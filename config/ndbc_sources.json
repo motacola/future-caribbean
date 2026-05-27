@@ -1,0 +1,51 @@
+{
+  "source": "NOAA NDBC Buoys",
+  "base_url": "https://www.ndbc.noaa.gov/data/realtime2",
+  "buoys": {
+    "42058": {
+      "name": "Eastern Caribbean (E of Barbados)",
+      "lat": 13.3,
+      "lon": -59.4,
+      "region": "eastern"
+    },
+    "42059": {
+      "name": "Eastern Caribbean (Martinique area)",
+      "lat": 14.2,
+      "lon": -61.8,
+      "region": "eastern"
+    },
+    "42060": {
+      "name": "Eastern Caribbean (St. Croix area)",
+      "lat": 16.0,
+      "lon": -63.5,
+      "region": "eastern"
+    },
+    "41043": {
+      "name": "North Caribbean (Puerto Rico Trench)",
+      "lat": 17.0,
+      "lon": -60.5,
+      "region": "northern"
+    },
+    "42056": {
+      "name": "Western Caribbean (Yucatan Basin)",
+      "lat": 19.0,
+      "lon": -84.9,
+      "region": "western"
+    },
+    "42057": {
+      "name": "Western Caribbean (Cayman area)",
+      "lat": 17.7,
+      "lon": -80.1,
+      "region": "western"
+    }
+  },
+  "signal_thresholds": {
+    "wind_high_kts": 28,
+    "wind_gust_high_kts": 34,
+    "wind_low_kts": 3,
+    "pressure_drop_3h_hpa": 3.0,
+    "pressure_very_low_hpa": 1005,
+    "wave_height_high_m": 3.0
+  },
+  "history_window_minutes": 180
+}

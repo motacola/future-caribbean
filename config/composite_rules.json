@@ -1,0 +1,82 @@
+{
+  "composite_rules": {
+    "cyclone_risk": {
+      "label": "🌀 Cyclone / Severe Weather Risk",
+      "priority": "high",
+      "conditions": {
+        "buoy_pressure_max": 1008,
+        "buoy_pressure_drop_3h": 2.0,
+        "buoy_wind_min_kts": 20,
+        "small_craft_advisory_required": false
+      }
+    },
+    "maritime_hazard": {
+      "label": "🚢 Maritime Hazard",
+      "priority": "medium",
+      "conditions": {
+        "buoy_wind_min_kts": 25,
+        "noaa_marine_alert_required": true
+      }
+    },
+    "investment_signal": {
+      "label": "💼 Investment Signal",
+      "priority": "medium",
+      "conditions": {
+        "fdi_growth_min_pct": 20,
+        "gdp_growth_min_pct": 5,
+        "idb_topic_match_required": true,
+        "caricom_trade_match": false
+      }
+    },
+    "economic_vulnerability": {
+      "label": "⚠️ Economic Vulnerability",
+      "priority": "medium",
+      "conditions": {
+        "inflation_max_pct": 10,
+        "unemployment_max_pct": 15
+      }
+    },
+    "tourism_impact": {
+      "label": "🏖️ Tourism Impact",
+      "priority": "low",
+      "conditions": {
+        "gdp_growth_min_pct": 5,
+        "wind_advisory_active": false
+      }
+    },
+    "food_security": {
+      "label": "🌾 Food Security Signal",
+      "priority": "medium",
+      "conditions": {
+        "caricom_food_trade_min_datasets": 2,
+        "cross_reference_inflation": true,
+        "inflation_threshold_pct": 5
+      }
+    },
+    "development_pipeline": {
+      "label": "🏗️ Development Pipeline",
+      "priority": "medium",
+      "conditions": {
+        "cdb_procurement_active": true,
+        "idb_infrastructure_match": true
+      }
+    },
+    "enhanced_investment": {
+      "label": "💎 Enhanced Investment Signal",
+      "priority": "medium",
+      "conditions": {
+        "wb_fdi_growth_min_pct": 20,
+        "caricom_trade_data_available": true,
+        "cdb_procurement_or_evaluation": true,
+        "require_two_of_three": true
+      }
+    },
+    "tropical_development": {
+      "label": "🌪️ Tropical Development Signal",
+      "priority": "high",
+      "conditions": {
+        "min_probability": "medium"
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "source": "IDB Open Data (CKAN)",
+  "base_url": "https://data.iadb.org/api/3",
+  "queries": [
+    {
+      "query": "Caribbean",
+      "label": "All Caribbean datasets",
+      "rows": 100,
+      "sort": "metadata_modified desc"
+    }
+  ],
+  "topics": {
+    "climate": ["climate", "environment", "renewable", "emissions", "carbon", "resilience", "disaster", "hurricane", "flood"],
+    "infrastructure": ["infrastructure", "transport", "energy", "water", "sanitation", "road", "port", "telecom"],
+    "economy": ["gdp", "economic", "trade", "fdi", "investment", "finance", "debt", "fiscal", "inflation"],
+    "tourism": ["tourism", "travel", "hospitality", "arrivals"],
+    "social": ["education", "health", "poverty", "inequality", "gender", "labor", "employment"],
+    "agriculture": ["agriculture", "food", "fisheries", "rural", "land"]
+  },
+  "signal_thresholds": {
+    "new_dataset": true,
+    "updated_dataset": true,
+    "topic_match": true
+  },
+  "exclude_keywords": ["sanctioned", "sanctions", "compliance"]
+}

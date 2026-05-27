@@ -1,0 +1,43 @@
+{
+  "sources": {
+    "caricom_statistics": {
+      "label": "CARICOM Statistics (WordPress REST API)",
+      "base_url": "https://statistics.caricom.org/wp-json/wp/v2",
+      "post_types": {
+        "country_data": {
+          "label": "Country Data",
+          "query_params": "per_page=100&_fields=id,title,date,modified,link,content"
+        },
+        "publications": {
+          "label": "Publications",
+          "query_params": "per_page=50&_fields=id,title,date,modified,link"
+        }
+      },
+      "signal_thresholds": {
+        "new_dataset": true,
+        "updated_dataset": true
+      }
+    },
+    "cdb_rss": {
+      "label": "Caribbean Development Bank (RSS Feed)",
+      "feed_url": "https://www.caribank.org/rss.xml",
+      "signal_types": {
+        "procurement": {
+          "label": "📋 Procurement Notice",
+          "priority": "medium",
+          "keyword": "procurement"
+        },
+        "evaluation": {
+          "label": "📊 Evaluation Report",
+          "priority": "medium",
+          "keyword": "evaluation"
+        },
+        "news": {
+          "label": "📰 News & Events",
+          "priority": "low",
+          "keyword": "news"
+        }
+      }
+    }
+  }
+}

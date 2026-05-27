@@ -1,0 +1,116 @@
+{
+  "seasons": [
+    {
+      "id": "hurricane_season",
+      "label": "Atlantic Hurricane Season",
+      "start": "06-01",
+      "end": "11-30",
+      "relevance": "Operational risk for all Caribbean stakeholders. Monitoring NHC/NWS/NDBC for tropical development and maritime hazards.",
+      "signal_kinds": ["cyclone_risk", "active_storm", "tropical_development", "maritime_hazard"],
+      "urgency": "high",
+      "action": "Review contingency plans and ensure resilience routing is active"
+    },
+    {
+      "id": "tourism_high_season",
+      "label": "Tourism High Season",
+      "start": "12-15",
+      "end": "04-15",
+      "relevance": "Peak tourism revenue window. GDP, airlift, and booking data most actionable during booking and arrival periods.",
+      "signal_kinds": ["tourism_impact"],
+      "urgency": "medium",
+      "action": "Monitor tourist demand indicators for capacity planning"
+    },
+    {
+      "id": "tourism_shoulder",
+      "label": "Tourism Shoulder Season",
+      "start": "04-16",
+      "end": "06-15",
+      "relevance": "Post-peak period. Early indicators of summer demand trajectory are most valuable now.",
+      "signal_kinds": ["tourism_impact"],
+      "urgency": "low",
+      "action": "Track early summer booking and airlift data"
+    },
+    {
+      "id": "procurement_q2",
+      "label": "Q2 Procurement Cycle",
+      "start": "04-01",
+      "end": "06-30",
+      "relevance": "CDB and IDB typically issue mid-year procurement rounds in Q2. Pipeline data especially actionable now.",
+      "signal_kinds": ["development_pipeline"],
+      "urgency": "high",
+      "action": "Review procurement pipeline for active bidding opportunities"
+    },
+    {
+      "id": "procurement_q3",
+      "label": "Q3 Procurement Cycle",
+      "start": "07-01",
+      "end": "09-30",
+      "relevance": "Late-summer procurement cycle. New project announcements common before fiscal year-end.",
+      "signal_kinds": ["development_pipeline"],
+      "urgency": "medium",
+      "action": "Monitor new project announcements for bid pipeline"
+    },
+    {
+      "id": "budget_planning",
+      "label": "Regional Budget Planning",
+      "start": "09-01",
+      "end": "11-30",
+      "relevance": "Caribbean governments and development banks finalize annual budgets. Infrastructure and investment signals carry extra weight.",
+      "signal_kinds": ["development_pipeline", "enhanced_investment"],
+      "urgency": "medium",
+      "action": "Cross-reference investment signals with budget priorities"
+    }
+  ],
+  "events": [
+    {
+      "id": "future_caribbean_buildathon",
+      "label": "Future Caribbean Buildathon",
+      "date": "2026-07-15",
+      "advance_notice_days": 30,
+      "relevance": "Regional innovation event approaching. Ecosystem builder and founder-matching dispatches most actionable now.",
+      "signal_kinds": ["development_pipeline", "enhanced_investment", "investment_signal"],
+      "urgency": "medium",
+      "action": "Route investment and pipeline signals to buildathon participants"
+    },
+    {
+      "id": "caricom_summit",
+      "label": "CARICOM Heads of Government Meeting",
+      "date": "2026-07-01",
+      "advance_notice_days": 14,
+      "relevance": "Regional policy decisions expected. Development pipeline and investment signals may indicate pre-summit momentum.",
+      "signal_kinds": ["development_pipeline", "enhanced_investment"],
+      "urgency": "medium",
+      "action": "Monitor policy signals and procurement announcements before summit"
+    },
+    {
+      "id": "idb_annual_meeting",
+      "label": "IDB Annual Meeting",
+      "date": "2026-03-21",
+      "advance_notice_days": 14,
+      "relevance": "IDB project pipeline and funding announcements typically cluster around annual meetings.",
+      "signal_kinds": ["development_pipeline"],
+      "urgency": "high",
+      "action": "Review IDB project pipeline for new funding windows"
+    },
+    {
+      "id": "world_bank_spring_meetings",
+      "label": "World Bank Spring Meetings",
+      "date": "2026-04-18",
+      "advance_notice_days": 14,
+      "relevance": "New development financing and project announcements expected from World Bank group.",
+      "signal_kinds": ["development_pipeline", "enhanced_investment"],
+      "urgency": "medium",
+      "action": "Track new financing announcements for Caribbean region"
+    },
+    {
+      "id": "cop_climate",
+      "label": "COP Climate Summit",
+      "date": "2026-11-09",
+      "advance_notice_days": 30,
+      "relevance": "Climate resilience funding and vulnerability signals most salient in lead-up to COP. Food security and economic vulnerability dispatches gain political weight.",
+      "signal_kinds": ["economic_vulnerability", "food_security"],
+      "urgency": "low",
+      "action": "Compile vulnerability and food security signals for policy audience"
+    }
+  ]
+}

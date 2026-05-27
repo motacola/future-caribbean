@@ -1,0 +1,44 @@
+{
+  "countries": {
+    "AG": "Antigua and Barbuda",
+    "BB": "Barbados",
+    "BS": "Bahamas",
+    "BZ": "Belize",
+    "DM": "Dominica",
+    "GD": "Grenada",
+    "GY": "Guyana",
+    "JM": "Jamaica",
+    "KN": "St. Kitts and Nevis",
+    "LC": "St. Lucia",
+    "SR": "Suriname",
+    "TT": "Trinidad and Tobago",
+    "VC": "St. Vincent and the Grenadines"
+  },
+  "indicators": {
+    "NY.GDP.MKTP.CD": {
+      "label": "GDP current USD",
+      "kind": "currency",
+      "signal_threshold_pct": 5
+    },
+    "FP.CPI.TOTL.ZG": {
+      "label": "Inflation annual %",
+      "kind": "percent",
+      "signal_threshold_abs": 5
+    },
+    "SL.UEM.TOTL.ZS": {
+      "label": "Unemployment %",
+      "kind": "percent",
+      "signal_threshold_abs": 10
+    },
+    "BX.KLT.DINV.CD.WD": {
+      "label": "Foreign direct investment net inflows current USD",
+      "kind": "currency",
+      "signal_threshold_pct": 10
+    },
+    "SP.POP.TOTL": {
+      "label": "Population",
+      "kind": "count",
+      "signal_threshold_pct": 1
+    }
+  }
+}

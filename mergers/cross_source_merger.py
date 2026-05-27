@@ -1,0 +1,830 @@
+#!/usr/bin/env python3
+"""Cross-source signal merger — reads all 4 watcher outputs and produces
+composite intelligence signals by combining evidence across sources.
+
+Composite rules:
+  🌪️ Cyclone Risk   = buoy pressure drop + small craft advisory
+  🚢 Maritime Hazard = buoy high wind + marine alert
+  💼 Investment      = FDI surge + IDB project dataset
+  ⚠️ Vulnerability   = high inflation + high unemployment
+  🏖️ Tourism Impact  = GDP growth + weather conditions
+
+Outputs:
+  data/composite/latest.json  — all composite signals
+  signals/composite/latest.md — merged signal brief
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+import re
+from collections import defaultdict
+from dataclasses import dataclass, asdict
+from datetime import datetime, timezone
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+DEFAULT_RULES = ROOT / "config" / "composite_rules.json"
+DEFAULT_DATA_DIR = ROOT / "data" / "composite"
+DEFAULT_SIGNAL_DIR = ROOT / "signals" / "composite"
+STATE_FILE = ROOT / "data" / "composite" / ".sent_composites.json"
+
+
+WB_SIGNAL = ROOT / "signals" / "world_bank" / "latest.md"
+WB_DATA = ROOT / "data" / "world_bank" / "latest.json"
+IDB_DATA = ROOT / "data" / "idb" / "latest.json"
+NOAA_SIGNAL = ROOT / "data" / "noaa" / "latest.json"
+NDBC_DATA = ROOT / "data" / "ndbc" / "latest.json"
+TIER2_DATA = ROOT / "data" / "tier2" / "latest.json"
+NHC_DATA = ROOT / "data" / "nhc" / "latest.json"
+
+
+@dataclass(frozen=True)
+class CompositeSignal:
+    id: str
+    kind: str
+    label: str
+    priority: str
+    summary: str
+    evidence: list[str]
+    countries: list[str]
+    sources: list[str]
+
+
+def load_json(path: Path) -> dict | None:
+    if not path.exists():
+        return None
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return None
+
+
+# ── Source readers ────────────────────────────────────────
+
+def read_wb_observations() -> list[dict]:
+    data = load_json(WB_DATA)
+    if data:
+        return data.get("observations", [])
+    return []
+
+
+def read_wb_signals_md() -> list[str]:
+    if not WB_SIGNAL.exists():
+        return []
+    text = WB_SIGNAL.read_text(encoding="utf-8")
+    lines = text.splitlines()
+    in_signals = False
+    signals: list[str] = []
+    for line in lines:
+        if line.strip() == "## Signals":
+            in_signals = True
+            continue
+        if in_signals:
+            if line.startswith("## "):
+                break
+            if line.startswith("- "):
+                signals.append(line[2:].strip())
+    return signals
+
+
+def read_idb_topics() -> list[dict]:
+    data = load_json(IDB_DATA)
+    if data:
+        return data.get("datasets", [])
+    return []
+
+
+def read_noaa_alerts() -> list[dict]:
+    data = load_json(NOAA_SIGNAL)
+    if data:
+        return data.get("alerts", [])
+    return []
+
+
+def read_ndbc_readings() -> list[dict]:
+    data = load_json(NDBC_DATA)
+    if data:
+        return data.get("readings", [])
+    return []
+
+
+def read_ndbc_history() -> list[dict]:
+    hist = load_json(ROOT / "data" / "ndbc" / "history.json")
+    return list(hist.values()) if hist else []
+
+
+def read_tier2_items() -> list[dict]:
+    data = load_json(TIER2_DATA)
+    if data:
+        return data.get("items", [])
+    return []
+
+
+def read_nhc_data() -> dict | None:
+    """Read NHC watcher output: outlook, development areas, active storms."""
+    data = load_json(NHC_DATA)
+    if data:
+        return data.get("snapshot")
+    return None
+
+
+# ── Helper: country name extraction
+
+def extract_country(signal_text: str) -> str | None:
+    m = re.match(r"^([A-Za-z .]+?):", signal_text)
+    return m.group(1).strip() if m else None
+
+
+# ── Composite rule engines ────────────────────────────────
+
+def detect_cyclone_risk(
+    rules: dict,
+    ndbc_readings: list[dict],
+    noaa_alerts: list[dict],
+    ndbc_history: list[dict],
+) -> list[CompositeSignal]:
+    """Buoy pressure drop + marine alert = cyclone risk per region."""
+    cond = rules.get("conditions", {})
+    max_pressure = cond.get("buoy_pressure_max", 1008)
+    min_wind = cond.get("buoy_wind_min_kts", 20)
+    need_advisory = cond.get("small_craft_advisory_required", False)
+
+    # Check marine alerts
+    has_marine = any(
+        a.get("event") == "Small Craft Advisory" and a.get("zone_type") == "marine"
+        for a in noaa_alerts
+    )
+    if need_advisory and not has_marine:
+        return []
+
+    signals: list[CompositeSignal] = []
+    for reading in ndbc_readings:
+        pres = reading.get("pressure_hpa")
+        wind = reading.get("wind_speed_ms")
+        wind_kts = (wind * 1.94384) if wind else None
+        station = reading.get("station_name", "Unknown")
+
+        if pres is not None and pres <= max_pressure and wind_kts is not None and wind_kts >= min_wind:
+            region = reading.get("region", "caribbean")
+            country_map = {"eastern": "Barbados / Windwards", "northern": "Puerto Rico / USVI", "western": "Cayman / Jamaica"}
+            country = country_map.get(region, "Caribbean")
+
+            signals.append(CompositeSignal(
+                id=f"cyclone-{reading.get('station_id','?')}",
+                kind="cyclone_risk",
+                label="🌀 Cyclone / Severe Weather Risk",
+                priority="high",
+                summary=f"Elevated tropical weather risk in {country}: {station} reports {pres:.0f} hPa at {wind_kts:.0f} kts",
+                evidence=[f"Buoy {station}: {pres:.0f} hPa, wind {wind_kts:.0f} kts"],
+                countries=[country],
+                sources=["NDBC", "NOAA"],
+            ))
+
+    return signals
+
+
+def detect_maritime_hazard(
+    rules: dict,
+    ndbc_readings: list[dict],
+    noaa_alerts: list[dict],
+) -> list[CompositeSignal]:
+    """High buoy wind + marine alert = confirmed maritime hazard."""
+    cond = rules.get("conditions", {})
+    min_wind = cond.get("buoy_wind_min_kts", 25)
+    need_marine = cond.get("noaa_marine_alert_required", True)
+
+    has_marine = any(
+        a.get("event") == "Small Craft Advisory" for a in noaa_alerts
+    )
+    if need_marine and not has_marine:
+        return []
+
+    signals: list[CompositeSignal] = []
+    for reading in ndbc_readings:
+        wind = reading.get("wind_speed_ms")
+        wind_kts = (wind * 1.94384) if wind else None
+        station = reading.get("station_name", "Unknown")
+
+        if wind_kts is not None and wind_kts >= min_wind:
+            signals.append(CompositeSignal(
+                id=f"maritime-{reading.get('station_id','?')}",
+                kind="maritime_hazard",
+                label="🚢 Maritime Hazard",
+                priority="medium",
+                summary=f"Small craft advisory active with {wind_kts:.0f} kts wind at {station}",
+                evidence=[f"Buoy {station}: {wind_kts:.0f} kts", "NOAA Small Craft Advisory active"],
+                countries=["Caribbean"],
+                sources=["NDBC", "NOAA"],
+            ))
+
+    return signals
+
+
+def detect_investment_signal(
+    rules: dict,
+    wb_signals: list[str],
+    wb_observations: list[dict],
+    idb_datasets: list[dict],
+) -> list[CompositeSignal]:
+    """FDI surge + IDB project dataset in same country = investment signal."""
+    cond = rules.get("conditions", {})
+    fdi_min = cond.get("fdi_growth_min_pct", 20)
+    gdp_min = cond.get("gdp_growth_min_pct", 5)
+    need_idb = cond.get("idb_topic_match_required", True)
+
+    # Extract FDI surges from WB signals
+    countries_with_fdi: dict[str, list[str]] = defaultdict(list)
+    countries_with_gdp: dict[str, list[str]] = defaultdict(list)
+
+    for sig in wb_signals:
+        country = extract_country(sig)
+        if not country:
+            continue
+        if "foreign direct investment" in sig.lower():
+            # Only flag positive FDI growth (surges up, not drops)
+            m = re.search(r"moved up ([\d.]+)%", sig)
+            if m and float(m.group(1)) >= fdi_min:
+                countries_with_fdi[country].append(sig)
+        if "gdp" in sig.lower():
+            m = re.search(r"([\d.]+)%", sig)
+            if m and float(m.group(1)) >= gdp_min:
+                countries_with_gdp[country].append(sig)
+
+    # Cross-reference with IDB topics
+    idb_countries = set()
+    for ds in idb_datasets:
+        for topic in ds.get("topics", []):
+            if topic in ("economy", "infrastructure", "climate"):
+                idb_countries.add(topic)
+
+    signals: list[CompositeSignal] = []
+    for country in countries_with_fdi:
+        evidence = countries_with_fdi[country]
+        if need_idb and not idb_countries:
+            continue
+        signals.append(CompositeSignal(
+            id=f"invest-{country.lower().replace(' ','-')}",
+            kind="investment_signal",
+            label="💼 Investment Signal",
+            priority="medium",
+            summary=f"{country}: FDI surge detected with active IDB development datasets available",
+            evidence=evidence,
+            countries=[country],
+            sources=["World Bank", "IDB"],
+        ))
+
+    return signals
+
+
+def detect_economic_vulnerability(
+    rules: dict,
+    wb_signals: list[str],
+) -> list[CompositeSignal]:
+    """High inflation + high unemployment = vulnerability."""
+    cond = rules.get("conditions", {})
+    infl_max = cond.get("inflation_max_pct", 10)
+    unemp_max = cond.get("unemployment_max_pct", 15)
+
+    countries_infl: dict[str, list[str]] = defaultdict(list)
+    countries_unemp: dict[str, list[str]] = defaultdict(list)
+
+    for sig in wb_signals:
+        country = extract_country(sig)
+        if not country:
+            continue
+        if "inflation" in sig.lower():
+            m = re.search(r"([\d.]+)%", sig)
+            if m:
+                val = float(m.group(1))
+                if val >= infl_max:
+                    countries_infl[country].append(sig)
+        if "unemployment" in sig.lower():
+            m = re.search(r"([\d.]+)%", sig)
+            if m:
+                val = float(m.group(1))
+                if val >= unemp_max:
+                    countries_unemp[country].append(sig)
+
+    signals: list[CompositeSignal] = []
+    # Any country with high inflation OR unemployment => vulnerability
+    for country in set(list(countries_infl.keys()) + list(countries_unemp.keys())):
+        evidence = countries_infl.get(country, []) + countries_unemp.get(country, [])
+        if evidence:
+            signals.append(CompositeSignal(
+                id=f"vuln-{country.lower().replace(' ','-')}",
+                kind="economic_vulnerability",
+                label="⚠️ Economic Vulnerability",
+                priority="medium",
+                summary=f"{country}: elevated economic vulnerability indicators",
+                evidence=evidence,
+                countries=[country],
+                sources=["World Bank"],
+            ))
+
+    return signals
+
+
+def detect_tourism_impact(
+    rules: dict,
+    wb_signals: list[str],
+    noaa_alerts: list[dict],
+) -> list[CompositeSignal]:
+    """Strong GDP growth flagged but no active wind advisory = positive tourism context."""
+    cond = rules.get("conditions", {})
+    gdp_min = cond.get("gdp_growth_min_pct", 5)
+    no_wind = cond.get("wind_advisory_active", False)
+
+    has_wind = any("Wind Advisory" in (a.get("event", "") or "") for a in noaa_alerts)
+    if no_wind and has_wind:
+        return []
+
+    countries_gdp: dict[str, list[str]] = defaultdict(list)
+    for sig in wb_signals:
+        country = extract_country(sig)
+        if not country:
+            continue
+        if "gdp" in sig.lower():
+            m = re.search(r"([\d.]+)%", sig)
+            if m and float(m.group(1)) >= gdp_min:
+                countries_gdp[country].append(sig)
+
+    signals: list[CompositeSignal] = []
+    for country, evidence in countries_gdp.items():
+        signals.append(CompositeSignal(
+            id=f"tourism-{country.lower().replace(' ','-')}",
+            kind="tourism_impact",
+            label="🏖️ Tourism Impact",
+            priority="low",
+            summary=f"{country}: strong GDP growth ({evidence[0].split(':')[1].strip() if ':' in evidence[0] else ''}) — positive tourism context",
+            evidence=evidence,
+            countries=[country],
+            sources=["World Bank"],
+        ))
+    return signals
+
+
+def detect_food_security(
+    rules: dict,
+    tier2_items: list[dict],
+    wb_signals: list[str],
+) -> list[CompositeSignal]:
+    """CARICOM food trade data + inflation context = food security signal."""
+    cond = rules.get("conditions", {})
+    min_food_datasets = cond.get("caricom_food_trade_min_datasets", 2)
+    check_inflation = cond.get("cross_reference_inflation", True)
+    infl_threshold = cond.get("inflation_threshold_pct", 5)
+
+    # Find CARICOM food-related datasets
+    food_items = [
+        i for i in tier2_items
+        if i.get("source_slug") == "caricom"
+        and i.get("item_type") == "country_data"
+        and any(kw in (i.get("title", "") or "").lower()
+                for kw in ["food", "import", "export", "agriculture"])
+    ]
+
+    if len(food_items) < min_food_datasets:
+        return []
+
+    # Cross-reference with inflation signals from WB
+    high_inflation_countries: list[str] = []
+    if check_inflation:
+        for sig in wb_signals:
+            country = extract_country(sig)
+            if not country:
+                continue
+            if "inflation" in sig.lower():
+                m = re.search(r"([\d.]+)%", sig)
+                if m and float(m.group(1)) >= infl_threshold:
+                    high_inflation_countries.append(country)
+
+    evidence = [
+        f"CARICOM food trade data: {len(food_items)} datasets available",
+    ]
+    for fi in food_items[:3]:
+        evidence.append(f"• {fi['title']}")
+
+    vuln_context = ""
+    if high_inflation_countries:
+        vuln_context = f" — elevated inflation in {', '.join(high_inflation_countries[:3])}"
+        evidence.append(f"Inflation > {infl_threshold}% in: {', '.join(high_inflation_countries[:3])}")
+
+    signals: list[CompositeSignal] = []
+    signals.append(CompositeSignal(
+        id="food-security-regional",
+        kind="food_security",
+        label="🌾 Food Security Signal",
+        priority="medium",
+        summary=f"Regional food trade monitoring active: {len(food_items)} datasets{vuln_context}",
+        evidence=evidence,
+        countries=["CARICOM"],
+        sources=["CARICOM", "World Bank"],
+    ))
+    return signals
+
+
+def detect_development_pipeline(
+    rules: dict,
+    tier2_items: list[dict],
+    idb_datasets: list[dict],
+) -> list[CompositeSignal]:
+    """CDB procurement notices + IDB infrastructure datasets = active development pipeline."""
+    cond = rules.get("conditions", {})
+    need_procurement = cond.get("cdb_procurement_active", True)
+    need_infra = cond.get("idb_infrastructure_match", True)
+
+    # Find CDB procurement notices
+    cdb_procurement = [
+        i for i in tier2_items
+        if i.get("source_slug") == "cdb" and i.get("item_type") == "procurement"
+    ]
+
+    if need_procurement and not cdb_procurement:
+        return []
+
+    # Find IDB infrastructure datasets
+    idb_infra = [
+        ds for ds in idb_datasets
+        if "infrastructure" in ds.get("topics", [])
+    ] if need_infra else []
+
+    if need_infra and not idb_infra:
+        return []
+
+    evidence = []
+    if cdb_procurement:
+        evidence.append(f"CDB active procurement notices: {len(cdb_procurement)}")
+        for p in cdb_procurement[:3]:
+            evidence.append(f"• {p['title']}")
+    if idb_infra:
+        evidence.append(f"IDB infrastructure datasets: {len(idb_infra)}")
+
+    signals: list[CompositeSignal] = []
+    signals.append(CompositeSignal(
+        id="dev-pipeline-regional",
+        kind="development_pipeline",
+        label="🏗️ Development Pipeline",
+        priority="medium",
+        summary=f"Active development pipeline: {len(cdb_procurement)} CDB procurements + {len(idb_infra)} IDB infrastructure datasets",
+        evidence=evidence,
+        countries=["CARICOM"],
+        sources=["CDB", "IDB"],
+    ))
+    return signals
+
+
+def detect_enhanced_investment(
+    rules: dict,
+    wb_signals: list[str],
+    tier2_items: list[dict],
+) -> list[CompositeSignal]:
+    """Triple-source validation: WB FDI surge + CARICOM trade data + CDB activity."""
+    cond = rules.get("conditions", {})
+    fdi_min = cond.get("wb_fdi_growth_min_pct", 20)
+    need_trade = cond.get("caricom_trade_data_available", True)
+    need_cdb = cond.get("cdb_procurement_or_evaluation", True)
+    require_two = cond.get("require_two_of_three", True)
+
+    # Source 1: WB FDI surges
+    countries_fdi: list[str] = []
+    for sig in wb_signals:
+        country = extract_country(sig)
+        if not country:
+            continue
+        if "foreign direct investment" in sig.lower():
+            m = re.search(r"moved up ([\d.]+)%", sig)
+            if m and float(m.group(1)) >= fdi_min:
+                countries_fdi.append(country)
+
+    if not countries_fdi:
+        return []
+
+    # Source 2: CARICOM trade data availability
+    has_caricom_trade = False
+    if need_trade:
+        trade_titles = " ".join(
+            i.get("title", "") for i in tier2_items
+            if i.get("source_slug") == "caricom"
+        ).lower()
+        has_caricom_trade = any(kw in trade_titles for kw in ["trade", "import", "export", "fdi"])
+
+    # Source 3: CDB activity
+    has_cdb_activity = False
+    if need_cdb:
+        has_cdb_activity = any(
+            i.get("source_slug") == "cdb"
+            for i in tier2_items
+        )
+
+    # Score: how many of the three sources confirm
+    sources_active = sum([bool(countries_fdi), has_caricom_trade, has_cdb_activity])
+    if require_two and sources_active < 2:
+        return []
+
+    signals: list[CompositeSignal] = []
+    for country in countries_fdi:
+        sources_list = ["World Bank"]
+        evidence_parts = [f"WB FDI surge detected: {country}"]
+        if has_caricom_trade:
+            sources_list.append("CARICOM")
+            evidence_parts.append("CARICOM trade/FDI data available")
+        if has_cdb_activity:
+            sources_list.append("CDB")
+            evidence_parts.append("CDB procurement/evaluation activity")
+        evidence_parts.append(f"Confidence: WB FDI data confirmed · CARICOM/CDB data available ({sources_active}/3 signals)")
+
+        signals.append(CompositeSignal(
+            id=f"enhanced-invest-{country.lower().replace(' ','-')}",
+            kind="enhanced_investment",
+            label="💎 Enhanced Investment Signal",
+            priority="medium",
+            summary=f"{country}: FDI surge (WB) + supporting context from CARICOM/CDB data availability ({sources_active}/3 signals)",
+            evidence=evidence_parts,
+            countries=[country],
+            sources=sources_list,
+        ))
+
+    return signals
+
+
+# ── NHC Storm Risk ─────────────────────────────────────────
+
+
+def detect_nhc_storm_risk(
+    rules: dict,
+    nhc_data: dict | None,
+    noaa_alerts: list[dict],
+    ndbc_readings: list[dict],
+) -> list[CompositeSignal]:
+    """NHC development areas + active storms + marine conditions = storm risk signal.
+
+    Off-season (no development areas, no active storms) produces no signals.
+    During active season, checks for:
+      - NHC development areas (low/med/high probability)
+      - Active named storms
+      - Cross-reference with NOAA marine alerts and buoy readings
+    """
+    if not nhc_data:
+        return []
+
+    cond = rules.get("conditions", {})
+    min_prob = cond.get("min_probability", "low")
+
+    development_areas = nhc_data.get("development_areas", [])
+    active_storms = nhc_data.get("active_storms", [])
+    summary = nhc_data.get("summary", "")
+
+    prob_rank = {"high": 3, "medium": 2, "low": 1}
+
+    signals: list[CompositeSignal] = []
+
+    # 1. Signal for high-probability development areas
+    high_areas = [
+        a for a in development_areas
+        if prob_rank.get(a.get("probability", "low"), 0) >= prob_rank.get(min_prob, 1)
+    ]
+    medium_areas = [
+        a for a in development_areas if a.get("probability") == "medium"
+    ]
+
+    if high_areas:
+        area_labels = [a["label"] for a in high_areas[:2]]
+        evidence_parts = [
+            f"NHC high-probability development: {'; '.join(area_labels)}"
+        ]
+        for a in high_areas:
+            loc = a.get("location", "")
+            if loc:
+                evidence_parts.append(f"  Location: {loc}")
+            desc = a.get("description", "")
+            if desc:
+                evidence_parts.append(f"  Details: {desc[:200]}")
+
+        # Cross-reference with marine alerts
+        marine_alerts = [
+            a for a in noaa_alerts
+            if a.get("zone_type") == "marine" and a.get("severity") in ("Severe", "Extreme")
+        ]
+        if marine_alerts:
+            evidence_parts.append(f"NOAA marine alerts active: {len(marine_alerts)} zone(s)")
+            sources = ["NHC", "NOAA"]
+        else:
+            sources = ["NHC"]
+
+        signals.append(CompositeSignal(
+            id=f"nhc-high-development-{datetime.now(timezone.utc).strftime('%Y%m%d')}",
+            kind="tropical_development",
+            label="🌀 Tropical Development Watch",
+            priority="high",
+            summary=f"NHC: {len(high_areas)} high-probability development area(s) — {summary[:120]}",
+            evidence=evidence_parts,
+            countries=["Caribbean/Atlantic"],
+            sources=sources,
+        ))
+
+    elif medium_areas:
+        evidence_parts = [
+            f"NHC medium-probability development: {len(medium_areas)} area(s) being monitored"
+        ]
+        for a in medium_areas[:2]:
+            loc = a.get("location", "")
+            if loc:
+                evidence_parts.append(f"  {a['label'][:80]} — {loc}")
+
+        signals.append(CompositeSignal(
+            id=f"nhc-medium-development-{datetime.now(timezone.utc).strftime('%Y%m%d')}",
+            kind="tropical_development",
+            label="🌀 Tropical Development Monitor",
+            priority="medium",
+            summary=f"NHC monitoring {len(medium_areas)} medium-probability development area(s)",
+            evidence=evidence_parts,
+            countries=["Caribbean/Atlantic"],
+            sources=["NHC"],
+        ))
+
+    # 2. Signal for active named storms
+    for storm in active_storms:
+        storm_name = storm.get("name", "Unnamed")
+        storm_type = storm.get("storm_type", "Tropical Cyclone")
+        wind = storm.get("wind_kts")
+        pressure = storm.get("pressure_mb")
+        lat = storm.get("lat")
+        lon = storm.get("lon")
+
+        evidence_parts = [f"{storm_type} {storm_name} active in Atlantic basin"]
+        if wind:
+            evidence_parts.append(f"  Winds: {wind} kt ({wind * 1.151} mph)")
+        if pressure:
+            evidence_parts.append(f"  Pressure: {pressure} mb")
+        if lat and lon:
+            evidence_parts.append(f"  Position: {lat}°N {lon}°W")
+
+        signals.append(CompositeSignal(
+            id=f"storm-{storm_name.lower().replace(' ','-')}",
+            kind="active_storm",
+            label="🌀 Active Storm: " + storm_name,
+            priority="high",
+            summary=f"{storm_type} {storm_name}: {wind or '?'} kt, {pressure or '?'} mb — active in Caribbean/Atlantic basin",
+            evidence=evidence_parts,
+            countries=["Caribbean/Atlantic"],
+            sources=["NHC", "NOAA"],
+        ))
+
+    return signals
+
+
+# ── Output ────────────────────────────────────────────────
+
+def write_outputs(
+    signals: list[CompositeSignal],
+    data_dir: Path,
+    signal_dir: Path,
+) -> tuple[Path, Path]:
+    data_dir.mkdir(parents=True, exist_ok=True)
+    signal_dir.mkdir(parents=True, exist_ok=True)
+    fetched_at = datetime.now(timezone.utc).isoformat()
+
+    # Sort by priority
+    priority_order = {"high": 0, "medium": 1, "low": 2}
+
+    payload = {
+        "source": "cross-source merger",
+        "fetched_at": fetched_at,
+        "composite_signals": len(signals),
+        "signals": [asdict(s) for s in signals],
+    }
+
+    json_path = data_dir / "latest.json"
+    json_path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+    md_lines = [
+        "# Caribbean Signal OS — Composite Intelligence",
+        "",
+        f"- Generated: {fetched_at}",
+        f"- Composite signals: {len(signals)}",
+        "- Sources: World Bank, IDB, NOAA NWS, NDBC Buoys, CARICOM, CDB",
+        "",
+    ]
+
+    if not signals:
+        md_lines.append("*No composite signals generated.* Normal conditions across all sources.")
+        md_lines.append("")
+
+    for sig in sorted(signals, key=lambda s: priority_order.get(s.priority, 99)):
+        icon_map = {
+            "cyclone_risk": "🌀", "maritime_hazard": "🚢",
+            "investment_signal": "💼", "economic_vulnerability": "⚠️",
+            "tourism_impact": "🏖️", "food_security": "🌾",
+            "development_pipeline": "🏗️", "enhanced_investment": "💎",
+            "tropical_development": "🌪️", "active_storm": "🌀",
+        }
+        icon = icon_map.get(sig.kind, "•")
+        priority_badge = {"high": "🔴", "medium": "🟡", "low": "🟢"}.get(sig.priority, "⚪")
+
+        md_lines.append(f"{priority_badge} {icon} **{sig.label}**")
+        md_lines.append(f"   {sig.summary}")
+        md_lines.append(f"   Sources: {', '.join(sig.sources)}")
+        for ev in sig.evidence[:2]:
+            md_lines.append(f"   • {ev}")
+        md_lines.append("")
+
+    md_lines.append("---")
+    md_lines.append(f"**Composite signals:** {len(signals)}")
+    md_lines.append("*Generated by cross-source merger — combines evidence across 6 watchers*")
+
+    md_path = signal_dir / "latest.md"
+    md_path.write_text("\n".join(md_lines) + "\n", encoding="utf-8")
+    return json_path, md_path
+
+
+def load_state() -> set[str]:
+    if STATE_FILE.exists():
+        return set(json.loads(STATE_FILE.read_text(encoding="utf-8")))
+    return set()
+
+
+def save_state(ids: set[str]) -> None:
+    STATE_FILE.parent.mkdir(parents=True, exist_ok=True)
+    STATE_FILE.write_text(json.dumps(sorted(ids), indent=2) + "\n", encoding="utf-8")
+
+
+def run(rules_path: Path, data_dir: Path, signal_dir: Path) -> int:
+    rules = json.loads(rules_path.read_text(encoding="utf-8"))
+    combined_rules = rules.get("composite_rules", {})
+
+    # Read all source data
+    wb_obs = read_wb_observations()
+    wb_sigs = read_wb_signals_md()
+    idb_ds = read_idb_topics()
+    noaa_alerts = read_noaa_alerts()
+    ndbc_readings = read_ndbc_readings()
+    ndbc_history = read_ndbc_history()
+    nhc_data = read_nhc_data()
+
+    all_signals: list[CompositeSignal] = []
+
+    # Read Tier 2 data
+    tier2_items = read_tier2_items()
+
+    cyclone_rules = combined_rules.get("cyclone_risk", {})
+    all_signals.extend(detect_cyclone_risk(cyclone_rules, ndbc_readings, noaa_alerts, ndbc_history))
+
+    maritime_rules = combined_rules.get("maritime_hazard", {})
+    all_signals.extend(detect_maritime_hazard(maritime_rules, ndbc_readings, noaa_alerts))
+
+    invest_rules = combined_rules.get("investment_signal", {})
+    all_signals.extend(detect_investment_signal(invest_rules, wb_sigs, wb_obs, idb_ds))
+
+    vuln_rules = combined_rules.get("economic_vulnerability", {})
+    all_signals.extend(detect_economic_vulnerability(vuln_rules, wb_sigs))
+
+    tourism_rules = combined_rules.get("tourism_impact", {})
+    all_signals.extend(detect_tourism_impact(tourism_rules, wb_sigs, noaa_alerts))
+
+    # Tier 2-enhanced rules
+    food_rules = combined_rules.get("food_security", {})
+    if tier2_items:
+        all_signals.extend(detect_food_security(food_rules, tier2_items, wb_sigs))
+
+    dev_rules = combined_rules.get("development_pipeline", {})
+    if tier2_items:
+        all_signals.extend(detect_development_pipeline(dev_rules, tier2_items, idb_ds))
+
+    enhanced_rules = combined_rules.get("enhanced_investment", {})
+    if tier2_items:
+        all_signals.extend(detect_enhanced_investment(enhanced_rules, wb_sigs, tier2_items))
+
+    # NHC storm risk
+    nhc_rules = combined_rules.get("tropical_development", {})
+    if nhc_data:
+        all_signals.extend(detect_nhc_storm_risk(nhc_rules, nhc_data, noaa_alerts, ndbc_readings))
+
+    # Delta detection
+    state = load_state()
+    current_ids = {s.id for s in all_signals}
+    new_ids = {s.id for s in all_signals if s.id not in state}
+
+    json_path, md_path = write_outputs(all_signals, data_dir, signal_dir)
+    print(f"Wrote {json_path}", flush=True)
+    print(f"Wrote {md_path}", flush=True)
+    print(f"Composite signals: {len(all_signals)}", flush=True)
+    print(f"New since last run: {len(new_ids)}", flush=True)
+
+    save_state(current_ids)
+    return 0
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description="Cross-source signal merger for Caribbean Signal OS.")
+    parser.add_argument("--rules", type=Path, default=DEFAULT_RULES)
+    parser.add_argument("--data-dir", type=Path, default=DEFAULT_DATA_DIR)
+    parser.add_argument("--signal-dir", type=Path, default=DEFAULT_SIGNAL_DIR)
+    args = parser.parse_args()
+    return run(args.rules, args.data_dir, args.signal_dir)
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

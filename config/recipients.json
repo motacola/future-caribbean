@@ -1,0 +1,140 @@
+{
+  "_comment": "Recipient routing rules for Caribbean Opportunity Dispatch.",
+  "_version": "2.0",
+
+  "personas": {
+    "diaspora_investor": {
+      "label": "Diaspora Investor",
+      "channel": "Email brief + Telegram",
+      "description": "Caribbean diaspora capital networks — want validated, high-confidence entry points with clear next steps for capital deployment"
+    },
+    "founder_operator": {
+      "label": "Regional Founder/Operator",
+      "channel": "Telegram",
+      "description": "Entrepreneurs and operators active in Caribbean markets — want sector-specific signals and procurement/partnership leads"
+    },
+    "ecosystem_builder": {
+      "label": "Ecosystem Builder",
+      "channel": "Telegram",
+      "description": "Accelerators, trade agencies, chambers — want regional trend awareness and cross-country opportunity maps"
+    },
+    "regional_operator": {
+      "label": "Regional Operator",
+      "channel": "Telegram",
+      "description": "On-the-ground operators in logistics, tourism, infrastructure — want operational signals and procurement notices"
+    },
+    "procurement_watcher": {
+      "label": "Procurement Watcher",
+      "channel": "Email brief",
+      "description": "Entities tracking CDB/IDB procurement — want project pipeline detail and opportunity-specific notifications"
+    },
+    "operator_resilience": {
+      "label": "Operations/Resilience",
+      "channel": "Telegram/SMS alert",
+      "description": "Operations and logistics teams — want marine/storm alerts with immediate action windows"
+    },
+    "tourism_logistics_operator": {
+      "label": "Tourism/Logistics Operator",
+      "channel": "Telegram",
+      "description": "Tourism boards, hotel operators, shipping — want demand signals and hazard context"
+    },
+    "policy_media": {
+      "label": "Policy/Media",
+      "channel": "Telegram digest",
+      "description": "Policy analysts, journalists, regional media — want cross-country context and vulnerability awareness"
+    }
+  },
+
+  "routing_rules": {
+    "enhanced_investment": {
+      "personas": ["diaspora_investor", "ecosystem_builder", "founder_operator"],
+      "action_window": "14 days",
+      "decision_to_influence": "Which verified opportunity to investigate for capital deployment or partnership entry",
+      "routing_rationale": {
+        "diaspora_investor": "Multi-source validation reduces screening risk — capital follows verified signals",
+        "ecosystem_builder": "Cross-country investment velocity signals where to focus ecosystem support and founder matching",
+        "founder_operator": "Multi-source investment lift indicates growing market that may support new entry or expansion"
+      }
+    },
+    "investment_signal": {
+      "personas": ["diaspora_investor", "founder_operator"],
+      "action_window": "14 days",
+      "decision_to_influence": "Which country-sector pair to validate for investment readiness",
+      "routing_rationale": {
+        "diaspora_investor": "Single-source FDI movement is a screening trigger, not a deployment signal — start diligence",
+        "founder_operator": "FDI movement in your operating country signals competition or demand growth — assess positioning"
+      }
+    },
+    "development_pipeline": {
+      "personas": ["regional_operator", "procurement_watcher", "founder_operator"],
+      "action_window": "30 days",
+      "decision_to_influence": "Which procurement or project opportunity to pursue",
+      "routing_rationale": {
+        "regional_operator": "Active procurement directly maps to operational capacity needs — first to respond wins",
+        "procurement_watcher": "CDB/IDB project pipeline is the primary lead source for project-based business development",
+        "founder_operator": "Procurement pipeline signals government and institutional spending direction — follow the money"
+      }
+    },
+    "economic_vulnerability": {
+      "personas": ["diaspora_investor", "policy_media"],
+      "action_window": "30 days",
+      "decision_to_influence": "Risk assessment for capital exposure or policy attention",
+      "routing_rationale": {
+        "diaspora_investor": "Vulnerability signals change risk profiles — reassess exposure and timing",
+        "policy_media": "Economic stress indicators drive policy response and media narratives"
+      }
+    },
+    "food_security": {
+      "personas": ["ecosystem_builder", "policy_media"],
+      "action_window": "30 days",
+      "decision_to_influence": "Agricultural/logistics investment case or policy response planning",
+      "routing_rationale": {
+        "ecosystem_builder": "Food trade data reveals supply chain gaps that local founders and agri-tech can fill",
+        "policy_media": "Food security is a regional stability indicator — tracks pressure points before they become crises"
+      }
+    },
+    "tourism_impact": {
+      "personas": ["tourism_logistics_operator", "founder_operator"],
+      "action_window": "30 days",
+      "decision_to_influence": "Tourism capacity planning and timing of marketing or expansion",
+      "routing_rationale": {
+        "tourism_logistics_operator": "GDP growth in tourism-relevant economies signals demand trajectory — plan capacity accordingly",
+        "founder_operator": "Tourism-linked GDP growth in your operating country indicates broader consumer demand"
+      }
+    },
+    "cyclone_risk": {
+      "personas": ["operator_resilience", "tourism_logistics_operator"],
+      "action_window": "48 hours",
+      "decision_to_influence": "Immediate operational readiness",
+      "routing_rationale": {
+        "operator_resilience": "Buoy pressure + marine alert convergence = elevated confidence for operational response trigger",
+        "tourism_logistics_operator": "Cyclone risk directly impacts tourism bookings and logistics routing — advance warning for contingency"
+      }
+    },
+    "active_storm": {
+      "personas": ["operator_resilience"],
+      "action_window": "24 hours",
+      "decision_to_influence": "Immediate operational response deployment",
+      "routing_rationale": {
+        "operator_resilience": "Named storm with track data is a time-critical operational event — response windows measured in hours"
+      }
+    },
+    "tropical_development": {
+      "personas": ["operator_resilience"],
+      "action_window": "72 hours",
+      "decision_to_influence": "Preparedness monitoring pre-escalation",
+      "routing_rationale": {
+        "operator_resilience": "Pre-storm development monitoring allows staged preparedness without response fatigue"
+      }
+    },
+    "maritime_hazard": {
+      "personas": ["operator_resilience", "tourism_logistics_operator"],
+      "action_window": "48 hours",
+      "decision_to_influence": "Maritime operations adjustment for safety and logistics routing",
+      "routing_rationale": {
+        "operator_resilience": "High-wind + marine alert confirmation requires safety response and shipping route adjustments",
+        "tourism_logistics_operator": "Maritime hazards affect island supply chains and tourism transport schedules"
+      }
+    }
+  }
+}

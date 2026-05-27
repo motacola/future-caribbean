@@ -1,0 +1,27 @@
+{
+  "source": "NOAA NWS API",
+  "base_url": "https://api.weather.gov",
+  "areas": {
+    "PR": {
+      "label": "Puerto Rico & US Virgin Islands",
+      "type": "land"
+    },
+    "AM": {
+      "label": "Atlantic Marine Zones (Caribbean basin)",
+      "type": "marine"
+    }
+  },
+  "marine_zones_focus": [
+    "AMZ050", "AMZ052", "AMZ057", "AMZ059",
+    "AMZ049", "AMZ048", "AMZ711"
+  ],
+  "severity_priority": {
+    "Extreme": 4,
+    "Severe": 3,
+    "Moderate": 2,
+    "Minor": 1,
+    "Unknown": 0
+  },
+  "alert_ttl_hours": 48,
+  "exclude_events": []
+}
