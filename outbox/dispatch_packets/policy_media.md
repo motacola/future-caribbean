@@ -2,7 +2,7 @@
 
 **Decision job:** Briefing input and narrative lead sourcing
 **Delivery channel:** Telegram digest
-**Generated:** May 28, 2026 at 03:46 UTC
+**Generated:** May 28, 2026 at 20:34 UTC
 **Dispatches in this packet:** 3
 
 ---
@@ -11,7 +11,7 @@
 
 ### 1. CARICOM: food supply indicators shifting — supply chain implications
 
-**ID:** `DSP-20260528-016` | **Country:** CARICOM | **Confidence:** 🟡 Validation | 80/100 | B - cross-source
+**ID:** `DSP-20260528-016` | **Country:** CARICOM | **Confidence:** 🟡 Validation | 78/100 | B - cross-source
 **Channel:** Telegram digest | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -25,7 +25,7 @@
 
 ### 2. St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended
 
-**ID:** `DSP-20260528-014` | **Country:** St. Vincent and the Grenadines | **Confidence:** 🟢 Monitor | 69/100 | C - single-source
+**ID:** `DSP-20260528-012` | **Country:** St. Vincent and the Grenadines | **Confidence:** 🟡 Validation | 72/100 | C - single-source
 **Channel:** Telegram digest | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -40,7 +40,7 @@
 
 ### 3. Suriname: economic stress indicators rising — portfolio review recommended
 
-**ID:** `DSP-20260528-012` | **Country:** Suriname | **Confidence:** 🟢 Monitor | 56/100 | C - single-source
+**ID:** `DSP-20260528-010` | **Country:** Suriname | **Confidence:** 🟢 Monitor | 54/100 | C - single-source
 **Channel:** Telegram digest | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** ignored
 

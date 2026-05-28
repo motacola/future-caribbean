@@ -1,4 +1,4 @@
-*Caribbean Market Pulse — 2026-05-28 03:46 UTC*
+*Caribbean Market Pulse — 2026-05-28 20:34 UTC*
 
 Lead: Belize. 2 converging signal(s) across 4 source(s). Signals: 💼 Investment + 💎 Investment.
 
@@ -14,19 +14,18 @@ Lead: Belize. 2 converging signal(s) across 4 source(s). Signals: 💼 Investmen
 
 🔴 — **🏗️ Pipeline — CARICOM**
    CARICOM: 6 active procurements — bidding window open
-   Immediate | 96/100 | B - cross-source
+   Immediate | 95/100 | B - cross-source
    Active procurement pipeline: CDB active procurement notices: 6. Priority: review CDB/IDB opportunities as lead list for project-based entry.
 
-🔴 — **💼 Investment — Guyana**
+🟡 — **💼 Investment — Guyana**
    Guyana: FDI trending at +860.3% — screening trigger active
-   Immediate | 90/100 | B - cross-source
-   Immediate investigation. Guyana FDI signal (860.3% change) with active development datasets. Validate with local market intel.
+   Validation | 88/100 | B - cross-source
+   Validation priority. Guyana FDI movement (860.3% change) signals opportunity. Cross-reference with sector data.
 
-🟡 🆕 **🚢 Maritime — Caribbean**
-   Caribbean: signal detected
-   Validation | 82/100 | B - cross-source
-   🆕 New this cycle
-   Maritime hazard active: signal detected. Relevant for shipping, logistics, coastal operations.
+🟡 — **💼 Investment — St. Kitts and Nevis**
+   St. Kitts and Nevis: FDI trending at +41.1% — screening trigger active
+   Validation | 78/100 | B - cross-source
+   Validation priority. St. Kitts and Nevis FDI movement (41.1% change) signals opportunity. Cross-reference with sector data.
 
-— Lead: Belize · 26 composite signal(s) · 1 new · 24 persistent
+— Lead: Belize · 25 composite signal(s) · 24 persistent
 - Caribbean Signal OS

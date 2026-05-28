@@ -1,12 +1,12 @@
 {
   "boost_lines": [
-    "St. Vincent and the Grenadines economic vulnerability upranked +9",
-    "St. Vincent and the Grenadines enhanced investment downranked -6",
-    "Guyana enhanced investment upranked +5",
-    "Suriname economic vulnerability downranked -4",
-    "St. Vincent and the Grenadines investment signal downranked -4"
+    "St. Vincent and the Grenadines economic vulnerability upranked +12",
+    "St. Vincent and the Grenadines enhanced investment downranked -9",
+    "Suriname economic vulnerability downranked -6",
+    "St. Vincent and the Grenadines investment signal downranked -6",
+    "Guyana investment signal downranked -6"
   ],
-  "channel_count": 5,
+  "channel_count": 4,
   "cluster_count": 13,
   "clusters": [
     {
@@ -147,8 +147,8 @@
     },
     {
       "cluster_id": "CL-development-pipeline-caricom",
-      "confidence_display": "\ud83d\udd34 Immediate | 96/100 | B - cross-source",
-      "confidence_score": 96,
+      "confidence_display": "\ud83d\udd34 Immediate | 95/100 | B - cross-source",
+      "confidence_score": 95,
       "country_cluster": "CARICOM",
       "decision": "Which procurement or project opportunity to pursue",
       "detail": "CDB active procurement notices: 6",
@@ -252,7 +252,7 @@
         {
           "action": "Assess competitive positioning in Caribwide. FDI movement (Guyana (860.3% change), Belize (701.0% change), St. Vincent and the Grenadines (88.2% change)) signals growing market or incoming competition \u2014 evaluate local advantage before new entrants arrive.",
           "channel": "Telegram",
-          "dispatch_id": "DSP-20260528-004",
+          "dispatch_id": "DSP-20260528-002",
           "feedback_status": "ignored",
           "persona": "Regional Founder/Operator",
           "rationale": "FDI movement in your operating country signals competition or demand growth \u2014 assess positioning"
@@ -260,7 +260,7 @@
         {
           "action": "Screen Caribwide for investment readiness. FDI movement (Guyana (860.3% change), Belize (701.0% change), St. Vincent and the Grenadines (88.2% change)) is a screening trigger \u2014 cross-reference with sector conditions before deploying capital.",
           "channel": "Email brief + Telegram",
-          "dispatch_id": "DSP-20260528-003",
+          "dispatch_id": "DSP-20260528-001",
           "feedback_status": "ignored",
           "persona": "Diaspora Investor",
           "rationale": "Single-source FDI movement is a screening trigger, not a deployment signal \u2014 start diligence"
@@ -272,8 +272,8 @@
     },
     {
       "cluster_id": "CL-investment-signal-guyana",
-      "confidence_display": "\ud83d\udd34 Immediate | 90/100 | B - cross-source",
-      "confidence_score": 90,
+      "confidence_display": "\ud83d\udfe1 Validation | 88/100 | B - cross-source",
+      "confidence_score": 88,
       "country_cluster": "Guyana",
       "decision": "Which country-sector pair to validate for investment readiness",
       "detail": "860.3% change",
@@ -288,7 +288,7 @@
         {
           "action": "Assess competitive positioning in Guyana. FDI movement (860.3% change) signals growing market or incoming competition \u2014 evaluate local advantage before new entrants arrive.",
           "channel": "Telegram",
-          "dispatch_id": "DSP-20260528-006",
+          "dispatch_id": "DSP-20260528-004",
           "feedback_status": "ignored",
           "persona": "Regional Founder/Operator",
           "rationale": "FDI movement in your operating country signals competition or demand growth \u2014 assess positioning"
@@ -296,7 +296,7 @@
         {
           "action": "Screen Guyana for investment readiness. FDI movement (860.3% change) is a screening trigger \u2014 cross-reference with sector conditions before deploying capital.",
           "channel": "Email brief + Telegram",
-          "dispatch_id": "DSP-20260528-005",
+          "dispatch_id": "DSP-20260528-003",
           "feedback_status": "ignored",
           "persona": "Diaspora Investor",
           "rationale": "Single-source FDI movement is a screening trigger, not a deployment signal \u2014 start diligence"
@@ -308,8 +308,8 @@
     },
     {
       "cluster_id": "CL-investment-signal-belize",
-      "confidence_display": "\ud83d\udd34 Immediate | 90/100 | B - cross-source",
-      "confidence_score": 90,
+      "confidence_display": "\ud83d\udfe1 Validation | 88/100 | B - cross-source",
+      "confidence_score": 88,
       "country_cluster": "Belize",
       "decision": "Which country-sector pair to validate for investment readiness",
       "detail": "701.0% change",
@@ -324,7 +324,7 @@
         {
           "action": "Assess competitive positioning in Belize. FDI movement (701.0% change) signals growing market or incoming competition \u2014 evaluate local advantage before new entrants arrive.",
           "channel": "Telegram",
-          "dispatch_id": "DSP-20260528-008",
+          "dispatch_id": "DSP-20260528-006",
           "feedback_status": "ignored",
           "persona": "Regional Founder/Operator",
           "rationale": "FDI movement in your operating country signals competition or demand growth \u2014 assess positioning"
@@ -332,7 +332,7 @@
         {
           "action": "Screen Belize for investment readiness. FDI movement (701.0% change) is a screening trigger \u2014 cross-reference with sector conditions before deploying capital.",
           "channel": "Email brief + Telegram",
-          "dispatch_id": "DSP-20260528-007",
+          "dispatch_id": "DSP-20260528-005",
           "feedback_status": "ignored",
           "persona": "Diaspora Investor",
           "rationale": "Single-source FDI movement is a screening trigger, not a deployment signal \u2014 start diligence"
@@ -343,45 +343,9 @@
       "title": "Belize: FDI trending at +701.0% \u2014 screening trigger active"
     },
     {
-      "cluster_id": "CL-maritime-hazard-caribbean",
-      "confidence_display": "\ud83d\udfe1 Validation | 82/100 | B - cross-source",
-      "confidence_score": 82,
-      "country_cluster": "Caribbean",
-      "decision": "Maritime operations adjustment for safety and logistics routing",
-      "detail": "signal detected",
-      "evidence": "Buoy Eastern Caribbean (E of Barbados): 25 kts",
-      "evidence_grade": "B - cross-source",
-      "feedback_counts": {
-        "ignored": 2
-      },
-      "feedback_summary": "Feedback this cycle: 2 ignored.",
-      "freshness": "sustained",
-      "personas": [
-        {
-          "action": "Assess Caribbean demand trajectory. signal detected \u2014 adjust capacity plans.",
-          "channel": "Telegram",
-          "dispatch_id": "DSP-20260528-002",
-          "feedback_status": "ignored",
-          "persona": "Tourism/Logistics Operator",
-          "rationale": "Maritime hazards affect island supply chains and tourism transport schedules"
-        },
-        {
-          "action": "Prepare operational response: Caribbean. Action window: 48 hours. Evidence: signal detected",
-          "channel": "Telegram/SMS alert",
-          "dispatch_id": "DSP-20260528-001",
-          "feedback_status": "ignored",
-          "persona": "Operations/Resilience",
-          "rationale": "High-wind + marine alert confirmation requires safety response and shipping route adjustments"
-        }
-      ],
-      "risk_flags": [],
-      "signal_kind": "maritime_hazard",
-      "title": "Caribbean: signal detected"
-    },
-    {
       "cluster_id": "CL-food-security-caricom",
-      "confidence_display": "\ud83d\udfe1 Validation | 80/100 | B - cross-source",
-      "confidence_score": 80,
+      "confidence_display": "\ud83d\udfe1 Validation | 78/100 | B - cross-source",
+      "confidence_score": 78,
       "country_cluster": "CARICOM",
       "decision": "Agricultural/logistics investment case or policy response planning",
       "detail": "5%",
@@ -416,8 +380,8 @@
     },
     {
       "cluster_id": "CL-investment-signal-st-vincent-and-the-grenadines",
-      "confidence_display": "\ud83d\udfe1 Validation | 78/100 | B - cross-source",
-      "confidence_score": 78,
+      "confidence_display": "\ud83d\udfe1 Validation | 76/100 | B - cross-source",
+      "confidence_score": 76,
       "country_cluster": "St. Vincent and the Grenadines",
       "decision": "Which country-sector pair to validate for investment readiness",
       "detail": "88.2% change",
@@ -432,7 +396,7 @@
         {
           "action": "Assess competitive positioning in St. Vincent and the Grenadines. FDI movement (88.2% change) signals growing market or incoming competition \u2014 evaluate local advantage before new entrants arrive.",
           "channel": "Telegram",
-          "dispatch_id": "DSP-20260528-010",
+          "dispatch_id": "DSP-20260528-008",
           "feedback_status": "ignored",
           "persona": "Regional Founder/Operator",
           "rationale": "FDI movement in your operating country signals competition or demand growth \u2014 assess positioning"
@@ -440,7 +404,7 @@
         {
           "action": "Screen St. Vincent and the Grenadines for investment readiness. FDI movement (88.2% change) is a screening trigger \u2014 cross-reference with sector conditions before deploying capital.",
           "channel": "Email brief + Telegram",
-          "dispatch_id": "DSP-20260528-009",
+          "dispatch_id": "DSP-20260528-007",
           "feedback_status": "ignored",
           "persona": "Diaspora Investor",
           "rationale": "Single-source FDI movement is a screening trigger, not a deployment signal \u2014 start diligence"
@@ -452,8 +416,8 @@
     },
     {
       "cluster_id": "CL-economic-vulnerability-st-vincent-and-the-grenadines",
-      "confidence_display": "\ud83d\udfe2 Monitor | 69/100 | C - single-source",
-      "confidence_score": 69,
+      "confidence_display": "\ud83d\udfe1 Validation | 72/100 | C - single-source",
+      "confidence_score": 72,
       "country_cluster": "St. Vincent and the Grenadines",
       "decision": "Risk assessment for capital exposure or policy attention",
       "detail": "18.00%",
@@ -469,7 +433,7 @@
         {
           "action": "Signal context for St. Vincent and the Grenadines: 18.00%. Use this dispatch as a briefing input or narrative lead.",
           "channel": "Telegram digest",
-          "dispatch_id": "DSP-20260528-014",
+          "dispatch_id": "DSP-20260528-012",
           "feedback_status": "ignored",
           "persona": "Policy/Media",
           "rationale": "Economic stress indicators drive policy response and media narratives"
@@ -477,7 +441,7 @@
         {
           "action": "Assess portfolio exposure in St. Vincent and the Grenadines. Economic stress indicators (18.00%) may affect existing positions or timing.",
           "channel": "Email brief + Telegram",
-          "dispatch_id": "DSP-20260528-013",
+          "dispatch_id": "DSP-20260528-011",
           "feedback_status": "decision_changed",
           "persona": "Diaspora Investor",
           "rationale": "Vulnerability signals change risk profiles \u2014 reassess exposure and timing"
@@ -491,8 +455,8 @@
     },
     {
       "cluster_id": "CL-economic-vulnerability-suriname",
-      "confidence_display": "\ud83d\udfe2 Monitor | 56/100 | C - single-source",
-      "confidence_score": 56,
+      "confidence_display": "\ud83d\udfe2 Monitor | 54/100 | C - single-source",
+      "confidence_score": 54,
       "country_cluster": "Suriname",
       "decision": "Risk assessment for capital exposure or policy attention",
       "detail": "16.23%",
@@ -507,7 +471,7 @@
         {
           "action": "Signal context for Suriname: 16.23%. Use this dispatch as a briefing input or narrative lead.",
           "channel": "Telegram digest",
-          "dispatch_id": "DSP-20260528-012",
+          "dispatch_id": "DSP-20260528-010",
           "feedback_status": "ignored",
           "persona": "Policy/Media",
           "rationale": "Economic stress indicators drive policy response and media narratives"
@@ -515,7 +479,7 @@
         {
           "action": "Assess portfolio exposure in Suriname. Economic stress indicators (16.23%) may affect existing positions or timing.",
           "channel": "Email brief + Telegram",
-          "dispatch_id": "DSP-20260528-011",
+          "dispatch_id": "DSP-20260528-009",
           "feedback_status": "ignored",
           "persona": "Diaspora Investor",
           "rationale": "Vulnerability signals change risk profiles \u2014 reassess exposure and timing"
@@ -526,12 +490,48 @@
       ],
       "signal_kind": "economic_vulnerability",
       "title": "Suriname: economic stress indicators rising \u2014 portfolio review recommended"
+    },
+    {
+      "cluster_id": "CL-tourism-impact-guyana",
+      "confidence_display": "\ud83d\udfe2 Monitor | 51/100 | C - single-source",
+      "confidence_score": 51,
+      "country_cluster": "Guyana",
+      "decision": "Tourism capacity planning and timing of marketing or expansion",
+      "detail": "45.8% change",
+      "evidence": "Guyana: GDP current USD moved up 45.8% from 2023 to 2024.",
+      "evidence_grade": "C - single-source",
+      "feedback_counts": {
+        "ignored": 2
+      },
+      "feedback_summary": "Feedback this cycle: 2 ignored.",
+      "freshness": "sustained",
+      "personas": [
+        {
+          "action": "Assess Guyana demand trajectory. 45.8% change \u2014 adjust capacity plans.",
+          "channel": "Telegram",
+          "dispatch_id": "DSP-20260528-013",
+          "feedback_status": "ignored",
+          "persona": "Tourism/Logistics Operator",
+          "rationale": "GDP growth in tourism-relevant economies signals demand trajectory \u2014 plan capacity accordingly"
+        },
+        {
+          "action": "Validate consumer demand signal in Guyana. GDP growth (45.8% change) may indicate expanding local market for products and services.",
+          "channel": "Telegram",
+          "dispatch_id": "DSP-20260528-014",
+          "feedback_status": "ignored",
+          "persona": "Regional Founder/Operator",
+          "rationale": "Tourism-linked GDP growth in your operating country indicates broader consumer demand"
+        }
+      ],
+      "risk_flags": [],
+      "signal_kind": "tourism_impact",
+      "title": "Guyana: GDP growth signals expanding tourist economy"
     }
   ],
   "cycle_id": "20260528",
   "dispatch_count": 31,
-  "generated_at": "2026-05-28 03:46 UTC",
-  "persona_count": 8,
+  "generated_at": "2026-05-28 20:34 UTC",
+  "persona_count": 7,
   "regional_thesis": "Capital momentum is strongest in Guyana (+860.3%), followed by Belize, St. Vincent and the Grenadines. However, St. Vincent and the Grenadines and Suriname also carry elevated vulnerability indicators \u2014 investment signals from these countries require deeper diligence before committing capital. Development pipeline remains active (CDB active procurement notices: 6) \u2014 the bidding window is open for project-based entry. Tourism-related growth signals are visible in Antigua and Barbuda, Guyana, St. Kitts and Nevis \u2014 demand-side indicators for capacity planning.",
   "source_count": 2,
   "why_now": [

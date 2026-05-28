@@ -1,28 +1,28 @@
 {
-  "generated_at": "2026-05-28T03:46:44.273577+00:00",
+  "generated_at": "2026-05-28T20:34:44.258982+00:00",
   "boosts": {
     "enhanced_investment": {
-      "Guyana": 5,
-      "Belize": -1,
-      "St. Vincent and the Grenadines": -6
+      "Guyana": 6,
+      "Belize": -3,
+      "St. Vincent and the Grenadines": -9
     },
     "development_pipeline": {
-      "CARICOM": 2
+      "CARICOM": 1
     },
     "investment_signal": {
-      "Guyana": -4,
-      "Belize": -4,
-      "St. Vincent and the Grenadines": -4
+      "Guyana": -6,
+      "Belize": -6,
+      "St. Vincent and the Grenadines": -6
+    },
+    "maritime_hazard": {
+      "Caribbean": -4
     },
     "food_security": {
-      "CARICOM": -4
+      "CARICOM": -6
     },
     "economic_vulnerability": {
-      "St. Vincent and the Grenadines": 9,
-      "Suriname": -4
-    },
-    "tourism_impact": {
-      "Guyana": -4
+      "St. Vincent and the Grenadines": 12,
+      "Suriname": -6
     }
   }
 }

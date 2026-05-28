@@ -1,6 +1,6 @@
 # Why Now? Editorial Calendar Context
 
-Run date: 2026-05-27
+Run date: 2026-05-28
 
 🟢 **Tourism Shoulder Season** — Post-peak period. Early indicators of summer demand trajectory are most valuable now.
    → Track early summer booking and airlift data

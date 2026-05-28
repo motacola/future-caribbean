@@ -1,6 +1,6 @@
 # Caribbean Opportunity Dispatch — Judge Brief
 
-Generated: 2026-05-28 03:46 UTC
+Generated: 2026-05-28 20:34 UTC
 
 ## What This Proves
 
@@ -8,10 +8,10 @@ Caribbean Opportunity Dispatch is the product. Caribbean Signal OS is the archit
 
 ## Live Run Snapshot
 
-- Total raw signals generated: 26
-- Sources represented: CARICOM, CDB, IDB, NDBC, NOAA, World Bank
-- Countries/zones: 11
-- New/updated this cycle: 1
+- Total raw signals generated: 25
+- Sources represented: CARICOM, CDB, IDB, World Bank
+- Countries/zones: 10
+- New/updated this cycle: 0
 - User-facing outputs: opportunity dispatches, regional thesis, why-now context, feedback review, judge brief
 
 **Belize** — 2 signal(s), 4 source(s): 💼 Investment + 💎 Investment
@@ -31,40 +31,39 @@ Caribbean Opportunity Dispatch is the product. Caribbean Signal OS is the archit
 
 **2.** 🔴 **🏗️ Pipeline — CARICOM** — sustained
    Narrative: CARICOM: 6 active procurements — bidding window open
-   Score: 96/100 | Grade: B - cross-source
+   Score: 95/100 | Grade: B - cross-source
    Audience: investor/founder via Email brief + Telegram
    Decision: Active procurement pipeline: CDB active procurement notices: 6. Priority: review CDB/IDB opportunities as lead list for project-based entry.
 
-**3.** 🔴 **💼 Investment — Guyana** — sustained
+**3.** 🟡 **💼 Investment — Guyana** — sustained
    Narrative: Guyana: FDI trending at +860.3% — screening trigger active
-   Score: 90/100 | Grade: B - cross-source
+   Score: 88/100 | Grade: B - cross-source
    Audience: investor/founder via Email brief + Telegram
-   Decision: Immediate investigation. Guyana FDI signal (860.3% change) with active development datasets. Validate with local market intel.
+   Decision: Validation priority. Guyana FDI movement (860.3% change) signals opportunity. Cross-reference with sector data.
 
-**4.** 🟡 **🚢 Maritime — Caribbean** — new
-   Narrative: Caribbean: signal detected
-   Score: 82/100 | Grade: B - cross-source
-   Audience: operator/resilience via Telegram/SMS alert
-   Decision: Maritime hazard active: signal detected. Relevant for shipping, logistics, coastal operations.
-   🆕 New this cycle
-
-**5.** 🟡 **💼 Investment — St. Kitts and Nevis** — sustained
+**4.** 🟡 **💼 Investment — St. Kitts and Nevis** — sustained
    Narrative: St. Kitts and Nevis: FDI trending at +41.1% — screening trigger active
    Score: 78/100 | Grade: B - cross-source
    Audience: investor/founder via Email brief + Telegram
    Decision: Validation priority. St. Kitts and Nevis FDI movement (41.1% change) signals opportunity. Cross-reference with sector data.
 
-**6.** 🟢 **⚠️ Vulnerability — St. Vincent and the Grenadines** — sustained
+**5.** 🟡 **⚠️ Vulnerability — St. Vincent and the Grenadines** — sustained
    Narrative: St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended
-   Score: 69/100 | Grade: C - single-source
+   Score: 72/100 | Grade: C - single-source
    Audience: policy/operator via Telegram digest
-   Decision: Monitor. St. Vincent and the Grenadines showing economic stress (18.00%). Track next cycle. Escalates if additional stress indicators appear or existing ones worsen.
+   Decision: Watch: St. Vincent and the Grenadines elevated indicators (18.00%). Deeper context check needed before expansion or support decisions.
 
-**7.** 🟢 **⚠️ Vulnerability — Suriname** — sustained
+**6.** 🟢 **⚠️ Vulnerability — Suriname** — sustained
    Narrative: Suriname: economic stress indicators rising — portfolio review recommended
-   Score: 56/100 | Grade: C - single-source
+   Score: 54/100 | Grade: C - single-source
    Audience: policy/operator via Telegram digest
    Decision: Monitor. Suriname showing economic stress (16.23%). Track next cycle. Escalates if additional stress indicators appear or existing ones worsen.
+
+**7.** ⚪ **🏖️ Tourism — Antigua and Barbuda** — sustained
+   Narrative: Antigua and Barbuda: GDP growth signals expanding tourist economy
+   Score: 47/100 | Grade: C - single-source
+   Audience: tourism operator via Telegram digest
+   Decision: Context. Antigua and Barbuda GDP data point for tourism sector awareness.
 
 ## Routing Rationale
 
@@ -103,7 +102,7 @@ Each signal is routed to specific personas based on signal kind and evidence lev
 
 ## Cycle Summary
 
-Lead: Belize · 26 composite signal(s) · 1 new · 24 persistent
+Lead: Belize · 25 composite signal(s) · 24 persistent
 ## Judge Demo Path
 
 1. Run `bash run_pipeline.sh`.

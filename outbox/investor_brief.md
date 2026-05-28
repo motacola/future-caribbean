@@ -1,6 +1,6 @@
 # Caribbean Market Pulse — Investor Brief
 
-Generated: 2026-05-28 03:46 UTC
+Generated: 2026-05-28 20:34 UTC
 
 Audience: investors, founders, diaspora capital networks.
 Decision supported: where to investigate deal flow, procurement activity, or market momentum.
@@ -9,7 +9,7 @@ Decision supported: where to investigate deal flow, procurement activity, or mar
 
 Lead: Belize. 2 converging signal(s) across 4 source(s). Signals: 💼 Investment + 💎 Investment.
 
-*Lead: Belize · 26 composite signal(s) · 1 new · 24 persistent*
+*Lead: Belize · 25 composite signal(s) · 24 persistent*
 
 ## Lead Signal
 
@@ -39,10 +39,10 @@ Multi-source investment signals validated across 8 countries. All carry A-grade 
 
 🔴 — **🏗️ Pipeline — CARICOM**
    CARICOM: 6 active procurements — bidding window open
-   Immediate | 96/100 | B - cross-source
+   Immediate | 95/100 | B - cross-source
    Active procurement pipeline: CDB active procurement notices: 6. Priority: review CDB/IDB opportunities as lead list for project-based entry.
 
 Active procurement:
 - Enhancing the Quality of the Belize National Quality Infrastructure
-- Strengthening Flood Early Warning Systems in Suriname
-- Strengthening Board Governance and Engagement for Improved Decision-making Through the Provision of Board Advisors Project
+- Disaster Resilience Improvement Project
+- Strengthening Institutional Capacity for A Resilient Caribbean Coastal and Marine Environment (RCCAME) Project

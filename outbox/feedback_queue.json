@@ -1,6 +1,6 @@
 {
   "cycle_intro": "Lead: Belize. 2 converging signal(s) across 4 source(s). Signals: \ud83d\udcbc Investment + \ud83d\udc8e Investment.",
-  "generated_at": "2026-05-28 03:46 UTC",
+  "generated_at": "2026-05-28 20:34 UTC",
   "items": [
     {
       "band": "immediate",
@@ -71,11 +71,11 @@
       },
       "persona": "investor/founder",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 96,
+      "score": 95,
       "signal_id": "dev-pipeline-regional"
     },
     {
-      "band": "immediate",
+      "band": "validation",
       "channel": "Email brief + Telegram",
       "country": "Guyana",
       "freshness": "sustained",
@@ -89,26 +89,8 @@
       },
       "persona": "investor/founder",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 90,
+      "score": 88,
       "signal_id": "invest-guyana"
-    },
-    {
-      "band": "validation",
-      "channel": "Telegram/SMS alert",
-      "country": "Caribbean",
-      "freshness": "new",
-      "kind": "maritime_hazard",
-      "metrics": {
-        "decision_changed": null,
-        "forwarded": null,
-        "opened": null,
-        "reply_count": null,
-        "sent": false
-      },
-      "persona": "operator/resilience",
-      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 82,
-      "signal_id": "maritime-42058"
     },
     {
       "band": "validation",
@@ -147,7 +129,7 @@
       "signal_id": "invest-trinidad-and-tobago"
     },
     {
-      "band": "monitor",
+      "band": "validation",
       "channel": "Telegram digest",
       "country": "St. Vincent and the Grenadines",
       "freshness": "sustained",
@@ -161,7 +143,7 @@
       },
       "persona": "policy/operator",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 69,
+      "score": 72,
       "signal_id": "vuln-st.-vincent-and-the-grenadines"
     },
     {
@@ -179,7 +161,7 @@
       },
       "persona": "policy/operator",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 56,
+      "score": 54,
       "signal_id": "vuln-suriname"
     },
     {
@@ -217,6 +199,24 @@
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
       "score": 100,
       "signal_id": "enhanced-invest-guyana"
+    },
+    {
+      "band": "immediate",
+      "channel": "Email brief + Telegram",
+      "country": "St. Kitts and Nevis",
+      "freshness": "sustained",
+      "kind": "enhanced_investment",
+      "metrics": {
+        "decision_changed": null,
+        "forwarded": null,
+        "opened": null,
+        "reply_count": null,
+        "sent": false
+      },
+      "persona": "investor/founder",
+      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
+      "score": 100,
+      "signal_id": "enhanced-invest-st.-kitts-and-nevis"
     }
   ],
   "purpose": "Feedback agent input queue for distribution performance and trust signals."

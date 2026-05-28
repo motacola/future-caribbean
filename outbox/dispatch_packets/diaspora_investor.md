@@ -2,7 +2,7 @@
 
 **Decision job:** Capital deployment screening and market entry assessment
 **Delivery channel:** Email brief + Telegram
-**Generated:** May 28, 2026 at 03:46 UTC
+**Generated:** May 28, 2026 at 20:34 UTC
 **Dispatches in this packet:** 10
 
 ---
@@ -54,7 +54,7 @@
 
 ### 4. Regional FDI snapshot: 8 countries with active capital movement
 
-**ID:** `DSP-20260528-003` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
+**ID:** `DSP-20260528-001` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
 **Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** new
 **Feedback status:** ignored
 
@@ -66,35 +66,7 @@
 **Decision to influence:** Which country-sector pair to validate for investment readiness
 **Routing rationale:** Single-source FDI movement is a screening trigger, not a deployment signal — start diligence
 
-### 5. Guyana: FDI trending at +860.3% — screening trigger active
-
-**ID:** `DSP-20260528-005` | **Country:** Guyana | **Confidence:** 🔴 Immediate | 90/100 | B - cross-source
-**Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Guyana: Foreign direct investment net inflows current USD moved up 860.3% from 2023 to 2024.
-**Detail:** 860.3% change
-**Grade:** B - cross-source
-
-**Recommended action:** Screen Guyana for investment readiness. FDI movement (860.3% change) is a screening trigger — cross-reference with sector conditions before deploying capital.
-**Decision to influence:** Which country-sector pair to validate for investment readiness
-**Routing rationale:** Single-source FDI movement is a screening trigger, not a deployment signal — start diligence
-
-### 6. Belize: FDI trending at +701.0% — screening trigger active
-
-**ID:** `DSP-20260528-007` | **Country:** Belize | **Confidence:** 🔴 Immediate | 90/100 | B - cross-source
-**Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Belize: Foreign direct investment net inflows current USD moved up 701.0% from 2023 to 2024.
-**Detail:** 701.0% change
-**Grade:** B - cross-source
-
-**Recommended action:** Screen Belize for investment readiness. FDI movement (701.0% change) is a screening trigger — cross-reference with sector conditions before deploying capital.
-**Decision to influence:** Which country-sector pair to validate for investment readiness
-**Routing rationale:** Single-source FDI movement is a screening trigger, not a deployment signal — start diligence
-
-### 7. Capital convergence: 8 Caribbean economies showing multi-source investment momentum
+### 5. Capital convergence: 8 Caribbean economies showing multi-source investment momentum
 
 **ID:** `DSP-20260528-020` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
 **Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** new
@@ -108,9 +80,37 @@
 **Decision to influence:** Which verified opportunity to investigate for capital deployment or partnership entry
 **Routing rationale:** Multi-source validation reduces screening risk — capital follows verified signals
 
+### 6. Guyana: FDI trending at +860.3% — screening trigger active
+
+**ID:** `DSP-20260528-003` | **Country:** Guyana | **Confidence:** 🟡 Validation | 88/100 | B - cross-source
+**Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Guyana: Foreign direct investment net inflows current USD moved up 860.3% from 2023 to 2024.
+**Detail:** 860.3% change
+**Grade:** B - cross-source
+
+**Recommended action:** Screen Guyana for investment readiness. FDI movement (860.3% change) is a screening trigger — cross-reference with sector conditions before deploying capital.
+**Decision to influence:** Which country-sector pair to validate for investment readiness
+**Routing rationale:** Single-source FDI movement is a screening trigger, not a deployment signal — start diligence
+
+### 7. Belize: FDI trending at +701.0% — screening trigger active
+
+**ID:** `DSP-20260528-005` | **Country:** Belize | **Confidence:** 🟡 Validation | 88/100 | B - cross-source
+**Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Belize: Foreign direct investment net inflows current USD moved up 701.0% from 2023 to 2024.
+**Detail:** 701.0% change
+**Grade:** B - cross-source
+
+**Recommended action:** Screen Belize for investment readiness. FDI movement (701.0% change) is a screening trigger — cross-reference with sector conditions before deploying capital.
+**Decision to influence:** Which country-sector pair to validate for investment readiness
+**Routing rationale:** Single-source FDI movement is a screening trigger, not a deployment signal — start diligence
+
 ### 8. St. Vincent and the Grenadines: FDI trending at +88.2% — screening trigger active
 
-**ID:** `DSP-20260528-009` | **Country:** St. Vincent and the Grenadines | **Confidence:** 🟡 Validation | 78/100 | B - cross-source
+**ID:** `DSP-20260528-007` | **Country:** St. Vincent and the Grenadines | **Confidence:** 🟡 Validation | 76/100 | B - cross-source
 **Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -124,7 +124,7 @@
 
 ### 9. St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended
 
-**ID:** `DSP-20260528-013` | **Country:** St. Vincent and the Grenadines | **Confidence:** 🟢 Monitor | 69/100 | C - single-source
+**ID:** `DSP-20260528-011` | **Country:** St. Vincent and the Grenadines | **Confidence:** 🟡 Validation | 72/100 | C - single-source
 **Channel:** Email brief + Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** decision_changed
 
@@ -139,7 +139,7 @@
 
 ### 10. Suriname: economic stress indicators rising — portfolio review recommended
 
-**ID:** `DSP-20260528-011` | **Country:** Suriname | **Confidence:** 🟢 Monitor | 56/100 | C - single-source
+**ID:** `DSP-20260528-009` | **Country:** Suriname | **Confidence:** 🟢 Monitor | 54/100 | C - single-source
 **Channel:** Email brief + Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** ignored
 

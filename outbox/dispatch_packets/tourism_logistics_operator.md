@@ -2,26 +2,26 @@
 
 **Decision job:** Capacity planning and demand trajectory assessment
 **Delivery channel:** Telegram
-**Generated:** May 28, 2026 at 03:46 UTC
+**Generated:** May 28, 2026 at 20:34 UTC
 **Dispatches in this packet:** 1
 
 ---
 
 ## Dispatches (1)
 
-### 1. Caribbean: signal detected
+### 1. Guyana: GDP growth signals expanding tourist economy
 
-**ID:** `DSP-20260528-002` | **Country:** Caribbean | **Confidence:** 🟡 Validation | 82/100 | B - cross-source
-**Channel:** Telegram | **Window:** 48 hours | **Freshness:** sustained
+**ID:** `DSP-20260528-013` | **Country:** Guyana | **Confidence:** 🟢 Monitor | 51/100 | C - single-source
+**Channel:** Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** Buoy Eastern Caribbean (E of Barbados): 25 kts
-**Detail:** signal detected
-**Grade:** B - cross-source
+**Evidence:** Guyana: GDP current USD moved up 45.8% from 2023 to 2024.
+**Detail:** 45.8% change
+**Grade:** C - single-source
 
-**Recommended action:** Assess Caribbean demand trajectory. signal detected — adjust capacity plans.
-**Decision to influence:** Maritime operations adjustment for safety and logistics routing
-**Routing rationale:** Maritime hazards affect island supply chains and tourism transport schedules
+**Recommended action:** Assess Guyana demand trajectory. 45.8% change — adjust capacity plans.
+**Decision to influence:** Tourism capacity planning and timing of marketing or expansion
+**Routing rationale:** GDP growth in tourism-relevant economies signals demand trajectory — plan capacity accordingly
 
 ---
 
