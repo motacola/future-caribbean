@@ -149,7 +149,6 @@ for name,ch,act,fb in pcards:
       <div class="aud-name">{j(name)}</div>
       <div class="aud-channel">{j(ch)}</div>
       <p class="aud-action">{j(act)}</p>
-      <div class="aud-status">Last delivery: {j(fb)}</div>
     </div>'''
 
 # ── Secondary signals HTML (if any) ────────────────────────
