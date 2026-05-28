@@ -11,7 +11,6 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:var(--f);background:var(--bg);color:var(--t);line-height:1.6;font-size:15px;-webkit-font-smoothing:antialiased}
 a{color:var(--a);text-decoration:none}
-/* top */
 .top{background:var(--s1);border-bottom:1px solid var(--line);padding:12px 0}
 .top-i{max-width:1080px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center}
 .brand{font-size:15px;font-weight:800;letter-spacing:-.3px}
@@ -21,31 +20,25 @@ a{color:var(--a);text-decoration:none}
 .top-r a:hover{color:var(--t)}
 .ld{width:7px;height:7px;background:var(--ok);border-radius:50%;display:inline-block;margin-right:4px;animation:p 2s infinite}
 @keyframes p{0%,100%{opacity:1}50%{opacity:.35}}
-
-/* hero */
 .hero{max-width:1080px;margin:0 auto;padding:56px 24px 44px}
 .h-tag{display:inline-block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--a);background:rgba(59,130,246,.1);padding:4px 10px;border-radius:4px;margin-bottom:16px}
 .hero h1{font-size:clamp(26px,3.8vw,40px);font-weight:900;letter-spacing:-1.2px;line-height:1.1;margin-bottom:14px}
 .hero h1 em{font-style:normal;background:linear-gradient(135deg,var(--a) 0%,#818CF8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero-desc{font-size:17px;color:var(--m);max-width:560px;margin-bottom:28px;line-height:1.5}
-.hero-ctas{display:flex;gap:12px;margin-bottom:36px;flex-wrap:wrap}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
 .btn{display:inline-block;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;border:none;font-family:var(--f)}
 .btn-p{background:var(--a);color:#fff}
 .btn-s{background:var(--s2);color:var(--t);border:1px solid var(--line)}
 .btn-s:hover{border-color:var(--m)}
-.stats{display:flex;gap:0;flex-wrap:wrap}
+.stats{display:flex;gap:0;flex-wrap:wrap;margin-top:32px}
 .stat{padding:0 20px;border-right:1px solid var(--line)}.stat:first-child{padding-left:0}.stat:last-child{border-right:none}
 .stat-n{font-size:22px;font-weight:800}
 .stat-l{font-size:10px;color:var(--m);text-transform:uppercase;letter-spacing:.8px;margin-top:2px}
-
-/* sections */
 .sec{max-width:1080px;margin:0 auto;padding:36px 24px}
 .sec:first-of-type{padding-top:0}
 .sl{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--m);margin-bottom:10px;font-weight:600}
 .st{font-size:20px;font-weight:800;letter-spacing:-.3px;margin-bottom:6px}
 .ss{font-size:14px;color:var(--m);margin-bottom:22px;max-width:540px}
-
-/* lead card */
 .card{background:var(--s1);border:1px solid var(--line);border-radius:var(--r);padding:28px;margin-bottom:14px}
 .card-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;flex-wrap:wrap;gap:8px}
 .loc-tag{font-size:11px;text-transform:uppercase;letter-spacing:1.2px;color:var(--m);font-weight:600}
@@ -58,36 +51,26 @@ a{color:var(--a);text-decoration:none}
 .why strong{color:var(--t)}
 .risk{background:rgba(239,68,68,.07);border:1px solid rgba(239,68,68,.18);border-radius:6px;padding:8px 12px;font-size:13px;color:var(--no);margin:10px 0}
 .detail-rows{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
-.dr{padding:8px 0;border-bottom:1px solid var(--line)}
-.dr:last-child{border-bottom:none}
+.dr{padding:8px 0;border-bottom:1px solid var(--line)}.dr:last-child{border-bottom:none}
 .dr label{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.8px;color:var(--m);margin-bottom:2px;font-weight:600}
 .dr span{font-size:13px;color:var(--t)}
 .disclaimer{font-size:11px;color:var(--m);margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
 .disclaimer strong{color:var(--w)}
-
-/* signals list */
 .sig-row{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--line);gap:12px}
 .sig-row:last-child{border-bottom:none}
 .sig-main strong{display:block;font-size:14px;font-weight:600;margin-bottom:2px}
 .sig-loc{font-size:12px;color:var(--m)}
 .risk-tag{font-size:11px;color:var(--no);background:rgba(239,68,68,.07);padding:3px 8px;border-radius:4px;white-space:nowrap}
-
-/* audience */
-.aud-grid{display:grid;grid-template-columns:repeat(auto-fill,minmin(220px,1fr));gap:14px}
+.aud-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
 .aud{background:var(--s1);border:1px solid var(--line);border-radius:var(--r);padding:16px}
 .aud-name{font-weight:700;font-size:14px;margin-bottom:2px}
 .aud-ch{font-size:11px;color:var(--a);margin-bottom:8px;font-weight:500}
-.aud-act{font-size:13px;color:var(--m);margin-bottom:8px;line-height:1.4}
-.aud-fb{font-size:11px;color:var(--w)}
-
-/* outputs */
+.aud-act{font-size:13px;color:var(--m);margin-bottom:0;line-height:1.4}
 .out-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .out{background:var(--s1);border:1px solid var(--line);border-radius:var(--r);padding:20px}
 .out h4{font-size:14px;font-weight:700;margin-bottom:4px}
 .out-ch{font-size:11px;color:var(--a);margin-bottom:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .out-body{font-size:12px;color:var(--m);white-space:pre-wrap;font-family:'Mono Lisa','SF Mono',monospace;max-height:200px;overflow:auto;line-height:1.5;background:var(--bg);border-radius:6px;padding:12px;border:1px solid var(--line)}
-
-/* analyst */
 .analyst{background:var(--s1);border:1px solid var(--line);border-radius:var(--r);padding:18px;margin-top:18px}
 .analyst h3{font-size:14px;font-weight:700;margin-bottom:4px}
 .analyst>p{font-size:12px;color:var(--m);margin-bottom:10px}
@@ -98,43 +81,41 @@ a{color:var(--a);text-decoration:none}
 .ask-row input{background:var(--bg);border:1px solid var(--line);color:var(--t);padding:8px 12px;border-radius:6px;font-size:13px;font-family:var(--f)}
 .ask-row button{background:var(--a);border:none;color:#fff;padding:8px 14px;border-radius:6px;font-size:13px;cursor:pointer;font-weight:600;font-family:var(--f)}
 .abox{margin-top:10px;padding:12px;background:var(--bg);border-left:3px solid var(--a);font-size:13px;color:var(--m);white-space:pre-wrap;max-height:200px;overflow:auto;border-radius:0 6px 6px 0}
-
-/* sources */
 .src-tbl{width:100%;border-collapse:collapse;font-size:13px}
 .src-tbl td{padding:10px 12px;border-bottom:1px solid var(--line);color:var(--m)}
 .src-tbl tr:last-child td{border-bottom:none}
 .src-tbl td:first-child{color:var(--t);font-weight:600}
 .src-ok .dot{color:var(--ok)}.src-off .dot{color:var(--m)}
 .dot{margin-right:6px}
-
-/* feedback */
 .fb-pill{display:inline-block;padding:4px 10px;border-radius:20px;font-size:12px;background:var(--s2);color:var(--m);margin:2px}
 .boost-line{font-size:13px;color:var(--m);padding:2px 0}
 .fb-box{background:var(--s1);border:1px solid var(--line);border-radius:var(--r);padding:18px}
-
-/* deep proof */
 .deep{margin-top:32px;border-top:1px solid var(--line);padding-top:24px}
 .deep-btn{background:var(--s2);border:1px solid var(--line);color:var(--m);padding:8px 16px;border-radius:6px;font-size:13px;cursor:pointer;font-family:var(--f)}
 .deep-btn:hover{border-color:var(--a);color:var(--t)}
 .deep-c{display:none;margin-top:20px}
 .deep-c.open{display:block}
-
-/* footer */
+.cluster-card{display:grid;grid-template-columns:36px 1fr;gap:12px;border:1px solid var(--line);border-radius:var(--r);padding:14px;margin-bottom:10px}
+.cnum{font-size:18px;font-weight:800;color:var(--a)}
+.cbody h4{font-size:14px;margin-bottom:4px}
+.cbody p{font-size:13px;color:var(--m);margin:3px 0}
+.risk-inline{font-size:12px;color:var(--no);margin:4px 0}
+.croutes{margin-top:6px}
+.route-line{display:flex;gap:8px;font-size:11px;color:var(--m);padding:2px 0}
+.route-line span:first-child{color:var(--text);font-weight:600}
 footer{border-top:1px solid var(--line);padding:24px;text-align:center;font-size:11px;color:var(--m);margin-top:40px}
-
 .muted{color:var(--m);font-size:13px}
-
+.conf-badge{font-size:11px;padding:2px 8px;border-radius:3px;margin-bottom:8px;display:inline-block}
 @media(max-width:768px){.out-grid,.detail-rows{grid-template-columns:1fr}.stats{gap:8px}.stat{padding:0 10px}.hero-ctas{flex-direction:column}}
 </style>
 </head>
 <body>
-
 <div class="top">
   <div class="top-i">
     <div class="brand">🌴 Caribbean <em>Opportunity Dispatch</em></div>
     <div class="top-r">
       <a href="#"><span class="ld"></span>Live</a>
-      <a href="#" onclick="toggleDeep();return false;">System Proof</a>
+      <a href="javascript:void(0)" onclick="toggleDeep();return false;">System Proof</a>
     </div>
   </div>
 </div>
@@ -145,12 +126,11 @@ footer{border-top:1px solid var(--line);padding:24px;text-align:center;font-size
   <p class="hero-desc">We monitor public regional data, detect opportunity signals, and turn them into investor briefs, operator alerts, and diaspora-ready updates.</p>
   <div class="hero-ctas">
     <a href="#dispatch" class="btn btn-p">Read Today's Dispatch</a>
-    <a href="#" class="btn btn-s" onclick="toggleDeep();return false;">Audit the Pipeline</a>
+    <a href="javascript:void(0)" class="btn btn-s" onclick="toggleDeep();return false;">Audit the Pipeline</a>
   </div>
   <div class="stats">
     <div class="stat"><div class="stat-n">13</div><div class="stat-l">Countries</div></div>
     <div class="stat"><div class="stat-n">6/6</div><div class="stat-l">Sources live</div></div>
-    <div class="stat"><div class="stat-n">26</div><div class="stat-l">Signals found</div></div>
     <div class="stat"><div class="stat-n">31</div><div class="stat-l">Dispatches sent</div></div>
     <div class="stat"><div class="stat-n">4h</div><div class="stat-l">Refresh cycle</div></div>
   </div>
@@ -161,9 +141,9 @@ footer{border-top:1px solid var(--line);padding:24px;text-align:center;font-size
   <div class="card">
     <div class="card-head">
       <div class="loc-tag">Guyana · 20260528</div>
-      <span class="conf conf-high">High confidence · A - multi-source</span>
+      <span class="conf conf-high">High confidence · Supported by multiple sources</span>
     </div>
-    <h2>Guyana: +860.3% multi-source capital surge — market entry window open</h2>
+    <h2>Guyana leads today's Caribbean capital momentum signal</h2>
     <div class="why">
       <strong>Why this matters:</strong> Guyana shows the strongest capital momentum in this cycle, with Belize and St. Vincent and the Grenadines also showing notable movement. This does not mean automatic investment readiness — it means these markets deserve closer screening now, especially where capital flows overlap with procurement, infrastructure, logistics, energy, tourism, or professional services.
     </div>
@@ -171,8 +151,8 @@ footer{border-top:1px solid var(--line);padding:24px;text-align:center;font-size
     <div class="detail-rows">
       <div class="dr"><label>Source</label><span>World Bank indicators</span></div>
       <div class="dr"><label>Period</label><span>2023 to 2024</span></div>
-      <div class="dr"><label>Decision supported</label><span>Where to investigate capital deployment, partnerships, or market entry</span></div>
-      <div class="dr"><label>Next action</label><span>Validate sector exposure, local partners, and procurement links before committing capital</span></div>
+      <div class="dr"><label>Signal</label><span>World Bank data shows +860.3% FDI increase Guyana 2023→2024</span></div>
+      <div class="dr"><label>Next action</label><span>Sector screening and local partner validation</span></div>
     </div>
     <div class="disclaimer"><strong>Screening signal, not investment advice.</strong> This dispatch is designed to direct attention, not to recommend specific investments. Always conduct independent diligence.</div>
   </div>
@@ -181,20 +161,20 @@ footer{border-top:1px solid var(--line);padding:24px;text-align:center;font-size
 <div class="sec" style="padding-top:0">
   <div class="sl">Also on our radar</div>
   <div class="card" style="padding:18px">
-    <div class="signal-row">
-      <div><strong>Belize: +701.0% multi-source capital surge — market entry window open</strong><div class="signal-loc">Belize</div></div>
+    <div class="sig-row">
+      <div class="sig-main"><strong>Belize: capital momentum signal (+701.0%)</strong><div class="sig-loc">Belize</div></div>
       
     </div>
-    <div class="signal-row">
-      <div><strong>St. Vincent and the Grenadines: +88.2% multi-source investment validated — opportunity active</strong><div class="signal-loc">St. Vincent and the Grenadines</div></div>
+    <div class="sig-row">
+      <div class="sig-main"><strong>St. Vincent and the Grenadines: capital momentum signal (+88.2%)</strong><div class="sig-loc">St. Vincent and the Grenadines</div></div>
       <span class="risk-tag">⚠️ St. Vincent and the Grenadines also has vulnerabil</span>
     </div>
-    <div class="signal-row">
-      <div><strong>CARICOM: 6 active procurements — bidding window open</strong><div class="signal-loc">CARICOM</div></div>
+    <div class="sig-row">
+      <div class="sig-main"><strong>CARICOM opportunity signal</strong><div class="sig-loc">CARICOM</div></div>
       
     </div>
-    <div class="signal-row">
-      <div><strong>Capital convergence: 8 Caribbean economies showing multi-source investment momentum</strong><div class="signal-loc">Caribwide</div></div>
+    <div class="sig-row">
+      <div class="sig-main"><strong>Capital convergence opportunity signal</strong><div class="sig-loc">Caribwide</div></div>
       
     </div></div>
 </div>
@@ -202,39 +182,39 @@ footer{border-top:1px solid var(--line);padding:24px;text-align:center;font-size
 <div class="sec">
   <div class="sl">For you</div>
   <div class="st">Who should act on this</div>
-  <div class="ss">Every dispatch is written for a specific audience. Here's who gets today's signal and what they receive.</div>
+  <div class="ss">Every dispatch is written for a specific audience.</div>
   <div class="aud-grid">
     <div class="aud-card">
       <div class="aud-name">Regional Founder/Operator</div>
       <div class="aud-channel">Telegram</div>
-      <p class="aud-action">Assess competitive positioning in Guyana. FDI movement (860.3% change) signals growing market or incoming comp</p>
+      <p class="aud-action">Assess competitive positioning in Guyana. FDI movement (860.3% change) signals growing market or inc</p>
     </div>
     <div class="aud-card">
       <div class="aud-name">Ecosystem Builder</div>
       <div class="aud-channel">Telegram</div>
-      <p class="aud-action">Route Guyana opportunity to relevant founders and investors in your network. Signal strength (860.3% change) m</p>
+      <p class="aud-action">Route Guyana opportunity to relevant founders and investors in your network. Signal strength (860.3%</p>
     </div>
     <div class="aud-card">
       <div class="aud-name">Diaspora Investor</div>
       <div class="aud-channel">Email brief + Telegram</div>
-      <p class="aud-action">Investigate Guyana as a capital deployment target this cycle. Multi-source validation (860.3% change) confirms</p>
+      <p class="aud-action">Investigate Guyana as a capital deployment target this cycle. Multi-source validation (860.3% change</p>
     </div>
     <div class="aud-card">
       <div class="aud-name">Regional Operator</div>
       <div class="aud-channel">Telegram</div>
-      <p class="aud-action">Review operational readiness for CARICOM opportunities. CDB active procurement notices: 6 — assess capacity an</p>
+      <p class="aud-action">Review operational readiness for CARICOM opportunities. CDB active procurement notices: 6 — assess c</p>
     </div>
     <div class="aud-card">
       <div class="aud-name">Procurement Watcher</div>
       <div class="aud-channel">Email brief</div>
-      <p class="aud-action">Track CDB/IDB project pipeline: CDB active procurement notices: 6. Review opportunity fit and prepare expressi</p>
+      <p class="aud-action">Track CDB/IDB project pipeline: CDB active procurement notices: 6. Review opportunity fit and prepar</p>
     </div></div>
 </div>
 
 <div class="sec" style="padding-top:0">
   <div class="sl">What they receive</div>
-  <div class="st">Ready to send</div>
-  <div class="ss">Each audience gets a different format. These are real outputs from today's cycle.</div>
+  <div class="st">Ready-to-send outputs</div>
+  <div class="ss">Each audience gets a different format.</div>
   <div class="out-grid">
     <div class="out">
       <h4>🌴 Telegram Alert</h4>
@@ -245,17 +225,20 @@ Lead signal: Guyana capital momentum
 
 Guyana is today's strongest market-entry signal based on World Bank FDI movement.
 
-Why it matters: Capital activity may create openings in partnerships, services, procurement, logistics, and infrastructure-adjacent sectors.
+Why it matters:
+Capital activity may create openings in partnerships, services, procurement, logistics, and infrastructure-adjacent sectors.
 
-Who should act: Diaspora investors, regional founders, and ecosystem builders.
+Who should act:
+Diaspora investors, regional founders, and ecosystem builders.
 
-Next step: Screen Guyana first. Compare Belize and St. Vincent before committing further research.
+Next step:
+Screen Guyana first. Compare Belize and St. Vincent before committing further research.
 
 Confidence: High
 Source: World Bank indicators
 Period: 2023–2024
 
-This is a screening signal, not investment advice.</div>
+Screening signal, not investment advice.</div>
     </div>
     <div class="out">
       <h4>📊 Investor Brief</h4>
@@ -263,8 +246,7 @@ This is a screening signal, not investment advice.</div>
       <div class="out-body">Caribbean Capital Momentum Brief
 
 Lead market: Guyana
-Signal: FDI movement increased sharply between 2023 and 2024.
-Source: World Bank indicators
+Signal: World Bank FDI movement increased sharply 2023→2024
 
 Why it matters:
 Guyana is showing the strongest capital momentum in today's regional cycle. That may point to near-term opportunities in partnerships, services, procurement, logistics, real estate, and infrastructure-adjacent sectors.
@@ -273,24 +255,24 @@ Investor action:
 Screen Guyana first, then compare Belize and St. Vincent and the Grenadines before deciding where to investigate deal flow.
 
 Diligence note:
-Treat this as a screening signal, not an investment recommendation. Validate sector exposure, local execution risk, and partner quality.
-
-— Caribbean Opportunity Dispatch</div>
+Treat this as a screening signal, not an investment recommendation. Validate sector exposure, local execution risk, and partner quality.</div>
     </div>
     <div class="out">
-      <h4>💬 WhatsApp-Style Alert</h4>
+      <h4>💬 WhatsApp Alert</h4>
       <div class="out-ch">WhatsApp / messaging</div>
       <div class="out-body">🇬🇾 Guyana capital signal
 
 World Bank data shows sharp FDI increase 2023→2024.
 
-What to watch: partnerships, procurement, logistics, energy, professional services.
+What to watch:
+partnerships, procurement, logistics, energy, professional services.
 
-Next step: Screen Guyana first, then compare Belize + St. Vincent.
+Next step:
+Screen Guyana first, then compare Belize + St. Vincent.
 
 ⚠️ Screening signal only. Not investment advice.
 
-🔗 Full brief: [link]</div>
+Full brief: [link]</div>
     </div>
     <div class="out">
       <h4>🏛️ Policy / Media Brief</h4>
@@ -304,14 +286,15 @@ Implications:
 • Professional services demand likely to increase
 • Cross-border logistics and energy coordination opportunities
 
-Recommended monitoring: CDB/IDB project pipelines, bilateral trade data, sector-specific FDI breakdowns when available.
+Recommended monitoring:
+CDB/IDB project pipelines, bilateral trade data, sector-specific FDI breakdowns.
 
 Source: World Bank indicators, 2023–2024 comparison.</div>
     </div>
   </div>
 
   <div class="analyst">
-    <h3>🔍 Ask about today's dispatch</h3>
+    <h3>Ask about today's dispatch</h3>
     <p>Interrogate today's cycle. Answers come from the data, not an AI.</p>
     <div class="aprompts">
       <button onclick="ask('explain')">Explain lead signal</button>
@@ -352,24 +335,166 @@ Source: World Bank indicators, 2023–2024 comparison.</div>
   <div class="deep-c" id="dc">
     <div class="card" style="margin-top:16px">
       <h3 style="margin-bottom:4px">Pipeline internals</h3>
-      <p style="font-size:13px;color:var(--m);margin-bottom:16px">Technical proof layer — for judges and reviewers who want to see the full system.</p>
+      <p style="font-size:13px;color:var(--m);margin-bottom:16px">Technical proof layer for judges and reviewers.</p>
       <div style="display:grid;grid-template-columns:2fr 1fr;gap:24px">
         <div>
           <h4 style="font-size:14px;margin-bottom:8px">All opportunity themes (13)</h4>
-          <div id="clusters-area"></div>
+          
+    <div class="cluster-card">
+      <div class="cnum">01</div>
+      <div class="cbody">
+        <h4>Guyana: capital momentum signal (+860.3%) · Guyana</h4>
+        <div class="conf-badge conf-high">High confidence · Supported by multiple sources · sustained</div>
+        <p><strong>Decision:</strong> Which verified opportunity to investigate for capital deployment or partnership entry</p>
+        <p><strong>Evidence:</strong> World Bank FDI movement data shows: Guyana</p>
+        
+        <div class="croutes"><div class="route-line"><span>Regional Founder/Operator</span> <span>Telegram</span></div><div class="route-line"><span>Ecosystem Builder</span> <span>Telegram</span></div><div class="route-line"><span>Diaspora Investor</span> <span>Email brief + Telegram</span></div></div>
+      </div>
+    </div>
+    <div class="cluster-card">
+      <div class="cnum">02</div>
+      <div class="cbody">
+        <h4>Belize: capital momentum signal (+701.0%) · Belize</h4>
+        <div class="conf-badge conf-high">High confidence · Supported by multiple sources · sustained</div>
+        <p><strong>Decision:</strong> Which verified opportunity to investigate for capital deployment or partnership entry</p>
+        <p><strong>Evidence:</strong> World Bank FDI movement data shows: Belize</p>
+        
+        <div class="croutes"><div class="route-line"><span>Regional Founder/Operator</span> <span>Telegram</span></div><div class="route-line"><span>Ecosystem Builder</span> <span>Telegram</span></div><div class="route-line"><span>Diaspora Investor</span> <span>Email brief + Telegram</span></div></div>
+      </div>
+    </div>
+    <div class="cluster-card">
+      <div class="cnum">03</div>
+      <div class="cbody">
+        <h4>St. Vincent and the Grenadines: capital momentum signal (+88.2%) · St. Vincent and the Grenadines</h4>
+        <div class="conf-badge conf-high">High confidence · Supported by multiple sources · weakened</div>
+        <p><strong>Decision:</strong> Which verified opportunity to investigate for capital deployment or partnership entry</p>
+        <p><strong>Evidence:</strong> World Bank FDI movement data shows: St. Vincent and the Grenadines</p>
+        <div class="risk-inline">⚠️ St. Vincent and the Grenadines also has vulnerability — validate before committi</div>
+        <div class="croutes"><div class="route-line"><span>Regional Founder/Operator</span> <span>Telegram</span></div><div class="route-line"><span>Ecosystem Builder</span> <span>Telegram</span></div><div class="route-line"><span>Diaspora Investor</span> <span>Email brief + Telegram</span></div></div>
+      </div>
+    </div>
+    <div class="cluster-card">
+      <div class="cnum">04</div>
+      <div class="cbody">
+        <h4>CARICOM opportunity signal · CARICOM</h4>
+        <div class="conf-badge conf-high">Moderate confidence · Supported by multiple sources · sustained</div>
+        <p><strong>Decision:</strong> Which procurement or project opportunity to pursue</p>
+        <p><strong>Evidence:</strong> CDB active procurement notices: 6</p>
+        
+        <div class="croutes"><div class="route-line"><span>Regional Operator</span> <span>Telegram</span></div><div class="route-line"><span>Regional Founder/Operator</span> <span>Telegram</span></div><div class="route-line"><span>Procurement Watcher</span> <span>Email brief</span></div></div>
+      </div>
+    </div>
+    <div class="cluster-card">
+      <div class="cnum">05</div>
+      <div class="cbody">
+        <h4>Capital convergence opportunity signal · Caribwide</h4>
+        <div class="conf-badge conf-high">Moderate confidence · Supported by multiple sources · new</div>
+        <p><strong>Decision:</strong> Which verified opportunity to investigate for capital deployment or partnership entry</p>
+        <p><strong>Evidence:</strong> Multi-country enhanced investment validated across 8 countries. Top magnitudes: Guyana (860.3% change), Belize (701.0% change), St. Vincent and the Grenadines (88.2% change).</p>
+        
+        <div class="croutes"><div class="route-line"><span>Regional Founder/Operator</span> <span>Telegram</span></div><div class="route-line"><span>Ecosystem Builder</span> <span>Telegram</span></div><div class="route-line"><span>Diaspora Investor</span> <span>Email brief + Telegram</span></div></div>
+      </div>
+    </div>
+    <div class="cluster-card">
+      <div class="cnum">06</div>
+      <div class="cbody">
+        <h4>Regional FDI snapshot opportunity signal · Caribwide</h4>
+        <div class="conf-badge conf-high">Moderate confidence · Supported by multiple sources · new</div>
+        <p><strong>Decision:</strong> Which country-sector pair to validate for investment readiness</p>
+        <p><strong>Evidence:</strong> Multi-country investment signal validated across 8 countries. Top magnitudes: Guyana (860.3% change), Belize (701.0% change), St. Vincent and the Grenadines (88.2% change).</p>
+        
+        <div class="croutes"><div class="route-line"><span>Regional Founder/Operator</span> <span>Telegram</span></div><div class="route-line"><span>Diaspora Investor</span> <span>Email brief + Telegram</span></div></div>
+      </div>
+    </div>
+    <div class="cluster-card">
+      <div class="cnum">07</div>
+      <div class="cbody">
+        <h4>Guyana: capital momentum signal (+860.3%) · Guyana</h4>
+        <div class="conf-badge conf-high">Moderate confidence · Supported by multiple sources · sustained</div>
+        <p><strong>Decision:</strong> Which country-sector pair to validate for investment readiness</p>
+        <p><strong>Evidence:</strong> Guyana: Foreign direct investment net inflows current USD moved up 860.3% from 2023 to 2024.</p>
+        
+        <div class="croutes"><div class="route-line"><span>Regional Founder/Operator</span> <span>Telegram</span></div><div class="route-line"><span>Diaspora Investor</span> <span>Email brief + Telegram</span></div></div>
+      </div>
+    </div>
+    <div class="cluster-card">
+      <div class="cnum">08</div>
+      <div class="cbody">
+        <h4>Belize: capital momentum signal (+701.0%) · Belize</h4>
+        <div class="conf-badge conf-high">Moderate confidence · Supported by multiple sources · sustained</div>
+        <p><strong>Decision:</strong> Which country-sector pair to validate for investment readiness</p>
+        <p><strong>Evidence:</strong> Belize: Foreign direct investment net inflows current USD moved up 701.0% from 2023 to 2024.</p>
+        
+        <div class="croutes"><div class="route-line"><span>Regional Founder/Operator</span> <span>Telegram</span></div><div class="route-line"><span>Diaspora Investor</span> <span>Email brief + Telegram</span></div></div>
+      </div>
+    </div>
+    <div class="cluster-card">
+      <div class="cnum">09</div>
+      <div class="cbody">
+        <h4>Caribbean opportunity signal · Caribbean</h4>
+        <div class="conf-badge conf-high">Moderate confidence · Supported by multiple sources · sustained</div>
+        <p><strong>Decision:</strong> Maritime operations adjustment for safety and logistics routing</p>
+        <p><strong>Evidence:</strong> Buoy Eastern Caribbean (E of Barbados): 25 kts</p>
+        
+        <div class="croutes"><div class="route-line"><span>Tourism/Logistics Operator</span> <span>Telegram</span></div><div class="route-line"><span>Operations/Resilience</span> <span>Telegram/SMS alert</span></div></div>
+      </div>
+    </div>
+    <div class="cluster-card">
+      <div class="cnum">10</div>
+      <div class="cbody">
+        <h4>CARICOM opportunity signal · CARICOM</h4>
+        <div class="conf-badge conf-high">Moderate confidence · Supported by multiple sources · sustained</div>
+        <p><strong>Decision:</strong> Agricultural/logistics investment case or policy response planning</p>
+        <p><strong>Evidence:</strong> CARICOM food trade data: 18 datasets available</p>
+        
+        <div class="croutes"><div class="route-line"><span>Policy/Media</span> <span>Telegram digest</span></div><div class="route-line"><span>Ecosystem Builder</span> <span>Telegram</span></div></div>
+      </div>
+    </div>
+    <div class="cluster-card">
+      <div class="cnum">11</div>
+      <div class="cbody">
+        <h4>St. Vincent and the Grenadines: capital momentum signal (+88.2%) · St. Vincent and the Grenadines</h4>
+        <div class="conf-badge conf-high">Moderate confidence · Supported by multiple sources · sustained</div>
+        <p><strong>Decision:</strong> Which country-sector pair to validate for investment readiness</p>
+        <p><strong>Evidence:</strong> St. Vincent and the Grenadines: Foreign direct investment net inflows current USD moved up 88.2% from 2023 to 2024.</p>
+        
+        <div class="croutes"><div class="route-line"><span>Regional Founder/Operator</span> <span>Telegram</span></div><div class="route-line"><span>Diaspora Investor</span> <span>Email brief + Telegram</span></div></div>
+      </div>
+    </div>
+    <div class="cluster-card">
+      <div class="cnum">12</div>
+      <div class="cbody">
+        <h4>St. Vincent and the Grenadines opportunity signal · St. Vincent and the Grenadines</h4>
+        <div class="conf-badge conf-high">Early signal · Single source · sustained</div>
+        <p><strong>Decision:</strong> Risk assessment for capital exposure or policy attention</p>
+        <p><strong>Evidence:</strong> St. Vincent and the Grenadines: Unemployment % is 18.00% (2025).</p>
+        <div class="risk-inline">⚠️ Elevated economic stress in St. Vincent and the Grenadines</div>
+        <div class="croutes"><div class="route-line"><span>Policy/Media</span> <span>Telegram digest</span></div><div class="route-line"><span>Diaspora Investor</span> <span>Email brief + Telegram</span></div></div>
+      </div>
+    </div>
+    <div class="cluster-card">
+      <div class="cnum">13</div>
+      <div class="cbody">
+        <h4>Suriname opportunity signal · Suriname</h4>
+        <div class="conf-badge conf-high">Early signal · Single source · sustained</div>
+        <p><strong>Decision:</strong> Risk assessment for capital exposure or policy attention</p>
+        <p><strong>Evidence:</strong> Suriname: Inflation annual % is 16.23% (2024).</p>
+        <div class="risk-inline">⚠️ Elevated economic stress in Suriname</div>
+        <div class="croutes"><div class="route-line"><span>Policy/Media</span> <span>Telegram digest</span></div><div class="route-line"><span>Diaspora Investor</span> <span>Email brief + Telegram</span></div></div>
+      </div>
+    </div>
         </div>
         <div>
-          <h4 style="font-size:14px;margin-bottom:8px">System counts</h4>
+          <h4 style="font-size:14px;margin-bottom:8px">Counts</h4>
           <div style="font-size:13px;color:var(--m);line-height:2">
             <div>Opportunity themes: 13</div>
             <div>Routed dispatches: 31</div>
             <div>Delivery responses: 50</div>
-            <div>Regional signals: 26</div>
             <div>Sources online: 6/6</div>
             <div>Countries covered: 13</div>
           </div>
-          <h4 style="font-size:14px;margin:16px 0 8px">Delivery responses (all)</h4>
-          <div id="all-fb" style="font-size:13px;color:var(--m)"></div>
+          <h4 style="font-size:14px;margin:16px 0 8px">All delivery responses</h4>
+          <div><span class="fb-pill">— Ignored: 42</span><span class="fb-pill">📤 Forwarded: 2</span><span class="fb-pill">👁 Opened: 2</span><span class="fb-pill">💬 Replied: 2</span><span class="fb-pill">🔀 Decision Changed: 2</span></div>
         </div>
       </div>
     </div>
@@ -377,10 +502,10 @@ Source: World Bank indicators, 2023–2024 comparison.</div>
 </div>
 
 <script>
-const D = {"cycle": "20260528", "lead": {"title": "Guyana: +860.3% multi-source capital surge — market entry window open", "country": "Guyana", "evidence": "WB FDI surge detected: Guyana", "decision": "Which verified opportunity to investigate for capital deployment or partnership entry", "risks": [], "personas": [{"persona": "Regional Founder/Operator", "channel": "Telegram", "action": "Assess competitive positioning in Guyana. FDI movement (860.3% change) signals growing market or incoming comp"}, {"persona": "Ecosystem Builder", "channel": "Telegram", "action": "Route Guyana opportunity to relevant founders and investors in your network. Signal strength (860.3% change) m"}, {"persona": "Diaspora Investor", "channel": "Email brief + Telegram", "action": "Investigate Guyana as a capital deployment target this cycle. Multi-source validation (860.3% change) confirms"}, {"persona": "Regional Operator", "channel": "Telegram", "action": "Review operational readiness for CARICOM opportunities. CDB active procurement notices: 6 — assess capacity an"}]}, "thesis": "Capital momentum is strongest in Guyana (+860.3%), followed by Belize, St. Vincent and the Grenadines.  However, St. Vincent and the Grenadines and Suriname also carry elevated vulnerability indicators — investment signals from these countries require deeper diligence before committing capital.  Dev", "sources": 6, "signals": 26, "dispatches": 31};
+const D = {"cycle": "20260528", "lead": {"title": "Guyana leads today's Caribbean capital momentum signal", "country": "Guyana", "evidence": "World Bank FDI movement data shows: Guyana", "decision": "Which verified opportunity to investigate for capital deployment or partnership entry", "pct": "+860.3%", "risks": [], "personas": [{"persona": "Regional Founder/Operator", "channel": "Telegram", "action": "Assess competitive positioning in Guyana. FDI movement (860.3% change) signals growing market or inc"}, {"persona": "Ecosystem Builder", "channel": "Telegram", "action": "Route Guyana opportunity to relevant founders and investors in your network. Signal strength (860.3%"}, {"persona": "Diaspora Investor", "channel": "Email brief + Telegram", "action": "Investigate Guyana as a capital deployment target this cycle. Multi-source validation (860.3% change"}, {"persona": "Regional Operator", "channel": "Telegram", "action": "Review operational readiness for CARICOM opportunities. CDB active procurement notices: 6 — assess c"}]}, "thesis": "Capital momentum is strongest in Guyana (+860.3%), followed by Belize, St. Vincent and the Grenadines.  However, St. Vincent and the Grenadines and Suriname also carry elevated vulnerability indicators — investment signals from these countries require deeper diligence before committing capital.  Dev", "sources": 6, "signals": 26, "dispatches": 31};
 const risks = [];
 if (risks.length) {
-  document.getElementById('risk-area').innerHTML = '<div class="risk">⚠️ Risk: ' + risks[0] + '</div>';
+  document.getElementById('risk-area').innerHTML = '<div class="risk">⚠️ ' + risks[0] + '</div>';
 }
 
 window.ask = function(q) {
@@ -388,15 +513,15 @@ window.ask = function(q) {
   if (!q) { box.textContent = 'Select a prompt or ask a question.'; return; }
   const d = D.lead; const l = q.toLowerCase();
   if (l === 'explain' || l.includes('lead') || l.includes('first')) {
-    box.textContent = 'Lead signal: ' + d.title + '\n\n' + D.thesis + '\n\nEvidence: ' + d.evidence + '\n\nTop audiences:\n' + d.personas.slice(0,3).map(p => '• ' + p.persona + ' via ' + p.channel + ': ' + p.action.substring(0,90) + '…').join('\n');
+    box.textContent = 'Lead signal: ' + d.title + '\n\n' + D.thesis + '\n\nEvidence: ' + d.evidence + ' (' + d.pct + ')\n\nTop audiences:\n' + d.personas.slice(0,3).map(p => '• ' + p.persona + ' via ' + p.channel + ': ' + p.action.substring(0,90) + '…').join('\n');
   } else if (l.includes('investor')) {
-    box.textContent = 'Diaspora investor receives:\n\n"Today\'s lead: ' + d.title + '.\n\n' + (D.thesis.length > 130 ? D.thesis.substring(0,130) + '…' : D.thesis) + '\n\n' + (d.risks.length ? '⚠️ ' + d.risks[0] + '\n\n' : '') + 'Next step: Investigate ' + d.country + ' as a potential deployment target. Validate local partners, sector fit, and timing before committing capital.\n\n⚠️ Screening signal, not investment advice."';
+    box.textContent = 'Diaspora investor receives:\n\n"Today\'s lead: ' + d.title + '.\n\n' + (D.thesis.length > 130 ? D.thesis.substring(0,130) + '…' : D.thesis) + '\n\n' + (d.risks.length ? '⚠️ ' + d.risks[0] + '\n\n' : '') + 'Next step: Investigate ' + d.country + ' as a potential deployment target. Validate local partners, sector fit, and timing.\n\nScreening signal, not investment advice.';
   } else if (l.includes('what changed') || l.includes('changed')) {
-    box.textContent = 'Cycle ' + D.cycle + ' changes:\n\n• ' + D.signals + ' regional signals detected\n• ' + D.dispatches + ' dispatches routed to audiences\n\n' + D.thesis;
+    box.textContent = 'Cycle ' + D.cycle + ':\n\n• ' + D.signals + ' regional signals detected\n• ' + D.dispatches + ' dispatches routed\n\n' + D.thesis;
   } else if (l.includes('guyana')) {
-    box.textContent = 'Guyana is the lead signal (High confidence).\n\n' + d.evidence + '\n\n' + (d.risks.length ? '⚠️ ' + d.risks[0] + '\n\n' : '') + 'Why now: ' + D.thesis + '\n\nSuggested: Compare Guyana against Belize and St. Vincent before committing. Multi-source confirmation reduces screening risk.';
+    box.textContent = 'Guyana is the lead signal (High confidence).\n\n' + d.evidence + ' (' + d.pct + ')\n\n' + (d.risks.length ? '⚠️ ' + d.risks[0] + '\n\n' : '') + 'Compare Guyana against Belize and St. Vincent before committing.';
   } else if (l.includes('draft') || l.includes('note')) {
-    box.textContent = 'Draft investor note:\n\nSubject: ' + d.country + ' signal worth reviewing this cycle\n\nOur system flagged ' + d.title + '.\n\nEvidence: ' + d.evidence + '.\n' + (d.risks.length ? '\nNote: ' + d.risks[0] + '\n' : '\n') + 'Next step: Validate sector fit, local partners, and timing.\n\n⚠️ This is a screening signal, not an investment recommendation.';
+    box.textContent = 'Draft investor note:\n\nSubject: ' + d.country + ' signal worth reviewing\n\nSignal: ' + d.title + '\nEvidence: ' + d.evidence + ' (' + d.pct + ')\n' + (d.risks.length ? '\nNote: ' + d.risks[0] + '\n' : '\n') + 'Next step: Validate sector fit, local partners, and timing.\n\nScreening signal, not investment advice.';
   } else {
     box.textContent = 'Try: explain lead, investor perspective, what changed, why Guyana, or draft investor note.\n\nToday: ' + d.title + ' · ' + D.signals + ' signals · ' + D.dispatches + ' dispatches.';
   }
@@ -411,7 +536,7 @@ function toggleDeep() {
 </script>
 
 <footer>
-  Caribbean Opportunity Dispatch · Cycle 20260528 · May 28, 2026 — 18:20 UTC · Screening signals only, not investment advice · Data: World Bank · IDB · NOAA · NDBC · CARICOM · CDB
+  Caribbean Opportunity Dispatch · Cycle 20260528 · May 28, 2026 — 18:40 UTC · Screening signals only, not investment advice · Data: World Bank · IDB · NOAA · NDBC · CARICOM · CDB
 </footer>
 </body>
 </html>
