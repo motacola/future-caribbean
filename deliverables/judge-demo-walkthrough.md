@@ -41,9 +41,9 @@ This executes:
 
 ---
 
-## Step 3: Open `outbox/opportunity_dispatches.md`
+## Step 3: Open `dashboard.html` — Dispatch Desk first
 
-**What this proves:** The system doesn't just detect signals — it routes them as concrete actions to specific personas.
+**What this proves:** The product is a decision desk, not a raw artifact pile. The top section shows Track 08's chain in one place: data → signal → packaging → distribution → action → capital.
 
 Each dispatch has:
 - **Editorial title** (answers "why does this matter")
@@ -53,7 +53,7 @@ Each dispatch has:
 - **Recommended action** (what to do next)
 - **Evidence grade** (A = multi-source, B = cross-source, C = single-source)
 
-Current cycle (2026-05-26): **31 dispatches** routed to 6 persona types.
+Current cycle: **13 decision clusters** generated from **31 persona routes** across **7 persona types**.
 
 **Example route:**
 
@@ -72,9 +72,9 @@ Same signal → different actions per persona. This is routing intelligence, not
 
 ---
 
-## Step 4: Open `outbox/regional_thesis.md`
+## Step 4: Open `outbox/dispatch_desk.md`
 
-**What this proves:** The system connects individual signals into a single regional narrative. This is what distinguishes intelligence from a list.
+**What this proves:** The markdown Dispatch Desk is the portable product surface. It can be read without the dashboard and still shows decision clusters, persona routes, evidence, feedback, and supporting artifacts.
 
 Current thesis:
 
@@ -84,9 +84,9 @@ The thesis synthesizes 5 signal types across 10 countries into 3 sentences plus 
 
 ---
 
-## Step 5: Open `outbox/why_now.md`
+## Step 5: Open `outbox/regional_thesis.md` and `outbox/why_now.md`
 
-**What this proves:** The system has temporal awareness — it knows what matters *this week*, not just *what changed*.
+**What this proves:** The system has synthesis and temporal awareness — it knows what matters *this week*, not just *what changed*.
 
 Current context:
 
@@ -188,9 +188,9 @@ The brief includes:
 
 ---
 
-## Step 10: Open `dashboard.html`
+## Step 10: Review the lower dashboard operator/audit sections
 
-**What this proves:** The operator console is a health view, not the product. It shows:
+**What this proves:** The same page also includes operator/audit health below the Dispatch Desk. It shows:
 - Composite signal count (currently 25)
 - Watcher health (6 sources tracked)
 - Dispatch queue (29 dispatches)
@@ -201,7 +201,7 @@ The brief includes:
 - Persona routing breakdown
 - Routing Map — signal kind to persona mapping
 
-The dashboard is what an operator uses to confirm the pipeline is alive. The *product* is the dispatch output, thesis, and routing.
+The top of the dashboard is now the Dispatch Desk product view; the lower sections are what an operator uses to confirm the pipeline is alive.
 
 ---
 
@@ -217,7 +217,7 @@ Caribbean Opportunity Dispatch is not a dashboard. It is a **continuous intellig
 6. **Synthesizes** a cross-cluster thesis connecting capital, risk, pipeline, and timing
 7. **Contextualizes** every dispatch with seasonal and event awareness
 
-The product output is the opportunity dispatch — a routed, actionable signal that tells a specific persona *what changed, why it matters now, and what to do next.*
+The product output is the Dispatch Desk — grouped, routed, actionable decision clusters that tell specific personas *what changed, why it matters now, and what to do next.*
 
 ---
 
