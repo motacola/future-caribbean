@@ -55,6 +55,9 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
         if path == "/api/whatsapp/link":
             self._api_whatsapp_link()
             return
+        if path == "/api/preview":
+            self._api_preview()
+            return
 
         # Block internal paths
         clean = path.lstrip("/")
@@ -63,8 +66,10 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
                 self.send_error(404)
                 return
 
-        # Root → dashboard
+        # Root → Signal Builder; /system → audit dashboard
         if clean in ("", "index.html"):
+            self.path = "/configurator.html"
+        elif clean in ("system", "system.html"):
             self.path = "/dashboard.html"
 
         super().do_GET()
@@ -189,6 +194,179 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
             self._json({"ok": False, "error": "Timeout after 25s"}, 504)
         except Exception as exc:
             self._json({"ok": False, "error": str(exc)}, 500)
+
+    # ── /api/preview ───────────────────────────────────────────
+
+    def _api_preview(self) -> None:
+        import re
+        from urllib.parse import parse_qs
+
+        qs = parse_qs(urlparse(self.path).query)
+        persona   = qs.get("persona",  ["investor"])[0].lower().strip()
+        countries = [c.strip() for c in qs.get("countries", ["all"])[0].lower().split(",") if c.strip()]
+        signals   = [s.strip() for s in qs.get("signals",   ["all"])[0].lower().split(",") if s.strip()]
+        channel   = qs.get("channel",  ["telegram"])[0].lower().strip()
+
+        # Load live dispatch data
+        desk: dict = {}
+        desk_p = APP_DIR / "outbox" / "dispatch_desk.json"
+        if desk_p.exists():
+            try:
+                desk = json.loads(desk_p.read_text())
+            except Exception:
+                pass
+
+        clusters = desk.get("clusters", [])
+        if not clusters:
+            self._json({"ok": False, "error": "No signal data yet — run the pipeline first."}, 503)
+            return
+
+        # ── Country filter ─────────────────────────────────────
+        fallback = False
+        fallback_reason = ""
+        working = clusters
+
+        if "all" not in countries:
+            matched = [
+                c for c in clusters
+                if any(co in c.get("country_cluster", "").lower() for co in countries)
+            ]
+            if matched:
+                working = matched
+            else:
+                fallback = True
+                fallback_reason = "No signals for selected countries this cycle. Showing nearest available signal."
+
+        # ── Signal-type filter ──────────────────────────────────
+        SIG_TERMS: dict[str, list[str]] = {
+            "investment":  ["investment", "capital", "fdi", "surge", "momentum"],
+            "procurement": ["procurement", "cdb", "idb", "pipeline", "project"],
+            "risk":        ["risk", "vulnerability", "debt", "deficit"],
+            "weather":     ["weather", "marine", "storm", "hurricane", "pressure", "wind", "wave"],
+            "tourism":     ["tourism", "logistics", "travel", "hospitality"],
+        }
+        if "all" not in signals:
+            terms: list[str] = []
+            for s in signals:
+                terms.extend(SIG_TERMS.get(s, [s]))
+            sig_matched = [
+                c for c in working
+                if any(t in (c.get("title","") + c.get("evidence","")).lower() for t in terms)
+            ]
+            if sig_matched:
+                working = sig_matched
+            elif not fallback:
+                fallback = True
+                fallback_reason = "No exact match for selected signal types this cycle. Showing nearest relevant signal."
+
+        cluster = working[0]
+
+        # ── Persona matching ────────────────────────────────────
+        PERSONA_TERMS: dict[str, list[str]] = {
+            "investor":  ["investor", "diaspora investor", "regional investor"],
+            "founder":   ["founder", "operator", "ecosystem builder"],
+            "policy":    ["policy", "media", "policy/media"],
+            "diaspora":  ["diaspora"],
+        }
+        p_terms = PERSONA_TERMS.get(persona, [persona])
+        persona_rec: dict = {}
+        for p in cluster.get("personas", []):
+            if any(t in p.get("persona", "").lower() for t in p_terms):
+                persona_rec = p
+                break
+        if not persona_rec and cluster.get("personas"):
+            persona_rec = cluster["personas"][0]
+
+        # ── Field extraction ────────────────────────────────────
+        country  = cluster.get("country_cluster", "Caribbean")
+        raw_title = cluster.get("title", "")
+        evidence = cluster.get("evidence", "")
+        grade    = (cluster.get("evidence_grade", "C") or "C")[0].upper()
+        decision = cluster.get("decision", "")
+        risks    = cluster.get("risk_flags", []) or []
+
+        # Clean evidence text
+        evidence = re.sub(r"\bWB\s+", "World Bank ", evidence)
+        evidence = re.sub(r"detected:\s*", "shows: ", evidence)
+        evidence = re.sub(r"FDI surge", "FDI movement", evidence)
+
+        pct_m = re.search(r"([+\-]?\d+\.?\d*)%", raw_title)
+        pct   = pct_m.group(0) if pct_m else ""
+
+        conf_map = {"A": "High confidence", "B": "Moderate confidence", "C": "Early signal"}
+        confidence = conf_map.get(grade, "Early signal")
+
+        action = persona_rec.get("action", decision)[:200] if persona_rec else decision[:200]
+
+        PERSONA_DISPLAY = {
+            "investor": "Diaspora Investor",
+            "founder":  "Regional Founder / Operator",
+            "policy":   "Policy / Media",
+            "diaspora": "Diaspora",
+        }
+        persona_label = PERSONA_DISPLAY.get(persona, persona.title())
+
+        # ── Format per channel ──────────────────────────────────
+        pct_str = f" ({pct})" if pct else ""
+
+        if channel == "telegram":
+            formatted = (
+                f"*Caribbean Opportunity Signal*\n\n"
+                f"*{country}* — {confidence}\n\n"
+                f"{evidence}{pct_str}\n\n"
+                f"*What to do ({persona_label}):*\n{action}\n\n"
+                + (f"⚠️ Risk flag: {risks[0]}\n\n" if risks else "")
+                + f"_Screening signal only. Not investment advice._"
+            )
+        elif channel == "whatsapp":
+            formatted = (
+                f"🌴 Caribbean Signal\n\n"
+                f"{country}: {evidence}{pct_str}\n\n"
+                f"{action[:160]}\n\n"
+                f"Screening signal only. Not investment advice.\n"
+                f"Full brief: https://future-caribbean.fly.dev"
+            )
+        elif channel == "email":
+            formatted = (
+                f"Subject: {country} — {confidence.lower()} market signal\n\n"
+                f"{evidence}{pct_str}\n\n"
+                f"For {persona_label}:\n{action}\n\n"
+                + (f"Risk flag: {risks[0]}\n\n" if risks else "")
+                + f"Source: World Bank indicators\nConfidence: {confidence}\n\n"
+                f"Screening signal, not investment advice.\n"
+                f"Caribbean Opportunity Dispatch"
+            )
+        else:  # memo
+            formatted = (
+                f"CARIBBEAN OPPORTUNITY BRIEF\n"
+                f"{'─' * 36}\n"
+                f"Country:    {country}\n"
+                f"Confidence: {confidence}\n"
+                f"Audience:   {persona_label}\n\n"
+                f"SIGNAL\n{evidence}{pct_str}\n\n"
+                f"RECOMMENDED ACTION\n{action}\n\n"
+                + (f"RISK FLAG\n{risks[0]}\n\n" if risks else "")
+                + f"{'─' * 36}\n"
+                f"Screening signal only. Not investment advice.\n"
+                f"Caribbean Opportunity Dispatch"
+            )
+
+        self._json({
+            "ok":             True,
+            "persona":        persona_label,
+            "channel":        channel,
+            "country":        country,
+            "confidence":     confidence,
+            "evidence":       evidence,
+            "pct":            pct,
+            "action":         action,
+            "source":         "World Bank / IDB / NOAA / CARICOM / CDB",
+            "risks":          risks[:1],
+            "formatted":      formatted,
+            "fallback":       fallback,
+            "fallback_reason": fallback_reason,
+            "cycle_id":       desk.get("cycle_id", ""),
+        })
 
     # ── /api/whatsapp/link ─────────────────────────────────────
 

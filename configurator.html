@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Caribbean Opportunity Dispatch — Build Your Signal Feed</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #F7F1E7; --card: #FFFFFF; --card-alt: #FBF7EF;
+  --text: #102A43; --sub: #486581; --muted: #829AB1;
+  --gold: #C79A3B; --teal: #0E7C7B; --coral: #C94C4C;
+  --border: #E2D6C2; --border-dark: #C4B5A0;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Inter', -apple-system, system-ui, sans-serif;
+  --mono: 'IBM Plex Mono', monospace;
+  --r: 8px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.6; font-size: 15px; -webkit-font-smoothing: antialiased; }
+
+/* ── masthead ── */
+.masthead { background: var(--text); color: var(--bg); padding: 14px 0; }
+.mast-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+.mast-name { font-family: var(--serif); font-size: 18px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--bg); text-decoration: none; }
+.mast-name em { font-style: normal; color: var(--gold); }
+.mast-links { display: flex; gap: 20px; align-items: center; }
+.mast-links a { color: var(--muted); font-size: 12px; letter-spacing: .5px; text-transform: uppercase; font-weight: 500; text-decoration: none; }
+.mast-links a:hover { color: var(--bg); }
+.live-pill { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; color: #3fb950; font-weight: 600; }
+.live-dot { width: 6px; height: 6px; border-radius: 50%; background: #3fb950; animation: pulse 2.4s ease-in-out infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+/* ── hero ── */
+.hero { max-width: 1100px; margin: 0 auto; padding: 52px 24px 40px; }
+.hero-kicker { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gold); font-weight: 600; margin-bottom: 14px; }
+.hero-headline { font-family: var(--serif); font-size: clamp(30px, 4vw, 46px); font-weight: 700; line-height: 1.1; letter-spacing: -.5px; margin-bottom: 14px; }
+.hero-headline em { font-style: italic; color: var(--teal); }
+.hero-sub { font-size: 16px; color: var(--sub); max-width: 580px; line-height: 1.6; margin-bottom: 28px; }
+.hero-stats { display: flex; gap: 28px; flex-wrap: wrap; }
+.hero-stat { font-size: 12px; color: var(--muted); }
+.hero-stat strong { color: var(--text); font-family: var(--mono); font-size: 13px; }
+
+/* ── builder ── */
+.builder-wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px 56px; }
+.builder { display: grid; grid-template-columns: 380px 1fr; gap: 28px; align-items: start; }
+@media(max-width:860px){ .builder { grid-template-columns: 1fr; } }
+
+/* Controls panel */
+.controls { background: var(--card); border: 1px solid var(--border); border-radius: var(--r); padding: 24px; position: sticky; top: 20px; }
+.controls-title { font-family: var(--serif); font-size: 18px; font-weight: 700; margin-bottom: 20px; color: var(--text); }
+.ctrl-group { margin-bottom: 20px; }
+.ctrl-group:last-child { margin-bottom: 0; }
+.ctrl-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--muted); font-weight: 600; margin-bottom: 8px; display: block; }
+.chips { display: flex; flex-wrap: wrap; gap: 7px; }
+.chip { padding: 6px 13px; border-radius: 20px; font-size: 12px; font-weight: 500; cursor: pointer; border: 1px solid var(--border); background: var(--card); color: var(--sub); font-family: var(--sans); transition: all .12s; line-height: 1; }
+.chip:hover { border-color: var(--teal); color: var(--teal); }
+.chip.on { background: var(--teal); border-color: var(--teal); color: white; font-weight: 600; }
+.chip.on-gold { background: var(--gold); border-color: var(--gold); color: white; font-weight: 600; }
+.chip-multi.on { background: rgba(14,124,123,.12); border-color: var(--teal); color: var(--teal); }
+
+/* Preview panel */
+.preview-panel { display: flex; flex-direction: column; gap: 0; }
+.preview-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 8px; }
+.preview-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--muted); font-weight: 600; }
+.preview-meta { font-size: 12px; color: var(--teal); font-weight: 500; }
+.preview-loading { display: none; font-size: 12px; color: var(--muted); padding: 8px 0; }
+
+/* Device frames */
+.device-wrap { border-radius: var(--r); overflow: hidden; border: 1px solid var(--border); min-height: 300px; }
+.device-tg { background: #17212b; padding: 20px 16px; }
+.device-tg .tg-bar { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,.08); }
+.device-tg .tg-avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--teal); display: flex; align-items: center; justify-content: center; font-size: 14px; }
+.device-tg .tg-name { font-size: 13px; font-weight: 600; color: #fff; }
+.device-tg .tg-sub { font-size: 11px; color: #7d9ab5; }
+.device-tg .tg-bubble { background: #2b5278; border-radius: 4px 12px 12px 12px; padding: 12px 14px; font-size: 13px; line-height: 1.65; color: #e8f0f8; white-space: pre-wrap; word-break: break-word; }
+.device-tg .tg-time { font-size: 10px; color: #7d9ab5; text-align: right; margin-top: 6px; }
+
+.device-wa { background: #0a1014; padding: 20px 16px; }
+.device-wa .wa-bar { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,.07); }
+.device-wa .wa-avatar { width: 32px; height: 32px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; font-size: 14px; }
+.device-wa .wa-name { font-size: 13px; font-weight: 600; color: #e9edef; }
+.device-wa .wa-sub { font-size: 11px; color: #8696a0; }
+.device-wa .wa-bubble { background: #005c4b; border-radius: 4px 12px 12px 12px; padding: 12px 14px; font-size: 13px; line-height: 1.65; color: #e9edef; white-space: pre-wrap; word-break: break-word; }
+.device-wa .wa-time { font-size: 10px; color: #8696a0; text-align: right; margin-top: 6px; }
+
+.device-email { background: #f6f6f6; padding: 0; }
+.device-email .email-chrome { background: #e8e8e8; padding: 8px 14px; font-size: 11px; color: #666; border-bottom: 1px solid #ddd; display: flex; gap: 6px; align-items: center; }
+.device-email .email-chrome span { background: #fff; border: 1px solid #ccc; border-radius: 3px; padding: 2px 8px; font-size: 11px; color: #333; }
+.device-email .email-body { background: #fff; padding: 24px; font-size: 13px; line-height: 1.7; color: #333; }
+.device-email .email-subject { font-weight: 700; font-size: 15px; margin-bottom: 16px; color: #111; }
+.device-email .email-from { font-size: 11px; color: #888; margin-bottom: 16px; padding-bottom: 14px; border-bottom: 1px solid #eee; }
+.device-email .email-text { white-space: pre-wrap; }
+
+.device-memo { background: var(--card); padding: 28px; border-left: 3px solid var(--gold); }
+.device-memo .memo-logo { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: var(--gold); font-weight: 700; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+.device-memo .memo-text { font-family: var(--mono); font-size: 12px; line-height: 1.85; color: var(--text); white-space: pre-wrap; }
+
+/* Signal metadata */
+.signal-meta { background: var(--card-alt); border: 1px solid var(--border); border-top: none; border-radius: 0 0 var(--r) var(--r); padding: 14px 18px; display: flex; gap: 20px; flex-wrap: wrap; }
+.meta-item { font-size: 11px; color: var(--muted); }
+.meta-item strong { color: var(--text); font-size: 12px; }
+.fallback-notice { background: rgba(199,154,59,.08); border: 1px solid rgba(199,154,59,.25); border-top: none; padding: 10px 18px; font-size: 12px; color: #8a6a1a; border-radius: 0 0 var(--r) var(--r); display: none; }
+
+/* CTA */
+.cta-section { max-width: 1100px; margin: 0 auto; padding: 0 24px 64px; }
+.cta-card { background: var(--text); border-radius: var(--r); padding: 32px 36px; display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+.cta-copy h3 { font-family: var(--serif); font-size: 22px; font-weight: 700; color: var(--bg); margin-bottom: 4px; }
+.cta-copy p { font-size: 14px; color: var(--muted); max-width: 460px; line-height: 1.5; }
+.cta-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+.btn-feed { padding: 11px 22px; border-radius: 6px; font-size: 13px; font-weight: 700; cursor: pointer; font-family: var(--sans); letter-spacing: .3px; transition: all .15s; white-space: nowrap; }
+.btn-feed-primary { background: var(--gold); border: none; color: var(--text); }
+.btn-feed-primary:hover { background: #d9a93f; }
+.btn-feed-ghost { background: transparent; border: 1px solid rgba(255,255,255,.2); color: rgba(255,255,255,.75); }
+.btn-feed-ghost:hover { border-color: rgba(255,255,255,.5); color: #fff; }
+
+/* How it works */
+.how-section { max-width: 1100px; margin: 0 auto; padding: 0 24px 64px; }
+.how-title { font-family: var(--serif); font-size: 22px; font-weight: 700; margin-bottom: 6px; }
+.how-sub { font-size: 14px; color: var(--sub); margin-bottom: 28px; }
+.how-steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+@media(max-width:640px){ .how-steps { grid-template-columns: 1fr; } }
+.how-step { background: var(--card); border: 1px solid var(--border); border-radius: var(--r); padding: 20px; }
+.how-num { font-family: var(--mono); font-size: 28px; font-weight: 600; color: var(--gold); margin-bottom: 10px; line-height: 1; }
+.how-text { font-size: 14px; color: var(--sub); line-height: 1.6; }
+.how-text strong { color: var(--text); }
+
+/* Proof layer */
+.proof-section { max-width: 1100px; margin: 0 auto; padding: 0 24px 60px; }
+.proof-toggle { background: transparent; border: 1px solid var(--border-dark); color: var(--muted); padding: 9px 18px; border-radius: 4px; font-size: 12px; cursor: pointer; font-family: var(--sans); letter-spacing: .3px; text-transform: uppercase; display: flex; align-items: center; gap: 8px; }
+.proof-toggle:hover { border-color: var(--text); color: var(--text); }
+.proof-body { display: none; margin-top: 16px; background: var(--card); border: 1px solid var(--border); border-radius: var(--r); padding: 24px; }
+.proof-body.open { display: block; }
+.proof-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px,1fr)); gap: 12px; margin-bottom: 20px; }
+.proof-stat { padding: 14px; background: var(--card-alt); border-radius: 6px; border: 1px solid var(--border); }
+.proof-stat .ps-val { font-family: var(--mono); font-size: 22px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+.proof-stat .ps-lbl { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .8px; }
+.proof-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--teal); font-weight: 600; text-decoration: none; }
+.proof-link:hover { text-decoration: underline; }
+.src-row { display: flex; justify-content: space-between; align-items: center; padding: 9px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
+.src-row:last-child { border-bottom: none; }
+.src-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 8px; }
+.src-ok { background: var(--teal); }
+.src-off { background: var(--muted); }
+
+/* Modal */
+.modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.55); z-index: 100; align-items: center; justify-content: center; }
+.modal-overlay.open { display: flex; }
+.modal-card { background: var(--card); border-radius: var(--r); padding: 36px; max-width: 460px; width: calc(100% - 32px); position: relative; box-shadow: 0 20px 60px rgba(0,0,0,.25); }
+.modal-card h3 { font-family: var(--serif); font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+.modal-card p { font-size: 14px; color: var(--sub); line-height: 1.6; margin-bottom: 20px; }
+.modal-actions { display: flex; flex-direction: column; gap: 10px; }
+.modal-btn { padding: 12px 18px; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer; border: 1px solid var(--border); background: var(--card); color: var(--text); font-family: var(--sans); text-align: left; transition: all .12s; display: flex; align-items: center; gap: 10px; }
+.modal-btn:hover { border-color: var(--teal); color: var(--teal); }
+.modal-btn.primary { background: var(--text); border-color: var(--text); color: var(--bg); }
+.modal-btn.primary:hover { background: #1a3a54; }
+.modal-close { position: absolute; top: 16px; right: 16px; background: transparent; border: none; font-size: 18px; color: var(--muted); cursor: pointer; line-height: 1; padding: 4px; }
+.modal-close:hover { color: var(--text); }
+.modal-note { font-size: 11px; color: var(--muted); margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border); line-height: 1.5; }
+
+footer { border-top: 1px solid var(--border); padding: 24px; text-align: center; font-size: 11px; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<!-- Masthead -->
+<div class="masthead">
+  <div class="mast-inner">
+    <a href="/" class="mast-name">CARIBBEAN <em>OPPORTUNITY</em> DISPATCH</a>
+    <div class="mast-links">
+      <span class="live-pill"><span class="live-dot"></span> 6/6 sources live</span>
+      <a href="/system">System audit</a>
+    </div>
+  </div>
+</div>
+
+<!-- Hero -->
+<div class="hero">
+  <p class="hero-kicker">Intelligence · Media · Distribution</p>
+  <h1 class="hero-headline">Build your Caribbean<br><em>market signal feed.</em></h1>
+  <p class="hero-sub">Choose the countries, sectors, and delivery channel you care about. We turn public regional data into briefings you can actually use — filtered for your role, formatted for your channel.</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><strong>13</strong> countries monitored</div>
+    <div class="hero-stat"><strong id="hs-sources">6/6</strong> sources live</div>
+    <div class="hero-stat"><strong id="hs-signals">13</strong> signals this cycle</div>
+    <div class="hero-stat"><strong>4h</strong> refresh cadence</div>
+  </div>
+</div>
+
+<!-- Signal Builder -->
+<div class="builder-wrap">
+  <div class="builder">
+
+    <!-- Left: Controls -->
+    <div class="controls">
+      <div class="controls-title">Configure your feed</div>
+
+      <div class="ctrl-group">
+        <span class="ctrl-label">Your role</span>
+        <div class="chips" id="chips-persona">
+          <button class="chip on" data-val="investor">Investor</button>
+          <button class="chip" data-val="founder">Founder / Operator</button>
+          <button class="chip" data-val="policy">Policy / Media</button>
+          <button class="chip" data-val="diaspora">Diaspora</button>
+        </div>
+      </div>
+
+      <div class="ctrl-group">
+        <span class="ctrl-label">Countries</span>
+        <div class="chips" id="chips-countries">
+          <button class="chip chip-multi on" data-val="all">All 13</button>
+          <button class="chip chip-multi" data-val="guyana">Guyana</button>
+          <button class="chip chip-multi" data-val="belize">Belize</button>
+          <button class="chip chip-multi" data-val="jamaica">Jamaica</button>
+          <button class="chip chip-multi" data-val="barbados">Barbados</button>
+          <button class="chip chip-multi" data-val="trinidad">Trinidad &amp; Tobago</button>
+          <button class="chip chip-multi" data-val="vincent">St. Vincent</button>
+        </div>
+      </div>
+
+      <div class="ctrl-group">
+        <span class="ctrl-label">Signal type</span>
+        <div class="chips" id="chips-signals">
+          <button class="chip on" data-val="all">All signals</button>
+          <button class="chip" data-val="investment">Investment</button>
+          <button class="chip" data-val="procurement">Procurement</button>
+          <button class="chip" data-val="risk">Risk</button>
+          <button class="chip" data-val="weather">Weather / Marine</button>
+          <button class="chip" data-val="tourism">Tourism / Logistics</button>
+        </div>
+      </div>
+
+      <div class="ctrl-group">
+        <span class="ctrl-label">Delivery channel</span>
+        <div class="chips" id="chips-channel">
+          <button class="chip on" data-val="telegram">Telegram</button>
+          <button class="chip" data-val="whatsapp">WhatsApp</button>
+          <button class="chip" data-val="email">Email</button>
+          <button class="chip" data-val="memo">Briefing memo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Preview -->
+    <div class="preview-panel">
+      <div class="preview-header">
+        <span class="preview-label">Your signal preview</span>
+        <span class="preview-meta" id="preview-meta">Investor · All countries · Telegram</span>
+      </div>
+      <div class="preview-loading" id="preview-loading">⏳ Loading signal…</div>
+
+      <div class="device-wrap" id="device-wrap">
+        <!-- rendered by JS -->
+      </div>
+      <div class="signal-meta" id="signal-meta"></div>
+      <div class="fallback-notice" id="fallback-notice"></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+  <div class="cta-card">
+    <div class="cta-copy">
+      <h3>Get this feed delivered to you.</h3>
+      <p>Telegram, WhatsApp, and email delivery are live. Your personalised preview is generated from the current pipeline — this is exactly what you would receive.</p>
+    </div>
+    <div class="cta-btns">
+      <button class="btn-feed btn-feed-primary" onclick="openModal()">Get this feed →</button>
+      <button class="btn-feed btn-feed-ghost" onclick="copyBriefing()">Copy briefing</button>
+    </div>
+  </div>
+</div>
+
+<!-- How it works -->
+<div class="how-section">
+  <p class="how-title">How it works</p>
+  <p class="how-sub">A continuously running intelligence pipeline — not a one-off report.</p>
+  <div class="how-steps">
+    <div class="how-step">
+      <div class="how-num">01</div>
+      <div class="how-text"><strong>Watcher agents</strong> monitor 6 public data sources across 13 Caribbean countries every 4 hours — World Bank, IDB, NOAA, NDBC, CARICOM, CDB.</div>
+    </div>
+    <div class="how-step">
+      <div class="how-num">02</div>
+      <div class="how-text"><strong>Reasoning agents</strong> detect investment signals, procurement opportunities, risk flags, and market shifts. Each signal is scored, graded, and cross-validated.</div>
+    </div>
+    <div class="how-step">
+      <div class="how-num">03</div>
+      <div class="how-text"><strong>Distribution agents</strong> package each signal for your role and channel — formatted differently for an investor memo, a Telegram alert, or a WhatsApp message.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Proof layer -->
+<div class="proof-section">
+  <button class="proof-toggle" id="proof-btn" onclick="toggleProof()">
+    <span>▸</span> View system proof
+  </button>
+  <div class="proof-body" id="proof-body">
+    <div class="proof-grid">
+      <div class="proof-stat"><div class="ps-val">6/6</div><div class="ps-lbl">Sources live</div></div>
+      <div class="proof-stat"><div class="ps-val">13</div><div class="ps-lbl">Countries</div></div>
+      <div class="proof-stat"><div class="ps-val" id="pb-signals">13</div><div class="ps-lbl">Signals this cycle</div></div>
+      <div class="proof-stat"><div class="ps-val" id="pb-dispatches">31</div><div class="ps-lbl">Dispatches routed</div></div>
+    </div>
+    <div style="margin-bottom:16px"><div class="src-row"><span><span class="src-dot src-ok"></span>World Bank Indicators</span><span style="font-size:12px;color:var(--teal)">Live</span></div><div class="src-row"><span><span class="src-dot src-ok"></span>IDB Open Data</span><span style="font-size:12px;color:var(--teal)">Live</span></div><div class="src-row"><span><span class="src-dot src-ok"></span>NOAA Weather Alerts</span><span style="font-size:12px;color:var(--teal)">Live</span></div><div class="src-row"><span><span class="src-dot src-ok"></span>NDBC Marine Buoys</span><span style="font-size:12px;color:var(--teal)">Live</span></div><div class="src-row"><span><span class="src-dot src-ok"></span>CARICOM Statistics</span><span style="font-size:12px;color:var(--teal)">Live</span></div><div class="src-row"><span><span class="src-dot src-ok"></span>CDB Procurement Feed</span><span style="font-size:12px;color:var(--teal)">Live</span></div></div>
+    <a href="/system" class="proof-link">Open full system audit →</a>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal-overlay" id="modal" onclick="if(event.target===this)closeModal()">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <h3>Your feed is ready.</h3>
+    <p>This preview was generated live from today's pipeline. Choose how you want to receive it.</p>
+    <div class="modal-actions">
+      <button class="modal-btn primary" onclick="sendTelegram()">✈ Send to Telegram</button>
+      <button class="modal-btn" onclick="openWhatsApp()">📱 Share via WhatsApp</button>
+      <button class="modal-btn" onclick="copyBriefing();closeModal()">📋 Copy briefing text</button>
+    </div>
+    <div class="modal-note" id="modal-status">Telegram delivery requires a connected bot. WhatsApp opens a pre-filled message. Copy works immediately.</div>
+  </div>
+</div>
+
+<footer>
+  Caribbean Opportunity Dispatch · Cycle 20260528 · May 28, 2026 at 20:54 UTC · Screening signals only, not investment advice · Data: World Bank · IDB · NOAA · NDBC · CARICOM · CDB
+</footer>
+
+<script>
+// ── Embedded pipeline data (client-side fallback) ───────────
+const PIPELINE = {"clusters": [{"cluster_id": "CL-enhanced-investment-guyana", "confidence_display": "🔴 Immediate | 100/100 | A - multi-source", "confidence_score": 100, "country_cluster": "Guyana", "decision": "Which verified opportunity to investigate for capital deployment or partnership entry", "detail": "860.3% change", "evidence": "WB FDI surge detected: Guyana", "evidence_grade": "A - multi-source", "feedback_counts": {"forwarded": 1, "ignored": 2}, "feedback_summary": "Feedback this cycle: 2 ignored, 1 forwarded.", "freshness": "sustained", "personas": [{"action": "Assess competitive positioning in Guyana. FDI movement (860.3% change) signals growing market or incoming competition — evaluate local advantage before new entrants arrive.", "channel": "Telegram", "dispatch_id": "DSP-20260528-025", "feedback_status": "ignored", "persona": "Regional Founder/Operator", "rationale": "Multi-source investment lift indicates growing market that may support new entry or expansion"}, {"action": "Route Guyana opportunity to relevant founders and investors in your network. Signal strength (860.3% change) makes this a high-priority introduction target.", "channel": "Telegram", "dispatch_id": "DSP-20260528-024", "feedback_status": "ignored", "persona": "Ecosystem Builder", "rationale": "Cross-country investment velocity signals where to focus ecosystem support and founder matching"}, {"action": "Investigate Guyana as a capital deployment target this cycle. Multi-source validation (860.3% change) confirms directional signal — next step is operator discovery and market entry assessment.", "channel": "Email brief + Telegram", "dispatch_id": "DSP-20260528-023", "feedback_status": "forwarded", "persona": "Diaspora Investor", "rationale": "Multi-source validation reduces screening risk — capital follows verified signals"}], "risk_flags": [], "signal_kind": "enhanced_investment", "title": "Guyana: +860.3% multi-source capital surge — market entry window open"}, {"cluster_id": "CL-enhanced-investment-belize", "confidence_display": "🔴 Immediate | 100/100 | A - multi-source", "confidence_score": 100, "country_cluster": "Belize", "decision": "Which verified opportunity to investigate for capital deployment or partnership entry", "detail": "701.0% change", "evidence": "WB FDI surge detected: Belize", "evidence_grade": "A - multi-source", "feedback_counts": {"ignored": 2, "opened": 1}, "feedback_summary": "Feedback this cycle: 2 ignored, 1 opened.", "freshness": "sustained", "personas": [{"action": "Assess competitive positioning in Belize. FDI movement (701.0% change) signals growing market or incoming competition — evaluate local advantage before new entrants arrive.", "channel": "Telegram", "dispatch_id": "DSP-20260528-028", "feedback_status": "ignored", "persona": "Regional Founder/Operator", "rationale": "Multi-source investment lift indicates growing market that may support new entry or expansion"}, {"action": "Route Belize opportunity to relevant founders and investors in your network. Signal strength (701.0% change) makes this a high-priority introduction target.", "channel": "Telegram", "dispatch_id": "DSP-20260528-027", "feedback_status": "ignored", "persona": "Ecosystem Builder", "rationale": "Cross-country investment velocity signals where to focus ecosystem support and founder matching"}, {"action": "Investigate Belize as a capital deployment target this cycle. Multi-source validation (701.0% change) confirms directional signal — next step is operator discovery and market entry assessment.", "channel": "Email brief + Telegram", "dispatch_id": "DSP-20260528-026", "feedback_status": "opened", "persona": "Diaspora Investor", "rationale": "Multi-source validation reduces screening risk — capital follows verified signals"}], "risk_flags": [], "signal_kind": "enhanced_investment", "title": "Belize: +701.0% multi-source capital surge — market entry window open"}, {"cluster_id": "CL-enhanced-investment-st-vincent-and-the-grenadines", "confidence_display": "🔴 Immediate | 100/100 | A - multi-source", "confidence_score": 100, "country_cluster": "St. Vincent and the Grenadines", "decision": "Which verified opportunity to investigate for capital deployment or partnership entry", "detail": "88.2% change", "evidence": "WB FDI surge detected: St. Vincent and the Grenadines", "evidence_grade": "A - multi-source", "feedback_counts": {"ignored": 3}, "feedback_summary": "Feedback this cycle: 3 ignored.", "freshness": "weakened", "personas": [{"action": "Assess competitive positioning in St. Vincent and the Grenadines. FDI movement (88.2% change) signals growing market or incoming competition — evaluate local advantage before new entrants arrive.", "channel": "Telegram", "dispatch_id": "DSP-20260528-031", "feedback_status": "ignored", "persona": "Regional Founder/Operator", "rationale": "Multi-source investment lift indicates growing market that may support new entry or expansion"}, {"action": "Route St. Vincent and the Grenadines opportunity to relevant founders and investors in your network. Signal strength (88.2% change) makes this a high-priority introduction target.", "channel": "Telegram", "dispatch_id": "DSP-20260528-030", "feedback_status": "ignored", "persona": "Ecosystem Builder", "rationale": "Cross-country investment velocity signals where to focus ecosystem support and founder matching"}, {"action": "Investigate St. Vincent and the Grenadines as a capital deployment target this cycle. Multi-source validation (88.2% change) confirms directional signal — next step is operator discovery and market entry assessment.", "channel": "Email brief + Telegram", "dispatch_id": "DSP-20260528-029", "feedback_status": "ignored", "persona": "Diaspora Investor", "rationale": "Multi-source validation reduces screening risk — capital follows verified signals"}], "risk_flags": ["St. Vincent and the Grenadines also has vulnerability — validate before committing"], "signal_kind": "enhanced_investment", "title": "St. Vincent and the Grenadines: +88.2% multi-source investment validated — opportunity active"}, {"cluster_id": "CL-development-pipeline-caricom", "confidence_display": "🔴 Immediate | 95/100 | B - cross-source", "confidence_score": 95, "country_cluster": "CARICOM", "decision": "Which procurement or project opportunity to pursue", "detail": "CDB active procurement notices: 6", "evidence": "CDB active procurement notices: 6", "evidence_grade": "B - cross-source", "feedback_counts": {"ignored": 2, "replied": 1}, "feedback_summary": "Feedback this cycle: 2 ignored, 1 replied.", "freshness": "sustained", "personas": [{"action": "Review operational readiness for CARICOM opportunities. CDB active procurement notices: 6 — assess capacity and bid pipeline.", "channel": "Telegram", "dispatch_id": "DSP-20260528-017", "feedback_status": "replied", "persona": "Regional Operator", "rationale": "Active procurement directly maps to operational capacity needs — first to respond wins"}, {"action": "Map CARICOM procurement pipeline against your capability. CDB/IDB projects (CDB active procurement notices: 6) create service and supply opportunities.", "channel": "Telegram", "dispatch_id": "DSP-20260528-019", "feedback_status": "ignored", "persona": "Regional Founder/Operator", "rationale": "Procurement pipeline signals government and institutional spending direction — follow the money"}, {"action": "Track CDB/IDB project pipeline: CDB active procurement notices: 6. Review opportunity fit and prepare expression of interest.", "channel": "Email brief", "dispatch_id": "DSP-20260528-018", "feedback_status": "ignored", "persona": "Procurement Watcher", "rationale": "CDB/IDB project pipeline is the primary lead source for project-based business development"}], "risk_flags": [], "signal_kind": "development_pipeline", "title": "CARICOM: 6 active procurements — bidding window open"}, {"cluster_id": "CL-enhanced-investment-caribwide", "confidence_display": "🟡 Validation | Multi-country | Multi-source", "confidence_score": 90, "country_cluster": "Caribwide", "decision": "Which verified opportunity to investigate for capital deployment or partnership entry", "detail": "Guyana (860.3% change), Belize (701.0% change), St. Vincent and the Grenadines (88.2% change)", "evidence": "Multi-country enhanced investment validated across 8 countries. Top magnitudes: Guyana (860.3% change), Belize (701.0% change), St. Vincent and the Grenadines (88.2% change).", "evidence_grade": "B - cross-source", "feedback_counts": {"ignored": 3}, "feedback_summary": "Feedback this cycle: 3 ignored.", "freshness": "new", "personas": [{"action": "Assess competitive positioning in Caribwide. FDI movement (Guyana (860.3% change), Belize (701.0% change), St. Vincent and the Grenadines (88.2% change)) signals growing market or incoming competition — evaluate local advantage before new entrants arrive.", "channel": "Telegram", "dispatch_id": "DSP-20260528-022", "feedback_status": "ignored", "persona": "Regional Founder/Operator", "rationale": "Multi-source investment lift indicates growing market that may support new entry or expansion"}, {"action": "Route Caribwide opportunity to relevant founders and investors in your network. Signal strength (Guyana (860.3% change), Belize (701.0% change), St. Vincent and the Grenadines (88.2% change)) makes this a high-priority introduction target.", "channel": "Telegram", "dispatch_id": "DSP-20260528-021", "feedback_status": "ignored", "persona": "Ecosystem Builder", "rationale": "Cross-country investment velocity signals where to focus ecosystem support and founder matching"}, {"action": "Investigate Caribwide as a capital deployment target this cycle. Multi-source validation (Guyana (860.3% change), Belize (701.0% change), St. Vincent and the Grenadines (88.2% change)) confirms directional signal — next step is operator discovery and market entry assessment.", "channel": "Email brief + Telegram", "dispatch_id": "DSP-20260528-020", "feedback_status": "ignored", "persona": "Diaspora Investor", "rationale": "Multi-source validation reduces screening risk — capital follows verified signals"}], "risk_flags": [], "signal_kind": "enhanced_investment", "title": "Capital convergence: 8 Caribbean economies showing multi-source investment momentum"}, {"cluster_id": "CL-investment-signal-caribwide", "confidence_display": "🟡 Validation | Multi-country | Multi-source", "confidence_score": 90, "country_cluster": "Caribwide", "decision": "Which country-sector pair to validate for investment readiness", "detail": "Guyana (860.3% change), Belize (701.0% change), St. Vincent and the Grenadines (88.2% change)", "evidence": "Multi-country investment signal validated across 8 countries. Top magnitudes: Guyana (860.3% change), Belize (701.0% change), St. Vincent and the Grenadines (88.2% change).", "evidence_grade": "B - cross-source", "feedback_counts": {"ignored": 2}, "feedback_summary": "Feedback this cycle: 2 ignored.", "freshness": "new", "personas": [{"action": "Assess competitive positioning in Caribwide. FDI movement (Guyana (860.3% change), Belize (701.0% change), St. Vincent and the Grenadines (88.2% change)) signals growing market or incoming competition — evaluate local advantage before new entrants arrive.", "channel": "Telegram", "dispatch_id": "DSP-20260528-002", "feedback_status": "ignored", "persona": "Regional Founder/Operator", "rationale": "FDI movement in your operating country signals competition or demand growth — assess positioning"}, {"action": "Screen Caribwide for investment readiness. FDI movement (Guyana (860.3% change), Belize (701.0% change), St. Vincent and the Grenadines (88.2% change)) is a screening trigger — cross-reference with sector conditions before deploying capital.", "channel": "Email brief + Telegram", "dispatch_id": "DSP-20260528-001", "feedback_status": "ignored", "persona": "Diaspora Investor", "rationale": "Single-source FDI movement is a screening trigger, not a deployment signal — start diligence"}], "risk_flags": [], "signal_kind": "investment_signal", "title": "Regional FDI snapshot: 8 countries with active capital movement"}, {"cluster_id": "CL-investment-signal-guyana", "confidence_display": "🟡 Validation | 88/100 | B - cross-source", "confidence_score": 88, "country_cluster": "Guyana", "decision": "Which country-sector pair to validate for investment readiness", "detail": "860.3% change", "evidence": "Guyana: Foreign direct investment net inflows current USD moved up 860.3% from 2023 to 2024.", "evidence_grade": "B - cross-source", "feedback_counts": {"ignored": 2}, "feedback_summary": "Feedback this cycle: 2 ignored.", "freshness": "sustained", "personas": [{"action": "Assess competitive positioning in Guyana. FDI movement (860.3% change) signals growing market or incoming competition — evaluate local advantage before new entrants arrive.", "channel": "Telegram", "dispatch_id": "DSP-20260528-004", "feedback_status": "ignored", "persona": "Regional Founder/Operator", "rationale": "FDI movement in your operating country signals competition or demand growth — assess positioning"}, {"action": "Screen Guyana for investment readiness. FDI movement (860.3% change) is a screening trigger — cross-reference with sector conditions before deploying capital.", "channel": "Email brief + Telegram", "dispatch_id": "DSP-20260528-003", "feedback_status": "ignored", "persona": "Diaspora Investor", "rationale": "Single-source FDI movement is a screening trigger, not a deployment signal — start diligence"}], "risk_flags": [], "signal_kind": "investment_signal", "title": "Guyana: FDI trending at +860.3% — screening trigger active"}, {"cluster_id": "CL-investment-signal-belize", "confidence_display": "🟡 Validation | 88/100 | B - cross-source", "confidence_score": 88, "country_cluster": "Belize", "decision": "Which country-sector pair to validate for investment readiness", "detail": "701.0% change", "evidence": "Belize: Foreign direct investment net inflows current USD moved up 701.0% from 2023 to 2024.", "evidence_grade": "B - cross-source", "feedback_counts": {"ignored": 2}, "feedback_summary": "Feedback this cycle: 2 ignored.", "freshness": "sustained", "personas": [{"action": "Assess competitive positioning in Belize. FDI movement (701.0% change) signals growing market or incoming competition — evaluate local advantage before new entrants arrive.", "channel": "Telegram", "dispatch_id": "DSP-20260528-006", "feedback_status": "ignored", "persona": "Regional Founder/Operator", "rationale": "FDI movement in your operating country signals competition or demand growth — assess positioning"}, {"action": "Screen Belize for investment readiness. FDI movement (701.0% change) is a screening trigger — cross-reference with sector conditions before deploying capital.", "channel": "Email brief + Telegram", "dispatch_id": "DSP-20260528-005", "feedback_status": "ignored", "persona": "Diaspora Investor", "rationale": "Single-source FDI movement is a screening trigger, not a deployment signal — start diligence"}], "risk_flags": [], "signal_kind": "investment_signal", "title": "Belize: FDI trending at +701.0% — screening trigger active"}, {"cluster_id": "CL-food-security-caricom", "confidence_display": "🟡 Validation | 78/100 | B - cross-source", "confidence_score": 78, "country_cluster": "CARICOM", "decision": "Agricultural/logistics investment case or policy response planning", "detail": "5%", "evidence": "CARICOM food trade data: 18 datasets available", "evidence_grade": "B - cross-source", "feedback_counts": {"ignored": 2}, "feedback_summary": "Feedback this cycle: 2 ignored.", "freshness": "sustained", "personas": [{"action": "Signal context for CARICOM: 5%. Use this dispatch as a briefing input or narrative lead.", "channel": "Telegram digest", "dispatch_id": "DSP-20260528-016", "feedback_status": "ignored", "persona": "Policy/Media", "rationale": "Food security is a regional stability indicator — tracks pressure points before they become crises"}, {"action": "Route CARICOM opportunity to relevant founders and investors in your network. Signal strength (5%) makes this a high-priority introduction target.", "channel": "Telegram", "dispatch_id": "DSP-20260528-015", "feedback_status": "ignored", "persona": "Ecosystem Builder", "rationale": "Food trade data reveals supply chain gaps that local founders and agri-tech can fill"}], "risk_flags": [], "signal_kind": "food_security", "title": "CARICOM: food supply indicators shifting — supply chain implications"}, {"cluster_id": "CL-investment-signal-st-vincent-and-the-grenadines", "confidence_display": "🟡 Validation | 76/100 | B - cross-source", "confidence_score": 76, "country_cluster": "St. Vincent and the Grenadines", "decision": "Which country-sector pair to validate for investment readiness", "detail": "88.2% change", "evidence": "St. Vincent and the Grenadines: Foreign direct investment net inflows current USD moved up 88.2% from 2023 to 2024.", "evidence_grade": "B - cross-source", "feedback_counts": {"ignored": 2}, "feedback_summary": "Feedback this cycle: 2 ignored.", "freshness": "sustained", "personas": [{"action": "Assess competitive positioning in St. Vincent and the Grenadines. FDI movement (88.2% change) signals growing market or incoming competition — evaluate local advantage before new entrants arrive.", "channel": "Telegram", "dispatch_id": "DSP-20260528-008", "feedback_status": "ignored", "persona": "Regional Founder/Operator", "rationale": "FDI movement in your operating country signals competition or demand growth — assess positioning"}, {"action": "Screen St. Vincent and the Grenadines for investment readiness. FDI movement (88.2% change) is a screening trigger — cross-reference with sector conditions before deploying capital.", "channel": "Email brief + Telegram", "dispatch_id": "DSP-20260528-007", "feedback_status": "ignored", "persona": "Diaspora Investor", "rationale": "Single-source FDI movement is a screening trigger, not a deployment signal — start diligence"}], "risk_flags": [], "signal_kind": "investment_signal", "title": "St. Vincent and the Grenadines: FDI trending at +88.2% — screening trigger active"}, {"cluster_id": "CL-economic-vulnerability-st-vincent-and-the-grenadines", "confidence_display": "🟡 Validation | 72/100 | C - single-source", "confidence_score": 72, "country_cluster": "St. Vincent and the Grenadines", "decision": "Risk assessment for capital exposure or policy attention", "detail": "18.00%", "evidence": "St. Vincent and the Grenadines: Unemployment % is 18.00% (2025).", "evidence_grade": "C - single-source", "feedback_counts": {"decision_changed": 1, "ignored": 1}, "feedback_summary": "Feedback this cycle: 1 ignored, 1 changed a decision.", "freshness": "sustained", "personas": [{"action": "Signal context for St. Vincent and the Grenadines: 18.00%. Use this dispatch as a briefing input or narrative lead.", "channel": "Telegram digest", "dispatch_id": "DSP-20260528-012", "feedback_status": "ignored", "persona": "Policy/Media", "rationale": "Economic stress indicators drive policy response and media narratives"}, {"action": "Assess portfolio exposure in St. Vincent and the Grenadines. Economic stress indicators (18.00%) may affect existing positions or timing.", "channel": "Email brief + Telegram", "dispatch_id": "DSP-20260528-011", "feedback_status": "decision_changed", "persona": "Diaspora Investor", "rationale": "Vulnerability signals change risk profiles — reassess exposure and timing"}], "risk_flags": ["Elevated economic stress in St. Vincent and the Grenadines"], "signal_kind": "economic_vulnerability", "title": "St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended"}, {"cluster_id": "CL-economic-vulnerability-suriname", "confidence_display": "🟢 Monitor | 54/100 | C - single-source", "confidence_score": 54, "country_cluster": "Suriname", "decision": "Risk assessment for capital exposure or policy attention", "detail": "16.23%", "evidence": "Suriname: Inflation annual % is 16.23% (2024).", "evidence_grade": "C - single-source", "feedback_counts": {"ignored": 2}, "feedback_summary": "Feedback this cycle: 2 ignored.", "freshness": "sustained", "personas": [{"action": "Signal context for Suriname: 16.23%. Use this dispatch as a briefing input or narrative lead.", "channel": "Telegram digest", "dispatch_id": "DSP-20260528-010", "feedback_status": "ignored", "persona": "Policy/Media", "rationale": "Economic stress indicators drive policy response and media narratives"}, {"action": "Assess portfolio exposure in Suriname. Economic stress indicators (16.23%) may affect existing positions or timing.", "channel": "Email brief + Telegram", "dispatch_id": "DSP-20260528-009", "feedback_status": "ignored", "persona": "Diaspora Investor", "rationale": "Vulnerability signals change risk profiles — reassess exposure and timing"}], "risk_flags": ["Elevated economic stress in Suriname"], "signal_kind": "economic_vulnerability", "title": "Suriname: economic stress indicators rising — portfolio review recommended"}, {"cluster_id": "CL-tourism-impact-guyana", "confidence_display": "🟢 Monitor | 51/100 | C - single-source", "confidence_score": 51, "country_cluster": "Guyana", "decision": "Tourism capacity planning and timing of marketing or expansion", "detail": "45.8% change", "evidence": "Guyana: GDP current USD moved up 45.8% from 2023 to 2024.", "evidence_grade": "C - single-source", "feedback_counts": {"ignored": 2}, "feedback_summary": "Feedback this cycle: 2 ignored.", "freshness": "sustained", "personas": [{"action": "Assess Guyana demand trajectory. 45.8% change — adjust capacity plans.", "channel": "Telegram", "dispatch_id": "DSP-20260528-013", "feedback_status": "ignored", "persona": "Tourism/Logistics Operator", "rationale": "GDP growth in tourism-relevant economies signals demand trajectory — plan capacity accordingly"}, {"action": "Validate consumer demand signal in Guyana. GDP growth (45.8% change) may indicate expanding local market for products and services.", "channel": "Telegram", "dispatch_id": "DSP-20260528-014", "feedback_status": "ignored", "persona": "Regional Founder/Operator", "rationale": "Tourism-linked GDP growth in your operating country indicates broader consumer demand"}], "risk_flags": [], "signal_kind": "tourism_impact", "title": "Guyana: GDP growth signals expanding tourist economy"}], "n_sources": 6, "n_clusters": 13, "n_personas": 31, "cycle_id": "20260528"};
+
+// ── State ───────────────────────────────────────────────────
+const state = {
+  persona:   'investor',
+  countries: ['all'],
+  signals:   ['all'],
+  channel:   'telegram',
+};
+let _previewText = '';
+let _debounce = null;
+
+// ── Chip selectors ──────────────────────────────────────────
+function initChips(groupId, key, multi) {
+  const group = document.getElementById(groupId);
+  group.addEventListener('click', function(e) {
+    const chip = e.target.closest('.chip');
+    if (!chip) return;
+    const val = chip.dataset.val;
+    if (!multi) {
+      group.querySelectorAll('.chip').forEach(c => c.classList.remove('on'));
+      chip.classList.add('on');
+      state[key] = val;
+    } else {
+      if (val === 'all') {
+        group.querySelectorAll('.chip').forEach(c => c.classList.remove('on'));
+        chip.classList.add('on');
+        state[key] = ['all'];
+      } else {
+        const allChip = group.querySelector('[data-val="all"]');
+        allChip && allChip.classList.remove('on');
+        chip.classList.toggle('on');
+        const active = [...group.querySelectorAll('.chip.on')].map(c => c.dataset.val);
+        state[key] = active.length ? active : ['all'];
+        if (!active.length) allChip && allChip.classList.add('on');
+      }
+    }
+    schedulePreview();
+    updateMeta();
+  });
+}
+
+initChips('chips-persona',   'persona',   false);
+initChips('chips-countries', 'countries', true);
+initChips('chips-signals',   'signals',   false);
+initChips('chips-channel',   'channel',   false);
+
+// ── Meta label ──────────────────────────────────────────────
+const PERSONA_LABELS = { investor:'Investor', founder:'Founder / Operator', policy:'Policy / Media', diaspora:'Diaspora' };
+const CHANNEL_LABELS = { telegram:'Telegram', whatsapp:'WhatsApp', email:'Email', memo:'Briefing memo' };
+function updateMeta() {
+  const countries = state.countries.includes('all') ? 'All 13 countries' :
+    state.countries.map(c => c.charAt(0).toUpperCase() + c.slice(1)).join(', ');
+  document.getElementById('preview-meta').textContent =
+    (PERSONA_LABELS[state.persona] || state.persona) + ' · ' + countries + ' · ' +
+    (CHANNEL_LABELS[state.channel] || state.channel);
+}
+
+// ── Preview scheduling ──────────────────────────────────────
+function schedulePreview() {
+  clearTimeout(_debounce);
+  _debounce = setTimeout(loadPreview, 220);
+}
+
+function loadPreview() {
+  const params = new URLSearchParams({
+    persona:   state.persona,
+    countries: state.countries.join(','),
+    signals:   Array.isArray(state.signals) ? state.signals.join(',') : state.signals,
+    channel:   state.channel,
+  });
+
+  document.getElementById('preview-loading').style.display = 'block';
+
+  fetch('/api/preview?' + params)
+    .then(r => r.ok ? r.json() : null)
+    .then(r => {
+      document.getElementById('preview-loading').style.display = 'none';
+      if (r && r.ok) {
+        renderPreview(r);
+      } else {
+        renderClientSide();
+      }
+    })
+    .catch(() => {
+      document.getElementById('preview-loading').style.display = 'none';
+      renderClientSide();
+    });
+}
+
+// ── Server-rendered preview ─────────────────────────────────
+function renderPreview(r) {
+  _previewText = r.formatted;
+  renderDevice(state.channel, r.formatted, r.country);
+
+  const meta = document.getElementById('signal-meta');
+  meta.innerHTML =
+    `<div class="meta-item"><strong>${r.country}</strong></div>` +
+    `<div class="meta-item"><strong>${r.confidence}</strong></div>` +
+    `<div class="meta-item">${r.source}</div>` +
+    (r.pct ? `<div class="meta-item"><strong>${r.pct}</strong></div>` : '') +
+    (r.cycle_id ? `<div class="meta-item">Cycle ${r.cycle_id}</div>` : '');
+
+  const fn = document.getElementById('fallback-notice');
+  if (r.fallback) {
+    fn.textContent = '⚠ ' + r.fallback_reason;
+    fn.style.display = 'block';
+  } else {
+    fn.style.display = 'none';
+  }
+}
+
+// ── Client-side fallback ────────────────────────────────────
+function renderClientSide() {
+  const clusters = PIPELINE.clusters || [];
+  if (!clusters.length) { renderDevice(state.channel, 'No signal data available.', 'Caribbean'); return; }
+
+  let working = clusters;
+  let fallback = false;
+
+  if (!state.countries.includes('all')) {
+    const f = clusters.filter(c =>
+      state.countries.some(co => (c.country_cluster||'').toLowerCase().includes(co))
+    );
+    if (f.length) working = f; else fallback = true;
+  }
+
+  const sigTerms = {
+    investment:['investment','capital','fdi','surge'],
+    procurement:['procurement','cdb','idb'],
+    risk:['risk','vulnerability'],
+    weather:['weather','marine','storm'],
+    tourism:['tourism','logistics']
+  };
+  const sigs = Array.isArray(state.signals) ? state.signals : [state.signals];
+  if (!sigs.includes('all')) {
+    const terms = sigs.flatMap(s => sigTerms[s]||[s]);
+    const f = working.filter(c =>
+      terms.some(t => ((c.title||'')+(c.evidence||'')).toLowerCase().includes(t))
+    );
+    if (f.length) working = f;
+  }
+
+  const c = working[0];
+  const pTerms = {investor:['investor','diaspora'],founder:['founder','operator','ecosystem'],policy:['policy','media'],diaspora:['diaspora']};
+  const pts = pTerms[state.persona]||[state.persona];
+  let pr = (c.personas||[]).find(p => pts.some(t => (p.persona||'').toLowerCase().includes(t)));
+  if (!pr && c.personas?.length) pr = c.personas[0];
+
+  const country = c.country_cluster||'Caribbean';
+  let ev = (c.evidence||'').replace(/\bWB\s+/,'World Bank ').replace(/detected:\s*/,'shows: ').replace(/FDI surge/,'FDI movement');
+  const pct = (c.title||'').match(/([+\-]?\d+\.?\d*)%/)?.[0]||'';
+  const action = (pr?.action||c.decision||'').slice(0,200);
+  const grade = (c.evidence_grade||'C')[0].toUpperCase();
+  const conf = {A:'High confidence',B:'Moderate confidence',C:'Early signal'}[grade]||'Early signal';
+
+  const pl = {investor:'Diaspora Investor',founder:'Regional Founder',policy:'Policy / Media',diaspora:'Diaspora'}[state.persona]||state.persona;
+  const pstr = pct ? ` (${pct})` : '';
+
+  let text = '';
+  if (state.channel === 'telegram') {
+    text = `*Caribbean Opportunity Signal*\n\n*${country}* — ${conf}\n\n${ev}${pstr}\n\n*What to do (${pl}):*\n${action}\n\n_Screening signal only. Not investment advice._`;
+  } else if (state.channel === 'whatsapp') {
+    text = `🌴 Caribbean Signal\n\n${country}: ${ev}${pstr}\n\n${action.slice(0,160)}\n\nScreening signal only.\nhttps://future-caribbean.fly.dev`;
+  } else if (state.channel === 'email') {
+    text = `Subject: ${country} — ${conf.toLowerCase()} market signal\n\n${ev}${pstr}\n\nFor ${pl}:\n${action}\n\nSource: World Bank / IDB\nConfidence: ${conf}\n\nScreening signal, not investment advice.\nCaribbean Opportunity Dispatch`;
+  } else {
+    text = `CARIBBEAN OPPORTUNITY BRIEF\n${'─'.repeat(36)}\nCountry:    ${country}\nConfidence: ${conf}\nAudience:   ${pl}\n\nSIGNAL\n${ev}${pstr}\n\nRECOMMENDED ACTION\n${action}\n\n${'─'.repeat(36)}\nScreening signal only. Not investment advice.\nCaribbean Opportunity Dispatch`;
+  }
+
+  _previewText = text;
+  renderDevice(state.channel, text, country);
+
+  document.getElementById('signal-meta').innerHTML =
+    `<div class="meta-item"><strong>${country}</strong></div>` +
+    `<div class="meta-item"><strong>${conf}</strong></div>` +
+    `<div class="meta-item">World Bank / IDB / NOAA</div>` +
+    (pct ? `<div class="meta-item"><strong>${pct}</strong></div>` : '');
+
+  const fn = document.getElementById('fallback-notice');
+  fn.style.display = fallback ? 'block' : 'none';
+  if (fallback) fn.textContent = '⚠ No exact match for selected countries this cycle. Showing nearest available signal.';
+}
+
+// ── Device frame renderer ───────────────────────────────────
+function renderDevice(channel, text, country) {
+  const wrap = document.getElementById('device-wrap');
+  const now = new Date().toLocaleTimeString('en-GB', {hour:'2-digit',minute:'2-digit'});
+
+  if (channel === 'telegram') {
+    wrap.className = 'device-wrap device-tg';
+    wrap.innerHTML = `
+      <div class="tg-bar">
+        <div class="tg-avatar">🌴</div>
+        <div><div class="tg-name">Caribbean Opportunity Dispatch</div><div class="tg-sub">Signal channel · ${PIPELINE.n_sources || 5}/6 sources live</div></div>
+      </div>
+      <div class="tg-bubble">${fmtTg(text)}</div>
+      <div class="tg-time">${now}</div>`;
+  } else if (channel === 'whatsapp') {
+    wrap.className = 'device-wrap device-wa';
+    wrap.innerHTML = `
+      <div class="wa-bar">
+        <div class="wa-avatar">🌴</div>
+        <div><div class="wa-name">Caribbean Signals</div><div class="wa-sub">Broadcast channel</div></div>
+      </div>
+      <div class="wa-bubble">${esc(text)}</div>
+      <div class="wa-time">${now}</div>`;
+  } else if (channel === 'email') {
+    const lines = text.split('\n');
+    const subj = lines[0].replace('Subject: ','');
+    const body = lines.slice(2).join('\n');
+    wrap.className = 'device-wrap device-email';
+    wrap.innerHTML = `
+      <div class="email-chrome"><span>From: Caribbean Opportunity Dispatch &lt;signal@cod.caribbean&gt;</span></div>
+      <div class="email-body">
+        <div class="email-subject">${esc(subj)}</div>
+        <div class="email-from">Caribbean Opportunity Dispatch · ${now}</div>
+        <div class="email-text">${esc(body)}</div>
+      </div>`;
+  } else {
+    wrap.className = 'device-wrap device-memo';
+    wrap.innerHTML = `
+      <div class="memo-logo">Caribbean Opportunity Dispatch — Intelligence Brief</div>
+      <div class="memo-text">${esc(text)}</div>`;
+  }
+}
+
+function esc(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function fmtTg(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+    .replace(/\*([^*]+)\*/g,'<strong>$1</strong>')
+    .replace(/_([^_]+)_/g,'<em>$1</em>');
+}
+
+// ── Modal ───────────────────────────────────────────────────
+function openModal() { document.getElementById('modal').classList.add('open'); }
+function closeModal() { document.getElementById('modal').classList.remove('open'); }
+
+function copyBriefing() {
+  if (!_previewText) return;
+  navigator.clipboard.writeText(_previewText).then(() => {
+    const btn = event?.target;
+    if (btn) { const orig = btn.textContent; btn.textContent = '✓ Copied'; setTimeout(()=>btn.textContent=orig, 2000); }
+  }).catch(() => alert(_previewText));
+}
+
+function openWhatsApp() {
+  fetch('/api/whatsapp/link')
+    .then(r => r.json())
+    .then(r => { if (r.ok) window.open(r.link,'_blank','noopener'); })
+    .catch(() => {
+      const msg = _previewText || '🌴 Caribbean Opportunity Dispatch\nhttps://future-caribbean.fly.dev';
+      window.open('https://wa.me/?text='+encodeURIComponent(msg),'_blank','noopener');
+    });
+  closeModal();
+}
+
+function sendTelegram() {
+  const status = document.getElementById('modal-status');
+  status.textContent = '⏳ Sending…';
+  fetch('/api/send/telegram', { method: 'POST' })
+    .then(r => r.json())
+    .then(r => {
+      status.textContent = r.ok
+        ? '✅ Sent · ' + (r.mode === 'live' ? 'live delivery' : 'dry-run — add TELEGRAM_BOT_TOKEN to .env')
+        : '⚠ ' + (r.error || 'Send failed — check Telegram credentials in .env');
+    })
+    .catch(() => { status.textContent = '⚠ Connection error'; });
+}
+
+// ── Proof toggle ────────────────────────────────────────────
+function toggleProof() {
+  const body = document.getElementById('proof-body');
+  const btn  = document.getElementById('proof-btn');
+  const open = body.classList.toggle('open');
+  btn.querySelector('span').textContent = open ? '▾' : '▸';
+}
+
+// ── Live status poll ────────────────────────────────────────
+function pollStatus() {
+  fetch('/api/status')
+    .then(r => r.ok ? r.json() : null)
+    .then(s => {
+      if (!s) return;
+      const v = s.n_sources_ok + '/6';
+      ['hs-sources'].forEach(id => { const el = document.getElementById(id); if (el) el.textContent = v; });
+      ['hs-signals'].forEach(id => { const el = document.getElementById(id); if (el && s.n_clusters) el.textContent = s.n_clusters; });
+      ['pb-signals'].forEach(id => { const el = document.getElementById(id); if (el && s.n_clusters) el.textContent = s.n_clusters; });
+      ['pb-dispatches'].forEach(id => { const el = document.getElementById(id); if (el && s.n_dispatches) el.textContent = s.n_dispatches; });
+    })
+    .catch(() => {});
+}
+pollStatus();
+setInterval(pollStatus, 30000);
+
+// ── Init ────────────────────────────────────────────────────
+updateMeta();
+loadPreview();
+</script>
+</body>
+</html>
