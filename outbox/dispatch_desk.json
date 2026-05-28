@@ -1,0 +1,541 @@
+{
+  "boost_lines": [
+    "St. Vincent and the Grenadines economic vulnerability upranked +9",
+    "St. Vincent and the Grenadines enhanced investment downranked -6",
+    "Guyana enhanced investment upranked +5",
+    "Suriname economic vulnerability downranked -4",
+    "St. Vincent and the Grenadines investment signal downranked -4"
+  ],
+  "channel_count": 5,
+  "cluster_count": 13,
+  "clusters": [
+    {
+      "cluster_id": "CL-enhanced-investment-guyana",
+      "confidence_display": "\ud83d\udd34 Immediate | 100/100 | A - multi-source",
+      "confidence_score": 100,
+      "country_cluster": "Guyana",
+      "decision": "Which verified opportunity to investigate for capital deployment or partnership entry",
+      "detail": "860.3% change",
+      "evidence": "WB FDI surge detected: Guyana",
+      "evidence_grade": "A - multi-source",
+      "feedback_counts": {
+        "forwarded": 1,
+        "ignored": 2
+      },
+      "feedback_summary": "Feedback this cycle: 2 ignored, 1 forwarded.",
+      "freshness": "sustained",
+      "personas": [
+        {
+          "action": "Assess competitive positioning in Guyana. FDI movement (860.3% change) signals growing market or incoming competition \u2014 evaluate local advantage before new entrants arrive.",
+          "channel": "Telegram",
+          "dispatch_id": "DSP-20260528-025",
+          "feedback_status": "ignored",
+          "persona": "Regional Founder/Operator",
+          "rationale": "Multi-source investment lift indicates growing market that may support new entry or expansion"
+        },
+        {
+          "action": "Route Guyana opportunity to relevant founders and investors in your network. Signal strength (860.3% change) makes this a high-priority introduction target.",
+          "channel": "Telegram",
+          "dispatch_id": "DSP-20260528-024",
+          "feedback_status": "ignored",
+          "persona": "Ecosystem Builder",
+          "rationale": "Cross-country investment velocity signals where to focus ecosystem support and founder matching"
+        },
+        {
+          "action": "Investigate Guyana as a capital deployment target this cycle. Multi-source validation (860.3% change) confirms directional signal \u2014 next step is operator discovery and market entry assessment.",
+          "channel": "Email brief + Telegram",
+          "dispatch_id": "DSP-20260528-023",
+          "feedback_status": "forwarded",
+          "persona": "Diaspora Investor",
+          "rationale": "Multi-source validation reduces screening risk \u2014 capital follows verified signals"
+        }
+      ],
+      "risk_flags": [],
+      "signal_kind": "enhanced_investment",
+      "title": "Guyana: +860.3% multi-source capital surge \u2014 market entry window open"
+    },
+    {
+      "cluster_id": "CL-enhanced-investment-belize",
+      "confidence_display": "\ud83d\udd34 Immediate | 100/100 | A - multi-source",
+      "confidence_score": 100,
+      "country_cluster": "Belize",
+      "decision": "Which verified opportunity to investigate for capital deployment or partnership entry",
+      "detail": "701.0% change",
+      "evidence": "WB FDI surge detected: Belize",
+      "evidence_grade": "A - multi-source",
+      "feedback_counts": {
+        "ignored": 2,
+        "opened": 1
+      },
+      "feedback_summary": "Feedback this cycle: 2 ignored, 1 opened.",
+      "freshness": "sustained",
+      "personas": [
+        {
+          "action": "Assess competitive positioning in Belize. FDI movement (701.0% change) signals growing market or incoming competition \u2014 evaluate local advantage before new entrants arrive.",
+          "channel": "Telegram",
+          "dispatch_id": "DSP-20260528-028",
+          "feedback_status": "ignored",
+          "persona": "Regional Founder/Operator",
+          "rationale": "Multi-source investment lift indicates growing market that may support new entry or expansion"
+        },
+        {
+          "action": "Route Belize opportunity to relevant founders and investors in your network. Signal strength (701.0% change) makes this a high-priority introduction target.",
+          "channel": "Telegram",
+          "dispatch_id": "DSP-20260528-027",
+          "feedback_status": "ignored",
+          "persona": "Ecosystem Builder",
+          "rationale": "Cross-country investment velocity signals where to focus ecosystem support and founder matching"
+        },
+        {
+          "action": "Investigate Belize as a capital deployment target this cycle. Multi-source validation (701.0% change) confirms directional signal \u2014 next step is operator discovery and market entry assessment.",
+          "channel": "Email brief + Telegram",
+          "dispatch_id": "DSP-20260528-026",
+          "feedback_status": "opened",
+          "persona": "Diaspora Investor",
+          "rationale": "Multi-source validation reduces screening risk \u2014 capital follows verified signals"
+        }
+      ],
+      "risk_flags": [],
+      "signal_kind": "enhanced_investment",
+      "title": "Belize: +701.0% multi-source capital surge \u2014 market entry window open"
+    },
+    {
+      "cluster_id": "CL-enhanced-investment-st-vincent-and-the-grenadines",
+      "confidence_display": "\ud83d\udd34 Immediate | 100/100 | A - multi-source",
+      "confidence_score": 100,
+      "country_cluster": "St. Vincent and the Grenadines",
+      "decision": "Which verified opportunity to investigate for capital deployment or partnership entry",
+      "detail": "88.2% change",
+      "evidence": "WB FDI surge detected: St. Vincent and the Grenadines",
+      "evidence_grade": "A - multi-source",
+      "feedback_counts": {
+        "ignored": 3
+      },
+      "feedback_summary": "Feedback this cycle: 3 ignored.",
+      "freshness": "weakened",
+      "personas": [
+        {
+          "action": "Assess competitive positioning in St. Vincent and the Grenadines. FDI movement (88.2% change) signals growing market or incoming competition \u2014 evaluate local advantage before new entrants arrive.",
+          "channel": "Telegram",
+          "dispatch_id": "DSP-20260528-031",
+          "feedback_status": "ignored",
+          "persona": "Regional Founder/Operator",
+          "rationale": "Multi-source investment lift indicates growing market that may support new entry or expansion"
+        },
+        {
+          "action": "Route St. Vincent and the Grenadines opportunity to relevant founders and investors in your network. Signal strength (88.2% change) makes this a high-priority introduction target.",
+          "channel": "Telegram",
+          "dispatch_id": "DSP-20260528-030",
+          "feedback_status": "ignored",
+          "persona": "Ecosystem Builder",
+          "rationale": "Cross-country investment velocity signals where to focus ecosystem support and founder matching"
+        },
+        {
+          "action": "Investigate St. Vincent and the Grenadines as a capital deployment target this cycle. Multi-source validation (88.2% change) confirms directional signal \u2014 next step is operator discovery and market entry assessment.",
+          "channel": "Email brief + Telegram",
+          "dispatch_id": "DSP-20260528-029",
+          "feedback_status": "ignored",
+          "persona": "Diaspora Investor",
+          "rationale": "Multi-source validation reduces screening risk \u2014 capital follows verified signals"
+        }
+      ],
+      "risk_flags": [
+        "St. Vincent and the Grenadines also has vulnerability \u2014 validate before committing"
+      ],
+      "signal_kind": "enhanced_investment",
+      "title": "St. Vincent and the Grenadines: +88.2% multi-source investment validated \u2014 opportunity active"
+    },
+    {
+      "cluster_id": "CL-development-pipeline-caricom",
+      "confidence_display": "\ud83d\udd34 Immediate | 96/100 | B - cross-source",
+      "confidence_score": 96,
+      "country_cluster": "CARICOM",
+      "decision": "Which procurement or project opportunity to pursue",
+      "detail": "CDB active procurement notices: 6",
+      "evidence": "CDB active procurement notices: 6",
+      "evidence_grade": "B - cross-source",
+      "feedback_counts": {
+        "ignored": 2,
+        "replied": 1
+      },
+      "feedback_summary": "Feedback this cycle: 2 ignored, 1 replied.",
+      "freshness": "sustained",
+      "personas": [
+        {
+          "action": "Review operational readiness for CARICOM opportunities. CDB active procurement notices: 6 \u2014 assess capacity and bid pipeline.",
+          "channel": "Telegram",
+          "dispatch_id": "DSP-20260528-017",
+          "feedback_status": "replied",
+          "persona": "Regional Operator",
+          "rationale": "Active procurement directly maps to operational capacity needs \u2014 first to respond wins"
+        },
+        {
+          "action": "Map CARICOM procurement pipeline against your capability. CDB/IDB projects (CDB active procurement notices: 6) create service and supply opportunities.",
+          "channel": "Telegram",
+          "dispatch_id": "DSP-20260528-019",
+          "feedback_status": "ignored",
+          "persona": "Regional Founder/Operator",
+          "rationale": "Procurement pipeline signals government and institutional spending direction \u2014 follow the money"
+        },
+        {
+          "action": "Track CDB/IDB project pipeline: CDB active procurement notices: 6. Review opportunity fit and prepare expression of interest.",
+          "channel": "Email brief",
+          "dispatch_id": "DSP-20260528-018",
+          "feedback_status": "ignored",
+          "persona": "Procurement Watcher",
+          "rationale": "CDB/IDB project pipeline is the primary lead source for project-based business development"
+        }
+      ],
+      "risk_flags": [],
+      "signal_kind": "development_pipeline",
+      "title": "CARICOM: 6 active procurements \u2014 bidding window open"
+    },
+    {
+      "cluster_id": "CL-enhanced-investment-caribwide",
+      "confidence_display": "\ud83d\udfe1 Validation | Multi-country | Multi-source",
+      "confidence_score": 90,
+      "country_cluster": "Caribwide",
+      "decision": "Which verified opportunity to investigate for capital deployment or partnership entry",
+      "detail": "Guyana (860.3% change), Belize (701.0% change), St. Vincent and the Grenadines (88.2% change)",
+      "evidence": "Multi-country enhanced investment validated across 8 countries. Top magnitudes: Guyana (860.3% change), Belize (701.0% change), St. Vincent and the Grenadines (88.2% change).",
+      "evidence_grade": "B - cross-source",
+      "feedback_counts": {
+        "ignored": 3
+      },
+      "feedback_summary": "Feedback this cycle: 3 ignored.",
+      "freshness": "new",
+      "personas": [
+        {
+          "action": "Assess competitive positioning in Caribwide. FDI movement (Guyana (860.3% change), Belize (701.0% change), St. Vincent and the Grenadines (88.2% change)) signals growing market or incoming competition \u2014 evaluate local advantage before new entrants arrive.",
+          "channel": "Telegram",
+          "dispatch_id": "DSP-20260528-022",
+          "feedback_status": "ignored",
+          "persona": "Regional Founder/Operator",
+          "rationale": "Multi-source investment lift indicates growing market that may support new entry or expansion"
+        },
+        {
+          "action": "Route Caribwide opportunity to relevant founders and investors in your network. Signal strength (Guyana (860.3% change), Belize (701.0% change), St. Vincent and the Grenadines (88.2% change)) makes this a high-priority introduction target.",
+          "channel": "Telegram",
+          "dispatch_id": "DSP-20260528-021",
+          "feedback_status": "ignored",
+          "persona": "Ecosystem Builder",
+          "rationale": "Cross-country investment velocity signals where to focus ecosystem support and founder matching"
+        },
+        {
+          "action": "Investigate Caribwide as a capital deployment target this cycle. Multi-source validation (Guyana (860.3% change), Belize (701.0% change), St. Vincent and the Grenadines (88.2% change)) confirms directional signal \u2014 next step is operator discovery and market entry assessment.",
+          "channel": "Email brief + Telegram",
+          "dispatch_id": "DSP-20260528-020",
+          "feedback_status": "ignored",
+          "persona": "Diaspora Investor",
+          "rationale": "Multi-source validation reduces screening risk \u2014 capital follows verified signals"
+        }
+      ],
+      "risk_flags": [],
+      "signal_kind": "enhanced_investment",
+      "title": "Capital convergence: 8 Caribbean economies showing multi-source investment momentum"
+    },
+    {
+      "cluster_id": "CL-investment-signal-caribwide",
+      "confidence_display": "\ud83d\udfe1 Validation | Multi-country | Multi-source",
+      "confidence_score": 90,
+      "country_cluster": "Caribwide",
+      "decision": "Which country-sector pair to validate for investment readiness",
+      "detail": "Guyana (860.3% change), Belize (701.0% change), St. Vincent and the Grenadines (88.2% change)",
+      "evidence": "Multi-country investment signal validated across 8 countries. Top magnitudes: Guyana (860.3% change), Belize (701.0% change), St. Vincent and the Grenadines (88.2% change).",
+      "evidence_grade": "B - cross-source",
+      "feedback_counts": {
+        "ignored": 2
+      },
+      "feedback_summary": "Feedback this cycle: 2 ignored.",
+      "freshness": "new",
+      "personas": [
+        {
+          "action": "Assess competitive positioning in Caribwide. FDI movement (Guyana (860.3% change), Belize (701.0% change), St. Vincent and the Grenadines (88.2% change)) signals growing market or incoming competition \u2014 evaluate local advantage before new entrants arrive.",
+          "channel": "Telegram",
+          "dispatch_id": "DSP-20260528-004",
+          "feedback_status": "ignored",
+          "persona": "Regional Founder/Operator",
+          "rationale": "FDI movement in your operating country signals competition or demand growth \u2014 assess positioning"
+        },
+        {
+          "action": "Screen Caribwide for investment readiness. FDI movement (Guyana (860.3% change), Belize (701.0% change), St. Vincent and the Grenadines (88.2% change)) is a screening trigger \u2014 cross-reference with sector conditions before deploying capital.",
+          "channel": "Email brief + Telegram",
+          "dispatch_id": "DSP-20260528-003",
+          "feedback_status": "ignored",
+          "persona": "Diaspora Investor",
+          "rationale": "Single-source FDI movement is a screening trigger, not a deployment signal \u2014 start diligence"
+        }
+      ],
+      "risk_flags": [],
+      "signal_kind": "investment_signal",
+      "title": "Regional FDI snapshot: 8 countries with active capital movement"
+    },
+    {
+      "cluster_id": "CL-investment-signal-guyana",
+      "confidence_display": "\ud83d\udd34 Immediate | 90/100 | B - cross-source",
+      "confidence_score": 90,
+      "country_cluster": "Guyana",
+      "decision": "Which country-sector pair to validate for investment readiness",
+      "detail": "860.3% change",
+      "evidence": "Guyana: Foreign direct investment net inflows current USD moved up 860.3% from 2023 to 2024.",
+      "evidence_grade": "B - cross-source",
+      "feedback_counts": {
+        "ignored": 2
+      },
+      "feedback_summary": "Feedback this cycle: 2 ignored.",
+      "freshness": "sustained",
+      "personas": [
+        {
+          "action": "Assess competitive positioning in Guyana. FDI movement (860.3% change) signals growing market or incoming competition \u2014 evaluate local advantage before new entrants arrive.",
+          "channel": "Telegram",
+          "dispatch_id": "DSP-20260528-006",
+          "feedback_status": "ignored",
+          "persona": "Regional Founder/Operator",
+          "rationale": "FDI movement in your operating country signals competition or demand growth \u2014 assess positioning"
+        },
+        {
+          "action": "Screen Guyana for investment readiness. FDI movement (860.3% change) is a screening trigger \u2014 cross-reference with sector conditions before deploying capital.",
+          "channel": "Email brief + Telegram",
+          "dispatch_id": "DSP-20260528-005",
+          "feedback_status": "ignored",
+          "persona": "Diaspora Investor",
+          "rationale": "Single-source FDI movement is a screening trigger, not a deployment signal \u2014 start diligence"
+        }
+      ],
+      "risk_flags": [],
+      "signal_kind": "investment_signal",
+      "title": "Guyana: FDI trending at +860.3% \u2014 screening trigger active"
+    },
+    {
+      "cluster_id": "CL-investment-signal-belize",
+      "confidence_display": "\ud83d\udd34 Immediate | 90/100 | B - cross-source",
+      "confidence_score": 90,
+      "country_cluster": "Belize",
+      "decision": "Which country-sector pair to validate for investment readiness",
+      "detail": "701.0% change",
+      "evidence": "Belize: Foreign direct investment net inflows current USD moved up 701.0% from 2023 to 2024.",
+      "evidence_grade": "B - cross-source",
+      "feedback_counts": {
+        "ignored": 2
+      },
+      "feedback_summary": "Feedback this cycle: 2 ignored.",
+      "freshness": "sustained",
+      "personas": [
+        {
+          "action": "Assess competitive positioning in Belize. FDI movement (701.0% change) signals growing market or incoming competition \u2014 evaluate local advantage before new entrants arrive.",
+          "channel": "Telegram",
+          "dispatch_id": "DSP-20260528-008",
+          "feedback_status": "ignored",
+          "persona": "Regional Founder/Operator",
+          "rationale": "FDI movement in your operating country signals competition or demand growth \u2014 assess positioning"
+        },
+        {
+          "action": "Screen Belize for investment readiness. FDI movement (701.0% change) is a screening trigger \u2014 cross-reference with sector conditions before deploying capital.",
+          "channel": "Email brief + Telegram",
+          "dispatch_id": "DSP-20260528-007",
+          "feedback_status": "ignored",
+          "persona": "Diaspora Investor",
+          "rationale": "Single-source FDI movement is a screening trigger, not a deployment signal \u2014 start diligence"
+        }
+      ],
+      "risk_flags": [],
+      "signal_kind": "investment_signal",
+      "title": "Belize: FDI trending at +701.0% \u2014 screening trigger active"
+    },
+    {
+      "cluster_id": "CL-maritime-hazard-caribbean",
+      "confidence_display": "\ud83d\udfe1 Validation | 82/100 | B - cross-source",
+      "confidence_score": 82,
+      "country_cluster": "Caribbean",
+      "decision": "Maritime operations adjustment for safety and logistics routing",
+      "detail": "signal detected",
+      "evidence": "Buoy Eastern Caribbean (E of Barbados): 25 kts",
+      "evidence_grade": "B - cross-source",
+      "feedback_counts": {
+        "ignored": 2
+      },
+      "feedback_summary": "Feedback this cycle: 2 ignored.",
+      "freshness": "sustained",
+      "personas": [
+        {
+          "action": "Assess Caribbean demand trajectory. signal detected \u2014 adjust capacity plans.",
+          "channel": "Telegram",
+          "dispatch_id": "DSP-20260528-002",
+          "feedback_status": "ignored",
+          "persona": "Tourism/Logistics Operator",
+          "rationale": "Maritime hazards affect island supply chains and tourism transport schedules"
+        },
+        {
+          "action": "Prepare operational response: Caribbean. Action window: 48 hours. Evidence: signal detected",
+          "channel": "Telegram/SMS alert",
+          "dispatch_id": "DSP-20260528-001",
+          "feedback_status": "ignored",
+          "persona": "Operations/Resilience",
+          "rationale": "High-wind + marine alert confirmation requires safety response and shipping route adjustments"
+        }
+      ],
+      "risk_flags": [],
+      "signal_kind": "maritime_hazard",
+      "title": "Caribbean: signal detected"
+    },
+    {
+      "cluster_id": "CL-food-security-caricom",
+      "confidence_display": "\ud83d\udfe1 Validation | 80/100 | B - cross-source",
+      "confidence_score": 80,
+      "country_cluster": "CARICOM",
+      "decision": "Agricultural/logistics investment case or policy response planning",
+      "detail": "5%",
+      "evidence": "CARICOM food trade data: 18 datasets available",
+      "evidence_grade": "B - cross-source",
+      "feedback_counts": {
+        "ignored": 2
+      },
+      "feedback_summary": "Feedback this cycle: 2 ignored.",
+      "freshness": "sustained",
+      "personas": [
+        {
+          "action": "Signal context for CARICOM: 5%. Use this dispatch as a briefing input or narrative lead.",
+          "channel": "Telegram digest",
+          "dispatch_id": "DSP-20260528-016",
+          "feedback_status": "ignored",
+          "persona": "Policy/Media",
+          "rationale": "Food security is a regional stability indicator \u2014 tracks pressure points before they become crises"
+        },
+        {
+          "action": "Route CARICOM opportunity to relevant founders and investors in your network. Signal strength (5%) makes this a high-priority introduction target.",
+          "channel": "Telegram",
+          "dispatch_id": "DSP-20260528-015",
+          "feedback_status": "ignored",
+          "persona": "Ecosystem Builder",
+          "rationale": "Food trade data reveals supply chain gaps that local founders and agri-tech can fill"
+        }
+      ],
+      "risk_flags": [],
+      "signal_kind": "food_security",
+      "title": "CARICOM: food supply indicators shifting \u2014 supply chain implications"
+    },
+    {
+      "cluster_id": "CL-investment-signal-st-vincent-and-the-grenadines",
+      "confidence_display": "\ud83d\udfe1 Validation | 78/100 | B - cross-source",
+      "confidence_score": 78,
+      "country_cluster": "St. Vincent and the Grenadines",
+      "decision": "Which country-sector pair to validate for investment readiness",
+      "detail": "88.2% change",
+      "evidence": "St. Vincent and the Grenadines: Foreign direct investment net inflows current USD moved up 88.2% from 2023 to 2024.",
+      "evidence_grade": "B - cross-source",
+      "feedback_counts": {
+        "ignored": 2
+      },
+      "feedback_summary": "Feedback this cycle: 2 ignored.",
+      "freshness": "sustained",
+      "personas": [
+        {
+          "action": "Assess competitive positioning in St. Vincent and the Grenadines. FDI movement (88.2% change) signals growing market or incoming competition \u2014 evaluate local advantage before new entrants arrive.",
+          "channel": "Telegram",
+          "dispatch_id": "DSP-20260528-010",
+          "feedback_status": "ignored",
+          "persona": "Regional Founder/Operator",
+          "rationale": "FDI movement in your operating country signals competition or demand growth \u2014 assess positioning"
+        },
+        {
+          "action": "Screen St. Vincent and the Grenadines for investment readiness. FDI movement (88.2% change) is a screening trigger \u2014 cross-reference with sector conditions before deploying capital.",
+          "channel": "Email brief + Telegram",
+          "dispatch_id": "DSP-20260528-009",
+          "feedback_status": "ignored",
+          "persona": "Diaspora Investor",
+          "rationale": "Single-source FDI movement is a screening trigger, not a deployment signal \u2014 start diligence"
+        }
+      ],
+      "risk_flags": [],
+      "signal_kind": "investment_signal",
+      "title": "St. Vincent and the Grenadines: FDI trending at +88.2% \u2014 screening trigger active"
+    },
+    {
+      "cluster_id": "CL-economic-vulnerability-st-vincent-and-the-grenadines",
+      "confidence_display": "\ud83d\udfe2 Monitor | 69/100 | C - single-source",
+      "confidence_score": 69,
+      "country_cluster": "St. Vincent and the Grenadines",
+      "decision": "Risk assessment for capital exposure or policy attention",
+      "detail": "18.00%",
+      "evidence": "St. Vincent and the Grenadines: Unemployment % is 18.00% (2025).",
+      "evidence_grade": "C - single-source",
+      "feedback_counts": {
+        "decision_changed": 1,
+        "ignored": 1
+      },
+      "feedback_summary": "Feedback this cycle: 1 ignored, 1 changed a decision.",
+      "freshness": "sustained",
+      "personas": [
+        {
+          "action": "Signal context for St. Vincent and the Grenadines: 18.00%. Use this dispatch as a briefing input or narrative lead.",
+          "channel": "Telegram digest",
+          "dispatch_id": "DSP-20260528-014",
+          "feedback_status": "ignored",
+          "persona": "Policy/Media",
+          "rationale": "Economic stress indicators drive policy response and media narratives"
+        },
+        {
+          "action": "Assess portfolio exposure in St. Vincent and the Grenadines. Economic stress indicators (18.00%) may affect existing positions or timing.",
+          "channel": "Email brief + Telegram",
+          "dispatch_id": "DSP-20260528-013",
+          "feedback_status": "decision_changed",
+          "persona": "Diaspora Investor",
+          "rationale": "Vulnerability signals change risk profiles \u2014 reassess exposure and timing"
+        }
+      ],
+      "risk_flags": [
+        "Elevated economic stress in St. Vincent and the Grenadines"
+      ],
+      "signal_kind": "economic_vulnerability",
+      "title": "St. Vincent and the Grenadines: economic stress indicators rising \u2014 portfolio review recommended"
+    },
+    {
+      "cluster_id": "CL-economic-vulnerability-suriname",
+      "confidence_display": "\ud83d\udfe2 Monitor | 56/100 | C - single-source",
+      "confidence_score": 56,
+      "country_cluster": "Suriname",
+      "decision": "Risk assessment for capital exposure or policy attention",
+      "detail": "16.23%",
+      "evidence": "Suriname: Inflation annual % is 16.23% (2024).",
+      "evidence_grade": "C - single-source",
+      "feedback_counts": {
+        "ignored": 2
+      },
+      "feedback_summary": "Feedback this cycle: 2 ignored.",
+      "freshness": "sustained",
+      "personas": [
+        {
+          "action": "Signal context for Suriname: 16.23%. Use this dispatch as a briefing input or narrative lead.",
+          "channel": "Telegram digest",
+          "dispatch_id": "DSP-20260528-012",
+          "feedback_status": "ignored",
+          "persona": "Policy/Media",
+          "rationale": "Economic stress indicators drive policy response and media narratives"
+        },
+        {
+          "action": "Assess portfolio exposure in Suriname. Economic stress indicators (16.23%) may affect existing positions or timing.",
+          "channel": "Email brief + Telegram",
+          "dispatch_id": "DSP-20260528-011",
+          "feedback_status": "ignored",
+          "persona": "Diaspora Investor",
+          "rationale": "Vulnerability signals change risk profiles \u2014 reassess exposure and timing"
+        }
+      ],
+      "risk_flags": [
+        "Elevated economic stress in Suriname"
+      ],
+      "signal_kind": "economic_vulnerability",
+      "title": "Suriname: economic stress indicators rising \u2014 portfolio review recommended"
+    }
+  ],
+  "cycle_id": "20260528",
+  "dispatch_count": 31,
+  "generated_at": "2026-05-28 03:46 UTC",
+  "persona_count": 8,
+  "regional_thesis": "Capital momentum is strongest in Guyana (+860.3%), followed by Belize, St. Vincent and the Grenadines. However, St. Vincent and the Grenadines and Suriname also carry elevated vulnerability indicators \u2014 investment signals from these countries require deeper diligence before committing capital. Development pipeline remains active (CDB active procurement notices: 6) \u2014 the bidding window is open for project-based entry. Tourism-related growth signals are visible in Antigua and Barbuda, Guyana, St. Kitts and Nevis \u2014 demand-side indicators for capacity planning.",
+  "source_count": 2,
+  "why_now": [
+    "\ud83d\udfe2 **Tourism Shoulder Season** \u2014 Post-peak period. Early indicators of summer demand trajectory are most valuable now.",
+    "\ud83d\udd34 **Q2 Procurement Cycle** \u2014 CDB and IDB typically issue mid-year procurement rounds in Q2. Pipeline data especially actionable now."
+  ]
+}

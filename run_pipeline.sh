@@ -54,11 +54,14 @@ run_step "Feedback Apply" "python3 \"$ROOT/packagers/feedback_loop.py\" apply" "
 
 # ── Packaging agents ─────────────────────────────────────
 run_step "Channel Outputs" "python3 \"$ROOT/packagers/build_channel_outputs.py\"" "channel_outputs"
-
-# ── Distribution delta (outputs new content for cron delivery) ──
-run_step "Outbox Delta" "python3 \"$ROOT/distributors/delta_outbox.py\"" "delta_outbox"
+# ── Distribution delta ─────────────────────────────────────
+# Intentionally not run here. Cron wrappers call distributors/delta_outbox.py
+# once after this pipeline completes, so the hash gate is not consumed before
+# Hermes can deliver the human-facing notification.
 
 run_step "Opportunity Dispatch" "python3 \"$ROOT/packagers/opportunity_dispatch.py\"" "opportunity_dispatch"
+run_step "Dispatch Desk" "python3 \"$ROOT/packagers/dispatch_desk.py\"" "dispatch_desk"
+run_step "Telegram Brief" "python3 \"$ROOT/packagers/telegram_brief.py\"" "telegram_brief"
 
 # ── Action Proof: Dispatch Packets & Delivery Manifest ───
 run_step "Dispatch Packets" "python3 \"$ROOT/packagers/dispatch_packet_generator.py\"" "dispatch_packets"

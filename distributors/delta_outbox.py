@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
-"""Delta distributor for packaged outbox deliverables.
+"""Delta distributor for the cron-delivered Telegram pulse.
 
-Tracks the content hash of each outbox file. Outputs changed content
-to stdout for cron delivery. Silent when nothing has changed.
-
-Used by the full-pipeline cron job to deliver only-new Telegram digests,
-investor briefs, and diaspora posts.
+Tracks the content hash of the short human-facing brief and prints it to stdout
+only when it changes. Hermes cron delivers stdout verbatim; empty stdout stays
+silent. Deep-dive artifacts remain in outbox/ but are linked from the brief
+rather than dumped into Telegram.
 """
 
 from __future__ import annotations
@@ -22,11 +21,10 @@ ROOT = Path(__file__).resolve().parents[1]
 STATE_FILE = ROOT / "data" / "outbox" / ".sent_digests.json"
 OUTBOX_DIR = ROOT / "outbox"
 
-# Files to track for delivery — in priority order
+# Files to track for delivery — in priority order.
+# Keep this narrow: cron output is the product surface, not a raw artifact dump.
 TRACKED_FILES = [
-    "telegram_digest.md",
-    "investor_brief.md",
-    "diaspora_post.md",
+    "telegram_brief.md",
 ]
 
 
@@ -77,12 +75,7 @@ def run() -> int:
             # File has changed — output its content for delivery
             content = filepath.read_text(encoding="utf-8").strip()
             if content:
-                print(f"📬 {filename}", flush=True)
-                print("", flush=True)
                 print(content, flush=True)
-                print("", flush=True)
-                print("---", flush=True)
-                print("", flush=True)
                 changed_count += 1
             state[filename] = current_hash
 

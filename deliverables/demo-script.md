@@ -2,23 +2,32 @@
 
 ## One-liner
 
-Caribbean Opportunity Dispatch turns fragmented Caribbean public data into routed opportunity and risk dispatches for the people who can act on them.
+Caribbean Opportunity Dispatch turns fragmented Caribbean public data into decision-ready routes: what changed, who should act, what they should do next, and how feedback changes the next cycle.
 
 ## 2-Minute Flow
 
-1. **Problem**: Caribbean data exists across institutions, countries, and formats. That makes regional opportunities hard to see and slow to act on. Existing tools (portals, newsletters, dashboards) stop at data or context — none of them run a repeatable pipeline that ends in a routed decision.
+1. **Problem**: Caribbean opportunity data exists across institutions, countries, and formats. That makes regional opportunities hard to see and slow to act on. Existing tools stop at portals, newsletters, or dashboards; they do not run a repeatable pipeline that ends in routed decisions.
 
-2. **System**: Six watchers monitor World Bank, IDB, NOAA, NDBC, CARICOM, and CDB. A cross-source merger converts raw updates into composite intelligence signals. Editorial enrichment ranks, narrates, and routes them.
+2. **System**: Six watchers monitor World Bank, IDB, NOAA, NDBC, CARICOM, and CDB. A cross-source merger turns raw updates into composite signals. Editorial enrichment scores, narrates, and prepares them for routing.
 
-3. **Product**: Opportunity dispatches are the output — each dispatch targets a persona (diaspora investor, ecosystem builder, regional operator, procurement watcher, policy/media), specifies a channel (email, Telegram), names the decision it should trigger, and records whether it was acted on.
+3. **Product**: The Dispatch Desk groups repeated routes into decision clusters. Each cluster shows the signal, evidence, confidence, why-now context, persona routes, recommended action, delivery channel, and feedback status.
 
-4. **Why Now**: Editorial calendar context (Q2 procurement cycle, tourism shoulder season) anchors each dispatch in real timing.
+4. **Distribution**: Persona packets and a delivery manifest prove the last mile. Telegram/email are adapters; the product is the decision route.
 
-5. **Regional Thesis**: Cross-cluster synthesis connects investment momentum, risk flags, development pipeline, and timing into one actionable narrative each cycle.
+5. **Feedback Loop**: Dispatches accumulate opens, forwards, replies, ignores, and decision-change markers. Boosts persist with decay, so the next cycle ranks similar signals differently.
 
-6. **Feedback Loop**: Dispatches accumulate opens, forwards, replies, and decision-change signals. Boosts persist with decay — the system learns which signals create action.
+6. **Ask the Dispatch Desk**: The dashboard includes an analyst rail for interrogating the cycle without reading every artifact. Click "Explain lead signal" or "Investor actions", or type a question like "draft Guyana investor note". Answers are deterministic, local, and cite artifact sources.
 
-7. **Operator Console**: The dashboard is an internal health view, not the product. It confirms the pipeline is alive — the product is in outbox/artifacts.
+7. **Operator Audit**: The lower dashboard sections confirm the pipeline is alive: source health, dispatch counts, manifest state, packets, and feedback state.
+
+## Headless query CLI
+
+```bash
+python3 agent/query.py explain-lead
+python3 agent/query.py ask "what changed this cycle"
+python3 agent/query.py ask "show investor actions"
+python3 agent/query.py ask "draft Belize investor note"
+```
 
 ## Command
 
@@ -28,10 +37,18 @@ bash run_pipeline.sh
 
 ## Files To Open During Demo (in order)
 
-1. `outbox/opportunity_dispatches.md` — the product: routed persona/action dispatches
-2. `outbox/regional_thesis.md` — cross-cluster synthesis narrative
-3. `outbox/why_now.md` — editorial calendar context
-4. `outbox/feedback_review.md` — feedback/learning loop
-5. `outbox/channel_dispatch_log.md` — distribution routing
-6. `outbox/judge_brief.md` — system intelligence + routing rationale
-7. `dashboard.html` — internal operator console (last, to confirm pipeline health)
+1. `dashboard.html` — start here: Dispatch Desk product view at top, operator audit below
+2. `outbox/dispatch_desk.md` — judge/user-facing decision clusters in markdown
+3. `outbox/dispatch_packets/diaspora_investor.md` — persona-specific delivery packet
+4. `outbox/delivery_manifest.json` — channel handoff proof
+5. `outbox/feedback_review.md` — feedback/learning loop
+6. `outbox/regional_thesis.md` and `outbox/why_now.md` — synthesis and timing context
+7. `outbox/opportunity_dispatches.json` — canonical route data if judges want to inspect internals
+
+## Demo Close
+
+The Track 08 claim is not “we built a dashboard.” The claim is:
+
+Data → Signal → Packaging → Distribution → Action → Capital
+
+The Dispatch Desk makes that chain visible in one place. It shows how fragmented public regional data becomes a specific action for a specific person, with evidence and feedback attached.

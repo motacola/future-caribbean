@@ -46,7 +46,8 @@ public data -> watchers -> normalized records -> reasoning merger -> composite s
 
 | Artifact | What it is |
 |---|---|
-| `outbox/opportunity_dispatches.md` | Routed dispatches with persona, channel, action, and feedback status |
+| `outbox/dispatch_desk.md` | Primary Track 08 product surface: grouped decision clusters with persona routes, evidence, action, and feedback |
+| `outbox/opportunity_dispatches.md` | Canonical routed dispatches with persona, channel, action, and feedback status |
 | `outbox/regional_thesis.md` | Cross-cluster synthesis — investment, risk, pipeline, tourism in one narrative |
 | `outbox/why_now.md` | Editorial calendar context — seasonal windows, procurement cycles, etc. |
 | `outbox/judge_brief.md` | Full system intelligence brief with routing rationale |
@@ -92,12 +93,44 @@ Manual feedback intake:
 
 ```bash
 python3 packagers/feedback_intake.py --dispatch-id DSP-20260526-001 --status forwarded --note "Forwarded to investor partner"
-python3 packagers/feedback_loop.py apply
+python3 dashboard/generate.py
 ```
 
-## Delivery
+Headless Dispatch Desk query:
 
-All watchers run on cron with noise-gated packaging and delivery. See `architecture/cron.md`. The system produces opportunities, not alerts — every dispatch names a specific persona, a channel, an action, and a decision it supports. The dispatch packet and delivery manifest layers prove the last mile before external channel integration.
+```bash
+python3 agent/query.py explain-lead
+python3 agent/query.py ask "show investor actions"
+python3 agent/query.py ask "what changed this cycle"
+python3 agent/query.py ask "draft Belize investor note"
+```
+
+## Delivery and user interaction
+
+All watchers run on cron with noise-gated packaging and delivery. See `architecture/cron.md`. The primary user/judge-facing surface is `outbox/dispatch_desk.md` and the top Dispatch Desk section in `dashboard.html`: decision clusters grouped by signal, with persona-specific routes underneath.
+
+The dashboard includes an **Ask the Dispatch Desk** analyst rail. It is deterministic and local for now: answers come from `outbox/dispatch_desk.json` and cite local artifacts. This keeps the demo reliable while leaving a clean path to a future headless LLM/API layer. The headless query CLI (`agent/query.py`) exposes the same logic for CLI, Telegram, and future API clients.
+
+Telegram and email are **delivery adapters**, not the product. The cron-delivered `outbox/telegram_brief.md` is a compact notification that points back to the Dispatch Desk when the desk changes.
+
+The Dispatch Desk is organized around Track 08's chain:
+
+- **Data** — public source families feeding the cycle
+- **Signal** — decision clusters grouped from repeated persona routes
+- **Packaging** — evidence grade, confidence, why-now context, risk flags
+- **Distribution** — persona route + channel + delivery manifest
+- **Action** — recommended next step for each recipient
+- **Capital** — investor/operator/procurement decisions: investigate, bid, pause, partner, or route
+
+Deep-dive artifacts remain in `outbox/`:
+
+- `outbox/dispatch_desk.md` — primary decision desk
+- `outbox/opportunity_dispatches.json` — canonical route data
+- `outbox/dispatch_packets/*.md` — persona-ready packets
+- `outbox/regional_thesis.md` — full regional read
+- `outbox/investor_brief.md` — investor-facing detail
+
+The system produces opportunities, not alerts — every dispatch names a specific persona, a channel, an action, and a decision it supports. The dispatch packet and delivery manifest layers prove the last mile before external channel integration.
 
 ## Deployment
 

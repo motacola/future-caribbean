@@ -1,0 +1,223 @@
+{
+  "cycle_intro": "Lead: Belize. 2 converging signal(s) across 4 source(s). Signals: \ud83d\udcbc Investment + \ud83d\udc8e Investment.",
+  "generated_at": "2026-05-28 03:46 UTC",
+  "items": [
+    {
+      "band": "immediate",
+      "channel": "Email brief + Telegram",
+      "country": "Barbados",
+      "freshness": "sustained",
+      "kind": "enhanced_investment",
+      "metrics": {
+        "decision_changed": null,
+        "forwarded": null,
+        "opened": null,
+        "reply_count": null,
+        "sent": false
+      },
+      "persona": "investor/founder",
+      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
+      "score": 100,
+      "signal_id": "enhanced-invest-barbados"
+    },
+    {
+      "band": "immediate",
+      "channel": "Email brief + Telegram",
+      "country": "Belize",
+      "freshness": "sustained",
+      "kind": "enhanced_investment",
+      "metrics": {
+        "decision_changed": null,
+        "forwarded": null,
+        "opened": null,
+        "reply_count": null,
+        "sent": false
+      },
+      "persona": "investor/founder",
+      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
+      "score": 100,
+      "signal_id": "enhanced-invest-belize"
+    },
+    {
+      "band": "immediate",
+      "channel": "Email brief + Telegram",
+      "country": "Dominica",
+      "freshness": "sustained",
+      "kind": "enhanced_investment",
+      "metrics": {
+        "decision_changed": null,
+        "forwarded": null,
+        "opened": null,
+        "reply_count": null,
+        "sent": false
+      },
+      "persona": "investor/founder",
+      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
+      "score": 100,
+      "signal_id": "enhanced-invest-dominica"
+    },
+    {
+      "band": "immediate",
+      "channel": "Email brief + Telegram",
+      "country": "CARICOM",
+      "freshness": "sustained",
+      "kind": "development_pipeline",
+      "metrics": {
+        "decision_changed": null,
+        "forwarded": null,
+        "opened": null,
+        "reply_count": null,
+        "sent": false
+      },
+      "persona": "investor/founder",
+      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
+      "score": 96,
+      "signal_id": "dev-pipeline-regional"
+    },
+    {
+      "band": "immediate",
+      "channel": "Email brief + Telegram",
+      "country": "Guyana",
+      "freshness": "sustained",
+      "kind": "investment_signal",
+      "metrics": {
+        "decision_changed": null,
+        "forwarded": null,
+        "opened": null,
+        "reply_count": null,
+        "sent": false
+      },
+      "persona": "investor/founder",
+      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
+      "score": 90,
+      "signal_id": "invest-guyana"
+    },
+    {
+      "band": "validation",
+      "channel": "Telegram/SMS alert",
+      "country": "Caribbean",
+      "freshness": "new",
+      "kind": "maritime_hazard",
+      "metrics": {
+        "decision_changed": null,
+        "forwarded": null,
+        "opened": null,
+        "reply_count": null,
+        "sent": false
+      },
+      "persona": "operator/resilience",
+      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
+      "score": 82,
+      "signal_id": "maritime-42058"
+    },
+    {
+      "band": "validation",
+      "channel": "Email brief + Telegram",
+      "country": "St. Kitts and Nevis",
+      "freshness": "sustained",
+      "kind": "investment_signal",
+      "metrics": {
+        "decision_changed": null,
+        "forwarded": null,
+        "opened": null,
+        "reply_count": null,
+        "sent": false
+      },
+      "persona": "investor/founder",
+      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
+      "score": 78,
+      "signal_id": "invest-st.-kitts-and-nevis"
+    },
+    {
+      "band": "validation",
+      "channel": "Email brief + Telegram",
+      "country": "Trinidad and Tobago",
+      "freshness": "sustained",
+      "kind": "investment_signal",
+      "metrics": {
+        "decision_changed": null,
+        "forwarded": null,
+        "opened": null,
+        "reply_count": null,
+        "sent": false
+      },
+      "persona": "investor/founder",
+      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
+      "score": 78,
+      "signal_id": "invest-trinidad-and-tobago"
+    },
+    {
+      "band": "monitor",
+      "channel": "Telegram digest",
+      "country": "St. Vincent and the Grenadines",
+      "freshness": "sustained",
+      "kind": "economic_vulnerability",
+      "metrics": {
+        "decision_changed": null,
+        "forwarded": null,
+        "opened": null,
+        "reply_count": null,
+        "sent": false
+      },
+      "persona": "policy/operator",
+      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
+      "score": 69,
+      "signal_id": "vuln-st.-vincent-and-the-grenadines"
+    },
+    {
+      "band": "monitor",
+      "channel": "Telegram digest",
+      "country": "Suriname",
+      "freshness": "sustained",
+      "kind": "economic_vulnerability",
+      "metrics": {
+        "decision_changed": null,
+        "forwarded": null,
+        "opened": null,
+        "reply_count": null,
+        "sent": false
+      },
+      "persona": "policy/operator",
+      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
+      "score": 56,
+      "signal_id": "vuln-suriname"
+    },
+    {
+      "band": "context",
+      "channel": "Telegram digest",
+      "country": "Antigua and Barbuda",
+      "freshness": "sustained",
+      "kind": "tourism_impact",
+      "metrics": {
+        "decision_changed": null,
+        "forwarded": null,
+        "opened": null,
+        "reply_count": null,
+        "sent": false
+      },
+      "persona": "tourism operator",
+      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
+      "score": 47,
+      "signal_id": "tourism-antigua-and-barbuda"
+    },
+    {
+      "band": "immediate",
+      "channel": "Email brief + Telegram",
+      "country": "Guyana",
+      "freshness": "sustained",
+      "kind": "enhanced_investment",
+      "metrics": {
+        "decision_changed": null,
+        "forwarded": null,
+        "opened": null,
+        "reply_count": null,
+        "sent": false
+      },
+      "persona": "investor/founder",
+      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
+      "score": 100,
+      "signal_id": "enhanced-invest-guyana"
+    }
+  ],
+  "purpose": "Feedback agent input queue for distribution performance and trust signals."
+}

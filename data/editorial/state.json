@@ -1,7 +1,8 @@
 {
-  "previous_run": "2026-05-26T20:59:44.848064+00:00",
+  "previous_run": "2026-05-28T03:46:44.617174+00:00",
   "previous_lead_country": "Belize",
   "previous_signal_ids": [
+    "maritime-42058",
     "invest-barbados",
     "invest-belize",
     "invest-dominica",
@@ -29,6 +30,7 @@
     "enhanced-invest-st.-vincent-and-the-grenadines"
   ],
   "previous_top_scores": {
+    "maritime-42058": 82,
     "invest-barbados": 78,
     "invest-belize": 90,
     "invest-dominica": 74,
@@ -38,14 +40,14 @@
     "invest-trinidad-and-tobago": 78,
     "invest-st.-vincent-and-the-grenadines": 78,
     "vuln-suriname": 56,
-    "vuln-st.-vincent-and-the-grenadines": 68,
+    "vuln-st.-vincent-and-the-grenadines": 69,
     "tourism-antigua-and-barbuda": 47,
-    "tourism-guyana": 51,
+    "tourism-guyana": 47,
     "tourism-st.-kitts-and-nevis": 47,
     "tourism-suriname": 47,
     "tourism-st.-vincent-and-the-grenadines": 47,
     "food-security-regional": 80,
-    "dev-pipeline-regional": 95,
+    "dev-pipeline-regional": 96,
     "enhanced-invest-barbados": 100,
     "enhanced-invest-belize": 100,
     "enhanced-invest-dominica": 100,
@@ -56,6 +58,7 @@
     "enhanced-invest-st.-vincent-and-the-grenadines": 100
   },
   "previous_summaries": {
+    "maritime-42058": "Small craft advisory active with 25 kts wind at Eastern Caribbean (E of Barbados)",
     "invest-barbados": "Barbados: FDI surge detected with active IDB development datasets available",
     "invest-belize": "Belize: FDI surge detected with active IDB development datasets available",
     "invest-dominica": "Dominica: FDI surge detected with active IDB development datasets available",
@@ -71,7 +74,7 @@
     "tourism-st.-kitts-and-nevis": "St. Kitts and Nevis: strong GDP growth (GDP current USD moved up 6.3% from 2023 to 2024.) \u2014 positive tourism context",
     "tourism-suriname": "Suriname: strong GDP growth (GDP current USD moved up 27.2% from 2023 to 2024.) \u2014 positive tourism context",
     "tourism-st.-vincent-and-the-grenadines": "St. Vincent and the Grenadines: strong GDP growth (GDP current USD moved up 7.9% from 2023 to 2024.) \u2014 positive tourism context",
-    "food-security-regional": "Regional food trade monitoring active: 21 datasets \u2014 elevated inflation in Antigua and Barbuda, Jamaica, Suriname",
+    "food-security-regional": "Regional food trade monitoring active: 18 datasets \u2014 elevated inflation in Antigua and Barbuda, Jamaica, Suriname",
     "dev-pipeline-regional": "Active development pipeline: 6 CDB procurements + 7 IDB infrastructure datasets",
     "enhanced-invest-barbados": "Barbados: FDI surge (WB) + supporting context from CARICOM/CDB data availability (3/3 signals)",
     "enhanced-invest-belize": "Belize: FDI surge (WB) + supporting context from CARICOM/CDB data availability (3/3 signals)",

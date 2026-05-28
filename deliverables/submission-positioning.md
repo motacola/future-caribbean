@@ -28,28 +28,29 @@ Caribbean Opportunity Dispatch (product) / Caribbean Signal OS (architecture) ma
 ## What We Should Demo (in order)
 
 1. Run `bash run_pipeline.sh` — show the pipeline executing end-to-end
-2. Open `outbox/opportunity_dispatches.md` — the product: routed dispatches with persona, channel, action, feedback status
-3. Open `outbox/regional_thesis.md` — cross-cluster synthesis (investment + risk + pipeline + tourism + timing)
-4. Open `outbox/why_now.md` — editorial calendar context for the current cycle
-5. Open `outbox/feedback_review.md` — feedback loop: what was forwarded, replied to, opened, or changed a decision
-6. Open `outbox/dispatch_packets/diaspora_investor.md` — persona-specific packet with action checklist and feedback options
-7. Open `outbox/delivery_manifest.json` — channel-ready delivery manifest, one entry per dispatch
-8. Open `outbox/channel_dispatch_log.md` — distribution routing by channel
-9. Open `outbox/judge_brief.md` — full system brief with routing rationale
-10. Run `python3 packagers/feedback_intake.py --list` — show CLI feedback intake working
-11. Open `dashboard.html` — internal operator console (last, to confirm pipeline health)
+2. Open `dashboard.html` — start with the Dispatch Desk product view, then scroll to operator/audit health
+3. Open `outbox/dispatch_desk.md` — the primary Track 08 surface: decision clusters, persona routes, evidence, action, feedback
+4. Open `outbox/dispatch_packets/diaspora_investor.md` — persona-specific packet with action checklist and feedback options
+5. Open `outbox/delivery_manifest.json` — channel-ready delivery manifest, one entry per dispatch
+6. Open `outbox/feedback_review.md` — feedback loop: what was forwarded, replied to, opened, or changed a decision
+7. Open `outbox/regional_thesis.md` and `outbox/why_now.md` — cross-cluster synthesis and timing context
+8. Run `python3 packagers/feedback_intake.py --list` — show CLI feedback intake working
+9. Open `outbox/opportunity_dispatches.json` only if judges want the canonical route data
 
 ## Product Framing
 
 **Caribbean Opportunity Dispatch** is the first product surface:
 
-- Routed dispatches for five personas: diaspora investor, ecosystem builder, regional operator, procurement watcher, policy/media
+- Routed decision clusters for seven personas: diaspora investor, founder/operator, ecosystem builder, regional operator, procurement watcher, policy/media, tourism/logistics
+- Dispatch Desk view that groups repeated persona routes under one signal so the decision, evidence, action, and feedback are visible at once
 - Persona-specific packet files that show exactly what each recipient receives
 - Delivery manifest that proves dispatches can move into channel adapters
 - Each dispatch names a specific decision: investigate, validate, route, monitor, assess, or track
 - Feedback loop learns which signals create action and adjusts future cycles
 - Regional thesis synthesizes all signals into one actionable narrative
 - Why-now context anchors every dispatch in seasonal and institutional timing
+- Ask the Dispatch Desk analyst rail for drilldowns, evidence explanations, persona filters, and copyable draft briefs
+- Headless query CLI (`agent/query.py`) so web, CLI, Telegram, and future API clients can share the same deterministic intelligence layer
 
 ## Competition Gap
 
