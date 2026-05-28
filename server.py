@@ -52,6 +52,9 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
         if path == "/api/pipeline/stream":
             self._api_pipeline_stream()
             return
+        if path == "/api/whatsapp/link":
+            self._api_whatsapp_link()
+            return
 
         # Block internal paths
         clean = path.lstrip("/")
@@ -72,8 +75,8 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
 
         if path == "/api/send/telegram":
             self._api_send("telegram")
-        elif path == "/api/send/whatsapp":
-            self._api_send("whatsapp")
+        elif path == "/api/whatsapp/link":
+            self._api_whatsapp_link()
         else:
             self.send_error(404)
 
@@ -147,19 +150,15 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
             "server_time": datetime.now(timezone.utc).isoformat(),
         })
 
-    # ── /api/send/{channel} ────────────────────────────────────
+    # ── /api/send/telegram ─────────────────────────────────────
 
     def _api_send(self, channel: str) -> None:
-        script_map = {
-            "telegram": APP_DIR / "distributors" / "telegram_sender.py",
-            "whatsapp": APP_DIR / "distributors" / "whatsapp_sender.py",
-        }
-        script = script_map.get(channel)
-        if not script or not script.exists():
-            self._json({"ok": False, "error": f"{channel} sender not found"}, 404)
+        script = APP_DIR / "distributors" / "telegram_sender.py"
+        if not script.exists():
+            self._json({"ok": False, "error": "telegram_sender.py not found"}, 404)
             return
 
-        # Check for credentials; run live if present, dry-run otherwise
+        # Load .env if present; use live mode if token present, else dry-run
         env = os.environ.copy()
         env_path = APP_DIR / ".env"
         if env_path.exists():
@@ -169,10 +168,7 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
                     k, _, v = raw.partition("=")
                     env.setdefault(k.strip(), v.strip())
 
-        has_creds = (
-            (channel == "telegram" and env.get("TELEGRAM_BOT_TOKEN"))
-            or (channel == "whatsapp" and env.get("TWILIO_ACCOUNT_SID"))
-        )
+        has_creds = bool(env.get("TELEGRAM_BOT_TOKEN"))
         flags = [] if has_creds else ["--dry-run"]
 
         try:
@@ -184,7 +180,7 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
             output = (result.stdout or "") + (result.stderr or "")
             self._json({
                 "ok": result.returncode == 0,
-                "channel": channel,
+                "channel": "telegram",
                 "mode": "live" if has_creds else "dry-run",
                 "output": output[:800].strip(),
                 "timestamp": datetime.now(timezone.utc).isoformat(),
@@ -193,6 +189,57 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
             self._json({"ok": False, "error": "Timeout after 25s"}, 504)
         except Exception as exc:
             self._json({"ok": False, "error": str(exc)}, 500)
+
+    # ── /api/whatsapp/link ─────────────────────────────────────
+
+    def _api_whatsapp_link(self) -> None:
+        """Return a pre-filled wa.me share link built from the live dispatch."""
+        import urllib.parse
+
+        desk: dict = {}
+        desk_p = APP_DIR / "outbox" / "dispatch_desk.json"
+        if desk_p.exists():
+            try:
+                desk = json.loads(desk_p.read_text())
+            except Exception:
+                pass
+
+        clusters = desk.get("clusters", [])
+        lead = clusters[0] if clusters else {}
+        country = lead.get("country_cluster", "Caribbean")
+        title = lead.get("title", "")
+
+        # Extract percentage if present
+        import re
+        pct_m = re.search(r"([+\-]?\d+\.?\d*)%", title)
+        pct = pct_m.group(0) if pct_m else ""
+
+        lines = [
+            f"🌴 *Caribbean Opportunity Signal*",
+            f"",
+            f"*Lead market: {country}*",
+            f"Signal: {pct} capital movement (World Bank data)" if pct else f"Signal: Capital momentum detected",
+            f"",
+            f"Who should act: Diaspora investors, regional founders, ecosystem builders.",
+            f"",
+            f"Next step: Screen {country} first. Validate sector fit and local partners before committing.",
+            f"",
+            f"_Screening signal only. Not investment advice._",
+            f"",
+            f"Full brief: https://future-caribbean.fly.dev",
+        ]
+        msg = "\n".join(lines)
+
+        # wa.me uses plain text (no markdown)
+        plain = msg.replace("*", "").replace("_", "")
+        link = "https://wa.me/?text=" + urllib.parse.quote(plain)
+
+        self._json({
+            "ok": True,
+            "link": link,
+            "preview": plain[:300],
+            "country": country,
+        })
 
     # ── /api/pipeline/stream (SSE) ─────────────────────────────
 

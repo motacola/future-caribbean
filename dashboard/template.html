@@ -221,7 +221,7 @@ footer { border-top: 1px solid var(--border); padding: 24px; text-align: center;
     <span class="demo-label">Live demo</span>
     <button class="dbtn dbtn-gold" id="btn-pipeline" onclick="triggerPipeline()">▶ Run Pipeline</button>
     <button class="dbtn dbtn-teal" id="btn-tg" onclick="sendToChannel('telegram')">✈ Send Telegram</button>
-    <button class="dbtn" id="btn-wa" onclick="sendToChannel('whatsapp')">📱 Send WhatsApp</button>
+    <button class="dbtn" id="btn-wa" onclick="openWhatsApp()">📱 Share WhatsApp</button>
     <span class="demo-spacer"></span>
     <span class="demo-live"><span class="live-dot"></span><span id="demo-status-txt">Live · refreshing…</span></span>
   </div>
@@ -328,7 +328,7 @@ Next: Screen Guyana, then compare Belize + St. Vincent.
 Screening signal only. Not investment advice.
 
 Full brief: [link]</div>
-      <div class="out-foot"><button class="send-btn" id="send-wa" onclick="sendToChannel('whatsapp')">Send to WhatsApp ↗</button></div>
+      <div class="out-foot"><button class="send-btn" id="send-wa" onclick="openWhatsApp()">Share via WhatsApp ↗</button></div>
     </div>
     <div class="out">
       <div class="out-head"><h4>🏛️ Policy Brief</h4><div class="out-ch">Email / document</div></div>
@@ -536,10 +536,9 @@ function triggerPipeline() {
   };
 }
 
-// ── Channel sender ──────────────────────────────────────────
+// ── Telegram sender ─────────────────────────────────────────
 function sendToChannel(channel) {
-  const btnIds = { telegram: ['btn-tg', 'send-tg'], whatsapp: ['btn-wa', 'send-wa'] };
-  const ids = btnIds[channel] || [];
+  const ids = ['btn-tg', 'send-tg'];
   const receipt = document.getElementById('send-receipt');
 
   ids.forEach(function(id) {
@@ -547,22 +546,21 @@ function sendToChannel(channel) {
     if (b) { b.disabled = true; b.textContent = '⏳ Sending…'; }
   });
 
-  fetch('/api/send/' + channel, { method: 'POST' })
+  fetch('/api/send/telegram', { method: 'POST' })
     .then(function(r) { return r.json(); })
     .then(function(r) {
       if (!receipt) return;
-      const ch = channel === 'telegram' ? '✈ Telegram' : '📱 WhatsApp';
-      const modeTag = r.mode === 'live' ? 'live send' : 'dry-run (add credentials to .env to send live)';
+      const modeTag = r.mode === 'live' ? 'live send' : 'dry-run · add TELEGRAM_BOT_TOKEN to .env to send live';
       if (r.ok) {
         receipt.className = 'send-receipt sr-ok';
-        receipt.innerHTML = '<strong>' + ch + ' dispatch sent</strong> · ' + modeTag +
+        receipt.innerHTML = '<strong>✈ Telegram dispatch sent</strong> · ' + modeTag +
           ' · <span style="font-size:11px;opacity:.7">' + new Date().toLocaleTimeString() + '</span>' +
-          (r.output ? '<br><code style="font-size:11px;display:block;margin-top:6px;opacity:.8">' +
-            r.output.replace(/</g,'&lt;').split('\n').slice(0,3).join('<br>') + '</code>' : '');
+          (r.output ? '<br><code style="font-size:11px;display:block;margin-top:6px;opacity:.8;white-space:pre-wrap">' +
+            r.output.replace(/</g,'&lt;').split('\n').slice(0,4).join('\n') + '</code>' : '');
       } else {
         receipt.className = 'send-receipt sr-err';
-        receipt.innerHTML = '⚠️ <strong>' + ch + '</strong>: ' + (r.error || 'Send failed') +
-          '<br><small style="opacity:.7">Add credentials to .env to enable live delivery</small>';
+        receipt.innerHTML = '⚠️ <strong>Telegram</strong>: ' + (r.error || 'Send failed') +
+          '<br><small style="opacity:.7">Add TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID to .env</small>';
       }
       receipt.style.display = 'block';
       receipt.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -575,15 +573,50 @@ function sendToChannel(channel) {
       }
     })
     .finally(function() {
-      const labels = { telegram: '✈ Send Telegram', whatsapp: '📱 Send WhatsApp' };
-      const cardLabels = { telegram: 'Send to Telegram ↗', whatsapp: 'Send to WhatsApp ↗' };
       ids.forEach(function(id) {
         const b = document.getElementById(id);
         if (b) {
           b.disabled = false;
-          b.textContent = b.id.startsWith('btn-') ? labels[channel] : cardLabels[channel];
+          b.textContent = id === 'btn-tg' ? '✈ Send Telegram' : 'Send to Telegram ↗';
         }
       });
+    });
+}
+
+// ── WhatsApp share (wa.me pre-filled link) ──────────────────
+function openWhatsApp() {
+  const btnBar = document.getElementById('btn-wa');
+  const btnCard = document.getElementById('send-wa');
+  const receipt = document.getElementById('send-receipt');
+  if (btnBar) { btnBar.disabled = true; btnBar.textContent = '⏳ Building…'; }
+  if (btnCard) { btnCard.disabled = true; btnCard.textContent = 'Building…'; }
+
+  fetch('/api/whatsapp/link')
+    .then(function(r) { return r.json(); })
+    .then(function(r) {
+      if (r.ok && r.link) {
+        window.open(r.link, '_blank', 'noopener');
+        if (receipt) {
+          receipt.className = 'send-receipt sr-ok';
+          receipt.innerHTML = '📱 <strong>WhatsApp opened</strong> · pre-filled dispatch for ' + (r.country || 'Caribbean') +
+            ' · message ready to send in WhatsApp' +
+            (r.preview ? '<br><code style="font-size:11px;display:block;margin-top:6px;opacity:.8;white-space:pre-wrap">' +
+              r.preview.replace(/</g,'&lt;').substring(0,200) + '…</code>' : '');
+          receipt.style.display = 'block';
+          receipt.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      }
+    })
+    .catch(function() {
+      // Fallback: build a basic wa.me link client-side
+      const msg = '🌴 Caribbean Opportunity Signal\n\nLead: ' + (D.lead.country || 'Caribbean') +
+        (D.lead.pct ? ' · ' + D.lead.pct + ' capital movement' : '') +
+        '\n\nFull brief: https://future-caribbean.fly.dev';
+      window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+    })
+    .finally(function() {
+      if (btnBar) { btnBar.disabled = false; btnBar.textContent = '📱 Share WhatsApp'; }
+      if (btnCard) { btnCard.disabled = false; btnCard.textContent = 'Share via WhatsApp ↗'; }
     });
 }
 </script>
