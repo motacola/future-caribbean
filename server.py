@@ -1,50 +1,59 @@
 #!/usr/bin/env python3
-"""Serve dashboard and run pipeline on a schedule."""
+"""Serve Caribbean Opportunity Dispatch — product-first homepage."""
 
 import http.server
+import mimetypes
 import os
 import subprocess
 import threading
 import time
 from pathlib import Path
+from urllib.parse import urlparse
 
 PORT = int(os.environ.get("PORT", 8080))
 APP_DIR = Path(__file__).parent
 
-# Paths that should never be served
 BLOCKED_PREFIXES = (
-    ".git", ".env", ".claude", ".hermes", ".ruff_cache",
+    ".git", ".env", ".claude", ".hermes", ".ruff_cache", ".github",
     "data/", "signals/", "watchers/", "mergers/", "distributors/",
     "packagers/", "planning/", "tests/", "agent/", "architecture/",
+    "config/", "memory/",
     "run_pipeline.sh", "requirements.txt", "server.py", "Dockerfile",
-    "Procfile", "fly.toml", "vercel.json", ".gitignore",
+    "Procfile", "fly.toml", "vercel.json", ".gitignore", ".dockerignore",
 )
 
 
-class SecureHandler(http.server.SimpleHTTPRequestHandler):
-    def do_GET(self):
-        path = self.path.split("?")[0].lstrip("/")
+class AppHandler(http.server.SimpleHTTPRequestHandler):
+    """Custom handler: redirects / to /dashboard.html, blocks internal paths."""
 
-        # Block access to internal/sensitive paths
+    def do_GET(self):
+        parsed = urlparse(self.path)
+        path = parsed.path.lstrip("/")
+
+        # Block internal paths
         for blocked in BLOCKED_PREFIXES:
-            if path.startswith(blocked) or path == blocked:
-                self.send_error(404, "Not found")
+            if path == blocked or path.startswith(blocked):
+                self.send_error(404)
                 return
 
-        # Redirect root to dashboard
+        # Root → dashboard
         if path == "" or path == "index.html":
             self.path = "/dashboard.html"
 
         return super().do_GET()
 
     def list_directory(self, path):
-        """Disable directory listing entirely."""
-        self.send_error(404, "Not found")
+        self.send_error(404)
         return None
+
+    def log_message(self, format, *args):
+        """Quieter logging."""
+        pass
 
 
 def pipeline_loop():
-    """Run the pipeline every 4 hours."""
+    """Run the pipeline on startup and every 4 hours."""
+    time.sleep(2)  # let server start first
     subprocess.run(["bash", "run_pipeline.sh"], capture_output=True, cwd=str(APP_DIR))
     while True:
         time.sleep(14400)
@@ -52,9 +61,8 @@ def pipeline_loop():
 
 
 if __name__ == "__main__":
-    t = threading.Thread(target=pipeline_loop, daemon=True)
-    t.start()
+    threading.Thread(target=pipeline_loop, daemon=True).start()
     os.chdir(str(APP_DIR))
-    server = http.server.HTTPServer(("0.0.0.0", PORT), SecureHandler)
-    print(f"Serving on port {PORT}")
+    server = http.server.HTTPServer(("0.0.0.0", PORT), AppHandler)
+    print(f"Listening on :{PORT}")
     server.serve_forever()
