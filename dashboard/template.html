@@ -149,9 +149,9 @@ footer{border-top:1px solid var(--line);padding:24px;text-align:center;font-size
   </div>
   <div class="stats">
     <div class="stat"><div class="stat-n">13</div><div class="stat-l">Countries</div></div>
-    <div class="stat"><div class="stat-n">6/6</div><div class="stat-l">Sources live</div></div>
-    <div class="stat"><div class="stat-n">26</div><div class="stat-l">Signals found</div></div>
-    <div class="stat"><div class="stat-n">31</div><div class="stat-l">Dispatches sent</div></div>
+    <div class="stat"><div class="stat-n">{{n_sources}}/6</div><div class="stat-l">Sources live</div></div>
+    <div class="stat"><div class="stat-n">{{n_composite}}</div><div class="stat-l">Signals found</div></div>
+    <div class="stat"><div class="stat-n">{{n_personas}}</div><div class="stat-l">Dispatches sent</div></div>
     <div class="stat"><div class="stat-n">4h</div><div class="stat-l">Refresh cycle</div></div>
   </div>
 </div>
@@ -160,10 +160,10 @@ footer{border-top:1px solid var(--line);padding:24px;text-align:center;font-size
   <div class="sl">Today's lead dispatch</div>
   <div class="card">
     <div class="card-head">
-      <div class="loc-tag">Guyana · 20260528</div>
-      <span class="conf conf-high">High confidence · A - multi-source</span>
+      <div class="loc-tag">{{l_country}} · {{cycle_id}}</div>
+      <span class="conf conf-high">High confidence · {{l_grade}}</span>
     </div>
-    <h2>Guyana: +860.3% multi-source capital surge — market entry window open</h2>
+    <h2>{{l_title}}</h2>
     <div class="why">
       <strong>Why this matters:</strong> Guyana shows the strongest capital momentum in this cycle, with Belize and St. Vincent and the Grenadines also showing notable movement. This does not mean automatic investment readiness — it means these markets deserve closer screening now, especially where capital flows overlap with procurement, infrastructure, logistics, energy, tourism, or professional services.
     </div>
@@ -180,60 +180,14 @@ footer{border-top:1px solid var(--line);padding:24px;text-align:center;font-size
 
 <div class="sec" style="padding-top:0">
   <div class="sl">Also on our radar</div>
-  <div class="card" style="padding:18px">
-    <div class="signal-row">
-      <div><strong>Belize: +701.0% multi-source capital surge — market entry window open</strong><div class="signal-loc">Belize</div></div>
-      
-    </div>
-    <div class="signal-row">
-      <div><strong>St. Vincent and the Grenadines: +88.2% multi-source investment validated — opportunity active</strong><div class="signal-loc">St. Vincent and the Grenadines</div></div>
-      <span class="risk-tag">⚠️ St. Vincent and the Grenadines also has vulnerabil</span>
-    </div>
-    <div class="signal-row">
-      <div><strong>CARICOM: 6 active procurements — bidding window open</strong><div class="signal-loc">CARICOM</div></div>
-      
-    </div>
-    <div class="signal-row">
-      <div><strong>Capital convergence: 8 Caribbean economies showing multi-source investment momentum</strong><div class="signal-loc">Caribwide</div></div>
-      
-    </div></div>
+  <div class="card" style="padding:18px">{{sec_html}}</div>
 </div>
 
 <div class="sec">
   <div class="sl">For you</div>
   <div class="st">Who should act on this</div>
   <div class="ss">Every dispatch is written for a specific audience. Here's who gets today's signal and what they receive.</div>
-  <div class="aud-grid">
-    <div class="aud-card">
-      <div class="aud-name">Regional Founder/Operator</div>
-      <div class="aud-channel">Telegram</div>
-      <p class="aud-action">Assess competitive positioning in Guyana. FDI movement (860.3% change) signals growing market or incoming comp</p>
-      <div class="aud-status">Last delivery: Ignored</div>
-    </div>
-    <div class="aud-card">
-      <div class="aud-name">Ecosystem Builder</div>
-      <div class="aud-channel">Telegram</div>
-      <p class="aud-action">Route Guyana opportunity to relevant founders and investors in your network. Signal strength (860.3% change) m</p>
-      <div class="aud-status">Last delivery: Ignored</div>
-    </div>
-    <div class="aud-card">
-      <div class="aud-name">Diaspora Investor</div>
-      <div class="aud-channel">Email brief + Telegram</div>
-      <p class="aud-action">Investigate Guyana as a capital deployment target this cycle. Multi-source validation (860.3% change) confirms</p>
-      <div class="aud-status">Last delivery: Forwarded</div>
-    </div>
-    <div class="aud-card">
-      <div class="aud-name">Regional Operator</div>
-      <div class="aud-channel">Telegram</div>
-      <p class="aud-action">Review operational readiness for CARICOM opportunities. CDB active procurement notices: 6 — assess capacity an</p>
-      <div class="aud-status">Last delivery: Replied</div>
-    </div>
-    <div class="aud-card">
-      <div class="aud-name">Procurement Watcher</div>
-      <div class="aud-channel">Email brief</div>
-      <p class="aud-action">Track CDB/IDB project pipeline: CDB active procurement notices: 6. Review opportunity fit and prepare expressi</p>
-      <div class="aud-status">Last delivery: Ignored</div>
-    </div></div>
+  <div class="aud-grid">{{pcard_html}}</div>
 </div>
 
 <div class="sec" style="padding-top:0">
@@ -338,7 +292,7 @@ Source: World Bank indicators, 2023–2024 comparison.</div>
   <div class="st">Where this comes from</div>
   <div class="ss">Six public data sources, all free, all updating on schedule.</div>
   <div class="card" style="padding:0;overflow:hidden">
-    <table class="src-tbl"><tr class="src-ok"><td><span class="dot">●</span> World Bank Indicators</td><td>REST API · 5 indicators × 13 countries</td><td>14h ago</td></tr><tr class="src-ok"><td><span class="dot">●</span> IDB Open Data</td><td>CKAN API · Regional project datasets</td><td>14h ago</td></tr><tr class="src-ok"><td><span class="dot">●</span> NOAA Weather Alerts</td><td>NWS API · Active hazard alerts</td><td>14h ago</td></tr><tr class="src-ok"><td><span class="dot">●</span> NDBC Marine Buoys</td><td>Marine conditions · 6 buoys</td><td>14h ago</td></tr><tr class="src-ok"><td><span class="dot">●</span> CARICOM Statistics</td><td>WordPress REST · 126 datasets</td><td>14h ago</td></tr><tr class="src-ok"><td><span class="dot">●</span> CDB Procurement Feed</td><td>RSS · Project & procurement notices</td><td>14h ago</td></tr></table>
+    <table class="src-tbl">{{src_rows}}</table>
   </div>
 </div>
 
@@ -347,8 +301,8 @@ Source: World Bank indicators, 2023–2024 comparison.</div>
   <div class="st">What happened after delivery</div>
   <div class="ss">When recipients open, forward, or act on a dispatch, the next cycle adjusts.</div>
   <div class="fb-box">
-    <div><span class="fb-pill">📤 Forwarded: 2</span><span class="fb-pill">👁 Opened: 2</span><span class="fb-pill">💬 Replied: 2</span><span class="fb-pill">🔀 Decision Changed: 2</span></div>
-    <div style="margin-top:10px"><div class="boost-line">Guyana enhanced investment: +6</div><div class="boost-line">Belize enhanced investment: -3</div><div class="boost-line">St. Vincent and the Grenadines enhanced investment: -9</div><div class="boost-line">CARICOM development pipeline: +1</div><div class="boost-line">Guyana investment signal: -6</div><div class="boost-line">Belize investment signal: -6</div><div class="boost-line">St. Vincent and the Grenadines investment signal: -6</div><div class="boost-line">Caribbean maritime hazard: -4</div><div class="boost-line">CARICOM food security: -6</div><div class="boost-line">St. Vincent and the Grenadines economic vulnerability: +12</div><div class="boost-line">Suriname economic vulnerability: -6</div></div>
+    <div>{{fb_html}}</div>
+    {{boost_html}}
   </div>
 </div>
 
@@ -360,17 +314,17 @@ Source: World Bank indicators, 2023–2024 comparison.</div>
       <p style="font-size:13px;color:var(--m);margin-bottom:16px">Technical proof layer — for judges and reviewers who want to see the full system.</p>
       <div style="display:grid;grid-template-columns:2fr 1fr;gap:24px">
         <div>
-          <h4 style="font-size:14px;margin-bottom:8px">All opportunity themes (13)</h4>
+          <h4 style="font-size:14px;margin-bottom:8px">All opportunity themes ({{n_clusters}})</h4>
           <div id="clusters-area"></div>
         </div>
         <div>
           <h4 style="font-size:14px;margin-bottom:8px">System counts</h4>
           <div style="font-size:13px;color:var(--m);line-height:2">
-            <div>Opportunity themes: 13</div>
-            <div>Routed dispatches: 31</div>
-            <div>Delivery responses: 50</div>
-            <div>Regional signals: 26</div>
-            <div>Sources online: 6/6</div>
+            <div>Opportunity themes: {{n_clusters}}</div>
+            <div>Routed dispatches: {{n_personas}}</div>
+            <div>Delivery responses: {{n_fb}}</div>
+            <div>Regional signals: {{n_composite}}</div>
+            <div>Sources online: {{n_sources}}/6</div>
             <div>Countries covered: 13</div>
           </div>
           <h4 style="font-size:14px;margin:16px 0 8px">Delivery responses (all)</h4>
@@ -382,8 +336,8 @@ Source: World Bank indicators, 2023–2024 comparison.</div>
 </div>
 
 <script>
-const D = {"cycle": "20260528", "lead": {"title": "Guyana: +860.3% multi-source capital surge — market entry window open", "country": "Guyana", "evidence": "WB FDI surge detected: Guyana", "decision": "Which verified opportunity to investigate for capital deployment or partnership entry", "risks": [], "personas": [{"persona": "Regional Founder/Operator", "channel": "Telegram", "action": "Assess competitive positioning in Guyana. FDI movement (860.3% change) signals growing market or incoming comp"}, {"persona": "Ecosystem Builder", "channel": "Telegram", "action": "Route Guyana opportunity to relevant founders and investors in your network. Signal strength (860.3% change) m"}, {"persona": "Diaspora Investor", "channel": "Email brief + Telegram", "action": "Investigate Guyana as a capital deployment target this cycle. Multi-source validation (860.3% change) confirms"}, {"persona": "Regional Operator", "channel": "Telegram", "action": "Review operational readiness for CARICOM opportunities. CDB active procurement notices: 6 — assess capacity an"}]}, "thesis": "Capital momentum is strongest in Guyana (+860.3%), followed by Belize, St. Vincent and the Grenadines.  However, St. Vincent and the Grenadines and Suriname also carry elevated vulnerability indicators — investment signals from these countries require deeper diligence before committing capital.  Dev", "sources": 6, "signals": 26, "dispatches": 31};
-const risks = [];
+const D = {{aj}};
+const risks = {{l_risks_json}};
 if (risks.length) {
   document.getElementById('risk-area').innerHTML = '<div class="risk">⚠️ Risk: ' + risks[0] + '</div>';
 }
@@ -416,7 +370,7 @@ function toggleDeep() {
 </script>
 
 <footer>
-  Caribbean Opportunity Dispatch · Cycle 20260528 · May 28, 2026 — 18:16 UTC · Screening signals only, not investment advice · Data: World Bank · IDB · NOAA · NDBC · CARICOM · CDB
+  Caribbean Opportunity Dispatch · Cycle {{cycle_id}} · {{now_str}} · Screening signals only, not investment advice · Data: World Bank · IDB · NOAA · NDBC · CARICOM · CDB
 </footer>
 </body>
 </html>
