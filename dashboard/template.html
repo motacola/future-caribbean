@@ -3,186 +3,283 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Caribbean Opportunity Dispatch — Daily Market Intelligence</title>
+<title>Caribbean Opportunity Dispatch — Daily Investment Intelligence</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#080B14;--s1:#111627;--s2:#1A2035;--line:#1E2A40;--t:#E8ECF4;--m:#6B7FA0;--a:#3B82F6;--ok:#10B981;--w:#F59B0B;--no:#EF4444;--r:12px;--f:'Inter',-apple-system,system-ui,sans-serif}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--f);background:var(--bg);color:var(--t);line-height:1.6;font-size:15px;-webkit-font-smoothing:antialiased}
-a{color:var(--a);text-decoration:none}
-.top{background:var(--s1);border-bottom:1px solid var(--line);padding:12px 0}
-.top-i{max-width:1080px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center}
-.brand{font-size:15px;font-weight:800;letter-spacing:-.3px}
-.brand em{font-style:normal;color:var(--a)}
-.top-r{display:flex;gap:16px;align-items:center}
-.top-r a{color:var(--m);font-size:13px;font-weight:500}
-.top-r a:hover{color:var(--t)}
-.ld{width:7px;height:7px;background:var(--ok);border-radius:50%;display:inline-block;margin-right:4px;animation:p 2s infinite}
-@keyframes p{0%,100%{opacity:1}50%{opacity:.35}}
-.hero{max-width:1080px;margin:0 auto;padding:56px 24px 44px}
-.h-tag{display:inline-block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--a);background:rgba(59,130,246,.1);padding:4px 10px;border-radius:4px;margin-bottom:16px}
-.hero h1{font-size:clamp(26px,3.8vw,40px);font-weight:900;letter-spacing:-1.2px;line-height:1.1;margin-bottom:14px}
-.hero h1 em{font-style:normal;background:linear-gradient(135deg,var(--a) 0%,#818CF8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-desc{font-size:17px;color:var(--m);max-width:560px;margin-bottom:28px;line-height:1.5}
-.hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-block;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;border:none;font-family:var(--f)}
-.btn-p{background:var(--a);color:#fff}
-.btn-s{background:var(--s2);color:var(--t);border:1px solid var(--line)}
-.btn-s:hover{border-color:var(--m)}
-.stats{display:flex;gap:0;flex-wrap:wrap;margin-top:32px}
-.stat{padding:0 20px;border-right:1px solid var(--line)}.stat:first-child{padding-left:0}.stat:last-child{border-right:none}
-.stat-n{font-size:22px;font-weight:800}
-.stat-l{font-size:10px;color:var(--m);text-transform:uppercase;letter-spacing:.8px;margin-top:2px}
-.sec{max-width:1080px;margin:0 auto;padding:36px 24px}
-.sec:first-of-type{padding-top:0}
-.sl{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--m);margin-bottom:10px;font-weight:600}
-.st{font-size:20px;font-weight:800;letter-spacing:-.3px;margin-bottom:6px}
-.ss{font-size:14px;color:var(--m);margin-bottom:22px;max-width:540px}
-.card{background:var(--s1);border:1px solid var(--line);border-radius:var(--r);padding:28px;margin-bottom:14px}
-.card-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;flex-wrap:wrap;gap:8px}
-.loc-tag{font-size:11px;text-transform:uppercase;letter-spacing:1.2px;color:var(--m);font-weight:600}
-.conf{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.3px}
-.conf-high{background:rgba(16,185,129,.12);color:var(--ok)}
-.conf-med{background:rgba(245,185,11,.12);color:var(--w)}
-.conf-early{background:rgba(239,68,68,.12);color:var(--no)}
-.card h2{font-size:22px;font-weight:800;margin:8px 0 14px;letter-spacing:-.3px;line-height:1.2}
-.why{margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--line);font-size:15px;color:var(--m)}
-.why strong{color:var(--t)}
-.risk{background:rgba(239,68,68,.07);border:1px solid rgba(239,68,68,.18);border-radius:6px;padding:8px 12px;font-size:13px;color:var(--no);margin:10px 0}
-.detail-rows{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
-.dr{padding:8px 0;border-bottom:1px solid var(--line)}.dr:last-child{border-bottom:none}
-.dr label{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.8px;color:var(--m);margin-bottom:2px;font-weight:600}
-.dr span{font-size:13px;color:var(--t)}
-.disclaimer{font-size:11px;color:var(--m);margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
-.disclaimer strong{color:var(--w)}
-.sig-row{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--line);gap:12px}
-.sig-row:last-child{border-bottom:none}
-.sig-main strong{display:block;font-size:14px;font-weight:600;margin-bottom:2px}
-.sig-loc{font-size:12px;color:var(--m)}
-.risk-tag{font-size:11px;color:var(--no);background:rgba(239,68,68,.07);padding:3px 8px;border-radius:4px;white-space:nowrap}
-.aud-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
-.aud{background:var(--s1);border:1px solid var(--line);border-radius:var(--r);padding:16px}
-.aud-name{font-weight:700;font-size:14px;margin-bottom:2px}
-.aud-ch{font-size:11px;color:var(--a);margin-bottom:8px;font-weight:500}
-.aud-act{font-size:13px;color:var(--m);margin-bottom:0;line-height:1.4}
-.out-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.out{background:var(--s1);border:1px solid var(--line);border-radius:var(--r);padding:20px}
-.out h4{font-size:14px;font-weight:700;margin-bottom:4px}
-.out-ch{font-size:11px;color:var(--a);margin-bottom:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.out-body{font-size:12px;color:var(--m);white-space:pre-wrap;font-family:'Mono Lisa','SF Mono',monospace;max-height:200px;overflow:auto;line-height:1.5;background:var(--bg);border-radius:6px;padding:12px;border:1px solid var(--line)}
-.analyst{background:var(--s1);border:1px solid var(--line);border-radius:var(--r);padding:18px;margin-top:18px}
-.analyst h3{font-size:14px;font-weight:700;margin-bottom:4px}
-.analyst>p{font-size:12px;color:var(--m);margin-bottom:10px}
-.aprompts{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
-.aprompts button{background:var(--s2);border:1px solid var(--line);color:var(--t);padding:5px 10px;border-radius:6px;font-size:12px;cursor:pointer;font-family:var(--f)}
-.aprompts button:hover{border-color:var(--a)}
-.ask-row{display:grid;grid-template-columns:1fr auto;gap:8px}
-.ask-row input{background:var(--bg);border:1px solid var(--line);color:var(--t);padding:8px 12px;border-radius:6px;font-size:13px;font-family:var(--f)}
-.ask-row button{background:var(--a);border:none;color:#fff;padding:8px 14px;border-radius:6px;font-size:13px;cursor:pointer;font-weight:600;font-family:var(--f)}
-.abox{margin-top:10px;padding:12px;background:var(--bg);border-left:3px solid var(--a);font-size:13px;color:var(--m);white-space:pre-wrap;max-height:200px;overflow:auto;border-radius:0 6px 6px 0}
-.src-tbl{width:100%;border-collapse:collapse;font-size:13px}
-.src-tbl td{padding:10px 12px;border-bottom:1px solid var(--line);color:var(--m)}
-.src-tbl tr:last-child td{border-bottom:none}
-.src-tbl td:first-child{color:var(--t);font-weight:600}
-.src-ok .dot{color:var(--ok)}.src-off .dot{color:var(--m)}
-.dot{margin-right:6px}
-.fb-pill{display:inline-block;padding:4px 10px;border-radius:20px;font-size:12px;background:var(--s2);color:var(--m);margin:2px}
-.boost-line{font-size:13px;color:var(--m);padding:2px 0}
-.fb-box{background:var(--s1);border:1px solid var(--line);border-radius:var(--r);padding:18px}
-.deep{margin-top:32px;border-top:1px solid var(--line);padding-top:24px}
-.deep-btn{background:var(--s2);border:1px solid var(--line);color:var(--m);padding:8px 16px;border-radius:6px;font-size:13px;cursor:pointer;font-family:var(--f)}
-.deep-btn:hover{border-color:var(--a);color:var(--t)}
-.deep-c{display:none;margin-top:20px}
-.deep-c.open{display:block}
-.cluster-card{display:grid;grid-template-columns:36px 1fr;gap:12px;border:1px solid var(--line);border-radius:var(--r);padding:14px;margin-bottom:10px}
-.cnum{font-size:18px;font-weight:800;color:var(--a)}
-.cbody h4{font-size:14px;margin-bottom:4px}
-.cbody p{font-size:13px;color:var(--m);margin:3px 0}
-.risk-inline{font-size:12px;color:var(--no);margin:4px 0}
-.croutes{margin-top:6px}
-.route-line{display:flex;gap:8px;font-size:11px;color:var(--m);padding:2px 0}
-.route-line span:first-child{color:var(--text);font-weight:600}
-footer{border-top:1px solid var(--line);padding:24px;text-align:center;font-size:11px;color:var(--m);margin-top:40px}
-.muted{color:var(--m);font-size:13px}
-.conf-badge{font-size:11px;padding:2px 8px;border-radius:3px;margin-bottom:8px;display:inline-block}
-@media(max-width:768px){.out-grid,.detail-rows{grid-template-columns:1fr}.stats{gap:8px}.stat{padding:0 10px}.hero-ctas{flex-direction:column}}
+:root {
+  --bg: #F7F1E7; --card: #FFFFFF; --card-alt: #FBF7EF;
+  --text: #102A43; --sub: #486581; --muted: #829AB1;
+  --gold: #C79A3B; --teal: #0E7C7B; --coral: #C94C4C;
+  --border: #E2D6C2; --border-dark: #C4B5A0;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Inter', -apple-system, system-ui, sans-serif;
+  --mono: 'IBM Plex Mono', monospace;
+  --r: 8px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.6; font-size: 15px; -webkit-font-smoothing: antialiased; }
+a { color: var(--teal); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── masthead ── */
+.masthead { background: var(--text); color: var(--bg); padding: 14px 0; }
+.mast-inner { max-width: 1080px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+.mast-name { font-family: var(--serif); font-size: 18px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
+.mast-name em { font-style: normal; color: var(--gold); }
+.mast-links { display: flex; gap: 20px; }
+.mast-links a { color: var(--muted); font-size: 12px; letter-spacing: .5px; text-transform: uppercase; font-weight: 500; }
+.mast-links a:hover { color: var(--bg); text-decoration: none; }
+
+/* ── hero ── */
+.hero { max-width: 1080px; margin: 0 auto; padding: 48px 24px 40px; }
+.hero-headline { font-family: var(--serif); font-size: clamp(28px, 4vw, 44px); font-weight: 700; letter-spacing: -.5px; line-height: 1.1; margin-bottom: 12px; color: var(--text); }
+.hero-headline em { font-style: normal; font-style: italic; color: var(--teal); }
+.hero-sub { font-size: 17px; color: var(--sub); max-width: 560px; margin-bottom: 28px; line-height: 1.5; }
+.hero-actions { display: flex; gap: 12px; margin-bottom: 32px; flex-wrap: wrap; }
+.btn { display: inline-block; padding: 10px 22px; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer; border: none; font-family: var(--sans); letter-spacing: .3px; }
+.btn-p { background: var(--text); color: var(--bg); }
+.btn-s { background: transparent; color: var(--text); border: 1px solid var(--border-dark); }
+.btn-s:hover { border-color: var(--text); text-decoration: none; }
+
+/* ── source strip ── */
+.strip { display: flex; align-items: center; gap: 24px; padding: 14px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 40px; flex-wrap: wrap; }
+.strip-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); }
+.strip-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); }
+.strip-val { font-weight: 600; color: var(--text); font-family: var(--mono); font-size: 12px; }
+
+/* ── sections ── */
+.sec { max-width: 1080px; margin: 0 auto; padding: 0 24px 40px; }
+.sec-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gold); margin-bottom: 10px; font-weight: 600; }
+.sec-title { font-family: var(--serif); font-size: 24px; font-weight: 700; margin-bottom: 8px; letter-spacing: -.3px; }
+.sec-sub { font-size: 14px; color: var(--sub); margin-bottom: 20px; max-width: 520px; }
+
+/* ── lead story ── */
+.lead-story { background: var(--card); border: 1px solid var(--border); border-radius: var(--r); padding: 32px; margin-bottom: 16px; }
+.lead-story-head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; flex-wrap: wrap; gap: 8px; }
+.lead-loc { font-size: 11px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--muted); font-weight: 600; }
+.lead-conf { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 600; background: rgba(14,124,123,.1); color: var(--teal); }
+.lead-story h2 { font-family: var(--serif); font-size: 26px; font-weight: 700; margin: 8px 0 16px; line-height: 1.2; }
+.lead-why { font-size: 15px; color: var(--sub); margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--border); line-height: 1.6; }
+.lead-why strong { color: var(--text); }
+.lead-risk { background: rgba(201,76,76,.07); border: 1px solid rgba(201,76,76,.15); border-radius: 6px; padding: 10px 14px; font-size: 13px; color: var(--coral); margin: 12px 0; }
+.lead-details { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 16px; }
+.ld { padding: 8px 0; border-bottom: 1px solid var(--border); }
+.ld:last-child { border-bottom: none; }
+.ld label { display: block; font-size: 10px; text-transform: uppercase; letter-spacing: .8px; color: var(--muted); margin-bottom: 2px; font-weight: 600; }
+.ld span { font-size: 13px; color: var(--text); }
+.lead-disclaimer { font-size: 11px; color: var(--muted); margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--border); }
+.lead-disclaimer strong { color: var(--gold); }
+
+/* ── signal list ── */
+.sig-list { background: var(--card); border: 1px solid var(--border); border-radius: var(--r); padding: 18px; }
+.sig-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--border); gap: 12px; }
+.sig-row:last-child { border-bottom: none; }
+.sig-main strong { display: block; font-size: 14px; font-weight: 600; margin-bottom: 2px; }
+.sig-loc { font-size: 12px; color: var(--muted); }
+.risk-tag { font-size: 11px; color: var(--coral); background: rgba(201,76,76,.07); padding: 3px 8px; border-radius: 4px; white-space: nowrap; }
+
+/* ── audience cards ── */
+.aud-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
+.aud { background: var(--card); border: 1px solid var(--border); border-radius: var(--r); padding: 18px; }
+.aud-name { font-family: var(--serif); font-weight: 700; font-size: 16px; margin-bottom: 4px; }
+.aud-ch { font-size: 11px; color: var(--teal); margin-bottom: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: .5px; }
+.aud-act { font-size: 13px; color: var(--sub); line-height: 1.5; }
+
+/* ── output cards ── */
+.out-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.out { background: var(--card); border: 1px solid var(--border); border-radius: var(--r); padding: 0; overflow: hidden; }
+.out-head { padding: 16px 20px 12px; border-bottom: 1px solid var(--border); }
+.out-head h4 { font-family: var(--serif); font-size: 16px; font-weight: 700; margin-bottom: 2px; }
+.out-ch { font-size: 10px; color: var(--teal); text-transform: uppercase; letter-spacing: .8px; font-weight: 600; }
+.out-body { padding: 16px 20px; font-size: 12px; color: var(--sub); white-space: pre-wrap; font-family: var(--mono); line-height: 1.6; max-height: 220px; overflow: auto; }
+
+/* ── analyst ── */
+.analyst { background: var(--card-alt); border: 1px solid var(--border); border-radius: var(--r); padding: 20px; margin-top: 18px; }
+.analyst h3 { font-family: var(--serif); font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+.analyst>p { font-size: 12px; color: var(--muted); margin-bottom: 12px; }
+.aprompts { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.aprompts button { background: var(--card); border: 1px solid var(--border); color: var(--text); padding: 5px 12px; border-radius: 4px; font-size: 12px; cursor: pointer; font-family: var(--sans); }
+.aprompts button:hover { border-color: var(--teal); color: var(--teal); }
+.ask-row { display: grid; grid-template-columns: 1fr auto; gap: 8px; }
+.ask-row input { background: var(--card); border: 1px solid var(--border); color: var(--text); padding: 8px 12px; border-radius: 4px; font-size: 13px; font-family: var(--sans); }
+.ask-row button { background: var(--text); border: none; color: var(--bg); padding: 8px 16px; border-radius: 4px; font-size: 13px; cursor: pointer; font-weight: 600; font-family: var(--sans); }
+.abox { margin-top: 10px; padding: 14px; background: var(--card); border-left: 3px solid var(--gold); font-size: 13px; color: var(--sub); white-space: pre-wrap; max-height: 200px; overflow: auto; border-radius: 0 4px 4px 0; }
+
+/* ── sources table ── */
+.src-tbl { width: 100%; border-collapse: collapse; font-size: 13px; }
+.src-tbl td { padding: 10px 12px; border-bottom: 1px solid var(--border); color: var(--sub); }
+.src-tbl tr:last-child td { border-bottom: none; }
+.src-tbl td:first-child { color: var(--text); font-weight: 600; }
+.src-tbl td:last-child { font-family: var(--mono); font-size: 12px; }
+.src-ok td:last-child { color: var(--teal); }
+.src-off td:last-child { color: var(--muted); }
+.dot { margin-right: 6px; }
+
+/* ── feedback ── */
+.fb-pill { display: inline-block; padding: 4px 10px; border-radius: 20px; font-size: 12px; background: var(--card); color: var(--sub); border: 1px solid var(--border); margin: 2px; }
+.boost-line { font-size: 12px; color: var(--muted); padding: 2px 0; }
+.fb-box { background: var(--card); border: 1px solid var(--border); border-radius: var(--r); padding: 18px; }
+
+/* ── deep proof ── */
+.deep { margin-top: 40px; border-top: 1px solid var(--border); padding-top: 24px; }
+.deep-btn { background: transparent; border: 1px solid var(--border-dark); color: var(--muted); padding: 8px 16px; border-radius: 4px; font-size: 12px; cursor: pointer; font-family: var(--sans); letter-spacing: .3px; text-transform: uppercase; }
+.deep-btn:hover { border-color: var(--text); color: var(--text); }
+.deep-c { display: none; margin-top: 20px; }
+.deep-c.open { display: block; }
+.cluster-card { display: grid; grid-template-columns: 36px 1fr; gap: 12px; border: 1px solid var(--border); border-radius: var(--r); padding: 14px; margin-bottom: 10px; background: var(--card); }
+.cnum { font-family: var(--mono); font-size: 16px; font-weight: 600; color: var(--gold); }
+.cbody h4 { font-family: var(--serif); font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.cbody p { font-size: 12px; color: var(--muted); margin: 2px 0; }
+.risk-inline { font-size: 11px; color: var(--coral); margin: 4px 0; }
+.croutes { margin-top: 6px; }
+.route-line { display: flex; gap: 8px; font-size: 11px; color: var(--muted); padding: 2px 0; }
+.route-line span:first-child { color: var(--text); font-weight: 500; }
+
+/* ── footer ── */
+footer { border-top: 1px solid var(--border); padding: 24px; text-align: center; font-size: 11px; color: var(--muted); margin-top: 40px; }
+.muted { color: var(--muted); font-size: 13px; }
+
+/* ── demo control bar ── */
+.demo-bar { background: #0b1a26; border-bottom: 1px solid rgba(255,255,255,.07); padding: 14px 0; }
+.demo-bar-inner { max-width: 1080px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.demo-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; color: rgba(255,255,255,.35); font-weight: 600; margin-right: 4px; }
+.dbtn { display: inline-flex; align-items: center; gap: 7px; padding: 7px 15px; border-radius: 5px; font-size: 12px; font-weight: 600; cursor: pointer; border: 1px solid rgba(255,255,255,.14); color: rgba(255,255,255,.85); background: rgba(255,255,255,.06); font-family: var(--sans); transition: all .15s; letter-spacing: .2px; white-space: nowrap; }
+.dbtn:hover:not(:disabled) { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.28); }
+.dbtn:disabled, .dbtn.loading { opacity: .5; cursor: not-allowed; }
+.dbtn-teal { background: rgba(14,124,123,.35); border-color: rgba(14,124,123,.7); color: #5eead4; }
+.dbtn-teal:hover:not(:disabled) { background: rgba(14,124,123,.55); }
+.dbtn-gold { background: rgba(199,154,59,.25); border-color: rgba(199,154,59,.5); color: #f0c96b; }
+.dbtn-gold:hover:not(:disabled) { background: rgba(199,154,59,.4); }
+.demo-spacer { flex: 1; }
+.demo-live { font-size: 11px; color: rgba(255,255,255,.35); display: flex; align-items: center; gap: 6px; }
+.live-dot { width: 6px; height: 6px; border-radius: 50%; background: #3fb950; animation: livepulse 2.4s ease-in-out infinite; flex-shrink: 0; }
+@keyframes livepulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.35;transform:scale(.7)} }
+
+/* ── pipeline log panel ── */
+.log-wrap { background: #0b1a26; border-bottom: 1px solid rgba(255,255,255,.06); display: none; }
+.log-wrap.open { display: block; }
+.log-inner { max-width: 1080px; margin: 0 auto; padding: 4px 24px 14px; }
+.log-panel { background: #0d1117; border-radius: 6px; padding: 14px 18px; max-height: 260px; overflow-y: auto; font-family: var(--mono); font-size: 12px; line-height: 1.75; }
+.log-line { color: #8b949e; }
+.log-line.ll-ok { color: #3fb950; }
+.log-line.ll-err { color: #f85149; }
+.log-line.ll-info { color: #58a6ff; }
+.log-line.ll-head { color: #e3b341; font-weight: 600; }
+
+/* ── send receipt ── */
+.send-receipt { border-radius: 6px; padding: 12px 18px; font-size: 13px; margin-top: 14px; display: none; }
+.send-receipt.sr-ok { background: rgba(14,124,123,.08); border: 1px solid rgba(14,124,123,.25); color: var(--teal); }
+.send-receipt.sr-err { background: rgba(201,76,76,.07); border: 1px solid rgba(201,76,76,.18); color: var(--coral); }
+
+/* ── out card send footer ── */
+.out-foot { padding: 10px 18px 12px; border-top: 1px solid var(--border); display: flex; gap: 8px; justify-content: flex-end; }
+.send-btn { padding: 5px 14px; border-radius: 4px; font-size: 12px; font-weight: 600; cursor: pointer; border: 1px solid var(--teal); color: var(--teal); background: transparent; font-family: var(--sans); transition: all .15s; }
+.send-btn:hover:not(:disabled) { background: var(--teal); color: white; }
+.send-btn:disabled { opacity: .45; cursor: not-allowed; }
+
+@media(max-width:768px) {
+  .out-grid, .lead-details { grid-template-columns: 1fr; }
+  .strip { gap: 12px; }
+}
 </style>
 </head>
 <body>
-<div class="top">
-  <div class="top-i">
-    <div class="brand">🌴 Caribbean <em>Opportunity Dispatch</em></div>
-    <div class="top-r">
-      <a href="#"><span class="ld"></span>Live</a>
-      <a href="javascript:void(0)" onclick="toggleDeep();return false;">System Proof</a>
+
+<div class="masthead">
+  <div class="mast-inner">
+    <div class="mast-name">CARIBBEAN <em>OPPORTUNITY</em> DISPATCH</div>
+    <div class="mast-links">
+      <a href="#"><span style="color:var(--teal)">●</span> Live</a>
+      <a href="javascript:void(0)" onclick="toggleDeep();return false;">Today's briefing</a>
     </div>
   </div>
 </div>
 
 <div class="hero">
-  <div class="h-tag">Daily market intelligence</div>
-  <h1>Daily investment and market intelligence for a <em>connected Caribbean</em>.</h1>
-  <p class="hero-desc">We monitor public regional data, detect opportunity signals, and turn them into investor briefs, operator alerts, and diaspora-ready updates.</p>
-  <div class="hero-ctas">
-    <a href="#dispatch" class="btn btn-p">Read Today's Dispatch</a>
-    <a href="javascript:void(0)" class="btn btn-s" onclick="toggleDeep();return false;">Audit the Pipeline</a>
-  </div>
-  <div class="stats">
-    <div class="stat"><div class="stat-n">13</div><div class="stat-l">Countries</div></div>
-    <div class="stat"><div class="stat-n">{{n_sources}}/6</div><div class="stat-l">Sources live</div></div>
-    <div class="stat"><div class="stat-n">{{n_personas}}</div><div class="stat-l">Dispatches sent</div></div>
-    <div class="stat"><div class="stat-n">4h</div><div class="stat-l">Refresh cycle</div></div>
+  <p class="sec-label" style="color:var(--gold);margin-bottom:8px">Daily investment intelligence</p>
+  <h1 class="hero-headline">Daily investment intelligence for a <em>connected Caribbean</em>.</h1>
+  <p class="hero-sub">We monitor public regional data, identify market signals, and package them into briefings for investors, founders, policymakers, and diaspora networks.</p>
+  <div class="hero-actions">
+    <a href="#briefing" class="btn btn-p">Read Today's Briefing</a>
+    <a href="javascript:void(0)" class="btn btn-s" onclick="toggleDeep();return false;">System Audit</a>
   </div>
 </div>
 
-<div class="sec" id="dispatch">
-  <div class="sl">Today's lead dispatch</div>
-  <div class="card">
-    <div class="card-head">
-      <div class="loc-tag">{{l_country}} · {{cycle_id}}</div>
-      <span class="conf conf-high">{{l_grade}}</span>
+<div class="sec" style="padding-bottom:0">
+  <div class="strip">
+    <div class="strip-item"><span class="strip-dot"></span> <span class="strip-val">13</span> countries</div>
+    <div class="strip-item"><span class="strip-dot" style="background:var(--teal)"></span> <span class="strip-val" id="stat-sources">{{n_sources}}/6</span> sources</div>
+    <div class="strip-item"><span class="strip-dot" style="background:var(--gold)"></span> <span class="strip-val" id="stat-dispatches">{{n_personas}}</span> dispatches</div>
+    <div class="strip-item"><span class="strip-dot" style="background:var(--muted)"></span> <span class="strip-val">4h</span> refresh</div>
+  </div>
+</div>
+
+<!-- Live demo control bar -->
+<div class="demo-bar">
+  <div class="demo-bar-inner">
+    <span class="demo-label">Live demo</span>
+    <button class="dbtn dbtn-gold" id="btn-pipeline" onclick="triggerPipeline()">▶ Run Pipeline</button>
+    <button class="dbtn dbtn-teal" id="btn-tg" onclick="sendToChannel('telegram')">✈ Send Telegram</button>
+    <button class="dbtn" id="btn-wa" onclick="sendToChannel('whatsapp')">📱 Send WhatsApp</button>
+    <span class="demo-spacer"></span>
+    <span class="demo-live"><span class="live-dot"></span><span id="demo-status-txt">Live · refreshing…</span></span>
+  </div>
+</div>
+<div class="log-wrap" id="log-wrap">
+  <div class="log-inner">
+    <div class="log-panel" id="log-panel">
+      <div class="log-line ll-info"># Caribbean Signal OS — click "Run Pipeline" to watch the system collect data live</div>
+    </div>
+  </div>
+</div>
+
+<div class="sec" id="briefing">
+  <div class="sec-label">Lead story</div>
+  <div class="lead-story">
+    <div class="lead-story-head">
+      <div class="lead-loc">{{l_country}} · {{cycle_id}}</div>
+      <span class="lead-conf">{{l_grade}}</span>
     </div>
     <h2>{{l_title}}</h2>
-    <div class="why">
-      <strong>Why this matters:</strong> Guyana shows the strongest capital momentum in this cycle, with Belize and St. Vincent and the Grenadines also showing notable movement. This does not mean automatic investment readiness — it means these markets deserve closer screening now, especially where capital flows overlap with procurement, infrastructure, logistics, energy, tourism, or professional services.
+    <div class="lead-why">
+      <strong>Why this matters:</strong> Guyana shows the strongest capital momentum in this cycle, with Belize and St. Vincent and the Grenadines also showing notable movement. This does not mean automatic investment readiness. It means these markets deserve closer screening now, especially where capital flows overlap with procurement, infrastructure, logistics, energy, tourism, or professional services.
     </div>
     <div id="risk-area"></div>
-    <div class="detail-rows">
-      <div class="dr"><label>Source</label><span>World Bank indicators</span></div>
-      <div class="dr"><label>Period</label><span>2023 to 2024</span></div>
-      <div class="dr"><label>Signal</label><span>World Bank data shows {{lead_pct}} FDI increase {{l_country}} 2023→2024</span></div>
-      <div class="dr"><label>Next action</label><span>Sector screening and local partner validation</span></div>
+    <div class="lead-details">
+      <div class="ld"><label>Source</label><span>World Bank indicators</span></div>
+      <div class="ld"><label>Period</label><span>2023 to 2024</span></div>
+      <div class="ld"><label>Signal</label><span>World Bank data shows {{lead_pct}} FDI movement, {{l_country}} 2023 to 2024</span></div>
+      <div class="ld"><label>Next action</label><span>Sector screening and local partner validation</span></div>
     </div>
-    <div class="disclaimer"><strong>Screening signal, not investment advice.</strong> This dispatch is designed to direct attention, not to recommend specific investments. Always conduct independent diligence.</div>
+    <div class="lead-disclaimer"><strong>Screening signal, not investment advice.</strong> This dispatch is designed to direct attention, not to recommend specific investments. Always conduct independent diligence.</div>
   </div>
-</div>
-
-<div class="sec" style="padding-top:0">
-  <div class="sl">Also on our radar</div>
-  <div class="card" style="padding:18px">{{sec_html}}</div>
 </div>
 
 <div class="sec">
-  <div class="sl">For you</div>
+  <div class="sec-label">Also on our radar</div>
+  <div class="sig-list">{{sec_html}}</div>
+</div>
+
+<div class="sec">
+  <div class="sec-label">Built for decision-makers</div>
   <div class="st">Who should act on this</div>
   <div class="ss">Every dispatch is written for a specific audience.</div>
   <div class="aud-grid">{{pcard_html}}</div>
 </div>
 
-<div class="sec" style="padding-top:0">
-  <div class="sl">What they receive</div>
-  <div class="st">Ready-to-send outputs</div>
-  <div class="ss">Each audience gets a different format.</div>
+<div class="sec">
+  <div class="sec-label">Briefings ready to send</div>
+  <div class="st">Formatted for each channel</div>
+  <div class="ss">These are real outputs from today's briefing cycle.</div>
   <div class="out-grid">
     <div class="out">
-      <h4>🌴 Telegram Alert</h4>
-      <div class="out-ch">Telegram channel</div>
-      <div class="out-body">🌴 Caribbean Opportunity Dispatch
+      <div class="out-head"><h4>🌴 Telegram Briefing</h4><div class="out-ch">Telegram channel</div></div>
+      <div class="out-body" id="tg-body">Caribbean Opportunity Dispatch
 
-Lead signal: Guyana capital momentum
+Lead signal: Guyana capital movement
 
-Guyana is today's strongest market-entry signal based on World Bank FDI movement.
+Guyana is today's strongest momentum signal based on World Bank FDI data.
 
 Why it matters:
 Capital activity may create openings in partnerships, services, procurement, logistics, and infrastructure-adjacent sectors.
@@ -195,17 +292,17 @@ Screen Guyana first. Compare Belize and St. Vincent before committing further re
 
 Confidence: High
 Source: World Bank indicators
-Period: 2023–2024
+Period: 2023 to 2024
 
 Screening signal, not investment advice.</div>
+      <div class="out-foot"><button class="send-btn" id="send-tg" onclick="sendToChannel('telegram')">Send to Telegram ↗</button></div>
     </div>
     <div class="out">
-      <h4>📊 Investor Brief</h4>
-      <div class="out-ch">Email</div>
+      <div class="out-head"><h4>📊 Investor Memo</h4><div class="out-ch">Email</div></div>
       <div class="out-body">Caribbean Capital Momentum Brief
 
 Lead market: Guyana
-Signal: World Bank FDI movement increased sharply 2023→2024
+Signal: World Bank FDI movement increased sharply 2023 to 2024
 
 Why it matters:
 Guyana is showing the strongest capital momentum in today's regional cycle. That may point to near-term opportunities in partnerships, services, procurement, logistics, real estate, and infrastructure-adjacent sectors.
@@ -214,29 +311,28 @@ Investor action:
 Screen Guyana first, then compare Belize and St. Vincent and the Grenadines before deciding where to investigate deal flow.
 
 Diligence note:
-Treat this as a screening signal, not an investment recommendation. Validate sector exposure, local execution risk, and partner quality.</div>
+Treat this as a screening signal, not an investment recommendation. Validate sector exposure, local execution risk, and partner quality.
+
+Caribbean Opportunity Dispatch</div>
     </div>
     <div class="out">
-      <h4>💬 WhatsApp Alert</h4>
-      <div class="out-ch">WhatsApp / messaging</div>
-      <div class="out-body">🇬🇾 Guyana capital signal
+      <div class="out-head"><h4>💬 Message Alert</h4><div class="out-ch">WhatsApp / messaging</div></div>
+      <div class="out-body">Guyana capital signal
 
-World Bank data shows sharp FDI increase 2023→2024.
+World Bank data shows sharp FDI increase 2023 to 2024.
 
-What to watch:
-partnerships, procurement, logistics, energy, professional services.
+Watch: partnerships, procurement, logistics, energy, professional services.
 
-Next step:
-Screen Guyana first, then compare Belize + St. Vincent.
+Next: Screen Guyana, then compare Belize + St. Vincent.
 
-⚠️ Screening signal only. Not investment advice.
+Screening signal only. Not investment advice.
 
 Full brief: [link]</div>
+      <div class="out-foot"><button class="send-btn" id="send-wa" onclick="sendToChannel('whatsapp')">Send to WhatsApp ↗</button></div>
     </div>
     <div class="out">
-      <h4>🏛️ Policy / Media Brief</h4>
-      <div class="out-ch">Email / document</div>
-      <div class="out-body">Caribbean Regional Signal — Policy Brief
+      <div class="out-head"><h4>🏛️ Policy Brief</h4><div class="out-ch">Email / document</div></div>
+      <div class="out-body">Regional Investment Signal
 
 Capital momentum is concentrating in Guyana, with secondary movement in Belize and St. Vincent and the Grenadines.
 
@@ -245,22 +341,24 @@ Implications:
 • Professional services demand likely to increase
 • Cross-border logistics and energy coordination opportunities
 
-Recommended monitoring:
-CDB/IDB project pipelines, bilateral trade data, sector-specific FDI breakdowns.
+Monitoring recommended:
+CDB/IDB project pipelines, trade data, sector FDI breakdowns.
 
-Source: World Bank indicators, 2023–2024 comparison.</div>
+Source: World Bank indicators, 2023 to 2024 comparison.</div>
     </div>
   </div>
 
+  <div id="send-receipt" class="send-receipt" role="status"></div>
+
   <div class="analyst">
-    <h3>Ask about today's dispatch</h3>
-    <p>Interrogate today's cycle. Answers come from the data, not an AI.</p>
+    <h3>Ask about today's briefing</h3>
+    <p>Interrogate this cycle. Answers sourced from the data, not generated by AI.</p>
     <div class="aprompts">
-      <button onclick="ask('explain')">Explain lead signal</button>
-      <button onclick="ask('investor')">Investor perspective</button>
+      <button onclick="ask('explain')">Explain the lead</button>
+      <button onclick="ask('investor')">Investor view</button>
       <button onclick="ask('what-changed')">What changed</button>
       <button onclick="ask('guyana')">Why Guyana</button>
-      <button onclick="ask('draft')">Draft investor note</button>
+      <button onclick="ask('draft')">Draft a note</button>
     </div>
     <div class="ask-row">
       <input id="dq" placeholder="Ask about a signal, country, audience…" onkeydown="if(event.key==='Enter')ask(this.value)">
@@ -270,19 +368,19 @@ Source: World Bank indicators, 2023–2024 comparison.</div>
   </div>
 </div>
 
-<div class="sec" style="padding-top:0">
-  <div class="sl">Trust</div>
+<div class="sec">
+  <div class="sec-label">Sources</div>
   <div class="st">Where this comes from</div>
-  <div class="ss">Six public data sources, all free, all updating on schedule.</div>
-  <div class="card" style="padding:0;overflow:hidden">
+  <div class="ss">Six public data sources, all free, monitored continuously.</div>
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden">
     <table class="src-tbl">{{src_rows}}</table>
   </div>
 </div>
 
-<div class="sec" style="padding-top:0">
-  <div class="sl">Feedback loop</div>
+<div class="sec">
+  <div class="sec-label">Delivery responses</div>
   <div class="st">What happened after delivery</div>
-  <div class="ss">When recipients open, forward, or act on a dispatch, the next cycle adjusts.</div>
+  <div class="ss">When recipients open, forward, or act on a briefing, the next cycle adjusts.</div>
   <div class="fb-box">
     <div>{{fb_html}}</div>
     {{boost_html}}
@@ -290,26 +388,26 @@ Source: World Bank indicators, 2023–2024 comparison.</div>
 </div>
 
 <div class="sec deep">
-  <button class="deep-btn" id="db" onclick="toggleDeep()">▸ Show pipeline internals</button>
+  <button class="deep-btn" id="db" onclick="toggleDeep()">▸ System audit</button>
   <div class="deep-c" id="dc">
-    <div class="card" style="margin-top:16px">
-      <h3 style="margin-bottom:4px">Pipeline internals</h3>
-      <p style="font-size:13px;color:var(--m);margin-bottom:16px">Technical proof layer for judges and reviewers.</p>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:24px;margin-top:16px">
+      <h3 style="font-family:var(--serif);font-size:18px;margin-bottom:4px">System audit</h3>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:16px">Technical proof layer for reviewers.</p>
       <div style="display:grid;grid-template-columns:2fr 1fr;gap:24px">
         <div>
-          <h4 style="font-size:14px;margin-bottom:8px">All opportunity themes ({{n_clusters}})</h4>
+          <h4 style="font-size:13px;margin-bottom:8px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px">All themes ({{n_clusters}})</h4>
           {{all_clusters_html}}
         </div>
         <div>
-          <h4 style="font-size:14px;margin-bottom:8px">Counts</h4>
-          <div style="font-size:13px;color:var(--m);line-height:2">
-            <div>Opportunity themes: {{n_clusters}}</div>
-            <div>Routed dispatches: {{n_personas}}</div>
-            <div>Delivery responses: {{n_fb}}</div>
-            <div>Sources online: {{n_sources}}/6</div>
-            <div>Countries covered: 13</div>
+          <h4 style="font-size:13px;margin-bottom:8px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px">Counts</h4>
+          <div style="font-size:13px;color:var(--sub);line-height:2">
+            <div>Themes: {{n_clusters}}</div>
+            <div>Dispatches: {{n_personas}}</div>
+            <div>Responses: {{n_fb}}</div>
+            <div>Sources: {{n_sources}}/6</div>
+            <div>Countries: 13</div>
           </div>
-          <h4 style="font-size:14px;margin:16px 0 8px">All delivery responses</h4>
+          <h4 style="font-size:13px;margin:16px 0 8px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px">All responses</h4>
           <div>{{fb_all_html}}</div>
         </div>
       </div>
@@ -318,36 +416,175 @@ Source: World Bank indicators, 2023–2024 comparison.</div>
 </div>
 
 <script>
+// ── Static data injected at build time ─────────────────────
 const D = {{aj}};
 const risks = {{l_risks_json}};
 if (risks.length) {
-  document.getElementById('risk-area').innerHTML = '<div class="risk">⚠️ ' + risks[0] + '</div>';
+  document.getElementById('risk-area').innerHTML = '<div class="lead-risk">⚠️ ' + risks[0] + '</div>';
 }
 
+// ── System audit toggle ─────────────────────────────────────
+function toggleDeep() {
+  const c = document.getElementById('dc'); const b = document.getElementById('db');
+  if (c.classList.contains('open')) { c.classList.remove('open'); b.textContent = '▸ System audit'; }
+  else { c.classList.add('open'); b.textContent = '▾ System audit'; c.scrollIntoView({behavior:'smooth'}); }
+}
+
+// ── Analyst Q&A ─────────────────────────────────────────────
 window.ask = function(q) {
   const box = document.getElementById('da');
   if (!q) { box.textContent = 'Select a prompt or ask a question.'; return; }
   const d = D.lead; const l = q.toLowerCase();
   if (l === 'explain' || l.includes('lead') || l.includes('first')) {
-    box.textContent = 'Lead signal: ' + d.title + '\n\n' + D.thesis + '\n\nEvidence: ' + d.evidence + ' (' + d.pct + ')\n\nTop audiences:\n' + d.personas.slice(0,3).map(p => '• ' + p.persona + ' via ' + p.channel + ': ' + p.action.substring(0,90) + '…').join('\n');
+    box.textContent = 'Lead: ' + d.title + '\n\n' + D.thesis + '\n\nEvidence: ' + d.evidence + '\nAudiences:\n' + d.personas.slice(0,3).map(p => '• ' + p.persona + ': ' + p.action.substring(0,80) + '…').join('\n');
   } else if (l.includes('investor')) {
-    box.textContent = 'Diaspora investor receives:\n\n"Today\'s lead: ' + d.title + '.\n\n' + (D.thesis.length > 130 ? D.thesis.substring(0,130) + '…' : D.thesis) + '\n\n' + (d.risks.length ? '⚠️ ' + d.risks[0] + '\n\n' : '') + 'Next step: Investigate ' + d.country + ' as a potential deployment target. Validate local partners, sector fit, and timing.\n\nScreening signal, not investment advice.';
+    box.textContent = 'Investor receives:\n\n"' + d.title + '.\n\n' + (D.thesis.length > 120 ? D.thesis.substring(0,120) + '…' : D.thesis) + '\n\nNext: Validate ' + d.country + '. Screen sector fit, partners, timing.\n\nScreening signal, not investment advice."';
   } else if (l.includes('what changed') || l.includes('changed')) {
-    box.textContent = 'Cycle ' + D.cycle + ':\n\n• ' + D.signals + ' regional signals detected\n• ' + D.dispatches + ' dispatches routed\n\n' + D.thesis;
-  } else if (l.includes('guyana')) {
-    box.textContent = 'Guyana is the lead signal (High confidence).\n\n' + d.evidence + ' (' + d.pct + ')\n\n' + (d.risks.length ? '⚠️ ' + d.risks[0] + '\n\n' : '') + 'Compare Guyana against Belize and St. Vincent before committing.';
+    box.textContent = 'Cycle ' + D.cycle + ':\n\n• ' + D.signals + ' regional signals\n• ' + D.dispatches + ' dispatches routed\n\n' + D.thesis;
+  } else if (l.includes('guyana') || l.includes('lead country') || l.includes('why')) {
+    box.textContent = d.country + ' leads (High confidence).\n\n' + d.evidence + (d.pct ? ' (' + d.pct + ')' : '') + '\n\nCompare against secondary signals before committing.';
   } else if (l.includes('draft') || l.includes('note')) {
-    box.textContent = 'Draft investor note:\n\nSubject: ' + d.country + ' signal worth reviewing\n\nSignal: ' + d.title + '\nEvidence: ' + d.evidence + ' (' + d.pct + ')\n' + (d.risks.length ? '\nNote: ' + d.risks[0] + '\n' : '\n') + 'Next step: Validate sector fit, local partners, and timing.\n\nScreening signal, not investment advice.';
+    box.textContent = 'Draft:\n\nSubject: ' + d.country + ' signal worth reviewing\n\n' + d.title + '.\n' + d.evidence + (d.pct ? ' (' + d.pct + ')' : '') + '\n\nNext: Validate sector fit, local partners, timing.\n\nScreening signal, not investment advice.';
   } else {
-    box.textContent = 'Try: explain lead, investor perspective, what changed, why Guyana, or draft investor note.\n\nToday: ' + d.title + ' · ' + D.signals + ' signals · ' + D.dispatches + ' dispatches.';
+    box.textContent = 'Try: explain lead · investor view · what changed · why ' + d.country + ' · draft a note';
   }
   box.scrollTop = 0;
 };
 
-function toggleDeep() {
-  const c = document.getElementById('dc'); const b = document.getElementById('db');
-  if (c.classList.contains('open')) { c.classList.remove('open'); b.textContent = '▸ Show pipeline internals'; }
-  else { c.classList.add('open'); b.textContent = '▾ Hide pipeline internals'; c.scrollIntoView({behavior:'smooth'}); }
+// ── Live status polling ─────────────────────────────────────
+function _timeAgo(iso) {
+  if (!iso) return '—';
+  try {
+    const m = Math.floor((Date.now() - new Date(iso).getTime()) / 60000);
+    if (m < 2) return 'just now';
+    if (m < 60) return m + 'm ago';
+    const h = Math.floor(m / 60);
+    if (h < 24) return h + 'h ago';
+    return Math.floor(h / 24) + 'd ago';
+  } catch(e) { return '—'; }
+}
+
+function _pollStatus() {
+  fetch('/api/status')
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(s) {
+      if (!s) return;
+      const src = document.getElementById('stat-sources');
+      if (src) src.textContent = s.n_sources_ok + '/6';
+      const disp = document.getElementById('stat-dispatches');
+      if (disp && s.n_dispatches) disp.textContent = s.n_dispatches;
+      const txt = document.getElementById('demo-status-txt');
+      if (txt) {
+        if (s.pipeline_running) {
+          txt.textContent = '⏳ Pipeline running…';
+        } else {
+          const ago = _timeAgo(s.generated_at || s.server_time);
+          txt.textContent = 'Live · last cycle ' + ago;
+        }
+      }
+    })
+    .catch(function(){
+      const txt = document.getElementById('demo-status-txt');
+      if (txt) txt.textContent = 'Live';
+    });
+}
+_pollStatus();
+setInterval(_pollStatus, 30000);
+
+// ── Pipeline runner ─────────────────────────────────────────
+function triggerPipeline() {
+  const btn = document.getElementById('btn-pipeline');
+  const logWrap = document.getElementById('log-wrap');
+  const logPanel = document.getElementById('log-panel');
+  if (!btn || btn.disabled) return;
+
+  btn.disabled = true;
+  btn.textContent = '⏳ Running…';
+  logWrap.classList.add('open');
+  logPanel.innerHTML = '<div class="log-line ll-info"># Caribbean Signal OS — pipeline starting…</div>';
+  logWrap.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+  const es = new EventSource('/api/pipeline/stream');
+  es.onmessage = function(e) {
+    const d = e.data;
+    const line = document.createElement('div');
+    line.className = 'log-line' +
+      (d.startsWith('✅') || d.startsWith('Wrote') || d.startsWith('Written') ? ' ll-ok' :
+       d.startsWith('❌') || d.toLowerCase().startsWith('error') ? ' ll-err' :
+       d.startsWith('🚀') || d.startsWith('#') ? ' ll-info' :
+       d.startsWith('—') || d.startsWith('Pipeline') ? ' ll-head' : '');
+    line.textContent = d;
+    logPanel.appendChild(line);
+    logPanel.scrollTop = logPanel.scrollHeight;
+
+    if (d.startsWith('✅') || d.includes('Pipeline complete')) {
+      btn.disabled = false;
+      btn.textContent = '▶ Run Pipeline';
+      es.close();
+      setTimeout(_pollStatus, 1000);
+    }
+  };
+  es.onerror = function() {
+    const line = document.createElement('div');
+    line.className = 'log-line ll-head';
+    line.textContent = '— stream closed';
+    logPanel.appendChild(line);
+    btn.disabled = false;
+    btn.textContent = '▶ Run Pipeline';
+    es.close();
+    _pollStatus();
+  };
+}
+
+// ── Channel sender ──────────────────────────────────────────
+function sendToChannel(channel) {
+  const btnIds = { telegram: ['btn-tg', 'send-tg'], whatsapp: ['btn-wa', 'send-wa'] };
+  const ids = btnIds[channel] || [];
+  const receipt = document.getElementById('send-receipt');
+
+  ids.forEach(function(id) {
+    const b = document.getElementById(id);
+    if (b) { b.disabled = true; b.textContent = '⏳ Sending…'; }
+  });
+
+  fetch('/api/send/' + channel, { method: 'POST' })
+    .then(function(r) { return r.json(); })
+    .then(function(r) {
+      if (!receipt) return;
+      const ch = channel === 'telegram' ? '✈ Telegram' : '📱 WhatsApp';
+      const modeTag = r.mode === 'live' ? 'live send' : 'dry-run (add credentials to .env to send live)';
+      if (r.ok) {
+        receipt.className = 'send-receipt sr-ok';
+        receipt.innerHTML = '<strong>' + ch + ' dispatch sent</strong> · ' + modeTag +
+          ' · <span style="font-size:11px;opacity:.7">' + new Date().toLocaleTimeString() + '</span>' +
+          (r.output ? '<br><code style="font-size:11px;display:block;margin-top:6px;opacity:.8">' +
+            r.output.replace(/</g,'&lt;').split('\n').slice(0,3).join('<br>') + '</code>' : '');
+      } else {
+        receipt.className = 'send-receipt sr-err';
+        receipt.innerHTML = '⚠️ <strong>' + ch + '</strong>: ' + (r.error || 'Send failed') +
+          '<br><small style="opacity:.7">Add credentials to .env to enable live delivery</small>';
+      }
+      receipt.style.display = 'block';
+      receipt.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    })
+    .catch(function() {
+      if (receipt) {
+        receipt.className = 'send-receipt sr-err';
+        receipt.innerHTML = '⚠️ Could not reach the API — is the server running?';
+        receipt.style.display = 'block';
+      }
+    })
+    .finally(function() {
+      const labels = { telegram: '✈ Send Telegram', whatsapp: '📱 Send WhatsApp' };
+      const cardLabels = { telegram: 'Send to Telegram ↗', whatsapp: 'Send to WhatsApp ↗' };
+      ids.forEach(function(id) {
+        const b = document.getElementById(id);
+        if (b) {
+          b.disabled = false;
+          b.textContent = b.id.startsWith('btn-') ? labels[channel] : cardLabels[channel];
+        }
+      });
+    });
 }
 </script>
 

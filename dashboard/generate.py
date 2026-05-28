@@ -124,7 +124,7 @@ for label, key, desc in SRC:
     a = age(d.get("fetched_at") if d else None)
     dot = "●" if ok else "○"
     cls = "src-ok" if ok else "src-off"
-    src_rows += f'<tr class="{cls}"><td><span class="dot">{dot}</span> {j(label)}</td><td>{j(desc)}</td><td>{j(a)}</td></tr>'
+    src_rows += f'<tr class="{cls}"><td><span class="dot">{dot}</span> {j(label)}</td><td>{j(desc)}</td><td>{"Live" if ok else "Offline"}</td></tr>'
 
 # ── Secondary signals (clean titles) ───────────────────────
 sec_signals = ""
@@ -188,7 +188,7 @@ n_composite = len((read_json(ROOT / "data" / "composite" / "latest.json") or {})
 n_personas = desk.get("dispatch_count", 0)
 n_fb = len(fb_hist)
 cycle_id = desk.get("cycle_id", "—")
-now_str = datetime.now(timezone.utc).strftime("%B %d, %Y — %H:%M UTC")
+now_str = datetime.now(timezone.utc).strftime("%B %d, %Y at %H:%M UTC")
 
 # ── Analyst JS data ────────────────────────────────────────
 analyst_data = {
