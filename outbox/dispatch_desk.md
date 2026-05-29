@@ -1,12 +1,12 @@
 # Dispatch Desk — Cycle 20260528
 
-Generated: 2026-05-28 20:34 UTC
+Generated: 2026-05-29 02:09 UTC
 
 Caribbean Opportunity Dispatch turns fragmented regional data into decision-ready routes. This is the primary product surface; Telegram/email are delivery channels and the dashboard is the operator/audit view.
 
-## Track 08 Chain
+## Open Track Coordination Chain
 
-Data → Signal → Packaging → Distribution → Action → Capital
+Fragmented public data → Agentic signal pipeline → Routed decisions → Feedback → Faster regional action
 
 | Stage | This cycle proof |
 |---|---|

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Generate the judge/product-facing Dispatch Desk artifact.
 
-The Dispatch Desk is the primary Track 08 presentation layer: it groups routed
+The Dispatch Desk is the primary Open Track presentation layer: it groups routed
 persona dispatches into decision-first clusters so a judge or operator can see
 what changed, who should care, what action follows, what evidence supports it,
 and how feedback changes the next cycle.
@@ -194,9 +194,9 @@ def write_outputs(payload: dict[str, Any]) -> None:
         "",
         "Caribbean Opportunity Dispatch turns fragmented regional data into decision-ready routes. This is the primary product surface; Telegram/email are delivery channels and the dashboard is the operator/audit view.",
         "",
-        "## Track 08 Chain",
+        "## Open Track Coordination Chain",
         "",
-        "Data → Signal → Packaging → Distribution → Action → Capital",
+        "Fragmented public data → Agentic signal pipeline → Routed decisions → Feedback → Faster regional action",
         "",
         "| Stage | This cycle proof |",
         "|---|---|",

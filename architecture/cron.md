@@ -19,7 +19,7 @@ Use OpenClaw cron for packaging and distribution once the watcher output is usef
 
 ## User-facing presentation
 
-The primary user/judge-facing surface is the **Dispatch Desk**: `outbox/dispatch_desk.md` plus the top section of `dashboard.html`. It groups repeated persona routes into decision clusters so Track 08 reviewers can see the complete chain: data → signal → packaging → distribution → action → capital.
+The primary user/judge-facing surface is the **Dispatch Desk**: `outbox/dispatch_desk.md` plus the top section of `dashboard.html`. It groups repeated persona routes into decision clusters so Open Track reviewers can see the complete coordination chain: fragmented public data → agentic signal pipeline → routed decisions → feedback → faster regional action.
 
 Each full pipeline cycle writes:
 

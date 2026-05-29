@@ -4,7 +4,11 @@
 
 This is the product. The system architecture underneath is **Caribbean Signal OS** — a continuous multi-agent pipeline that watches public regional data, merges weak signals across sources, and packages them into routed dispatches for specific decision-makers.
 
-**Track:** 08 — Intelligence, Media & Distribution Systems (Sapien + Polymath Buildathon)
+**Track:** 10 — Open Track (Future Caribbean Buildathon)
+
+**Category:** Agentic market coordination infrastructure for fragmented Caribbean economies.
+
+Caribbean Opportunity Dispatch belongs in Open Track because it is not a sector-specific app. Finance, disaster risk, food, ocean, tourism, and procurement are signal domains; the product is the cross-sector routing layer that turns those signals into action.
 
 ---
 
@@ -18,7 +22,7 @@ Existing tools stop short:
 - Dashboards show status but do not package channel-ready action
 - Investor catalogues list opportunities but are not continuous watchers
 
-This fills the **last mile between public regional data and acted-on opportunity**.
+This fills the **last mile between public regional data and acted-on opportunity**. The goal is to compress the time between public signal and economic action.
 
 ## The Product
 
@@ -46,7 +50,7 @@ public data -> watchers -> normalized records -> reasoning merger -> composite s
 
 | Artifact | What it is |
 |---|---|
-| `outbox/dispatch_desk.md` | Primary Track 08 product surface: grouped decision clusters with persona routes, evidence, action, and feedback |
+| `outbox/dispatch_desk.md` | Primary Open Track product surface: grouped decision clusters with persona routes, evidence, action, and feedback |
 | `outbox/opportunity_dispatches.md` | Canonical routed dispatches with persona, channel, action, and feedback status |
 | `outbox/regional_thesis.md` | Cross-cluster synthesis — investment, risk, pipeline, tourism in one narrative |
 | `outbox/why_now.md` | Editorial calendar context — seasonal windows, procurement cycles, etc. |
@@ -113,7 +117,7 @@ The dashboard includes an **Ask the Dispatch Desk** analyst rail. It is determin
 
 Telegram and email are **delivery adapters**, not the product. The cron-delivered `outbox/telegram_brief.md` is a compact notification that points back to the Dispatch Desk when the desk changes.
 
-The Dispatch Desk is organized around Track 08's chain:
+The Dispatch Desk is organized around the Open Track coordination chain:
 
 - **Data** — public source families feeding the cycle
 - **Signal** — decision clusters grouped from repeated persona routes

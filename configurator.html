@@ -177,7 +177,7 @@ footer { border-top: 1px solid var(--border); padding: 24px; text-align: center;
 
 <!-- Hero -->
 <div class="hero">
-  <p class="hero-kicker">Intelligence · Media · Distribution</p>
+  <p class="hero-kicker">Open Track · Agentic coordination infrastructure</p>
   <h1 class="hero-headline">Build your Caribbean<br><em>market signal feed.</em></h1>
   <p class="hero-sub">Choose the countries, sectors, and delivery channel you care about. We turn public regional data into briefings you can actually use — filtered for your role, formatted for your channel.</p>
   <div class="hero-stats">
@@ -318,16 +318,15 @@ footer { border-top: 1px solid var(--border); padding: 24px; text-align: center;
     <h3>Your feed is ready.</h3>
     <p>This preview was generated live from today's pipeline. Choose how you want to receive it.</p>
     <div class="modal-actions">
-      <button class="modal-btn primary" onclick="sendTelegram()">✈ Send to Telegram</button>
-      <button class="modal-btn" onclick="openWhatsApp()">📱 Share via WhatsApp</button>
-      <button class="modal-btn" onclick="copyBriefing();closeModal()">📋 Copy briefing text</button>
+      <button class="modal-btn primary" onclick="copyBriefing();closeModal()">📋 Copy briefing text</button>
+      <button class="modal-btn" onclick="closeModal()">Close</button>
     </div>
-    <div class="modal-note" id="modal-status">Telegram delivery requires a connected bot. WhatsApp opens a pre-filled message. Copy works immediately.</div>
+    <div class="modal-note" id="modal-status">Copy the briefing text and paste it into your messaging app, email, or notes.</div>
   </div>
 </div>
 
 <footer>
-  Caribbean Opportunity Dispatch · Cycle 20260528 · May 28, 2026 at 20:54 UTC · Screening signals only, not investment advice · Data: World Bank · IDB · NOAA · NDBC · CARICOM · CDB
+  Caribbean Opportunity Dispatch · Cycle 20260528 · Open Track · Screening signals only, not investment advice · Data: World Bank · IDB · NOAA · NDBC · CARICOM · CDB
 </footer>
 
 <script>
@@ -495,7 +494,7 @@ function renderClientSide() {
   if (state.channel === 'telegram') {
     text = `*Caribbean Opportunity Signal*\n\n*${country}* — ${conf}\n\n${ev}${pstr}\n\n*What to do (${pl}):*\n${action}\n\n_Screening signal only. Not investment advice._`;
   } else if (state.channel === 'whatsapp') {
-    text = `🌴 Caribbean Signal\n\n${country}: ${ev}${pstr}\n\n${action.slice(0,160)}\n\nScreening signal only.\nhttps://future-caribbean.fly.dev`;
+    text = `🌴 Caribbean Signal\n\n${country}: ${ev}${pstr}\n\n${action.slice(0,160)}\n\nScreening signal only.`;
   } else if (state.channel === 'email') {
     text = `Subject: ${country} — ${conf.toLowerCase()} market signal\n\n${ev}${pstr}\n\nFor ${pl}:\n${action}\n\nSource: World Bank / IDB\nConfidence: ${conf}\n\nScreening signal, not investment advice.\nCaribbean Opportunity Dispatch`;
   } else {
@@ -576,30 +575,6 @@ function copyBriefing() {
     const btn = event?.target;
     if (btn) { const orig = btn.textContent; btn.textContent = '✓ Copied'; setTimeout(()=>btn.textContent=orig, 2000); }
   }).catch(() => alert(_previewText));
-}
-
-function openWhatsApp() {
-  fetch('/api/whatsapp/link')
-    .then(r => r.json())
-    .then(r => { if (r.ok) window.open(r.link,'_blank','noopener'); })
-    .catch(() => {
-      const msg = _previewText || '🌴 Caribbean Opportunity Dispatch\nhttps://future-caribbean.fly.dev';
-      window.open('https://wa.me/?text='+encodeURIComponent(msg),'_blank','noopener');
-    });
-  closeModal();
-}
-
-function sendTelegram() {
-  const status = document.getElementById('modal-status');
-  status.textContent = '⏳ Sending…';
-  fetch('/api/send/telegram', { method: 'POST' })
-    .then(r => r.json())
-    .then(r => {
-      status.textContent = r.ok
-        ? '✅ Sent · ' + (r.mode === 'live' ? 'live delivery' : 'dry-run — add TELEGRAM_BOT_TOKEN to .env')
-        : '⚠ ' + (r.error || 'Send failed — check Telegram credentials in .env');
-    })
-    .catch(() => { status.textContent = '⚠ Connection error'; });
 }
 
 // ── Proof toggle ────────────────────────────────────────────

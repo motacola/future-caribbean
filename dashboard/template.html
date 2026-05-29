@@ -8,10 +8,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #F7F1E7; --card: #FFFFFF; --card-alt: #FBF7EF;
-  --text: #102A43; --sub: #486581; --muted: #829AB1;
-  --gold: #C79A3B; --teal: #0E7C7B; --coral: #C94C4C;
-  --border: #E2D6C2; --border-dark: #C4B5A0;
+  --bg: #F4EBDD; --ink: #18251F; --card: #FFFCF4; --card-alt: #EAF2EC;
+  --text: #18251F; --sub: #455A50; --muted: #7F8C83;
+  --gold: #B57A22; --teal: #0D766E; --coral: #B94836; --sky: #2676A8;
+  --lime: #B6C74E; --border: #D8CBB8; --border-dark: #AA9A82;
   --serif: 'Cormorant Garamond', Georgia, serif;
   --sans: 'Inter', -apple-system, system-ui, sans-serif;
   --mono: 'IBM Plex Mono', monospace;
@@ -23,24 +23,40 @@ a { color: var(--teal); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 /* ── masthead ── */
-.masthead { background: var(--text); color: var(--bg); padding: 14px 0; }
+.masthead { background: var(--ink); color: var(--bg); padding: 14px 0; }
 .mast-inner { max-width: 1080px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
 .mast-name { font-family: var(--serif); font-size: 18px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
 .mast-name em { font-style: normal; color: var(--gold); }
 .mast-links { display: flex; gap: 20px; }
-.mast-links a { color: var(--muted); font-size: 12px; letter-spacing: .5px; text-transform: uppercase; font-weight: 500; }
+.mast-links a { color: color-mix(in srgb, var(--bg) 62%, transparent); font-size: 12px; letter-spacing: .5px; text-transform: uppercase; font-weight: 500; }
 .mast-links a:hover { color: var(--bg); text-decoration: none; }
 
 /* ── hero ── */
-.hero { max-width: 1080px; margin: 0 auto; padding: 48px 24px 40px; }
-.hero-headline { font-family: var(--serif); font-size: clamp(28px, 4vw, 44px); font-weight: 700; letter-spacing: -.5px; line-height: 1.1; margin-bottom: 12px; color: var(--text); }
+.hero { max-width: 1160px; margin: 0 auto; padding: 54px 24px 34px; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 430px; gap: clamp(28px, 5vw, 64px); align-items: center; }
+.hero-headline { font-family: var(--serif); font-size: clamp(38px, 6vw, 76px); font-weight: 700; letter-spacing: 0; line-height: .95; margin-bottom: 18px; color: var(--text); max-width: 680px; }
 .hero-headline em { font-style: normal; font-style: italic; color: var(--teal); }
-.hero-sub { font-size: 17px; color: var(--sub); max-width: 560px; margin-bottom: 28px; line-height: 1.5; }
+.hero-sub { font-size: clamp(17px, 2vw, 21px); color: var(--sub); max-width: 620px; margin-bottom: 28px; line-height: 1.5; }
 .hero-actions { display: flex; gap: 12px; margin-bottom: 32px; flex-wrap: wrap; }
-.btn { display: inline-block; padding: 10px 22px; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer; border: none; font-family: var(--sans); letter-spacing: .3px; }
-.btn-p { background: var(--text); color: var(--bg); }
+.btn { display: inline-block; padding: 10px 22px; border-radius: 5px; font-size: 13px; font-weight: 600; cursor: pointer; border: none; font-family: var(--sans); letter-spacing: .3px; }
+.btn-p { background: var(--ink); color: var(--bg); }
 .btn-s { background: transparent; color: var(--text); border: 1px solid var(--border-dark); }
 .btn-s:hover { border-color: var(--text); text-decoration: none; }
+.hero-terminal { background: var(--ink); color: var(--bg); border-radius: 8px; padding: 18px; box-shadow: 0 24px 80px rgba(24,37,31,.18); position: relative; overflow: hidden; }
+.hero-terminal::before { content: ""; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(182,199,78,.18), transparent 42%, rgba(38,118,168,.16)); pointer-events: none; }
+.terminal-top { position: relative; display: flex; justify-content: space-between; gap: 12px; padding-bottom: 12px; border-bottom: 1px solid rgba(244,235,221,.16); font-family: var(--mono); font-size: 11px; color: rgba(244,235,221,.62); }
+.route-flow { position: relative; display: grid; gap: 10px; padding-top: 16px; }
+.route-node { display: grid; grid-template-columns: 34px 1fr; gap: 12px; align-items: start; }
+.route-index { width: 28px; height: 28px; display: grid; place-items: center; border: 1px solid rgba(244,235,221,.22); border-radius: 50%; font-family: var(--mono); font-size: 11px; color: var(--lime); }
+.route-node strong { display: block; font-size: 13px; margin-bottom: 2px; color: var(--bg); }
+.route-node span { display: block; font-size: 12px; line-height: 1.45; color: rgba(244,235,221,.68); }
+.route-arrow { height: 18px; margin-left: 13px; border-left: 1px solid rgba(244,235,221,.24); }
+.proof-band { max-width: 1160px; margin: 0 auto; padding: 0 24px 36px; }
+.proof-line { display: grid; grid-template-columns: repeat(5, 1fr); border: 1px solid var(--border); background: color-mix(in srgb, var(--card) 76%, transparent); border-radius: 8px; overflow: hidden; }
+.proof-cell { padding: 14px 16px; border-right: 1px solid var(--border); min-width: 0; }
+.proof-cell:last-child { border-right: none; }
+.proof-k { display: block; font-family: var(--mono); font-size: 18px; line-height: 1.1; color: var(--ink); margin-bottom: 4px; }
+.proof-v { display: block; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .8px; font-weight: 700; }
 
 /* ── source strip ── */
 .strip { display: flex; align-items: center; gap: 24px; padding: 14px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 40px; flex-wrap: wrap; }
@@ -51,11 +67,12 @@ a:hover { text-decoration: underline; }
 /* ── sections ── */
 .sec { max-width: 1080px; margin: 0 auto; padding: 0 24px 40px; }
 .sec-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gold); margin-bottom: 10px; font-weight: 600; }
-.sec-title { font-family: var(--serif); font-size: 24px; font-weight: 700; margin-bottom: 8px; letter-spacing: -.3px; }
+.sec-title, .st { font-family: var(--serif); font-size: 28px; line-height: 1.08; font-weight: 700; margin-bottom: 8px; letter-spacing: 0; }
 .sec-sub { font-size: 14px; color: var(--sub); margin-bottom: 20px; max-width: 520px; }
+.ss { font-size: 14px; color: var(--sub); margin-bottom: 20px; max-width: 560px; }
 
 /* ── lead story ── */
-.lead-story { background: var(--card); border: 1px solid var(--border); border-radius: var(--r); padding: 32px; margin-bottom: 16px; }
+.lead-story { background: var(--card); border: 1px solid var(--border); border-radius: var(--r); padding: 32px; margin-bottom: 16px; box-shadow: 0 14px 40px rgba(24,37,31,.07); }
 .lead-story-head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; flex-wrap: wrap; gap: 8px; }
 .lead-loc { font-size: 11px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--muted); font-weight: 600; }
 .lead-conf { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 600; background: rgba(14,124,123,.1); color: var(--teal); }
@@ -80,11 +97,12 @@ a:hover { text-decoration: underline; }
 .risk-tag { font-size: 11px; color: var(--coral); background: rgba(201,76,76,.07); padding: 3px 8px; border-radius: 4px; white-space: nowrap; }
 
 /* ── audience cards ── */
-.aud-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
-.aud { background: var(--card); border: 1px solid var(--border); border-radius: var(--r); padding: 18px; }
+.aud-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; }
+.aud { background: var(--ink); color: var(--bg); border-radius: var(--r); padding: 16px; min-height: 178px; display: flex; flex-direction: column; }
+.aud-num { font-family: var(--mono); font-size: 11px; color: var(--lime); margin-bottom: 18px; }
 .aud-name { font-family: var(--serif); font-weight: 700; font-size: 16px; margin-bottom: 4px; }
-.aud-ch { font-size: 11px; color: var(--teal); margin-bottom: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: .5px; }
-.aud-act { font-size: 13px; color: var(--sub); line-height: 1.5; }
+.aud-ch { font-size: 11px; color: var(--lime); margin-bottom: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; }
+.aud-act { font-size: 13px; color: color-mix(in srgb, var(--bg) 78%, transparent); line-height: 1.5; margin-top: auto; }
 
 /* ── output cards ── */
 .out-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
@@ -93,6 +111,14 @@ a:hover { text-decoration: underline; }
 .out-head h4 { font-family: var(--serif); font-size: 16px; font-weight: 700; margin-bottom: 2px; }
 .out-ch { font-size: 10px; color: var(--teal); text-transform: uppercase; letter-spacing: .8px; font-weight: 600; }
 .out-body { padding: 16px 20px; font-size: 12px; color: var(--sub); white-space: pre-wrap; font-family: var(--mono); line-height: 1.6; max-height: 220px; overflow: auto; }
+.out-static { padding: 10px 20px 14px; border-top: 1px solid var(--border); font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .8px; font-weight: 700; }
+.coordination-strip { background: var(--ink); color: var(--bg); padding: 26px 0; margin: 4px 0 44px; }
+.coordination-inner { max-width: 1080px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 1fr 34px 1fr 34px 1fr 34px 1fr; gap: 12px; align-items: center; }
+.coord-step { min-height: 112px; border: 1px solid rgba(244,235,221,.18); border-radius: 8px; padding: 14px; }
+.coord-step span { display: block; font-family: var(--mono); color: var(--lime); font-size: 11px; margin-bottom: 16px; }
+.coord-step strong { display: block; font-size: 14px; color: var(--bg); margin-bottom: 4px; }
+.coord-step p { font-size: 12px; color: rgba(244,235,221,.64); line-height: 1.45; }
+.coord-arrow { color: rgba(244,235,221,.35); font-family: var(--mono); text-align: center; }
 
 /* ── analyst ── */
 .analyst { background: var(--card-alt); border: 1px solid var(--border); border-radius: var(--r); padding: 20px; margin-top: 18px; }
@@ -179,7 +205,10 @@ footer { border-top: 1px solid var(--border); padding: 24px; text-align: center;
 .send-btn:disabled { opacity: .45; cursor: not-allowed; }
 
 @media(max-width:768px) {
-  .out-grid, .lead-details { grid-template-columns: 1fr; }
+  .hero-grid, .out-grid, .lead-details, .coordination-inner { grid-template-columns: 1fr; }
+  .coord-arrow { display: none; }
+  .proof-line { grid-template-columns: repeat(2, 1fr); }
+  .proof-cell { border-bottom: 1px solid var(--border); }
   .strip { gap: 12px; }
 }
 </style>
@@ -190,47 +219,57 @@ footer { border-top: 1px solid var(--border); padding: 24px; text-align: center;
   <div class="mast-inner">
     <div class="mast-name">CARIBBEAN <em>OPPORTUNITY</em> DISPATCH</div>
     <div class="mast-links">
-      <a href="#"><span style="color:var(--teal)">●</span> Live</a>
+      <a href="#briefing"><span style="color:var(--teal)">●</span> Cycle {{cycle_id}}</a>
       <a href="javascript:void(0)" onclick="toggleDeep();return false;">Today's briefing</a>
     </div>
   </div>
 </div>
 
 <div class="hero">
-  <p class="sec-label" style="color:var(--gold);margin-bottom:8px">Daily investment intelligence</p>
-  <h1 class="hero-headline">Daily investment intelligence for a <em>connected Caribbean</em>.</h1>
-  <p class="hero-sub">We monitor public regional data, identify market signals, and package them into briefings for investors, founders, policymakers, and diaspora networks.</p>
-  <div class="hero-actions">
-    <a href="#briefing" class="btn btn-p">Read Today's Briefing</a>
-    <a href="javascript:void(0)" class="btn btn-s" onclick="toggleDeep();return false;">System Audit</a>
-  </div>
-</div>
-
-<div class="sec" style="padding-bottom:0">
-  <div class="strip">
-    <div class="strip-item"><span class="strip-dot"></span> <span class="strip-val">13</span> countries</div>
-    <div class="strip-item"><span class="strip-dot" style="background:var(--teal)"></span> <span class="strip-val" id="stat-sources">{{n_sources}}/6</span> sources</div>
-    <div class="strip-item"><span class="strip-dot" style="background:var(--gold)"></span> <span class="strip-val" id="stat-dispatches">{{n_personas}}</span> dispatches</div>
-    <div class="strip-item"><span class="strip-dot" style="background:var(--muted)"></span> <span class="strip-val">4h</span> refresh</div>
-  </div>
-</div>
-
-<!-- Live demo control bar -->
-<div class="demo-bar">
-  <div class="demo-bar-inner">
-    <span class="demo-label">Live demo</span>
-    <button class="dbtn dbtn-gold" id="btn-pipeline" onclick="triggerPipeline()">▶ Run Pipeline</button>
-    <button class="dbtn dbtn-teal" id="btn-tg" onclick="sendToChannel('telegram')">✈ Send Telegram</button>
-    <button class="dbtn" id="btn-wa" onclick="openWhatsApp()">📱 Share WhatsApp</button>
-    <span class="demo-spacer"></span>
-    <span class="demo-live"><span class="live-dot"></span><span id="demo-status-txt">Live · refreshing…</span></span>
-  </div>
-</div>
-<div class="log-wrap" id="log-wrap">
-  <div class="log-inner">
-    <div class="log-panel" id="log-panel">
-      <div class="log-line ll-info"># Caribbean Signal OS — click "Run Pipeline" to watch the system collect data live</div>
+  <div class="hero-grid">
+    <div>
+      <p class="sec-label" style="color:var(--gold);margin-bottom:10px">Open Track coordination system</p>
+      <h1 class="hero-headline">A dispatch desk for moving Caribbean signals into action.</h1>
+      <p class="hero-sub">Public data already exists. This system watches it, finds decision signals, routes each one to the right persona, and lets feedback change the next cycle.</p>
+      <div class="hero-actions">
+        <a href="#briefing" class="btn btn-p">Open Today's Desk</a>
+        <a href="javascript:void(0)" class="btn btn-s" onclick="toggleDeep();return false;">Review System Proof</a>
+      </div>
     </div>
+    <div class="hero-terminal" aria-label="Signal routing example">
+      <div class="terminal-top"><span>Cycle {{cycle_id}}</span><span>{{n_personas}} routes</span></div>
+      <div class="route-flow">
+        <div class="route-node"><div class="route-index">01</div><div><strong>{{l_country}} signal detected</strong><span>{{l_evidence}}. Confidence: {{l_grade}}.</span></div></div>
+        <div class="route-arrow"></div>
+        <div class="route-node"><div class="route-index">02</div><div><strong>Decision cluster formed</strong><span>{{l_decision}}.</span></div></div>
+        <div class="route-arrow"></div>
+        <div class="route-node"><div class="route-index">03</div><div><strong>Persona routes assigned</strong><span>Investor, founder/operator, ecosystem builder, policy/media, and procurement routes each get different actions.</span></div></div>
+        <div class="route-arrow"></div>
+        <div class="route-node"><div class="route-index">04</div><div><strong>Feedback updates priority</strong><span>Forwards, replies, opens, ignores, and decision changes affect the next dispatch cycle.</span></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="proof-band">
+  <div class="proof-line">
+    <div class="proof-cell"><span class="proof-k">13</span><span class="proof-v">Countries watched</span></div>
+    <div class="proof-cell"><span class="proof-k">{{n_sources}}/6</span><span class="proof-v">Source families live</span></div>
+    <div class="proof-cell"><span class="proof-k">{{n_clusters}}</span><span class="proof-v">Decision clusters</span></div>
+    <div class="proof-cell"><span class="proof-k">{{n_personas}}</span><span class="proof-v">Persona routes</span></div>
+    <div class="proof-cell"><span class="proof-k">4h</span><span class="proof-v">Refresh target</span></div>
+  </div>
+</div>
+
+<div class="coordination-strip">
+  <div class="coordination-inner">
+    <div class="coord-step"><span>01</span><strong>Watch</strong><p>World Bank, IDB, NOAA, NDBC, CARICOM, and CDB sources feed the cycle.</p></div>
+    <div class="coord-arrow">-></div>
+    <div class="coord-step"><span>02</span><strong>Detect</strong><p>Weak public signals become country and cross-country decision clusters.</p></div>
+    <div class="coord-arrow">-></div>
+    <div class="coord-step"><span>03</span><strong>Route</strong><p>Each signal gets a persona, channel, rationale, and next action.</p></div>
+    <div class="coord-arrow">-></div>
+    <div class="coord-step"><span>04</span><strong>Learn</strong><p>Recipient feedback changes ranking, urgency, and future dispatch priority.</p></div>
   </div>
 </div>
 
@@ -274,7 +313,7 @@ footer { border-top: 1px solid var(--border); padding: 24px; text-align: center;
   <div class="ss">These are real outputs from today's briefing cycle.</div>
   <div class="out-grid">
     <div class="out">
-      <div class="out-head"><h4>🌴 Telegram Briefing</h4><div class="out-ch">Telegram channel</div></div>
+      <div class="out-head"><h4>Telegram Briefing</h4><div class="out-ch">Telegram channel</div></div>
       <div class="out-body" id="tg-body">Caribbean Opportunity Dispatch
 
 Lead signal: Guyana capital movement
@@ -295,10 +334,10 @@ Source: World Bank indicators
 Period: 2023 to 2024
 
 Screening signal, not investment advice.</div>
-      <div class="out-foot"><button class="send-btn" id="send-tg" onclick="sendToChannel('telegram')">Send to Telegram ↗</button></div>
+      <div class="out-static">Delivery packet generated</div>
     </div>
     <div class="out">
-      <div class="out-head"><h4>📊 Investor Memo</h4><div class="out-ch">Email</div></div>
+      <div class="out-head"><h4>Investor Memo</h4><div class="out-ch">Email</div></div>
       <div class="out-body">Caribbean Capital Momentum Brief
 
 Lead market: Guyana
@@ -314,9 +353,10 @@ Diligence note:
 Treat this as a screening signal, not an investment recommendation. Validate sector exposure, local execution risk, and partner quality.
 
 Caribbean Opportunity Dispatch</div>
+      <div class="out-static">Persona route generated</div>
     </div>
     <div class="out">
-      <div class="out-head"><h4>💬 Message Alert</h4><div class="out-ch">WhatsApp / messaging</div></div>
+      <div class="out-head"><h4>Message Alert</h4><div class="out-ch">WhatsApp / messaging</div></div>
       <div class="out-body">Guyana capital signal
 
 World Bank data shows sharp FDI increase 2023 to 2024.
@@ -328,10 +368,10 @@ Next: Screen Guyana, then compare Belize + St. Vincent.
 Screening signal only. Not investment advice.
 
 Full brief: [link]</div>
-      <div class="out-foot"><button class="send-btn" id="send-wa" onclick="openWhatsApp()">Share via WhatsApp ↗</button></div>
+      <div class="out-static">Channel copy generated</div>
     </div>
     <div class="out">
-      <div class="out-head"><h4>🏛️ Policy Brief</h4><div class="out-ch">Email / document</div></div>
+      <div class="out-head"><h4>Policy Brief</h4><div class="out-ch">Email / document</div></div>
       <div class="out-body">Regional Investment Signal
 
 Capital momentum is concentrating in Guyana, with secondary movement in Belize and St. Vincent and the Grenadines.
@@ -345,10 +385,9 @@ Monitoring recommended:
 CDB/IDB project pipelines, trade data, sector FDI breakdowns.
 
 Source: World Bank indicators, 2023 to 2024 comparison.</div>
+      <div class="out-static">Institution brief generated</div>
     </div>
   </div>
-
-  <div id="send-receipt" class="send-receipt" role="status"></div>
 
   <div class="analyst">
     <h3>Ask about today's briefing</h3>
@@ -451,174 +490,6 @@ window.ask = function(q) {
   box.scrollTop = 0;
 };
 
-// ── Live status polling ─────────────────────────────────────
-function _timeAgo(iso) {
-  if (!iso) return '—';
-  try {
-    const m = Math.floor((Date.now() - new Date(iso).getTime()) / 60000);
-    if (m < 2) return 'just now';
-    if (m < 60) return m + 'm ago';
-    const h = Math.floor(m / 60);
-    if (h < 24) return h + 'h ago';
-    return Math.floor(h / 24) + 'd ago';
-  } catch(e) { return '—'; }
-}
-
-function _pollStatus() {
-  fetch('/api/status')
-    .then(function(r){ return r.ok ? r.json() : null; })
-    .then(function(s) {
-      if (!s) return;
-      const src = document.getElementById('stat-sources');
-      if (src) src.textContent = s.n_sources_ok + '/6';
-      const disp = document.getElementById('stat-dispatches');
-      if (disp && s.n_dispatches) disp.textContent = s.n_dispatches;
-      const txt = document.getElementById('demo-status-txt');
-      if (txt) {
-        if (s.pipeline_running) {
-          txt.textContent = '⏳ Pipeline running…';
-        } else {
-          const ago = _timeAgo(s.generated_at || s.server_time);
-          txt.textContent = 'Live · last cycle ' + ago;
-        }
-      }
-    })
-    .catch(function(){
-      const txt = document.getElementById('demo-status-txt');
-      if (txt) txt.textContent = 'Live';
-    });
-}
-_pollStatus();
-setInterval(_pollStatus, 30000);
-
-// ── Pipeline runner ─────────────────────────────────────────
-function triggerPipeline() {
-  const btn = document.getElementById('btn-pipeline');
-  const logWrap = document.getElementById('log-wrap');
-  const logPanel = document.getElementById('log-panel');
-  if (!btn || btn.disabled) return;
-
-  btn.disabled = true;
-  btn.textContent = '⏳ Running…';
-  logWrap.classList.add('open');
-  logPanel.innerHTML = '<div class="log-line ll-info"># Caribbean Signal OS — pipeline starting…</div>';
-  logWrap.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-
-  const es = new EventSource('/api/pipeline/stream');
-  es.onmessage = function(e) {
-    const d = e.data;
-    const line = document.createElement('div');
-    line.className = 'log-line' +
-      (d.startsWith('✅') || d.startsWith('Wrote') || d.startsWith('Written') ? ' ll-ok' :
-       d.startsWith('❌') || d.toLowerCase().startsWith('error') ? ' ll-err' :
-       d.startsWith('🚀') || d.startsWith('#') ? ' ll-info' :
-       d.startsWith('—') || d.startsWith('Pipeline') ? ' ll-head' : '');
-    line.textContent = d;
-    logPanel.appendChild(line);
-    logPanel.scrollTop = logPanel.scrollHeight;
-
-    if (d.startsWith('✅') || d.includes('Pipeline complete')) {
-      btn.disabled = false;
-      btn.textContent = '▶ Run Pipeline';
-      es.close();
-      setTimeout(_pollStatus, 1000);
-    }
-  };
-  es.onerror = function() {
-    const line = document.createElement('div');
-    line.className = 'log-line ll-head';
-    line.textContent = '— stream closed';
-    logPanel.appendChild(line);
-    btn.disabled = false;
-    btn.textContent = '▶ Run Pipeline';
-    es.close();
-    _pollStatus();
-  };
-}
-
-// ── Telegram sender ─────────────────────────────────────────
-function sendToChannel(channel) {
-  const ids = ['btn-tg', 'send-tg'];
-  const receipt = document.getElementById('send-receipt');
-
-  ids.forEach(function(id) {
-    const b = document.getElementById(id);
-    if (b) { b.disabled = true; b.textContent = '⏳ Sending…'; }
-  });
-
-  fetch('/api/send/telegram', { method: 'POST' })
-    .then(function(r) { return r.json(); })
-    .then(function(r) {
-      if (!receipt) return;
-      const modeTag = r.mode === 'live' ? 'live send' : 'dry-run · add TELEGRAM_BOT_TOKEN to .env to send live';
-      if (r.ok) {
-        receipt.className = 'send-receipt sr-ok';
-        receipt.innerHTML = '<strong>✈ Telegram dispatch sent</strong> · ' + modeTag +
-          ' · <span style="font-size:11px;opacity:.7">' + new Date().toLocaleTimeString() + '</span>' +
-          (r.output ? '<br><code style="font-size:11px;display:block;margin-top:6px;opacity:.8;white-space:pre-wrap">' +
-            r.output.replace(/</g,'&lt;').split('\n').slice(0,4).join('\n') + '</code>' : '');
-      } else {
-        receipt.className = 'send-receipt sr-err';
-        receipt.innerHTML = '⚠️ <strong>Telegram</strong>: ' + (r.error || 'Send failed') +
-          '<br><small style="opacity:.7">Add TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID to .env</small>';
-      }
-      receipt.style.display = 'block';
-      receipt.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    })
-    .catch(function() {
-      if (receipt) {
-        receipt.className = 'send-receipt sr-err';
-        receipt.innerHTML = '⚠️ Could not reach the API — is the server running?';
-        receipt.style.display = 'block';
-      }
-    })
-    .finally(function() {
-      ids.forEach(function(id) {
-        const b = document.getElementById(id);
-        if (b) {
-          b.disabled = false;
-          b.textContent = id === 'btn-tg' ? '✈ Send Telegram' : 'Send to Telegram ↗';
-        }
-      });
-    });
-}
-
-// ── WhatsApp share (wa.me pre-filled link) ──────────────────
-function openWhatsApp() {
-  const btnBar = document.getElementById('btn-wa');
-  const btnCard = document.getElementById('send-wa');
-  const receipt = document.getElementById('send-receipt');
-  if (btnBar) { btnBar.disabled = true; btnBar.textContent = '⏳ Building…'; }
-  if (btnCard) { btnCard.disabled = true; btnCard.textContent = 'Building…'; }
-
-  fetch('/api/whatsapp/link')
-    .then(function(r) { return r.json(); })
-    .then(function(r) {
-      if (r.ok && r.link) {
-        window.open(r.link, '_blank', 'noopener');
-        if (receipt) {
-          receipt.className = 'send-receipt sr-ok';
-          receipt.innerHTML = '📱 <strong>WhatsApp opened</strong> · pre-filled dispatch for ' + (r.country || 'Caribbean') +
-            ' · message ready to send in WhatsApp' +
-            (r.preview ? '<br><code style="font-size:11px;display:block;margin-top:6px;opacity:.8;white-space:pre-wrap">' +
-              r.preview.replace(/</g,'&lt;').substring(0,200) + '…</code>' : '');
-          receipt.style.display = 'block';
-          receipt.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
-      }
-    })
-    .catch(function() {
-      // Fallback: build a basic wa.me link client-side
-      const msg = '🌴 Caribbean Opportunity Signal\n\nLead: ' + (D.lead.country || 'Caribbean') +
-        (D.lead.pct ? ' · ' + D.lead.pct + ' capital movement' : '') +
-        '\n\nFull brief: https://future-caribbean.fly.dev';
-      window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank', 'noopener');
-    })
-    .finally(function() {
-      if (btnBar) { btnBar.disabled = false; btnBar.textContent = '📱 Share WhatsApp'; }
-      if (btnCard) { btnCard.disabled = false; btnCard.textContent = 'Share via WhatsApp ↗'; }
-    });
-}
 </script>
 
 <footer>

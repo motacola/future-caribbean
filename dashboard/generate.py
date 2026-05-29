@@ -98,12 +98,13 @@ for c in clusters:
     if len(pcards) >= 5: break
 
 pcard_html = ""
-for name, ch, act in pcards:
+for idx, (name, ch, act) in enumerate(pcards, 1):
     pcard_html += f'''
-    <div class="aud-card">
+    <div class="aud">
+      <div class="aud-num">{idx:02d}</div>
       <div class="aud-name">{j(name)}</div>
-      <div class="aud-channel">{j(ch)}</div>
-      <p class="aud-action">{j(act)}</p>
+      <div class="aud-ch">{j(ch)}</div>
+      <p class="aud-act">{j(act)}</p>
     </div>'''
 
 # ── Sources ────────────────────────────────────────────────

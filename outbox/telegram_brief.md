@@ -4,7 +4,7 @@ Cycle: `20260528` · 2026-05-28 20:34 UTC
 *What this is:*
 A Dispatch Desk notification. The product is the decision route: signal → persona → action → feedback. Telegram is only the delivery channel.
 
-*Track 08 chain this cycle*
+*Open Track coordination chain this cycle*
 Data → 13 signal clusters → 31 persona routes → 7 personas → action/capital decisions
 
 *Priority decision clusters*

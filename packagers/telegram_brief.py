@@ -87,7 +87,7 @@ def build_brief() -> str:
         "*What this is:*",
         "A Dispatch Desk notification. The product is the decision route: signal → persona → action → feedback. Telegram is only the delivery channel.",
         "",
-        "*Track 08 chain this cycle*",
+        "*Open Track coordination chain this cycle*",
         f"Data → {desk.get('cluster_count', 0)} signal clusters → {desk.get('dispatch_count', 0)} persona routes → {desk.get('persona_count', 0)} personas → action/capital decisions",
         "",
         "*Priority decision clusters*",

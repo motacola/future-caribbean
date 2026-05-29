@@ -2,6 +2,12 @@
 
 A guided tour of the system, artifact by artifact. Each step proves a specific claim about what the product does and why it matters.
 
+**Submission track:** 10 — Open Track.
+
+**Category:** Agentic market coordination infrastructure for fragmented Caribbean economies.
+
+**Core claim:** Caribbean Opportunity Dispatch compresses the time between public signal and economic action.
+
 ---
 
 ## Step 1: The Problem (Context)
@@ -11,6 +17,8 @@ Public regional data for the Caribbean is fragmented across 10+ institutions —
 The intended consumer — diaspora investors, regional operators, ecosystem builders — has to pull from all of them manually. Most don't. The data sits in PDFs and spreadsheets, never reaching the people who could act on it.
 
 **Signal OS exists because the gap isn't data availability. It's data routing.**
+
+That is why this belongs in Open Track: the product is a reusable coordination layer, not a single-sector app.
 
 ---
 
@@ -41,173 +49,69 @@ This executes:
 
 ---
 
-## Step 3: Open `dashboard.html` — Dispatch Desk first
+3. Open `dashboard.html` — Today's Desk first
 
-**What this proves:** The product is a decision desk, not a raw artifact pile. The top section shows Track 08's chain in one place: data → signal → packaging → distribution → action → capital.
+**What this proves:** The product is a dispatch desk, not a data viewer. The top section shows the coordination chain in one place.
 
-Each dispatch has:
-- **Editorial title** (answers "why does this matter")
-- **Target persona** (investor, founder, operator, ecosystem builder)
-- **Channel** (Telegram, email, digest)
-- **Why this persona** (routing rationale)
-- **Recommended action** (what to do next)
-- **Evidence grade** (A = multi-source, B = cross-source, C = single-source)
+The "Today's Desk" section shows multiple live signals per cycle — each with country, signal type, pct change, A/B/C evidence grade, confidence status, and persona routes. Guyana leads at +860.3% (A-grade, multi-source). Belize follows at +701.0%. SVG shows a conflicted signal: FDI up 88.2% but unemployment at 18%. CARICOM procurement shows 6 active bidding windows.
 
-Current cycle: **13 decision clusters** generated from **31 persona routes** across **7 persona types**.
-
-**Example route:**
-
-```
-Guyana: +860.3% multi-source capital surge — market entry window open
-  To: Diaspora Investor • Via: Email brief + Telegram
-  Why: Multi-source validation reduces screening risk
-  Action: Investigate Guyana as a capital deployment target this cycle.
-  
-  To: Ecosystem Builder • Via: Telegram
-  Why: Cross-country investment velocity signals where to focus support
-  Action: Route Guyana opportunity to relevant founders and investors.
-```
-
-Same signal → different actions per persona. This is routing intelligence, not a broadcast.
+The persona section shows seven audience cards — each with a complete action sentence. Same signal, different action per persona. This is routing intelligence, not a broadcast.
 
 ---
 
-## Step 4: Open `outbox/dispatch_desk.md`
+## Step 4: Interact with the analyst rail
 
-**What this proves:** The markdown Dispatch Desk is the portable product surface. It can be read without the dashboard and still shows decision clusters, persona routes, evidence, feedback, and supporting artifacts.
+Use the "Ask about today's briefing" panel to test deterministic querying. Click "Explain the lead" for a substantive 3-4 sentence answer citing Guyana FDI evidence and multi-source validation. Click "Belize" or "SVG conflict" for country-specific breakdown. Click "Draft a note" for a ready-to-send investor email. Type any country, signal type, or "feedback loop" in the input field — all answers are deterministic, local, read-only from embedded data.
 
-Current thesis:
-
-> Capital momentum is strongest in **Guyana (+860.3%)**, followed by Belize, St. Vincent and the Grenadines. However, **SVG and Suriname** also carry elevated vulnerability indicators — investment signals from these countries require deeper diligence before committing capital. Development pipeline remains active (6 CDB procurements) — the **bidding window is open** for project-based entry. Tourism-related growth signals visible in Antigua, Guyana, St. Kitts — demand-side indicators for capacity planning.
-
-The thesis synthesizes 5 signal types across 10 countries into 3 sentences plus actionable recommendations. No single watcher could produce this. Only a cross-source, cross-kind system can.
+**What this proves:** The cycle is interrogable without reading every artifact.
 
 ---
 
-## Step 5: Open `outbox/regional_thesis.md` and `outbox/why_now.md`
+## Step 5: Review the feedback table
 
-**What this proves:** The system has synthesis and temporal awareness — it knows what matters *this week*, not just *what changed*.
+Scroll to "Delivery responses" — the table shows dispatch-level feedback with three columns: dispatch name, last feedback action, and numerical effect on next cycle. Positive values (teal) mean the signal was forwarded, replied to, or changed a decision. Negative values (coral) mean it was ignored. Boosts decay 50% per cycle.
 
-Current context:
-
-```
-🟢 Tourism Shoulder Season — Post-peak period. Early indicators of summer
-   demand trajectory are most valuable now.
-   → Track early summer booking and airlift data
-🔴 Q2 Procurement Cycle — CDB and IDB typically issue mid-year procurement
-   rounds in Q2. Pipeline data especially actionable now.
-   → Review procurement pipeline for active bidding opportunities
-```
-
-Each dispatch kind is cross-referenced against the calendar. Investment pipeline dispatches carry Q2 procurement context. Tourism dispatches carry shoulder season context. The editorial calendar (`config/editorial_calendar.json`) defines 5 seasonal windows and 5 upcoming events, including hurricane season (Jun-Nov), the Future Caribbean Buildathon (July 15), and COP climate negotiations.
+**What this proves:** The feedback loop is consequential, not decorative. Recipient behavior directly changes next-cycle priority.
 
 ---
 
-## Step 6: Open `outbox/channel_dispatch_log.md`
+## Step 6: Open the persona packets
 
-**What this proves:** Dispatches are routed per persona to specific channels — Email brief, Telegram, Telegram digest. Not a single feed.
+Open `outbox/dispatch_packets/diaspora_investor.md` and `outbox/dispatch_packets/founder_operator.md` to compare how different personas receive the same signal formatted differently.
 
-Current routing:
+Open `outbox/delivery_manifest.json` — the machine-readable map of 29 dispatches to channels.
 
-| Channel | Dispatches | Best for |
-|---------|-----------|----------|
-| Email brief + Telegram | 10 | Investors, procurement watchers — need signal + detailed context |
-| Telegram | 17 | Founders, operators — time-sensitive, actionable alerts |
-| Telegram digest | 3 | Broad awareness — vulnerability, food security |
-| Email brief | 1 | Procurement pipeline detail |
+Open `outbox/regional_thesis.md`, `outbox/why_now.md`, and `outbox/feedback_review.md` for synthesis, timing context, and the feedback/learning loop documentation.
 
-This is the distribution layer. The same system can route to Slack, WhatsApp, SMS, or any channel with a bridge.
+**What this proves:** Distribution readiness — the last mile before external channel integration is proven.
 
 ---
 
-## Step 7: Open `outbox/feedback_review.md`
+## Step 7: Open the outbox artifacts
 
-**What this proves:** The feedback loop is real, not simulated.
+Open `outbox/opportunity_dispatches.json` only if judges want to inspect the canonical route data.
 
-4 feedback events from the previous cycle:
+Run `python3 agent/query.py ask "show investor actions"` to demonstrate the headless query CLI.
 
-| Dispatch | Feedback | Effect this cycle |
-|----------|----------|-------------------|
-| Guyana enhanced_investment | 📤 forwarded | +6 boost to Guyana enhanced signals |
-| CARICOM development_pipeline | 💬 replied | +2 boost to pipeline signals |
-| SVG economic_vulnerability | 🔀 decision_changed | +10 boost — highest weight |
-| Trinidad enhanced_investment | 👁️ opened only | +1 (minimal signal) |
-
-The feedback state is read at pipeline start and written at pipeline end. Boosts decay by half each cycle. Next cycle, these same signals will have different scores based on accumulated feedback history.
-
-**This is the closed-loop intelligence model:** dispatch → receive feedback → adapt scoring → dispatch differently.
+**What this proves:** The system is headless-queryable — web UI, CLI, and future API all share the same deterministic query engine.
 
 ---
 
-## Step 8: Open `outbox/dispatch_packets/` and `outbox/delivery_manifest.json`
+## Step 8: Review the lower dashboard operator/audit sections
 
-**What this proves:** The system produces distribution-ready outputs, not just internal artifacts.
+**What this proves:** The same page also includes operator/audit health below the product sections. It shows:
+- Source health (6 sources tracked)
+- All 13 themes/clusters with confidence, evidence, and persona routes
+- Feedback counts (50 total responses across the cycle)
+- System counts (themes, dispatches, responses, sources, countries)
 
-Each persona gets a dedicated packet under `outbox/dispatch_packets/`:
-
-| Packet | Dispatches | Channel |
-|--------|-----------|---------|
-| `diaspora_investor.md` | 10 | Email brief + Telegram |
-| `founder_operator.md` | 9 | Telegram |
-| `ecosystem_builder.md` | 5 | Telegram |
-| `policy_media.md` | 3 | Telegram digest |
-| `procurement_watcher.md` | 1 | Email brief |
-| `regional_operator.md` | 1 | Telegram |
-
-Each packet contains the dispatches routed to that persona with:
-- Editorial title and score
-- Recommended action
-- Evidence summary and grade
-- Risk flags and conflict warnings
-- A feedback action prompt
-
-The delivery manifest (`outbox/delivery_manifest.json`) is a machine-readable map of 29 dispatches to channels. It proves the system can hand off to an external delivery system (Telegram bot API, email service, Slack webhook) without additional processing.
-
-Together, packets + manifest close the **"judges have to imagine distribution"** gap. The last mile before external channel integration is proven.
-
-**How to add real feedback:** Run the feedback intake CLI after sharing a packet:
-
-```bash
-python3 packagers/feedback_intake.py --dispatch-id DSP-20260526-001 --status forwarded --note "Shared with Guyana investment partner"
-```
-
-This writes to `data/feedback/available.json`, which the next pipeline run reads via `feedback_loop.py apply` to adjust scores. The manual intake path means any channel (Telegram, email, Slack, in-person) can surface feedback — the dispatcher just needs a dispatch ID and a status.
+The top of the dashboard is the dispatch desk product view; the lower sections are what an operator uses to confirm the pipeline is alive.
 
 ---
 
-## Step 9: Open `outbox/judge_brief.md`
+## Summary: The Open Track Claim
 
-**What this proves:** The full system architecture is documented — routing rationale, feedback mechanism, demo path, and future roadmap.
-
-The brief includes:
-- Complete routing rationale (10 signal kinds → 8 personas with *why* for each)
-- The feedback loop mechanism with current active boosts
-- The regional thesis pattern
-- The editorial calendar design
-- The judge demo path (this very document)
-
----
-
-## Step 10: Review the lower dashboard operator/audit sections
-
-**What this proves:** The same page also includes operator/audit health below the Dispatch Desk. It shows:
-- Composite signal count (currently 25)
-- Watcher health (6 sources tracked)
-- Dispatch queue (29 dispatches)
-- Dispatch Desk — delivery manifest and packet counts per persona
-- Feedback loop status (4 events, active boosts visible)
-- Regional thesis preview
-- Why-now context
-- Persona routing breakdown
-- Routing Map — signal kind to persona mapping
-
-The top of the dashboard is now the Dispatch Desk product view; the lower sections are what an operator uses to confirm the pipeline is alive.
-
----
-
-## Summary: The Track 08 Claim
-
-Caribbean Opportunity Dispatch is not a dashboard. It is a **continuous intelligence pipeline** that:
+Caribbean Opportunity Dispatch is not a dashboard. It is an **agentic market coordination system** that:
 
 1. **Detects** signals from fragmented public data (6 watchers, 10+ sources)
 2. **Judges** them with editorial enrichment (score bands, evidence grades, narrative titles)
@@ -218,6 +122,8 @@ Caribbean Opportunity Dispatch is not a dashboard. It is a **continuous intellig
 7. **Contextualizes** every dispatch with seasonal and event awareness
 
 The product output is the Dispatch Desk — grouped, routed, actionable decision clusters that tell specific personas *what changed, why it matters now, and what to do next.*
+
+Finance, disaster, food, ocean, tourism, and procurement are all valid signal domains inside the system. Open Track is the correct submission category because the product is the routing and coordination infrastructure across those domains.
 
 ---
 

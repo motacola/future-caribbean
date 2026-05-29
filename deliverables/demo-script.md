@@ -4,21 +4,27 @@
 
 Caribbean Opportunity Dispatch turns fragmented Caribbean public data into decision-ready routes: what changed, who should act, what they should do next, and how feedback changes the next cycle.
 
+**Track:** 10 — Open Track.
+
+**Category:** Agentic market coordination infrastructure for fragmented Caribbean economies.
+
 ## 2-Minute Flow
 
-1. **Problem**: Caribbean opportunity data exists across institutions, countries, and formats. That makes regional opportunities hard to see and slow to act on. Existing tools stop at portals, newsletters, or dashboards; they do not run a repeatable pipeline that ends in routed decisions.
+1. **Problem**: Caribbean opportunity data exists across institutions, countries, and formats. That makes regional opportunities hard to see and slow to act on. The constraint is coordination, not data availability. Existing tools stop at portals, newsletters, or dashboards; they do not run a repeatable pipeline that ends in routed decisions.
 
 2. **System**: Six watchers monitor World Bank, IDB, NOAA, NDBC, CARICOM, and CDB. A cross-source merger turns raw updates into composite signals. Editorial enrichment scores, narrates, and prepares them for routing.
 
 3. **Product**: The Dispatch Desk groups repeated routes into decision clusters. Each cluster shows the signal, evidence, confidence, why-now context, persona routes, recommended action, delivery channel, and feedback status.
 
-4. **Distribution**: Persona packets and a delivery manifest prove the last mile. Telegram/email are adapters; the product is the decision route.
+4. **Open Track fit**: This is not a Finance app, Disaster app, Food app, or Ocean app. Those are signal domains. The product is the cross-sector coordination layer that routes any relevant regional signal to the person most likely to act.
 
-5. **Feedback Loop**: Dispatches accumulate opens, forwards, replies, ignores, and decision-change markers. Boosts persist with decay, so the next cycle ranks similar signals differently.
+5. **Distribution**: Persona packets and a delivery manifest prove the last mile. Telegram/email are adapters; the product is the decision route.
 
-6. **Ask the Dispatch Desk**: The dashboard includes an analyst rail for interrogating the cycle without reading every artifact. Click "Explain lead signal" or "Investor actions", or type a question like "draft Guyana investor note". Answers are deterministic, local, and cite artifact sources.
+6. **Feedback Loop**: Dispatches accumulate opens, forwards, replies, ignores, and decision-change markers. Boosts persist with decay, so the next cycle ranks similar signals differently.
 
-7. **Operator Audit**: The lower dashboard sections confirm the pipeline is alive: source health, dispatch counts, manifest state, packets, and feedback state.
+7. **Ask the Dispatch Desk**: The dashboard includes an analyst rail for interrogating the cycle without reading every artifact. Click "Explain lead signal" or "Investor actions", or type a question like "draft Guyana investor note". Answers are deterministic, local, and cite artifact sources.
+
+8. **Operator Audit**: The lower dashboard sections confirm the pipeline is alive: source health, dispatch counts, manifest state, packets, and feedback state.
 
 ## Headless query CLI
 
@@ -47,8 +53,12 @@ bash run_pipeline.sh
 
 ## Demo Close
 
-The Track 08 claim is not “we built a dashboard.” The claim is:
+The Open Track claim is not “we built a dashboard.” The claim is:
 
-Data → Signal → Packaging → Distribution → Action → Capital
+Fragmented public data → Agentic signal pipeline → Routed decisions → Feedback → Faster regional action
 
 The Dispatch Desk makes that chain visible in one place. It shows how fragmented public regional data becomes a specific action for a specific person, with evidence and feedback attached.
+
+Close with:
+
+> We compress the time between public signal and economic action.

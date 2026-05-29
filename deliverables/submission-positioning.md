@@ -6,11 +6,17 @@ The dashboard is only an operator console for proving the system is alive. The d
 
 Caribbean Signal OS is the architecture underneath — the terms are distinct.
 
-## Track Requirement Fit
+## Track Fit
 
-Future Caribbean Track 08 asks for a continuous intelligence pipeline:
+**Chosen track: 10 — Open Track.**
 
-    Data -> Signal -> Packaging -> Distribution -> Action -> Capital
+Caribbean Opportunity Dispatch belongs in Open Track because it is not a sector-specific app. It is an agentic market coordination layer for fragmented Caribbean economies.
+
+Finance, disaster risk, food, ocean, tourism, energy, and procurement are signal domains inside the system. The product category is the cross-sector routing infrastructure that turns those signals into decision-ready dispatches for specific people.
+
+The Open Track claim:
+
+    Fragmented public data -> agentic signal pipeline -> routed decisions -> feedback -> faster regional action
 
 Caribbean Opportunity Dispatch (product) / Caribbean Signal OS (architecture) maps to this chain as follows:
 
@@ -25,11 +31,23 @@ Caribbean Opportunity Dispatch (product) / Caribbean Signal OS (architecture) ma
 | Distribution readiness | Dispatch packets per persona, channel-ready delivery manifest, feedback intake CLI |
 | Continuous operation | run_pipeline.sh runs watchers, merger, packagers, feedback loop, dispatch packets, manifest, operator console |
 
+## Why Not A Sector Track
+
+| Track | Why it partially fits | Why Open Track is stronger |
+|---|---|---|
+| Finance, Payments & MSME Capital | The system routes investment, FDI, procurement, and diaspora capital signals | Finance is one output lane, not the whole product |
+| Climate Risk & Disaster Coordination | NOAA/NDBC risk signals can route to operators and policy/media users | Disaster coordination is one signal family, not the core architecture |
+| Ocean Systems & Blue Economy | Marine and weather data can support maritime, tourism, and logistics decisions | Ocean is one data domain inside a broader regional intelligence layer |
+| Food Systems & Supply Chains | CARICOM food/security signals can identify supply chain pressure | Food is a vertical use case, not the product category |
+| Tourism & Transportation | Tourism windows and airlift/demand signals can be routed | Tourism is another downstream decision lane |
+
+Open Track lets the submission tell the truth: this is coordination infrastructure across fragmented real-economy signals.
+
 ## What We Should Demo (in order)
 
 1. Run `bash run_pipeline.sh` — show the pipeline executing end-to-end
 2. Open `dashboard.html` — start with the Dispatch Desk product view, then scroll to operator/audit health
-3. Open `outbox/dispatch_desk.md` — the primary Track 08 surface: decision clusters, persona routes, evidence, action, feedback
+3. Open `outbox/dispatch_desk.md` — the primary Open Track surface: decision clusters, persona routes, evidence, action, feedback
 4. Open `outbox/dispatch_packets/diaspora_investor.md` — persona-specific packet with action checklist and feedback options
 5. Open `outbox/delivery_manifest.json` — channel-ready delivery manifest, one entry per dispatch
 6. Open `outbox/feedback_review.md` — feedback loop: what was forwarded, replied to, opened, or changed a decision
@@ -62,6 +80,10 @@ Existing tools stop at one layer:
 - Investor catalogues list static opportunities but are not continuous data watchers
 
 This fills the **last mile between public regional data and acted-on opportunity**.
+
+The short version:
+
+> Caribbean Opportunity Dispatch compresses the time between public signal and economic action.
 
 ## Dashboard Role
 
