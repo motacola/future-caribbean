@@ -72,8 +72,11 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
                 self.send_error(404)
                 return
 
-        # Root → Signal Builder; /system → audit dashboard
+        # Root → editorial briefing page; /build → Signal Builder;
+        # /system → same editorial page (it carries the audit section)
         if clean in ("", "index.html"):
+            self.path = "/dashboard.html"
+        elif clean in ("build", "build.html"):
             self.path = "/configurator.html"
         elif clean in ("system", "system.html"):
             self.path = "/dashboard.html"

@@ -261,47 +261,12 @@ OUT = ROOT / "dashboard.html"
 OUT.write_text(template, encoding="utf-8")
 print(f"Written {OUT}", flush=True)
 
-# ── Render configurator (Signal Builder homepage) ───────────
-# Build source rows for proof panel (compact version)
-proof_src_rows = ""
-for label, key, desc in SRC:
-    d = read_json(ROOT / "data" / key / "latest.json")
-    ok = d is not None
-    dot_cls = "src-ok" if ok else "src-off"
-    status = "Live" if ok else "Offline"
-    proof_src_rows += (
-        f'<div class="src-row">'
-        f'<span><span class="src-dot {dot_cls}"></span>{label}</span>'
-        f'<span style="font-size:12px;color:var(--{"teal" if ok else "muted"})">{status}</span>'
-        f'</div>'
-    )
-
-# Embed all cluster data as JSON for client-side filtering/fallback
-conf_data = {
-    "clusters": clusters,
-    "n_sources": n_sources,
-    "n_clusters": n_clusters,
-    "n_personas": n_personas,
-    "cycle_id": cycle_id,
-}
-conf_json_str = json.dumps(conf_data, ensure_ascii=False).replace("</", "<\\/")
-
-conf_template = Path(ROOT / "dashboard" / "configurator_template.html").read_text()
-CV = dict(
-    n_sources=n_sources,
-    n_clusters=n_clusters,
-    n_personas=n_personas,
-    cycle_id=j(cycle_id),
-    now_str=j(now_str),
-    proof_src_rows=proof_src_rows,
-    conf_json=conf_json_str,
-)
-for k, val in CV.items():
-    conf_template = conf_template.replace("{{" + k + "}}", str(val))
-
-CONF_OUT = ROOT / "configurator.html"
-CONF_OUT.write_text(conf_template, encoding="utf-8")
-print(f"Written {CONF_OUT}", flush=True)
+# ── Signal Builder (configurator.html) ──────────────────────
+# NOTE: configurator.html is a hand-maintained static page (the Signal
+# Fabric engine UI: domain switcher, reasoning panel, deploy wizard,
+# heartbeat). It pulls all live data from /api/* at runtime, so it is
+# intentionally NOT regenerated here — doing so previously overwrote the
+# engine features from a stale template. Leave it untouched.
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()

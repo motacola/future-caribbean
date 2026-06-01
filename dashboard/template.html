@@ -162,6 +162,25 @@ a:hover { text-decoration: underline; }
 .route-line { display: flex; gap: 8px; font-size: 11px; color: var(--muted); padding: 2px 0; }
 .route-line span:first-child { color: var(--text); font-weight: 500; }
 
+/* ── engine band ── */
+.engine-band { background: var(--card-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.engine-band-inner { max-width: 1080px; margin: 0 auto; padding: 36px 24px; }
+.eb-head { margin-bottom: 22px; }
+.eb-title { font-family: var(--serif); font-size: 26px; font-weight: 700; letter-spacing: -.3px; margin: 6px 0 8px; }
+.eb-sub { font-size: 14px; color: var(--sub); max-width: 680px; line-height: 1.6; }
+.eb-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px,1fr)); gap: 14px; margin-bottom: 18px; }
+.eb-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--r); padding: 18px; }
+.eb-card.eb-live { border-left: 3px solid var(--teal); }
+.eb-card.eb-bp { border-left: 3px solid var(--border-dark); }
+.eb-badge { display: inline-block; font-size: 9px; text-transform: uppercase; letter-spacing: .8px; font-weight: 700; padding: 2px 8px; border-radius: 20px; margin-bottom: 8px; }
+.eb-badge.on { background: rgba(14,124,123,.14); color: var(--teal); }
+.eb-badge.off { background: rgba(130,154,177,.16); color: var(--sub); }
+.eb-name { font-family: var(--serif); font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+.eb-meta { font-family: var(--mono); font-size: 11px; color: var(--muted); }
+.eb-reason { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--gold); border-radius: var(--r); padding: 16px 18px; }
+.eb-reason-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--gold); font-weight: 600; }
+.eb-reason-text { font-size: 14px; color: var(--text); line-height: 1.6; margin-top: 8px; }
+
 /* ── footer ── */
 footer { border-top: 1px solid var(--border); padding: 24px; text-align: center; font-size: 11px; color: var(--muted); margin-top: 40px; }
 .muted { color: var(--muted); font-size: 13px; }
@@ -220,7 +239,8 @@ footer { border-top: 1px solid var(--border); padding: 24px; text-align: center;
     <div class="mast-name">CARIBBEAN <em>OPPORTUNITY</em> DISPATCH</div>
     <div class="mast-links">
       <a href="#briefing"><span style="color:var(--teal)">●</span> Cycle {{cycle_id}}</a>
-      <a href="javascript:void(0)" onclick="toggleDeep();return false;">Today's briefing</a>
+      <a href="/build">Build your feed</a>
+      <a href="javascript:void(0)" onclick="toggleDeep();return false;">System proof</a>
     </div>
   </div>
 </div>
@@ -233,7 +253,7 @@ footer { border-top: 1px solid var(--border); padding: 24px; text-align: center;
       <p class="hero-sub">Public data already exists. This system watches it, finds decision signals, routes each one to the right persona, and lets feedback change the next cycle.</p>
       <div class="hero-actions">
         <a href="#briefing" class="btn btn-p">Open Today's Desk</a>
-        <a href="javascript:void(0)" class="btn btn-s" onclick="toggleDeep();return false;">Review System Proof</a>
+        <a href="/build" class="btn btn-s">Build your own feed →</a>
       </div>
     </div>
     <div class="hero-terminal" aria-label="Signal routing example">
@@ -258,6 +278,22 @@ footer { border-top: 1px solid var(--border); padding: 24px; text-align: center;
     <div class="proof-cell"><span class="proof-k">{{n_clusters}}</span><span class="proof-v">Decision clusters</span></div>
     <div class="proof-cell"><span class="proof-k">{{n_personas}}</span><span class="proof-v">Persona routes</span></div>
     <div class="proof-cell"><span class="proof-k">4h</span><span class="proof-v">Refresh target</span></div>
+  </div>
+</div>
+
+<!-- Engine highlights: one engine, multiple live instances -->
+<div class="engine-band">
+  <div class="engine-band-inner">
+    <div class="eb-head">
+      <p class="sec-label" style="color:var(--gold)">One engine · multiple instances</p>
+      <h2 class="eb-title">The same pipeline runs more than one domain.</h2>
+      <p class="eb-sub">This briefing is the Caribbean economic instance. The identical watch → reason → distribute engine also runs a live climate-hazard instance, and deploys to any fragmented data market. <a href="/build">Explore the engine and build a feed →</a></p>
+    </div>
+    <div class="eb-grid" id="eb-instances"></div>
+    <div class="eb-reason" id="eb-reason" style="display:none">
+      <span class="eb-reason-label">Reasoning agent · cross-signal synthesis</span>
+      <p class="eb-reason-text" id="eb-reason-text"></p>
+    </div>
   </div>
 </div>
 
@@ -489,6 +525,35 @@ window.ask = function(q) {
   }
   box.scrollTop = 0;
 };
+
+// ── Engine highlights: live instances + reasoning ───────────
+fetch('/api/domains')
+  .then(r => r.ok ? r.json() : null)
+  .then(d => {
+    if (!d || !d.ok || !d.domains) return;
+    const grid = document.getElementById('eb-instances');
+    if (!grid) return;
+    grid.innerHTML = d.domains.map(x => {
+      const live = x.status === 'live';
+      const c = x.counts || {};
+      return '<div class="eb-card ' + (live ? 'eb-live' : 'eb-bp') + '">' +
+        '<span class="eb-badge ' + (live ? 'on' : 'off') + '">' + (live ? '● Live' : 'Blueprint') + '</span>' +
+        '<div class="eb-name">' + x.name + '</div>' +
+        '<div class="eb-meta">' + (c.sources_wired || 0) + '/' + (c.sources || 0) + ' sources · ' +
+        (c.recipients || 0) + ' roles</div></div>';
+    }).join('');
+  })
+  .catch(() => {});
+
+fetch('/api/reasoning')
+  .then(r => r.ok ? r.json() : null)
+  .then(r => {
+    if (!r || !r.ok || !r.thesis) return;
+    const box = document.getElementById('eb-reason');
+    document.getElementById('eb-reason-text').textContent = r.thesis;
+    box.style.display = 'block';
+  })
+  .catch(() => {});
 
 </script>
 
