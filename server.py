@@ -452,9 +452,15 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
 
         # Domain-specific framing
         if domain == "climate":
-            head_title = "Caribbean Hazard Alert"
-            head_emoji = "🌀"
-            head_name = "Caribbean Hazard Signal"
+            is_all_clear = cluster.get("signal_kind") == "all_clear"
+            if is_all_clear:
+                head_title = "Caribbean Conditions — All Clear"
+                head_emoji = "🌤️"
+                head_name = "Caribbean Conditions"
+            else:
+                head_title = "Caribbean Hazard Alert"
+                head_emoji = "🌀"
+                head_name = "Caribbean Hazard Signal"
             source_label = "NOAA NWS / NDBC buoys / NHC outlook"
             disclaimer = "Decision-support signal. Always follow official emergency directives."
         else:

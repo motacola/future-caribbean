@@ -188,6 +188,61 @@ def build_clusters() -> list[dict[str, Any]]:
                 "personas": _personas_for("tropical", "NHC basin outlook active"),
             })
 
+    # ── All-clear baseline ──────────────────────────────────────
+    # A quiet cycle is still intelligence: resilience planners and
+    # insurers value a confirmed all-clear with current conditions.
+    # Built from the always-present NDBC readings + NHC status.
+    if not clusters:
+        readings = ndbc.get("readings", []) or []
+        n_buoys = len(readings)
+        waves = [r.get("wave_height_m") for r in readings if r.get("wave_height_m") is not None]
+        winds = [r.get("wind_speed_ms") for r in readings if r.get("wind_speed_ms") is not None]
+        max_wave = max(waves) if waves else None
+        max_wind_kt = round(max(winds) * 1.94384, 0) if winds else None
+
+        nhc2 = _read(NHC) or {}
+        snap2 = (nhc2.get("snapshot") or {}) if isinstance(nhc2, dict) else {}
+        tropics_quiet = "formation is not expected" in (snap2.get("outlook_text", "") or "").lower()
+
+        cond_bits = []
+        if n_buoys:
+            cond_bits.append(f"{n_buoys} buoys reporting")
+        if max_wave is not None:
+            cond_bits.append(f"peak seas {max_wave:.1f}m")
+        if max_wind_kt is not None:
+            cond_bits.append(f"max wind {max_wind_kt:.0f} kt")
+        if tropics_quiet:
+            cond_bits.append("no tropical development expected (NHC)")
+        conditions = "; ".join(cond_bits) if cond_bits else "monitoring continues"
+
+        clusters.append({
+            "cluster_id": "CLIM-allclear",
+            "country_cluster": "Caribbean basin",
+            "signal_kind": "all_clear",
+            "title": "All clear — no active hazards this cycle",
+            "evidence": f"No active NWS alerts in Caribbean zones. Current conditions: {conditions}.",
+            "evidence_grade": "A - official sources",
+            "confidence_score": 70,
+            "freshness": "new",
+            "decision": "Routine monitoring — no action required",
+            "risk_flags": [],
+            "personas": [
+                {
+                    "persona": PERSONAS["resilience_planner"]["label"],
+                    "channel": PERSONAS["resilience_planner"]["channel"],
+                    "action": f"All clear across Caribbean zones — {conditions}. "
+                              f"No action required; the engine keeps watching and will "
+                              f"escalate the moment a threshold is crossed.",
+                },
+                {
+                    "persona": PERSONAS["insurer"]["label"],
+                    "channel": PERSONAS["insurer"]["channel"],
+                    "action": f"No active hazard exposure this cycle ({conditions}). "
+                              f"Baseline confirmed for parametric monitoring.",
+                },
+            ],
+        })
+
     # Strongest signals first
     clusters.sort(key=lambda c: c.get("confidence_score", 0), reverse=True)
     return clusters

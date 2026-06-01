@@ -5,16 +5,18 @@
     "PR": {
       "label": "Puerto Rico & US Virgin Islands",
       "type": "land"
-    },
-    "AM": {
-      "label": "Atlantic Marine Zones (Caribbean basin)",
-      "type": "marine"
     }
   },
-  "marine_zones_focus": [
-    "AMZ050", "AMZ052", "AMZ057", "AMZ059",
-    "AMZ049", "AMZ048", "AMZ711"
-  ],
+  "_marine_note": "NWS San Juan (Caribbean) coastal & offshore marine zones only — excludes US-mainland Atlantic waters.",
+  "marine_zones": {
+    "type": "marine",
+    "zones": [
+      "AMZ710", "AMZ711", "AMZ712", "AMZ713", "AMZ714", "AMZ715",
+      "AMZ716", "AMZ717", "AMZ718", "AMZ720", "AMZ721", "AMZ722",
+      "AMZ723", "AMZ725", "AMZ731", "AMZ741", "AMZ742", "AMZ743",
+      "AMZ744", "AMZ745"
+    ]
+  },
   "severity_priority": {
     "Extreme": 4,
     "Severe": 3,

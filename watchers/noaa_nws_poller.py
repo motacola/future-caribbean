@@ -253,6 +253,20 @@ def run(config_path: Path, data_dir: Path, signal_dir: Path, timeout: int) -> in
         except Exception as exc:
             errors.append(f"{area_code}: {exc}")
 
+    # Caribbean marine zones (NWS San Juan) — fetched by zone so we don't
+    # pull US-mainland Atlantic waters. One request, comma-joined.
+    mz = config.get("marine_zones") or {}
+    zones = mz.get("zones", [])
+    if zones:
+        zone_q = ",".join(zones)
+        url = f"{base}/alerts/active?zone={zone_q}"
+        try:
+            payload = fetch_json(url, timeout)
+            alerts = extract_alerts(payload, mz.get("type", "marine"), exclude_events)
+            all_alerts.extend(alerts)
+        except Exception as exc:
+            errors.append(f"marine_zones: {exc}")
+
     # Dedup by alert ID
     deduped: dict[str, WeatherAlert] = {}
     for a in all_alerts:
