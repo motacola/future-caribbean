@@ -3,9 +3,9 @@
 
 import http.server
 import json
-import mimetypes
 import os
 import subprocess
+import sys
 import threading
 import time
 from datetime import datetime, timezone
@@ -19,7 +19,7 @@ BLOCKED_PREFIXES = (
     ".git", ".env", ".claude", ".hermes", ".ruff_cache", ".github",
     "data/", "signals/", "watchers/", "mergers/", "distributors/",
     "packagers/", "planning/", "tests/", "agent/", "architecture/",
-    "config/", "memory/",
+    "config/", "memory/", "domains/",
     "run_pipeline.sh", "requirements.txt", "server.py", "Dockerfile",
     "Procfile", "fly.toml", "vercel.json", ".gitignore", ".dockerignore",
 )
@@ -57,6 +57,9 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
             return
         if path == "/api/preview":
             self._api_preview()
+            return
+        if path == "/api/domains":
+            self._api_domains()
             return
 
         # Block internal paths
@@ -108,6 +111,24 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
             return True
         except Exception:
             return False
+
+    # ── /api/domains ───────────────────────────────────────────
+
+    def _api_domains(self) -> None:
+        """Serve the domain registry — the proof that the engine is
+        config-driven. Each entry is a real domains/*.json manifest."""
+        try:
+            sys.path.insert(0, str(APP_DIR))
+            from domains.registry import load_all, summarise
+            domains, errors = load_all(validate=True)
+            self._json({
+                "ok": True,
+                "count": len(domains),
+                "domains": [summarise(d) for d in domains],
+                "errors": errors,
+            })
+        except Exception as exc:
+            self._json({"ok": False, "error": str(exc)}, 500)
 
     # ── /api/status ────────────────────────────────────────────
 
@@ -321,7 +342,7 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
                 f"{evidence}{pct_str}\n\n"
                 f"*What to do ({persona_label}):*\n{action}\n\n"
                 + (f"⚠️ Risk flag: {risks[0]}\n\n" if risks else "")
-                + f"_Screening signal only. Not investment advice._"
+                + "_Screening signal only. Not investment advice._"
             )
         elif channel == "whatsapp":
             formatted = (
@@ -398,18 +419,18 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
         pct = pct_m.group(0) if pct_m else ""
 
         lines = [
-            f"🌴 *Caribbean Opportunity Signal*",
-            f"",
+            "🌴 *Caribbean Opportunity Signal*",
+            "",
             f"*Lead market: {country}*",
-            f"Signal: {pct} capital movement (World Bank data)" if pct else f"Signal: Capital momentum detected",
-            f"",
-            f"Who should act: Diaspora investors, regional founders, ecosystem builders.",
-            f"",
+            f"Signal: {pct} capital movement (World Bank data)" if pct else "Signal: Capital momentum detected",
+            "",
+            "Who should act: Diaspora investors, regional founders, ecosystem builders.",
+            "",
             f"Next step: Screen {country} first. Validate sector fit and local partners before committing.",
-            f"",
-            f"_Screening signal only. Not investment advice._",
-            f"",
-            f"Full brief: https://future-caribbean.fly.dev",
+            "",
+            "_Screening signal only. Not investment advice._",
+            "",
+            "Full brief: https://future-caribbean.fly.dev",
         ]
         msg = "\n".join(lines)
 

@@ -1,0 +1,28 @@
+{
+  "id": "trade",
+  "name": "Supply Chain & Trade Flows",
+  "status": "blueprint",
+  "tagline": "Fragmented trade data unified into routed intelligence.",
+  "blurb": "Fragmented trade data unified into routed intelligence.",
+  "geography": { "scope": "Any trade corridor (CARICOM trade feeds already partially wired)" },
+  "pipeline": {
+    "watch": "Port throughput, customs, shipping & trade-statistic feeds.",
+    "reason": "Detects volume shifts and bottlenecks, flags route & supplier risk.",
+    "distribute": "Alerts operators & logistics planners to disruption ahead."
+  },
+  "sources": [
+    { "id": "tier2",    "label": "CARICOM trade datasets", "kind": "trade",     "watcher": "watchers/tier2_scraper.py", "config": "config/tier2_sources.json", "reuses": "caribbean" },
+    { "id": "ports",    "label": "Port throughput feeds",  "kind": "logistics", "watcher": null, "config": null, "note": "candidate public source — not yet wired" },
+    { "id": "shipping", "label": "AIS / shipping data",    "kind": "logistics", "watcher": null, "config": null, "note": "candidate public source — not yet wired" }
+  ],
+  "signals": {
+    "config": "config/composite_rules.json",
+    "kinds": ["food_security", "volume_shift", "route_risk"]
+  },
+  "recipients": {
+    "personas": [
+      { "id": "regional_operator",         "label": "Regional Operator",       "channel": "Telegram", "reuses": "caribbean" },
+      { "id": "tourism_logistics_operator","label": "Logistics Planner",        "channel": "Telegram", "reuses": "caribbean" }
+    ]
+  }
+}

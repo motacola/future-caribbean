@@ -131,6 +131,8 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); line
 .badge-live { background: rgba(63,185,80,.14); color: #2f9e44; }
 .badge-blueprint { background: rgba(130,154,177,.16); color: var(--sub); }
 .domain-blurb { font-size: 12px; color: var(--muted); line-height: 1.5; margin-top: 8px; }
+.domain-wired { font-family: var(--mono); font-size: 11px; color: var(--teal); margin-top: 8px; font-weight: 500; }
+.instance-line code { font-family: var(--mono); font-size: 12px; background: var(--card-alt); border: 1px solid var(--border); padding: 1px 6px; border-radius: 4px; color: var(--text); }
 .instance-line { font-size: 13px; color: var(--muted); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .instance-line .il-status { font-weight: 700; }
 .il-live { color: #2f9e44; }
@@ -678,44 +680,60 @@ pollStatus();
 setInterval(pollStatus, 30000);
 
 // ── Engine: domain switcher + pipeline ──────────────────────
-const DOMAINS = [
+// Domains are served from /api/domains — each is a real domains/*.json
+// manifest loaded by domains/registry.py. The embedded array below is an
+// offline fallback that mirrors the same shape.
+let DOMAINS = [
   { id:'caribbean', name:'Caribbean Economic Signals', status:'live',
     blurb:'The live instance. 6 public sources, refreshed every 4 hours.',
-    watch:'World Bank, IDB, NOAA, NDBC, CARICOM & CDB feeds across 13 Caribbean countries.',
-    reason:'Detects FDI surges, procurement windows, risk flags & marine hazards. Each signal scored, graded, cross-validated.',
-    distribute:'Routes role-specific briefings to investors, founders, policy & diaspora — Telegram, WhatsApp, email or memo.' },
-  { id:'compliance', name:'Cross-Jurisdiction Compliance', status:'blueprint',
-    blurb:'Same engine, pointed at regulatory data.',
-    watch:'Regulatory gazettes, sanctions lists & policy releases across jurisdictions.',
-    reason:'Maps new obligations to each entity and scores compliance risk as rules change.',
-    distribute:'Alerts compliance & legal owners the moment an obligation shifts.' },
+    counts:{sources:6,sources_wired:6,signals:9,recipients:8},
+    pipeline:{
+      watch:'World Bank, IDB, NOAA, NDBC, NHC, CARICOM & CDB feeds across 13 Caribbean countries.',
+      reason:'Detects FDI surges, procurement windows, risk flags & marine hazards. Each signal scored, graded, cross-validated.',
+      distribute:'Routes role-specific briefings to investors, founders, policy & diaspora — Telegram, WhatsApp, email or memo.'} },
   { id:'climate', name:'Climate & Catastrophe Risk', status:'blueprint',
     blurb:'Reuses the marine & weather watchers already wired for the Caribbean.',
-    watch:'NOAA, NDBC, NHC & hazard feeds — storms, surge, marine conditions in real time.',
-    reason:'Scores exposure and escalates as an event develops toward a threshold.',
-    distribute:'Briefs insurers, reinsurers & resilience planners before impact.' },
+    counts:{sources:4,sources_wired:3,signals:3,recipients:3},
+    pipeline:{
+      watch:'NOAA, NDBC, NHC & hazard feeds — storms, surge, marine conditions in real time.',
+      reason:'Scores exposure and escalates as an event develops toward a threshold.',
+      distribute:'Briefs insurers, reinsurers & resilience planners before impact.'} },
+  { id:'compliance', name:'Cross-Jurisdiction Compliance', status:'blueprint',
+    blurb:'Same engine, pointed at regulatory data.',
+    counts:{sources:2,sources_wired:0,signals:2,recipients:2},
+    pipeline:{
+      watch:'Regulatory gazettes, sanctions lists & policy releases across jurisdictions.',
+      reason:'Maps new obligations to each entity and scores compliance risk as rules change.',
+      distribute:'Alerts compliance & legal owners the moment an obligation shifts.'} },
   { id:'trade', name:'Supply Chain & Trade Flows', status:'blueprint',
     blurb:'Fragmented trade data unified into routed intelligence.',
-    watch:'Port throughput, customs, shipping & trade-statistic feeds.',
-    reason:'Detects volume shifts and bottlenecks, flags route & supplier risk.',
-    distribute:'Alerts operators & logistics planners to disruption ahead.' },
+    counts:{sources:3,sources_wired:1,signals:3,recipients:2},
+    pipeline:{
+      watch:'Port throughput, customs, shipping & trade-statistic feeds.',
+      reason:'Detects volume shifts and bottlenecks, flags route & supplier risk.',
+      distribute:'Alerts operators & logistics planners to disruption ahead.'} },
   { id:'capital', name:'Emerging-Market Capital Flows', status:'blueprint',
     blurb:'The Caribbean method, generalised to any emerging-market set.',
-    watch:'Multi-region public economic indicators at scale.',
-    reason:'Detects cross-border capital momentum & convergence across markets.',
-    distribute:'Dispatches to allocators & funds on the channels they use.' },
+    counts:{sources:2,sources_wired:1,signals:3,recipients:2},
+    pipeline:{
+      watch:'Multi-region public economic indicators at scale.',
+      reason:'Detects cross-border capital momentum & convergence across markets.',
+      distribute:'Dispatches to allocators & funds on the channels they use.'} },
 ];
 let activeDomain = 'caribbean';
 
 function renderDomains() {
   const strip = document.getElementById('domain-strip');
   strip.innerHTML = DOMAINS.map(d => {
+    const c = d.counts || {};
     const badge = d.status === 'live'
       ? '<span class="domain-badge badge-live">● Live</span>'
       : '<span class="domain-badge badge-blueprint">Blueprint</span>';
+    const wired = (c.sources_wired != null)
+      ? `<div class="domain-wired">${c.sources_wired}/${c.sources} sources wired</div>` : '';
     return `<button class="domain-card${d.id===activeDomain?' on':''}" data-domain="${d.id}">
       <div class="domain-name">${d.name}</div>${badge}
-      <div class="domain-blurb">${d.blurb}</div>
+      <div class="domain-blurb">${d.blurb||''}</div>${wired}
     </button>`;
   }).join('');
   strip.querySelectorAll('.domain-card').forEach(c =>
@@ -723,27 +741,45 @@ function renderDomains() {
 }
 
 function selectDomain(id) {
-  activeDomain = id;
   const d = DOMAINS.find(x => x.id === id) || DOMAINS[0];
+  activeDomain = d.id;
   document.querySelectorAll('.domain-card').forEach(c =>
-    c.classList.toggle('on', c.dataset.domain === id));
-  document.getElementById('pipe-watch').textContent = d.watch;
-  document.getElementById('pipe-reason').textContent = d.reason;
-  document.getElementById('pipe-distribute').textContent = d.distribute;
+    c.classList.toggle('on', c.dataset.domain === d.id));
+  const p = d.pipeline || {};
+  document.getElementById('pipe-watch').textContent = p.watch || '';
+  document.getElementById('pipe-reason').textContent = p.reason || '';
+  document.getElementById('pipe-distribute').textContent = p.distribute || '';
 
+  const c = d.counts || {};
   const line = document.getElementById('instance-line');
   if (d.status === 'live') {
     line.innerHTML = `<span class="il-status il-live">● Running now</span> — ` +
-      `${d.name} is the live instance. Configure a real briefing below.`;
+      `${d.name} is the live instance: ${c.sources_wired}/${c.sources} sources wired, ` +
+      `${c.signals} signal rules, ${c.recipients} recipient roles. Configure a real briefing below.`;
   } else {
-    line.innerHTML = `<span class="il-status il-blueprint">○ Architecture-ready</span> — ` +
-      `${d.name} runs on the identical engine. Not live in this demo; ` +
-      `the live preview below stays on the Caribbean instance.`;
+    line.innerHTML = `<span class="il-status il-blueprint">○ Config-ready</span> — ` +
+      `${d.name} is defined by <code>domains/${d.id}.json</code> on the identical engine ` +
+      `(${c.sources_wired}/${c.sources} sources wired). Not live in this demo; the preview below stays on the Caribbean instance.`;
   }
+}
+
+function loadDomains() {
+  fetch('/api/domains')
+    .then(r => r.ok ? r.json() : null)
+    .then(d => {
+      if (d && d.ok && Array.isArray(d.domains) && d.domains.length) {
+        DOMAINS = d.domains;
+        if (!DOMAINS.find(x => x.id === activeDomain)) activeDomain = DOMAINS[0].id;
+        renderDomains();
+        selectDomain(activeDomain);
+      }
+    })
+    .catch(() => {});
 }
 
 renderDomains();
 selectDomain('caribbean');
+loadDomains();
 
 // ── Init ────────────────────────────────────────────────────
 updateMeta();

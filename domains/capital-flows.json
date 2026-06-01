@@ -1,0 +1,27 @@
+{
+  "id": "capital",
+  "name": "Emerging-Market Capital Flows",
+  "status": "blueprint",
+  "tagline": "The Caribbean method, generalised to any emerging-market set.",
+  "blurb": "The Caribbean method, generalised to any emerging-market set.",
+  "geography": { "scope": "Any emerging-market country set" },
+  "pipeline": {
+    "watch": "Multi-region public economic indicators at scale.",
+    "reason": "Detects cross-border capital momentum & convergence across markets.",
+    "distribute": "Dispatches to allocators & funds on the channels they use."
+  },
+  "sources": [
+    { "id": "world_bank", "label": "World Bank Indicators (multi-region)", "kind": "economic", "watcher": "watchers/world_bank_poller.py", "config": "config/world_bank_indicators.json", "reuses": "caribbean", "note": "same watcher, broader country set" },
+    { "id": "imf",        "label": "IMF / multilateral indicators",       "kind": "economic", "watcher": null, "config": null, "note": "candidate public source — not yet wired" }
+  ],
+  "signals": {
+    "config": "config/composite_rules.json",
+    "kinds": ["enhanced_investment", "investment_signal", "economic_vulnerability"]
+  },
+  "recipients": {
+    "personas": [
+      { "id": "allocator", "label": "Allocator / Fund",   "channel": "Email + Telegram" },
+      { "id": "diaspora_investor", "label": "Diaspora Investor", "channel": "Email + Telegram", "reuses": "caribbean" }
+    ]
+  }
+}

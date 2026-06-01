@@ -1,0 +1,27 @@
+{
+  "id": "compliance",
+  "name": "Cross-Jurisdiction Compliance",
+  "status": "blueprint",
+  "tagline": "Same engine, pointed at regulatory data.",
+  "blurb": "Same engine, pointed at regulatory data.",
+  "geography": { "scope": "Any multi-jurisdiction regulatory environment" },
+  "pipeline": {
+    "watch": "Regulatory gazettes, sanctions lists & policy releases across jurisdictions.",
+    "reason": "Maps new obligations to each entity and scores compliance risk as rules change.",
+    "distribute": "Alerts compliance & legal owners the moment an obligation shifts."
+  },
+  "sources": [
+    { "id": "gazettes",  "label": "Official regulatory gazettes", "kind": "regulatory", "watcher": null, "config": null, "note": "candidate public source — not yet wired" },
+    { "id": "sanctions", "label": "Sanctions & watchlists",       "kind": "regulatory", "watcher": null, "config": null, "note": "candidate public source — not yet wired" }
+  ],
+  "signals": {
+    "config": null,
+    "kinds": ["obligation_change", "compliance_risk"]
+  },
+  "recipients": {
+    "personas": [
+      { "id": "compliance_owner", "label": "Compliance Owner", "channel": "Email + alert" },
+      { "id": "legal_counsel",    "label": "Legal Counsel",    "channel": "Email brief" }
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "caribbean",
+  "name": "Caribbean Economic Signals",
+  "status": "live",
+  "tagline": "Six public sources across 13 CARICOM states, refreshed every 4 hours.",
+  "blurb": "The live instance. 6 public sources, refreshed every 4 hours.",
+  "geography": {
+    "scope": "13 CARICOM member states",
+    "config_ref": "config/world_bank_indicators.json#countries"
+  },
+  "pipeline": {
+    "watch": "World Bank, IDB, NOAA, NDBC, NHC, CARICOM & CDB feeds across 13 Caribbean countries.",
+    "reason": "Detects FDI surges, procurement windows, risk flags & marine hazards. Each signal scored, graded, cross-validated.",
+    "distribute": "Routes role-specific briefings to investors, founders, policy & diaspora — Telegram, WhatsApp, email or memo."
+  },
+  "sources": [
+    { "id": "world_bank", "label": "World Bank Indicators", "kind": "economic",   "watcher": "watchers/world_bank_poller.py", "config": "config/world_bank_indicators.json" },
+    { "id": "idb",        "label": "IDB Open Data",         "kind": "development", "watcher": "watchers/idb_ckan_poller.py",   "config": "config/idb_sources.json" },
+    { "id": "noaa",       "label": "NOAA Weather Alerts",   "kind": "hazard",      "watcher": "watchers/noaa_nws_poller.py",   "config": "config/noaa_sources.json" },
+    { "id": "ndbc",       "label": "NDBC Marine Buoys",     "kind": "marine",      "watcher": "watchers/ndbc_buoy_poller.py",  "config": "config/ndbc_sources.json" },
+    { "id": "nhc",        "label": "NHC Storm Tracks",      "kind": "hazard",      "watcher": "watchers/nhc_storm_poller.py",  "config": "config/noaa_sources.json" },
+    { "id": "tier2",      "label": "CARICOM + CDB Feeds",   "kind": "trade",       "watcher": "watchers/tier2_scraper.py",     "config": "config/tier2_sources.json" }
+  ],
+  "signals": {
+    "config": "config/composite_rules.json",
+    "kinds": [
+      "enhanced_investment", "investment_signal", "development_pipeline",
+      "economic_vulnerability", "food_security", "tourism_impact",
+      "cyclone_risk", "tropical_development", "maritime_hazard"
+    ]
+  },
+  "recipients": {
+    "config": "config/recipients.json",
+    "personas": [
+      { "id": "diaspora_investor",         "label": "Diaspora Investor",      "channel": "Email + Telegram" },
+      { "id": "founder_operator",          "label": "Regional Founder/Operator", "channel": "Telegram" },
+      { "id": "ecosystem_builder",         "label": "Ecosystem Builder",      "channel": "Telegram" },
+      { "id": "regional_operator",         "label": "Regional Operator",      "channel": "Telegram" },
+      { "id": "procurement_watcher",       "label": "Procurement Watcher",    "channel": "Email brief" },
+      { "id": "operator_resilience",       "label": "Operations/Resilience",  "channel": "Telegram/SMS alert" },
+      { "id": "tourism_logistics_operator","label": "Tourism/Logistics Operator", "channel": "Telegram" },
+      { "id": "policy_media",              "label": "Policy/Media",           "channel": "Telegram digest" }
+    ]
+  }
+}
