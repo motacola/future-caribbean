@@ -154,6 +154,12 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); line
 .reason-conns { list-style: none; display: flex; flex-direction: column; gap: 6px; }
 .reason-conns li { font-size: 12.5px; color: var(--sub); padding-left: 16px; position: relative; line-height: 1.5; }
 .reason-conns li::before { content: "→"; position: absolute; left: 0; color: var(--gold); }
+.deploy-btn { margin-top: 14px; background: transparent; border: 1px dashed var(--border-dark); color: var(--teal); padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer; font-family: var(--sans); transition: all .15s; }
+.deploy-btn:hover { border-color: var(--teal); border-style: solid; background: rgba(14,124,123,.06); }
+.wiz-field { margin-bottom: 12px; }
+.wiz-field label { display: block; font-size: 11px; font-weight: 600; color: var(--sub); margin-bottom: 5px; }
+.wiz-field input { width: 100%; background: var(--card); border: 1px solid var(--border); color: var(--text); padding: 9px 12px; border-radius: 5px; font-size: 13px; font-family: var(--sans); }
+.wiz-field input:focus { outline: none; border-color: var(--teal); }
 
 /* Proof layer */
 .proof-section { max-width: 1100px; margin: 0 auto; padding: 0 24px 60px; }
@@ -222,7 +228,8 @@ footer { border-top: 1px solid var(--border); padding: 24px; text-align: center;
   <div class="engine-head">
     <div class="engine-kicker">The engine</div>
     <div class="engine-title">One pipeline. Any domain.</div>
-    <div class="engine-sub">The same three-stage agent pipeline runs every instance. Pick a domain to see how its public sources flow through watch → reason → distribute. The Caribbean is live now; the rest are deployment blueprints on the identical engine.</div>
+    <div class="engine-sub">The same three-stage agent pipeline runs every instance. Pick a domain to see how its public sources flow through watch → reason → distribute. Two instances are live now; the rest are deployment blueprints on the identical engine — and you can define a new one.</div>
+    <button class="deploy-btn" onclick="openWizard()">+ Deploy a domain</button>
   </div>
 
   <div class="domain-strip" id="domain-strip"></div>
@@ -383,6 +390,36 @@ footer { border-top: 1px solid var(--border); padding: 24px; text-align: center;
       <button class="modal-btn" onclick="closeModal()">Close</button>
     </div>
     <div class="modal-note" id="modal-status">Caribbean is live now. New domains are architecture-ready — the pipeline is domain-agnostic by design, so a new instance is a config of sources, signals, and recipients.</div>
+  </div>
+</div>
+
+<!-- Deploy-a-domain wizard -->
+<div class="modal-overlay" id="wizard" onclick="if(event.target===this)closeWizard()">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeWizard()">✕</button>
+    <h3>Define a new domain</h3>
+    <p>A new instance is a config file, not a rebuild. Fill this in and it's written to <code style="font-family:var(--mono);font-size:12px">domains/</code>, validated, and added to the switcher live — as a blueprint.</p>
+    <div class="wiz-field">
+      <label>Domain name</label>
+      <input id="wiz-name" maxlength="60" placeholder="e.g. Renewable Energy Grid Signals">
+    </div>
+    <div class="wiz-field">
+      <label>① Watch — what public sources?</label>
+      <input id="wiz-watch" maxlength="240" placeholder="Grid operator feeds, energy regulators, outage data…">
+    </div>
+    <div class="wiz-field">
+      <label>② Reason — what signals?</label>
+      <input id="wiz-reason" maxlength="240" placeholder="Capacity shortfalls, price spikes, outage clusters…">
+    </div>
+    <div class="wiz-field">
+      <label>③ Distribute — to whom?</label>
+      <input id="wiz-distribute" maxlength="240" placeholder="Grid operators, regulators, large consumers…">
+    </div>
+    <div class="modal-actions" style="margin-top:18px">
+      <button class="modal-btn primary" id="wiz-submit" onclick="submitWizard()">Create domain →</button>
+      <button class="modal-btn" onclick="closeWizard()">Cancel</button>
+    </div>
+    <div class="modal-note" id="wiz-status">The engine is domain-agnostic — this proves it: your domain runs the same watch → reason → distribute pipeline.</div>
   </div>
 </div>
 
@@ -639,6 +676,49 @@ function fmtTg(s) {
 // ── Modal ───────────────────────────────────────────────────
 function openModal() { document.getElementById('modal').classList.add('open'); }
 function closeModal() { document.getElementById('modal').classList.remove('open'); }
+
+// ── Deploy-a-domain wizard ──────────────────────────────────
+function openWizard() { document.getElementById('wizard').classList.add('open'); }
+function closeWizard() { document.getElementById('wizard').classList.remove('open'); }
+
+function submitWizard() {
+  const btn = document.getElementById('wiz-submit');
+  const status = document.getElementById('wiz-status');
+  const payload = {
+    name:       (document.getElementById('wiz-name').value || '').trim(),
+    watch:      (document.getElementById('wiz-watch').value || '').trim(),
+    reason:     (document.getElementById('wiz-reason').value || '').trim(),
+    distribute: (document.getElementById('wiz-distribute').value || '').trim(),
+  };
+  if (payload.name.length < 3) {
+    status.textContent = '⚠ Give the domain a name (3+ characters).';
+    return;
+  }
+  btn.disabled = true; btn.textContent = 'Creating…';
+  fetch('/api/domains/create', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  })
+    .then(r => r.json())
+    .then(r => {
+      if (r && r.ok && r.domain) {
+        status.innerHTML = '✓ Created <code style="font-family:var(--mono)">domains/' +
+          r.domain.id + '.json</code> — added to the switcher.';
+        loadDomains();                 // refresh from registry
+        setTimeout(() => {
+          closeWizard();
+          activeDomain = r.domain.id;
+          loadDomains();
+          document.querySelector('.engine-sec').scrollIntoView({ behavior: 'smooth' });
+        }, 900);
+      } else {
+        status.textContent = '⚠ ' + ((r && r.error) || 'Could not create domain.');
+      }
+    })
+    .catch(() => { status.textContent = '⚠ Could not reach the API.'; })
+    .finally(() => { btn.disabled = false; btn.textContent = 'Create domain →'; });
+}
 
 function copyBriefing() {
   if (!_previewText) return;

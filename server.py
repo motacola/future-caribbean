@@ -88,6 +88,8 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
             self._api_send("telegram")
         elif path == "/api/whatsapp/link":
             self._api_whatsapp_link()
+        elif path == "/api/domains/create":
+            self._api_create_domain()
         else:
             self.send_error(404)
 
@@ -130,6 +132,79 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
                 "domains": [summarise(d) for d in domains],
                 "errors": errors,
             })
+        except Exception as exc:
+            self._json({"ok": False, "error": str(exc)}, 500)
+
+    # ── /api/domains/create ────────────────────────────────────
+
+    def _api_create_domain(self) -> None:
+        """Create a new blueprint domain from the UI wizard.
+
+        This is the abstraction made interactive: a new domain is a config
+        file. Writes are sanitised hard (public endpoint) — slug-only ids,
+        status forced to blueprint, length caps, and a cap on UI-created
+        domains so the folder can't be flooded."""
+        import re as _re
+        try:
+            length = int(self.headers.get("Content-Length", 0))
+            raw = self.rfile.read(length) if length else b"{}"
+            body = json.loads(raw.decode("utf-8") or "{}")
+        except (ValueError, json.JSONDecodeError):
+            self._json({"ok": False, "error": "Invalid JSON body"}, 400)
+            return
+
+        name = str(body.get("name", "")).strip()[:60]
+        if len(name) < 3:
+            self._json({"ok": False, "error": "Name must be at least 3 characters"}, 400)
+            return
+
+        slug = _re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
+        if len(slug) > 32:  # trim on a word boundary, not mid-word
+            slug = slug[:32].rsplit("-", 1)[0] if "-" in slug[:32] else slug[:32]
+        if not _re.fullmatch(r"[a-z0-9][a-z0-9-]{1,31}", slug):
+            self._json({"ok": False, "error": "Name must contain letters or digits"}, 400)
+            return
+
+        domains_dir = APP_DIR / "domains"
+        user_files = list(domains_dir.glob("user-*.json"))
+        if len(user_files) >= 12:
+            self._json({"ok": False, "error": "Demo limit reached (12 user domains). Remove some first."}, 429)
+            return
+
+        target = domains_dir / f"user-{slug}.json"
+        if target.exists():
+            self._json({"ok": False, "error": f"A domain '{slug}' already exists"}, 409)
+            return
+
+        def _clip(key: str, fallback: str) -> str:
+            return (str(body.get(key, "")).strip() or fallback)[:240]
+
+        manifest = {
+            "id": slug,
+            "name": name,
+            "status": "blueprint",
+            "created_via": "ui",
+            "tagline": _clip("tagline", "User-defined domain on the Signal Fabric engine."),
+            "blurb": _clip("tagline", "User-defined domain — same engine, new sources."),
+            "pipeline": {
+                "watch": _clip("watch", "Public data sources for this domain."),
+                "reason": _clip("reason", "Detect the signals that matter for this domain."),
+                "distribute": _clip("distribute", "Route briefings to this domain's recipients."),
+            },
+            "sources": [],
+            "signals": {"kinds": []},
+            "recipients": {"personas": []},
+        }
+
+        try:
+            sys.path.insert(0, str(APP_DIR))
+            from domains.registry import _validate, summarise
+            errs = _validate(manifest, target)
+            if errs:
+                self._json({"ok": False, "error": "; ".join(errs)}, 400)
+                return
+            target.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+            self._json({"ok": True, "domain": summarise(manifest)})
         except Exception as exc:
             self._json({"ok": False, "error": str(exc)}, 500)
 

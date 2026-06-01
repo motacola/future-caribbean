@@ -12,3 +12,6 @@ __pycache__/
 data/*/latest.json
 signals/*/latest.md
 .vercel
+
+# Wizard-created domains (ephemeral demo instances)
+domains/user-*.json
