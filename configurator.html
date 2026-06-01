@@ -169,7 +169,7 @@ footer { border-top: 1px solid var(--border); padding: 24px; text-align: center;
   <div class="mast-inner">
     <a href="/" class="mast-name">CARIBBEAN <em>OPPORTUNITY</em> DISPATCH</a>
     <div class="mast-links">
-      <span class="live-pill"><span class="live-dot"></span> 6/6 sources live</span>
+      <span class="live-pill"><span class="live-dot"></span> <span id="mast-sources">6/6</span> sources live</span>
       <a href="/system">System audit</a>
     </div>
   </div>
@@ -265,7 +265,7 @@ footer { border-top: 1px solid var(--border); padding: 24px; text-align: center;
   <div class="cta-card">
     <div class="cta-copy">
       <h3>Get this feed delivered to you.</h3>
-      <p>Telegram, WhatsApp, and email delivery are live. Your personalised preview is generated from the current pipeline — this is exactly what you would receive.</p>
+      <p>This preview is generated live from the current pipeline — exactly what you would receive. Copy it now, or connect a channel to get every cycle automatically.</p>
     </div>
     <div class="cta-btns">
       <button class="btn-feed btn-feed-primary" onclick="openModal()">Get this feed →</button>
@@ -306,7 +306,7 @@ footer { border-top: 1px solid var(--border); padding: 24px; text-align: center;
       <div class="proof-stat"><div class="ps-val" id="pb-signals">13</div><div class="ps-lbl">Signals this cycle</div></div>
       <div class="proof-stat"><div class="ps-val" id="pb-dispatches">31</div><div class="ps-lbl">Dispatches routed</div></div>
     </div>
-    <div style="margin-bottom:16px"><div class="src-row"><span><span class="src-dot src-ok"></span>World Bank Indicators</span><span style="font-size:12px;color:var(--teal)">Live</span></div><div class="src-row"><span><span class="src-dot src-ok"></span>IDB Open Data</span><span style="font-size:12px;color:var(--teal)">Live</span></div><div class="src-row"><span><span class="src-dot src-ok"></span>NOAA Weather Alerts</span><span style="font-size:12px;color:var(--teal)">Live</span></div><div class="src-row"><span><span class="src-dot src-ok"></span>NDBC Marine Buoys</span><span style="font-size:12px;color:var(--teal)">Live</span></div><div class="src-row"><span><span class="src-dot src-ok"></span>CARICOM Statistics</span><span style="font-size:12px;color:var(--teal)">Live</span></div><div class="src-row"><span><span class="src-dot src-ok"></span>CDB Procurement Feed</span><span style="font-size:12px;color:var(--teal)">Live</span></div></div>
+    <div style="margin-bottom:16px" id="src-rows"><div class="src-row"><span><span class="src-dot src-ok"></span>World Bank Indicators</span><span style="font-size:12px;color:var(--teal)">Live</span></div><div class="src-row"><span><span class="src-dot src-ok"></span>IDB Open Data</span><span style="font-size:12px;color:var(--teal)">Live</span></div><div class="src-row"><span><span class="src-dot src-ok"></span>NOAA Weather Alerts</span><span style="font-size:12px;color:var(--teal)">Live</span></div><div class="src-row"><span><span class="src-dot src-ok"></span>NDBC Marine Buoys</span><span style="font-size:12px;color:var(--teal)">Live</span></div><div class="src-row"><span><span class="src-dot src-ok"></span>CARICOM Statistics</span><span style="font-size:12px;color:var(--teal)">Live</span></div><div class="src-row"><span><span class="src-dot src-ok"></span>CDB Procurement Feed</span><span style="font-size:12px;color:var(--teal)">Live</span></div></div>
     <a href="/system" class="proof-link">Open full system audit →</a>
   </div>
 </div>
@@ -316,12 +316,12 @@ footer { border-top: 1px solid var(--border); padding: 24px; text-align: center;
   <div class="modal-card">
     <button class="modal-close" onclick="closeModal()">✕</button>
     <h3>Your feed is ready.</h3>
-    <p>This preview was generated live from today's pipeline. Choose how you want to receive it.</p>
+    <p>This preview was generated live from today's pipeline. Copy it now — channel delivery (Telegram, WhatsApp, email) connects when you subscribe.</p>
     <div class="modal-actions">
       <button class="modal-btn primary" onclick="copyBriefing();closeModal()">📋 Copy briefing text</button>
       <button class="modal-btn" onclick="closeModal()">Close</button>
     </div>
-    <div class="modal-note" id="modal-status">Copy the briefing text and paste it into your messaging app, email, or notes.</div>
+    <div class="modal-note" id="modal-status">Telegram bot delivery is wired and ready to enable. For this demo, copy the briefing and paste it into any channel.</div>
   </div>
 </div>
 
@@ -481,7 +481,15 @@ function renderClientSide() {
   if (!pr && c.personas?.length) pr = c.personas[0];
 
   const country = c.country_cluster||'Caribbean';
-  let ev = (c.evidence||'').replace(/\bWB\s+/,'World Bank ').replace(/detected:\s*/,'shows: ').replace(/FDI surge/,'FDI movement');
+  const ce = country.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+  let ev = (c.evidence||'')
+    .replace(new RegExp('^\\s*'+ce+'\\s*:\\s*'),'')
+    .replace(new RegExp('\\s*:\\s*'+ce+'\\s*\\.?\\s*$'),'')
+    .replace(/\bWB\b/,'World Bank')
+    .replace(/FDI surge detected/,'FDI inflows rising')
+    .replace(/detected:\s*/,'')
+    .replace(/FDI surge/,'FDI movement')
+    .trim();
   const pct = (c.title||'').match(/([+\-]?\d+\.?\d*)%/)?.[0]||'';
   const action = (pr?.action||c.decision||'').slice(0,200);
   const grade = (c.evidence_grade||'C')[0].toUpperCase();
@@ -586,16 +594,44 @@ function toggleProof() {
 }
 
 // ── Live status poll ────────────────────────────────────────
+// The status API exposes 5 data dirs; CARICOM + CDB both come from `tier2`,
+// so the 6 logical feeds map onto those keys.
+const SRC_VIEW = [
+  { label: 'World Bank Indicators', key: 'world_bank' },
+  { label: 'IDB Open Data',         key: 'idb' },
+  { label: 'NOAA Weather Alerts',   key: 'noaa' },
+  { label: 'NDBC Marine Buoys',     key: 'ndbc' },
+  { label: 'CARICOM Statistics',    key: 'tier2' },
+  { label: 'CDB Procurement Feed',  key: 'tier2' },
+];
+
+function setText(id, val) { const el = document.getElementById(id); if (el && val != null) el.textContent = val; }
+
 function pollStatus() {
   fetch('/api/status')
     .then(r => r.ok ? r.json() : null)
     .then(s => {
       if (!s) return;
-      const v = s.n_sources_ok + '/6';
-      ['hs-sources'].forEach(id => { const el = document.getElementById(id); if (el) el.textContent = v; });
-      ['hs-signals'].forEach(id => { const el = document.getElementById(id); if (el && s.n_clusters) el.textContent = s.n_clusters; });
-      ['pb-signals'].forEach(id => { const el = document.getElementById(id); if (el && s.n_clusters) el.textContent = s.n_clusters; });
-      ['pb-dispatches'].forEach(id => { const el = document.getElementById(id); if (el && s.n_dispatches) el.textContent = s.n_dispatches; });
+      const sources = s.sources || {};
+      const okCount = SRC_VIEW.filter(v => sources[v.key] && sources[v.key].ok).length;
+      const ratio = okCount + '/6';
+
+      setText('mast-sources', ratio);
+      setText('hs-sources', ratio);
+      if (s.n_clusters) { setText('hs-signals', s.n_clusters); setText('pb-signals', s.n_clusters); }
+      if (s.n_dispatches) setText('pb-dispatches', s.n_dispatches);
+
+      // Rebuild proof source rows from live status
+      const rows = document.getElementById('src-rows');
+      if (rows && Object.keys(sources).length) {
+        rows.innerHTML = SRC_VIEW.map(v => {
+          const ok = sources[v.key] && sources[v.key].ok;
+          return '<div class="src-row"><span><span class="src-dot ' +
+            (ok ? 'src-ok' : 'src-off') + '"></span>' + v.label + '</span>' +
+            '<span style="font-size:12px;color:' + (ok ? 'var(--teal)' : 'var(--muted)') + '">' +
+            (ok ? 'Live' : 'Offline') + '</span></div>';
+        }).join('');
+      }
     })
     .catch(() => {});
 }

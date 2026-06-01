@@ -285,10 +285,15 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
         decision = cluster.get("decision", "")
         risks    = cluster.get("risk_flags", []) or []
 
-        # Clean evidence text
-        evidence = re.sub(r"\bWB\s+", "World Bank ", evidence)
-        evidence = re.sub(r"detected:\s*", "shows: ", evidence)
+        # Clean evidence text — strip redundant country (shown separately),
+        # then humanise pipeline shorthand
+        evidence = re.sub(rf"^\s*{re.escape(country)}\s*:\s*", "", evidence)
+        evidence = re.sub(rf"\s*:\s*{re.escape(country)}\s*\.?\s*$", "", evidence)
+        evidence = re.sub(r"\bWB\b", "World Bank", evidence)
+        evidence = re.sub(r"FDI surge detected", "FDI inflows rising", evidence)
+        evidence = re.sub(r"detected:\s*", "", evidence)
         evidence = re.sub(r"FDI surge", "FDI movement", evidence)
+        evidence = evidence.strip()
 
         pct_m = re.search(r"([+\-]?\d+\.?\d*)%", raw_title)
         pct   = pct_m.group(0) if pct_m else ""
