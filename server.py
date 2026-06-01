@@ -227,10 +227,18 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
         countries = [c.strip() for c in qs.get("countries", ["all"])[0].lower().split(",") if c.strip()]
         signals   = [s.strip() for s in qs.get("signals",   ["all"])[0].lower().split(",") if s.strip()]
         channel   = qs.get("channel",  ["telegram"])[0].lower().strip()
+        domain    = qs.get("domain",   ["caribbean"])[0].lower().strip()
 
-        # Load live dispatch data
+        # Each live instance has its own dispatch desk. Climate is the
+        # second live instance (hazard data → insurer/resilience roles).
+        DESK_FILES = {
+            "caribbean": "dispatch_desk.json",
+            "climate":   "climate_desk.json",
+        }
+        desk_file = DESK_FILES.get(domain, "dispatch_desk.json")
+
         desk: dict = {}
-        desk_p = APP_DIR / "outbox" / "dispatch_desk.json"
+        desk_p = APP_DIR / "outbox" / desk_file
         if desk_p.exists():
             try:
                 desk = json.loads(desk_p.read_text())
@@ -239,14 +247,20 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
 
         clusters = desk.get("clusters", [])
         if not clusters:
-            self._json({"ok": False, "error": "No signal data yet — run the pipeline first."}, 503)
+            self._json({"ok": False, "error": f"No signal data yet for '{domain}' — run the pipeline first."}, 503)
             return
 
-        # ── Country filter ─────────────────────────────────────
         fallback = False
         fallback_reason = ""
         working = clusters
 
+        # Country/signal filters are economic concepts; for non-economic
+        # instances (climate) we route by strongest live hazard instead.
+        if domain != "caribbean":
+            countries = ["all"]
+            signals = ["all"]
+
+        # ── Country filter ─────────────────────────────────────
         if "all" not in countries:
             matched = [
                 c for c in clusters
@@ -283,12 +297,21 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
         cluster = working[0]
 
         # ── Persona matching ────────────────────────────────────
-        PERSONA_TERMS: dict[str, list[str]] = {
-            "investor":  ["investor", "diaspora investor", "regional investor"],
-            "founder":   ["founder", "operator", "ecosystem builder"],
-            "policy":    ["policy", "media", "policy/media"],
-            "diaspora":  ["diaspora"],
-        }
+        if domain == "climate":
+            # Map the economic role chips onto the climate instance's roles
+            PERSONA_TERMS = {
+                "investor":  ["insurer", "reinsurer"],
+                "founder":   ["operations", "resilience", "operator"],
+                "policy":    ["resilience planner", "planner"],
+                "diaspora":  ["insurer"],
+            }
+        else:
+            PERSONA_TERMS = {
+                "investor":  ["investor", "diaspora investor", "regional investor"],
+                "founder":   ["founder", "operator", "ecosystem builder"],
+                "policy":    ["policy", "media", "policy/media"],
+                "diaspora":  ["diaspora"],
+            }
         p_terms = PERSONA_TERMS.get(persona, [persona])
         persona_rec: dict = {}
         for p in cluster.get("personas", []):
@@ -324,61 +347,83 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
 
         action = persona_rec.get("action", decision)[:200] if persona_rec else decision[:200]
 
-        PERSONA_DISPLAY = {
-            "investor": "Diaspora Investor",
-            "founder":  "Regional Founder / Operator",
-            "policy":   "Policy / Media",
-            "diaspora": "Diaspora",
-        }
-        persona_label = PERSONA_DISPLAY.get(persona, persona.title())
+        # For the climate instance, use the dispatch's own recipient label
+        if domain == "climate":
+            persona_label = persona_rec.get("persona", "Resilience Planner") if persona_rec else "Resilience Planner"
+        else:
+            PERSONA_DISPLAY = {
+                "investor": "Diaspora Investor",
+                "founder":  "Regional Founder / Operator",
+                "policy":   "Policy / Media",
+                "diaspora": "Diaspora",
+            }
+            persona_label = PERSONA_DISPLAY.get(persona, persona.title())
+
+        # Domain-specific framing
+        if domain == "climate":
+            head_title = "Caribbean Hazard Alert"
+            head_emoji = "🌀"
+            head_name = "Caribbean Hazard Signal"
+            source_label = "NOAA NWS / NDBC buoys / NHC outlook"
+            disclaimer = "Decision-support signal. Always follow official emergency directives."
+        else:
+            head_title = "Caribbean Opportunity Signal"
+            head_emoji = "🌴"
+            head_name = "Caribbean Signal"
+            source_label = "World Bank / IDB / NOAA / CARICOM / CDB"
+            disclaimer = "Screening signal only. Not investment advice."
 
         # ── Format per channel ──────────────────────────────────
         pct_str = f" ({pct})" if pct else ""
 
         if channel == "telegram":
             formatted = (
-                f"*Caribbean Opportunity Signal*\n\n"
+                f"*{head_title}*\n\n"
                 f"*{country}* — {confidence}\n\n"
                 f"{evidence}{pct_str}\n\n"
                 f"*What to do ({persona_label}):*\n{action}\n\n"
                 + (f"⚠️ Risk flag: {risks[0]}\n\n" if risks else "")
-                + "_Screening signal only. Not investment advice._"
+                + f"_{disclaimer}_"
             )
         elif channel == "whatsapp":
             formatted = (
-                f"🌴 Caribbean Signal\n\n"
+                f"{head_emoji} {head_name}\n\n"
                 f"{country}: {evidence}{pct_str}\n\n"
                 f"{action[:160]}\n\n"
-                f"Screening signal only. Not investment advice.\n"
+                f"{disclaimer}\n"
                 f"Full brief: https://future-caribbean.fly.dev"
             )
         elif channel == "email":
+            kind_word = "hazard" if domain == "climate" else "market"
             formatted = (
-                f"Subject: {country} — {confidence.lower()} market signal\n\n"
+                f"Subject: {country} — {confidence.lower()} {kind_word} signal\n\n"
                 f"{evidence}{pct_str}\n\n"
                 f"For {persona_label}:\n{action}\n\n"
                 + (f"Risk flag: {risks[0]}\n\n" if risks else "")
-                + f"Source: World Bank indicators\nConfidence: {confidence}\n\n"
-                f"Screening signal, not investment advice.\n"
+                + f"Source: {source_label}\nConfidence: {confidence}\n\n"
+                f"{disclaimer}\n"
                 f"Caribbean Opportunity Dispatch"
             )
         else:  # memo
+            brief_title = "CARIBBEAN HAZARD BRIEF" if domain == "climate" else "CARIBBEAN OPPORTUNITY BRIEF"
+            loc_label = "Area" if domain == "climate" else "Country"
             formatted = (
-                f"CARIBBEAN OPPORTUNITY BRIEF\n"
+                f"{brief_title}\n"
                 f"{'─' * 36}\n"
-                f"Country:    {country}\n"
+                f"{loc_label}:      {country}\n"
                 f"Confidence: {confidence}\n"
                 f"Audience:   {persona_label}\n\n"
                 f"SIGNAL\n{evidence}{pct_str}\n\n"
                 f"RECOMMENDED ACTION\n{action}\n\n"
                 + (f"RISK FLAG\n{risks[0]}\n\n" if risks else "")
                 + f"{'─' * 36}\n"
-                f"Screening signal only. Not investment advice.\n"
+                f"{disclaimer}\n"
                 f"Caribbean Opportunity Dispatch"
             )
 
         self._json({
             "ok":             True,
+            "domain":         domain,
             "persona":        persona_label,
             "channel":        channel,
             "country":        country,
@@ -386,7 +431,7 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
             "evidence":       evidence,
             "pct":            pct,
             "action":         action,
-            "source":         "World Bank / IDB / NOAA / CARICOM / CDB",
+            "source":         source_label,
             "risks":          risks[:1],
             "formatted":      formatted,
             "fallback":       fallback,

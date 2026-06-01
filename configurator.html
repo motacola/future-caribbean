@@ -380,6 +380,7 @@ const state = {
   countries: ['all'],
   signals:   ['all'],
   channel:   'telegram',
+  domain:    'caribbean',
 };
 let _previewText = '';
 let _debounce = null;
@@ -442,6 +443,7 @@ function loadPreview() {
     countries: state.countries.join(','),
     signals:   Array.isArray(state.signals) ? state.signals.join(',') : state.signals,
     channel:   state.channel,
+    domain:    state.domain || 'caribbean',
   });
 
   document.getElementById('preview-loading').style.display = 'block';
@@ -754,12 +756,18 @@ function selectDomain(id) {
   const line = document.getElementById('instance-line');
   if (d.status === 'live') {
     line.innerHTML = `<span class="il-status il-live">● Running now</span> — ` +
-      `${d.name} is the live instance: ${c.sources_wired}/${c.sources} sources wired, ` +
-      `${c.signals} signal rules, ${c.recipients} recipient roles. Configure a real briefing below.`;
+      `${d.name} is a live instance: ${c.sources_wired}/${c.sources} sources wired, ` +
+      `${c.signals} signal rules, ${c.recipients} recipient roles. The preview below is generated from its real dispatches.`;
+    // Live instance → drive the preview from this domain's real data
+    state.domain = d.id;
+    loadPreview();
   } else {
     line.innerHTML = `<span class="il-status il-blueprint">○ Config-ready</span> — ` +
       `${d.name} is defined by <code>domains/${d.id}.json</code> on the identical engine ` +
-      `(${c.sources_wired}/${c.sources} sources wired). Not live in this demo; the preview below stays on the Caribbean instance.`;
+      `(${c.sources_wired}/${c.sources} sources wired). Not live in this demo; the preview stays on the Caribbean instance.`;
+    // Blueprint → keep the live Caribbean preview
+    state.domain = 'caribbean';
+    loadPreview();
   }
 }
 

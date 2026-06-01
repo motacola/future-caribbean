@@ -1,9 +1,11 @@
 {
   "id": "climate",
   "name": "Climate & Catastrophe Risk",
-  "status": "blueprint",
+  "status": "live",
   "tagline": "The same engine, re-targeted at hazard data for insurers and resilience planners.",
-  "blurb": "Reuses the marine & weather watchers already wired for the Caribbean.",
+  "blurb": "Second live instance. Reuses the NOAA/NDBC/NHC watchers, routed to climate roles.",
+  "dispatch_output": "outbox/climate_desk.json",
+  "packager": "packagers/climate_dispatch.py",
   "geography": { "scope": "Hazard-exposed regions (Caribbean basin first)" },
   "pipeline": {
     "watch": "NOAA, NDBC, NHC & hazard feeds — storms, surge, marine conditions in real time.",
