@@ -115,16 +115,33 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); line
 .btn-feed-ghost { background: transparent; border: 1px solid rgba(255,255,255,.2); color: rgba(255,255,255,.75); }
 .btn-feed-ghost:hover { border-color: rgba(255,255,255,.5); color: #fff; }
 
-/* How it works */
-.how-section { max-width: 1100px; margin: 0 auto; padding: 0 24px 64px; }
-.how-title { font-family: var(--serif); font-size: 22px; font-weight: 700; margin-bottom: 6px; }
-.how-sub { font-size: 14px; color: var(--sub); margin-bottom: 28px; }
-.how-steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
-@media(max-width:640px){ .how-steps { grid-template-columns: 1fr; } }
-.how-step { background: var(--card); border: 1px solid var(--border); border-radius: var(--r); padding: 20px; }
-.how-num { font-family: var(--mono); font-size: 28px; font-weight: 600; color: var(--gold); margin-bottom: 10px; line-height: 1; }
-.how-text { font-size: 14px; color: var(--sub); line-height: 1.6; }
-.how-text strong { color: var(--text); }
+
+/* engine section */
+.engine-sec { max-width: 1100px; margin: 0 auto; padding: 0 24px 4px; }
+.engine-head { margin-bottom: 22px; }
+.engine-kicker { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gold); font-weight: 600; margin-bottom: 8px; }
+.engine-title { font-family: var(--serif); font-size: 26px; font-weight: 700; letter-spacing: -.3px; margin-bottom: 6px; }
+.engine-sub { font-size: 15px; color: var(--sub); max-width: 660px; line-height: 1.6; }
+.domain-strip { display: grid; grid-template-columns: repeat(auto-fill, minmax(188px,1fr)); gap: 12px; margin-bottom: 22px; }
+.domain-card { text-align: left; background: var(--card); border: 1px solid var(--border); border-radius: var(--r); padding: 16px; cursor: pointer; transition: all .15s; font-family: var(--sans); }
+.domain-card:hover { border-color: var(--teal); transform: translateY(-2px); }
+.domain-card.on { border-color: var(--teal); box-shadow: 0 0 0 1px var(--teal); background: var(--card-alt); }
+.domain-name { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 8px; line-height: 1.3; }
+.domain-badge { display: inline-block; font-size: 9px; text-transform: uppercase; letter-spacing: .8px; font-weight: 700; padding: 2px 8px; border-radius: 20px; }
+.badge-live { background: rgba(63,185,80,.14); color: #2f9e44; }
+.badge-blueprint { background: rgba(130,154,177,.16); color: var(--sub); }
+.domain-blurb { font-size: 12px; color: var(--muted); line-height: 1.5; margin-top: 8px; }
+.instance-line { font-size: 13px; color: var(--muted); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.instance-line .il-status { font-weight: 700; }
+.il-live { color: #2f9e44; }
+.il-blueprint { color: var(--sub); }
+.pipeline { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; align-items: stretch; background: var(--card); border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; margin-bottom: 8px; }
+@media(max-width:760px){ .pipeline { grid-template-columns: 1fr; } .pipe-arrow { transform: rotate(90deg); padding: 8px 0; } }
+.pipe-stage { padding: 20px; }
+.pipe-num { font-family: var(--mono); font-size: 11px; color: var(--gold); font-weight: 600; letter-spacing: 1px; margin-bottom: 8px; }
+.pipe-name { font-family: var(--serif); font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+.pipe-detail { font-size: 12.5px; color: var(--sub); line-height: 1.55; }
+.pipe-arrow { display: flex; align-items: center; justify-content: center; color: var(--border-dark); font-size: 20px; padding: 0 4px; }
 
 /* Proof layer */
 .proof-section { max-width: 1100px; margin: 0 auto; padding: 0 24px 60px; }
@@ -167,9 +184,9 @@ footer { border-top: 1px solid var(--border); padding: 24px; text-align: center;
 <!-- Masthead -->
 <div class="masthead">
   <div class="mast-inner">
-    <a href="/" class="mast-name">CARIBBEAN <em>OPPORTUNITY</em> DISPATCH</a>
+    <a href="/" class="mast-name">SIGNAL <em>FABRIC</em></a>
     <div class="mast-links">
-      <span class="live-pill"><span class="live-dot"></span> <span id="mast-sources">6/6</span> sources live</span>
+      <span class="live-pill"><span class="live-dot"></span> Caribbean instance · <span id="mast-sources">6/6</span> live</span>
       <a href="/system">System audit</a>
     </div>
   </div>
@@ -177,14 +194,56 @@ footer { border-top: 1px solid var(--border); padding: 24px; text-align: center;
 
 <!-- Hero -->
 <div class="hero">
-  <p class="hero-kicker">Open Track · Agentic coordination infrastructure</p>
-  <h1 class="hero-headline">Build your Caribbean<br><em>market signal feed.</em></h1>
-  <p class="hero-sub">Choose the countries, sectors, and delivery channel you care about. We turn public regional data into briefings you can actually use — filtered for your role, formatted for your channel.</p>
+  <p class="hero-kicker">Open Track · Agentic intelligence engine</p>
+  <h1 class="hero-headline">One engine for any<br><em>fragmented data market.</em></h1>
+  <p class="hero-sub">Signal Fabric is an agentic system that watches public data, reasons over it, and delivers routed intelligence to the people who act on it. It runs live today on the Caribbean — and deploys to any domain where critical data sits scattered, public, and unread.</p>
   <div class="hero-stats">
-    <div class="hero-stat"><strong>13</strong> countries monitored</div>
-    <div class="hero-stat"><strong id="hs-sources">6/6</strong> sources live</div>
+    <div class="hero-stat"><strong>1</strong> domain-agnostic engine</div>
+    <div class="hero-stat"><strong id="hs-sources">6/6</strong> live sources (Caribbean)</div>
     <div class="hero-stat"><strong id="hs-signals">13</strong> signals this cycle</div>
-    <div class="hero-stat"><strong>4h</strong> refresh cadence</div>
+    <div class="hero-stat"><strong>4h</strong> autonomous cycle</div>
+  </div>
+</div>
+
+<!-- Engine: domain switcher + pipeline -->
+<div class="engine-sec">
+  <div class="engine-head">
+    <div class="engine-kicker">The engine</div>
+    <div class="engine-title">One pipeline. Any domain.</div>
+    <div class="engine-sub">The same three-stage agent pipeline runs every instance. Pick a domain to see how its public sources flow through watch → reason → distribute. The Caribbean is live now; the rest are deployment blueprints on the identical engine.</div>
+  </div>
+
+  <div class="domain-strip" id="domain-strip"></div>
+
+  <div class="instance-line" id="instance-line"></div>
+
+  <div class="pipeline">
+    <div class="pipe-stage">
+      <div class="pipe-num">01 · WATCH</div>
+      <div class="pipe-name">Watcher agents</div>
+      <div class="pipe-detail" id="pipe-watch"></div>
+    </div>
+    <div class="pipe-arrow">→</div>
+    <div class="pipe-stage">
+      <div class="pipe-num">02 · REASON</div>
+      <div class="pipe-name">Reasoning agents</div>
+      <div class="pipe-detail" id="pipe-reason"></div>
+    </div>
+    <div class="pipe-arrow">→</div>
+    <div class="pipe-stage">
+      <div class="pipe-num">03 · DISTRIBUTE</div>
+      <div class="pipe-name">Distribution agents</div>
+      <div class="pipe-detail" id="pipe-distribute"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Live proof: Caribbean instance -->
+<div class="engine-sec" style="padding-top:36px">
+  <div class="engine-head">
+    <div class="engine-kicker">Live proof · Caribbean instance</div>
+    <div class="engine-title">See what a real user receives</div>
+    <div class="engine-sub">This is the engine deployed on six Caribbean public sources, refreshed every four hours. Configure a feed and the exact briefing is generated live from the current cycle — filtered for the role, formatted for the channel.</div>
   </div>
 </div>
 
@@ -264,32 +323,12 @@ footer { border-top: 1px solid var(--border); padding: 24px; text-align: center;
 <div class="cta-section">
   <div class="cta-card">
     <div class="cta-copy">
-      <h3>Get this feed delivered to you.</h3>
-      <p>This preview is generated live from the current pipeline — exactly what you would receive. Copy it now, or connect a channel to get every cycle automatically.</p>
+      <h3>Deploy the engine on your domain.</h3>
+      <p>The Caribbean instance proves it end-to-end. The same watch → reason → distribute pipeline stands up on compliance, climate risk, trade flows, or any fragmented data market. Copy a live briefing now, or open a deployment conversation.</p>
     </div>
     <div class="cta-btns">
-      <button class="btn-feed btn-feed-primary" onclick="openModal()">Get this feed →</button>
-      <button class="btn-feed btn-feed-ghost" onclick="copyBriefing()">Copy briefing</button>
-    </div>
-  </div>
-</div>
-
-<!-- How it works -->
-<div class="how-section">
-  <p class="how-title">How it works</p>
-  <p class="how-sub">A continuously running intelligence pipeline — not a one-off report.</p>
-  <div class="how-steps">
-    <div class="how-step">
-      <div class="how-num">01</div>
-      <div class="how-text"><strong>Watcher agents</strong> monitor 6 public data sources across 13 Caribbean countries every 4 hours — World Bank, IDB, NOAA, NDBC, CARICOM, CDB.</div>
-    </div>
-    <div class="how-step">
-      <div class="how-num">02</div>
-      <div class="how-text"><strong>Reasoning agents</strong> detect investment signals, procurement opportunities, risk flags, and market shifts. Each signal is scored, graded, and cross-validated.</div>
-    </div>
-    <div class="how-step">
-      <div class="how-num">03</div>
-      <div class="how-text"><strong>Distribution agents</strong> package each signal for your role and channel — formatted differently for an investor memo, a Telegram alert, or a WhatsApp message.</div>
+      <button class="btn-feed btn-feed-primary" onclick="copyBriefing()">Copy live briefing</button>
+      <button class="btn-feed btn-feed-ghost" onclick="openModal()">Deploy a domain →</button>
     </div>
   </div>
 </div>
@@ -315,18 +354,18 @@ footer { border-top: 1px solid var(--border); padding: 24px; text-align: center;
 <div class="modal-overlay" id="modal" onclick="if(event.target===this)closeModal()">
   <div class="modal-card">
     <button class="modal-close" onclick="closeModal()">✕</button>
-    <h3>Your feed is ready.</h3>
-    <p>This preview was generated live from today's pipeline. Copy it now — channel delivery (Telegram, WhatsApp, email) connects when you subscribe.</p>
+    <h3>Deploy Signal Fabric.</h3>
+    <p>The Caribbean instance proves the engine end-to-end. Standing up a new domain — compliance, climate risk, trade, capital flows — wires its public sources into the same watcher → reasoning → distribution pipeline.</p>
     <div class="modal-actions">
-      <button class="modal-btn primary" onclick="copyBriefing();closeModal()">📋 Copy briefing text</button>
+      <button class="modal-btn primary" onclick="copyBriefing();closeModal()">📋 Copy a live briefing</button>
       <button class="modal-btn" onclick="closeModal()">Close</button>
     </div>
-    <div class="modal-note" id="modal-status">Telegram bot delivery is wired and ready to enable. For this demo, copy the briefing and paste it into any channel.</div>
+    <div class="modal-note" id="modal-status">Caribbean is live now. New domains are architecture-ready — the pipeline is domain-agnostic by design, so a new instance is a config of sources, signals, and recipients.</div>
   </div>
 </div>
 
 <footer>
-  Caribbean Opportunity Dispatch · Cycle 20260528 · Open Track · Screening signals only, not investment advice · Data: World Bank · IDB · NOAA · NDBC · CARICOM · CDB
+  Signal Fabric · Caribbean Opportunity Dispatch (live instance) · Open Track · Screening signals only, not investment advice · Data: World Bank · IDB · NOAA · NDBC · CARICOM · CDB
 </footer>
 
 <script>
@@ -637,6 +676,74 @@ function pollStatus() {
 }
 pollStatus();
 setInterval(pollStatus, 30000);
+
+// ── Engine: domain switcher + pipeline ──────────────────────
+const DOMAINS = [
+  { id:'caribbean', name:'Caribbean Economic Signals', status:'live',
+    blurb:'The live instance. 6 public sources, refreshed every 4 hours.',
+    watch:'World Bank, IDB, NOAA, NDBC, CARICOM & CDB feeds across 13 Caribbean countries.',
+    reason:'Detects FDI surges, procurement windows, risk flags & marine hazards. Each signal scored, graded, cross-validated.',
+    distribute:'Routes role-specific briefings to investors, founders, policy & diaspora — Telegram, WhatsApp, email or memo.' },
+  { id:'compliance', name:'Cross-Jurisdiction Compliance', status:'blueprint',
+    blurb:'Same engine, pointed at regulatory data.',
+    watch:'Regulatory gazettes, sanctions lists & policy releases across jurisdictions.',
+    reason:'Maps new obligations to each entity and scores compliance risk as rules change.',
+    distribute:'Alerts compliance & legal owners the moment an obligation shifts.' },
+  { id:'climate', name:'Climate & Catastrophe Risk', status:'blueprint',
+    blurb:'Reuses the marine & weather watchers already wired for the Caribbean.',
+    watch:'NOAA, NDBC, NHC & hazard feeds — storms, surge, marine conditions in real time.',
+    reason:'Scores exposure and escalates as an event develops toward a threshold.',
+    distribute:'Briefs insurers, reinsurers & resilience planners before impact.' },
+  { id:'trade', name:'Supply Chain & Trade Flows', status:'blueprint',
+    blurb:'Fragmented trade data unified into routed intelligence.',
+    watch:'Port throughput, customs, shipping & trade-statistic feeds.',
+    reason:'Detects volume shifts and bottlenecks, flags route & supplier risk.',
+    distribute:'Alerts operators & logistics planners to disruption ahead.' },
+  { id:'capital', name:'Emerging-Market Capital Flows', status:'blueprint',
+    blurb:'The Caribbean method, generalised to any emerging-market set.',
+    watch:'Multi-region public economic indicators at scale.',
+    reason:'Detects cross-border capital momentum & convergence across markets.',
+    distribute:'Dispatches to allocators & funds on the channels they use.' },
+];
+let activeDomain = 'caribbean';
+
+function renderDomains() {
+  const strip = document.getElementById('domain-strip');
+  strip.innerHTML = DOMAINS.map(d => {
+    const badge = d.status === 'live'
+      ? '<span class="domain-badge badge-live">● Live</span>'
+      : '<span class="domain-badge badge-blueprint">Blueprint</span>';
+    return `<button class="domain-card${d.id===activeDomain?' on':''}" data-domain="${d.id}">
+      <div class="domain-name">${d.name}</div>${badge}
+      <div class="domain-blurb">${d.blurb}</div>
+    </button>`;
+  }).join('');
+  strip.querySelectorAll('.domain-card').forEach(c =>
+    c.addEventListener('click', () => selectDomain(c.dataset.domain)));
+}
+
+function selectDomain(id) {
+  activeDomain = id;
+  const d = DOMAINS.find(x => x.id === id) || DOMAINS[0];
+  document.querySelectorAll('.domain-card').forEach(c =>
+    c.classList.toggle('on', c.dataset.domain === id));
+  document.getElementById('pipe-watch').textContent = d.watch;
+  document.getElementById('pipe-reason').textContent = d.reason;
+  document.getElementById('pipe-distribute').textContent = d.distribute;
+
+  const line = document.getElementById('instance-line');
+  if (d.status === 'live') {
+    line.innerHTML = `<span class="il-status il-live">● Running now</span> — ` +
+      `${d.name} is the live instance. Configure a real briefing below.`;
+  } else {
+    line.innerHTML = `<span class="il-status il-blueprint">○ Architecture-ready</span> — ` +
+      `${d.name} runs on the identical engine. Not live in this demo; ` +
+      `the live preview below stays on the Caribbean instance.`;
+  }
+}
+
+renderDomains();
+selectDomain('caribbean');
 
 // ── Init ────────────────────────────────────────────────────
 updateMeta();
