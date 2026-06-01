@@ -61,6 +61,9 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
         if path == "/api/domains":
             self._api_domains()
             return
+        if path == "/api/reasoning":
+            self._api_reasoning()
+            return
 
         # Block internal paths
         clean = path.lstrip("/")
@@ -127,6 +130,19 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
                 "domains": [summarise(d) for d in domains],
                 "errors": errors,
             })
+        except Exception as exc:
+            self._json({"ok": False, "error": str(exc)}, 500)
+
+    # ── /api/reasoning ─────────────────────────────────────────
+
+    def _api_reasoning(self) -> None:
+        """Serve the reasoning agent's cross-signal synthesis."""
+        p = APP_DIR / "outbox" / "reasoning.json"
+        if not p.exists():
+            self._json({"ok": False, "error": "No synthesis yet — run the pipeline."}, 503)
+            return
+        try:
+            self._json({"ok": True, **json.loads(p.read_text())})
         except Exception as exc:
             self._json({"ok": False, "error": str(exc)}, 500)
 

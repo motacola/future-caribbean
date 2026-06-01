@@ -144,6 +144,16 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); line
 .pipe-name { font-family: var(--serif); font-size: 17px; font-weight: 700; margin-bottom: 8px; }
 .pipe-detail { font-size: 12.5px; color: var(--sub); line-height: 1.55; }
 .pipe-arrow { display: flex; align-items: center; justify-content: center; color: var(--border-dark); font-size: 20px; padding: 0 4px; }
+.reason-panel { background: var(--card-alt); border: 1px solid var(--border); border-left: 3px solid var(--gold); border-radius: var(--r); padding: 18px 20px; margin-top: 14px; }
+.reason-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
+.reason-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--gold); font-weight: 600; }
+.reason-engine { font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: .5px; padding: 2px 9px; border-radius: 20px; font-weight: 700; }
+.reason-engine.eng-llm { background: rgba(14,124,123,.14); color: var(--teal); }
+.reason-engine.eng-det { background: rgba(130,154,177,.16); color: var(--sub); }
+.reason-thesis { font-size: 15px; color: var(--text); line-height: 1.6; margin-bottom: 12px; }
+.reason-conns { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.reason-conns li { font-size: 12.5px; color: var(--sub); padding-left: 16px; position: relative; line-height: 1.5; }
+.reason-conns li::before { content: "→"; position: absolute; left: 0; color: var(--gold); }
 
 /* Proof layer */
 .proof-section { max-width: 1100px; margin: 0 auto; padding: 0 24px 60px; }
@@ -237,6 +247,16 @@ footer { border-top: 1px solid var(--border); padding: 24px; text-align: center;
       <div class="pipe-name">Distribution agents</div>
       <div class="pipe-detail" id="pipe-distribute"></div>
     </div>
+  </div>
+
+  <!-- Reasoning agent synthesis -->
+  <div class="reason-panel" id="reason-panel">
+    <div class="reason-head">
+      <span class="reason-label">Reasoning agent · cross-signal synthesis</span>
+      <span class="reason-engine" id="reason-engine">—</span>
+    </div>
+    <p class="reason-thesis" id="reason-thesis">Synthesizing this cycle…</p>
+    <ul class="reason-conns" id="reason-conns"></ul>
   </div>
 </div>
 
@@ -785,9 +805,29 @@ function loadDomains() {
     .catch(() => {});
 }
 
+function loadReasoning() {
+  fetch('/api/reasoning')
+    .then(r => r.ok ? r.json() : null)
+    .then(r => {
+      if (!r || !r.ok) return;
+      const eng = document.getElementById('reason-engine');
+      const isLlm = r.engine === 'llm';
+      eng.className = 'reason-engine ' + (isLlm ? 'eng-llm' : 'eng-det');
+      eng.textContent = isLlm ? ('⚡ ' + (r.model || 'LLM')) : 'deterministic';
+      eng.title = isLlm
+        ? 'Model-generated synthesis'
+        : 'Rule-based synthesis. Set LLM_BASE_URL + LLM_API_KEY (e.g. an H200-hosted model) to enable LLM reasoning.';
+      document.getElementById('reason-thesis').textContent = r.thesis || '';
+      const ul = document.getElementById('reason-conns');
+      ul.innerHTML = (r.connections || []).map(c => `<li>${c.replace(/</g,'&lt;')}</li>`).join('');
+    })
+    .catch(() => {});
+}
+
 renderDomains();
 selectDomain('caribbean');
 loadDomains();
+loadReasoning();
 
 // ── Init ────────────────────────────────────────────────────
 updateMeta();
