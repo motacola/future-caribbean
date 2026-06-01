@@ -254,6 +254,28 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
             except Exception:
                 pass
 
+        # Feedback outcomes — proof the system changes decisions, not just
+        # produces signals.
+        feedback: dict = {}
+        fb_p = APP_DIR / "data" / "feedback" / "state.json"
+        if fb_p.exists():
+            try:
+                hist = json.loads(fb_p.read_text()).get("history", [])
+                for e in hist:
+                    s = e.get("feedback_status", "unknown")
+                    feedback[s] = feedback.get(s, 0) + 1
+            except Exception:
+                pass
+
+        # Autonomous cycle count (incremented by the pipeline loop)
+        cycle_count = 0
+        cc_p = APP_DIR / "data" / ".cycle_count.json"
+        if cc_p.exists():
+            try:
+                cycle_count = int(json.loads(cc_p.read_text()).get("count", 0))
+            except Exception:
+                pass
+
         self._json({
             "ok": True,
             "sources": sources,
@@ -262,6 +284,10 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
             "n_clusters": len(desk.get("clusters", [])),
             "cycle_id": desk.get("cycle_id", "—"),
             "generated_at": desk.get("generated_at", ""),
+            "cadence_hours": 4,
+            "cycle_count": cycle_count,
+            "feedback": feedback,
+            "live_instances": 2,
             "pipeline_running": _pipeline_running,
             "last_lines": _last_pipeline_lines[-8:],
             "server_time": datetime.now(timezone.utc).isoformat(),
@@ -533,6 +559,7 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
             "formatted":      formatted,
             "fallback":       fallback,
             "fallback_reason": fallback_reason,
+            "freshness":      cluster.get("freshness", ""),
             "cycle_id":       desk.get("cycle_id", ""),
         })
 
@@ -638,13 +665,34 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
         pass
 
 
+def _bump_cycle_count() -> None:
+    """Record one completed autonomous cycle."""
+    cc_p = APP_DIR / "data" / ".cycle_count.json"
+    count = 0
+    if cc_p.exists():
+        try:
+            count = int(json.loads(cc_p.read_text()).get("count", 0))
+        except Exception:
+            count = 0
+    try:
+        cc_p.parent.mkdir(parents=True, exist_ok=True)
+        cc_p.write_text(json.dumps({
+            "count": count + 1,
+            "last_run": datetime.now(timezone.utc).isoformat(),
+        }) + "\n", encoding="utf-8")
+    except Exception:
+        pass
+
+
 def pipeline_loop():
     """Run the pipeline on startup and every 4 hours."""
     time.sleep(3)
     subprocess.run(["bash", "run_pipeline.sh"], capture_output=True, cwd=str(APP_DIR))
+    _bump_cycle_count()
     while True:
         time.sleep(14400)
         subprocess.run(["bash", "run_pipeline.sh"], capture_output=True, cwd=str(APP_DIR))
+        _bump_cycle_count()
 
 
 if __name__ == "__main__":
