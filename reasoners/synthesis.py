@@ -84,11 +84,11 @@ def gather_signals() -> dict[str, Any]:
         key=lambda x: x["pct"], reverse=True,
     )
 
-    # Active hazards from the climate instance
+    # Active hazards from the climate instance (an all-clear is not a hazard)
     hazards = [
         {"area": c.get("country_cluster", ""), "title": c.get("title", ""),
          "risk": (c.get("risk_flags") or [None])[0]}
-        for c in clim
+        for c in clim if c.get("signal_kind") != "all_clear"
     ]
 
     return {

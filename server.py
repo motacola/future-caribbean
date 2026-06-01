@@ -19,7 +19,7 @@ BLOCKED_PREFIXES = (
     ".git", ".env", ".claude", ".hermes", ".ruff_cache", ".github",
     "data/", "signals/", "watchers/", "mergers/", "distributors/",
     "packagers/", "planning/", "tests/", "agent/", "architecture/",
-    "config/", "memory/", "domains/",
+    "config/", "memory/", "domains/", "cli/", "reasoners/",
     "run_pipeline.sh", "requirements.txt", "server.py", "Dockerfile",
     "Procfile", "fly.toml", "vercel.json", ".gitignore", ".dockerignore",
 )
@@ -72,12 +72,12 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
                 self.send_error(404)
                 return
 
-        # Root → editorial briefing page; /build → Signal Builder;
-        # /system → same editorial page (it carries the audit section)
-        if clean in ("", "index.html"):
-            self.path = "/dashboard.html"
-        elif clean in ("build", "build.html"):
+        # Root → interactive Signal Builder; /briefing → editorial desk;
+        # /system → editorial page (carries the audit section)
+        if clean in ("", "index.html", "build", "build.html"):
             self.path = "/configurator.html"
+        elif clean in ("briefing", "briefing.html", "desk"):
+            self.path = "/dashboard.html"
         elif clean in ("system", "system.html"):
             self.path = "/dashboard.html"
 
