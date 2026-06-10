@@ -1,14 +1,14 @@
 # Caribbean Opportunity Dispatch
 
-**Routed opportunity and risk dispatches from fragmented Caribbean public data.**
+**Routed opportunity and risk dispatches from fragmented Caribbean public data — readable by humans, queryable by any AI agent.**
 
-This is the product. The system architecture underneath is **Caribbean Signal OS** — a continuous multi-agent pipeline that watches public regional data, merges weak signals across sources, and packages them into routed dispatches for specific decision-makers.
+Powered by **Signal Fabric**, a continuous multi-agent pipeline that watches public regional data, merges weak signals across sources, packages them into routed dispatches for specific decision-makers, pre-assembles the diligence evidence, and learns from recipient feedback.
 
 **Track:** 10 — Open Track (Future Caribbean Buildathon)
 
 **Category:** Agentic market coordination infrastructure for fragmented Caribbean economies.
 
-Caribbean Opportunity Dispatch belongs in Open Track because it is not a sector-specific app. Finance, disaster risk, food, ocean, tourism, and procurement are signal domains; the product is the cross-sector routing layer that turns those signals into action.
+Caribbean Opportunity Dispatch belongs in Open Track because it is not a sector-specific app. Finance, disaster risk, food, ocean, tourism, and procurement are signal domains; the product is the cross-sector routing layer that turns those signals into action — and the first agent-ready opportunity API for the region.
 
 ---
 
@@ -21,45 +21,82 @@ Existing tools stop short:
 - Newsletters explain market context but do not run a repeatable signal pipeline
 - Dashboards show status but do not package channel-ready action
 - Investor catalogues list opportunities but are not continuous watchers
+- Nothing in the region is queryable by AI agents
 
 This fills the **last mile between public regional data and acted-on opportunity**. The goal is to compress the time between public signal and economic action.
 
 ## The Product
 
-Caribbean Opportunity Dispatch converts raw public data into five things per cycle:
+Each 4-hour cycle converts raw public data into:
 
-- **Priority** — what matters this cycle
+- **Priority** — what matters this cycle, evidence-graded
 - **Routing** — who should receive it (persona + channel)
-- **Action** — what decision it should trigger
-- **Learning** — whether the dispatch produced a real response (feedback loop)
-- **Distribution** — channel-ready packets with delivery manifest
+- **Action** — what decision it should trigger, with an action window
+- **Validation** — an auto-assembled diligence pack per lead signal: sector hypotheses, supporting projects, procurement matches, intro targets, and an explicit advance/hold/reject recommendation with reasons
+- **Learning** — whether the dispatch produced a real response (feedback loop re-weights future cycles)
+- **Distribution** — channel-ready packets with an approval-gated delivery manifest
 
 The useful artifact is the dispatch, not the chart.
 
-### Architecture (Caribbean Signal OS)
+## Works With Any Agent
+
+The engine is agent-agnostic by design. The contract is a plain HTTP API plus a machine-readable tool manifest — MCP is one adapter on top, not the foundation.
+
+| Client | How it connects |
+|---|---|
+| **Any agent / curl** | `GET /api/tools.json` — self-describing tool manifest; `POST /api/ask` for cited answers |
+| **Claude (Code/Desktop)** | MCP adapter: `mcp_adapter/desk_server.py` (see `mcp_adapter/README.md`) |
+| **Hermes / OpenClaw** | Point HTTP tooling at `/api/tools.json`, or shell out to `cli/signalctl.py` |
+| **Flue** | Workflow harness in `.flue/` (`ask-dispatch`, `run-cycle`, `record-feedback`, …) |
+| **Humans (terminal)** | `python3 cli/signalctl.py status\|signals\|preview\|ask\|reason\|send` |
+| **Humans (browser)** | `dashboard.html` — decision workspace, live map, cycle theater, ask-the-desk |
+
+Discovery files: [`llms.txt`](llms.txt) and [`agents.md`](agents.md) (also served over HTTP) describe every endpoint with copy-paste examples per framework.
+
+Answers are **deterministic and cited** — they come from the generated desk artifacts, not an LLM, so they are free, offline, and never hallucinate in front of a judge.
+
+```bash
+# the same engine, three ways
+curl -X POST localhost:8080/api/ask -d '{"question":"explain lead"}'
+python3 cli/signalctl.py ask "what changed this cycle"
+python3 agent/query.py ask "draft Belize investor note"
+```
+
+## The Dashboard
+
+`python3 server.py` then open `http://localhost:8080/dashboard.html`:
+
+- **Decision workspace** — the lead signal as a decision, not a headline: recommended move, action window, named owner, evidence grade, diligence checklist, and the full validation pack inline
+- **Ask the desk** — chat panel wired to the deterministic query engine, with citations
+- **Live Caribbean map** — 13 watched countries, signal pulses sized by confidence, click to drill
+- **Cycle theater** — watch the pipeline run live over SSE (sources lighting up, signals forming, dispatches routing), with a replay mode that works without network from `data/history/`
+
+## Architecture (Signal Fabric)
 
 ```
 public data -> watchers -> normalized records -> reasoning merger -> composite signals
                                                                   -> opportunity dispatches (the product)
+                                                                  -> validation packs (auto-diligence)
                                                                   -> regional thesis + why-now context
-                                                                  -> feedback loop
-                                                                  -> operator console (internal only)
+                                                                  -> feedback loop (re-weights next cycle)
+                                                                  -> agent interface (HTTP / MCP / CLI)
+                                                                  -> decision workspace (dashboard.html)
 ```
 
 ## Key Artifacts (outbox/)
 
 | Artifact | What it is |
 |---|---|
-| `outbox/dispatch_desk.md` | Primary Open Track product surface: grouped decision clusters with persona routes, evidence, action, and feedback |
+| `outbox/dispatch_desk.md` | Primary product surface: grouped decision clusters with persona routes, evidence, action, and feedback |
 | `outbox/opportunity_dispatches.md` | Canonical routed dispatches with persona, channel, action, and feedback status |
+| `outbox/validation_packs/*.{json,md}` | Auto-assembled diligence pack per lead signal with advance/hold/reject recommendation |
 | `outbox/regional_thesis.md` | Cross-cluster synthesis — investment, risk, pipeline, tourism in one narrative |
 | `outbox/why_now.md` | Editorial calendar context — seasonal windows, procurement cycles, etc. |
 | `outbox/judge_brief.md` | Full system intelligence brief with routing rationale |
 | `outbox/feedback_review.md` | Feedback loop — what was forwarded, replied to, opened, or changed a decision |
-| `outbox/channel_dispatch_log.md` | Distribution routing by channel |
 | `outbox/dispatch_packets/*.md` | Persona-specific dispatch packets (action checklists, evidence, feedback options) |
 | `outbox/delivery_manifest.json` | Channel-ready delivery manifest (one entry per dispatch) |
-| `dashboard.html` | Internal operator console for pipeline health (not the product) |
+| `dashboard.html` | The decision workspace (regenerated each cycle) |
 
 ## Data Sources
 
@@ -76,71 +113,63 @@ All sources are public, free, and require no API keys:
 
 ## Run
 
-Full pipeline:
-
 ```bash
+# full pipeline (watchers -> merger -> packagers -> validation packs -> dashboard)
 bash run_pipeline.sh
+
+# serve the dashboard + API (also auto-runs the pipeline every 4h)
+python3 server.py            # http://localhost:8080/dashboard.html
+
+# terminal control
+python3 cli/signalctl.py status
+python3 cli/signalctl.py ask "explain lead"
+python3 cli/signalctl.py preview --persona investor --channel telegram
+
+# tests
+python3 -m pytest -q
 ```
 
-Individual steps:
+### HTTP API (server.py)
+
+Read: `GET /api/status` · `/api/tools.json` · `/api/domains` · `/api/reasoning` · `/api/validation-packs[/<signal_id>]` · `/api/map-data` · `/api/history` · `/api/pipeline/stream` (SSE, `?replay=1` for offline replay) · `/llms.txt` · `/agents.md`
+
+Ask: `POST /api/ask` `{"question": "..."}` → `{answer, citations}`
+
+Write (approval-gated): `POST /api/feedback/apply` · `/api/delivery/prepare` · `/api/delivery/approve` · `/api/delivery/send-approved` (dry-run by default) · `/api/history/archive`
+
+Delivery is intentionally approval-gated: prepare first, approve explicitly, then send. Live Telegram sends require `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID`; dry-run is the default.
+
+### Flue harness
 
 ```bash
-python3 watchers/world_bank_poller.py
-python3 mergers/cross_source_merger.py
-python3 packagers/build_channel_outputs.py
-python3 packagers/dispatch_packet_generator.py
-python3 packagers/delivery_manifest.py
-python3 dashboard/generate.py
+npm run flue:apply-feedback
+npm run flue:prepare-delivery -- '{"channel":"telegram"}'
+npm run flue:approve-delivery -- '{"approvalId":"APP-...","approvedBy":"operator"}'
+npm run flue:send-approved -- '{"approvalId":"APP-...","dryRun":true}'
 ```
 
-Manual feedback intake:
+## Validation Packs — from "investigate" to "here's the evidence"
 
-```bash
-python3 packagers/feedback_intake.py --dispatch-id DSP-20260526-001 --status forwarded --note "Forwarded to investor partner"
-python3 dashboard/generate.py
-```
+The biggest gap in regional intelligence products is that they tell you *what* to investigate. Each cycle this system runs the first pass for you. Example (Guyana FDI surge):
 
-Headless Dispatch Desk query:
+- **Sector hypotheses** with explicit bases (analyst priors flagged as unconfirmed; official GDP-by-industry data cited when it exists)
+- **Supporting projects** matched from IDB/CDB by country
+- **Procurement matches** tagged country vs regional
+- **Intro targets** — real public institutions (GO-Invest, JAMPRO, InvesTT, …), never fabricated operators
+- **Advance / hold / reject** with the reason stated
+- **Unresolved questions** — exactly what a human still has to check this week
 
-```bash
-python3 agent/query.py explain-lead
-python3 agent/query.py ask "show investor actions"
-python3 agent/query.py ask "what changed this cycle"
-python3 agent/query.py ask "draft Belize investor note"
-```
+## Project Direction
 
-## Delivery and user interaction
-
-All watchers run on cron with noise-gated packaging and delivery. See `architecture/cron.md`. The primary user/judge-facing surface is `outbox/dispatch_desk.md` and the top Dispatch Desk section in `dashboard.html`: decision clusters grouped by signal, with persona-specific routes underneath.
-
-The dashboard includes an **Ask the Dispatch Desk** analyst rail. It is deterministic and local for now: answers come from `outbox/dispatch_desk.json` and cite local artifacts. This keeps the demo reliable while leaving a clean path to a future headless LLM/API layer. The headless query CLI (`agent/query.py`) exposes the same logic for CLI, Telegram, and future API clients.
-
-Telegram and email are **delivery adapters**, not the product. The cron-delivered `outbox/telegram_brief.md` is a compact notification that points back to the Dispatch Desk when the desk changes.
-
-The Dispatch Desk is organized around the Open Track coordination chain:
-
-- **Data** — public source families feeding the cycle
-- **Signal** — decision clusters grouped from repeated persona routes
-- **Packaging** — evidence grade, confidence, why-now context, risk flags
-- **Distribution** — persona route + channel + delivery manifest
-- **Action** — recommended next step for each recipient
-- **Capital** — investor/operator/procurement decisions: investigate, bid, pause, partner, or route
-
-Deep-dive artifacts remain in `outbox/`:
-
-- `outbox/dispatch_desk.md` — primary decision desk
-- `outbox/opportunity_dispatches.json` — canonical route data
-- `outbox/dispatch_packets/*.md` — persona-ready packets
-- `outbox/regional_thesis.md` — full regional read
-- `outbox/investor_brief.md` — investor-facing detail
-
-The system produces opportunities, not alerts — every dispatch names a specific persona, a channel, an action, and a decision it supports. The dispatch packet and delivery manifest layers prove the last mile before external channel integration.
+Current build plan: `PLAN_ENGINE_2026-06-10.md`. Implementation briefs and results live in `planning/`. Execution model: strategy and review by Claude, implementation by Hermes, engine pluggable by anything.
 
 ## Deployment
 
 For static hosting (Netlify, GitHub Pages, etc.):
 
 1. Run `bash run_pipeline.sh` to generate all artifacts
-2. Deploy `dashboard.html`, `outbox/*.md`, and `assets/` as static files
+2. Deploy `dashboard.html`, `outbox/*.md`, and `assets/` as static files (the dashboard degrades gracefully without the API)
 3. No build step needed — all HTML/Markdown is self-contained
 4. Cron jobs on the backend continue data collection independently
+
+A hardened read-only public server mode is in progress (Phase 5 of the build plan).
