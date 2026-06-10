@@ -1,0 +1,115 @@
+{
+  "signal_id": "enhanced-invest-belize",
+  "dispatch_id": "DSP-20260610-026",
+  "country": "Belize",
+  "signal_title": "Belize: +701.0% multi-source capital surge — market entry window open",
+  "confidence_score": 100,
+  "evidence_grade": "A - multi-source",
+  "sector_hypotheses": [
+    {
+      "sector": "Tourism and hospitality",
+      "basis": "Analyst prior from widely reported sector drivers — requires local confirmation",
+      "status": "unconfirmed"
+    },
+    {
+      "sector": "Agribusiness and agro-exports",
+      "basis": "Analyst prior from widely reported sector drivers — requires local confirmation",
+      "status": "unconfirmed"
+    },
+    {
+      "sector": "Business process outsourcing",
+      "basis": "Analyst prior from widely reported sector drivers — requires local confirmation",
+      "status": "unconfirmed"
+    },
+    {
+      "sector": "FDI-receiving sectors (composition not yet broken down)",
+      "basis": "World Bank: FDI net inflows moved +701.0% from 2023 to 2024",
+      "status": "macro_signal"
+    }
+  ],
+  "supporting_projects": [
+    {
+      "title": "Baseline Salud Mesoamerica Belize: LQAS Survey 2015",
+      "source": "IDB Open Data",
+      "url": "https://data.iadb.org/en/search?q=Baseline%20Salud%20Mesoamerica%20Belize%3A%20LQAS%20",
+      "topics": []
+    },
+    {
+      "title": "Baseline Health Mesoamerica Belize - LQAS Survey 2015",
+      "source": "IDB Open Data",
+      "url": "https://data.iadb.org/en/search?q=Baseline%20Health%20Mesoamerica%20Belize%20-%20LQA",
+      "topics": [
+        "social"
+      ]
+    }
+  ],
+  "procurement_matches": [
+    {
+      "title": "Enhancing the Quality of the Belize National Quality Infrastructure",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure",
+      "match": "country"
+    },
+    {
+      "title": "Support for Institutional Strengthening of the Caribbean Disaster Emergency Project",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/support-institutional-strengthening-caribbean-disaster-emergency-project",
+      "match": "regional"
+    }
+  ],
+  "official_country_data": [
+    {
+      "title": "Belize: Monthly Consumer Price Index (CPI) by Expenditure Category",
+      "source": "CARICOM Statistics",
+      "url": "https://statistics.caricom.org/country_data/belize-monthly-consumer-price-index-cpi-by-expenditure-category/"
+    },
+    {
+      "title": "2024_VNR_Report_Belize",
+      "source": "CARICOM Statistics",
+      "url": "https://statistics.caricom.org/country_data/2024_vnr_report_belize/"
+    },
+    {
+      "title": "2017_VNR_Report_Belize",
+      "source": "CARICOM Statistics",
+      "url": "https://statistics.caricom.org/country_data/2017_vnr_report_belize/"
+    }
+  ],
+  "credible_local_operators": [],
+  "relevant_institutions": [
+    {
+      "name": "BELTRAIDE (Belize Trade and Investment Development Service)",
+      "role": "National trade and investment promotion agency"
+    },
+    {
+      "name": "Caribbean Export Development Agency",
+      "role": "Regional trade and investment promotion"
+    },
+    {
+      "name": "Caribbean Development Bank (CDB)",
+      "role": "Regional development finance and procurement"
+    }
+  ],
+  "source_links": [
+    "https://data.iadb.org/en/search?q=Baseline%20Health%20Mesoamerica%20Belize%20-%20LQA",
+    "https://data.iadb.org/en/search?q=Baseline%20Salud%20Mesoamerica%20Belize%3A%20LQAS%20",
+    "https://statistics.caricom.org/country_data/2017_vnr_report_belize/",
+    "https://statistics.caricom.org/country_data/2024_vnr_report_belize/",
+    "https://statistics.caricom.org/country_data/belize-monthly-consumer-price-index-cpi-by-expenditure-category/",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/support-institutional-strengthening-caribbean-disaster-emergency-project"
+  ],
+  "unresolved_questions": [
+    "Which specific sectors are driving the movement in Belize? No official sector-breakdown dataset matched this cycle.",
+    "Operator discovery is not yet automated — source two credible local operators via the listed institutions.",
+    "Validate that the underlying FDI movement is sustained, not a one-off transaction or statistical revision."
+  ],
+  "recommended_intro_targets": [
+    {
+      "name": "BELTRAIDE (Belize Trade and Investment Development Service)",
+      "why": "National trade and investment promotion agency"
+    }
+  ],
+  "advance_or_reject_recommendation": "advance",
+  "recommendation_reason": "High-confidence signal (100/100) with 2 independent evidence categories already attached. Worth one validation conversation this cycle.",
+  "last_validated_at": "2026-06-10T17:59:19.211537+00:00"
+}

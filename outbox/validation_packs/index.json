@@ -1,0 +1,40 @@
+{
+  "generated_at": "2026-06-10T17:59:19.211537+00:00",
+  "packs": [
+    {
+      "signal_id": "enhanced-invest-guyana",
+      "file": "enhanced-invest-guyana.json",
+      "country": "Guyana",
+      "recommendation": "advance",
+      "confidence_score": 100
+    },
+    {
+      "signal_id": "enhanced-invest-belize",
+      "file": "enhanced-invest-belize.json",
+      "country": "Belize",
+      "recommendation": "advance",
+      "confidence_score": 100
+    },
+    {
+      "signal_id": "enhanced-invest-st.-vincent-and-the-grenadines",
+      "file": "enhanced-invest-st.-vincent-and-the-grenadines.json",
+      "country": "St. Vincent and the Grenadines",
+      "recommendation": "hold",
+      "confidence_score": 100
+    },
+    {
+      "signal_id": "dev-pipeline-regional",
+      "file": "dev-pipeline-regional.json",
+      "country": "CARICOM",
+      "recommendation": "hold",
+      "confidence_score": 96
+    },
+    {
+      "signal_id": "regional-investment_signal-20260610",
+      "file": "regional-investment_signal-20260610.json",
+      "country": "Caribwide",
+      "recommendation": "hold",
+      "confidence_score": 90
+    }
+  ]
+}

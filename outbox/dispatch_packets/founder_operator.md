@@ -2,7 +2,7 @@
 
 **Decision job:** Competitive positioning and capability mapping
 **Delivery channel:** Telegram
-**Generated:** May 28, 2026 at 20:34 UTC
+**Generated:** Jun 10, 2026 at 17:59 UTC
 **Dispatches in this packet:** 10
 
 ---
@@ -11,7 +11,7 @@
 
 ### 1. Guyana: +860.3% multi-source capital surge — market entry window open
 
-**ID:** `DSP-20260528-025` | **Country:** Guyana | **Confidence:** 🔴 Immediate | 100/100 | A - multi-source
+**ID:** `DSP-20260610-025` | **Country:** Guyana | **Confidence:** 🔴 Immediate | 100/100 | A - multi-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -25,7 +25,7 @@
 
 ### 2. Belize: +701.0% multi-source capital surge — market entry window open
 
-**ID:** `DSP-20260528-028` | **Country:** Belize | **Confidence:** 🔴 Immediate | 100/100 | A - multi-source
+**ID:** `DSP-20260610-028` | **Country:** Belize | **Confidence:** 🔴 Immediate | 100/100 | A - multi-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -39,7 +39,7 @@
 
 ### 3. St. Vincent and the Grenadines: +88.2% multi-source investment validated — opportunity active
 
-**ID:** `DSP-20260528-031` | **Country:** St. Vincent and the Grenadines | **Confidence:** 🔴 Immediate | 100/100 | A - multi-source
+**ID:** `DSP-20260610-031` | **Country:** St. Vincent and the Grenadines | **Confidence:** 🔴 Immediate | 100/100 | A - multi-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** weakened
 **Feedback status:** ignored
 
@@ -52,23 +52,23 @@
 **Routing rationale:** Multi-source investment lift indicates growing market that may support new entry or expansion
 **Risk flags:** St. Vincent and the Grenadines also has vulnerability — validate before committing
 
-### 4. CARICOM: 6 active procurements — bidding window open
+### 4. CARICOM: 2 active procurements — bidding window open
 
-**ID:** `DSP-20260528-019` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 95/100 | B - cross-source
+**ID:** `DSP-20260610-019` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 96/100 | B - cross-source
 **Channel:** Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** CDB active procurement notices: 6
-**Detail:** CDB active procurement notices: 6
+**Evidence:** CDB active procurement notices: 2
+**Detail:** CDB active procurement notices: 2
 **Grade:** B - cross-source
 
-**Recommended action:** Map CARICOM procurement pipeline against your capability. CDB/IDB projects (CDB active procurement notices: 6) create service and supply opportunities.
+**Recommended action:** Map CARICOM procurement pipeline against your capability. CDB/IDB projects (CDB active procurement notices: 2) create service and supply opportunities.
 **Decision to influence:** Which procurement or project opportunity to pursue
 **Routing rationale:** Procurement pipeline signals government and institutional spending direction — follow the money
 
 ### 5. Regional FDI snapshot: 8 countries with active capital movement
 
-**ID:** `DSP-20260528-002` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
+**ID:** `DSP-20260610-002` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** new
 **Feedback status:** ignored
 
@@ -80,23 +80,9 @@
 **Decision to influence:** Which country-sector pair to validate for investment readiness
 **Routing rationale:** FDI movement in your operating country signals competition or demand growth — assess positioning
 
-### 6. Capital convergence: 8 Caribbean economies showing multi-source investment momentum
+### 6. Guyana: FDI trending at +860.3% — screening trigger active
 
-**ID:** `DSP-20260528-022` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
-**Channel:** Telegram | **Window:** 14 days | **Freshness:** new
-**Feedback status:** ignored
-
-**Evidence:** Multi-country enhanced investment validated across 8 countries. Top magnitudes: Guyana (860.3% change), Belize (701.0% change), St. Vincent and the Grenadines (88.2% change).
-**Detail:** Guyana (860.3% change), Belize (701.0% change), St. Vincent and the Grenadines (88.2% change)
-**Grade:** B - cross-source
-
-**Recommended action:** Assess competitive positioning in Caribwide. FDI movement (Guyana (860.3% change), Belize (701.0% change), St. Vincent and the Grenadines (88.2% change)) signals growing market or incoming competition — evaluate local advantage before new entrants arrive.
-**Decision to influence:** Which verified opportunity to investigate for capital deployment or partnership entry
-**Routing rationale:** Multi-source investment lift indicates growing market that may support new entry or expansion
-
-### 7. Guyana: FDI trending at +860.3% — screening trigger active
-
-**ID:** `DSP-20260528-004` | **Country:** Guyana | **Confidence:** 🟡 Validation | 88/100 | B - cross-source
+**ID:** `DSP-20260610-004` | **Country:** Guyana | **Confidence:** 🔴 Immediate | 90/100 | B - cross-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -108,9 +94,9 @@
 **Decision to influence:** Which country-sector pair to validate for investment readiness
 **Routing rationale:** FDI movement in your operating country signals competition or demand growth — assess positioning
 
-### 8. Belize: FDI trending at +701.0% — screening trigger active
+### 7. Belize: FDI trending at +701.0% — screening trigger active
 
-**ID:** `DSP-20260528-006` | **Country:** Belize | **Confidence:** 🟡 Validation | 88/100 | B - cross-source
+**ID:** `DSP-20260610-006` | **Country:** Belize | **Confidence:** 🔴 Immediate | 90/100 | B - cross-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -122,9 +108,23 @@
 **Decision to influence:** Which country-sector pair to validate for investment readiness
 **Routing rationale:** FDI movement in your operating country signals competition or demand growth — assess positioning
 
+### 8. Capital convergence: 8 Caribbean economies showing multi-source investment momentum
+
+**ID:** `DSP-20260610-022` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
+**Channel:** Telegram | **Window:** 14 days | **Freshness:** new
+**Feedback status:** ignored
+
+**Evidence:** Multi-country enhanced investment validated across 8 countries. Top magnitudes: Guyana (860.3% change), Belize (701.0% change), St. Vincent and the Grenadines (88.2% change).
+**Detail:** Guyana (860.3% change), Belize (701.0% change), St. Vincent and the Grenadines (88.2% change)
+**Grade:** B - cross-source
+
+**Recommended action:** Assess competitive positioning in Caribwide. FDI movement (Guyana (860.3% change), Belize (701.0% change), St. Vincent and the Grenadines (88.2% change)) signals growing market or incoming competition — evaluate local advantage before new entrants arrive.
+**Decision to influence:** Which verified opportunity to investigate for capital deployment or partnership entry
+**Routing rationale:** Multi-source investment lift indicates growing market that may support new entry or expansion
+
 ### 9. St. Vincent and the Grenadines: FDI trending at +88.2% — screening trigger active
 
-**ID:** `DSP-20260528-008` | **Country:** St. Vincent and the Grenadines | **Confidence:** 🟡 Validation | 76/100 | B - cross-source
+**ID:** `DSP-20260610-008` | **Country:** St. Vincent and the Grenadines | **Confidence:** 🟡 Validation | 78/100 | B - cross-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -138,7 +138,7 @@
 
 ### 10. Guyana: GDP growth signals expanding tourist economy
 
-**ID:** `DSP-20260528-014` | **Country:** Guyana | **Confidence:** 🟢 Monitor | 51/100 | C - single-source
+**ID:** `DSP-20260610-014` | **Country:** Guyana | **Confidence:** 🟢 Monitor | 51/100 | C - single-source
 **Channel:** Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** ignored
 

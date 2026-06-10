@@ -1,6 +1,6 @@
-# Dispatch Desk — Cycle 20260610
+# Dispatch Desk — Cycle 20260603
 
-Generated: 2026-06-10 17:59 UTC
+Generated: 2026-06-03 13:30 UTC
 
 Caribbean Opportunity Dispatch turns fragmented regional data into decision-ready routes. This is the primary product surface; Telegram/email are delivery channels and the dashboard is the operator/audit view.
 
@@ -11,15 +11,15 @@ Fragmented public data → Agentic signal pipeline → Routed decisions → Feed
 | Stage | This cycle proof |
 |---|---|
 | Data | 2 source families represented |
-| Signal | 13 decision clusters from 31 persona routes |
+| Signal | 12 decision clusters from 29 persona routes |
 | Packaging | Persona actions, evidence grades, risk flags, and action windows attached |
-| Distribution | 7 personas across 4 channel types |
+| Distribution | 6 personas across 4 channel types |
 | Action | Every route names the decision it should influence |
 | Capital | Investor/operator/procurement routes identify where to investigate, bid, pause, or partner |
 
 ## Regional Read
 
-Capital momentum is strongest in Guyana (+860.3%), followed by Belize, St. Vincent and the Grenadines. However, St. Vincent and the Grenadines and Suriname also carry elevated vulnerability indicators — investment signals from these countries require deeper diligence before committing capital. Development pipeline remains active (CDB active procurement notices: 2) — the bidding window is open for project-based entry. Tourism-related growth signals are visible in Antigua and Barbuda, Guyana, St. Kitts and Nevis — demand-side indicators for capacity planning.
+Capital momentum is strongest in Guyana (+860.3%), followed by Belize, St. Vincent and the Grenadines. However, St. Vincent and the Grenadines and Suriname also carry elevated vulnerability indicators — investment signals from these countries require deeper diligence before committing capital. Development pipeline remains active (CDB active procurement notices: 6) — the bidding window is open for project-based entry. Tourism-related growth signals are visible in Antigua and Barbuda, Guyana, St. Kitts and Nevis — demand-side indicators for capacity planning.
 
 ## Why This Cycle Matters
 
@@ -39,9 +39,9 @@ Capital momentum is strongest in Guyana (+860.3%), followed by Belize, St. Vince
 
 | Persona | Channel | Next action | Feedback |
 |---|---|---|---|
-| Regional Founder/Operator | Telegram | Assess competitive positioning in Guyana. FDI movement (860.3% change) signals growing market or incoming competition — evaluate… | ignored (`DSP-20260610-025`) |
-| Ecosystem Builder | Telegram | Route Guyana opportunity to relevant founders and investors in your network. Signal strength (860.3% change) makes this a… | ignored (`DSP-20260610-024`) |
-| Diaspora Investor | Email brief + Telegram | Investigate Guyana as a capital deployment target this cycle. Multi-source validation (860.3% change) confirms directional signal —… | forwarded (`DSP-20260610-023`) |
+| Regional Founder/Operator | Telegram | Assess competitive positioning in Guyana. FDI movement (860.3% change) signals growing market or incoming competition — evaluate… | ignored (`DSP-20260603-023`) |
+| Ecosystem Builder | Telegram | Route Guyana opportunity to relevant founders and investors in your network. Signal strength (860.3% change) makes this a… | ignored (`DSP-20260603-022`) |
+| Diaspora Investor | Email brief + Telegram | Investigate Guyana as a capital deployment target this cycle. Multi-source validation (860.3% change) confirms directional signal —… | forwarded (`DSP-20260603-021`) |
 
 ### 2. Belize: +701.0% multi-source capital surge — market entry window open
 
@@ -53,9 +53,9 @@ Capital momentum is strongest in Guyana (+860.3%), followed by Belize, St. Vince
 
 | Persona | Channel | Next action | Feedback |
 |---|---|---|---|
-| Regional Founder/Operator | Telegram | Assess competitive positioning in Belize. FDI movement (701.0% change) signals growing market or incoming competition — evaluate… | ignored (`DSP-20260610-028`) |
-| Ecosystem Builder | Telegram | Route Belize opportunity to relevant founders and investors in your network. Signal strength (701.0% change) makes this a… | ignored (`DSP-20260610-027`) |
-| Diaspora Investor | Email brief + Telegram | Investigate Belize as a capital deployment target this cycle. Multi-source validation (701.0% change) confirms directional signal —… | opened (`DSP-20260610-026`) |
+| Regional Founder/Operator | Telegram | Assess competitive positioning in Belize. FDI movement (701.0% change) signals growing market or incoming competition — evaluate… | ignored (`DSP-20260603-026`) |
+| Ecosystem Builder | Telegram | Route Belize opportunity to relevant founders and investors in your network. Signal strength (701.0% change) makes this a… | ignored (`DSP-20260603-025`) |
+| Diaspora Investor | Email brief + Telegram | Investigate Belize as a capital deployment target this cycle. Multi-source validation (701.0% change) confirms directional signal —… | opened (`DSP-20260603-024`) |
 
 ### 3. St. Vincent and the Grenadines: +88.2% multi-source investment validated — opportunity active
 
@@ -68,23 +68,23 @@ Capital momentum is strongest in Guyana (+860.3%), followed by Belize, St. Vince
 
 | Persona | Channel | Next action | Feedback |
 |---|---|---|---|
-| Regional Founder/Operator | Telegram | Assess competitive positioning in St. Vincent and the Grenadines. FDI movement (88.2% change) signals growing market or incoming… | ignored (`DSP-20260610-031`) |
-| Ecosystem Builder | Telegram | Route St. Vincent and the Grenadines opportunity to relevant founders and investors in your network. Signal strength (88.2% change)… | ignored (`DSP-20260610-030`) |
-| Diaspora Investor | Email brief + Telegram | Investigate St. Vincent and the Grenadines as a capital deployment target this cycle. Multi-source validation (88.2% change) confirms… | ignored (`DSP-20260610-029`) |
+| Regional Founder/Operator | Telegram | Assess competitive positioning in St. Vincent and the Grenadines. FDI movement (88.2% change) signals growing market or incoming… | ignored (`DSP-20260603-029`) |
+| Ecosystem Builder | Telegram | Route St. Vincent and the Grenadines opportunity to relevant founders and investors in your network. Signal strength (88.2% change)… | ignored (`DSP-20260603-028`) |
+| Diaspora Investor | Email brief + Telegram | Investigate St. Vincent and the Grenadines as a capital deployment target this cycle. Multi-source validation (88.2% change) confirms… | ignored (`DSP-20260603-027`) |
 
-### 4. CARICOM: 2 active procurements — bidding window open
+### 4. CARICOM: 6 active procurements — bidding window open
 
 - **Decision:** Which procurement or project opportunity to pursue
-- **Evidence:** CDB active procurement notices: 2 (B - cross-source)
+- **Evidence:** CDB active procurement notices: 6 (B - cross-source)
 - **Confidence:** 96/100 · sustained
-- **Signal detail:** CDB active procurement notices: 2
+- **Signal detail:** CDB active procurement notices: 6
 - **Feedback effect:** Feedback this cycle: 2 ignored, 1 replied.
 
 | Persona | Channel | Next action | Feedback |
 |---|---|---|---|
-| Regional Operator | Telegram | Review operational readiness for CARICOM opportunities. CDB active procurement notices: 2 — assess capacity and bid pipeline. | replied (`DSP-20260610-017`) |
-| Regional Founder/Operator | Telegram | Map CARICOM procurement pipeline against your capability. CDB/IDB projects (CDB active procurement notices: 2) create service and… | ignored (`DSP-20260610-019`) |
-| Procurement Watcher | Email brief | Track CDB/IDB project pipeline: CDB active procurement notices: 2. Review opportunity fit and prepare expression of interest. | ignored (`DSP-20260610-018`) |
+| Regional Operator | Telegram | Review operational readiness for CARICOM opportunities. CDB active procurement notices: 6 — assess capacity and bid pipeline. | replied (`DSP-20260603-015`) |
+| Regional Founder/Operator | Telegram | Map CARICOM procurement pipeline against your capability. CDB/IDB projects (CDB active procurement notices: 6) create service and… | ignored (`DSP-20260603-017`) |
+| Procurement Watcher | Email brief | Track CDB/IDB project pipeline: CDB active procurement notices: 6. Review opportunity fit and prepare expression of interest. | ignored (`DSP-20260603-016`) |
 
 ### 5. Capital convergence: 8 Caribbean economies showing multi-source investment momentum
 
@@ -96,9 +96,9 @@ Capital momentum is strongest in Guyana (+860.3%), followed by Belize, St. Vince
 
 | Persona | Channel | Next action | Feedback |
 |---|---|---|---|
-| Regional Founder/Operator | Telegram | Assess competitive positioning in Caribwide. FDI movement (Guyana (860.3% change), Belize (701.0% change), St. Vincent and the… | ignored (`DSP-20260610-022`) |
-| Ecosystem Builder | Telegram | Route Caribwide opportunity to relevant founders and investors in your network. Signal strength (Guyana (860.3% change), Belize… | ignored (`DSP-20260610-021`) |
-| Diaspora Investor | Email brief + Telegram | Investigate Caribwide as a capital deployment target this cycle. Multi-source validation (Guyana (860.3% change), Belize (701.0%… | ignored (`DSP-20260610-020`) |
+| Regional Founder/Operator | Telegram | Assess competitive positioning in Caribwide. FDI movement (Guyana (860.3% change), Belize (701.0% change), St. Vincent and the… | ignored (`DSP-20260603-020`) |
+| Ecosystem Builder | Telegram | Route Caribwide opportunity to relevant founders and investors in your network. Signal strength (Guyana (860.3% change), Belize… | ignored (`DSP-20260603-019`) |
+| Diaspora Investor | Email brief + Telegram | Investigate Caribwide as a capital deployment target this cycle. Multi-source validation (Guyana (860.3% change), Belize (701.0%… | ignored (`DSP-20260603-018`) |
 
 ### 6. Regional FDI snapshot: 8 countries with active capital movement
 
@@ -110,8 +110,8 @@ Capital momentum is strongest in Guyana (+860.3%), followed by Belize, St. Vince
 
 | Persona | Channel | Next action | Feedback |
 |---|---|---|---|
-| Regional Founder/Operator | Telegram | Assess competitive positioning in Caribwide. FDI movement (Guyana (860.3% change), Belize (701.0% change), St. Vincent and the… | ignored (`DSP-20260610-002`) |
-| Diaspora Investor | Email brief + Telegram | Screen Caribwide for investment readiness. FDI movement (Guyana (860.3% change), Belize (701.0% change), St. Vincent and the… | ignored (`DSP-20260610-001`) |
+| Regional Founder/Operator | Telegram | Assess competitive positioning in Caribwide. FDI movement (Guyana (860.3% change), Belize (701.0% change), St. Vincent and the… | ignored (`DSP-20260603-002`) |
+| Diaspora Investor | Email brief + Telegram | Screen Caribwide for investment readiness. FDI movement (Guyana (860.3% change), Belize (701.0% change), St. Vincent and the… | ignored (`DSP-20260603-001`) |
 
 ### 7. Guyana: FDI trending at +860.3% — screening trigger active
 
@@ -123,8 +123,8 @@ Capital momentum is strongest in Guyana (+860.3%), followed by Belize, St. Vince
 
 | Persona | Channel | Next action | Feedback |
 |---|---|---|---|
-| Regional Founder/Operator | Telegram | Assess competitive positioning in Guyana. FDI movement (860.3% change) signals growing market or incoming competition — evaluate… | ignored (`DSP-20260610-004`) |
-| Diaspora Investor | Email brief + Telegram | Screen Guyana for investment readiness. FDI movement (860.3% change) is a screening trigger — cross-reference with sector conditions… | ignored (`DSP-20260610-003`) |
+| Regional Founder/Operator | Telegram | Assess competitive positioning in Guyana. FDI movement (860.3% change) signals growing market or incoming competition — evaluate… | ignored (`DSP-20260603-004`) |
+| Diaspora Investor | Email brief + Telegram | Screen Guyana for investment readiness. FDI movement (860.3% change) is a screening trigger — cross-reference with sector conditions… | ignored (`DSP-20260603-003`) |
 
 ### 8. Belize: FDI trending at +701.0% — screening trigger active
 
@@ -136,8 +136,8 @@ Capital momentum is strongest in Guyana (+860.3%), followed by Belize, St. Vince
 
 | Persona | Channel | Next action | Feedback |
 |---|---|---|---|
-| Regional Founder/Operator | Telegram | Assess competitive positioning in Belize. FDI movement (701.0% change) signals growing market or incoming competition — evaluate… | ignored (`DSP-20260610-006`) |
-| Diaspora Investor | Email brief + Telegram | Screen Belize for investment readiness. FDI movement (701.0% change) is a screening trigger — cross-reference with sector conditions… | ignored (`DSP-20260610-005`) |
+| Regional Founder/Operator | Telegram | Assess competitive positioning in Belize. FDI movement (701.0% change) signals growing market or incoming competition — evaluate… | ignored (`DSP-20260603-006`) |
+| Diaspora Investor | Email brief + Telegram | Screen Belize for investment readiness. FDI movement (701.0% change) is a screening trigger — cross-reference with sector conditions… | ignored (`DSP-20260603-005`) |
 
 ## Feedback-Adjusted Priority
 

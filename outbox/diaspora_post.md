@@ -13,7 +13,7 @@ Lead: Belize. 2 converging signal(s) across 4 source(s). Signals: 💼 Investmen
 
 • **Trinidad and Tobago**: +69.8% multi-source investment validated — opportunity active
 
-🏗️ CARICOM: 6 active procurements — bidding window open
+🏗️ CARICOM: 2 active procurements — bidding window open
 
 Generated from public regional data, ranked for decision value.
-Generated: 2026-05-28 20:34 UTC
+Generated: 2026-06-10 17:59 UTC

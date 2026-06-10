@@ -1,0 +1,19 @@
+{
+  "engine": "deterministic",
+  "model": null,
+  "generated_at": "2026-06-03T13:30:49.458175+00:00",
+  "thesis": "Capital momentum is led by Guyana (+860%), with Belize, St. Vincent and the Grenadines also moving. St. Vincent and the Grenadines show investment interest AND elevated vulnerability in the same cycle \u2014 diligence before capital, not after. Meanwhile the climate instance shows an active hazard (Marine hazard: High seas at Eastern Caribbean (E of Barbados): 3.1m). Where hazard exposure overlaps capital momentum, recovery-capital timing and entry timing intersect.",
+  "connections": [
+    "St. Vincent and the Grenadines: investment signal \u00d7 vulnerability flag \u2014 validate before deploying",
+    "Guyana: 2 converging signal types (enhanced_investment, investment_signal)",
+    "Belize: 2 converging signal types (enhanced_investment, investment_signal)",
+    "St. Vincent and the Grenadines: 3 converging signal types (economic_vulnerability, enhanced_investment, investment_signal)",
+    "Cross-instance: hazard (Caribbean marine zones) overlaps economic momentum window"
+  ],
+  "stats": {
+    "economic_signals": 12,
+    "climate_signals": 1,
+    "conflicts": 1,
+    "convergences": 5
+  }
+}

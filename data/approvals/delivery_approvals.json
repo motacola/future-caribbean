@@ -1,0 +1,55 @@
+{
+  "updatedAt": "2026-06-03T14:32:54.525Z",
+  "approvals": [
+    {
+      "approvalId": "APP-20260603-telegram-mpy61med",
+      "cycleId": "20260603",
+      "channel": "telegram",
+      "file": "outbox/telegram_digest.md",
+      "status": "dry-run-sent",
+      "createdAt": "2026-06-03T14:32:51.877Z",
+      "updatedAt": "2026-06-03T14:32:54.525Z",
+      "approvedBy": "HTTP smoke",
+      "sendResult": {
+        "dryRun": true,
+        "exitCode": 0,
+        "stdout": "── DRY RUN ── Would send to Telegram:\n*Caribbean Market Pulse — 2026\\-06\\-03 14:32 UTC*\n\nLead: Belize\\. 2 converging signal\\(s\\) across 4 source\\(s\\)\\. Signals: 💼 Investment \\+ 💎 Investment\\.\n\n🔴 — **💎 Investment — Belize**\n   Belize: \\+701\\.0% multi\\-source capital surge — market entry window open\n   Immediate \\| 100/100 \\| A \\- multi\\-source\n   Immediate investigation\\. Belize has multi\\-source investment validation \\(3 signals converging\\)\\. Priority: assess market entry options, identify existing operators\\.\n\n🔴 — **💎 Investment — Barbados**\n   Barbados: \\+34\\.8% multi\\-source investment validated — opportunity active\n   Immediate \\| 100/100 \\| A \\- multi\\-source\n   Immediate investigation\\. Barbados has multi\\-source investment validation \\(3 signals converging\\)\\. Priority: assess market entry options, identify existing operators\\.\n\n🔴 — **🏗️ Pipeline — CARICOM**\n   CARICOM: 6 active procurements — bidding window open\n   Immediate \\| 96/100 \\| B \\- cross\\-source\n   Active procurement pipeline: CDB active procurement notices: 6\\. Priority: review CDB/IDB opportunities as lead list for project\\-based entry\\.\n\n🔴 — **💼 Investment — Guyana**\n   Guyana: FDI trending at \\+860\\.3% — screening trigger active\n   Immediate \\| 90/100 \\| B \\- cross\\-source\n   Immediate investigation\\. Guyana FDI signal \\(860\\.3% change\\) with active development datasets\\. Validate with local market intel\\.\n\n🟡 — **💼 Investment — St\\. Kitts and Nevis**\n   St\\. Kitts and Nevis: FDI trending at \\+41\\.1% — screening trigger active\n   Validation \\| 78/100 \\| B \\- cross\\-source\n   Validation priority\\. St\\. Kitts and Nevis FDI movement \\(41\\.1% change\\) signals opportunity\\. Cross\\-reference with sector data\\.\n\n— Lead: Belize · 25 composite signal\\(s\\) · 24 persistent\n\\- Caribbean Signal OS\n",
+        "stderr": ""
+      }
+    },
+    {
+      "approvalId": "APP-20260603-telegram-mpy60v21",
+      "cycleId": "20260603",
+      "channel": "telegram",
+      "file": "outbox/telegram_digest.md",
+      "status": "pending",
+      "createdAt": "2026-06-03T14:32:16.441Z",
+      "updatedAt": "2026-06-03T14:32:16.441Z"
+    },
+    {
+      "approvalId": "APP-20260603-telegram-mpy60ncj",
+      "cycleId": "20260603",
+      "channel": "telegram",
+      "file": "outbox/telegram_digest.md",
+      "status": "pending",
+      "createdAt": "2026-06-03T14:32:06.451Z",
+      "updatedAt": "2026-06-03T14:32:06.451Z"
+    },
+    {
+      "approvalId": "APP-20260603-telegram-mpy5z1d0",
+      "cycleId": "20260603",
+      "channel": "telegram",
+      "file": "outbox/telegram_digest.md",
+      "status": "dry-run-sent",
+      "createdAt": "2026-06-03T14:30:51.300Z",
+      "updatedAt": "2026-06-03T14:31:07.683Z",
+      "approvedBy": "Hermes Phase 3A smoke",
+      "sendResult": {
+        "dryRun": true,
+        "exitCode": 0,
+        "stdout": "── DRY RUN ── Would send to Telegram:\n*Caribbean Market Pulse — 2026\\-06\\-03 13:30 UTC*\n\nLead: Belize\\. 2 converging signal\\(s\\) across 4 source\\(s\\)\\. Signals: 💼 Investment \\+ 💎 Investment\\.\n\n🔴 — **💎 Investment — Belize**\n   Belize: \\+701\\.0% multi\\-source capital surge — market entry window open\n   Immediate \\| 100/100 \\| A \\- multi\\-source\n   Immediate investigation\\. Belize has multi\\-source investment validation \\(3 signals converging\\)\\. Priority: assess market entry options, identify existing operators\\.\n\n🔴 — **💎 Investment — Barbados**\n   Barbados: \\+34\\.8% multi\\-source investment validated — opportunity active\n   Immediate \\| 100/100 \\| A \\- multi\\-source\n   Immediate investigation\\. Barbados has multi\\-source investment validation \\(3 signals converging\\)\\. Priority: assess market entry options, identify existing operators\\.\n\n🔴 — **🏗️ Pipeline — CARICOM**\n   CARICOM: 6 active procurements — bidding window open\n   Immediate \\| 96/100 \\| B \\- cross\\-source\n   Active procurement pipeline: CDB active procurement notices: 6\\. Priority: review CDB/IDB opportunities as lead list for project\\-based entry\\.\n\n🔴 — **💼 Investment — Guyana**\n   Guyana: FDI trending at \\+860\\.3% — screening trigger active\n   Immediate \\| 90/100 \\| B \\- cross\\-source\n   Immediate investigation\\. Guyana FDI signal \\(860\\.3% change\\) with active development datasets\\. Validate with local market intel\\.\n\n🟡 — **💼 Investment — St\\. Kitts and Nevis**\n   St\\. Kitts and Nevis: FDI trending at \\+41\\.1% — screening trigger active\n   Validation \\| 78/100 \\| B \\- cross\\-source\n   Validation priority\\. St\\. Kitts and Nevis FDI movement \\(41\\.1% change\\) signals opportunity\\. Cross\\-reference with sector data\\.\n\n— Lead: Belize · 25 composite signal\\(s\\) · 1 updated · 23 persistent\n\\- Caribbean Signal OS\n",
+        "stderr": ""
+      }
+    }
+  ]
+}

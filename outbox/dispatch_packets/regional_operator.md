@@ -2,24 +2,24 @@
 
 **Decision job:** Operational readiness and bid pipeline assessment
 **Delivery channel:** Telegram
-**Generated:** May 28, 2026 at 20:34 UTC
+**Generated:** Jun 10, 2026 at 17:59 UTC
 **Dispatches in this packet:** 1
 
 ---
 
 ## Dispatches (1)
 
-### 1. CARICOM: 6 active procurements — bidding window open
+### 1. CARICOM: 2 active procurements — bidding window open
 
-**ID:** `DSP-20260528-017` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 95/100 | B - cross-source
+**ID:** `DSP-20260610-017` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 96/100 | B - cross-source
 **Channel:** Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** replied
 
-**Evidence:** CDB active procurement notices: 6
-**Detail:** CDB active procurement notices: 6
+**Evidence:** CDB active procurement notices: 2
+**Detail:** CDB active procurement notices: 2
 **Grade:** B - cross-source
 
-**Recommended action:** Review operational readiness for CARICOM opportunities. CDB active procurement notices: 6 — assess capacity and bid pipeline.
+**Recommended action:** Review operational readiness for CARICOM opportunities. CDB active procurement notices: 2 — assess capacity and bid pipeline.
 **Decision to influence:** Which procurement or project opportunity to pursue
 **Routing rationale:** Active procurement directly maps to operational capacity needs — first to respond wins
 

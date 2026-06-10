@@ -1,6 +1,6 @@
 # Caribbean Opportunity Dispatch — Judge Brief
 
-Generated: 2026-06-10 17:59 UTC
+Generated: 2026-06-03 13:30 UTC
 
 ## What This Proves
 
@@ -11,7 +11,7 @@ Caribbean Opportunity Dispatch is the product. Caribbean Signal OS is the archit
 - Total raw signals generated: 25
 - Sources represented: CARICOM, CDB, IDB, World Bank
 - Countries/zones: 10
-- New/updated this cycle: 0
+- New/updated this cycle: 1
 - User-facing outputs: opportunity dispatches, regional thesis, why-now context, feedback review, judge brief
 
 **Belize** — 2 signal(s), 4 source(s): 💼 Investment + 💎 Investment
@@ -30,10 +30,10 @@ Caribbean Opportunity Dispatch is the product. Caribbean Signal OS is the archit
    Decision: Immediate investigation. Barbados has multi-source investment validation (3 signals converging). Priority: assess market entry options, identify existing operators.
 
 **2.** 🔴 **🏗️ Pipeline — CARICOM** — sustained
-   Narrative: CARICOM: 2 active procurements — bidding window open
+   Narrative: CARICOM: 6 active procurements — bidding window open
    Score: 96/100 | Grade: B - cross-source
    Audience: investor/founder via Email brief + Telegram
-   Decision: Active procurement pipeline: CDB active procurement notices: 2. Priority: review CDB/IDB opportunities as lead list for project-based entry.
+   Decision: Active procurement pipeline: CDB active procurement notices: 6. Priority: review CDB/IDB opportunities as lead list for project-based entry.
 
 **3.** 🔴 **💼 Investment — Guyana** — sustained
    Narrative: Guyana: FDI trending at +860.3% — screening trigger active
@@ -102,7 +102,7 @@ Each signal is routed to specific personas based on signal kind and evidence lev
 
 ## Cycle Summary
 
-Lead: Belize · 25 composite signal(s) · 24 persistent
+Lead: Belize · 25 composite signal(s) · 1 updated · 23 persistent
 ## Judge Demo Path
 
 1. Run `bash run_pipeline.sh`.

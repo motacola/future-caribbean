@@ -1,0 +1,98 @@
+{
+  "signal_id": "enhanced-invest-st.-vincent-and-the-grenadines",
+  "dispatch_id": "DSP-20260610-029",
+  "country": "St. Vincent and the Grenadines",
+  "signal_title": "St. Vincent and the Grenadines: +88.2% multi-source investment validated — opportunity active",
+  "confidence_score": 100,
+  "evidence_grade": "A - multi-source",
+  "sector_hypotheses": [
+    {
+      "sector": "FDI-receiving sectors (composition not yet broken down)",
+      "basis": "World Bank: FDI net inflows moved +88.2% from 2023 to 2024",
+      "status": "macro_signal"
+    }
+  ],
+  "supporting_projects": [
+    {
+      "title": "56th Annual Meeting: Statement by Governor for Saint Vincent and the Grenadines, Dr. The Hon. Godwin Friday",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/publications-and-resources/resource-library/official-records/56th-annual-meeting-statement-governor-saint-vincent-and-grenadines-dr-hon-godwin-friday",
+      "topics": []
+    }
+  ],
+  "procurement_matches": [
+    {
+      "title": "Enhancing the Quality of the Belize National Quality Infrastructure",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure",
+      "match": "regional"
+    },
+    {
+      "title": "Support for Institutional Strengthening of the Caribbean Disaster Emergency Project",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/support-institutional-strengthening-caribbean-disaster-emergency-project",
+      "match": "regional"
+    }
+  ],
+  "official_country_data": [
+    {
+      "title": "St. Vincent and the Grenadines: Monthly Consumer Price Index (CPI) by Expenditure Category",
+      "source": "CARICOM Statistics",
+      "url": "https://statistics.caricom.org/country_data/st-vincent-and-the-grenadines-monthly-consumer-price-index-cpi-by-expenditure-category/"
+    },
+    {
+      "title": "2020_VNR_Report_St_Vincent_and_the_Grenadines",
+      "source": "CARICOM Statistics",
+      "url": "https://statistics.caricom.org/country_data/2020_vnr_report_st_vincent_and_the_grenadines/"
+    },
+    {
+      "title": "St. Vincent and the Grenadines Rest of the World (ROW) Accounts 2020-2024",
+      "source": "CARICOM Statistics",
+      "url": "https://statistics.caricom.org/country_data/st-vincent-and-the-grenadines/"
+    },
+    {
+      "title": "St Vincent and the Grenadines Estimates of Gross National Disposable Income: 2019-2023",
+      "source": "CARICOM Statistics",
+      "url": "https://statistics.caricom.org/country_data/st-vincent-and-the-grenadines-estimates-of-gross-national-disposable-income-2019-2023/"
+    }
+  ],
+  "credible_local_operators": [],
+  "relevant_institutions": [
+    {
+      "name": "Invest SVG",
+      "role": "National investment promotion agency"
+    },
+    {
+      "name": "Caribbean Export Development Agency",
+      "role": "Regional trade and investment promotion"
+    },
+    {
+      "name": "Caribbean Development Bank (CDB)",
+      "role": "Regional development finance and procurement"
+    }
+  ],
+  "source_links": [
+    "https://statistics.caricom.org/country_data/2020_vnr_report_st_vincent_and_the_grenadines/",
+    "https://statistics.caricom.org/country_data/st-vincent-and-the-grenadines-estimates-of-gross-national-disposable-income-2019-2023/",
+    "https://statistics.caricom.org/country_data/st-vincent-and-the-grenadines-monthly-consumer-price-index-cpi-by-expenditure-category/",
+    "https://statistics.caricom.org/country_data/st-vincent-and-the-grenadines/",
+    "https://www.caribank.org/publications-and-resources/resource-library/official-records/56th-annual-meeting-statement-governor-saint-vincent-and-grenadines-dr-hon-godwin-friday",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/support-institutional-strengthening-caribbean-disaster-emergency-project"
+  ],
+  "unresolved_questions": [
+    "Which specific sectors are driving the movement in St. Vincent and the Grenadines? No official sector-breakdown dataset matched this cycle.",
+    "No live St. Vincent and the Grenadines-specific procurement notice matched this cycle — check CDB and national tender portals directly.",
+    "Operator discovery is not yet automated — source two credible local operators via the listed institutions.",
+    "Validate that the underlying FDI movement is sustained, not a one-off transaction or statistical revision."
+  ],
+  "recommended_intro_targets": [
+    {
+      "name": "Invest SVG",
+      "why": "National investment promotion agency"
+    }
+  ],
+  "advance_or_reject_recommendation": "hold",
+  "recommendation_reason": "Signal confidence 100/100 with 1 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.",
+  "last_validated_at": "2026-06-10T17:59:19.211537+00:00"
+}

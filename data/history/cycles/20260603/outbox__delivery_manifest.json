@@ -1,32 +1,31 @@
 {
-  "generated_at": "2026-06-10T17:59:20.153944+00:00",
-  "cycle_id": "20260610",
-  "total_deliveries": 31,
+  "generated_at": "2026-06-03T13:30:49.584923+00:00",
+  "cycle_id": "20260603",
+  "total_deliveries": 29,
   "summary": {
-    "personas": 7,
+    "personas": 6,
     "channels": 4,
     "by_persona": {
       "diaspora_investor": 10,
-      "founder_operator": 10,
+      "founder_operator": 9,
       "ecosystem_builder": 5,
       "policy_media": 3,
       "regional_operator": 1,
-      "procurement_watcher": 1,
-      "tourism_logistics_operator": 1
+      "procurement_watcher": 1
     },
     "by_channel": {
-      "Telegram": 17,
+      "Telegram": 15,
       "Email brief + Telegram": 10,
       "Telegram digest": 3,
       "Email brief": 1
     },
     "by_status": {
-      "delivered": 31
+      "delivered": 29
     }
   },
   "deliveries": [
     {
-      "dispatch_id": "DSP-20260610-023",
+      "dispatch_id": "DSP-20260603-021",
       "title": "Guyana: +860.3% multi-source capital surge — market entry window open",
       "persona_key": "diaspora_investor",
       "persona_label": "Diaspora Investor",
@@ -35,13 +34,13 @@
       "action_window": "14 days",
       "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
       "target_artifact_path": "outbox/dispatch_packets/diaspora_investor.md",
-      "cycle_id": "20260610",
+      "cycle_id": "20260603",
       "country_cluster": "Guyana",
       "confidence_score": 100,
       "signal_kind": "enhanced_investment"
     },
     {
-      "dispatch_id": "DSP-20260610-024",
+      "dispatch_id": "DSP-20260603-022",
       "title": "Guyana: +860.3% multi-source capital surge — market entry window open",
       "persona_key": "ecosystem_builder",
       "persona_label": "Ecosystem Builder",
@@ -50,13 +49,13 @@
       "action_window": "14 days",
       "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
       "target_artifact_path": "outbox/dispatch_packets/ecosystem_builder.md",
-      "cycle_id": "20260610",
+      "cycle_id": "20260603",
       "country_cluster": "Guyana",
       "confidence_score": 100,
       "signal_kind": "enhanced_investment"
     },
     {
-      "dispatch_id": "DSP-20260610-025",
+      "dispatch_id": "DSP-20260603-023",
       "title": "Guyana: +860.3% multi-source capital surge — market entry window open",
       "persona_key": "founder_operator",
       "persona_label": "Regional Founder/Operator",
@@ -65,13 +64,13 @@
       "action_window": "14 days",
       "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
       "target_artifact_path": "outbox/dispatch_packets/founder_operator.md",
-      "cycle_id": "20260610",
+      "cycle_id": "20260603",
       "country_cluster": "Guyana",
       "confidence_score": 100,
       "signal_kind": "enhanced_investment"
     },
     {
-      "dispatch_id": "DSP-20260610-026",
+      "dispatch_id": "DSP-20260603-024",
       "title": "Belize: +701.0% multi-source capital surge — market entry window open",
       "persona_key": "diaspora_investor",
       "persona_label": "Diaspora Investor",
@@ -80,13 +79,13 @@
       "action_window": "14 days",
       "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
       "target_artifact_path": "outbox/dispatch_packets/diaspora_investor.md",
-      "cycle_id": "20260610",
+      "cycle_id": "20260603",
       "country_cluster": "Belize",
       "confidence_score": 100,
       "signal_kind": "enhanced_investment"
     },
     {
-      "dispatch_id": "DSP-20260610-027",
+      "dispatch_id": "DSP-20260603-025",
       "title": "Belize: +701.0% multi-source capital surge — market entry window open",
       "persona_key": "ecosystem_builder",
       "persona_label": "Ecosystem Builder",
@@ -95,13 +94,13 @@
       "action_window": "14 days",
       "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
       "target_artifact_path": "outbox/dispatch_packets/ecosystem_builder.md",
-      "cycle_id": "20260610",
+      "cycle_id": "20260603",
       "country_cluster": "Belize",
       "confidence_score": 100,
       "signal_kind": "enhanced_investment"
     },
     {
-      "dispatch_id": "DSP-20260610-028",
+      "dispatch_id": "DSP-20260603-026",
       "title": "Belize: +701.0% multi-source capital surge — market entry window open",
       "persona_key": "founder_operator",
       "persona_label": "Regional Founder/Operator",
@@ -110,13 +109,13 @@
       "action_window": "14 days",
       "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
       "target_artifact_path": "outbox/dispatch_packets/founder_operator.md",
-      "cycle_id": "20260610",
+      "cycle_id": "20260603",
       "country_cluster": "Belize",
       "confidence_score": 100,
       "signal_kind": "enhanced_investment"
     },
     {
-      "dispatch_id": "DSP-20260610-029",
+      "dispatch_id": "DSP-20260603-027",
       "title": "St. Vincent and the Grenadines: +88.2% multi-source investment validated — opportunity active",
       "persona_key": "diaspora_investor",
       "persona_label": "Diaspora Investor",
@@ -125,13 +124,13 @@
       "action_window": "14 days",
       "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
       "target_artifact_path": "outbox/dispatch_packets/diaspora_investor.md",
-      "cycle_id": "20260610",
+      "cycle_id": "20260603",
       "country_cluster": "St. Vincent and the Grenadines",
       "confidence_score": 100,
       "signal_kind": "enhanced_investment"
     },
     {
-      "dispatch_id": "DSP-20260610-030",
+      "dispatch_id": "DSP-20260603-028",
       "title": "St. Vincent and the Grenadines: +88.2% multi-source investment validated — opportunity active",
       "persona_key": "ecosystem_builder",
       "persona_label": "Ecosystem Builder",
@@ -140,13 +139,13 @@
       "action_window": "14 days",
       "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
       "target_artifact_path": "outbox/dispatch_packets/ecosystem_builder.md",
-      "cycle_id": "20260610",
+      "cycle_id": "20260603",
       "country_cluster": "St. Vincent and the Grenadines",
       "confidence_score": 100,
       "signal_kind": "enhanced_investment"
     },
     {
-      "dispatch_id": "DSP-20260610-031",
+      "dispatch_id": "DSP-20260603-029",
       "title": "St. Vincent and the Grenadines: +88.2% multi-source investment validated — opportunity active",
       "persona_key": "founder_operator",
       "persona_label": "Regional Founder/Operator",
@@ -155,14 +154,14 @@
       "action_window": "14 days",
       "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
       "target_artifact_path": "outbox/dispatch_packets/founder_operator.md",
-      "cycle_id": "20260610",
+      "cycle_id": "20260603",
       "country_cluster": "St. Vincent and the Grenadines",
       "confidence_score": 100,
       "signal_kind": "enhanced_investment"
     },
     {
-      "dispatch_id": "DSP-20260610-017",
-      "title": "CARICOM: 2 active procurements — bidding window open",
+      "dispatch_id": "DSP-20260603-015",
+      "title": "CARICOM: 6 active procurements — bidding window open",
       "persona_key": "regional_operator",
       "persona_label": "Regional Operator",
       "channel": "Telegram",
@@ -170,14 +169,14 @@
       "action_window": "30 days",
       "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
       "target_artifact_path": "outbox/dispatch_packets/regional_operator.md",
-      "cycle_id": "20260610",
+      "cycle_id": "20260603",
       "country_cluster": "CARICOM",
       "confidence_score": 96,
       "signal_kind": "development_pipeline"
     },
     {
-      "dispatch_id": "DSP-20260610-018",
-      "title": "CARICOM: 2 active procurements — bidding window open",
+      "dispatch_id": "DSP-20260603-016",
+      "title": "CARICOM: 6 active procurements — bidding window open",
       "persona_key": "procurement_watcher",
       "persona_label": "Procurement Watcher",
       "channel": "Email brief",
@@ -185,14 +184,14 @@
       "action_window": "30 days",
       "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
       "target_artifact_path": "outbox/dispatch_packets/procurement_watcher.md",
-      "cycle_id": "20260610",
+      "cycle_id": "20260603",
       "country_cluster": "CARICOM",
       "confidence_score": 96,
       "signal_kind": "development_pipeline"
     },
     {
-      "dispatch_id": "DSP-20260610-019",
-      "title": "CARICOM: 2 active procurements — bidding window open",
+      "dispatch_id": "DSP-20260603-017",
+      "title": "CARICOM: 6 active procurements — bidding window open",
       "persona_key": "founder_operator",
       "persona_label": "Regional Founder/Operator",
       "channel": "Telegram",
@@ -200,13 +199,13 @@
       "action_window": "30 days",
       "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
       "target_artifact_path": "outbox/dispatch_packets/founder_operator.md",
-      "cycle_id": "20260610",
+      "cycle_id": "20260603",
       "country_cluster": "CARICOM",
       "confidence_score": 96,
       "signal_kind": "development_pipeline"
     },
     {
-      "dispatch_id": "DSP-20260610-001",
+      "dispatch_id": "DSP-20260603-001",
       "title": "Regional FDI snapshot: 8 countries with active capital movement",
       "persona_key": "diaspora_investor",
       "persona_label": "Diaspora Investor",
@@ -215,13 +214,13 @@
       "action_window": "14 days",
       "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
       "target_artifact_path": "outbox/dispatch_packets/diaspora_investor.md",
-      "cycle_id": "20260610",
+      "cycle_id": "20260603",
       "country_cluster": "Caribwide",
       "confidence_score": 90,
       "signal_kind": "investment_signal"
     },
     {
-      "dispatch_id": "DSP-20260610-002",
+      "dispatch_id": "DSP-20260603-002",
       "title": "Regional FDI snapshot: 8 countries with active capital movement",
       "persona_key": "founder_operator",
       "persona_label": "Regional Founder/Operator",
@@ -230,13 +229,13 @@
       "action_window": "14 days",
       "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
       "target_artifact_path": "outbox/dispatch_packets/founder_operator.md",
-      "cycle_id": "20260610",
+      "cycle_id": "20260603",
       "country_cluster": "Caribwide",
       "confidence_score": 90,
       "signal_kind": "investment_signal"
     },
     {
-      "dispatch_id": "DSP-20260610-003",
+      "dispatch_id": "DSP-20260603-003",
       "title": "Guyana: FDI trending at +860.3% — screening trigger active",
       "persona_key": "diaspora_investor",
       "persona_label": "Diaspora Investor",
@@ -245,13 +244,13 @@
       "action_window": "14 days",
       "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
       "target_artifact_path": "outbox/dispatch_packets/diaspora_investor.md",
-      "cycle_id": "20260610",
+      "cycle_id": "20260603",
       "country_cluster": "Guyana",
       "confidence_score": 90,
       "signal_kind": "investment_signal"
     },
     {
-      "dispatch_id": "DSP-20260610-004",
+      "dispatch_id": "DSP-20260603-004",
       "title": "Guyana: FDI trending at +860.3% — screening trigger active",
       "persona_key": "founder_operator",
       "persona_label": "Regional Founder/Operator",
@@ -260,13 +259,13 @@
       "action_window": "14 days",
       "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
       "target_artifact_path": "outbox/dispatch_packets/founder_operator.md",
-      "cycle_id": "20260610",
+      "cycle_id": "20260603",
       "country_cluster": "Guyana",
       "confidence_score": 90,
       "signal_kind": "investment_signal"
     },
     {
-      "dispatch_id": "DSP-20260610-005",
+      "dispatch_id": "DSP-20260603-005",
       "title": "Belize: FDI trending at +701.0% — screening trigger active",
       "persona_key": "diaspora_investor",
       "persona_label": "Diaspora Investor",
@@ -275,13 +274,13 @@
       "action_window": "14 days",
       "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
       "target_artifact_path": "outbox/dispatch_packets/diaspora_investor.md",
-      "cycle_id": "20260610",
+      "cycle_id": "20260603",
       "country_cluster": "Belize",
       "confidence_score": 90,
       "signal_kind": "investment_signal"
     },
     {
-      "dispatch_id": "DSP-20260610-006",
+      "dispatch_id": "DSP-20260603-006",
       "title": "Belize: FDI trending at +701.0% — screening trigger active",
       "persona_key": "founder_operator",
       "persona_label": "Regional Founder/Operator",
@@ -290,13 +289,13 @@
       "action_window": "14 days",
       "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
       "target_artifact_path": "outbox/dispatch_packets/founder_operator.md",
-      "cycle_id": "20260610",
+      "cycle_id": "20260603",
       "country_cluster": "Belize",
       "confidence_score": 90,
       "signal_kind": "investment_signal"
     },
     {
-      "dispatch_id": "DSP-20260610-020",
+      "dispatch_id": "DSP-20260603-018",
       "title": "Capital convergence: 8 Caribbean economies showing multi-source investment momentum",
       "persona_key": "diaspora_investor",
       "persona_label": "Diaspora Investor",
@@ -305,13 +304,13 @@
       "action_window": "14 days",
       "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
       "target_artifact_path": "outbox/dispatch_packets/diaspora_investor.md",
-      "cycle_id": "20260610",
+      "cycle_id": "20260603",
       "country_cluster": "Caribwide",
       "confidence_score": 90,
       "signal_kind": "enhanced_investment"
     },
     {
-      "dispatch_id": "DSP-20260610-021",
+      "dispatch_id": "DSP-20260603-019",
       "title": "Capital convergence: 8 Caribbean economies showing multi-source investment momentum",
       "persona_key": "ecosystem_builder",
       "persona_label": "Ecosystem Builder",
@@ -320,13 +319,13 @@
       "action_window": "14 days",
       "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
       "target_artifact_path": "outbox/dispatch_packets/ecosystem_builder.md",
-      "cycle_id": "20260610",
+      "cycle_id": "20260603",
       "country_cluster": "Caribwide",
       "confidence_score": 90,
       "signal_kind": "enhanced_investment"
     },
     {
-      "dispatch_id": "DSP-20260610-022",
+      "dispatch_id": "DSP-20260603-020",
       "title": "Capital convergence: 8 Caribbean economies showing multi-source investment momentum",
       "persona_key": "founder_operator",
       "persona_label": "Regional Founder/Operator",
@@ -335,13 +334,13 @@
       "action_window": "14 days",
       "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
       "target_artifact_path": "outbox/dispatch_packets/founder_operator.md",
-      "cycle_id": "20260610",
+      "cycle_id": "20260603",
       "country_cluster": "Caribwide",
       "confidence_score": 90,
       "signal_kind": "enhanced_investment"
     },
     {
-      "dispatch_id": "DSP-20260610-015",
+      "dispatch_id": "DSP-20260603-013",
       "title": "CARICOM: food supply indicators shifting — supply chain implications",
       "persona_key": "ecosystem_builder",
       "persona_label": "Ecosystem Builder",
@@ -350,13 +349,13 @@
       "action_window": "30 days",
       "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
       "target_artifact_path": "outbox/dispatch_packets/ecosystem_builder.md",
-      "cycle_id": "20260610",
+      "cycle_id": "20260603",
       "country_cluster": "CARICOM",
       "confidence_score": 80,
       "signal_kind": "food_security"
     },
     {
-      "dispatch_id": "DSP-20260610-016",
+      "dispatch_id": "DSP-20260603-014",
       "title": "CARICOM: food supply indicators shifting — supply chain implications",
       "persona_key": "policy_media",
       "persona_label": "Policy/Media",
@@ -365,13 +364,13 @@
       "action_window": "30 days",
       "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
       "target_artifact_path": "outbox/dispatch_packets/policy_media.md",
-      "cycle_id": "20260610",
+      "cycle_id": "20260603",
       "country_cluster": "CARICOM",
       "confidence_score": 80,
       "signal_kind": "food_security"
     },
     {
-      "dispatch_id": "DSP-20260610-007",
+      "dispatch_id": "DSP-20260603-007",
       "title": "St. Vincent and the Grenadines: FDI trending at +88.2% — screening trigger active",
       "persona_key": "diaspora_investor",
       "persona_label": "Diaspora Investor",
@@ -380,13 +379,13 @@
       "action_window": "14 days",
       "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
       "target_artifact_path": "outbox/dispatch_packets/diaspora_investor.md",
-      "cycle_id": "20260610",
+      "cycle_id": "20260603",
       "country_cluster": "St. Vincent and the Grenadines",
       "confidence_score": 78,
       "signal_kind": "investment_signal"
     },
     {
-      "dispatch_id": "DSP-20260610-008",
+      "dispatch_id": "DSP-20260603-008",
       "title": "St. Vincent and the Grenadines: FDI trending at +88.2% — screening trigger active",
       "persona_key": "founder_operator",
       "persona_label": "Regional Founder/Operator",
@@ -395,13 +394,13 @@
       "action_window": "14 days",
       "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
       "target_artifact_path": "outbox/dispatch_packets/founder_operator.md",
-      "cycle_id": "20260610",
+      "cycle_id": "20260603",
       "country_cluster": "St. Vincent and the Grenadines",
       "confidence_score": 78,
       "signal_kind": "investment_signal"
     },
     {
-      "dispatch_id": "DSP-20260610-009",
+      "dispatch_id": "DSP-20260603-009",
       "title": "St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended",
       "persona_key": "diaspora_investor",
       "persona_label": "Diaspora Investor",
@@ -410,13 +409,13 @@
       "action_window": "30 days",
       "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
       "target_artifact_path": "outbox/dispatch_packets/diaspora_investor.md",
-      "cycle_id": "20260610",
+      "cycle_id": "20260603",
       "country_cluster": "St. Vincent and the Grenadines",
       "confidence_score": 69,
       "signal_kind": "economic_vulnerability"
     },
     {
-      "dispatch_id": "DSP-20260610-010",
+      "dispatch_id": "DSP-20260603-010",
       "title": "St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended",
       "persona_key": "policy_media",
       "persona_label": "Policy/Media",
@@ -425,13 +424,13 @@
       "action_window": "30 days",
       "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
       "target_artifact_path": "outbox/dispatch_packets/policy_media.md",
-      "cycle_id": "20260610",
+      "cycle_id": "20260603",
       "country_cluster": "St. Vincent and the Grenadines",
       "confidence_score": 69,
       "signal_kind": "economic_vulnerability"
     },
     {
-      "dispatch_id": "DSP-20260610-011",
+      "dispatch_id": "DSP-20260603-011",
       "title": "Suriname: economic stress indicators rising — portfolio review recommended",
       "persona_key": "diaspora_investor",
       "persona_label": "Diaspora Investor",
@@ -440,13 +439,13 @@
       "action_window": "30 days",
       "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
       "target_artifact_path": "outbox/dispatch_packets/diaspora_investor.md",
-      "cycle_id": "20260610",
+      "cycle_id": "20260603",
       "country_cluster": "Suriname",
       "confidence_score": 56,
       "signal_kind": "economic_vulnerability"
     },
     {
-      "dispatch_id": "DSP-20260610-012",
+      "dispatch_id": "DSP-20260603-012",
       "title": "Suriname: economic stress indicators rising — portfolio review recommended",
       "persona_key": "policy_media",
       "persona_label": "Policy/Media",
@@ -455,40 +454,10 @@
       "action_window": "30 days",
       "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
       "target_artifact_path": "outbox/dispatch_packets/policy_media.md",
-      "cycle_id": "20260610",
+      "cycle_id": "20260603",
       "country_cluster": "Suriname",
       "confidence_score": 56,
       "signal_kind": "economic_vulnerability"
-    },
-    {
-      "dispatch_id": "DSP-20260610-013",
-      "title": "Guyana: GDP growth signals expanding tourist economy",
-      "persona_key": "tourism_logistics_operator",
-      "persona_label": "Tourism/Logistics Operator",
-      "channel": "Telegram",
-      "delivery_status": "delivered",
-      "action_window": "30 days",
-      "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
-      "target_artifact_path": "outbox/dispatch_packets/tourism_logistics_operator.md",
-      "cycle_id": "20260610",
-      "country_cluster": "Guyana",
-      "confidence_score": 51,
-      "signal_kind": "tourism_impact"
-    },
-    {
-      "dispatch_id": "DSP-20260610-014",
-      "title": "Guyana: GDP growth signals expanding tourist economy",
-      "persona_key": "founder_operator",
-      "persona_label": "Regional Founder/Operator",
-      "channel": "Telegram",
-      "delivery_status": "delivered",
-      "action_window": "30 days",
-      "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
-      "target_artifact_path": "outbox/dispatch_packets/founder_operator.md",
-      "cycle_id": "20260610",
-      "country_cluster": "Guyana",
-      "confidence_score": 51,
-      "signal_kind": "tourism_impact"
     }
   ]
 }

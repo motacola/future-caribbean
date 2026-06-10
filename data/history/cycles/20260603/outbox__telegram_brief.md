@@ -1,11 +1,11 @@
 🌴 *Caribbean Opportunity Dispatch — Decision Routes Ready*
-Cycle: `20260610` · 2026-06-10 17:59 UTC
+Cycle: `20260603` · 2026-06-03 13:30 UTC
 
 *What this is:*
 A Dispatch Desk notification. The product is the decision route: signal → persona → action → feedback. Telegram is only the delivery channel.
 
 *Open Track coordination chain this cycle*
-Data → 13 signal clusters → 31 persona routes → 7 personas → action/capital decisions
+Data → 12 signal clusters → 29 persona routes → 6 personas → action/capital decisions
 
 *Priority decision clusters*
 1) *Guyana: +860.3% multi-source capital surge — market entry window open*
