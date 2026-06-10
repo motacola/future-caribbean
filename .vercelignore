@@ -1,0 +1,50 @@
+# Vercel ignore patterns — exclude heavy dirs, keep what functions & dashboard need
+
+# Build/planning docs
+planning/
+*.md
+!llms.txt
+!agents.md
+
+# Test suite
+tests/
+
+# Data — EXCEPT history/ which the theater replay needs
+data/*
+!data/history/
+!data/history/**
+
+# Pipeline source code (not needed at runtime)
+cli/
+mergers/
+watchers/
+packagers/
+distributors/
+.flue/
+mcp_adapter/
+
+# Config & infra (not needed at runtime)
+.github/
+docker/
+Dockerfile
+Procfile
+fly.toml
+vercel.json
+.gitignore
+.dockerignore
+requirements.txt
+run_pipeline.sh
+server.py
+
+# Credentials & local state
+.env
+__pycache__/
+*.pyc
+.pipeline/
+.sent_*.json
+
+# Wizard-created domains (ephemeral)
+domains/user-*.json
+
+# Agent verification outputs
+output/

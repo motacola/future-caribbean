@@ -1,16 +1,21 @@
 {
-  "version": 2,
-  "buildCommand": "",
-  "outputDirectory": ".",
-  "routes": [
-    { "src": "/(.*)", "dest": "/$1" }
+  "rewrites": [
+    { "source": "/", "destination": "/dashboard.html" },
+    { "source": "/api/tools.json", "destination": "/api/tools" },
+    { "source": "/api/validation-packs/(.*)", "destination": "/api/validation-packs/$1" },
+    { "source": "/llms.txt", "destination": "/llms.txt" },
+    { "source": "/agents.md", "destination": "/agents.md" }
   ],
   "headers": [
     {
-      "source": "/dashboard.html",
+      "source": "/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=300" }
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET, POST, OPTIONS" },
+        { "key": "Access-Control-Allow-Headers", "value": "Content-Type" }
       ]
     }
-  ]
+  ],
+  "crons": [],
+  "regions": ["iad1"]
 }

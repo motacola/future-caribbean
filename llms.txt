@@ -4,7 +4,7 @@
 
 **Base URL (local):** `http://localhost:8080`
 
-**Base URL (hosted):** `https://future-caribbean.fly.dev`
+**Base URL (hosted):** `https://<project>.vercel.app`
 
 ---
 
@@ -29,15 +29,15 @@
 
 ```bash
 # Ask the desk a question
-curl -X POST http://localhost:8080/api/ask \
+curl -X POST https://<project>.vercel.app/api/ask \
   -H "Content-Type: application/json" \
   -d '{"question": "explain the lead signal"}'
 
 # Get the tool manifest (for agent self-configuration)
-curl http://localhost:8080/api/tools.json
+curl https://<project>.vercel.app/api/tools.json
 
 # Get validation packs index
-curl http://localhost:8080/api/validation-packs
+curl https://<project>.vercel.app/api/validation-packs
 ```
 
 **See also:** `/agents.md` for framework-specific setup (Claude/MCP, Hermes, OpenClaw, plain HTTP).

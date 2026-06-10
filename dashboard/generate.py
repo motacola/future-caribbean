@@ -469,6 +469,15 @@ for i, c in enumerate(clusters, 1):
 # ── Prepare all validation packs for client-side expansion ────
 all_packs_json = json.dumps(all_packs, ensure_ascii=False).replace("</", "<\\/")
 
+# ── Find latest replay JSONL for theater fallback ─────────────
+history_dir = ROOT / "data" / "history"
+replay_jsonl_url = ""
+if history_dir.exists():
+    jsonl_files = sorted(history_dir.glob("*.jsonl"), key=lambda p: p.stat().st_mtime, reverse=True)
+    if jsonl_files:
+        # Use the most recent file; Vercel serves data/history/ statically
+        replay_jsonl_url = f"/data/history/{jsonl_files[0].name}"
+
 # ── Render dashboard (system audit page) ───────────────────
 template = Path(ROOT / "dashboard" / "template.html").read_text()
 
@@ -499,6 +508,7 @@ V = dict(
     map_dispatches_json=map_dispatches_json,
     all_packs_json=all_packs_json,
     verdict_counts_json=verdict_counts_json,
+    replay_jsonl_url=j(replay_jsonl_url),
 )
 
 for k, val in V.items():

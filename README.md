@@ -165,11 +165,42 @@ Current build plan: `PLAN_ENGINE_2026-06-10.md`. Implementation briefs and resul
 
 ## Deployment
 
-For static hosting (Netlify, GitHub Pages, etc.):
+### Vercel + GitHub Actions (recommended, $0 hosting)
+
+This is the primary public deployment: GitHub Actions runs the pipeline every 4 hours and commits artifacts; Vercel serves `dashboard.html` + static artifacts plus Python serverless functions for the read-only APIs.
+
+**Live URL:** `https://<project>.vercel.app` (replace after first deploy)
+
+**Setup (3 steps):**
+
+1. **Import repo in Vercel**
+   - New Project → Import this GitHub repository
+   - Framework Preset: **Other**
+   - Root Directory: `/` (repo root)
+   - No build command, no output directory needed (static + functions)
+   - Deploy — Vercel detects `vercel.json` and `api/` functions automatically
+
+2. **Enable the GitHub Actions workflow**
+   - The `.github/workflows/pipeline.yml` runs on a 4-hour cron + manual dispatch
+   - Add optional secrets for Telegram delivery (not required for read-only API):
+     - `TELEGRAM_BOT_TOKEN`
+     - `TELEGRAM_CHAT_ID`
+   - Workflow commits artifacts → auto-triggers Vercel redeploy
+
+3. **Done** — open the Vercel URL. The dashboard, map, theater replay, and `/api/ask`, `/api/status`, `/api/validation-packs`, `/api/map-data`, `/api/tools.json` all work.
+
+**Notes:**
+- Write endpoints (`/api/feedback/apply`, `/api/delivery/*`, `/api/domains/create`) are **not deployed** — public instance is read-only by construction
+- Theater uses client-side replay from committed `data/history/*.jsonl` (no SSE on Vercel)
+- Local development unchanged: `python3 server.py` for full read-write + live SSE
+
+---
+
+### Static hosting (Netlify, GitHub Pages, etc.)
+
+For pure static hosting without API functions:
 
 1. Run `bash run_pipeline.sh` to generate all artifacts
 2. Deploy `dashboard.html`, `outbox/*.md`, and `assets/` as static files (the dashboard degrades gracefully without the API)
 3. No build step needed — all HTML/Markdown is self-contained
 4. Cron jobs on the backend continue data collection independently
-
-A hardened read-only public server mode is in progress (Phase 5 of the build plan).
