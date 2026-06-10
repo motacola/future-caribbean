@@ -169,7 +169,7 @@ Current build plan: `PLAN_ENGINE_2026-06-10.md`. Implementation briefs and resul
 
 This is the primary public deployment: GitHub Actions runs the pipeline every 4 hours and commits artifacts; Vercel serves `dashboard.html` + static artifacts plus Python serverless functions for the read-only APIs.
 
-**Live URL:** `https://<project>.vercel.app` (replace after first deploy)
+**Live URL:** `https://signal-fabric.vercel.app`
 
 **Setup (3 steps):**
 

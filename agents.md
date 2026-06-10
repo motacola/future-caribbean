@@ -3,7 +3,7 @@
 The Signal Fabric engine exposes a **plain HTTP API** as its foundation — no SDK, no vendor lock-in. Every framework below hits the same endpoints.
 
 **Base URL (local):** `http://localhost:8080`
-**Base URL (hosted):** `https://<project>.vercel.app`
+**Base URL (hosted):** `https://signal-fabric.vercel.app`
 
 **Tool manifest:** `GET /api/tools.json` — machine-readable, ingest to self-configure.
 
@@ -15,21 +15,21 @@ No agent framework needed. The API is REST + JSON.
 
 ```bash
 # Status check
-curl https://<project>.vercel.app/api/status
+curl https://signal-fabric.vercel.app/api/status
 
 # Ask a question (deterministic, cited)
-curl -X POST https://<project>.vercel.app/api/ask \
+curl -X POST https://signal-fabric.vercel.app/api/ask \
   -H "Content-Type: application/json" \
   -d '{"question": "what changed this cycle"}'
 
 # List validation packs
-curl https://<project>.vercel.app/api/validation-packs
+curl https://signal-fabric.vercel.app/api/validation-packs
 
 # Get a specific pack
-curl https://<project>.vercel.app/api/validation-packs/enhanced-invest-guyana
+curl https://signal-fabric.vercel.app/api/validation-packs/enhanced-invest-guyana
 
 # Tool manifest (for any tool-calling agent)
-curl https://<project>.vercel.app/api/tools.json
+curl https://signal-fabric.vercel.app/api/tools.json
 ```
 
 **Response shape (`/api/ask`):**
@@ -54,7 +54,7 @@ Hermes uses **HTTP toolsets** pointed at `/api/tools.json`.
 {
   "name": "caribbean-desk",
   "type": "http",
-  "url": "https://<project>.vercel.app/api/tools.json",
+  "url": "https://signal-fabric.vercel.app/api/tools.json",
   "auth": "none"
 }
 ```
@@ -62,7 +62,7 @@ Hermes uses **HTTP toolsets** pointed at `/api/tools.json`.
 2. Or add via CLI:
 
 ```bash
-hermes tools add http caribbean-desk https://<project>.vercel.app/api/tools.json
+hermes tools add http caribbean-desk https://signal-fabric.vercel.app/api/tools.json
 ```
 
 3. Now Hermes can call `caribbean_desk.ask`, `caribbean_desk.status`, `caribbean_desk.validation_packs.get`, etc., directly.
@@ -78,7 +78,7 @@ OpenClaw can call the HTTP API directly, or use the provided **`signalctl` CLI**
 
 ### Option 1: HTTP (same as plain curl above)
 
-OpenClaw's HTTP tools pointed at `https://<project>.vercel.app/api/tools.json`.
+OpenClaw's HTTP tools pointed at `https://signal-fabric.vercel.app/api/tools.json`.
 
 ### Option 2: `signalctl` (no HTTP server needed — runs against local files)
 
@@ -136,7 +136,7 @@ Same config, ensure `python3` is on PATH and the `mcp` package is installed in t
 > "Get the Guyana validation pack and tell me the sector hypotheses."
 > "What changed this cycle according to the desk?"
 
-**Note:** The MCP adapter runs locally against your checked-out repo. For a hosted public instance, the MCP server would need to be deployed alongside the API (future work). The HTTP API at `https://<project>.vercel.app` remains the universal interface.
+**Note:** The MCP adapter runs locally against your checked-out repo. For a hosted public instance, the MCP server would need to be deployed alongside the API (future work). The HTTP API at `https://signal-fabric.vercel.app` remains the universal interface.
 
 ---
 
