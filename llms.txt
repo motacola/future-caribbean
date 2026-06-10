@@ -1,0 +1,43 @@
+# Caribbean Opportunity Dispatch — Signal Fabric Agent Interface
+
+**What this is:** A deterministic, citation-backed opportunity engine for the Caribbean. Humans read the dashboard; agents query the API. The same engine answers both.
+
+**Base URL (local):** `http://localhost:8080`
+
+**Base URL (hosted):** `https://future-caribbean.fly.dev`
+
+---
+
+## Endpoints
+
+| Method | Path | Description |
+|--------|------|-------------|
+| POST | `/api/ask` | Ask a question against the current Dispatch Desk. Returns a deterministic, cited answer. |
+| GET | `/api/status` | Engine health: source status, cycle info, dispatch counts, feedback outcomes. |
+| GET | `/api/validation-packs` | Index of all validation packs for the current cycle. |
+| GET | `/api/validation-packs/{signal_id}` | Full validation pack (sector hypotheses, projects, procurement, intro targets, unresolved questions). |
+| GET | `/api/domains` | List all configured engine instances (live + blueprint). |
+| GET | `/api/reasoning` | Cross-signal synthesis from the reasoning agent. |
+| POST | `/api/feedback/apply` | Apply recipient feedback to reweight next-cycle priorities (write). |
+| GET | `/api/tools.json` | **Machine-readable manifest of all tools.** Ingest this to self-configure. |
+| GET | `/llms.txt` | This file. |
+| GET | `/agents.md` | Framework-specific connection instructions. |
+
+---
+
+## Quick Start (curl)
+
+```bash
+# Ask the desk a question
+curl -X POST http://localhost:8080/api/ask \
+  -H "Content-Type: application/json" \
+  -d '{"question": "explain the lead signal"}'
+
+# Get the tool manifest (for agent self-configuration)
+curl http://localhost:8080/api/tools.json
+
+# Get validation packs index
+curl http://localhost:8080/api/validation-packs
+```
+
+**See also:** `/agents.md` for framework-specific setup (Claude/MCP, Hermes, OpenClaw, plain HTTP).

@@ -5,6 +5,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+
+from map_data import build_map_data, canonical_country
 
 def j(v): return json.dumps(str(v), ensure_ascii=False)[1:-1]
 
@@ -69,6 +72,53 @@ def clean_signal_title(raw: str) -> str:
 desk = read_json(ROOT / "outbox" / "dispatch_desk.json") or {}
 clusters = desk.get("clusters", []) or []
 lead = clusters[0] if clusters else {}
+dispatch_data = read_json(ROOT / "outbox" / "opportunity_dispatches.json") or {}
+dispatches = dispatch_data.get("dispatches", []) or []
+map_data = build_map_data(ROOT)
+
+MAP_GEOMETRY = {
+    "Bahamas": ("M166 70l18-8 20 5-13 6 17 7-25 2z", 186, 70),
+    "Belize": ("M75 139l12-8 8 13-5 25-13-5z", 84, 149),
+    "Jamaica": ("M191 151l28-5 15 7-20 9-24-3z", 211, 154),
+    "Haiti": ("M255 137l27-7 18 9-8 15-30-4z", 276, 143),
+    "Dominican Republic": ("M291 137l38-3 20 11-15 12-40-4z", 319, 146),
+    "Puerto Rico": ("M372 150l34-3 9 8-36 7z", 393, 155),
+    "Antigua & Barbuda": ("M462 166l8-5 7 7-8 8z", 469, 169),
+    "St Lucia": ("M461 226l7-12 8 13-7 15z", 468, 228),
+    "Barbados": ("M503 225l8-10 7 14-8 12z", 510, 228),
+    "Grenada": ("M451 268l10-8 8 10-9 11z", 460, 270),
+    "Trinidad & Tobago": ("M477 291l22-8 14 13-20 15z", 493, 298),
+    "Guyana": ("M433 315l30-14 24 24-9 66-34 10-19-43z", 459, 350),
+    "Suriname": ("M486 324l38-10 24 21-10 57-40 6z", 515, 354),
+}
+MAP_COLORS = {"investment": "#3B82F6", "climate": "#10B981", "procurement": "#F59E0B", "none": "#6B7280"}
+
+map_svg_groups = ""
+for entry in map_data:
+    country = entry["country"]
+    path, cx, cy = MAP_GEOMETRY[country]
+    radius = 4 + (entry["confidence"] / 100 * 10)
+    color = MAP_COLORS[entry["kind"]]
+    map_svg_groups += f'''
+      <g class="map-country" tabindex="0" role="button" data-country="{j(country)}" data-summary="{j(entry["top_signal_summary"])}">
+        <path class="country-shape" d="{path}"><title>{j(country)}</title></path>
+        <circle class="signal-halo" cx="{cx}" cy="{cy}" r="{radius + 5:.1f}" fill="{color}"></circle>
+        <circle class="signal-pulse" cx="{cx}" cy="{cy}" r="{radius:.1f}" fill="{color}" data-confidence="{entry["confidence"]}" data-kind="{entry["kind"]}"><title>{j(country)} — {j(entry["top_signal_summary"])}</title></circle>
+      </g>'''
+
+map_dispatches: dict[str, list[dict]] = {country: [] for country in MAP_GEOMETRY}
+for dispatch in dispatches:
+    country = canonical_country(dispatch.get("country_cluster", ""))
+    if country in map_dispatches:
+        map_dispatches[country].append({
+            "dispatch_id": dispatch.get("dispatch_id"),
+            "title": dispatch.get("title", ""),
+            "recommended_action": dispatch.get("recommended_action", ""),
+            "confidence_score": dispatch.get("confidence_score", 0),
+            "signal_kind": dispatch.get("signal_kind", ""),
+            "persona_label": dispatch.get("persona_label", ""),
+        })
+map_dispatches_json = json.dumps(map_dispatches, ensure_ascii=False).replace("</", "<\\/")
 
 # ── Lead signal: rewrite all labels for user-facing view ───
 
@@ -83,6 +133,113 @@ l_risks = lead.get("risk_flags", []) or []
 # Extract percentage for context display
 lead_pct = re.search(r"([+\-]?\d+\.?\d*)%", lead.get("title",""))
 lead_pct_str = lead_pct.group(1) + "%" if lead_pct else ""
+
+# ── Lead decision workspace ───────────────────────────────
+lead_dispatches = [
+    d for d in dispatches
+    if d.get("country_cluster") == l_country and d.get("signal_kind") == lead.get("signal_kind")
+]
+lead_dispatch = next(
+    (d for d in lead_dispatches if d.get("persona_key") == "diaspora_investor"),
+    lead_dispatches[0] if lead_dispatches else {},
+)
+lead_action = lead_dispatch.get(
+    "recommended_action",
+    "Validate sector fit, local partners, and timing before advancing this opportunity.",
+)
+lead_window = lead_dispatch.get("action_window", "14 days")
+lead_owner = lead_dispatch.get("persona_label", "Diaspora Investor")
+lead_dispatch_id = lead_dispatch.get("dispatch_id", lead.get("cluster_id", "lead-dispatch"))
+lead_delivery = lead_dispatch.get("delivery_status", "queued").replace("_", " ").title()
+lead_feedback = lead_dispatch.get("feedback_status", "awaiting").replace("_", " ").title()
+lead_rationale = lead_dispatch.get(
+    "routing_rationale",
+    "This route matches a high-confidence signal to the person most likely to advance it.",
+)
+
+lead_routes_html = ""
+for route in lead_dispatches[:3]:
+    lead_routes_html += f'''
+    <div class="route-lane">
+      <div>
+        <strong>{j(route.get("persona_label", "Decision-maker"))}</strong>
+        <span>{j(route.get("channel", "Brief"))} · {j(route.get("action_window", "14 days"))}</span>
+      </div>
+      <p>{j(route.get("recommended_action", ""))}</p>
+      <span class="route-state">{j(route.get("feedback_status", "awaiting").replace("_", " ").title())}</span>
+    </div>'''
+
+# ── All validation packs (indexed by signal_id for client-side expansion) ──
+validation_packs_index = read_json(ROOT / "outbox" / "validation_packs" / "index.json") or {}
+all_packs = {}
+for entry in validation_packs_index.get("packs", []):
+    sid = entry.get("signal_id")
+    if not sid:
+        continue
+    safe = re.sub(r"[^A-Za-z0-9._-]", "-", sid)
+    pack = read_json(ROOT / "outbox" / "validation_packs" / f"{safe}.json")
+    if pack:
+        all_packs[sid] = pack
+
+# ── Lead validation pack (for backward compat with existing template) ──
+vp_sid = lead_dispatch.get("signal_id", "")
+vp_file = re.sub(r"[^A-Za-z0-9._-]", "-", vp_sid) if vp_sid else ""
+vpack = all_packs.get(vp_sid) or (read_json(ROOT / "outbox" / "validation_packs" / f"{vp_file}.json") if vp_file else None)
+
+validation_pack_html = ""
+if vpack:
+    verdict = vpack.get("advance_or_reject_recommendation", "hold")
+    verdict_label = {"advance": "Advance", "hold": "Hold", "reject": "Reject"}.get(verdict, "Hold")
+
+    hyp_lis = ""
+    for h in (vpack.get("sector_hypotheses") or [])[:5]:
+        hyp_lis += f'<li><strong>{j(h.get("sector",""))}</strong><em>{j(h.get("basis",""))}</em></li>'
+    if not hyp_lis:
+        hyp_lis = '<li>No sector hypotheses generated this cycle.</li>'
+
+    proj_lis = ""
+    for p in (vpack.get("supporting_projects") or [])[:4]:
+        url = p.get("url", "")
+        title = j(p.get("title", "")[:90])
+        proj_lis += f'<li><a href="{j(url)}" target="_blank" rel="noopener">{title}</a><em>{j(p.get("source",""))}</em></li>' if url else f'<li>{title}</li>'
+    if not proj_lis:
+        proj_lis = '<li>No matched projects this cycle.</li>'
+
+    proc_lis = ""
+    for p in (vpack.get("procurement_matches") or [])[:4]:
+        url = p.get("url", "")
+        title = j(p.get("title", "")[:90])
+        tag = f'<span class="vpack-tag">{j(p.get("match",""))}</span>'
+        proc_lis += f'<li><a href="{j(url)}" target="_blank" rel="noopener">{title}</a>{tag}</li>' if url else f'<li>{title}{tag}</li>'
+    if not proc_lis:
+        proc_lis = '<li>No live procurement notices matched.</li>'
+
+    intro_lis = ""
+    for i in (vpack.get("recommended_intro_targets") or [])[:4]:
+        intro_lis += f'<li><strong>{j(i.get("name",""))}</strong><em>{j(i.get("why",""))}</em></li>'
+    if not intro_lis:
+        intro_lis = '<li>No intro targets identified.</li>'
+
+    q_lis = "".join(f'<li>{j(q)}</li>' for q in (vpack.get("unresolved_questions") or [])[:4])
+
+    validation_pack_html = f'''
+      <div class="vpack">
+        <div class="vpack-head">
+          <div>
+            <span>Validation pack · auto-assembled this cycle</span>
+            <h3>What the system already checked for {j(vpack.get("country", l_country))}</h3>
+          </div>
+          <span class="vpack-verdict {j(verdict)}">{j(verdict_label)}</span>
+        </div>
+        <div class="vpack-reason">{j(vpack.get("recommendation_reason", ""))}</div>
+        <div class="vpack-grid">
+          <div class="vpack-col"><h4>Sector hypotheses</h4><ul>{hyp_lis}</ul></div>
+          <div class="vpack-col"><h4>Suggested first conversations</h4><ul>{intro_lis}</ul></div>
+          <div class="vpack-col"><h4>Supporting projects &amp; data</h4><ul>{proj_lis}</ul></div>
+          <div class="vpack-col"><h4>Procurement pipeline</h4><ul>{proc_lis}</ul></div>
+        </div>
+        <div class="vpack-questions"><h4>Still unresolved — what to validate this week</h4><ul>{q_lis}</ul></div>
+      </div>'''
 
 # ── Persona cards ──────────────────────────────────────────
 pcards = []
@@ -127,18 +284,87 @@ for label, key, desc in SRC:
     cls = "src-ok" if ok else "src-off"
     src_rows += f'<tr class="{cls}"><td><span class="dot">{dot}</span> {j(label)}</td><td>{j(desc)}</td><td>{"Live" if ok else "Offline"}</td></tr>'
 
-# ── Secondary signals (clean titles) ───────────────────────
+# ── Secondary signals (clean titles) with expandable validation ────
 sec_signals = ""
+advance_count = 0
+hold_count = 0
+reject_count = 0
 for c in clusters[1:5]:
     ct = clean_signal_title(c.get("title", ""))
     cc = c.get("country_cluster", "")
     risk_html = ""
     if c.get("risk_flags"):
         risk_html = f'<span class="risk-tag">⚠️ {j(c["risk_flags"][0][:50])}</span>'
+    
+    # Get validation verdict for this signal
+    sid = c.get("signal_id", "")
+    verdict = "hold"  # default
+    if sid and sid in all_packs:
+        verdict = all_packs[sid].get("advance_or_reject_recommendation", "hold")
+    
+    if verdict == "advance":
+        advance_count += 1
+    elif verdict == "hold":
+        hold_count += 1
+    else:
+        reject_count += 1
+    
+    # Build validation HTML if pack exists
+    validation_html = ""
+    if sid and sid in all_packs:
+        pack = all_packs[sid]
+        verdict_label = {"advance": "Advance", "hold": "Hold", "reject": "Reject"}.get(verdict, "Hold")
+        
+        # Sector hypotheses
+        hyp_lis = ""
+        for h in (pack.get("sector_hypotheses") or [])[:3]:
+            basis = f'<em>{j(h.get("basis", ""))}</em>' if h.get("basis") else ""
+            hyp_lis += f'<li><strong>{j(h.get("sector", ""))}</strong>{basis}</li>'
+        if not hyp_lis:
+            hyp_lis = '<li>No sector hypotheses this cycle.</li>'
+        
+        # Supporting projects
+        proj_lis = ""
+        for p in (pack.get("supporting_projects") or [])[:2]:
+            url = p.get("url", "")
+            title = j(p.get("title", "")[:80])
+            proj_lis += f'<li><a href="{j(url)}" target="_blank" rel="noopener">{title}</a><em>{j(p.get("source", ""))}</em></li>' if url else f'<li>{title}</li>'
+        if not proj_lis:
+            proj_lis = '<li>No matched projects.</li>'
+        
+        # Procurement matches
+        proc_lis = ""
+        for p in (pack.get("procurement_matches") or [])[:2]:
+            url = p.get("url", "")
+            title = j(p.get("title", "")[:80])
+            tag = f'<span class="vpack-tag">{j(p.get("match", ""))}</span>'
+            proc_lis += f'<li><a href="{j(url)}" target="_blank" rel="noopener">{title}</a>{tag}</li>' if url else f'<li>{title}{tag}</li>'
+        if not proc_lis:
+            proc_lis = '<li>No procurement matches.</li>'
+        
+        validation_html = f'''
+        <div class="sig-validation">
+          <div class="sig-validation-inner">
+            <div class="sig-validation-head">
+              <span>Validation pack · auto-assembled this cycle</span>
+              <h4>Evidence for {j(pack.get("country", cc))}</h4>
+              <span class="sig-validation-verdict {j(verdict)}">{j(verdict_label)}</span>
+            </div>
+            <div class="sig-validation-grid">
+              <div class="sig-validation-col"><h5>Sector hypotheses</h5><ul>{hyp_lis}</ul></div>
+              <div class="sig-validation-col"><h5>Projects &amp; data</h5><ul>{proj_lis}</ul></div>
+              <div class="sig-validation-col"><h5>Procurement pipeline</h5><ul>{proc_lis}</ul></div>
+              <div class="sig-validation-col"><h5>Still unresolved</h5><ul>{"".join(f"<li>{j(q)}</li>" for q in (pack.get("unresolved_questions") or [])[:2]) or "<li>All questions resolved.</li>"}</ul></div>
+            </div>
+          </div>
+        </div>'''
+    
     sec_signals += f'''
-    <div class="sig-row">
+    <div class="sig-row" data-verdict="{j(verdict)}" data-signal-id="{j(sid)}">
       <div class="sig-main"><strong>{j(ct)}</strong><div class="sig-loc">{j(cc)}</div></div>
       {risk_html}
+      <span class="sig-expand" aria-label="Expand validation" title="View validation pack">▼</span>
+      {validation_html}
     </div>'''
 
 # ── Feedback: product view hides "ignored" ─────────────────
@@ -191,6 +417,14 @@ n_fb = len(fb_hist)
 cycle_id = desk.get("cycle_id", "—")
 now_str = datetime.now(timezone.utc).strftime("%B %d, %Y at %H:%M UTC")
 
+# Verdict counts for filter bar
+verdict_counts_json = json.dumps({
+    "all": advance_count + hold_count + reject_count,
+    "advance": advance_count,
+    "hold": hold_count,
+    "reject": reject_count,
+}, ensure_ascii=False)
+
 # ── Analyst JS data ────────────────────────────────────────
 analyst_data = {
     "cycle": cycle_id,
@@ -232,6 +466,9 @@ for i, c in enumerate(clusters, 1):
       </div>
     </div>'''
 
+# ── Prepare all validation packs for client-side expansion ────
+all_packs_json = json.dumps(all_packs, ensure_ascii=False).replace("</", "<\\/")
+
 # ── Render dashboard (system audit page) ───────────────────
 template = Path(ROOT / "dashboard" / "template.html").read_text()
 
@@ -242,6 +479,12 @@ V = dict(
     l_title=j(l_title), l_country=j(l_country),
     l_evidence=j(l_evidence), l_decision=j(l_decision),
     l_grade=j(l_grade), lead_pct=j(lead_pct_str),
+    lead_action=j(lead_action), lead_window=j(lead_window),
+    lead_owner=j(lead_owner), lead_dispatch_id=j(lead_dispatch_id),
+    lead_delivery=j(lead_delivery), lead_feedback=j(lead_feedback),
+    lead_rationale=j(lead_rationale),
+    lead_routes_html=lead_routes_html,
+    validation_pack_html=validation_pack_html,
     l_risks_json=json.dumps(l_risks, ensure_ascii=False),
     pcard_html=pcard_html,
     sec_html=sec_signals if sec_signals else '<p class="muted">No additional signals</p>',
@@ -252,12 +495,17 @@ V = dict(
     all_clusters_html=all_clusters_html,
     whynow_html="".join(f"<li>{j(item)}</li>" for item in whynow_items) if whynow_items else "<li>No active seasonal triggers</li>",
     aj=aj,
+    map_svg_groups=map_svg_groups,
+    map_dispatches_json=map_dispatches_json,
+    all_packs_json=all_packs_json,
+    verdict_counts_json=verdict_counts_json,
 )
 
 for k, val in V.items():
     template = template.replace("{{" + k + "}}", str(val))
 
 OUT = ROOT / "dashboard.html"
+template = "\n".join(line.rstrip() for line in template.splitlines()) + "\n"
 OUT.write_text(template, encoding="utf-8")
 print(f"Written {OUT}", flush=True)
 

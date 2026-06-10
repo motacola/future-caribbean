@@ -1,0 +1,29 @@
+{
+  "name": "future-caribbean",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "flue:dev": "flue dev --target node",
+    "flue:build": "flue build --target node",
+    "flue:run-cycle": "flue run run-cycle --target node --payload '{}'",
+    "flue:ask": "flue run ask-dispatch --target node --payload",
+    "flue:brief": "flue run generate-brief --target node --payload",
+    "flue:artifacts": "flue run list-artifacts --target node --payload '{}'",
+    "flue:notebook": "flue run open-notebook-sync --target node --payload",
+    "flue:apply-feedback": "flue run apply-feedback --target node --payload '{}'",
+    "flue:prepare-delivery": "flue run prepare-delivery --target node --payload",
+    "flue:approve-delivery": "flue run approve-delivery --target node --payload",
+    "flue:send-approved": "flue run send-approved --target node --payload",
+    "flue:history": "flue run cycle-history --target node --payload"
+  },
+  "dependencies": {
+    "@flue/runtime": "^0.9.1",
+    "hono": "^4.10.7",
+    "valibot": "^1.2.0"
+  },
+  "devDependencies": {
+    "@flue/cli": "^0.9.1",
+    "@types/node": "^24.10.1",
+    "typescript": "^5.9.3"
+  }
+}

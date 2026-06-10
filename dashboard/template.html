@@ -18,7 +18,7 @@
   --r: 8px;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.6; font-size: 15px; -webkit-font-smoothing: antialiased; }
+body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.6; font-size: 15px; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 a { color: var(--teal); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
@@ -88,13 +88,79 @@ a:hover { text-decoration: underline; }
 .lead-disclaimer { font-size: 11px; color: var(--muted); margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--border); }
 .lead-disclaimer strong { color: var(--gold); }
 
+/* ── decision workspace ── */
+.decision-shell { display: grid; grid-template-columns: minmax(0,1.25fr) minmax(300px,.75fr); gap: 16px; align-items: start; }
+.decision-main, .decision-side { background: var(--card); border: 1px solid var(--border); border-radius: var(--r); }
+.decision-main { padding: 30px; box-shadow: 0 18px 50px rgba(24,37,31,.08); }
+.decision-kicker { display: flex; justify-content: space-between; gap: 12px; align-items: center; margin-bottom: 18px; }
+.decision-id { font-family: var(--mono); font-size: 10px; color: var(--muted); }
+.decision-status { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; color: var(--teal); text-transform: uppercase; letter-spacing: .7px; }
+.decision-status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--teal); }
+.decision-main h2 { font-family: var(--serif); font-size: clamp(30px,4vw,48px); line-height: 1; margin-bottom: 14px; }
+.decision-summary { color: var(--sub); font-size: 15px; max-width: 720px; margin-bottom: 22px; }
+.decision-call { background: var(--ink); color: var(--bg); padding: 20px; border-radius: 7px; margin-bottom: 20px; }
+.decision-call label, .decision-fact label { display: block; font-size: 9px; text-transform: uppercase; letter-spacing: 1.1px; font-weight: 700; color: var(--lime); margin-bottom: 6px; }
+.decision-call strong { display: block; font-family: var(--serif); font-size: 21px; line-height: 1.2; margin-bottom: 8px; }
+.decision-call p { color: rgba(244,235,221,.68); font-size: 12px; }
+.decision-facts { display: grid; grid-template-columns: repeat(3,1fr); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 22px; }
+.decision-fact { padding: 13px 12px 13px 0; }
+.decision-fact + .decision-fact { border-left: 1px solid var(--border); padding-left: 12px; }
+.decision-fact label { color: var(--muted); }
+.decision-fact strong { display: block; font-size: 13px; line-height: 1.35; }
+.check-title { font-family: var(--serif); font-size: 18px; margin-bottom: 3px; }
+.check-sub { color: var(--muted); font-size: 12px; margin-bottom: 12px; }
+.checklist { display: grid; gap: 7px; }
+.check-item { display: grid; grid-template-columns: 25px 1fr; gap: 10px; align-items: start; padding: 11px 0; border-top: 1px solid var(--border); cursor: pointer; }
+.check-box { width: 20px; height: 20px; border: 1px solid var(--border-dark); display: grid; place-items: center; font-size: 12px; color: transparent; transition: .15s ease; }
+.check-item.done .check-box { background: var(--teal); border-color: var(--teal); color: var(--card); }
+.check-item.done strong, .check-item.done span { opacity: .48; text-decoration: line-through; }
+.check-item strong { display: block; font-size: 13px; margin-bottom: 2px; }
+.check-item span { display: block; font-size: 11px; color: var(--muted); }
+.decision-side { overflow: hidden; }
+.side-head { padding: 18px; border-bottom: 1px solid var(--border); }
+.side-head span { display: block; font-size: 10px; color: var(--gold); text-transform: uppercase; letter-spacing: 1.1px; font-weight: 700; margin-bottom: 5px; }
+.side-head h3 { font-family: var(--serif); font-size: 20px; }
+.route-lane { padding: 16px 18px; border-bottom: 1px solid var(--border); position: relative; }
+.route-lane:last-child { border-bottom: none; }
+.route-lane div { padding-right: 70px; margin-bottom: 8px; }
+.route-lane strong { display: block; font-size: 13px; }
+.route-lane div span { display: block; font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .6px; }
+.route-lane p { font-size: 12px; color: var(--sub); line-height: 1.5; }
+.route-state { position: absolute; right: 18px; top: 17px; font-family: var(--mono); font-size: 9px; color: var(--teal); text-transform: uppercase; }
+.decision-note { padding: 16px 18px; background: var(--card-alt); font-size: 12px; color: var(--sub); }
+.decision-note strong { color: var(--text); }
+
+/* ── validation pack ── */
+.vpack { margin-top: 22px; border: 1px solid var(--border-dark); border-radius: 7px; overflow: hidden; }
+.vpack-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; padding: 14px 16px; background: var(--card-alt); }
+.vpack-head div span { display: block; font-size: 9px; text-transform: uppercase; letter-spacing: 1.1px; font-weight: 700; color: var(--gold); margin-bottom: 4px; }
+.vpack-head h3 { font-family: var(--serif); font-size: 18px; }
+.vpack-verdict { font-family: var(--mono); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; padding: 5px 10px; border-radius: 4px; }
+.vpack-verdict.advance { color: var(--teal); background: rgba(31,122,110,.1); }
+.vpack-verdict.hold { color: var(--gold); background: rgba(176,137,52,.12); }
+.vpack-verdict.reject { color: var(--coral); background: rgba(201,76,76,.1); }
+.vpack-reason { padding: 12px 16px; border-top: 1px solid var(--border); font-size: 12px; color: var(--sub); line-height: 1.55; }
+.vpack-grid { display: grid; grid-template-columns: 1fr 1fr; }
+.vpack-col { padding: 14px 16px; border-top: 1px solid var(--border); min-width: 0; }
+.vpack-col + .vpack-col { border-left: 1px solid var(--border); }
+.vpack-col h4 { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; color: var(--muted); margin-bottom: 9px; }
+.vpack-col ul { list-style: none; display: grid; gap: 7px; }
+.vpack-col li { font-size: 12px; line-height: 1.45; color: var(--sub); overflow-wrap: anywhere; }
+.vpack-col li strong { color: var(--text); font-weight: 600; }
+.vpack-col li em { display: block; font-style: normal; font-size: 10.5px; color: var(--muted); }
+.vpack-col a { color: var(--teal); text-decoration: none; border-bottom: 1px solid rgba(31,122,110,.3); }
+.vpack-tag { font-family: var(--mono); font-size: 9px; color: var(--muted); text-transform: uppercase; margin-left: 5px; }
+.vpack-questions { padding: 12px 16px; border-top: 1px solid var(--border); background: var(--card-alt); }
+.vpack-questions h4 { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; color: var(--muted); margin-bottom: 8px; }
+.vpack-questions li { font-size: 11.5px; color: var(--sub); line-height: 1.5; margin-left: 16px; margin-bottom: 4px; }
+
 /* ── signal list ── */
 .sig-list { background: var(--card); border: 1px solid var(--border); border-radius: var(--r); padding: 18px; }
 .sig-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--border); gap: 12px; }
 .sig-row:last-child { border-bottom: none; }
 .sig-main strong { display: block; font-size: 14px; font-weight: 600; margin-bottom: 2px; }
 .sig-loc { font-size: 12px; color: var(--muted); }
-.risk-tag { font-size: 11px; color: var(--coral); background: rgba(201,76,76,.07); padding: 3px 8px; border-radius: 4px; white-space: nowrap; }
+.risk-tag { font-size: 11px; color: var(--coral); background: rgba(201,76,76,.07); padding: 3px 8px; border-radius: 4px; max-width: 100%; overflow-wrap: anywhere; }
 
 /* ── audience cards ── */
 .aud-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; }
@@ -131,6 +197,11 @@ a:hover { text-decoration: underline; }
 .ask-row input { background: var(--card); border: 1px solid var(--border); color: var(--text); padding: 8px 12px; border-radius: 4px; font-size: 13px; font-family: var(--sans); }
 .ask-row button { background: var(--text); border: none; color: var(--bg); padding: 8px 16px; border-radius: 4px; font-size: 13px; cursor: pointer; font-weight: 600; font-family: var(--sans); }
 .abox { margin-top: 10px; padding: 14px; background: var(--card); border-left: 3px solid var(--gold); font-size: 13px; color: var(--sub); white-space: pre-wrap; max-height: 200px; overflow: auto; border-radius: 0 4px 4px 0; }
+
+/* ── Ask the Desk chips ── */
+.ask-desk-chips { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+.ask-chip { background: var(--card); border: 1px solid var(--border); color: var(--text); padding: 6px 14px; border-radius: 20px; font-size: 12px; cursor: pointer; font-family: var(--sans); white-space: nowrap; transition: all .15s; }
+.ask-chip:hover { border-color: var(--teal); color: var(--teal); }
 
 /* ── sources table ── */
 .src-tbl { width: 100%; border-collapse: collapse; font-size: 13px; }
@@ -223,12 +294,145 @@ footer { border-top: 1px solid var(--border); padding: 24px; text-align: center;
 .send-btn:hover:not(:disabled) { background: var(--teal); color: white; }
 .send-btn:disabled { opacity: .45; cursor: not-allowed; }
 
+/* ── Caribbean map hero ── */
+.map-hero { max-width: 1160px; margin: 0 auto; padding: 42px 24px 34px; }
+.map-hero-head { display: flex; justify-content: space-between; gap: 24px; align-items: end; margin-bottom: 18px; }
+.map-hero-head h1 { font-family: var(--serif); font-size: clamp(36px,6vw,68px); line-height: .96; max-width: 720px; }
+.map-hero-head p:last-child { color: var(--sub); max-width: 600px; margin-top: 10px; }
+.map-legend { display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-end; font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .6px; }
+.map-legend span { display: inline-flex; gap: 5px; align-items: center; }
+.map-legend i { width: 7px; height: 7px; border-radius: 50%; }
+.map-shell { position: relative; background: var(--ink); border-radius: 10px; overflow: hidden; box-shadow: 0 24px 80px rgba(24,37,31,.18); }
+.caribbean-map { display: block; width: 100%; height: auto; min-height: 300px; background: radial-gradient(circle at 60% 45%, #183b42, #101f20 65%); }
+.map-waterline { fill: none; stroke: rgba(244,235,221,.08); stroke-width: 1; stroke-dasharray: 5 8; }
+.country-shape { fill: #e8dfce; stroke: #fffaf0; stroke-width: 1.5; transition: fill .15s, stroke-width .15s; }
+.map-country { cursor: pointer; outline: none; }
+.map-country:hover .country-shape, .map-country:focus .country-shape, .map-country.selected .country-shape { fill: #fff8e9; stroke-width: 3; }
+.signal-pulse { stroke: #fff; stroke-width: 1.5; }
+.signal-halo { opacity: .22; transform-box: fill-box; transform-origin: center; animation: map-pulse 2.4s ease-out infinite; }
+.map-country:nth-of-type(3n) .signal-halo { animation-delay: .8s; }
+.map-country:nth-of-type(3n+1) .signal-halo { animation-delay: 1.6s; }
+@keyframes map-pulse { 0% { transform: scale(.7); opacity: .38; } 75%,100% { transform: scale(1.8); opacity: 0; } }
+.map-tooltip { position: absolute; left: 16px; bottom: 14px; max-width: calc(100% - 32px); padding: 8px 11px; border-radius: 5px; background: rgba(255,252,244,.95); color: var(--ink); font-size: 11px; opacity: 0; transform: translateY(4px); transition: .15s; pointer-events: none; }
+.map-tooltip.show { opacity: 1; transform: translateY(0); }
+.map-drill { margin-top: 12px; background: var(--card); border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; }
+.map-drill-head { padding: 14px 16px; display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--border); }
+.map-drill-head strong { font-family: var(--serif); font-size: 20px; }
+.map-drill-head span, .map-drill-empty { color: var(--muted); font-size: 12px; }
+.map-drill-empty { padding: 14px 16px; }
+.map-drill-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(230px,1fr)); }
+.map-drill-grid article { padding: 15px 16px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.map-drill-grid span { font-family: var(--mono); color: var(--teal); font-size: 9px; text-transform: uppercase; }
+.map-drill-grid h3 { font-family: var(--serif); font-size: 16px; line-height: 1.2; margin: 6px 0; }
+.map-drill-grid p { color: var(--sub); font-size: 11px; line-height: 1.5; }
+
+/* ── signal theater ── */
+.theater { max-width: 1160px; margin: 0 auto; padding: 0 24px 38px; }
+.theater-shell { background: #101c1a; color: var(--bg); border-radius: 10px; overflow: hidden; box-shadow: 0 18px 60px rgba(24,37,31,.14); }
+.theater-head { display: flex; justify-content: space-between; align-items: center; gap: 14px; padding: 14px 18px; border-bottom: 1px solid rgba(244,235,221,.12); }
+.theater-title { display: flex; align-items: center; gap: 10px; }
+.theater-title strong { font-family: var(--serif); font-size: 19px; }
+.stream-mode { display: inline-flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 9px; letter-spacing: 1px; color: var(--lime); }
+.stream-mode::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; animation: theater-live 1.4s ease-in-out infinite; }
+.stream-mode.replay { color: var(--gold); }
+.stream-mode.paused { color: var(--muted); }
+.stream-mode.paused::before { animation: none; }
+@keyframes theater-live { 50% { opacity: .28; transform: scale(.72); } }
+.theater-toggle { background: transparent; color: var(--bg); border: 1px solid rgba(244,235,221,.25); border-radius: 4px; padding: 5px 11px; font: 10px var(--mono); cursor: pointer; }
+.theater-feed { height: 244px; overflow: auto; padding: 10px 18px 14px; scrollbar-color: rgba(244,235,221,.2) transparent; }
+.theater-event { display: grid; grid-template-columns: 72px 1fr; gap: 10px; align-items: start; padding: 7px 0; border-bottom: 1px solid rgba(244,235,221,.07); animation: theater-in .25s ease-out; }
+@keyframes theater-in { from { opacity: 0; transform: translateY(5px); } }
+.theater-time { color: rgba(244,235,221,.35); font: 9px var(--mono); padding-top: 3px; }
+.theater-event p { color: rgba(244,235,221,.78); font-size: 11px; line-height: 1.45; }
+.theater-event strong { color: var(--bg); }
+.event-source span { display: inline-block; background: rgba(244,235,221,.1); border: 1px solid rgba(244,235,221,.12); border-radius: 20px; padding: 2px 8px; color: rgba(244,235,221,.72); font: 10px var(--mono); }
+.event-signal span { display: inline-block; border-radius: 3px; padding: 2px 7px; color: white; font: 9px var(--mono); text-transform: uppercase; margin-right: 6px; }
+.event-dispatch p::before { content: "→ "; color: var(--lime); font-weight: 700; }
+.event-dispatch code { color: rgba(244,235,221,.42); font: 9px var(--mono); }
+.event-cycle { grid-template-columns: 1fr; padding: 12px 0; border-top: 1px solid rgba(182,199,78,.35); border-bottom: none; }
+.event-cycle p { color: var(--lime); font: 10px var(--mono); text-transform: uppercase; letter-spacing: .7px; }
+
 @media(max-width:768px) {
-  .hero-grid, .out-grid, .lead-details, .coordination-inner { grid-template-columns: 1fr; }
+  .hero-grid, .out-grid, .lead-details, .coordination-inner, .decision-shell, .vpack-grid { grid-template-columns: 1fr; }
+  .vpack-col + .vpack-col { border-left: none; }
+  .mast-inner { align-items: flex-start; flex-wrap: wrap; gap: 8px 16px; }
+  .mast-name { max-width: 180px; }
+  .mast-links { gap: 12px; flex-wrap: wrap; justify-content: flex-end; }
+  .hero { padding-top: 42px; }
+  .hero-grid > *, .route-node > *, .decision-shell > * { min-width: 0; }
+  .hero-terminal, .decision-main, .decision-side { width: 100%; }
+  .hero-headline, .hero-sub, .route-node span, .route-node strong, .decision-main h2, .route-lane p { overflow-wrap: anywhere; }
+  .hero-actions { display: grid; grid-template-columns: 1fr; }
+  .hero-actions .btn { width: 100%; text-align: center; }
+  .sig-row { align-items: flex-start; flex-direction: column; }
+  .decision-facts { grid-template-columns: 1fr; }
+  .decision-fact + .decision-fact { border-left: none; border-top: 1px solid var(--border); padding-left: 0; }
   .coord-arrow { display: none; }
   .proof-line { grid-template-columns: repeat(2, 1fr); }
   .proof-cell { border-bottom: 1px solid var(--border); }
   .strip { gap: 12px; }
+  .map-hero { padding: 30px 0 24px; }
+  .map-hero-head { display: block; padding: 0 18px; }
+  .map-legend { justify-content: flex-start; margin-top: 14px; }
+  .map-shell, .map-drill { border-radius: 0; }
+  .caribbean-map { min-height: 250px; }
+  .theater { padding: 0 0 30px; }
+  .theater-shell { border-radius: 0; }
+  .theater-event { grid-template-columns: 58px 1fr; }
+  .verdict-filter { flex-wrap: wrap; }
+}
+
+/* ── cycle clock ── */
+.cycle-clock { display: flex; align-items: center; gap: 12px; font-family: var(--mono); font-size: 12px; color: var(--sub); margin-left: auto; }
+.cycle-clock .clock-item { display: flex; align-items: center; gap: 6px; }
+.cycle-clock .clock-label { color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
+.cycle-clock .clock-value { font-weight: 600; color: var(--text); }
+
+/* ── verdict filter ── */
+.verdict-filter { display: flex; align-items: center; gap: 8px; padding: 12px 0 8px; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+.verdict-filter label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); font-weight: 600; margin-right: 4px; }
+.verdict-btn { padding: 5px 12px; border-radius: 20px; font-size: 11px; font-weight: 600; cursor: pointer; border: 1px solid var(--border); background: var(--card); color: var(--text); font-family: var(--sans); transition: all 0.15s; white-space: nowrap; }
+.verdict-btn:hover { border-color: var(--teal); color: var(--teal); }
+.verdict-btn.active { background: var(--teal); border-color: var(--teal); color: var(--bg); }
+.verdict-btn.verified { border-color: var(--teal); color: var(--teal); }
+.verdict-btn.verified.active { background: var(--teal); color: var(--bg); }
+.verdict-btn.mixed { border-color: var(--gold); color: var(--gold); }
+.verdict-btn.mixed.active { background: var(--gold); color: var(--bg); }
+.verdict-btn.unverified { border-color: var(--coral); color: var(--coral); }
+.verdict-btn.unverified.active { background: var(--coral); color: var(--bg); }
+.verdict-count { font-family: var(--mono); font-size: 10px; color: var(--muted); margin-left: 4px; }
+
+/* ── expandable validation pack in signal list ── */
+.sig-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--border); gap: 12px; cursor: pointer; transition: background 0.15s; }
+.sig-row:hover { background: var(--card-alt); }
+.sig-row:last-child { border-bottom: none; }
+.sig-main { display: flex; align-items: center; gap: 10px; flex: 1; min-width: 0; }
+.sig-main strong { display: block; font-size: 14px; font-weight: 600; margin-bottom: 2px; }
+.sig-loc { font-size: 12px; color: var(--muted); }
+.sig-expand { display: flex; align-items: center; justify-content: center; width: 28px; height: 28px; border: 1px solid var(--border); border-radius: 50%; background: var(--card); color: var(--muted); font-size: 12px; cursor: pointer; transition: all 0.15s; flex-shrink: 0; }
+.sig-expand:hover { border-color: var(--teal); color: var(--teal); transform: rotate(180deg); }
+.sig-row.expanded .sig-expand { transform: rotate(180deg); border-color: var(--teal); color: var(--teal); }
+.sig-validation { display: none; padding: 16px 0 0; border-top: 1px solid var(--border); margin-top: 8px; animation: expand-in 0.2s ease-out; }
+.sig-row.expanded .sig-validation { display: block; }
+@keyframes expand-in { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+.sig-validation-inner { background: var(--card-alt); border: 1px solid var(--border); border-radius: var(--r); padding: 14px; }
+.sig-validation-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 10px; flex-wrap: wrap; }
+.sig-validation-head span { font-size: 9px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; color: var(--gold); }
+.sig-validation-head h4 { font-family: var(--serif); font-size: 16px; }
+.sig-validation-verdict { font-family: var(--mono); font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; padding: 4px 10px; border-radius: 4px; }
+.sig-validation-verdict.advance { color: var(--teal); background: rgba(31,122,110,0.1); }
+.sig-validation-verdict.hold { color: var(--gold); background: rgba(176,137,52,0.12); }
+.sig-validation-verdict.reject { color: var(--coral); background: rgba(201,76,76,0.1); }
+.sig-validation-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.sig-validation-col { min-width: 0; }
+.sig-validation-col h5 { font-size: 9px; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; color: var(--muted); margin-bottom: 6px; }
+.sig-validation-col ul { list-style: none; display: grid; gap: 5px; font-size: 11px; line-height: 1.4; color: var(--sub); }
+.sig-validation-col li { overflow-wrap: anywhere; }
+.sig-validation-col li strong { color: var(--text); font-weight: 600; }
+.sig-validation-col li em { display: block; font-style: normal; font-size: 9.5px; color: var(--muted); margin-top: 2px; }
+
+@media(max-width:768px) {
+  .sig-validation-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -245,30 +449,69 @@ footer { border-top: 1px solid var(--border); padding: 24px; text-align: center;
   </div>
 </div>
 
-<div class="hero">
-  <div class="hero-grid">
+<section class="map-hero" aria-labelledby="map-title">
+  <div class="map-hero-head">
     <div>
-      <p class="sec-label" style="color:var(--gold);margin-bottom:10px">Open Track coordination system</p>
-      <h1 class="hero-headline">A dispatch desk for moving Caribbean signals into action.</h1>
-      <p class="hero-sub">Public data already exists. This system watches it, finds decision signals, routes each one to the right persona, and lets feedback change the next cycle.</p>
-      <div class="hero-actions">
-        <a href="#briefing" class="btn btn-p">Open Today's Desk</a>
-        <a href="/build" class="btn btn-s">Build your own feed →</a>
-      </div>
+      <p class="sec-label">Live regional signal map · Cycle {{cycle_id}}</p>
+      <h1 id="map-title">Where Caribbean opportunity is moving now.</h1>
+      <p>Pulse size reflects confidence. Select a country to inspect its current dispatches.</p>
     </div>
-    <div class="hero-terminal" aria-label="Signal routing example">
-      <div class="terminal-top"><span>Cycle {{cycle_id}}</span><span>{{n_personas}} routes</span></div>
-      <div class="route-flow">
-        <div class="route-node"><div class="route-index">01</div><div><strong>{{l_country}} signal detected</strong><span>{{l_evidence}}. Confidence: {{l_grade}}.</span></div></div>
-        <div class="route-arrow"></div>
-        <div class="route-node"><div class="route-index">02</div><div><strong>Decision cluster formed</strong><span>{{l_decision}}.</span></div></div>
-        <div class="route-arrow"></div>
-        <div class="route-node"><div class="route-index">03</div><div><strong>Persona routes assigned</strong><span>Investor, founder/operator, ecosystem builder, policy/media, and procurement routes each get different actions.</span></div></div>
-        <div class="route-arrow"></div>
-        <div class="route-node"><div class="route-index">04</div><div><strong>Feedback updates priority</strong><span>Forwards, replies, opens, ignores, and decision changes affect the next dispatch cycle.</span></div></div>
-      </div>
+    <div class="map-legend" aria-label="Signal kinds">
+      <span><i style="background:#3B82F6"></i>Investment</span>
+      <span><i style="background:#10B981"></i>Climate</span>
+      <span><i style="background:#F59E0B"></i>Procurement</span>
+      <span><i style="background:#6B7280"></i>No signal</span>
     </div>
   </div>
+  <div class="map-shell">
+    <svg class="caribbean-map" viewBox="40 35 530 390" role="img" aria-labelledby="map-title map-desc">
+      <desc id="map-desc">Map of thirteen watched Caribbean countries with confidence pulses.</desc>
+      <path class="map-waterline" d="M62 102C175 32 344 42 530 158M115 198c148-40 300-7 414 101M344 405c61-8 123-6 184 7"/>
+      {{map_svg_groups}}
+    </svg>
+    <div class="map-tooltip" id="map-tooltip" role="status"></div>
+  </div>
+  <div class="map-drill" id="map-drill" aria-live="polite">
+    <p class="map-drill-empty">Select a country pulse to open its dispatches.</p>
+  </div>
+</section>
+
+<section class="theater" aria-labelledby="theater-title">
+  <div class="theater-shell">
+    <div class="theater-head">
+      <div class="theater-title">
+        <strong id="theater-title">Signal Theater</strong>
+        <span class="stream-mode" id="stream-mode">LIVE</span>
+      </div>
+      <div class="cycle-clock" id="cycle-clock">
+        <span class="clock-item"><span class="clock-label">Next cycle:</span><span class="clock-value" id="next-cycle">—</span></span>
+        <span class="clock-item"><span class="clock-label">Last:</span><span class="clock-value" id="last-cycle">—</span></span>
+      </div>
+      <button class="theater-toggle" id="theater-toggle" type="button">Pause</button>
+    </div>
+    <div class="theater-feed" id="theater-feed" aria-live="polite">
+      <div class="theater-event event-source"><span class="theater-time">waiting</span><p><span>Pipeline ↻</span></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Ask the Desk panel ─────────────────────────────────── -->
+<div class="sec" id="ask-desk" style="margin-top: -20px;">
+  <div class="sec-label">Ask the desk</div>
+  <div class="st">Deterministic answers from this cycle's data — no AI generation</div>
+  <div class="ss">Try: lead signal · what changed · investor routes · draft a Guyana note</div>
+  <div class="ask-desk-chips" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;">
+    <button class="ask-chip" data-q="explain the lead signal">Explain the lead signal</button>
+    <button class="ask-chip" data-q="what changed this cycle">What changed this cycle?</button>
+    <button class="ask-chip" data-q="routes for diaspora investor">Routes for diaspora investor</button>
+    <button class="ask-chip" data-q="draft a note for Guyana">Draft a note for Guyana</button>
+  </div>
+  <div class="ask-row" style="display:grid;grid-template-columns:1fr auto;gap:8px;margin-bottom:12px;">
+    <input id="dq" type="text" placeholder="Ask about a signal, country, audience…" onkeydown="if(event.key==='Enter')askDesk(this.value)" style="background:var(--card);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:4px;font-size:13px;font-family:var(--sans);">
+    <button onclick="askDesk(document.getElementById('dq').value)" class="btn btn-p" style="padding:8px 16px;">Ask</button>
+  </div>
+  <div id="da" class="abox" style="display:none;margin-top:10px;padding:14px;background:var(--card);border-left:3px solid var(--gold);font-size:13px;color:var(--sub);white-space:pre-wrap;max-height:200px;overflow:auto;border-radius:0 4px 4px 0;">Select a chip or ask a question.</div>
+  <div id="ask-offline" style="display:none;margin-top:10px;padding:12px;background:var(--card-alt);border:1px solid var(--border);border-radius:4px;font-size:13px;color:var(--muted);">Live desk offline — run <code>python3 server.py</code> to ask questions.</div>
 </div>
 
 <div class="proof-band">
@@ -281,46 +524,69 @@ footer { border-top: 1px solid var(--border); padding: 24px; text-align: center;
   </div>
 </div>
 
-<!-- Engine highlights: one engine, multiple live instances -->
-<div class="engine-band">
-  <div class="engine-band-inner">
-    <div class="eb-head">
-      <p class="sec-label" style="color:var(--gold)">One engine · multiple instances</p>
-      <h2 class="eb-title">The same pipeline runs more than one domain.</h2>
-      <p class="eb-sub">This briefing is the Caribbean economic instance. The identical watch → reason → distribute engine also runs a live climate-hazard instance, and deploys to any fragmented data market. <a href="/build">Explore the engine and build a feed →</a></p>
+<div class="sec" id="decision-workspace">
+  <div class="sec-label">Today's decision workspace</div>
+  <div class="decision-shell">
+    <div class="decision-main">
+      <div class="decision-kicker">
+        <span class="decision-id">{{lead_dispatch_id}} · Cycle {{cycle_id}}</span>
+        <span class="decision-status">{{lead_delivery}}</span>
+      </div>
+      <h2>{{l_title}}</h2>
+      <p class="decision-summary">Guyana is the strongest capital-momentum signal in this cycle. The useful decision is not whether the percentage looks exciting; it is whether there is enough sector fit, local access, and execution capacity to justify a first conversation.</p>
+      <div class="decision-call">
+        <label>Recommended move · {{lead_window}}</label>
+        <strong>{{lead_action}}</strong>
+        <p>{{lead_rationale}}</p>
+      </div>
+      <div class="decision-facts">
+        <div class="decision-fact"><label>Owner</label><strong>{{lead_owner}}</strong></div>
+        <div class="decision-fact"><label>Evidence</label><strong>{{l_grade}}</strong></div>
+        <div class="decision-fact"><label>Current response</label><strong>{{lead_feedback}}</strong></div>
+      </div>
+      <h3 class="check-title">Advance or reject this signal</h3>
+      <p class="check-sub">The validation pack below pre-assembles evidence for these checks — confirm each one before spending more time or capital.</p>
+      <div class="checklist" id="lead-checklist">
+        <div class="check-item" data-check="sector"><span class="check-box">✓</span><div><strong>Identify the sector behind the movement</strong><span>Separate broad FDI momentum from the specific industries creating the opening.</span></div></div>
+        <div class="check-item" data-check="operator"><span class="check-box">✓</span><div><strong>Find two credible local operators</strong><span>Validate demand, execution constraints, and who is already positioned to act.</span></div></div>
+        <div class="check-item" data-check="pipeline"><span class="check-box">✓</span><div><strong>Cross-check procurement and project pipelines</strong><span>Look for a concrete near-term route into the market, not just a macro signal.</span></div></div>
+      </div>
+      {{validation_pack_html}}
+      <div id="risk-area"></div>
+      <div class="lead-disclaimer"><strong>Screening signal, not investment advice.</strong> Advance only when local diligence supports the public-data signal.</div>
     </div>
-    <div class="eb-grid" id="eb-instances"></div>
-    <div class="eb-reason" id="eb-reason" style="display:none">
-      <span class="eb-reason-label">Reasoning agent · cross-signal synthesis</span>
-      <p class="eb-reason-text" id="eb-reason-text"></p>
-    </div>
+    <aside class="decision-side">
+      <div class="side-head">
+        <span>Same signal, routed by decision job</span>
+        <h3>Who moves it forward</h3>
+      </div>
+      {{lead_routes_html}}
+      <div class="decision-note"><strong>Decision to influence:</strong> {{l_decision}}</div>
+    </aside>
   </div>
 </div>
 
 <div class="coordination-strip">
   <div class="coordination-inner">
-    <div class="coord-step"><span>01</span><strong>Watch</strong><p>World Bank, IDB, NOAA, NDBC, CARICOM, and CDB sources feed the cycle.</p></div>
+    <div class="coord-step"><span>01</span><strong>Watch</strong><p>Public regional sources feed the cycle.</p></div>
     <div class="coord-arrow">-></div>
-    <div class="coord-step"><span>02</span><strong>Detect</strong><p>Weak public signals become country and cross-country decision clusters.</p></div>
+    <div class="coord-step"><span>02</span><strong>Screen</strong><p>Signals are graded and conflicts surfaced.</p></div>
     <div class="coord-arrow">-></div>
-    <div class="coord-step"><span>03</span><strong>Route</strong><p>Each signal gets a persona, channel, rationale, and next action.</p></div>
+    <div class="coord-step"><span>03</span><strong>Advance</strong><p>A named owner gets a practical next move.</p></div>
     <div class="coord-arrow">-></div>
-    <div class="coord-step"><span>04</span><strong>Learn</strong><p>Recipient feedback changes ranking, urgency, and future dispatch priority.</p></div>
+    <div class="coord-step"><span>04</span><strong>Learn</strong><p>Responses change future dispatch priority.</p></div>
   </div>
 </div>
 
 <div class="sec" id="briefing">
-  <div class="sec-label">Lead story</div>
+  <div class="sec-label">Regional context</div>
   <div class="lead-story">
     <div class="lead-story-head">
       <div class="lead-loc">{{l_country}} · {{cycle_id}}</div>
       <span class="lead-conf">{{l_grade}}</span>
     </div>
-    <h2>{{l_title}}</h2>
-    <div class="lead-why">
-      <strong>Why this matters:</strong> Guyana shows the strongest capital momentum in this cycle, with Belize and St. Vincent and the Grenadines also showing notable movement. This does not mean automatic investment readiness. It means these markets deserve closer screening now, especially where capital flows overlap with procurement, infrastructure, logistics, energy, tourism, or professional services.
-    </div>
-    <div id="risk-area"></div>
+    <h2>Why this signal reached the top of the desk</h2>
+    <div class="lead-why"><strong>Regional read:</strong> Guyana shows the strongest capital momentum in this cycle, with Belize and St. Vincent and the Grenadines also showing notable movement. The signal earns attention, but local execution evidence determines whether it advances.</div>
     <div class="lead-details">
       <div class="ld"><label>Source</label><span>World Bank indicators</span></div>
       <div class="ld"><label>Period</label><span>2023 to 2024</span></div>
@@ -333,7 +599,14 @@ footer { border-top: 1px solid var(--border); padding: 24px; text-align: center;
 
 <div class="sec">
   <div class="sec-label">Also on our radar</div>
-  <div class="sig-list">{{sec_html}}</div>
+  <div class="verdict-filter" id="verdict-filter" role="group" aria-label="Filter signals by validation verdict">
+    <label>Filter:</label>
+    <button class="verdict-btn active" data-verdict="all">All <span class="verdict-count" id="count-all">0</span></button>
+    <button class="verdict-btn verified" data-verdict="advance">✅ Verified <span class="verdict-count" id="count-advance">0</span></button>
+    <button class="verdict-btn mixed" data-verdict="hold">⚠️ Mixed <span class="verdict-count" id="count-hold">0</span></button>
+    <button class="verdict-btn unverified" data-verdict="reject">❌ Unverified <span class="verdict-count" id="count-reject">0</span></button>
+  </div>
+  <div class="sig-list" id="sig-list">{{sec_html}}</div>
 </div>
 
 <div class="sec">
@@ -493,10 +766,152 @@ Source: World Bank indicators, 2023 to 2024 comparison.</div>
 <script>
 // ── Static data injected at build time ─────────────────────
 const D = {{aj}};
+const MAP_DISPATCHES = {{map_dispatches_json}};
+const MAP_COLORS = { investment:'#3B82F6', climate:'#10B981', procurement:'#F59E0B', none:'#6B7280' };
+let theaterSource = null;
+let theaterPaused = false;
+let theaterReplayAttempted = false;
+let theaterBuffer = [];
+
+function theaterTime(ts) {
+  return new Date((ts || Date.now() / 1000) * 1000).toLocaleTimeString([], {hour:'2-digit', minute:'2-digit', second:'2-digit'});
+}
+
+function renderTheaterEvent(type, data) {
+  if (theaterPaused) {
+    theaterBuffer.push([type, data]);
+    return;
+  }
+  const feed = document.getElementById('theater-feed');
+  const row = document.createElement('div');
+  const eventClass = {source_check:'source', signal_found:'signal', dispatch_routed:'dispatch', cycle_complete:'cycle'}[type] || 'source';
+  row.className = 'theater-event event-' + eventClass;
+  const time = '<span class="theater-time">' + theaterTime(data.ts) + '</span>';
+  if (type === 'source_check') {
+    row.innerHTML = time + '<p><span>' + escapeMapText(data.source) + ' ↻</span> ' + escapeMapText(data.status) + '</p>';
+  } else if (type === 'signal_found') {
+    const color = MAP_COLORS[data.kind] || MAP_COLORS.none;
+    row.innerHTML = time + '<p><span style="background:' + color + '">' + escapeMapText(data.kind) + '</span><strong>' + escapeMapText(data.country) + '</strong> · ' + escapeMapText(data.confidence) + '% · ' + escapeMapText(data.summary) + '</p>';
+  } else if (type === 'dispatch_routed') {
+    row.innerHTML = time + '<p><strong>' + escapeMapText(data.recipient) + '</strong> · ' + escapeMapText(data.country) + ' <code>' + escapeMapText(data.dispatch_id) + '</code></p>';
+  } else {
+    row.innerHTML = '<p>Cycle ' + escapeMapText(data.cycle) + ' complete — ' + escapeMapText(data.signals) + ' signals</p>';
+  }
+  feed.appendChild(row);
+  while (feed.children.length > 50) feed.firstElementChild.remove();
+  feed.scrollTop = feed.scrollHeight;
+}
+
+function setTheaterMode(mode) {
+  const badge = document.getElementById('stream-mode');
+  badge.textContent = mode;
+  badge.className = 'stream-mode ' + mode.toLowerCase();
+}
+
+function connectTheater(replay) {
+  if (theaterSource) theaterSource.close();
+  setTheaterMode(replay ? 'REPLAY' : 'LIVE');
+  theaterSource = new EventSource('/api/pipeline/stream' + (replay ? '?replay=1' : ''));
+  ['source_check','signal_found','dispatch_routed','cycle_complete'].forEach(type => {
+    theaterSource.addEventListener(type, event => {
+      try { renderTheaterEvent(type, JSON.parse(event.data)); } catch (_) {}
+    });
+  });
+  theaterSource.onerror = () => {
+    theaterSource.close();
+    if (!replay && !theaterReplayAttempted) {
+      theaterReplayAttempted = true;
+      connectTheater(true);
+      return;
+    }
+    fetch('/api/pipeline/status').then(r => r.json()).then(status => {
+      renderTheaterEvent('cycle_complete', {cycle:status.cycle_count || status.cycle_id, signals:status.n_clusters || 0, ts:Date.now()/1000});
+      setTheaterMode('REPLAY');
+    }).catch(() => setTheaterMode('PAUSED'));
+  };
+}
+
+document.getElementById('theater-toggle').addEventListener('click', event => {
+  theaterPaused = !theaterPaused;
+  event.currentTarget.textContent = theaterPaused ? 'Resume' : 'Pause';
+  if (theaterPaused) {
+    setTheaterMode('PAUSED');
+  } else {
+    setTheaterMode(theaterReplayAttempted ? 'REPLAY' : 'LIVE');
+    const pending = theaterBuffer.splice(0);
+    pending.forEach(([type, data]) => renderTheaterEvent(type, data));
+  }
+});
+connectTheater(false);
+
+function escapeMapText(value) {
+  const node = document.createElement('span');
+  node.textContent = value == null ? '' : String(value);
+  return node.innerHTML;
+}
+
+function openCountryDrill(country) {
+  const items = MAP_DISPATCHES[country] || [];
+  const drill = document.getElementById('map-drill');
+  document.querySelectorAll('.map-country').forEach(x => x.classList.toggle('selected', x.dataset.country === country));
+  if (!items.length) {
+    drill.innerHTML = '<div class="map-drill-head"><strong>' + escapeMapText(country) + '</strong><span>No current signals</span></div><p class="map-drill-empty">This country remains on the watchlist and will pulse when a new signal is dispatched.</p>';
+    return;
+  }
+  drill.innerHTML = '<div class="map-drill-head"><strong>' + escapeMapText(country) + '</strong><span>' + items.length + ' dispatches</span></div><div class="map-drill-grid">' +
+    items.slice(0, 6).map(d => '<article><span>' + escapeMapText(d.dispatch_id) + ' · ' + escapeMapText(d.persona_label) + '</span><h3>' + escapeMapText(d.title) + '</h3><p>' + escapeMapText(d.recommended_action) + '</p></article>').join('') +
+    '</div>';
+}
+
+document.querySelectorAll('.map-country').forEach(country => {
+  country.addEventListener('click', () => openCountryDrill(country.dataset.country));
+  country.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      openCountryDrill(country.dataset.country);
+    }
+  });
+  country.addEventListener('pointerenter', () => {
+    const tip = document.getElementById('map-tooltip');
+    tip.textContent = country.dataset.country + ' — ' + country.dataset.summary;
+    tip.classList.add('show');
+  });
+  country.addEventListener('pointerleave', () => document.getElementById('map-tooltip').classList.remove('show'));
+});
+
+fetch('/api/map-data').then(r => r.ok ? r.json() : null).then(entries => {
+  if (!entries) return;
+  entries.forEach(entry => {
+    const group = [...document.querySelectorAll('.map-country')].find(x => x.dataset.country === entry.country);
+    if (!group) return;
+    group.dataset.summary = entry.top_signal_summary || 'No current signal';
+    const pulse = group.querySelector('.signal-pulse');
+    const halo = group.querySelector('.signal-halo');
+    const radius = 4 + (Math.max(0, Math.min(100, entry.confidence)) / 100 * 10);
+    const color = MAP_COLORS[entry.kind] || MAP_COLORS.none;
+    pulse.setAttribute('r', radius);
+    pulse.setAttribute('fill', color);
+    halo.setAttribute('r', radius + 5);
+    halo.setAttribute('fill', color);
+  });
+}).catch(() => {});
+
 const risks = {{l_risks_json}};
 if (risks.length) {
   document.getElementById('risk-area').innerHTML = '<div class="lead-risk">⚠️ ' + risks[0] + '</div>';
 }
+
+// ── Lightweight decision progress ──────────────────────────
+const checklistKey = 'future-caribbean:' + D.cycle + ':lead-checklist';
+const savedChecks = JSON.parse(localStorage.getItem(checklistKey) || '[]');
+document.querySelectorAll('#lead-checklist .check-item').forEach(item => {
+  if (savedChecks.includes(item.dataset.check)) item.classList.add('done');
+  item.addEventListener('click', () => {
+    item.classList.toggle('done');
+    const done = [...document.querySelectorAll('#lead-checklist .check-item.done')].map(x => x.dataset.check);
+    localStorage.setItem(checklistKey, JSON.stringify(done));
+  });
+});
 
 // ── System audit toggle ─────────────────────────────────────
 function toggleDeep() {
@@ -526,6 +941,38 @@ window.ask = function(q) {
   box.scrollTop = 0;
 };
 
+// ── Ask the Desk (live API) ──────────────────────────────────
+window.askDesk = async function(q) {
+  const box = document.getElementById('da');
+  const offline = document.getElementById('ask-offline');
+  if (!q) { box.textContent = 'Select a chip or ask a question.'; box.style.display = 'block'; return; }
+  box.style.display = 'block';
+  box.textContent = 'Asking the desk…';
+  offline.style.display = 'none';
+  try {
+    const res = await fetch('/api/ask', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ question: q })
+    });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+    const answer = data.answer || 'No answer returned.';
+    const citation = data.generated_at ? '\n\n— Answered at ' + new Date(data.generated_at).toLocaleString() : '';
+    box.textContent = answer + citation;
+  } catch (e) {
+    box.style.display = 'none';
+    offline.style.display = 'block';
+    console.warn('Ask desk failed:', e);
+  }
+  box.scrollTop = 0;
+};
+
+// Chip handlers
+document.querySelectorAll('.ask-chip').forEach(btn => {
+  btn.addEventListener('click', () => window.askDesk(btn.dataset.q));
+});
+
 // ── Engine highlights: live instances + reasoning ───────────
 fetch('/api/domains')
   .then(r => r.ok ? r.json() : null)
@@ -554,6 +1001,92 @@ fetch('/api/reasoning')
     box.style.display = 'block';
   })
   .catch(() => {});
+
+// ── Verdict counts injected at build time ────────────────────
+const VERDICT_COUNTS = {{verdict_counts_json}};
+
+// Update filter button counts
+function updateFilterCounts() {
+  document.getElementById('count-all').textContent = VERDICT_COUNTS.all;
+  document.getElementById('count-advance').textContent = VERDICT_COUNTS.advance;
+  document.getElementById('count-hold').textContent = VERDICT_COUNTS.hold;
+  document.getElementById('count-reject').textContent = VERDICT_COUNTS.reject;
+}
+updateFilterCounts();
+
+// ── Verdict filter (client-side) ─────────────────────────────
+let currentVerdictFilter = 'all';
+document.querySelectorAll('.verdict-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const verdict = btn.dataset.verdict;
+    currentVerdictFilter = verdict;
+    document.querySelectorAll('.verdict-btn').forEach(b => b.classList.toggle('active', b.dataset.verdict === verdict));
+    filterSignals();
+  });
+});
+
+function filterSignals() {
+  document.querySelectorAll('#sig-list .sig-row').forEach(row => {
+    const verdict = row.dataset.verdict;
+    if (currentVerdictFilter === 'all' || verdict === currentVerdictFilter) {
+      row.style.display = 'flex';
+    } else {
+      row.style.display = 'none';
+    }
+  });
+}
+
+// ── Validation pack expand/collapse ──────────────────────────
+document.querySelectorAll('#sig-list .sig-expand').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const row = btn.closest('.sig-row');
+    row.classList.toggle('expanded');
+  });
+});
+
+// Also allow clicking the row to toggle
+document.querySelectorAll('#sig-list .sig-row').forEach(row => {
+  row.addEventListener('click', (e) => {
+    if (!e.target.closest('.sig-expand') && !e.target.closest('a') && !e.target.closest('.sig-validation')) {
+      row.classList.toggle('expanded');
+    }
+  });
+});
+
+// ── Cycle clock polling (every 30s) ──────────────────────────
+function formatDuration(seconds) {
+  if (seconds == null) return '\u2014';
+  if (seconds <= 0) return 'Now';
+  const h = Math.floor(seconds / 3600);
+  const m = Math.floor((seconds % 3600) / 60);
+  const s = seconds % 60;
+  if (h > 0) return h + 'h ' + m + 'm ' + s + 's';
+  if (m > 0) return m + 'm ' + s + 's';
+  return s + 's';
+}
+
+function updateCycleClock() {
+  fetch('/api/status')
+    .then(r => r.ok ? r.json() : null)
+    .then(status => {
+      if (!status) return;
+      const nextEl = document.getElementById('next-cycle');
+      const lastEl = document.getElementById('last-cycle');
+      if (status.next_cycle_in != null) {
+        nextEl.textContent = formatDuration(status.next_cycle_in);
+      }
+      if (status.last_cycle_ago != null) {
+        lastEl.textContent = formatDuration(status.last_cycle_ago) + ' ago';
+      }
+    })
+    .catch(() => {});
+}
+
+// Initial load
+updateCycleClock();
+// Poll every 30 seconds
+setInterval(updateCycleClock, 30000);
 
 </script>
 

@@ -4,13 +4,14 @@
 import http.server
 import json
 import os
+import queue
 import subprocess
 import sys
 import threading
 import time
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import parse_qs, urlparse
 
 PORT = int(os.environ.get("PORT", 8080))
 APP_DIR = Path(__file__).parent
@@ -27,6 +28,98 @@ BLOCKED_PREFIXES = (
 _pipeline_lock = threading.Lock()
 _pipeline_running = False
 _last_pipeline_lines: list[str] = []
+_pipeline_subscribers: set[queue.Queue] = set()
+_pipeline_subscribers_lock = threading.Lock()
+
+
+# ── Tool Manifest ────────────────────────────────────────────
+
+TOOLS_MANIFEST = {
+    "engine": "Signal Fabric",
+    "product": "Caribbean Opportunity Dispatch",
+    "version": 1,
+    "tools": [
+        {
+            "name": "ask",
+            "description": "Ask a deterministic question against the current Dispatch Desk. Returns a cited answer from live data — no LLM generation.",
+            "method": "POST",
+            "path": "/api/ask",
+            "params": {
+                "type": "object",
+                "properties": {
+                    "question": {"type": "string", "description": "Natural-language question about today's signals, countries, personas, feedback changes, or drafting notes."}
+                },
+                "required": ["question"]
+            },
+            "example_request": {"question": "explain the lead signal"},
+            "example_response_keys": ["question", "answer", "engine", "generated_at"]
+        },
+        {
+            "name": "status",
+            "description": "Get the current engine status: source health, cycle info, dispatch counts, feedback outcomes, pipeline state.",
+            "method": "GET",
+            "path": "/api/status",
+            "params": {"type": "object", "properties": {}},
+            "example_request": {},
+            "example_response_keys": ["ok", "sources", "n_sources_ok", "n_dispatches", "n_clusters", "cycle_id", "generated_at", "cadence_hours", "cycle_count", "feedback", "pipeline_running"]
+        },
+        {
+            "name": "validation_packs.index",
+            "description": "List all validation packs for the current cycle with signal_id, country, recommendation, and confidence.",
+            "method": "GET",
+            "path": "/api/validation-packs",
+            "params": {"type": "object", "properties": {}},
+            "example_request": {},
+            "example_response_keys": ["generated_at", "packs"]
+        },
+        {
+            "name": "validation_packs.get",
+            "description": "Get a full validation pack by signal_id. Contains sector hypotheses, supporting projects, procurement matches, intro targets, and unresolved questions.",
+            "method": "GET",
+            "path": "/api/validation-packs/{signal_id}",
+            "params": {
+                "type": "object",
+                "properties": {
+                    "signal_id": {"type": "string", "description": "The signal identifier (e.g., enhanced-invest-guyana)"}
+                },
+                "required": ["signal_id"]
+            },
+            "example_request": {"signal_id": "enhanced-invest-guyana"},
+            "example_response_keys": ["signal_id", "country", "sector_hypotheses", "supporting_projects", "procurement_matches", "advance_or_reject_recommendation", "recommendation_reason", "last_validated_at"]
+        },
+        {
+            "name": "domains",
+            "description": "List all configured engine instances (domains) — live and blueprint — with source/signal/recipient counts.",
+            "method": "GET",
+            "path": "/api/domains",
+            "params": {"type": "object", "properties": {}},
+            "example_request": {},
+            "example_response_keys": ["ok", "count", "domains", "errors"]
+        },
+        {
+            "name": "reasoning",
+            "description": "Get the reasoning agent's cross-signal synthesis for the current cycle.",
+            "method": "GET",
+            "path": "/api/reasoning",
+            "params": {"type": "object", "properties": {}},
+            "example_request": {},
+            "example_response_keys": ["ok", "engine", "model", "thesis", "connections"]
+        },
+        {
+            "name": "feedback_apply",
+            "description": "Apply recipient feedback to adjust signal priorities for the next cycle. This is a write operation.",
+            "method": "POST",
+            "path": "/api/feedback/apply",
+            "params": {
+                "type": "object",
+                "properties": {}
+            },
+            "example_request": {},
+            "example_response_keys": ["ok", "workflow", "exit_code", "result"],
+            "writes": True
+        }
+    ]
+}
 
 
 class AppHandler(http.server.SimpleHTTPRequestHandler):
@@ -49,8 +142,14 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
         if path == "/api/status":
             self._api_status()
             return
+        if path == "/api/map-data":
+            self._api_map_data()
+            return
         if path == "/api/pipeline/stream":
-            self._api_pipeline_stream()
+            self._api_pipeline_stream(parse_qs(parsed.query).get("replay") == ["1"])
+            return
+        if path == "/api/pipeline/status":
+            self._api_status()
             return
         if path == "/api/whatsapp/link":
             self._api_whatsapp_link()
@@ -63,6 +162,28 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
             return
         if path == "/api/reasoning":
             self._api_reasoning()
+            return
+        if path == "/api/delivery/approvals":
+            self._api_delivery_approvals()
+            return
+        if path == "/api/history":
+            self._api_history()
+            return
+        if path == "/api/validation-packs":
+            self._api_validation_packs_index()
+            return
+        if path.startswith("/api/validation-packs/"):
+            signal_id = path[len("/api/validation-packs/"):]
+            self._api_validation_pack(signal_id)
+            return
+        if path == "/api/tools.json":
+            self._api_tools_manifest()
+            return
+        if path == "/llms.txt":
+            self._serve_static("llms.txt")
+            return
+        if path == "/agents.md":
+            self._serve_static("agents.md")
             return
 
         # Block internal paths
@@ -87,12 +208,25 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
         parsed = urlparse(self.path)
         path = parsed.path
 
+        if path == "/api/ask":
+            self._api_ask()
+            return
         if path == "/api/send/telegram":
             self._api_send("telegram")
         elif path == "/api/whatsapp/link":
             self._api_whatsapp_link()
         elif path == "/api/domains/create":
             self._api_create_domain()
+        elif path == "/api/feedback/apply":
+            self._api_feedback_apply()
+        elif path == "/api/delivery/prepare":
+            self._api_delivery_prepare()
+        elif path == "/api/delivery/approve":
+            self._api_delivery_approve()
+        elif path == "/api/delivery/send-approved":
+            self._api_delivery_send_approved()
+        elif path == "/api/history/archive":
+            self._api_history_archive()
         else:
             self.send_error(404)
 
@@ -110,6 +244,35 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
     def _cors(self) -> None:
         self.send_header("Access-Control-Allow-Origin", "*")
 
+    def _read_json_body(self) -> dict:
+        try:
+            length = int(self.headers.get("Content-Length", 0))
+            raw = self.rfile.read(length) if length else b"{}"
+            body = json.loads(raw.decode("utf-8") or "{}")
+            return body if isinstance(body, dict) else {}
+        except Exception:
+            return {}
+
+    def _run_node_workflow(self, workflow: str, payload: dict, timeout: int = 90) -> dict:
+        cmd = ["npm", "exec", "--", "flue", "run", workflow, "--target", "node", "--payload", json.dumps(payload)]
+        result = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout, cwd=str(APP_DIR))
+        output = (result.stdout or "").strip()
+        data: dict = {"ok": result.returncode == 0, "workflow": workflow, "exit_code": result.returncode}
+        if output:
+            try:
+                data["result"] = json.loads(output)
+            except json.JSONDecodeError:
+                start = output.rfind('\n{')
+                candidate = output[start + 1:] if start >= 0 else output
+                try:
+                    data["result"] = json.loads(candidate)
+                    data["stdout_tail"] = output[:start].strip()[-2000:] if start >= 0 else ""
+                except json.JSONDecodeError:
+                    data["stdout"] = output[-6000:]
+        if result.stderr:
+            data["stderr"] = result.stderr[-3000:]
+        return data
+
     def _sse(self, data: str) -> bool:
         """Write one SSE message. Returns False if the connection broke."""
         try:
@@ -119,6 +282,95 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
             return True
         except Exception:
             return False
+
+    def _sse_event(self, item: dict) -> bool:
+        """Write one typed SSE event."""
+        try:
+            event_type = item["event"]
+            payload = json.dumps(item["data"], ensure_ascii=False)
+            self.wfile.write(f"event: {event_type}\ndata: {payload}\n\n".encode("utf-8"))
+            self.wfile.flush()
+            return True
+        except Exception:
+            return False
+
+    # ── /api/ask ────────────────────────────────────────────────
+
+    def _api_ask(self) -> None:
+        """Handle POST /api/ask — deterministic Q&A against the desk."""
+        body = self._read_json_body()
+        question = (body.get("question") or "").strip()
+        if not question:
+            self._json({"error": "question is required"}, 400)
+            return
+        try:
+            sys.path.insert(0, str(APP_DIR))
+            from agent.query import load_desk, ask
+            desk = load_desk()
+            answer = ask(question, desk)
+            self._json({
+                "question": question,
+                "answer": answer,
+                "engine": "deterministic",
+                "generated_at": datetime.now(timezone.utc).isoformat(),
+            })
+        except FileNotFoundError as exc:
+            self._json({"error": str(exc)}, 503)
+        except Exception as exc:
+            self._json({"error": str(exc)}, 500)
+
+    # ── /api/validation-packs ──────────────────────────────────
+
+    def _api_validation_packs_index(self) -> None:
+        """Serve the validation packs index."""
+        index_path = APP_DIR / "outbox" / "validation_packs" / "index.json"
+        if not index_path.exists():
+            self._json({"error": "No validation packs index found — run the pipeline first."}, 404)
+            return
+        try:
+            self._json(json.loads(index_path.read_text(encoding="utf-8")))
+        except Exception as exc:
+            self._json({"error": str(exc)}, 500)
+
+    def _api_validation_pack(self, signal_id: str) -> None:
+        """Serve a single validation pack by signal_id."""
+        # Sanitize path segment — reject traversal attempts
+        if "/" in signal_id or ".." in signal_id:
+            self._json({"error": "Invalid signal_id"}, 400)
+            return
+        pack_path = APP_DIR / "outbox" / "validation_packs" / f"{signal_id}.json"
+        if not pack_path.exists():
+            self._json({"error": f"Validation pack '{signal_id}' not found"}, 404)
+            return
+        try:
+            self._json(json.loads(pack_path.read_text(encoding="utf-8")))
+        except Exception as exc:
+            self._json({"error": str(exc)}, 500)
+
+    # ── /api/tools.json ────────────────────────────────────────
+
+    def _api_tools_manifest(self) -> None:
+        """Serve the machine-readable tool manifest."""
+        self._json(TOOLS_MANIFEST)
+
+    # ── Static file serving for discovery ──────────────────────
+
+    def _serve_static(self, filename: str) -> None:
+        """Serve a static file from the repo root (for llms.txt, agents.md)."""
+        file_path = APP_DIR / filename
+        if not file_path.exists():
+            self.send_error(404)
+            return
+        try:
+            content = file_path.read_text(encoding="utf-8")
+            self.send_response(200)
+            self.send_header("Content-Type", "text/plain; charset=utf-8" if filename.endswith(".txt") else "text/markdown; charset=utf-8")
+            self.send_header("Content-Length", str(len(content.encode("utf-8"))))
+            self._cors()
+            self.end_headers()
+            self.wfile.write(content.encode("utf-8"))
+        except Exception:
+            self.send_error(500)
 
     # ── /api/domains ───────────────────────────────────────────
 
@@ -211,6 +463,80 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
         except Exception as exc:
             self._json({"ok": False, "error": str(exc)}, 500)
 
+    # ── /api/delivery + /api/history + /api/feedback ─────────────
+
+    def _api_feedback_apply(self) -> None:
+        try:
+            self._json(self._run_node_workflow("apply-feedback", {}, timeout=60))
+        except subprocess.TimeoutExpired:
+            self._json({"ok": False, "error": "Timeout applying feedback"}, 504)
+        except Exception as exc:
+            self._json({"ok": False, "error": str(exc)}, 500)
+
+    def _api_delivery_approvals(self) -> None:
+        p = APP_DIR / "data" / "approvals" / "delivery_approvals.json"
+        if not p.exists():
+            self._json({"ok": True, "approvals": []})
+            return
+        try:
+            self._json({"ok": True, **json.loads(p.read_text())})
+        except Exception as exc:
+            self._json({"ok": False, "error": str(exc)}, 500)
+
+    def _api_delivery_prepare(self) -> None:
+        try:
+            self._json(self._run_node_workflow("prepare-delivery", self._read_json_body(), timeout=60))
+        except subprocess.TimeoutExpired:
+            self._json({"ok": False, "error": "Timeout preparing delivery"}, 504)
+        except Exception as exc:
+            self._json({"ok": False, "error": str(exc)}, 500)
+
+    def _api_delivery_approve(self) -> None:
+        body = self._read_json_body()
+        if not body.get("approvalId"):
+            self._json({"ok": False, "error": "approvalId required"}, 400)
+            return
+        try:
+            self._json(self._run_node_workflow("approve-delivery", body, timeout=60))
+        except subprocess.TimeoutExpired:
+            self._json({"ok": False, "error": "Timeout approving delivery"}, 504)
+        except Exception as exc:
+            self._json({"ok": False, "error": str(exc)}, 500)
+
+    def _api_delivery_send_approved(self) -> None:
+        body = self._read_json_body()
+        if not body.get("approvalId"):
+            self._json({"ok": False, "error": "approvalId required"}, 400)
+            return
+        # Product safety: dry-run unless explicitly set false in the JSON body.
+        body["dryRun"] = body.get("dryRun", True)
+        try:
+            self._json(self._run_node_workflow("send-approved", body, timeout=90))
+        except subprocess.TimeoutExpired:
+            self._json({"ok": False, "error": "Timeout sending approved delivery"}, 504)
+        except Exception as exc:
+            self._json({"ok": False, "error": str(exc)}, 500)
+
+    def _api_history(self) -> None:
+        p = APP_DIR / "data" / "history" / "index.json"
+        if not p.exists():
+            self._json({"ok": True, "cycles": []})
+            return
+        try:
+            self._json({"ok": True, **json.loads(p.read_text())})
+        except Exception as exc:
+            self._json({"ok": False, "error": str(exc)}, 500)
+
+    def _api_history_archive(self) -> None:
+        try:
+            payload = self._read_json_body()
+            payload.setdefault("action", "archive")
+            self._json(self._run_node_workflow("cycle-history", payload, timeout=60))
+        except subprocess.TimeoutExpired:
+            self._json({"ok": False, "error": "Timeout archiving cycle"}, 504)
+        except Exception as exc:
+            self._json({"ok": False, "error": str(exc)}, 500)
+
     # ── /api/reasoning ─────────────────────────────────────────
 
     def _api_reasoning(self) -> None:
@@ -224,7 +550,13 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
         except Exception as exc:
             self._json({"ok": False, "error": str(exc)}, 500)
 
-    # ── /api/status ────────────────────────────────────────────
+    # ── /api/map-data + /api/status ────────────────────────────
+
+    def _api_map_data(self) -> None:
+        """Serve one current signal summary for every watched country."""
+        from map_data import build_map_data
+
+        self._json(build_map_data(APP_DIR))
 
     def _api_status(self) -> None:
         global _pipeline_running
@@ -272,10 +604,32 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
 
         # Autonomous cycle count (incremented by the pipeline loop)
         cycle_count = 0
+        last_cycle_time = None
         cc_p = APP_DIR / "data" / ".cycle_count.json"
         if cc_p.exists():
             try:
-                cycle_count = int(json.loads(cc_p.read_text()).get("count", 0))
+                cc_data = json.loads(cc_p.read_text())
+                cycle_count = int(cc_data.get("count", 0))
+                last_cycle_time = cc_data.get("last_run")
+            except Exception:
+                pass
+        
+        # Cycle timing for countdown
+        cadence_seconds = 4 * 3600  # 4 hours
+        next_cycle_in = None
+        last_cycle_ago = None
+        if last_cycle_time:
+            try:
+                from dateutil import parser as dateparser
+                last_dt = dateparser.isoparse(last_cycle_time)
+                now = datetime.now(timezone.utc)
+                elapsed = (now - last_dt).total_seconds()
+                last_cycle_ago = int(elapsed)
+                remaining = cadence_seconds - elapsed
+                if remaining > 0:
+                    next_cycle_in = int(remaining)
+                else:
+                    next_cycle_in = 0
             except Exception:
                 pass
 
@@ -294,6 +648,8 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
             "pipeline_running": _pipeline_running,
             "last_lines": _last_pipeline_lines[-8:],
             "server_time": datetime.now(timezone.utc).isoformat(),
+            "next_cycle_in": next_cycle_in,
+            "last_cycle_ago": last_cycle_ago,
         })
 
     # ── /api/send/telegram ─────────────────────────────────────
@@ -619,9 +975,7 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
 
     # ── /api/pipeline/stream (SSE) ─────────────────────────────
 
-    def _api_pipeline_stream(self) -> None:
-        global _pipeline_running, _last_pipeline_lines
-
+    def _api_pipeline_stream(self, replay: bool = False) -> None:
         self.send_response(200)
         self.send_header("Content-Type", "text/event-stream")
         self.send_header("Cache-Control", "no-cache")
@@ -629,36 +983,39 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
         self._cors()
         self.end_headers()
 
-        if not _pipeline_lock.acquire(blocking=False):
-            self._sse("⏳ Pipeline already running — please wait…")
+        if replay:
+            from pipeline_events import latest_history, synthetic_events
+
+            events = latest_history(APP_DIR) or synthetic_events(APP_DIR)
+            previous_ts: float | None = None
+            for item in events:
+                ts = float(item.get("data", {}).get("ts", time.time()))
+                if previous_ts is not None:
+                    time.sleep(min(max((ts - previous_ts) / 10, 0), 1))
+                if not self._sse_event(item):
+                    break
+                previous_ts = ts
             return
 
-        _pipeline_running = True
-        _last_pipeline_lines = []
+        subscriber: queue.Queue = queue.Queue()
+        with _pipeline_subscribers_lock:
+            _pipeline_subscribers.add(subscriber)
+        _start_pipeline_cycle_if_idle()
         try:
-            self._sse("🚀 Starting Caribbean Signal OS pipeline…")
-            proc = subprocess.Popen(
-                ["bash", "run_pipeline.sh"],
-                stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
-                text=True, bufsize=1, cwd=str(APP_DIR),
-            )
-            for raw in proc.stdout:  # type: ignore[union-attr]
-                line = raw.rstrip()
-                if not line:
-                    continue
-                _last_pipeline_lines.append(line)
-                if len(_last_pipeline_lines) > 80:
-                    _last_pipeline_lines = _last_pipeline_lines[-80:]
-                if not self._sse(line):
-                    proc.terminate()
-                    break
-            proc.wait()
-            self._sse(f"✅ Pipeline complete — exit {proc.returncode}")
-        except Exception as exc:
-            self._sse(f"❌ Error: {exc}")
+            while True:
+                try:
+                    item = subscriber.get(timeout=15)
+                    if not self._sse_event(item):
+                        break
+                except queue.Empty:
+                    try:
+                        self.wfile.write(b": keep-alive\n\n")
+                        self.wfile.flush()
+                    except Exception:
+                        break
         finally:
-            _pipeline_running = False
-            _pipeline_lock.release()
+            with _pipeline_subscribers_lock:
+                _pipeline_subscribers.discard(subscriber)
 
     def list_directory(self, path):
         self.send_error(404)
@@ -666,6 +1023,74 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
 
     def log_message(self, format, *args):
         pass
+
+
+def _run_pipeline_cycle(emit=None) -> list[dict]:
+    """Run one real pipeline cycle, emit typed events, and persist its replay."""
+    global _last_pipeline_lines
+    from pipeline_events import append_history, cycle_number, outbox_events, source_event_from_line
+
+    _last_pipeline_lines = []
+    events: list[dict] = []
+    proc = subprocess.Popen(
+        ["bash", "run_pipeline.sh"],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+        text=True,
+        bufsize=1,
+        cwd=str(APP_DIR),
+    )
+    for raw in proc.stdout:  # type: ignore[union-attr]
+        line = raw.rstrip()
+        if not line:
+            continue
+        _last_pipeline_lines.append(line)
+        if len(_last_pipeline_lines) > 80:
+            _last_pipeline_lines = _last_pipeline_lines[-80:]
+        item = source_event_from_line(line)
+        if item:
+            events.append(item)
+            if emit:
+                emit(item)
+    proc.wait()
+
+    for item in outbox_events(APP_DIR, cycle_number(APP_DIR)):
+        events.append(item)
+        if emit:
+            emit(item)
+    append_history(APP_DIR, events)
+    _bump_cycle_count()
+    return events
+
+
+def _broadcast_event(item: dict) -> None:
+    """Publish a typed pipeline event to every connected live stream."""
+    with _pipeline_subscribers_lock:
+        subscribers = list(_pipeline_subscribers)
+    for subscriber in subscribers:
+        subscriber.put(item)
+
+
+def _pipeline_cycle_worker() -> None:
+    global _pipeline_running
+    try:
+        _run_pipeline_cycle(_broadcast_event)
+    except Exception as exc:
+        from pipeline_events import event
+        _broadcast_event(event("cycle_complete", cycle=0, signals=0, error=str(exc)))
+    finally:
+        _pipeline_running = False
+        _pipeline_lock.release()
+
+
+def _start_pipeline_cycle_if_idle() -> bool:
+    """Start a broadcast cycle without racing another live or scheduled cycle."""
+    global _pipeline_running
+    if not _pipeline_lock.acquire(blocking=False):
+        return False
+    _pipeline_running = True
+    threading.Thread(target=_pipeline_cycle_worker, daemon=True).start()
+    return True
 
 
 def _bump_cycle_count() -> None:
@@ -690,17 +1115,21 @@ def _bump_cycle_count() -> None:
 def pipeline_loop():
     """Run the pipeline on startup and every 4 hours."""
     time.sleep(3)
-    subprocess.run(["bash", "run_pipeline.sh"], capture_output=True, cwd=str(APP_DIR))
-    _bump_cycle_count()
     while True:
+        global _pipeline_running
+        with _pipeline_lock:
+            _pipeline_running = True
+            try:
+                _run_pipeline_cycle(_broadcast_event)
+            finally:
+                _pipeline_running = False
         time.sleep(14400)
-        subprocess.run(["bash", "run_pipeline.sh"], capture_output=True, cwd=str(APP_DIR))
-        _bump_cycle_count()
 
 
 if __name__ == "__main__":
-    threading.Thread(target=pipeline_loop, daemon=True).start()
+    if os.environ.get("DISABLE_PIPELINE_LOOP") != "1":
+        threading.Thread(target=pipeline_loop, daemon=True).start()
     os.chdir(str(APP_DIR))
-    server = http.server.HTTPServer(("0.0.0.0", PORT), AppHandler)
+    server = http.server.ThreadingHTTPServer(("0.0.0.0", PORT), AppHandler)
     print(f"Listening on :{PORT}")
     server.serve_forever()

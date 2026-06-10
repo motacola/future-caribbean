@@ -19,12 +19,16 @@ Commands:
     run                            Run one full pipeline cycle
     send [--channel telegram] [--live]
                                    Send the current digest (dry-run by default)
+    ask <question>                 Ask the desk a deterministic question (no server needed)
 
 Examples:
     python3 cli/signalctl.py status
     python3 cli/signalctl.py signals --domain climate
     python3 cli/signalctl.py preview --persona investor --channel telegram
     python3 cli/signalctl.py preview --domain climate --persona policy
+    python3 cli/signalctl.py ask "explain the lead signal"
+    python3 cli/signalctl.py ask "what changed this cycle"
+    python3 cli/signalctl.py ask "draft a note for Guyana"
 """
 
 from __future__ import annotations
@@ -240,8 +244,32 @@ def cmd_send(args) -> int:
         print(red("telegram_sender.py not found"))
         return 1
     flags = [] if args.live else ["--dry-run"]
-    print(bold(f"Sending via {args.channel} ({'LIVE' if args.live else 'dry-run'})…\n"))
+    print(bold(f"Sending via {args.channel} ({'LIVE' if args.live else 'dry-run'})...\n"))
     return subprocess.run(["python3", str(script), *flags], cwd=str(ROOT)).returncode
+
+
+def cmd_ask(args) -> int:
+    question = " ".join(args.question)
+    desk = _read("outbox/dispatch_desk.json")
+    if not desk:
+        print(red("No dispatch desk found. Run: signalctl run"))
+        return 1
+    try:
+        sys.path.insert(0, str(ROOT))
+        from agent.query import ask
+        answer = ask(question, desk)
+        print()
+        print(bold(f"Q: {question}"))
+        print()
+        print(answer)
+        print()
+        return 0
+    except FileNotFoundError as exc:
+        print(red(str(exc)))
+        return 1
+    except Exception as exc:
+        print(red(f"Error: {exc}"))
+        return 1
 
 
 # ── arg parsing ─────────────────────────────────────────────────
@@ -274,6 +302,10 @@ def build_parser() -> argparse.ArgumentParser:
     sd.add_argument("--channel", default="telegram", choices=["telegram"])
     sd.add_argument("--live", action="store_true", help="send for real (default: dry-run)")
     sd.set_defaults(fn=cmd_send)
+
+    aq = sub.add_parser("ask", help="ask the desk a deterministic question (no server needed)")
+    aq.add_argument("question", nargs="+", help="question to ask (e.g., 'explain the lead signal')")
+    aq.set_defaults(fn=cmd_ask)
 
     return p
 

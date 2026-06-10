@@ -14,6 +14,10 @@ Sources:
 Outputs:
   data/tier2/latest.json  — structured snapshot
   signals/tier2/latest.md — human-readable brief
+
+Scrapling is used for adaptive HTML parsing of WordPress content — when
+CARICOM's theme or plugin changes the HTML structure, Scrapling's selector
+auto-heals instead of breaking like regex-based extraction would.
 """
 
 from __future__ import annotations
@@ -32,6 +36,13 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+# ── Scrapling import (optional — falls back to regex if not installed) ──
+SCRAPLING_AVAILABLE = False
+try:
+    from scrapling import Selector
+    SCRAPLING_AVAILABLE = True
+except ImportError:
+    pass
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_CONFIG = ROOT / "config" / "tier2_sources.json"
@@ -91,15 +102,28 @@ def fetch_text(url: str, timeout: int) -> str:
 
 # ── CARICOM WordPress API ────────────────────────────────
 
-def extract_data_files(html: str) -> list[str]:
-    """Extract downloadable XLSX/CSV/PDF URLs from rendered WP content."""
+# File extensions we care about when extracting data file links
+DATA_EXTENSIONS = ("xlsx", "xls", "csv", "pdf")
+
+
+def extract_data_files_scrapling(html: str) -> list[str]:
+    """Extract downloadable data file URLs from WordPress content HTML.
+
+    Uses Scrapling's CSS selector engine for robust link extraction.
+    Falls back to regex if Scrapling is not available.
+    """
     urls: list[str] = []
-    for ext in ("xlsx", "xls", "csv", "pdf"):
-        found = re.findall(
-            rf'href=[\"\']([^\"\']*\.{ext})[\"\']', html, re.IGNORECASE
-        )
-        urls.extend(found)
-    # Deduplicate
+    page = Selector(html)
+
+    # Find all <a> tags whose href ends with a data file extension
+    for ext in DATA_EXTENSIONS:
+        links = page.css(f'a[href$=".{ext}"], a[href$=".{ext.upper()}"]')
+        for link in links:
+            href = link.attrib.get("href", "")
+            if href:
+                urls.append(href)
+
+    # Deduplicate preserving order
     seen = set()
     unique = []
     for u in urls:
@@ -107,6 +131,40 @@ def extract_data_files(html: str) -> list[str]:
             seen.add(u)
             unique.append(u)
     return unique
+
+
+def extract_data_files_regex(html: str) -> list[str]:
+    """Fallback: extract data file URLs using regex (original method)."""
+    urls: list[str] = []
+    for ext in DATA_EXTENSIONS:
+        found = re.findall(
+            rf'href=[\"\']([^\"\']*\.{ext})[\"\']', html, re.IGNORECASE
+        )
+        urls.extend(found)
+    seen = set()
+    unique = []
+    for u in urls:
+        if u not in seen:
+            seen.add(u)
+            unique.append(u)
+    return unique
+
+
+def extract_data_files(html: str) -> list[str]:
+    """Extract data file URLs — uses Scrapling if available, else regex."""
+    if SCRAPLING_AVAILABLE:
+        try:
+            return extract_data_files_scrapling(html)
+        except Exception:
+            pass
+    return extract_data_files_regex(html)
+
+
+def strip_html_to_text(html: str, max_len: int = 200) -> str:
+    """Strip HTML tags and truncate to max_len characters."""
+    text = re.sub(r"<[^>]+>", "", html)
+    text = re.sub(r"\s+", " ", text).strip()
+    return text[:max_len]
 
 
 def poll_caricom(
@@ -133,7 +191,7 @@ def poll_caricom(
                 data_files = extract_data_files(content)
 
                 # Extract description from content (strip HTML)
-                desc = re.sub(r"<[^>]+>", "", content)[:200].strip()
+                desc = strip_html_to_text(content)
 
                 item = DataItem(
                     id=item_id,
