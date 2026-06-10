@@ -379,8 +379,33 @@ footer { border-top: 1px solid var(--border); padding: 24px; text-align: center;
 
 /* ── motion & polish ── */
 html { scroll-behavior: smooth; }
-.reveal { opacity: 0; transform: translateY(18px); transition: opacity .55s ease, transform .55s ease; }
+
+/* scroll progress */
+#scroll-progress { position: fixed; top: 0; left: 0; height: 2px; width: 0; z-index: 1300; background: linear-gradient(90deg, var(--gold), var(--teal)); transition: width .1s linear; }
+
+/* sticky glass masthead */
+.masthead { position: sticky; top: 0; z-index: 1200; transition: background .3s ease, box-shadow .3s ease; }
+.masthead.scrolled { background: rgba(24,37,31,.86); backdrop-filter: blur(14px) saturate(1.2); -webkit-backdrop-filter: blur(14px) saturate(1.2); box-shadow: 0 12px 34px rgba(24,37,31,.28); }
+
+/* opening frame load-in choreography (the map IS the hero) */
+.hw { display: inline-block; opacity: 0; transform: translateY(.55em); animation: word-rise .75s cubic-bezier(.22,1,.36,1) forwards; animation-delay: var(--wd, 0s); }
+@keyframes word-rise { to { opacity: 1; transform: translateY(0); } }
+.map-hero-head .sec-label { opacity: 0; animation: word-rise .6s cubic-bezier(.22,1,.36,1) .05s forwards; }
+.map-hero-head > div > p:not(.sec-label), .map-legend { opacity: 0; animation: word-rise .7s cubic-bezier(.22,1,.36,1) .6s forwards; }
+.map-shell { opacity: 0; transform: translateY(16px) scale(.992); animation: shell-in .9s cubic-bezier(.22,1,.36,1) .35s forwards; }
+@keyframes shell-in { to { opacity: 1; transform: none; } }
+
+/* scroll reveals + per-child stagger */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s cubic-bezier(.22,1,.36,1), transform .6s cubic-bezier(.22,1,.36,1); }
 .reveal.in { opacity: 1; transform: none; }
+.stagger-child { opacity: 0; transform: translateY(14px); transition: opacity .55s cubic-bezier(.22,1,.36,1), transform .55s cubic-bezier(.22,1,.36,1); transition-delay: var(--sd, 0s); }
+.reveal.in .stagger-child { opacity: 1; transform: none; }
+
+/* section label: gold rule draws in */
+.sec-label::after { content: ""; display: inline-block; width: 0; height: 1px; background: var(--gold); margin-left: 10px; vertical-align: middle; transition: width .7s ease .25s; }
+.reveal.in .sec-label::after { width: 36px; }
+
+/* hover micro-interactions */
 .out, .aud, .cluster-card { transition: transform .18s ease, box-shadow .18s ease; }
 .out:hover, .cluster-card:hover { transform: translateY(-3px); box-shadow: 0 16px 44px rgba(24,37,31,.12); }
 .aud:hover { transform: translateY(-3px); box-shadow: 0 16px 44px rgba(24,37,31,.28); }
@@ -390,13 +415,26 @@ html { scroll-behavior: smooth; }
 .btn:hover { transform: translateY(-1px); }
 .btn:active { transform: translateY(0) scale(.98); }
 .btn-p:hover { box-shadow: 0 8px 24px rgba(24,37,31,.3); }
-.sig-marker .sig-dot { animation: marker-pop .45s cubic-bezier(.34,1.56,.64,1) both; animation-delay: var(--delay, 0s); }
+
+/* answer card: one-time gold sheen as the answer types in */
+.ans-sweep { position: relative; overflow: hidden; }
+.ans-sweep::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(105deg, transparent 32%, rgba(181,122,34,.12) 46%, transparent 62%); transform: translateX(-130%); animation: ans-sheen 1.15s ease .2s 1 forwards; }
+@keyframes ans-sheen { to { transform: translateX(130%); } }
+
+/* theater events: slide in with a lime flash */
+@keyframes theater-in { from { opacity: 0; transform: translateX(-10px); background: rgba(182,199,78,.07); } to { opacity: 1; transform: none; background: transparent; } }
+.theater-event { animation: theater-in .4s cubic-bezier(.22,1,.36,1); }
+
+/* map markers pop in */
+.sig-marker .sig-dot { animation: marker-pop .5s cubic-bezier(.34,1.56,.64,1) both; animation-delay: var(--delay, 0s); }
 @keyframes marker-pop { from { transform: scale(0); } to { transform: scale(1); } }
 .proof-cell .proof-k { font-variant-numeric: tabular-nums; }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .reveal { opacity: 1; transform: none; transition: none; }
-  .sig-marker .sig-dot, .sig-marker .sig-ring, .signal-halo { animation: none !important; }
+  .reveal, .stagger-child, .hw, .map-hero-head .sec-label,
+  .map-hero-head > div > p:not(.sec-label), .map-legend, .map-shell { opacity: 1; transform: none; transition: none; animation: none; }
+  .sig-marker .sig-dot, .sig-marker .sig-ring, .signal-halo, .ans-sweep::after { animation: none !important; }
 }
 
 @media(max-width:768px) {
@@ -1293,7 +1331,14 @@ if (typeof L !== 'undefined') {
   MAP_MARKERS.forEach((entry, idx) => {
     const m = L.marker([entry.lat, entry.lng], { icon: sigIcon(entry, idx), keyboard: true, title: entry.country });
     m.bindTooltip(sigTip(entry), { className: 'sig-tip', direction: 'top', offset: [0, -10], opacity: 1 });
-    m.on('click', () => openCountryDrill(entry.country));
+    m.on('click', () => {
+      openCountryDrill(entry.country);
+      map.flyTo([entry.lat, entry.lng], Math.max(map.getZoom(), 6), { duration: 0.7 });
+      if (innerWidth < 800) {
+        const drill = document.getElementById('map-drill');
+        if (drill) setTimeout(() => drill.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 350);
+      }
+    });
     m.addTo(map);
     mapMarkerRefs[entry.country] = { marker: m, idx };
   });
@@ -1443,7 +1488,7 @@ window.ask = function(q) {
             Live desk offline — this page is static right now. Run <code class="font-mono">python3 server.py</code> locally, or try the hosted desk.
           </div>`}
         ${thread.map((m, i) => html`
-          <div key=${m.at + m.q} class="mt-3 bg-cardc border-l-[3px] border-gold rounded-r p-4 animate-riseIn ${i > 0 ? 'opacity-60' : ''}">
+          <div key=${m.at + m.q} class="mt-3 bg-cardc border-l-[3px] border-gold rounded-r p-4 animate-riseIn ${i > 0 ? 'opacity-60' : 'ans-sweep'}">
             <div class="font-mono text-[10px] uppercase tracking-wider text-mutedc mb-1">You asked · ${m.q}</div>
             <div class="text-[13px] leading-relaxed text-sub whitespace-pre-wrap max-h-[230px] overflow-auto">
               ${i === 0 ? html`<${Typewriter} text=${m.a} />` : m.a}
@@ -1573,13 +1618,63 @@ updateCycleClock();
 // Poll every 30 seconds
 setInterval(updateCycleClock, 30000);
 
-// ── Motion: scroll reveals + animated counters ───────────────
+// ── Motion: load-in, scroll choreography, live pipeline loop ──
 (function () {
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const sections = document.querySelectorAll('.sec, .map-hero, .theater, .proof-band, .coordination-strip');
-  if (reduced || !('IntersectionObserver' in window)) return;
+  if (reduced) return;
 
-  sections.forEach(s => s.classList.add('reveal'));
+  // Opening headline: wrap words for staggered rise (preserves inline elements)
+  const headline = document.querySelector('.map-hero-head h1');
+  if (headline) {
+    let wi = 0;
+    const wrap = node => {
+      if (node.nodeType === 3) {
+        const frag = document.createDocumentFragment();
+        node.textContent.split(/(\s+)/).forEach(part => {
+          if (!part.trim()) { frag.appendChild(document.createTextNode(part)); return; }
+          const s = document.createElement('span');
+          s.className = 'hw'; s.style.setProperty('--wd', (wi++ * 0.07) + 's');
+          s.textContent = part;
+          frag.appendChild(s);
+        });
+        node.parentNode.replaceChild(frag, node);
+      } else if (node.nodeType === 1) {
+        const s = document.createElement('span');
+        s.className = 'hw'; s.style.setProperty('--wd', (wi++ * 0.07) + 's');
+        node.parentNode.replaceChild(s, node);
+        s.appendChild(node);
+      }
+    };
+    [...headline.childNodes].forEach(wrap);
+  }
+
+  // Scroll progress bar + glass masthead
+  const bar = document.createElement('div');
+  bar.id = 'scroll-progress';
+  document.body.appendChild(bar);
+  const mast = document.querySelector('.masthead');
+  let ticking = false;
+  addEventListener('scroll', () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      const max = document.documentElement.scrollHeight - innerHeight;
+      bar.style.width = (max > 0 ? (scrollY / max * 100) : 0) + '%';
+      if (mast) mast.classList.toggle('scrolled', scrollY > 40);
+      ticking = false;
+    });
+  }, { passive: true });
+
+  if (!('IntersectionObserver' in window)) return;
+  const sections = document.querySelectorAll('.sec, .map-hero, .theater, .proof-band, .coordination-strip');
+  const CHILD_SEL = '.proof-cell, .aud, .out, .cluster-card, .coord-step, .sig-row, .vpack-col, .route-lane';
+  sections.forEach(s => {
+    s.classList.add('reveal');
+    s.querySelectorAll(CHILD_SEL).forEach((c, i) => {
+      c.classList.add('stagger-child');
+      c.style.setProperty('--sd', (Math.min(i, 8) * 0.07) + 's');
+    });
+  });
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (!e.isIntersecting) return;
@@ -1608,7 +1703,7 @@ setInterval(updateCycleClock, 30000);
 </script>
 
 <footer>
-  Caribbean Opportunity Dispatch · Cycle 20260610 · June 10, 2026 at 21:37 UTC · Screening signals only, not investment advice · Data: World Bank · IDB · NOAA · NDBC · CARICOM · CDB
+  Caribbean Opportunity Dispatch · Cycle 20260610 · June 10, 2026 at 21:49 UTC · Screening signals only, not investment advice · Data: World Bank · IDB · NOAA · NDBC · CARICOM · CDB
 </footer>
 </body>
 </html>
