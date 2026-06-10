@@ -6,6 +6,8 @@
 <title>Caribbean Opportunity Dispatch — Daily Investment Intelligence</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 <style>
 :root {
   --bg: #F4EBDD; --ink: #18251F; --card: #FFFCF4; --card-alt: #EAF2EC;
@@ -302,19 +304,26 @@ footer { border-top: 1px solid var(--border); padding: 24px; text-align: center;
 .map-legend { display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-end; font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .6px; }
 .map-legend span { display: inline-flex; gap: 5px; align-items: center; }
 .map-legend i { width: 7px; height: 7px; border-radius: 50%; }
-.map-shell { position: relative; background: var(--ink); border-radius: 10px; overflow: hidden; box-shadow: 0 24px 80px rgba(24,37,31,.18); }
-.caribbean-map { display: block; width: 100%; height: auto; min-height: 300px; background: radial-gradient(circle at 60% 45%, #183b42, #101f20 65%); }
-.map-waterline { fill: none; stroke: rgba(244,235,221,.08); stroke-width: 1; stroke-dasharray: 5 8; }
-.country-shape { fill: #e8dfce; stroke: #fffaf0; stroke-width: 1.5; transition: fill .15s, stroke-width .15s; }
-.map-country { cursor: pointer; outline: none; }
-.map-country:hover .country-shape, .map-country:focus .country-shape, .map-country.selected .country-shape { fill: #fff8e9; stroke-width: 3; }
-.signal-pulse { stroke: #fff; stroke-width: 1.5; }
-.signal-halo { opacity: .22; transform-box: fill-box; transform-origin: center; animation: map-pulse 2.4s ease-out infinite; }
-.map-country:nth-of-type(3n) .signal-halo { animation-delay: .8s; }
-.map-country:nth-of-type(3n+1) .signal-halo { animation-delay: 1.6s; }
-@keyframes map-pulse { 0% { transform: scale(.7); opacity: .38; } 75%,100% { transform: scale(1.8); opacity: 0; } }
-.map-tooltip { position: absolute; left: 16px; bottom: 14px; max-width: calc(100% - 32px); padding: 8px 11px; border-radius: 5px; background: rgba(255,252,244,.95); color: var(--ink); font-size: 11px; opacity: 0; transform: translateY(4px); transition: .15s; pointer-events: none; }
-.map-tooltip.show { opacity: 1; transform: translateY(0); }
+.map-shell { position: relative; border-radius: 10px; overflow: hidden; box-shadow: 0 24px 80px rgba(24,37,31,.18); border: 1px solid var(--border); background: #cfe3e8; }
+#leaflet-map { height: 480px; width: 100%; background: #cfe3e8; font-family: var(--sans); }
+.leaflet-container a.leaflet-popup-close-button { color: var(--muted); }
+.leaflet-control-attribution { font-size: 9px !important; background: rgba(255,252,244,.85) !important; color: var(--muted) !important; }
+.leaflet-control-attribution a { color: var(--sub) !important; }
+.leaflet-control-zoom a { color: var(--ink) !important; border-color: var(--border) !important; }
+/* signal markers: confidence-sized pulsing dots in theme colors */
+.sig-marker { position: relative; cursor: pointer; }
+.sig-marker .sig-dot { position: absolute; inset: 0; border-radius: 50%; background: var(--c); border: 2px solid #fffcf4; box-shadow: 0 2px 10px rgba(24,37,31,.35); transition: transform .15s; }
+.sig-marker .sig-ring { position: absolute; inset: 0; border-radius: 50%; background: var(--c); opacity: .3; animation: sig-pulse 2.6s ease-out infinite; animation-delay: var(--delay, 0s); }
+.sig-marker.quiet .sig-ring { animation: none; opacity: 0; }
+.sig-marker:hover .sig-dot, .sig-marker.selected .sig-dot { transform: scale(1.22); }
+.sig-marker.selected .sig-dot { border-color: var(--ink); }
+@keyframes sig-pulse { 0% { transform: scale(.8); opacity: .35; } 75%, 100% { transform: scale(2.4); opacity: 0; } }
+.sig-tip { background: var(--card) !important; color: var(--ink) !important; border: 1px solid var(--border) !important; border-radius: 6px !important; box-shadow: 0 10px 30px rgba(24,37,31,.16) !important; font-family: var(--sans) !important; font-size: 11px !important; line-height: 1.45 !important; padding: 8px 11px !important; max-width: 240px; white-space: normal !important; }
+.sig-tip strong { display: block; font-family: var(--serif); font-size: 14px; margin-bottom: 1px; }
+.sig-tip::before { display: none; }
+.map-fallback { padding: 22px 18px; display: flex; flex-wrap: wrap; gap: 8px; background: var(--card); min-height: 200px; align-content: flex-start; }
+.map-fallback button { border: 1px solid var(--border-dark); background: transparent; border-radius: 20px; padding: 6px 14px; font: 12px var(--sans); cursor: pointer; color: var(--text); display: inline-flex; gap: 7px; align-items: center; }
+.map-fallback button i { width: 8px; height: 8px; border-radius: 50%; background: var(--c); }
 .map-drill { margin-top: 12px; background: var(--card); border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; }
 .map-drill-head { padding: 14px 16px; display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--border); }
 .map-drill-head strong { font-family: var(--serif); font-size: 20px; }
@@ -374,8 +383,8 @@ footer { border-top: 1px solid var(--border); padding: 24px; text-align: center;
   .map-hero { padding: 30px 0 24px; }
   .map-hero-head { display: block; padding: 0 18px; }
   .map-legend { justify-content: flex-start; margin-top: 14px; }
-  .map-shell, .map-drill { border-radius: 0; }
-  .caribbean-map { min-height: 250px; }
+  .map-shell, .map-drill { border-radius: 0; border-left: none; border-right: none; }
+  #leaflet-map { height: 340px; }
   .theater { padding: 0 0 30px; }
   .theater-shell { border-radius: 0; }
   .theater-event { grid-template-columns: 58px 1fr; }
@@ -457,19 +466,14 @@ footer { border-top: 1px solid var(--border); padding: 24px; text-align: center;
       <p>Pulse size reflects confidence. Select a country to inspect its current dispatches.</p>
     </div>
     <div class="map-legend" aria-label="Signal kinds">
-      <span><i style="background:#3B82F6"></i>Investment</span>
-      <span><i style="background:#10B981"></i>Climate</span>
-      <span><i style="background:#F59E0B"></i>Procurement</span>
-      <span><i style="background:#6B7280"></i>No signal</span>
+      <span><i style="background:#2676A8"></i>Investment</span>
+      <span><i style="background:#0D766E"></i>Climate</span>
+      <span><i style="background:#B57A22"></i>Procurement</span>
+      <span><i style="background:#7F8C83"></i>No signal</span>
     </div>
   </div>
   <div class="map-shell">
-    <svg class="caribbean-map" viewBox="40 35 530 390" role="img" aria-labelledby="map-title map-desc">
-      <desc id="map-desc">Map of thirteen watched Caribbean countries with confidence pulses.</desc>
-      <path class="map-waterline" d="M62 102C175 32 344 42 530 158M115 198c148-40 300-7 414 101M344 405c61-8 123-6 184 7"/>
-      {{map_svg_groups}}
-    </svg>
-    <div class="map-tooltip" id="map-tooltip" role="status"></div>
+    <div id="leaflet-map" role="application" aria-label="Map of thirteen watched Caribbean countries with confidence pulses"></div>
   </div>
   <div class="map-drill" id="map-drill" aria-live="polite">
     <p class="map-drill-empty">Select a country pulse to open its dispatches.</p>
@@ -767,7 +771,8 @@ Source: World Bank indicators, 2023 to 2024 comparison.</div>
 // ── Static data injected at build time ─────────────────────
 const D = {{aj}};
 const MAP_DISPATCHES = {{map_dispatches_json}};
-const MAP_COLORS = { investment:'#3B82F6', climate:'#10B981', procurement:'#F59E0B', none:'#6B7280' };
+const MAP_MARKERS = {{map_markers_json}};
+const MAP_COLORS = { investment:'#2676A8', climate:'#0D766E', procurement:'#B57A22', none:'#7F8C83' };
 const REPLAY_JSONL_URL = "{{replay_jsonl_url}}";
 let theaterSource = null;
 let theaterPaused = false;
@@ -915,7 +920,7 @@ function escapeMapText(value) {
 function openCountryDrill(country) {
   const items = MAP_DISPATCHES[country] || [];
   const drill = document.getElementById('map-drill');
-  document.querySelectorAll('.map-country').forEach(x => x.classList.toggle('selected', x.dataset.country === country));
+  document.querySelectorAll('.sig-marker').forEach(x => x.classList.toggle('selected', x.dataset.country === country));
   if (!items.length) {
     drill.innerHTML = '<div class="map-drill-head"><strong>' + escapeMapText(country) + '</strong><span>No current signals</span></div><p class="map-drill-empty">This country remains on the watchlist and will pulse when a new signal is dispatched.</p>';
     return;
@@ -925,38 +930,74 @@ function openCountryDrill(country) {
     '</div>';
 }
 
-document.querySelectorAll('.map-country').forEach(country => {
-  country.addEventListener('click', () => openCountryDrill(country.dataset.country));
-  country.addEventListener('keydown', e => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      openCountryDrill(country.dataset.country);
-    }
-  });
-  country.addEventListener('pointerenter', () => {
-    const tip = document.getElementById('map-tooltip');
-    tip.textContent = country.dataset.country + ' — ' + country.dataset.summary;
-    tip.classList.add('show');
-  });
-  country.addEventListener('pointerleave', () => document.getElementById('map-tooltip').classList.remove('show'));
-});
+// ── Caribbean map (Leaflet + CARTO Voyager tiles, no API key) ──
+const mapMarkerRefs = {};
 
-fetch('/api/map-data').then(r => r.ok ? r.json() : null).then(entries => {
-  if (!entries) return;
-  entries.forEach(entry => {
-    const group = [...document.querySelectorAll('.map-country')].find(x => x.dataset.country === entry.country);
-    if (!group) return;
-    group.dataset.summary = entry.top_signal_summary || 'No current signal';
-    const pulse = group.querySelector('.signal-pulse');
-    const halo = group.querySelector('.signal-halo');
-    const radius = 4 + (Math.max(0, Math.min(100, entry.confidence)) / 100 * 10);
-    const color = MAP_COLORS[entry.kind] || MAP_COLORS.none;
-    pulse.setAttribute('r', radius);
-    pulse.setAttribute('fill', color);
-    halo.setAttribute('r', radius + 5);
-    halo.setAttribute('fill', color);
+function sigIcon(entry, idx) {
+  const conf = Math.max(0, Math.min(100, entry.confidence || 0));
+  const d = Math.round(14 + conf / 100 * 14);            // dot: 14–28px
+  const color = MAP_COLORS[entry.kind] || MAP_COLORS.none;
+  const quiet = entry.kind === 'none' || conf === 0 ? ' quiet' : '';
+  return L.divIcon({
+    className: '',
+    iconSize: [d, d],
+    iconAnchor: [d / 2, d / 2],
+    html: '<div class="sig-marker' + quiet + '" data-country="' + escapeMapText(entry.country) + '"' +
+          ' style="--c:' + color + ';--delay:' + (idx % 3) * 0.85 + 's;width:' + d + 'px;height:' + d + 'px">' +
+          '<span class="sig-ring"></span><span class="sig-dot"></span></div>'
   });
-}).catch(() => {});
+}
+
+function sigTip(entry) {
+  return '<strong>' + escapeMapText(entry.country) + '</strong>' +
+         escapeMapText(entry.summary || entry.top_signal_summary || 'On the watchlist — no current signal');
+}
+
+function renderMapFallback() {
+  const shell = document.querySelector('.map-shell');
+  shell.innerHTML = '<div class="map-fallback">' + MAP_MARKERS.map(m =>
+    '<button data-country="' + escapeMapText(m.country) + '" style="--c:' + (MAP_COLORS[m.kind] || MAP_COLORS.none) + '"><i></i>' + escapeMapText(m.country) + '</button>'
+  ).join('') + '</div>';
+  shell.querySelectorAll('button').forEach(b => b.addEventListener('click', () => openCountryDrill(b.dataset.country)));
+}
+
+if (typeof L !== 'undefined') {
+  const map = L.map('leaflet-map', {
+    minZoom: 4, maxZoom: 9,
+    scrollWheelZoom: false,                                 // don't hijack page scroll
+    maxBounds: [[-2, -98], [32, -42]], maxBoundsViscosity: 0.8,
+    attributionControl: true
+  });
+  // Frame all 13 watched countries (Bahamas down to Suriname)
+  map.fitBounds(L.latLngBounds(MAP_MARKERS.map(m => [m.lat, m.lng])).pad(0.18));
+  map.on('click', () => map.scrollWheelZoom.enable());      // opt-in zoom after first interaction
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+    subdomains: 'abcd'
+  }).addTo(map);
+
+  MAP_MARKERS.forEach((entry, idx) => {
+    const m = L.marker([entry.lat, entry.lng], { icon: sigIcon(entry, idx), keyboard: true, title: entry.country });
+    m.bindTooltip(sigTip(entry), { className: 'sig-tip', direction: 'top', offset: [0, -10], opacity: 1 });
+    m.on('click', () => openCountryDrill(entry.country));
+    m.addTo(map);
+    mapMarkerRefs[entry.country] = { marker: m, idx };
+  });
+
+  // Refresh marker state from the live API when available
+  fetch('/api/map-data').then(r => r.ok ? r.json() : null).then(entries => {
+    if (!entries) return;
+    entries.forEach(entry => {
+      const ref = mapMarkerRefs[entry.country];
+      if (!ref) return;
+      const merged = { country: entry.country, confidence: entry.confidence, kind: entry.kind, summary: entry.top_signal_summary };
+      ref.marker.setIcon(sigIcon(merged, ref.idx));
+      ref.marker.setTooltipContent(sigTip(merged));
+    });
+  }).catch(() => {});
+} else {
+  renderMapFallback();
+}
 
 const risks = {{l_risks_json}};
 if (risks.length) {

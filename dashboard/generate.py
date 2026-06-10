@@ -76,37 +76,37 @@ dispatch_data = read_json(ROOT / "outbox" / "opportunity_dispatches.json") or {}
 dispatches = dispatch_data.get("dispatches", []) or []
 map_data = build_map_data(ROOT)
 
-MAP_GEOMETRY = {
-    "Bahamas": ("M166 70l18-8 20 5-13 6 17 7-25 2z", 186, 70),
-    "Belize": ("M75 139l12-8 8 13-5 25-13-5z", 84, 149),
-    "Jamaica": ("M191 151l28-5 15 7-20 9-24-3z", 211, 154),
-    "Haiti": ("M255 137l27-7 18 9-8 15-30-4z", 276, 143),
-    "Dominican Republic": ("M291 137l38-3 20 11-15 12-40-4z", 319, 146),
-    "Puerto Rico": ("M372 150l34-3 9 8-36 7z", 393, 155),
-    "Antigua & Barbuda": ("M462 166l8-5 7 7-8 8z", 469, 169),
-    "St Lucia": ("M461 226l7-12 8 13-7 15z", 468, 228),
-    "Barbados": ("M503 225l8-10 7 14-8 12z", 510, 228),
-    "Grenada": ("M451 268l10-8 8 10-9 11z", 460, 270),
-    "Trinidad & Tobago": ("M477 291l22-8 14 13-20 15z", 493, 298),
-    "Guyana": ("M433 315l30-14 24 24-9 66-34 10-19-43z", 459, 350),
-    "Suriname": ("M486 324l38-10 24 21-10 57-40 6z", 515, 354),
+# Real coordinates (country centroid / capital region) for the Leaflet map
+COUNTRY_COORDS = {
+    "Bahamas": (24.70, -77.80),
+    "Belize": (17.25, -88.76),
+    "Jamaica": (18.11, -77.30),
+    "Haiti": (18.97, -72.69),
+    "Dominican Republic": (18.79, -70.16),
+    "Puerto Rico": (18.22, -66.42),
+    "Antigua & Barbuda": (17.08, -61.80),
+    "St Lucia": (13.91, -60.98),
+    "Barbados": (13.16, -59.55),
+    "Grenada": (12.11, -61.68),
+    "Trinidad & Tobago": (10.46, -61.25),
+    "Guyana": (4.86, -58.93),
+    "Suriname": (3.92, -56.03),
 }
-MAP_COLORS = {"investment": "#3B82F6", "climate": "#10B981", "procurement": "#F59E0B", "none": "#6B7280"}
 
-map_svg_groups = ""
+map_markers = []
 for entry in map_data:
-    country = entry["country"]
-    path, cx, cy = MAP_GEOMETRY[country]
-    radius = 4 + (entry["confidence"] / 100 * 10)
-    color = MAP_COLORS[entry["kind"]]
-    map_svg_groups += f'''
-      <g class="map-country" tabindex="0" role="button" data-country="{j(country)}" data-summary="{j(entry["top_signal_summary"])}">
-        <path class="country-shape" d="{path}"><title>{j(country)}</title></path>
-        <circle class="signal-halo" cx="{cx}" cy="{cy}" r="{radius + 5:.1f}" fill="{color}"></circle>
-        <circle class="signal-pulse" cx="{cx}" cy="{cy}" r="{radius:.1f}" fill="{color}" data-confidence="{entry["confidence"]}" data-kind="{entry["kind"]}"><title>{j(country)} — {j(entry["top_signal_summary"])}</title></circle>
-      </g>'''
+    lat, lng = COUNTRY_COORDS[entry["country"]]
+    map_markers.append({
+        "country": entry["country"],
+        "lat": lat,
+        "lng": lng,
+        "confidence": entry["confidence"],
+        "kind": entry["kind"],
+        "summary": entry["top_signal_summary"],
+    })
+map_markers_json = json.dumps(map_markers, ensure_ascii=False).replace("</", "<\\/")
 
-map_dispatches: dict[str, list[dict]] = {country: [] for country in MAP_GEOMETRY}
+map_dispatches: dict[str, list[dict]] = {country: [] for country in COUNTRY_COORDS}
 for dispatch in dispatches:
     country = canonical_country(dispatch.get("country_cluster", ""))
     if country in map_dispatches:
@@ -504,7 +504,7 @@ V = dict(
     all_clusters_html=all_clusters_html,
     whynow_html="".join(f"<li>{j(item)}</li>" for item in whynow_items) if whynow_items else "<li>No active seasonal triggers</li>",
     aj=aj,
-    map_svg_groups=map_svg_groups,
+    map_markers_json=map_markers_json,
     map_dispatches_json=map_dispatches_json,
     all_packs_json=all_packs_json,
     verdict_counts_json=verdict_counts_json,
