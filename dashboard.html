@@ -8,6 +8,22 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin=""></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin=""></script>
+<script src="https://unpkg.com/htm@3.1.1/dist/htm.umd.js" crossorigin=""></script>
+<script>
+// Tailwind config BEFORE the CDN script: preflight off so it can't reset the design system
+tailwind = { config: { corePlugins: { preflight: false }, theme: { extend: {
+  colors: { ink:'#18251F', cream:'#F4EBDD', cardc:'#FFFCF4', teal:'#0D766E', gold:'#B57A22', coral:'#B94836', sky:'#2676A8', sub:'#455A50', mutedc:'#7F8C83', borderc:'#D8CBB8' },
+  fontFamily: { serif:['Cormorant Garamond','Georgia','serif'], mono:['IBM Plex Mono','monospace'] },
+  keyframes: {
+    riseIn: { from: { opacity:'0', transform:'translateY(10px)' }, to: { opacity:'1', transform:'translateY(0)' } },
+    dotBounce: { '0%,80%,100%': { transform:'translateY(0)', opacity:'.45' }, '40%': { transform:'translateY(-5px)', opacity:'1' } }
+  },
+  animation: { riseIn:'riseIn .35s ease-out both', dotBounce:'dotBounce 1.1s ease-in-out infinite' }
+} } } };
+</script>
+<script src="https://cdn.tailwindcss.com"></script>
 <style>
 :root {
   --bg: #F4EBDD; --ink: #18251F; --card: #FFFCF4; --card-alt: #EAF2EC;
@@ -361,6 +377,28 @@ footer { border-top: 1px solid var(--border); padding: 24px; text-align: center;
 .event-cycle { grid-template-columns: 1fr; padding: 12px 0; border-top: 1px solid rgba(182,199,78,.35); border-bottom: none; }
 .event-cycle p { color: var(--lime); font: 10px var(--mono); text-transform: uppercase; letter-spacing: .7px; }
 
+/* ── motion & polish ── */
+html { scroll-behavior: smooth; }
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .55s ease, transform .55s ease; }
+.reveal.in { opacity: 1; transform: none; }
+.out, .aud, .cluster-card { transition: transform .18s ease, box-shadow .18s ease; }
+.out:hover, .cluster-card:hover { transform: translateY(-3px); box-shadow: 0 16px 44px rgba(24,37,31,.12); }
+.aud:hover { transform: translateY(-3px); box-shadow: 0 16px 44px rgba(24,37,31,.28); }
+.vpack { transition: box-shadow .18s ease; }
+.vpack:hover { box-shadow: 0 14px 40px rgba(24,37,31,.08); }
+.btn { transition: transform .12s ease, box-shadow .15s ease; }
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(0) scale(.98); }
+.btn-p:hover { box-shadow: 0 8px 24px rgba(24,37,31,.3); }
+.sig-marker .sig-dot { animation: marker-pop .45s cubic-bezier(.34,1.56,.64,1) both; animation-delay: var(--delay, 0s); }
+@keyframes marker-pop { from { transform: scale(0); } to { transform: scale(1); } }
+.proof-cell .proof-k { font-variant-numeric: tabular-nums; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .sig-marker .sig-dot, .sig-marker .sig-ring, .signal-halo { animation: none !important; }
+}
+
 @media(max-width:768px) {
   .hero-grid, .out-grid, .lead-details, .coordination-inner, .decision-shell, .vpack-grid { grid-template-columns: 1fr; }
   .vpack-col + .vpack-col { border-left: none; }
@@ -504,18 +542,7 @@ footer { border-top: 1px solid var(--border); padding: 24px; text-align: center;
   <div class="sec-label">Ask the desk</div>
   <div class="st">Deterministic answers from this cycle's data — no AI generation</div>
   <div class="ss">Try: lead signal · what changed · investor routes · draft a Guyana note</div>
-  <div class="ask-desk-chips" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;">
-    <button class="ask-chip" data-q="explain the lead signal">Explain the lead signal</button>
-    <button class="ask-chip" data-q="what changed this cycle">What changed this cycle?</button>
-    <button class="ask-chip" data-q="routes for diaspora investor">Routes for diaspora investor</button>
-    <button class="ask-chip" data-q="draft a note for Guyana">Draft a note for Guyana</button>
-  </div>
-  <div class="ask-row" style="display:grid;grid-template-columns:1fr auto;gap:8px;margin-bottom:12px;">
-    <input id="dq" type="text" placeholder="Ask about a signal, country, audience…" onkeydown="if(event.key==='Enter')askDesk(this.value)" style="background:var(--card);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:4px;font-size:13px;font-family:var(--sans);">
-    <button onclick="askDesk(document.getElementById('dq').value)" class="btn btn-p" style="padding:8px 16px;">Ask</button>
-  </div>
-  <div id="da" class="abox" style="display:none;margin-top:10px;padding:14px;background:var(--card);border-left:3px solid var(--gold);font-size:13px;color:var(--sub);white-space:pre-wrap;max-height:200px;overflow:auto;border-radius:0 4px 4px 0;">Select a chip or ask a question.</div>
-  <div id="ask-offline" style="display:none;margin-top:10px;padding:12px;background:var(--card-alt);border:1px solid var(--border);border-radius:4px;font-size:13px;color:var(--muted);">Live desk offline — run <code>python3 server.py</code> to ask questions.</div>
+  <div id="ask-desk-root"></div>
 </div>
 
 <div class="proof-band">
@@ -1155,17 +1182,66 @@ function escapeMapText(value) {
   return node.innerHTML;
 }
 
+// ── Country drill — React island (global API kept for Leaflet) ──
+const drillReact = (function () {
+  if (typeof React === 'undefined' || typeof ReactDOM === 'undefined' || typeof htm === 'undefined') return null;
+  const html = htm.bind(React.createElement);
+
+  function DrillPanel({ country }) {
+    if (!country) return html`<p class="map-drill-empty">Select a country pulse to open its dispatches.</p>`;
+    const items = MAP_DISPATCHES[country] || [];
+    if (!items.length) {
+      return html`
+        <div class="animate-riseIn">
+          <div class="map-drill-head"><strong>${country}</strong><span>No current signals</span></div>
+          <p class="map-drill-empty">This country remains on the watchlist and will pulse when a new signal is dispatched.</p>
+        </div>`;
+    }
+    return html`
+      <div class="animate-riseIn">
+        <div class="map-drill-head">
+          <strong>${country}</strong>
+          <span>${items.length} dispatch${items.length === 1 ? '' : 'es'} this cycle</span>
+        </div>
+        <div class="map-drill-grid">
+          ${items.slice(0, 6).map((d, i) => {
+            const conf = Math.max(0, Math.min(100, d.confidence_score || 0));
+            const color = MAP_COLORS[(d.signal_kind || '').includes('invest') ? 'investment' : (d.signal_kind || '').includes('climate') ? 'climate' : (d.signal_kind || '').includes('procure') ? 'procurement' : 'none'];
+            return html`
+              <article key=${d.dispatch_id} class="animate-riseIn transition-all duration-200 hover:bg-cardc hover:-translate-y-[2px]"
+                       style=${{ animationDelay: (i * 70) + 'ms' }}>
+                <span>${d.dispatch_id} · ${d.persona_label}</span>
+                <h3>${d.title}</h3>
+                <p>${d.recommended_action}</p>
+                <div class="mt-2 flex items-center gap-2">
+                  <div class="h-[4px] flex-1 rounded-full bg-borderc/60 overflow-hidden">
+                    <div class="h-full rounded-full transition-[width] duration-700 ease-out"
+                         style=${{ width: conf + '%', background: color }}></div>
+                  </div>
+                  <span class="font-mono text-[9px] text-mutedc">${conf}/100</span>
+                </div>
+              </article>`;
+          })}
+        </div>
+      </div>`;
+  }
+
+  const node = document.getElementById('map-drill');
+  if (!node) return null;
+  const root = ReactDOM.createRoot(node);
+  root.render(html`<${DrillPanel} country=${null} />`);
+  return { render: c => root.render(html`<${DrillPanel} country=${c} />`) };
+})();
+
 function openCountryDrill(country) {
+  document.querySelectorAll('.sig-marker').forEach(x => x.classList.toggle('selected', x.dataset.country === country));
+  if (drillReact) { drillReact.render(country); return; }
+  // No-React fallback: plain list
   const items = MAP_DISPATCHES[country] || [];
   const drill = document.getElementById('map-drill');
-  document.querySelectorAll('.sig-marker').forEach(x => x.classList.toggle('selected', x.dataset.country === country));
-  if (!items.length) {
-    drill.innerHTML = '<div class="map-drill-head"><strong>' + escapeMapText(country) + '</strong><span>No current signals</span></div><p class="map-drill-empty">This country remains on the watchlist and will pulse when a new signal is dispatched.</p>';
-    return;
-  }
-  drill.innerHTML = '<div class="map-drill-head"><strong>' + escapeMapText(country) + '</strong><span>' + items.length + ' dispatches</span></div><div class="map-drill-grid">' +
-    items.slice(0, 6).map(d => '<article><span>' + escapeMapText(d.dispatch_id) + ' · ' + escapeMapText(d.persona_label) + '</span><h3>' + escapeMapText(d.title) + '</h3><p>' + escapeMapText(d.recommended_action) + '</p></article>').join('') +
-    '</div>';
+  drill.innerHTML = '<div class="map-drill-head"><strong>' + escapeMapText(country) + '</strong><span>' + items.length + ' dispatches</span></div>' +
+    (items.length ? '<div class="map-drill-grid">' + items.slice(0, 6).map(d => '<article><span>' + escapeMapText(d.dispatch_id) + ' · ' + escapeMapText(d.persona_label) + '</span><h3>' + escapeMapText(d.title) + '</h3><p>' + escapeMapText(d.recommended_action) + '</p></article>').join('') + '</div>'
+                 : '<p class="map-drill-empty">No current signals.</p>');
 }
 
 // ── Caribbean map (Leaflet + CARTO Voyager tiles, no API key) ──
@@ -1282,37 +1358,105 @@ window.ask = function(q) {
   box.scrollTop = 0;
 };
 
-// ── Ask the Desk (live API) ──────────────────────────────────
-window.askDesk = async function(q) {
-  const box = document.getElementById('da');
-  const offline = document.getElementById('ask-offline');
-  if (!q) { box.textContent = 'Select a chip or ask a question.'; box.style.display = 'block'; return; }
-  box.style.display = 'block';
-  box.textContent = 'Asking the desk…';
-  offline.style.display = 'none';
-  try {
-    const res = await fetch('/api/ask', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ question: q })
-    });
-    if (!res.ok) throw new Error('HTTP ' + res.status);
-    const data = await res.json();
-    const answer = data.answer || 'No answer returned.';
-    const citation = data.generated_at ? '\n\n— Answered at ' + new Date(data.generated_at).toLocaleString() : '';
-    box.textContent = answer + citation;
-  } catch (e) {
-    box.style.display = 'none';
-    offline.style.display = 'block';
-    console.warn('Ask desk failed:', e);
-  }
-  box.scrollTop = 0;
-};
+// ── Ask the Desk — React island ──────────────────────────────
+(function () {
+  if (typeof React === 'undefined' || typeof ReactDOM === 'undefined' || typeof htm === 'undefined') return;
+  const html = htm.bind(React.createElement);
+  const { useState, useRef, useEffect } = React;
+  const CHIPS = [
+    'Explain the lead signal', 'What changed this cycle?',
+    'Routes for diaspora investor', 'Draft a note for Guyana',
+  ];
 
-// Chip handlers
-document.querySelectorAll('.ask-chip').forEach(btn => {
-  btn.addEventListener('click', () => window.askDesk(btn.dataset.q));
-});
+  function Typewriter({ text }) {
+    const [shown, setShown] = useState(0);
+    useEffect(() => {
+      setShown(0);
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) { setShown(text.length); return; }
+      const step = Math.max(2, Math.round(text.length / 90));   // whole answer in ~1.2s
+      const t = setInterval(() => setShown(s => {
+        if (s >= text.length) { clearInterval(t); return s; }
+        return s + step;
+      }), 13);
+      return () => clearInterval(t);
+    }, [text]);
+    return html`<span>${text.slice(0, shown)}<span class="${shown < text.length ? 'inline-block w-[7px] h-[14px] bg-gold align-middle ml-[1px] animate-pulse' : 'hidden'}"></span></span>`;
+  }
+
+  function AskDesk() {
+    const [q, setQ] = useState('');
+    const [thread, setThread] = useState([]);    // {q, a, at} newest first
+    const [busy, setBusy] = useState(false);
+    const [offline, setOffline] = useState(false);
+    const inputRef = useRef(null);
+
+    async function ask(question) {
+      const query = (question || '').trim();
+      if (!query || busy) return;
+      setBusy(true); setOffline(false); setQ('');
+      try {
+        const res = await fetch('/api/ask', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ question: query }),
+        });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+        setThread(t => [{ q: query, a: data.answer || 'No answer returned.', at: data.generated_at }, ...t].slice(0, 3));
+      } catch (e) {
+        setOffline(true);
+      }
+      setBusy(false);
+    }
+
+    return html`
+      <div>
+        <div class="flex gap-2 flex-wrap mb-3">
+          ${CHIPS.map(c => html`
+            <button key=${c} onClick=${() => ask(c)} disabled=${busy}
+              class="px-[14px] py-[6px] rounded-full border text-[12px] transition-all duration-150 cursor-pointer
+                     bg-cardc border-borderc text-ink hover:border-teal hover:text-teal hover:-translate-y-[1px]
+                     active:translate-y-0 disabled:opacity-40 disabled:cursor-default">
+              ${c}
+            </button>`)}
+        </div>
+        <div class="grid grid-cols-[1fr_auto] gap-2 mb-3">
+          <input ref=${inputRef} value=${q}
+            onInput=${e => setQ(e.target.value)}
+            onKeyDown=${e => { if (e.key === 'Enter') ask(q); }}
+            placeholder="Ask about a signal, country, audience…"
+            class="bg-cardc border border-borderc text-ink px-3 py-2 rounded text-[13px] outline-none
+                   transition-shadow focus:border-teal focus:shadow-[0_0_0_3px_rgba(13,118,110,.12)]" />
+          <button onClick=${() => ask(q)} disabled=${busy}
+            class="btn btn-p px-4 transition-transform active:scale-[.97] disabled:opacity-60">
+            ${busy ? 'Asking…' : 'Ask'}
+          </button>
+        </div>
+        ${busy && html`
+          <div class="flex items-center gap-2 px-4 py-3 text-[12px] text-mutedc animate-riseIn">
+            <span class="w-[6px] h-[6px] rounded-full bg-gold animate-dotBounce"></span>
+            <span class="w-[6px] h-[6px] rounded-full bg-gold animate-dotBounce [animation-delay:.15s]"></span>
+            <span class="w-[6px] h-[6px] rounded-full bg-gold animate-dotBounce [animation-delay:.3s]"></span>
+            consulting this cycle's artifacts
+          </div>`}
+        ${offline && html`
+          <div class="mt-2 px-4 py-3 bg-[#EAF2EC] border border-borderc rounded text-[13px] text-mutedc animate-riseIn">
+            Live desk offline — this page is static right now. Run <code class="font-mono">python3 server.py</code> locally, or try the hosted desk.
+          </div>`}
+        ${thread.map((m, i) => html`
+          <div key=${m.at + m.q} class="mt-3 bg-cardc border-l-[3px] border-gold rounded-r p-4 animate-riseIn ${i > 0 ? 'opacity-60' : ''}">
+            <div class="font-mono text-[10px] uppercase tracking-wider text-mutedc mb-1">You asked · ${m.q}</div>
+            <div class="text-[13px] leading-relaxed text-sub whitespace-pre-wrap max-h-[230px] overflow-auto">
+              ${i === 0 ? html`<${Typewriter} text=${m.a} />` : m.a}
+            </div>
+          </div>`)}
+        ${!thread.length && !busy && !offline && html`
+          <div class="mt-2 px-4 py-3 text-[12px] text-mutedc">Answers come straight from this cycle's generated artifacts — deterministic, cited, no AI generation.</div>`}
+      </div>`;
+  }
+
+  const askRoot = document.getElementById('ask-desk-root');
+  if (askRoot) ReactDOM.createRoot(askRoot).render(html`<${AskDesk} />`);
+})();
 
 // ── Engine highlights: live instances + reasoning ───────────
 fetch('/api/domains')
@@ -1429,10 +1573,42 @@ updateCycleClock();
 // Poll every 30 seconds
 setInterval(updateCycleClock, 30000);
 
+// ── Motion: scroll reveals + animated counters ───────────────
+(function () {
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const sections = document.querySelectorAll('.sec, .map-hero, .theater, .proof-band, .coordination-strip');
+  if (reduced || !('IntersectionObserver' in window)) return;
+
+  sections.forEach(s => s.classList.add('reveal'));
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+      if (e.target.classList.contains('proof-band')) animateCounters(e.target);
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  sections.forEach(s => io.observe(s));
+
+  function animateCounters(band) {
+    band.querySelectorAll('.proof-k').forEach(el => {
+      const m = el.textContent.match(/^(\d+)(.*)$/);
+      if (!m) return;
+      const target = parseInt(m[1], 10), suffix = m[2];
+      if (!target) return;
+      const t0 = performance.now(), dur = 900;
+      (function tick(now) {
+        const p = Math.min(1, (now - t0) / dur);
+        el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3))) + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+      })(t0);
+    });
+  }
+})();
 </script>
 
 <footer>
-  Caribbean Opportunity Dispatch · Cycle 20260610 · June 10, 2026 at 21:25 UTC · Screening signals only, not investment advice · Data: World Bank · IDB · NOAA · NDBC · CARICOM · CDB
+  Caribbean Opportunity Dispatch · Cycle 20260610 · June 10, 2026 at 21:37 UTC · Screening signals only, not investment advice · Data: World Bank · IDB · NOAA · NDBC · CARICOM · CDB
 </footer>
 </body>
 </html>
