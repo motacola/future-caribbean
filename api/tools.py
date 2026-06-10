@@ -7,7 +7,7 @@ from http.server import BaseHTTPRequestHandler
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from server import TOOLS_MANIFEST
+from api_manifest import TOOLS_MANIFEST
 
 
 def _public_manifest() -> dict:
