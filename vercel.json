@@ -14,7 +14,7 @@
     },
     {
       "source": "/api/validation-packs/(.*)",
-      "destination": "/api/validation-packs/$1"
+      "destination": "/api/validation-packs?id=$1"
     },
     {
       "source": "/llms.txt",
