@@ -1,9 +1,9 @@
 # Opportunity Validation Pack — Caribwide
 
-- Signal: `regional-investment_signal-20260610` · Dispatch: `DSP-20260610-001`
+- Signal: `regional-investment_signal-20260611` · Dispatch: `DSP-20260611-001`
 - Confidence: 90/100 · B - cross-source
 - Recommendation: **HOLD** — Signal confidence 90/100 with 0 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.
-- Last validated: 2026-06-10T21:59:36.921100+00:00
+- Last validated: 2026-06-11T10:00:42.538507+00:00
 
 ## Sector hypotheses
 - None identified this cycle

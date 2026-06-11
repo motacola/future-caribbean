@@ -1,5 +1,5 @@
 🌴 *Caribbean Opportunity Dispatch — Decision Routes Ready*
-Cycle: `20260610` · 2026-06-10 17:59 UTC
+Cycle: `20260611` · 2026-06-11 10:00 UTC
 
 *What this is:*
 A Dispatch Desk notification. The product is the decision route: signal → persona → action → feedback. Telegram is only the delivery channel.
@@ -36,9 +36,9 @@ Data → 13 signal clusters → 31 persona routes → 7 personas → action/capi
    Loop: Feedback this cycle: 3 ignored.
 
 *Feedback-adjusted priority*
-• St. Vincent and the Grenadines economic vulnerability upranked +9
+• St. Vincent and the Grenadines economic vulnerability upranked +10
 • St. Vincent and the Grenadines enhanced investment downranked -6
-• Guyana enhanced investment upranked +5
+• Guyana enhanced investment upranked +6
 • Suriname economic vulnerability downranked -4
 
 *Open the product surface*

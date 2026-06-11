@@ -5,7 +5,7 @@ The Signal Fabric engine exposes a **plain HTTP API** as its foundation — no S
 **Base URL (local):** `http://localhost:8080`
 **Base URL (hosted):** `https://signal-fabric.vercel.app`
 
-**Tool manifest:** `GET /api/tools.json` — machine-readable, ingest to self-configure.
+**Tool manifest:** `GET /api/tools.json (see also /feed.xml — RSS of the latest signals)` — machine-readable, ingest to self-configure.
 
 ---
 

@@ -6,6 +6,14 @@ TOOLS_MANIFEST = {
     "version": 1,
     "tools": [
         {
+            "name": "live_feed",
+            "description": "RSS 2.0 feed of the latest signals in plain language (one item per signal, machine ids in guid/category)",
+            "method": "GET",
+            "path": "/feed.xml",
+            "params": {},
+            "writes": False,
+        },
+        {
             "name": "ask",
             "description": "Ask a deterministic question against the current Dispatch Desk. Returns a cited answer from live data — no LLM generation.",
             "method": "POST",

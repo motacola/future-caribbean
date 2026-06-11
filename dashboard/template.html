@@ -402,6 +402,24 @@ html { scroll-behavior: smooth; }
 .masthead { position: sticky; top: 0; z-index: 1200; transition: background .3s ease, box-shadow .3s ease; }
 .masthead.scrolled { background: rgba(24,37,31,.86); backdrop-filter: blur(14px) saturate(1.2); -webkit-backdrop-filter: blur(14px) saturate(1.2); box-shadow: 0 12px 34px rgba(24,37,31,.28); }
 
+/* live wire ticker */
+.livewire { display: flex; align-items: stretch; background: #10201A; border-bottom: 1px solid rgba(244,235,221,.1); overflow: hidden; }
+.lw-label { flex-shrink: 0; display: flex; align-items: center; gap: 7px; padding: 8px 16px; font: 700 9px var(--mono); letter-spacing: 1.6px; text-transform: uppercase; color: var(--gold); background: rgba(181,122,34,.1); border-right: 1px solid rgba(244,235,221,.1); }
+.lw-label::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); animation: theater-live 1.4s ease-in-out infinite; }
+.lw-track { display: flex; overflow: hidden; flex: 1; min-width: 0; }
+.lw-rail { display: flex; flex-shrink: 0; align-items: center; animation: lw-scroll var(--lw-dur, 60s) linear infinite; }
+.livewire:hover .lw-rail { animation-play-state: paused; }
+@keyframes lw-scroll { to { transform: translateX(-100%); } }
+.lw-item { display: inline-flex; align-items: center; gap: 8px; padding: 8px 26px 8px 0; margin-left: 26px; font-size: 12px; color: rgba(244,235,221,.82); text-decoration: none; white-space: nowrap; border-right: 1px solid rgba(244,235,221,.08); }
+.lw-item:hover { color: #fff; text-decoration: none; }
+.lw-item i { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.lw-kicker { font: 700 9px var(--mono); letter-spacing: 1px; text-transform: uppercase; color: var(--lime); }
+@media (prefers-reduced-motion: reduce) {
+  .lw-rail { animation: none; }
+  .lw-track { overflow-x: auto; }
+  .lw-rail[aria-hidden] { display: none; }
+}
+
 /* opening frame load-in choreography (the map IS the hero) */
 .hw { display: inline-block; opacity: 0; transform: translateY(.55em); animation: word-rise .75s cubic-bezier(.22,1,.36,1) forwards; animation-delay: var(--wd, 0s); }
 @keyframes word-rise { to { opacity: 1; transform: translateY(0); } }
@@ -546,6 +564,14 @@ html { scroll-behavior: smooth; }
       <a href="/build">Build your feed</a>
       <a href="javascript:void(0)" onclick="toggleDeep();return false;">Under the hood</a>
     </div>
+  </div>
+</div>
+
+<div class="livewire" role="marquee" aria-label="Latest signals from this cycle">
+  <span class="lw-label">Live wire</span>
+  <div class="lw-track">
+    <div class="lw-rail" id="lw-rail">{{ticker_html}}</div>
+    <div class="lw-rail" aria-hidden="true">{{ticker_html}}</div>
   </div>
 </div>
 
@@ -1449,6 +1475,22 @@ setInterval(updateCycleClock, 30000);
     });
   }, { passive: true });
 
+  // Live wire: click -> fly to country; scroll speed scales with length
+  const lwRail = document.getElementById('lw-rail');
+  if (lwRail) {
+    const n = lwRail.children.length || 1;
+    document.querySelector('.livewire').style.setProperty('--lw-dur', Math.max(30, n * 7) + 's');
+    document.querySelectorAll('.lw-item').forEach(a => a.addEventListener('click', e => {
+      const c = a.dataset.country;
+      if (c && typeof openCountryDrill === 'function') {
+        e.preventDefault();
+        openCountryDrill(c);
+        const shell = document.querySelector('.map-shell');
+        if (shell) shell.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }));
+  }
+
   if (!('IntersectionObserver' in window)) return;
   const sections = document.querySelectorAll('.sec, .map-hero, .theater, .proof-band, .coordination-strip');
   const CHILD_SEL = '.proof-cell, .aud, .out, .cluster-card, .coord-step, .sig-row, .vpack-col, .route-lane';
@@ -1495,7 +1537,7 @@ setInterval(updateCycleClock, 30000);
     <div class="foot-meta">
       Cycle {{cycle_id}} · {{now_str}}<br>
       Data · World Bank · IDB · NOAA · NDBC · CARICOM · CDB<br>
-      For AI agents · <a href="/llms.txt">llms.txt</a> · <a href="/agents.md">agents.md</a> · <a href="/api/tools.json">tools.json</a>
+      Follow · <a href="/feed.xml">RSS</a> &nbsp;·&nbsp; For AI agents · <a href="/llms.txt">llms.txt</a> · <a href="/agents.md">agents.md</a> · <a href="/api/tools.json">tools.json</a>
     </div>
   </div>
   <div class="foot-legal">

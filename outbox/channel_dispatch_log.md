@@ -1,6 +1,6 @@
-# Channel Dispatch Log — Cycle 20260610
+# Channel Dispatch Log — Cycle 20260611
 
-Generated: 2026-06-10 17:59 UTC
+Generated: 2026-06-11 10:00 UTC
 
 Per-channel routing plan for this cycle. Live send receipts are written to `outbox/live_send_log.md` after each delivery run.
 

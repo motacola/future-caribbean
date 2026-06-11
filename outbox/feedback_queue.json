@@ -1,6 +1,6 @@
 {
   "cycle_intro": "Lead: Belize. 2 converging signal(s) across 4 source(s). Signals: \ud83d\udcbc Investment + \ud83d\udc8e Investment.",
-  "generated_at": "2026-06-10 17:59 UTC",
+  "generated_at": "2026-06-11 10:00 UTC",
   "items": [
     {
       "band": "immediate",
@@ -129,7 +129,7 @@
       "signal_id": "invest-trinidad-and-tobago"
     },
     {
-      "band": "monitor",
+      "band": "validation",
       "channel": "Telegram digest",
       "country": "St. Vincent and the Grenadines",
       "freshness": "sustained",
@@ -143,7 +143,7 @@
       },
       "persona": "policy/operator",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 69,
+      "score": 70,
       "signal_id": "vuln-st.-vincent-and-the-grenadines"
     },
     {

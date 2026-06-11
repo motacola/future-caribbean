@@ -54,6 +54,19 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
         path = parsed.path
 
         # API routes
+        if path == "/feed.xml":
+            fp = APP_DIR / "outbox" / "feed.xml"
+            if fp.exists():
+                body = fp.read_bytes()
+                self.send_response(200)
+                self.send_header("Content-Type", "application/rss+xml; charset=utf-8")
+                self.send_header("Content-Length", str(len(body)))
+                self._cors()
+                self.end_headers()
+                self.wfile.write(body)
+            else:
+                self._json({"error": "feed not generated yet"}, 404)
+            return
         if path == "/api/status":
             self._api_status()
             return

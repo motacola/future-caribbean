@@ -19,7 +19,7 @@
 | GET | `/api/domains` | List all configured engine instances (live + blueprint). |
 | GET | `/api/reasoning` | Cross-signal synthesis from the reasoning agent. |
 | POST | `/api/feedback/apply` | Apply recipient feedback to reweight next-cycle priorities (write). |
-| GET | `/api/tools.json` | **Machine-readable manifest of all tools.** Ingest this to self-configure. |
+| GET | `/api/tools.json (see also /feed.xml — RSS of the latest signals)` | **Machine-readable manifest of all tools.** Ingest this to self-configure. |
 | GET | `/llms.txt` | This file. |
 | GET | `/agents.md` | Framework-specific connection instructions. |
 
