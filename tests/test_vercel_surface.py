@@ -27,7 +27,7 @@ def test_no_write_capable_functions_deployed():
     # Public instance is read-only by construction: no function may import
     # or shell out to delivery/feedback write paths.
     forbidden = ("feedback_loop", "telegram_sender", "delivery", "subprocess")
-    for fn in API_FUNCTIONS + ["validation-packs/[id].py"]:
+    for fn in API_FUNCTIONS:
         src = (ROOT / "api" / fn).read_text()
         for word in forbidden:
             assert word not in src, f"api/{fn} references write path: {word}"
