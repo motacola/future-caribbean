@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Caribbean Opportunity Dispatch — Daily Investment Intelligence</title>
+<title>Caribbean Opportunity Dispatch — see where the region is moving</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2318251F'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23B57A22'/%3E%3Ccircle cx='16' cy='16' r='10' fill='none' stroke='%23B57A22' stroke-opacity='.45' stroke-width='2'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
@@ -36,12 +37,17 @@ tailwind = { config: { corePlugins: { preflight: false }, theme: { extend: {
   --r: 8px;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.6; font-size: 15px; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+body { font-family: var(--sans); background: var(--bg); background-image: radial-gradient(1100px 500px at 75% -120px, rgba(181,122,34,.06), transparent 70%), radial-gradient(900px 420px at -10% 30%, rgba(13,118,110,.04), transparent 70%); color: var(--text); line-height: 1.6; font-size: 15px; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 a { color: var(--teal); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 /* ── masthead ── */
 .masthead { background: var(--ink); color: var(--bg); padding: 14px 0; }
+.masthead::after { content: ""; display: block; height: 2px; margin-bottom: -2px; background: linear-gradient(90deg, var(--gold), var(--teal) 55%, transparent); opacity: .85; }
+.map-hero-head h1 em { font-style: italic; color: var(--teal); }
+.map-caption { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; padding: 10px 2px 0; font-family: var(--mono); font-size: 9.5px; letter-spacing: .6px; text-transform: uppercase; color: var(--muted); }
+.map-caption b { color: var(--gold); font-weight: 500; }
+.decision-summary { font-family: var(--serif); font-size: 19px; line-height: 1.45; color: var(--text); border-left: 2px solid var(--gold); padding-left: 16px; font-style: italic; }
 .mast-inner { max-width: 1080px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
 .mast-name { font-family: var(--serif); font-size: 18px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
 .mast-name em { font-style: normal; color: var(--gold); }
@@ -271,7 +277,16 @@ a:hover { text-decoration: underline; }
 .eb-reason-text { font-size: 14px; color: var(--text); line-height: 1.6; margin-top: 8px; }
 
 /* ── footer ── */
-footer { border-top: 1px solid var(--border); padding: 24px; text-align: center; font-size: 11px; color: var(--muted); margin-top: 40px; }
+footer { background: var(--ink); color: var(--bg); margin-top: 56px; padding: 44px 24px 30px; }
+footer::before { content: ""; display: block; height: 2px; margin: -44px -24px 42px; background: linear-gradient(90deg, transparent, var(--teal) 45%, var(--gold)); opacity: .85; }
+.foot-inner { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 28px; align-items: start; }
+.foot-brand { font-family: var(--serif); font-size: 22px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+.foot-brand em { font-style: normal; color: var(--gold); }
+.foot-tag { margin-top: 8px; font-size: 13px; color: rgba(244,235,221,.62); max-width: 380px; line-height: 1.55; }
+.foot-meta { text-align: right; font-family: var(--mono); font-size: 10px; color: rgba(244,235,221,.45); line-height: 2; }
+.foot-meta a { color: rgba(244,235,221,.7); }
+.foot-legal { max-width: 1080px; margin: 26px auto 0; padding-top: 14px; border-top: 1px solid rgba(244,235,221,.12); font-size: 10.5px; color: rgba(244,235,221,.4); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+@media(max-width:768px) { .foot-inner { grid-template-columns: 1fr; } .foot-meta { text-align: left; } }
 .muted { color: var(--muted); font-size: 13px; }
 
 /* ── demo control bar ── */
@@ -529,7 +544,7 @@ html { scroll-behavior: smooth; }
     <div class="mast-links">
       <a href="#briefing"><span style="color:var(--teal)">●</span> Cycle {{cycle_id}}</a>
       <a href="/build">Build your feed</a>
-      <a href="javascript:void(0)" onclick="toggleDeep();return false;">System proof</a>
+      <a href="javascript:void(0)" onclick="toggleDeep();return false;">Under the hood</a>
     </div>
   </div>
 </div>
@@ -537,22 +552,23 @@ html { scroll-behavior: smooth; }
 <section class="map-hero" aria-labelledby="map-title">
   <div class="map-hero-head">
     <div>
-      <p class="sec-label">Live regional signal map · Cycle {{cycle_id}}</p>
-      <h1 id="map-title">Where Caribbean opportunity is moving now.</h1>
-      <p>Pulse size reflects confidence. Select a country to inspect its current dispatches.</p>
+      <p class="sec-label">The live map · refreshed every four hours</p>
+      <h1 id="map-title">Where Caribbean opportunity is moving <em>now.</em></h1>
+      <p>Thirteen countries, watched around the clock. The bigger the pulse, the stronger the signal — tap a country to see what's moving.</p>
     </div>
     <div class="map-legend" aria-label="Signal kinds">
       <span><i style="background:#2676A8"></i>Investment</span>
       <span><i style="background:#0D766E"></i>Climate</span>
       <span><i style="background:#B57A22"></i>Procurement</span>
-      <span><i style="background:#7F8C83"></i>No signal</span>
+      <span><i style="background:#7F8C83"></i>Quiet</span>
     </div>
   </div>
   <div class="map-shell">
     <div id="leaflet-map" role="application" aria-label="Map of thirteen watched Caribbean countries with confidence pulses"></div>
   </div>
+  <div class="map-caption"><b>Live feed</b><span>World Bank</span><span>IDB</span><span>NOAA</span><span>NDBC</span><span>CARICOM</span><span>CDB</span></div>
   <div class="map-drill" id="map-drill" aria-live="polite">
-    <p class="map-drill-empty">Select a country pulse to open its dispatches.</p>
+    <p class="map-drill-empty">Tap a country to see what the desk found.</p>
   </div>
 </section>
 
@@ -560,7 +576,7 @@ html { scroll-behavior: smooth; }
   <div class="theater-shell">
     <div class="theater-head">
       <div class="theater-title">
-        <strong id="theater-title">Signal Theater</strong>
+        <strong id="theater-title">Watch the desk work</strong>
         <span class="stream-mode" id="stream-mode">LIVE</span>
       </div>
       <div class="cycle-clock" id="cycle-clock">
@@ -577,24 +593,24 @@ html { scroll-behavior: smooth; }
 
 <!-- ── Ask the Desk panel ─────────────────────────────────── -->
 <div class="sec" id="ask-desk" style="margin-top: -20px;">
-  <div class="sec-label">Ask the desk</div>
-  <div class="st">Deterministic answers from this cycle's data — no AI generation</div>
-  <div class="ss">Try: lead signal · what changed · investor routes · draft a Guyana note</div>
+  <div class="sec-label">Got a question?</div>
+  <div class="st">Ask the desk</div>
+  <div class="ss">It answers from today's data — with receipts, not guesswork.</div>
   <div id="ask-desk-root"></div>
 </div>
 
 <div class="proof-band">
   <div class="proof-line">
     <div class="proof-cell"><span class="proof-k">13</span><span class="proof-v">Countries watched</span></div>
-    <div class="proof-cell"><span class="proof-k">{{n_sources}}/6</span><span class="proof-v">Source families live</span></div>
-    <div class="proof-cell"><span class="proof-k">{{n_clusters}}</span><span class="proof-v">Decision clusters</span></div>
-    <div class="proof-cell"><span class="proof-k">{{n_personas}}</span><span class="proof-v">Persona routes</span></div>
-    <div class="proof-cell"><span class="proof-k">4h</span><span class="proof-v">Refresh target</span></div>
+    <div class="proof-cell"><span class="proof-k">{{n_sources}}/6</span><span class="proof-v">Public sources live</span></div>
+    <div class="proof-cell"><span class="proof-k">{{n_clusters}}</span><span class="proof-v">Live signals</span></div>
+    <div class="proof-cell"><span class="proof-k">{{n_personas}}</span><span class="proof-v">Briefings routed</span></div>
+    <div class="proof-cell"><span class="proof-k">4h</span><span class="proof-v">Update rhythm</span></div>
   </div>
 </div>
 
 <div class="sec" id="decision-workspace">
-  <div class="sec-label">Today's decision workspace</div>
+  <div class="sec-label">Today's call</div>
   <div class="decision-shell">
     <div class="decision-main">
       <div class="decision-kicker">
@@ -602,48 +618,48 @@ html { scroll-behavior: smooth; }
         <span class="decision-status">{{lead_delivery}}</span>
       </div>
       <h2>{{l_title}}</h2>
-      <p class="decision-summary">Guyana is the strongest capital-momentum signal in this cycle. The useful decision is not whether the percentage looks exciting; it is whether there is enough sector fit, local access, and execution capacity to justify a first conversation.</p>
+      <p class="decision-summary">Money is moving into Guyana faster than anywhere else in the region. The question that matters isn't whether the number looks exciting — it's whether there's a real opening for you, and who you'd need to talk to first.</p>
       <div class="decision-call">
-        <label>Recommended move · {{lead_window}}</label>
+        <label>The move · next {{lead_window}}</label>
         <strong>{{lead_action}}</strong>
         <p>{{lead_rationale}}</p>
       </div>
       <div class="decision-facts">
-        <div class="decision-fact"><label>Owner</label><strong>{{lead_owner}}</strong></div>
-        <div class="decision-fact"><label>Evidence</label><strong>{{l_grade}}</strong></div>
-        <div class="decision-fact"><label>Current response</label><strong>{{lead_feedback}}</strong></div>
+        <div class="decision-fact"><label>Best placed to act</label><strong>{{lead_owner}}</strong></div>
+        <div class="decision-fact"><label>How solid is this</label><strong>{{l_grade}}</strong></div>
+        <div class="decision-fact"><label>What's happened so far</label><strong>{{lead_feedback}}</strong></div>
       </div>
-      <h3 class="check-title">Advance or reject this signal</h3>
-      <p class="check-sub">The validation pack below pre-assembles evidence for these checks — confirm each one before spending more time or capital.</p>
+      <h3 class="check-title">Three checks before you commit</h3>
+      <p class="check-sub">The desk has already pulled the evidence below — tick each one off before you spend more time or money.</p>
       <div class="checklist" id="lead-checklist">
-        <div class="check-item" data-check="sector"><span class="check-box">✓</span><div><strong>Identify the sector behind the movement</strong><span>Separate broad FDI momentum from the specific industries creating the opening.</span></div></div>
-        <div class="check-item" data-check="operator"><span class="check-box">✓</span><div><strong>Find two credible local operators</strong><span>Validate demand, execution constraints, and who is already positioned to act.</span></div></div>
-        <div class="check-item" data-check="pipeline"><span class="check-box">✓</span><div><strong>Cross-check procurement and project pipelines</strong><span>Look for a concrete near-term route into the market, not just a macro signal.</span></div></div>
+        <div class="check-item" data-check="sector"><span class="check-box">✓</span><div><strong>Pin down which industry is driving this</strong><span>Big numbers hide specifics. Find the sectors actually creating the opening.</span></div></div>
+        <div class="check-item" data-check="operator"><span class="check-box">✓</span><div><strong>Find two people on the ground</strong><span>Who is already doing business there — and what do they know that the data doesn't?</span></div></div>
+        <div class="check-item" data-check="pipeline"><span class="check-box">✓</span><div><strong>Check for a concrete way in</strong><span>A live tender, a project, a partnership — something with a date on it.</span></div></div>
       </div>
       {{validation_pack_html}}
       <div id="risk-area"></div>
-      <div class="lead-disclaimer"><strong>Screening signal, not investment advice.</strong> Advance only when local diligence supports the public-data signal.</div>
+      <div class="lead-disclaimer"><strong>A signal, not advice.</strong> The data points; people on the ground confirm.</div>
     </div>
     <aside class="decision-side">
       <div class="side-head">
-        <span>Same signal, routed by decision job</span>
-        <h3>Who moves it forward</h3>
+        <span>One story, three seats</span>
+        <h3>Who gets this briefing</h3>
       </div>
       {{lead_routes_html}}
-      <div class="decision-note"><strong>Decision to influence:</strong> {{l_decision}}</div>
+      <div class="decision-note"><strong>The decision on the table:</strong> {{l_decision}}</div>
     </aside>
   </div>
 </div>
 
 <div class="coordination-strip">
   <div class="coordination-inner">
-    <div class="coord-step"><span>01</span><strong>Watch</strong><p>Public regional sources feed the cycle.</p></div>
+    <div class="coord-step"><span>01</span><strong>Watch</strong><p>We read the region's public data so you don't have to.</p></div>
     <div class="coord-arrow">-></div>
-    <div class="coord-step"><span>02</span><strong>Screen</strong><p>Signals are graded and conflicts surfaced.</p></div>
+    <div class="coord-step"><span>02</span><strong>Sift</strong><p>Weak signals get checked against each other and graded.</p></div>
     <div class="coord-arrow">-></div>
-    <div class="coord-step"><span>03</span><strong>Advance</strong><p>A named owner gets a practical next move.</p></div>
+    <div class="coord-step"><span>03</span><strong>Brief</strong><p>The right person gets a clear next move, not a chart.</p></div>
     <div class="coord-arrow">-></div>
-    <div class="coord-step"><span>04</span><strong>Learn</strong><p>Responses change future dispatch priority.</p></div>
+    <div class="coord-step"><span>04</span><strong>Learn</strong><p>Your response shapes what the desk sends next.</p></div>
   </div>
 </div>
 
@@ -655,14 +671,14 @@ html { scroll-behavior: smooth; }
       <span class="lead-conf">{{l_grade}}</span>
     </div>
     <h2>Why this signal reached the top of the desk</h2>
-    <div class="lead-why"><strong>Regional read:</strong> Guyana shows the strongest capital momentum in this cycle, with Belize and St. Vincent and the Grenadines also showing notable movement. The signal earns attention, but local execution evidence determines whether it advances.</div>
+    <div class="lead-why"><strong>The regional read:</strong> Guyana is the standout this cycle, with Belize and St. Vincent close behind. The numbers earn attention — what happens next depends on what people on the ground confirm.</div>
     <div class="lead-details">
       <div class="ld"><label>Source</label><span>World Bank indicators</span></div>
       <div class="ld"><label>Period</label><span>2023 to 2024</span></div>
-      <div class="ld"><label>Signal</label><span>World Bank data shows {{lead_pct}} FDI movement, {{l_country}} 2023 to 2024</span></div>
-      <div class="ld"><label>Next action</label><span>Sector screening and local partner validation</span></div>
+      <div class="ld"><label>Signal</label><span>Foreign investment into {{l_country}} moved {{lead_pct}} between 2023 and 2024</span></div>
+      <div class="ld"><label>Next step</label><span>Find the sector, then the people</span></div>
     </div>
-    <div class="lead-disclaimer"><strong>Screening signal, not investment advice.</strong> This dispatch is designed to direct attention, not to recommend specific investments. Always conduct independent diligence.</div>
+    <div class="lead-disclaimer"><strong>A signal, not advice.</strong> This page directs attention — it doesn't recommend investments. Always do your own diligence.</div>
   </div>
 </div>
 
@@ -671,24 +687,24 @@ html { scroll-behavior: smooth; }
   <div class="verdict-filter" id="verdict-filter" role="group" aria-label="Filter signals by validation verdict">
     <label>Filter:</label>
     <button class="verdict-btn active" data-verdict="all">All <span class="verdict-count" id="count-all">0</span></button>
-    <button class="verdict-btn verified" data-verdict="advance">✅ Verified <span class="verdict-count" id="count-advance">0</span></button>
-    <button class="verdict-btn mixed" data-verdict="hold">⚠️ Mixed <span class="verdict-count" id="count-hold">0</span></button>
-    <button class="verdict-btn unverified" data-verdict="reject">❌ Unverified <span class="verdict-count" id="count-reject">0</span></button>
+    <button class="verdict-btn verified" data-verdict="advance">Advance <span class="verdict-count" id="count-advance">0</span></button>
+    <button class="verdict-btn mixed" data-verdict="hold">Hold <span class="verdict-count" id="count-hold">0</span></button>
+    <button class="verdict-btn unverified" data-verdict="reject">Park <span class="verdict-count" id="count-reject">0</span></button>
   </div>
   <div class="sig-list" id="sig-list">{{sec_html}}</div>
 </div>
 
 <div class="sec">
-  <div class="sec-label">Built for decision-makers</div>
+  <div class="sec-label">Who it's for</div>
   <div class="st">Who should act on this</div>
-  <div class="ss">Every dispatch is written for a specific audience.</div>
+  <div class="ss">The same signal reads differently from different seats — so the desk writes it differently for each.</div>
   <div class="aud-grid">{{pcard_html}}</div>
 </div>
 
 <div class="sec">
-  <div class="sec-label">Briefings ready to send</div>
-  <div class="st">Formatted for each channel</div>
-  <div class="ss">These are real outputs from today's briefing cycle.</div>
+  <div class="sec-label">Ready to forward</div>
+  <div class="st">Written to travel</div>
+  <div class="ss">Live outputs from today's cycle — made to be forwarded, not filed.</div>
   <div class="out-grid">
     <div class="out">
       <div class="out-head"><h4>Telegram Briefing</h4><div class="out-ch">Telegram channel</div></div>
@@ -778,7 +794,7 @@ Source: World Bank indicators, 2023 to 2024 comparison.</div>
       <button onclick="ask('draft')">Draft a note</button>
     </div>
     <div class="ask-row">
-      <input id="dq" placeholder="Ask about a signal, country, audience…" onkeydown="if(event.key==='Enter')ask(this.value)">
+      <input id="dq" placeholder="Ask about a country, a signal, or what to do next…" onkeydown="if(event.key==='Enter')ask(this.value)">
       <button onclick="ask(document.getElementById('dq').value)">Ask</button>
     </div>
     <div id="da" class="abox">Select a prompt or ask a question.</div>
@@ -993,15 +1009,15 @@ const drillReact = (function () {
     if (!items.length) {
       return html`
         <div class="animate-riseIn">
-          <div class="map-drill-head"><strong>${country}</strong><span>No current signals</span></div>
-          <p class="map-drill-empty">This country remains on the watchlist and will pulse when a new signal is dispatched.</p>
+          <div class="map-drill-head"><strong>${country}</strong><span>Quiet this cycle</span></div>
+          <p class="map-drill-empty">Nothing to act on here right now. The desk keeps watching — when something moves, it pulses.</p>
         </div>`;
     }
     return html`
       <div class="animate-riseIn">
         <div class="map-drill-head">
           <strong>${country}</strong>
-          <span>${items.length} dispatch${items.length === 1 ? '' : 'es'} this cycle</span>
+          <span>${items.length} briefing${items.length === 1 ? '' : 's'} this cycle</span>
         </div>
         <div class="map-drill-grid">
           ${items.slice(0, 6).map((d, i) => {
@@ -1243,11 +1259,11 @@ window.ask = function(q) {
             <span class="w-[6px] h-[6px] rounded-full bg-gold animate-dotBounce"></span>
             <span class="w-[6px] h-[6px] rounded-full bg-gold animate-dotBounce [animation-delay:.15s]"></span>
             <span class="w-[6px] h-[6px] rounded-full bg-gold animate-dotBounce [animation-delay:.3s]"></span>
-            consulting this cycle's artifacts
+            pulling today's files
           </div>`}
         ${offline && html`
           <div class="mt-2 px-4 py-3 bg-[#EAF2EC] border border-borderc rounded text-[13px] text-mutedc animate-riseIn">
-            Live desk offline — this page is static right now. Run <code class="font-mono">python3 server.py</code> locally, or try the hosted desk.
+            The desk can't be reached from this copy of the page — try the live site at signal-fabric.vercel.app.
           </div>`}
         ${thread.map((m, i) => html`
           <div key=${m.at + m.q} class="mt-3 bg-cardc border-l-[3px] border-gold rounded-r p-4 animate-riseIn ${i > 0 ? 'opacity-60' : 'ans-sweep'}">
@@ -1257,7 +1273,7 @@ window.ask = function(q) {
             </div>
           </div>`)}
         ${!thread.length && !busy && !offline && html`
-          <div class="mt-2 px-4 py-3 text-[12px] text-mutedc">Answers come straight from this cycle's generated artifacts — deterministic, cited, no AI generation.</div>`}
+          <div class="mt-2 px-4 py-3 text-[12px] text-mutedc">Every answer is pulled word-for-word from this cycle's files — so you can always check the receipts.</div>`}
       </div>`;
   }
 
@@ -1465,7 +1481,21 @@ setInterval(updateCycleClock, 30000);
 </script>
 
 <footer>
-  Caribbean Opportunity Dispatch · Cycle {{cycle_id}} · {{now_str}} · Screening signals only, not investment advice · Data: World Bank · IDB · NOAA · NDBC · CARICOM · CDB
+  <div class="foot-inner">
+    <div>
+      <div class="foot-brand">Caribbean <em>Opportunity</em> Dispatch</div>
+      <p class="foot-tag">Signals from the region’s public data, routed to the people who can act on them. Built in the open, for the Caribbean.</p>
+    </div>
+    <div class="foot-meta">
+      Cycle {{cycle_id}} · {{now_str}}<br>
+      Data · World Bank · IDB · NOAA · NDBC · CARICOM · CDB<br>
+      For AI agents · <a href="/llms.txt">llms.txt</a> · <a href="/agents.md">agents.md</a> · <a href="/api/tools.json">tools.json</a>
+    </div>
+  </div>
+  <div class="foot-legal">
+    <span>A signal, not advice — always do your own diligence.</span>
+    <span>Powered by Signal Fabric</span>
+  </div>
 </footer>
 </body>
 </html>

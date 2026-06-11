@@ -153,9 +153,9 @@ def test_dashboard_generate_includes_counts():
     from dashboard.generate import clean_title, clean_grade, clean_evidence, clean_signal_title
 
     assert "Guyana" in clean_title("Guyana: +860.3% multi-source capital surge")
-    assert "High confidence" in clean_grade("A - multi-source")
+    assert "Solid" in clean_grade("A - multi-source")
     assert "World Bank" in clean_evidence("WB FDI surge detected: Guyana")
-    assert "capital momentum" in clean_signal_title("Guyana: +860.3% ...")
+    assert "money on the move" in clean_signal_title("Guyana: +860.3% ...")
 
 
 if __name__ == "__main__":

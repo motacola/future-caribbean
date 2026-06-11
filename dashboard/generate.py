@@ -38,16 +38,16 @@ def clean_title(raw: str) -> str:
     # Extract country
     country = raw.split(":")[0].strip() if ":" in raw else "Caribbean"
     # Check for risk flags to adjust wording
-    return f"{country} leads today's Caribbean capital momentum signal"
+    return f"All signals point to {country}."
 
 def clean_grade(raw: str) -> str:
     """Turn 'A - multi-source' → 'High confidence, supported by multiple sources'"""
     if "multi-source" in raw.lower() or raw.startswith("A"):
-        return "High confidence · Supported by multiple sources"
+        return "Solid — several sources agree"
     if "cross-source" in raw.lower() or raw.startswith("B"):
-        return "Moderate confidence · Supported by multiple sources"
+        return "Promising — more than one source"
     if raw.startswith("C"):
-        return "Early signal · Single source"
+        return "Early — one source so far"
     return "Exploratory"
 
 def clean_evidence(raw: str) -> str:
@@ -64,8 +64,8 @@ def clean_signal_title(raw: str) -> str:
         # Extract the percentage
         pct = re.search(r"([+\-]?\d+\.?\d*)%", raw)
         pct_str = pct.group(1) + "%" if pct else ""
-        return f"{country}: capital momentum signal ({pct_str})"
-    return f"{country} opportunity signal"
+        return f"{country} — money on the move ({pct_str})"
+    return f"{country} — early signal"
 
 # ── Load data ──────────────────────────────────────────────
 
