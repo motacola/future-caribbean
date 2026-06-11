@@ -710,50 +710,49 @@ html { scroll-behavior: smooth; }
       <div class="out-head"><h4>Telegram Briefing</h4><div class="out-ch">Telegram channel</div></div>
       <div class="out-body" id="tg-body">Caribbean Opportunity Dispatch
 
-Lead signal: Guyana capital movement
+Today's lead: Guyana
 
-Guyana is today's strongest momentum signal based on World Bank FDI data.
+Money is moving into Guyana — World Bank numbers show the sharpest rise in the region.
 
 Why it matters:
-Capital activity may create openings in partnerships, services, procurement, logistics, and infrastructure-adjacent sectors.
+New money usually means new openings — partnerships, services, tenders, logistics.
 
-Who should act:
-Diaspora investors, regional founders, and ecosystem builders.
+Who this is for:
+Diaspora investors, regional founders, ecosystem builders.
 
 Next step:
-Screen Guyana first. Compare Belize and St. Vincent before committing further research.
+Look at Guyana first. Compare Belize and St. Vincent before going deeper.
 
-Confidence: High
-Source: World Bank indicators
-Period: 2023 to 2024
+How solid: several sources agree
+Based on: World Bank, 2023 to 2024
 
-Screening signal, not investment advice.</div>
-      <div class="out-static">Delivery packet generated</div>
+A signal, not advice.</div>
+      <div class="out-static">Ready to send</div>
     </div>
     <div class="out">
       <div class="out-head"><h4>Investor Memo</h4><div class="out-ch">Email</div></div>
       <div class="out-body">Caribbean Capital Momentum Brief
 
 Lead market: Guyana
-Signal: World Bank FDI movement increased sharply 2023 to 2024
+The signal: foreign investment rose sharply between 2023 and 2024 — World Bank data.
 
 Why it matters:
-Guyana is showing the strongest capital momentum in today's regional cycle. That may point to near-term opportunities in partnerships, services, procurement, logistics, real estate, and infrastructure-adjacent sectors.
+Guyana is pulling in more money than anywhere else in the region right now. That usually opens doors in partnerships, services, tenders, logistics, property, and infrastructure.
 
-Investor action:
-Screen Guyana first, then compare Belize and St. Vincent and the Grenadines before deciding where to investigate deal flow.
+What to do:
+Look at Guyana first, then weigh Belize and St. Vincent before deciding where to dig in.
 
-Diligence note:
-Treat this as a screening signal, not an investment recommendation. Validate sector exposure, local execution risk, and partner quality.
+Before you act:
+This is a pointer, not a recommendation. Check the sector, the local risks, and the people you'd be working with.
 
 Caribbean Opportunity Dispatch</div>
-      <div class="out-static">Persona route generated</div>
+      <div class="out-static">Written for investors</div>
     </div>
     <div class="out">
       <div class="out-head"><h4>Message Alert</h4><div class="out-ch">WhatsApp / messaging</div></div>
-      <div class="out-body">Guyana capital signal
+      <div class="out-body">Guyana — money moving
 
-World Bank data shows sharp FDI increase 2023 to 2024.
+World Bank numbers show a sharp rise in foreign investment, 2023 to 2024.
 
 Watch: partnerships, procurement, logistics, energy, professional services.
 
@@ -776,7 +775,7 @@ Implications:
 • Cross-border logistics and energy coordination opportunities
 
 Monitoring recommended:
-CDB/IDB project pipelines, trade data, sector FDI breakdowns.
+CDB and IDB project pipelines, trade data, and where the investment is landing by sector.
 
 Source: World Bank indicators, 2023 to 2024 comparison.</div>
       <div class="out-static">Institution brief generated</div>
@@ -853,6 +852,13 @@ Source: World Bank indicators, 2023 to 2024 comparison.</div>
 const D = {{aj}};
 const MAP_DISPATCHES = {{map_dispatches_json}};
 const MAP_MARKERS = {{map_markers_json}};
+const HUMANIZE_RULES = {{humanize_rules_json}}.map(([p, r]) => { try { return [new RegExp(p), r]; } catch (e) { return null; } }).filter(Boolean);
+function humanizeJs(t) {
+  if (!t) return t;
+  let out = String(t);
+  HUMANIZE_RULES.forEach(([rx, r]) => { out = out.replace(rx, r); });
+  return out;
+}
 const MAP_COLORS = { investment:'#2676A8', climate:'#0D766E', procurement:'#B57A22', none:'#7F8C83' };
 const REPLAY_JSONL_URL = "{{replay_jsonl_url}}";
 let theaterSource = null;
@@ -879,7 +885,7 @@ function renderTheaterEvent(type, data) {
     row.innerHTML = time + '<p><span>' + escapeMapText(data.source) + ' ↻</span> ' + escapeMapText(data.status) + '</p>';
   } else if (type === 'signal_found') {
     const color = MAP_COLORS[data.kind] || MAP_COLORS.none;
-    row.innerHTML = time + '<p><span style="background:' + color + '">' + escapeMapText(data.kind) + '</span><strong>' + escapeMapText(data.country) + '</strong> · ' + escapeMapText(data.confidence) + '% · ' + escapeMapText(data.summary) + '</p>';
+    row.innerHTML = time + '<p><span style="background:' + color + '">' + escapeMapText(data.kind) + '</span><strong>' + escapeMapText(data.country) + '</strong> · ' + escapeMapText(data.confidence) + '% · ' + escapeMapText(humanizeJs(data.summary)) + '</p>';
   } else if (type === 'dispatch_routed') {
     row.innerHTML = time + '<p><strong>' + escapeMapText(data.recipient) + '</strong> · ' + escapeMapText(data.country) + ' <code>' + escapeMapText(data.dispatch_id) + '</code></p>';
   } else {
@@ -1224,7 +1230,7 @@ window.ask = function(q) {
         });
         if (!res.ok) throw new Error('HTTP ' + res.status);
         const data = await res.json();
-        setThread(t => [{ q: query, a: data.answer || 'No answer returned.', at: data.generated_at }, ...t].slice(0, 3));
+        setThread(t => [{ q: query, a: humanizeJs(data.answer) || 'No answer returned.', at: data.generated_at }, ...t].slice(0, 3));
       } catch (e) {
         setOffline(true);
       }

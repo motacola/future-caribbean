@@ -29,7 +29,7 @@ MAX_MATCHES = 6
 INSTITUTIONS = {
     "Guyana": [
         {"name": "Guyana Office for Investment (GO-Invest)", "role": "National investment promotion agency"},
-        {"name": "Private Sector Commission of Guyana", "role": "Umbrella private-sector body — operator discovery"},
+        {"name": "Private Sector Commission of Guyana", "role": "Knows the private sector — ask who's really operating"},
     ],
     "Jamaica": [
         {"name": "JAMPRO (Jamaica Promotions Corporation)", "role": "National investment and export promotion agency"},
@@ -68,7 +68,7 @@ INSTITUTIONS = {
         {"name": "Centre de Facilitation des Investissements (CFI)", "role": "National investment facilitation centre"},
     ],
     "Suriname": [
-        {"name": "Chamber of Commerce and Industry Suriname (KKF)", "role": "National chamber — operator discovery"},
+        {"name": "Chamber of Commerce and Industry Suriname (KKF)", "role": "The national chamber — a shortcut to who's doing business"},
     ],
 }
 

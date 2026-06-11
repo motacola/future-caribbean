@@ -67,6 +67,85 @@ def clean_signal_title(raw: str) -> str:
         return f"{country} — money on the move ({pct_str})"
     return f"{country} — early signal"
 
+# ── Natural-language layer ─────────────────────────────────
+# Pipeline artifacts stay machine-shaped (agents consume them verbatim);
+# the page translates them into plain speech at render time.
+# Each rule: (regex, replacement). Specific templates first, generic last.
+HUMANIZE_RULES = [
+    (r"^([^:]+): \+?([\d.]+)% multi-source capital surge — market entry window open$",
+     r"Money is moving into \1 — up \2%, and more than one source says so"),
+    (r"^([^:]+): FDI trending at \+?([\d.]+)% — screening trigger active$",
+     r"Foreign investment into \1 is up \2% — worth a first look"),
+    (r"^([^:]+): (\d+) active procurements? — bidding window open$",
+     r"\2 live tenders in \1 — bids are open now"),
+    (r"^([^:]+): food supply indicators shifting — supply chain implications$",
+     r"Food supply numbers are shifting in \1 — keep an eye on the supply chain"),
+    (r"^Capital convergence: (\d+) Caribbean economies showing multi-source investment momentum$",
+     r"\1 Caribbean economies are pulling in money at the same time"),
+    (r"^([^:]+): GDP growth signals expanding tourist economy$",
+     r"\1's economy is growing — good news for tourism demand"),
+    (r"^([^:]+): economic stress indicators rising.*$",
+     r"Stress numbers are rising in \1 — worth watching"),
+    (r"Investigate (.+?) as a capital deployment target this cycle\. Multi-source validation \((.+?)\) confirms directional signal — next step is operator discovery and market entry assessment\.",
+     r"Take a serious look at \1 this cycle. Several sources point the same way (\2) — the next step is finding local partners and checking for a real way in."),
+    (r"Assess competitive positioning in (.+?)\. FDI movement \((.+?)\) signals growing market or incoming competition — evaluate (.+?)\.",
+     r"If you operate in \1, take stock: new money (\2) means a growing market — or new competition arriving."),
+    (r"Assess portfolio exposure in (.+?)\. Economic stress indicators \((.+?)\) may affect existing positions or timing\.",
+     r"Holding positions in \1? Stress numbers are at \2 — check your exposure and your timing."),
+    (r"Assess (.+?) demand trajectory\. (.+?) change — adjust capacity plans\.",
+     r"Demand in \1 looks to be shifting (\2) — worth revisiting capacity plans."),
+    (r"Screen (.+?) for investment readiness\. FDI movement \((.+?)\) is a screening trigger — cross-reference with sector conditions before deploying capital\.",
+     r"\1 is worth a first screen: money is moving (\2). Check the sector picture before committing anything."),
+    (r"Multi-source validation reduces screening risk — capital follows verified signals",
+     r"When several sources agree, half the homework is already done"),
+    (r"FDI movement in your operating country signals competition or demand growth — assess positioning",
+     r"Money moving into your market means demand — or competition. Either way, better to know early"),
+    (r"Active procurement directly maps to operational capacity needs — first to respond wins",
+     r"Live tenders reward whoever responds first"),
+    (r"Cross-country investment velocity signals where to focus ecosystem support and founder matching",
+     r"Where the money lands is where founders will need support next"),
+    (r"Economic stress indicators drive policy response and media narratives",
+     r"Stress numbers move policy — and headlines"),
+    (r"Food trade data reveals supply chain gaps that local founders and agri-tech can fill",
+     r"Gaps in the food trade are openings for local founders"),
+    (r"GDP growth in tourism-relevant economies signals demand trajectory — plan capacity accordingly",
+     r"A growing economy means more visitors — plan capacity for it"),
+    (r"CDB/IDB project pipeline is the primary lead source for project-based business development",
+     r"The CDB and IDB project pipeline is where project work starts"),
+    (r"Food security is a regional stability indicator — tracks pressure points before they become crises",
+     r"Food security numbers flag pressure early — before it becomes a crisis"),
+    (r"Which verified opportunity to investigate for capital deployment or partnership entry",
+     r"Which opportunity deserves your attention first"),
+    (r"Analyst prior from widely reported sector drivers — requires local confirmation",
+     r"Widely reported driver — still needs confirming on the ground"),
+    (r"(\d+) independent evidence categories already attached",
+     r"evidence already attached from \1 directions"),
+    (r"High-confidence signal", r"Strong signal"),
+    (r"Worth one validation conversation this cycle\.", r"Worth one real conversation this cycle."),
+    (r"Umbrella private-sector body — operator discovery",
+     r"Knows the private sector — ask who's really operating"),
+    (r"National chamber — operator discovery",
+     r"The national chamber — a shortcut to who's doing business"),
+    (r"World Bank FDI movement data shows:\s*(.+)", r"World Bank sees foreign investment moving into \1"),
+    (r"WB FDI surge detected:\s*", r"World Bank sees money moving into "),
+    (r"\bWB\b", "World Bank"),
+    (r"\bFDI\b", "foreign investment"),
+]
+_HUMANIZE_COMPILED = [(re.compile(p), r) for p, r in HUMANIZE_RULES]
+
+def humanize(text: str) -> str:
+    if not text:
+        return text
+    for rx, repl in _HUMANIZE_COMPILED:
+        text = rx.sub(repl, text)
+    return text
+
+# JS twin for live content (theater stream, ask-desk answers):
+# same patterns, replacement backrefs converted \1 -> $1
+humanize_rules_json = json.dumps(
+    [[p, re.sub(r"\\(\d)", r"$\1", r)] for p, r in HUMANIZE_RULES],
+    ensure_ascii=False).replace("</", "<\\/")
+
 # ── Load data ──────────────────────────────────────────────
 
 desk = read_json(ROOT / "outbox" / "dispatch_desk.json") or {}
@@ -102,7 +181,7 @@ for entry in map_data:
         "lng": lng,
         "confidence": entry["confidence"],
         "kind": entry["kind"],
-        "summary": entry["top_signal_summary"],
+        "summary": humanize(entry["top_signal_summary"]),
     })
 map_markers_json = json.dumps(map_markers, ensure_ascii=False).replace("</", "<\\/")
 
@@ -112,8 +191,8 @@ for dispatch in dispatches:
     if country in map_dispatches:
         map_dispatches[country].append({
             "dispatch_id": dispatch.get("dispatch_id"),
-            "title": dispatch.get("title", ""),
-            "recommended_action": dispatch.get("recommended_action", ""),
+            "title": humanize(dispatch.get("title", "")),
+            "recommended_action": humanize(dispatch.get("recommended_action", "")),
             "confidence_score": dispatch.get("confidence_score", 0),
             "signal_kind": dispatch.get("signal_kind", ""),
             "persona_label": dispatch.get("persona_label", ""),
@@ -124,8 +203,8 @@ map_dispatches_json = json.dumps(map_dispatches, ensure_ascii=False).replace("</
 
 l_country = lead.get("country_cluster", "Guyana")
 l_title = clean_title(lead.get("title", ""))                    # "Guyana leads today's Caribbean capital momentum signal"
-l_evidence = clean_evidence(lead.get("evidence", ""))            # "World Bank FDI movement: Guyana"
-l_decision = lead.get("decision", "Where to investigate capital deployment or partnership entry")
+l_evidence = humanize(clean_evidence(lead.get("evidence", "")))            # "World Bank FDI movement: Guyana"
+l_decision = humanize(lead.get("decision", "Which opportunity deserves your attention first"))
 l_score = lead.get("confidence_score", 0)
 l_grade = clean_grade(lead.get("evidence_grade", ""))          # "High confidence, supported by multiple sources"
 l_fresh = lead.get("freshness", "")
@@ -143,19 +222,19 @@ lead_dispatch = next(
     (d for d in lead_dispatches if d.get("persona_key") == "diaspora_investor"),
     lead_dispatches[0] if lead_dispatches else {},
 )
-lead_action = lead_dispatch.get(
+lead_action = humanize(lead_dispatch.get(
     "recommended_action",
     "Validate sector fit, local partners, and timing before advancing this opportunity.",
-)
+))
 lead_window = lead_dispatch.get("action_window", "14 days")
 lead_owner = lead_dispatch.get("persona_label", "Diaspora Investor")
 lead_dispatch_id = lead_dispatch.get("dispatch_id", lead.get("cluster_id", "lead-dispatch"))
 lead_delivery = lead_dispatch.get("delivery_status", "queued").replace("_", " ").title()
 lead_feedback = lead_dispatch.get("feedback_status", "awaiting").replace("_", " ").title()
-lead_rationale = lead_dispatch.get(
+lead_rationale = humanize(lead_dispatch.get(
     "routing_rationale",
     "This route matches a high-confidence signal to the person most likely to advance it.",
-)
+))
 
 lead_routes_html = ""
 for route in lead_dispatches[:3]:
@@ -165,7 +244,7 @@ for route in lead_dispatches[:3]:
         <strong>{j(route.get("persona_label", "Decision-maker"))}</strong>
         <span>{j(route.get("channel", "Brief"))} · {j(route.get("action_window", "14 days"))}</span>
       </div>
-      <p>{j(route.get("recommended_action", ""))}</p>
+      <p>{j(humanize(route.get("recommended_action", "")))}</p>
       <span class="route-state">{j(route.get("feedback_status", "awaiting").replace("_", " ").title())}</span>
     </div>'''
 
@@ -193,7 +272,7 @@ if vpack:
 
     hyp_lis = ""
     for h in (vpack.get("sector_hypotheses") or [])[:5]:
-        hyp_lis += f'<li><strong>{j(h.get("sector",""))}</strong><em>{j(h.get("basis",""))}</em></li>'
+        hyp_lis += f'<li><strong>{j(h.get("sector",""))}</strong><em>{j(humanize(h.get("basis","")))}</em></li>'
     if not hyp_lis:
         hyp_lis = '<li>No sector hypotheses generated this cycle.</li>'
 
@@ -216,11 +295,11 @@ if vpack:
 
     intro_lis = ""
     for i in (vpack.get("recommended_intro_targets") or [])[:4]:
-        intro_lis += f'<li><strong>{j(i.get("name",""))}</strong><em>{j(i.get("why",""))}</em></li>'
+        intro_lis += f'<li><strong>{j(i.get("name",""))}</strong><em>{j(humanize(i.get("why","")))}</em></li>'
     if not intro_lis:
         intro_lis = '<li>No intro targets identified.</li>'
 
-    q_lis = "".join(f'<li>{j(q)}</li>' for q in (vpack.get("unresolved_questions") or [])[:4])
+    q_lis = "".join(f'<li>{j(humanize(q))}</li>' for q in (vpack.get("unresolved_questions") or [])[:4])
 
     validation_pack_html = f'''
       <div class="vpack">
@@ -231,7 +310,7 @@ if vpack:
           </div>
           <span class="vpack-verdict {j(verdict)}">{j(verdict_label)}</span>
         </div>
-        <div class="vpack-reason">{j(vpack.get("recommendation_reason", ""))}</div>
+        <div class="vpack-reason">{j(humanize(vpack.get("recommendation_reason", "")))}</div>
         <div class="vpack-grid">
           <div class="vpack-col"><h4>Sector hypotheses</h4><ul>{hyp_lis}</ul></div>
           <div class="vpack-col"><h4>Suggested first conversations</h4><ul>{intro_lis}</ul></div>
@@ -250,7 +329,7 @@ for c in clusters:
         if name in seen: continue
         seen.add(name)
         ch = p.get("channel", "")
-        act = (p.get("action", "") or "")[:100]
+        act = humanize(p.get("action", "") or "")[:100]
         pcards.append((name, ch, act))
     if len(pcards) >= 5: break
 
@@ -318,7 +397,7 @@ for c in clusters[1:5]:
         # Sector hypotheses
         hyp_lis = ""
         for h in (pack.get("sector_hypotheses") or [])[:3]:
-            basis = f'<em>{j(h.get("basis", ""))}</em>' if h.get("basis") else ""
+            basis = f'<em>{j(humanize(h.get("basis", "")))}</em>' if h.get("basis") else ""
             hyp_lis += f'<li><strong>{j(h.get("sector", ""))}</strong>{basis}</li>'
         if not hyp_lis:
             hyp_lis = '<li>No sector hypotheses this cycle.</li>'
@@ -505,6 +584,7 @@ V = dict(
     whynow_html="".join(f"<li>{j(item)}</li>" for item in whynow_items) if whynow_items else "<li>No active seasonal triggers</li>",
     aj=aj,
     map_markers_json=map_markers_json,
+    humanize_rules_json=humanize_rules_json,
     map_dispatches_json=map_dispatches_json,
     all_packs_json=all_packs_json,
     verdict_counts_json=verdict_counts_json,
