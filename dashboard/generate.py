@@ -311,6 +311,7 @@ for label, key, desc in SRC:
     src_rows += f'<tr class="{cls}"><td><span class="dot">{dot}</span> {j(label)}</td><td>{j(desc)}</td><td>{"Live" if ok else "Offline"}</td></tr>'
 
 # ── Secondary signals (clean titles) with expandable validation ────
+cycle_id = desk.get("cycle_id", "—")
 sec_signals = ""
 advance_count = 0
 hold_count = 0
@@ -385,9 +386,22 @@ for c in clusters[1:5]:
           </div>
         </div>'''
     
+    kind = c.get("signal_kind", "") or ""
+    desk_name = ("Investment Desk" if "invest" in kind
+            else "Climate Desk" if ("climate" in kind or "weather" in kind)
+            else "Procurement Desk" if ("procure" in kind or "pipeline" in kind)
+            else "Regional Desk")
+    desk_color = {"Investment Desk": "#2676A8", "Climate Desk": "#0D766E", "Procurement Desk": "#B57A22"}.get(desk_name, "#7F8C83")
+    dek = humanize((c.get("decision", "") or ""))[:110]
     sec_signals += f'''
     <div class="sig-row" data-verdict="{j(verdict)}" data-signal-id="{j(sid)}">
-      <div class="sig-main"><strong>{j(ct)}</strong><div class="sig-loc">{j(cc)}</div></div>
+      <div class="sig-main"><div>
+        <span class="art-kicker" style="color:{desk_color}">{j(desk_name)}</span>
+        <strong class="art-head">{j(ct)}</strong>
+        <div class="sig-loc">{j(cc)}</div>
+        <p class="art-dek">{j(dek)}</p>
+        <span class="art-by">By the Desk · Cycle {j(cycle_id)}</span>
+      </div></div>
       {risk_html}
       <span class="sig-expand" aria-label="Expand validation" title="View validation pack">▼</span>
       {validation_html}
@@ -440,7 +454,6 @@ n_clusters = len(clusters)
 n_composite = len((read_json(ROOT / "data" / "composite" / "latest.json") or {}).get("signals", []) or [])
 n_personas = desk.get("dispatch_count", 0)
 n_fb = len(fb_hist)
-cycle_id = desk.get("cycle_id", "—")
 now_str = datetime.now(timezone.utc).strftime("%B %d, %Y at %H:%M UTC")
 
 # Verdict counts for filter bar

@@ -420,6 +420,40 @@ html { scroll-behavior: smooth; }
   .lw-rail[aria-hidden] { display: none; }
 }
 
+/* desk navigation */
+.desknav { background: var(--bg); border-bottom: 3px double var(--border-dark); position: relative; z-index: 5; }
+.desknav-inner { max-width: 1160px; margin: 0 auto; padding: 0 24px; display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; }
+.desknav-inner::-webkit-scrollbar { display: none; }
+.dn-item { padding: 11px 14px; font: 600 11px var(--sans); letter-spacing: 1.1px; text-transform: uppercase; color: var(--sub); white-space: nowrap; text-decoration: none; border-bottom: 2px solid transparent; margin-bottom: -1px; }
+.dn-item:hover { color: var(--ink); text-decoration: none; border-bottom-color: var(--gold); }
+.dn-agents { color: var(--teal); }
+
+/* lead-story dateline */
+.dateline { display: flex; gap: 14px; align-items: baseline; flex-wrap: wrap; padding-bottom: 10px; margin-bottom: 14px; border-bottom: 3px double var(--border-dark); }
+.dl-desk { font: 700 10px var(--mono); letter-spacing: 1.4px; text-transform: uppercase; color: var(--sky); }
+.dl-by { font: italic 600 13px var(--serif); color: var(--ink); }
+.dl-when { font: 400 10px var(--mono); color: var(--muted); margin-left: auto; }
+
+/* wire article cards */
+.art-kicker { display: block; font: 700 9px var(--mono); letter-spacing: 1.3px; text-transform: uppercase; margin-bottom: 3px; }
+.art-head { font-family: var(--serif); font-size: 17px; font-weight: 700; line-height: 1.2; }
+.art-dek { font-size: 12.5px; color: var(--sub); margin-top: 3px; line-height: 1.5; }
+.art-by { display: block; font: italic 500 11px var(--serif); color: var(--muted); margin-top: 5px; }
+
+/* for-agents block */
+.agents-block { background: var(--ink); color: var(--bg); border-radius: 10px; padding: 34px 30px 24px; box-shadow: 0 18px 60px rgba(24,37,31,.16); }
+.agents-eyebrow { font: 700 10px var(--mono); letter-spacing: 1.6px; text-transform: uppercase; color: var(--lime); }
+.agents-head h2 { font-family: var(--serif); font-size: clamp(24px,3.4vw,36px); line-height: 1.1; margin: 10px 0 8px; }
+.agents-head p { color: rgba(244,235,221,.66); font-size: 14px; max-width: 560px; margin-bottom: 22px; }
+.agents-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; }
+.agents-card { border: 1px solid rgba(244,235,221,.16); border-radius: 8px; padding: 16px; }
+.agents-card h4 { font-family: var(--serif); font-size: 16px; margin-bottom: 10px; }
+.agents-card pre { font: 11px var(--mono); color: var(--lime); white-space: pre-wrap; overflow-wrap: anywhere; background: rgba(244,235,221,.06); border-radius: 5px; padding: 10px 12px; margin-bottom: 8px; }
+.agents-card span { font-size: 11px; color: rgba(244,235,221,.5); }
+.agents-foot { margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(244,235,221,.12); font-size: 12px; color: rgba(244,235,221,.6); }
+.agents-foot a { color: var(--lime); }
+
+
 /* opening frame load-in choreography (the map IS the hero) */
 .hw { display: inline-block; opacity: 0; transform: translateY(.55em); animation: word-rise .75s cubic-bezier(.22,1,.36,1) forwards; animation-delay: var(--wd, 0s); }
 @keyframes word-rise { to { opacity: 1; transform: translateY(0); } }
@@ -498,6 +532,9 @@ html { scroll-behavior: smooth; }
   .theater-shell { border-radius: 0; }
   .theater-event { grid-template-columns: 58px 1fr; }
   .verdict-filter { flex-wrap: wrap; }
+  .desknav-inner { padding: 0 12px; }
+  .dateline .dl-when { margin-left: 0; width: 100%; }
+  .agents-block { border-radius: 0; }
 }
 
 /* ── cycle clock ── */
@@ -575,6 +612,17 @@ html { scroll-behavior: smooth; }
   </div>
 </div>
 
+<nav class="desknav" aria-label="Desks">
+  <div class="desknav-inner">
+    <a href="#leaflet-map" class="dn-item">Front Page</a>
+    <a href="#decision-workspace" class="dn-item dn-invest">Investment Desk</a>
+    <a href="#theater" class="dn-item">The Engine</a>
+    <a href="#ask-desk" class="dn-item">Ask the Desk</a>
+    <a href="#more-wire" class="dn-item">More from the Wire</a>
+    <a href="#for-agents" class="dn-item dn-agents">For Agents</a>
+  </div>
+</nav>
+
 <section class="map-hero" aria-labelledby="map-title">
   <div class="map-hero-head">
     <div>
@@ -639,6 +687,7 @@ html { scroll-behavior: smooth; }
   <div class="sec-label">Today's call</div>
   <div class="decision-shell">
     <div class="decision-main">
+      <div class="dateline"><span class="dl-desk">Investment Desk</span><span class="dl-by">By the Desk</span><span class="dl-when">Cycle {{cycle_id}} · {{now_str}}</span></div>
       <div class="decision-kicker">
         <span class="decision-id">{{lead_dispatch_id}} · Cycle {{cycle_id}}</span>
         <span class="decision-status">{{lead_delivery}}</span>
@@ -709,7 +758,7 @@ html { scroll-behavior: smooth; }
 </div>
 
 <div class="sec">
-  <div class="sec-label">Also on our radar</div>
+  <div class="sec-label" id="more-wire">More from the wire</div>
   <div class="verdict-filter" id="verdict-filter" role="group" aria-label="Filter signals by validation verdict">
     <label>Filter:</label>
     <button class="verdict-btn active" data-verdict="all">All <span class="verdict-count" id="count-all">0</span></button>
@@ -1527,6 +1576,23 @@ setInterval(updateCycleClock, 30000);
   }
 })();
 </script>
+
+<div class="sec" id="for-agents">
+  <div class="agents-block">
+    <div class="agents-head">
+      <span class="agents-eyebrow">// machine-readable edition</span>
+      <h2>Reading this as an AI agent? This page is yours too.</h2>
+      <p>Everything the desk publishes is available as structured data — same facts, no scraping required.</p>
+    </div>
+    <div class="agents-grid">
+      <div class="agents-card"><h4>One question, one answer</h4><pre>curl -X POST https://signal-fabric.vercel.app/api/ask \
+  -d '{"question":"explain lead"}'</pre><span>Deterministic, cited — no hallucinations</span></div>
+      <div class="agents-card"><h4>Every tool, self-described</h4><pre>GET /api/tools.json</pre><span>Ingest the manifest, configure yourself</span></div>
+      <div class="agents-card"><h4>Follow the wire</h4><pre>GET /feed.xml</pre><span>RSS of every signal, every cycle</span></div>
+    </div>
+    <div class="agents-foot">Full connection guide for Claude (MCP), Hermes, OpenClaw, and anything HTTP-capable: <a href="/agents.md">agents.md</a> · <a href="/llms.txt">llms.txt</a></div>
+  </div>
+</div>
 
 <footer>
   <div class="foot-inner">
