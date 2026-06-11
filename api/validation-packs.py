@@ -1,8 +1,14 @@
-"""Vercel serverless function: GET /api/validation-packs"""
+"""Vercel serverless function: GET /api/validation-packs[?id=<signal_id>]
+
+Without ?id: the pack index. With ?id: the full pack for that signal
+(pretty path /api/validation-packs/<id> rewrites to ?id= via vercel.json).
+"""
 import json
+import re
 import sys
 from pathlib import Path
 from http.server import BaseHTTPRequestHandler
+from urllib.parse import parse_qs, urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
@@ -33,12 +39,19 @@ class handler(BaseHTTPRequestHandler):
         self.end_headers()
 
     def do_GET(self):
-        index_path = ROOT / "outbox" / "validation_packs" / "index.json"
-        if not index_path.exists():
-            self._json({"error": "No validation packs index found — run the pipeline first."}, 404)
+        packs_dir = ROOT / "outbox" / "validation_packs"
+        qs = parse_qs(urlparse(self.path).query)
+        sid = (qs.get("id") or [""])[0]
+        if sid:
+            safe = re.sub(r"[^A-Za-z0-9._-]", "-", sid)
+            pack = _read_json(packs_dir / f"{safe}.json")
+            if pack is None:
+                self._json({"error": f"No validation pack for signal '{sid}'."}, 404)
+            else:
+                self._json(pack)
             return
-        try:
-            index = json.loads(index_path.read_text(encoding="utf-8"))
+        index = _read_json(packs_dir / "index.json")
+        if index is None:
+            self._json({"error": "No validation packs index found — run the pipeline first."}, 404)
+        else:
             self._json(index)
-        except Exception as exc:
-            self._json({"error": str(exc)}, 500)
