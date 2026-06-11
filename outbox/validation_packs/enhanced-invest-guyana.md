@@ -2,8 +2,8 @@
 
 - Signal: `enhanced-invest-guyana` · Dispatch: `DSP-20260611-023`
 - Confidence: 100/100 · A - multi-source
-- Recommendation: **ADVANCE** — High-confidence signal (100/100) with 2 independent evidence categories already attached. Worth one validation conversation this cycle.
-- Last validated: 2026-06-11T10:00:42.538507+00:00
+- Recommendation: **ADVANCE** — High-confidence signal (100/100) with 3 independent evidence categories already attached. Worth one validation conversation this cycle.
+- Last validated: 2026-06-11T17:21:57.966570+00:00
 
 ## Sector hypotheses
 - Oil & gas and offshore support services — _Analyst prior from widely reported sector drivers — requires local confirmation_
@@ -18,8 +18,12 @@
 - [Guyana: Latin American Public Opinion Project - Victimization and Crime survey 2016](https://data.iadb.org/en/search?q=Guyana%3A%20Latin%20American%20Public%20Opinion%20Pr) — IDB Open Data
 
 ## Procurement matches
-- [Enhancing the Quality of the Belize National Quality Infrastructure](https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure) — Caribbean Development Bank (regional)
-- [Support for Institutional Strengthening of the Caribbean Disaster Emergency Project](https://www.caribank.org/work-with-us/procurement/procurement-notices/support-institutional-strengthening-caribbean-disaster-emergency-project) — Caribbean Development Bank (regional)
+- [Request for Proposal for Engineering, Procurement, Construction + Finance for Rehabilitation & Upgrading of Hinterland Coastal Airstrips Lots 1-4](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
+- [EOI for the Designing and Supervising the Construction of New Primary Schools](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
+- [ Supply and delivery of Asphalt Laboratory Equipment](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
+- [Supply and Delivery of Materials to Retube #1 Boiler Super Heater and Install New Header for Rose Hall Estate](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
+- [Supply and Delivery of 2Kg & 5Kg Demerara Gold Laminated Films](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
+- [Supply and Delivery of Materials for Upgrading from Mild Steel to Stainless Steel at Albion Estate – Lot 1-4](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
 
 ## Official country data
 - [Guyana: Monthly Consumer Price Index (CPI) by Expenditure Category](https://statistics.caricom.org/country_data/guyana-monthly-consumer-price-index-cpi-by-expenditure-category/) — CARICOM Statistics
@@ -29,13 +33,13 @@
 
 ## Relevant institutions & intro targets
 - Guyana Office for Investment (GO-Invest) — National investment promotion agency
-- Private Sector Commission of Guyana — Umbrella private-sector body — operator discovery
+- Private Sector Commission of Guyana — Knows the private sector — ask who's really operating
 - Caribbean Export Development Agency — Regional trade and investment promotion
 - Caribbean Development Bank (CDB) — Regional development finance and procurement
 
 ## Unresolved questions
 - Confirm which sectors in the official Guyana GDP-by-industry data actually align with the FDI movement.
-- No live Guyana-specific procurement notice matched this cycle — check CDB and national tender portals directly.
+- Tender closes 2026-06-16 — confirm eligibility and bid requirements early.
 - Operator discovery is not yet automated — source two credible local operators via the listed institutions.
 - Validate that the underlying FDI movement is sustained, not a one-off transaction or statistical revision.
 

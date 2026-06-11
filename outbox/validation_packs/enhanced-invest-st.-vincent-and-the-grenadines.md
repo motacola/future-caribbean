@@ -3,7 +3,7 @@
 - Signal: `enhanced-invest-st.-vincent-and-the-grenadines` · Dispatch: `DSP-20260611-029`
 - Confidence: 100/100 · A - multi-source
 - Recommendation: **HOLD** — Signal confidence 100/100 with 1 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.
-- Last validated: 2026-06-11T10:00:42.538507+00:00
+- Last validated: 2026-06-11T17:21:57.966570+00:00
 
 ## Sector hypotheses
 - FDI-receiving sectors (composition not yet broken down) — _World Bank: FDI net inflows moved +88.2% from 2023 to 2024_

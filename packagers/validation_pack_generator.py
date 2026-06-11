@@ -183,8 +183,19 @@ def supporting_projects_for(country: str, idb: dict, tier2_items: list[dict]) ->
     return out[:MAX_MATCHES]
 
 
-def procurement_matches_for(country: str, tier2_items: list[dict]) -> list[dict]:
+def procurement_matches_for(country: str, tier2_items: list[dict],
+                            tenders: list[dict] | None = None) -> list[dict]:
     direct, regional = [], []
+    # Live national-portal tenders rank first — dated, country-specific.
+    for t in tenders or []:
+        if _norm(t.get("country", "")) == _norm(country) or mentions_country(t.get("country", ""), country):
+            direct.append({
+                "title": t.get("title", ""),
+                "source": t.get("source", ""),
+                "url": t.get("url", ""),
+                "match": "country",
+                "closing_date": t.get("closing_date"),
+            })
     for item in tier2_items:
         if item.get("item_type") != "procurement":
             continue
@@ -250,7 +261,10 @@ def unresolved_questions_for(country: str, hyps: list[dict], procurement: list[d
         qs.append(f"Which specific sectors are driving the movement in {country}? No official sector-breakdown dataset matched this cycle.")
     else:
         qs.append(f"Confirm which sectors in the official {country} GDP-by-industry data actually align with the FDI movement.")
-    if not [p for p in procurement if p.get("match") == "country"]:
+    dated = [p for p in procurement if p.get("match") == "country" and p.get("closing_date")]
+    if dated:
+        qs.append(f"Tender closes {dated[0]['closing_date']} — confirm eligibility and bid requirements early.")
+    elif not [p for p in procurement if p.get("match") == "country"]:
         qs.append(f"No live {country}-specific procurement notice matched this cycle — check CDB and national tender portals directly.")
     if not operators:
         qs.append("Operator discovery is not yet automated — source two credible local operators via the listed institutions.")
@@ -260,14 +274,15 @@ def unresolved_questions_for(country: str, hyps: list[dict], procurement: list[d
 
 # ── Pack assembly ───────────────────────────────────────────
 
-def build_pack(dispatch: dict, wb: dict, idb: dict, tier2: dict, now_iso: str) -> dict:
+def build_pack(dispatch: dict, wb: dict, idb: dict, tier2: dict, now_iso: str,
+               tenders: list[dict] | None = None) -> dict:
     country = dispatch.get("country_cluster", "Caribbean")
     tier2_items = (tier2 or {}).get("items", []) or []
     wb_obs = wb_observations_for(country, wb)
 
     hyps = sector_hypotheses_for(country, tier2_items, wb_obs)
     projects = supporting_projects_for(country, idb, tier2_items)
-    procurement = procurement_matches_for(country, tier2_items)
+    procurement = procurement_matches_for(country, tier2_items, tenders)
     cdata = country_data_for(country, tier2_items)
     institutions = INSTITUTIONS.get(country, []) + REGIONAL_INSTITUTIONS
     # No automated operator source exists yet; never fabricate one.
@@ -374,13 +389,14 @@ def main() -> None:
     wb = read_json(ROOT / "data" / "world_bank" / "latest.json") or {}
     idb = read_json(ROOT / "data" / "idb" / "latest.json") or {}
     tier2 = read_json(ROOT / "data" / "tier2" / "latest.json") or {}
+    tenders = (read_json(ROOT / "data" / "tenders" / "latest.json") or {}).get("items", [])
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     now_iso = datetime.now(timezone.utc).isoformat()
 
     index = []
     for dispatch in select_lead_dispatches(dispatches):
-        pack = build_pack(dispatch, wb, idb, tier2, now_iso)
+        pack = build_pack(dispatch, wb, idb, tier2, now_iso, tenders)
         sid = pack["signal_id"] or pack["dispatch_id"]
         safe = re.sub(r"[^A-Za-z0-9._-]", "-", sid)
         (OUT_DIR / f"{safe}.json").write_text(

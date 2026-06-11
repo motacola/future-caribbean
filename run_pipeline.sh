@@ -34,6 +34,7 @@ run_step() {
 run_step "World Bank" "python3 \"$ROOT/watchers/world_bank_poller.py\"" "world_bank"
 run_step "IDB CKAN" "python3 \"$ROOT/watchers/idb_ckan_poller.py\"" "idb_ckan"
 run_step "Tier 2 (CARICOM + CDB)" "python3 \"$ROOT/watchers/tier2_scraper.py\"" "tier2"
+run_step "Tenders (Guyana eProcure)" "python3 \"$ROOT/watchers/tenders_poller.py\"" "tenders"
 
 # ── Fast data (always runs) ───────────────────────────────
 run_step "NOAA NWS" "python3 \"$ROOT/watchers/noaa_nws_poller.py\"" "noaa_nws"

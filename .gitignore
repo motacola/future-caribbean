@@ -21,3 +21,6 @@ domains/user-*.json
 
 # Agent verification screenshots — not committed
 output/
+
+# Tender portal raw snapshots — regenerated each cycle
+data/tenders/raw/
