@@ -225,3 +225,79 @@ Minimum winning demo = Phases 1 + 2 local. Hosted (5) is the backup wow;
 |---|---|
 | stdlib http.server exposed publicly | Read-only mode (5A) + reverse proxy in front; no writes without token |
 | Hosted demo dies mid-judging | Failover drill (5C); local replay is always primary |
+
+---
+
+## Phase 6 — Moat Deepening (added 2026-06-11, post-user-testing)
+
+Status of Phases 1, 2, 3A, 4C, 5: DELIVERED and live at
+https://signal-fabric.vercel.app. This phase is the next sprint,
+prioritised from competitive research (2026-06-11).
+
+### Competitive landscape (researched 2026-06-11)
+
+The pieces exist separately; the combination does not.
+
+| Comparable | What it is | What it lacks vs us |
+|---|---|---|
+| Caribbean Insight (Caribbean Council) | Weekly human-written analysis since 1973, paywalled | No pipeline, no evidence-citing, no agent surface, not free |
+| CE Intelligence (Caribbean Export) | Export-market portal | Static data, no signals/briefings, human-only |
+| Invest Caribbean | AI deal-flow exchange for institutional capital | Deal platform, not intelligence; closed |
+| Devex Pro Funding | 850+ sources, ~35k projects, ML-classified tenders within 24h | Expensive, dev-sector, global focus, human subscribers only |
+| Dataminr | Real-time event detection from public data | Enterprise alerts, no Caribbean economic focus |
+| The Agent Times | Agent-native publishing (MCP/RSS/llms.txt) | Beat is the AI-agent economy, not regional economics; thin verified traction (see bernard report 2026-03-20) |
+
+The empty intersection we occupy: **Caribbean-focused + continuous
+pipeline + evidence-cited diligence + agent-native + free.**
+One-line positioning: "Devex for the Caribbean, that agents can read,
+for free." CAIPA / Caribbean Export / CDB are partners, not competitors.
+
+### Workstreams (priority order)
+
+**6A. Track record page (plan 4B, promoted).** "What the desk said →
+what happened." Build from existing data/history/ + outbox archives:
+a per-cycle archive page plus a 'receipts' view (signal, date, what we
+recommended, what the response was, boost applied). The trust engine no
+comparable has. ~Hermes-buildable from a Claude design brief.
+
+**6B. Real recipients, two-way (plan 4A, promoted).** Convert the
+friend-testers into actual recipients: Telegram (exists, one-way) gains
+reply buttons (Advanced / Forwarded / Not relevant) posting to
+/api/feedback/apply; investigate WhatsApp (the Caribbean channel —
+/api/whatsapp/link already exists). Even 10 real responders beats any
+claimed user number — the exact trap Agent Times fell into.
+
+**6C. Source depth (standing Hermes workstream).** The gap vs Devex's
+850 sources. Guyana eProcure ran a standard platform (Frappe/doctracker)
+with a public JSON API — probe other territories for the same pattern
+(Trinidad, Barbados, OECS, Suriname). Add central bank releases,
+official gazettes, and the news-RSS corroboration layer (3B) that
+upgrades sector hypotheses from 'unconfirmed' to 'corroborated' with
+citations. Each adapter follows watchers/tenders_poller.py: honest
+empty over fabricated records.
+
+**6D. Hosted remote MCP + directory listing.** mcp_adapter is
+stdio-only. Serve MCP over streamable HTTP at the public URL, then list
+on MCP directories (mcpservers.org et al — Agent Times is already
+there). Free distribution into the agent ecosystem; makes 'any agent
+anywhere can query the desk' literally true.
+
+**6E. Country permalinks + cycle archive.** Stable shareable URLs per
+country (humans share, agents cite, SEO compounds). Pairs with 6A.
+
+**6F. Make /build real.** The wizard currently demos; have it emit an
+actual custom RSS feed per domain/persona selection (static generation
+at pipeline time). 'Build your own feed' becomes a product.
+
+### Sprint plan (from 2026-06-12)
+
+```
+Day 1-2: 6A track record (Claude design brief -> Hermes build -> review)
+         6C kickoff: portal probe sweep (Hermes, parallel)
+Day 3-4: 6B two-way Telegram + recipient onboarding of friend-testers
+Then:    6D remote MCP -> directory listings; 6E permalinks; 6F build-real
+```
+
+Execution model unchanged: Claude designs/briefs/reviews, Hermes builds
+(current model: stepfun/step-3.7-flash:free — probe before first
+dispatch of the day; see hermes-does-the-build memory).
