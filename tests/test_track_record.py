@@ -22,6 +22,7 @@ def test_packager_grouping():
 
     # Contract keys present
     assert "generated_at" in data
+    assert data["feedback_provenance"] == "simulated"
     assert "current_boosts" in data
     assert "cycles" in data
 
@@ -67,7 +68,7 @@ def test_contract_keys():
     out_path = ROOT / "outbox" / "track_record.json"
     data = json.loads(out_path.read_text())
 
-    required_keys = ["generated_at", "current_boosts", "cycles"]
+    required_keys = ["generated_at", "feedback_provenance", "current_boosts", "cycles"]
     for key in required_keys:
         assert key in data, f"Missing required key: {key}"
 
@@ -102,6 +103,11 @@ def test_dashboard_rendering():
     assert "receipts-table" in content
     assert "receipts-boosts" in content
     assert "r-pill" in content
+    assert "Demo evidence:" in content
+
+    desk = json.loads((ROOT / "outbox" / "dispatch_desk.json").read_text())
+    assert f'Cycle {desk["cycle_id"]}' in content
+    assert f'"cycle": "{desk["cycle_id"]}"' in content
 
 
 if __name__ == "__main__":

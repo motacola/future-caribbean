@@ -81,12 +81,12 @@ TOOLS_MANIFEST = {
         },
         {
             "name": "track_record",
-            "description": "Public record of what the desk said each cycle, responses received, and current priority adjustments",
+            "description": "Public record of what the desk said each cycle, feedback provenance, responses, and current priority adjustments",
             "method": "GET",
             "path": "/api/track-record",
             "params": {"type": "object", "properties": {}},
             "example_request": {},
-            "example_response_keys": ["ok", "generated_at", "current_boosts", "cycles"],
+            "example_response_keys": ["ok", "generated_at", "feedback_provenance", "current_boosts", "cycles"],
             "writes": False
         },
         {

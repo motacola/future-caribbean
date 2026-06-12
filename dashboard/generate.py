@@ -450,19 +450,27 @@ for kind, countries in fb_boosts.items():
 track_record = read_json(ROOT / "outbox" / "track_record.json")
 receipts_html = ""
 boosts_html = ""
+receipts_provenance_html = ""
 if track_record:
     cycles = track_record.get("cycles", []) or []
     current_boosts = track_record.get("current_boosts", {}) or {}
+    feedback_provenance = track_record.get("feedback_provenance", "simulated")
+    if feedback_provenance != "observed":
+        receipts_provenance_html = (
+            '<p class="receipts-note"><strong>Demo evidence:</strong> '
+            'these responses are simulated to prove the feedback and reprioritisation loop. '
+            'Observed recipient outcomes will replace them as the desk goes live.</p>'
+        )
 
     # Receipts rows (max 6)
     for c in cycles[:6]:
-        cycle_id = c.get("cycle_id", "")
+        receipt_cycle_id = c.get("cycle_id", "")
         # Parse cycle date: 20260611 -> 11 Jun 2026
         try:
-            dt = datetime.strptime(cycle_id, "%Y%m%d")
+            dt = datetime.strptime(receipt_cycle_id, "%Y%m%d")
             cycle_date = dt.strftime("%d %b %Y")
         except Exception:
-            cycle_date = cycle_id
+            cycle_date = receipt_cycle_id
 
         responses = c.get("responses", {}) or {}
         dispatch_count = c.get("dispatch_count", 0)
@@ -489,7 +497,7 @@ if track_record:
             pills = '<span class="r-pill r-quiet">No responses yet</span>'
 
         receipts_html += f'''<div class="receipt-row">
-  <div class="receipt-when"><strong>{j(cycle_date)}</strong><span>Cycle {j(cycle_id)}</span></div>
+  <div class="receipt-when"><strong>{j(cycle_date)}</strong><span>Cycle {j(receipt_cycle_id)}</span></div>
   <div class="receipt-said">
     <span class="fp-kicker">{j(lead_country)}</span>
     <strong>{j(lead_title)}</strong>
@@ -629,6 +637,7 @@ V = dict(
     replay_jsonl_url=j(replay_jsonl_url),
     receipts_html=receipts_html,
     boosts_html=boosts_html,
+    receipts_provenance_html=receipts_provenance_html,
 )
 
 for k, val in V.items():

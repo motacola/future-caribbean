@@ -36,6 +36,7 @@ def main() -> None:
     state = json.loads(state_path.read_text())
     history = state.get("history", []) or []
     boosts = state.get("boosts", {}) or {}
+    feedback_provenance = state.get("feedback_provenance", "simulated")
 
     # Group history by cycle
     by_cycle: dict[str, list] = {}
@@ -101,6 +102,7 @@ def main() -> None:
 
     output = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
+        "feedback_provenance": feedback_provenance,
         "current_boosts": boosts,
         "cycles": cycles_out,
     }

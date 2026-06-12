@@ -55,7 +55,7 @@ def load_feedback_state() -> dict[str, Any]:
         except (json.JSONDecodeError, OSError):
             LOGGER.warning("feedback state read error, starting fresh")
             pass
-    return {"cycle": "", "history": [], "boosts": {}}
+    return {"cycle": "", "history": [], "boosts": {}, "feedback_provenance": "simulated"}
 
 
 def save_feedback_state(state: dict[str, Any]) -> None:
@@ -207,6 +207,7 @@ def seed_initial_feedback() -> dict[str, Any]:
         "cycle": "20260525",
         "history": seed_history,
         "boosts": compute_boosts({"history": seed_history}),
+        "feedback_provenance": "simulated",
     }
 
 

@@ -10,6 +10,21 @@ Caribbean opportunity data is split across thirteen public sources, six countrie
 
 ---
 
+## 1A. Frame the pitch against the 2026 rubric
+
+The published rubric weights **Business Strength 50%** and **Agentic AI Excellence 50%**.
+
+| Rubric category | What to prove in the demo | Honest current position |
+|---|---|---|
+| Team Quality | Fast execution, domain understanding, and clear product vision | Show the working breadth and explain why this problem is legible to the team; prepare a short founder-background answer separately |
+| Innovation, Uniqueness & Defensibility | Cross-market signal routing, machine-readable regional data, and the compounding response loop | Strongest business category; emphasize fragmented-market normalization and proprietary workflow/data advantages |
+| Product-Market Fit | A specific buyer, painful decision, business model, and path beyond the Caribbean | Product surface is strong; customer demand, pricing, and revenue evidence still need direct validation |
+| Agentic AI Excellence | Multi-agent coordination, orchestration, reasoning, human approval, efficiency, and scale | Strongest overall category; prove the same deterministic engine works across humans, HTTP agents, CLI, and MCP |
+
+Do not describe simulated feedback as customer traction. Say: “The closed-loop mechanism is working with simulated response evidence; the next validation step is replacing it with observed recipient outcomes.”
+
+---
+
 ## 2. Three-minute walkthrough (live site)
 
 All steps use **https://signal-fabric.vercel.app**.
@@ -99,7 +114,7 @@ Available tools: `desk_status`, `list_signals`, `get_dispatch`, `get_validation_
 | Deterministic cited answers | `https://signal-fabric.vercel.app/api/ask` | Returns `"engine":"deterministic"` plus `"Sources: outbox/..."` |
 | Live Guyana tenders with closing dates | `https://signal-fabric.vercel.app/api/validation-packs/enhanced-invest-guyana` | `procurement_matches` entries with `closing_date: 2026-06-16` |
 | Agent-agnostic surface | `https://signal-fabric.vercel.app/api/tools.json` + `https://signal-fabric.vercel.app/feed.xml` + MCP adapter | Machine-readable tool manifest, RSS feed, and MCP wrapper all present |
-| Feedback loop re-weighting | `https://signal-fabric.vercel.app/api/status` | `feedback` block shows total responses and active boosts |
+| Feedback loop re-weighting | `https://signal-fabric.vercel.app/api/track-record` | `feedback_provenance: simulated` plus responses and active boosts proves the mechanism without claiming live traction |
 | 13 watched countries | `https://signal-fabric.vercel.app/api/tools.json` | `map-data` surface documented as live |
 | 13 clusters / 31 dispatches in current cycle | `https://signal-fabric.vercel.app/api/status` | `n_clusters: 13`, `n_dispatches: 31` |
 | Validation pack index live (5 packs) | `https://signal-fabric.vercel.app/api/validation-packs` | `packs[]` with five entries, including Guyana and Belize |
