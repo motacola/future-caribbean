@@ -11,6 +11,8 @@ import re
 HUMANIZE_RULES = [
     (r"^([^:]+): \+?([\d.]+)% multi-source capital surge — market entry window open$",
      r"Money is moving into \1 — up \2%, and more than one source says so"),
+    (r"^([^:]+): \+?([\d.]+)% multi-source investment validated — opportunity active$",
+     r"Money is moving into \1 — up \2%, validated by several sources"),
     (r"^([^:]+): FDI trending at \+?([\d.]+)% — screening trigger active$",
      r"Foreign investment into \1 is up \2% — worth a first look"),
     (r"^([^:]+): (\d+) active procurements? — bidding window open$",

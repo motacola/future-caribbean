@@ -146,6 +146,16 @@ for _t in _ticker_items:
         f'<span>{j(humanize(_t.get("title", "")))}</span></a>'
     )
 
+# ── Front-page pointers (broadsheet "briefly" column) ──────
+front_pointers_html = ""
+for _t in _ticker_items[1:4]:
+    _country = canonical_country(_t.get("country_cluster", "")) or ""
+    front_pointers_html += (
+        f'<a class="fp-item" href="#leaflet-map" data-country="{j(_country)}">'
+        f'<span class="fp-kicker">{j(_t.get("country_cluster", "Region"))}</span>'
+        f'<span class="fp-title">{j(humanize(_t.get("title", "")))}</span></a>'
+    )
+
 # ── Lead signal: rewrite all labels for user-facing view ───
 
 l_country = lead.get("country_cluster", "Guyana")
@@ -546,6 +556,7 @@ V = dict(
     map_markers_json=map_markers_json,
     humanize_rules_json=humanize_rules_json,
     ticker_html=ticker_html,
+    front_pointers_html=front_pointers_html,
     map_dispatches_json=map_dispatches_json,
     all_packs_json=all_packs_json,
     verdict_counts_json=verdict_counts_json,
