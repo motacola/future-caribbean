@@ -1,0 +1,74 @@
+{
+  "generated_at": "2026-06-12T03:39:28.144817+00:00",
+  "current_boosts": {
+    "enhanced_investment": {
+      "Guyana": 5,
+      "Belize": -1,
+      "St. Vincent and the Grenadines": -6
+    },
+    "development_pipeline": {
+      "CARICOM": 2
+    },
+    "investment_signal": {
+      "Guyana": -4,
+      "Belize": -4,
+      "St. Vincent and the Grenadines": -4
+    },
+    "food_security": {
+      "CARICOM": -4
+    },
+    "economic_vulnerability": {
+      "St. Vincent and the Grenadines": 9,
+      "Suriname": -4
+    },
+    "tourism_impact": {
+      "Guyana": -4
+    }
+  },
+  "cycles": [
+    {
+      "cycle_id": "20260611",
+      "responses": {
+        "forwarded": 1,
+        "replied": 1,
+        "opened": 1,
+        "ignored": 22,
+        "decision_changed": 1
+      },
+      "dispatch_count": 26,
+      "countries": [
+        "Guyana",
+        "St. Vincent and the Grenadines",
+        "Belize",
+        "CARICOM",
+        "Suriname"
+      ],
+      "lead": {
+        "country": "Guyana",
+        "title": "Money is moving into Guyana — up 860.3%, and more than one source says so"
+      }
+    },
+    {
+      "cycle_id": "20260610",
+      "responses": {
+        "forwarded": 1,
+        "replied": 1,
+        "opened": 1,
+        "ignored": 20,
+        "decision_changed": 1
+      },
+      "dispatch_count": 24,
+      "countries": [
+        "St. Vincent and the Grenadines",
+        "Guyana",
+        "Belize",
+        "CARICOM",
+        "Suriname"
+      ],
+      "lead": {
+        "country": "",
+        "title": ""
+      }
+    }
+  ]
+}

@@ -80,6 +80,16 @@ TOOLS_MANIFEST = {
             "example_response_keys": ["ok", "engine", "model", "thesis", "connections"]
         },
         {
+            "name": "track_record",
+            "description": "Public record of what the desk said each cycle, responses received, and current priority adjustments",
+            "method": "GET",
+            "path": "/api/track-record",
+            "params": {"type": "object", "properties": {}},
+            "example_request": {},
+            "example_response_keys": ["ok", "generated_at", "current_boosts", "cycles"],
+            "writes": False
+        },
+        {
             "name": "feedback_apply",
             "description": "Apply recipient feedback to adjust signal priorities for the next cycle. This is a write operation.",
             "method": "POST",

@@ -96,6 +96,9 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
         if path == "/api/reasoning":
             self._api_reasoning()
             return
+        if path == "/api/track-record":
+            self._api_track_record()
+            return
         if path == "/api/delivery/approvals":
             self._api_delivery_approvals()
             return
@@ -477,6 +480,19 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
         p = APP_DIR / "outbox" / "reasoning.json"
         if not p.exists():
             self._json({"ok": False, "error": "No synthesis yet — run the pipeline."}, 503)
+            return
+        try:
+            self._json({"ok": True, **json.loads(p.read_text())})
+        except Exception as exc:
+            self._json({"ok": False, "error": str(exc)}, 500)
+
+    # ── /api/track-record ───────────────────────────────────────
+
+    def _api_track_record(self) -> None:
+        """Serve the desk's public track record of cycles, responses, and priorities."""
+        p = APP_DIR / "outbox" / "track_record.json"
+        if not p.exists():
+            self._json({"ok": False, "error": "Track record not generated yet — run the pipeline."}, 503)
             return
         try:
             self._json({"ok": True, **json.loads(p.read_text())})

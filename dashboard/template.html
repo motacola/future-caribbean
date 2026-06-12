@@ -461,6 +461,22 @@ html { scroll-behavior: smooth; }
 .art-dek { font-size: 12.5px; color: var(--sub); margin-top: 3px; line-height: 1.5; }
 .art-by { display: block; font: italic 500 11px var(--serif); color: var(--muted); margin-top: 5px; }
 
+/* the desk's receipts */
+.receipts-table { border-top: 2px solid var(--ink); }
+.receipt-row { display: grid; grid-template-columns: 150px minmax(0,1fr) 240px; gap: 18px; padding: 14px 0; border-bottom: 1px solid var(--border); align-items: start; }
+.receipt-when strong { display: block; font-family: var(--serif); font-size: 16px; }
+.receipt-when span { font: 400 9px var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: .8px; }
+.receipt-said strong { display: block; font-family: var(--serif); font-size: 16px; line-height: 1.25; margin: 2px 0; }
+.receipt-said p { font-size: 11.5px; color: var(--muted); }
+.receipt-resp { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; }
+.r-pill { font: 600 10px var(--mono); color: var(--teal); background: rgba(13,118,110,.08); border-radius: 3px; padding: 4px 8px; white-space: nowrap; }
+.r-pill.r-quiet { color: var(--muted); background: var(--card-alt); }
+.receipts-boosts { padding: 12px 0; border-bottom: 1px solid var(--border); display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.r-boost { font: 600 11px var(--mono); padding: 3px 8px; border-radius: 3px; }
+.r-boost.up { color: var(--teal); background: rgba(13,118,110,.08); }
+.r-boost.down { color: var(--coral); background: rgba(201,76,76,.08); }
+.receipts-foot { font-size: 11px; color: var(--muted); margin-top: 10px; }
+
 /* for-agents block */
 .agents-block { background: var(--ink); color: var(--bg); border-radius: var(--r); padding: 34px 30px 24px; box-shadow: 0 1px 2px rgba(24,37,31,.08); }
 .agents-eyebrow { font: 700 10px var(--mono); letter-spacing: 1.6px; text-transform: uppercase; color: var(--lime); }
@@ -562,6 +578,8 @@ html { scroll-behavior: smooth; }
   .desknav-inner { padding: 0 12px; }
   .dateline .dl-when { margin-left: 0; width: 100%; }
   .agents-block { border-radius: 0; }
+  .receipt-row { grid-template-columns: 1fr; gap: 6px; }
+  .receipt-resp { justify-content: flex-start; }
 }
 
 /* ── cycle clock ── */
@@ -646,6 +664,7 @@ html { scroll-behavior: smooth; }
     <a href="#theater" class="dn-item">Watch It Work</a>
     <a href="#ask-desk" class="dn-item">Ask the Desk</a>
     <a href="#more-wire" class="dn-item">More from the Wire</a>
+    <a href="#receipts" class="dn-item">Receipts</a>
     <a href="#for-agents" class="dn-item dn-agents">For Agents</a>
   </div>
 </nav>
@@ -816,6 +835,15 @@ html { scroll-behavior: smooth; }
     <button class="verdict-btn unverified" data-verdict="reject">Park <span class="verdict-count" id="count-reject">0</span></button>
   </div>
   <div class="sig-list" id="sig-list">{{sec_html}}</div>
+</div>
+
+<div class="sec" id="receipts">
+  <div class="sec-label">The desk's receipts</div>
+  <div class="st">What the desk said — and what happened next</div>
+  <div class="ss">Every briefing is recorded, and reader responses change what the desk prioritises. Here is that loop, in public.</div>
+  <div class="receipts-table">{{receipts_html}}</div>
+  <div class="receipts-boosts"><span class="fp-head">Current priorities, shaped by responses</span>{{boosts_html}}</div>
+  <p class="receipts-foot">Machine-readable record: <a href="/api/track-record">/api/track-record</a></p>
 </div>
 
 <div class="sec">

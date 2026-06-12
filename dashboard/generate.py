@@ -446,6 +446,72 @@ for kind, countries in fb_boosts.items():
             sign = "+" if val > 0 else ""
             boost_lines += f'<div class="boost-line">{j(country)} {j(kind.replace("_"," "))}: {sign}{val}</div>'
 
+# ── Track Record (receipts) ──────────────────────────────────
+track_record = read_json(ROOT / "outbox" / "track_record.json")
+receipts_html = ""
+boosts_html = ""
+if track_record:
+    cycles = track_record.get("cycles", []) or []
+    current_boosts = track_record.get("current_boosts", {}) or {}
+
+    # Receipts rows (max 6)
+    for c in cycles[:6]:
+        cycle_id = c.get("cycle_id", "")
+        # Parse cycle date: 20260611 -> 11 Jun 2026
+        try:
+            dt = datetime.strptime(cycle_id, "%Y%m%d")
+            cycle_date = dt.strftime("%d %b %Y")
+        except Exception:
+            cycle_date = cycle_id
+
+        responses = c.get("responses", {}) or {}
+        dispatch_count = c.get("dispatch_count", 0)
+        countries = c.get("countries", []) or []
+        lead = c.get("lead", {}) or {}
+        lead_country = lead.get("country", "") or "Region"
+        lead_title = lead.get("title", "") or f"{dispatch_count} briefings routed"
+
+        # Response pills (skip ignored)
+        pills = ""
+        pill_order = [
+            ("forwarded", "Forwarded"),
+            ("replied", "Replied"),
+            ("decision_changed", "Changed a decision"),
+            ("opened", "Opened"),
+        ]
+        any_pills = False
+        for key, label in pill_order:
+            n = responses.get(key, 0)
+            if n:
+                pills += f'<span class="r-pill">{label} {n}</span>'
+                any_pills = True
+        if not any_pills:
+            pills = '<span class="r-pill r-quiet">No responses yet</span>'
+
+        receipts_html += f'''<div class="receipt-row">
+  <div class="receipt-when"><strong>{j(cycle_date)}</strong><span>Cycle {j(cycle_id)}</span></div>
+  <div class="receipt-said">
+    <span class="fp-kicker">{j(lead_country)}</span>
+    <strong>{j(lead_title)}</strong>
+    <p>{dispatch_count} briefings · {len(countries)} markets: {j(", ".join(countries[:4]))}</p>
+  </div>
+  <div class="receipt-resp">{pills}</div>
+</div>'''
+
+    # Boosts line: net adjustment per country (summed across signal kinds),
+    # top 5 by magnitude — one chip per country, no contradictory arrows.
+    net: dict[str, int] = {}
+    for countries in current_boosts.values():
+        for country, val in countries.items():
+            net[country] = net.get(country, 0) + int(val or 0)
+    for country, val in sorted(net.items(), key=lambda kv: -abs(kv[1]))[:5]:
+        if val == 0:
+            continue
+        direction = "up" if val > 0 else "down"
+        arrow = "▲" if val > 0 else "▼"
+        sign = "+" if val > 0 else ""
+        boosts_html += f'<span class="r-boost {direction}">{j(country)} {arrow}{sign}{val}</span>'
+
 # ── Thesis ─────────────────────────────────────────────────
 thesis = read_text(ROOT / "outbox" / "regional_thesis.md")
 thesis_line = next((l.strip() for l in thesis.split("\n")
@@ -561,6 +627,8 @@ V = dict(
     all_packs_json=all_packs_json,
     verdict_counts_json=verdict_counts_json,
     replay_jsonl_url=j(replay_jsonl_url),
+    receipts_html=receipts_html,
+    boosts_html=boosts_html,
 )
 
 for k, val in V.items():
