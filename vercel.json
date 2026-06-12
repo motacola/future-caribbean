@@ -1,6 +1,10 @@
 {
   "rewrites": [
     {
+      "source": "/build",
+      "destination": "/configurator.html"
+    },
+    {
       "source": "/feed.xml",
       "destination": "/outbox/feed.xml"
     },

@@ -54,6 +54,11 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
         path = parsed.path
 
         # API routes
+        if path == "/build":
+            self.send_response(302)
+            self.send_header("Location", "/configurator.html")
+            self.end_headers()
+            return
         if path == "/feed.xml":
             fp = APP_DIR / "outbox" / "feed.xml"
             if fp.exists():
