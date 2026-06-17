@@ -192,7 +192,7 @@ def write_outputs(payload: dict[str, Any]) -> None:
         "",
         f"Generated: {payload['generated_at']}",
         "",
-        "Caribbean Opportunity Dispatch turns fragmented regional data into decision-ready routes. This is the primary product surface; Telegram/email are delivery channels and the dashboard is the operator/audit view.",
+        "Signal Fabric turns fragmented regional data into decision-ready routes. This is the primary product surface; Telegram/email are delivery channels and the dashboard is the operator/audit view.",
         "",
         "## Open Track Coordination Chain",
         "",

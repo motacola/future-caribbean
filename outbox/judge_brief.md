@@ -1,6 +1,6 @@
 # Caribbean Opportunity Dispatch — Judge Brief
 
-Generated: 2026-06-17 21:42 UTC
+Generated: 2026-06-17 22:25 UTC
 
 ## What This Proves
 

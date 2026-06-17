@@ -23,7 +23,7 @@ def test_tools_manifest_valid_structure():
     assert "engine" in TOOLS_MANIFEST
     assert TOOLS_MANIFEST["engine"] == "Signal Fabric"
     assert "product" in TOOLS_MANIFEST
-    assert TOOLS_MANIFEST["product"] == "Caribbean Opportunity Dispatch"
+    assert TOOLS_MANIFEST["product"] == "Signal Fabric"
     assert "version" in TOOLS_MANIFEST
     assert TOOLS_MANIFEST["version"] == 1
     assert "tools" in TOOLS_MANIFEST

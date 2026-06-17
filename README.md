@@ -1,4 +1,4 @@
-# Caribbean Opportunity Dispatch
+# Signal Fabric
 
 **Routed opportunity and risk dispatches from fragmented Caribbean public data — readable by humans, queryable by any AI agent.**
 
@@ -8,7 +8,7 @@ Powered by **Signal Fabric**, a continuous multi-agent pipeline that watches pub
 
 **Category:** Agentic market coordination infrastructure for fragmented Caribbean economies.
 
-Caribbean Opportunity Dispatch belongs in Open Track because it is not a sector-specific app. Finance, disaster risk, food, ocean, tourism, and procurement are signal domains; the product is the cross-sector routing layer that turns those signals into action — and the first agent-ready opportunity API for the region.
+Signal Fabric belongs in Open Track because it is not a sector-specific app. Finance, disaster risk, food, ocean, tourism, and procurement are signal domains; the product is the cross-sector routing layer that turns those signals into action — and the first agent-ready opportunity API for the region.
 
 ---
 

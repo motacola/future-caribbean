@@ -1,1 +1,1 @@
-"""Headless query helpers for Caribbean Opportunity Dispatch."""
+"""Headless query helpers for Signal Fabric."""

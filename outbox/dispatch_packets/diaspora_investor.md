@@ -2,7 +2,7 @@
 
 **Decision job:** Capital deployment screening and market entry assessment
 **Delivery channel:** Email brief + Telegram
-**Generated:** Jun 17, 2026 at 21:42 UTC
+**Generated:** Jun 17, 2026 at 22:25 UTC
 **Dispatches in this packet:** 10
 
 ---
@@ -124,7 +124,7 @@
 
 ### 9. St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended
 
-**ID:** `DSP-20260617-009` | **Country:** St. Vincent and the Grenadines | **Confidence:** 🟢 Monitor | 69/100 | C - single-source
+**ID:** `DSP-20260617-011` | **Country:** St. Vincent and the Grenadines | **Confidence:** 🟢 Monitor | 69/100 | C - single-source
 **Channel:** Email brief + Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** decision_changed
 
@@ -139,7 +139,7 @@
 
 ### 10. Suriname: economic stress indicators rising — portfolio review recommended
 
-**ID:** `DSP-20260617-011` | **Country:** Suriname | **Confidence:** 🟢 Monitor | 56/100 | C - single-source
+**ID:** `DSP-20260617-009` | **Country:** Suriname | **Confidence:** 🟢 Monitor | 56/100 | C - single-source
 **Channel:** Email brief + Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** ignored
 

@@ -1,6 +1,6 @@
 # Signal OS Feedback Review — Cycle 20260617
 
-Generated: 2026-06-17 21:42 UTC
+Generated: 2026-06-17 22:25 UTC
 
 Feedback is collected per dispatch via channel interaction (Telegram reactions, replies, forwarding, or explicit feedback links). Each entry records what happened and how the next cycle adapts.
 
@@ -35,7 +35,7 @@ Feedback is collected per dispatch via channel interaction (Telegram reactions, 
 
 ### St. Vincent and the Grenadines: economic stress indicators rising — portfolio review...
 
-- **Dispatch**: DSP-20260617-009
+- **Dispatch**: DSP-20260617-011
 - **Kind**: economic_vulnerability
 - **Sent via**: Email brief + Telegram
 - **Feedback**: 🔀 decision_changed

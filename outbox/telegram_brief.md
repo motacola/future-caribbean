@@ -1,5 +1,5 @@
-🌴 *Caribbean Opportunity Dispatch — Decision Routes Ready*
-Cycle: `20260617` · 2026-06-17 21:42 UTC
+🌴 *Signal Fabric — Decision Routes Ready*
+Cycle: `20260617` · 2026-06-17 22:25 UTC
 
 *What this is:*
 A Dispatch Desk notification. The product is the decision route: signal → persona → action → feedback. Telegram is only the delivery channel.
@@ -48,4 +48,4 @@ Data → 13 signal clusters → 32 persona routes → 6 personas → action/capi
 • `outbox/delivery_manifest.json` — channel handoff manifest
 
 No changed desk = no message.
-- Caribbean Opportunity Dispatch
+- Signal Fabric

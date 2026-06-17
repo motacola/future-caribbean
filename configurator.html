@@ -466,7 +466,7 @@ footer { border-top: 1px solid var(--border); padding: 24px; text-align: center;
 </div>
 
 <footer>
-  Signal Fabric · Caribbean Opportunity Dispatch (live instance) · Open Track · Screening signals only, not investment advice · Data: World Bank · IDB · NOAA · NDBC · CARICOM · CDB
+  Signal Fabric · Signal Fabric (live instance) · Open Track · Screening signals only, not investment advice · Data: World Bank · IDB · NOAA · NDBC · CARICOM · CDB
 </footer>
 
 <script>
@@ -647,9 +647,9 @@ function renderClientSide() {
   } else if (state.channel === 'whatsapp') {
     text = `🌴 Caribbean Signal\n\n${country}: ${ev}${pstr}\n\n${action.slice(0,160)}\n\nScreening signal only.`;
   } else if (state.channel === 'email') {
-    text = `Subject: ${country} — ${conf.toLowerCase()} market signal\n\n${ev}${pstr}\n\nFor ${pl}:\n${action}\n\nSource: World Bank / IDB\nConfidence: ${conf}\n\nScreening signal, not investment advice.\nCaribbean Opportunity Dispatch`;
+    text = `Subject: ${country} — ${conf.toLowerCase()} market signal\n\n${ev}${pstr}\n\nFor ${pl}:\n${action}\n\nSource: World Bank / IDB\nConfidence: ${conf}\n\nScreening signal, not investment advice.\nSignal Fabric`;
   } else {
-    text = `CARIBBEAN OPPORTUNITY BRIEF\n${'─'.repeat(36)}\nCountry:    ${country}\nConfidence: ${conf}\nAudience:   ${pl}\n\nSIGNAL\n${ev}${pstr}\n\nRECOMMENDED ACTION\n${action}\n\n${'─'.repeat(36)}\nScreening signal only. Not investment advice.\nCaribbean Opportunity Dispatch`;
+    text = `CARIBBEAN OPPORTUNITY BRIEF\n${'─'.repeat(36)}\nCountry:    ${country}\nConfidence: ${conf}\nAudience:   ${pl}\n\nSIGNAL\n${ev}${pstr}\n\nRECOMMENDED ACTION\n${action}\n\n${'─'.repeat(36)}\nScreening signal only. Not investment advice.\nSignal Fabric`;
   }
 
   _previewText = text;
@@ -676,7 +676,7 @@ function renderDevice(channel, text, country) {
     wrap.innerHTML = `
       <div class="tg-bar">
         <div class="tg-avatar">🌴</div>
-        <div><div class="tg-name">Caribbean Opportunity Dispatch</div><div class="tg-sub">Signal channel · ${PIPELINE.n_sources || 5}/6 sources live</div></div>
+        <div><div class="tg-name">Signal Fabric</div><div class="tg-sub">Signal channel · ${PIPELINE.n_sources || 5}/6 sources live</div></div>
       </div>
       <div class="tg-bubble">${fmtTg(text)}</div>
       <div class="tg-time">${now}</div>`;
@@ -695,16 +695,16 @@ function renderDevice(channel, text, country) {
     const body = lines.slice(2).join('\n');
     wrap.className = 'device-wrap device-email';
     wrap.innerHTML = `
-      <div class="email-chrome"><span>From: Caribbean Opportunity Dispatch &lt;signal@cod.caribbean&gt;</span></div>
+      <div class="email-chrome"><span>From: Signal Fabric &lt;signal@cod.caribbean&gt;</span></div>
       <div class="email-body">
         <div class="email-subject">${esc(subj)}</div>
-        <div class="email-from">Caribbean Opportunity Dispatch · ${now}</div>
+        <div class="email-from">Signal Fabric · ${now}</div>
         <div class="email-text">${esc(body)}</div>
       </div>`;
   } else {
     wrap.className = 'device-wrap device-memo';
     wrap.innerHTML = `
-      <div class="memo-logo">Caribbean Opportunity Dispatch — Intelligence Brief</div>
+      <div class="memo-logo">Signal Fabric — Intelligence Brief</div>
       <div class="memo-text">${esc(text)}</div>`;
   }
 }

@@ -2,14 +2,14 @@
   "instance": "climate",
   "instance_label": "Climate & Catastrophe Risk",
   "cycle_id": "20260617",
-  "generated_at": "2026-06-17T21:42:28.600485+00:00",
+  "generated_at": "2026-06-17T22:25:24.749731+00:00",
   "clusters": [
     {
       "cluster_id": "CLIM-allclear",
       "country_cluster": "Caribbean basin",
       "signal_kind": "all_clear",
       "title": "All clear \u2014 no active hazards this cycle",
-      "evidence": "No active NWS alerts in Caribbean zones. Current conditions: 6 buoys reporting; max wind 19 kt; no tropical development expected (NHC).",
+      "evidence": "No active NWS alerts in Caribbean zones. Current conditions: 6 buoys reporting; peak seas 2.5m; max wind 19 kt; no tropical development expected (NHC).",
       "evidence_grade": "A - official sources",
       "confidence_score": 70,
       "freshness": "new",
@@ -19,12 +19,12 @@
         {
           "persona": "Resilience Planner",
           "channel": "Telegram/SMS alert",
-          "action": "All clear across Caribbean zones \u2014 6 buoys reporting; max wind 19 kt; no tropical development expected (NHC). No action required; the engine keeps watching and will escalate the moment a threshold is crossed."
+          "action": "All clear across Caribbean zones \u2014 6 buoys reporting; peak seas 2.5m; max wind 19 kt; no tropical development expected (NHC). No action required; the engine keeps watching and will escalate the moment a threshold is crossed."
         },
         {
           "persona": "Insurer / Reinsurer",
           "channel": "Email + alert",
-          "action": "No active hazard exposure this cycle (6 buoys reporting; max wind 19 kt; no tropical development expected (NHC)). Baseline confirmed for parametric monitoring."
+          "action": "No active hazard exposure this cycle (6 buoys reporting; peak seas 2.5m; max wind 19 kt; no tropical development expected (NHC)). Baseline confirmed for parametric monitoring."
         }
       ]
     }

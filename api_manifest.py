@@ -2,7 +2,7 @@
 
 TOOLS_MANIFEST = {
     "engine": "Signal Fabric",
-    "product": "Caribbean Opportunity Dispatch",
+    "product": "Signal Fabric",
     "version": 1,
     "tools": [
         {

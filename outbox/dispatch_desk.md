@@ -1,8 +1,8 @@
 # Dispatch Desk — Cycle 20260617
 
-Generated: 2026-06-17 21:42 UTC
+Generated: 2026-06-17 22:25 UTC
 
-Caribbean Opportunity Dispatch turns fragmented regional data into decision-ready routes. This is the primary product surface; Telegram/email are delivery channels and the dashboard is the operator/audit view.
+Signal Fabric turns fragmented regional data into decision-ready routes. This is the primary product surface; Telegram/email are delivery channels and the dashboard is the operator/audit view.
 
 ## Open Track Coordination Chain
 
