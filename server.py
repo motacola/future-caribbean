@@ -112,6 +112,12 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
             signal_id = path[len("/api/validation-packs/"):]
             self._api_validation_pack(signal_id)
             return
+        if path == "/api/community-brief":
+            self._api_community_brief()
+            return
+        if path == "/api/community-brief/snippets":
+            self._api_community_brief_snippets()
+            return
         if path == "/api/tools.json":
             self._api_tools_manifest()
             return
@@ -284,6 +290,30 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
             self._json({"error": str(exc)}, 500)
 
     # ── /api/tools.json ────────────────────────────────────────
+
+    def _api_community_brief(self) -> None:
+        """Serve the community brief (plain-language signals)."""
+        brief_path = APP_DIR / "outbox" / "community_brief.md"
+        if not brief_path.exists():
+            self._json({"error": "Community brief not generated yet — run the pipeline first."}, 404)
+            return
+        try:
+            content = brief_path.read_text(encoding="utf-8")
+            self._json({"ok": True, "brief": content})
+        except Exception as exc:
+            self._json({"error": str(exc)}, 500)
+
+    def _api_community_brief_snippets(self) -> None:
+        """Serve platform-specific social snippets (X thread, Instagram, WhatsApp)."""
+        snippets = {}
+        for name in ("x_thread", "instagram_caption", "whatsapp_forward"):
+            path = APP_DIR / "outbox" / f"community_brief_{name}.md"
+            if path.exists():
+                snippets[name] = path.read_text(encoding="utf-8")
+        if not snippets:
+            self._json({"error": "Snippets not generated yet — run the pipeline first."}, 404)
+            return
+        self._json({"ok": True, "snippets": snippets})
 
     def _api_tools_manifest(self) -> None:
         """Serve the machine-readable tool manifest."""

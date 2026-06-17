@@ -2,26 +2,40 @@
 
 **Decision job:** Project pipeline tracking and expression of interest preparation
 **Delivery channel:** Email brief
-**Generated:** Jun 11, 2026 at 10:00 UTC
-**Dispatches in this packet:** 1
+**Generated:** Jun 17, 2026 at 21:42 UTC
+**Dispatches in this packet:** 2
 
 ---
 
-## Dispatches (1)
+## Dispatches (2)
 
-### 1. CARICOM: 2 active procurements — bidding window open
+### 1. CARICOM: 3 active procurements — bidding window open
 
-**ID:** `DSP-20260611-018` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 96/100 | B - cross-source
+**ID:** `DSP-20260617-016` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 96/100 | B - cross-source
 **Channel:** Email brief | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** CDB active procurement notices: 2
-**Detail:** CDB active procurement notices: 2
+**Evidence:** CDB active procurement notices: 3
+**Detail:** CDB active procurement notices: 3
 **Grade:** B - cross-source
 
-**Recommended action:** Track CDB/IDB project pipeline: CDB active procurement notices: 2. Review opportunity fit and prepare expression of interest.
+**Recommended action:** Track CDB/IDB project pipeline: CDB active procurement notices: 3. Review opportunity fit and prepare expression of interest.
 **Decision to influence:** Which procurement or project opportunity to pursue
 **Routing rationale:** CDB/IDB project pipeline is the primary lead source for project-based business development
+
+### 2. Belize: signal detected
+
+**ID:** `DSP-20260617-031` | **Country:** Belize | **Confidence:** 🔴 Immediate | 94/100 | A - multi-source
+**Channel:** Email brief | **Window:** 21 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** CDB active procurement notices: 3
+**Detail:** signal detected
+**Grade:** A - multi-source
+
+**Recommended action:** CDB procurement (signal detected) aligned with stable shipping lanes. Viable corridor for logistics providers — prepare EOI.
+**Decision to influence:** Which logistics/procurement corridor to bid or partner on
+**Routing rationale:** CDB procurement aligned with maritime stability = viable logistics corridors for project-based entry
 
 ---
 

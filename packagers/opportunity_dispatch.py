@@ -61,6 +61,34 @@ def _persona_action_for_kind(
     action_window: str,
 ) -> str:
     """Sharper, persona-specific action language."""
+    # Supply chain signal - handle first for relevant personas
+    if kind == "supply_chain_signal":
+        if persona_key == "regional_operator":
+            return (
+                f"Active supply chain corridor in {country}: procurement live + maritime stable. "
+                f"Assess capacity for logistics, warehousing, transport — bid window open."
+            )
+        if persona_key == "procurement_watcher":
+            return (
+                f"CDB procurement ({detail}) aligned with stable shipping lanes. "
+                f"Viable corridor for logistics providers — prepare EOI."
+            )
+        if persona_key == "founder_operator":
+            return (
+                f"Supply chain gap in {country} confirmed. Procurement pipeline + stable maritime = "
+                f"build warehousing, transport, or last-mile services here."
+            )
+        if persona_key == "diaspora_investor":
+            return (
+                f"Supply chain corridor in {country} — logistics + procurement convergence. "
+                f"Infrastructure play with project-based entry. {detail}"
+            )
+        if persona_key == "ecosystem_builder":
+            return (
+                f"Supply chain corridor opening in {country} — connect logistics founders "
+                f"to procurement pipeline ({detail})."
+            )
+
     if persona_key == "diaspora_investor":
         if "enhanced" in kind:
             return (

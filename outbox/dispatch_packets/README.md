@@ -1,8 +1,8 @@
 # Dispatch Packets
 
-Generated: Jun 11, 2026 at 10:00 UTC
-Total personas: 7
-Total dispatches across all packets: 31
+Generated: Jun 17, 2026 at 21:42 UTC
+Total personas: 6
+Total dispatches across all packets: 32
 
 | Persona | Dispatches | Packet |
 |---------|-----------|--------|
@@ -10,7 +10,6 @@ Total dispatches across all packets: 31
 | Ecosystem Builder | 5 | `ecosystem_builder.md` |
 | Regional Founder/Operator | 10 | `founder_operator.md` |
 | Policy/Media | 3 | `policy_media.md` |
-| Procurement Watcher | 1 | `procurement_watcher.md` |
-| Regional Operator | 1 | `regional_operator.md` |
-| Tourism/Logistics Operator | 1 | `tourism_logistics_operator.md` |
+| Procurement Watcher | 2 | `procurement_watcher.md` |
+| Regional Operator | 2 | `regional_operator.md` |
 

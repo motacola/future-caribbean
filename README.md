@@ -193,6 +193,7 @@ This is the primary public deployment: GitHub Actions runs the pipeline every 4 
 - Write endpoints (`/api/feedback/apply`, `/api/delivery/*`, `/api/domains/create`) are **not deployed** — public instance is read-only by construction
 - Theater uses client-side replay from committed `data/history/*.jsonl` (no SSE on Vercel)
 - Local development unchanged: `python3 server.py` for full read-write + live SSE
+- **Static files** — `vercel.json` now declares `dashboard.html`, `configurator.html`, `dashboard/**`, and `outbox/**` as static builds so the dashboard, "Build your feed" configurator, RSS feed, and validation packs all serve on Vercel
 
 ---
 

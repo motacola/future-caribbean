@@ -1,7 +1,6 @@
 """Vercel serverless function: GET /api/status"""
 from __future__ import annotations
 import json
-import os
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -11,8 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 # Reuse logic from server.py but read-only
-from agent.query import load_desk
-from map_data import build_map_data
+from agent.query import load_desk  # noqa: E402
 
 SRC = [
     ("World Bank", "world_bank", "REST API · 5 indicators × 13 countries"),

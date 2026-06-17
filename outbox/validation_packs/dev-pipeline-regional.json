@@ -1,8 +1,8 @@
 {
   "signal_id": "dev-pipeline-regional",
-  "dispatch_id": "DSP-20260611-017",
+  "dispatch_id": "DSP-20260617-015",
   "country": "CARICOM",
-  "signal_title": "CARICOM: 2 active procurements — bidding window open",
+  "signal_title": "CARICOM: 3 active procurements — bidding window open",
   "confidence_score": 96,
   "evidence_grade": "B - cross-source",
   "sector_hypotheses": [],
@@ -10,37 +10,37 @@
     {
       "title": "CARICOM Selected Economic Indicators 2011, 2015-2019",
       "source": "CARICOM Statistics",
-      "url": "https://statistics.caricom.org/publications/caricoms-selected-economic-indicators-2011-2015-2019/",
+      "url": "https://statistics.caricom.org/publication/caricoms-selected-economic-indicators-2011-2015-2019/",
       "topics": []
     },
     {
       "title": "CARICOM Selected Economic Indicators 2010, 2014-2018",
       "source": "CARICOM Statistics",
-      "url": "https://statistics.caricom.org/publications/caricoms-selected-economic-indicators-2010-2014-2018/",
+      "url": "https://statistics.caricom.org/publication/caricoms-selected-economic-indicators-2010-2014-2018/",
       "topics": []
     },
     {
       "title": "The CARICOM Environment in Figures-4th Edition",
       "source": "CARICOM Statistics",
-      "url": "https://statistics.caricom.org/publications/the-caricom-environment-in-figures-4th-edition/",
+      "url": "https://statistics.caricom.org/publication/the-caricom-environment-in-figures-4th-edition/",
       "topics": []
     },
     {
       "title": "The CARICOM Environment in Figures-3rd Edition",
       "source": "CARICOM Statistics",
-      "url": "https://statistics.caricom.org/publications/the-caricom-environment-in-figures-3rd-edition/",
+      "url": "https://statistics.caricom.org/publication/the-caricom-environment-in-figures-3rd-edition/",
       "topics": []
     },
     {
       "title": "The CARICOM Environment in Figures-2nd Edition",
       "source": "CARICOM Statistics",
-      "url": "https://statistics.caricom.org/publications/the-caricom-environment-in-figures-2004/",
+      "url": "https://statistics.caricom.org/publication/the-caricom-environment-in-figures-2004/",
       "topics": []
     },
     {
       "title": "CARICOM Selected Economic Indicators, 1990, 1998 &#8211; 2002",
       "source": "CARICOM Statistics",
-      "url": "https://statistics.caricom.org/publications/caricom-selected-economic-indicators-1990-1998-2002/",
+      "url": "https://statistics.caricom.org/publication/caricom-selected-economic-indicators-1990-1998-2002/",
       "topics": []
     }
   ],
@@ -49,6 +49,12 @@
       "title": "Enhancing the Quality of the Belize National Quality Infrastructure",
       "source": "Caribbean Development Bank",
       "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure",
+      "match": "regional"
+    },
+    {
+      "title": "School Improvement Project (SIP) Phase 1",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/school-improvement-project-sip-phase-1-0",
       "match": "regional"
     },
     {
@@ -70,6 +76,11 @@
       "url": "https://statistics.caricom.org/country_data/caricom-summary-total-liabilities-commercial-banks-2000-2025/"
     },
     {
+      "title": "CARICOM Summary Total Liabilities-Commercial Banks 2000-2025",
+      "source": "CARICOM Statistics",
+      "url": "https://statistics.caricom.org/country_data/caricom-summary-total-liabilities-commercial-banks-2000-2025-2/"
+    },
+    {
       "title": "CARICOM Intra-Regional Food Imports by SITC, 2000-2024",
       "source": "CARICOM Statistics",
       "url": "https://statistics.caricom.org/country_data/caricom-intra-regional-food-imports-bysitc-2000-2023/"
@@ -83,11 +94,6 @@
       "title": "CARICOM Total Food Imports by SITC, 2000-2024",
       "source": "CARICOM Statistics",
       "url": "https://statistics.caricom.org/country_data/caricom-total-food-imports-by-sitc-2000-2023/"
-    },
-    {
-      "title": "CARICOM Stay-Over Tourist Arrivals",
-      "source": "CARICOM Statistics",
-      "url": "https://statistics.caricom.org/country_data/number-of-tourist-arrivals/"
     }
   ],
   "credible_local_operators": [],
@@ -105,16 +111,17 @@
     "https://statistics.caricom.org/country_data/caricom-intra-regional-food-exports-by-sitc-2000-2023/",
     "https://statistics.caricom.org/country_data/caricom-intra-regional-food-imports-bysitc-2000-2023/",
     "https://statistics.caricom.org/country_data/caricom-summary-total-assets-commercial-banks-2000-2025/",
+    "https://statistics.caricom.org/country_data/caricom-summary-total-liabilities-commercial-banks-2000-2025-2/",
     "https://statistics.caricom.org/country_data/caricom-summary-total-liabilities-commercial-banks-2000-2025/",
     "https://statistics.caricom.org/country_data/caricom-total-food-imports-by-sitc-2000-2023/",
-    "https://statistics.caricom.org/country_data/number-of-tourist-arrivals/",
-    "https://statistics.caricom.org/publications/caricom-selected-economic-indicators-1990-1998-2002/",
-    "https://statistics.caricom.org/publications/caricoms-selected-economic-indicators-2010-2014-2018/",
-    "https://statistics.caricom.org/publications/caricoms-selected-economic-indicators-2011-2015-2019/",
-    "https://statistics.caricom.org/publications/the-caricom-environment-in-figures-2004/",
-    "https://statistics.caricom.org/publications/the-caricom-environment-in-figures-3rd-edition/",
-    "https://statistics.caricom.org/publications/the-caricom-environment-in-figures-4th-edition/",
+    "https://statistics.caricom.org/publication/caricom-selected-economic-indicators-1990-1998-2002/",
+    "https://statistics.caricom.org/publication/caricoms-selected-economic-indicators-2010-2014-2018/",
+    "https://statistics.caricom.org/publication/caricoms-selected-economic-indicators-2011-2015-2019/",
+    "https://statistics.caricom.org/publication/the-caricom-environment-in-figures-2004/",
+    "https://statistics.caricom.org/publication/the-caricom-environment-in-figures-3rd-edition/",
+    "https://statistics.caricom.org/publication/the-caricom-environment-in-figures-4th-edition/",
     "https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/school-improvement-project-sip-phase-1-0",
     "https://www.caribank.org/work-with-us/procurement/procurement-notices/support-institutional-strengthening-caribbean-disaster-emergency-project"
   ],
   "unresolved_questions": [
@@ -131,5 +138,5 @@
   ],
   "advance_or_reject_recommendation": "hold",
   "recommendation_reason": "Signal confidence 96/100 with 1 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.",
-  "last_validated_at": "2026-06-11T17:21:57.966570+00:00"
+  "last_validated_at": "2026-06-17T21:42:28.277090+00:00"
 }

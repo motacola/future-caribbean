@@ -1,8 +1,8 @@
 # Regional Thesis — Caribbean Signal OS
 
-Generated: 2026-06-11 10:00 UTC
+Generated: 2026-06-17 21:42 UTC
 
-Capital momentum is strongest in Guyana (+860.3%), followed by Belize, St. Vincent and the Grenadines.  However, St. Vincent and the Grenadines and Suriname also carry elevated vulnerability indicators — investment signals from these countries require deeper diligence before committing capital.  Development pipeline remains active (CDB active procurement notices: 2) — the bidding window is open for project-based entry. Tourism-related growth signals are visible in Antigua and Barbuda, Guyana, St. Kitts and Nevis — demand-side indicators for capacity planning.
+Capital momentum is strongest in Guyana (+860.3%), followed by Belize, St. Vincent and the Grenadines.  However, St. Vincent and the Grenadines and Suriname also carry elevated vulnerability indicators — investment signals from these countries require deeper diligence before committing capital.  Development pipeline remains active (CDB active procurement notices: 3) — the bidding window is open for project-based entry. Tourism-related growth signals are visible in Antigua and Barbuda, Guyana, St. Kitts and Nevis — demand-side indicators for capacity planning.
 
 **Why now:** Atlantic Hurricane Season active — Q2 Procurement Cycle active
 
@@ -11,7 +11,7 @@ Capital momentum is strongest in Guyana (+860.3%), followed by Belize, St. Vince
 - Lead signal: Guyana: +860.3% multi-source capital surge — market entry window open
 - Cross-reference: St. Vincent and the Grenadines investment + vulnerability — validate before deploying capital
 - Cross-reference: Suriname investment + vulnerability — validate before deploying capital
-- Procurement: CARICOM: 2 active procurements — bidding window open
+- Procurement: CARICOM: 3 active procurements — bidding window open
 - Timing: Atlantic Hurricane Season active — Q2 Procurement Cycle active
 
 ## Capital Momentum (Top Signals)
@@ -30,5 +30,5 @@ Capital momentum is strongest in Guyana (+860.3%), followed by Belize, St. Vince
 
 ## Vulnerability Monitoring
 
-- **St. Vincent and the Grenadines**: +18.00% (70/100)
+- **St. Vincent and the Grenadines**: +18.00% (69/100)
 - **Suriname**: +16.23% (56/100)

@@ -1,6 +1,6 @@
 {
   "signal_id": "enhanced-invest-guyana",
-  "dispatch_id": "DSP-20260611-023",
+  "dispatch_id": "DSP-20260617-021",
   "country": "Guyana",
   "signal_title": "Guyana: +860.3% multi-source capital surge — market entry window open",
   "confidence_score": 100,
@@ -44,56 +44,26 @@
       "source": "IDB Open Data",
       "url": "https://data.iadb.org/en/search?q=Productivity%2C%20Technology%20and%20Innovation%20",
       "topics": []
-    },
-    {
-      "title": "Guyana: Latin American Public Opinion Project - Victimization and Crime survey 2016",
-      "source": "IDB Open Data",
-      "url": "https://data.iadb.org/en/search?q=Guyana%3A%20Latin%20American%20Public%20Opinion%20Pr",
-      "topics": []
     }
   ],
   "procurement_matches": [
     {
-      "title": "Request for Proposal for Engineering, Procurement, Construction + Finance for Rehabilitation & Upgrading of Hinterland Coastal Airstrips Lots 1-4",
-      "source": "Guyana eProcure (NPTA)",
-      "url": "https://eprocure.gov.gy/",
-      "match": "country",
-      "closing_date": "2026-06-16"
+      "title": "Enhancing the Quality of the Belize National Quality Infrastructure",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure",
+      "match": "regional"
     },
     {
-      "title": "EOI for the Designing and Supervising the Construction of New Primary Schools",
-      "source": "Guyana eProcure (NPTA)",
-      "url": "https://eprocure.gov.gy/",
-      "match": "country",
-      "closing_date": "2026-06-16"
+      "title": "School Improvement Project (SIP) Phase 1",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/school-improvement-project-sip-phase-1-0",
+      "match": "regional"
     },
     {
-      "title": " Supply and delivery of Asphalt Laboratory Equipment",
-      "source": "Guyana eProcure (NPTA)",
-      "url": "https://eprocure.gov.gy/",
-      "match": "country",
-      "closing_date": "2026-06-23"
-    },
-    {
-      "title": "Supply and Delivery of Materials to Retube #1 Boiler Super Heater and Install New Header for Rose Hall Estate",
-      "source": "Guyana eProcure (NPTA)",
-      "url": "https://eprocure.gov.gy/",
-      "match": "country",
-      "closing_date": "2026-06-23"
-    },
-    {
-      "title": "Supply and Delivery of 2Kg & 5Kg Demerara Gold Laminated Films",
-      "source": "Guyana eProcure (NPTA)",
-      "url": "https://eprocure.gov.gy/",
-      "match": "country",
-      "closing_date": "2026-06-23"
-    },
-    {
-      "title": "Supply and Delivery of Materials for Upgrading from Mild Steel to Stainless Steel at Albion Estate – Lot 1-4",
-      "source": "Guyana eProcure (NPTA)",
-      "url": "https://eprocure.gov.gy/",
-      "match": "country",
-      "closing_date": "2026-06-23"
+      "title": "Support for Institutional Strengthening of the Caribbean Disaster Emergency Project",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/support-institutional-strengthening-caribbean-disaster-emergency-project",
+      "match": "regional"
     }
   ],
   "official_country_data": [
@@ -138,17 +108,18 @@
     }
   ],
   "source_links": [
-    "https://data.iadb.org/en/search?q=Guyana%3A%20Latin%20American%20Public%20Opinion%20Pr",
     "https://data.iadb.org/en/search?q=Productivity%2C%20Technology%20and%20Innovation%20",
-    "https://eprocure.gov.gy/",
     "https://statistics.caricom.org/country_data/2019_vnr_report_guyana/",
     "https://statistics.caricom.org/country_data/2023_vnr_report_guyana/",
     "https://statistics.caricom.org/country_data/guyana-monthly-consumer-price-index-cpi-by-expenditure-category/",
-    "https://statistics.caricom.org/country_data/guyana-value-addedgdp-by-industries-at-constant-prices-isic-4-gyd-2012-2023/"
+    "https://statistics.caricom.org/country_data/guyana-value-addedgdp-by-industries-at-constant-prices-isic-4-gyd-2012-2023/",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/school-improvement-project-sip-phase-1-0",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/support-institutional-strengthening-caribbean-disaster-emergency-project"
   ],
   "unresolved_questions": [
     "Confirm which sectors in the official Guyana GDP-by-industry data actually align with the FDI movement.",
-    "Tender closes 2026-06-16 — confirm eligibility and bid requirements early.",
+    "No live Guyana-specific procurement notice matched this cycle — check CDB and national tender portals directly.",
     "Operator discovery is not yet automated — source two credible local operators via the listed institutions.",
     "Validate that the underlying FDI movement is sustained, not a one-off transaction or statistical revision."
   ],
@@ -163,6 +134,6 @@
     }
   ],
   "advance_or_reject_recommendation": "advance",
-  "recommendation_reason": "High-confidence signal (100/100) with 3 independent evidence categories already attached. Worth one validation conversation this cycle.",
-  "last_validated_at": "2026-06-11T17:21:57.966570+00:00"
+  "recommendation_reason": "High-confidence signal (100/100) with 2 independent evidence categories already attached. Worth one validation conversation this cycle.",
+  "last_validated_at": "2026-06-17T21:42:28.277090+00:00"
 }

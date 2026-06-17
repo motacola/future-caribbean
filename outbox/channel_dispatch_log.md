@@ -1,13 +1,14 @@
-# Channel Dispatch Log — Cycle 20260611
+# Channel Dispatch Log — Cycle 20260617
 
-Generated: 2026-06-11 10:00 UTC
+Generated: 2026-06-17 21:42 UTC
 
 Per-channel routing plan for this cycle. Live send receipts are written to `outbox/live_send_log.md` after each delivery run.
 
 ## Email brief
 
-- [✓] CARICOM: 2 active procurements — bidding window open
-- **1 dispatches routed to Email brief**
+- [✓] CARICOM: 3 active procurements — bidding window open
+- [✓] Belize: signal detected
+- **2 dispatches routed to Email brief**
 
 ## Email brief + Telegram
 
@@ -31,8 +32,10 @@ Per-channel routing plan for this cycle. Live send receipts are written to `outb
 - [✓] Belize: +701.0% multi-source capital surge — market entry window open
 - [✓] St. Vincent and the Grenadines: +88.2% multi-source investment validated — opportunity active
 - [✓] St. Vincent and the Grenadines: +88.2% multi-source investment validated — opportunity active
-- [✓] CARICOM: 2 active procurements — bidding window open
-- [✓] CARICOM: 2 active procurements — bidding window open
+- [✓] CARICOM: 3 active procurements — bidding window open
+- [✓] CARICOM: 3 active procurements — bidding window open
+- [✓] Belize: signal detected
+- [✓] Belize: signal detected
 - [✓] Regional FDI snapshot: 8 countries with active capital movement
 - [✓] Guyana: FDI trending at +860.3% — screening trigger active
 - [✓] Belize: FDI trending at +701.0% — screening trigger active
@@ -40,8 +43,6 @@ Per-channel routing plan for this cycle. Live send receipts are written to `outb
 - [✓] Capital convergence: 8 Caribbean economies showing multi-source investment momentum
 - [✓] CARICOM: food supply indicators shifting — supply chain implications
 - [✓] St. Vincent and the Grenadines: FDI trending at +88.2% — screening trigger active
-- [✓] Guyana: GDP growth signals expanding tourist economy
-- [✓] Guyana: GDP growth signals expanding tourist economy
 - **17 dispatches routed to Telegram**
 
 ## Telegram digest

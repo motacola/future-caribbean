@@ -1,9 +1,9 @@
 # Opportunity Validation Pack — St. Vincent and the Grenadines
 
-- Signal: `enhanced-invest-st.-vincent-and-the-grenadines` · Dispatch: `DSP-20260611-029`
+- Signal: `enhanced-invest-st.-vincent-and-the-grenadines` · Dispatch: `DSP-20260617-027`
 - Confidence: 100/100 · A - multi-source
 - Recommendation: **HOLD** — Signal confidence 100/100 with 1 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.
-- Last validated: 2026-06-11T17:21:57.966570+00:00
+- Last validated: 2026-06-17T21:42:28.277090+00:00
 
 ## Sector hypotheses
 - FDI-receiving sectors (composition not yet broken down) — _World Bank: FDI net inflows moved +88.2% from 2023 to 2024_
@@ -13,6 +13,7 @@
 
 ## Procurement matches
 - [Enhancing the Quality of the Belize National Quality Infrastructure](https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure) — Caribbean Development Bank (regional)
+- [School Improvement Project (SIP) Phase 1](https://www.caribank.org/work-with-us/procurement/procurement-notices/school-improvement-project-sip-phase-1-0) — Caribbean Development Bank (regional)
 - [Support for Institutional Strengthening of the Caribbean Disaster Emergency Project](https://www.caribank.org/work-with-us/procurement/procurement-notices/support-institutional-strengthening-caribbean-disaster-emergency-project) — Caribbean Development Bank (regional)
 
 ## Official country data

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-11T17:21:57.966570+00:00",
+  "generated_at": "2026-06-17T21:42:28.277090+00:00",
   "packs": [
     {
       "signal_id": "enhanced-invest-guyana",
@@ -12,7 +12,7 @@
       "signal_id": "enhanced-invest-belize",
       "file": "enhanced-invest-belize.json",
       "country": "Belize",
-      "recommendation": "advance",
+      "recommendation": "hold",
       "confidence_score": 100
     },
     {
@@ -30,11 +30,11 @@
       "confidence_score": 96
     },
     {
-      "signal_id": "regional-investment_signal-20260611",
-      "file": "regional-investment_signal-20260611.json",
-      "country": "Caribwide",
+      "signal_id": "supply-chain-belize",
+      "file": "supply-chain-belize.json",
+      "country": "Belize",
       "recommendation": "hold",
-      "confidence_score": 90
+      "confidence_score": 94
     }
   ]
 }

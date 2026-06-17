@@ -1,6 +1,6 @@
 # Caribbean Opportunity Dispatch — Judge Brief
 
-Generated: 2026-06-11 10:00 UTC
+Generated: 2026-06-17 21:42 UTC
 
 ## What This Proves
 
@@ -8,13 +8,13 @@ Caribbean Opportunity Dispatch is the product. Caribbean Signal OS is the archit
 
 ## Live Run Snapshot
 
-- Total raw signals generated: 25
-- Sources represented: CARICOM, CDB, IDB, World Bank
+- Total raw signals generated: 26
+- Sources represented: CARICOM, CDB, IDB, NDBC, World Bank
 - Countries/zones: 10
 - New/updated this cycle: 0
 - User-facing outputs: opportunity dispatches, regional thesis, why-now context, feedback review, judge brief
 
-**Belize** — 2 signal(s), 4 source(s): 💼 Investment + 💎 Investment
+**Belize** — 3 signal(s), 5 source(s): 💼 Investment + 💎 Investment + supply_chain_signal
 
 🔴 — **💎 Investment — Belize**
    Belize: +701.0% multi-source capital surge — market entry window open
@@ -30,10 +30,10 @@ Caribbean Opportunity Dispatch is the product. Caribbean Signal OS is the archit
    Decision: Immediate investigation. Barbados has multi-source investment validation (3 signals converging). Priority: assess market entry options, identify existing operators.
 
 **2.** 🔴 **🏗️ Pipeline — CARICOM** — sustained
-   Narrative: CARICOM: 2 active procurements — bidding window open
+   Narrative: CARICOM: 3 active procurements — bidding window open
    Score: 96/100 | Grade: B - cross-source
    Audience: investor/founder via Email brief + Telegram
-   Decision: Active procurement pipeline: CDB active procurement notices: 2. Priority: review CDB/IDB opportunities as lead list for project-based entry.
+   Decision: Active procurement pipeline: CDB active procurement notices: 3. Priority: review CDB/IDB opportunities as lead list for project-based entry.
 
 **3.** 🔴 **💼 Investment — Guyana** — sustained
    Narrative: Guyana: FDI trending at +860.3% — screening trigger active
@@ -47,11 +47,11 @@ Caribbean Opportunity Dispatch is the product. Caribbean Signal OS is the archit
    Audience: investor/founder via Email brief + Telegram
    Decision: Validation priority. St. Kitts and Nevis FDI movement (41.1% change) signals opportunity. Cross-reference with sector data.
 
-**5.** 🟡 **⚠️ Vulnerability — St. Vincent and the Grenadines** — sustained
+**5.** 🟢 **⚠️ Vulnerability — St. Vincent and the Grenadines** — sustained
    Narrative: St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended
-   Score: 70/100 | Grade: C - single-source
+   Score: 69/100 | Grade: C - single-source
    Audience: policy/operator via Telegram digest
-   Decision: Watch: St. Vincent and the Grenadines elevated indicators (18.00%). Deeper context check needed before expansion or support decisions.
+   Decision: Monitor. St. Vincent and the Grenadines showing economic stress (18.00%). Track next cycle. Escalates if additional stress indicators appear or existing ones worsen.
 
 **6.** 🟢 **⚠️ Vulnerability — Suriname** — sustained
    Narrative: Suriname: economic stress indicators rising — portfolio review recommended
@@ -94,6 +94,10 @@ Each signal is routed to specific personas based on signal kind and evidence lev
 - **Maritime Hazard** → Operator_Resilience, Tourism_Logistics_Operator
   - Operator Resilience: High-wind + marine alert confirmation requires safety response and shipping route adjustments
   - Tourism Logistics Operator: Maritime hazards affect island supply chains and tourism transport schedules
+- **Supply Chain Signal** → Regional_Operator, Procurement_Watcher, Founder_Operator
+  - Regional Operator: Active procurement + stable maritime = real supply chain corridor opportunity — first to respond wins
+  - Procurement Watcher: CDB procurement aligned with maritime stability = viable logistics corridors for project-based entry
+  - Founder Operator: Supply chain gaps + procurement pipeline = where to build logistics, warehousing, or last-mile services
 - **Tourism Impact** → Tourism_Logistics_Operator, Founder_Operator
   - Tourism Logistics Operator: GDP growth in tourism-relevant economies signals demand trajectory — plan capacity accordingly
   - Founder Operator: Tourism-linked GDP growth in your operating country indicates broader consumer demand
@@ -102,7 +106,7 @@ Each signal is routed to specific personas based on signal kind and evidence lev
 
 ## Cycle Summary
 
-Lead: Belize · 25 composite signal(s) · 24 persistent
+Lead: Belize · 26 composite signal(s) · 25 persistent
 ## Judge Demo Path
 
 1. Run `bash run_pipeline.sh`.

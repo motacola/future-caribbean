@@ -1,0 +1,470 @@
+{"event": "source_check", "data": {"source": "World Bank", "status": "polling", "ts": 1781656457.657863}}
+{"event": "source_check", "data": {"source": "World Bank", "status": "complete", "ts": 1781656465.98293}}
+{"event": "source_check", "data": {"source": "IDB", "status": "polling", "ts": 1781656465.98879}}
+{"event": "source_check", "data": {"source": "IDB", "status": "complete", "ts": 1781656470.672531}}
+{"event": "source_check", "data": {"source": "CARICOM / CDB", "status": "polling", "ts": 1781656470.678325}}
+{"event": "source_check", "data": {"source": "CARICOM / CDB", "status": "complete", "ts": 1781656479.039061}}
+{"event": "source_check", "data": {"source": "NOAA", "status": "polling", "ts": 1781656479.734748}}
+{"event": "source_check", "data": {"source": "NOAA", "status": "complete", "ts": 1781656482.9067662}}
+{"event": "source_check", "data": {"source": "NDBC", "status": "polling", "ts": 1781656482.9133399}}
+{"event": "source_check", "data": {"source": "NDBC", "status": "complete", "ts": 1781656494.904746}}
+{"event": "source_check", "data": {"source": "NHC", "status": "polling", "ts": 1781656494.9101682}}
+{"event": "source_check", "data": {"source": "NHC", "status": "complete", "ts": 1781656498.54585}}
+{"event": "signal_found", "data": {"country": "Guyana", "kind": "investment", "confidence": 100, "summary": "Guyana: +860.3% multi-source capital surge — market entry window open", "ts": 1781656499.768851}}
+{"event": "signal_found", "data": {"country": "Belize", "kind": "investment", "confidence": 100, "summary": "Belize: +701.0% multi-source capital surge — market entry window open", "ts": 1781656499.768852}}
+{"event": "signal_found", "data": {"country": "Suriname", "kind": "climate", "confidence": 56, "summary": "Suriname: economic stress indicators rising — portfolio review recommended", "ts": 1781656499.768853}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-021", "country": "Guyana", "recipient": "Diaspora Investor", "ts": 1781656499.7690392}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-022", "country": "Guyana", "recipient": "Ecosystem Builder", "ts": 1781656499.7690399}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-023", "country": "Guyana", "recipient": "Regional Founder/Operator", "ts": 1781656499.7690399}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-024", "country": "Belize", "recipient": "Diaspora Investor", "ts": 1781656499.7690399}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-025", "country": "Belize", "recipient": "Ecosystem Builder", "ts": 1781656499.7690408}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-026", "country": "Belize", "recipient": "Regional Founder/Operator", "ts": 1781656499.7690408}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-027", "country": "St. Vincent and the Grenadines", "recipient": "Diaspora Investor", "ts": 1781656499.7690408}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-028", "country": "St. Vincent and the Grenadines", "recipient": "Ecosystem Builder", "ts": 1781656499.769042}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-029", "country": "St. Vincent and the Grenadines", "recipient": "Regional Founder/Operator", "ts": 1781656499.769042}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-015", "country": "CARICOM", "recipient": "Regional Operator", "ts": 1781656499.769042}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-016", "country": "CARICOM", "recipient": "Procurement Watcher", "ts": 1781656499.769042}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-017", "country": "CARICOM", "recipient": "Regional Founder/Operator", "ts": 1781656499.769043}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-001", "country": "Caribwide", "recipient": "Diaspora Investor", "ts": 1781656499.769043}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-002", "country": "Caribwide", "recipient": "Regional Founder/Operator", "ts": 1781656499.769043}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-003", "country": "Guyana", "recipient": "Diaspora Investor", "ts": 1781656499.769044}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-004", "country": "Guyana", "recipient": "Regional Founder/Operator", "ts": 1781656499.769044}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-005", "country": "Belize", "recipient": "Diaspora Investor", "ts": 1781656499.769044}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-006", "country": "Belize", "recipient": "Regional Founder/Operator", "ts": 1781656499.769044}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-018", "country": "Caribwide", "recipient": "Diaspora Investor", "ts": 1781656499.7690449}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-019", "country": "Caribwide", "recipient": "Ecosystem Builder", "ts": 1781656499.7690449}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-020", "country": "Caribwide", "recipient": "Regional Founder/Operator", "ts": 1781656499.7690449}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-013", "country": "CARICOM", "recipient": "Ecosystem Builder", "ts": 1781656499.7690449}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-014", "country": "CARICOM", "recipient": "Policy/Media", "ts": 1781656499.769046}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-007", "country": "St. Vincent and the Grenadines", "recipient": "Diaspora Investor", "ts": 1781656499.769046}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-008", "country": "St. Vincent and the Grenadines", "recipient": "Regional Founder/Operator", "ts": 1781656499.769046}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-009", "country": "St. Vincent and the Grenadines", "recipient": "Diaspora Investor", "ts": 1781656499.769047}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-010", "country": "St. Vincent and the Grenadines", "recipient": "Policy/Media", "ts": 1781656499.769047}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-011", "country": "Suriname", "recipient": "Diaspora Investor", "ts": 1781656499.769047}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-012", "country": "Suriname", "recipient": "Policy/Media", "ts": 1781656499.769047}}
+{"event": "cycle_complete", "data": {"cycle": 53, "signals": 3, "ts": 1781656499.769394}}
+{"event": "source_check", "data": {"source": "World Bank", "status": "polling", "ts": 1781656562.729589}}
+{"event": "source_check", "data": {"source": "World Bank", "status": "complete", "ts": 1781656571.1742651}}
+{"event": "source_check", "data": {"source": "IDB", "status": "polling", "ts": 1781656571.183203}}
+{"event": "source_check", "data": {"source": "IDB", "status": "complete", "ts": 1781656595.183109}}
+{"event": "source_check", "data": {"source": "CARICOM / CDB", "status": "polling", "ts": 1781656595.1894279}}
+{"event": "source_check", "data": {"source": "CARICOM / CDB", "status": "complete", "ts": 1781656600.386244}}
+{"event": "source_check", "data": {"source": "NOAA", "status": "polling", "ts": 1781656601.092127}}
+{"event": "source_check", "data": {"source": "NOAA", "status": "complete", "ts": 1781656603.6826692}}
+{"event": "source_check", "data": {"source": "NDBC", "status": "polling", "ts": 1781656603.68919}}
+{"event": "source_check", "data": {"source": "NDBC", "status": "complete", "ts": 1781656614.890205}}
+{"event": "source_check", "data": {"source": "NHC", "status": "polling", "ts": 1781656614.8966231}}
+{"event": "source_check", "data": {"source": "NHC", "status": "complete", "ts": 1781656618.755208}}
+{"event": "signal_found", "data": {"country": "Guyana", "kind": "investment", "confidence": 100, "summary": "Guyana: +860.3% multi-source capital surge — market entry window open", "ts": 1781656620.021879}}
+{"event": "signal_found", "data": {"country": "Belize", "kind": "investment", "confidence": 100, "summary": "Belize: +701.0% multi-source capital surge — market entry window open", "ts": 1781656620.0218801}}
+{"event": "signal_found", "data": {"country": "Suriname", "kind": "climate", "confidence": 54, "summary": "Suriname: economic stress indicators rising — portfolio review recommended", "ts": 1781656620.021881}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-021", "country": "Guyana", "recipient": "Diaspora Investor", "ts": 1781656620.022088}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-022", "country": "Guyana", "recipient": "Ecosystem Builder", "ts": 1781656620.022089}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-023", "country": "Guyana", "recipient": "Regional Founder/Operator", "ts": 1781656620.02209}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-024", "country": "Belize", "recipient": "Diaspora Investor", "ts": 1781656620.02209}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-025", "country": "Belize", "recipient": "Ecosystem Builder", "ts": 1781656620.02209}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-026", "country": "Belize", "recipient": "Regional Founder/Operator", "ts": 1781656620.022091}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-027", "country": "St. Vincent and the Grenadines", "recipient": "Diaspora Investor", "ts": 1781656620.022091}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-028", "country": "St. Vincent and the Grenadines", "recipient": "Ecosystem Builder", "ts": 1781656620.022091}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-029", "country": "St. Vincent and the Grenadines", "recipient": "Regional Founder/Operator", "ts": 1781656620.022091}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-015", "country": "CARICOM", "recipient": "Regional Operator", "ts": 1781656620.022092}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-016", "country": "CARICOM", "recipient": "Procurement Watcher", "ts": 1781656620.022092}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-017", "country": "CARICOM", "recipient": "Regional Founder/Operator", "ts": 1781656620.022092}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-001", "country": "Caribwide", "recipient": "Diaspora Investor", "ts": 1781656620.022092}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-002", "country": "Caribwide", "recipient": "Regional Founder/Operator", "ts": 1781656620.022093}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-018", "country": "Caribwide", "recipient": "Diaspora Investor", "ts": 1781656620.022093}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-019", "country": "Caribwide", "recipient": "Ecosystem Builder", "ts": 1781656620.022093}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-020", "country": "Caribwide", "recipient": "Regional Founder/Operator", "ts": 1781656620.022094}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-003", "country": "Guyana", "recipient": "Diaspora Investor", "ts": 1781656620.022094}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-004", "country": "Guyana", "recipient": "Regional Founder/Operator", "ts": 1781656620.022094}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-005", "country": "Belize", "recipient": "Diaspora Investor", "ts": 1781656620.022094}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-006", "country": "Belize", "recipient": "Regional Founder/Operator", "ts": 1781656620.0220952}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-013", "country": "CARICOM", "recipient": "Ecosystem Builder", "ts": 1781656620.0220952}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-014", "country": "CARICOM", "recipient": "Policy/Media", "ts": 1781656620.0220952}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-007", "country": "St. Vincent and the Grenadines", "recipient": "Diaspora Investor", "ts": 1781656620.0220952}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-008", "country": "St. Vincent and the Grenadines", "recipient": "Regional Founder/Operator", "ts": 1781656620.022096}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-009", "country": "St. Vincent and the Grenadines", "recipient": "Diaspora Investor", "ts": 1781656620.022096}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-010", "country": "St. Vincent and the Grenadines", "recipient": "Policy/Media", "ts": 1781656620.022096}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-011", "country": "Suriname", "recipient": "Diaspora Investor", "ts": 1781656620.022096}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-012", "country": "Suriname", "recipient": "Policy/Media", "ts": 1781656620.0220969}}
+{"event": "cycle_complete", "data": {"cycle": 54, "signals": 3, "ts": 1781656620.022492}}
+{"event": "source_check", "data": {"source": "World Bank", "status": "polling", "ts": 1781671020.156012}}
+{"event": "source_check", "data": {"source": "World Bank", "status": "complete", "ts": 1781671024.97956}}
+{"event": "source_check", "data": {"source": "IDB", "status": "polling", "ts": 1781671024.985307}}
+{"event": "source_check", "data": {"source": "IDB", "status": "complete", "ts": 1781671028.136343}}
+{"event": "source_check", "data": {"source": "CARICOM / CDB", "status": "polling", "ts": 1781671028.1422}}
+{"event": "source_check", "data": {"source": "CARICOM / CDB", "status": "complete", "ts": 1781671038.2352881}}
+{"event": "source_check", "data": {"source": "NOAA", "status": "polling", "ts": 1781671038.631326}}
+{"event": "source_check", "data": {"source": "NOAA", "status": "complete", "ts": 1781671039.84405}}
+{"event": "source_check", "data": {"source": "NDBC", "status": "polling", "ts": 1781671039.850394}}
+{"event": "source_check", "data": {"source": "NDBC", "status": "complete", "ts": 1781671049.22445}}
+{"event": "source_check", "data": {"source": "NHC", "status": "polling", "ts": 1781671049.230627}}
+{"event": "source_check", "data": {"source": "NHC", "status": "complete", "ts": 1781671051.177664}}
+{"event": "signal_found", "data": {"country": "Guyana", "kind": "investment", "confidence": 100, "summary": "Guyana: +860.3% multi-source capital surge — market entry window open", "ts": 1781671052.386432}}
+{"event": "signal_found", "data": {"country": "Belize", "kind": "investment", "confidence": 100, "summary": "Belize: +701.0% multi-source capital surge — market entry window open", "ts": 1781671052.386436}}
+{"event": "signal_found", "data": {"country": "Suriname", "kind": "climate", "confidence": 56, "summary": "Suriname: economic stress indicators rising — portfolio review recommended", "ts": 1781671052.386436}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-023", "country": "Guyana", "recipient": "Diaspora Investor", "ts": 1781671052.386728}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-024", "country": "Guyana", "recipient": "Ecosystem Builder", "ts": 1781671052.386729}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-025", "country": "Guyana", "recipient": "Regional Founder/Operator", "ts": 1781671052.386729}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-026", "country": "Belize", "recipient": "Diaspora Investor", "ts": 1781671052.386729}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-027", "country": "Belize", "recipient": "Ecosystem Builder", "ts": 1781671052.38673}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-028", "country": "Belize", "recipient": "Regional Founder/Operator", "ts": 1781671052.38673}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-029", "country": "St. Vincent and the Grenadines", "recipient": "Diaspora Investor", "ts": 1781671052.38673}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-030", "country": "St. Vincent and the Grenadines", "recipient": "Ecosystem Builder", "ts": 1781671052.38673}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-031", "country": "St. Vincent and the Grenadines", "recipient": "Regional Founder/Operator", "ts": 1781671052.386731}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-017", "country": "CARICOM", "recipient": "Regional Operator", "ts": 1781671052.386731}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-018", "country": "CARICOM", "recipient": "Procurement Watcher", "ts": 1781671052.386731}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-019", "country": "CARICOM", "recipient": "Regional Founder/Operator", "ts": 1781671052.386731}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-001", "country": "Caribwide", "recipient": "Diaspora Investor", "ts": 1781671052.386732}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-002", "country": "Caribwide", "recipient": "Regional Founder/Operator", "ts": 1781671052.386732}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-003", "country": "Guyana", "recipient": "Diaspora Investor", "ts": 1781671052.386732}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-004", "country": "Guyana", "recipient": "Regional Founder/Operator", "ts": 1781671052.386733}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-005", "country": "Belize", "recipient": "Diaspora Investor", "ts": 1781671052.386733}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-006", "country": "Belize", "recipient": "Regional Founder/Operator", "ts": 1781671052.386733}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-020", "country": "Caribwide", "recipient": "Diaspora Investor", "ts": 1781671052.386733}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-021", "country": "Caribwide", "recipient": "Ecosystem Builder", "ts": 1781671052.386734}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-022", "country": "Caribwide", "recipient": "Regional Founder/Operator", "ts": 1781671052.386734}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-015", "country": "CARICOM", "recipient": "Ecosystem Builder", "ts": 1781671052.386734}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-016", "country": "CARICOM", "recipient": "Policy/Media", "ts": 1781671052.386734}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-007", "country": "St. Vincent and the Grenadines", "recipient": "Diaspora Investor", "ts": 1781671052.3867352}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-008", "country": "St. Vincent and the Grenadines", "recipient": "Regional Founder/Operator", "ts": 1781671052.3867352}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-009", "country": "St. Vincent and the Grenadines", "recipient": "Diaspora Investor", "ts": 1781671052.3867352}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-010", "country": "St. Vincent and the Grenadines", "recipient": "Policy/Media", "ts": 1781671052.3867352}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-011", "country": "Suriname", "recipient": "Diaspora Investor", "ts": 1781671052.3867362}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-012", "country": "Suriname", "recipient": "Policy/Media", "ts": 1781671052.3867362}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-013", "country": "Guyana", "recipient": "Tourism/Logistics Operator", "ts": 1781671052.3867362}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-014", "country": "Guyana", "recipient": "Regional Founder/Operator", "ts": 1781671052.3867362}}
+{"event": "cycle_complete", "data": {"cycle": 55, "signals": 3, "ts": 1781671052.38722}}
+{"event": "source_check", "data": {"source": "World Bank", "status": "polling", "ts": 1781685452.6220858}}
+{"event": "source_check", "data": {"source": "World Bank", "status": "complete", "ts": 1781685456.267194}}
+{"event": "source_check", "data": {"source": "IDB", "status": "polling", "ts": 1781685456.277594}}
+{"event": "source_check", "data": {"source": "IDB", "status": "complete", "ts": 1781685459.5076108}}
+{"event": "source_check", "data": {"source": "CARICOM / CDB", "status": "polling", "ts": 1781685459.5132952}}
+{"event": "source_check", "data": {"source": "CARICOM / CDB", "status": "complete", "ts": 1781685470.520562}}
+{"event": "source_check", "data": {"source": "NOAA", "status": "polling", "ts": 1781685470.9079309}}
+{"event": "source_check", "data": {"source": "NOAA", "status": "complete", "ts": 1781685471.938428}}
+{"event": "source_check", "data": {"source": "NDBC", "status": "polling", "ts": 1781685471.9486022}}
+{"event": "source_check", "data": {"source": "NDBC", "status": "complete", "ts": 1781685475.774125}}
+{"event": "source_check", "data": {"source": "NHC", "status": "polling", "ts": 1781685475.781673}}
+{"event": "source_check", "data": {"source": "NHC", "status": "complete", "ts": 1781685477.2230332}}
+{"event": "signal_found", "data": {"country": "Guyana", "kind": "investment", "confidence": 100, "summary": "Guyana: +860.3% multi-source capital surge — market entry window open", "ts": 1781685478.300444}}
+{"event": "signal_found", "data": {"country": "Belize", "kind": "investment", "confidence": 100, "summary": "Belize: +701.0% multi-source capital surge — market entry window open", "ts": 1781685478.3004448}}
+{"event": "signal_found", "data": {"country": "Suriname", "kind": "climate", "confidence": 56, "summary": "Suriname: economic stress indicators rising — portfolio review recommended", "ts": 1781685478.300446}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-021", "country": "Guyana", "recipient": "Diaspora Investor", "ts": 1781685478.3006191}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-022", "country": "Guyana", "recipient": "Ecosystem Builder", "ts": 1781685478.3006191}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-023", "country": "Guyana", "recipient": "Regional Founder/Operator", "ts": 1781685478.30062}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-024", "country": "Belize", "recipient": "Diaspora Investor", "ts": 1781685478.30062}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-025", "country": "Belize", "recipient": "Ecosystem Builder", "ts": 1781685478.30062}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-026", "country": "Belize", "recipient": "Regional Founder/Operator", "ts": 1781685478.300621}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-027", "country": "St. Vincent and the Grenadines", "recipient": "Diaspora Investor", "ts": 1781685478.300621}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-028", "country": "St. Vincent and the Grenadines", "recipient": "Ecosystem Builder", "ts": 1781685478.300621}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-029", "country": "St. Vincent and the Grenadines", "recipient": "Regional Founder/Operator", "ts": 1781685478.300621}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-015", "country": "CARICOM", "recipient": "Regional Operator", "ts": 1781685478.300622}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-016", "country": "CARICOM", "recipient": "Procurement Watcher", "ts": 1781685478.300622}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-017", "country": "CARICOM", "recipient": "Regional Founder/Operator", "ts": 1781685478.300622}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-001", "country": "Caribwide", "recipient": "Diaspora Investor", "ts": 1781685478.300622}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-002", "country": "Caribwide", "recipient": "Regional Founder/Operator", "ts": 1781685478.3006232}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-003", "country": "Guyana", "recipient": "Diaspora Investor", "ts": 1781685478.3006232}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-004", "country": "Guyana", "recipient": "Regional Founder/Operator", "ts": 1781685478.3006232}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-005", "country": "Belize", "recipient": "Diaspora Investor", "ts": 1781685478.3006232}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-006", "country": "Belize", "recipient": "Regional Founder/Operator", "ts": 1781685478.300624}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-018", "country": "Caribwide", "recipient": "Diaspora Investor", "ts": 1781685478.300624}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-019", "country": "Caribwide", "recipient": "Ecosystem Builder", "ts": 1781685478.300624}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-020", "country": "Caribwide", "recipient": "Regional Founder/Operator", "ts": 1781685478.3006248}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-013", "country": "CARICOM", "recipient": "Ecosystem Builder", "ts": 1781685478.3006248}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-014", "country": "CARICOM", "recipient": "Policy/Media", "ts": 1781685478.3006248}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-007", "country": "St. Vincent and the Grenadines", "recipient": "Diaspora Investor", "ts": 1781685478.3006248}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-008", "country": "St. Vincent and the Grenadines", "recipient": "Regional Founder/Operator", "ts": 1781685478.3006258}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-011", "country": "St. Vincent and the Grenadines", "recipient": "Diaspora Investor", "ts": 1781685478.3006258}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-012", "country": "St. Vincent and the Grenadines", "recipient": "Policy/Media", "ts": 1781685478.3006258}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-009", "country": "Suriname", "recipient": "Diaspora Investor", "ts": 1781685478.3006258}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-010", "country": "Suriname", "recipient": "Policy/Media", "ts": 1781685478.300627}}
+{"event": "cycle_complete", "data": {"cycle": 56, "signals": 3, "ts": 1781685478.302652}}
+{"event": "source_check", "data": {"source": "World Bank", "status": "polling", "ts": 1781699878.40951}}
+{"event": "source_check", "data": {"source": "World Bank", "status": "complete", "ts": 1781699882.8400729}}
+{"event": "source_check", "data": {"source": "IDB", "status": "polling", "ts": 1781699882.8498292}}
+{"event": "source_check", "data": {"source": "IDB", "status": "complete", "ts": 1781699886.346525}}
+{"event": "source_check", "data": {"source": "CARICOM / CDB", "status": "polling", "ts": 1781699886.3552861}}
+{"event": "source_check", "data": {"source": "CARICOM / CDB", "status": "complete", "ts": 1781699892.598099}}
+{"event": "source_check", "data": {"source": "NOAA", "status": "polling", "ts": 1781699893.010498}}
+{"event": "source_check", "data": {"source": "NOAA", "status": "complete", "ts": 1781699894.055547}}
+{"event": "source_check", "data": {"source": "NDBC", "status": "polling", "ts": 1781699894.064796}}
+{"event": "source_check", "data": {"source": "NDBC", "status": "complete", "ts": 1781699898.7785542}}
+{"event": "source_check", "data": {"source": "NHC", "status": "polling", "ts": 1781699898.786879}}
+{"event": "source_check", "data": {"source": "NHC", "status": "complete", "ts": 1781699900.673938}}
+{"event": "signal_found", "data": {"country": "Guyana", "kind": "investment", "confidence": 100, "summary": "Guyana: +860.3% multi-source capital surge — market entry window open", "ts": 1781699901.874808}}
+{"event": "signal_found", "data": {"country": "Belize", "kind": "investment", "confidence": 100, "summary": "Belize: +701.0% multi-source capital surge — market entry window open", "ts": 1781699901.874809}}
+{"event": "signal_found", "data": {"country": "Suriname", "kind": "climate", "confidence": 56, "summary": "Suriname: economic stress indicators rising — portfolio review recommended", "ts": 1781699901.8748102}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-023", "country": "Guyana", "recipient": "Diaspora Investor", "ts": 1781699901.875308}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-024", "country": "Guyana", "recipient": "Ecosystem Builder", "ts": 1781699901.875308}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-025", "country": "Guyana", "recipient": "Regional Founder/Operator", "ts": 1781699901.875309}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-026", "country": "Belize", "recipient": "Diaspora Investor", "ts": 1781699901.875309}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-027", "country": "Belize", "recipient": "Ecosystem Builder", "ts": 1781699901.875309}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-028", "country": "Belize", "recipient": "Regional Founder/Operator", "ts": 1781699901.875309}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-029", "country": "St. Vincent and the Grenadines", "recipient": "Diaspora Investor", "ts": 1781699901.8753102}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-030", "country": "St. Vincent and the Grenadines", "recipient": "Ecosystem Builder", "ts": 1781699901.8753102}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-031", "country": "St. Vincent and the Grenadines", "recipient": "Regional Founder/Operator", "ts": 1781699901.8753102}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-017", "country": "CARICOM", "recipient": "Regional Operator", "ts": 1781699901.8753102}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-018", "country": "CARICOM", "recipient": "Procurement Watcher", "ts": 1781699901.8753111}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-019", "country": "CARICOM", "recipient": "Regional Founder/Operator", "ts": 1781699901.8753111}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-001", "country": "Caribwide", "recipient": "Diaspora Investor", "ts": 1781699901.8753111}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-002", "country": "Caribwide", "recipient": "Regional Founder/Operator", "ts": 1781699901.8753111}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-003", "country": "Guyana", "recipient": "Diaspora Investor", "ts": 1781699901.875312}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-004", "country": "Guyana", "recipient": "Regional Founder/Operator", "ts": 1781699901.875312}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-005", "country": "Belize", "recipient": "Diaspora Investor", "ts": 1781699901.875312}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-006", "country": "Belize", "recipient": "Regional Founder/Operator", "ts": 1781699901.875312}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-020", "country": "Caribwide", "recipient": "Diaspora Investor", "ts": 1781699901.8753128}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-021", "country": "Caribwide", "recipient": "Ecosystem Builder", "ts": 1781699901.8753128}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-022", "country": "Caribwide", "recipient": "Regional Founder/Operator", "ts": 1781699901.8753128}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-015", "country": "CARICOM", "recipient": "Ecosystem Builder", "ts": 1781699901.8753128}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-016", "country": "CARICOM", "recipient": "Policy/Media", "ts": 1781699901.875314}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-007", "country": "St. Vincent and the Grenadines", "recipient": "Diaspora Investor", "ts": 1781699901.875314}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-008", "country": "St. Vincent and the Grenadines", "recipient": "Regional Founder/Operator", "ts": 1781699901.875314}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-009", "country": "St. Vincent and the Grenadines", "recipient": "Diaspora Investor", "ts": 1781699901.875314}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-010", "country": "St. Vincent and the Grenadines", "recipient": "Policy/Media", "ts": 1781699901.875315}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-011", "country": "Suriname", "recipient": "Diaspora Investor", "ts": 1781699901.875315}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-012", "country": "Suriname", "recipient": "Policy/Media", "ts": 1781699901.875315}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-013", "country": "Guyana", "recipient": "Tourism/Logistics Operator", "ts": 1781699901.875315}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-014", "country": "Guyana", "recipient": "Regional Founder/Operator", "ts": 1781699901.875316}}
+{"event": "cycle_complete", "data": {"cycle": 57, "signals": 3, "ts": 1781699901.87605}}
+{"event": "source_check", "data": {"source": "World Bank", "status": "polling", "ts": 1781714301.987606}}
+{"event": "source_check", "data": {"source": "World Bank", "status": "complete", "ts": 1781714306.5364962}}
+{"event": "source_check", "data": {"source": "IDB", "status": "polling", "ts": 1781714306.5467799}}
+{"event": "source_check", "data": {"source": "IDB", "status": "complete", "ts": 1781714309.685885}}
+{"event": "source_check", "data": {"source": "CARICOM / CDB", "status": "polling", "ts": 1781714309.6919382}}
+{"event": "source_check", "data": {"source": "CARICOM / CDB", "status": "complete", "ts": 1781714326.22381}}
+{"event": "source_check", "data": {"source": "NOAA", "status": "polling", "ts": 1781714326.698686}}
+{"event": "source_check", "data": {"source": "NOAA", "status": "complete", "ts": 1781714327.8569422}}
+{"event": "source_check", "data": {"source": "NDBC", "status": "polling", "ts": 1781714327.866836}}
+{"event": "source_check", "data": {"source": "NDBC", "status": "complete", "ts": 1781714331.715443}}
+{"event": "source_check", "data": {"source": "NHC", "status": "polling", "ts": 1781714331.722694}}
+{"event": "source_check", "data": {"source": "NHC", "status": "complete", "ts": 1781714333.313766}}
+{"event": "signal_found", "data": {"country": "Guyana", "kind": "investment", "confidence": 100, "summary": "Guyana: +860.3% multi-source capital surge — market entry window open", "ts": 1781714334.355463}}
+{"event": "signal_found", "data": {"country": "Belize", "kind": "investment", "confidence": 100, "summary": "Belize: +701.0% multi-source capital surge — market entry window open", "ts": 1781714334.355463}}
+{"event": "signal_found", "data": {"country": "Suriname", "kind": "climate", "confidence": 56, "summary": "Suriname: economic stress indicators rising — portfolio review recommended", "ts": 1781714334.355464}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-021", "country": "Guyana", "recipient": "Diaspora Investor", "ts": 1781714334.3556511}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-022", "country": "Guyana", "recipient": "Ecosystem Builder", "ts": 1781714334.3556511}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-023", "country": "Guyana", "recipient": "Regional Founder/Operator", "ts": 1781714334.355652}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-024", "country": "Belize", "recipient": "Diaspora Investor", "ts": 1781714334.355652}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-025", "country": "Belize", "recipient": "Ecosystem Builder", "ts": 1781714334.355652}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-026", "country": "Belize", "recipient": "Regional Founder/Operator", "ts": 1781714334.355652}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-027", "country": "St. Vincent and the Grenadines", "recipient": "Diaspora Investor", "ts": 1781714334.355653}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-028", "country": "St. Vincent and the Grenadines", "recipient": "Ecosystem Builder", "ts": 1781714334.355653}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-029", "country": "St. Vincent and the Grenadines", "recipient": "Regional Founder/Operator", "ts": 1781714334.355653}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-015", "country": "CARICOM", "recipient": "Regional Operator", "ts": 1781714334.355653}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-016", "country": "CARICOM", "recipient": "Procurement Watcher", "ts": 1781714334.355653}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-017", "country": "CARICOM", "recipient": "Regional Founder/Operator", "ts": 1781714334.355654}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-001", "country": "Caribwide", "recipient": "Diaspora Investor", "ts": 1781714334.355654}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-002", "country": "Caribwide", "recipient": "Regional Founder/Operator", "ts": 1781714334.355654}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-003", "country": "Guyana", "recipient": "Diaspora Investor", "ts": 1781714334.355654}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-004", "country": "Guyana", "recipient": "Regional Founder/Operator", "ts": 1781714334.355655}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-005", "country": "Belize", "recipient": "Diaspora Investor", "ts": 1781714334.355655}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-006", "country": "Belize", "recipient": "Regional Founder/Operator", "ts": 1781714334.355655}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-018", "country": "Caribwide", "recipient": "Diaspora Investor", "ts": 1781714334.355655}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-019", "country": "Caribwide", "recipient": "Ecosystem Builder", "ts": 1781714334.355656}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-020", "country": "Caribwide", "recipient": "Regional Founder/Operator", "ts": 1781714334.355656}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-013", "country": "CARICOM", "recipient": "Ecosystem Builder", "ts": 1781714334.355656}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-014", "country": "CARICOM", "recipient": "Policy/Media", "ts": 1781714334.355656}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-007", "country": "St. Vincent and the Grenadines", "recipient": "Diaspora Investor", "ts": 1781714334.355656}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-008", "country": "St. Vincent and the Grenadines", "recipient": "Regional Founder/Operator", "ts": 1781714334.3556569}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-011", "country": "St. Vincent and the Grenadines", "recipient": "Diaspora Investor", "ts": 1781714334.3556569}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-012", "country": "St. Vincent and the Grenadines", "recipient": "Policy/Media", "ts": 1781714334.3556569}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-009", "country": "Suriname", "recipient": "Diaspora Investor", "ts": 1781714334.3556569}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-010", "country": "Suriname", "recipient": "Policy/Media", "ts": 1781714334.355658}}
+{"event": "cycle_complete", "data": {"cycle": 58, "signals": 3, "ts": 1781714334.357892}}
+{"event": "source_check", "data": {"source": "World Bank", "status": "polling", "ts": 1781728734.423339}}
+{"event": "source_check", "data": {"source": "World Bank", "status": "complete", "ts": 1781728738.299083}}
+{"event": "source_check", "data": {"source": "IDB", "status": "polling", "ts": 1781728738.306185}}
+{"event": "source_check", "data": {"source": "IDB", "status": "complete", "ts": 1781728741.5432692}}
+{"event": "source_check", "data": {"source": "CARICOM / CDB", "status": "polling", "ts": 1781728741.5500958}}
+{"event": "source_check", "data": {"source": "CARICOM / CDB", "status": "complete", "ts": 1781728758.97162}}
+{"event": "source_check", "data": {"source": "NOAA", "status": "polling", "ts": 1781728759.295826}}
+{"event": "source_check", "data": {"source": "NOAA", "status": "complete", "ts": 1781728760.661901}}
+{"event": "source_check", "data": {"source": "NDBC", "status": "polling", "ts": 1781728760.670145}}
+{"event": "source_check", "data": {"source": "NDBC", "status": "complete", "ts": 1781728764.886112}}
+{"event": "source_check", "data": {"source": "NHC", "status": "polling", "ts": 1781728764.893653}}
+{"event": "source_check", "data": {"source": "NHC", "status": "complete", "ts": 1781728766.301277}}
+{"event": "signal_found", "data": {"country": "Guyana", "kind": "investment", "confidence": 100, "summary": "Guyana: +860.3% multi-source capital surge — market entry window open", "ts": 1781728767.713797}}
+{"event": "signal_found", "data": {"country": "Belize", "kind": "investment", "confidence": 100, "summary": "Belize: +701.0% multi-source capital surge — market entry window open", "ts": 1781728767.7137978}}
+{"event": "signal_found", "data": {"country": "Suriname", "kind": "climate", "confidence": 56, "summary": "Suriname: economic stress indicators rising — portfolio review recommended", "ts": 1781728767.7137978}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-023", "country": "Guyana", "recipient": "Diaspora Investor", "ts": 1781728767.7155368}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-024", "country": "Guyana", "recipient": "Ecosystem Builder", "ts": 1781728767.715539}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-025", "country": "Guyana", "recipient": "Regional Founder/Operator", "ts": 1781728767.71554}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-026", "country": "Belize", "recipient": "Diaspora Investor", "ts": 1781728767.71554}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-027", "country": "Belize", "recipient": "Ecosystem Builder", "ts": 1781728767.715541}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-028", "country": "Belize", "recipient": "Regional Founder/Operator", "ts": 1781728767.715541}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-029", "country": "St. Vincent and the Grenadines", "recipient": "Diaspora Investor", "ts": 1781728767.715542}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-030", "country": "St. Vincent and the Grenadines", "recipient": "Ecosystem Builder", "ts": 1781728767.715542}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-031", "country": "St. Vincent and the Grenadines", "recipient": "Regional Founder/Operator", "ts": 1781728767.715543}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-017", "country": "CARICOM", "recipient": "Regional Operator", "ts": 1781728767.715543}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-018", "country": "CARICOM", "recipient": "Procurement Watcher", "ts": 1781728767.715544}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-019", "country": "CARICOM", "recipient": "Regional Founder/Operator", "ts": 1781728767.715544}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-032", "country": "Belize", "recipient": "Regional Operator", "ts": 1781728767.715544}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-033", "country": "Belize", "recipient": "Procurement Watcher", "ts": 1781728767.7155452}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-034", "country": "Belize", "recipient": "Regional Founder/Operator", "ts": 1781728767.7155452}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-001", "country": "Caribwide", "recipient": "Diaspora Investor", "ts": 1781728767.7155461}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-002", "country": "Caribwide", "recipient": "Regional Founder/Operator", "ts": 1781728767.7155461}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-003", "country": "Guyana", "recipient": "Diaspora Investor", "ts": 1781728767.7155468}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-004", "country": "Guyana", "recipient": "Regional Founder/Operator", "ts": 1781728767.7155468}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-005", "country": "Belize", "recipient": "Diaspora Investor", "ts": 1781728767.7155478}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-006", "country": "Belize", "recipient": "Regional Founder/Operator", "ts": 1781728767.7155478}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-020", "country": "Caribwide", "recipient": "Diaspora Investor", "ts": 1781728767.7155478}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-021", "country": "Caribwide", "recipient": "Ecosystem Builder", "ts": 1781728767.715549}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-022", "country": "Caribwide", "recipient": "Regional Founder/Operator", "ts": 1781728767.715549}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-015", "country": "CARICOM", "recipient": "Ecosystem Builder", "ts": 1781728767.71555}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-016", "country": "CARICOM", "recipient": "Policy/Media", "ts": 1781728767.71555}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-007", "country": "St. Vincent and the Grenadines", "recipient": "Diaspora Investor", "ts": 1781728767.71555}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-008", "country": "St. Vincent and the Grenadines", "recipient": "Regional Founder/Operator", "ts": 1781728767.715551}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-009", "country": "St. Vincent and the Grenadines", "recipient": "Diaspora Investor", "ts": 1781728767.715551}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-010", "country": "St. Vincent and the Grenadines", "recipient": "Policy/Media", "ts": 1781728767.715551}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-011", "country": "Suriname", "recipient": "Diaspora Investor", "ts": 1781728767.715552}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-012", "country": "Suriname", "recipient": "Policy/Media", "ts": 1781728767.715552}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-013", "country": "Guyana", "recipient": "Tourism/Logistics Operator", "ts": 1781728767.715552}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-014", "country": "Guyana", "recipient": "Regional Founder/Operator", "ts": 1781728767.715553}}
+{"event": "cycle_complete", "data": {"cycle": 59, "signals": 3, "ts": 1781728767.7198248}}
+{"event": "source_check", "data": {"source": "World Bank", "status": "polling", "ts": 1781728772.65744}}
+{"event": "source_check", "data": {"source": "World Bank", "status": "complete", "ts": 1781728776.615582}}
+{"event": "source_check", "data": {"source": "IDB", "status": "polling", "ts": 1781728776.622889}}
+{"event": "source_check", "data": {"source": "IDB", "status": "complete", "ts": 1781728779.742479}}
+{"event": "source_check", "data": {"source": "CARICOM / CDB", "status": "polling", "ts": 1781728779.752337}}
+{"event": "source_check", "data": {"source": "CARICOM / CDB", "status": "complete", "ts": 1781728805.99223}}
+{"event": "source_check", "data": {"source": "NOAA", "status": "polling", "ts": 1781728806.347283}}
+{"event": "source_check", "data": {"source": "NOAA", "status": "complete", "ts": 1781728807.718797}}
+{"event": "source_check", "data": {"source": "NDBC", "status": "polling", "ts": 1781728807.726908}}
+{"event": "source_check", "data": {"source": "NDBC", "status": "complete", "ts": 1781728812.055605}}
+{"event": "source_check", "data": {"source": "NHC", "status": "polling", "ts": 1781728812.062828}}
+{"event": "source_check", "data": {"source": "NHC", "status": "complete", "ts": 1781728813.859961}}
+{"event": "signal_found", "data": {"country": "Guyana", "kind": "investment", "confidence": 100, "summary": "Guyana: +860.3% multi-source capital surge — market entry window open", "ts": 1781728815.510617}}
+{"event": "signal_found", "data": {"country": "Belize", "kind": "investment", "confidence": 100, "summary": "Belize: +701.0% multi-source capital surge — market entry window open", "ts": 1781728815.510619}}
+{"event": "signal_found", "data": {"country": "Suriname", "kind": "climate", "confidence": 56, "summary": "Suriname: economic stress indicators rising — portfolio review recommended", "ts": 1781728815.510619}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-021", "country": "Guyana", "recipient": "Diaspora Investor", "ts": 1781728815.5110981}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-022", "country": "Guyana", "recipient": "Ecosystem Builder", "ts": 1781728815.5110998}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-023", "country": "Guyana", "recipient": "Regional Founder/Operator", "ts": 1781728815.511101}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-024", "country": "Belize", "recipient": "Diaspora Investor", "ts": 1781728815.511101}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-025", "country": "Belize", "recipient": "Ecosystem Builder", "ts": 1781728815.511102}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-026", "country": "Belize", "recipient": "Regional Founder/Operator", "ts": 1781728815.511102}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-027", "country": "St. Vincent and the Grenadines", "recipient": "Diaspora Investor", "ts": 1781728815.511102}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-028", "country": "St. Vincent and the Grenadines", "recipient": "Ecosystem Builder", "ts": 1781728815.511103}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-029", "country": "St. Vincent and the Grenadines", "recipient": "Regional Founder/Operator", "ts": 1781728815.511103}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-015", "country": "CARICOM", "recipient": "Regional Operator", "ts": 1781728815.511103}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-016", "country": "CARICOM", "recipient": "Procurement Watcher", "ts": 1781728815.511104}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-017", "country": "CARICOM", "recipient": "Regional Founder/Operator", "ts": 1781728815.511104}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-030", "country": "Belize", "recipient": "Regional Operator", "ts": 1781728815.511105}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-031", "country": "Belize", "recipient": "Procurement Watcher", "ts": 1781728815.511105}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-032", "country": "Belize", "recipient": "Regional Founder/Operator", "ts": 1781728815.511106}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-001", "country": "Caribwide", "recipient": "Diaspora Investor", "ts": 1781728815.511107}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-002", "country": "Caribwide", "recipient": "Regional Founder/Operator", "ts": 1781728815.511107}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-003", "country": "Guyana", "recipient": "Diaspora Investor", "ts": 1781728815.511107}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-004", "country": "Guyana", "recipient": "Regional Founder/Operator", "ts": 1781728815.5111082}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-005", "country": "Belize", "recipient": "Diaspora Investor", "ts": 1781728815.5111082}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-006", "country": "Belize", "recipient": "Regional Founder/Operator", "ts": 1781728815.511109}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-018", "country": "Caribwide", "recipient": "Diaspora Investor", "ts": 1781728815.511109}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-019", "country": "Caribwide", "recipient": "Ecosystem Builder", "ts": 1781728815.511109}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-020", "country": "Caribwide", "recipient": "Regional Founder/Operator", "ts": 1781728815.5111098}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-013", "country": "CARICOM", "recipient": "Ecosystem Builder", "ts": 1781728815.5111098}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-014", "country": "CARICOM", "recipient": "Policy/Media", "ts": 1781728815.5111098}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-007", "country": "St. Vincent and the Grenadines", "recipient": "Diaspora Investor", "ts": 1781728815.511111}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-008", "country": "St. Vincent and the Grenadines", "recipient": "Regional Founder/Operator", "ts": 1781728815.5111208}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-011", "country": "St. Vincent and the Grenadines", "recipient": "Diaspora Investor", "ts": 1781728815.511122}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-012", "country": "St. Vincent and the Grenadines", "recipient": "Policy/Media", "ts": 1781728815.511123}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-009", "country": "Suriname", "recipient": "Diaspora Investor", "ts": 1781728815.511124}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-010", "country": "Suriname", "recipient": "Policy/Media", "ts": 1781728815.511124}}
+{"event": "cycle_complete", "data": {"cycle": 60, "signals": 3, "ts": 1781728815.5119731}}
+{"event": "source_check", "data": {"source": "World Bank", "status": "polling", "ts": 1781730411.1635032}}
+{"event": "source_check", "data": {"source": "World Bank", "status": "complete", "ts": 1781730415.173676}}
+{"event": "source_check", "data": {"source": "IDB", "status": "polling", "ts": 1781730415.180459}}
+{"event": "source_check", "data": {"source": "IDB", "status": "complete", "ts": 1781730418.4547288}}
+{"event": "source_check", "data": {"source": "CARICOM / CDB", "status": "polling", "ts": 1781730418.461959}}
+{"event": "source_check", "data": {"source": "CARICOM / CDB", "status": "complete", "ts": 1781730440.169396}}
+{"event": "source_check", "data": {"source": "NOAA", "status": "polling", "ts": 1781730440.628778}}
+{"event": "source_check", "data": {"source": "NOAA", "status": "complete", "ts": 1781730441.735584}}
+{"event": "source_check", "data": {"source": "NDBC", "status": "polling", "ts": 1781730441.744406}}
+{"event": "source_check", "data": {"source": "NDBC", "status": "complete", "ts": 1781730447.787362}}
+{"event": "source_check", "data": {"source": "NHC", "status": "polling", "ts": 1781730447.794178}}
+{"event": "source_check", "data": {"source": "NHC", "status": "complete", "ts": 1781730449.6807182}}
+{"event": "signal_found", "data": {"country": "Guyana", "kind": "investment", "confidence": 100, "summary": "Guyana: +860.3% multi-source capital surge — market entry window open", "ts": 1781730451.126401}}
+{"event": "signal_found", "data": {"country": "Belize", "kind": "investment", "confidence": 100, "summary": "Belize: +701.0% multi-source capital surge — market entry window open", "ts": 1781730451.1264021}}
+{"event": "signal_found", "data": {"country": "Suriname", "kind": "climate", "confidence": 56, "summary": "Suriname: economic stress indicators rising — portfolio review recommended", "ts": 1781730451.126403}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-023", "country": "Guyana", "recipient": "Diaspora Investor", "ts": 1781730451.126666}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-024", "country": "Guyana", "recipient": "Ecosystem Builder", "ts": 1781730451.126668}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-025", "country": "Guyana", "recipient": "Regional Founder/Operator", "ts": 1781730451.126668}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-026", "country": "Belize", "recipient": "Diaspora Investor", "ts": 1781730451.1266692}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-027", "country": "Belize", "recipient": "Ecosystem Builder", "ts": 1781730451.1266692}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-028", "country": "Belize", "recipient": "Regional Founder/Operator", "ts": 1781730451.1266692}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-029", "country": "St. Vincent and the Grenadines", "recipient": "Diaspora Investor", "ts": 1781730451.1266701}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-030", "country": "St. Vincent and the Grenadines", "recipient": "Ecosystem Builder", "ts": 1781730451.1266701}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-031", "country": "St. Vincent and the Grenadines", "recipient": "Regional Founder/Operator", "ts": 1781730451.1266701}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-017", "country": "CARICOM", "recipient": "Regional Operator", "ts": 1781730451.126671}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-018", "country": "CARICOM", "recipient": "Procurement Watcher", "ts": 1781730451.126671}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-019", "country": "CARICOM", "recipient": "Regional Founder/Operator", "ts": 1781730451.126671}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-032", "country": "Belize", "recipient": "Regional Operator", "ts": 1781730451.126671}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-033", "country": "Belize", "recipient": "Procurement Watcher", "ts": 1781730451.1266718}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-034", "country": "Belize", "recipient": "Regional Founder/Operator", "ts": 1781730451.1266718}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-001", "country": "Caribwide", "recipient": "Diaspora Investor", "ts": 1781730451.1266718}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-002", "country": "Caribwide", "recipient": "Regional Founder/Operator", "ts": 1781730451.126673}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-003", "country": "Guyana", "recipient": "Diaspora Investor", "ts": 1781730451.126673}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-004", "country": "Guyana", "recipient": "Regional Founder/Operator", "ts": 1781730451.126673}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-005", "country": "Belize", "recipient": "Diaspora Investor", "ts": 1781730451.126673}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-006", "country": "Belize", "recipient": "Regional Founder/Operator", "ts": 1781730451.126674}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-020", "country": "Caribwide", "recipient": "Diaspora Investor", "ts": 1781730451.126674}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-021", "country": "Caribwide", "recipient": "Ecosystem Builder", "ts": 1781730451.126674}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-022", "country": "Caribwide", "recipient": "Regional Founder/Operator", "ts": 1781730451.126675}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-015", "country": "CARICOM", "recipient": "Ecosystem Builder", "ts": 1781730451.126675}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-016", "country": "CARICOM", "recipient": "Policy/Media", "ts": 1781730451.126675}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-007", "country": "St. Vincent and the Grenadines", "recipient": "Diaspora Investor", "ts": 1781730451.126675}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-008", "country": "St. Vincent and the Grenadines", "recipient": "Regional Founder/Operator", "ts": 1781730451.126676}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-011", "country": "St. Vincent and the Grenadines", "recipient": "Diaspora Investor", "ts": 1781730451.126676}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-012", "country": "St. Vincent and the Grenadines", "recipient": "Policy/Media", "ts": 1781730451.126676}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-009", "country": "Suriname", "recipient": "Diaspora Investor", "ts": 1781730451.126677}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-010", "country": "Suriname", "recipient": "Policy/Media", "ts": 1781730451.126677}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-013", "country": "Guyana", "recipient": "Tourism/Logistics Operator", "ts": 1781730451.126677}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-014", "country": "Guyana", "recipient": "Regional Founder/Operator", "ts": 1781730451.126679}}
+{"event": "cycle_complete", "data": {"cycle": 61, "signals": 3, "ts": 1781730451.127125}}
+{"event": "source_check", "data": {"source": "World Bank", "status": "polling", "ts": 1781732503.542136}}
+{"event": "source_check", "data": {"source": "World Bank", "status": "complete", "ts": 1781732507.661858}}
+{"event": "source_check", "data": {"source": "IDB", "status": "polling", "ts": 1781732507.6701062}}
+{"event": "source_check", "data": {"source": "IDB", "status": "complete", "ts": 1781732510.601838}}
+{"event": "source_check", "data": {"source": "CARICOM / CDB", "status": "polling", "ts": 1781732510.609513}}
+{"event": "source_check", "data": {"source": "CARICOM / CDB", "status": "complete", "ts": 1781732540.177056}}
+{"event": "source_check", "data": {"source": "NOAA", "status": "polling", "ts": 1781732540.5660942}}
+{"event": "source_check", "data": {"source": "NOAA", "status": "complete", "ts": 1781732541.8176472}}
+{"event": "source_check", "data": {"source": "NDBC", "status": "polling", "ts": 1781732541.825001}}
+{"event": "source_check", "data": {"source": "NDBC", "status": "complete", "ts": 1781732546.482583}}
+{"event": "source_check", "data": {"source": "NHC", "status": "polling", "ts": 1781732546.488996}}
+{"event": "source_check", "data": {"source": "NHC", "status": "complete", "ts": 1781732547.938762}}
+{"event": "signal_found", "data": {"country": "Guyana", "kind": "investment", "confidence": 100, "summary": "Guyana: +860.3% multi-source capital surge — market entry window open", "ts": 1781732549.362541}}
+{"event": "signal_found", "data": {"country": "Belize", "kind": "investment", "confidence": 100, "summary": "Belize: +701.0% multi-source capital surge — market entry window open", "ts": 1781732549.3625422}}
+{"event": "signal_found", "data": {"country": "Suriname", "kind": "climate", "confidence": 56, "summary": "Suriname: economic stress indicators rising — portfolio review recommended", "ts": 1781732549.362543}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-021", "country": "Guyana", "recipient": "Diaspora Investor", "ts": 1781732549.362762}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-022", "country": "Guyana", "recipient": "Ecosystem Builder", "ts": 1781732549.362763}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-023", "country": "Guyana", "recipient": "Regional Founder/Operator", "ts": 1781732549.362763}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-024", "country": "Belize", "recipient": "Diaspora Investor", "ts": 1781732549.3627641}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-025", "country": "Belize", "recipient": "Ecosystem Builder", "ts": 1781732549.3627641}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-026", "country": "Belize", "recipient": "Regional Founder/Operator", "ts": 1781732549.3627641}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-027", "country": "St. Vincent and the Grenadines", "recipient": "Diaspora Investor", "ts": 1781732549.3627641}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-028", "country": "St. Vincent and the Grenadines", "recipient": "Ecosystem Builder", "ts": 1781732549.362765}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-029", "country": "St. Vincent and the Grenadines", "recipient": "Regional Founder/Operator", "ts": 1781732549.362765}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-015", "country": "CARICOM", "recipient": "Regional Operator", "ts": 1781732549.362765}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-016", "country": "CARICOM", "recipient": "Procurement Watcher", "ts": 1781732549.362765}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-017", "country": "CARICOM", "recipient": "Regional Founder/Operator", "ts": 1781732549.362766}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-030", "country": "Belize", "recipient": "Regional Operator", "ts": 1781732549.362766}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-031", "country": "Belize", "recipient": "Procurement Watcher", "ts": 1781732549.362766}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-032", "country": "Belize", "recipient": "Regional Founder/Operator", "ts": 1781732549.3627672}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-001", "country": "Caribwide", "recipient": "Diaspora Investor", "ts": 1781732549.3627672}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-002", "country": "Caribwide", "recipient": "Regional Founder/Operator", "ts": 1781732549.3627672}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-003", "country": "Guyana", "recipient": "Diaspora Investor", "ts": 1781732549.3627672}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-004", "country": "Guyana", "recipient": "Regional Founder/Operator", "ts": 1781732549.362768}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-005", "country": "Belize", "recipient": "Diaspora Investor", "ts": 1781732549.362768}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-006", "country": "Belize", "recipient": "Regional Founder/Operator", "ts": 1781732549.362768}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-018", "country": "Caribwide", "recipient": "Diaspora Investor", "ts": 1781732549.362768}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-019", "country": "Caribwide", "recipient": "Ecosystem Builder", "ts": 1781732549.362769}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-020", "country": "Caribwide", "recipient": "Regional Founder/Operator", "ts": 1781732549.362769}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-013", "country": "CARICOM", "recipient": "Ecosystem Builder", "ts": 1781732549.362769}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-014", "country": "CARICOM", "recipient": "Policy/Media", "ts": 1781732549.362769}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-007", "country": "St. Vincent and the Grenadines", "recipient": "Diaspora Investor", "ts": 1781732549.3627698}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-008", "country": "St. Vincent and the Grenadines", "recipient": "Regional Founder/Operator", "ts": 1781732549.3627698}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-009", "country": "St. Vincent and the Grenadines", "recipient": "Diaspora Investor", "ts": 1781732549.3627698}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-010", "country": "St. Vincent and the Grenadines", "recipient": "Policy/Media", "ts": 1781732549.3627698}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-011", "country": "Suriname", "recipient": "Diaspora Investor", "ts": 1781732549.362771}}
+{"event": "dispatch_routed", "data": {"dispatch_id": "DSP-20260617-012", "country": "Suriname", "recipient": "Policy/Media", "ts": 1781732549.362771}}
+{"event": "cycle_complete", "data": {"cycle": 62, "signals": 3, "ts": 1781732549.363174}}

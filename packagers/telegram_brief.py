@@ -44,7 +44,7 @@ def ensure_desk() -> dict[str, Any]:
         return desk
     # Build the desk on demand if opportunity dispatches already exist.
     sys.path.insert(0, str(ROOT))
-    from packagers.dispatch_desk import build, write_outputs  # noqa: WPS433
+    from packagers.dispatch_desk import build, write_outputs  # noqa: PLC0415
 
     desk = build()
     write_outputs(desk)

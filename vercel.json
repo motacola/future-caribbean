@@ -1,55 +1,28 @@
 {
+  "builds": [
+    { "src": "api/**/*.py", "use": "@vercel/python" },
+    { "src": "dashboard.html", "use": "@vercel/static" },
+    { "src": "configurator.html", "use": "@vercel/static" },
+    { "src": "dashboard/**", "use": "@vercel/static" },
+    { "src": "outbox/**", "use": "@vercel/static" }
+  ],
   "rewrites": [
-    {
-      "source": "/build",
-      "destination": "/configurator.html"
-    },
-    {
-      "source": "/feed.xml",
-      "destination": "/outbox/feed.xml"
-    },
-    {
-      "source": "/",
-      "destination": "/dashboard.html"
-    },
-    {
-      "source": "/api/tools.json",
-      "destination": "/api/tools"
-    },
-    {
-      "source": "/api/validation-packs/(.*)",
-      "destination": "/api/validation-packs?id=$1"
-    },
-    {
-      "source": "/llms.txt",
-      "destination": "/llms.txt"
-    },
-    {
-      "source": "/agents.md",
-      "destination": "/agents.md"
-    }
+    { "source": "/build", "destination": "/configurator.html" },
+    { "source": "/feed.xml", "destination": "/outbox/feed.xml" },
+    { "source": "/", "destination": "/dashboard.html" },
+    { "source": "/api/tools.json", "destination": "/api/tools" },
+    { "source": "/api/validation-packs/(.*)", "destination": "/api/validation-packs?id=$1" },
+    { "source": "/llms.txt", "destination": "/llms.txt" },
+    { "source": "/agents.md", "destination": "/agents.md" },
+    { "source": "/(.*)", "destination": "/dashboard.html" }
   ],
   "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Access-Control-Allow-Origin",
-          "value": "*"
-        },
-        {
-          "key": "Access-Control-Allow-Methods",
-          "value": "GET, POST, OPTIONS"
-        },
-        {
-          "key": "Access-Control-Allow-Headers",
-          "value": "Content-Type"
-        }
-      ]
-    }
+    { "source": "/(.*)", "headers": [
+      { "key": "Access-Control-Allow-Origin", "value": "*" },
+      { "key": "Access-Control-Allow-Methods", "value": "GET, POST, OPTIONS" },
+      { "key": "Access-Control-Allow-Headers", "value": "Content-Type" }
+    ]}
   ],
   "crons": [],
-  "regions": [
-    "iad1"
-  ]
+  "regions": ["iad1"]
 }

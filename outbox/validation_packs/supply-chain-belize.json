@@ -1,9 +1,9 @@
 {
-  "signal_id": "enhanced-invest-belize",
-  "dispatch_id": "DSP-20260617-024",
+  "signal_id": "supply-chain-belize",
+  "dispatch_id": "DSP-20260617-030",
   "country": "Belize",
-  "signal_title": "Belize: +701.0% multi-source capital surge — market entry window open",
-  "confidence_score": 100,
+  "signal_title": "Belize: signal detected",
+  "confidence_score": 94,
   "evidence_grade": "A - multi-source",
   "sector_hypotheses": [
     {
@@ -100,6 +100,6 @@
     }
   ],
   "advance_or_reject_recommendation": "hold",
-  "recommendation_reason": "Signal confidence 100/100 with 1 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.",
+  "recommendation_reason": "Signal confidence 94/100 with 1 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.",
   "last_validated_at": "2026-06-17T21:42:28.277090+00:00"
 }

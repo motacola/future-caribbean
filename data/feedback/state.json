@@ -1,14 +1,230 @@
 {
-  "cycle": "20260611",
+  "cycle": "20260617",
   "feedback_provenance": "simulated",
   "history": [
+    {
+      "dispatch_id": "DSP-20260617-021",
+      "signal_kind": "enhanced_investment",
+      "country": "Guyana",
+      "feedback_status": "forwarded",
+      "cycle": "20260617",
+      "cycles_ago": 0
+    },
+    {
+      "dispatch_id": "DSP-20260617-022",
+      "signal_kind": "enhanced_investment",
+      "country": "Guyana",
+      "feedback_status": "ignored",
+      "cycle": "20260617",
+      "cycles_ago": 0
+    },
+    {
+      "dispatch_id": "DSP-20260617-023",
+      "signal_kind": "enhanced_investment",
+      "country": "Guyana",
+      "feedback_status": "ignored",
+      "cycle": "20260617",
+      "cycles_ago": 0
+    },
+    {
+      "dispatch_id": "DSP-20260617-024",
+      "signal_kind": "enhanced_investment",
+      "country": "Belize",
+      "feedback_status": "opened",
+      "cycle": "20260617",
+      "cycles_ago": 0
+    },
+    {
+      "dispatch_id": "DSP-20260617-025",
+      "signal_kind": "enhanced_investment",
+      "country": "Belize",
+      "feedback_status": "ignored",
+      "cycle": "20260617",
+      "cycles_ago": 0
+    },
+    {
+      "dispatch_id": "DSP-20260617-026",
+      "signal_kind": "enhanced_investment",
+      "country": "Belize",
+      "feedback_status": "ignored",
+      "cycle": "20260617",
+      "cycles_ago": 0
+    },
+    {
+      "dispatch_id": "DSP-20260617-027",
+      "signal_kind": "enhanced_investment",
+      "country": "St. Vincent and the Grenadines",
+      "feedback_status": "ignored",
+      "cycle": "20260617",
+      "cycles_ago": 0
+    },
+    {
+      "dispatch_id": "DSP-20260617-028",
+      "signal_kind": "enhanced_investment",
+      "country": "St. Vincent and the Grenadines",
+      "feedback_status": "ignored",
+      "cycle": "20260617",
+      "cycles_ago": 0
+    },
+    {
+      "dispatch_id": "DSP-20260617-029",
+      "signal_kind": "enhanced_investment",
+      "country": "St. Vincent and the Grenadines",
+      "feedback_status": "ignored",
+      "cycle": "20260617",
+      "cycles_ago": 0
+    },
+    {
+      "dispatch_id": "DSP-20260617-015",
+      "signal_kind": "development_pipeline",
+      "country": "CARICOM",
+      "feedback_status": "replied",
+      "cycle": "20260617",
+      "cycles_ago": 0
+    },
+    {
+      "dispatch_id": "DSP-20260617-016",
+      "signal_kind": "development_pipeline",
+      "country": "CARICOM",
+      "feedback_status": "ignored",
+      "cycle": "20260617",
+      "cycles_ago": 0
+    },
+    {
+      "dispatch_id": "DSP-20260617-017",
+      "signal_kind": "development_pipeline",
+      "country": "CARICOM",
+      "feedback_status": "ignored",
+      "cycle": "20260617",
+      "cycles_ago": 0
+    },
+    {
+      "dispatch_id": "DSP-20260617-030",
+      "signal_kind": "supply_chain_signal",
+      "country": "Belize",
+      "feedback_status": "ignored",
+      "cycle": "20260617",
+      "cycles_ago": 0
+    },
+    {
+      "dispatch_id": "DSP-20260617-031",
+      "signal_kind": "supply_chain_signal",
+      "country": "Belize",
+      "feedback_status": "ignored",
+      "cycle": "20260617",
+      "cycles_ago": 0
+    },
+    {
+      "dispatch_id": "DSP-20260617-032",
+      "signal_kind": "supply_chain_signal",
+      "country": "Belize",
+      "feedback_status": "ignored",
+      "cycle": "20260617",
+      "cycles_ago": 0
+    },
+    {
+      "dispatch_id": "DSP-20260617-003",
+      "signal_kind": "investment_signal",
+      "country": "Guyana",
+      "feedback_status": "ignored",
+      "cycle": "20260617",
+      "cycles_ago": 0
+    },
+    {
+      "dispatch_id": "DSP-20260617-004",
+      "signal_kind": "investment_signal",
+      "country": "Guyana",
+      "feedback_status": "ignored",
+      "cycle": "20260617",
+      "cycles_ago": 0
+    },
+    {
+      "dispatch_id": "DSP-20260617-005",
+      "signal_kind": "investment_signal",
+      "country": "Belize",
+      "feedback_status": "ignored",
+      "cycle": "20260617",
+      "cycles_ago": 0
+    },
+    {
+      "dispatch_id": "DSP-20260617-006",
+      "signal_kind": "investment_signal",
+      "country": "Belize",
+      "feedback_status": "ignored",
+      "cycle": "20260617",
+      "cycles_ago": 0
+    },
+    {
+      "dispatch_id": "DSP-20260617-013",
+      "signal_kind": "food_security",
+      "country": "CARICOM",
+      "feedback_status": "ignored",
+      "cycle": "20260617",
+      "cycles_ago": 0
+    },
+    {
+      "dispatch_id": "DSP-20260617-014",
+      "signal_kind": "food_security",
+      "country": "CARICOM",
+      "feedback_status": "ignored",
+      "cycle": "20260617",
+      "cycles_ago": 0
+    },
+    {
+      "dispatch_id": "DSP-20260617-007",
+      "signal_kind": "investment_signal",
+      "country": "St. Vincent and the Grenadines",
+      "feedback_status": "ignored",
+      "cycle": "20260617",
+      "cycles_ago": 0
+    },
+    {
+      "dispatch_id": "DSP-20260617-008",
+      "signal_kind": "investment_signal",
+      "country": "St. Vincent and the Grenadines",
+      "feedback_status": "ignored",
+      "cycle": "20260617",
+      "cycles_ago": 0
+    },
+    {
+      "dispatch_id": "DSP-20260617-009",
+      "signal_kind": "economic_vulnerability",
+      "country": "St. Vincent and the Grenadines",
+      "feedback_status": "decision_changed",
+      "cycle": "20260617",
+      "cycles_ago": 0
+    },
+    {
+      "dispatch_id": "DSP-20260617-010",
+      "signal_kind": "economic_vulnerability",
+      "country": "St. Vincent and the Grenadines",
+      "feedback_status": "ignored",
+      "cycle": "20260617",
+      "cycles_ago": 0
+    },
+    {
+      "dispatch_id": "DSP-20260617-011",
+      "signal_kind": "economic_vulnerability",
+      "country": "Suriname",
+      "feedback_status": "ignored",
+      "cycle": "20260617",
+      "cycles_ago": 0
+    },
+    {
+      "dispatch_id": "DSP-20260617-012",
+      "signal_kind": "economic_vulnerability",
+      "country": "Suriname",
+      "feedback_status": "ignored",
+      "cycle": "20260617",
+      "cycles_ago": 0
+    },
     {
       "dispatch_id": "DSP-20260611-023",
       "signal_kind": "enhanced_investment",
       "country": "Guyana",
       "feedback_status": "forwarded",
       "cycle": "20260611",
-      "cycles_ago": 0
+      "cycles_ago": 20
     },
     {
       "dispatch_id": "DSP-20260611-024",
@@ -16,7 +232,7 @@
       "country": "Guyana",
       "feedback_status": "ignored",
       "cycle": "20260611",
-      "cycles_ago": 0
+      "cycles_ago": 20
     },
     {
       "dispatch_id": "DSP-20260611-025",
@@ -24,7 +240,7 @@
       "country": "Guyana",
       "feedback_status": "ignored",
       "cycle": "20260611",
-      "cycles_ago": 0
+      "cycles_ago": 20
     },
     {
       "dispatch_id": "DSP-20260611-026",
@@ -32,7 +248,7 @@
       "country": "Belize",
       "feedback_status": "opened",
       "cycle": "20260611",
-      "cycles_ago": 0
+      "cycles_ago": 20
     },
     {
       "dispatch_id": "DSP-20260611-027",
@@ -40,7 +256,7 @@
       "country": "Belize",
       "feedback_status": "ignored",
       "cycle": "20260611",
-      "cycles_ago": 0
+      "cycles_ago": 20
     },
     {
       "dispatch_id": "DSP-20260611-028",
@@ -48,7 +264,7 @@
       "country": "Belize",
       "feedback_status": "ignored",
       "cycle": "20260611",
-      "cycles_ago": 0
+      "cycles_ago": 20
     },
     {
       "dispatch_id": "DSP-20260611-029",
@@ -56,7 +272,7 @@
       "country": "St. Vincent and the Grenadines",
       "feedback_status": "ignored",
       "cycle": "20260611",
-      "cycles_ago": 0
+      "cycles_ago": 20
     },
     {
       "dispatch_id": "DSP-20260611-030",
@@ -64,7 +280,7 @@
       "country": "St. Vincent and the Grenadines",
       "feedback_status": "ignored",
       "cycle": "20260611",
-      "cycles_ago": 0
+      "cycles_ago": 20
     },
     {
       "dispatch_id": "DSP-20260611-031",
@@ -72,7 +288,7 @@
       "country": "St. Vincent and the Grenadines",
       "feedback_status": "ignored",
       "cycle": "20260611",
-      "cycles_ago": 0
+      "cycles_ago": 20
     },
     {
       "dispatch_id": "DSP-20260611-017",
@@ -80,7 +296,7 @@
       "country": "CARICOM",
       "feedback_status": "replied",
       "cycle": "20260611",
-      "cycles_ago": 0
+      "cycles_ago": 20
     },
     {
       "dispatch_id": "DSP-20260611-018",
@@ -88,7 +304,7 @@
       "country": "CARICOM",
       "feedback_status": "ignored",
       "cycle": "20260611",
-      "cycles_ago": 0
+      "cycles_ago": 20
     },
     {
       "dispatch_id": "DSP-20260611-019",
@@ -96,7 +312,7 @@
       "country": "CARICOM",
       "feedback_status": "ignored",
       "cycle": "20260611",
-      "cycles_ago": 0
+      "cycles_ago": 20
     },
     {
       "dispatch_id": "DSP-20260611-003",
@@ -104,7 +320,7 @@
       "country": "Guyana",
       "feedback_status": "ignored",
       "cycle": "20260611",
-      "cycles_ago": 0
+      "cycles_ago": 20
     },
     {
       "dispatch_id": "DSP-20260611-004",
@@ -112,7 +328,7 @@
       "country": "Guyana",
       "feedback_status": "ignored",
       "cycle": "20260611",
-      "cycles_ago": 0
+      "cycles_ago": 20
     },
     {
       "dispatch_id": "DSP-20260611-005",
@@ -120,7 +336,7 @@
       "country": "Belize",
       "feedback_status": "ignored",
       "cycle": "20260611",
-      "cycles_ago": 0
+      "cycles_ago": 20
     },
     {
       "dispatch_id": "DSP-20260611-006",
@@ -128,7 +344,7 @@
       "country": "Belize",
       "feedback_status": "ignored",
       "cycle": "20260611",
-      "cycles_ago": 0
+      "cycles_ago": 20
     },
     {
       "dispatch_id": "DSP-20260611-015",
@@ -136,7 +352,7 @@
       "country": "CARICOM",
       "feedback_status": "ignored",
       "cycle": "20260611",
-      "cycles_ago": 0
+      "cycles_ago": 20
     },
     {
       "dispatch_id": "DSP-20260611-016",
@@ -144,7 +360,7 @@
       "country": "CARICOM",
       "feedback_status": "ignored",
       "cycle": "20260611",
-      "cycles_ago": 0
+      "cycles_ago": 20
     },
     {
       "dispatch_id": "DSP-20260611-007",
@@ -152,7 +368,7 @@
       "country": "St. Vincent and the Grenadines",
       "feedback_status": "ignored",
       "cycle": "20260611",
-      "cycles_ago": 0
+      "cycles_ago": 20
     },
     {
       "dispatch_id": "DSP-20260611-008",
@@ -160,7 +376,7 @@
       "country": "St. Vincent and the Grenadines",
       "feedback_status": "ignored",
       "cycle": "20260611",
-      "cycles_ago": 0
+      "cycles_ago": 20
     },
     {
       "dispatch_id": "DSP-20260611-009",
@@ -168,239 +384,7 @@
       "country": "St. Vincent and the Grenadines",
       "feedback_status": "decision_changed",
       "cycle": "20260611",
-      "cycles_ago": 0
-    },
-    {
-      "dispatch_id": "DSP-20260611-010",
-      "signal_kind": "economic_vulnerability",
-      "country": "St. Vincent and the Grenadines",
-      "feedback_status": "ignored",
-      "cycle": "20260611",
-      "cycles_ago": 0
-    },
-    {
-      "dispatch_id": "DSP-20260611-011",
-      "signal_kind": "economic_vulnerability",
-      "country": "Suriname",
-      "feedback_status": "ignored",
-      "cycle": "20260611",
-      "cycles_ago": 0
-    },
-    {
-      "dispatch_id": "DSP-20260611-012",
-      "signal_kind": "economic_vulnerability",
-      "country": "Suriname",
-      "feedback_status": "ignored",
-      "cycle": "20260611",
-      "cycles_ago": 0
-    },
-    {
-      "dispatch_id": "DSP-20260611-013",
-      "signal_kind": "tourism_impact",
-      "country": "Guyana",
-      "feedback_status": "ignored",
-      "cycle": "20260611",
-      "cycles_ago": 0
-    },
-    {
-      "dispatch_id": "DSP-20260611-014",
-      "signal_kind": "tourism_impact",
-      "country": "Guyana",
-      "feedback_status": "ignored",
-      "cycle": "20260611",
-      "cycles_ago": 0
-    },
-    {
-      "dispatch_id": "DSP-20260610-021",
-      "signal_kind": "enhanced_investment",
-      "country": "Guyana",
-      "feedback_status": "forwarded",
-      "cycle": "20260610",
-      "cycles_ago": 3
-    },
-    {
-      "dispatch_id": "DSP-20260610-022",
-      "signal_kind": "enhanced_investment",
-      "country": "Guyana",
-      "feedback_status": "ignored",
-      "cycle": "20260610",
-      "cycles_ago": 3
-    },
-    {
-      "dispatch_id": "DSP-20260610-023",
-      "signal_kind": "enhanced_investment",
-      "country": "Guyana",
-      "feedback_status": "ignored",
-      "cycle": "20260610",
-      "cycles_ago": 3
-    },
-    {
-      "dispatch_id": "DSP-20260610-024",
-      "signal_kind": "enhanced_investment",
-      "country": "Belize",
-      "feedback_status": "opened",
-      "cycle": "20260610",
-      "cycles_ago": 3
-    },
-    {
-      "dispatch_id": "DSP-20260610-025",
-      "signal_kind": "enhanced_investment",
-      "country": "Belize",
-      "feedback_status": "ignored",
-      "cycle": "20260610",
-      "cycles_ago": 3
-    },
-    {
-      "dispatch_id": "DSP-20260610-026",
-      "signal_kind": "enhanced_investment",
-      "country": "Belize",
-      "feedback_status": "ignored",
-      "cycle": "20260610",
-      "cycles_ago": 3
-    },
-    {
-      "dispatch_id": "DSP-20260610-027",
-      "signal_kind": "enhanced_investment",
-      "country": "St. Vincent and the Grenadines",
-      "feedback_status": "ignored",
-      "cycle": "20260610",
-      "cycles_ago": 3
-    },
-    {
-      "dispatch_id": "DSP-20260610-028",
-      "signal_kind": "enhanced_investment",
-      "country": "St. Vincent and the Grenadines",
-      "feedback_status": "ignored",
-      "cycle": "20260610",
-      "cycles_ago": 3
-    },
-    {
-      "dispatch_id": "DSP-20260610-029",
-      "signal_kind": "enhanced_investment",
-      "country": "St. Vincent and the Grenadines",
-      "feedback_status": "ignored",
-      "cycle": "20260610",
-      "cycles_ago": 3
-    },
-    {
-      "dispatch_id": "DSP-20260610-015",
-      "signal_kind": "development_pipeline",
-      "country": "CARICOM",
-      "feedback_status": "replied",
-      "cycle": "20260610",
-      "cycles_ago": 3
-    },
-    {
-      "dispatch_id": "DSP-20260610-016",
-      "signal_kind": "development_pipeline",
-      "country": "CARICOM",
-      "feedback_status": "ignored",
-      "cycle": "20260610",
-      "cycles_ago": 3
-    },
-    {
-      "dispatch_id": "DSP-20260610-017",
-      "signal_kind": "development_pipeline",
-      "country": "CARICOM",
-      "feedback_status": "ignored",
-      "cycle": "20260610",
-      "cycles_ago": 3
-    },
-    {
-      "dispatch_id": "DSP-20260610-003",
-      "signal_kind": "investment_signal",
-      "country": "Guyana",
-      "feedback_status": "ignored",
-      "cycle": "20260610",
-      "cycles_ago": 3
-    },
-    {
-      "dispatch_id": "DSP-20260610-004",
-      "signal_kind": "investment_signal",
-      "country": "Guyana",
-      "feedback_status": "ignored",
-      "cycle": "20260610",
-      "cycles_ago": 3
-    },
-    {
-      "dispatch_id": "DSP-20260610-005",
-      "signal_kind": "investment_signal",
-      "country": "Belize",
-      "feedback_status": "ignored",
-      "cycle": "20260610",
-      "cycles_ago": 3
-    },
-    {
-      "dispatch_id": "DSP-20260610-006",
-      "signal_kind": "investment_signal",
-      "country": "Belize",
-      "feedback_status": "ignored",
-      "cycle": "20260610",
-      "cycles_ago": 3
-    },
-    {
-      "dispatch_id": "DSP-20260610-013",
-      "signal_kind": "food_security",
-      "country": "CARICOM",
-      "feedback_status": "ignored",
-      "cycle": "20260610",
-      "cycles_ago": 3
-    },
-    {
-      "dispatch_id": "DSP-20260610-014",
-      "signal_kind": "food_security",
-      "country": "CARICOM",
-      "feedback_status": "ignored",
-      "cycle": "20260610",
-      "cycles_ago": 3
-    },
-    {
-      "dispatch_id": "DSP-20260610-007",
-      "signal_kind": "investment_signal",
-      "country": "St. Vincent and the Grenadines",
-      "feedback_status": "ignored",
-      "cycle": "20260610",
-      "cycles_ago": 3
-    },
-    {
-      "dispatch_id": "DSP-20260610-008",
-      "signal_kind": "investment_signal",
-      "country": "St. Vincent and the Grenadines",
-      "feedback_status": "ignored",
-      "cycle": "20260610",
-      "cycles_ago": 3
-    },
-    {
-      "dispatch_id": "DSP-20260610-011",
-      "signal_kind": "economic_vulnerability",
-      "country": "St. Vincent and the Grenadines",
-      "feedback_status": "decision_changed",
-      "cycle": "20260610",
-      "cycles_ago": 3
-    },
-    {
-      "dispatch_id": "DSP-20260610-012",
-      "signal_kind": "economic_vulnerability",
-      "country": "St. Vincent and the Grenadines",
-      "feedback_status": "ignored",
-      "cycle": "20260610",
-      "cycles_ago": 3
-    },
-    {
-      "dispatch_id": "DSP-20260610-009",
-      "signal_kind": "economic_vulnerability",
-      "country": "Suriname",
-      "feedback_status": "ignored",
-      "cycle": "20260610",
-      "cycles_ago": 3
-    },
-    {
-      "dispatch_id": "DSP-20260610-010",
-      "signal_kind": "economic_vulnerability",
-      "country": "Suriname",
-      "feedback_status": "ignored",
-      "cycle": "20260610",
-      "cycles_ago": 3
+      "cycles_ago": 20
     }
   ],
   "boosts": {
@@ -411,6 +395,9 @@
     },
     "development_pipeline": {
       "CARICOM": 2
+    },
+    "supply_chain_signal": {
+      "Belize": -6
     },
     "investment_signal": {
       "Guyana": -4,
@@ -423,9 +410,6 @@
     "economic_vulnerability": {
       "St. Vincent and the Grenadines": 9,
       "Suriname": -4
-    },
-    "tourism_impact": {
-      "Guyana": -4
     }
   }
 }

@@ -1,8 +1,8 @@
 # Opportunity Validation Pack — Belize
 
-- Signal: `enhanced-invest-belize` · Dispatch: `DSP-20260617-024`
-- Confidence: 100/100 · A - multi-source
-- Recommendation: **HOLD** — Signal confidence 100/100 with 1 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.
+- Signal: `supply-chain-belize` · Dispatch: `DSP-20260617-030`
+- Confidence: 94/100 · A - multi-source
+- Recommendation: **HOLD** — Signal confidence 94/100 with 1 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.
 - Last validated: 2026-06-17T21:42:28.277090+00:00
 
 ## Sector hypotheses

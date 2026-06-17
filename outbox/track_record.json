@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-12T22:16:41.457155+00:00",
+  "generated_at": "2026-06-17T21:42:28.463957+00:00",
   "feedback_provenance": "simulated",
   "current_boosts": {
     "enhanced_investment": {
@@ -9,6 +9,9 @@
     },
     "development_pipeline": {
       "CARICOM": 2
+    },
+    "supply_chain_signal": {
+      "Belize": -6
     },
     "investment_signal": {
       "Guyana": -4,
@@ -28,19 +31,19 @@
   },
   "cycles": [
     {
-      "cycle_id": "20260611",
+      "cycle_id": "20260617",
       "responses": {
         "forwarded": 1,
         "replied": 1,
         "opened": 1,
-        "ignored": 22,
+        "ignored": 25,
         "decision_changed": 1
       },
-      "dispatch_count": 26,
+      "dispatch_count": 29,
       "countries": [
+        "Belize",
         "Guyana",
         "St. Vincent and the Grenadines",
-        "Belize",
         "CARICOM",
         "Suriname"
       ],
@@ -50,21 +53,20 @@
       }
     },
     {
-      "cycle_id": "20260610",
+      "cycle_id": "20260611",
       "responses": {
         "forwarded": 1,
         "replied": 1,
         "opened": 1,
-        "ignored": 20,
+        "ignored": 17,
         "decision_changed": 1
       },
-      "dispatch_count": 24,
+      "dispatch_count": 21,
       "countries": [
         "St. Vincent and the Grenadines",
         "Guyana",
         "Belize",
-        "CARICOM",
-        "Suriname"
+        "CARICOM"
       ],
       "lead": {
         "country": "",

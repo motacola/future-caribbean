@@ -550,6 +550,110 @@ def detect_enhanced_investment(
     return signals
 
 
+# ── Supply Chain Signal ─────────────────────────────────────
+
+
+def detect_supply_chain_signal(
+    rules: dict,
+    tier2_items: list[dict],
+    ndbc_readings: list[dict],
+    noaa_alerts: list[dict],
+) -> list[CompositeSignal]:
+    """CDB procurement + stable maritime conditions + Tier 2 logistics data = supply chain opportunity.
+
+    Conditions:
+      - CDB procurement active (from tier2_items)
+      - NDBC maritime stable (no high winds, no marine alerts)
+      - Tier 2 logistics data available (CARICOM transport/trade data)
+    """
+    cond = rules.get("conditions", {})
+    need_procurement = cond.get("cdb_procurement_active", True)
+    need_maritime_stable = cond.get("ndbc_maritime_stable", True)
+    need_logistics = cond.get("tier2_logistics_data_available", True)
+
+    # Source 1: CDB procurement notices
+    cdb_procurement = [
+        i for i in tier2_items
+        if i.get("source_slug") == "cdb" and i.get("item_type") == "procurement"
+    ]
+    if need_procurement and not cdb_procurement:
+        return []
+
+    # Source 2: Maritime stability (no high winds, no marine alerts)
+    maritime_stable = True
+    if need_maritime_stable:
+        high_wind = any(
+            (r.get("wind_speed_ms") or 0) * 1.94384 >= 25
+            for r in ndbc_readings
+        )
+        marine_alert = any(
+            a.get("event") in ("Small Craft Advisory", "Gale Warning", "Storm Warning")
+            for a in noaa_alerts
+            if a.get("zone_type") == "marine"
+        )
+        if high_wind or marine_alert:
+            maritime_stable = False
+
+    if need_maritime_stable and not maritime_stable:
+        return []
+
+    # Source 3: Tier 2 logistics data (CARICOM transport/trade)
+    logistics_items = []
+    has_logistics = False
+    if need_logistics:
+        logistics_items = [
+            i for i in tier2_items
+            if i.get("source_slug") == "caricom"
+            and any(kw in (i.get("title", "") or "").lower()
+                    for kw in ["transport", "shipping", "port", "logistics", "trade", "import", "export"])
+        ]
+        has_logistics = len(logistics_items) >= 1
+
+    if need_logistics and not has_logistics:
+        return []
+
+    # All conditions met - build signal
+    evidence = []
+    sources = ["CDB", "NDBC"]
+    if cdb_procurement:
+        evidence.append(f"CDB active procurement notices: {len(cdb_procurement)}")
+        for p in cdb_procurement[:2]:
+            evidence.append(f"  • {p['title'][:80]}")
+    if maritime_stable:
+        evidence.append("Maritime conditions stable — no high-wind or marine alerts")
+    if has_logistics:
+        evidence.append(f"CARICOM logistics/trade data available: {len(logistics_items)} dataset(s)")
+        sources.append("CARICOM")
+
+    # Determine affected corridor
+    corridor = "CARICOM regional"
+    if cdb_procurement:
+        # Check if any procurement mentions specific countries
+        countries_mentioned = set()
+        for p in cdb_procurement:
+            title = (p.get("title", "") or "").lower()
+            for country in ["guyana", "suriname", "trinidad", "barbados", "jamaica", "belize",
+                           "bahamas", "dominica", "grenada", "saint lucia", "st. vincent",
+                           "st. kitts", "antigua", "cayman"]:
+                if country in title:
+                    countries_mentioned.add(country.title())
+        if countries_mentioned:
+            corridor = ", ".join(sorted(countries_mentioned))
+
+    signals: list[CompositeSignal] = []
+    signals.append(CompositeSignal(
+        id=f"supply-chain-{corridor.lower().replace(' ', '-').replace(',', '')}",
+        kind="supply_chain_signal",
+        label="🔗 Supply Chain Opportunity",
+        priority="medium",
+        summary=f"Supply chain corridor opportunity: {corridor} — CDB procurement active + maritime stable + logistics data available",
+        evidence=evidence,
+        countries=[corridor] if corridor != "CARICOM regional" else ["CARICOM"],
+        sources=sources,
+    ))
+    return signals
+
+
 # ── NHC Storm Risk ─────────────────────────────────────────
 
 
@@ -719,7 +823,7 @@ def write_outputs(
             "investment_signal": "💼", "economic_vulnerability": "⚠️",
             "tourism_impact": "🏖️", "food_security": "🌾",
             "development_pipeline": "🏗️", "enhanced_investment": "💎",
-            "tropical_development": "🌪️", "active_storm": "🌀",
+            "supply_chain_signal": "🔗", "tropical_development": "🌪️", "active_storm": "🌀",
         }
         icon = icon_map.get(sig.kind, "•")
         priority_badge = {"high": "🔴", "medium": "🟡", "low": "🟢"}.get(sig.priority, "⚪")
@@ -796,6 +900,11 @@ def run(rules_path: Path, data_dir: Path, signal_dir: Path) -> int:
     enhanced_rules = combined_rules.get("enhanced_investment", {})
     if tier2_items:
         all_signals.extend(detect_enhanced_investment(enhanced_rules, wb_sigs, tier2_items))
+
+    # Supply chain signal (Tier 2 + maritime + NDBC)
+    supply_chain_rules = combined_rules.get("supply_chain_signal", {})
+    if tier2_items:
+        all_signals.extend(detect_supply_chain_signal(supply_chain_rules, tier2_items, ndbc_readings, noaa_alerts))
 
     # NHC storm risk
     nhc_rules = combined_rules.get("tropical_development", {})

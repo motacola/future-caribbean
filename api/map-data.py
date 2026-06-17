@@ -7,7 +7,7 @@ from http.server import BaseHTTPRequestHandler
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from map_data import build_map_data
+from map_data import build_map_data  # noqa: E402
 
 
 class handler(BaseHTTPRequestHandler):

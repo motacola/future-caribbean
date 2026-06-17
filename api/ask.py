@@ -1,6 +1,5 @@
 """Vercel serverless function: POST /api/ask"""
 import json
-import os
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -10,7 +9,7 @@ from http.server import BaseHTTPRequestHandler
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from agent.query import load_desk, ask
+from agent.query import load_desk, ask  # noqa: E402
 
 MAX_QUESTION_LEN = 500
 

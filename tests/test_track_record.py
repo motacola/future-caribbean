@@ -50,9 +50,11 @@ def test_packager_grouping():
         assert "decision_changed" in responses
 
     # Lead only filled for cycles present in opportunity_dispatches.json
-    # Current cycle (20260611) should have lead, older (20260610) should not
-    current_cycle = next((c for c in cycles if c["cycle_id"] == "20260611"), None)
-    older_cycle = next((c for c in cycles if c["cycle_id"] == "20260610"), None)
+    # Current cycle should have lead, older (if exists) should not
+    desk = json.loads((ROOT / "outbox" / "dispatch_desk.json").read_text())
+    current_cycle_id = desk["cycle_id"]
+    current_cycle = next((c for c in cycles if c["cycle_id"] == current_cycle_id), None)
+    older_cycle = next((c for c in cycles if c["cycle_id"] != current_cycle_id), None)
 
     assert current_cycle is not None, "Current cycle should exist"
     assert current_cycle["lead"]["country"] == "Guyana"

@@ -1,13 +1,16 @@
 {
-  "generated_at": "2026-06-11T10:00:41.432741+00:00",
+  "generated_at": "2026-06-17T21:42:28.079765+00:00",
   "boosts": {
     "enhanced_investment": {
-      "Guyana": 6,
+      "Guyana": 5,
       "Belize": -1,
       "St. Vincent and the Grenadines": -6
     },
     "development_pipeline": {
       "CARICOM": 2
+    },
+    "supply_chain_signal": {
+      "Belize": -6
     },
     "investment_signal": {
       "Guyana": -4,
@@ -18,8 +21,11 @@
       "CARICOM": -4
     },
     "economic_vulnerability": {
-      "St. Vincent and the Grenadines": 10,
+      "St. Vincent and the Grenadines": 9,
       "Suriname": -4
+    },
+    "tourism_impact": {
+      "Guyana": -4
     }
   }
 }

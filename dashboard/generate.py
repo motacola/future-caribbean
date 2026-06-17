@@ -1,35 +1,48 @@
 """Generate dashboard.html from template + live data."""
 from __future__ import annotations
-import argparse, json, re, subprocess, sys
+import argparse
+import json
+import re
+import subprocess
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from map_data import build_map_data, canonical_country
+from map_data import build_map_data, canonical_country  # noqa: E402
 
 def j(v): return json.dumps(str(v), ensure_ascii=False)[1:-1]
 
 def read_json(p: Path) -> dict | None:
-    if not p.exists(): return None
-    try: return json.loads(p.read_text())
-    except: return None
+    if not p.exists():
+        return None
+    try:
+        return json.loads(p.read_text())
+    except Exception:
+        return None
 
 def read_text(p: Path) -> str:
-    if not p.exists(): return ""
+    if not p.exists():
+        return ""
     return p.read_text("utf-8", errors="replace")
 
 def age(ts):
-    if not ts: return "—"
+    if not ts:
+        return "—"
     try:
-        m = int((datetime.now(timezone.utc) - datetime.fromisoformat(ts.replace("Z","+00:00"))).total_seconds()/60)
-        if m < 2: return "just now"
-        if m < 60: return f"{m}m ago"
+        m = int((datetime.now(timezone.utc) - datetime.fromisoformat(ts.replace("Z", "+00:00"))).total_seconds() / 60)
+        if m < 2:
+            return "just now"
+        if m < 60:
+            return f"{m}m ago"
         h = m // 60
-        if h < 24: return f"{h}h ago"
+        if h < 24:
+            return f"{h}h ago"
         return f"{h//24}d ago"
-    except: return "──"
+    except Exception:
+        return "──"
 
 # ── Label rewriter: pipeline internals → user-facing ────────
 
@@ -67,7 +80,8 @@ def clean_signal_title(raw: str) -> str:
         return f"{country} — money on the move ({pct_str})"
     return f"{country} — early signal"
 
-from humanizer import humanize, humanize_rules_json
+
+from humanizer import humanize, humanize_rules_json  # noqa: E402
 
 # ── Load data ──────────────────────────────────────────────
 
@@ -93,6 +107,16 @@ COUNTRY_COORDS = {
     "Trinidad & Tobago": (10.46, -61.25),
     "Guyana": (4.86, -58.93),
     "Suriname": (3.92, -56.03),
+    "St Kitts & Nevis": (17.35, -62.73),
+    "St Vincent & the Grenadines": (13.15, -61.23),
+    "Dominica": (15.41, -61.37),
+    "Cayman Islands": (19.31, -81.25),
+    "Turks & Caicos": (21.69, -71.79),
+    "Montserrat": (16.74, -62.18),
+    "Anguilla": (18.22, -63.05),
+    "British Virgin Islands": (18.42, -64.61),
+    "US Virgin Islands": (18.34, -64.93),
+    "Cuba": (21.52, -77.78),
 }
 
 map_markers = []
@@ -283,12 +307,14 @@ seen = set()
 for c in clusters:
     for p in c.get("personas", []) or []:
         name = p.get("persona", "")
-        if name in seen: continue
+        if name in seen:
+            continue
         seen.add(name)
         ch = p.get("channel", "")
         act = humanize(p.get("action", "") or "")[:100]
         pcards.append((name, ch, act))
-    if len(pcards) >= 5: break
+    if len(pcards) >= 5:
+        break
 
 pcard_html = ""
 for idx, (name, ch, act) in enumerate(pcards, 1):

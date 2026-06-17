@@ -101,6 +101,26 @@ TOOLS_MANIFEST = {
             "example_request": {},
             "example_response_keys": ["ok", "workflow", "exit_code", "result"],
             "writes": True
+        },
+        {
+            "name": "community_brief.get",
+            "description": "Get the plain-language community brief — one paragraph per signal, no jargon, for builders and community leaders.",
+            "method": "GET",
+            "path": "/api/community-brief",
+            "params": {"type": "object", "properties": {}},
+            "example_request": {},
+            "example_response_keys": ["ok", "brief"],
+            "writes": False
+        },
+        {
+            "name": "community_brief.snippets",
+            "description": "Get platform-specific social snippets (X thread, Instagram caption, WhatsApp forward) for the current community brief.",
+            "method": "GET",
+            "path": "/api/community-brief/snippets",
+            "params": {"type": "object", "properties": {}},
+            "example_request": {},
+            "example_response_keys": ["ok", "snippets"],
+            "writes": False
         }
     ]
 }

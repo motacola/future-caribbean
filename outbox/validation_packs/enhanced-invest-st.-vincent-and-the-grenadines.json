@@ -1,6 +1,6 @@
 {
   "signal_id": "enhanced-invest-st.-vincent-and-the-grenadines",
-  "dispatch_id": "DSP-20260611-029",
+  "dispatch_id": "DSP-20260617-027",
   "country": "St. Vincent and the Grenadines",
   "signal_title": "St. Vincent and the Grenadines: +88.2% multi-source investment validated — opportunity active",
   "confidence_score": 100,
@@ -25,6 +25,12 @@
       "title": "Enhancing the Quality of the Belize National Quality Infrastructure",
       "source": "Caribbean Development Bank",
       "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure",
+      "match": "regional"
+    },
+    {
+      "title": "School Improvement Project (SIP) Phase 1",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/school-improvement-project-sip-phase-1-0",
       "match": "regional"
     },
     {
@@ -78,6 +84,7 @@
     "https://statistics.caricom.org/country_data/st-vincent-and-the-grenadines/",
     "https://www.caribank.org/publications-and-resources/resource-library/official-records/56th-annual-meeting-statement-governor-saint-vincent-and-grenadines-dr-hon-godwin-friday",
     "https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/school-improvement-project-sip-phase-1-0",
     "https://www.caribank.org/work-with-us/procurement/procurement-notices/support-institutional-strengthening-caribbean-disaster-emergency-project"
   ],
   "unresolved_questions": [
@@ -94,5 +101,5 @@
   ],
   "advance_or_reject_recommendation": "hold",
   "recommendation_reason": "Signal confidence 100/100 with 1 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.",
-  "last_validated_at": "2026-06-11T17:21:57.966570+00:00"
+  "last_validated_at": "2026-06-17T21:42:28.277090+00:00"
 }

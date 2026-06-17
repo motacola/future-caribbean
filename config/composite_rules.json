@@ -77,6 +77,15 @@
       "conditions": {
         "min_probability": "medium"
       }
+    },
+    "supply_chain_signal": {
+      "label": "🔗 Supply Chain Opportunity",
+      "priority": "medium",
+      "conditions": {
+        "cdb_procurement_active": true,
+        "ndbc_maritime_stable": true,
+        "tier2_logistics_data_available": true
+      }
     }
   }
 }

@@ -135,6 +135,16 @@
         "operator_resilience": "High-wind + marine alert confirmation requires safety response and shipping route adjustments",
         "tourism_logistics_operator": "Maritime hazards affect island supply chains and tourism transport schedules"
       }
+    },
+    "supply_chain_signal": {
+      "personas": ["regional_operator", "procurement_watcher", "founder_operator"],
+      "action_window": "21 days",
+      "decision_to_influence": "Which logistics/procurement corridor to bid or partner on",
+      "routing_rationale": {
+        "regional_operator": "Active procurement + stable maritime = real supply chain corridor opportunity — first to respond wins",
+        "procurement_watcher": "CDB procurement aligned with maritime stability = viable logistics corridors for project-based entry",
+        "founder_operator": "Supply chain gaps + procurement pipeline = where to build logistics, warehousing, or last-mile services"
+      }
     }
   }
 }

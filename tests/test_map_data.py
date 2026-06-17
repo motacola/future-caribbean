@@ -38,7 +38,7 @@ def test_map_data_endpoint_structure():
 def test_map_data_country_coverage():
     data = build_map_data(ROOT)
     assert {entry["country"] for entry in data} == set(WATCHED_COUNTRIES)
-    assert len(data) == 13
+    assert len(data) == len(WATCHED_COUNTRIES)
 
 
 def test_map_data_confidence_range():

@@ -8,6 +8,10 @@ WATCHED_COUNTRIES = (
     "Jamaica", "Trinidad & Tobago", "Barbados", "Guyana", "Belize", "Haiti",
     "Dominican Republic", "Puerto Rico", "Bahamas", "Antigua & Barbuda",
     "St Lucia", "Grenada", "Suriname",
+    "St Kitts & Nevis", "St Vincent & the Grenadines", "Dominica",
+    "Cayman Islands", "Turks & Caicos", "Montserrat",
+    "Anguilla", "British Virgin Islands", "US Virgin Islands",
+    "Cuba",
 )
 
 _ALIASES = {
@@ -15,6 +19,16 @@ _ALIASES = {
     "antigua and barbuda": "Antigua & Barbuda",
     "saint lucia": "St Lucia",
     "st. lucia": "St Lucia",
+    "st kitts and nevis": "St Kitts & Nevis",
+    "saint kitts and nevis": "St Kitts & Nevis",
+    "st vincent and the grenadines": "St Vincent & the Grenadines",
+    "saint vincent and the grenadines": "St Vincent & the Grenadines",
+    "cayman islands": "Cayman Islands",
+    "turks and caicos": "Turks & Caicos",
+    "turks & caicos": "Turks & Caicos",
+    "british virgin islands": "British Virgin Islands",
+    "us virgin islands": "US Virgin Islands",
+    "u.s. virgin islands": "US Virgin Islands",
 }
 
 

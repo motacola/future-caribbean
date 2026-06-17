@@ -2,7 +2,7 @@
 
 **Decision job:** Capacity planning and demand trajectory assessment
 **Delivery channel:** Telegram
-**Generated:** Jun 11, 2026 at 10:00 UTC
+**Generated:** Jun 17, 2026 at 21:41 UTC
 **Dispatches in this packet:** 1
 
 ---
@@ -11,7 +11,7 @@
 
 ### 1. Guyana: GDP growth signals expanding tourist economy
 
-**ID:** `DSP-20260611-013` | **Country:** Guyana | **Confidence:** 🟢 Monitor | 51/100 | C - single-source
+**ID:** `DSP-20260617-013` | **Country:** Guyana | **Confidence:** 🟢 Monitor | 51/100 | C - single-source
 **Channel:** Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** ignored
 

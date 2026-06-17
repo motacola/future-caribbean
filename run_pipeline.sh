@@ -68,6 +68,7 @@ run_step "Dispatch Desk" "python3 \"$ROOT/packagers/dispatch_desk.py\"" "dispatc
 run_step "Climate Dispatch (2nd instance)" "python3 \"$ROOT/packagers/climate_dispatch.py\"" "climate_dispatch"
 run_step "Reasoning Agent (cross-signal synthesis)" "python3 \"$ROOT/reasoners/synthesis.py\"" "reasoning"
 run_step "Telegram Brief" "python3 \"$ROOT/packagers/telegram_brief.py\"" "telegram_brief"
+run_step "Community Brief" "python3 \"$ROOT/packagers/community_brief.py\"" "community_brief"
 
 # ── Action Proof: Dispatch Packets & Delivery Manifest ───
 run_step "Dispatch Packets" "python3 \"$ROOT/packagers/dispatch_packet_generator.py\"" "dispatch_packets"
