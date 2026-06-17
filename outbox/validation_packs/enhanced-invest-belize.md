@@ -1,9 +1,9 @@
 # Opportunity Validation Pack — Belize
 
-- Signal: `enhanced-invest-belize` · Dispatch: `DSP-20260617-024`
+- Signal: `enhanced-invest-belize` · Dispatch: `DSP-20260617-026`
 - Confidence: 100/100 · A - multi-source
 - Recommendation: **HOLD** — Signal confidence 100/100 with 1 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.
-- Last validated: 2026-06-17T22:25:24.501305+00:00
+- Last validated: 2026-06-17T22:29:47.414719+00:00
 
 ## Sector hypotheses
 - Tourism and hospitality — _Analyst prior from widely reported sector drivers — requires local confirmation_

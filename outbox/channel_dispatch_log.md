@@ -1,6 +1,6 @@
 # Channel Dispatch Log — Cycle 20260617
 
-Generated: 2026-06-17 22:25 UTC
+Generated: 2026-06-17 22:29 UTC
 
 Per-channel routing plan for this cycle. Live send receipts are written to `outbox/live_send_log.md` after each delivery run.
 
@@ -43,7 +43,9 @@ Per-channel routing plan for this cycle. Live send receipts are written to `outb
 - [✓] Capital convergence: 8 Caribbean economies showing multi-source investment momentum
 - [✓] CARICOM: food supply indicators shifting — supply chain implications
 - [✓] St. Vincent and the Grenadines: FDI trending at +88.2% — screening trigger active
-- **17 dispatches routed to Telegram**
+- [✓] Guyana: GDP growth signals expanding tourist economy
+- [✓] Guyana: GDP growth signals expanding tourist economy
+- **19 dispatches routed to Telegram**
 
 ## Telegram digest
 

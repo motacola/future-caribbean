@@ -2,7 +2,7 @@
 
 **Decision job:** Founder matching and ecosystem support prioritisation
 **Delivery channel:** Telegram
-**Generated:** Jun 17, 2026 at 22:25 UTC
+**Generated:** Jun 17, 2026 at 22:29 UTC
 **Dispatches in this packet:** 5
 
 ---
@@ -11,7 +11,7 @@
 
 ### 1. Guyana: +860.3% multi-source capital surge — market entry window open
 
-**ID:** `DSP-20260617-022` | **Country:** Guyana | **Confidence:** 🔴 Immediate | 100/100 | A - multi-source
+**ID:** `DSP-20260617-024` | **Country:** Guyana | **Confidence:** 🔴 Immediate | 100/100 | A - multi-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -25,7 +25,7 @@
 
 ### 2. Belize: +701.0% multi-source capital surge — market entry window open
 
-**ID:** `DSP-20260617-025` | **Country:** Belize | **Confidence:** 🔴 Immediate | 100/100 | A - multi-source
+**ID:** `DSP-20260617-027` | **Country:** Belize | **Confidence:** 🔴 Immediate | 100/100 | A - multi-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -39,7 +39,7 @@
 
 ### 3. St. Vincent and the Grenadines: +88.2% multi-source investment validated — opportunity active
 
-**ID:** `DSP-20260617-028` | **Country:** St. Vincent and the Grenadines | **Confidence:** 🔴 Immediate | 100/100 | A - multi-source
+**ID:** `DSP-20260617-030` | **Country:** St. Vincent and the Grenadines | **Confidence:** 🔴 Immediate | 100/100 | A - multi-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** weakened
 **Feedback status:** ignored
 
@@ -54,7 +54,7 @@
 
 ### 4. Capital convergence: 8 Caribbean economies showing multi-source investment momentum
 
-**ID:** `DSP-20260617-019` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
+**ID:** `DSP-20260617-021` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** new
 **Feedback status:** ignored
 
@@ -68,7 +68,7 @@
 
 ### 5. CARICOM: food supply indicators shifting — supply chain implications
 
-**ID:** `DSP-20260617-013` | **Country:** CARICOM | **Confidence:** 🟡 Validation | 80/100 | B - cross-source
+**ID:** `DSP-20260617-015` | **Country:** CARICOM | **Confidence:** 🟡 Validation | 80/100 | B - cross-source
 **Channel:** Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** ignored
 

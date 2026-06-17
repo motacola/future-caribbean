@@ -1,11 +1,11 @@
 🌴 *Signal Fabric — Decision Routes Ready*
-Cycle: `20260617` · 2026-06-17 22:25 UTC
+Cycle: `20260617` · 2026-06-17 22:29 UTC
 
 *What this is:*
 A Dispatch Desk notification. The product is the decision route: signal → persona → action → feedback. Telegram is only the delivery channel.
 
 *Open Track coordination chain this cycle*
-Data → 13 signal clusters → 32 persona routes → 6 personas → action/capital decisions
+Data → 14 signal clusters → 34 persona routes → 7 personas → action/capital decisions
 
 *Priority decision clusters*
 1) *Guyana: +860.3% multi-source capital surge — market entry window open*

@@ -1,31 +1,32 @@
 {
-  "generated_at": "2026-06-17T22:25:25.040094+00:00",
+  "generated_at": "2026-06-17T22:29:47.945713+00:00",
   "cycle_id": "20260617",
-  "total_deliveries": 32,
+  "total_deliveries": 34,
   "summary": {
-    "personas": 6,
+    "personas": 7,
     "channels": 4,
     "by_persona": {
+      "founder_operator": 11,
       "diaspora_investor": 10,
-      "founder_operator": 10,
       "ecosystem_builder": 5,
       "policy_media": 3,
       "regional_operator": 2,
-      "procurement_watcher": 2
+      "procurement_watcher": 2,
+      "tourism_logistics_operator": 1
     },
     "by_channel": {
-      "Telegram": 17,
+      "Telegram": 19,
       "Email brief + Telegram": 10,
       "Telegram digest": 3,
       "Email brief": 2
     },
     "by_status": {
-      "delivered": 32
+      "delivered": 34
     }
   },
   "deliveries": [
     {
-      "dispatch_id": "DSP-20260617-021",
+      "dispatch_id": "DSP-20260617-023",
       "title": "Guyana: +860.3% multi-source capital surge — market entry window open",
       "persona_key": "diaspora_investor",
       "persona_label": "Diaspora Investor",
@@ -34,36 +35,6 @@
       "action_window": "14 days",
       "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
       "target_artifact_path": "outbox/dispatch_packets/diaspora_investor.md",
-      "cycle_id": "20260617",
-      "country_cluster": "Guyana",
-      "confidence_score": 100,
-      "signal_kind": "enhanced_investment"
-    },
-    {
-      "dispatch_id": "DSP-20260617-022",
-      "title": "Guyana: +860.3% multi-source capital surge — market entry window open",
-      "persona_key": "ecosystem_builder",
-      "persona_label": "Ecosystem Builder",
-      "channel": "Telegram",
-      "delivery_status": "delivered",
-      "action_window": "14 days",
-      "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
-      "target_artifact_path": "outbox/dispatch_packets/ecosystem_builder.md",
-      "cycle_id": "20260617",
-      "country_cluster": "Guyana",
-      "confidence_score": 100,
-      "signal_kind": "enhanced_investment"
-    },
-    {
-      "dispatch_id": "DSP-20260617-023",
-      "title": "Guyana: +860.3% multi-source capital surge — market entry window open",
-      "persona_key": "founder_operator",
-      "persona_label": "Regional Founder/Operator",
-      "channel": "Telegram",
-      "delivery_status": "delivered",
-      "action_window": "14 days",
-      "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
-      "target_artifact_path": "outbox/dispatch_packets/founder_operator.md",
       "cycle_id": "20260617",
       "country_cluster": "Guyana",
       "confidence_score": 100,
@@ -71,22 +42,7 @@
     },
     {
       "dispatch_id": "DSP-20260617-024",
-      "title": "Belize: +701.0% multi-source capital surge — market entry window open",
-      "persona_key": "diaspora_investor",
-      "persona_label": "Diaspora Investor",
-      "channel": "Email brief + Telegram",
-      "delivery_status": "delivered",
-      "action_window": "14 days",
-      "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
-      "target_artifact_path": "outbox/dispatch_packets/diaspora_investor.md",
-      "cycle_id": "20260617",
-      "country_cluster": "Belize",
-      "confidence_score": 100,
-      "signal_kind": "enhanced_investment"
-    },
-    {
-      "dispatch_id": "DSP-20260617-025",
-      "title": "Belize: +701.0% multi-source capital surge — market entry window open",
+      "title": "Guyana: +860.3% multi-source capital surge — market entry window open",
       "persona_key": "ecosystem_builder",
       "persona_label": "Ecosystem Builder",
       "channel": "Telegram",
@@ -95,13 +51,13 @@
       "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
       "target_artifact_path": "outbox/dispatch_packets/ecosystem_builder.md",
       "cycle_id": "20260617",
-      "country_cluster": "Belize",
+      "country_cluster": "Guyana",
       "confidence_score": 100,
       "signal_kind": "enhanced_investment"
     },
     {
-      "dispatch_id": "DSP-20260617-026",
-      "title": "Belize: +701.0% multi-source capital surge — market entry window open",
+      "dispatch_id": "DSP-20260617-025",
+      "title": "Guyana: +860.3% multi-source capital surge — market entry window open",
       "persona_key": "founder_operator",
       "persona_label": "Regional Founder/Operator",
       "channel": "Telegram",
@@ -109,6 +65,21 @@
       "action_window": "14 days",
       "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
       "target_artifact_path": "outbox/dispatch_packets/founder_operator.md",
+      "cycle_id": "20260617",
+      "country_cluster": "Guyana",
+      "confidence_score": 100,
+      "signal_kind": "enhanced_investment"
+    },
+    {
+      "dispatch_id": "DSP-20260617-026",
+      "title": "Belize: +701.0% multi-source capital surge — market entry window open",
+      "persona_key": "diaspora_investor",
+      "persona_label": "Diaspora Investor",
+      "channel": "Email brief + Telegram",
+      "delivery_status": "delivered",
+      "action_window": "14 days",
+      "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
+      "target_artifact_path": "outbox/dispatch_packets/diaspora_investor.md",
       "cycle_id": "20260617",
       "country_cluster": "Belize",
       "confidence_score": 100,
@@ -116,6 +87,36 @@
     },
     {
       "dispatch_id": "DSP-20260617-027",
+      "title": "Belize: +701.0% multi-source capital surge — market entry window open",
+      "persona_key": "ecosystem_builder",
+      "persona_label": "Ecosystem Builder",
+      "channel": "Telegram",
+      "delivery_status": "delivered",
+      "action_window": "14 days",
+      "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
+      "target_artifact_path": "outbox/dispatch_packets/ecosystem_builder.md",
+      "cycle_id": "20260617",
+      "country_cluster": "Belize",
+      "confidence_score": 100,
+      "signal_kind": "enhanced_investment"
+    },
+    {
+      "dispatch_id": "DSP-20260617-028",
+      "title": "Belize: +701.0% multi-source capital surge — market entry window open",
+      "persona_key": "founder_operator",
+      "persona_label": "Regional Founder/Operator",
+      "channel": "Telegram",
+      "delivery_status": "delivered",
+      "action_window": "14 days",
+      "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
+      "target_artifact_path": "outbox/dispatch_packets/founder_operator.md",
+      "cycle_id": "20260617",
+      "country_cluster": "Belize",
+      "confidence_score": 100,
+      "signal_kind": "enhanced_investment"
+    },
+    {
+      "dispatch_id": "DSP-20260617-029",
       "title": "St. Vincent and the Grenadines: +88.2% multi-source investment validated — opportunity active",
       "persona_key": "diaspora_investor",
       "persona_label": "Diaspora Investor",
@@ -130,7 +131,7 @@
       "signal_kind": "enhanced_investment"
     },
     {
-      "dispatch_id": "DSP-20260617-028",
+      "dispatch_id": "DSP-20260617-030",
       "title": "St. Vincent and the Grenadines: +88.2% multi-source investment validated — opportunity active",
       "persona_key": "ecosystem_builder",
       "persona_label": "Ecosystem Builder",
@@ -145,7 +146,7 @@
       "signal_kind": "enhanced_investment"
     },
     {
-      "dispatch_id": "DSP-20260617-029",
+      "dispatch_id": "DSP-20260617-031",
       "title": "St. Vincent and the Grenadines: +88.2% multi-source investment validated — opportunity active",
       "persona_key": "founder_operator",
       "persona_label": "Regional Founder/Operator",
@@ -160,7 +161,7 @@
       "signal_kind": "enhanced_investment"
     },
     {
-      "dispatch_id": "DSP-20260617-015",
+      "dispatch_id": "DSP-20260617-017",
       "title": "CARICOM: 3 active procurements — bidding window open",
       "persona_key": "regional_operator",
       "persona_label": "Regional Operator",
@@ -175,7 +176,7 @@
       "signal_kind": "development_pipeline"
     },
     {
-      "dispatch_id": "DSP-20260617-016",
+      "dispatch_id": "DSP-20260617-018",
       "title": "CARICOM: 3 active procurements — bidding window open",
       "persona_key": "procurement_watcher",
       "persona_label": "Procurement Watcher",
@@ -190,7 +191,7 @@
       "signal_kind": "development_pipeline"
     },
     {
-      "dispatch_id": "DSP-20260617-017",
+      "dispatch_id": "DSP-20260617-019",
       "title": "CARICOM: 3 active procurements — bidding window open",
       "persona_key": "founder_operator",
       "persona_label": "Regional Founder/Operator",
@@ -205,7 +206,7 @@
       "signal_kind": "development_pipeline"
     },
     {
-      "dispatch_id": "DSP-20260617-030",
+      "dispatch_id": "DSP-20260617-032",
       "title": "Belize: signal detected",
       "persona_key": "regional_operator",
       "persona_label": "Regional Operator",
@@ -220,7 +221,7 @@
       "signal_kind": "supply_chain_signal"
     },
     {
-      "dispatch_id": "DSP-20260617-031",
+      "dispatch_id": "DSP-20260617-033",
       "title": "Belize: signal detected",
       "persona_key": "procurement_watcher",
       "persona_label": "Procurement Watcher",
@@ -235,7 +236,7 @@
       "signal_kind": "supply_chain_signal"
     },
     {
-      "dispatch_id": "DSP-20260617-032",
+      "dispatch_id": "DSP-20260617-034",
       "title": "Belize: signal detected",
       "persona_key": "founder_operator",
       "persona_label": "Regional Founder/Operator",
@@ -340,7 +341,7 @@
       "signal_kind": "investment_signal"
     },
     {
-      "dispatch_id": "DSP-20260617-018",
+      "dispatch_id": "DSP-20260617-020",
       "title": "Capital convergence: 8 Caribbean economies showing multi-source investment momentum",
       "persona_key": "diaspora_investor",
       "persona_label": "Diaspora Investor",
@@ -355,7 +356,7 @@
       "signal_kind": "enhanced_investment"
     },
     {
-      "dispatch_id": "DSP-20260617-019",
+      "dispatch_id": "DSP-20260617-021",
       "title": "Capital convergence: 8 Caribbean economies showing multi-source investment momentum",
       "persona_key": "ecosystem_builder",
       "persona_label": "Ecosystem Builder",
@@ -370,7 +371,7 @@
       "signal_kind": "enhanced_investment"
     },
     {
-      "dispatch_id": "DSP-20260617-020",
+      "dispatch_id": "DSP-20260617-022",
       "title": "Capital convergence: 8 Caribbean economies showing multi-source investment momentum",
       "persona_key": "founder_operator",
       "persona_label": "Regional Founder/Operator",
@@ -385,7 +386,7 @@
       "signal_kind": "enhanced_investment"
     },
     {
-      "dispatch_id": "DSP-20260617-013",
+      "dispatch_id": "DSP-20260617-015",
       "title": "CARICOM: food supply indicators shifting — supply chain implications",
       "persona_key": "ecosystem_builder",
       "persona_label": "Ecosystem Builder",
@@ -400,7 +401,7 @@
       "signal_kind": "food_security"
     },
     {
-      "dispatch_id": "DSP-20260617-014",
+      "dispatch_id": "DSP-20260617-016",
       "title": "CARICOM: food supply indicators shifting — supply chain implications",
       "persona_key": "policy_media",
       "persona_label": "Policy/Media",
@@ -503,6 +504,36 @@
       "country_cluster": "Suriname",
       "confidence_score": 56,
       "signal_kind": "economic_vulnerability"
+    },
+    {
+      "dispatch_id": "DSP-20260617-013",
+      "title": "Guyana: GDP growth signals expanding tourist economy",
+      "persona_key": "tourism_logistics_operator",
+      "persona_label": "Tourism/Logistics Operator",
+      "channel": "Telegram",
+      "delivery_status": "delivered",
+      "action_window": "30 days",
+      "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
+      "target_artifact_path": "outbox/dispatch_packets/tourism_logistics_operator.md",
+      "cycle_id": "20260617",
+      "country_cluster": "Guyana",
+      "confidence_score": 51,
+      "signal_kind": "tourism_impact"
+    },
+    {
+      "dispatch_id": "DSP-20260617-014",
+      "title": "Guyana: GDP growth signals expanding tourist economy",
+      "persona_key": "founder_operator",
+      "persona_label": "Regional Founder/Operator",
+      "channel": "Telegram",
+      "delivery_status": "delivered",
+      "action_window": "30 days",
+      "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
+      "target_artifact_path": "outbox/dispatch_packets/founder_operator.md",
+      "cycle_id": "20260617",
+      "country_cluster": "Guyana",
+      "confidence_score": 51,
+      "signal_kind": "tourism_impact"
     }
   ]
 }

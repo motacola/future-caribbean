@@ -1,6 +1,6 @@
 # Caribbean Opportunity Dispatch — Judge Brief
 
-Generated: 2026-06-17 22:25 UTC
+Generated: 2026-06-17 22:29 UTC
 
 ## What This Proves
 
@@ -29,41 +29,47 @@ Caribbean Opportunity Dispatch is the product. Caribbean Signal OS is the archit
    Audience: investor/founder via Email brief + Telegram
    Decision: Immediate investigation. Barbados has multi-source investment validation (3 signals converging). Priority: assess market entry options, identify existing operators.
 
-**2.** 🔴 **🏗️ Pipeline — CARICOM** — sustained
+**2.** 🔴 **💎 Investment — Dominica** — sustained
+   Narrative: Dominica: +24.9% multi-source investment validated — opportunity active
+   Score: 100/100 | Grade: A - multi-source
+   Audience: investor/founder via Email brief + Telegram
+   Decision: Immediate investigation. Dominica has multi-source investment validation (3 signals converging). Priority: assess market entry options, identify existing operators.
+
+**3.** 🔴 **🏗️ Pipeline — CARICOM** — sustained
    Narrative: CARICOM: 3 active procurements — bidding window open
    Score: 96/100 | Grade: B - cross-source
    Audience: investor/founder via Email brief + Telegram
    Decision: Active procurement pipeline: CDB active procurement notices: 3. Priority: review CDB/IDB opportunities as lead list for project-based entry.
 
-**3.** 🔴 **💼 Investment — Guyana** — sustained
+**4.** 🔴 **supply_chain_signal — Belize** — sustained
+   Narrative: Belize: signal detected
+   Score: 94/100 | Grade: A - multi-source
+   Audience: regional intelligence via Telegram digest
+   Decision: Immediate — Belize: supply_chain_signal (signal detected). Validate locally.
+
+**5.** 🔴 **💼 Investment — Guyana** — sustained
    Narrative: Guyana: FDI trending at +860.3% — screening trigger active
    Score: 90/100 | Grade: B - cross-source
    Audience: investor/founder via Email brief + Telegram
    Decision: Immediate investigation. Guyana FDI signal (860.3% change) with active development datasets. Validate with local market intel.
 
-**4.** 🟡 **💼 Investment — St. Kitts and Nevis** — sustained
+**6.** 🟡 **💼 Investment — St. Kitts and Nevis** — sustained
    Narrative: St. Kitts and Nevis: FDI trending at +41.1% — screening trigger active
    Score: 78/100 | Grade: B - cross-source
    Audience: investor/founder via Email brief + Telegram
    Decision: Validation priority. St. Kitts and Nevis FDI movement (41.1% change) signals opportunity. Cross-reference with sector data.
 
-**5.** 🟢 **⚠️ Vulnerability — St. Vincent and the Grenadines** — sustained
+**7.** 🟢 **⚠️ Vulnerability — St. Vincent and the Grenadines** — sustained
    Narrative: St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended
    Score: 69/100 | Grade: C - single-source
    Audience: policy/operator via Telegram digest
    Decision: Monitor. St. Vincent and the Grenadines showing economic stress (18.00%). Track next cycle. Escalates if additional stress indicators appear or existing ones worsen.
 
-**6.** 🟢 **⚠️ Vulnerability — Suriname** — sustained
+**8.** 🟢 **⚠️ Vulnerability — Suriname** — sustained
    Narrative: Suriname: economic stress indicators rising — portfolio review recommended
    Score: 56/100 | Grade: C - single-source
    Audience: policy/operator via Telegram digest
    Decision: Monitor. Suriname showing economic stress (16.23%). Track next cycle. Escalates if additional stress indicators appear or existing ones worsen.
-
-**7.** ⚪ **🏖️ Tourism — Antigua and Barbuda** — sustained
-   Narrative: Antigua and Barbuda: GDP growth signals expanding tourist economy
-   Score: 47/100 | Grade: C - single-source
-   Audience: tourism operator via Telegram digest
-   Decision: Context. Antigua and Barbuda GDP data point for tourism sector awareness.
 
 ## Routing Rationale
 

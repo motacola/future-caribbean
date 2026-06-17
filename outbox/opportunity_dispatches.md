@@ -1,7 +1,7 @@
 # Caribbean Opportunity Dispatch — Cycle 20260617
 
-Generated: 2026-06-17 22:25 UTC
-Total dispatches: 32
+Generated: 2026-06-17 22:29 UTC
+Total dispatches: 34
 
 ## ✅ Delivered Dispatches
 
@@ -95,4 +95,4 @@ Total dispatches: 32
    Why this persona: Supply chain gaps + procurement pipeline = where to build logistics, warehousing, or last-mile servi
    Action: Supply chain gap in Belize confirmed. Procurement pipeline + stable maritime = build warehousing, transport, or last-mile services here.
 
-*...and 17 more delivered dispatches*
+*...and 19 more delivered dispatches*
