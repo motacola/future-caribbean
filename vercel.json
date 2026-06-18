@@ -1,6 +1,8 @@
 {
   "functions": {
-    "api/**/*.py": {}
+    "api/**/*.py": {
+      "runtime": "@vercel/python"
+    }
   },
   "rewrites": [
     { "source": "/build", "destination": "/configurator.html" },
