@@ -8,23 +8,40 @@
     { "src": "data/history/**", "use": "@vercel/static" }
   ],
   "routes": [
+    {
+      "src": "/api/tools.json",
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, DELETE, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type"
+      },
+      "dest": "/api/tools.py"
+    },
+    {
+      "src": "/api/validation-packs/(.+)",
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, DELETE, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type"
+      },
+      "dest": "/api/validation-packs.py?id=$1"
+    },
+    {
+      "src": "/api/([^/]+)",
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, DELETE, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type"
+      },
+      "dest": "/api/$1.py"
+    },
     { "src": "/build", "dest": "/configurator.html" },
     { "src": "/feed.xml", "dest": "/outbox/feed.xml" },
-    { "src": "/api/tools.json", "dest": "/api/tools" },
-    { "src": "/api/validation-packs/(.+)", "dest": "/api/validation-packs?id=$1" },
-    { "src": "/api/(.*)", "dest": "/api/$1" },
     { "src": "/data/history/(.*)", "dest": "/data/history/$1" },
     { "src": "/llms.txt", "dest": "/llms.txt" },
     { "src": "/agents.md", "dest": "/agents.md" },
     { "src": "/", "dest": "/dashboard.html" },
     { "src": "/(.*)", "dest": "/dashboard.html" }
-  ],
-  "headers": [
-    { "source": "/(.*)", "headers": [
-      { "key": "Access-Control-Allow-Origin", "value": "*" },
-      { "key": "Access-Control-Allow-Methods", "value": "GET, POST, OPTIONS" },
-      { "key": "Access-Control-Allow-Headers", "value": "Content-Type" }
-    ]}
   ],
   "crons": [],
   "regions": ["iad1"]
