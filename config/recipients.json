@@ -145,6 +145,38 @@
         "procurement_watcher": "CDB procurement aligned with maritime stability = viable logistics corridors for project-based entry",
         "founder_operator": "Supply chain gaps + procurement pipeline = where to build logistics, warehousing, or last-mile services"
       }
+    },
+    "ccrif_payout": {
+      "personas": ["diaspora_investor", "policy_media", "operator_resilience", "ecosystem_builder"],
+      "action_window": "7 days",
+      "decision_to_influence": "Insurance capital deployment for reconstruction / parametric trigger validation",
+      "routing_rationale": {
+        "diaspora_investor": "CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens",
+        "policy_media": "Parametric payout = quantified sovereign risk event = fiscal impact story",
+        "operator_resilience": "Payout confirms hazard severity = operational recovery capital available",
+        "ecosystem_builder": "Payout triggers regional reconstruction = supply chain, logistics, construction pipeline"
+      }
+    },
+    "eccb_credit_surge": {
+      "personas": ["diaspora_investor", "founder_operator", "ecosystem_builder", "regional_operator"],
+      "action_window": "21 days",
+      "decision_to_influence": "Private sector credit expansion = banking confidence = investment timing signal",
+      "routing_rationale": {
+        "diaspora_investor": "Credit surge = banking system confidence = deploy capital alongside local lending",
+        "founder_operator": "Credit growth = working capital available = demand for local goods/services rising",
+        "ecosystem_builder": "Credit expansion = fintech, SME lending, financial inclusion opportunities",
+        "regional_operator": "Deposit growth = local liquidity = procurement and supply chain capacity"
+      }
+    },
+    "eccb_deposit_growth": {
+      "personas": ["diaspora_investor", "ecosystem_builder", "regional_operator"],
+      "action_window": "30 days",
+      "decision_to_influence": "Deposit base expansion = currency union stability = confidence signal",
+      "routing_rationale": {
+        "diaspora_investor": "Deposit growth = institutional confidence = favorable capital environment",
+        "ecosystem_builder": "Deposit surge = remittance inflow or FDI settlement = ecosystem liquidity",
+        "regional_operator": "Deposit base = procurement capacity payment assurance"
+      }
     }
   }
 }

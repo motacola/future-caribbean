@@ -1,6 +1,6 @@
-# Channel Dispatch Log — Cycle 20260617
+# Channel Dispatch Log — Cycle 20260618
 
-Generated: 2026-06-17 22:29 UTC
+Generated: 2026-06-18 00:38 UTC
 
 Per-channel routing plan for this cycle. Live send receipts are written to `outbox/live_send_log.md` after each delivery run.
 
@@ -16,9 +16,9 @@ Per-channel routing plan for this cycle. Live send receipts are written to `outb
 - [✓] Belize: +701.0% multi-source capital surge — market entry window open
 - [✓] St. Vincent and the Grenadines: +88.2% multi-source investment validated — opportunity active
 - [✓] Regional FDI snapshot: 8 countries with active capital movement
+- [✓] Capital convergence: 8 Caribbean economies showing multi-source investment momentum
 - [✓] Guyana: FDI trending at +860.3% — screening trigger active
 - [✓] Belize: FDI trending at +701.0% — screening trigger active
-- [✓] Capital convergence: 8 Caribbean economies showing multi-source investment momentum
 - [✓] St. Vincent and the Grenadines: FDI trending at +88.2% — screening trigger active
 - [✓] St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended
 - [✓] Suriname: economic stress indicators rising — portfolio review recommended
@@ -37,15 +37,13 @@ Per-channel routing plan for this cycle. Live send receipts are written to `outb
 - [✓] Belize: signal detected
 - [✓] Belize: signal detected
 - [✓] Regional FDI snapshot: 8 countries with active capital movement
+- [✓] Capital convergence: 8 Caribbean economies showing multi-source investment momentum
+- [✓] Capital convergence: 8 Caribbean economies showing multi-source investment momentum
 - [✓] Guyana: FDI trending at +860.3% — screening trigger active
 - [✓] Belize: FDI trending at +701.0% — screening trigger active
-- [✓] Capital convergence: 8 Caribbean economies showing multi-source investment momentum
-- [✓] Capital convergence: 8 Caribbean economies showing multi-source investment momentum
-- [✓] CARICOM: food supply indicators shifting — supply chain implications
 - [✓] St. Vincent and the Grenadines: FDI trending at +88.2% — screening trigger active
-- [✓] Guyana: GDP growth signals expanding tourist economy
-- [✓] Guyana: GDP growth signals expanding tourist economy
-- **19 dispatches routed to Telegram**
+- [✓] CARICOM: food supply indicators shifting — supply chain implications
+- **17 dispatches routed to Telegram**
 
 ## Telegram digest
 

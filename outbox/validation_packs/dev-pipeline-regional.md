@@ -1,9 +1,9 @@
 # Opportunity Validation Pack — CARICOM
 
-- Signal: `dev-pipeline-regional` · Dispatch: `DSP-20260617-017`
-- Confidence: 96/100 · B - cross-source
-- Recommendation: **HOLD** — Signal confidence 96/100 with 1 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.
-- Last validated: 2026-06-17T22:29:47.414719+00:00
+- Signal: `dev-pipeline-regional` · Dispatch: `DSP-20260618-015`
+- Confidence: 95/100 · B - cross-source
+- Recommendation: **HOLD** — Signal confidence 95/100 with 1 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.
+- Last validated: 2026-06-18T00:38:45.114504+00:00
 
 ## Sector hypotheses
 - None identified this cycle

@@ -998,6 +998,27 @@ Future files likely:
 - `agent/retrieval.py` — artifact/context retrieval with citations
 - `distributors/telegram_agent.py` — Telegram reply handler using same query functions
 
+---
+
+## Later Version / Nice to Have: Optional ML Sidecar
+
+**Discussion capture (2026-06-17):** Whether to add PyTorch/ML to deepen the moot.
+
+**Decision:** **No — stay deterministic in core.** The moat is *auditable coordination*: cited answers, deterministic rules, agent-agnostic protocol. PyTorch makes you "another AI tool."
+
+**When it would make sense (separate repo: `signal-fabric-ml/`):**
+
+| Use Case | Approach |
+|----------|----------|
+| Semantic deduplication across cycles | Local embeddings + FAISS sidecar |
+| Anomaly detection on NDBC buoy time series | Tiny LSTM forecaster sidecar |
+| Signal classification for new source types | Fine-tuned DistilBERT sidecar |
+| Sector hypothesis generation from unstructured text | Local LLM (Gemma/Llama) constrained to retrieved artifacts |
+
+**Interfaces:** Sidecar exposes gRPC/HTTP (`/ml/deduplicate`, `/ml/anomaly`, `/ml/classify`). Core stays deterministic; sidecar is optional enhancer.
+
+**Revisit trigger:** When signal volume >500/cycle OR new unstructured sources (satellite imagery, social media, PDFs) need classification at scale.
+
 Future endpoints:
 
 - `GET /api/context`

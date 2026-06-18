@@ -35,6 +35,8 @@ run_step "World Bank" "python3 \"$ROOT/watchers/world_bank_poller.py\"" "world_b
 run_step "IDB CKAN" "python3 \"$ROOT/watchers/idb_ckan_poller.py\"" "idb_ckan"
 run_step "Tier 2 (CARICOM + CDB)" "python3 \"$ROOT/watchers/tier2_scraper.py\"" "tier2"
 run_step "Tenders (Guyana eProcure)" "python3 \"$ROOT/watchers/tenders_poller.py\"" "tenders"
+run_step "CCRIF (Parametric Payouts)" "python3 \"$ROOT/watchers/ccrif_poller.py\"" "ccrif"
+run_step "ECCB (Monetary Stats)" "python3 \"$ROOT/watchers/eccb_poller.py\"" "eccb"
 
 # ── Fast data (always runs) ───────────────────────────────
 run_step "NOAA NWS" "python3 \"$ROOT/watchers/noaa_nws_poller.py\"" "noaa_nws"
@@ -64,6 +66,7 @@ run_step "Opportunity Dispatch" "python3 \"$ROOT/packagers/opportunity_dispatch.
 run_step "Validation Packs" "python3 \"$ROOT/packagers/validation_pack_generator.py\"" "validation_packs"
 run_step "RSS Feed" "python3 \"$ROOT/packagers/rss_feed.py\"" "rss_feed"
 run_step "Track Record" "python3 \"$ROOT/packagers/track_record.py\"" "track_record"
+run_step "Backtest Report" "python3 \"$ROOT/packagers/backtest_report.py\"" "backtest_report"
 run_step "Dispatch Desk" "python3 \"$ROOT/packagers/dispatch_desk.py\"" "dispatch_desk"
 run_step "Climate Dispatch (2nd instance)" "python3 \"$ROOT/packagers/climate_dispatch.py\"" "climate_dispatch"
 run_step "Reasoning Agent (cross-signal synthesis)" "python3 \"$ROOT/reasoners/synthesis.py\"" "reasoning"

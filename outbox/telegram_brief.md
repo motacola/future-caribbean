@@ -1,11 +1,11 @@
 🌴 *Signal Fabric — Decision Routes Ready*
-Cycle: `20260617` · 2026-06-17 22:29 UTC
+Cycle: `20260618` · 2026-06-18 00:38 UTC
 
 *What this is:*
 A Dispatch Desk notification. The product is the decision route: signal → persona → action → feedback. Telegram is only the delivery channel.
 
 *Open Track coordination chain this cycle*
-Data → 14 signal clusters → 34 persona routes → 7 personas → action/capital decisions
+Data → 13 signal clusters → 32 persona routes → 6 personas → action/capital decisions
 
 *Priority decision clusters*
 1) *Guyana: +860.3% multi-source capital surge — market entry window open*
@@ -36,10 +36,10 @@ Data → 14 signal clusters → 34 persona routes → 7 personas → action/capi
    Loop: Feedback this cycle: 3 ignored.
 
 *Feedback-adjusted priority*
-• St. Vincent and the Grenadines economic vulnerability upranked +9
-• St. Vincent and the Grenadines enhanced investment downranked -6
-• Belize supply chain signal downranked -6
-• Guyana enhanced investment upranked +5
+• St. Vincent and the Grenadines enhanced investment downranked -9
+• Belize supply chain signal downranked -9
+• St. Vincent and the Grenadines economic vulnerability upranked +8
+• Guyana investment signal downranked -6
 
 *Open the product surface*
 • `outbox/dispatch_desk.md` — judge/user-facing decision desk

@@ -1,5 +1,5 @@
 🌴 **Caribbean Opportunity Brief** — what's moving this week
-Cycle 20260617 • 2026-06-17 22:29 UTC
+Cycle 20260618 • 2026-06-18 00:38 UTC
 
 Plain-language signals for builders, business owners, and community leaders.
 No jargon. Just what matters for your next move.
@@ -28,12 +28,12 @@ No jargon. Just what matters for your next move.
 
 5. **Guyana**: foreign investment spiking — worth watching — 860.3% movement
    Investment noise in your market. Could mean competitors coming or demand growing. (holding steady)
-   🔴 High confidence — multiple sources agree
+   🟡 Solid signal — some corroboration
    📊 Cross-source validation
 
 6. **Belize**: foreign investment spiking — worth watching — 701.0% movement
    Investment noise in your market. Could mean competitors coming or demand growing. (holding steady)
-   🔴 High confidence — multiple sources agree
+   🟡 Solid signal — some corroboration
    📊 Cross-source validation
 
 ---

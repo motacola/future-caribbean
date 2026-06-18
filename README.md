@@ -110,6 +110,27 @@ All sources are public, free, and require no API keys:
 | **NDBC Buoys** | Tabular text | 6 buoys: wind, pressure, wave height |
 | **CARICOM Statistics** | WordPress REST API | 126 datasets |
 | **CDB** | RSS feed | Procurement notices, evaluation reports |
+| **CCRIF SPC** | Web scraping | Parametric insurance payouts (tropical cyclone, earthquake, excess rainfall) |
+| **ECCB** | Web scraping | Monetary & financial stats (private credit, deposits, NFA, total assets) |
+
+## Signal Types (Composite Rules)
+
+| Signal | Priority | Sources | Description |
+|---|---|---|---|
+| 🌀 Cyclone Risk | High | NDBC + NOAA | Buoy pressure drop + marine advisory |
+| 🚢 Maritime Hazard | Medium | NDBC + NOAA | High wind + marine alert |
+| 💼 Investment Signal | Medium | WB + IDB | FDI surge + IDB project match |
+| 💎 Enhanced Investment | Medium | WB + CARICOM + CDB | Triple-source FDI validation |
+| ⚠️ Economic Vulnerability | Medium | WB | High inflation + unemployment |
+| 🏖️ Tourism Impact | Low | WB + NOAA | GDP growth + no wind advisory |
+| 🌾 Food Security | Medium | CARICOM + WB | Food trade datasets + inflation cross-ref |
+| 🏗️ Development Pipeline | Medium | CDB + IDB | Active procurement + infra projects |
+| 🔗 Supply Chain Opportunity | Medium | CDB + NDBC + CARICOM | Procurement + stable maritime + logistics data |
+| 💰 CCRIF Parametric Payout | High | CCRIF | Insurance payout ≥$1M = verified hazard + capital |
+| 🏦 ECCB Credit Surge | Medium | ECCB | Private credit + deposits + NFA growth |
+| 🏦 ECCB Deposit Growth | Medium | ECCB | Deposit base expansion = stability signal |
+| 🌪️ Tropical Development | High | NHC + NOAA | High-probability cyclone formation |
+| 🌀 Active Storm | High | NHC | Named storm with track data |
 
 ## Run
 

@@ -1,6 +1,6 @@
 {
   "cycle_intro": "Lead: Belize. 3 converging signal(s) across 5 source(s). Signals: \ud83d\udcbc Investment + \ud83d\udc8e Investment + supply_chain_signal.",
-  "generated_at": "2026-06-17 22:29 UTC",
+  "generated_at": "2026-06-18 00:38 UTC",
   "items": [
     {
       "band": "immediate",
@@ -23,24 +23,6 @@
     {
       "band": "immediate",
       "channel": "Email brief + Telegram",
-      "country": "Dominica",
-      "freshness": "sustained",
-      "kind": "enhanced_investment",
-      "metrics": {
-        "decision_changed": null,
-        "forwarded": null,
-        "opened": null,
-        "reply_count": null,
-        "sent": false
-      },
-      "persona": "investor/founder",
-      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 100,
-      "signal_id": "enhanced-invest-dominica"
-    },
-    {
-      "band": "immediate",
-      "channel": "Email brief + Telegram",
       "country": "Belize",
       "freshness": "sustained",
       "kind": "enhanced_investment",
@@ -59,6 +41,24 @@
     {
       "band": "immediate",
       "channel": "Email brief + Telegram",
+      "country": "Dominica",
+      "freshness": "sustained",
+      "kind": "enhanced_investment",
+      "metrics": {
+        "decision_changed": null,
+        "forwarded": null,
+        "opened": null,
+        "reply_count": null,
+        "sent": false
+      },
+      "persona": "investor/founder",
+      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
+      "score": 100,
+      "signal_id": "enhanced-invest-dominica"
+    },
+    {
+      "band": "immediate",
+      "channel": "Email brief + Telegram",
       "country": "CARICOM",
       "freshness": "sustained",
       "kind": "development_pipeline",
@@ -71,11 +71,11 @@
       },
       "persona": "investor/founder",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 96,
+      "score": 95,
       "signal_id": "dev-pipeline-regional"
     },
     {
-      "band": "immediate",
+      "band": "validation",
       "channel": "Email brief + Telegram",
       "country": "Guyana",
       "freshness": "sustained",
@@ -89,7 +89,7 @@
       },
       "persona": "investor/founder",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 90,
+      "score": 88,
       "signal_id": "invest-guyana"
     },
     {
@@ -143,7 +143,7 @@
       },
       "persona": "policy/operator",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 69,
+      "score": 68,
       "signal_id": "vuln-st.-vincent-and-the-grenadines"
     },
     {

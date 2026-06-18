@@ -2,7 +2,7 @@
 
 **Decision job:** Operational readiness and bid pipeline assessment
 **Delivery channel:** Telegram
-**Generated:** Jun 17, 2026 at 22:29 UTC
+**Generated:** Jun 18, 2026 at 00:38 UTC
 **Dispatches in this packet:** 2
 
 ---
@@ -11,7 +11,7 @@
 
 ### 1. CARICOM: 3 active procurements — bidding window open
 
-**ID:** `DSP-20260617-017` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 96/100 | B - cross-source
+**ID:** `DSP-20260618-015` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 95/100 | B - cross-source
 **Channel:** Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** replied
 
@@ -25,7 +25,7 @@
 
 ### 2. Belize: signal detected
 
-**ID:** `DSP-20260617-032` | **Country:** Belize | **Confidence:** 🔴 Immediate | 94/100 | A - multi-source
+**ID:** `DSP-20260618-030` | **Country:** Belize | **Confidence:** 🔴 Immediate | 91/100 | A - multi-source
 **Channel:** Telegram | **Window:** 21 days | **Freshness:** sustained
 **Feedback status:** ignored
 

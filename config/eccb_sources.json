@@ -1,0 +1,34 @@
+{
+  "base_url": "https://www.eccb-centralbank.org",
+  "source_name": "Eastern Caribbean Central Bank",
+  "statistics_pages": {
+    "monetary_survey": "https://www.eccb-centralbank.org/statistics-category/monetary-and-financial-statistics/summarized-monetary-survey",
+    "key_financial_stats": "https://www.eccb-centralbank.org/statistics"
+  },
+  "member_countries": [
+    "AG", "DM", "GD", "KN", "LC", "MS", "VC"
+  ],
+  "indicators": {
+    "private_sector_credit": {
+      "label": "Private Sector Credit EC$M",
+      "kind": "currency",
+      "signal_threshold_pct": 5
+    },
+    "total_deposits": {
+      "label": "Total Deposits EC$M",
+      "kind": "currency",
+      "signal_threshold_pct": 3
+    },
+    "net_foreign_assets": {
+      "label": "Net Foreign Assets EC$M",
+      "kind": "currency",
+      "signal_threshold_pct": 10
+    },
+    "total_assets": {
+      "label": "Total Assets EC$M",
+      "kind": "currency",
+      "signal_threshold_pct": 2
+    }
+  },
+  "signal_threshold_pct": 5
+}

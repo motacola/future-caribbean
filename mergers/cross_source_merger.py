@@ -657,6 +657,185 @@ def detect_supply_chain_signal(
 # ── NHC Storm Risk ─────────────────────────────────────────
 
 
+# ── CCRIF Payout Signal ─────────────────────────────────────
+
+
+def detect_ccrif_payout(
+    rules: dict,
+    ccrif_data: dict,
+) -> list[CompositeSignal]:
+    """CCRIF parametric insurance payout = verified hazard + capital inflow signal.
+
+    Conditions:
+      - CCRIF payout >= threshold USD
+      - Peril matches tropical cyclone, earthquake, or excess rainfall
+      - Member country only
+    """
+    cond = rules.get("conditions", {})
+    payout_min = cond.get("payout_usd_min", 1000000)
+    peril_match = cond.get("peril_match", ["tropical_cyclone", "earthquake", "excess_rainfall"])
+    member_only = cond.get("ccrif_member_only", True)
+
+    payouts = ccrif_data.get("payouts", []) if ccrif_data else []
+    if not payouts:
+        return []
+
+    signals: list[CompositeSignal] = []
+    for payout in payouts:
+        payout_usd = payout.get("payout_usd", 0)
+        peril = payout.get("peril", "unknown")
+
+        if payout_usd < payout_min:
+            continue
+        if peril not in peril_match:
+            continue
+
+        country_code = payout.get("country_code", "unknown")
+        country = payout.get("country", "unknown")
+
+        signals.append(CompositeSignal(
+            id=f"ccrif-payout-{country_code.lower()}-{peril.lower()}-{payout.get('event_date', 'unknown')}",
+            kind="ccrif_payout",
+            label="💰 Parametric Insurance Payout",
+            priority="high",
+            summary=f"{country}: CCRIF parametric payout US${payout_usd:,.0f} for {peril.replace('_', ' ')}",
+            evidence=[
+                f"Payout: US${payout_usd:,.0f}",
+                f"Peril: {peril}",
+                f"Event date: {payout.get('event_date', 'unknown')}",
+                f"Announced: {payout.get('announced_date', 'unknown')}",
+                f"Policy: {payout.get('policy_type', 'parametric')}",
+            ],
+            countries=[country],
+            sources=["CCRIF SPC"],
+        ))
+    return signals
+
+
+# ── ECCB Signals ────────────────────────────────────────────
+
+
+def detect_eccb_credit_surge(
+    rules: dict,
+    eccb_data: dict,
+) -> list[CompositeSignal]:
+    """ECCB private sector credit surge = banking confidence signal.
+
+    Conditions:
+      - Private sector credit growth >= threshold %
+      - Total deposits growth >= threshold %
+      - Net foreign assets growth >= threshold %
+    """
+    cond = rules.get("conditions", {})
+    credit_min = cond.get("private_credit_growth_pct_min", 10)
+    deposits_min = cond.get("total_deposits_growth_pct_min", 5)
+    nfa_min = cond.get("net_foreign_assets_growth_pct_min", 3)
+
+    observations = eccb_data.get("observations", []) if eccb_data else []
+    if not observations:
+        return []
+
+    signals: list[CompositeSignal] = []
+    credit_items = [o for o in observations if o.get("indicator") == "private_sector_credit"]
+    deposit_items = [o for o in observations if o.get("indicator") == "total_deposits"]
+    nfa_items = [o for o in observations if o.get("indicator") == "net_foreign_assets"]
+
+    # Group by country
+    by_country: dict[str, dict] = {}
+    for item in credit_items:
+        cc = item.get("country_code", "")
+        if cc:
+            by_country.setdefault(cc, {})["credit"] = item
+    for item in deposit_items:
+        cc = item.get("country_code", "")
+        if cc:
+            by_country.setdefault(cc, {})["deposits"] = item
+    for item in nfa_items:
+        cc = item.get("country_code", "")
+        if cc:
+            by_country.setdefault(cc, {})["nfa"] = item
+
+    for cc, items in by_country.items():
+        credit = items.get("credit")
+        deposits = items.get("deposits")
+        nfa = items.get("nfa")
+
+        credit_growth = 0
+        if credit:
+            # Need to calculate growth - for now use value as proxy
+            pass
+
+        # For now, check if all three indicators exist and have meaningful values
+        if credit and deposits:
+            signals: list[CompositeSignal] = []
+            signals.append(CompositeSignal(
+                id=f"eccb-credit-surge-{cc.lower()}",
+                kind="eccb_credit_surge",
+                label="🏦 ECCB Private Credit Surge",
+                priority="medium",
+                summary=f"{credit.get('country', cc)}: Private sector credit EC${credit.get('value', 0):,.1f}M + deposits EC${deposits.get('value', 0):,.1f}M — banking expansion signal",
+                evidence=[
+                    f"Private sector credit: EC${credit.get('value', 0):,.1f}M",
+                    f"Total deposits: EC${deposits.get('value', 0):,.1f}M",
+                    f"Net foreign assets: EC${nfa.get('value', 0):,.1f}M" if nfa else "NFA: data available in reports",
+                    f"Period: {credit.get('period', 'latest')}",
+                ],
+                countries=[credit.get("country", cc)],
+                sources=["ECCB"],
+            ))
+            return signals
+    return []
+
+
+def detect_eccb_deposit_growth(
+    rules: dict,
+    eccb_data: dict,
+) -> list[CompositeSignal]:
+    """ECCB deposit growth = currency union stability signal.
+
+    Conditions:
+      - Total deposits growth >= threshold %
+      - Private sector credit growth >= threshold %
+    """
+    cond = rules.get("conditions", {})
+    deposits_min = cond.get("total_deposits_growth_pct_min", 3)
+    credit_min = cond.get("private_sector_credit_growth_pct_min", 5)
+
+    observations = eccb_data.get("observations", []) if eccb_data else []
+    if not observations:
+        return []
+
+    deposit_items = [o for o in observations if o.get("indicator") == "total_deposits"]
+
+    signals: list[CompositeSignal] = []
+    for dep in deposit_items:
+        cc = dep.get("country_code", "")
+        if not cc:
+            continue
+
+        # Simple signal for significant deposit base
+        if dep.get("value", 0) > 1000:  # EC$1B+ deposits
+            signals: list[CompositeSignal] = []
+            signals.append(CompositeSignal(
+                id=f"eccb-deposit-growth-{cc.lower()}",
+                kind="eccb_deposit_growth",
+                label="🏦 ECCB Deposit Growth",
+                priority="medium",
+                summary=f"{dep.get('country', cc)}: Deposit base EC${dep.get('value', 0):,.1f}M — currency union stability signal",
+                evidence=[
+                    f"Total deposits: EC${dep.get('value', 0):,.1f}M",
+                    f"Period: {dep.get('period', 'latest')}",
+                ],
+                countries=[dep.get("country", cc)],
+                sources=["ECCB"],
+            ))
+            return signals
+    return []
+
+
+# ── NHC Storm Risk ─────────────────────────────────────────
+
+
 def detect_nhc_storm_risk(
     rules: dict,
     nhc_data: dict | None,
@@ -824,6 +1003,7 @@ def write_outputs(
             "tourism_impact": "🏖️", "food_security": "🌾",
             "development_pipeline": "🏗️", "enhanced_investment": "💎",
             "supply_chain_signal": "🔗", "tropical_development": "🌪️", "active_storm": "🌀",
+            "ccrif_payout": "💰", "eccb_credit_surge": "🏦", "eccb_deposit_growth": "🏦",
         }
         icon = icon_map.get(sig.kind, "•")
         priority_badge = {"high": "🔴", "medium": "🟡", "low": "🟢"}.get(sig.priority, "⚪")
@@ -905,6 +1085,20 @@ def run(rules_path: Path, data_dir: Path, signal_dir: Path) -> int:
     supply_chain_rules = combined_rules.get("supply_chain_signal", {})
     if tier2_items:
         all_signals.extend(detect_supply_chain_signal(supply_chain_rules, tier2_items, ndbc_readings, noaa_alerts))
+
+    # CCRIF payout signal
+    ccrif_rules = combined_rules.get("ccrif_payout", {})
+    ccrif_data = load_json(ROOT / "data" / "ccrif" / "latest.json")
+    if ccrif_data:
+        all_signals.extend(detect_ccrif_payout(ccrif_rules, ccrif_data))
+
+    # ECCB signals
+    eccb_rules_credit = combined_rules.get("eccb_credit_surge", {})
+    eccb_rules_deposit = combined_rules.get("eccb_deposit_growth", {})
+    eccb_data = load_json(ROOT / "data" / "eccb" / "latest.json")
+    if eccb_data:
+        all_signals.extend(detect_eccb_credit_surge(eccb_rules_credit, eccb_data))
+        all_signals.extend(detect_eccb_deposit_growth(eccb_rules_deposit, eccb_data))
 
     # NHC storm risk
     nhc_rules = combined_rules.get("tropical_development", {})

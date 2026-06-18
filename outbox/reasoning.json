@@ -1,16 +1,16 @@
 {
   "engine": "deterministic",
   "model": null,
-  "generated_at": "2026-06-17T22:29:47.738075+00:00",
+  "generated_at": "2026-06-18T00:38:45.463935+00:00",
   "thesis": "Capital momentum is led by Guyana (+860%), with Belize, St. Vincent and the Grenadines also moving. St. Vincent and the Grenadines show investment interest AND elevated vulnerability in the same cycle \u2014 diligence before capital, not after.",
   "connections": [
     "St. Vincent and the Grenadines: investment signal \u00d7 vulnerability flag \u2014 validate before deploying",
-    "Guyana: 3 converging signal types (enhanced_investment, investment_signal, tourism_impact)",
+    "Guyana: 2 converging signal types (enhanced_investment, investment_signal)",
     "Belize: 3 converging signal types (enhanced_investment, investment_signal, supply_chain_signal)",
     "St. Vincent and the Grenadines: 3 converging signal types (economic_vulnerability, enhanced_investment, investment_signal)"
   ],
   "stats": {
-    "economic_signals": 14,
+    "economic_signals": 13,
     "climate_signals": 1,
     "conflicts": 1,
     "convergences": 5

@@ -1,9 +1,9 @@
 # Opportunity Validation Pack — Guyana
 
-- Signal: `enhanced-invest-guyana` · Dispatch: `DSP-20260617-023`
+- Signal: `enhanced-invest-guyana` · Dispatch: `DSP-20260618-021`
 - Confidence: 100/100 · A - multi-source
 - Recommendation: **ADVANCE** — High-confidence signal (100/100) with 2 independent evidence categories already attached. Worth one validation conversation this cycle.
-- Last validated: 2026-06-17T22:29:47.414719+00:00
+- Last validated: 2026-06-18T00:38:45.114504+00:00
 
 ## Sector hypotheses
 - Oil & gas and offshore support services — _Analyst prior from widely reported sector drivers — requires local confirmation_

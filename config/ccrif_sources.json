@@ -1,0 +1,11 @@
+{
+  "base_url": "https://www.ccrif.org",
+  "source_name": "CCRIF SPC",
+  "payouts_page": "https://www.ccrif.org/payouts",
+  "members": [
+    "AG", "BB", "BZ", "DM", "GD", "GY", "HT", "JM", "KN", "LC", "MS", "SR", "TC", "TT", "VC", "VG"
+  ],
+  "perils": ["tropical_cyclone", "earthquake", "excess_rainfall"],
+  "payout_threshold_usd": 100000,
+  "signal_threshold_usd": 1000000
+}

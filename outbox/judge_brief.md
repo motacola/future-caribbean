@@ -1,6 +1,6 @@
 # Caribbean Opportunity Dispatch — Judge Brief
 
-Generated: 2026-06-17 22:29 UTC
+Generated: 2026-06-18 00:38 UTC
 
 ## What This Proves
 
@@ -29,47 +29,41 @@ Caribbean Opportunity Dispatch is the product. Caribbean Signal OS is the archit
    Audience: investor/founder via Email brief + Telegram
    Decision: Immediate investigation. Barbados has multi-source investment validation (3 signals converging). Priority: assess market entry options, identify existing operators.
 
-**2.** 🔴 **💎 Investment — Dominica** — sustained
-   Narrative: Dominica: +24.9% multi-source investment validated — opportunity active
-   Score: 100/100 | Grade: A - multi-source
-   Audience: investor/founder via Email brief + Telegram
-   Decision: Immediate investigation. Dominica has multi-source investment validation (3 signals converging). Priority: assess market entry options, identify existing operators.
-
-**3.** 🔴 **🏗️ Pipeline — CARICOM** — sustained
+**2.** 🔴 **🏗️ Pipeline — CARICOM** — sustained
    Narrative: CARICOM: 3 active procurements — bidding window open
-   Score: 96/100 | Grade: B - cross-source
+   Score: 95/100 | Grade: B - cross-source
    Audience: investor/founder via Email brief + Telegram
    Decision: Active procurement pipeline: CDB active procurement notices: 3. Priority: review CDB/IDB opportunities as lead list for project-based entry.
 
-**4.** 🔴 **supply_chain_signal — Belize** — sustained
-   Narrative: Belize: signal detected
-   Score: 94/100 | Grade: A - multi-source
-   Audience: regional intelligence via Telegram digest
-   Decision: Immediate — Belize: supply_chain_signal (signal detected). Validate locally.
-
-**5.** 🔴 **💼 Investment — Guyana** — sustained
+**3.** 🟡 **💼 Investment — Guyana** — sustained
    Narrative: Guyana: FDI trending at +860.3% — screening trigger active
-   Score: 90/100 | Grade: B - cross-source
+   Score: 88/100 | Grade: B - cross-source
    Audience: investor/founder via Email brief + Telegram
-   Decision: Immediate investigation. Guyana FDI signal (860.3% change) with active development datasets. Validate with local market intel.
+   Decision: Validation priority. Guyana FDI movement (860.3% change) signals opportunity. Cross-reference with sector data.
 
-**6.** 🟡 **💼 Investment — St. Kitts and Nevis** — sustained
+**4.** 🟡 **💼 Investment — St. Kitts and Nevis** — sustained
    Narrative: St. Kitts and Nevis: FDI trending at +41.1% — screening trigger active
    Score: 78/100 | Grade: B - cross-source
    Audience: investor/founder via Email brief + Telegram
    Decision: Validation priority. St. Kitts and Nevis FDI movement (41.1% change) signals opportunity. Cross-reference with sector data.
 
-**7.** 🟢 **⚠️ Vulnerability — St. Vincent and the Grenadines** — sustained
+**5.** 🟢 **⚠️ Vulnerability — St. Vincent and the Grenadines** — sustained
    Narrative: St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended
-   Score: 69/100 | Grade: C - single-source
+   Score: 68/100 | Grade: C - single-source
    Audience: policy/operator via Telegram digest
    Decision: Monitor. St. Vincent and the Grenadines showing economic stress (18.00%). Track next cycle. Escalates if additional stress indicators appear or existing ones worsen.
 
-**8.** 🟢 **⚠️ Vulnerability — Suriname** — sustained
+**6.** 🟢 **⚠️ Vulnerability — Suriname** — sustained
    Narrative: Suriname: economic stress indicators rising — portfolio review recommended
    Score: 56/100 | Grade: C - single-source
    Audience: policy/operator via Telegram digest
    Decision: Monitor. Suriname showing economic stress (16.23%). Track next cycle. Escalates if additional stress indicators appear or existing ones worsen.
+
+**7.** ⚪ **🏖️ Tourism — Antigua and Barbuda** — sustained
+   Narrative: Antigua and Barbuda: GDP growth signals expanding tourist economy
+   Score: 47/100 | Grade: C - single-source
+   Audience: tourism operator via Telegram digest
+   Decision: Context. Antigua and Barbuda GDP data point for tourism sector awareness.
 
 ## Routing Rationale
 
@@ -77,6 +71,11 @@ Each signal is routed to specific personas based on signal kind and evidence lev
 
 - **Active Storm** → Operator_Resilience
   - Operator Resilience: Named storm with track data is a time-critical operational event — response windows measured in hours
+- **Ccrif Payout** → Diaspora_Investor, Policy_Media, Operator_Resilience, Ecosystem_Builder
+  - Diaspora Investor: CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+  - Policy Media: Parametric payout = quantified sovereign risk event = fiscal impact story
+  - Operator Resilience: Payout confirms hazard severity = operational recovery capital available
+  - Ecosystem Builder: Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 - **Cyclone Risk** → Operator_Resilience, Tourism_Logistics_Operator
   - Operator Resilience: Buoy pressure + marine alert convergence = elevated confidence for operational response trigger
   - Tourism Logistics Operator: Cyclone risk directly impacts tourism bookings and logistics routing — advance warning for contingency
@@ -84,6 +83,15 @@ Each signal is routed to specific personas based on signal kind and evidence lev
   - Regional Operator: Active procurement directly maps to operational capacity needs — first to respond wins
   - Procurement Watcher: CDB/IDB project pipeline is the primary lead source for project-based business development
   - Founder Operator: Procurement pipeline signals government and institutional spending direction — follow the money
+- **Eccb Credit Surge** → Diaspora_Investor, Founder_Operator, Ecosystem_Builder, Regional_Operator
+  - Diaspora Investor: Credit surge = banking system confidence = deploy capital alongside local lending
+  - Founder Operator: Credit growth = working capital available = demand for local goods/services rising
+  - Ecosystem Builder: Credit expansion = fintech, SME lending, financial inclusion opportunities
+  - Regional Operator: Deposit growth = local liquidity = procurement and supply chain capacity
+- **Eccb Deposit Growth** → Diaspora_Investor, Ecosystem_Builder, Regional_Operator
+  - Diaspora Investor: Deposit growth = institutional confidence = favorable capital environment
+  - Ecosystem Builder: Deposit surge = remittance inflow or FDI settlement = ecosystem liquidity
+  - Regional Operator: Deposit base = procurement capacity payment assurance
 - **Economic Vulnerability** → Diaspora_Investor, Policy_Media
   - Diaspora Investor: Vulnerability signals change risk profiles — reassess exposure and timing
   - Policy Media: Economic stress indicators drive policy response and media narratives

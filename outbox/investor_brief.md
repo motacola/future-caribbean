@@ -1,6 +1,6 @@
 # Caribbean Market Pulse — Investor Brief
 
-Generated: 2026-06-17 22:29 UTC
+Generated: 2026-06-18 00:38 UTC
 
 Audience: investors, founders, diaspora capital networks.
 Decision supported: where to investigate deal flow, procurement activity, or market momentum.
@@ -39,7 +39,7 @@ Multi-source investment signals validated across 8 countries. All carry A-grade 
 
 🔴 — **🏗️ Pipeline — CARICOM**
    CARICOM: 3 active procurements — bidding window open
-   Immediate | 96/100 | B - cross-source
+   Immediate | 95/100 | B - cross-source
    Active procurement pipeline: CDB active procurement notices: 3. Priority: review CDB/IDB opportunities as lead list for project-based entry.
 
 Active procurement:

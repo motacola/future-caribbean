@@ -86,6 +86,32 @@
         "ndbc_maritime_stable": true,
         "tier2_logistics_data_available": true
       }
+    },
+    "ccrif_payout": {
+      "label": "💰 Parametric Insurance Payout",
+      "priority": "high",
+      "conditions": {
+        "payout_usd_min": 1000000,
+        "peril_match": ["tropical_cyclone", "earthquake", "excess_rainfall"],
+        "ccrif_member_only": true
+      }
+    },
+    "eccb_credit_surge": {
+      "label": "🏦 ECCB Private Credit Surge",
+      "priority": "medium",
+      "conditions": {
+        "private_credit_growth_pct_min": 10,
+        "total_deposits_growth_pct_min": 5,
+        "net_foreign_assets_growth_pct_min": 3
+      }
+    },
+    "eccb_deposit_growth": {
+      "label": "🏦 ECCB Deposit Growth",
+      "priority": "medium",
+      "conditions": {
+        "total_deposits_growth_pct_min": 3,
+        "private_sector_credit_growth_pct_min": 5
+      }
     }
   }
 }

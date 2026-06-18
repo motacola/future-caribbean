@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-17T22:31:03.188560+00:00",
+  "generated_at": "2026-06-18T00:38:58.089417+00:00",
   "feedback_provenance": "simulated",
   "current_boosts": {
     "enhanced_investment": {
-      "Guyana": 5,
+      "Guyana": 6,
       "Belize": -1,
       "St. Vincent and the Grenadines": -6
     },
@@ -22,28 +22,25 @@
       "CARICOM": -4
     },
     "economic_vulnerability": {
-      "St. Vincent and the Grenadines": 9,
+      "St. Vincent and the Grenadines": 8,
       "Suriname": -4
-    },
-    "tourism_impact": {
-      "Guyana": -4
     }
   },
   "cycles": [
     {
-      "cycle_id": "20260617",
+      "cycle_id": "20260618",
       "responses": {
         "forwarded": 1,
         "replied": 1,
         "opened": 1,
-        "ignored": 25,
+        "ignored": 23,
         "decision_changed": 1
       },
-      "dispatch_count": 29,
+      "dispatch_count": 27,
       "countries": [
         "Belize",
-        "Guyana",
         "St. Vincent and the Grenadines",
+        "Guyana",
         "CARICOM",
         "Suriname"
       ],
@@ -53,20 +50,20 @@
       }
     },
     {
-      "cycle_id": "20260611",
+      "cycle_id": "20260617",
       "responses": {
         "forwarded": 1,
         "replied": 1,
         "opened": 1,
-        "ignored": 17,
-        "decision_changed": 1
+        "ignored": 18,
+        "decision_changed": 0
       },
       "dispatch_count": 21,
       "countries": [
-        "St. Vincent and the Grenadines",
-        "Guyana",
         "Belize",
-        "CARICOM"
+        "Guyana",
+        "CARICOM",
+        "St. Vincent and the Grenadines"
       ],
       "lead": {
         "country": "",
