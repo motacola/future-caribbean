@@ -2,7 +2,7 @@
 
 **Decision job:** Competitive positioning and capability mapping
 **Delivery channel:** Telegram
-**Generated:** Jun 18, 2026 at 00:38 UTC
+**Generated:** Jun 18, 2026 at 11:31 UTC
 **Dispatches in this packet:** 10
 
 ---
@@ -54,7 +54,7 @@
 
 ### 4. CARICOM: 3 active procurements — bidding window open
 
-**ID:** `DSP-20260618-017` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 95/100 | B - cross-source
+**ID:** `DSP-20260618-017` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 96/100 | B - cross-source
 **Channel:** Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -68,7 +68,7 @@
 
 ### 5. Belize: signal detected
 
-**ID:** `DSP-20260618-032` | **Country:** Belize | **Confidence:** 🔴 Immediate | 91/100 | A - multi-source
+**ID:** `DSP-20260618-032` | **Country:** Belize | **Confidence:** 🔴 Immediate | 94/100 | A - multi-source
 **Channel:** Telegram | **Window:** 21 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -94,7 +94,35 @@
 **Decision to influence:** Which country-sector pair to validate for investment readiness
 **Routing rationale:** FDI movement in your operating country signals competition or demand growth — assess positioning
 
-### 7. Capital convergence: 8 Caribbean economies showing multi-source investment momentum
+### 7. Guyana: FDI trending at +860.3% — screening trigger active
+
+**ID:** `DSP-20260618-004` | **Country:** Guyana | **Confidence:** 🔴 Immediate | 90/100 | B - cross-source
+**Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Guyana: Foreign direct investment net inflows current USD moved up 860.3% from 2023 to 2024.
+**Detail:** 860.3% change
+**Grade:** B - cross-source
+
+**Recommended action:** Assess competitive positioning in Guyana. FDI movement (860.3% change) signals growing market or incoming competition — evaluate local advantage before new entrants arrive.
+**Decision to influence:** Which country-sector pair to validate for investment readiness
+**Routing rationale:** FDI movement in your operating country signals competition or demand growth — assess positioning
+
+### 8. Belize: FDI trending at +701.0% — screening trigger active
+
+**ID:** `DSP-20260618-006` | **Country:** Belize | **Confidence:** 🔴 Immediate | 90/100 | B - cross-source
+**Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Belize: Foreign direct investment net inflows current USD moved up 701.0% from 2023 to 2024.
+**Detail:** 701.0% change
+**Grade:** B - cross-source
+
+**Recommended action:** Assess competitive positioning in Belize. FDI movement (701.0% change) signals growing market or incoming competition — evaluate local advantage before new entrants arrive.
+**Decision to influence:** Which country-sector pair to validate for investment readiness
+**Routing rationale:** FDI movement in your operating country signals competition or demand growth — assess positioning
+
+### 9. Capital convergence: 8 Caribbean economies showing multi-source investment momentum
 
 **ID:** `DSP-20260618-020` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** new
@@ -107,34 +135,6 @@
 **Recommended action:** Assess competitive positioning in Caribwide. FDI movement (Guyana (860.3% change), Belize (701.0% change), St. Vincent and the Grenadines (88.2% change)) signals growing market or incoming competition — evaluate local advantage before new entrants arrive.
 **Decision to influence:** Which verified opportunity to investigate for capital deployment or partnership entry
 **Routing rationale:** Multi-source investment lift indicates growing market that may support new entry or expansion
-
-### 8. Guyana: FDI trending at +860.3% — screening trigger active
-
-**ID:** `DSP-20260618-004` | **Country:** Guyana | **Confidence:** 🟡 Validation | 88/100 | B - cross-source
-**Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Guyana: Foreign direct investment net inflows current USD moved up 860.3% from 2023 to 2024.
-**Detail:** 860.3% change
-**Grade:** B - cross-source
-
-**Recommended action:** Assess competitive positioning in Guyana. FDI movement (860.3% change) signals growing market or incoming competition — evaluate local advantage before new entrants arrive.
-**Decision to influence:** Which country-sector pair to validate for investment readiness
-**Routing rationale:** FDI movement in your operating country signals competition or demand growth — assess positioning
-
-### 9. Belize: FDI trending at +701.0% — screening trigger active
-
-**ID:** `DSP-20260618-006` | **Country:** Belize | **Confidence:** 🟡 Validation | 88/100 | B - cross-source
-**Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Belize: Foreign direct investment net inflows current USD moved up 701.0% from 2023 to 2024.
-**Detail:** 701.0% change
-**Grade:** B - cross-source
-
-**Recommended action:** Assess competitive positioning in Belize. FDI movement (701.0% change) signals growing market or incoming competition — evaluate local advantage before new entrants arrive.
-**Decision to influence:** Which country-sector pair to validate for investment readiness
-**Routing rationale:** FDI movement in your operating country signals competition or demand growth — assess positioning
 
 ### 10. St. Vincent and the Grenadines: FDI trending at +88.2% — screening trigger active
 

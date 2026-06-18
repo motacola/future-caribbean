@@ -1,0 +1,216 @@
+digraph SignalFabric {
+  rankdir=LR;
+  fontname="Inter";
+  fontsize=12;
+  nodesep=0.8;
+  ranksep=1.2;
+  splines=ortho;
+  compound=true;
+
+  subgraph cluster_sources {
+    label="Sources";
+    style="rounded,filled";
+    fillcolor="#F8F8F8";
+    fontname="Inter Bold";
+    fontsize=13;
+    src_wb [shape=box, label="World Bank", fillcolor="#2676A8", style="filled,rounded", fontname="Inter", fontsize=10];
+    src_idb [shape=box, label="IDB Open Data", fillcolor="#2676A8", style="filled,rounded", fontname="Inter", fontsize=10];
+    src_noaa [shape=box, label="NOAA NWS", fillcolor="#0D766E", style="filled,rounded", fontname="Inter", fontsize=10];
+    src_ndbc [shape=box, label="NDBC Buoys", fillcolor="#0D766E", style="filled,rounded", fontname="Inter", fontsize=10];
+    src_caricom [shape=box, label="CARICOM Stats", fillcolor="#B57A22", style="filled,rounded", fontname="Inter", fontsize=10];
+    src_cdb [shape=box, label="CDB", fillcolor="#B57A22", style="filled,rounded", fontname="Inter", fontsize=10];
+    src_ccrif [shape=box, label="CCRIF SPC", fillcolor="#B94836", style="filled,rounded", fontname="Inter", fontsize=10];
+    src_eccb [shape=box, label="ECCB", fillcolor="#B57A22", style="filled,rounded", fontname="Inter", fontsize=10];
+  }
+
+  subgraph cluster_watchers {
+    label="Watchers";
+    style="rounded,filled";
+    fillcolor="#F8F8F8";
+    fontname="Inter Bold";
+    fontsize=13;
+    w_wb [shape=ellipse, label="World Bank\nPoller", fillcolor="#2676A8", style="filled,rounded", fontname="Inter", fontsize=10];
+    w_idb [shape=ellipse, label="IDB CKAN\nPoller", fillcolor="#2676A8", style="filled,rounded", fontname="Inter", fontsize=10];
+    w_tier2 [shape=ellipse, label="Tier 2\nScraper", fillcolor="#B57A22", style="filled,rounded", fontname="Inter", fontsize=10];
+    w_tenders [shape=ellipse, label="Tenders\nPoller", fillcolor="#2676A8", style="filled,rounded", fontname="Inter", fontsize=10];
+    w_ccrif [shape=ellipse, label="CCRIF\nPoller", fillcolor="#B94836", style="filled,rounded", fontname="Inter", fontsize=10];
+    w_eccb [shape=ellipse, label="ECCB\nPoller", fillcolor="#B57A22", style="filled,rounded", fontname="Inter", fontsize=10];
+    w_noaa [shape=ellipse, label="NOAA NWS\nPoller", fillcolor="#0D766E", style="filled,rounded", fontname="Inter", fontsize=10];
+    w_ndbc [shape=ellipse, label="NDBC Buoy\nPoller", fillcolor="#0D766E", style="filled,rounded", fontname="Inter", fontsize=10];
+    w_nhc [shape=ellipse, label="NHC Storm\nPoller", fillcolor="#B94836", style="filled,rounded", fontname="Inter", fontsize=10];
+  }
+
+  subgraph cluster_merger {
+    label="Merger";
+    style="rounded,filled";
+    fillcolor="#F8F8F8";
+    fontname="Inter Bold";
+    fontsize=13;
+    merger [shape=diamond, label="Cross-Source\nMerger", fillcolor="#18251F", style="filled,rounded", fontname="Inter", fontsize=10];
+  }
+
+  subgraph cluster_signals {
+    label="Signals";
+    style="rounded,filled";
+    fillcolor="#F8F8F8";
+    fontname="Inter Bold";
+    fontsize=13;
+    sig_cyclone [shape=hexagon, label="🌀 Cyclone Risk", fillcolor="#B94836", style="filled,rounded", fontname="Inter", fontsize=10];
+    sig_maritime [shape=hexagon, label="🚢 Maritime Hazard", fillcolor="#B6C74E", style="filled,rounded", fontname="Inter", fontsize=10];
+    sig_invest [shape=hexagon, label="💼 Investment Signal", fillcolor="#2676A8", style="filled,rounded", fontname="Inter", fontsize=10];
+    sig_enhanced [shape=hexagon, label="💎 Enhanced Investment", fillcolor="#2676A8", style="filled,rounded", fontname="Inter", fontsize=10];
+    sig_vuln [shape=hexagon, label="⚠️ Economic Vulnerability", fillcolor="#B94836", style="filled,rounded", fontname="Inter", fontsize=10];
+    sig_tourism [shape=hexagon, label="🏖️ Tourism Impact", fillcolor="#B6C74E", style="filled,rounded", fontname="Inter", fontsize=10];
+    sig_food [shape=hexagon, label="🌾 Food Security", fillcolor="#B6C74E", style="filled,rounded", fontname="Inter", fontsize=10];
+    sig_dev [shape=hexagon, label="🏗️ Development Pipeline", fillcolor="#B57A22", style="filled,rounded", fontname="Inter", fontsize=10];
+    sig_supply [shape=hexagon, label="🔗 Supply Chain", fillcolor="#B57A22", style="filled,rounded", fontname="Inter", fontsize=10];
+    sig_ccrif [shape=hexagon, label="💰 CCRIF Payout", fillcolor="#B94836", style="filled,rounded", fontname="Inter", fontsize=10];
+    sig_eccb_credit [shape=hexagon, label="🏦 ECCB Credit Surge", fillcolor="#B57A22", style="filled,rounded", fontname="Inter", fontsize=10];
+    sig_eccb_deposit [shape=hexagon, label="🏦 ECCB Deposit Growth", fillcolor="#B57A22", style="filled,rounded", fontname="Inter", fontsize=10];
+    sig_trop_dev [shape=hexagon, label="🌪️ Tropical Development", fillcolor="#B94836", style="filled,rounded", fontname="Inter", fontsize=10];
+    sig_active_storm [shape=hexagon, label="🌀 Active Storm", fillcolor="#B94836", style="filled,rounded", fontname="Inter", fontsize=10];
+  }
+
+  subgraph cluster_personas {
+    label="Personas";
+    style="rounded,filled";
+    fillcolor="#F8F8F8";
+    fontname="Inter Bold";
+    fontsize=13;
+    p_diaspora [shape=circle, label="💼 Diaspora Investor", fillcolor="#2676A8", style="filled,rounded", fontname="Inter", fontsize=10];
+    p_founder [shape=circle, label="🏭 Founder/Operator", fillcolor="#2676A8", style="filled,rounded", fontname="Inter", fontsize=10];
+    p_ecosystem [shape=circle, label="🌐 Ecosystem Builder", fillcolor="#0D766E", style="filled,rounded", fontname="Inter", fontsize=10];
+    p_regional [shape=circle, label="🚚 Regional Operator", fillcolor="#B57A22", style="filled,rounded", fontname="Inter", fontsize=10];
+    p_procurement [shape=circle, label="📋 Procurement Watcher", fillcolor="#B57A22", style="filled,rounded", fontname="Inter", fontsize=10];
+    p_resilience [shape=circle, label="⚡ Ops/Resilience", fillcolor="#B94836", style="filled,rounded", fontname="Inter", fontsize=10];
+    p_tourism [shape=circle, label="🏨 Tourism/Logistics", fillcolor="#B6C74E", style="filled,rounded", fontname="Inter", fontsize=10];
+    p_policy [shape=circle, label="📰 Policy/Media", fillcolor="#7F8C83", style="filled,rounded", fontname="Inter", fontsize=10];
+  }
+
+  subgraph cluster_artifacts {
+    label="Artifacts";
+    style="rounded,filled";
+    fillcolor="#F8F8F8";
+    fontname="Inter Bold";
+    fontsize=13;
+    art_desk [shape=folder, label="Dispatch Desk\n(dispatch_desk.md)", fillcolor="#18251F", style="filled,rounded", fontname="Inter", fontsize=10];
+    art_dispatches [shape=folder, label="Opportunity\nDispatches", fillcolor="#18251F", style="filled,rounded", fontname="Inter", fontsize=10];
+    art_packs [shape=folder, label="Validation Packs\n(5 per cycle)", fillcolor="#18251F", style="filled,rounded", fontname="Inter", fontsize=10];
+    art_thesis [shape=folder, label="Regional Thesis\n+ Why Now", fillcolor="#18251F", style="filled,rounded", fontname="Inter", fontsize=10];
+    art_backtest [shape=folder, label="Backtest Report\n(accuracy metrics)", fillcolor="#18251F", style="filled,rounded", fontname="Inter", fontsize=10];
+    art_dashboard [shape=folder, label="Interactive\nDashboard", fillcolor="#18251F", style="filled,rounded", fontname="Inter", fontsize=10];
+    art_community [shape=folder, label="Community Brief\n(WhatsApp/IG/X)", fillcolor="#18251F", style="filled,rounded", fontname="Inter", fontsize=10];
+    art_api [shape=folder, label="HTTP API +\nMCP Adapter", fillcolor="#18251F", style="filled,rounded", fontname="Inter", fontsize=10];
+  }
+
+  src_wb -> w_wb [label="fetches", style=solid, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  src_idb -> w_idb [label="fetches", style=solid, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  src_caricom -> w_tier2 [label="fetches", style=solid, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  src_cdb -> w_tier2 [label="fetches", style=solid, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  src_ccrif -> w_ccrif [label="fetches", style=solid, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  src_eccb -> w_eccb [label="fetches", style=solid, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  src_noaa -> w_noaa [label="fetches", style=solid, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  src_ndbc -> w_ndbc [label="fetches", style=solid, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  w_wb -> merger [label="normalized JSON", style=solid, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  w_idb -> merger [label="normalized JSON", style=solid, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  w_tier2 -> merger [label="normalized JSON", style=solid, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  w_tenders -> merger [label="normalized JSON", style=solid, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  w_ccrif -> merger [label="normalized JSON", style=solid, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  w_eccb -> merger [label="normalized JSON", style=solid, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  w_noaa -> merger [label="normalized JSON", style=solid, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  w_ndbc -> merger [label="normalized JSON", style=solid, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  w_nhc -> merger [label="normalized JSON", style=solid, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  w_ndbc -> sig_cyclone [label="composite rule", style=dashed, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  w_noaa -> sig_cyclone [label="composite rule", style=dashed, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  w_ndbc -> sig_maritime [label="composite rule", style=dashed, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  w_noaa -> sig_maritime [label="composite rule", style=dashed, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  w_wb -> sig_invest [label="composite rule", style=dashed, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  w_idb -> sig_invest [label="composite rule", style=dashed, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  w_wb -> sig_enhanced [label="composite rule", style=dashed, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  w_tier2 -> sig_enhanced [label="composite rule", style=dashed, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  w_wb -> sig_vuln [label="composite rule", style=dashed, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  w_wb -> sig_tourism [label="composite rule", style=dashed, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  w_noaa -> sig_tourism [label="composite rule", style=dashed, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  w_tier2 -> sig_food [label="composite rule", style=dashed, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  w_wb -> sig_food [label="composite rule", style=dashed, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  w_tier2 -> sig_dev [label="composite rule", style=dashed, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  w_idb -> sig_dev [label="composite rule", style=dashed, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  w_tier2 -> sig_supply [label="composite rule", style=dashed, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  w_ndbc -> sig_supply [label="composite rule", style=dashed, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  w_ccrif -> sig_ccrif [label="composite rule", style=dashed, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  w_eccb -> sig_eccb_credit [label="composite rule", style=dashed, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  w_eccb -> sig_eccb_deposit [label="composite rule", style=dashed, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  w_nhc -> sig_trop_dev [label="composite rule", style=dashed, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  w_noaa -> sig_trop_dev [label="composite rule", style=dashed, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  w_nhc -> sig_active_storm [label="composite rule", style=dashed, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  sig_cyclone -> p_resilience [label="routed to", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  sig_cyclone -> p_tourism [label="routed to", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  sig_maritime -> p_resilience [label="routed to", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  sig_maritime -> p_tourism [label="routed to", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  sig_invest -> p_diaspora [label="routed to", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  sig_invest -> p_founder [label="routed to", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  sig_enhanced -> p_diaspora [label="routed to", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  sig_enhanced -> p_ecosystem [label="routed to", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  sig_enhanced -> p_founder [label="routed to", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  sig_vuln -> p_diaspora [label="routed to", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  sig_vuln -> p_policy [label="routed to", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  sig_tourism -> p_tourism [label="routed to", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  sig_tourism -> p_founder [label="routed to", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  sig_food -> p_ecosystem [label="routed to", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  sig_food -> p_policy [label="routed to", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  sig_dev -> p_regional [label="routed to", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  sig_dev -> p_procurement [label="routed to", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  sig_dev -> p_founder [label="routed to", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  sig_supply -> p_regional [label="routed to", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  sig_supply -> p_procurement [label="routed to", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  sig_supply -> p_founder [label="routed to", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  sig_ccrif -> p_diaspora [label="routed to", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  sig_ccrif -> p_policy [label="routed to", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  sig_ccrif -> p_resilience [label="routed to", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  sig_ccrif -> p_ecosystem [label="routed to", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  sig_eccb_credit -> p_diaspora [label="routed to", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  sig_eccb_credit -> p_founder [label="routed to", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  sig_eccb_credit -> p_ecosystem [label="routed to", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  sig_eccb_credit -> p_regional [label="routed to", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  sig_eccb_deposit -> p_diaspora [label="routed to", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  sig_eccb_deposit -> p_ecosystem [label="routed to", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  sig_eccb_deposit -> p_regional [label="routed to", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  sig_trop_dev -> p_resilience [label="routed to", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  sig_active_storm -> p_resilience [label="routed to", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  p_diaspora -> art_desk [label="consumes", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  p_diaspora -> art_dispatches [label="consumes", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  p_diaspora -> art_packs [label="consumes", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  p_diaspora -> art_backtest [label="consumes", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  p_founder -> art_desk [label="consumes", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  p_founder -> art_dispatches [label="consumes", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  p_founder -> art_packs [label="consumes", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  p_founder -> art_dashboard [label="consumes", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  p_ecosystem -> art_desk [label="consumes", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  p_ecosystem -> art_packs [label="consumes", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  p_ecosystem -> art_thesis [label="consumes", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  p_ecosystem -> art_backtest [label="consumes", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  p_regional -> art_desk [label="consumes", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  p_regional -> art_dispatches [label="consumes", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  p_regional -> art_packs [label="consumes", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  p_procurement -> art_desk [label="consumes", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  p_procurement -> art_dispatches [label="consumes", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  p_procurement -> art_packs [label="consumes", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  p_resilience -> art_desk [label="consumes", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  p_resilience -> art_dispatches [label="consumes", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  p_resilience -> art_community [label="consumes", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  p_tourism -> art_desk [label="consumes", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  p_tourism -> art_dispatches [label="consumes", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  p_tourism -> art_dashboard [label="consumes", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  p_policy -> art_desk [label="consumes", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  p_policy -> art_thesis [label="consumes", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  p_policy -> art_backtest [label="consumes", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  p_policy -> art_community [label="consumes", style=dotted, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  art_desk -> art_api [label="served via", style=dashed, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  art_dispatches -> art_api [label="served via", style=dashed, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  art_packs -> art_api [label="served via", style=dashed, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  art_thesis -> art_api [label="served via", style=dashed, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  art_backtest -> art_api [label="served via", style=dashed, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  art_dashboard -> art_api [label="served via", style=dashed, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  art_community -> art_api [label="served via", style=dashed, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+  art_api -> art_api [label="served via", style=dashed, fontname="Inter", fontsize=8, color="#7F8C83", penwidth=1.2];
+}

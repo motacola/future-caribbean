@@ -1,6 +1,6 @@
 # Caribbean Opportunity Dispatch — Judge Brief
 
-Generated: 2026-06-18 00:38 UTC
+Generated: 2026-06-18 11:31 UTC
 
 ## What This Proves
 
@@ -31,15 +31,15 @@ Caribbean Opportunity Dispatch is the product. Caribbean Signal OS is the archit
 
 **2.** 🔴 **🏗️ Pipeline — CARICOM** — sustained
    Narrative: CARICOM: 3 active procurements — bidding window open
-   Score: 95/100 | Grade: B - cross-source
+   Score: 96/100 | Grade: B - cross-source
    Audience: investor/founder via Email brief + Telegram
    Decision: Active procurement pipeline: CDB active procurement notices: 3. Priority: review CDB/IDB opportunities as lead list for project-based entry.
 
-**3.** 🟡 **💼 Investment — Guyana** — sustained
+**3.** 🔴 **💼 Investment — Guyana** — sustained
    Narrative: Guyana: FDI trending at +860.3% — screening trigger active
-   Score: 88/100 | Grade: B - cross-source
+   Score: 90/100 | Grade: B - cross-source
    Audience: investor/founder via Email brief + Telegram
-   Decision: Validation priority. Guyana FDI movement (860.3% change) signals opportunity. Cross-reference with sector data.
+   Decision: Immediate investigation. Guyana FDI signal (860.3% change) with active development datasets. Validate with local market intel.
 
 **4.** 🟡 **💼 Investment — St. Kitts and Nevis** — sustained
    Narrative: St. Kitts and Nevis: FDI trending at +41.1% — screening trigger active
@@ -108,6 +108,19 @@ Each signal is routed to specific personas based on signal kind and evidence lev
 - **Maritime Hazard** → Operator_Resilience, Tourism_Logistics_Operator
   - Operator Resilience: High-wind + marine alert confirmation requires safety response and shipping route adjustments
   - Tourism Logistics Operator: Maritime hazards affect island supply chains and tourism transport schedules
+- **Port Activity Surge** → Regional_Operator, Procurement_Watcher, Founder_Operator, Ecosystem_Builder
+  - Regional Operator: Vessel surge at key port = immediate cargo handling and transport demand
+  - Procurement Watcher: High port activity = import/export volume up = procurement pipeline likely expanding
+  - Founder Operator: Port throughput growth = build logistics, cold storage, last-mile services here
+  - Ecosystem Builder: Port activity = trade corridor health = regional integration indicator
+- **Port Congestion** → Regional_Operator, Operator_Resilience, Procurement_Watcher
+  - Regional Operator: Congestion = vessels waiting = delays, demurrage costs, rerouting needed immediately
+  - Operator Resilience: Slow vessels in port zone = operational bottleneck = activate contingency routes
+  - Procurement Watcher: Congestion at transshipment hub = procurement delivery risk = adjust schedules
+- **Shipping Corridor** → Regional_Operator, Ecosystem_Builder, Founder_Operator
+  - Regional Operator: Consistent eastbound/westbound traffic = reliable corridor for scheduled services
+  - Ecosystem Builder: Active corridor = trade route validation = port infrastructure and services investment case
+  - Founder Operator: Known shipping lane = predictable transit times = build distribution hub here
 - **Supply Chain Signal** → Regional_Operator, Procurement_Watcher, Founder_Operator
   - Regional Operator: Active procurement + stable maritime = real supply chain corridor opportunity — first to respond wins
   - Procurement Watcher: CDB procurement aligned with maritime stability = viable logistics corridors for project-based entry

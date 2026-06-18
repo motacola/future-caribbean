@@ -2,7 +2,7 @@
 
 **Decision job:** Founder matching and ecosystem support prioritisation
 **Delivery channel:** Telegram
-**Generated:** Jun 18, 2026 at 00:38 UTC
+**Generated:** Jun 18, 2026 at 11:31 UTC
 **Dispatches in this packet:** 5
 
 ---
@@ -68,7 +68,7 @@
 
 ### 5. CARICOM: food supply indicators shifting — supply chain implications
 
-**ID:** `DSP-20260618-013` | **Country:** CARICOM | **Confidence:** 🟡 Validation | 78/100 | B - cross-source
+**ID:** `DSP-20260618-013` | **Country:** CARICOM | **Confidence:** 🟡 Validation | 80/100 | B - cross-source
 **Channel:** Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** ignored
 

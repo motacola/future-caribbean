@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-18T00:38:45.653738+00:00",
+  "generated_at": "2026-06-18T11:31:05.931156+00:00",
   "cycle_id": "20260618",
   "total_deliveries": 32,
   "summary": {
@@ -171,7 +171,7 @@
       "target_artifact_path": "outbox/dispatch_packets/regional_operator.md",
       "cycle_id": "20260618",
       "country_cluster": "CARICOM",
-      "confidence_score": 95,
+      "confidence_score": 96,
       "signal_kind": "development_pipeline"
     },
     {
@@ -186,7 +186,7 @@
       "target_artifact_path": "outbox/dispatch_packets/procurement_watcher.md",
       "cycle_id": "20260618",
       "country_cluster": "CARICOM",
-      "confidence_score": 95,
+      "confidence_score": 96,
       "signal_kind": "development_pipeline"
     },
     {
@@ -201,7 +201,7 @@
       "target_artifact_path": "outbox/dispatch_packets/founder_operator.md",
       "cycle_id": "20260618",
       "country_cluster": "CARICOM",
-      "confidence_score": 95,
+      "confidence_score": 96,
       "signal_kind": "development_pipeline"
     },
     {
@@ -216,7 +216,7 @@
       "target_artifact_path": "outbox/dispatch_packets/regional_operator.md",
       "cycle_id": "20260618",
       "country_cluster": "Belize",
-      "confidence_score": 91,
+      "confidence_score": 94,
       "signal_kind": "supply_chain_signal"
     },
     {
@@ -231,7 +231,7 @@
       "target_artifact_path": "outbox/dispatch_packets/procurement_watcher.md",
       "cycle_id": "20260618",
       "country_cluster": "Belize",
-      "confidence_score": 91,
+      "confidence_score": 94,
       "signal_kind": "supply_chain_signal"
     },
     {
@@ -246,7 +246,7 @@
       "target_artifact_path": "outbox/dispatch_packets/founder_operator.md",
       "cycle_id": "20260618",
       "country_cluster": "Belize",
-      "confidence_score": 91,
+      "confidence_score": 94,
       "signal_kind": "supply_chain_signal"
     },
     {
@@ -276,6 +276,66 @@
       "target_artifact_path": "outbox/dispatch_packets/founder_operator.md",
       "cycle_id": "20260618",
       "country_cluster": "Caribwide",
+      "confidence_score": 90,
+      "signal_kind": "investment_signal"
+    },
+    {
+      "dispatch_id": "DSP-20260618-003",
+      "title": "Guyana: FDI trending at +860.3% — screening trigger active",
+      "persona_key": "diaspora_investor",
+      "persona_label": "Diaspora Investor",
+      "channel": "Email brief + Telegram",
+      "delivery_status": "delivered",
+      "action_window": "14 days",
+      "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
+      "target_artifact_path": "outbox/dispatch_packets/diaspora_investor.md",
+      "cycle_id": "20260618",
+      "country_cluster": "Guyana",
+      "confidence_score": 90,
+      "signal_kind": "investment_signal"
+    },
+    {
+      "dispatch_id": "DSP-20260618-004",
+      "title": "Guyana: FDI trending at +860.3% — screening trigger active",
+      "persona_key": "founder_operator",
+      "persona_label": "Regional Founder/Operator",
+      "channel": "Telegram",
+      "delivery_status": "delivered",
+      "action_window": "14 days",
+      "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
+      "target_artifact_path": "outbox/dispatch_packets/founder_operator.md",
+      "cycle_id": "20260618",
+      "country_cluster": "Guyana",
+      "confidence_score": 90,
+      "signal_kind": "investment_signal"
+    },
+    {
+      "dispatch_id": "DSP-20260618-005",
+      "title": "Belize: FDI trending at +701.0% — screening trigger active",
+      "persona_key": "diaspora_investor",
+      "persona_label": "Diaspora Investor",
+      "channel": "Email brief + Telegram",
+      "delivery_status": "delivered",
+      "action_window": "14 days",
+      "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
+      "target_artifact_path": "outbox/dispatch_packets/diaspora_investor.md",
+      "cycle_id": "20260618",
+      "country_cluster": "Belize",
+      "confidence_score": 90,
+      "signal_kind": "investment_signal"
+    },
+    {
+      "dispatch_id": "DSP-20260618-006",
+      "title": "Belize: FDI trending at +701.0% — screening trigger active",
+      "persona_key": "founder_operator",
+      "persona_label": "Regional Founder/Operator",
+      "channel": "Telegram",
+      "delivery_status": "delivered",
+      "action_window": "14 days",
+      "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
+      "target_artifact_path": "outbox/dispatch_packets/founder_operator.md",
+      "cycle_id": "20260618",
+      "country_cluster": "Belize",
       "confidence_score": 90,
       "signal_kind": "investment_signal"
     },
@@ -325,64 +385,34 @@
       "signal_kind": "enhanced_investment"
     },
     {
-      "dispatch_id": "DSP-20260618-003",
-      "title": "Guyana: FDI trending at +860.3% — screening trigger active",
-      "persona_key": "diaspora_investor",
-      "persona_label": "Diaspora Investor",
-      "channel": "Email brief + Telegram",
-      "delivery_status": "delivered",
-      "action_window": "14 days",
-      "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
-      "target_artifact_path": "outbox/dispatch_packets/diaspora_investor.md",
-      "cycle_id": "20260618",
-      "country_cluster": "Guyana",
-      "confidence_score": 88,
-      "signal_kind": "investment_signal"
-    },
-    {
-      "dispatch_id": "DSP-20260618-004",
-      "title": "Guyana: FDI trending at +860.3% — screening trigger active",
-      "persona_key": "founder_operator",
-      "persona_label": "Regional Founder/Operator",
+      "dispatch_id": "DSP-20260618-013",
+      "title": "CARICOM: food supply indicators shifting — supply chain implications",
+      "persona_key": "ecosystem_builder",
+      "persona_label": "Ecosystem Builder",
       "channel": "Telegram",
       "delivery_status": "delivered",
-      "action_window": "14 days",
+      "action_window": "30 days",
       "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
-      "target_artifact_path": "outbox/dispatch_packets/founder_operator.md",
+      "target_artifact_path": "outbox/dispatch_packets/ecosystem_builder.md",
       "cycle_id": "20260618",
-      "country_cluster": "Guyana",
-      "confidence_score": 88,
-      "signal_kind": "investment_signal"
+      "country_cluster": "CARICOM",
+      "confidence_score": 80,
+      "signal_kind": "food_security"
     },
     {
-      "dispatch_id": "DSP-20260618-005",
-      "title": "Belize: FDI trending at +701.0% — screening trigger active",
-      "persona_key": "diaspora_investor",
-      "persona_label": "Diaspora Investor",
-      "channel": "Email brief + Telegram",
+      "dispatch_id": "DSP-20260618-014",
+      "title": "CARICOM: food supply indicators shifting — supply chain implications",
+      "persona_key": "policy_media",
+      "persona_label": "Policy/Media",
+      "channel": "Telegram digest",
       "delivery_status": "delivered",
-      "action_window": "14 days",
+      "action_window": "30 days",
       "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
-      "target_artifact_path": "outbox/dispatch_packets/diaspora_investor.md",
+      "target_artifact_path": "outbox/dispatch_packets/policy_media.md",
       "cycle_id": "20260618",
-      "country_cluster": "Belize",
-      "confidence_score": 88,
-      "signal_kind": "investment_signal"
-    },
-    {
-      "dispatch_id": "DSP-20260618-006",
-      "title": "Belize: FDI trending at +701.0% — screening trigger active",
-      "persona_key": "founder_operator",
-      "persona_label": "Regional Founder/Operator",
-      "channel": "Telegram",
-      "delivery_status": "delivered",
-      "action_window": "14 days",
-      "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
-      "target_artifact_path": "outbox/dispatch_packets/founder_operator.md",
-      "cycle_id": "20260618",
-      "country_cluster": "Belize",
-      "confidence_score": 88,
-      "signal_kind": "investment_signal"
+      "country_cluster": "CARICOM",
+      "confidence_score": 80,
+      "signal_kind": "food_security"
     },
     {
       "dispatch_id": "DSP-20260618-007",
@@ -415,37 +445,7 @@
       "signal_kind": "investment_signal"
     },
     {
-      "dispatch_id": "DSP-20260618-013",
-      "title": "CARICOM: food supply indicators shifting — supply chain implications",
-      "persona_key": "ecosystem_builder",
-      "persona_label": "Ecosystem Builder",
-      "channel": "Telegram",
-      "delivery_status": "delivered",
-      "action_window": "30 days",
-      "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
-      "target_artifact_path": "outbox/dispatch_packets/ecosystem_builder.md",
-      "cycle_id": "20260618",
-      "country_cluster": "CARICOM",
-      "confidence_score": 78,
-      "signal_kind": "food_security"
-    },
-    {
-      "dispatch_id": "DSP-20260618-014",
-      "title": "CARICOM: food supply indicators shifting — supply chain implications",
-      "persona_key": "policy_media",
-      "persona_label": "Policy/Media",
-      "channel": "Telegram digest",
-      "delivery_status": "delivered",
-      "action_window": "30 days",
-      "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
-      "target_artifact_path": "outbox/dispatch_packets/policy_media.md",
-      "cycle_id": "20260618",
-      "country_cluster": "CARICOM",
-      "confidence_score": 78,
-      "signal_kind": "food_security"
-    },
-    {
-      "dispatch_id": "DSP-20260618-009",
+      "dispatch_id": "DSP-20260618-011",
       "title": "St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended",
       "persona_key": "diaspora_investor",
       "persona_label": "Diaspora Investor",
@@ -460,7 +460,7 @@
       "signal_kind": "economic_vulnerability"
     },
     {
-      "dispatch_id": "DSP-20260618-010",
+      "dispatch_id": "DSP-20260618-012",
       "title": "St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended",
       "persona_key": "policy_media",
       "persona_label": "Policy/Media",
@@ -475,7 +475,7 @@
       "signal_kind": "economic_vulnerability"
     },
     {
-      "dispatch_id": "DSP-20260618-011",
+      "dispatch_id": "DSP-20260618-009",
       "title": "Suriname: economic stress indicators rising — portfolio review recommended",
       "persona_key": "diaspora_investor",
       "persona_label": "Diaspora Investor",
@@ -490,7 +490,7 @@
       "signal_kind": "economic_vulnerability"
     },
     {
-      "dispatch_id": "DSP-20260618-012",
+      "dispatch_id": "DSP-20260618-010",
       "title": "Suriname: economic stress indicators rising — portfolio review recommended",
       "persona_key": "policy_media",
       "persona_label": "Policy/Media",

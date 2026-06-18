@@ -654,6 +654,175 @@ def detect_supply_chain_signal(
     return signals
 
 
+# ── AIS Maritime Signals ─────────────────────────────────────
+
+
+def detect_port_activity_surge(
+    rules: dict,
+    ais_data: dict,
+) -> list[CompositeSignal]:
+    """Port activity surge from AIS vessel density.
+
+    Conditions:
+      - Vessel count at any monitored port >= threshold
+      - Port must be in the monitored Caribbean port list
+    """
+    cond = rules.get("conditions", {})
+    vessel_min = cond.get("vessel_count_min", 15)
+    port_list = cond.get("port_list", [])
+
+    ports_data = ais_data.get("ports", {}) if ais_data else {}
+    if not ports_data:
+        return []
+
+    signals: list[CompositeSignal] = []
+    for port_name, port_data in ports_data.items():
+        if port_list and port_name not in port_list:
+            continue
+
+        vessel_count = port_data.get("vessel_count", 0)
+        if vessel_count < vessel_min:
+            continue
+
+        avg_sog = port_data.get("avg_sog", 0)
+        port_vessels = port_data.get("vessels", [])
+
+        # Get country from port config
+        port_country = ""
+        for port in PORTS_CONFIG:
+            if port["name"] == port_name:
+                port_country = port["country"]
+                break
+
+        signals.append(CompositeSignal(
+            id=f"port-activity-{port_name.lower().replace(' ', '-')}",
+            kind="port_activity_surge",
+            label="🚢 Port Activity Surge",
+            priority="medium",
+            summary=f"{port_name} ({port_country}): {vessel_count} vessels in port zone — throughput surge",
+            evidence=[
+                f"Port: {port_name}, {port_country}",
+                f"Vessel count: {vessel_count}",
+                f"Avg speed over ground: {avg_sog:.1f} kt",
+                f"Collection window: {ais_data.get('collection_window_seconds', 0)}s",
+            ],
+            countries=[port_country] if port_country else [port_name],
+            sources=["AISstream.io"],
+        ))
+    return signals
+
+
+def detect_port_congestion(
+    rules: dict,
+    ais_data: dict,
+) -> list[CompositeSignal]:
+    """Port congestion from slow-moving vessels in port zone.
+
+    Conditions:
+      - Slow vessel count (SOG < threshold) >= minimum
+      - Indicates vessels waiting/anchored = congestion
+    """
+    cond = rules.get("conditions", {})
+    slow_min = cond.get("slow_vessel_count_min", 5)
+    speed_threshold = cond.get("speed_threshold_kts", 3.0)
+
+    ais_signals = ais_data.get("signals", []) if ais_data else []
+    if not ais_signals:
+        return []
+
+    signals: list[CompositeSignal] = []
+    for sig in ais_signals:
+        if sig.get("type") != "port_congestion":
+            continue
+
+        port_name = sig.get("port", "")
+        slow_count = sig.get("slow_vessels", 0)
+        avg_sog = sig.get("avg_sog_kn", 0)
+
+        if slow_count < slow_min:
+            continue
+
+        signals.append(CompositeSignal(
+            id=f"port-congestion-{port_name.lower().replace(' ', '-')}",
+            kind="port_congestion",
+            label="🚧 Port Congestion",
+            priority="high",
+            summary=f"{port_name}: {slow_count} vessels moving < {speed_threshold} kt — congestion detected",
+            evidence=[
+                f"Port: {port_name}",
+                f"Slow vessels (< {speed_threshold} kt): {slow_count}",
+                f"Avg speed in zone: {avg_sog:.1f} kt",
+                "Likely cause: anchorage waiting, berth queue, or weather delay",
+            ],
+            countries=[port_name],
+            sources=["AISstream.io"],
+        ))
+    return signals
+
+
+def detect_shipping_corridor(
+    rules: dict,
+    ais_data: dict,
+) -> list[CompositeSignal]:
+    """Shipping corridor detection from vessel traffic patterns.
+
+    Conditions:
+      - Vessel count in latitude band >= threshold
+      - Consistent eastbound or westbound direction
+    """
+    cond = rules.get("conditions", {})
+    vessel_min = cond.get("vessel_count_min", 20)
+    valid_directions = cond.get("direction", ["eastbound", "westbound"])
+
+    ais_corridors = ais_data.get("corridors", []) if ais_data else {}
+    if not ais_corridors:
+        return []
+
+    signals: list[CompositeSignal] = []
+    for corridor in ais_corridors:
+        if corridor.get("direction") not in valid_directions:
+            continue
+
+        vessel_count = corridor.get("vessel_count", 0)
+        if vessel_count < vessel_min:
+            continue
+
+        lat_band = corridor.get("lat_band", 0)
+        direction = corridor.get("direction", "unknown")
+        avg_course = corridor.get("avg_course", 0)
+
+        signals.append(CompositeSignal(
+            id=f"shipping-corridor-lat{int(lat_band)}-{direction}",
+            kind="shipping_corridor",
+            label="🛳️ Shipping Corridor Active",
+            priority="low",
+            summary=f"Lat {lat_band}°: {vessel_count} vessels on {direction} corridor (avg course {avg_course:.0f}°)",
+            evidence=[
+                f"Latitude band: {lat_band}°",
+                f"Vessel count: {vessel_count}",
+                f"Direction: {direction} (avg course {avg_course:.1f}°)",
+                "Indicates established trade lane — reliable logistics corridor",
+            ],
+            countries=["Caribbean/Atlantic"],
+            sources=["AISstream.io"],
+        ))
+    return signals
+
+
+PORTS_CONFIG = [
+    {"name": "Kingston", "country": "Jamaica", "lat": 17.97, "lon": -76.80, "bbox_radius_km": 50},
+    {"name": "Port of Spain", "country": "Trinidad", "lat": 10.65, "lon": -61.52, "bbox_radius_km": 50},
+    {"name": "Bridgetown", "country": "Barbados", "lat": 13.10, "lon": -59.62, "bbox_radius_km": 50},
+    {"name": "Georgetown", "country": "Guyana", "lat": 6.80, "lon": -58.15, "bbox_radius_km": 50},
+    {"name": "San Juan", "country": "Puerto Rico", "lat": 18.45, "lon": -66.10, "bbox_radius_km": 50},
+    {"name": "Nassau", "country": "Bahamas", "lat": 25.08, "lon": -77.34, "bbox_radius_km": 50},
+    {"name": "Port-au-Prince", "country": "Haiti", "lat": 18.55, "lon": -72.33, "bbox_radius_km": 50},
+    {"name": "St. George's", "country": "Grenada", "lat": 12.05, "lon": -61.75, "bbox_radius_km": 50},
+    {"name": "Castries", "country": "St. Lucia", "lat": 14.01, "lon": -60.99, "bbox_radius_km": 50},
+    {"name": "Roseau", "country": "Dominica", "lat": 15.30, "lon": -61.38, "bbox_radius_km": 50},
+]
+
+
 # ── NHC Storm Risk ─────────────────────────────────────────
 
 
@@ -988,7 +1157,7 @@ def write_outputs(
         "",
         f"- Generated: {fetched_at}",
         f"- Composite signals: {len(signals)}",
-        "- Sources: World Bank, IDB, NOAA NWS, NDBC Buoys, CARICOM, CDB",
+        "- Sources: World Bank, IDB, NOAA NWS, NDBC Buoys, CARICOM, CDB, CCRIF, ECCB, AISstream.io",
         "",
     ]
 
@@ -1004,6 +1173,7 @@ def write_outputs(
             "development_pipeline": "🏗️", "enhanced_investment": "💎",
             "supply_chain_signal": "🔗", "tropical_development": "🌪️", "active_storm": "🌀",
             "ccrif_payout": "💰", "eccb_credit_surge": "🏦", "eccb_deposit_growth": "🏦",
+            "port_activity_surge": "🚢", "port_congestion": "🚧", "shipping_corridor": "🛳️",
         }
         icon = icon_map.get(sig.kind, "•")
         priority_badge = {"high": "🔴", "medium": "🟡", "low": "🟢"}.get(sig.priority, "⚪")
@@ -1099,6 +1269,16 @@ def run(rules_path: Path, data_dir: Path, signal_dir: Path) -> int:
     if eccb_data:
         all_signals.extend(detect_eccb_credit_surge(eccb_rules_credit, eccb_data))
         all_signals.extend(detect_eccb_deposit_growth(eccb_rules_deposit, eccb_data))
+
+    # AIS Maritime signals
+    ais_rules_activity = combined_rules.get("port_activity_surge", {})
+    ais_rules_congestion = combined_rules.get("port_congestion", {})
+    ais_rules_corridor = combined_rules.get("shipping_corridor", {})
+    ais_data = load_json(ROOT / "data" / "ais" / "latest.json")
+    if ais_data:
+        all_signals.extend(detect_port_activity_surge(ais_rules_activity, ais_data))
+        all_signals.extend(detect_port_congestion(ais_rules_congestion, ais_data))
+        all_signals.extend(detect_shipping_corridor(ais_rules_corridor, ais_data))
 
     # NHC storm risk
     nhc_rules = combined_rules.get("tropical_development", {})

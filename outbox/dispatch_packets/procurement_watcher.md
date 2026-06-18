@@ -2,7 +2,7 @@
 
 **Decision job:** Project pipeline tracking and expression of interest preparation
 **Delivery channel:** Email brief
-**Generated:** Jun 18, 2026 at 00:38 UTC
+**Generated:** Jun 18, 2026 at 11:31 UTC
 **Dispatches in this packet:** 2
 
 ---
@@ -11,7 +11,7 @@
 
 ### 1. CARICOM: 3 active procurements — bidding window open
 
-**ID:** `DSP-20260618-016` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 95/100 | B - cross-source
+**ID:** `DSP-20260618-016` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 96/100 | B - cross-source
 **Channel:** Email brief | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -25,7 +25,7 @@
 
 ### 2. Belize: signal detected
 
-**ID:** `DSP-20260618-031` | **Country:** Belize | **Confidence:** 🔴 Immediate | 91/100 | A - multi-source
+**ID:** `DSP-20260618-031` | **Country:** Belize | **Confidence:** 🔴 Immediate | 94/100 | A - multi-source
 **Channel:** Email brief | **Window:** 21 days | **Freshness:** sustained
 **Feedback status:** ignored
 

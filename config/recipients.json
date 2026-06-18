@@ -177,6 +177,37 @@
         "ecosystem_builder": "Deposit surge = remittance inflow or FDI settlement = ecosystem liquidity",
         "regional_operator": "Deposit base = procurement capacity payment assurance"
       }
+    },
+    "port_activity_surge": {
+      "personas": ["regional_operator", "procurement_watcher", "founder_operator", "ecosystem_builder"],
+      "action_window": "7 days",
+      "decision_to_influence": "Port throughput increase = logistics demand = warehousing/transport opportunity",
+      "routing_rationale": {
+        "regional_operator": "Vessel surge at key port = immediate cargo handling and transport demand",
+        "procurement_watcher": "High port activity = import/export volume up = procurement pipeline likely expanding",
+        "founder_operator": "Port throughput growth = build logistics, cold storage, last-mile services here",
+        "ecosystem_builder": "Port activity = trade corridor health = regional integration indicator"
+      }
+    },
+    "port_congestion": {
+      "personas": ["regional_operator", "operator_resilience", "procurement_watcher"],
+      "action_window": "48 hours",
+      "decision_to_influence": "Port congestion = supply chain delay risk = reroute or buffer inventory decision",
+      "routing_rationale": {
+        "regional_operator": "Congestion = vessels waiting = delays, demurrage costs, rerouting needed immediately",
+        "operator_resilience": "Slow vessels in port zone = operational bottleneck = activate contingency routes",
+        "procurement_watcher": "Congestion at transshipment hub = procurement delivery risk = adjust schedules"
+      }
+    },
+    "shipping_corridor": {
+      "personas": ["regional_operator", "ecosystem_builder", "founder_operator"],
+      "action_window": "30 days",
+      "decision_to_influence": "Established shipping lane = reliable logistics corridor = infrastructure investment signal",
+      "routing_rationale": {
+        "regional_operator": "Consistent eastbound/westbound traffic = reliable corridor for scheduled services",
+        "ecosystem_builder": "Active corridor = trade route validation = port infrastructure and services investment case",
+        "founder_operator": "Known shipping lane = predictable transit times = build distribution hub here"
+      }
     }
   }
 }

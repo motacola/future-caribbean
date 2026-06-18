@@ -41,6 +41,7 @@ run_step "ECCB (Monetary Stats)" "python3 \"$ROOT/watchers/eccb_poller.py\"" "ec
 # ── Fast data (always runs) ───────────────────────────────
 run_step "NOAA NWS" "python3 \"$ROOT/watchers/noaa_nws_poller.py\"" "noaa_nws"
 run_step "NDBC Buoys" "python3 \"$ROOT/watchers/ndbc_buoy_poller.py\"" "ndbc_buoys"
+run_step "AIS Maritime" "python3 \"$ROOT/watchers/ais_poller.py\"" "ais_maritime"
 
 # ── NHC Storm Intelligence ──────────────────────────────
 run_step "NHC Storms" "python3 \"$ROOT/watchers/nhc_storm_poller.py\"" "nhc_storms"

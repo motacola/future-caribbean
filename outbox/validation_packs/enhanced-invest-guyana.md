@@ -3,7 +3,7 @@
 - Signal: `enhanced-invest-guyana` · Dispatch: `DSP-20260618-021`
 - Confidence: 100/100 · A - multi-source
 - Recommendation: **ADVANCE** — High-confidence signal (100/100) with 2 independent evidence categories already attached. Worth one validation conversation this cycle.
-- Last validated: 2026-06-18T00:38:45.114504+00:00
+- Last validated: 2026-06-18T11:31:05.336554+00:00
 
 ## Sector hypotheses
 - Oil & gas and offshore support services — _Analyst prior from widely reported sector drivers — requires local confirmation_

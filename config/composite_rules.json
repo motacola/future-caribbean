@@ -112,6 +112,30 @@
         "total_deposits_growth_pct_min": 3,
         "private_sector_credit_growth_pct_min": 5
       }
+    },
+    "port_activity_surge": {
+      "label": "🚢 Port Activity Surge",
+      "priority": "medium",
+      "conditions": {
+        "vessel_count_min": 15,
+        "port_list": ["Kingston", "Port of Spain", "Bridgetown", "Georgetown", "San Juan", "Nassau", "Port-au-Prince", "St. George's", "Castries", "Roseau"]
+      }
+    },
+    "port_congestion": {
+      "label": "🚧 Port Congestion",
+      "priority": "high",
+      "conditions": {
+        "slow_vessel_count_min": 5,
+        "speed_threshold_kts": 3
+      }
+    },
+    "shipping_corridor": {
+      "label": "🛳️ Shipping Corridor Active",
+      "priority": "low",
+      "conditions": {
+        "vessel_count_min": 20,
+        "direction": ["eastbound", "westbound"]
+      }
     }
   }
 }

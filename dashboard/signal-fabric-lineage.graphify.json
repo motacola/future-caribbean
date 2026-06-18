@@ -1,0 +1,1050 @@
+{
+  "graph": {
+    "nodes": [
+      {
+        "id": "src_wb",
+        "label": "World Bank",
+        "type": "source",
+        "description": "REST API \u00b7 5 indicators \u00d7 13 countries",
+        "color": "#2676A8"
+      },
+      {
+        "id": "src_idb",
+        "label": "IDB Open Data",
+        "type": "source",
+        "description": "CKAN API \u00b7 99 Caribbean datasets",
+        "color": "#2676A8"
+      },
+      {
+        "id": "src_noaa",
+        "label": "NOAA NWS",
+        "type": "source",
+        "description": "REST API \u00b7 Weather alerts",
+        "color": "#0D766E"
+      },
+      {
+        "id": "src_ndbc",
+        "label": "NDBC Buoys",
+        "type": "source",
+        "description": "Tabular text \u00b7 6 buoys",
+        "color": "#0D766E"
+      },
+      {
+        "id": "src_caricom",
+        "label": "CARICOM Stats",
+        "type": "source",
+        "description": "WP REST API \u00b7 126 datasets",
+        "color": "#B57A22"
+      },
+      {
+        "id": "src_cdb",
+        "label": "CDB",
+        "type": "source",
+        "description": "RSS \u00b7 Procurement & evaluations",
+        "color": "#B57A22"
+      },
+      {
+        "id": "src_ccrif",
+        "label": "CCRIF SPC",
+        "type": "source",
+        "description": "Parametric payouts (TC, EQ, rainfall)",
+        "color": "#B94836"
+      },
+      {
+        "id": "src_eccb",
+        "label": "ECCB",
+        "type": "source",
+        "description": "Monetary stats (credit, deposits, NFA)",
+        "color": "#B57A22"
+      },
+      {
+        "id": "w_wb",
+        "label": "World Bank\nPoller",
+        "type": "watcher",
+        "description": "5 indicators \u00d7 13 countries",
+        "color": "#2676A8"
+      },
+      {
+        "id": "w_idb",
+        "label": "IDB CKAN\nPoller",
+        "type": "watcher",
+        "description": "99 datasets",
+        "color": "#2676A8"
+      },
+      {
+        "id": "w_tier2",
+        "label": "Tier 2\nScraper",
+        "type": "watcher",
+        "description": "CARICOM WP API + CDB RSS",
+        "color": "#B57A22"
+      },
+      {
+        "id": "w_tenders",
+        "label": "Tenders\nPoller",
+        "type": "watcher",
+        "description": "Guyana eProcure API",
+        "color": "#2676A8"
+      },
+      {
+        "id": "w_ccrif",
+        "label": "CCRIF\nPoller",
+        "type": "watcher",
+        "description": "Parametric payouts scrape",
+        "color": "#B94836"
+      },
+      {
+        "id": "w_eccb",
+        "label": "ECCB\nPoller",
+        "type": "watcher",
+        "description": "Monetary stats scrape",
+        "color": "#B57A22"
+      },
+      {
+        "id": "w_noaa",
+        "label": "NOAA NWS\nPoller",
+        "type": "watcher",
+        "description": "Active weather alerts",
+        "color": "#0D766E"
+      },
+      {
+        "id": "w_ndbc",
+        "label": "NDBC Buoy\nPoller",
+        "type": "watcher",
+        "description": "6 buoys wind/pressure",
+        "color": "#0D766E"
+      },
+      {
+        "id": "w_nhc",
+        "label": "NHC Storm\nPoller",
+        "type": "watcher",
+        "description": "Tropical cyclone tracking",
+        "color": "#B94836"
+      },
+      {
+        "id": "merger",
+        "label": "Cross-Source\nMerger",
+        "type": "merger",
+        "description": "Composite rules engine \u00b7 14 signal types",
+        "color": "#18251F"
+      },
+      {
+        "id": "sig_cyclone",
+        "label": "\ud83c\udf00 Cyclone Risk",
+        "type": "signal",
+        "priority": "high",
+        "color": "#B94836"
+      },
+      {
+        "id": "sig_maritime",
+        "label": "\ud83d\udea2 Maritime Hazard",
+        "type": "signal",
+        "priority": "medium",
+        "color": "#B6C74E"
+      },
+      {
+        "id": "sig_invest",
+        "label": "\ud83d\udcbc Investment Signal",
+        "type": "signal",
+        "priority": "medium",
+        "color": "#2676A8"
+      },
+      {
+        "id": "sig_enhanced",
+        "label": "\ud83d\udc8e Enhanced Investment",
+        "type": "signal",
+        "priority": "medium",
+        "color": "#2676A8"
+      },
+      {
+        "id": "sig_vuln",
+        "label": "\u26a0\ufe0f Economic Vulnerability",
+        "type": "signal",
+        "priority": "medium",
+        "color": "#B94836"
+      },
+      {
+        "id": "sig_tourism",
+        "label": "\ud83c\udfd6\ufe0f Tourism Impact",
+        "type": "signal",
+        "priority": "low",
+        "color": "#B6C74E"
+      },
+      {
+        "id": "sig_food",
+        "label": "\ud83c\udf3e Food Security",
+        "type": "signal",
+        "priority": "medium",
+        "color": "#B6C74E"
+      },
+      {
+        "id": "sig_dev",
+        "label": "\ud83c\udfd7\ufe0f Development Pipeline",
+        "type": "signal",
+        "priority": "medium",
+        "color": "#B57A22"
+      },
+      {
+        "id": "sig_supply",
+        "label": "\ud83d\udd17 Supply Chain",
+        "type": "signal",
+        "priority": "medium",
+        "color": "#B57A22"
+      },
+      {
+        "id": "sig_ccrif",
+        "label": "\ud83d\udcb0 CCRIF Payout",
+        "type": "signal",
+        "priority": "high",
+        "color": "#B94836"
+      },
+      {
+        "id": "sig_eccb_credit",
+        "label": "\ud83c\udfe6 ECCB Credit Surge",
+        "type": "signal",
+        "priority": "medium",
+        "color": "#B57A22"
+      },
+      {
+        "id": "sig_eccb_deposit",
+        "label": "\ud83c\udfe6 ECCB Deposit Growth",
+        "type": "signal",
+        "priority": "medium",
+        "color": "#B57A22"
+      },
+      {
+        "id": "sig_trop_dev",
+        "label": "\ud83c\udf2a\ufe0f Tropical Development",
+        "type": "signal",
+        "priority": "high",
+        "color": "#B94836"
+      },
+      {
+        "id": "sig_active_storm",
+        "label": "\ud83c\udf00 Active Storm",
+        "type": "signal",
+        "priority": "high",
+        "color": "#B94836"
+      },
+      {
+        "id": "p_diaspora",
+        "label": "\ud83d\udcbc Diaspora Investor",
+        "type": "persona",
+        "channel": "Email + Telegram",
+        "color": "#2676A8"
+      },
+      {
+        "id": "p_founder",
+        "label": "\ud83c\udfed Founder/Operator",
+        "type": "persona",
+        "channel": "Telegram",
+        "color": "#2676A8"
+      },
+      {
+        "id": "p_ecosystem",
+        "label": "\ud83c\udf10 Ecosystem Builder",
+        "type": "persona",
+        "channel": "Telegram",
+        "color": "#0D766E"
+      },
+      {
+        "id": "p_regional",
+        "label": "\ud83d\ude9a Regional Operator",
+        "type": "persona",
+        "channel": "Telegram",
+        "color": "#B57A22"
+      },
+      {
+        "id": "p_procurement",
+        "label": "\ud83d\udccb Procurement Watcher",
+        "type": "persona",
+        "channel": "Email",
+        "color": "#B57A22"
+      },
+      {
+        "id": "p_resilience",
+        "label": "\u26a1 Ops/Resilience",
+        "type": "persona",
+        "channel": "Telegram/SMS",
+        "color": "#B94836"
+      },
+      {
+        "id": "p_tourism",
+        "label": "\ud83c\udfe8 Tourism/Logistics",
+        "type": "persona",
+        "channel": "Telegram",
+        "color": "#B6C74E"
+      },
+      {
+        "id": "p_policy",
+        "label": "\ud83d\udcf0 Policy/Media",
+        "type": "persona",
+        "channel": "Telegram Digest",
+        "color": "#7F8C83"
+      },
+      {
+        "id": "art_desk",
+        "label": "Dispatch Desk\n(dispatch_desk.md)",
+        "type": "artifact",
+        "description": "Decision clusters + persona routes",
+        "color": "#18251F"
+      },
+      {
+        "id": "art_dispatches",
+        "label": "Opportunity\nDispatches",
+        "type": "artifact",
+        "description": "32 routed actions per cycle",
+        "color": "#18251F"
+      },
+      {
+        "id": "art_packs",
+        "label": "Validation Packs\n(5 per cycle)",
+        "type": "artifact",
+        "description": "Sector hypotheses + procurement",
+        "color": "#18251F"
+      },
+      {
+        "id": "art_thesis",
+        "label": "Regional Thesis\n+ Why Now",
+        "type": "artifact",
+        "description": "Cross-cluster synthesis",
+        "color": "#18251F"
+      },
+      {
+        "id": "art_backtest",
+        "label": "Backtest Report\n(accuracy metrics)",
+        "type": "artifact",
+        "description": "Precision/recall per signal",
+        "color": "#18251F"
+      },
+      {
+        "id": "art_dashboard",
+        "label": "Interactive\nDashboard",
+        "type": "artifact",
+        "description": "Map + theater + ask-the-desk",
+        "color": "#18251F"
+      },
+      {
+        "id": "art_community",
+        "label": "Community Brief\n(WhatsApp/IG/X)",
+        "type": "artifact",
+        "description": "Plain-language signals",
+        "color": "#18251F"
+      },
+      {
+        "id": "art_api",
+        "label": "HTTP API +\nMCP Adapter",
+        "type": "artifact",
+        "description": "Agent-agnostic interface",
+        "color": "#18251F"
+      }
+    ],
+    "edges": [
+      {
+        "from": "src_wb",
+        "to": "w_wb",
+        "label": "fetches",
+        "style": "solid"
+      },
+      {
+        "from": "src_idb",
+        "to": "w_idb",
+        "label": "fetches",
+        "style": "solid"
+      },
+      {
+        "from": "src_caricom",
+        "to": "w_tier2",
+        "label": "fetches",
+        "style": "solid"
+      },
+      {
+        "from": "src_cdb",
+        "to": "w_tier2",
+        "label": "fetches",
+        "style": "solid"
+      },
+      {
+        "from": "src_ccrif",
+        "to": "w_ccrif",
+        "label": "fetches",
+        "style": "solid"
+      },
+      {
+        "from": "src_eccb",
+        "to": "w_eccb",
+        "label": "fetches",
+        "style": "solid"
+      },
+      {
+        "from": "src_noaa",
+        "to": "w_noaa",
+        "label": "fetches",
+        "style": "solid"
+      },
+      {
+        "from": "src_ndbc",
+        "to": "w_ndbc",
+        "label": "fetches",
+        "style": "solid"
+      },
+      {
+        "from": "w_wb",
+        "to": "merger",
+        "label": "normalized JSON",
+        "style": "solid"
+      },
+      {
+        "from": "w_idb",
+        "to": "merger",
+        "label": "normalized JSON",
+        "style": "solid"
+      },
+      {
+        "from": "w_tier2",
+        "to": "merger",
+        "label": "normalized JSON",
+        "style": "solid"
+      },
+      {
+        "from": "w_tenders",
+        "to": "merger",
+        "label": "normalized JSON",
+        "style": "solid"
+      },
+      {
+        "from": "w_ccrif",
+        "to": "merger",
+        "label": "normalized JSON",
+        "style": "solid"
+      },
+      {
+        "from": "w_eccb",
+        "to": "merger",
+        "label": "normalized JSON",
+        "style": "solid"
+      },
+      {
+        "from": "w_noaa",
+        "to": "merger",
+        "label": "normalized JSON",
+        "style": "solid"
+      },
+      {
+        "from": "w_ndbc",
+        "to": "merger",
+        "label": "normalized JSON",
+        "style": "solid"
+      },
+      {
+        "from": "w_nhc",
+        "to": "merger",
+        "label": "normalized JSON",
+        "style": "solid"
+      },
+      {
+        "from": "w_ndbc",
+        "to": "sig_cyclone",
+        "label": "composite rule",
+        "style": "dashed"
+      },
+      {
+        "from": "w_noaa",
+        "to": "sig_cyclone",
+        "label": "composite rule",
+        "style": "dashed"
+      },
+      {
+        "from": "w_ndbc",
+        "to": "sig_maritime",
+        "label": "composite rule",
+        "style": "dashed"
+      },
+      {
+        "from": "w_noaa",
+        "to": "sig_maritime",
+        "label": "composite rule",
+        "style": "dashed"
+      },
+      {
+        "from": "w_wb",
+        "to": "sig_invest",
+        "label": "composite rule",
+        "style": "dashed"
+      },
+      {
+        "from": "w_idb",
+        "to": "sig_invest",
+        "label": "composite rule",
+        "style": "dashed"
+      },
+      {
+        "from": "w_wb",
+        "to": "sig_enhanced",
+        "label": "composite rule",
+        "style": "dashed"
+      },
+      {
+        "from": "w_tier2",
+        "to": "sig_enhanced",
+        "label": "composite rule",
+        "style": "dashed"
+      },
+      {
+        "from": "w_wb",
+        "to": "sig_vuln",
+        "label": "composite rule",
+        "style": "dashed"
+      },
+      {
+        "from": "w_wb",
+        "to": "sig_tourism",
+        "label": "composite rule",
+        "style": "dashed"
+      },
+      {
+        "from": "w_noaa",
+        "to": "sig_tourism",
+        "label": "composite rule",
+        "style": "dashed"
+      },
+      {
+        "from": "w_tier2",
+        "to": "sig_food",
+        "label": "composite rule",
+        "style": "dashed"
+      },
+      {
+        "from": "w_wb",
+        "to": "sig_food",
+        "label": "composite rule",
+        "style": "dashed"
+      },
+      {
+        "from": "w_tier2",
+        "to": "sig_dev",
+        "label": "composite rule",
+        "style": "dashed"
+      },
+      {
+        "from": "w_idb",
+        "to": "sig_dev",
+        "label": "composite rule",
+        "style": "dashed"
+      },
+      {
+        "from": "w_tier2",
+        "to": "sig_supply",
+        "label": "composite rule",
+        "style": "dashed"
+      },
+      {
+        "from": "w_ndbc",
+        "to": "sig_supply",
+        "label": "composite rule",
+        "style": "dashed"
+      },
+      {
+        "from": "w_ccrif",
+        "to": "sig_ccrif",
+        "label": "composite rule",
+        "style": "dashed"
+      },
+      {
+        "from": "w_eccb",
+        "to": "sig_eccb_credit",
+        "label": "composite rule",
+        "style": "dashed"
+      },
+      {
+        "from": "w_eccb",
+        "to": "sig_eccb_deposit",
+        "label": "composite rule",
+        "style": "dashed"
+      },
+      {
+        "from": "w_nhc",
+        "to": "sig_trop_dev",
+        "label": "composite rule",
+        "style": "dashed"
+      },
+      {
+        "from": "w_noaa",
+        "to": "sig_trop_dev",
+        "label": "composite rule",
+        "style": "dashed"
+      },
+      {
+        "from": "w_nhc",
+        "to": "sig_active_storm",
+        "label": "composite rule",
+        "style": "dashed"
+      },
+      {
+        "from": "sig_cyclone",
+        "to": "p_resilience",
+        "label": "routed to",
+        "style": "dotted"
+      },
+      {
+        "from": "sig_cyclone",
+        "to": "p_tourism",
+        "label": "routed to",
+        "style": "dotted"
+      },
+      {
+        "from": "sig_maritime",
+        "to": "p_resilience",
+        "label": "routed to",
+        "style": "dotted"
+      },
+      {
+        "from": "sig_maritime",
+        "to": "p_tourism",
+        "label": "routed to",
+        "style": "dotted"
+      },
+      {
+        "from": "sig_invest",
+        "to": "p_diaspora",
+        "label": "routed to",
+        "style": "dotted"
+      },
+      {
+        "from": "sig_invest",
+        "to": "p_founder",
+        "label": "routed to",
+        "style": "dotted"
+      },
+      {
+        "from": "sig_enhanced",
+        "to": "p_diaspora",
+        "label": "routed to",
+        "style": "dotted"
+      },
+      {
+        "from": "sig_enhanced",
+        "to": "p_ecosystem",
+        "label": "routed to",
+        "style": "dotted"
+      },
+      {
+        "from": "sig_enhanced",
+        "to": "p_founder",
+        "label": "routed to",
+        "style": "dotted"
+      },
+      {
+        "from": "sig_vuln",
+        "to": "p_diaspora",
+        "label": "routed to",
+        "style": "dotted"
+      },
+      {
+        "from": "sig_vuln",
+        "to": "p_policy",
+        "label": "routed to",
+        "style": "dotted"
+      },
+      {
+        "from": "sig_tourism",
+        "to": "p_tourism",
+        "label": "routed to",
+        "style": "dotted"
+      },
+      {
+        "from": "sig_tourism",
+        "to": "p_founder",
+        "label": "routed to",
+        "style": "dotted"
+      },
+      {
+        "from": "sig_food",
+        "to": "p_ecosystem",
+        "label": "routed to",
+        "style": "dotted"
+      },
+      {
+        "from": "sig_food",
+        "to": "p_policy",
+        "label": "routed to",
+        "style": "dotted"
+      },
+      {
+        "from": "sig_dev",
+        "to": "p_regional",
+        "label": "routed to",
+        "style": "dotted"
+      },
+      {
+        "from": "sig_dev",
+        "to": "p_procurement",
+        "label": "routed to",
+        "style": "dotted"
+      },
+      {
+        "from": "sig_dev",
+        "to": "p_founder",
+        "label": "routed to",
+        "style": "dotted"
+      },
+      {
+        "from": "sig_supply",
+        "to": "p_regional",
+        "label": "routed to",
+        "style": "dotted"
+      },
+      {
+        "from": "sig_supply",
+        "to": "p_procurement",
+        "label": "routed to",
+        "style": "dotted"
+      },
+      {
+        "from": "sig_supply",
+        "to": "p_founder",
+        "label": "routed to",
+        "style": "dotted"
+      },
+      {
+        "from": "sig_ccrif",
+        "to": "p_diaspora",
+        "label": "routed to",
+        "style": "dotted"
+      },
+      {
+        "from": "sig_ccrif",
+        "to": "p_policy",
+        "label": "routed to",
+        "style": "dotted"
+      },
+      {
+        "from": "sig_ccrif",
+        "to": "p_resilience",
+        "label": "routed to",
+        "style": "dotted"
+      },
+      {
+        "from": "sig_ccrif",
+        "to": "p_ecosystem",
+        "label": "routed to",
+        "style": "dotted"
+      },
+      {
+        "from": "sig_eccb_credit",
+        "to": "p_diaspora",
+        "label": "routed to",
+        "style": "dotted"
+      },
+      {
+        "from": "sig_eccb_credit",
+        "to": "p_founder",
+        "label": "routed to",
+        "style": "dotted"
+      },
+      {
+        "from": "sig_eccb_credit",
+        "to": "p_ecosystem",
+        "label": "routed to",
+        "style": "dotted"
+      },
+      {
+        "from": "sig_eccb_credit",
+        "to": "p_regional",
+        "label": "routed to",
+        "style": "dotted"
+      },
+      {
+        "from": "sig_eccb_deposit",
+        "to": "p_diaspora",
+        "label": "routed to",
+        "style": "dotted"
+      },
+      {
+        "from": "sig_eccb_deposit",
+        "to": "p_ecosystem",
+        "label": "routed to",
+        "style": "dotted"
+      },
+      {
+        "from": "sig_eccb_deposit",
+        "to": "p_regional",
+        "label": "routed to",
+        "style": "dotted"
+      },
+      {
+        "from": "sig_trop_dev",
+        "to": "p_resilience",
+        "label": "routed to",
+        "style": "dotted"
+      },
+      {
+        "from": "sig_active_storm",
+        "to": "p_resilience",
+        "label": "routed to",
+        "style": "dotted"
+      },
+      {
+        "from": "p_diaspora",
+        "to": "art_desk",
+        "label": "consumes",
+        "style": "dotted"
+      },
+      {
+        "from": "p_diaspora",
+        "to": "art_dispatches",
+        "label": "consumes",
+        "style": "dotted"
+      },
+      {
+        "from": "p_diaspora",
+        "to": "art_packs",
+        "label": "consumes",
+        "style": "dotted"
+      },
+      {
+        "from": "p_diaspora",
+        "to": "art_backtest",
+        "label": "consumes",
+        "style": "dotted"
+      },
+      {
+        "from": "p_founder",
+        "to": "art_desk",
+        "label": "consumes",
+        "style": "dotted"
+      },
+      {
+        "from": "p_founder",
+        "to": "art_dispatches",
+        "label": "consumes",
+        "style": "dotted"
+      },
+      {
+        "from": "p_founder",
+        "to": "art_packs",
+        "label": "consumes",
+        "style": "dotted"
+      },
+      {
+        "from": "p_founder",
+        "to": "art_dashboard",
+        "label": "consumes",
+        "style": "dotted"
+      },
+      {
+        "from": "p_ecosystem",
+        "to": "art_desk",
+        "label": "consumes",
+        "style": "dotted"
+      },
+      {
+        "from": "p_ecosystem",
+        "to": "art_packs",
+        "label": "consumes",
+        "style": "dotted"
+      },
+      {
+        "from": "p_ecosystem",
+        "to": "art_thesis",
+        "label": "consumes",
+        "style": "dotted"
+      },
+      {
+        "from": "p_ecosystem",
+        "to": "art_backtest",
+        "label": "consumes",
+        "style": "dotted"
+      },
+      {
+        "from": "p_regional",
+        "to": "art_desk",
+        "label": "consumes",
+        "style": "dotted"
+      },
+      {
+        "from": "p_regional",
+        "to": "art_dispatches",
+        "label": "consumes",
+        "style": "dotted"
+      },
+      {
+        "from": "p_regional",
+        "to": "art_packs",
+        "label": "consumes",
+        "style": "dotted"
+      },
+      {
+        "from": "p_procurement",
+        "to": "art_desk",
+        "label": "consumes",
+        "style": "dotted"
+      },
+      {
+        "from": "p_procurement",
+        "to": "art_dispatches",
+        "label": "consumes",
+        "style": "dotted"
+      },
+      {
+        "from": "p_procurement",
+        "to": "art_packs",
+        "label": "consumes",
+        "style": "dotted"
+      },
+      {
+        "from": "p_resilience",
+        "to": "art_desk",
+        "label": "consumes",
+        "style": "dotted"
+      },
+      {
+        "from": "p_resilience",
+        "to": "art_dispatches",
+        "label": "consumes",
+        "style": "dotted"
+      },
+      {
+        "from": "p_resilience",
+        "to": "art_community",
+        "label": "consumes",
+        "style": "dotted"
+      },
+      {
+        "from": "p_tourism",
+        "to": "art_desk",
+        "label": "consumes",
+        "style": "dotted"
+      },
+      {
+        "from": "p_tourism",
+        "to": "art_dispatches",
+        "label": "consumes",
+        "style": "dotted"
+      },
+      {
+        "from": "p_tourism",
+        "to": "art_dashboard",
+        "label": "consumes",
+        "style": "dotted"
+      },
+      {
+        "from": "p_policy",
+        "to": "art_desk",
+        "label": "consumes",
+        "style": "dotted"
+      },
+      {
+        "from": "p_policy",
+        "to": "art_thesis",
+        "label": "consumes",
+        "style": "dotted"
+      },
+      {
+        "from": "p_policy",
+        "to": "art_backtest",
+        "label": "consumes",
+        "style": "dotted"
+      },
+      {
+        "from": "p_policy",
+        "to": "art_community",
+        "label": "consumes",
+        "style": "dotted"
+      },
+      {
+        "from": "art_desk",
+        "to": "art_api",
+        "label": "served via",
+        "style": "dashed"
+      },
+      {
+        "from": "art_dispatches",
+        "to": "art_api",
+        "label": "served via",
+        "style": "dashed"
+      },
+      {
+        "from": "art_packs",
+        "to": "art_api",
+        "label": "served via",
+        "style": "dashed"
+      },
+      {
+        "from": "art_thesis",
+        "to": "art_api",
+        "label": "served via",
+        "style": "dashed"
+      },
+      {
+        "from": "art_backtest",
+        "to": "art_api",
+        "label": "served via",
+        "style": "dashed"
+      },
+      {
+        "from": "art_dashboard",
+        "to": "art_api",
+        "label": "served via",
+        "style": "dashed"
+      },
+      {
+        "from": "art_community",
+        "to": "art_api",
+        "label": "served via",
+        "style": "dashed"
+      },
+      {
+        "from": "art_api",
+        "to": "art_api",
+        "label": "served via",
+        "style": "dashed"
+      }
+    ],
+    "metadata": {
+      "title": "Signal Fabric \u2014 Data Lineage & Routing Graph",
+      "description": "8 sources \u2192 8 watchers \u2192 merger \u2192 14 signals \u2192 11 personas \u2192 8 artifacts \u2192 API",
+      "version": "1.0",
+      "cycle": "4-hour"
+    }
+  },
+  "config": {
+    "layout": "hierarchical",
+    "direction": "LR",
+    "nodeSpacing": 100,
+    "rankSpacing": 150,
+    "edgeLabelFontSize": 10,
+    "nodeLabelFontSize": 11
+  },
+  "styles": {
+    "source": {
+      "shape": "box",
+      "fillColor": "#E8F0FE",
+      "borderColor": "#2676A8"
+    },
+    "watcher": {
+      "shape": "ellipse",
+      "fillColor": "#E8F0FE",
+      "borderColor": "#2676A8"
+    },
+    "merger": {
+      "shape": "diamond",
+      "fillColor": "#F4EBDD",
+      "borderColor": "#18251F"
+    },
+    "signal": {
+      "shape": "hexagon",
+      "fillColor": "#FEF3E2",
+      "borderColor": "#B57A22"
+    },
+    "persona": {
+      "shape": "circle",
+      "fillColor": "#E6F2EC",
+      "borderColor": "#0D766E"
+    },
+    "artifact": {
+      "shape": "folder",
+      "fillColor": "#F4EBDD",
+      "borderColor": "#18251F"
+    }
+  }
+}

@@ -2,7 +2,7 @@
 
 **Decision job:** Capacity planning and demand trajectory assessment
 **Delivery channel:** Telegram
-**Generated:** Jun 18, 2026 at 00:36 UTC
+**Generated:** Jun 18, 2026 at 10:46 UTC
 **Dispatches in this packet:** 1
 
 ---

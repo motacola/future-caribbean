@@ -1,6 +1,6 @@
 # Dispatch Desk — Cycle 20260618
 
-Generated: 2026-06-18 00:38 UTC
+Generated: 2026-06-18 11:31 UTC
 
 Signal Fabric turns fragmented regional data into decision-ready routes. This is the primary product surface; Telegram/email are delivery channels and the dashboard is the operator/audit view.
 
@@ -25,7 +25,7 @@ Capital momentum is strongest in Guyana (+860.3%), followed by Belize, St. Vince
 
 - 🔴 **Atlantic Hurricane Season** — Operational risk for all Caribbean stakeholders. Monitoring NHC/NWS/NDBC for tropical development and maritime hazards.
 - 🔴 **Q2 Procurement Cycle** — CDB and IDB typically issue mid-year procurement rounds in Q2. Pipeline data especially actionable now.
-- 🟡 **Future Caribbean Buildathon** in 28 days — Regional innovation event approaching. Ecosystem builder and founder-matching dispatches most actionable now.
+- 🟡 **Future Caribbean Buildathon** in 27 days — Regional innovation event approaching. Ecosystem builder and founder-matching dispatches most actionable now.
 
 ## Decision Clusters
 
@@ -76,7 +76,7 @@ Capital momentum is strongest in Guyana (+860.3%), followed by Belize, St. Vince
 
 - **Decision:** Which procurement or project opportunity to pursue
 - **Evidence:** CDB active procurement notices: 3 (B - cross-source)
-- **Confidence:** 95/100 · sustained
+- **Confidence:** 96/100 · sustained
 - **Signal detail:** CDB active procurement notices: 3
 - **Feedback effect:** Feedback this cycle: 2 ignored, 1 replied.
 
@@ -90,7 +90,7 @@ Capital momentum is strongest in Guyana (+860.3%), followed by Belize, St. Vince
 
 - **Decision:** Which logistics/procurement corridor to bid or partner on
 - **Evidence:** CDB active procurement notices: 3 (A - multi-source)
-- **Confidence:** 91/100 · sustained
+- **Confidence:** 94/100 · sustained
 - **Signal detail:** signal detected
 - **Feedback effect:** Feedback this cycle: 3 ignored.
 
@@ -131,7 +131,7 @@ Capital momentum is strongest in Guyana (+860.3%), followed by Belize, St. Vince
 
 - **Decision:** Which country-sector pair to validate for investment readiness
 - **Evidence:** Guyana: Foreign direct investment net inflows current USD moved up 860.3% from 2023 to 2024. (B - cross-source)
-- **Confidence:** 88/100 · sustained
+- **Confidence:** 90/100 · sustained
 - **Signal detail:** 860.3% change
 - **Feedback effect:** Feedback this cycle: 2 ignored.
 
@@ -142,11 +142,11 @@ Capital momentum is strongest in Guyana (+860.3%), followed by Belize, St. Vince
 
 ## Feedback-Adjusted Priority
 
-- St. Vincent and the Grenadines enhanced investment downranked -9
-- Belize supply chain signal downranked -9
 - St. Vincent and the Grenadines economic vulnerability upranked +8
-- Guyana investment signal downranked -6
-- Guyana enhanced investment upranked +6
+- St. Vincent and the Grenadines enhanced investment downranked -6
+- Belize supply chain signal downranked -6
+- Guyana enhanced investment upranked +5
+- Suriname economic vulnerability downranked -4
 
 ## Supporting Artifacts
 

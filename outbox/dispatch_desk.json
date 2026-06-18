@@ -1,10 +1,10 @@
 {
   "boost_lines": [
-    "St. Vincent and the Grenadines enhanced investment downranked -9",
-    "Belize supply chain signal downranked -9",
     "St. Vincent and the Grenadines economic vulnerability upranked +8",
-    "Guyana investment signal downranked -6",
-    "Guyana enhanced investment upranked +6"
+    "St. Vincent and the Grenadines enhanced investment downranked -6",
+    "Belize supply chain signal downranked -6",
+    "Guyana enhanced investment upranked +5",
+    "Suriname economic vulnerability downranked -4"
   ],
   "channel_count": 4,
   "cluster_count": 13,
@@ -147,8 +147,8 @@
     },
     {
       "cluster_id": "CL-development-pipeline-caricom",
-      "confidence_display": "\ud83d\udd34 Immediate | 95/100 | B - cross-source",
-      "confidence_score": 95,
+      "confidence_display": "\ud83d\udd34 Immediate | 96/100 | B - cross-source",
+      "confidence_score": 96,
       "country_cluster": "CARICOM",
       "decision": "Which procurement or project opportunity to pursue",
       "detail": "CDB active procurement notices: 3",
@@ -192,8 +192,8 @@
     },
     {
       "cluster_id": "CL-supply-chain-signal-belize",
-      "confidence_display": "\ud83d\udd34 Immediate | 91/100 | A - multi-source",
-      "confidence_score": 91,
+      "confidence_display": "\ud83d\udd34 Immediate | 94/100 | A - multi-source",
+      "confidence_score": 94,
       "country_cluster": "Belize",
       "decision": "Which logistics/procurement corridor to bid or partner on",
       "detail": "signal detected",
@@ -316,8 +316,8 @@
     },
     {
       "cluster_id": "CL-investment-signal-guyana",
-      "confidence_display": "\ud83d\udfe1 Validation | 88/100 | B - cross-source",
-      "confidence_score": 88,
+      "confidence_display": "\ud83d\udd34 Immediate | 90/100 | B - cross-source",
+      "confidence_score": 90,
       "country_cluster": "Guyana",
       "decision": "Which country-sector pair to validate for investment readiness",
       "detail": "860.3% change",
@@ -352,8 +352,8 @@
     },
     {
       "cluster_id": "CL-investment-signal-belize",
-      "confidence_display": "\ud83d\udfe1 Validation | 88/100 | B - cross-source",
-      "confidence_score": 88,
+      "confidence_display": "\ud83d\udd34 Immediate | 90/100 | B - cross-source",
+      "confidence_score": 90,
       "country_cluster": "Belize",
       "decision": "Which country-sector pair to validate for investment readiness",
       "detail": "701.0% change",
@@ -385,6 +385,42 @@
       "risk_flags": [],
       "signal_kind": "investment_signal",
       "title": "Belize: FDI trending at +701.0% \u2014 screening trigger active"
+    },
+    {
+      "cluster_id": "CL-food-security-caricom",
+      "confidence_display": "\ud83d\udfe1 Validation | 80/100 | B - cross-source",
+      "confidence_score": 80,
+      "country_cluster": "CARICOM",
+      "decision": "Agricultural/logistics investment case or policy response planning",
+      "detail": "5%",
+      "evidence": "CARICOM food trade data: 14 datasets available",
+      "evidence_grade": "B - cross-source",
+      "feedback_counts": {
+        "ignored": 2
+      },
+      "feedback_summary": "Feedback this cycle: 2 ignored.",
+      "freshness": "sustained",
+      "personas": [
+        {
+          "action": "Signal context for CARICOM: 5%. Use this dispatch as a briefing input or narrative lead.",
+          "channel": "Telegram digest",
+          "dispatch_id": "DSP-20260618-014",
+          "feedback_status": "ignored",
+          "persona": "Policy/Media",
+          "rationale": "Food security is a regional stability indicator \u2014 tracks pressure points before they become crises"
+        },
+        {
+          "action": "Route CARICOM opportunity to relevant founders and investors in your network. Signal strength (5%) makes this a high-priority introduction target.",
+          "channel": "Telegram",
+          "dispatch_id": "DSP-20260618-013",
+          "feedback_status": "ignored",
+          "persona": "Ecosystem Builder",
+          "rationale": "Food trade data reveals supply chain gaps that local founders and agri-tech can fill"
+        }
+      ],
+      "risk_flags": [],
+      "signal_kind": "food_security",
+      "title": "CARICOM: food supply indicators shifting \u2014 supply chain implications"
     },
     {
       "cluster_id": "CL-investment-signal-st-vincent-and-the-grenadines",
@@ -423,42 +459,6 @@
       "title": "St. Vincent and the Grenadines: FDI trending at +88.2% \u2014 screening trigger active"
     },
     {
-      "cluster_id": "CL-food-security-caricom",
-      "confidence_display": "\ud83d\udfe1 Validation | 78/100 | B - cross-source",
-      "confidence_score": 78,
-      "country_cluster": "CARICOM",
-      "decision": "Agricultural/logistics investment case or policy response planning",
-      "detail": "5%",
-      "evidence": "CARICOM food trade data: 14 datasets available",
-      "evidence_grade": "B - cross-source",
-      "feedback_counts": {
-        "ignored": 2
-      },
-      "feedback_summary": "Feedback this cycle: 2 ignored.",
-      "freshness": "sustained",
-      "personas": [
-        {
-          "action": "Signal context for CARICOM: 5%. Use this dispatch as a briefing input or narrative lead.",
-          "channel": "Telegram digest",
-          "dispatch_id": "DSP-20260618-014",
-          "feedback_status": "ignored",
-          "persona": "Policy/Media",
-          "rationale": "Food security is a regional stability indicator \u2014 tracks pressure points before they become crises"
-        },
-        {
-          "action": "Route CARICOM opportunity to relevant founders and investors in your network. Signal strength (5%) makes this a high-priority introduction target.",
-          "channel": "Telegram",
-          "dispatch_id": "DSP-20260618-013",
-          "feedback_status": "ignored",
-          "persona": "Ecosystem Builder",
-          "rationale": "Food trade data reveals supply chain gaps that local founders and agri-tech can fill"
-        }
-      ],
-      "risk_flags": [],
-      "signal_kind": "food_security",
-      "title": "CARICOM: food supply indicators shifting \u2014 supply chain implications"
-    },
-    {
       "cluster_id": "CL-economic-vulnerability-st-vincent-and-the-grenadines",
       "confidence_display": "\ud83d\udfe2 Monitor | 68/100 | C - single-source",
       "confidence_score": 68,
@@ -477,7 +477,7 @@
         {
           "action": "Signal context for St. Vincent and the Grenadines: 18.00%. Use this dispatch as a briefing input or narrative lead.",
           "channel": "Telegram digest",
-          "dispatch_id": "DSP-20260618-010",
+          "dispatch_id": "DSP-20260618-012",
           "feedback_status": "ignored",
           "persona": "Policy/Media",
           "rationale": "Economic stress indicators drive policy response and media narratives"
@@ -485,7 +485,7 @@
         {
           "action": "Assess portfolio exposure in St. Vincent and the Grenadines. Economic stress indicators (18.00%) may affect existing positions or timing.",
           "channel": "Email brief + Telegram",
-          "dispatch_id": "DSP-20260618-009",
+          "dispatch_id": "DSP-20260618-011",
           "feedback_status": "decision_changed",
           "persona": "Diaspora Investor",
           "rationale": "Vulnerability signals change risk profiles \u2014 reassess exposure and timing"
@@ -515,7 +515,7 @@
         {
           "action": "Signal context for Suriname: 16.23%. Use this dispatch as a briefing input or narrative lead.",
           "channel": "Telegram digest",
-          "dispatch_id": "DSP-20260618-012",
+          "dispatch_id": "DSP-20260618-010",
           "feedback_status": "ignored",
           "persona": "Policy/Media",
           "rationale": "Economic stress indicators drive policy response and media narratives"
@@ -523,7 +523,7 @@
         {
           "action": "Assess portfolio exposure in Suriname. Economic stress indicators (16.23%) may affect existing positions or timing.",
           "channel": "Email brief + Telegram",
-          "dispatch_id": "DSP-20260618-011",
+          "dispatch_id": "DSP-20260618-009",
           "feedback_status": "ignored",
           "persona": "Diaspora Investor",
           "rationale": "Vulnerability signals change risk profiles \u2014 reassess exposure and timing"
@@ -538,13 +538,13 @@
   ],
   "cycle_id": "20260618",
   "dispatch_count": 32,
-  "generated_at": "2026-06-18 00:38 UTC",
+  "generated_at": "2026-06-18 11:31 UTC",
   "persona_count": 6,
   "regional_thesis": "Capital momentum is strongest in Guyana (+860.3%), followed by Belize, St. Vincent and the Grenadines. However, St. Vincent and the Grenadines and Suriname also carry elevated vulnerability indicators \u2014 investment signals from these countries require deeper diligence before committing capital. Development pipeline remains active (CDB active procurement notices: 3) \u2014 the bidding window is open for project-based entry. Tourism-related growth signals are visible in Antigua and Barbuda, Guyana, St. Kitts and Nevis \u2014 demand-side indicators for capacity planning.",
   "source_count": 2,
   "why_now": [
     "\ud83d\udd34 **Atlantic Hurricane Season** \u2014 Operational risk for all Caribbean stakeholders. Monitoring NHC/NWS/NDBC for tropical development and maritime hazards.",
     "\ud83d\udd34 **Q2 Procurement Cycle** \u2014 CDB and IDB typically issue mid-year procurement rounds in Q2. Pipeline data especially actionable now.",
-    "\ud83d\udfe1 **Future Caribbean Buildathon** in 28 days \u2014 Regional innovation event approaching. Ecosystem builder and founder-matching dispatches most actionable now."
+    "\ud83d\udfe1 **Future Caribbean Buildathon** in 27 days \u2014 Regional innovation event approaching. Ecosystem builder and founder-matching dispatches most actionable now."
   ]
 }

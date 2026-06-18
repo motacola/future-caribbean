@@ -1,9 +1,9 @@
 # Opportunity Validation Pack — Belize
 
 - Signal: `supply-chain-belize` · Dispatch: `DSP-20260618-030`
-- Confidence: 91/100 · A - multi-source
-- Recommendation: **HOLD** — Signal confidence 91/100 with 1 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.
-- Last validated: 2026-06-18T00:38:45.114504+00:00
+- Confidence: 94/100 · A - multi-source
+- Recommendation: **HOLD** — Signal confidence 94/100 with 1 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.
+- Last validated: 2026-06-18T11:31:05.336554+00:00
 
 ## Sector hypotheses
 - Tourism and hospitality — _Analyst prior from widely reported sector drivers — requires local confirmation_

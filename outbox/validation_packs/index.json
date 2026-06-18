@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-18T00:38:45.114504+00:00",
+  "generated_at": "2026-06-18T11:31:05.336554+00:00",
   "packs": [
     {
       "signal_id": "enhanced-invest-guyana",
@@ -27,14 +27,14 @@
       "file": "dev-pipeline-regional.json",
       "country": "CARICOM",
       "recommendation": "hold",
-      "confidence_score": 95
+      "confidence_score": 96
     },
     {
       "signal_id": "supply-chain-belize",
       "file": "supply-chain-belize.json",
       "country": "Belize",
       "recommendation": "hold",
-      "confidence_score": 91
+      "confidence_score": 94
     }
   ]
 }
