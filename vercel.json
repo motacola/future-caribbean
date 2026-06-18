@@ -1,17 +1,23 @@
 {
   "builds": [
     { "src": "api/**/*.py", "use": "@vercel/python" },
+    { "src": "dashboard.html", "use": "@vercel/static" },
+    { "src": "configurator.html", "use": "@vercel/static" },
+    { "src": "dashboard/**", "use": "@vercel/static" },
+    { "src": "outbox/**", "use": "@vercel/static" },
     { "src": "data/history/**", "use": "@vercel/static" }
   ],
-  "rewrites": [
-    { "source": "/build", "destination": "/configurator.html" },
-    { "source": "/feed.xml", "destination": "/outbox/feed.xml" },
-    { "source": "/", "destination": "/dashboard.html" },
-    { "source": "/api/tools.json", "destination": "/api/tools" },
-    { "source": "/api/validation-packs/(.*)", "destination": "/api/validation-packs?id=$1" },
-    { "source": "/llms.txt", "destination": "/llms.txt" },
-    { "source": "/agents.md", "destination": "/agents.md" },
-    { "source": "/((?!api/|data/).*)", "destination": "/dashboard.html" }
+  "routes": [
+    { "src": "/build", "dest": "/configurator.html" },
+    { "src": "/feed.xml", "dest": "/outbox/feed.xml" },
+    { "src": "/api/tools.json", "dest": "/api/tools" },
+    { "src": "/api/validation-packs/(.+)", "dest": "/api/validation-packs?id=$1" },
+    { "src": "/api/(.*)", "dest": "/api/$1" },
+    { "src": "/data/history/(.*)", "dest": "/data/history/$1" },
+    { "src": "/llms.txt", "dest": "/llms.txt" },
+    { "src": "/agents.md", "dest": "/agents.md" },
+    { "src": "/", "dest": "/dashboard.html" },
+    { "src": "/(.*)", "dest": "/dashboard.html" }
   ],
   "headers": [
     { "source": "/(.*)", "headers": [
