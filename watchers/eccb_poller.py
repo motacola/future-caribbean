@@ -32,7 +32,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_CONFIG = ROOT / "config" / "eccb_sources.json"
 DEFAULT_DATA_DIR = ROOT / "data" / "eccb"
 DEFAULT_SIGNAL_DIR = ROOT / "signals" / "eccb"
-USER_AGENT = "future-caribbean-signal-os/0.1"
+USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/124.0 Safari/537.36"
 
 
 @dataclass(frozen=True)
@@ -50,46 +50,56 @@ class ECCBObservation:
         return f"eccb:{self.country_code}:{self.indicator}:{self.period}:{self.value:.0f}"
 
 
-class ECCBTableParser(HTMLParser):
-    """Parse ECCB statistics tables from HTML."""
+# Maps the ECCB HTML table's row labels (lowercased substrings) to our indicator keys.
+ECCB_INDICATOR_MAP: dict[str, str] = {
+    "claims on private sector": "private_sector_credit",
+    "broad money liabilities": "total_deposits",
+    "net foreign assets": "net_foreign_assets",
+    "domestic claims": "total_assets",
+}
 
-    def __init__(self, target_indicators: list[str]):
+
+class ECCBTableParser(HTMLParser):
+    """Parse the ECCB monetary survey aggregate table.
+
+    Table format (one row per indicator, columns are years):
+        | Unit | 2021 | 2022 | 2023 | 2024 | 2025
+        Net Foreign Assets | EC$M | 11,347 | ... | 14,080
+    """
+
+    def __init__(self):
         super().__init__()
         self.in_table = False
         self.in_row = False
         self.in_cell = False
-        self.current_row = []
+        self.current_row: list[str] = []
         self.current_cell = ""
-        self.tables = []
-        self.headers = []
-        self.target_indicators = [t.lower() for t in target_indicators]
+        self.header_row: list[str] = []
+        self.data_rows: list[list[str]] = []
+        self._header_captured = False
 
     def handle_starttag(self, tag, attrs):
-        attrs_dict = dict(attrs)
         if tag == "table":
             self.in_table = True
-            self.current_row = []
         elif tag == "tr" and self.in_table:
             self.in_row = True
             self.current_row = []
-        elif tag == "td" and self.in_row:
-            self.in_cell = True
-            self.current_cell = ""
-        elif tag == "th" and self.in_table and not self.headers:
+        elif tag in ("td", "th") and self.in_row:
             self.in_cell = True
             self.current_cell = ""
 
     def handle_endtag(self, tag):
-        if tag == "td" and self.in_cell:
+        if tag in ("td", "th") and self.in_cell:
             self.in_cell = False
             self.current_row.append(self.current_cell.strip())
-        elif tag == "th" and self.in_cell:
-            self.in_cell = False
-            self.headers.append(self.current_cell.strip())
         elif tag == "tr" and self.in_row:
             self.in_row = False
             if self.current_row:
-                self.tables.append(self.current_row)
+                if not self._header_captured and any(re.match(r"20\d\d", c) for c in self.current_row):
+                    self.header_row = self.current_row
+                    self._header_captured = True
+                else:
+                    self.data_rows.append(self.current_row)
         elif tag == "table":
             self.in_table = False
 
@@ -97,66 +107,73 @@ class ECCBTableParser(HTMLParser):
         if self.in_cell:
             self.current_cell += data
 
-    def get_observations(self, country_codes: list[str]) -> list[ECCBObservation]:
-        """Extract target indicators from parsed tables."""
-        observations = []
-        if not self.headers or not self.tables:
+    def get_observations(self) -> list[ECCBObservation]:
+        """Return one observation per target indicator using the most recent year."""
+        observations: list[ECCBObservation] = []
+
+        # Identify year columns from the header row
+        year_cols: list[tuple[int, str]] = []
+        for idx, cell in enumerate(self.header_row):
+            if re.match(r"20\d\d", cell.strip()):
+                year_cols.append((idx, cell.strip()))
+
+        if not year_cols:
             return observations
 
-        # Find indicator columns
-        indicator_cols = {}
-        for idx, header in enumerate(self.headers):
-            header_lower = header.lower()
-            for target in self.target_indicators:
-                if target.lower() in header_lower:
-                    indicator_cols[target] = idx
+        # Latest and previous year for YoY comparison
+        latest_idx, latest_year = year_cols[-1]
+        prev_idx, prev_year = year_cols[-2] if len(year_cols) >= 2 else (None, None)
 
-        if not indicator_cols:
-            return observations
-
-        for row in self.tables:
-            if len(row) <= max(indicator_cols.values()):
+        for row in self.data_rows:
+            if not row:
                 continue
+            label = row[0].strip()
+            label_lower = label.lower()
 
-            # First column is usually country/period
-            country = row[0] if row else ""
-            country_code = None
-            for cc in country_codes:
-                if cc.lower() in country.lower() or country.lower() in cc.lower():
-                    country_code = cc
+            indicator_key = None
+            for fragment, key in ECCB_INDICATOR_MAP.items():
+                if fragment in label_lower:
+                    indicator_key = key
                     break
-
-            if not country_code:
+            if not indicator_key:
                 continue
 
-            period = ""
-            if len(row) > 1:
-                period = row[1]
+            if latest_idx >= len(row):
+                continue
 
-            for indicator, col_idx in indicator_cols.items():
-                if col_idx < len(row):
-                    value_str = row[col_idx].replace(",", "").replace("EC$", "").replace("$", "").strip()
-                    try:
-                        value = float(value_str)
-                    except ValueError:
-                        continue
+            def parse_val(s: str) -> float | None:
+                try:
+                    return float(s.replace(",", "").strip())
+                except (ValueError, AttributeError):
+                    return None
 
-                    observations.append(ECCBObservation(
-                        country=country,
-                        country_code=country_code,
-                        indicator=indicator,
-                        indicator_label=indicator.replace("_", " ").title(),
-                        value=value,
-                        unit="EC$M",
-                        period=period,
-                        source_url="https://www.eccb-centralbank.org/statistics",
-                    ))
+            current_val = parse_val(row[latest_idx])
+            if current_val is None:
+                continue
+
+            prev_val = parse_val(row[prev_idx]) if prev_idx is not None and prev_idx < len(row) else None
+            yoy_pct = round((current_val - prev_val) / prev_val * 100, 1) if prev_val else None
+
+            period_label = latest_year
+            if yoy_pct is not None:
+                period_label = f"{latest_year} (YoY: {yoy_pct:+.1f}%)"
+
+            observations.append(ECCBObservation(
+                country="Eastern Caribbean Currency Union",
+                country_code="ECCU",
+                indicator=indicator_key,
+                indicator_label=label,
+                value=current_val,
+                unit="EC$M",
+                period=period_label,
+                source_url="https://www.eccb-centralbank.org/statistics-category/monetary-and-financial-statistics/summarized-monetary-survey",
+            ))
 
         return observations
 
 
 def fetch_html(url: str, timeout: int) -> str:
-    req = urllib.request.Request(url, headers={"User-Agent": "future-caribbean-signal-os/0.1"})
+    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
     try:
         with urllib.request.urlopen(req, timeout=timeout) as response:
             return response.read().decode("utf-8")
@@ -241,22 +258,22 @@ def run(
     state_file = data_dir / ".sent_eccb.json"
     state = load_state(state_file)
 
-    member_countries = config.get("member_countries", [])
-    target_indicators = list(config.get("indicators", {}).keys())
-
     all_observations: list[ECCBObservation] = []
 
-    # Try monetary survey page
-    for page_name, page_url in config.get("statistics_pages", {}).items():
-        try:
-            html = fetch_html(page_url, timeout)
-            parser = ECCBTableParser(target_indicators)
-            parser.feed(html)
-            obs = parser.get_observations(member_countries)
-            all_observations.extend(obs)
-            print(f"Parsed {len(obs)} observations from {page_name}", flush=True)
-        except Exception as exc:
-            print(f"Failed to parse {page_name}: {exc}", file=sys.stderr)
+    # Monetary survey page has the aggregate ECCU table
+    primary_url = config.get("statistics_pages", {}).get(
+        "monetary_survey",
+        "https://www.eccb-centralbank.org/statistics-category/monetary-and-financial-statistics/summarized-monetary-survey",
+    )
+    try:
+        html = fetch_html(primary_url, timeout)
+        parser = ECCBTableParser()
+        parser.feed(html)
+        obs = parser.get_observations()
+        all_observations.extend(obs)
+        print(f"Parsed {len(obs)} observations from monetary_survey", flush=True)
+    except Exception as exc:
+        print(f"Failed to parse monetary_survey: {exc}", file=sys.stderr)
 
     # Deduplicate
     seen = set()

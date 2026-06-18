@@ -29,7 +29,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_CONFIG = ROOT / "config" / "ccrif_sources.json"
 DEFAULT_DATA_DIR = ROOT / "data" / "ccrif"
 DEFAULT_SIGNAL_DIR = ROOT / "signals" / "ccrif"
-USER_AGENT = "future-caribbean-signal-os/0.1"
+USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/124.0 Safari/537.36"
 
 
 @dataclass(frozen=True)
@@ -48,85 +48,156 @@ class PayoutEvent:
         return f"ccrif:{self.country_code}:{self.peril}:{self.event_date}:{self.payout_usd:.0f}"
 
 
+COUNTRY_NAME_TO_CODE: dict[str, str] = {
+    "antigua": "AG", "barbuda": "AG",
+    "barbados": "BB",
+    "belize": "BZ",
+    "dominica": "DM",
+    "grenada": "GD",
+    "guyana": "GY",
+    "haiti": "HT",
+    "jamaica": "JM",
+    "st. kitts": "KN", "saint kitts": "KN", "st kitts": "KN",
+    "st. lucia": "LC", "saint lucia": "LC",
+    "montserrat": "MS",
+    "suriname": "SR",
+    "turks": "TC",
+    "trinidad": "TT",
+    "st. vincent": "VC", "saint vincent": "VC",
+    "british virgin": "VG",
+    "anguilla": "AI",
+    "bahamas": "BS",
+    "cayman": "KY",
+    "nicaragua": "NI",
+    "guatemala": "GT",
+    "honduras": "HN",
+    "costa rica": "CR",
+    "panama": "PA",
+    "el salvador": "SV",
+}
+
+
+def _country_code(name: str) -> str | None:
+    low = name.lower()
+    for fragment, code in COUNTRY_NAME_TO_CODE.items():
+        if fragment in low:
+            return code
+    return None
+
+
+def _peril_from_event(event: str) -> str:
+    low = event.lower()
+    if any(w in low for w in ["tropical cyclone", "hurricane", "tropical storm"]):
+        return "tropical_cyclone"
+    if "earthquake" in low:
+        return "earthquake"
+    if any(w in low for w in ["rainfall", "trough", "flood"]):
+        return "excess_rainfall"
+    return "unknown"
+
+
+def _date_from_event(event: str) -> str:
+    """Best-effort: extract year from event text, fall back to today."""
+    m = re.search(r"\b(20\d{2})\b", event)
+    return f"{m.group(1)}-01-01" if m else datetime.now(timezone.utc).date().isoformat()
+
+
 class CCRIFParser(HTMLParser):
-    """Parse CCRIF payout announcements from HTML."""
+    """Parse the CCRIF payouts table at /aboutus/ccrif-spc-payouts.
+
+    Table format: Event | Country Affected | Payouts (USD)
+    Multi-country events have blank event cell in subsequent rows.
+    """
 
     def __init__(self):
         super().__init__()
-        self.in_payout_section = False
-        self.current_data = []
-        self.payouts = []
-        self.current_tag = ""
-        self.current_attrs = {}
+        self.in_table = False
+        self.in_row = False
+        self.in_cell = False
+        self.current_row: list[str] = []
+        self.current_cell = ""
+        self.all_rows: list[list[str]] = []
 
     def handle_starttag(self, tag, attrs):
-        self.current_tag = tag
-        self.current_attrs = dict(attrs)
-        if tag == "article" or (tag == "div" and "payout" in str(attrs).lower()):
-            self.in_payout_section = True
-            self.current_data = []
+        if tag == "table":
+            self.in_table = True
+        elif tag == "tr" and self.in_table:
+            self.in_row = True
+            self.current_row = []
+        elif tag in ("td", "th") and self.in_row:
+            self.in_cell = True
+            self.current_cell = ""
 
     def handle_endtag(self, tag):
-        if self.in_payout_section and (tag == "article" or tag == "div"):
-            self.in_payout_section = False
-            # Process collected data
-            self._process_payout()
+        if tag in ("td", "th") and self.in_cell:
+            self.in_cell = False
+            self.current_row.append(self.current_cell.strip())
+        elif tag == "tr" and self.in_row:
+            self.in_row = False
+            if self.current_row:
+                self.all_rows.append(self.current_row)
+        elif tag == "table":
+            self.in_table = False
 
     def handle_data(self, data):
-        if self.in_payout_section:
-            self.current_data.append(data.strip())
+        if self.in_cell:
+            self.current_cell += data
 
-    def _process_payout(self):
-        """Extract payout info from collected text."""
-        text = " ".join(self.current_data)
-        # Look for patterns like "US$X million to Country" or "payout of $X"
-        payout_match = re.search(r"(?:US\$|\$)\s*([\d,.]+)\s*(?:million|M|billion|B)?", text, re.IGNORECASE)
-        country_codes = ["AG", "BB", "BZ", "DM", "GD", "GY", "HT", "JM", "KN", "LC", "MS", "SR", "TC", "TT", "VC", "VG", "HN", "GT", "PA", "NI", "CR", "SV", "BQ", "CW", "SX"]
-        country_names = {
-            "Antigua": "AG", "Barbados": "BB", "Belize": "BZ", "Dominica": "DM",
-            "Grenada": "GD", "Guyana": "GY", "Haiti": "HT", "Jamaica": "JM",
-            "St. Kitts": "KN", "St. Lucia": "LC", "Montserrat": "MS", "Suriname": "SR",
-            "Turks": "TC", "Trinidad": "TT", "St. Vincent": "VC", "British Virgin": "VG",
-            "Anguilla": "AI"
-        }
-        country = None
-        for name, code in country_names.items():
-            if name.lower() in text.lower():
-                country = code
-                break
+    def handle_entityref(self, name):
+        if self.in_cell and name == "amp":
+            self.current_cell += "&"
 
-        peril = None
-        for p in ["tropical cyclone", "hurricane", "earthquake", "excess rainfall", "rainfall"]:
-            if p in text.lower():
-                peril = p.replace(" ", "_")
-                break
+    def get_payouts(self) -> list[PayoutEvent]:
+        payouts: list[PayoutEvent] = []
+        last_event = ""
+        for row in self.all_rows:
+            if len(row) < 2:
+                continue
+            # Skip header rows
+            if row[0].lower() in ("event", "") and row[1].lower() in ("country affected", "member", ""):
+                continue
+            # Skip totals rows
+            if re.match(r"total", row[0], re.I):
+                continue
 
-        if payout_match and country:
-            amount_str = payout_match.group(1).replace(",", "")
+            event_cell = row[0].strip()
+            if event_cell:
+                last_event = event_cell
+
+            if len(row) < 3:
+                continue
+
+            country_cell = row[1].strip()
+            amount_cell = row[2].strip() if len(row) > 2 else ""
+            if not country_cell or not amount_cell:
+                continue
+
+            country_code = _country_code(country_cell)
+            if not country_code:
+                continue
+
             try:
-                amount = float(amount_str)
-                if "million" in text.lower() or "M" in text.lower():
-                    amount *= 1_000_000
-                elif "billion" in text.lower() or "B" in text.lower():
-                    amount *= 1_000_000_000
+                amount = float(amount_cell.replace(",", "").replace("$", "").strip())
             except ValueError:
-                amount = 0.0
+                continue
+            if amount <= 0:
+                continue
 
-            payout = PayoutEvent(
-                id=f"ccrif-{country.lower()}-{peril or 'unknown'}-{datetime.now(timezone.utc).strftime('%Y%m%d')}",
-                country=country,
-                country_code=country,
-                peril=peril or "unknown",
+            # Rows like "Excess Rainfall - Jamaica" encode the peril in the country cell
+            peril = _peril_from_event(country_cell) if _peril_from_event(country_cell) != "unknown" else _peril_from_event(last_event)
+            event_date = _date_from_event(last_event)
+            payouts.append(PayoutEvent(
+                id=f"ccrif-{country_code.lower()}-{peril}-{event_date}",
+                country=country_cell,
+                country_code=country_code,
+                peril=peril,
                 payout_usd=amount,
-                event_date=datetime.now(timezone.utc).date().isoformat(),
-                announced_date=datetime.now(timezone.utc).date().isoformat(),
+                event_date=event_date,
+                announced_date=event_date,
                 policy_type="parametric",
-                source_url="https://www.ccrif.org",
-            )
-            self.payouts.append(payout)
-
-    def get_payouts(self):
-        return self.payouts
+                source_url="https://www.ccrif.org/aboutus/ccrif-spc-payouts",
+            ))
+        return payouts
 
 
 def fetch_html(url: str, timeout: int) -> str:
@@ -218,7 +289,7 @@ def run(
     state_file = data_dir / ".sent_payouts.json"
     state = load_state(state_file)
 
-    # Fetch and parse
+    # Fetch and parse the consolidated payouts table
     html = ""
     try:
         html = fetch_html(config["payouts_page"], timeout)
@@ -228,17 +299,6 @@ def run(
     parser = CCRIFParser()
     parser.feed(html)
     payouts = parser.get_payouts()
-
-    # Also try news page
-    for peril in config.get("perils", []):
-        try:
-            news_url = f"https://www.ccrif.org/news?peril={peril}"
-            news_html = fetch_html(news_url, timeout)
-            parser2 = CCRIFParser()
-            parser2.feed(news_html)
-            payouts.extend(parser2.get_payouts())
-        except Exception:
-            pass
 
     # Deduplicate
     seen = set()
