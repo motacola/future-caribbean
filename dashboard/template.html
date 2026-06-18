@@ -1110,7 +1110,7 @@ function connectTheater(replay) {
       return;
     }
     // On Vercel, SSE endpoint doesn't exist — fall back to client-side replay
-    if (REPLAY_JSONL_URL && REPLAY_JSONL_URL !== "{{replay_jsonl_url}}") {
+    if (REPLAY_JSONL_URL && REPLAY_JSONL_URL !== "") {
       runReplayFromJsonl(REPLAY_JSONL_URL);
     } else {
       // Last resort: try to find latest via index.json
@@ -1140,7 +1140,7 @@ document.getElementById('theater-toggle').addEventListener('click', event => {
       setTheaterMode('Replay (recorded cycle)');
       // Resume replay — for simplicity, restart from beginning
       // A full resume would need more state tracking
-      if (REPLAY_JSONL_URL && REPLAY_JSONL_URL !== "{{replay_jsonl_url}}") {
+      if (REPLAY_JSONL_URL && REPLAY_JSONL_URL !== "") {
         runReplayFromJsonl(REPLAY_JSONL_URL);
       }
     } else {

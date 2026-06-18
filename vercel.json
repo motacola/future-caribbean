@@ -4,7 +4,8 @@
     { "src": "dashboard.html", "use": "@vercel/static" },
     { "src": "configurator.html", "use": "@vercel/static" },
     { "src": "dashboard/**", "use": "@vercel/static" },
-    { "src": "outbox/**", "use": "@vercel/static" }
+    { "src": "outbox/**", "use": "@vercel/static" },
+    { "src": "data/history/**", "use": "@vercel/static" }
   ],
   "rewrites": [
     { "source": "/build", "destination": "/configurator.html" },
@@ -14,7 +15,7 @@
     { "source": "/api/validation-packs/(.*)", "destination": "/api/validation-packs?id=$1" },
     { "source": "/llms.txt", "destination": "/llms.txt" },
     { "source": "/agents.md", "destination": "/agents.md" },
-    { "source": "/((?!api/).*)", "destination": "/dashboard.html" }
+    { "source": "/((?!api/|data/).*)", "destination": "/dashboard.html" }
   ],
   "headers": [
     { "source": "/(.*)", "headers": [
