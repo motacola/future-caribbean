@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "@flue/runtime": "^0.9.1",
+    "@vercel/analytics": "^2.0.1",
     "hono": "^4.10.7",
     "valibot": "^1.2.0"
   },
