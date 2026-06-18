@@ -14,7 +14,7 @@
     { "source": "/api/validation-packs/(.*)", "destination": "/api/validation-packs?id=$1" },
     { "source": "/llms.txt", "destination": "/llms.txt" },
     { "source": "/agents.md", "destination": "/agents.md" },
-    { "source": "/(.*)", "destination": "/dashboard.html" }
+    { "source": "/((?!api/).*)", "destination": "/dashboard.html" }
   ],
   "headers": [
     { "source": "/(.*)", "headers": [
