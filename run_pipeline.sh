@@ -111,6 +111,9 @@ else
     echo "  ⚠ No telegram digest, skipping Telegram send"
 fi
 
+# ── Webhook alerts ────────────────────────────────────────
+run_step "Webhook Alerts" "python3 \"$ROOT/packagers/webhook_notifier.py\"" ""
+
 
 echo ""
 echo "=== Pipeline complete ==="

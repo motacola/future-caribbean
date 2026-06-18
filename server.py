@@ -121,6 +121,9 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
         if path == "/api/tools.json":
             self._api_tools_manifest()
             return
+        if path == "/api/webhooks":
+            self._api_webhooks_list()
+            return
         if path == "/llms.txt":
             self._serve_static("llms.txt")
             return
@@ -169,6 +172,17 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
             self._api_delivery_send_approved()
         elif path == "/api/history/archive":
             self._api_history_archive()
+        elif path == "/api/webhooks/subscribe":
+            self._api_webhooks_subscribe()
+        else:
+            self.send_error(404)
+
+    def do_DELETE(self):
+        parsed = urlparse(self.path)
+        path = parsed.path
+        if path.startswith("/api/webhooks/"):
+            sub_id = path[len("/api/webhooks/"):]
+            self._api_webhooks_delete(sub_id)
         else:
             self.send_error(404)
 
@@ -995,6 +1009,40 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
         finally:
             with _pipeline_subscribers_lock:
                 _pipeline_subscribers.discard(subscriber)
+
+    # ── /api/webhooks ──────────────────────────────────────────
+
+    def _api_webhooks_list(self) -> None:
+        from packagers.webhook_notifier import list_subscriptions
+        subs = list_subscriptions()
+        self._json({"ok": True, "subscriptions": subs, "count": len(subs)})
+
+    def _api_webhooks_subscribe(self) -> None:
+        from packagers.webhook_notifier import create_subscription
+        body = self._read_json_body()
+        url = body.get("url", "").strip()
+        if not url or not url.startswith("http"):
+            self._json({"ok": False, "error": "url required (must start with http)"}, 400)
+            return
+        threshold = int(body.get("threshold", 80))
+        if not (0 <= threshold <= 100):
+            self._json({"ok": False, "error": "threshold must be 0–100"}, 400)
+            return
+        sub = create_subscription(
+            url=url,
+            threshold=threshold,
+            country=body.get("country") or None,
+            signal_kind=body.get("signal_kind") or None,
+        )
+        self._json({"ok": True, "subscription": sub})
+
+    def _api_webhooks_delete(self, sub_id: str) -> None:
+        from packagers.webhook_notifier import delete_subscription
+        deleted = delete_subscription(sub_id.strip())
+        if deleted:
+            self._json({"ok": True, "deleted": sub_id})
+        else:
+            self._json({"ok": False, "error": f"subscription {sub_id!r} not found"}, 404)
 
     def list_directory(self, path):
         self.send_error(404)
