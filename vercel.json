@@ -1,12 +1,9 @@
 {
-  "builds": [
-    { "src": "api/**/*.py", "use": "@vercel/python" },
-    { "src": "dashboard.html", "use": "@vercel/static" },
-    { "src": "configurator.html", "use": "@vercel/static" },
-    { "src": "dashboard/**", "use": "@vercel/static" },
-    { "src": "outbox/**", "use": "@vercel/static" },
-    { "src": "data/history/**", "use": "@vercel/static" }
-  ],
+  "functions": {
+    "api/**/*.py": {
+      "runtime": "python3.12"
+    }
+  },
   "rewrites": [
     { "source": "/build", "destination": "/configurator.html" },
     { "source": "/feed.xml", "destination": "/outbox/feed.xml" },
