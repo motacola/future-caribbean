@@ -1,12 +1,19 @@
 # Opportunity Validation Pack — St. Vincent and the Grenadines
 
 - Signal: `enhanced-invest-st.-vincent-and-the-grenadines` · Dispatch: `DSP-20260618-027`
-- Confidence: 100/100 · A - multi-source
-- Recommendation: **HOLD** — Signal confidence 100/100 with 1 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.
-- Last validated: 2026-06-18T11:31:05.336554+00:00
+- Confidence: 68/100 (raw 100) · A - multi-source
+- Action readiness: medium (annual macro signal only)
+- Evidence freshness: stale · cycles since refresh: 10
+- Recommendation: **HOLD** — Calibrated confidence 68/100 with 2 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.
+- Last validated: 2026-06-18T15:54:50.454783+00:00
 
 ## Sector hypotheses
-- FDI-receiving sectors (composition not yet broken down) — _World Bank: FDI net inflows moved +88.2% from 2023 to 2024_
+- FDI-receiving sectors (composition not yet broken down) [macro_signal] — _World Bank: FDI net inflows moved +88.2% from 2023 to 2024_
+
+## Credible local operators (registry-backed)
+- VINLEC (St. Vincent Electricity Services Limited) — National utility — anchor for grid and renewable infrastructure projects ([profile](https://www.vinlec.com/))
+- Coreas Distribution Ltd. — Major regional distributor — supply chain and import corridor operator ([profile](https://www.coreas.com/))
+- Buccament Bay Resort (operating entity) — Large resort asset — tourism capacity and hospitality services benchmark ([profile](https://www.buccamentbay.com/))
 
 ## Supporting projects & publications
 - [56th Annual Meeting: Statement by Governor for Saint Vincent and the Grenadines, Dr. The Hon. Godwin Friday](https://www.caribank.org/publications-and-resources/resource-library/official-records/56th-annual-meeting-statement-governor-saint-vincent-and-grenadines-dr-hon-godwin-friday) — Caribbean Development Bank
@@ -30,7 +37,7 @@
 ## Unresolved questions
 - Which specific sectors are driving the movement in St. Vincent and the Grenadines? No official sector-breakdown dataset matched this cycle.
 - No live St. Vincent and the Grenadines-specific procurement notice matched this cycle — check CDB and national tender portals directly.
-- Operator discovery is not yet automated — source two credible local operators via the listed institutions.
+- Validate fit with registry-listed operators (VINLEC (St. Vincent Electricity Services Limited), Coreas Distribution Ltd.) before outreach.
 - Validate that the underlying FDI movement is sustained, not a one-off transaction or statistical revision.
 
 > Screening support, not investment advice. Institutions listed are public bodies

@@ -1,6 +1,6 @@
 # Regional Thesis — Caribbean Signal OS
 
-Generated: 2026-06-18 11:31 UTC
+Generated: 2026-06-18 15:54 UTC
 
 Capital momentum is strongest in Guyana (+860.3%), followed by Belize, St. Vincent and the Grenadines.  However, St. Vincent and the Grenadines and Suriname also carry elevated vulnerability indicators — investment signals from these countries require deeper diligence before committing capital.  Development pipeline remains active (CDB active procurement notices: 3) — the bidding window is open for project-based entry. Tourism-related growth signals are visible in Antigua and Barbuda, Guyana, St. Kitts and Nevis — demand-side indicators for capacity planning.
 
@@ -30,5 +30,5 @@ Capital momentum is strongest in Guyana (+860.3%), followed by Belize, St. Vince
 
 ## Vulnerability Monitoring
 
-- **Suriname**: +16.23% (56/100)
 - **St. Vincent and the Grenadines**: +18.00% (68/100)
+- **Suriname**: +16.23% (56/100)

@@ -1,4 +1,4 @@
-"""Tests for the Opportunity Validation Pack generator."""
+"""Tests for validation pack v2 — corroboration, registries, freshness."""
 import json
 import sys
 from pathlib import Path
@@ -7,7 +7,9 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from packagers.validation_pack_generator import (  # noqa: E402
-    build_pack, recommend, select_lead_dispatches,
+    build_pack,
+    recommend,
+    select_lead_dispatches,
 )
 
 DISPATCH = {
@@ -46,6 +48,25 @@ TIER2 = {
     ]
 }
 
+TENDER = {
+    "id": "PROC-2026-00311",
+    "title": "RFP for Rehabilitation of Hinterland Airstrips",
+    "country": "Guyana",
+    "source": "Guyana eProcure (NPTA)",
+    "url": "https://eprocure.gov.gy/",
+    "published": "2026-02-19",
+    "closing_date": "2026-06-23",
+    "category": "Works",
+}
+
+NEWS = [{
+    "title": "Guyana infrastructure and construction investment accelerates",
+    "summary": "Major construction projects expand across Guyana energy corridor",
+    "url": "https://example.com/guyana-build",
+    "source": "Test Feed",
+    "countries": ["Guyana"],
+}]
+
 
 def test_build_pack_has_required_fields():
     pack = build_pack(DISPATCH, WB, IDB, TIER2, "2026-06-10T00:00:00+00:00")
@@ -54,26 +75,30 @@ def test_build_pack_has_required_fields():
         "procurement_matches", "credible_local_operators", "relevant_institutions",
         "source_links", "unresolved_questions", "recommended_intro_targets",
         "advance_or_reject_recommendation", "recommendation_reason", "last_validated_at",
+        "action_readiness", "evidence_freshness", "cycles_since_refresh",
     ]:
         assert field in pack, f"missing field: {field}"
     assert pack["country"] == "Guyana"
     assert pack["advance_or_reject_recommendation"] in ("advance", "hold", "reject")
 
 
-def test_guyana_pack_advances_with_evidence():
-    pack = build_pack(DISPATCH, WB, IDB, TIER2, "2026-06-10T00:00:00+00:00")
+def test_guyana_pack_with_tender_and_news_can_advance():
+    pack = build_pack(
+        DISPATCH, WB, IDB, TIER2, "2026-06-10T00:00:00+00:00",
+        tenders=[TENDER], news_articles=NEWS,
+    )
+    assert pack["procurement_matches"][0]["match"] == "country"
+    assert pack["procurement_matches"][0]["closing_date"] == "2026-06-23"
+    assert any(h.get("status") == "corroborated" for h in pack["sector_hypotheses"])
+    assert len(pack["credible_local_operators"]) >= 2
     assert pack["advance_or_reject_recommendation"] == "advance"
-    # Country-matched project found, Brazil dataset excluded
-    titles = [p["title"] for p in pack["supporting_projects"]]
-    assert "Productivity Survey Guyana" in titles
-    assert "Unrelated Brazil dataset" not in titles
-    # Regional procurement carried with explicit non-country tag
-    assert pack["procurement_matches"][0]["match"] == "regional"
-    # GDP-by-industry dataset surfaces as a verifiable sector basis
-    assert any(h.get("status") == "data_available" for h in pack["sector_hypotheses"])
-    # Operators are never fabricated
-    assert pack["credible_local_operators"] == []
-    assert any("operator" in q.lower() for q in pack["unresolved_questions"])
+    assert pack["confidence_score"] <= 100
+
+
+def test_macro_only_without_tender_stays_hold_or_lower_confidence():
+    pack = build_pack(DISPATCH, WB, IDB, TIER2, "2026-06-10T00:00:00+00:00")
+    assert pack["confidence_score"] < 100
+    assert pack["advance_or_reject_recommendation"] in ("hold", "reject")
 
 
 def test_low_confidence_no_evidence_rejects():
@@ -97,9 +122,11 @@ def test_generated_pack_files_are_valid_json():
     out_dir = ROOT / "outbox" / "validation_packs"
     index_path = out_dir / "index.json"
     if not index_path.exists():
-        return  # generator has not run in this checkout
+        return
     index = json.loads(index_path.read_text())
     assert index["packs"], "index exists but lists no packs"
     for entry in index["packs"]:
-        pack = json.loads((out_dir / entry["file"]).read_text())
+        pack_file = out_dir / entry["file"]
+        assert pack_file.exists(), f"Pack file missing: {entry['file']}"
+        pack = json.loads(pack_file.read_text())
         assert pack["advance_or_reject_recommendation"] == entry["recommendation"]

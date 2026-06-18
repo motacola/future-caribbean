@@ -2,7 +2,7 @@
 
 **Decision job:** Briefing input and narrative lead sourcing
 **Delivery channel:** Telegram digest
-**Generated:** Jun 18, 2026 at 11:31 UTC
+**Generated:** Jun 18, 2026 at 15:54 UTC
 **Dispatches in this packet:** 3
 
 ---
@@ -25,7 +25,7 @@
 
 ### 2. St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended
 
-**ID:** `DSP-20260618-012` | **Country:** St. Vincent and the Grenadines | **Confidence:** 🟢 Monitor | 68/100 | C - single-source
+**ID:** `DSP-20260618-010` | **Country:** St. Vincent and the Grenadines | **Confidence:** 🟢 Monitor | 68/100 | C - single-source
 **Channel:** Telegram digest | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -40,7 +40,7 @@
 
 ### 3. Suriname: economic stress indicators rising — portfolio review recommended
 
-**ID:** `DSP-20260618-010` | **Country:** Suriname | **Confidence:** 🟢 Monitor | 56/100 | C - single-source
+**ID:** `DSP-20260618-012` | **Country:** Suriname | **Confidence:** 🟢 Monitor | 56/100 | C - single-source
 **Channel:** Telegram digest | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** ignored
 

@@ -2,7 +2,7 @@
 
 **Decision job:** Founder matching and ecosystem support prioritisation
 **Delivery channel:** Telegram
-**Generated:** Jun 18, 2026 at 11:31 UTC
+**Generated:** Jun 18, 2026 at 15:54 UTC
 **Dispatches in this packet:** 5
 
 ---

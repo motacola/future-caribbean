@@ -4,12 +4,15 @@
   "country": "Guyana",
   "signal_title": "Guyana: +860.3% multi-source capital surge — market entry window open",
   "confidence_score": 100,
+  "raw_confidence_score": 100,
+  "action_readiness": "high",
   "evidence_grade": "A - multi-source",
   "sector_hypotheses": [
     {
       "sector": "Oil & gas and offshore support services",
-      "basis": "Analyst prior from widely reported sector drivers — requires local confirmation",
-      "status": "unconfirmed"
+      "basis": "Google News — Guyana: More than 40 Oil and Gas companies receive Local Content Plan approvals - Guyana Chronicle",
+      "status": "corroborated",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPMHVNa19ianBxZnlWS0VPdFYtUmYyS25NY1FaX0xHWUhSdHVsQkRaMlhndHB1TWRqUGhoRUJlOTZfNHk2ZWFlX3BYN2hudUQ5cjhyLURGQjhkbmxaeXdJSjJ2R1V3MGozTXZXLTVaeU0wWmVTb05TNG5zYk9LcnZBRjJSVjF3cUF2LVR2NG1Ra0NYRi1GcXJObUFKRkNIWEFmeDh4ODNtR3oyWE94LXliYg?oc=5"
     },
     {
       "sector": "Construction and infrastructure",
@@ -48,22 +51,46 @@
   ],
   "procurement_matches": [
     {
-      "title": "Enhancing the Quality of the Belize National Quality Infrastructure",
-      "source": "Caribbean Development Bank",
-      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure",
-      "match": "regional"
+      "title": "Supply and delivery of Asphalt Laboratory Equipment",
+      "source": "Guyana eProcure (NPTA)",
+      "url": "https://eprocure.gov.gy/",
+      "match": "country",
+      "closing_date": "2026-06-23"
     },
     {
-      "title": "School Improvement Project (SIP) Phase 1",
-      "source": "Caribbean Development Bank",
-      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/school-improvement-project-sip-phase-1-0",
-      "match": "regional"
+      "title": "Supply and Delivery of Materials to Retube #1 Boiler Super Heater and Install New Header for Rose Hall Estate",
+      "source": "Guyana eProcure (NPTA)",
+      "url": "https://eprocure.gov.gy/",
+      "match": "country",
+      "closing_date": "2026-06-23"
     },
     {
-      "title": "Support for Institutional Strengthening of the Caribbean Disaster Emergency Project",
-      "source": "Caribbean Development Bank",
-      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/support-institutional-strengthening-caribbean-disaster-emergency-project",
-      "match": "regional"
+      "title": "Supply and Delivery of 2Kg & 5Kg Demerara Gold Laminated Films",
+      "source": "Guyana eProcure (NPTA)",
+      "url": "https://eprocure.gov.gy/",
+      "match": "country",
+      "closing_date": "2026-06-23"
+    },
+    {
+      "title": "Supply and Delivery of Materials for Upgrading from Mild Steel to Stainless Steel at Albion Estate – Lot 1-4",
+      "source": "Guyana eProcure (NPTA)",
+      "url": "https://eprocure.gov.gy/",
+      "match": "country",
+      "closing_date": "2026-06-23"
+    },
+    {
+      "title": "Supply and Delivery of Materials for Upgrading from Mild Steel to Stainless Steel at Blairmont Estate – Lot 1-4",
+      "source": "Guyana eProcure (NPTA)",
+      "url": "https://eprocure.gov.gy/",
+      "match": "country",
+      "closing_date": "2026-06-23"
+    },
+    {
+      "title": "Supply and Delivery of Tyres for the Industry",
+      "source": "Guyana eProcure (NPTA)",
+      "url": "https://eprocure.gov.gy/",
+      "match": "country",
+      "closing_date": "2026-06-23"
     }
   ],
   "official_country_data": [
@@ -88,7 +115,29 @@
       "url": "https://statistics.caricom.org/country_data/guyana-value-addedgdp-by-industries-at-constant-prices-isic-4-gyd-2012-2023/"
     }
   ],
-  "credible_local_operators": [],
+  "credible_local_operators": [
+    {
+      "name": "Guyana Shore Base Inc. (GSBI)",
+      "sector": "Oil & gas and offshore support services",
+      "role": "Offshore logistics and shore-base operator serving the energy sector",
+      "source_url": "https://guyanashorebase.com/",
+      "verified_by": "public website — sector listing"
+    },
+    {
+      "name": "Gaico Construction Inc.",
+      "sector": "Construction and infrastructure",
+      "role": "Major local contractor on public infrastructure and energy-adjacent projects",
+      "source_url": "https://gaicogroup.com/",
+      "verified_by": "public website — project portfolio"
+    },
+    {
+      "name": "Demerara Distillers Limited (DDL)",
+      "sector": "Agriculture and agro-processing",
+      "role": "Regional rum and agro-processing exporter with established supply chains",
+      "source_url": "https://www.ddldistillers.com/",
+      "verified_by": "public website — product lines"
+    }
+  ],
   "relevant_institutions": [
     {
       "name": "Guyana Office for Investment (GO-Invest)",
@@ -109,18 +158,17 @@
   ],
   "source_links": [
     "https://data.iadb.org/en/search?q=Productivity%2C%20Technology%20and%20Innovation%20",
+    "https://eprocure.gov.gy/",
+    "https://news.google.com/rss/articles/CBMisAFBVV95cUxPMHVNa19ianBxZnlWS0VPdFYtUmYyS25NY1FaX0xHWUhSdHVsQkRaMlhndHB1TWRqUGhoRUJlOTZfNHk2ZWFlX3BYN2hudUQ5cjhyLURGQjhkbmxaeXdJSjJ2R1V3MGozTXZXLTVaeU0wWmVTb05TNG5zYk9LcnZBRjJSVjF3cUF2LVR2NG1Ra0NYRi1GcXJObUFKRkNIWEFmeDh4ODNtR3oyWE94LXliYg?oc=5",
     "https://statistics.caricom.org/country_data/2019_vnr_report_guyana/",
     "https://statistics.caricom.org/country_data/2023_vnr_report_guyana/",
     "https://statistics.caricom.org/country_data/guyana-monthly-consumer-price-index-cpi-by-expenditure-category/",
-    "https://statistics.caricom.org/country_data/guyana-value-addedgdp-by-industries-at-constant-prices-isic-4-gyd-2012-2023/",
-    "https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure",
-    "https://www.caribank.org/work-with-us/procurement/procurement-notices/school-improvement-project-sip-phase-1-0",
-    "https://www.caribank.org/work-with-us/procurement/procurement-notices/support-institutional-strengthening-caribbean-disaster-emergency-project"
+    "https://statistics.caricom.org/country_data/guyana-value-addedgdp-by-industries-at-constant-prices-isic-4-gyd-2012-2023/"
   ],
   "unresolved_questions": [
     "Confirm which sectors in the official Guyana GDP-by-industry data actually align with the FDI movement.",
-    "No live Guyana-specific procurement notice matched this cycle — check CDB and national tender portals directly.",
-    "Operator discovery is not yet automated — source two credible local operators via the listed institutions.",
+    "Tender closes 2026-06-23 — confirm eligibility and bid requirements early.",
+    "Validate fit with registry-listed operators (Guyana Shore Base Inc. (GSBI), Gaico Construction Inc.) before outreach.",
     "Validate that the underlying FDI movement is sustained, not a one-off transaction or statistical revision."
   ],
   "recommended_intro_targets": [
@@ -134,6 +182,9 @@
     }
   ],
   "advance_or_reject_recommendation": "advance",
-  "recommendation_reason": "High-confidence signal (100/100) with 2 independent evidence categories already attached. Worth one validation conversation this cycle.",
-  "last_validated_at": "2026-06-18T11:31:05.336554+00:00"
+  "recommendation_reason": "Calibrated confidence 100/100 with 4 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.",
+  "last_validated_at": "2026-06-18T15:54:50.454783+00:00",
+  "evidence_fingerprint": "090b84ed53c6d53b",
+  "cycles_since_refresh": 1,
+  "evidence_freshness": "aging"
 }

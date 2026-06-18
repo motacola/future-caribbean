@@ -1,5 +1,7 @@
 # Connecting Agents to the Caribbean Opportunity Desk
 
+Signal Fabric is an agentic coordination infrastructure for fragmented economies: it watches public regional data, merges weak signals, routes opportunity dispatches to the right personas with auto-assembled diligence packs, and learns from recipient feedback. The Caribbean is the live proof; the engine is domain-agnostic (economic + climate instances today). Any agent can query it via HTTP, MCP, or CLI — it's deterministic, cited, and deployable now.
+
 The Signal Fabric engine exposes a **plain HTTP API** as its foundation — no SDK, no vendor lock-in. Every framework below hits the same endpoints.
 
 **Base URL (local):** `http://localhost:8080`

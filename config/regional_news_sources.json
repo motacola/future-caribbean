@@ -1,0 +1,36 @@
+{
+  "feeds": [
+    {
+      "slug": "google-news-caribbean",
+      "label": "Google News — Caribbean economy",
+      "url": "https://news.google.com/rss/search?q=Caribbean+investment+OR+procurement+OR+infrastructure&hl=en-US&gl=US&ceid=US:en",
+      "scope": "regional"
+    },
+    {
+      "slug": "google-news-guyana",
+      "label": "Google News — Guyana",
+      "url": "https://news.google.com/rss/search?q=Guyana+investment+OR+oil+OR+infrastructure&hl=en-US&gl=US&ceid=US:en",
+      "scope": "Guyana"
+    },
+    {
+      "slug": "google-news-jamaica",
+      "label": "Google News — Jamaica",
+      "url": "https://news.google.com/rss/search?q=Jamaica+investment+OR+tourism+OR+infrastructure&hl=en-US&gl=US&ceid=US:en",
+      "scope": "Jamaica"
+    },
+    {
+      "slug": "google-news-belize",
+      "label": "Google News — Belize",
+      "url": "https://news.google.com/rss/search?q=Belize+investment+OR+tourism+OR+logistics&hl=en-US&gl=US&ceid=US:en",
+      "scope": "Belize"
+    },
+    {
+      "slug": "cdb-rss",
+      "label": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/rss.xml",
+      "scope": "regional"
+    }
+  ],
+  "max_items_per_feed": 25,
+  "max_total_items": 120
+}

@@ -1,5 +1,9 @@
 # Signal Fabric
 
+Signal Fabric is an agentic coordination infrastructure for fragmented economies: it watches public regional data, merges weak signals, routes opportunity dispatches to the right personas with auto-assembled diligence packs, and learns from recipient feedback. The Caribbean is the live proof; the engine is domain-agnostic (economic + climate instances today). Any agent can query it via HTTP, MCP, or CLI — it's deterministic, cited, and deployable now.
+
+---
+
 **Routed opportunity and risk dispatches from fragmented Caribbean public data — readable by humans, queryable by any AI agent.**
 
 Powered by **Signal Fabric**, a continuous multi-agent pipeline that watches public regional data, merges weak signals across sources, packages them into routed dispatches for specific decision-makers, pre-assembles the diligence evidence, and learns from recipient feedback.

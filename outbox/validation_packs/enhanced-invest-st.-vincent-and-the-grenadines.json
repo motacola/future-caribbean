@@ -3,7 +3,9 @@
   "dispatch_id": "DSP-20260618-027",
   "country": "St. Vincent and the Grenadines",
   "signal_title": "St. Vincent and the Grenadines: +88.2% multi-source investment validated — opportunity active",
-  "confidence_score": 100,
+  "confidence_score": 68,
+  "raw_confidence_score": 100,
+  "action_readiness": "medium (annual macro signal only)",
   "evidence_grade": "A - multi-source",
   "sector_hypotheses": [
     {
@@ -62,7 +64,29 @@
       "url": "https://statistics.caricom.org/country_data/st-vincent-and-the-grenadines-estimates-of-gross-national-disposable-income-2019-2023/"
     }
   ],
-  "credible_local_operators": [],
+  "credible_local_operators": [
+    {
+      "name": "VINLEC (St. Vincent Electricity Services Limited)",
+      "sector": "Energy and utilities",
+      "role": "National utility — anchor for grid and renewable infrastructure projects",
+      "source_url": "https://www.vinlec.com/",
+      "verified_by": "public website — utility mandate"
+    },
+    {
+      "name": "Coreas Distribution Ltd.",
+      "sector": "Logistics and distribution",
+      "role": "Major regional distributor — supply chain and import corridor operator",
+      "source_url": "https://www.coreas.com/",
+      "verified_by": "public website — distribution network"
+    },
+    {
+      "name": "Buccament Bay Resort (operating entity)",
+      "sector": "Tourism and hospitality",
+      "role": "Large resort asset — tourism capacity and hospitality services benchmark",
+      "source_url": "https://www.buccamentbay.com/",
+      "verified_by": "public website — resort operations"
+    }
+  ],
   "relevant_institutions": [
     {
       "name": "Invest SVG",
@@ -90,7 +114,7 @@
   "unresolved_questions": [
     "Which specific sectors are driving the movement in St. Vincent and the Grenadines? No official sector-breakdown dataset matched this cycle.",
     "No live St. Vincent and the Grenadines-specific procurement notice matched this cycle — check CDB and national tender portals directly.",
-    "Operator discovery is not yet automated — source two credible local operators via the listed institutions.",
+    "Validate fit with registry-listed operators (VINLEC (St. Vincent Electricity Services Limited), Coreas Distribution Ltd.) before outreach.",
     "Validate that the underlying FDI movement is sustained, not a one-off transaction or statistical revision."
   ],
   "recommended_intro_targets": [
@@ -100,6 +124,9 @@
     }
   ],
   "advance_or_reject_recommendation": "hold",
-  "recommendation_reason": "Signal confidence 100/100 with 1 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.",
-  "last_validated_at": "2026-06-18T11:31:05.336554+00:00"
+  "recommendation_reason": "Calibrated confidence 68/100 with 2 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.",
+  "last_validated_at": "2026-06-18T15:54:50.454783+00:00",
+  "evidence_fingerprint": "a32b4eaa1db63dde",
+  "cycles_since_refresh": 10,
+  "evidence_freshness": "stale"
 }

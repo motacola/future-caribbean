@@ -34,7 +34,8 @@ run_step() {
 run_step "World Bank" "python3 \"$ROOT/watchers/world_bank_poller.py\"" "world_bank"
 run_step "IDB CKAN" "python3 \"$ROOT/watchers/idb_ckan_poller.py\"" "idb_ckan"
 run_step "Tier 2 (CARICOM + CDB)" "python3 \"$ROOT/watchers/tier2_scraper.py\"" "tier2"
-run_step "Tenders (Guyana eProcure)" "python3 \"$ROOT/watchers/tenders_poller.py\"" "tenders"
+run_step "Tenders (Guyana eProcure + GOJEP)" "python3 \"$ROOT/watchers/tenders_poller.py\"" "tenders"
+run_step "Regional News RSS" "python3 \"$ROOT/watchers/regional_news_poller.py\"" "regional_news"
 run_step "CCRIF (Parametric Payouts)" "python3 \"$ROOT/watchers/ccrif_poller.py\"" "ccrif"
 run_step "ECCB (Monetary Stats)" "python3 \"$ROOT/watchers/eccb_poller.py\"" "eccb"
 

@@ -1,0 +1,35 @@
+{
+  "signals": {
+    "enhanced-invest-guyana": {
+      "evidence_fingerprint": "090b84ed53c6d53b",
+      "stale_cycles": 1,
+      "last_validated_at": "2026-06-18T15:54:50.454783+00:00",
+      "recommendation": "advance"
+    },
+    "enhanced-invest-belize": {
+      "evidence_fingerprint": "df072417565d4580",
+      "stale_cycles": 1,
+      "last_validated_at": "2026-06-18T15:54:50.454783+00:00",
+      "recommendation": "advance"
+    },
+    "enhanced-invest-st.-vincent-and-the-grenadines": {
+      "evidence_fingerprint": "a32b4eaa1db63dde",
+      "stale_cycles": 10,
+      "last_validated_at": "2026-06-18T15:54:50.454783+00:00",
+      "recommendation": "hold"
+    },
+    "dev-pipeline-regional": {
+      "evidence_fingerprint": "e3b0c44298fc1c14",
+      "stale_cycles": 10,
+      "last_validated_at": "2026-06-18T15:54:50.454783+00:00",
+      "recommendation": "hold"
+    },
+    "supply-chain-belize": {
+      "evidence_fingerprint": "df072417565d4580",
+      "stale_cycles": 1,
+      "last_validated_at": "2026-06-18T15:54:50.454783+00:00",
+      "recommendation": "advance"
+    }
+  },
+  "updated_at": "2026-06-18T15:54:50.454783+00:00"
+}

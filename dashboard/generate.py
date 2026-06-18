@@ -83,6 +83,61 @@ def clean_signal_title(raw: str) -> str:
 
 from humanizer import humanize, humanize_rules_json  # noqa: E402
 
+# ── Validation pack freshness + evidence UI ─────────────────
+
+def pack_freshness_strip(pack: dict) -> str:
+    freshness = pack.get("evidence_freshness", "unknown")
+    cycles = int(pack.get("cycles_since_refresh", 0) or 0)
+    readiness = pack.get("action_readiness", "n/a")
+    raw = pack.get("raw_confidence_score", pack.get("confidence_score", "—"))
+    calibrated = pack.get("confidence_score", "—")
+    validated = age(pack.get("last_validated_at", ""))
+    label = {
+        "refreshing": "Refreshing",
+        "aging": "Aging",
+        "stale": "Stale — downgrade risk",
+    }.get(freshness, freshness.replace("_", " ").title())
+    cycle_note = (
+        "new evidence this cycle" if cycles == 0
+        else f"{cycles} cycle{'s' if cycles != 1 else ''} since evidence changed"
+    )
+    return f'''
+        <div class="vpack-freshness">
+          <span class="freshness-pill {j(freshness)}">{j(label)}</span>
+          <span class="freshness-meta">Action readiness: <strong>{j(readiness)}</strong></span>
+          <span class="freshness-meta">Confidence: <strong>{j(calibrated)}</strong> calibrated <em>(raw {j(raw)})</em></span>
+          <span class="freshness-meta">Validated {j(validated)} · {j(cycle_note)}</span>
+        </div>'''
+
+
+def pack_hypothesis_li(h: dict) -> str:
+    status = h.get("status", "")
+    badge = ""
+    if status:
+        badge = f'<span class="hyp-status {j(status)}">{j(status.replace("_", " "))}</span>'
+    basis = f'<em>{j(humanize(h.get("basis", "")))}</em>' if h.get("basis") else ""
+    return f'<li><strong>{j(h.get("sector", ""))}</strong>{badge}{basis}</li>'
+
+
+def pack_operator_li(o: dict) -> str:
+    url = o.get("source_url", "")
+    name = j(o.get("name", ""))
+    role = j(humanize(o.get("role", "")))
+    if url:
+        return f'<li><a href="{j(url)}" target="_blank" rel="noopener"><strong>{name}</strong></a><em>{role}</em></li>'
+    return f'<li><strong>{name}</strong><em>{role}</em></li>'
+
+
+def pack_procurement_li(p: dict, title_len: int = 90) -> str:
+    url = p.get("url", "")
+    title = j(p.get("title", "")[:title_len])
+    tag = f'<span class="vpack-tag">{j(p.get("match", ""))}</span>'
+    close = p.get("closing_date")
+    close_tag = f'<span class="vpack-tag closing">closes {j(close)}</span>' if close else ""
+    if url:
+        return f'<li><a href="{j(url)}" target="_blank" rel="noopener">{title}</a>{tag}{close_tag}</li>'
+    return f'<li>{title}{tag}{close_tag}</li>'
+
 # ── Load data ──────────────────────────────────────────────
 
 desk = read_json(ROOT / "outbox" / "dispatch_desk.json") or {}
@@ -253,7 +308,7 @@ if vpack:
 
     hyp_lis = ""
     for h in (vpack.get("sector_hypotheses") or [])[:5]:
-        hyp_lis += f'<li><strong>{j(h.get("sector",""))}</strong><em>{j(humanize(h.get("basis","")))}</em></li>'
+        hyp_lis += pack_hypothesis_li(h)
     if not hyp_lis:
         hyp_lis = '<li>No sector hypotheses generated this cycle.</li>'
 
@@ -267,18 +322,15 @@ if vpack:
 
     proc_lis = ""
     for p in (vpack.get("procurement_matches") or [])[:4]:
-        url = p.get("url", "")
-        title = j(p.get("title", "")[:90])
-        tag = f'<span class="vpack-tag">{j(p.get("match",""))}</span>'
-        proc_lis += f'<li><a href="{j(url)}" target="_blank" rel="noopener">{title}</a>{tag}</li>' if url else f'<li>{title}{tag}</li>'
+        proc_lis += pack_procurement_li(p)
     if not proc_lis:
         proc_lis = '<li>No live procurement notices matched.</li>'
 
-    intro_lis = ""
-    for i in (vpack.get("recommended_intro_targets") or [])[:4]:
-        intro_lis += f'<li><strong>{j(i.get("name",""))}</strong><em>{j(humanize(i.get("why","")))}</em></li>'
-    if not intro_lis:
-        intro_lis = '<li>No intro targets identified.</li>'
+    op_lis = ""
+    for o in (vpack.get("credible_local_operators") or [])[:4]:
+        op_lis += pack_operator_li(o)
+    if not op_lis:
+        op_lis = '<li>No registry-backed operators for this country yet.</li>'
 
     q_lis = "".join(f'<li>{j(humanize(q))}</li>' for q in (vpack.get("unresolved_questions") or [])[:4])
 
@@ -291,10 +343,11 @@ if vpack:
           </div>
           <span class="vpack-verdict {j(verdict)}">{j(verdict_label)}</span>
         </div>
+        {pack_freshness_strip(vpack)}
         <div class="vpack-reason">{j(humanize(vpack.get("recommendation_reason", "")))}</div>
         <div class="vpack-grid">
           <div class="vpack-col"><h4>Sector hypotheses</h4><ul>{hyp_lis}</ul></div>
-          <div class="vpack-col"><h4>Suggested first conversations</h4><ul>{intro_lis}</ul></div>
+          <div class="vpack-col"><h4>Registry operators</h4><ul>{op_lis}</ul></div>
           <div class="vpack-col"><h4>Supporting projects &amp; data</h4><ul>{proj_lis}</ul></div>
           <div class="vpack-col"><h4>Procurement pipeline</h4><ul>{proc_lis}</ul></div>
         </div>
@@ -381,8 +434,7 @@ for c in clusters[1:5]:
         # Sector hypotheses
         hyp_lis = ""
         for h in (pack.get("sector_hypotheses") or [])[:3]:
-            basis = f'<em>{j(humanize(h.get("basis", "")))}</em>' if h.get("basis") else ""
-            hyp_lis += f'<li><strong>{j(h.get("sector", ""))}</strong>{basis}</li>'
+            hyp_lis += pack_hypothesis_li(h)
         if not hyp_lis:
             hyp_lis = '<li>No sector hypotheses this cycle.</li>'
         
@@ -398,12 +450,13 @@ for c in clusters[1:5]:
         # Procurement matches
         proc_lis = ""
         for p in (pack.get("procurement_matches") or [])[:2]:
-            url = p.get("url", "")
-            title = j(p.get("title", "")[:80])
-            tag = f'<span class="vpack-tag">{j(p.get("match", ""))}</span>'
-            proc_lis += f'<li><a href="{j(url)}" target="_blank" rel="noopener">{title}</a>{tag}</li>' if url else f'<li>{title}{tag}</li>'
+            proc_lis += pack_procurement_li(p, title_len=80)
         if not proc_lis:
             proc_lis = '<li>No procurement matches.</li>'
+
+        fresh = pack.get("evidence_freshness", "unknown")
+        fresh_label = {"refreshing": "Refreshing", "aging": "Aging", "stale": "Stale"}.get(fresh, fresh)
+        cycles = int(pack.get("cycles_since_refresh", 0) or 0)
         
         validation_html = f'''
         <div class="sig-validation">
@@ -412,6 +465,10 @@ for c in clusters[1:5]:
               <span>Validation pack · auto-assembled this cycle</span>
               <h4>Evidence for {j(pack.get("country", cc))}</h4>
               <span class="sig-validation-verdict {j(verdict)}">{j(verdict_label)}</span>
+            </div>
+            <div class="sig-freshness">
+              <span class="freshness-pill {j(fresh)}">{j(fresh_label)}</span>
+              <span class="freshness-meta">{j(pack.get("action_readiness", "n/a"))} · {j(cycles)} cycles stale · conf {j(pack.get("confidence_score", "—"))}</span>
             </div>
             <div class="sig-validation-grid">
               <div class="sig-validation-col"><h5>Sector hypotheses</h5><ul>{hyp_lis}</ul></div>

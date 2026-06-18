@@ -2,29 +2,31 @@
   "instance": "climate",
   "instance_label": "Climate & Catastrophe Risk",
   "cycle_id": "20260618",
-  "generated_at": "2026-06-18T11:31:05.646412+00:00",
+  "generated_at": "2026-06-18T15:54:50.733487+00:00",
   "clusters": [
     {
-      "cluster_id": "CLIM-allclear",
-      "country_cluster": "Caribbean basin",
-      "signal_kind": "all_clear",
-      "title": "All clear \u2014 no active hazards this cycle",
-      "evidence": "No active NWS alerts in Caribbean zones. Current conditions: 6 buoys reporting; max wind 19 kt; no tropical development expected (NHC).",
-      "evidence_grade": "A - official sources",
-      "confidence_score": 70,
+      "cluster_id": "CLIM-tropical-outlook",
+      "country_cluster": "North Atlantic / Caribbean basin",
+      "signal_kind": "tropical_development",
+      "title": "Tropical development being monitored (NHC outlook)",
+      "evidence": "NHC Tropical Weather Outlook indicates a system worth watching across the basin.",
+      "evidence_grade": "B - official outlook",
+      "confidence_score": 85,
       "freshness": "new",
-      "decision": "Routine monitoring \u2014 no action required",
-      "risk_flags": [],
+      "decision": "Basin-wide exposure and readiness",
+      "risk_flags": [
+        "Active tropical outlook for the basin"
+      ],
       "personas": [
-        {
-          "persona": "Resilience Planner",
-          "channel": "Telegram/SMS alert",
-          "action": "All clear across Caribbean zones \u2014 6 buoys reporting; max wind 19 kt; no tropical development expected (NHC). No action required; the engine keeps watching and will escalate the moment a threshold is crossed."
-        },
         {
           "persona": "Insurer / Reinsurer",
           "channel": "Email + alert",
-          "action": "No active hazard exposure this cycle (6 buoys reporting; max wind 19 kt; no tropical development expected (NHC)). Baseline confirmed for parametric monitoring."
+          "action": "Tropical development watch \u2014 NHC basin outlook active. Begin exposure modelling for the basin; recovery-capital may be needed within days."
+        },
+        {
+          "persona": "Resilience Planner",
+          "channel": "Telegram/SMS alert",
+          "action": "Tropical outlook active \u2014 NHC basin outlook active. Move readiness posture up; verify supply and communication chains across exposed islands."
         }
       ]
     }

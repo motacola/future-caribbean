@@ -12,6 +12,7 @@ Outputs:
 """
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 from datetime import datetime, timezone
@@ -19,9 +20,23 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT_DIR = ROOT / "outbox" / "validation_packs"
+STATE_FILE = ROOT / "data" / "validation_packs" / "state.json"
+REGISTRY_DIR = ROOT / "data" / "registries"
 
 MAX_PACKS = 5
 MAX_MATCHES = 6
+FRESHNESS_STALE_CYCLES = 2
+STOPWORDS = frozenset({"from", "with", "and", "the", "that", "serving", "local", "sector"})
+SHORT_SECTOR_TOKENS = frozenset({"oil", "gas", "bpo", "fdi", "gdp"})
+
+REGISTRY_SLUGS = {
+    "Guyana": "guyana",
+    "Belize": "belize",
+    "Jamaica": "jamaica",
+    "Barbados": "barbados",
+    "Trinidad and Tobago": "trinidad-and-tobago",
+    "St. Vincent and the Grenadines": "st-vincent-and-the-grenadines",
+}
 
 # ── Curated reference registry ──────────────────────────────
 # Stable, well-known public institutions only. Entries are surfaced as
@@ -129,6 +144,168 @@ def wb_observations_for(country: str, wb: dict) -> list[dict]:
     return out
 
 
+def registry_slug(country: str) -> str:
+    if country in REGISTRY_SLUGS:
+        return REGISTRY_SLUGS[country]
+    return re.sub(r"[^a-z0-9]+", "-", country.lower()).strip("-")
+
+
+def load_operators_from_registry(country: str) -> list[dict]:
+    path = REGISTRY_DIR / f"{registry_slug(country)}.json"
+    if not path.exists():
+        return []
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return []
+    out = []
+    for op in payload.get("operators", []) or []:
+        if not op.get("name"):
+            continue
+        out.append({
+            "name": op["name"],
+            "sector": op.get("sector", ""),
+            "role": op.get("role", ""),
+            "source_url": op.get("source_url", ""),
+            "verified_by": op.get("verified_by", "registry"),
+        })
+    return out[:MAX_MATCHES]
+
+
+def _sector_tokens(sector: str) -> list[str]:
+    words = re.findall(r"[a-z]{3,}", _norm(sector))
+    return [
+        w for w in words
+        if w not in STOPWORDS and (len(w) >= 4 or w in SHORT_SECTOR_TOKENS)
+    ]
+
+
+def corroborate_sector_hypotheses(
+    hyps: list[dict], articles: list[dict], country: str,
+) -> list[dict]:
+    """Upgrade unconfirmed hypotheses when regional news cites the sector."""
+    country_articles = [
+        a for a in articles
+        if country in (a.get("countries") or [])
+        or mentions_country(f"{a.get('title', '')} {a.get('summary', '')}", country)
+    ]
+    out: list[dict] = []
+    for hyp in hyps:
+        if hyp.get("status") != "unconfirmed" or not country_articles:
+            out.append(hyp)
+            continue
+        tokens = _sector_tokens(hyp.get("sector", ""))
+        matched = None
+        for art in country_articles:
+            blob = _norm(f"{art.get('title', '')} {art.get('summary', '')}")
+            hits = sum(1 for t in tokens if t in blob)
+            if hits >= 2 or (hits >= 1 and len(tokens) <= 2):
+                matched = art
+                break
+        if matched:
+            out.append({
+                **hyp,
+                "status": "corroborated",
+                "basis": f"{matched.get('source', 'Regional news')}: {matched.get('title', '')}",
+                "url": matched.get("url", ""),
+            })
+        else:
+            out.append(hyp)
+    return out
+
+
+def evidence_fingerprint(pack: dict) -> str:
+    parts: list[str] = []
+    for h in pack.get("sector_hypotheses", []):
+        if h.get("status") == "corroborated":
+            parts.append(f"h:{h.get('url') or h.get('sector')}")
+    for p in pack.get("procurement_matches", []):
+        if p.get("match") == "country":
+            parts.append(f"p:{p.get('title')}:{p.get('closing_date')}")
+    for o in pack.get("credible_local_operators", []):
+        parts.append(f"o:{o.get('name')}")
+    digest = hashlib.sha256("|".join(sorted(parts)).encode()).hexdigest()[:16]
+    return digest or "empty"
+
+
+def load_pack_state() -> dict:
+    if not STATE_FILE.exists():
+        return {"signals": {}}
+    try:
+        return json.loads(STATE_FILE.read_text(encoding="utf-8"))
+    except Exception:
+        return {"signals": {}}
+
+
+def save_pack_state(state: dict) -> None:
+    STATE_FILE.parent.mkdir(parents=True, exist_ok=True)
+    STATE_FILE.write_text(json.dumps(state, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
+def apply_freshness_decay(
+    pack: dict, previous: dict | None, now_iso: str,
+) -> dict:
+    """Downgrade advance → hold when evidence has not refreshed for N cycles."""
+    fp = evidence_fingerprint(pack)
+    prev_fp = (previous or {}).get("evidence_fingerprint", "")
+    stale_cycles = int((previous or {}).get("stale_cycles", 0))
+    if prev_fp and fp == prev_fp:
+        stale_cycles += 1
+    else:
+        stale_cycles = 0
+
+    decision = pack["advance_or_reject_recommendation"]
+    reason = pack["recommendation_reason"]
+    if decision == "advance" and stale_cycles >= FRESHNESS_STALE_CYCLES:
+        decision = "hold"
+        reason = (
+            f"Evidence fingerprint unchanged for {stale_cycles} cycles — "
+            "downgraded from advance to hold until new corroboration arrives."
+        )
+
+    pack = {
+        **pack,
+        "advance_or_reject_recommendation": decision,
+        "recommendation_reason": reason,
+        "evidence_fingerprint": fp,
+        "cycles_since_refresh": stale_cycles,
+        "evidence_freshness": "stale" if stale_cycles >= FRESHNESS_STALE_CYCLES else (
+            "refreshing" if stale_cycles == 0 else "aging"
+        ),
+        "last_validated_at": now_iso,
+    }
+    return pack
+
+
+def calibrate_confidence(
+    confidence: int,
+    hyps: list[dict],
+    procurement: list[dict],
+    wb_obs: list[dict],
+) -> tuple[int, str]:
+    """Separate raw signal strength from action readiness."""
+    effective = confidence
+    notes: list[str] = []
+    has_corroborated = any(h.get("status") == "corroborated" for h in hyps)
+    has_data = any(h.get("status") == "data_available" for h in hyps)
+    dated_country_tender = any(
+        p.get("match") == "country" and p.get("closing_date") for p in procurement
+    )
+    macro_only = bool(wb_obs) and not has_corroborated and not dated_country_tender
+
+    if macro_only and not has_data:
+        effective = min(effective, 68)
+        notes.append("annual macro signal only")
+    elif not has_corroborated and not dated_country_tender:
+        effective = min(effective, 78)
+        notes.append("no dated country procurement or news corroboration")
+
+    readiness = "high" if effective >= 80 and (has_corroborated or dated_country_tender) else (
+        "medium" if effective >= 60 else "low"
+    )
+    return effective, readiness + (f" ({'; '.join(notes)})" if notes else "")
+
+
 def sector_hypotheses_for(country: str, tier2_items: list[dict], wb_obs: list[dict]) -> list[dict]:
     """Each hypothesis carries an explicit basis so nothing reads as a finding."""
     hyps: list[dict] = []
@@ -233,23 +410,31 @@ def country_data_for(country: str, tier2_items: list[dict]) -> list[dict]:
 def recommend(confidence: int, hyps: list[dict], projects: list[dict],
               procurement: list[dict], operators: list[dict]) -> tuple[str, str]:
     evidence_categories = sum([
-        bool([h for h in hyps if h.get("status") == "data_available"]),
+        bool([h for h in hyps if h.get("status") in ("data_available", "corroborated")]),
         bool(projects),
         bool([p for p in procurement if p.get("match") == "country"]),
         bool(operators),
     ])
-    if confidence >= 80 and evidence_categories >= 2:
+    dated_tender = any(p.get("match") == "country" and p.get("closing_date") for p in procurement)
+    if confidence >= 80 and evidence_categories >= 2 and (dated_tender or any(
+        h.get("status") == "corroborated" for h in hyps
+    )):
         return ("advance", (
-            f"High-confidence signal ({confidence}/100) with {evidence_categories} independent "
-            "evidence categories already attached. Worth one validation conversation this cycle."
+            f"Calibrated confidence {confidence}/100 with {evidence_categories} evidence categories "
+            "including dated procurement or corroborated sector news. Worth one validation conversation."
+        ))
+    if confidence >= 80 and evidence_categories >= 2:
+        return ("hold", (
+            f"Calibrated confidence {confidence}/100 with {evidence_categories} evidence categories, "
+            "but no dated country tender or corroborated sector article yet — advance after confirmation."
         ))
     if confidence >= 60 or evidence_categories >= 1:
         return ("hold", (
-            f"Signal confidence {confidence}/100 with {evidence_categories} evidence categories. "
+            f"Calibrated confidence {confidence}/100 with {evidence_categories} evidence categories. "
             "Keep on the desk; advance only after the unresolved questions below are answered."
         ))
     return ("reject", (
-        f"Signal confidence {confidence}/100 with no corroborating evidence categories. "
+        f"Calibrated confidence {confidence}/100 with no corroborating evidence categories. "
         "Park unless new corroborating data arrives next cycle."
     ))
 
@@ -267,28 +452,45 @@ def unresolved_questions_for(country: str, hyps: list[dict], procurement: list[d
     elif not [p for p in procurement if p.get("match") == "country"]:
         qs.append(f"No live {country}-specific procurement notice matched this cycle — check CDB and national tender portals directly.")
     if not operators:
-        qs.append("Operator discovery is not yet automated — source two credible local operators via the listed institutions.")
+        qs.append(
+            "No registry-backed local operators matched — source two credible operators "
+            "via the listed institutions."
+        )
+    else:
+        qs.append(
+            f"Validate fit with registry-listed operators ({operators[0]['name']}"
+            f"{', ' + operators[1]['name'] if len(operators) > 1 else ''}) before outreach."
+        )
     qs.append("Validate that the underlying FDI movement is sustained, not a one-off transaction or statistical revision.")
     return qs
 
 
 # ── Pack assembly ───────────────────────────────────────────
 
-def build_pack(dispatch: dict, wb: dict, idb: dict, tier2: dict, now_iso: str,
-               tenders: list[dict] | None = None) -> dict:
+def build_pack(
+    dispatch: dict,
+    wb: dict,
+    idb: dict,
+    tier2: dict,
+    now_iso: str,
+    tenders: list[dict] | None = None,
+    news_articles: list[dict] | None = None,
+    previous_state: dict | None = None,
+) -> dict:
     country = dispatch.get("country_cluster", "Caribbean")
     tier2_items = (tier2 or {}).get("items", []) or []
     wb_obs = wb_observations_for(country, wb)
 
     hyps = sector_hypotheses_for(country, tier2_items, wb_obs)
+    hyps = corroborate_sector_hypotheses(hyps, news_articles or [], country)
     projects = supporting_projects_for(country, idb, tier2_items)
     procurement = procurement_matches_for(country, tier2_items, tenders)
     cdata = country_data_for(country, tier2_items)
     institutions = INSTITUTIONS.get(country, []) + REGIONAL_INSTITUTIONS
-    # No automated operator source exists yet; never fabricate one.
-    operators: list[dict] = []
+    operators = load_operators_from_registry(country)
 
-    confidence = int(dispatch.get("confidence_score", 0) or 0)
+    raw_confidence = int(dispatch.get("confidence_score", 0) or 0)
+    confidence, action_readiness = calibrate_confidence(raw_confidence, hyps, procurement, wb_obs)
     decision, reason = recommend(confidence, hyps, projects, procurement, operators)
     questions = unresolved_questions_for(country, hyps, procurement, operators)
 
@@ -303,12 +505,14 @@ def build_pack(dispatch: dict, wb: dict, idb: dict, tier2: dict, now_iso: str,
         for i in INSTITUTIONS.get(country, [])
     ] or [{"name": REGIONAL_INSTITUTIONS[0]["name"], "why": REGIONAL_INSTITUTIONS[0]["role"]}]
 
-    return {
+    pack = {
         "signal_id": dispatch.get("signal_id", ""),
         "dispatch_id": dispatch.get("dispatch_id", ""),
         "country": country,
         "signal_title": dispatch.get("title", ""),
         "confidence_score": confidence,
+        "raw_confidence_score": raw_confidence,
+        "action_readiness": action_readiness,
         "evidence_grade": dispatch.get("evidence_grade", ""),
         "sector_hypotheses": hyps,
         "supporting_projects": projects,
@@ -323,6 +527,7 @@ def build_pack(dispatch: dict, wb: dict, idb: dict, tier2: dict, now_iso: str,
         "recommendation_reason": reason,
         "last_validated_at": now_iso,
     }
+    return apply_freshness_decay(pack, previous_state, now_iso)
 
 
 def render_md(pack: dict) -> str:
@@ -330,7 +535,9 @@ def render_md(pack: dict) -> str:
         f"# Opportunity Validation Pack — {pack['country']}",
         "",
         f"- Signal: `{pack['signal_id']}` · Dispatch: `{pack['dispatch_id']}`",
-        f"- Confidence: {pack['confidence_score']}/100 · {pack['evidence_grade']}",
+        f"- Confidence: {pack['confidence_score']}/100 (raw {pack.get('raw_confidence_score', pack['confidence_score'])}) · {pack['evidence_grade']}",
+        f"- Action readiness: {pack.get('action_readiness', 'n/a')}",
+        f"- Evidence freshness: {pack.get('evidence_freshness', 'n/a')} · cycles since refresh: {pack.get('cycles_since_refresh', 0)}",
         f"- Recommendation: **{pack['advance_or_reject_recommendation'].upper()}** — {pack['recommendation_reason']}",
         f"- Last validated: {pack['last_validated_at']}",
         "",
@@ -338,7 +545,15 @@ def render_md(pack: dict) -> str:
     ]
     for h in pack["sector_hypotheses"] or [{"sector": "None identified this cycle", "basis": ""}]:
         basis = f" — _{h['basis']}_" if h.get("basis") else ""
-        lines.append(f"- {h['sector']}{basis}")
+        status = f" [{h['status']}]" if h.get("status") else ""
+        lines.append(f"- {h['sector']}{status}{basis}")
+    lines += ["", "## Credible local operators (registry-backed)"]
+    for o in pack.get("credible_local_operators") or []:
+        url = o.get("source_url", "")
+        link = f" ([profile]({url}))" if url else ""
+        lines.append(f"- {o['name']} — {o.get('role', '')}{link}")
+    if not pack.get("credible_local_operators"):
+        lines.append("- No registry-backed operators for this country yet.")
     lines += ["", "## Supporting projects & publications"]
     for p in pack["supporting_projects"] or []:
         lines.append(f"- [{p['title']}]({p['url']}) — {p['source']}")
@@ -390,13 +605,26 @@ def main() -> None:
     idb = read_json(ROOT / "data" / "idb" / "latest.json") or {}
     tier2 = read_json(ROOT / "data" / "tier2" / "latest.json") or {}
     tenders = (read_json(ROOT / "data" / "tenders" / "latest.json") or {}).get("items", [])
+    news = (read_json(ROOT / "data" / "regional_news" / "latest.json") or {}).get("items", [])
+    pack_state = load_pack_state()
+    signals_state = pack_state.setdefault("signals", {})
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     now_iso = datetime.now(timezone.utc).isoformat()
 
     index = []
     for dispatch in select_lead_dispatches(dispatches):
-        pack = build_pack(dispatch, wb, idb, tier2, now_iso, tenders)
+        sid = dispatch.get("signal_id") or dispatch.get("dispatch_id", "")
+        previous = signals_state.get(sid)
+        pack = build_pack(
+            dispatch, wb, idb, tier2, now_iso, tenders, news, previous,
+        )
+        signals_state[sid] = {
+            "evidence_fingerprint": pack.get("evidence_fingerprint"),
+            "stale_cycles": pack.get("cycles_since_refresh", 0),
+            "last_validated_at": now_iso,
+            "recommendation": pack["advance_or_reject_recommendation"],
+        }
         sid = pack["signal_id"] or pack["dispatch_id"]
         safe = re.sub(r"[^A-Za-z0-9._-]", "-", sid)
         (OUT_DIR / f"{safe}.json").write_text(
@@ -414,6 +642,8 @@ def main() -> None:
     (OUT_DIR / "index.json").write_text(
         json.dumps({"generated_at": now_iso, "packs": index}, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8")
+    pack_state["updated_at"] = now_iso
+    save_pack_state(pack_state)
     print(f"Validation packs written: {len(index)} -> {OUT_DIR}")
 
 

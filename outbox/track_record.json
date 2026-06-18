@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-18T11:31:18.247298+00:00",
+  "generated_at": "2026-06-18T15:54:50.595880+00:00",
   "feedback_provenance": "simulated",
   "current_boosts": {
     "enhanced_investment": {
@@ -24,6 +24,9 @@
     "economic_vulnerability": {
       "St. Vincent and the Grenadines": 8,
       "Suriname": -4
+    },
+    "tourism_impact": {
+      "Guyana": -4
     }
   },
   "cycles": [
@@ -33,14 +36,14 @@
         "forwarded": 1,
         "replied": 1,
         "opened": 1,
-        "ignored": 23,
+        "ignored": 25,
         "decision_changed": 1
       },
-      "dispatch_count": 27,
+      "dispatch_count": 29,
       "countries": [
         "Belize",
-        "St. Vincent and the Grenadines",
         "Guyana",
+        "St. Vincent and the Grenadines",
         "CARICOM",
         "Suriname"
       ],

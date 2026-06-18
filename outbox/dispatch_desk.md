@@ -1,6 +1,6 @@
 # Dispatch Desk — Cycle 20260618
 
-Generated: 2026-06-18 11:31 UTC
+Generated: 2026-06-18 15:54 UTC
 
 Signal Fabric turns fragmented regional data into decision-ready routes. This is the primary product surface; Telegram/email are delivery channels and the dashboard is the operator/audit view.
 

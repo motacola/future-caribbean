@@ -1,0 +1,27 @@
+{
+  "country": "St. Vincent and the Grenadines",
+  "verified_at": "2026-06-18",
+  "operators": [
+    {
+      "name": "VINLEC (St. Vincent Electricity Services Limited)",
+      "sector": "Energy and utilities",
+      "role": "National utility — anchor for grid and renewable infrastructure projects",
+      "source_url": "https://www.vinlec.com/",
+      "verified_by": "public website — utility mandate"
+    },
+    {
+      "name": "Coreas Distribution Ltd.",
+      "sector": "Logistics and distribution",
+      "role": "Major regional distributor — supply chain and import corridor operator",
+      "source_url": "https://www.coreas.com/",
+      "verified_by": "public website — distribution network"
+    },
+    {
+      "name": "Buccament Bay Resort (operating entity)",
+      "sector": "Tourism and hospitality",
+      "role": "Large resort asset — tourism capacity and hospitality services benchmark",
+      "source_url": "https://www.buccamentbay.com/",
+      "verified_by": "public website — resort operations"
+    }
+  ]
+}

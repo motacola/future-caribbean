@@ -1,15 +1,21 @@
 # Opportunity Validation Pack — Belize
 
 - Signal: `enhanced-invest-belize` · Dispatch: `DSP-20260618-024`
-- Confidence: 100/100 · A - multi-source
-- Recommendation: **HOLD** — Signal confidence 100/100 with 1 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.
-- Last validated: 2026-06-18T11:31:05.336554+00:00
+- Confidence: 100/100 (raw 100) · A - multi-source
+- Action readiness: high
+- Evidence freshness: aging · cycles since refresh: 1
+- Recommendation: **ADVANCE** — Calibrated confidence 100/100 with 3 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.
+- Last validated: 2026-06-18T15:54:50.454783+00:00
 
 ## Sector hypotheses
-- Tourism and hospitality — _Analyst prior from widely reported sector drivers — requires local confirmation_
-- Agribusiness and agro-exports — _Analyst prior from widely reported sector drivers — requires local confirmation_
-- Business process outsourcing — _Analyst prior from widely reported sector drivers — requires local confirmation_
-- FDI-receiving sectors (composition not yet broken down) — _World Bank: FDI net inflows moved +701.0% from 2023 to 2024_
+- Tourism and hospitality [corroborated] — _Google News — Belize: United States Joins Canada, Mexico, Bahamas, Jamaica, Belize, Costa Rica, Panama, Colombia, Brazil, Argentina, And Chile As Tourism Boom As tThe Region Races To Become The World’s Most Powerful Travel Market across USA - Travel And Tour World_
+- Agribusiness and agro-exports [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
+- Business process outsourcing [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
+- FDI-receiving sectors (composition not yet broken down) [macro_signal] — _World Bank: FDI net inflows moved +701.0% from 2023 to 2024_
+
+## Credible local operators (registry-backed)
+- Belize Tourism Industry Association (BTIA) — National tourism industry body — gateway to operators and investors ([profile](https://www.btia.org/))
+- Port of Belize Limited — National port operator — logistics and maritime corridor anchor ([profile](https://www.portofbelize.com/))
 
 ## Supporting projects & publications
 - No matched projects this cycle.
@@ -31,7 +37,7 @@
 
 ## Unresolved questions
 - Which specific sectors are driving the movement in Belize? No official sector-breakdown dataset matched this cycle.
-- Operator discovery is not yet automated — source two credible local operators via the listed institutions.
+- Validate fit with registry-listed operators (Belize Tourism Industry Association (BTIA), Port of Belize Limited) before outreach.
 - Validate that the underlying FDI movement is sustained, not a one-off transaction or statistical revision.
 
 > Screening support, not investment advice. Institutions listed are public bodies

@@ -1,12 +1,17 @@
 # Opportunity Validation Pack — CARICOM
 
 - Signal: `dev-pipeline-regional` · Dispatch: `DSP-20260618-015`
-- Confidence: 96/100 · B - cross-source
-- Recommendation: **HOLD** — Signal confidence 96/100 with 1 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.
-- Last validated: 2026-06-18T11:31:05.336554+00:00
+- Confidence: 78/100 (raw 96) · B - cross-source
+- Action readiness: medium (no dated country procurement or news corroboration)
+- Evidence freshness: stale · cycles since refresh: 10
+- Recommendation: **HOLD** — Calibrated confidence 78/100 with 1 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.
+- Last validated: 2026-06-18T15:54:50.454783+00:00
 
 ## Sector hypotheses
 - None identified this cycle
+
+## Credible local operators (registry-backed)
+- No registry-backed operators for this country yet.
 
 ## Supporting projects & publications
 - [CARICOM Selected Economic Indicators 2011, 2015-2019](https://statistics.caricom.org/publication/caricoms-selected-economic-indicators-2011-2015-2019/) — CARICOM Statistics
@@ -36,7 +41,7 @@
 ## Unresolved questions
 - Which specific sectors are driving the movement in CARICOM? No official sector-breakdown dataset matched this cycle.
 - No live CARICOM-specific procurement notice matched this cycle — check CDB and national tender portals directly.
-- Operator discovery is not yet automated — source two credible local operators via the listed institutions.
+- No registry-backed local operators matched — source two credible operators via the listed institutions.
 - Validate that the underlying FDI movement is sustained, not a one-off transaction or statistical revision.
 
 > Screening support, not investment advice. Institutions listed are public bodies
