@@ -1,5 +1,5 @@
 🌴 *Signal Fabric — Decision Routes Ready*
-Cycle: `20260618` · 2026-06-18 15:54 UTC
+Cycle: `20260619` · 2026-06-19 12:20 UTC
 
 *What this is:*
 A Dispatch Desk notification. The product is the decision route: signal → persona → action → feedback. Telegram is only the delivery channel.
@@ -39,7 +39,7 @@ Data → 13 signal clusters → 32 persona routes → 6 personas → action/capi
 • St. Vincent and the Grenadines economic vulnerability upranked +8
 • St. Vincent and the Grenadines enhanced investment downranked -6
 • Belize supply chain signal downranked -6
-• Guyana enhanced investment upranked +5
+• Suriname economic vulnerability downranked -4
 
 *Open the product surface*
 • `outbox/dispatch_desk.md` — judge/user-facing decision desk

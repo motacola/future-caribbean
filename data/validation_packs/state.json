@@ -1,35 +1,41 @@
 {
   "signals": {
     "enhanced-invest-guyana": {
-      "evidence_fingerprint": "090b84ed53c6d53b",
-      "stale_cycles": 1,
-      "last_validated_at": "2026-06-18T15:54:50.454783+00:00",
-      "recommendation": "advance"
+      "evidence_fingerprint": "56fdcca6e2314df6",
+      "stale_cycles": 2,
+      "last_validated_at": "2026-06-19T12:20:17.196925+00:00",
+      "recommendation": "hold"
     },
     "enhanced-invest-belize": {
-      "evidence_fingerprint": "df072417565d4580",
-      "stale_cycles": 1,
-      "last_validated_at": "2026-06-18T15:54:50.454783+00:00",
-      "recommendation": "advance"
+      "evidence_fingerprint": "3af35d2df5aa7bf4",
+      "stale_cycles": 2,
+      "last_validated_at": "2026-06-19T12:20:17.196925+00:00",
+      "recommendation": "hold"
     },
     "enhanced-invest-st.-vincent-and-the-grenadines": {
       "evidence_fingerprint": "a32b4eaa1db63dde",
-      "stale_cycles": 10,
-      "last_validated_at": "2026-06-18T15:54:50.454783+00:00",
+      "stale_cycles": 14,
+      "last_validated_at": "2026-06-19T12:20:17.196925+00:00",
       "recommendation": "hold"
     },
     "dev-pipeline-regional": {
       "evidence_fingerprint": "e3b0c44298fc1c14",
-      "stale_cycles": 10,
-      "last_validated_at": "2026-06-18T15:54:50.454783+00:00",
+      "stale_cycles": 15,
+      "last_validated_at": "2026-06-19T12:20:17.196925+00:00",
       "recommendation": "hold"
     },
     "supply-chain-belize": {
-      "evidence_fingerprint": "df072417565d4580",
-      "stale_cycles": 1,
-      "last_validated_at": "2026-06-18T15:54:50.454783+00:00",
-      "recommendation": "advance"
+      "evidence_fingerprint": "3af35d2df5aa7bf4",
+      "stale_cycles": 2,
+      "last_validated_at": "2026-06-19T12:20:17.196925+00:00",
+      "recommendation": "hold"
+    },
+    "enhanced-invest-trinidad-and-tobago": {
+      "evidence_fingerprint": "e3b0c44298fc1c14",
+      "stale_cycles": 0,
+      "last_validated_at": "2026-06-19T12:17:37.381156+00:00",
+      "recommendation": "hold"
     }
   },
-  "updated_at": "2026-06-18T15:54:50.454783+00:00"
+  "updated_at": "2026-06-19T12:20:17.196925+00:00"
 }

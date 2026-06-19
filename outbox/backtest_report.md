@@ -1,69 +1,68 @@
 # Signal Fabric — Backtest Report
 
-**Generated:** 2026-06-18T15:54:50.640145+00:00
-**Cycles analyzed:** 2
-**Total dispatches:** 50
-**Actionable responses:** 7
-**Overall response rate:** 14.0%
-**Avg confidence:** 88.8/100
+**Generated:** 2026-06-19T12:20:17.351752+00:00
+**Cycles analyzed:** 1
+**Total dispatches:** 29
+**Actionable responses:** 4
+**Overall response rate:** 13.8%
+**Avg confidence:** 86.4/100
 
 ## Summary
 
-- **Total validation packs:** 8
-- **Avg confidence:** 88.8/100
-- **Response rate:** 14.0%
+- **Total validation packs:** 9
+- **Avg confidence:** 86.4/100
+- **Response rate:** 13.8%
 
 ## Recommendation Distribution
 
-- **Advance:** 3 (37.5%)
-- **Hold:** 5 (62.5%)
+- **Advance:** 0 (0.0%)
+- **Hold:** 9 (100.0%)
 - **Reject:** 0 (0.0%)
 
 ## Confidence Calibration
 
-- **80-100:** 6 packs (75.0%)
-- **60-79:** 2 packs (25.0%)
+- **80-100:** 6 packs (66.7%)
+- **60-79:** 3 packs (33.3%)
 - **40-59:** 0 packs (0.0%)
 - **0-39:** 0 packs (0.0%)
 
 ## Evidence Category Coverage
 
-- **Sector Hypotheses:** 4 packs (50.0%)
-- **Supporting Projects:** 3 packs (37.5%)
-- **Procurement Matches:** 25 packs (312.5%)
-- **Operators:** 10 packs (125.0%)
+- **Sector Hypotheses:** 5 packs (55.6%)
+- **Supporting Projects:** 4 packs (44.4%)
+- **Procurement Matches:** 28 packs (311.1%)
+- **Operators:** 10 packs (111.1%)
 
 ## Signal Type Performance
 
 - **dev:** Advance 0, Hold 1, Reject 0 (n=1)
-- **enhanced:** Advance 2, Hold 1, Reject 0 (n=3)
+- **enhanced:** Advance 0, Hold 4, Reject 0 (n=4)
 - **regional:** Advance 0, Hold 3, Reject 0 (n=3)
-- **supply:** Advance 1, Hold 0, Reject 0 (n=1)
+- **supply:** Advance 0, Hold 1, Reject 0 (n=1)
 
 ## Cycle Accuracy
 
 | Cycle | Dispatches | Actionable | Response Rate |
 |-------|------------|------------|---------------|
-| 20260618 | 29 | 4 | 13.8% |
-| 20260617 | 21 | 3 | 14.3% |
+| 20260619 | 29 | 4 | 13.8% |
 
 ## Feedback Analysis
 
-- **Total feedback entries:** 50
-- **Actionable rate:** 14.0%
-- **By status:** {'forwarded': 2, 'ignored': 43, 'opened': 2, 'replied': 2, 'decision_changed': 1}
+- **Total feedback entries:** 29
+- **Actionable rate:** 13.8%
+- **By status:** {'forwarded': 1, 'ignored': 25, 'opened': 1, 'replied': 1, 'decision_changed': 1}
 
 ## Recommendation Calibration
 
-- **Advance rate:** 37.5%
-- **Hold rate:** 62.5%
+- **Advance rate:** 0.0%
+- **Hold rate:** 100.0%
 - **Reject rate:** 0.0%
 
 > **Calibration note:** Advance = high confidence + 2+ evidence categories. Hold = moderate. Reject = low.
 
 ## Calibration Assessment
 
-✅ **Advance rate in healthy range** (10-50%).
+⚠️ **Low advance rate** — may be too conservative; consider lowering thresholds.
 ⚠️ **Low feedback response rate** — improve distribution or simplify feedback.
 
 ---

@@ -1,6 +1,6 @@
 # Caribbean Opportunity Dispatch — Judge Brief
 
-Generated: 2026-06-18 15:54 UTC
+Generated: 2026-06-19 12:20 UTC
 
 ## What This Proves
 
@@ -31,7 +31,7 @@ Caribbean Opportunity Dispatch is the product. Caribbean Signal OS is the archit
 
 **2.** 🔴 **🏗️ Pipeline — CARICOM** — sustained
    Narrative: CARICOM: 3 active procurements — bidding window open
-   Score: 96/100 | Grade: B - cross-source
+   Score: 95/100 | Grade: B - cross-source
    Audience: investor/founder via Email brief + Telegram
    Decision: Active procurement pipeline: CDB active procurement notices: 3. Priority: review CDB/IDB opportunities as lead list for project-based entry.
 
@@ -47,11 +47,12 @@ Caribbean Opportunity Dispatch is the product. Caribbean Signal OS is the archit
    Audience: investor/founder via Email brief + Telegram
    Decision: Validation priority. St. Kitts and Nevis FDI movement (41.1% change) signals opportunity. Cross-reference with sector data.
 
-**5.** 🟢 **⚠️ Vulnerability — St. Vincent and the Grenadines** — sustained
+**5.** 🟢 **⚠️ Vulnerability — St. Vincent and the Grenadines** — intensified
    Narrative: St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended
    Score: 68/100 | Grade: C - single-source
    Audience: policy/operator via Telegram digest
    Decision: Monitor. St. Vincent and the Grenadines showing economic stress (18.00%). Track next cycle. Escalates if additional stress indicators appear or existing ones worsen.
+   ⬆️ Strengthened (+8 pts)
 
 **6.** 🟢 **⚠️ Vulnerability — Suriname** — sustained
    Narrative: Suriname: economic stress indicators rising — portfolio review recommended
@@ -133,7 +134,7 @@ Each signal is routed to specific personas based on signal kind and evidence lev
 
 ## Cycle Summary
 
-Lead: Belize · 26 composite signal(s) · 25 persistent
+Lead: Belize · 26 composite signal(s) · 1 intensified · 24 persistent
 ## Judge Demo Path
 
 1. Run `bash run_pipeline.sh`.

@@ -2,7 +2,7 @@
 
 **Decision job:** Capital deployment screening and market entry assessment
 **Delivery channel:** Email brief + Telegram
-**Generated:** Jun 18, 2026 at 15:54 UTC
+**Generated:** Jun 19, 2026 at 12:20 UTC
 **Dispatches in this packet:** 10
 
 ---
@@ -11,7 +11,7 @@
 
 ### 1. Guyana: +860.3% multi-source capital surge — market entry window open
 
-**ID:** `DSP-20260618-021` | **Country:** Guyana | **Confidence:** 🔴 Immediate | 100/100 | A - multi-source
+**ID:** `DSP-20260619-021` | **Country:** Guyana | **Confidence:** 🔴 Immediate | 100/100 | A - multi-source
 **Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** forwarded
 
@@ -25,7 +25,7 @@
 
 ### 2. Belize: +701.0% multi-source capital surge — market entry window open
 
-**ID:** `DSP-20260618-024` | **Country:** Belize | **Confidence:** 🔴 Immediate | 100/100 | A - multi-source
+**ID:** `DSP-20260619-024` | **Country:** Belize | **Confidence:** 🔴 Immediate | 100/100 | A - multi-source
 **Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** opened
 
@@ -39,7 +39,7 @@
 
 ### 3. St. Vincent and the Grenadines: +88.2% multi-source investment validated — opportunity active
 
-**ID:** `DSP-20260618-027` | **Country:** St. Vincent and the Grenadines | **Confidence:** 🔴 Immediate | 100/100 | A - multi-source
+**ID:** `DSP-20260619-027` | **Country:** St. Vincent and the Grenadines | **Confidence:** 🔴 Immediate | 100/100 | A - multi-source
 **Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** weakened
 **Feedback status:** ignored
 
@@ -54,7 +54,7 @@
 
 ### 4. Regional FDI snapshot: 8 countries with active capital movement
 
-**ID:** `DSP-20260618-001` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
+**ID:** `DSP-20260619-001` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
 **Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** new
 **Feedback status:** ignored
 
@@ -68,7 +68,7 @@
 
 ### 5. Guyana: FDI trending at +860.3% — screening trigger active
 
-**ID:** `DSP-20260618-003` | **Country:** Guyana | **Confidence:** 🔴 Immediate | 90/100 | B - cross-source
+**ID:** `DSP-20260619-003` | **Country:** Guyana | **Confidence:** 🔴 Immediate | 90/100 | B - cross-source
 **Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -82,7 +82,7 @@
 
 ### 6. Belize: FDI trending at +701.0% — screening trigger active
 
-**ID:** `DSP-20260618-005` | **Country:** Belize | **Confidence:** 🔴 Immediate | 90/100 | B - cross-source
+**ID:** `DSP-20260619-005` | **Country:** Belize | **Confidence:** 🔴 Immediate | 90/100 | B - cross-source
 **Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -96,7 +96,7 @@
 
 ### 7. Capital convergence: 8 Caribbean economies showing multi-source investment momentum
 
-**ID:** `DSP-20260618-018` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
+**ID:** `DSP-20260619-018` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
 **Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** new
 **Feedback status:** ignored
 
@@ -110,7 +110,7 @@
 
 ### 8. St. Vincent and the Grenadines: FDI trending at +88.2% — screening trigger active
 
-**ID:** `DSP-20260618-007` | **Country:** St. Vincent and the Grenadines | **Confidence:** 🟡 Validation | 78/100 | B - cross-source
+**ID:** `DSP-20260619-007` | **Country:** St. Vincent and the Grenadines | **Confidence:** 🟡 Validation | 78/100 | B - cross-source
 **Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -124,7 +124,7 @@
 
 ### 9. St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended
 
-**ID:** `DSP-20260618-009` | **Country:** St. Vincent and the Grenadines | **Confidence:** 🟢 Monitor | 68/100 | C - single-source
+**ID:** `DSP-20260619-009` | **Country:** St. Vincent and the Grenadines | **Confidence:** 🟢 Monitor | 68/100 | C - single-source
 **Channel:** Email brief + Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** decision_changed
 
@@ -139,7 +139,7 @@
 
 ### 10. Suriname: economic stress indicators rising — portfolio review recommended
 
-**ID:** `DSP-20260618-011` | **Country:** Suriname | **Confidence:** 🟢 Monitor | 56/100 | C - single-source
+**ID:** `DSP-20260619-011` | **Country:** Suriname | **Confidence:** 🟢 Monitor | 56/100 | C - single-source
 **Channel:** Email brief + Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** ignored
 

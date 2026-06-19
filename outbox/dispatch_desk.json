@@ -3,8 +3,8 @@
     "St. Vincent and the Grenadines economic vulnerability upranked +8",
     "St. Vincent and the Grenadines enhanced investment downranked -6",
     "Belize supply chain signal downranked -6",
-    "Guyana enhanced investment upranked +5",
-    "Suriname economic vulnerability downranked -4"
+    "Suriname economic vulnerability downranked -4",
+    "St. Vincent and the Grenadines investment signal downranked -4"
   ],
   "channel_count": 4,
   "cluster_count": 13,
@@ -28,7 +28,7 @@
         {
           "action": "Assess competitive positioning in Guyana. FDI movement (860.3% change) signals growing market or incoming competition \u2014 evaluate local advantage before new entrants arrive.",
           "channel": "Telegram",
-          "dispatch_id": "DSP-20260618-023",
+          "dispatch_id": "DSP-20260619-023",
           "feedback_status": "ignored",
           "persona": "Regional Founder/Operator",
           "rationale": "Multi-source investment lift indicates growing market that may support new entry or expansion"
@@ -36,7 +36,7 @@
         {
           "action": "Route Guyana opportunity to relevant founders and investors in your network. Signal strength (860.3% change) makes this a high-priority introduction target.",
           "channel": "Telegram",
-          "dispatch_id": "DSP-20260618-022",
+          "dispatch_id": "DSP-20260619-022",
           "feedback_status": "ignored",
           "persona": "Ecosystem Builder",
           "rationale": "Cross-country investment velocity signals where to focus ecosystem support and founder matching"
@@ -44,7 +44,7 @@
         {
           "action": "Investigate Guyana as a capital deployment target this cycle. Multi-source validation (860.3% change) confirms directional signal \u2014 next step is operator discovery and market entry assessment.",
           "channel": "Email brief + Telegram",
-          "dispatch_id": "DSP-20260618-021",
+          "dispatch_id": "DSP-20260619-021",
           "feedback_status": "forwarded",
           "persona": "Diaspora Investor",
           "rationale": "Multi-source validation reduces screening risk \u2014 capital follows verified signals"
@@ -73,7 +73,7 @@
         {
           "action": "Assess competitive positioning in Belize. FDI movement (701.0% change) signals growing market or incoming competition \u2014 evaluate local advantage before new entrants arrive.",
           "channel": "Telegram",
-          "dispatch_id": "DSP-20260618-026",
+          "dispatch_id": "DSP-20260619-026",
           "feedback_status": "ignored",
           "persona": "Regional Founder/Operator",
           "rationale": "Multi-source investment lift indicates growing market that may support new entry or expansion"
@@ -81,7 +81,7 @@
         {
           "action": "Route Belize opportunity to relevant founders and investors in your network. Signal strength (701.0% change) makes this a high-priority introduction target.",
           "channel": "Telegram",
-          "dispatch_id": "DSP-20260618-025",
+          "dispatch_id": "DSP-20260619-025",
           "feedback_status": "ignored",
           "persona": "Ecosystem Builder",
           "rationale": "Cross-country investment velocity signals where to focus ecosystem support and founder matching"
@@ -89,7 +89,7 @@
         {
           "action": "Investigate Belize as a capital deployment target this cycle. Multi-source validation (701.0% change) confirms directional signal \u2014 next step is operator discovery and market entry assessment.",
           "channel": "Email brief + Telegram",
-          "dispatch_id": "DSP-20260618-024",
+          "dispatch_id": "DSP-20260619-024",
           "feedback_status": "opened",
           "persona": "Diaspora Investor",
           "rationale": "Multi-source validation reduces screening risk \u2014 capital follows verified signals"
@@ -117,7 +117,7 @@
         {
           "action": "Assess competitive positioning in St. Vincent and the Grenadines. FDI movement (88.2% change) signals growing market or incoming competition \u2014 evaluate local advantage before new entrants arrive.",
           "channel": "Telegram",
-          "dispatch_id": "DSP-20260618-029",
+          "dispatch_id": "DSP-20260619-029",
           "feedback_status": "ignored",
           "persona": "Regional Founder/Operator",
           "rationale": "Multi-source investment lift indicates growing market that may support new entry or expansion"
@@ -125,7 +125,7 @@
         {
           "action": "Route St. Vincent and the Grenadines opportunity to relevant founders and investors in your network. Signal strength (88.2% change) makes this a high-priority introduction target.",
           "channel": "Telegram",
-          "dispatch_id": "DSP-20260618-028",
+          "dispatch_id": "DSP-20260619-028",
           "feedback_status": "ignored",
           "persona": "Ecosystem Builder",
           "rationale": "Cross-country investment velocity signals where to focus ecosystem support and founder matching"
@@ -133,7 +133,7 @@
         {
           "action": "Investigate St. Vincent and the Grenadines as a capital deployment target this cycle. Multi-source validation (88.2% change) confirms directional signal \u2014 next step is operator discovery and market entry assessment.",
           "channel": "Email brief + Telegram",
-          "dispatch_id": "DSP-20260618-027",
+          "dispatch_id": "DSP-20260619-027",
           "feedback_status": "ignored",
           "persona": "Diaspora Investor",
           "rationale": "Multi-source validation reduces screening risk \u2014 capital follows verified signals"
@@ -147,8 +147,8 @@
     },
     {
       "cluster_id": "CL-development-pipeline-caricom",
-      "confidence_display": "\ud83d\udd34 Immediate | 96/100 | B - cross-source",
-      "confidence_score": 96,
+      "confidence_display": "\ud83d\udd34 Immediate | 95/100 | B - cross-source",
+      "confidence_score": 95,
       "country_cluster": "CARICOM",
       "decision": "Which procurement or project opportunity to pursue",
       "detail": "CDB active procurement notices: 3",
@@ -164,7 +164,7 @@
         {
           "action": "Review operational readiness for CARICOM opportunities. CDB active procurement notices: 3 \u2014 assess capacity and bid pipeline.",
           "channel": "Telegram",
-          "dispatch_id": "DSP-20260618-015",
+          "dispatch_id": "DSP-20260619-015",
           "feedback_status": "replied",
           "persona": "Regional Operator",
           "rationale": "Active procurement directly maps to operational capacity needs \u2014 first to respond wins"
@@ -172,7 +172,7 @@
         {
           "action": "Map CARICOM procurement pipeline against your capability. CDB/IDB projects (CDB active procurement notices: 3) create service and supply opportunities.",
           "channel": "Telegram",
-          "dispatch_id": "DSP-20260618-017",
+          "dispatch_id": "DSP-20260619-017",
           "feedback_status": "ignored",
           "persona": "Regional Founder/Operator",
           "rationale": "Procurement pipeline signals government and institutional spending direction \u2014 follow the money"
@@ -180,7 +180,7 @@
         {
           "action": "Track CDB/IDB project pipeline: CDB active procurement notices: 3. Review opportunity fit and prepare expression of interest.",
           "channel": "Email brief",
-          "dispatch_id": "DSP-20260618-016",
+          "dispatch_id": "DSP-20260619-016",
           "feedback_status": "ignored",
           "persona": "Procurement Watcher",
           "rationale": "CDB/IDB project pipeline is the primary lead source for project-based business development"
@@ -208,7 +208,7 @@
         {
           "action": "Active supply chain corridor in Belize: procurement live + maritime stable. Assess capacity for logistics, warehousing, transport \u2014 bid window open.",
           "channel": "Telegram",
-          "dispatch_id": "DSP-20260618-030",
+          "dispatch_id": "DSP-20260619-030",
           "feedback_status": "ignored",
           "persona": "Regional Operator",
           "rationale": "Active procurement + stable maritime = real supply chain corridor opportunity \u2014 first to respond wins"
@@ -216,7 +216,7 @@
         {
           "action": "Supply chain gap in Belize confirmed. Procurement pipeline + stable maritime = build warehousing, transport, or last-mile services here.",
           "channel": "Telegram",
-          "dispatch_id": "DSP-20260618-032",
+          "dispatch_id": "DSP-20260619-032",
           "feedback_status": "ignored",
           "persona": "Regional Founder/Operator",
           "rationale": "Supply chain gaps + procurement pipeline = where to build logistics, warehousing, or last-mile services"
@@ -224,7 +224,7 @@
         {
           "action": "CDB procurement (signal detected) aligned with stable shipping lanes. Viable corridor for logistics providers \u2014 prepare EOI.",
           "channel": "Email brief",
-          "dispatch_id": "DSP-20260618-031",
+          "dispatch_id": "DSP-20260619-031",
           "feedback_status": "ignored",
           "persona": "Procurement Watcher",
           "rationale": "CDB procurement aligned with maritime stability = viable logistics corridors for project-based entry"
@@ -252,7 +252,7 @@
         {
           "action": "Assess competitive positioning in Caribwide. FDI movement (Guyana (860.3% change), Belize (701.0% change), St. Vincent and the Grenadines (88.2% change)) signals growing market or incoming competition \u2014 evaluate local advantage before new entrants arrive.",
           "channel": "Telegram",
-          "dispatch_id": "DSP-20260618-020",
+          "dispatch_id": "DSP-20260619-020",
           "feedback_status": "ignored",
           "persona": "Regional Founder/Operator",
           "rationale": "Multi-source investment lift indicates growing market that may support new entry or expansion"
@@ -260,7 +260,7 @@
         {
           "action": "Route Caribwide opportunity to relevant founders and investors in your network. Signal strength (Guyana (860.3% change), Belize (701.0% change), St. Vincent and the Grenadines (88.2% change)) makes this a high-priority introduction target.",
           "channel": "Telegram",
-          "dispatch_id": "DSP-20260618-019",
+          "dispatch_id": "DSP-20260619-019",
           "feedback_status": "ignored",
           "persona": "Ecosystem Builder",
           "rationale": "Cross-country investment velocity signals where to focus ecosystem support and founder matching"
@@ -268,7 +268,7 @@
         {
           "action": "Investigate Caribwide as a capital deployment target this cycle. Multi-source validation (Guyana (860.3% change), Belize (701.0% change), St. Vincent and the Grenadines (88.2% change)) confirms directional signal \u2014 next step is operator discovery and market entry assessment.",
           "channel": "Email brief + Telegram",
-          "dispatch_id": "DSP-20260618-018",
+          "dispatch_id": "DSP-20260619-018",
           "feedback_status": "ignored",
           "persona": "Diaspora Investor",
           "rationale": "Multi-source validation reduces screening risk \u2014 capital follows verified signals"
@@ -296,7 +296,7 @@
         {
           "action": "Assess competitive positioning in Caribwide. FDI movement (Guyana (860.3% change), Belize (701.0% change), St. Vincent and the Grenadines (88.2% change)) signals growing market or incoming competition \u2014 evaluate local advantage before new entrants arrive.",
           "channel": "Telegram",
-          "dispatch_id": "DSP-20260618-002",
+          "dispatch_id": "DSP-20260619-002",
           "feedback_status": "ignored",
           "persona": "Regional Founder/Operator",
           "rationale": "FDI movement in your operating country signals competition or demand growth \u2014 assess positioning"
@@ -304,7 +304,7 @@
         {
           "action": "Screen Caribwide for investment readiness. FDI movement (Guyana (860.3% change), Belize (701.0% change), St. Vincent and the Grenadines (88.2% change)) is a screening trigger \u2014 cross-reference with sector conditions before deploying capital.",
           "channel": "Email brief + Telegram",
-          "dispatch_id": "DSP-20260618-001",
+          "dispatch_id": "DSP-20260619-001",
           "feedback_status": "ignored",
           "persona": "Diaspora Investor",
           "rationale": "Single-source FDI movement is a screening trigger, not a deployment signal \u2014 start diligence"
@@ -332,7 +332,7 @@
         {
           "action": "Assess competitive positioning in Guyana. FDI movement (860.3% change) signals growing market or incoming competition \u2014 evaluate local advantage before new entrants arrive.",
           "channel": "Telegram",
-          "dispatch_id": "DSP-20260618-004",
+          "dispatch_id": "DSP-20260619-004",
           "feedback_status": "ignored",
           "persona": "Regional Founder/Operator",
           "rationale": "FDI movement in your operating country signals competition or demand growth \u2014 assess positioning"
@@ -340,7 +340,7 @@
         {
           "action": "Screen Guyana for investment readiness. FDI movement (860.3% change) is a screening trigger \u2014 cross-reference with sector conditions before deploying capital.",
           "channel": "Email brief + Telegram",
-          "dispatch_id": "DSP-20260618-003",
+          "dispatch_id": "DSP-20260619-003",
           "feedback_status": "ignored",
           "persona": "Diaspora Investor",
           "rationale": "Single-source FDI movement is a screening trigger, not a deployment signal \u2014 start diligence"
@@ -368,7 +368,7 @@
         {
           "action": "Assess competitive positioning in Belize. FDI movement (701.0% change) signals growing market or incoming competition \u2014 evaluate local advantage before new entrants arrive.",
           "channel": "Telegram",
-          "dispatch_id": "DSP-20260618-006",
+          "dispatch_id": "DSP-20260619-006",
           "feedback_status": "ignored",
           "persona": "Regional Founder/Operator",
           "rationale": "FDI movement in your operating country signals competition or demand growth \u2014 assess positioning"
@@ -376,7 +376,7 @@
         {
           "action": "Screen Belize for investment readiness. FDI movement (701.0% change) is a screening trigger \u2014 cross-reference with sector conditions before deploying capital.",
           "channel": "Email brief + Telegram",
-          "dispatch_id": "DSP-20260618-005",
+          "dispatch_id": "DSP-20260619-005",
           "feedback_status": "ignored",
           "persona": "Diaspora Investor",
           "rationale": "Single-source FDI movement is a screening trigger, not a deployment signal \u2014 start diligence"
@@ -404,7 +404,7 @@
         {
           "action": "Signal context for CARICOM: 5%. Use this dispatch as a briefing input or narrative lead.",
           "channel": "Telegram digest",
-          "dispatch_id": "DSP-20260618-014",
+          "dispatch_id": "DSP-20260619-014",
           "feedback_status": "ignored",
           "persona": "Policy/Media",
           "rationale": "Food security is a regional stability indicator \u2014 tracks pressure points before they become crises"
@@ -412,7 +412,7 @@
         {
           "action": "Route CARICOM opportunity to relevant founders and investors in your network. Signal strength (5%) makes this a high-priority introduction target.",
           "channel": "Telegram",
-          "dispatch_id": "DSP-20260618-013",
+          "dispatch_id": "DSP-20260619-013",
           "feedback_status": "ignored",
           "persona": "Ecosystem Builder",
           "rationale": "Food trade data reveals supply chain gaps that local founders and agri-tech can fill"
@@ -440,7 +440,7 @@
         {
           "action": "Assess competitive positioning in St. Vincent and the Grenadines. FDI movement (88.2% change) signals growing market or incoming competition \u2014 evaluate local advantage before new entrants arrive.",
           "channel": "Telegram",
-          "dispatch_id": "DSP-20260618-008",
+          "dispatch_id": "DSP-20260619-008",
           "feedback_status": "ignored",
           "persona": "Regional Founder/Operator",
           "rationale": "FDI movement in your operating country signals competition or demand growth \u2014 assess positioning"
@@ -448,7 +448,7 @@
         {
           "action": "Screen St. Vincent and the Grenadines for investment readiness. FDI movement (88.2% change) is a screening trigger \u2014 cross-reference with sector conditions before deploying capital.",
           "channel": "Email brief + Telegram",
-          "dispatch_id": "DSP-20260618-007",
+          "dispatch_id": "DSP-20260619-007",
           "feedback_status": "ignored",
           "persona": "Diaspora Investor",
           "rationale": "Single-source FDI movement is a screening trigger, not a deployment signal \u2014 start diligence"
@@ -477,7 +477,7 @@
         {
           "action": "Signal context for St. Vincent and the Grenadines: 18.00%. Use this dispatch as a briefing input or narrative lead.",
           "channel": "Telegram digest",
-          "dispatch_id": "DSP-20260618-010",
+          "dispatch_id": "DSP-20260619-010",
           "feedback_status": "ignored",
           "persona": "Policy/Media",
           "rationale": "Economic stress indicators drive policy response and media narratives"
@@ -485,7 +485,7 @@
         {
           "action": "Assess portfolio exposure in St. Vincent and the Grenadines. Economic stress indicators (18.00%) may affect existing positions or timing.",
           "channel": "Email brief + Telegram",
-          "dispatch_id": "DSP-20260618-009",
+          "dispatch_id": "DSP-20260619-009",
           "feedback_status": "decision_changed",
           "persona": "Diaspora Investor",
           "rationale": "Vulnerability signals change risk profiles \u2014 reassess exposure and timing"
@@ -515,7 +515,7 @@
         {
           "action": "Signal context for Suriname: 16.23%. Use this dispatch as a briefing input or narrative lead.",
           "channel": "Telegram digest",
-          "dispatch_id": "DSP-20260618-012",
+          "dispatch_id": "DSP-20260619-012",
           "feedback_status": "ignored",
           "persona": "Policy/Media",
           "rationale": "Economic stress indicators drive policy response and media narratives"
@@ -523,7 +523,7 @@
         {
           "action": "Assess portfolio exposure in Suriname. Economic stress indicators (16.23%) may affect existing positions or timing.",
           "channel": "Email brief + Telegram",
-          "dispatch_id": "DSP-20260618-011",
+          "dispatch_id": "DSP-20260619-011",
           "feedback_status": "ignored",
           "persona": "Diaspora Investor",
           "rationale": "Vulnerability signals change risk profiles \u2014 reassess exposure and timing"
@@ -536,15 +536,15 @@
       "title": "Suriname: economic stress indicators rising \u2014 portfolio review recommended"
     }
   ],
-  "cycle_id": "20260618",
+  "cycle_id": "20260619",
   "dispatch_count": 32,
-  "generated_at": "2026-06-18 15:54 UTC",
+  "generated_at": "2026-06-19 12:20 UTC",
   "persona_count": 6,
   "regional_thesis": "Capital momentum is strongest in Guyana (+860.3%), followed by Belize, St. Vincent and the Grenadines. However, St. Vincent and the Grenadines and Suriname also carry elevated vulnerability indicators \u2014 investment signals from these countries require deeper diligence before committing capital. Development pipeline remains active (CDB active procurement notices: 3) \u2014 the bidding window is open for project-based entry. Tourism-related growth signals are visible in Antigua and Barbuda, Guyana, St. Kitts and Nevis \u2014 demand-side indicators for capacity planning.",
   "source_count": 2,
   "why_now": [
     "\ud83d\udd34 **Atlantic Hurricane Season** \u2014 Operational risk for all Caribbean stakeholders. Monitoring NHC/NWS/NDBC for tropical development and maritime hazards.",
     "\ud83d\udd34 **Q2 Procurement Cycle** \u2014 CDB and IDB typically issue mid-year procurement rounds in Q2. Pipeline data especially actionable now.",
-    "\ud83d\udfe1 **Future Caribbean Buildathon** in 27 days \u2014 Regional innovation event approaching. Ecosystem builder and founder-matching dispatches most actionable now."
+    "\ud83d\udfe1 **Future Caribbean Buildathon** in 26 days \u2014 Regional innovation event approaching. Ecosystem builder and founder-matching dispatches most actionable now."
   ]
 }

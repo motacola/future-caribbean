@@ -5,6 +5,9 @@ planning/
 *.md
 !llms.txt
 !agents.md
+# Runtime API functions read generated Markdown outbox artifacts.
+!outbox/*.md
+!outbox/**/*.md
 
 # Test suite
 tests/

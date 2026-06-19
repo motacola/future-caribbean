@@ -16,4 +16,4 @@ Lead: Belize. 3 converging signal(s) across 5 source(s). Signals: 💼 Investmen
 🏗️ CARICOM: 3 active procurements — bidding window open
 
 Generated from public regional data, ranked for decision value.
-Generated: 2026-06-18 15:54 UTC
+Generated: 2026-06-19 12:20 UTC

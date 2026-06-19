@@ -1,6 +1,6 @@
-# Caribbean Opportunity Dispatch — Cycle 20260618
+# Caribbean Opportunity Dispatch — Cycle 20260619
 
-Generated: 2026-06-18 15:54 UTC
+Generated: 2026-06-19 12:20 UTC
 Total dispatches: 32
 
 ## ✅ Delivered Dispatches

@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-06-18T15:54:50.454783+00:00",
+  "generated_at": "2026-06-19T12:20:17.196925+00:00",
   "packs": [
     {
       "signal_id": "enhanced-invest-guyana",
       "file": "enhanced-invest-guyana.json",
       "country": "Guyana",
-      "recommendation": "advance",
+      "recommendation": "hold",
       "confidence_score": 100
     },
     {
       "signal_id": "enhanced-invest-belize",
       "file": "enhanced-invest-belize.json",
       "country": "Belize",
-      "recommendation": "advance",
+      "recommendation": "hold",
       "confidence_score": 100
     },
     {
@@ -33,7 +33,7 @@
       "signal_id": "supply-chain-belize",
       "file": "supply-chain-belize.json",
       "country": "Belize",
-      "recommendation": "advance",
+      "recommendation": "hold",
       "confidence_score": 94
     }
   ]

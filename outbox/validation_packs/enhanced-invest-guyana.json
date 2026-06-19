@@ -1,6 +1,6 @@
 {
   "signal_id": "enhanced-invest-guyana",
-  "dispatch_id": "DSP-20260618-021",
+  "dispatch_id": "DSP-20260619-021",
   "country": "Guyana",
   "signal_title": "Guyana: +860.3% multi-source capital surge — market entry window open",
   "confidence_score": 100,
@@ -10,9 +10,9 @@
   "sector_hypotheses": [
     {
       "sector": "Oil & gas and offshore support services",
-      "basis": "Google News — Guyana: More than 40 Oil and Gas companies receive Local Content Plan approvals - Guyana Chronicle",
+      "basis": "Google News — Guyana: Eco (Atlantic) Oil & Gas 2026 operational and business update - BNamericas",
       "status": "corroborated",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPMHVNa19ianBxZnlWS0VPdFYtUmYyS25NY1FaX0xHWUhSdHVsQkRaMlhndHB1TWRqUGhoRUJlOTZfNHk2ZWFlX3BYN2hudUQ5cjhyLURGQjhkbmxaeXdJSjJ2R1V3MGozTXZXLTVaeU0wWmVTb05TNG5zYk9LcnZBRjJSVjF3cUF2LVR2NG1Ra0NYRi1GcXJObUFKRkNIWEFmeDh4ODNtR3oyWE94LXliYg?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQSktxcWpVQnVmcGNxaERoa0poSXdOUklUNUNXQnZKS3k2cnoxTWlSOEhVRmd4RlJVSkdfQWd4ajZLQmF3TG4zLUthVVFNRC12c1BlN002RHRRVnhlNmd0X3dvenVIekx2UUdVMzE3X0cwTjNYbW9YbFpKMFhrUnZRbDJpNVR4TDlYWjJsc2FMamNGWWdlclhsdA?oc=5"
     },
     {
       "sector": "Construction and infrastructure",
@@ -159,7 +159,7 @@
   "source_links": [
     "https://data.iadb.org/en/search?q=Productivity%2C%20Technology%20and%20Innovation%20",
     "https://eprocure.gov.gy/",
-    "https://news.google.com/rss/articles/CBMisAFBVV95cUxPMHVNa19ianBxZnlWS0VPdFYtUmYyS25NY1FaX0xHWUhSdHVsQkRaMlhndHB1TWRqUGhoRUJlOTZfNHk2ZWFlX3BYN2hudUQ5cjhyLURGQjhkbmxaeXdJSjJ2R1V3MGozTXZXLTVaeU0wWmVTb05TNG5zYk9LcnZBRjJSVjF3cUF2LVR2NG1Ra0NYRi1GcXJObUFKRkNIWEFmeDh4ODNtR3oyWE94LXliYg?oc=5",
+    "https://news.google.com/rss/articles/CBMimAFBVV95cUxQSktxcWpVQnVmcGNxaERoa0poSXdOUklUNUNXQnZKS3k2cnoxTWlSOEhVRmd4RlJVSkdfQWd4ajZLQmF3TG4zLUthVVFNRC12c1BlN002RHRRVnhlNmd0X3dvenVIekx2UUdVMzE3X0cwTjNYbW9YbFpKMFhrUnZRbDJpNVR4TDlYWjJsc2FMamNGWWdlclhsdA?oc=5",
     "https://statistics.caricom.org/country_data/2019_vnr_report_guyana/",
     "https://statistics.caricom.org/country_data/2023_vnr_report_guyana/",
     "https://statistics.caricom.org/country_data/guyana-monthly-consumer-price-index-cpi-by-expenditure-category/",
@@ -181,10 +181,10 @@
       "why": "Knows the private sector — ask who's really operating"
     }
   ],
-  "advance_or_reject_recommendation": "advance",
-  "recommendation_reason": "Calibrated confidence 100/100 with 4 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.",
-  "last_validated_at": "2026-06-18T15:54:50.454783+00:00",
-  "evidence_fingerprint": "090b84ed53c6d53b",
-  "cycles_since_refresh": 1,
-  "evidence_freshness": "aging"
+  "advance_or_reject_recommendation": "hold",
+  "recommendation_reason": "Evidence fingerprint unchanged for 2 cycles — downgraded from advance to hold until new corroboration arrives.",
+  "last_validated_at": "2026-06-19T12:20:17.196925+00:00",
+  "evidence_fingerprint": "56fdcca6e2314df6",
+  "cycles_since_refresh": 2,
+  "evidence_freshness": "stale"
 }

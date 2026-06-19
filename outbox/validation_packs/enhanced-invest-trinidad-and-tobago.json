@@ -1,0 +1,128 @@
+{
+  "signal_id": "enhanced-invest-trinidad-and-tobago",
+  "dispatch_id": "DSP-20260619-029",
+  "country": "Trinidad and Tobago",
+  "signal_title": "Trinidad and Tobago: +69.8% multi-source investment validated — opportunity active",
+  "confidence_score": 68,
+  "raw_confidence_score": 100,
+  "action_readiness": "medium (annual macro signal only)",
+  "evidence_grade": "A - multi-source",
+  "sector_hypotheses": [
+    {
+      "sector": "Energy and petrochemicals",
+      "basis": "Analyst prior from widely reported sector drivers — requires local confirmation",
+      "status": "unconfirmed"
+    },
+    {
+      "sector": "Manufacturing and regional exports",
+      "basis": "Analyst prior from widely reported sector drivers — requires local confirmation",
+      "status": "unconfirmed"
+    },
+    {
+      "sector": "FDI-receiving sectors (composition not yet broken down)",
+      "basis": "World Bank: FDI net inflows moved +69.8% from 2023 to 2024",
+      "status": "macro_signal"
+    }
+  ],
+  "supporting_projects": [
+    {
+      "title": "Data of Violence against women - Trinidad and Tobago - Survey answers: 2015",
+      "source": "IDB Open Data",
+      "url": "https://data.iadb.org/en/search?q=Data%20of%20Violence%20against%20women%20-%20Trinida",
+      "topics": []
+    },
+    {
+      "title": "Trinidad and Tobago: Latin American Public Opinion Project - Victimization and Crime survey 2014",
+      "source": "IDB Open Data",
+      "url": "https://data.iadb.org/en/search?q=Trinidad%20and%20Tobago%3A%20Latin%20American%20Publ",
+      "topics": []
+    },
+    {
+      "title": "Productivity, Technology and Innovation Survey Trinidad and Tobago: 2013-2014",
+      "source": "IDB Open Data",
+      "url": "https://data.iadb.org/en/search?q=Productivity%2C%20Technology%20and%20Innovation%20",
+      "topics": []
+    }
+  ],
+  "procurement_matches": [
+    {
+      "title": "Enhancing the Quality of the Belize National Quality Infrastructure",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure",
+      "match": "regional"
+    },
+    {
+      "title": "School Improvement Project (SIP) Phase 1",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/school-improvement-project-sip-phase-1-0",
+      "match": "regional"
+    },
+    {
+      "title": "Support for Institutional Strengthening of the Caribbean Disaster Emergency Project",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/support-institutional-strengthening-caribbean-disaster-emergency-project",
+      "match": "regional"
+    }
+  ],
+  "official_country_data": [
+    {
+      "title": "Trinidad and Tobago: Monthly Consumer Price Index (CPI) by Expenditure Category",
+      "source": "CARICOM Statistics",
+      "url": "https://statistics.caricom.org/country_data/trinidad-and-tobago-monthly-consumer-price-index-cpi-by-expenditure-category/"
+    },
+    {
+      "title": "2020_VNR_Report_Trinidad_and_Tobago",
+      "source": "CARICOM Statistics",
+      "url": "https://statistics.caricom.org/country_data/2020_vnr_report_trinidad_and_tobago/"
+    },
+    {
+      "title": "Trinidad and Tobago Estimates of Gross National Disposable Income: 2019-2023",
+      "source": "CARICOM Statistics",
+      "url": "https://statistics.caricom.org/country_data/trinidad-and-tobago-estimates-of-gross-national-disposable-income-2019-2023/"
+    }
+  ],
+  "credible_local_operators": [],
+  "relevant_institutions": [
+    {
+      "name": "InvesTT",
+      "role": "National investment promotion agency"
+    },
+    {
+      "name": "Caribbean Export Development Agency",
+      "role": "Regional trade and investment promotion"
+    },
+    {
+      "name": "Caribbean Development Bank (CDB)",
+      "role": "Regional development finance and procurement"
+    }
+  ],
+  "source_links": [
+    "https://data.iadb.org/en/search?q=Data%20of%20Violence%20against%20women%20-%20Trinida",
+    "https://data.iadb.org/en/search?q=Productivity%2C%20Technology%20and%20Innovation%20",
+    "https://data.iadb.org/en/search?q=Trinidad%20and%20Tobago%3A%20Latin%20American%20Publ",
+    "https://statistics.caricom.org/country_data/2020_vnr_report_trinidad_and_tobago/",
+    "https://statistics.caricom.org/country_data/trinidad-and-tobago-estimates-of-gross-national-disposable-income-2019-2023/",
+    "https://statistics.caricom.org/country_data/trinidad-and-tobago-monthly-consumer-price-index-cpi-by-expenditure-category/",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/school-improvement-project-sip-phase-1-0",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/support-institutional-strengthening-caribbean-disaster-emergency-project"
+  ],
+  "unresolved_questions": [
+    "Which specific sectors are driving the movement in Trinidad and Tobago? No official sector-breakdown dataset matched this cycle.",
+    "No live Trinidad and Tobago-specific procurement notice matched this cycle — check CDB and national tender portals directly.",
+    "No registry-backed local operators matched — source two credible operators via the listed institutions.",
+    "Validate that the underlying FDI movement is sustained, not a one-off transaction or statistical revision."
+  ],
+  "recommended_intro_targets": [
+    {
+      "name": "InvesTT",
+      "why": "National investment promotion agency"
+    }
+  ],
+  "advance_or_reject_recommendation": "hold",
+  "recommendation_reason": "Calibrated confidence 68/100 with 1 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.",
+  "last_validated_at": "2026-06-19T12:17:37.381156+00:00",
+  "evidence_fingerprint": "e3b0c44298fc1c14",
+  "cycles_since_refresh": 0,
+  "evidence_freshness": "refreshing"
+}

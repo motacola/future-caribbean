@@ -1,5 +1,5 @@
 🌴 **Caribbean Opportunity Brief** — what's moving this week
-Cycle 20260618 • 2026-06-18 15:54 UTC
+Cycle 20260619 • 2026-06-19 12:20 UTC
 
 Plain-language signals for builders, business owners, and community leaders.
 No jargon. Just what matters for your next move.
@@ -41,7 +41,7 @@ No jargon. Just what matters for your next move.
 **Why this week matters:**
 • Atlantic Hurricane Season — Operational risk for all Caribbean stakeholders. Monitoring NHC/NWS/NDBC for tropical development and maritime hazards.
 • Q2 Procurement Cycle — CDB and IDB typically issue mid-year procurement rounds in Q2. Pipeline data especially actionable now.
-• Future Caribbean Buildathon in 27 days — Regional innovation event approaching. Ecosystem builder and founder-matching dispatches most actionable now.
+• Future Caribbean Buildathon in 26 days — Regional innovation event approaching. Ecosystem builder and founder-matching dispatches most actionable now.
 
 ---
 

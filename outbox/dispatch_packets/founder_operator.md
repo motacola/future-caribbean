@@ -2,7 +2,7 @@
 
 **Decision job:** Competitive positioning and capability mapping
 **Delivery channel:** Telegram
-**Generated:** Jun 18, 2026 at 15:54 UTC
+**Generated:** Jun 19, 2026 at 12:20 UTC
 **Dispatches in this packet:** 10
 
 ---
@@ -11,7 +11,7 @@
 
 ### 1. Guyana: +860.3% multi-source capital surge — market entry window open
 
-**ID:** `DSP-20260618-023` | **Country:** Guyana | **Confidence:** 🔴 Immediate | 100/100 | A - multi-source
+**ID:** `DSP-20260619-023` | **Country:** Guyana | **Confidence:** 🔴 Immediate | 100/100 | A - multi-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -25,7 +25,7 @@
 
 ### 2. Belize: +701.0% multi-source capital surge — market entry window open
 
-**ID:** `DSP-20260618-026` | **Country:** Belize | **Confidence:** 🔴 Immediate | 100/100 | A - multi-source
+**ID:** `DSP-20260619-026` | **Country:** Belize | **Confidence:** 🔴 Immediate | 100/100 | A - multi-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -39,7 +39,7 @@
 
 ### 3. St. Vincent and the Grenadines: +88.2% multi-source investment validated — opportunity active
 
-**ID:** `DSP-20260618-029` | **Country:** St. Vincent and the Grenadines | **Confidence:** 🔴 Immediate | 100/100 | A - multi-source
+**ID:** `DSP-20260619-029` | **Country:** St. Vincent and the Grenadines | **Confidence:** 🔴 Immediate | 100/100 | A - multi-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** weakened
 **Feedback status:** ignored
 
@@ -54,7 +54,7 @@
 
 ### 4. CARICOM: 3 active procurements — bidding window open
 
-**ID:** `DSP-20260618-017` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 96/100 | B - cross-source
+**ID:** `DSP-20260619-017` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 95/100 | B - cross-source
 **Channel:** Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -68,7 +68,7 @@
 
 ### 5. Belize: signal detected
 
-**ID:** `DSP-20260618-032` | **Country:** Belize | **Confidence:** 🔴 Immediate | 94/100 | A - multi-source
+**ID:** `DSP-20260619-032` | **Country:** Belize | **Confidence:** 🔴 Immediate | 94/100 | A - multi-source
 **Channel:** Telegram | **Window:** 21 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -82,7 +82,7 @@
 
 ### 6. Regional FDI snapshot: 8 countries with active capital movement
 
-**ID:** `DSP-20260618-002` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
+**ID:** `DSP-20260619-002` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** new
 **Feedback status:** ignored
 
@@ -96,7 +96,7 @@
 
 ### 7. Guyana: FDI trending at +860.3% — screening trigger active
 
-**ID:** `DSP-20260618-004` | **Country:** Guyana | **Confidence:** 🔴 Immediate | 90/100 | B - cross-source
+**ID:** `DSP-20260619-004` | **Country:** Guyana | **Confidence:** 🔴 Immediate | 90/100 | B - cross-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -110,7 +110,7 @@
 
 ### 8. Belize: FDI trending at +701.0% — screening trigger active
 
-**ID:** `DSP-20260618-006` | **Country:** Belize | **Confidence:** 🔴 Immediate | 90/100 | B - cross-source
+**ID:** `DSP-20260619-006` | **Country:** Belize | **Confidence:** 🔴 Immediate | 90/100 | B - cross-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -124,7 +124,7 @@
 
 ### 9. Capital convergence: 8 Caribbean economies showing multi-source investment momentum
 
-**ID:** `DSP-20260618-020` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
+**ID:** `DSP-20260619-020` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** new
 **Feedback status:** ignored
 
@@ -138,7 +138,7 @@
 
 ### 10. St. Vincent and the Grenadines: FDI trending at +88.2% — screening trigger active
 
-**ID:** `DSP-20260618-008` | **Country:** St. Vincent and the Grenadines | **Confidence:** 🟡 Validation | 78/100 | B - cross-source
+**ID:** `DSP-20260619-008` | **Country:** St. Vincent and the Grenadines | **Confidence:** 🟡 Validation | 78/100 | B - cross-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 

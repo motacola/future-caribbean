@@ -1,11 +1,11 @@
 # Opportunity Validation Pack — St. Vincent and the Grenadines
 
-- Signal: `enhanced-invest-st.-vincent-and-the-grenadines` · Dispatch: `DSP-20260618-027`
+- Signal: `enhanced-invest-st.-vincent-and-the-grenadines` · Dispatch: `DSP-20260619-027`
 - Confidence: 68/100 (raw 100) · A - multi-source
 - Action readiness: medium (annual macro signal only)
-- Evidence freshness: stale · cycles since refresh: 10
+- Evidence freshness: stale · cycles since refresh: 14
 - Recommendation: **HOLD** — Calibrated confidence 68/100 with 2 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.
-- Last validated: 2026-06-18T15:54:50.454783+00:00
+- Last validated: 2026-06-19T12:20:17.196925+00:00
 
 ## Sector hypotheses
 - FDI-receiving sectors (composition not yet broken down) [macro_signal] — _World Bank: FDI net inflows moved +88.2% from 2023 to 2024_

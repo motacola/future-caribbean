@@ -1,14 +1,14 @@
 # Opportunity Validation Pack — Guyana
 
-- Signal: `enhanced-invest-guyana` · Dispatch: `DSP-20260618-021`
+- Signal: `enhanced-invest-guyana` · Dispatch: `DSP-20260619-021`
 - Confidence: 100/100 (raw 100) · A - multi-source
 - Action readiness: high
-- Evidence freshness: aging · cycles since refresh: 1
-- Recommendation: **ADVANCE** — Calibrated confidence 100/100 with 4 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.
-- Last validated: 2026-06-18T15:54:50.454783+00:00
+- Evidence freshness: stale · cycles since refresh: 2
+- Recommendation: **HOLD** — Evidence fingerprint unchanged for 2 cycles — downgraded from advance to hold until new corroboration arrives.
+- Last validated: 2026-06-19T12:20:17.196925+00:00
 
 ## Sector hypotheses
-- Oil & gas and offshore support services [corroborated] — _Google News — Guyana: More than 40 Oil and Gas companies receive Local Content Plan approvals - Guyana Chronicle_
+- Oil & gas and offshore support services [corroborated] — _Google News — Guyana: Eco (Atlantic) Oil & Gas 2026 operational and business update - BNamericas_
 - Construction and infrastructure [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
 - Logistics serving the energy supply chain [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
 - Agriculture and agro-processing [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_

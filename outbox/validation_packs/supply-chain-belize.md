@@ -1,14 +1,14 @@
 # Opportunity Validation Pack — Belize
 
-- Signal: `supply-chain-belize` · Dispatch: `DSP-20260618-030`
+- Signal: `supply-chain-belize` · Dispatch: `DSP-20260619-030`
 - Confidence: 94/100 (raw 94) · A - multi-source
 - Action readiness: high
-- Evidence freshness: aging · cycles since refresh: 1
-- Recommendation: **ADVANCE** — Calibrated confidence 94/100 with 3 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.
-- Last validated: 2026-06-18T15:54:50.454783+00:00
+- Evidence freshness: stale · cycles since refresh: 2
+- Recommendation: **HOLD** — Evidence fingerprint unchanged for 2 cycles — downgraded from advance to hold until new corroboration arrives.
+- Last validated: 2026-06-19T12:20:17.196925+00:00
 
 ## Sector hypotheses
-- Tourism and hospitality [corroborated] — _Google News — Belize: United States Joins Canada, Mexico, Bahamas, Jamaica, Belize, Costa Rica, Panama, Colombia, Brazil, Argentina, And Chile As Tourism Boom As tThe Region Races To Become The World’s Most Powerful Travel Market across USA - Travel And Tour World_
+- Tourism and hospitality [corroborated] — _Google News — Belize: What a Trip to Belize Taught Me About American Tourism - D Magazine_
 - Agribusiness and agro-exports [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
 - Business process outsourcing [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
 - FDI-receiving sectors (composition not yet broken down) [macro_signal] — _World Bank: FDI net inflows moved +701.0% from 2023 to 2024_
