@@ -35,7 +35,7 @@ const dispatchSummaryTool = defineTool({
 
 const rawDeskTool = defineTool({
   name: 'read_dispatch_desk_json',
-  description: 'Read the raw outbox/dispatch_desk.json artifact. Use only when summary or ask_dispatch is insufficient.',
+  description: 'Return a concise machine-readable summary of the latest dispatch_desk.json (cycle ID, cluster count, lead title/country/confidence, evidence grade). Use only when ask_dispatch or dispatch_summary is insufficient.',
   parameters: Type.Object({}),
   execute: async () => JSON.stringify(summarizeDesk(await readDispatchDeskJson()), null, 2),
 });
@@ -181,7 +181,11 @@ const listCycleHistoryTool = defineTool({
 });
 
 export default createAgent(() => ({
-  model: process.env.FLUE_MODEL || 'openai/gpt-5.5',
+  model: (() => {
+    const m = process.env.FLUE_MODEL;
+    if (!m) throw new Error('FLUE_MODEL env var is required. Set it to any model your provider supports, e.g. anthropic/claude-sonnet-4-6 or openai/gpt-4o.');
+    return m;
+  })(),
   tools: [
     askDispatchTool,
     explainLeadTool,
