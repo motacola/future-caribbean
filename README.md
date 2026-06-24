@@ -166,11 +166,22 @@ Delivery is intentionally approval-gated: prepare first, approve explicitly, the
 
 ### Flue harness
 
+`FLUE_MODEL` is required — set it to any model your provider supports before starting:
+
 ```bash
-npm run flue:apply-feedback
-npm run flue:prepare-delivery -- '{"channel":"telegram"}'
-npm run flue:approve-delivery -- '{"approvalId":"APP-...","approvedBy":"operator"}'
-npm run flue:send-approved -- '{"approvalId":"APP-...","dryRun":true}'
+export FLUE_MODEL=anthropic/claude-sonnet-4-6   # or openai/gpt-4o, etc.
+pnpm flue:dev                                    # start the Flue server
+pnpm flue:build                                  # production build → dist-flue/
+```
+
+Run workflows directly via CLI:
+
+```bash
+pnpm flue:run-cycle
+pnpm flue:apply-feedback
+pnpm flue:prepare-delivery -- '{"channel":"telegram"}'
+pnpm flue:approve-delivery -- '{"approvalId":"APP-...","approvedBy":"operator"}'
+pnpm flue:send-approved -- '{"approvalId":"APP-...","dryRun":true}'
 ```
 
 ## Validation Packs — from "investigate" to "here's the evidence"
