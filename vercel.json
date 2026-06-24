@@ -1,10 +1,8 @@
 {
+  "buildCommand": "pnpm install && pnpm build",
+  "outputDirectory": "dist",
   "builds": [
     { "src": "api/**/*.py", "use": "@vercel/python" },
-    { "src": "dist/**", "use": "@vercel/static" },
-    { "src": "dashboard.html", "use": "@vercel/static" },
-    { "src": "configurator.html", "use": "@vercel/static" },
-    { "src": "dashboard/**", "use": "@vercel/static" },
     { "src": "outbox/**", "use": "@vercel/static" },
     { "src": "data/history/**", "use": "@vercel/static" }
   ],
@@ -45,15 +43,11 @@
       },
       "dest": "/api/$1.py"
     },
-    { "src": "/build", "dest": "/dist/build/index.html" },
-    { "src": "/", "dest": "/dist/index.html" },
-    { "src": "/dashboard.html", "dest": "/dashboard.html" },
-    { "src": "/configurator.html", "dest": "/configurator.html" },
     { "src": "/feed.xml", "dest": "/outbox/feed.xml" },
     { "src": "/data/history/(.*)", "dest": "/data/history/$1" },
     { "src": "/llms.txt", "dest": "/llms.txt" },
     { "src": "/agents.md", "dest": "/agents.md" },
-    { "src": "/(.*)", "dest": "/dist/$1" }
+    { "src": "/(.*)", "dest": "/$1" }
   ],
   "crons": [],
   "regions": ["iad1"]
