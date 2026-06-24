@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Future Caribbean — Coming Soon</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink:  #18251F;
+    --gold: #B57A22;
+    --cream:#F4EBDD;
+    --teal: #0D766E;
+    --sub:  #455A50;
+    --muted:#7F8C83;
+    --serif:'Georgia', 'Times New Roman', serif;
+    --mono: 'Courier New', monospace;
+  }
+
+  html, body {
+    height: 100%;
+    background: var(--ink);
+    color: var(--cream);
+    font-family: var(--mono);
+    overflow: hidden;
+  }
+
+  /* ── Animated grid ── */
+  .grid-bg {
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(181,122,34,.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(181,122,34,.07) 1px, transparent 1px);
+    background-size: 48px 48px;
+    animation: drift 40s linear infinite;
+    pointer-events: none;
+  }
+  @keyframes drift {
+    from { background-position: 0 0; }
+    to   { background-position: 48px 48px; }
+  }
+
+  /* ── Glow orbs ── */
+  .orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+    opacity: .18;
+  }
+  .orb-1 {
+    width: 520px; height: 520px;
+    background: var(--teal);
+    top: -160px; left: -100px;
+    animation: pulse1 12s ease-in-out infinite alternate;
+  }
+  .orb-2 {
+    width: 420px; height: 420px;
+    background: var(--gold);
+    bottom: -120px; right: -80px;
+    animation: pulse2 15s ease-in-out infinite alternate;
+  }
+  @keyframes pulse1 { to { transform: translate(40px, 60px) scale(1.15); opacity: .24; } }
+  @keyframes pulse2 { to { transform: translate(-30px, -40px) scale(1.1); opacity: .22; } }
+
+  /* ── Layout ── */
+  .wrap {
+    position: relative;
+    z-index: 10;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 24px;
+    text-align: center;
+  }
+
+  /* ── Signal dot ── */
+  .signal-ring {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 40px;
+  }
+  .signal-ring::before,
+  .signal-ring::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    border: 1.5px solid var(--gold);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: ripple 3s ease-out infinite;
+  }
+  .signal-ring::after { animation-delay: 1.5s; }
+  @keyframes ripple {
+    0%   { transform: translate(-50%,-50%) scale(.3); opacity: .9; }
+    100% { transform: translate(-50%,-50%) scale(2.4); opacity: 0; }
+  }
+  .signal-dot {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    width: 14px; height: 14px;
+    background: var(--gold);
+    border-radius: 50%;
+    box-shadow: 0 0 18px var(--gold);
+  }
+
+  /* ── Brand ── */
+  .brand {
+    font-family: var(--serif);
+    font-size: clamp(13px, 2vw, 15px);
+    font-weight: 400;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    opacity: .85;
+  }
+
+  /* ── 404 ── */
+  .error-code {
+    font-family: var(--serif);
+    font-size: clamp(96px, 18vw, 176px);
+    font-weight: 700;
+    line-height: .9;
+    letter-spacing: -6px;
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(244,235,221,.12);
+    background: linear-gradient(160deg, rgba(244,235,221,.18) 0%, transparent 70%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    user-select: none;
+    margin-bottom: 8px;
+  }
+
+  /* ── Message ── */
+  .headline {
+    font-family: var(--serif);
+    font-size: clamp(22px, 4vw, 34px);
+    font-weight: 600;
+    color: var(--cream);
+    line-height: 1.2;
+    margin-bottom: 16px;
+    letter-spacing: -.3px;
+  }
+  .sub {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 380px;
+    margin: 0 auto 40px;
+  }
+  .sub em { font-style: normal; color: var(--teal); }
+
+  /* ── Divider ── */
+  .divider {
+    width: 48px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), var(--teal));
+    margin: 0 auto 40px;
+    border-radius: 2px;
+  }
+
+  /* ── Status pill ── */
+  .status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    border: 1px solid rgba(181,122,34,.25);
+    padding: 8px 20px;
+    border-radius: 40px;
+    margin-bottom: 20px;
+  }
+  .status-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    animation: blink 2s ease-in-out infinite;
+  }
+  @keyframes blink {
+    0%,100% { opacity: 1; }
+    50%      { opacity: .3; }
+  }
+
+  /* ── Footer ── */
+  .footer {
+    position: fixed;
+    bottom: 24px;
+    left: 0; right: 0;
+    text-align: center;
+    font-size: 11px;
+    color: rgba(127,140,131,.4);
+    letter-spacing: .5px;
+  }
+</style>
+</head>
+<body>
+
+<div class="grid-bg"></div>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+
+<div class="wrap">
+
+  <div class="signal-ring">
+    <div class="signal-dot"></div>
+  </div>
+
+  <div class="brand">Future Caribbean</div>
+
+  <div class="error-code">404</div>
+
+  <div class="divider"></div>
+
+  <h1 class="headline">Signal incoming.<br>Not here yet.</h1>
+  <p class="sub">
+    This project is still being built.<br>
+    The <em>signal</em> is real — the page isn't ready.
+  </p>
+
+  <div class="status">
+    <span class="status-dot"></span>
+    Under construction
+  </div>
+
+</div>
+
+<div class="footer">future-caribbean &nbsp;·&nbsp; a signal fabric project</div>
+
+</body>
+</html>

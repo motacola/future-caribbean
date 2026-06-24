@@ -1,5 +1,5 @@
 {
-  "buildCommand": "pnpm install && pnpm build",
+  "buildCommand": "bash scripts/vercel-build.sh",
   "outputDirectory": "dist",
   "builds": [
     { "src": "api/**/*.py", "use": "@vercel/python" },
