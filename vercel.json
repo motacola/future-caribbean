@@ -1,6 +1,7 @@
 {
   "builds": [
     { "src": "api/**/*.py", "use": "@vercel/python" },
+    { "src": "dist/**", "use": "@vercel/static" },
     { "src": "dashboard.html", "use": "@vercel/static" },
     { "src": "configurator.html", "use": "@vercel/static" },
     { "src": "dashboard/**", "use": "@vercel/static" },
@@ -44,13 +45,15 @@
       },
       "dest": "/api/$1.py"
     },
-    { "src": "/build", "dest": "/configurator.html" },
+    { "src": "/build", "dest": "/dist/build/index.html" },
+    { "src": "/", "dest": "/dist/index.html" },
+    { "src": "/dashboard.html", "dest": "/dashboard.html" },
+    { "src": "/configurator.html", "dest": "/configurator.html" },
     { "src": "/feed.xml", "dest": "/outbox/feed.xml" },
     { "src": "/data/history/(.*)", "dest": "/data/history/$1" },
     { "src": "/llms.txt", "dest": "/llms.txt" },
     { "src": "/agents.md", "dest": "/agents.md" },
-    { "src": "/", "dest": "/dashboard.html" },
-    { "src": "/(.*)", "dest": "/dashboard.html" }
+    { "src": "/(.*)", "dest": "/dist/$1" }
   ],
   "crons": [],
   "regions": ["iad1"]

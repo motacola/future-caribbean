@@ -1,5 +1,13 @@
 dist-flue/
+dist/
 node_modules/
+.astro/
+
+# Temp error logs
+syntax_errors.log
+syntax_errors.txt
+ts_errors.log
+ts_errors.txt
 
 # Credentials — never commit
 .env

@@ -55,9 +55,8 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
 
         # API routes
         if path == "/build":
-            self.send_response(302)
-            self.send_header("Location", "/configurator.html")
-            self.end_headers()
+            self.path = "/dist/build/index.html"
+            super().do_GET()
             return
         if path == "/feed.xml":
             fp = APP_DIR / "outbox" / "feed.xml"
@@ -138,14 +137,20 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
                 self.send_error(404)
                 return
 
-        # Root → interactive Signal Builder; /briefing → editorial desk;
-        # /system → editorial page (carries the audit section)
-        if clean in ("", "index.html", "build", "build.html"):
-            self.path = "/configurator.html"
-        elif clean in ("briefing", "briefing.html", "desk"):
-            self.path = "/dashboard.html"
-        elif clean in ("system", "system.html"):
-            self.path = "/dashboard.html"
+        # Astro dist assets
+        if clean.startswith("_astro/"):
+            self.path = "/dist/" + clean
+        # Signal permalink pages
+        elif clean.startswith("signal/"):
+            self.path = "/dist/" + clean + "/index.html"
+        # Root and named pages — serve from Astro dist
+        elif clean in ("", "index.html", "briefing", "briefing.html", "desk", "system", "system.html"):
+            self.path = "/dist/index.html"
+        elif clean in ("build", "build.html"):
+            self.path = "/dist/build/index.html"
+        # Legacy HTML files still present in repo
+        elif clean in ("dashboard.html", "configurator.html"):
+            pass  # serve as-is via super()
 
         super().do_GET()
 
@@ -403,7 +408,7 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
         domains_dir = APP_DIR / "domains"
         user_files = list(domains_dir.glob("user-*.json"))
         if len(user_files) >= 12:
-            self._json({"ok": False, "error": "Demo limit reached (12 user domains). Remove some first."}, 429)
+            self._json({"ok": False, "error": "Product limit reached (12 user domains). Remove some first."}, 429)
             return
 
         target = domains_dir / f"user-{slug}.json"

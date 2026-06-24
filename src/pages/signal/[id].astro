@@ -1,0 +1,239 @@
+---
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+import Base from '../../layouts/Base.astro';
+
+export async function getStaticPaths() {
+  const raw = JSON.parse(readFileSync(resolve('outbox/opportunity_dispatches.json'), 'utf8'));
+  const dispatches: any[] = raw.dispatches ?? raw;
+  return dispatches.map((d: any) => ({
+    params: { id: d.dispatch_id },
+    props: { dispatch: d, total: dispatches.length },
+  }));
+}
+
+const { dispatch: d, total } = Astro.props;
+
+const FRESHNESS_LABEL: Record<string, string> = {
+  new: 'New this cycle',
+  sustained: 'Sustained',
+  weakened: 'Weakening',
+};
+const FRESHNESS_CLASS: Record<string, string> = {
+  new: 'f-new',
+  sustained: 'f-sustained',
+  weakened: 'f-weakened',
+};
+const KIND_COLOR: Record<string, string> = {
+  enhanced_investment: '#2676A8',
+  investment_signal: '#2676A8',
+  development_pipeline: '#B57A22',
+  economic_vulnerability: '#B94836',
+  food_security: '#0D766E',
+  tourism_impact: '#0D766E',
+  marine_hazard: '#B94836',
+};
+const kindColor = KIND_COLOR[d.signal_kind] ?? '#7F8C83';
+
+const gradeLabel: Record<string, string> = {
+  'A - multi-source': 'A — multi-source',
+  'B - cross-source': 'B — cross-source',
+  'C - single-source': 'C — single-source',
+};
+const grade = gradeLabel[d.evidence_grade] ?? d.evidence_grade;
+
+const cycleDate = d.cycle_id
+  ? `${d.cycle_id.slice(0,4)}-${d.cycle_id.slice(4,6)}-${d.cycle_id.slice(6,8)}`
+  : null;
+
+const generatedAt = d.generated_at
+  ? new Date(d.generated_at).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'UTC' }) + ' UTC'
+  : null;
+---
+
+<style>
+.sig-mast { background: var(--ink); padding: 14px 0; }
+.sig-mast::after { content:""; display:block; height:2px; background:linear-gradient(90deg,var(--gold),var(--teal) 55%,transparent); opacity:.85; }
+.sig-mast-inner { max-width:860px; margin:0 auto; padding:0 24px; display:flex; justify-content:space-between; align-items:center; }
+.sig-mast-back { color:color-mix(in srgb,#F4EBDD 62%,transparent); font-size:12px; letter-spacing:.5px; text-transform:uppercase; font-weight:500; text-decoration:none; }
+.sig-mast-back:hover { color:#F4EBDD; text-decoration:none; }
+.sig-mast-id { font-family:var(--mono); font-size:11px; color:color-mix(in srgb,#F4EBDD 45%,transparent); }
+
+.sig-wrap { max-width:860px; margin:0 auto; padding:48px 24px 72px; }
+
+.sig-eyebrow { display:flex; align-items:center; gap:10px; margin-bottom:20px; flex-wrap:wrap; }
+.sig-kind { display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:700; padding:4px 12px; border-radius:20px; color:#fff; }
+.sig-kind-dot { width:7px; height:7px; border-radius:50%; background:#fff; opacity:.8; }
+.fresh-badge { font-size:11px; font-weight:600; padding:3px 10px; border-radius:20px; }
+.f-new { background:rgba(13,118,110,.14); color:var(--teal); }
+.f-sustained { background:rgba(181,122,34,.16); color:#9a7a1f; }
+.f-weakened { background:rgba(130,154,177,.18); color:var(--sub); }
+.sig-cycle { font-family:var(--mono); font-size:11px; color:var(--muted); }
+
+.sig-title { font-family:var(--serif); font-size:clamp(26px,4vw,40px); font-weight:700; line-height:1.15; letter-spacing:-.4px; margin-bottom:16px; color:var(--ink); }
+.sig-country { display:inline-block; font-size:13px; font-weight:600; color:var(--teal); border:1px solid var(--teal); padding:3px 12px; border-radius:20px; margin-bottom:32px; }
+
+.sig-conf { font-size:14px; font-weight:600; color:var(--ink); margin-bottom:32px; }
+.sig-conf-bar { display:flex; align-items:center; gap:12px; margin-top:8px; }
+.conf-track { flex:1; height:5px; background:var(--border); border-radius:3px; overflow:hidden; max-width:260px; }
+.conf-fill { height:100%; border-radius:3px; }
+.conf-num { font-family:var(--mono); font-size:12px; color:var(--muted); }
+
+.sig-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:28px; }
+@media(max-width:640px){ .sig-grid { grid-template-columns:1fr; } }
+
+.sig-card { background:var(--card); border:1px solid var(--border); border-radius:var(--r); padding:22px; }
+.sig-card-label { font-size:10px; text-transform:uppercase; letter-spacing:1.2px; color:var(--muted); font-weight:600; margin-bottom:10px; }
+.sig-card-body { font-size:14px; color:var(--sub); line-height:1.65; }
+.sig-card-body strong { color:var(--ink); }
+
+.action-card { background:var(--ink); color:#F4EBDD; border-radius:var(--r); padding:28px; margin-bottom:28px; border-left:4px solid var(--gold); }
+.action-label { font-size:10px; text-transform:uppercase; letter-spacing:1.2px; color:var(--gold); font-weight:600; margin-bottom:12px; }
+.action-text { font-size:16px; line-height:1.65; margin-bottom:16px; }
+.action-window { display:inline-flex; align-items:center; gap:6px; font-size:12px; color:color-mix(in srgb,#F4EBDD 60%,transparent); font-family:var(--mono); }
+
+.sig-meta-row { display:flex; flex-wrap:wrap; gap:20px; padding:18px 0; border-top:1px solid var(--border); font-size:12px; color:var(--muted); }
+.meta-pair { display:flex; flex-direction:column; gap:2px; }
+.meta-pair strong { color:var(--ink); font-size:13px; }
+
+.sig-persona { background:var(--card-alt); border:1px solid var(--border); border-radius:var(--r); padding:18px 22px; margin-bottom:28px; }
+.persona-label { font-size:10px; text-transform:uppercase; letter-spacing:1.2px; color:var(--muted); font-weight:600; margin-bottom:6px; }
+.persona-name { font-size:15px; font-weight:700; color:var(--ink); margin-bottom:4px; }
+.persona-desc { font-size:13px; color:var(--sub); line-height:1.55; }
+
+.risk-row { background:rgba(185,72,54,.07); border:1px solid rgba(185,72,54,.22); border-radius:var(--r); padding:14px 18px; margin-bottom:20px; font-size:13px; color:#8a2f22; display:flex; flex-direction:column; gap:6px; }
+
+.sig-footer { margin-top:48px; padding-top:24px; border-top:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
+.sig-footer-brand { font-family:var(--serif); font-size:14px; font-weight:700; color:var(--muted); }
+.sig-footer-brand em { font-style:normal; color:var(--gold); }
+.sig-footer-links { display:flex; gap:16px; font-size:12px; }
+.sig-feedback { margin-top:28px; background:var(--card); border:1px solid var(--border); border-radius:var(--r); padding:18px 22px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+.fb-label { font-size:13px; color:var(--sub); }
+.fb-status { font-size:12px; font-family:var(--mono); color:var(--teal); font-weight:600; }
+</style>
+
+<Base
+  title={`${d.title} — Signal Fabric`}
+  description={d.recommended_action?.slice(0, 155)}
+>
+
+<div class="sig-mast">
+  <div class="sig-mast-inner">
+    <a href="/" class="sig-mast-back">← Caribbean Opportunity Dispatch</a>
+    <span class="sig-mast-id">{d.dispatch_id}</span>
+  </div>
+</div>
+
+<div class="sig-wrap">
+
+  <div class="sig-eyebrow">
+    <span class="sig-kind" style={`background:${kindColor}`}>
+      <span class="sig-kind-dot"></span>
+      {d.signal_kind_label ?? d.signal_kind}
+    </span>
+    {d.freshness && (
+      <span class={`fresh-badge ${FRESHNESS_CLASS[d.freshness] ?? ''}`}>
+        {FRESHNESS_LABEL[d.freshness] ?? d.freshness}
+      </span>
+    )}
+    {cycleDate && <span class="sig-cycle">Cycle {cycleDate}</span>}
+  </div>
+
+  <h1 class="sig-title">{d.title}</h1>
+  <div class="sig-country">{d.country_cluster}</div>
+
+  <div class="sig-conf">
+    <div>{d.confidence_display}</div>
+    <div class="sig-conf-bar">
+      <div class="conf-track">
+        <div class="conf-fill" style={`width:${d.confidence_score}%;background:${kindColor}`}></div>
+      </div>
+      <span class="conf-num">{d.confidence_score}/100</span>
+    </div>
+  </div>
+
+  <div class="action-card">
+    <div class="action-label">Recommended action · {d.persona_label}</div>
+    <p class="action-text">{d.recommended_action}</p>
+    {d.action_window && (
+      <span class="action-window">⏱ Act within {d.action_window}</span>
+    )}
+  </div>
+
+  <div class="sig-persona">
+    <div class="persona-label">Who this is for</div>
+    <div class="persona-name">{d.persona_label}</div>
+    {d.recipient_type && <p class="persona-desc">{d.recipient_type}</p>}
+  </div>
+
+  <div class="sig-grid">
+    <div class="sig-card">
+      <div class="sig-card-label">Evidence</div>
+      <div class="sig-card-body">
+        <p>{d.evidence_summary}</p>
+        {d.detail && <p style="margin-top:8px"><strong>{d.detail}</strong></p>}
+      </div>
+    </div>
+    <div class="sig-card">
+      <div class="sig-card-label">Evidence grade · {grade}</div>
+      <div class="sig-card-body">{d.ranking_rationale}</div>
+    </div>
+    <div class="sig-card">
+      <div class="sig-card-label">Why routed here</div>
+      <div class="sig-card-body">{d.routing_rationale}</div>
+    </div>
+    <div class="sig-card">
+      <div class="sig-card-label">Decision this informs</div>
+      <div class="sig-card-body">{d.decision_influence}</div>
+    </div>
+  </div>
+
+  {d.risk_flags?.length > 0 && (
+    <div class="risk-row">
+      {d.risk_flags.map((r: string) => <span>⚠ {r}</span>)}
+    </div>
+  )}
+
+  <div class="sig-meta-row">
+    <div class="meta-pair">
+      <span>Delivered via</span>
+      <strong>{d.channel}</strong>
+    </div>
+    <div class="meta-pair">
+      <span>Delivery status</span>
+      <strong>{d.delivery_status}</strong>
+    </div>
+    {d.feedback_status && (
+      <div class="meta-pair">
+        <span>Feedback</span>
+        <strong>{d.feedback_status}</strong>
+      </div>
+    )}
+    {generatedAt && (
+      <div class="meta-pair">
+        <span>Generated</span>
+        <strong>{generatedAt}</strong>
+      </div>
+    )}
+  </div>
+
+  <div class="sig-feedback">
+    <span class="fb-label">{d.feedback_prompt ?? 'Did this signal trigger a follow-up?'}</span>
+    {d.feedback_status
+      ? <span class="fb-status">✓ {d.feedback_status}</span>
+      : <a href={`/api/feedback?id=${d.dispatch_id}`} style="font-size:13px;font-weight:600">Record feedback →</a>
+    }
+  </div>
+
+  <footer class="sig-footer">
+    <div class="sig-footer-brand">Signal <em>Fabric</em> — a screening signal, not investment advice</div>
+    <div class="sig-footer-links">
+      <a href="/">← All signals</a>
+      <a href="/feed.xml">RSS</a>
+      <a href="/llms.txt">llms.txt</a>
+    </div>
+  </footer>
+
+</div>
+
+</Base>

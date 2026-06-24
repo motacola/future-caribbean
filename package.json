@@ -14,12 +14,16 @@
     "flue:prepare-delivery": "flue run prepare-delivery --target node --payload",
     "flue:approve-delivery": "flue run approve-delivery --target node --payload",
     "flue:send-approved": "flue run send-approved --target node --payload",
-    "flue:history": "flue run cycle-history --target node --payload"
+    "flue:history": "flue run cycle-history --target node --payload",
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
   "dependencies": {
     "@flue/runtime": "^0.9.1",
     "hono": "^4.10.7",
-    "valibot": "^1.2.0"
+    "valibot": "^1.2.0",
+    "astro": "^7.0.0"
   },
   "devDependencies": {
     "@flue/cli": "^0.9.1",

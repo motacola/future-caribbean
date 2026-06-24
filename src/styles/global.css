@@ -1,0 +1,15 @@
+/* fallow-ignore-file unused-file */
+:root {
+  --bg: #F4EBDD; --ink: #18251F; --card: #FFFCF4; --card-alt: #EDE8DF;
+  --text: #18251F; --sub: #455A50; --muted: #7F8C83;
+  --gold: #B57A22; --teal: #0D766E; --coral: #B94836; --sky: #2676A8;
+  --lime: #B6C74E; --border: #D8CBB8; --border-dark: #AA9A82;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Inter', -apple-system, system-ui, sans-serif;
+  --mono: 'IBM Plex Mono', monospace;
+  --r: 3px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--sans); background: var(--bg); background-image: radial-gradient(1100px 500px at 75% -120px, rgba(181,122,34,.06), transparent 70%), radial-gradient(900px 420px at -10% 30%, rgba(13,118,110,.04), transparent 70%); color: var(--text); line-height: 1.6; font-size: 15px; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { color: var(--teal); text-decoration: none; }
+a:hover { text-decoration: underline; }
