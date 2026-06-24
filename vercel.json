@@ -40,6 +40,7 @@
     },
     { "src": "/build", "dest": "/build/index.html" },
     { "src": "/", "dest": "/index.html" },
+    { "src": "/signal/(.*)", "dest": "/signal/$1/index.html" },
     { "src": "/(.*)", "dest": "/$1" }
   ],
   "crons": [],
