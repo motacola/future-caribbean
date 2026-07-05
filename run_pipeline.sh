@@ -101,8 +101,12 @@ fi
 # ── Legacy feedback collector ────────────────────────────
 run_step "Feedback Collector" "python3 \"$ROOT/distributors/feedback_collector.py\"" "feedback_collector"
 
-# ── Operator console ─────────────────────────────────────
-run_step "Dashboard" "python3 \"$ROOT/dashboard/generate.py\" --no-open" "dashboard"
+# ── Operator console (Astro build; data baked in from outbox/ via src/lib/data.ts) ──
+if command -v pnpm >/dev/null 2>&1; then
+    run_step "Dashboard" "pnpm --dir \"$ROOT\" build" "dashboard"
+else
+    echo "  ⚠ pnpm not found, skipping Astro dashboard build (dist/ may be stale)"
+fi
 
 # ── Live delivery ────────────────────────────────────────
 if [ -f "$ROOT/outbox/telegram_digest.md" ]; then
@@ -118,7 +122,7 @@ run_step "Webhook Alerts" "python3 \"$ROOT/packagers/webhook_notifier.py\"" ""
 echo ""
 echo "=== Pipeline complete ==="
 echo "Packaged outputs: $ROOT/outbox/"
-echo "Operator console: $ROOT/dashboard.html"
+echo "Operator console: $ROOT/dist/index.html (serve with: python3 server.py)"
 echo "Dispatch log:     $ROOT/outbox/live_send_log.md"
 echo ""
 

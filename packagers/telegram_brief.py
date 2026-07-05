@@ -114,7 +114,7 @@ def build_brief() -> str:
         "",
         "*Open the product surface*",
         "• `outbox/dispatch_desk.md` — judge/user-facing decision desk",
-        "• `dashboard.html` — product view + operator audit console",
+        "• the dashboard site (`/`) — product view + operator audit console",
         "• `outbox/dispatch_packets/` — persona-ready packets",
         "• `outbox/delivery_manifest.json` — channel handoff manifest",
         "",

@@ -1,9 +1,17 @@
-"""Tests for the newspaper front-page layer (desk nav, dateline, agents block)."""
+"""Tests for the newspaper front-page layer (desk nav, dateline, agents block).
+
+Asserts against the built Astro page (dist/index.html) — run `pnpm build` first.
+"""
 import re
 from pathlib import Path
 
+import pytest
+
 ROOT = Path(__file__).resolve().parents[1]
-DASH = (ROOT / "dashboard.html").read_text()
+DIST = ROOT / "dist" / "index.html"
+if not DIST.exists():
+    pytest.skip("dist/index.html not built — run `pnpm build` first", allow_module_level=True)
+DASH = DIST.read_text()
 
 
 def test_desk_navigation_present():

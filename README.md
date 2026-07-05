@@ -53,7 +53,7 @@ The engine is agent-agnostic by design. The contract is a plain HTTP API plus a 
 | **Hermes / OpenClaw** | Point HTTP tooling at `/api/tools.json`, or shell out to `cli/signalctl.py` |
 | **Flue** | Workflow harness in `.flue/` (`ask-dispatch`, `run-cycle`, `record-feedback`, …) |
 | **Humans (terminal)** | `python3 cli/signalctl.py status\|signals\|preview\|ask\|reason\|send` |
-| **Humans (browser)** | `dashboard.html` — decision workspace, live map, cycle theater, ask-the-desk |
+| **Humans (browser)** | Astro site (`/`) — decision workspace, live map, cycle theater, ask-the-desk |
 
 Discovery files: [`llms.txt`](llms.txt) and [`agents.md`](agents.md) (also served over HTTP) describe every endpoint with copy-paste examples per framework.
 
@@ -68,12 +68,12 @@ python3 agent/query.py ask "draft Belize investor note"
 
 ## The Dashboard
 
-`python3 server.py` then open `http://localhost:8080/dashboard.html`:
+Run `pnpm build` for the Astro static frontend, or `python3 server.py` and open `http://localhost:8080/`:
 
 - **Decision workspace** — the lead signal as a decision, not a headline: recommended move, action window, named owner, evidence grade, diligence checklist, and the full validation pack inline
 - **Ask the desk** — chat panel wired to the deterministic query engine, with citations
-- **Live Caribbean map** — 13 watched countries, signal pulses sized by confidence, click to drill
-- **Cycle theater** — watch the pipeline run live over SSE (sources lighting up, signals forming, dispatches routing), with a replay mode that works without network from `data/history/`
+- **Live Caribbean map** — 23 watched Caribbean markets and territories, signal pulses sized by confidence, click to drill; every beacon has either a routed live signal or a clearly labeled market/FX watchlist signal
+- **Cycle theater** — watch the pipeline run live over SSE (sources lighting up, signals forming, dispatches routing), with replay fallbacks from `data/history/` and an embedded recorded-cycle event stream for production/static deploys
 
 ## Architecture (Signal Fabric)
 
@@ -84,7 +84,7 @@ public data -> watchers -> normalized records -> reasoning merger -> composite s
                                                                   -> regional thesis + why-now context
                                                                   -> feedback loop (re-weights next cycle)
                                                                   -> agent interface (HTTP / MCP / CLI)
-                                                                  -> decision workspace (dashboard.html)
+                                                                  -> decision workspace (Astro site, dist/)
 ```
 
 ## Key Artifacts (outbox/)
@@ -100,7 +100,7 @@ public data -> watchers -> normalized records -> reasoning merger -> composite s
 | `outbox/feedback_review.md` | Feedback loop — what was forwarded, replied to, opened, or changed a decision |
 | `outbox/dispatch_packets/*.md` | Persona-specific dispatch packets (action checklists, evidence, feedback options) |
 | `outbox/delivery_manifest.json` | Channel-ready delivery manifest (one entry per dispatch) |
-| `dashboard.html` | The decision workspace (regenerated each cycle) |
+| `dist/index.html` | The decision workspace (Astro build, refreshed each cycle) |
 
 ## Data Sources
 
@@ -108,7 +108,7 @@ All sources are public, free, and require no API keys:
 
 | Source | Method | Data |
 |---|---|---|
-| **World Bank** | REST API | 5 indicators × 13 Caribbean countries |
+| **World Bank** | REST API | 5 indicators × watched Caribbean countries |
 | **IDB Open Data** | CKAN API | 99 Caribbean datasets |
 | **NOAA NWS** | REST API | Active weather alerts |
 | **NDBC Buoys** | Tabular text | 6 buoys: wind, pressure, wave height |
@@ -143,7 +143,7 @@ All sources are public, free, and require no API keys:
 bash run_pipeline.sh
 
 # serve the dashboard + API (also auto-runs the pipeline every 4h)
-python3 server.py            # http://localhost:8080/dashboard.html
+python3 server.py            # http://localhost:8080/
 
 # terminal control
 python3 cli/signalctl.py status
@@ -203,7 +203,7 @@ Current build plan: `PLAN_ENGINE_2026-06-10.md`. Implementation briefs and resul
 
 ## Astro build architecture
 
-The frontend is an Astro v7 static build (migrated from a generated `dashboard.html` in June 2026). `pnpm build` outputs to `dist/`, which both `server.py` and Vercel serve. `dashboard.html` still exists as a pipeline artifact but is no longer the canonical UI — see [dashboard.html status](#dashboardhtml-status) below.
+The frontend is an Astro v7 static build (migrated from a generated `dashboard.html` in June 2026; the legacy generator and HTML files were deleted in July 2026). `pnpm build` outputs to `dist/`, which both `server.py` and Vercel serve.
 
 ### Frontend file map
 
@@ -223,14 +223,15 @@ The frontend is an Astro v7 static build (migrated from a generated `dashboard.h
 
 ### `server.py` routing
 
-Serves from `dist/` for all Astro output; legacy files pass through as-is:
+Serves from `dist/` for all Astro output; retired legacy URLs redirect:
 
 ```python
 if clean.startswith("_astro/"):        → /dist/_astro/...         (Astro hashed assets)
 elif clean.startswith("signal/"):      → /dist/signal/<id>/index.html
 elif clean in ("", "index.html", ...): → /dist/index.html
 elif clean in ("build", "build.html"): → /dist/build/index.html
-elif clean in ("dashboard.html", ...): → pass  (legacy, served as-is)
+elif clean == "dashboard.html":        → 301 /        (legacy URL)
+elif clean == "configurator.html":     → 301 /build   (legacy URL)
 ```
 
 ### Two Vercel projects, one repo
@@ -288,11 +289,9 @@ pnpm dev                     # http://localhost:4321/ — HMR only, no /api prox
 
 Leaflet is loaded via CDN `<script>` and `<link>` tags. Do **not** add `integrity` attributes to these tags — browsers silently block the load if the SRI hash doesn't match, with no console error that identifies the root cause.
 
-### `dashboard.html` status
+### Legacy UI retired (July 2026)
 
-`dashboard.html` is still generated by `dashboard/generate.py` and served at `/dashboard.html` via `server.py`, but the canonical UI is `dist/index.html`. The two can diverge silently.
-
-**Decision pending:** retire `dashboard/generate.py` and write pipeline output directly into Astro's data layer, or keep it as a fallback artifact. Until that decision is made, treat `dashboard.html` as read-only reference output — do not build features against it.
+`dashboard.html`, `dashboard/generate.py`, `dashboard/template.html`, and `configurator.html` were deleted — the Astro build is the only UI. The pipeline's Dashboard step now runs `pnpm build`, and `/dashboard.html` / `/configurator.html` 301-redirect to `/` and `/build`. The old files remain in git history if reference is ever needed.
 
 ---
 

@@ -148,9 +148,17 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
             self.path = "/dist/index.html"
         elif clean in ("build", "build.html"):
             self.path = "/dist/build/index.html"
-        # Legacy HTML files still present in repo
-        elif clean in ("dashboard.html", "configurator.html"):
-            pass  # serve as-is via super()
+        # Legacy pages retired June 2026 — redirect old links to Astro routes
+        elif clean == "dashboard.html":
+            self.send_response(301)
+            self.send_header("Location", "/")
+            self.end_headers()
+            return
+        elif clean == "configurator.html":
+            self.send_response(301)
+            self.send_header("Location", "/build")
+            self.end_headers()
+            return
 
         super().do_GET()
 

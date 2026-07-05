@@ -5,6 +5,12 @@ Signal Fabric is an agentic coordination infrastructure for fragmented economies
 > For Hermes. Read this first to get full context before touching anything.
 > Last updated: cycle 20260601. Repo: `motacola/future-caribbean` (private).
 > Deployed: https://future-caribbean.fly.dev · Latest commit: `dea0d8a`.
+>
+> **⚠ Stale in parts (July 2026):** the UI sections below predate the Astro
+> migration. `dashboard.html`, `dashboard/generate.py`, `dashboard/template.html`,
+> and `configurator.html` have been **deleted** — the UI is the Astro build in
+> `src/` → `dist/` (see README "Astro build architecture"). Routing described
+> in §"URL map" is superseded by `server.py` + `vercel.json`.
 
 ---
 

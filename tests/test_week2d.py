@@ -71,22 +71,21 @@ def test_validation_packs_endpoint_returns_verdict_field(tmp_path):
 
 
 def test_dashboard_renders_verdict_filter_and_expandable_packs():
-    """Test that the dashboard template contains verdict filter and expandable validation sections."""
-    template = Path(ROOT / "dashboard" / "template.html").read_text()
-    assert "verdict-filter" in template, "Verdict filter not in template"
-    assert "sig-expand" in template, "Expand button not in template"
-    assert "sig-validation" in template, "Validation section not in template"
-    assert "cycle-clock" in template, "Cycle clock not in template"
-    assert "next-cycle" in template, "Next cycle element not in template"
-    assert "last-cycle" in template, "Last cycle element not in template"
-    
-    # Also check that generate.py includes the verdict counts
-    generate_code = Path(ROOT / "dashboard" / "generate.py").read_text()
-    assert "verdict_counts_json" in generate_code, "verdict_counts_json not in generate.py"
-    assert "advance_count" in generate_code, "advance_count not in generate.py"
-    assert "hold_count" in generate_code, "hold_count not in generate.py"
-    assert "reject_count" in generate_code, "reject_count not in generate.py"
-    assert "data-verdict" in generate_code, "data-verdict attribute not in generate.py"
+    """Test that the Astro dashboard page contains verdict filter and expandable validation sections."""
+    template = Path(ROOT / "src" / "pages" / "index.astro").read_text()
+    assert "verdict-filter" in template, "Verdict filter not in index.astro"
+    assert "sig-expand" in template, "Expand button not in index.astro"
+    assert "sig-validation" in template, "Validation section not in index.astro"
+    assert "cycle-clock" in template, "Cycle clock not in index.astro"
+    assert "next-cycle" in template, "Next cycle element not in index.astro"
+    assert "last-cycle" in template, "Last cycle element not in index.astro"
+    assert "data-verdict" in template, "data-verdict attribute not in index.astro"
+
+    # Verdict counting logic lives in the Astro data layer now
+    data_layer = Path(ROOT / "src" / "lib" / "data.ts").read_text()
+    combined = template + data_layer
+    for verdict in ("advance", "hold", "reject"):
+        assert verdict in combined, f"verdict '{verdict}' not in Astro sources"
 
 
 def test_status_endpoint_returns_cycle_timing(tmp_path):
@@ -148,14 +147,22 @@ def test_status_endpoint_returns_cycle_timing(tmp_path):
         server.APP_DIR = original_root
 
 
-def test_dashboard_generate_includes_counts():
-    """Test that dashboard generate produces verdict counts."""
-    from dashboard.generate import clean_title, clean_grade, clean_evidence, clean_signal_title
+def test_astro_data_includes_ported_label_cleaners():
+    """The Astro data loader owns the label-cleaning rules formerly in dashboard/generate.py."""
+    data_source = Path(ROOT / "src" / "lib" / "data.ts").read_text()
+    dashboard_path = ROOT / "dist" / "index.html"
+    if not dashboard_path.exists():
+        pytest.skip("dist/index.html not built — run `pnpm build` first")
+    dashboard = dashboard_path.read_text()
 
-    assert "Guyana" in clean_title("Guyana: +860.3% multi-source capital surge")
-    assert "Solid" in clean_grade("A - multi-source")
-    assert "World Bank" in clean_evidence("WB FDI surge detected: Guyana")
-    assert "money on the move" in clean_signal_title("Guyana: +860.3% ...")
+    assert "function cleanTitle" in data_source
+    assert "function cleanGrade" in data_source
+    assert "function cleanEvidence" in data_source
+    assert "function cleanSignalTitle" in data_source
+    assert "All signals point to Guyana." in dashboard
+    assert "Solid — several sources agree" in dashboard
+    assert "World Bank" in dashboard
+    assert "money on the move" in dashboard
 
 
 if __name__ == "__main__":

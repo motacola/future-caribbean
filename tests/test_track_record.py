@@ -79,19 +79,12 @@ def test_contract_keys():
 
 
 def test_dashboard_rendering():
-    """After running the real packager: outbox/track_record.json valid and generated dashboard contains id=\"receipts\" and receipt-row."""
-    # Import the generate function to test HTML generation
-    import subprocess
-    result = subprocess.run(
-        [sys.executable, "dashboard/generate.py", "--no-open"],
-        cwd=ROOT,
-        capture_output=True,
-        text=True,
-    )
-    assert result.returncode == 0, f"Dashboard generation failed: {result.stderr}"
+    """outbox/track_record.json valid and the built Astro page contains id=\"receipts\" and receipt-row."""
+    import pytest
 
-    dashboard_path = ROOT / "dashboard.html"
-    assert dashboard_path.exists(), "dashboard.html should be generated"
+    dashboard_path = ROOT / "dist" / "index.html"
+    if not dashboard_path.exists():
+        pytest.skip("dist/index.html not built — run `pnpm build` first")
 
     content = dashboard_path.read_text()
 
@@ -105,11 +98,11 @@ def test_dashboard_rendering():
     assert "receipts-table" in content
     assert "receipts-boosts" in content
     assert "r-pill" in content
-    assert "Demo evidence:" in content
+    assert "Validation note:" in content
 
     desk = json.loads((ROOT / "outbox" / "dispatch_desk.json").read_text())
     assert f'Cycle {desk["cycle_id"]}' in content
-    assert f'"cycle": "{desk["cycle_id"]}"' in content
+    assert f'"cycle":"{desk["cycle_id"]}"' in content
 
 
 if __name__ == "__main__":

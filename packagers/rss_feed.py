@@ -44,7 +44,7 @@ def main() -> None:
     out.append('<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">')
     out.append("<channel>")
     out.append("<title>Signal Fabric — Live Wire</title>")
-    out.append(f"<link>{SITE}/dashboard.html</link>")
+    out.append(f"<link>{SITE}/</link>")
     out.append("<description>Signals from the Caribbean's public data, in plain language. "
                "Machine-readable companion: /api/tools.json</description>")
     out.append("<language>en</language>")
@@ -66,7 +66,7 @@ def main() -> None:
             pub_dt = now
         out.append("<item>")
         out.append(f"<title>{escape(title)}</title>")
-        out.append(f"<link>{SITE}/dashboard.html#decision-workspace</link>")
+        out.append(f"<link>{SITE}/#decision-workspace</link>")
         out.append(f'<guid isPermaLink="false">{escape(d.get("dispatch_id", ""))}</guid>')
         out.append(f"<pubDate>{format_datetime(pub_dt)}</pubDate>")
         if country:

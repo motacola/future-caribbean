@@ -128,6 +128,7 @@ def build_clusters(dispatches: list[dict[str, Any]]) -> list[dict[str, Any]]:
                 "channel": item.get("channel", "Unknown channel"),
                 "action": item.get("recommended_action", "No action recorded."),
                 "rationale": item.get("routing_rationale", "Matches signal profile."),
+                "ranking_rationale": item.get("ranking_rationale", ""),
                 "dispatch_id": item.get("dispatch_id", ""),
                 "feedback_status": item.get("feedback_status", "awaiting"),
             })
@@ -155,6 +156,7 @@ def build_clusters(dispatches: list[dict[str, Any]]) -> list[dict[str, Any]]:
             "personas": personas,
             "feedback_counts": dict(feedback_counts),
             "feedback_summary": feedback_sentence(feedback_counts),
+            "ranking_rationale": lead.get("ranking_rationale", ""),
         }
         clusters.append(cluster)
 
@@ -238,6 +240,7 @@ def write_outputs(payload: dict[str, Any]) -> None:
         if cluster.get("risk_flags"):
             lines.append(f"- **Risk flags:** {'; '.join(cluster['risk_flags'])}")
         lines.extend([
+            f"- **Why ranked here:** {cluster.get('ranking_rationale') or 'Ranking uses confidence, source coverage, evidence count, magnitude, and feedback.'}",
             f"- **Feedback effect:** {cluster['feedback_summary']}",
             "",
             "| Persona | Channel | Next action | Feedback |",
@@ -266,7 +269,7 @@ def write_outputs(payload: dict[str, Any]) -> None:
         "- `outbox/dispatch_packets/` — persona-ready delivery packets",
         "- `outbox/delivery_manifest.json` — channel handoff manifest",
         "- `outbox/feedback_review.md` — feedback and next-cycle learning",
-        "- `dashboard.html` — operator/audit console",
+        "- `dist/index.html` (served at `/`) — operator/audit console",
         "",
     ])
 

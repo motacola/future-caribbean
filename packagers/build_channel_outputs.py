@@ -368,7 +368,7 @@ def write_judge_brief(
         "7. Open `outbox/channel_dispatch_log.md` to show distribution routing.",
         "8. Open `outbox/feedback_review.md` to show the feedback/learning loop.",
         "9. Open `outbox/judge_brief.md` for the system and routing rationale.",
-        "10. Open `dashboard.html` last as the operator console.",
+        "10. Open the dashboard site (`python3 server.py`, then `/`) last as the operator console.",
         "",
         "## The Feedback Loop (Live)",
         "",

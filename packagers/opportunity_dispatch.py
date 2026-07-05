@@ -188,6 +188,7 @@ def _make_dispatch(
     risk_flags: list[str],
     decision_influence: str,
     routing_rationale: str,
+    ranking_rationale: str = "",
 ) -> dict:
     return {
         "dispatch_id": dispatch_id,
@@ -213,6 +214,7 @@ def _make_dispatch(
         "risk_flags": risk_flags,
         "decision_influence": decision_influence,
         "routing_rationale": routing_rationale,
+        "ranking_rationale": ranking_rationale,
         "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
         "delivery_status": "queued",
         "feedback_status": "awaiting",
@@ -311,6 +313,7 @@ def build_dispatches(
                     risk_flags=[],
                     decision_influence=rule.get("decision_to_influence", ""),
                     routing_rationale=rationale,
+                    ranking_rationale=f"Regional {kind.replace('_', ' ')} summary ranks at 90/100 because {len(sorted_signals)} country signal(s) are grouped; top markets: {top_detail}.",
                 )
                 dispatches.append(dispatch)
 
@@ -325,7 +328,7 @@ def build_dispatches(
                 band = sig.get("_band_label", "")
                 band_emoji = sig.get("_band_emoji", "⚪")
                 evidence = sig.get("evidence") or []
-                evidence_text = evidence[0] if evidence else summary
+                evidence_text = "; ".join(str(e) for e in evidence[:4]) if evidence else summary
 
                 # Risk flags
                 risk_flags: list[str] = []
@@ -375,6 +378,7 @@ def build_dispatches(
                         risk_flags=risk_flags,
                         decision_influence=rule.get("decision_to_influence", ""),
                         routing_rationale=rationale,
+                        ranking_rationale=sig.get("_ranking_rationale", ""),
                     )
                     dispatches.append(dispatch)
 
@@ -391,7 +395,7 @@ def build_dispatches(
                 band_emoji = sig.get("_band_emoji", "⚪")
                 kind_label = sig.get("_kind_label", kind)
                 evidence = sig.get("evidence") or []
-                evidence_text = evidence[0] if evidence else summary
+                evidence_text = "; ".join(str(e) for e in evidence[:4]) if evidence else summary
 
                 # Risk flags
                 risk_flags: list[str] = []
@@ -442,6 +446,7 @@ def build_dispatches(
                         risk_flags=risk_flags,
                         decision_influence=rule.get("decision_to_influence", ""),
                         routing_rationale=rationale,
+                        ranking_rationale=sig.get("_ranking_rationale", ""),
                     )
                     dispatches.append(dispatch)
 
@@ -744,7 +749,7 @@ def write_channel_dispatch_log(dispatches: list[dict[str, Any]], path: Path, cyc
         "",
         "### Dashboard",
         "",
-        "All dispatches are archived in the operator console (dashboard.html) for "
+        "All dispatches are archived in the operator console (the dashboard site, served at `/`) for "
         "retrospective review and pattern analysis.",
         "",
     ])
