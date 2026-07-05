@@ -38,6 +38,16 @@
       },
       "dest": "/api/$1.py"
     },
+    {
+      "src": "/dashboard.html",
+      "status": 301,
+      "headers": { "Location": "/" }
+    },
+    {
+      "src": "/configurator.html",
+      "status": 301,
+      "headers": { "Location": "/build" }
+    },
     { "src": "/build", "dest": "/build/index.html" },
     { "src": "/", "dest": "/index.html" },
     { "src": "/signal/(.*)", "dest": "/signal/$1/index.html" },
