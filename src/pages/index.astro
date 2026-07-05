@@ -7,7 +7,7 @@ const d = loadDashboardData();
 <style is:global>
 :root {
   --bg: #F4EBDD; --ink: #18251F; --card: #FFFCF4; --card-alt: #EDE8DF;
-  --text: #18251F; --sub: #455A50; --muted: #7F8C83;
+  --text: #18251F; --sub: #455A50; --muted: #5D6B62;
   --gold: #B57A22; --teal: #0D766E; --coral: #B94836; --sky: #2676A8;
   --lime: #B6C74E; --border: #D8CBB8; --border-dark: #AA9A82;
   --serif: 'Cormorant Garamond', Georgia, serif;
@@ -22,7 +22,7 @@ a:hover { text-decoration: underline; }
 .masthead { background: var(--ink); color: var(--bg); padding: 14px 0; }
 .masthead::after { content: ""; display: block; height: 2px; margin-bottom: -2px; background: linear-gradient(90deg, var(--gold), var(--teal) 55%, transparent); opacity: .85; }
 .front-lede h1 em { font-style: italic; color: var(--teal); }
-.map-caption { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; padding: 10px 2px 0; font-family: var(--mono); font-size: 9.5px; letter-spacing: .6px; text-transform: uppercase; color: var(--muted); }
+.map-caption { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; padding: 10px 2px 0; font-family: var(--mono); font-size: 11px; letter-spacing: .6px; text-transform: uppercase; color: var(--muted); }
 .map-caption b { color: var(--gold); font-weight: 500; }
 .map-finance-strip { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin-top: 10px; }
 .map-finance-chip { background: rgba(255,252,244,.84); border: 1px solid var(--border); border-radius: 6px; padding: 8px 10px; min-width: 0; }
@@ -346,25 +346,29 @@ footer::before { content: ""; display: block; height: 2px; margin: -44px -24px 4
 .event-cycle p { color: var(--lime); font: 10px var(--mono); text-transform: uppercase; letter-spacing: .7px; }
 html { scroll-behavior: smooth; }
 #scroll-progress { position: fixed; top: 0; left: 0; height: 2px; width: 0; z-index: 1300; background: linear-gradient(90deg, var(--gold), var(--teal)); transition: width .1s linear; }
-.masthead { position: sticky; top: 0; z-index: 1200; transition: background .3s ease, box-shadow .3s ease; }
-.masthead.scrolled { background: rgba(24,37,31,.86); backdrop-filter: blur(14px) saturate(1.2); -webkit-backdrop-filter: blur(14px) saturate(1.2); box-shadow: 0 12px 34px rgba(24,37,31,.28); }
+.masthead { position: sticky; top: 0; z-index: 1200; transition: background .3s ease, box-shadow .3s ease, padding .25s ease; }
+.masthead.scrolled { background: var(--ink); box-shadow: 0 8px 24px rgba(24,37,31,.25); padding: 0; }
+.masthead.scrolled .mast-inner { min-height: 44px; align-items: center; flex-wrap: nowrap; gap: 12px; }
+.masthead.scrolled .mast-name { font-size: 14px; letter-spacing: 1.1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: none; }
+[id] { scroll-margin-top: 100px; }
 .livewire { display: flex; align-items: stretch; background: var(--ink); border-bottom: 1px solid rgba(244,235,221,.08); overflow: hidden; }
 .lw-label { flex-shrink: 0; display: flex; align-items: center; gap: 7px; padding: 8px 16px; font: 700 9px var(--mono); letter-spacing: 1.6px; text-transform: uppercase; color: var(--gold); background: rgba(181,122,34,.1); border-right: 1px solid rgba(244,235,221,.1); }
 .lw-label::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); animation: theater-live 1.4s ease-in-out infinite; }
-.lw-track { display: flex; overflow: hidden; flex: 1; min-width: 0; }
+.lw-track { display: flex; overflow: hidden; flex: 1; min-width: 0; mask-image: linear-gradient(90deg, transparent, #000 26px, #000 calc(100% - 26px), transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 26px, #000 calc(100% - 26px), transparent); }
 .lw-rail { display: flex; flex-shrink: 0; align-items: center; animation: lw-scroll var(--lw-dur, 60s) linear infinite; }
-.livewire:hover .lw-rail { animation-play-state: paused; }
+.livewire:hover .lw-rail, .livewire:focus-within .lw-rail { animation-play-state: paused; }
 @keyframes lw-scroll { to { transform: translateX(-100%); } }
 .lw-item { display: inline-flex; align-items: center; gap: 8px; padding: 8px 26px 8px 0; margin-left: 26px; font-size: 12px; color: rgba(244,235,221,.82); text-decoration: none; white-space: nowrap; border-right: 1px solid rgba(244,235,221,.08); }
 .lw-item:hover { color: #fff; text-decoration: none; }
 .lw-item i { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
 .lw-kicker { font: 700 9px var(--mono); letter-spacing: 1px; text-transform: uppercase; color: var(--lime); }
 @media (prefers-reduced-motion: reduce) { .lw-rail { animation: none; } .lw-track { overflow-x: auto; } .lw-rail[aria-hidden] { display: none; } }
-.desknav { background: var(--bg); border-bottom: 1px solid var(--border); position: relative; z-index: 5; }
-.desknav-inner { max-width: 1140px; margin: 0 auto; padding: 0 24px; display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; }
+.desknav { background: var(--bg); border-bottom: 1px solid var(--border); position: sticky; top: 44px; z-index: 1100; }
+.desknav.scrolled { box-shadow: 0 6px 18px rgba(24,37,31,.1); }
+.desknav-inner { max-width: 1140px; margin: 0 auto; padding: 0 24px; display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent); -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent); }
 .desknav-inner::-webkit-scrollbar { display: none; }
 .dn-item { padding: 11px 14px; font: 600 11px var(--sans); letter-spacing: 1.1px; text-transform: uppercase; color: var(--sub); white-space: nowrap; text-decoration: none; border-bottom: 2px solid transparent; margin-bottom: -1px; }
-.dn-item:hover { color: var(--ink); text-decoration: none; border-bottom-color: var(--gold); }
+.dn-item:hover, .dn-item.active { color: var(--ink); text-decoration: none; border-bottom-color: var(--gold); }
 .dn-agents { color: var(--teal); }
 .dateline { display: flex; gap: 14px; align-items: baseline; flex-wrap: wrap; padding-bottom: 10px; margin-bottom: 14px; border-bottom: 3px double var(--border-dark); }
 .dl-desk { font: 700 10px var(--mono); letter-spacing: 1.4px; text-transform: uppercase; color: var(--gold); }
@@ -433,9 +437,10 @@ html { scroll-behavior: smooth; }
 @media(max-width:768px) {
   .out-grid, .lead-details, .coordination-inner, .decision-shell, .vpack-grid, .market-grid, .market-chart-grid, .map-finance-strip, .map-market-panel, .source-registry-group { grid-template-columns: 1fr; }
   .vpack-col + .vpack-col { border-left: none; }
-  .mast-inner { align-items: flex-start; flex-wrap: wrap; gap: 8px 16px; }
-  .mast-name { max-width: 180px; }
-  .mast-links { gap: 12px; flex-wrap: wrap; justify-content: flex-end; }
+  .mast-inner { align-items: center; flex-wrap: nowrap; gap: 12px; }
+  .mast-name { font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+  .mast-links { gap: 12px; flex-wrap: nowrap; flex-shrink: 0; }
+  .mast-links a:last-child { display: none; }
   .sig-row { align-items: flex-start; flex-direction: column; }
   .decision-facts { grid-template-columns: 1fr; }
   .decision-fact + .decision-fact { border-left: none; border-top: 1px solid var(--border); padding-left: 0; }
@@ -452,7 +457,7 @@ html { scroll-behavior: smooth; }
   .sec-pane { padding: 0 18px; margin-bottom: 24px; }
   .map-legend { justify-content: flex-start; margin-top: 10px; }
   .map-shell, .map-drill { border-radius: 0; border-left: none; border-right: none; }
-  #leaflet-map { height: 340px; }
+  #leaflet-map { height: 430px; }
   .theater { padding: 0 0 30px; }
   .theater-shell { border-radius: 0; }
   .theater-event { grid-template-columns: 58px 1fr; }
@@ -508,15 +513,53 @@ html { scroll-behavior: smooth; }
 .sig-validation-col li em { display: block; font-style: normal; font-size: 9.5px; color: var(--muted); margin-top: 2px; }
 .sig-freshness { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; margin-bottom: 10px; }
 @media(max-width:768px) { .sig-validation-grid { grid-template-columns: 1fr; } }
+/* Legibility floor for micro mono labels */
+.lw-label, .lw-kicker, .fp-head, .fp-kicker, .decision-call label, .decision-fact label,
+.vpack-head div span, .freshness-pill, .map-finance-chip span, .map-market-panel span,
+.map-drill-grid span, .receipt-when span, .route-state, .vpack-tag, .sig-validation-head span,
+.sig-validation-verdict, .sig-validation-col h5, .decision-id, .source-registry-head span,
+.side-head span, .vpack-questions h4, .vpack-col h4 { font-size: 10.5px; }
+.hyp-status { font-size: 9.5px; }
+.mini-bars-meta { display: block; font: 500 10.5px var(--mono); color: var(--muted); margin-top: 3px; letter-spacing: .3px; }
+.mini-bars i { cursor: help; }
+/* Ask desk + map drill components (plain CSS, formerly Tailwind Play utilities) */
+@keyframes rise-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.rise-in { animation: rise-in .35s cubic-bezier(.22,1,.36,1) both; }
+@keyframes dot-bounce { 0%, 80%, 100% { transform: translateY(0); opacity: .45; } 40% { transform: translateY(-4px); opacity: 1; } }
+.drill-card { transition: background .2s ease, transform .2s ease; }
+.drill-card:hover { background: var(--card); transform: translateY(-2px); }
+.conf-row { margin-top: 8px; display: flex; align-items: center; gap: 8px; }
+.conf-track { height: 4px; flex: 1; border-radius: 999px; background: color-mix(in srgb, var(--border) 60%, transparent); overflow: hidden; }
+.conf-fill { height: 100%; border-radius: 999px; transition: width .7s ease-out; }
+.conf-num { font-family: var(--mono); font-size: 10px; color: var(--muted); }
+.ask-chips { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+.ask-chip { padding: 6px 14px; border-radius: 999px; border: 1px solid var(--border); background: var(--card); color: var(--ink); font: 400 12px var(--sans); cursor: pointer; transition: all .15s ease; }
+.ask-chip:hover { border-color: var(--teal); color: var(--teal); transform: translateY(-1px); }
+.ask-chip:active { transform: translateY(0); }
+.ask-chip:disabled { opacity: .4; cursor: default; }
+.ask-row { display: grid; grid-template-columns: 1fr auto; gap: 8px; margin-bottom: 12px; }
+.ask-input { background: var(--card); border: 1px solid var(--border); color: var(--ink); padding: 8px 12px; border-radius: 4px; font: 400 13px var(--sans); outline: none; transition: border-color .15s ease, box-shadow .15s ease; }
+.ask-input:focus { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(13,118,110,.12); }
+.ask-send:active { transform: scale(.97); }
+.ask-send:disabled { opacity: .6; }
+.ask-busy { display: flex; align-items: center; gap: 8px; padding: 12px 16px; font-size: 12px; color: var(--muted); }
+.ask-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); animation: dot-bounce 1s ease-in-out infinite; }
+.ask-dot:nth-child(2) { animation-delay: .15s; }
+.ask-dot:nth-child(3) { animation-delay: .3s; }
+.ask-offline { margin-top: 8px; padding: 12px 16px; background: #EAF2EC; border: 1px solid var(--border); border-radius: 4px; font-size: 13px; color: var(--muted); }
+.ask-answer { margin-top: 12px; background: var(--card); border-left: 3px solid var(--gold); border-radius: 0 4px 4px 0; padding: 16px; }
+.ask-answer.older { opacity: .6; }
+.ask-q { font-family: var(--mono); font-size: 10.5px; text-transform: uppercase; letter-spacing: .8px; color: var(--muted); margin-bottom: 4px; }
+.ask-a { font-size: 13px; line-height: 1.65; color: var(--sub); white-space: pre-wrap; max-height: 230px; overflow: auto; }
+.ask-note { margin-top: 8px; padding: 12px 16px; font-size: 12px; color: var(--muted); }
+@keyframes caret-blink { 50% { opacity: 0; } }
+.type-caret { display: inline-block; width: 7px; height: 14px; background: var(--gold); vertical-align: middle; margin-left: 1px; animation: caret-blink 1s step-end infinite; }
+.type-caret.done { display: none; }
 </style>
 
 <Base title="Signal Fabric — see where the region is moving">
   <Fragment slot="head">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
-    <script is:inline>
-      window.tailwind = { config: { theme: { extend: {} } } };
-    </script>
-    <script is:inline src="https://cdn.tailwindcss.com"></script>
     <script is:inline src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
     <script is:inline src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin="anonymous"></script>
     <script is:inline src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
@@ -592,6 +635,7 @@ html { scroll-behavior: smooth; }
           <span><i style="background:#2676A8"></i>Investment</span>
           <span><i style="background:#0D766E"></i>Climate</span>
           <span><i style="background:#B57A22"></i>Procurement</span>
+          <span><i style="background:#6F5FA8"></i>Market watch</span>
           <span><i style="background:#7F8C83"></i>Quiet</span>
         </div>
         <div class="map-caption"><b>Live feed</b><span>World Bank</span><span>IDB</span><span>NOAA</span><span>NDBC</span><span>CARICOM</span><span>CDB</span><span>JSE</span><span>TTSE</span><span>BSE</span><span>BISX</span><span>CSX</span><span>ECSE</span><span>XE</span></div>
@@ -871,6 +915,7 @@ const D = ${d.analystData};
 const MAP_DISPATCHES = ${d.mapDispatchesJson};
 const MAP_MARKERS = ${d.mapMarkersJson};
 const MAP_MARKER_BY_COUNTRY = Object.fromEntries(MAP_MARKERS.map(m => [m.country, m]));
+const THEATER_EVENTS = ${d.theaterEventsJson};
 const HUMANIZE_RULES = ${d.humanizeRulesJson}.map(([p, r]) => { try { return [new RegExp(p), r]; } catch (e) { return null; } }).filter(Boolean);
 function humanizeJs(t) {
   if (!t) return t;
@@ -878,7 +923,7 @@ function humanizeJs(t) {
   HUMANIZE_RULES.forEach(([rx, r]) => { out = out.replace(rx, r); });
   return out;
 }
-const MAP_COLORS = { investment:'#2676A8', climate:'#0D766E', procurement:'#B57A22', none:'#7F8C83' };
+const MAP_COLORS = { investment:'#2676A8', climate:'#0D766E', procurement:'#B57A22', market:'#6F5FA8', none:'#7F8C83' };
 const REPLAY_JSONL_URL = ${JSON.stringify(d.replayJsonlUrl)};
 const VERDICT_COUNTS = ${d.verdictCountsJson};
 const risks = ${d.lRisksJson};
@@ -953,8 +998,26 @@ async function runReplayFromJsonl(jsonlUrl) {
     setTheaterMode('Replay (recorded cycle)');
   } catch (e) {
     console.warn('Replay failed:', e);
-    setTheaterMode('PAUSED');
+    runReplayFromEmbeddedEvents();
   }
+}
+
+async function runReplayFromEmbeddedEvents() {
+  if (!Array.isArray(THEATER_EVENTS) || !THEATER_EVENTS.length) {
+    setTheaterMode('PAUSED');
+    return;
+  }
+  theaterReplayMode = true;
+  setTheaterMode('Replay (recorded cycle)');
+  const feed = document.getElementById('theater-feed');
+  if (feed) feed.innerHTML = '';
+  for (let i = 0; i < THEATER_EVENTS.length; i++) {
+    if (theaterPaused) break;
+    const ev = THEATER_EVENTS[i];
+    renderTheaterEvent(ev.event, ev.data || {});
+    await new Promise(r => setTimeout(r, i < 6 ? 420 : 650));
+  }
+  if (!theaterPaused) setTheaterMode('Replay (recorded cycle)');
 }
 
 function connectTheater(replay) {
@@ -984,10 +1047,10 @@ function connectTheater(replay) {
             const dateStr = latest.cycleId.replace(/(\d{4})(\d{2})(\d{2})/, '$1-$2-$3');
             runReplayFromJsonl('/data/history/' + dateStr + '.jsonl');
           } else {
-            setTheaterMode('PAUSED');
+            runReplayFromEmbeddedEvents();
           }
         })
-        .catch(() => setTheaterMode('PAUSED'));
+        .catch(() => runReplayFromEmbeddedEvents());
     }
   };
 }
@@ -1038,14 +1101,20 @@ const drillReact = (function () {
       </div>`;
     if (!items.length) {
       return html`
-        <div class="animate-riseIn">
-          <div class="map-drill-head"><strong>${country}</strong><span>Quiet this cycle</span></div>
+        <div class="rise-in">
+          <div class="map-drill-head"><strong>${country}</strong><span>Watchlist signal</span></div>
           ${panel}
-          <p class="map-drill-empty">Nothing to act on here right now. The desk keeps watching — when something moves, it pulses.</p>
+          <div class="map-drill-grid">
+            <article>
+              <span>WATCHLIST · ${marker.confidence || 0}/100</span>
+              <h3>${marker.summary || 'Regional market watch signal'}</h3>
+              <p>${marker.ranking_rationale || 'The desk is monitoring this island for official notices, FX pressure, market-source updates, and local context. It becomes a routed briefing when corroborated movement appears.'}</p>
+            </article>
+          </div>
         </div>`;
     }
     return html`
-      <div class="animate-riseIn">
+      <div class="rise-in">
         <div class="map-drill-head">
           <strong>${country}</strong>
           <span>${items.length} briefing${items.length === 1 ? '' : 's'} this cycle</span>
@@ -1056,17 +1125,16 @@ const drillReact = (function () {
             const conf = Math.max(0, Math.min(100, d.confidence_score || 0));
             const color = MAP_COLORS[(d.signal_kind || '').includes('invest') ? 'investment' : (d.signal_kind || '').includes('climate') ? 'climate' : (d.signal_kind || '').includes('procure') ? 'procurement' : 'none'];
             return html`
-              <article key=${d.dispatch_id} class="animate-riseIn transition-all duration-200 hover:bg-cardc hover:-translate-y-[2px]"
+              <article key=${d.dispatch_id} class="rise-in drill-card"
                        style=${{ animationDelay: (i * 70) + 'ms' }}>
                 <span>${d.dispatch_id} · ${d.persona_label}</span>
                 <h3>${d.title}</h3>
                 <p>${d.recommended_action}</p>
-                <div class="mt-2 flex items-center gap-2">
-                  <div class="h-[4px] flex-1 rounded-full bg-borderc/60 overflow-hidden">
-                    <div class="h-full rounded-full transition-[width] duration-700 ease-out"
-                         style=${{ width: conf + '%', background: color }}></div>
+                <div class="conf-row">
+                  <div class="conf-track">
+                    <div class="conf-fill" style=${{ width: conf + '%', background: color }}></div>
                   </div>
-                  <span class="font-mono text-[9px] text-mutedc">${conf}/100</span>
+                  <span class="conf-num">${conf}/100</span>
                 </div>
               </article>`;
           })}
@@ -1085,10 +1153,11 @@ function openCountryDrill(country) {
   document.querySelectorAll('.sig-marker').forEach(x => x.classList.toggle('selected', x.dataset.country === country));
   if (drillReact) { drillReact.render(country); return; }
   const items = MAP_DISPATCHES[country] || [];
+  const marker = MAP_MARKER_BY_COUNTRY[country] || {};
   const drill = document.getElementById('map-drill');
   drill.innerHTML = '<div class="map-drill-head"><strong>' + escapeMapText(country) + '</strong><span>' + items.length + ' dispatches</span></div>' +
     (items.length ? '<div class="map-drill-grid">' + items.slice(0, 6).map(d => '<article><span>' + escapeMapText(d.dispatch_id) + ' · ' + escapeMapText(d.persona_label) + '</span><h3>' + escapeMapText(d.title) + '</h3><p>' + escapeMapText(d.recommended_action) + '</p></article>').join('') + '</div>'
-                 : '<p class="map-drill-empty">No current signals.</p>');
+                 : '<div class="map-drill-grid"><article><span>WATCHLIST · ' + escapeMapText(marker.confidence || 0) + '/100</span><h3>' + escapeMapText(marker.summary || 'Regional market watch signal') + '</h3><p>' + escapeMapText(marker.ranking_rationale || 'The desk is monitoring this island for official notices, FX pressure, market-source updates, and local context.') + '</p></article></div>');
 }
 
 const mapMarkerRefs = {};
@@ -1231,7 +1300,7 @@ window.ask = function(q) {
       }), 13);
       return () => clearInterval(t);
     }, [text]);
-    return html`<span>${text.slice(0, shown)}<span class="${shown < text.length ? 'inline-block w-[7px] h-[14px] bg-gold align-middle ml-[1px] animate-pulse' : 'hidden'}"></span></span>`;
+    return html`<span>${text.slice(0, shown)}<span class="type-caret ${shown < text.length ? '' : 'done'}"></span></span>`;
   }
 
   function AskDesk() {
@@ -1261,47 +1330,42 @@ window.ask = function(q) {
 
     return html`
       <div>
-        <div class="flex gap-2 flex-wrap mb-3">
+        <div class="ask-chips">
           ${CHIPS.map(c => html`
-            <button key=${c} onClick=${() => ask(c)} disabled=${busy}
-              class="px-[14px] py-[6px] rounded-full border text-[12px] transition-all duration-150 cursor-pointer
-                     bg-cardc border-borderc text-ink hover:border-teal hover:text-teal hover:-translate-y-[1px]
-                     active:translate-y-0 disabled:opacity-40 disabled:cursor-default">
+            <button key=${c} onClick=${() => ask(c)} disabled=${busy} class="ask-chip">
               ${c}
             </button>`)}
         </div>
-        <div class="grid grid-cols-[1fr_auto] gap-2 mb-3">
+        <div class="ask-row">
           <input ref=${inputRef} value=${q}
             onInput=${e => setQ(e.target.value)}
             onKeyDown=${e => { if (e.key === 'Enter') ask(q); }}
             placeholder="Ask about a country, a signal, or what to do next…"
-            class="bg-cardc border border-borderc text-ink px-3 py-2 rounded text-[13px] outline-none
-                   transition-shadow focus:border-teal focus:shadow-[0_0_0_3px_rgba(13,118,110,.12)]" />
-          <button onClick=${() => ask(q)} disabled=${busy}
-            class="btn btn-p px-4 transition-transform active:scale-[.97] disabled:opacity-60">
+            class="ask-input" />
+          <button onClick=${() => ask(q)} disabled=${busy} class="btn btn-p ask-send">
             ${busy ? 'Asking…' : 'Ask'}
           </button>
         </div>
         ${busy && html`
-          <div class="flex items-center gap-2 px-4 py-3 text-[12px] text-mutedc animate-riseIn">
-            <span class="w-[6px] h-[6px] rounded-full bg-gold animate-dotBounce"></span>
-            <span class="w-[6px] h-[6px] rounded-full bg-gold animate-dotBounce [animation-delay:.15s]"></span>
-            <span class="w-[6px] h-[6px] rounded-full bg-gold animate-dotBounce [animation-delay:.3s]"></span>
+          <div class="ask-busy rise-in">
+            <span class="ask-dot"></span>
+            <span class="ask-dot"></span>
+            <span class="ask-dot"></span>
             pulling today's files
           </div>`}
         ${offline && html`
-          <div class="mt-2 px-4 py-3 bg-[#EAF2EC] border border-borderc rounded text-[13px] text-mutedc animate-riseIn">
+          <div class="ask-offline rise-in">
             The desk can't be reached from this copy of the page — try the live site at signal-fabric.vercel.app.
           </div>`}
         ${thread.map((m, i) => html`
-          <div key=${m.at + m.q} class="mt-3 bg-cardc border-l-[3px] border-gold rounded-r p-4 animate-riseIn ${i > 0 ? 'opacity-60' : 'ans-sweep'}">
-            <div class="font-mono text-[10px] uppercase tracking-wider text-mutedc mb-1">You asked · ${m.q}</div>
-            <div class="text-[13px] leading-relaxed text-sub whitespace-pre-wrap max-h-[230px] overflow-auto">
+          <div key=${m.at + m.q} class="ask-answer rise-in ${i > 0 ? 'older' : 'ans-sweep'}">
+            <div class="ask-q">You asked · ${m.q}</div>
+            <div class="ask-a">
               ${i === 0 ? html`<${Typewriter} text=${m.a} />` : m.a}
             </div>
           </div>`)}
         ${!thread.length && !busy && !offline && html`
-          <div class="mt-2 px-4 py-3 text-[12px] text-mutedc">Every answer is pulled word-for-word from this cycle's files — so you can always check the receipts.</div>`}
+          <div class="ask-note">Every answer is pulled word-for-word from this cycle's files — so you can always check the receipts.</div>`}
       </div>`;
   }
 
@@ -1443,6 +1507,7 @@ setInterval(updateCycleClock, 30000);
 
   const bar = document.getElementById('scroll-progress');
   const mast = document.querySelector('.masthead');
+  const desknav = document.querySelector('.desknav');
   let ticking = false;
   addEventListener('scroll', () => {
     if (ticking) return;
@@ -1451,9 +1516,29 @@ setInterval(updateCycleClock, 30000);
       const max = document.documentElement.scrollHeight - innerHeight;
       if (bar) bar.style.width = (max > 0 ? (scrollY / max * 100) : 0) + '%';
       if (mast) mast.classList.toggle('scrolled', scrollY > 40);
+      if (desknav) desknav.classList.toggle('scrolled', scrollY > 40);
       ticking = false;
     });
   }, { passive: true });
+
+  // Scrollspy: highlight the desk nav item for the section in view
+  const dnItems = [...document.querySelectorAll('.dn-item[href^="#"]')];
+  const dnByTarget = new Map(dnItems.map(a => [a.getAttribute('href').slice(1), a]));
+  const spyTargets = [...dnByTarget.keys()].map(id => document.getElementById(id)).filter(Boolean);
+  if ('IntersectionObserver' in window && spyTargets.length) {
+    const spy = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        dnItems.forEach(a => a.classList.remove('active'));
+        const link = dnByTarget.get(e.target.id);
+        if (link) {
+          link.classList.add('active');
+          link.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+        }
+      });
+    }, { rootMargin: '-25% 0px -65% 0px' });
+    spyTargets.forEach(t => spy.observe(t));
+  }
 
   const lwRail = document.getElementById('lw-rail');
   if (lwRail) {

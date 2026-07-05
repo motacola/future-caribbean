@@ -125,7 +125,53 @@ function canonicalCountry(raw: string): string {
     'BVI': 'British Virgin Islands', 'USVI': 'US Virgin Islands',
     'SKN': 'St Kitts & Nevis', 'ANT': 'Antigua & Barbuda',
   };
-  return ALIAS[raw.trim()] ?? raw.trim();
+  const KEY_ALIAS: Record<string, string> = {
+    'trinidad and tobago': 'Trinidad & Tobago',
+    'antigua and barbuda': 'Antigua & Barbuda',
+    'st. lucia': 'St Lucia',
+    'saint lucia': 'St Lucia',
+    'st. kitts and nevis': 'St Kitts & Nevis',
+    'st kitts and nevis': 'St Kitts & Nevis',
+    'saint kitts and nevis': 'St Kitts & Nevis',
+    'st. vincent and the grenadines': 'St Vincent & the Grenadines',
+    'st vincent and the grenadines': 'St Vincent & the Grenadines',
+    'saint vincent and the grenadines': 'St Vincent & the Grenadines',
+    'turks and caicos': 'Turks & Caicos',
+    'u.s. virgin islands': 'US Virgin Islands',
+  };
+  const trimmed = raw.trim();
+  return ALIAS[trimmed] ?? KEY_ALIAS[trimmed.toLowerCase()] ?? trimmed;
+}
+
+// fallow-ignore-next-line complexity
+function watchlistSignal(country: string, market: any, fx: any): any {
+  const exchange = market?.exchange || {};
+  const snapshot = market?.market_snapshot || {};
+  if (market && Object.keys(market).length) {
+    const code = exchange.code || 'market source';
+    const focus = snapshot.focus || (market.watch_sectors || []).slice(0, 3).join(', ')
+      || 'official notices and local market context';
+    return {
+      confidence: 34,
+      kind: 'market',
+      summary: `Market watch signal: ${code} / ${fx?.pair || 'FX'} — monitor ${focus}`,
+      ranking_rationale: 'Watchlist signal from official market-source registry; promoted to a live briefing when core data or source corroboration moves.',
+    };
+  }
+  if (fx?.pair) {
+    return {
+      confidence: 28,
+      kind: 'market',
+      summary: `FX watch signal: ${fx.pair} ${fx.rate_label || 'watch'} — ${fx.signal || 'monitor reserves, flows, and official notices'}`,
+      ranking_rationale: 'Watchlist signal from FX/market coverage; promoted to a live briefing when source corroboration moves.',
+    };
+  }
+  return {
+    confidence: 28,
+    kind: 'market',
+    summary: 'Regional watch signal: monitor official notices, tourism/logistics activity, and local market context',
+    ranking_rationale: 'Watchlist signal from regional market coverage; promoted to a live briefing when source corroboration moves.',
+  };
 }
 
 // ── Validation pack HTML builders ──────────────────────────
@@ -338,20 +384,23 @@ export function loadDashboardData() {
   // fallow-ignore-next-line complexity
   const mapMarkers = Object.entries(COUNTRY_COORDS).map(([country, [lat, lng]]) => {
     const c = clusterByCountry[country] || {};
+    const market = marketProfileFor(country);
+    const fx = fxProfileFor(country);
+    const watch = c.signal_kind ? {} : watchlistSignal(country, market, fx);
     return {
       country, lat, lng,
-      confidence: c.confidence_score || 0,
+      confidence: c.confidence_score || watch.confidence || 0,
       kind: c.signal_kind ? (c.signal_kind.includes('invest') ? 'investment'
-        : c.signal_kind.includes('climate') || c.signal_kind.includes('weather') ? 'climate'
+        : c.signal_kind.includes('climate') || c.signal_kind.includes('weather') || c.signal_kind.includes('vulnerability') || c.signal_kind.includes('food_security') ? 'climate'
         : c.signal_kind.includes('procure') || c.signal_kind.includes('pipeline') ? 'procurement'
-        : 'none') : 'none',
-      summary: humanize(c.top_signal_summary || c.decision || ''),
-      ranking_rationale: humanize(c.ranking_rationale || ''),
-      fx: fxProfileFor(country),
+        : 'none') : watch.kind || 'none',
+      summary: humanize(c.top_signal_summary || c.title || c.decision || watch.summary || ''),
+      ranking_rationale: humanize(c.ranking_rationale || watch.ranking_rationale || ''),
+      fx,
       market: {
-        code: (marketProfileFor(country).exchange || {}).code || '',
-        name: (marketProfileFor(country).exchange || {}).name || '',
-        status: (marketProfileFor(country).exchange || {}).feed_status || '',
+        code: (market.exchange || {}).code || '',
+        name: (market.exchange || {}).name || '',
+        status: (market.exchange || {}).feed_status || '',
         snapshot: snapshotFor(country),
       },
     };
@@ -616,8 +665,13 @@ export function loadDashboardData() {
     const links = ((m.signal_links || []) as string[]).slice(0, 4).join(', ');
     const fx = m.fx || {};
     const snap = m.market_snapshot || {};
-    const bars = ((snap.bars || []) as number[]).slice(0, 8)
-      .map((v: number) => `<i style="height:${Math.max(8, Math.min(100, v || 0))}%"></i>`).join('');
+    const barVals = ((snap.bars || []) as number[]).slice(0, 8);
+    const barLabel = snap.chart_label || 'Market activity proxy';
+    const bars = barVals
+      .map((v: number, i: number) => `<i style="height:${Math.max(8, Math.min(100, v || 0))}%" title="${esc(barLabel)} — point ${i + 1} of ${barVals.length}: ${Math.round(v || 0)} (indexed)"></i>`).join('');
+    const barMeta = barVals.length
+      ? `<span class="mini-bars-meta">latest ${Math.round(barVals[barVals.length - 1] || 0)} · range ${Math.round(Math.min(...barVals))}–${Math.round(Math.max(...barVals))} · indexed 0–100</span>`
+      : '';
     const exchName = ex.name || 'Market source';
     const exchHtml = ex.url
       ? `<a href="${esc(ex.url)}" target="_blank" rel="noopener">${esc(exchName)}</a>`
@@ -634,8 +688,8 @@ export function loadDashboardData() {
     marketChartHtml += `<article class="market-chart-card ${statusClass}">
       <div class="market-top"><span class="market-code">${esc(ex.code || '—')}</span><span class="market-status">${esc(snap.data_status || status)}</span></div>
       <h3>${esc(snap.headline || exchName)}</h3>
-      <div class="mini-bars" aria-label="${esc(snap.chart_label || 'Market activity proxy')}">${bars}</div>
-      <p><strong>${esc(snap.chart_label || 'Market activity proxy')}</strong></p>
+      <div class="mini-bars" aria-label="${esc(barLabel)}">${bars}</div>
+      <p><strong>${esc(barLabel)}</strong>${barMeta}</p>
       <p>${esc(snap.focus || 'Market notices and official source updates')}</p>
       <div class="market-finance-row"><span>${esc(fx.indicator || 'FX watch')}</span><span>${esc(fx.pair || '—')}</span></div>
     </article>`;
@@ -730,6 +784,40 @@ export function loadDashboardData() {
     advance: advanceCount, hold: holdCount, reject: rejectCount,
   };
 
+  const nowTs = Math.floor(Date.now() / 1000);
+  const theaterEvents: any[] = [];
+  srcRows.slice(0, 6).forEach((src, i) => {
+    theaterEvents.push({
+      event: 'source_check',
+      data: { ts: nowTs + i * 8, source: src.label, status: src.status },
+    });
+  });
+  mapMarkers
+    .filter((m: any) => (m.confidence || 0) >= 50)
+    .slice(0, 6)
+    .forEach((m: any, i: number) => {
+      theaterEvents.push({
+        event: 'signal_found',
+        data: { ts: nowTs + 56 + i * 10, kind: m.kind, country: m.country, confidence: m.confidence, summary: m.summary },
+      });
+    });
+  // fallow-ignore-next-line complexity
+  dispatches.slice(0, 8).forEach((dispatch: any, i: number) => {
+    theaterEvents.push({
+      event: 'dispatch_routed',
+      data: {
+        ts: nowTs + 128 + i * 7,
+        recipient: dispatch.persona_label || dispatch.persona_key || 'Decision-maker',
+        country: canonicalCountry(dispatch.country_cluster || 'Region'),
+        dispatch_id: dispatch.dispatch_id || '',
+      },
+    });
+  });
+  theaterEvents.push({
+    event: 'cycle_complete',
+    data: { ts: nowTs + 190, cycle: cycleId, signals: nClusters },
+  });
+
   return {
     // Scalars
     cycleId, nowStr, nCountries, nSources, nClusters, nPersonas, nFb, nComposite,
@@ -752,6 +840,7 @@ export function loadDashboardData() {
     allPacksJson: JSON.stringify(allPacks).replace(/<\//g, '<\\/'),
     verdictCountsJson: JSON.stringify(verdictCounts),
     lRisksJson: JSON.stringify(lRisks),
+    theaterEventsJson: JSON.stringify(theaterEvents).replace(/<\//g, '<\\/'),
     replayJsonlUrl: replayJsonlUrl.replace(/<\//g, '<\\/'),
     humanizeRulesJson,
     tickerHtml, frontPointersHtml,
