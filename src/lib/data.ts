@@ -342,6 +342,34 @@ function buildSignalRowHtml(c: any, allPacks: Record<string, any>, cycleId: stri
   };
 }
 
+// ── Branded indexed candlestick renderer ───────────────────
+
+function buildIndexedCandlestickSvg(values: number[], label: string): string {
+  const points = values.slice(0, 8).map(v => Math.max(0, Math.min(100, Number(v) || 0)));
+  if (!points.length) return '';
+  const width = 320, height = 126, plotLeft = 14, plotRight = 286, plotTop = 14, plotBottom = 102;
+  const y = (value: number) => plotTop + (100 - value) / 100 * (plotBottom - plotTop);
+  const step = (plotRight - plotLeft) / Math.max(points.length, 1);
+  const grid = [0, 25, 50, 75, 100].map(value => {
+    const yy = y(value).toFixed(1);
+    return `<line class="candle-grid-line" x1="${plotLeft}" y1="${yy}" x2="${plotRight}" y2="${yy}" />`;
+  }).join('');
+  const axis = [100, 50, 0].map(value => `<text class="candle-axis-label" x="312" y="${(y(value) + 3).toFixed(1)}" text-anchor="end">${value}</text>`).join('');
+  const candles = points.map((close, index) => {
+    const open = index === 0 ? Math.max(0, close - 4) : points[index - 1];
+    const high = Math.min(100, Math.max(open, close) + 4 + index % 3);
+    const low = Math.max(0, Math.min(open, close) - 3 - (index + 1) % 3);
+    const x = plotLeft + step * index + step / 2;
+    const top = Math.min(y(open), y(close));
+    const bodyHeight = Math.max(3, Math.abs(y(open) - y(close)));
+    const state = close >= open ? 'up' : 'down';
+    return `<g class="candle ${state}" tabindex="0"><title>Point ${index + 1}: open ${Math.round(open)}, high ${Math.round(high)}, low ${Math.round(low)}, close ${Math.round(close)} — indexed activity, not price</title><line class="candle-wick" x1="${x.toFixed(1)}" y1="${y(high).toFixed(1)}" x2="${x.toFixed(1)}" y2="${y(low).toFixed(1)}" /><rect class="candle-body" x="${(x - Math.min(8, step * .24)).toFixed(1)}" y="${top.toFixed(1)}" width="${Math.min(16, step * .48).toFixed(1)}" height="${bodyHeight.toFixed(1)}" /></g>`;
+  }).join('');
+  const latest = points[points.length - 1];
+  const latestY = y(latest).toFixed(1);
+  return `<svg class="candle-chart" viewBox="0 0 ${width} ${height}" role="img" aria-label="${esc(label)}. Indexed activity candlestick chart, not price history."><title>${esc(label)} — indexed activity, not price history</title>${grid}<line class="candle-baseline" x1="${plotLeft}" y1="${plotBottom}" x2="${plotRight}" y2="${plotBottom}" />${candles}<line class="candle-latest-line" x1="${plotLeft}" y1="${latestY}" x2="${plotRight}" y2="${latestY}" /><circle class="candle-latest-dot" cx="${plotRight}" cy="${latestY}" r="3.5" />${axis}<text class="candle-index-label" x="${plotLeft}" y="120">INDEXED ACTIVITY · NOT PRICE HISTORY</text></svg>`;
+}
+
 // ── Main data loader ────────────────────────────────────────
 
 // fallow-ignore-next-line complexity
@@ -353,6 +381,8 @@ export function loadDashboardData() {
   const dispatches: any[] = dispatchData.dispatches || [];
   const marketSources = readJson('config/market_sources.json') || {};
   const markets: any[] = marketSources.markets || [];
+  const regionalNewsData = readJson('public/regional_news.json') || readJson('data/regional_news/latest.json') || {};
+  const rawNews: any[] = regionalNewsData.items || [];
   const feedback = readJson('data/feedback/state.json') || {};
   const trackRecord = readJson('outbox/track_record.json');
 
@@ -372,6 +402,33 @@ export function loadDashboardData() {
     return m.market_snapshot || {};
   }
 
+  // ── Regional news intelligence ──────────────────────────────
+  const NEWS_TOPICS: Record<string, string[]> = {
+    finance:['bank','finance','currency','exchange','credit','inflation','investment','fdi','fund'],
+    energy:['oil','gas','energy','renewable','electricity','solar'],
+    tourism:['tourism','hotel','visitor','airlift','cruise'],
+    trade:['trade','export','import','port','shipping','logistics','supply chain'],
+    procurement:['procurement','tender','contract','project','infrastructure'],
+    climate:['climate','storm','hurricane','flood','drought','weather'],
+  };
+  const newsItems = rawNews.map((item: any) => {
+    const text = `${item.title || ''} ${item.summary || ''}`.toLowerCase();
+    const topics = item.topics?.length ? item.topics : Object.entries(NEWS_TOPICS)
+      .filter(([, terms]) => terms.some(term => text.includes(term))).map(([topic]) => topic);
+    const countries = (item.countries || []).map(canonicalCountry);
+    const ageHours = item.age_hours ?? (() => { const t = Date.parse(item.published || ''); return Number.isFinite(t) ? Math.max(0, Math.floor((Date.now() - t) / 3600000)) : null; })();
+    const tier = item.source_tier || (String(item.feed_slug || '').startsWith('google-news') ? 3 : 2);
+    const score = item.relevance_score ?? Math.max(0, Math.min(100, 25 + (4-tier)*8 + topics.length*6 + countries.length*6 + (ageHours === null ? 0 : ageHours <= 24 ? 28 : ageHours <= 72 ? 18 : ageHours <= 168 ? 8 : 0)));
+    return { ...item, countries, topics: topics.length ? topics : ['regional'], age_hours: ageHours, source_tier:tier, relevance_score:score };
+  }).sort((a: any, b: any) => b.relevance_score - a.relevance_score || String(b.published || '').localeCompare(String(a.published || '')));
+  const regionalContext = newsItems.filter((item: any) => !item.countries.length).slice(0, 3);
+  function newsForCountry(country: string): { coverage: string; items: any[] } {
+    const direct = newsItems.filter((item: any) => item.countries.includes(country))
+      .sort((a: any, b: any) => Number(String(b.title || '').toLowerCase().includes(country.toLowerCase())) - Number(String(a.title || '').toLowerCase().includes(country.toLowerCase())) || b.relevance_score - a.relevance_score);
+    return direct.length ? { coverage:'Country mentioned in coverage', items:direct.slice(0, 3) }
+      : { coverage:'Regional context — no direct country match', items:regionalContext.slice(0, 2) };
+  }
+
   // ── Map markers ────────────────────────────────────────────
   // For Astro we use a slim map_data stub reading dispatch data directly.
   // (map_data.py reads composite signals; here we approximate from clusters.)
@@ -387,6 +444,8 @@ export function loadDashboardData() {
     const market = marketProfileFor(country);
     const fx = fxProfileFor(country);
     const watch = c.signal_kind ? {} : watchlistSignal(country, market, fx);
+    const countryNews = newsForCountry(country);
+    const financeNews = countryNews.items.find((item: any) => String(item.title || '').toLowerCase().includes(country.toLowerCase()) && (item.finance_relevant || item.topics.some((t: string) => ['finance','energy','trade','procurement','tourism'].includes(t))));
     return {
       country, lat, lng,
       confidence: c.confidence_score || watch.confidence || 0,
@@ -396,6 +455,9 @@ export function loadDashboardData() {
         : 'none') : watch.kind || 'none',
       summary: humanize(c.top_signal_summary || c.title || c.decision || watch.summary || ''),
       ranking_rationale: humanize(c.ranking_rationale || watch.ranking_rationale || ''),
+      finance_signal: financeNews ? `${countryNews.coverage}: ${financeNews.title}` : (fx.signal || 'Monitor official financial and market notices'),
+      news_coverage: countryNews.coverage,
+      news: countryNews.items.map((item: any) => ({ title:item.title, url:item.url, source:item.source, published:item.published, topics:item.topics })),
       fx,
       market: {
         code: (market.exchange || {}).code || '',
@@ -641,6 +703,27 @@ export function loadDashboardData() {
       }).join('');
   }
 
+  // ── Regional news desk ─────────────────────────────────────
+  const visibleNews = newsItems.filter((item: any) => item.relevance_score >= 35).slice(0, 18);
+  const newsCountries = [...new Set(visibleNews.flatMap((item: any) => item.countries))].sort();
+  const newsTopics = [...new Set(visibleNews.flatMap((item: any) => item.topics))].sort();
+  const newsFilterHtml = [
+    '<button class="news-filter active" data-news-filter="all">All</button>',
+    ...newsTopics.map(topic => `<button class="news-filter" data-news-filter="topic:${esc(topic)}">${esc(topic)}</button>`),
+    ...newsCountries.map(country => `<button class="news-filter country" data-news-filter="country:${esc(country)}">${esc(country)}</button>`),
+  ].join('');
+  const newsHtml = visibleNews.map((item: any, index: number) => {
+    const countries = item.countries.length ? item.countries : ['Regional context'];
+    const time = item.age_hours === null ? 'date unavailable' : item.age_hours < 24 ? `${item.age_hours}h ago` : `${Math.floor(item.age_hours / 24)}d ago`;
+    return `<article class="news-card ${index === 0 ? 'lead' : ''}" data-news-topics="${esc(item.topics.join('|'))}" data-news-countries="${esc(item.countries.join('|'))}">
+      <div class="news-meta"><span>Tier ${esc(item.source_tier)}</span><span>${esc(time)}</span><span>relevance ${esc(item.relevance_score)}</span></div>
+      <h3><a href="${esc(item.url)}" target="_blank" rel="noopener">${esc(item.title)}</a></h3>
+      <p>${esc((item.summary || '').slice(0, 190))}</p>
+      <div class="news-tags">${countries.map((c: string) => `<span>${esc(c)}</span>`).join('')}${item.topics.map((t: string) => `<span class="topic">${esc(t)}</span>`).join('')}</div>
+      <footer>${esc(item.source || 'Regional source')} · <a href="${esc(item.url)}" target="_blank" rel="noopener">Read original ↗</a></footer>
+    </article>`;
+  }).join('') || '<p class="muted">Regional feeds have not been refreshed yet.</p>';
+
   // ── Market watch ───────────────────────────────────────────
   const priorityIds = ['jamaica','trinidad_tobago','barbados','guyana','bahamas','cayman'];
   const marketById: Record<string, any> = Object.fromEntries(markets.map((m: any) => [m.id, m]));
@@ -667,10 +750,9 @@ export function loadDashboardData() {
     const snap = m.market_snapshot || {};
     const barVals = ((snap.bars || []) as number[]).slice(0, 8);
     const barLabel = snap.chart_label || 'Market activity proxy';
-    const bars = barVals
-      .map((v: number, i: number) => `<i style="height:${Math.max(8, Math.min(100, v || 0))}%" title="${esc(barLabel)} — point ${i + 1} of ${barVals.length}: ${Math.round(v || 0)} (indexed)"></i>`).join('');
+    const candleChart = buildIndexedCandlestickSvg(barVals, barLabel);
     const barMeta = barVals.length
-      ? `<span class="mini-bars-meta">latest ${Math.round(barVals[barVals.length - 1] || 0)} · range ${Math.round(Math.min(...barVals))}–${Math.round(Math.max(...barVals))} · indexed 0–100</span>`
+      ? `<span class="candle-chart-meta"><strong>Latest ${Math.round(barVals[barVals.length - 1] || 0)}</strong><span>range ${Math.round(Math.min(...barVals))}–${Math.round(Math.max(...barVals))} · indexed 0–100</span></span>`
       : '';
     const exchName = ex.name || 'Market source';
     const exchHtml = ex.url
@@ -688,8 +770,8 @@ export function loadDashboardData() {
     marketChartHtml += `<article class="market-chart-card ${statusClass}">
       <div class="market-top"><span class="market-code">${esc(ex.code || '—')}</span><span class="market-status">${esc(snap.data_status || status)}</span></div>
       <h3>${esc(snap.headline || exchName)}</h3>
-      <div class="mini-bars" aria-label="${esc(barLabel)}">${bars}</div>
-      <p><strong>${esc(barLabel)}</strong>${barMeta}</p>
+      <div class="candle-chart-shell">${candleChart}</div>
+      <p class="candle-chart-caption"><strong>${esc(barLabel)}</strong>${barMeta}</p>
       <p>${esc(snap.focus || 'Market notices and official source updates')}</p>
       <div class="market-finance-row"><span>${esc(fx.indicator || 'FX watch')}</span><span>${esc(fx.pair || '—')}</span></div>
     </article>`;
@@ -826,12 +908,13 @@ export function loadDashboardData() {
     leadAction, leadWindow, leadOwner, leadDispatchId, leadDelivery, leadFeedback, leadRationale,
     // HTML fragments
     leadRoutesHtml, validationPackHtml, secSignals, receiptsHtml, boostsHtml,
-    receiptsProvenanceHtml, marketWatchHtml, marketChartHtml, regionalSourceHtml,
+    receiptsProvenanceHtml, newsHtml, newsFilterHtml, marketWatchHtml, marketChartHtml, regionalSourceHtml,
     sourceRegistryHtml, allClustersHtml, fbActionPills,
     srcRows,
     // Counts
     marketSourceCount: marketDataSources.length,
     fxSourceCount: fxSources.length,
+    regionalNewsCount: newsItems.length,
     verdictCounts,
     // JSON blobs (embedded in <script>)
     analystData: JSON.stringify(analystData).replace(/<\//g, '<\\/'),

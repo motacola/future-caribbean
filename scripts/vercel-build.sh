@@ -13,9 +13,13 @@ else
   # Regional news data (data/regional_news/latest.json) is force-committed to git and
   # refreshed by the cron pipeline locally, then force-added + deployed. We do NOT
   # re-poll here: Vercel's build sandbox has unreliable RSS egress and would overwrite
-  # the good committed data with an empty/partial result. map_data.py reads this file
-  # at build time, so the committed copy is what ships.
+  # the good committed data with an empty/partial result. map_data.py / src/lib/data.ts
+  # read this file at build time, so the committed copy is what ships.
+  # Belt-and-suspenders: also copy it into public/ so it is guaranteed present in the
+  # deploy tree regardless of .gitignore / .vercelignore edge cases.
   echo "▶ using committed regional news data (no in-build polling)"
+  mkdir -p public
+  cp data/regional_news/latest.json public/regional_news.json 2>/dev/null || echo "⚠ could not copy regional news data"
 
   pnpm build
 

@@ -16,6 +16,11 @@ tests/
 data/*
 !data/history/
 !data/history/**
+# Regional news is baked into the static dashboard at build time via map_data.py /
+# src/lib/data.ts. Re-include the whole regional_news dir (the generated latest.json
+# is force-committed) so the section renders on Vercel. Ignore the bulky raw RSS cache.
+!data/regional_news/
+data/regional_news/raw/
 
 # Pipeline source code (not needed at runtime)
 cli/
