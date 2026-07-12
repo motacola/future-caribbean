@@ -1,9 +1,9 @@
 # Opportunity Validation Pack — CARICOM
 
-- Signal: `dev-pipeline-regional` · Dispatch: `DSP-20260710-003`
-- Confidence: 78/100 (raw 96) · B - cross-source
+- Signal: `food-security-regional` · Dispatch: `DSP-20260710-001`
+- Confidence: 78/100 (raw 80) · B - cross-source
 - Action readiness: medium (no dated country procurement or news corroboration)
-- Evidence freshness: stale · cycles since refresh: 48
+- Evidence freshness: stale · cycles since refresh: 3
 - Recommendation: **HOLD** — Calibrated confidence 78/100 with 1 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.
 - Last validated: 2026-07-12T17:28:06.653152+00:00
 
@@ -27,23 +27,15 @@
 - [Strengthening Flood Early Warning Systems in Suriname Project](https://www.caribank.org/work-with-us/procurement/procurement-notices/strengthening-flood-early-warning-systems-suriname-project) — Caribbean Development Bank (regional)
 
 ## Regional coordination path
-- Coordination score: 50/100
-- Demand countries: Guyana
+- Coordination score: 51/100
+- Demand countries: Caribbean regional demand
 - Minimum next action: Validate eligibility and delivery capacity with the top 3 contributing regional nodes within 30 days.
-- Barbados — professional services, project finance
-- Trinidad & Tobago — engineering services, construction delivery
-- Jamaica — construction delivery, project finance
-- Eastern Caribbean / OECS — professional services
+- Jamaica — shipping logistics, warehousing distribution
+- Trinidad & Tobago — shipping logistics
+- Eastern Caribbean / OECS — food processing
 
 ### Unlock path
-- **Capability Verification** — owner: `ecosystem_builder`; request: Two education-sector delivery partners with institutional references; estimated uplift: +10
-- **Capability Verification** — owner: `ecosystem_builder`; request: Two education-sector delivery partners with institutional references; estimated uplift: +10
-- **Capability Verification** — owner: `ecosystem_builder`; request: Two education-sector delivery partners with institutional references; estimated uplift: +10
-- **Capability Verification** — owner: `ecosystem_builder`; request: Two education-sector delivery partners with institutional references; estimated uplift: +10
-- **Capability Verification** — owner: `procurement_watcher`; request: Two eligible regional operators with comparable water or irrigation project references; estimated uplift: +7
-- **Eligibility Verification** — owner: `procurement_watcher`; request: Bid eligibility, registrations, and qualification requirements confirmed in writing; estimated uplift: +3
-- **Logistics Validation** — owner: `regional_operator`; request: Route, lead time, landed cost, and contingency option validated; estimated uplift: +3
-- **Demand Aggregation** — owner: `ecosystem_builder`; request: Demand is pooled into a commercially viable package; estimated uplift: +3
+- No unresolved deterministic blocker generated an intervention this cycle.
 
 ## Official country data
 - [CARICOM Food Import Coverage Ratio, 2000-2024](https://statistics.caricom.org/country_data/caricom-food-import-coverage-ratio-2000-2024/) — CARICOM Statistics

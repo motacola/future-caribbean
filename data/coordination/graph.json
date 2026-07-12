@@ -1,0 +1,1405 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-12T22:58:01.843899+00:00",
+  "registry_status": "pilot",
+  "nodes": [
+    {
+      "id": "country:guyana",
+      "type": "country",
+      "label": "Guyana",
+      "status": "pilot"
+    },
+    {
+      "id": "capability:construction_delivery",
+      "type": "capability",
+      "label": "Construction Delivery"
+    },
+    {
+      "id": "capability:climate_resilience",
+      "type": "capability",
+      "label": "Climate Resilience"
+    },
+    {
+      "id": "country:trinidad-tobago",
+      "type": "country",
+      "label": "Trinidad & Tobago",
+      "status": "pilot"
+    },
+    {
+      "id": "capability:industrial_fabrication",
+      "type": "capability",
+      "label": "Industrial Fabrication"
+    },
+    {
+      "id": "capability:engineering_services",
+      "type": "capability",
+      "label": "Engineering Services"
+    },
+    {
+      "id": "capability:civil_engineering",
+      "type": "capability",
+      "label": "Civil Engineering"
+    },
+    {
+      "id": "capability:shipping_logistics",
+      "type": "capability",
+      "label": "Shipping Logistics"
+    },
+    {
+      "id": "country:barbados",
+      "type": "country",
+      "label": "Barbados",
+      "status": "pilot"
+    },
+    {
+      "id": "capability:project_finance",
+      "type": "capability",
+      "label": "Project Finance"
+    },
+    {
+      "id": "capability:professional_services",
+      "type": "capability",
+      "label": "Professional Services"
+    },
+    {
+      "id": "capability:digital_services",
+      "type": "capability",
+      "label": "Digital Services"
+    },
+    {
+      "id": "capability:ict_integration",
+      "type": "capability",
+      "label": "Ict Integration"
+    },
+    {
+      "id": "country:jamaica",
+      "type": "country",
+      "label": "Jamaica",
+      "status": "pilot"
+    },
+    {
+      "id": "capability:aviation_infrastructure",
+      "type": "capability",
+      "label": "Aviation Infrastructure"
+    },
+    {
+      "id": "capability:warehousing_distribution",
+      "type": "capability",
+      "label": "Warehousing Distribution"
+    },
+    {
+      "id": "country:eastern-caribbean-oecs",
+      "type": "country",
+      "label": "Eastern Caribbean / OECS",
+      "status": "pilot",
+      "kind": "bloc"
+    },
+    {
+      "id": "country:antigua-barbuda",
+      "type": "country",
+      "label": "Antigua & Barbuda",
+      "status": "pilot",
+      "kind": "bloc_member",
+      "member_of": "country:eastern-caribbean-oecs"
+    },
+    {
+      "id": "country:dominica",
+      "type": "country",
+      "label": "Dominica",
+      "status": "pilot",
+      "kind": "bloc_member",
+      "member_of": "country:eastern-caribbean-oecs"
+    },
+    {
+      "id": "country:grenada",
+      "type": "country",
+      "label": "Grenada",
+      "status": "pilot",
+      "kind": "bloc_member",
+      "member_of": "country:eastern-caribbean-oecs"
+    },
+    {
+      "id": "country:montserrat",
+      "type": "country",
+      "label": "Montserrat",
+      "status": "pilot",
+      "kind": "bloc_member",
+      "member_of": "country:eastern-caribbean-oecs"
+    },
+    {
+      "id": "country:st-kitts-nevis",
+      "type": "country",
+      "label": "St Kitts & Nevis",
+      "status": "pilot",
+      "kind": "bloc_member",
+      "member_of": "country:eastern-caribbean-oecs"
+    },
+    {
+      "id": "country:st-lucia",
+      "type": "country",
+      "label": "St Lucia",
+      "status": "pilot",
+      "kind": "bloc_member",
+      "member_of": "country:eastern-caribbean-oecs"
+    },
+    {
+      "id": "country:st-vincent-the-grenadines",
+      "type": "country",
+      "label": "St Vincent & the Grenadines",
+      "status": "pilot",
+      "kind": "bloc_member",
+      "member_of": "country:eastern-caribbean-oecs"
+    },
+    {
+      "id": "country:anguilla",
+      "type": "country",
+      "label": "Anguilla",
+      "status": "pilot",
+      "kind": "bloc_member",
+      "member_of": "country:eastern-caribbean-oecs"
+    },
+    {
+      "id": "capability:food_processing",
+      "type": "capability",
+      "label": "Food Processing"
+    },
+    {
+      "id": "project:guyana:proc-2026-00365",
+      "type": "project",
+      "title": "Lot 1: Rehabilitation & Reconstruction of Taxiway Charlie \nLot 2: Rehabilitation & Reconstruction of the Main Runway",
+      "country": "Guyana",
+      "agency": "34-Ministry of Public Utilities and Aviation",
+      "category": "Works",
+      "sector": "aviation_infrastructure",
+      "classification": "deterministic_keyword",
+      "status": "Bid Advertised",
+      "closing_date": "2026-07-14",
+      "url": "https://eprocure.gov.gy/"
+    },
+    {
+      "id": "project:guyana:proc-2026-00362",
+      "type": "project",
+      "title": "1.\tConstruction of Access Bridges at Coglan Dam, West Bank Demerara, Region No. 3 Lots 1-4\nLot 1- Foot Path (EE: $19,415,000)\nLot 2- Eastern Side (EE: $28,847,000)\nLot 3- Central (EE: $28,834,000)\nLot 4- Western Side (EE: $28,834,000)",
+      "country": "Guyana",
+      "agency": "21-Ministry of Agriculture",
+      "category": "Works",
+      "sector": "transport_and_logistics",
+      "classification": "deterministic_keyword",
+      "status": "Bid Advertised",
+      "closing_date": "2026-07-16",
+      "url": "https://eprocure.gov.gy/"
+    },
+    {
+      "id": "project:guyana:proc-2026-00363",
+      "type": "project",
+      "title": "2.\tConstruction of Irrigation Canal and Intake Structure at Crabwood Creek, Region No.6 Lots 1-4\nLot 1- Section 1 (EE: $107,960,000)\nLot 2- Section 2 (EE: $107,960,000)\nLot 3- Section 3 (EE: $107,960,000)\nLot 4- Intake Structure (EE: $16,158,600)",
+      "country": "Guyana",
+      "agency": "21-Ministry of Agriculture",
+      "category": "Works",
+      "sector": "water_and_irrigation",
+      "classification": "deterministic_keyword",
+      "status": "Bid Advertised",
+      "closing_date": "2026-07-16",
+      "url": "https://eprocure.gov.gy/"
+    },
+    {
+      "id": "capability:water_infrastructure",
+      "type": "capability",
+      "label": "Water Infrastructure"
+    },
+    {
+      "id": "project:guyana:proc-2026-00364",
+      "type": "project",
+      "title": "3.\tRehabilitation of the NDIA Pontoon located at Adventure, Region No.6",
+      "country": "Guyana",
+      "agency": "21-Ministry of Agriculture",
+      "category": "Works",
+      "sector": "construction_and_works",
+      "classification": "deterministic_keyword",
+      "status": "Bid Advertised",
+      "closing_date": "2026-07-16",
+      "url": "https://eprocure.gov.gy/"
+    },
+    {
+      "id": "project:guyana:proc-2026-00369",
+      "type": "project",
+      "title": "Construction of Laboratories at Block C- Micobie Secondary School",
+      "country": "Guyana",
+      "agency": "40-Ministry of Education",
+      "category": "Works",
+      "sector": "education_infrastructure",
+      "classification": "deterministic_keyword",
+      "status": "Bid Advertised",
+      "closing_date": "2026-07-16",
+      "url": "https://eprocure.gov.gy/"
+    },
+    {
+      "id": "capability:education_services",
+      "type": "capability",
+      "label": "Education Services"
+    },
+    {
+      "id": "project:guyana:proc-2026-00370",
+      "type": "project",
+      "title": "Reconstruction of Agricola PIC",
+      "country": "Guyana",
+      "agency": "40-Ministry of Education",
+      "category": "Works",
+      "sector": "education_infrastructure",
+      "classification": "deterministic_keyword",
+      "status": "Bid Advertised",
+      "closing_date": "2026-07-16",
+      "url": "https://eprocure.gov.gy/"
+    },
+    {
+      "id": "project:guyana:proc-2026-00371",
+      "type": "project",
+      "title": "Construction of Floors to Include Classrooms Above Workshop at Essequibo Technical Institute",
+      "country": "Guyana",
+      "agency": "40-Ministry of Education",
+      "category": "Works",
+      "sector": "education_infrastructure",
+      "classification": "deterministic_keyword",
+      "status": "Bid Advertised",
+      "closing_date": "2026-07-16",
+      "url": "https://eprocure.gov.gy/"
+    },
+    {
+      "id": "project:guyana:proc-2026-00372",
+      "type": "project",
+      "title": "Reconstruction of Kingston Secondary School",
+      "country": "Guyana",
+      "agency": "40-Ministry of Education",
+      "category": "Works",
+      "sector": "education_infrastructure",
+      "classification": "deterministic_keyword",
+      "status": "Bid Advertised",
+      "closing_date": "2026-07-16",
+      "url": "https://eprocure.gov.gy/"
+    }
+  ],
+  "edges": [
+    {
+      "from": "country:guyana",
+      "to": "capability:construction_delivery",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.6,
+      "strength": 3,
+      "status": "curated_pilot",
+      "evidence": [
+        {
+          "source": "Guyana eProcure",
+          "url": "https://www.eprocure.gov.gy/",
+          "grade": "primary",
+          "supports": [
+            "construction_delivery",
+            "climate_resilience"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:guyana",
+      "to": "capability:climate_resilience",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.4,
+      "strength": 2,
+      "status": "curated_pilot",
+      "evidence": [
+        {
+          "source": "Guyana eProcure",
+          "url": "https://www.eprocure.gov.gy/",
+          "grade": "primary",
+          "supports": [
+            "construction_delivery",
+            "climate_resilience"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:trinidad-tobago",
+      "to": "capability:industrial_fabrication",
+      "type": "HAS_CAPABILITY",
+      "weight": 1.0,
+      "strength": 5,
+      "status": "curated_pilot",
+      "evidence": [
+        {
+          "source": "Trinidad and Tobago Ministry of Trade and Industry",
+          "url": "https://tradeind.gov.tt/",
+          "grade": "primary",
+          "supports": [
+            "industrial_fabrication",
+            "engineering_services",
+            "civil_engineering",
+            "construction_delivery"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:trinidad-tobago",
+      "to": "capability:engineering_services",
+      "type": "HAS_CAPABILITY",
+      "weight": 1.0,
+      "strength": 5,
+      "status": "curated_pilot",
+      "evidence": [
+        {
+          "source": "Trinidad and Tobago Ministry of Trade and Industry",
+          "url": "https://tradeind.gov.tt/",
+          "grade": "primary",
+          "supports": [
+            "industrial_fabrication",
+            "engineering_services",
+            "civil_engineering",
+            "construction_delivery"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:trinidad-tobago",
+      "to": "capability:civil_engineering",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.8,
+      "strength": 4,
+      "status": "curated_pilot",
+      "evidence": [
+        {
+          "source": "Trinidad and Tobago Ministry of Trade and Industry",
+          "url": "https://tradeind.gov.tt/",
+          "grade": "primary",
+          "supports": [
+            "industrial_fabrication",
+            "engineering_services",
+            "civil_engineering",
+            "construction_delivery"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:trinidad-tobago",
+      "to": "capability:shipping_logistics",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.8,
+      "strength": 4,
+      "status": "curated_pilot",
+      "evidence": [
+        {
+          "source": "Port Authority of Trinidad and Tobago",
+          "url": "https://www.patnt.com/",
+          "grade": "primary",
+          "supports": [
+            "shipping_logistics"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:trinidad-tobago",
+      "to": "capability:construction_delivery",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.8,
+      "strength": 4,
+      "status": "curated_pilot",
+      "evidence": [
+        {
+          "source": "Trinidad and Tobago Ministry of Trade and Industry",
+          "url": "https://tradeind.gov.tt/",
+          "grade": "primary",
+          "supports": [
+            "industrial_fabrication",
+            "engineering_services",
+            "civil_engineering",
+            "construction_delivery"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:barbados",
+      "to": "capability:project_finance",
+      "type": "HAS_CAPABILITY",
+      "weight": 1.0,
+      "strength": 5,
+      "status": "curated_pilot",
+      "evidence": [
+        {
+          "source": "Caribbean Development Bank",
+          "url": "https://www.caribank.org/",
+          "grade": "primary",
+          "supports": [
+            "project_finance",
+            "climate_resilience"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:barbados",
+      "to": "capability:professional_services",
+      "type": "HAS_CAPABILITY",
+      "weight": 1.0,
+      "strength": 5,
+      "status": "curated_pilot",
+      "evidence": [
+        {
+          "source": "Invest Barbados",
+          "url": "https://www.investbarbados.org/",
+          "grade": "primary",
+          "supports": [
+            "professional_services",
+            "digital_services",
+            "ict_integration"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:barbados",
+      "to": "capability:climate_resilience",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.8,
+      "strength": 4,
+      "status": "curated_pilot",
+      "evidence": [
+        {
+          "source": "Caribbean Development Bank",
+          "url": "https://www.caribank.org/",
+          "grade": "primary",
+          "supports": [
+            "project_finance",
+            "climate_resilience"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:barbados",
+      "to": "capability:digital_services",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.8,
+      "strength": 4,
+      "status": "curated_pilot",
+      "evidence": [
+        {
+          "source": "Invest Barbados",
+          "url": "https://www.investbarbados.org/",
+          "grade": "primary",
+          "supports": [
+            "professional_services",
+            "digital_services",
+            "ict_integration"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:barbados",
+      "to": "capability:ict_integration",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.6,
+      "strength": 3,
+      "status": "curated_pilot",
+      "evidence": [
+        {
+          "source": "Invest Barbados",
+          "url": "https://www.investbarbados.org/",
+          "grade": "primary",
+          "supports": [
+            "professional_services",
+            "digital_services",
+            "ict_integration"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:jamaica",
+      "to": "capability:construction_delivery",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.8,
+      "strength": 4,
+      "status": "curated_pilot",
+      "evidence": [
+        {
+          "source": "JAMPRO",
+          "url": "https://dobusinessjamaica.com/",
+          "grade": "primary",
+          "supports": [
+            "construction_delivery",
+            "civil_engineering",
+            "aviation_infrastructure",
+            "shipping_logistics",
+            "warehousing_distribution",
+            "digital_services",
+            "ict_integration"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:jamaica",
+      "to": "capability:civil_engineering",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.8,
+      "strength": 4,
+      "status": "curated_pilot",
+      "evidence": [
+        {
+          "source": "JAMPRO",
+          "url": "https://dobusinessjamaica.com/",
+          "grade": "primary",
+          "supports": [
+            "construction_delivery",
+            "civil_engineering",
+            "aviation_infrastructure",
+            "shipping_logistics",
+            "warehousing_distribution",
+            "digital_services",
+            "ict_integration"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:jamaica",
+      "to": "capability:aviation_infrastructure",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.6,
+      "strength": 3,
+      "status": "curated_pilot",
+      "evidence": [
+        {
+          "source": "JAMPRO",
+          "url": "https://dobusinessjamaica.com/",
+          "grade": "primary",
+          "supports": [
+            "construction_delivery",
+            "civil_engineering",
+            "aviation_infrastructure",
+            "shipping_logistics",
+            "warehousing_distribution",
+            "digital_services",
+            "ict_integration"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:jamaica",
+      "to": "capability:shipping_logistics",
+      "type": "HAS_CAPABILITY",
+      "weight": 1.0,
+      "strength": 5,
+      "status": "curated_pilot",
+      "evidence": [
+        {
+          "source": "JAMPRO",
+          "url": "https://dobusinessjamaica.com/",
+          "grade": "primary",
+          "supports": [
+            "construction_delivery",
+            "civil_engineering",
+            "aviation_infrastructure",
+            "shipping_logistics",
+            "warehousing_distribution",
+            "digital_services",
+            "ict_integration"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:jamaica",
+      "to": "capability:warehousing_distribution",
+      "type": "HAS_CAPABILITY",
+      "weight": 1.0,
+      "strength": 5,
+      "status": "curated_pilot",
+      "evidence": [
+        {
+          "source": "JAMPRO",
+          "url": "https://dobusinessjamaica.com/",
+          "grade": "primary",
+          "supports": [
+            "construction_delivery",
+            "civil_engineering",
+            "aviation_infrastructure",
+            "shipping_logistics",
+            "warehousing_distribution",
+            "digital_services",
+            "ict_integration"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:jamaica",
+      "to": "capability:project_finance",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.8,
+      "strength": 4,
+      "status": "curated_pilot",
+      "evidence": [
+        {
+          "source": "Jamaica Stock Exchange",
+          "url": "https://www.jamstockex.com/",
+          "grade": "primary",
+          "supports": [
+            "project_finance"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:jamaica",
+      "to": "capability:digital_services",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.8,
+      "strength": 4,
+      "status": "curated_pilot",
+      "evidence": [
+        {
+          "source": "JAMPRO",
+          "url": "https://dobusinessjamaica.com/",
+          "grade": "primary",
+          "supports": [
+            "construction_delivery",
+            "civil_engineering",
+            "aviation_infrastructure",
+            "shipping_logistics",
+            "warehousing_distribution",
+            "digital_services",
+            "ict_integration"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:jamaica",
+      "to": "capability:ict_integration",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.8,
+      "strength": 4,
+      "status": "curated_pilot",
+      "evidence": [
+        {
+          "source": "JAMPRO",
+          "url": "https://dobusinessjamaica.com/",
+          "grade": "primary",
+          "supports": [
+            "construction_delivery",
+            "civil_engineering",
+            "aviation_infrastructure",
+            "shipping_logistics",
+            "warehousing_distribution",
+            "digital_services",
+            "ict_integration"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:antigua-barbuda",
+      "to": "country:eastern-caribbean-oecs",
+      "type": "MEMBER_OF",
+      "weight": 1.0,
+      "status": "curated_pilot",
+      "evidence": [
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary",
+          "supports": [
+            "climate_resilience",
+            "professional_services",
+            "food_processing",
+            "digital_services"
+          ]
+        },
+        {
+          "source": "Eastern Caribbean Central Bank",
+          "url": "https://www.eccb-centralbank.org/",
+          "grade": "primary",
+          "supports": [
+            "professional_services"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:dominica",
+      "to": "country:eastern-caribbean-oecs",
+      "type": "MEMBER_OF",
+      "weight": 1.0,
+      "status": "curated_pilot",
+      "evidence": [
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary",
+          "supports": [
+            "climate_resilience",
+            "professional_services",
+            "food_processing",
+            "digital_services"
+          ]
+        },
+        {
+          "source": "Eastern Caribbean Central Bank",
+          "url": "https://www.eccb-centralbank.org/",
+          "grade": "primary",
+          "supports": [
+            "professional_services"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:grenada",
+      "to": "country:eastern-caribbean-oecs",
+      "type": "MEMBER_OF",
+      "weight": 1.0,
+      "status": "curated_pilot",
+      "evidence": [
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary",
+          "supports": [
+            "climate_resilience",
+            "professional_services",
+            "food_processing",
+            "digital_services"
+          ]
+        },
+        {
+          "source": "Eastern Caribbean Central Bank",
+          "url": "https://www.eccb-centralbank.org/",
+          "grade": "primary",
+          "supports": [
+            "professional_services"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:montserrat",
+      "to": "country:eastern-caribbean-oecs",
+      "type": "MEMBER_OF",
+      "weight": 1.0,
+      "status": "curated_pilot",
+      "evidence": [
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary",
+          "supports": [
+            "climate_resilience",
+            "professional_services",
+            "food_processing",
+            "digital_services"
+          ]
+        },
+        {
+          "source": "Eastern Caribbean Central Bank",
+          "url": "https://www.eccb-centralbank.org/",
+          "grade": "primary",
+          "supports": [
+            "professional_services"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:st-kitts-nevis",
+      "to": "country:eastern-caribbean-oecs",
+      "type": "MEMBER_OF",
+      "weight": 1.0,
+      "status": "curated_pilot",
+      "evidence": [
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary",
+          "supports": [
+            "climate_resilience",
+            "professional_services",
+            "food_processing",
+            "digital_services"
+          ]
+        },
+        {
+          "source": "Eastern Caribbean Central Bank",
+          "url": "https://www.eccb-centralbank.org/",
+          "grade": "primary",
+          "supports": [
+            "professional_services"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:st-lucia",
+      "to": "country:eastern-caribbean-oecs",
+      "type": "MEMBER_OF",
+      "weight": 1.0,
+      "status": "curated_pilot",
+      "evidence": [
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary",
+          "supports": [
+            "climate_resilience",
+            "professional_services",
+            "food_processing",
+            "digital_services"
+          ]
+        },
+        {
+          "source": "Eastern Caribbean Central Bank",
+          "url": "https://www.eccb-centralbank.org/",
+          "grade": "primary",
+          "supports": [
+            "professional_services"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:st-vincent-the-grenadines",
+      "to": "country:eastern-caribbean-oecs",
+      "type": "MEMBER_OF",
+      "weight": 1.0,
+      "status": "curated_pilot",
+      "evidence": [
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary",
+          "supports": [
+            "climate_resilience",
+            "professional_services",
+            "food_processing",
+            "digital_services"
+          ]
+        },
+        {
+          "source": "Eastern Caribbean Central Bank",
+          "url": "https://www.eccb-centralbank.org/",
+          "grade": "primary",
+          "supports": [
+            "professional_services"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:anguilla",
+      "to": "country:eastern-caribbean-oecs",
+      "type": "MEMBER_OF",
+      "weight": 1.0,
+      "status": "curated_pilot",
+      "evidence": [
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary",
+          "supports": [
+            "climate_resilience",
+            "professional_services",
+            "food_processing",
+            "digital_services"
+          ]
+        },
+        {
+          "source": "Eastern Caribbean Central Bank",
+          "url": "https://www.eccb-centralbank.org/",
+          "grade": "primary",
+          "supports": [
+            "professional_services"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:eastern-caribbean-oecs",
+      "to": "capability:climate_resilience",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.8,
+      "strength": 4,
+      "status": "curated_pilot",
+      "evidence": [
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary",
+          "supports": [
+            "climate_resilience",
+            "professional_services",
+            "food_processing",
+            "digital_services"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:eastern-caribbean-oecs",
+      "to": "capability:professional_services",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.6,
+      "strength": 3,
+      "status": "curated_pilot",
+      "evidence": [
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary",
+          "supports": [
+            "climate_resilience",
+            "professional_services",
+            "food_processing",
+            "digital_services"
+          ]
+        },
+        {
+          "source": "Eastern Caribbean Central Bank",
+          "url": "https://www.eccb-centralbank.org/",
+          "grade": "primary",
+          "supports": [
+            "professional_services"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:eastern-caribbean-oecs",
+      "to": "capability:food_processing",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.6,
+      "strength": 3,
+      "status": "curated_pilot",
+      "evidence": [
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary",
+          "supports": [
+            "climate_resilience",
+            "professional_services",
+            "food_processing",
+            "digital_services"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:eastern-caribbean-oecs",
+      "to": "capability:digital_services",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.6,
+      "strength": 3,
+      "status": "curated_pilot",
+      "evidence": [
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary",
+          "supports": [
+            "climate_resilience",
+            "professional_services",
+            "food_processing",
+            "digital_services"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00365",
+      "to": "country:guyana",
+      "type": "LOCATED_IN",
+      "weight": 1.0,
+      "status": "observed",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00365",
+      "to": "capability:aviation_infrastructure",
+      "type": "REQUIRES_CAPABILITY",
+      "weight": 1.0,
+      "status": "inferred_from_category",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00365",
+      "to": "capability:civil_engineering",
+      "type": "REQUIRES_CAPABILITY",
+      "weight": 1.0,
+      "status": "inferred_from_category",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00365",
+      "to": "capability:construction_delivery",
+      "type": "REQUIRES_CAPABILITY",
+      "weight": 1.0,
+      "status": "inferred_from_category",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00362",
+      "to": "country:guyana",
+      "type": "LOCATED_IN",
+      "weight": 1.0,
+      "status": "observed",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00362",
+      "to": "capability:civil_engineering",
+      "type": "REQUIRES_CAPABILITY",
+      "weight": 1.0,
+      "status": "inferred_from_category",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00362",
+      "to": "capability:shipping_logistics",
+      "type": "REQUIRES_CAPABILITY",
+      "weight": 1.0,
+      "status": "inferred_from_category",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00362",
+      "to": "capability:warehousing_distribution",
+      "type": "REQUIRES_CAPABILITY",
+      "weight": 1.0,
+      "status": "inferred_from_category",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00363",
+      "to": "country:guyana",
+      "type": "LOCATED_IN",
+      "weight": 1.0,
+      "status": "observed",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00363",
+      "to": "capability:water_infrastructure",
+      "type": "REQUIRES_CAPABILITY",
+      "weight": 1.0,
+      "status": "inferred_from_category",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00363",
+      "to": "capability:civil_engineering",
+      "type": "REQUIRES_CAPABILITY",
+      "weight": 1.0,
+      "status": "inferred_from_category",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00363",
+      "to": "capability:climate_resilience",
+      "type": "REQUIRES_CAPABILITY",
+      "weight": 1.0,
+      "status": "inferred_from_category",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00364",
+      "to": "country:guyana",
+      "type": "LOCATED_IN",
+      "weight": 1.0,
+      "status": "observed",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00364",
+      "to": "capability:construction_delivery",
+      "type": "REQUIRES_CAPABILITY",
+      "weight": 1.0,
+      "status": "inferred_from_category",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00364",
+      "to": "capability:civil_engineering",
+      "type": "REQUIRES_CAPABILITY",
+      "weight": 1.0,
+      "status": "inferred_from_category",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00369",
+      "to": "country:guyana",
+      "type": "LOCATED_IN",
+      "weight": 1.0,
+      "status": "observed",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00369",
+      "to": "capability:construction_delivery",
+      "type": "REQUIRES_CAPABILITY",
+      "weight": 1.0,
+      "status": "inferred_from_category",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00369",
+      "to": "capability:education_services",
+      "type": "REQUIRES_CAPABILITY",
+      "weight": 1.0,
+      "status": "inferred_from_category",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00370",
+      "to": "country:guyana",
+      "type": "LOCATED_IN",
+      "weight": 1.0,
+      "status": "observed",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00370",
+      "to": "capability:construction_delivery",
+      "type": "REQUIRES_CAPABILITY",
+      "weight": 1.0,
+      "status": "inferred_from_category",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00370",
+      "to": "capability:education_services",
+      "type": "REQUIRES_CAPABILITY",
+      "weight": 1.0,
+      "status": "inferred_from_category",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00371",
+      "to": "country:guyana",
+      "type": "LOCATED_IN",
+      "weight": 1.0,
+      "status": "observed",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00371",
+      "to": "capability:construction_delivery",
+      "type": "REQUIRES_CAPABILITY",
+      "weight": 1.0,
+      "status": "inferred_from_category",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00371",
+      "to": "capability:education_services",
+      "type": "REQUIRES_CAPABILITY",
+      "weight": 1.0,
+      "status": "inferred_from_category",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00372",
+      "to": "country:guyana",
+      "type": "LOCATED_IN",
+      "weight": 1.0,
+      "status": "observed",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00372",
+      "to": "capability:construction_delivery",
+      "type": "REQUIRES_CAPABILITY",
+      "weight": 1.0,
+      "status": "inferred_from_category",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00372",
+      "to": "capability:education_services",
+      "type": "REQUIRES_CAPABILITY",
+      "weight": 1.0,
+      "status": "inferred_from_category",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "nodes": 36,
+    "edges": 59
+  }
+}
