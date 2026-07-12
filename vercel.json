@@ -30,6 +30,15 @@
       "dest": "/api/community-brief.py?format=$1"
     },
     {
+      "src": "/api/coordination-opportunities/(.+)",
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type"
+      },
+      "dest": "/api/coordination-opportunities.py?id=$1"
+    },
+    {
       "src": "/api/([^/]+)",
       "headers": {
         "Access-Control-Allow-Origin": "*",
