@@ -4,7 +4,7 @@ from __future__ import annotations
 import json
 from http.server import BaseHTTPRequestHandler
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import urlparse, parse_qs
 
 ROOT = Path(__file__).resolve().parents[1]
 ARTIFACT = ROOT / "outbox" / "coordination_opportunities.json"
@@ -20,6 +20,9 @@ class handler(BaseHTTPRequestHandler):
         path = urlparse(self.path).path.rstrip("/")
         prefix = "/api/coordination-opportunities"
         opportunity_id = path[len(prefix):].strip("/") if path.startswith(prefix) else ""
+        # Vercel routes forward the id as a query param (?id=...); also accept path form.
+        if not opportunity_id:
+            opportunity_id = (parse_qs(urlparse(self.path).query).get("id") or [""])[0]
         if opportunity_id:
             item = next((entry for entry in data.get("opportunities", []) if entry.get("id") == opportunity_id), None)
             if item is None:
