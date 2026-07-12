@@ -75,7 +75,7 @@ def test_build_pack_has_required_fields():
         "procurement_matches", "credible_local_operators", "relevant_institutions",
         "source_links", "unresolved_questions", "recommended_intro_targets",
         "advance_or_reject_recommendation", "recommendation_reason", "last_validated_at",
-        "action_readiness", "evidence_freshness", "cycles_since_refresh",
+        "action_readiness", "evidence_freshness", "cycles_since_refresh", "coordination_path",
     ]:
         assert field in pack, f"missing field: {field}"
     assert pack["country"] == "Guyana"
@@ -99,6 +99,21 @@ def test_macro_only_without_tender_stays_hold_or_lower_confidence():
     pack = build_pack(DISPATCH, WB, IDB, TIER2, "2026-06-10T00:00:00+00:00")
     assert pack["confidence_score"] < 100
     assert pack["advance_or_reject_recommendation"] in ("hold", "reject")
+
+
+def test_pack_includes_matching_coordination_path():
+    path = {
+        "trigger_signal_id": DISPATCH["signal_id"],
+        "coordination_score": 72,
+        "demand_countries": ["Guyana"],
+        "contributing_nodes": [{"country": "Barbados", "matched_capabilities": [{"id": "project_finance"}]}],
+        "minimum_next_action": "Validate eligibility.",
+    }
+    pack = build_pack(
+        DISPATCH, WB, IDB, TIER2, "2026-06-10T00:00:00+00:00",
+        coordination_opportunities=[path],
+    )
+    assert pack["coordination_path"]["coordination_score"] == 72
 
 
 def test_low_confidence_no_evidence_rejects():

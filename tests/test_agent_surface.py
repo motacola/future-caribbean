@@ -42,6 +42,8 @@ def test_tools_manifest_valid_structure():
     assert "ask" in tool_names, "Missing 'ask' tool"
     assert "validation_packs.index" in tool_names, "Missing 'validation_packs.index' tool"
     assert "validation_packs.get" in tool_names, "Missing 'validation_packs.get' tool"
+    assert "coordination_opportunities.index" in tool_names
+    assert "coordination_opportunities.get" in tool_names
 
 
 # ── Test: /api/ask handler logic ──────────────────────────────
