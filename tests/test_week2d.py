@@ -159,7 +159,14 @@ def test_astro_data_includes_ported_label_cleaners():
     assert "function cleanGrade" in data_source
     assert "function cleanEvidence" in data_source
     assert "function cleanSignalTitle" in data_source
-    assert "All signals point to Guyana." in dashboard
+    # Lead label is derived at build time from outbox/dispatch_desk.json
+    # (clusters[0].country_cluster), so assert the actual current phrasing.
+    desk = json.loads((ROOT / "outbox" / "dispatch_desk.json").read_text())
+    lead_country = (desk.get("clusters") or [{}])[0].get("country_cluster", "")
+    assert lead_country, "dispatch_desk.json has no lead cluster"
+    assert f"All signals point to {lead_country}." in dashboard, (
+        f"dashboard should render 'All signals point to {lead_country}.' (got lead={lead_country})"
+    )
     assert "Solid — several sources agree" in dashboard
     assert "World Bank" in dashboard
     assert "money on the move" in dashboard

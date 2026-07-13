@@ -54,3 +54,62 @@ def test_vercelignore_keeps_runtime_needs():
 def test_discovery_files_mention_manifest():
     for f in ("llms.txt", "agents.md"):
         assert "/api/tools.json" in (ROOT / f).read_text(), f"{f} missing tools.json pointer"
+
+
+def _drive_coordination_handler(path: str) -> tuple[int, dict]:
+    """Drive the coordination-opportunities handler with a fake request and return (status, json)."""
+    import json as _json
+    from io import BytesIO
+
+    mod = _load("coordination-opportunities.py")
+    out = BytesIO()
+
+    class _Req(mod.handler):
+        def __init__(self, p):
+            self.path = p
+            self._out = out
+            self.headers = {}
+
+        def send_response(self, code):
+            self._code = code
+
+        def send_header(self, *a):
+            pass
+
+        def end_headers(self):
+            pass
+
+        def wfile_write(self, b):
+            out.write(b)
+
+        wfile = property(lambda self: self)  # type: ignore
+        write = wfile_write
+
+    req = _Req(path)
+    req.do_GET()
+    body = out.getvalue().decode()
+    return req._code, _json.loads(body)
+
+
+def test_coordination_handler_resolves_by_id_query_and_path():
+    # Query-param form (what vercel.json routes forward)
+    status_q, payload_q = _drive_coordination_handler(
+        "/api/coordination-opportunities?id=coord-dev-pipeline-regional"
+    )
+    assert status_q == 200, payload_q
+    assert payload_q.get("id") == "coord-dev-pipeline-regional"
+    # Path form (direct)
+    status_p, payload_p = _drive_coordination_handler(
+        "/api/coordination-opportunities/coord-dev-pipeline-regional"
+    )
+    assert status_p == 200, payload_p
+    assert payload_p.get("id") == "coord-dev-pipeline-regional"
+    # Index returns the full list
+    status_i, payload_i = _drive_coordination_handler("/api/coordination-opportunities")
+    assert status_i == 200, payload_i
+    assert "opportunities" in payload_i
+    # Unknown id -> 404
+    status_n, _ = _drive_coordination_handler(
+        "/api/coordination-opportunities?id=does-not-exist"
+    )
+    assert status_n == 404

@@ -476,6 +476,7 @@ def build_pack(
     tenders: list[dict] | None = None,
     news_articles: list[dict] | None = None,
     previous_state: dict | None = None,
+    coordination_opportunities: list[dict] | None = None,
 ) -> dict:
     country = dispatch.get("country_cluster", "Caribbean")
     tier2_items = (tier2 or {}).get("items", []) or []
@@ -527,54 +528,108 @@ def build_pack(
         "recommendation_reason": reason,
         "last_validated_at": now_iso,
     }
+    # Deterministic coordination-path enrichment: attach the best-matching
+    # coordination opportunity for this dispatch (by trigger_signal_id, then
+    # by demand country, then the single highest-scoring candidate).
+    pack["coordination_path"] = _match_coordination_path(
+        dispatch, coordination_opportunities or []
+    )
     return apply_freshness_decay(pack, previous_state, now_iso)
+
+
+def _match_coordination_path(
+    dispatch: dict, opportunities: list[dict]
+) -> dict | None:
+    """Return the coordination_path block for the best-matching opportunity, or None."""
+    if not opportunities:
+        return None
+    sid = dispatch.get("signal_id") or dispatch.get("dispatch_id", "")
+    country = dispatch.get("country_cluster", "")
+    by_signal = next(
+        (o for o in opportunities if o.get("trigger_signal_id") == sid), None
+    )
+    by_country = next(
+        (o for o in opportunities if country and country in (o.get("demand_countries") or [])),
+        None,
+    )
+    best = by_signal or by_country or max(
+        opportunities, key=lambda o: (o.get("coordination_score", 0) or 0)
+    )
+    return {
+        "coordination_score": best.get("coordination_score"),
+        "demand_countries": best.get("demand_countries", []),
+        "minimum_next_action": best.get("minimum_next_action", ""),
+        "contributing_nodes": best.get("contributing_nodes", []),
+        "matched_capabilities": best.get("matched_capabilities", []),
+    }
 
 
 def render_md(pack: dict) -> str:
     lines = [
-        f"# Opportunity Validation Pack — {pack['country']}",
+        f"# Opportunity Validation Pack \u2014 {pack['country']}",
         "",
-        f"- Signal: `{pack['signal_id']}` · Dispatch: `{pack['dispatch_id']}`",
-        f"- Confidence: {pack['confidence_score']}/100 (raw {pack.get('raw_confidence_score', pack['confidence_score'])}) · {pack['evidence_grade']}",
+        f"- Signal: `{pack['signal_id']}` \u00b7 Dispatch: `{pack['dispatch_id']}`",
+        f"- Confidence: {pack['confidence_score']}/100 (raw {pack.get('raw_confidence_score', pack['confidence_score'])}) \u00b7 {pack['evidence_grade']}",
         f"- Action readiness: {pack.get('action_readiness', 'n/a')}",
-        f"- Evidence freshness: {pack.get('evidence_freshness', 'n/a')} · cycles since refresh: {pack.get('cycles_since_refresh', 0)}",
-        f"- Recommendation: **{pack['advance_or_reject_recommendation'].upper()}** — {pack['recommendation_reason']}",
+        f"- Evidence freshness: {pack.get('evidence_freshness', 'n/a')} \u00b7 cycles since refresh: {pack.get('cycles_since_refresh', 0)}",
+        f"- Recommendation: **{pack['advance_or_reject_recommendation'].upper()}** \u2014 {pack['recommendation_reason']}",
         f"- Last validated: {pack['last_validated_at']}",
         "",
         "## Sector hypotheses",
     ]
     for h in pack["sector_hypotheses"] or [{"sector": "None identified this cycle", "basis": ""}]:
-        basis = f" — _{h['basis']}_" if h.get("basis") else ""
+        basis = f" \u2014 _{h['basis']}_" if h.get("basis") else ""
         status = f" [{h['status']}]" if h.get("status") else ""
         lines.append(f"- {h['sector']}{status}{basis}")
     lines += ["", "## Credible local operators (registry-backed)"]
     for o in pack.get("credible_local_operators") or []:
         url = o.get("source_url", "")
         link = f" ([profile]({url}))" if url else ""
-        lines.append(f"- {o['name']} — {o.get('role', '')}{link}")
+        lines.append(f"- {o['name']} \u2014 {o.get('role', '')}{link}")
     if not pack.get("credible_local_operators"):
         lines.append("- No registry-backed operators for this country yet.")
     lines += ["", "## Supporting projects & publications"]
-    for p in pack["supporting_projects"] or []:
-        lines.append(f"- [{p['title']}]({p['url']}) — {p['source']}")
+    for pr in pack["supporting_projects"] or []:
+        lines.append(f"- [{pr['title']}]({pr['url']}) \u2014 {pr['source']}")
     if not pack["supporting_projects"]:
         lines.append("- No matched projects this cycle.")
     lines += ["", "## Procurement matches"]
-    for p in pack["procurement_matches"] or []:
-        lines.append(f"- [{p['title']}]({p['url']}) — {p['source']} ({p['match']})")
+    for pr in pack["procurement_matches"] or []:
+        lines.append(f"- [{pr['title']}]({pr['url']}) \u2014 {pr['source']} ({pr['match']})")
     if not pack["procurement_matches"]:
         lines.append("- No live procurement notices matched.")
     lines += ["", "## Official country data"]
     for d in pack["official_country_data"] or []:
-        lines.append(f"- [{d['title']}]({d['url']}) — {d['source']}")
+        lines.append(f"- [{d['title']}]({d['url']}) \u2014 {d['source']}")
     if not pack["official_country_data"]:
         lines.append("- No official country datasets matched.")
     lines += ["", "## Relevant institutions & intro targets"]
     for i in pack["relevant_institutions"]:
-        lines.append(f"- {i['name']} — {i['role']}")
+        lines.append(f"- {i['name']} \u2014 {i['role']}")
     lines += ["", "## Unresolved questions"]
     for q in pack["unresolved_questions"]:
         lines.append(f"- {q}")
+    cp = pack.get("coordination_path")
+    if cp:
+        lines += ["", "## Regional coordination path"]
+        score = cp.get("coordination_score")
+        if score is not None:
+            lines.append(f"- Coordination score: {score}/100")
+        demand = cp.get("demand_countries") or []
+        if demand:
+            lines.append("- Demand countries: " + ", ".join(demand))
+        nodes = cp.get("contributing_nodes") or []
+        if nodes:
+            lines.append("- Contributing nodes:")
+            for n in nodes:
+                caps = ", ".join(c.get("id", "") for c in (n.get("matched_capabilities") or []))
+                line = "  - " + str(n.get("country", n.get("node", "")))
+                if caps:
+                    line += f" ({caps})"
+                lines.append(line)
+        action = cp.get("minimum_next_action")
+        if action:
+            lines.append(f"- Minimum next action: {action}")
     lines += [
         "",
         "> Screening support, not investment advice. Institutions listed are public bodies",
@@ -582,8 +637,6 @@ def render_md(pack: dict) -> str:
         "",
     ]
     return "\n".join(lines)
-
-
 def select_lead_dispatches(dispatches: list[dict]) -> list[dict]:
     """One dispatch per signal_id, highest confidence first."""
     by_signal: dict[str, dict] = {}
