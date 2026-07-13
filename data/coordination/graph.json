@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-12T22:58:01.843899+00:00",
+  "generated_at": "2026-07-13T21:58:52.183646+00:00",
   "registry_status": "pilot",
   "nodes": [
     {
@@ -949,12 +949,412 @@
       ]
     },
     {
+      "from": "country:antigua-barbuda",
+      "to": "capability:climate_resilience",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.8,
+      "strength": 4,
+      "status": "bloc_replicated",
+      "evidence": [
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary",
+          "supports": [
+            "climate_resilience",
+            "professional_services",
+            "food_processing",
+            "digital_services"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:dominica",
+      "to": "capability:climate_resilience",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.8,
+      "strength": 4,
+      "status": "bloc_replicated",
+      "evidence": [
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary",
+          "supports": [
+            "climate_resilience",
+            "professional_services",
+            "food_processing",
+            "digital_services"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:grenada",
+      "to": "capability:climate_resilience",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.8,
+      "strength": 4,
+      "status": "bloc_replicated",
+      "evidence": [
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary",
+          "supports": [
+            "climate_resilience",
+            "professional_services",
+            "food_processing",
+            "digital_services"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:montserrat",
+      "to": "capability:climate_resilience",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.8,
+      "strength": 4,
+      "status": "bloc_replicated",
+      "evidence": [
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary",
+          "supports": [
+            "climate_resilience",
+            "professional_services",
+            "food_processing",
+            "digital_services"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:st-kitts-nevis",
+      "to": "capability:climate_resilience",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.8,
+      "strength": 4,
+      "status": "bloc_replicated",
+      "evidence": [
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary",
+          "supports": [
+            "climate_resilience",
+            "professional_services",
+            "food_processing",
+            "digital_services"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:st-lucia",
+      "to": "capability:climate_resilience",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.8,
+      "strength": 4,
+      "status": "bloc_replicated",
+      "evidence": [
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary",
+          "supports": [
+            "climate_resilience",
+            "professional_services",
+            "food_processing",
+            "digital_services"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:st-vincent-the-grenadines",
+      "to": "capability:climate_resilience",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.8,
+      "strength": 4,
+      "status": "bloc_replicated",
+      "evidence": [
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary",
+          "supports": [
+            "climate_resilience",
+            "professional_services",
+            "food_processing",
+            "digital_services"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:anguilla",
+      "to": "capability:climate_resilience",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.8,
+      "strength": 4,
+      "status": "bloc_replicated",
+      "evidence": [
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary",
+          "supports": [
+            "climate_resilience",
+            "professional_services",
+            "food_processing",
+            "digital_services"
+          ]
+        }
+      ]
+    },
+    {
       "from": "country:eastern-caribbean-oecs",
       "to": "capability:professional_services",
       "type": "HAS_CAPABILITY",
       "weight": 0.6,
       "strength": 3,
       "status": "curated_pilot",
+      "evidence": [
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary",
+          "supports": [
+            "climate_resilience",
+            "professional_services",
+            "food_processing",
+            "digital_services"
+          ]
+        },
+        {
+          "source": "Eastern Caribbean Central Bank",
+          "url": "https://www.eccb-centralbank.org/",
+          "grade": "primary",
+          "supports": [
+            "professional_services"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:antigua-barbuda",
+      "to": "capability:professional_services",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.6,
+      "strength": 3,
+      "status": "bloc_replicated",
+      "evidence": [
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary",
+          "supports": [
+            "climate_resilience",
+            "professional_services",
+            "food_processing",
+            "digital_services"
+          ]
+        },
+        {
+          "source": "Eastern Caribbean Central Bank",
+          "url": "https://www.eccb-centralbank.org/",
+          "grade": "primary",
+          "supports": [
+            "professional_services"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:dominica",
+      "to": "capability:professional_services",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.6,
+      "strength": 3,
+      "status": "bloc_replicated",
+      "evidence": [
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary",
+          "supports": [
+            "climate_resilience",
+            "professional_services",
+            "food_processing",
+            "digital_services"
+          ]
+        },
+        {
+          "source": "Eastern Caribbean Central Bank",
+          "url": "https://www.eccb-centralbank.org/",
+          "grade": "primary",
+          "supports": [
+            "professional_services"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:grenada",
+      "to": "capability:professional_services",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.6,
+      "strength": 3,
+      "status": "bloc_replicated",
+      "evidence": [
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary",
+          "supports": [
+            "climate_resilience",
+            "professional_services",
+            "food_processing",
+            "digital_services"
+          ]
+        },
+        {
+          "source": "Eastern Caribbean Central Bank",
+          "url": "https://www.eccb-centralbank.org/",
+          "grade": "primary",
+          "supports": [
+            "professional_services"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:montserrat",
+      "to": "capability:professional_services",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.6,
+      "strength": 3,
+      "status": "bloc_replicated",
+      "evidence": [
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary",
+          "supports": [
+            "climate_resilience",
+            "professional_services",
+            "food_processing",
+            "digital_services"
+          ]
+        },
+        {
+          "source": "Eastern Caribbean Central Bank",
+          "url": "https://www.eccb-centralbank.org/",
+          "grade": "primary",
+          "supports": [
+            "professional_services"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:st-kitts-nevis",
+      "to": "capability:professional_services",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.6,
+      "strength": 3,
+      "status": "bloc_replicated",
+      "evidence": [
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary",
+          "supports": [
+            "climate_resilience",
+            "professional_services",
+            "food_processing",
+            "digital_services"
+          ]
+        },
+        {
+          "source": "Eastern Caribbean Central Bank",
+          "url": "https://www.eccb-centralbank.org/",
+          "grade": "primary",
+          "supports": [
+            "professional_services"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:st-lucia",
+      "to": "capability:professional_services",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.6,
+      "strength": 3,
+      "status": "bloc_replicated",
+      "evidence": [
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary",
+          "supports": [
+            "climate_resilience",
+            "professional_services",
+            "food_processing",
+            "digital_services"
+          ]
+        },
+        {
+          "source": "Eastern Caribbean Central Bank",
+          "url": "https://www.eccb-centralbank.org/",
+          "grade": "primary",
+          "supports": [
+            "professional_services"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:st-vincent-the-grenadines",
+      "to": "capability:professional_services",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.6,
+      "strength": 3,
+      "status": "bloc_replicated",
+      "evidence": [
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary",
+          "supports": [
+            "climate_resilience",
+            "professional_services",
+            "food_processing",
+            "digital_services"
+          ]
+        },
+        {
+          "source": "Eastern Caribbean Central Bank",
+          "url": "https://www.eccb-centralbank.org/",
+          "grade": "primary",
+          "supports": [
+            "professional_services"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:anguilla",
+      "to": "capability:professional_services",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.6,
+      "strength": 3,
+      "status": "bloc_replicated",
       "evidence": [
         {
           "source": "OECS Commission",
@@ -999,12 +1399,348 @@
       ]
     },
     {
+      "from": "country:antigua-barbuda",
+      "to": "capability:food_processing",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.6,
+      "strength": 3,
+      "status": "bloc_replicated",
+      "evidence": [
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary",
+          "supports": [
+            "climate_resilience",
+            "professional_services",
+            "food_processing",
+            "digital_services"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:dominica",
+      "to": "capability:food_processing",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.6,
+      "strength": 3,
+      "status": "bloc_replicated",
+      "evidence": [
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary",
+          "supports": [
+            "climate_resilience",
+            "professional_services",
+            "food_processing",
+            "digital_services"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:grenada",
+      "to": "capability:food_processing",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.6,
+      "strength": 3,
+      "status": "bloc_replicated",
+      "evidence": [
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary",
+          "supports": [
+            "climate_resilience",
+            "professional_services",
+            "food_processing",
+            "digital_services"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:montserrat",
+      "to": "capability:food_processing",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.6,
+      "strength": 3,
+      "status": "bloc_replicated",
+      "evidence": [
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary",
+          "supports": [
+            "climate_resilience",
+            "professional_services",
+            "food_processing",
+            "digital_services"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:st-kitts-nevis",
+      "to": "capability:food_processing",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.6,
+      "strength": 3,
+      "status": "bloc_replicated",
+      "evidence": [
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary",
+          "supports": [
+            "climate_resilience",
+            "professional_services",
+            "food_processing",
+            "digital_services"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:st-lucia",
+      "to": "capability:food_processing",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.6,
+      "strength": 3,
+      "status": "bloc_replicated",
+      "evidence": [
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary",
+          "supports": [
+            "climate_resilience",
+            "professional_services",
+            "food_processing",
+            "digital_services"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:st-vincent-the-grenadines",
+      "to": "capability:food_processing",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.6,
+      "strength": 3,
+      "status": "bloc_replicated",
+      "evidence": [
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary",
+          "supports": [
+            "climate_resilience",
+            "professional_services",
+            "food_processing",
+            "digital_services"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:anguilla",
+      "to": "capability:food_processing",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.6,
+      "strength": 3,
+      "status": "bloc_replicated",
+      "evidence": [
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary",
+          "supports": [
+            "climate_resilience",
+            "professional_services",
+            "food_processing",
+            "digital_services"
+          ]
+        }
+      ]
+    },
+    {
       "from": "country:eastern-caribbean-oecs",
       "to": "capability:digital_services",
       "type": "HAS_CAPABILITY",
       "weight": 0.6,
       "strength": 3,
       "status": "curated_pilot",
+      "evidence": [
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary",
+          "supports": [
+            "climate_resilience",
+            "professional_services",
+            "food_processing",
+            "digital_services"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:antigua-barbuda",
+      "to": "capability:digital_services",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.6,
+      "strength": 3,
+      "status": "bloc_replicated",
+      "evidence": [
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary",
+          "supports": [
+            "climate_resilience",
+            "professional_services",
+            "food_processing",
+            "digital_services"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:dominica",
+      "to": "capability:digital_services",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.6,
+      "strength": 3,
+      "status": "bloc_replicated",
+      "evidence": [
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary",
+          "supports": [
+            "climate_resilience",
+            "professional_services",
+            "food_processing",
+            "digital_services"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:grenada",
+      "to": "capability:digital_services",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.6,
+      "strength": 3,
+      "status": "bloc_replicated",
+      "evidence": [
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary",
+          "supports": [
+            "climate_resilience",
+            "professional_services",
+            "food_processing",
+            "digital_services"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:montserrat",
+      "to": "capability:digital_services",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.6,
+      "strength": 3,
+      "status": "bloc_replicated",
+      "evidence": [
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary",
+          "supports": [
+            "climate_resilience",
+            "professional_services",
+            "food_processing",
+            "digital_services"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:st-kitts-nevis",
+      "to": "capability:digital_services",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.6,
+      "strength": 3,
+      "status": "bloc_replicated",
+      "evidence": [
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary",
+          "supports": [
+            "climate_resilience",
+            "professional_services",
+            "food_processing",
+            "digital_services"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:st-lucia",
+      "to": "capability:digital_services",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.6,
+      "strength": 3,
+      "status": "bloc_replicated",
+      "evidence": [
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary",
+          "supports": [
+            "climate_resilience",
+            "professional_services",
+            "food_processing",
+            "digital_services"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:st-vincent-the-grenadines",
+      "to": "capability:digital_services",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.6,
+      "strength": 3,
+      "status": "bloc_replicated",
+      "evidence": [
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary",
+          "supports": [
+            "climate_resilience",
+            "professional_services",
+            "food_processing",
+            "digital_services"
+          ]
+        }
+      ]
+    },
+    {
+      "from": "country:anguilla",
+      "to": "capability:digital_services",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.6,
+      "strength": 3,
+      "status": "bloc_replicated",
       "evidence": [
         {
           "source": "OECS Commission",
@@ -1400,6 +2136,6 @@
   ],
   "counts": {
     "nodes": 36,
-    "edges": 59
+    "edges": 91
   }
 }

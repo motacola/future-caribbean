@@ -171,15 +171,33 @@ def build_graph(registry: dict[str, Any], projects: list[dict[str, Any]] | None 
                 nodes.append({"id": node_id, "type": "capability", "label": capability_id.replace("_", " ").title()})
                 seen_capabilities.add(capability_id)
             evidence = [item for item in profile.get("evidence", []) if capability_id in item.get("supports", [])]
+            strength = capability.get("strength", 0)
+            base_status = capability.get("origin", "curated_pilot")
+            # Bloc keeps the cited (bloc-level) capability edge as the evidence-aggregate.
             edges.append({
                 "from": country_id,
                 "to": node_id,
                 "type": "HAS_CAPABILITY",
-                "weight": round(max(0, min(5, capability.get("strength", 0))) / 5, 2),
-                "strength": capability.get("strength", 0),
-                "status": capability.get("origin", "curated_pilot"),
+                "weight": round(max(0, min(5, strength)) / 5, 2),
+                "strength": strength,
+                "status": base_status,
                 "evidence": evidence,
             })
+            # Island-as-node principle: each member island is individually scorable.
+            # Replicate the bloc capability to members, tagged bloc_replicated so the
+            # provenance stays honest (evidence is bloc-level, not island-verified).
+            if profile.get("members"):
+                for member in profile["members"]:
+                    member_id = f"country:{_slug(member)}"
+                    edges.append({
+                        "from": member_id,
+                        "to": node_id,
+                        "type": "HAS_CAPABILITY",
+                        "weight": round(max(0, min(5, strength)) / 5, 2),
+                        "strength": strength,
+                        "status": "bloc_replicated",
+                        "evidence": evidence,
+                    })
     for project in projects or []:
         nodes.append({key: project.get(key) for key in ("id", "type", "title", "country", "agency", "category", "sector", "classification", "status", "closing_date", "url")})
         country_id = f"country:{_slug(project['country'])}"
@@ -333,7 +351,14 @@ def build_opportunities(
                 "candidate_nodes": project_candidates[:3], "frictions": project_frictions,
             }
             project_match["unlock_path"] = build_unlock_path(project_match, project_frictions)
-            project_match["estimated_total_uplift"] = sum(item["estimated_score_uplift"] for item in project_match["unlock_path"])
+            # Deduped per (type, blocker, owner) — same key as operator campaigns.
+            # Each verification serves every project sharing the blocker, so a flat
+            # sum over unlock_path over-counts collapsed items (e.g. 4x education_services).
+            _pu: dict[tuple[str, str, str], int] = {}
+            for _it in project_match["unlock_path"]:
+                _k = (_it["type"], _it["blocker"], _it["owner_persona"])
+                _pu[_k] = max(_pu.get(_k, 0), _it["estimated_score_uplift"])
+            project_match["estimated_total_uplift"] = sum(_pu.values())
             project_matches.append(project_match)
         unlock_items = [item for match in project_matches for item in match["unlock_path"]]
         unlock_items.sort(key=lambda item: (item["type"] != "capability_verification", -item["estimated_score_uplift"], item["id"]))
