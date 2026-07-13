@@ -269,7 +269,7 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); line
               <div class="iv-grid">
                 {(o.operator_campaigns || []).map((c) => {
                   const pulse = campaignPulse(c);
-                  const statusLabel = pulse.resolved > 0 ? 'resolved' : (pulse.statuses.verified ? 'verified' : (pulse.statuses.proposed || pulse.statuses.evidence_requested || pulse.statuses.evidence_received ? 'active' : 'resolved'));
+                  const statusLabel = pulse.statuses.verified ? 'verified' : (pulse.resolved > 0 ? 'resolved' : (pulse.statuses.proposed || pulse.statuses.evidence_requested || pulse.statuses.evidence_received ? 'active' : 'resolved'));
                   return (
                     <div class="iv-row">
                       <span class="iv-blocker">{c.blocker}</span>
