@@ -396,6 +396,57 @@ def build_opportunities(
     return summary
 
 
+def _apply_outcomes(opportunites: list[dict[str, Any]], root: Path = ROOT) -> None:
+    """Feed operator-reported outcomes back into each opportunity's score.
+
+    Reads the persisted intervention_state on disk (outcomes an operator
+    submitted via submit-outcome), lifts the coordination_score for
+    de-risked paths (supplier validated / intro accepted), and honestly
+    flags logistics blocks (gap stays open, reason recorded). Pure in-memory
+    mutation of the opportunity dicts; engine.run() persists them.
+    """
+    try:
+        from coordination.interventions import _load as _load_state, _outcome_adjustment
+    except ImportError:
+        from interventions import _load as _load_state, _outcome_adjustment
+    state = _load_state(root)
+    state_by_id = state.get("interventions", {})
+    for opp in opportunites:
+        interventions = opp.get("intervention_state") or opp.get("operator_campaigns")
+        if not interventions and opp.get("trigger_signal_id"):
+            # match persisted interventions by related signal
+            interventions = [
+                e for e in state_by_id.values()
+                if opp["trigger_signal_id"] in (e.get("related_signals") or [])
+            ]
+        if not interventions:
+            continue
+        total_delta = 0
+        flags: list[str] = []
+        for entry in interventions:
+            if not isinstance(entry, dict):
+                continue
+            adj = _outcome_adjustment(entry)
+            total_delta += adj.get("delta", 0)
+            flags.extend(adj.get("flags", []))
+        if total_delta:
+            opp["coordination_score"] = max(0, min(100, opp.get("coordination_score", 0) + total_delta))
+            comp = opp.setdefault("score_components", {})
+            comp["outcome_adjustment"] = total_delta
+            rationale = opp.setdefault("ranking_rationale", [])
+            rationale.append(
+                f"Operator outcomes adjusted score by {total_delta:+d} "
+                f"({', '.join(sorted(set(flags)))})"
+            )
+        if "blocked_logistics" in flags:
+            opp.setdefault("frictions", [])
+            if "blocked_by_logistics" not in opp["frictions"]:
+                opp["frictions"].append("blocked_by_logistics")
+            opp.setdefault("unknowns", [])
+            if not any("logistics" in str(u).lower() for u in opp.get("unknowns", [])):
+                opp["unknowns"].append("Path stalled by logistics — recorded by operator, not resolved.")
+
+
 def run(root: Path = ROOT) -> tuple[dict[str, Any], dict[str, Any]]:
     registry = _load(root / "config" / "regional_capabilities.json")
     if not registry.get("countries"):
@@ -413,12 +464,13 @@ def run(root: Path = ROOT) -> tuple[dict[str, Any], dict[str, Any]]:
     graph_path.parent.mkdir(parents=True, exist_ok=True)
     opportunities_path.parent.mkdir(parents=True, exist_ok=True)
     try:
-        from coordination.interventions import apply_interventions
+        from coordination.interventions import apply_interventions, _outcome_adjustment
     except ImportError:
-        from interventions import apply_interventions
+        from interventions import apply_interventions, _outcome_adjustment
     try:
         for item in opportunities.get("opportunities", []):
             apply_interventions(item, root=root)
+        _apply_outcomes(opportunities.get("opportunities", []), root=root)
         persisted = True
     except Exception:
         persisted = False
