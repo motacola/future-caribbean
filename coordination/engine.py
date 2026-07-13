@@ -221,6 +221,50 @@ def _candidate_profiles(registry: dict[str, Any], demand_country: str, required:
     return candidates
 
 
+_OWNER_LABELS = {
+    "ecosystem_builder": "the ecosystem builder",
+    "procurement_watcher": "the procurement watcher",
+    "regional_operator": "the regional operator",
+    "founder_operator": "the founder/operator",
+    "diaspora_investor": "the diaspora investor",
+    "policy_media": "policy/media",
+}
+
+
+def _human_unlock_line(item: dict[str, Any]) -> str:
+    """Plain-language rendering of one unlock intervention (no jargon)."""
+    owner = _OWNER_LABELS.get(item.get("owner_persona", ""), item.get("owner_persona", "someone"))
+    what = item.get("minimum_evidence_request") or item.get("blocker", "this blocker")
+    return f"{what} — {owner} owns this, worth about +{item.get('estimated_score_uplift', 0)} to the score."
+
+
+def _humanized_unlock_path(unlock_items: list[dict[str, Any]]) -> list[str]:
+    """Dedup by (type, blocker, owner) and return one plain line per campaign."""
+    seen: dict[tuple[str, str, str], dict[str, Any]] = {}
+    order: list[tuple[str, str, str]] = []
+    for item in unlock_items:
+        key = (item["type"], item["blocker"], item["owner_persona"])
+        if key not in seen:
+            seen[key] = item
+            order.append(key)
+        else:
+            # keep the higher uplift of the duplicates
+            if item.get("estimated_score_uplift", 0) > seen[key].get("estimated_score_uplift", 0):
+                seen[key] = item
+    return [_human_unlock_line(seen[k]) for k in order]
+
+
+def _human_next_action(dispatch: dict[str, Any], candidates: list[dict[str, Any]], n: int) -> str:
+    """Plain-language next step (no procurement-memo jargon)."""
+    top = candidates[:n]
+    names = ", ".join(c.get("country", "a regional partner") for c in top) or "the top regional partners"
+    return (
+        f"Before this moves off hold, check with {names}: are they eligible to bid, "
+        f"and can they actually deliver? A short call this week answers both. "
+        f"If yes, the path opens; if not, we know what's missing."
+    )
+
+
 def _score(dispatch: dict[str, Any], candidates: list[dict[str, Any]], required: list[str]) -> tuple[int, dict[str, int], list[str]]:
     evidence_quality = min(100, 45 + 12 * len({e.get("source") for c in candidates for e in c.get("evidence", [])}))
     matched = {cap["id"] for c in candidates for cap in c["matched_capabilities"]}
@@ -314,6 +358,7 @@ def build_opportunities(
             "demand_countries": sorted({project["country"] for project in linked_projects}) or [demand_country],
             "project_coordination_matches": project_matches,
             "unlock_path": unlock_items,
+            "humanized_unlock_path": _humanized_unlock_path(unlock_items),
             "estimated_total_uplift": sum(deduped_uplift.values()),
             "unique_intervention_count": len(deduped_uplift),
             "required_capabilities": required,
@@ -321,7 +366,7 @@ def build_opportunities(
             "missing_capabilities": sorted(set(required) - matched),
             "contributing_nodes": candidates[:4],
             "frictions": sorted({constraint for candidate in candidates[:4] for constraint in candidate.get("constraints", [])}),
-            "minimum_next_action": f"Validate eligibility and delivery capacity with the top {min(3, len(candidates))} contributing regional nodes within {dispatch.get('action_window', '14 days')}.",
+            "minimum_next_action": _human_next_action(dispatch, candidates, min(3, len(candidates))),
             "accountable_recipient": {"persona_key": dispatch.get("persona_key"), "persona_label": dispatch.get("persona_label"), "channel": dispatch.get("channel")},
             "coordination_score": score,
             "score_components": components,
