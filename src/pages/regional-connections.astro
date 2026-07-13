@@ -15,10 +15,38 @@ function readJson(path: string): any {
 
 const coord = readJson('outbox/coordination_opportunities.json') || { opportunities: [], count: 0, generated_at: '', registry_status: '' };
 const graph = readJson('data/coordination/graph.json') || { nodes: [], edges: [], counts: {} };
+const state = readJson('data/intervention_state.json') || { interventions: {} };
 
 const opportunities = coord.opportunities || [];
 const nodes = graph.nodes || [];
 const edges = graph.edges || [];
+
+// Live intervention state: per intervention id → { status, outcome_types }.
+const ivById = {};
+for (const [id, e] of Object.entries(state.interventions || {})) {
+  const outcomes = (e.outcomes || []).map((o) => o.type);
+  ivById[id] = {
+    status: e.status || 'proposed',
+    outcomes,
+    blocked: outcomes.includes('blocked_logistics'),
+  };
+}
+// Summarise the closed loop for a campaign: its member interventions' statuses + outcomes.
+function campaignPulse(campaign) {
+  const ids = campaign.interventions || [];
+  const statuses = {};
+  const outcomeSet = new Set();
+  let blocked = false;
+  for (const id of ids) {
+    const iv = ivById[id];
+    if (!iv) continue;
+    statuses[iv.status] = (statuses[iv.status] || 0) + 1;
+    for (const t of iv.outcomes) outcomeSet.add(t);
+    if (iv.blocked) blocked = true;
+  }
+  const resolved = (statuses.verified || 0) + (statuses.rejected || 0) + (statuses.expired || 0);
+  return { statuses, outcomes: [...outcomeSet], blocked, resolved, total: ids.length };
+}
 
 // Country nodes (island-as-node principle) and their HAS_CAPABILITY edges.
 const countryNodes = nodes.filter((n) => n.type === 'country');
@@ -114,6 +142,22 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); line
 .unlock-list { list-style: none; display: grid; gap: 7px; }
 .unlock-list li { font-size: 12.5px; color: var(--sub); line-height: 1.5; padding-left: 16px; position: relative; }
 .unlock-list li::before { content: "→"; position: absolute; left: 0; color: var(--gold); }
+.iv-section { border-top: 1px solid var(--border); padding-top: 16px; }
+.iv-head { font-size: 10px; text-transform: uppercase; letter-spacing: 1.1px; color: var(--gold); font-weight: 700; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+.iv-grid { display: grid; gap: 10px; }
+.iv-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; padding: 10px 12px; background: var(--card-alt); border: 1px solid var(--border); border-radius: var(--r); }
+.iv-blocker { font-family: var(--serif); font-size: 15px; font-weight: 700; flex: 1 1 200px; }
+.iv-owner { font: 600 10px var(--mono); text-transform: uppercase; letter-spacing: .5px; color: var(--sub); }
+.iv-pill { font: 700 9px var(--mono); text-transform: uppercase; letter-spacing: .6px; padding: 3px 9px; border-radius: 20px; border: 1px solid var(--border-dark); color: var(--muted); }
+.iv-pill.verified { color: var(--teal); border-color: var(--teal); background: rgba(13,118,110,.09); }
+.iv-pill.active { color: var(--gold); border-color: var(--gold); background: rgba(181,122,34,.08); }
+.iv-pill.resolved { color: var(--coral); border-color: var(--coral); background: rgba(185,72,54,.07); }
+.iv-pill.blocked { color: var(--coral); border-color: var(--coral); background: rgba(185,72,54,.09); }
+.iv-badge { font: 700 9px var(--mono); text-transform: uppercase; letter-spacing: .5px; padding: 3px 8px; border-radius: 3px; }
+.iv-badge.supplier_validated { color: var(--teal); background: rgba(13,118,110,.12); }
+.iv-badge.intro_accepted { color: var(--sky); background: rgba(38,118,168,.12); }
+.iv-badge.blocked_logistics { color: var(--coral); background: rgba(185,72,54,.12); }
+.iv-empty { font-size: 12px; color: var(--muted); font-style: italic; }
 .opp-foot { padding: 12px 22px; border-top: 1px solid var(--border); background: var(--card-alt); font-size: 11px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 6px 16px; }
 .opp-foot code { font-family: var(--mono); font-size: 11px; color: var(--sub); }
 .disclaimer { max-width: 1140px; margin: 0 auto; padding: 0 24px 50px; font-size: 12px; color: var(--muted); border-top: 1px solid var(--border); padding-top: 16px; }
@@ -219,6 +263,30 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); line
               </ul>
             </div>
           )}
+          <div class="iv-section">
+            <div class="iv-head">Closed loop — interventions {(o.operator_campaigns || []).length ? `(${(o.operator_campaigns || []).length})` : ''}</div>
+            {(o.operator_campaigns || []).length > 0 ? (
+              <div class="iv-grid">
+                {(o.operator_campaigns || []).map((c) => {
+                  const pulse = campaignPulse(c);
+                  const statusLabel = pulse.resolved > 0 ? 'resolved' : (pulse.statuses.verified ? 'verified' : (pulse.statuses.proposed || pulse.statuses.evidence_requested || pulse.statuses.evidence_received ? 'active' : 'resolved'));
+                  return (
+                    <div class="iv-row">
+                      <span class="iv-blocker">{c.blocker}</span>
+                      <span class="iv-owner">{c.owner_persona}</span>
+                      <span class={`iv-pill ${statusLabel}`}>{statusLabel}{pulse.total > 1 ? ` · ${pulse.total}` : ''}</span>
+                      {pulse.blocked && <span class="iv-pill blocked">blocked</span>}
+                      {pulse.outcomes.map((t) => (
+                        <span class={`iv-badge ${t}`}>{t.replace('_', ' ')}</span>
+                      ))}
+                    </div>
+                  );
+                })}
+              </div>
+            ) : (
+              <div class="iv-empty">No interventions logged yet for this candidate.</div>
+            )}
+          </div>
         </div>
         <div class="opp-foot">
           <span>id: <code>{o.id}</code></span>
