@@ -169,6 +169,66 @@ def expire(state_id: str, root: Path = ROOT) -> dict[str, Any]:
     return entry
 
 
+# ── Outcomes ───────────────────────────────────────────────
+# Operator-reported coordination outcomes. These are NOT the hard lifecycle
+# (proposed → evidence_received → verified); they are the softer signals
+# the user named: an introduction was accepted, a supplier was validated,
+# or the path is blocked by logistics. They feed back into scoring
+# and are surfaced honestly (a logistics block stays a gap, but we say why).
+
+OUTCOME_TYPES = {
+    "intro_accepted",
+    "supplier_validated",
+    "blocked_logistics",
+}
+
+
+def submit_outcome(state_id: str, outcome_type: str, note: str = "", root: Path = ROOT) -> dict[str, Any]:
+    """Record an operator-reported coordination outcome against an intervention."""
+    if outcome_type not in OUTCOME_TYPES:
+        raise ValueError(f"unknown outcome: {outcome_type} (want one of {sorted(OUTCOME_TYPES)})")
+    state = _load(root)
+    entry = _get_entry(state, state_id)
+    record = {
+        "type": outcome_type,
+        "note": (note or "").strip(),
+        "submitted_at": _now(),
+    }
+    entry.setdefault("outcomes", []).append(record)
+    entry["updated_at"] = _now()
+    # A logistics block does not advance the lifecycle, but it is an honest,
+    # persistent reason the path is stalled — surfaced (not hidden) downstream.
+    if outcome_type == "blocked_logistics":
+        entry["blocked_reason"] = (note or "blocked by logistics").strip()
+    _save(state, root)
+    return entry
+
+
+def _outcome_adjustment(entry: dict[str, Any]) -> dict[str, Any]:
+    """Map an intervention's reported outcomes to a score delta + honest flags.
+
+    Returns {"delta": int, "flags": list[str]}.
+    - supplier_validated / intro_accepted on a friction intervention: de-risks it,
+      small positive nudge (the path is warmer, not solved).
+    - blocked_logistics: no score gain; the gap stays open but we record WHY.
+    """
+    outcomes = entry.get("outcomes", [])
+    if not outcomes:
+        return {"delta": 0, "flags": []}
+    types = {o.get("type") for o in outcomes}
+    delta = 0
+    flags: list[str] = []
+    if "supplier_validated" in types:
+        delta += 4
+        flags.append("supplier_validated")
+    if "intro_accepted" in types:
+        delta += 3
+        flags.append("intro_accepted")
+    if "blocked_logistics" in types:
+        flags.append("blocked_logistics")
+    return {"delta": delta, "flags": flags}
+
+
 def _capability_from_id(state_id: str) -> str | None:
     if ":capability:" in state_id:
         return state_id.rsplit(":capability:", 1)[1] or None
