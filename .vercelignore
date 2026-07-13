@@ -21,6 +21,10 @@ data/*
 # is force-committed) so the section renders on Vercel. Ignore the bulky raw RSS cache.
 !data/regional_news/
 data/regional_news/raw/
+# Coordination graph + intervention state are force-committed and read by the
+# Regional Connections page at build time. Un-ignore so the build context has them.
+!data/coordination/
+!data/intervention_state.json
 
 # Pipeline source code (not needed at runtime)
 cli/
