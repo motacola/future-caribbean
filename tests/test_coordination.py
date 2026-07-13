@@ -22,16 +22,24 @@ def test_graph_has_stable_typed_nodes_and_cited_edges():
     assert all(edge["evidence"] for edge in graph["edges"])
 
 
-def test_bloc_members_are_geographic_nodes_without_capability_claims():
+def test_bloc_members_are_geographic_nodes_with_replicated_capabilities():
     graph = build_graph(_registry())
     members = [node for node in graph["nodes"] if node.get("kind") == "bloc_member"]
     assert len(members) == 8
     assert all(node["member_of"] == "country:eastern-caribbean-oecs" for node in members)
     member_ids = {node["id"] for node in members}
-    # membership edges are cited; no capability edge is claimed at island level
+    # Each member is individually scorable: it carries replicated bloc capabilities,
+    # but the provenance is honest — tagged bloc_replicated, never curated_pilot/verified.
     for member_id in member_ids:
         assert any(e["from"] == member_id and e["type"] == "MEMBER_OF" and e["evidence"] for e in graph["edges"])
-        assert not any(e["from"] == member_id and e["type"] == "HAS_CAPABILITY" for e in graph["edges"])
+        caps = [e for e in graph["edges"] if e["from"] == member_id and e["type"] == "HAS_CAPABILITY"]
+        assert caps, f"{member_id} should have replicated capability edges"
+        assert all(e["status"] == "bloc_replicated" for e in caps), "member caps must be tagged bloc_replicated"
+        assert not any(e["status"] in ("curated_pilot", "verified") for e in caps), "no island-level evidence claimed"
+    # The bloc retains its own cited (bloc-level) capability edges as the evidence-aggregate.
+    bloc_caps = [e for e in graph["edges"] if e["from"] == "country:eastern-caribbean-oecs" and e["type"] == "HAS_CAPABILITY"]
+    assert bloc_caps, "bloc must keep its cited capability edges"
+    assert all(e["status"] != "bloc_replicated" for e in bloc_caps)
     bloc = next(node for node in graph["nodes"] if node["id"] == "country:eastern-caribbean-oecs")
     assert bloc.get("kind") == "bloc"
 
