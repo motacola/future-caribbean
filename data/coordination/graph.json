@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-13T21:58:52.183646+00:00",
+  "generated_at": "2026-07-13T22:21:42.646005+00:00",
   "registry_status": "pilot",
   "nodes": [
     {
@@ -18,6 +18,11 @@
       "id": "capability:climate_resilience",
       "type": "capability",
       "label": "Climate Resilience"
+    },
+    {
+      "id": "capability:water_infrastructure",
+      "type": "capability",
+      "label": "Water Infrastructure"
     },
     {
       "id": "country:trinidad-tobago",
@@ -203,11 +208,6 @@
       "url": "https://eprocure.gov.gy/"
     },
     {
-      "id": "capability:water_infrastructure",
-      "type": "capability",
-      "label": "Water Infrastructure"
-    },
-    {
       "id": "project:guyana:proc-2026-00364",
       "type": "project",
       "title": "3.\tRehabilitation of the NDIA Pontoon located at Adventure, Region No.6",
@@ -314,6 +314,25 @@
             "construction_delivery",
             "climate_resilience"
           ]
+        }
+      ]
+    },
+    {
+      "from": "country:guyana",
+      "to": "capability:water_infrastructure",
+      "type": "HAS_CAPABILITY",
+      "weight": 0.4,
+      "strength": 2,
+      "status": "verified_intervention",
+      "evidence": [
+        {
+          "source": "https://www.caribank.org/newsroom/news-and-events/cdb-approves-usd-762-million-upgrade-guyana-water-supply-systems",
+          "url": "",
+          "grade": "verified_intervention",
+          "supports": [
+            "water_infrastructure"
+          ],
+          "intervention_id": "unlock:project-guyana-proc-2026-00363:capability:water_infrastructure"
         }
       ]
     },
@@ -2136,6 +2155,6 @@
   ],
   "counts": {
     "nodes": 36,
-    "edges": 91
+    "edges": 92
   }
 }
