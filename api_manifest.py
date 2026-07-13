@@ -29,6 +29,16 @@ TOOLS_MANIFEST = {
             "example_response_keys": ["question", "answer", "engine", "generated_at"]
         },
         {
+            "name": "regional_news.list",
+            "description": "Ranked Caribbean news with deterministic source-tier, freshness, country, topic, and finance-relevance metadata.",
+            "method": "GET",
+            "path": "/api/regional-news",
+            "params": {"type": "object", "properties": {"country": {"type": "string"}, "topic": {"type": "string"}, "limit": {"type": "integer"}}},
+            "example_request": {"country": "Barbados", "topic": "finance"},
+            "example_response_keys": ["ok", "fetched_at", "count", "items"],
+            "writes": False
+        },
+        {
             "name": "status",
             "description": "Get the current engine status: source health, cycle info, dispatch counts, feedback outcomes, pipeline state.",
             "method": "GET",
@@ -120,6 +130,30 @@ TOOLS_MANIFEST = {
             "params": {"type": "object", "properties": {}},
             "example_request": {},
             "example_response_keys": ["ok", "snippets"],
+            "writes": False
+        },
+        {
+            "name": "coordination_opportunities.index",
+            "description": "List deterministic cross-island coordination candidates, matched capabilities, frictions, evidence, and explainable score components.",
+            "method": "GET",
+            "path": "/api/coordination-opportunities",
+            "params": {"type": "object", "properties": {}},
+            "example_request": {},
+            "example_response_keys": ["engine", "registry_status", "count", "opportunities"],
+            "writes": False
+        },
+        {
+            "name": "coordination_opportunities.get",
+            "description": "Get one coordination candidate by stable id, including project demand, contributing nodes, missing capabilities, frictions, owned unlock interventions, score-uplift estimates, and cited evidence.",
+            "method": "GET",
+            "path": "/api/coordination-opportunities/{opportunity_id}",
+            "params": {
+                "type": "object",
+                "properties": {"opportunity_id": {"type": "string"}},
+                "required": ["opportunity_id"]
+            },
+            "example_request": {"opportunity_id": "coord-dev-pipeline-regional"},
+            "example_response_keys": ["id", "demand_node", "project_coordination_matches", "contributing_nodes", "frictions", "unlock_path", "minimum_next_action", "coordination_score"],
             "writes": False
         }
     ]

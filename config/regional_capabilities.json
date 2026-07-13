@@ -1,0 +1,99 @@
+{
+  "version": 1,
+  "status": "pilot",
+  "description": "Cited pilot registry for deterministic Caribbean demand-to-capability matching. Strength is a screening score, not a market-size estimate.",
+  "capability_taxonomy": [
+    "construction_delivery",
+    "engineering_services",
+    "industrial_fabrication",
+    "project_finance",
+    "professional_services",
+    "shipping_logistics",
+    "warehousing_distribution",
+    "food_processing",
+    "climate_resilience",
+    "digital_services",
+    "civil_engineering",
+    "aviation_infrastructure",
+    "water_infrastructure",
+    "medical_supply",
+    "ict_integration",
+    "education_services"
+  ],
+  "countries": [
+    {
+      "country": "Guyana",
+      "capabilities": [
+        {"id": "construction_delivery", "strength": 3},
+        {"id": "climate_resilience", "strength": 2}
+      ],
+      "constraints": ["supplier qualification", "project-level diligence", "delivery capacity"],
+      "evidence": [
+        {"source": "Guyana eProcure", "url": "https://www.eprocure.gov.gy/", "grade": "primary", "supports": ["construction_delivery", "climate_resilience"]}
+      ]
+    },
+    {
+      "country": "Trinidad & Tobago",
+      "capabilities": [
+        {"id": "industrial_fabrication", "strength": 5},
+        {"id": "engineering_services", "strength": 5},
+        {"id": "civil_engineering", "strength": 4},
+        {"id": "shipping_logistics", "strength": 4},
+        {"id": "construction_delivery", "strength": 4}
+      ],
+      "constraints": ["cross-border supplier qualification", "shipping cost validation"],
+      "evidence": [
+        {"source": "Trinidad and Tobago Ministry of Trade and Industry", "url": "https://tradeind.gov.tt/", "grade": "primary", "supports": ["industrial_fabrication", "engineering_services", "civil_engineering", "construction_delivery"]},
+        {"source": "Port Authority of Trinidad and Tobago", "url": "https://www.patnt.com/", "grade": "primary", "supports": ["shipping_logistics"]}
+      ]
+    },
+    {
+      "country": "Barbados",
+      "capabilities": [
+        {"id": "project_finance", "strength": 5},
+        {"id": "professional_services", "strength": 5},
+        {"id": "climate_resilience", "strength": 4},
+        {"id": "digital_services", "strength": 4},
+        {"id": "ict_integration", "strength": 3}
+      ],
+      "constraints": ["mandate and ticket-size fit", "local delivery partner required"],
+      "evidence": [
+        {"source": "Caribbean Development Bank", "url": "https://www.caribank.org/", "grade": "primary", "supports": ["project_finance", "climate_resilience"]},
+        {"source": "Invest Barbados", "url": "https://www.investbarbados.org/", "grade": "primary", "supports": ["professional_services", "digital_services", "ict_integration"]}
+      ]
+    },
+    {
+      "country": "Jamaica",
+      "capabilities": [
+        {"id": "construction_delivery", "strength": 4},
+        {"id": "civil_engineering", "strength": 4},
+        {"id": "aviation_infrastructure", "strength": 3},
+        {"id": "shipping_logistics", "strength": 5},
+        {"id": "warehousing_distribution", "strength": 5},
+        {"id": "project_finance", "strength": 4},
+        {"id": "digital_services", "strength": 4},
+        {"id": "ict_integration", "strength": 4}
+      ],
+      "constraints": ["route economics", "procurement eligibility"],
+      "evidence": [
+        {"source": "JAMPRO", "url": "https://dobusinessjamaica.com/", "grade": "primary", "supports": ["construction_delivery", "civil_engineering", "aviation_infrastructure", "shipping_logistics", "warehousing_distribution", "digital_services", "ict_integration"]},
+        {"source": "Jamaica Stock Exchange", "url": "https://www.jamstockex.com/", "grade": "primary", "supports": ["project_finance"]}
+      ]
+    },
+    {
+      "country": "Eastern Caribbean / OECS",
+      "members": ["Antigua & Barbuda", "Dominica", "Grenada", "Montserrat", "St Kitts & Nevis", "St Lucia", "St Vincent & the Grenadines", "Anguilla"],
+      "capabilities": [
+        {"id": "climate_resilience", "strength": 4},
+        {"id": "professional_services", "strength": 3},
+        {"id": "food_processing", "strength": 3},
+        {"id": "digital_services", "strength": 3}
+      ],
+      "constraints": ["small transaction size", "pooled procurement required", "inter-island logistics"],
+      "evidence": [
+        {"source": "OECS Commission", "url": "https://www.oecs.int/", "grade": "primary", "supports": ["climate_resilience", "professional_services", "food_processing", "digital_services"]},
+        {"source": "Eastern Caribbean Central Bank", "url": "https://www.eccb-centralbank.org/", "grade": "primary", "supports": ["professional_services"]}
+      ]
+    }
+  ]
+}

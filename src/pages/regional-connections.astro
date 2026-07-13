@@ -1,0 +1,308 @@
+---
+import Base from '../layouts/Base.astro';
+import { readFileSync, existsSync } from 'fs';
+import { resolve, join } from 'path';
+
+function readJson(path: string): any {
+  const p = join(resolve(process.cwd()), path);
+  try {
+    if (!existsSync(p)) return null;
+    return JSON.parse(readFileSync(p, 'utf-8'));
+  } catch {
+    return null;
+  }
+}
+
+const coord = readJson('outbox/coordination_opportunities.json') || { opportunities: [], count: 0, generated_at: '', registry_status: '' };
+const graph = readJson('data/coordination/graph.json') || { nodes: [], edges: [], counts: {} };
+const state = readJson('data/intervention_state.json') || { interventions: {} };
+
+const opportunities = coord.opportunities || [];
+const nodes = graph.nodes || [];
+const edges = graph.edges || [];
+
+// Live intervention state: per intervention id → { status, outcome_types }.
+const ivById = {};
+for (const [id, e] of Object.entries(state.interventions || {})) {
+  const outcomes = (e.outcomes || []).map((o) => o.type);
+  ivById[id] = {
+    status: e.status || 'proposed',
+    outcomes,
+    blocked: outcomes.includes('blocked_logistics'),
+  };
+}
+// Summarise the closed loop for a campaign: its member interventions' statuses + outcomes.
+function campaignPulse(campaign) {
+  const ids = campaign.interventions || [];
+  const statuses = {};
+  const outcomeSet = new Set();
+  let blocked = false;
+  for (const id of ids) {
+    const iv = ivById[id];
+    if (!iv) continue;
+    statuses[iv.status] = (statuses[iv.status] || 0) + 1;
+    for (const t of iv.outcomes) outcomeSet.add(t);
+    if (iv.blocked) blocked = true;
+  }
+  const resolved = (statuses.verified || 0) + (statuses.rejected || 0) + (statuses.expired || 0);
+  return { statuses, outcomes: [...outcomeSet], blocked, resolved, total: ids.length };
+}
+
+// Country nodes (island-as-node principle) and their HAS_CAPABILITY edges.
+const countryNodes = nodes.filter((n) => n.type === 'country');
+const capabilityNodes = nodes.filter((n) => n.type === 'capability');
+const capLabel = {};
+for (const c of capabilityNodes) capLabel[c.id] = c.label || c.id.replace('capability:', '');
+
+const countryCaps = {};
+for (const n of countryNodes) countryCaps[n.id] = [];
+for (const e of edges) {
+  if (e.type === 'HAS_CAPABILITY' && countryCaps[e.from] !== undefined) {
+    countryCaps[e.from].push({
+      label: capLabel[e.to] || e.to,
+      strength: e.strength ?? 0,
+      status: e.status || '',
+    });
+  }
+}
+
+const memberEdges = edges.filter((e) => e.type === 'MEMBER_OF');
+const scoreTier = (s) => (s >= 60 ? 'high' : s >= 45 ? 'mid' : 'low');
+---
+
+<style is:global>
+:root {
+  --bg: #F4EBDD; --card: #FFFCF4; --card-alt: #EDE8DF;
+  --ink: #18251F; --text: #18251F; --sub: #455A50; --muted: #5D6B62;
+  --gold: #B57A22; --teal: #0D766E; --coral: #B94836; --sky: #2676A8; --lime: #B6C74E;
+  --border: #D8CBB8; --border-dark: #AA9A82;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Inter', -apple-system, system-ui, sans-serif;
+  --mono: 'IBM Plex Mono', monospace;
+  --r: 3px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.6; font-size: 15px; -webkit-font-smoothing: antialiased; }
+
+.masthead { background: var(--ink); color: var(--bg); padding: 14px 0; }
+.masthead::after { content: ""; display: block; height: 2px; margin-bottom: -2px; background: linear-gradient(90deg, var(--gold), var(--teal) 55%, transparent); opacity: .85; }
+.mast-inner { max-width: 1140px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+.mast-name { font-family: var(--serif); font-size: 18px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; color: var(--bg); }
+.mast-name em { font-style: normal; color: var(--gold); }
+.mast-links { display: flex; gap: 20px; align-items: center; }
+.mast-links a { color: color-mix(in srgb, var(--bg) 62%, transparent); font-size: 12px; letter-spacing: .5px; text-transform: uppercase; font-weight: 500; text-decoration: none; }
+.mast-links a:hover { color: var(--bg); }
+
+.hero { max-width: 1140px; margin: 0 auto; padding: 44px 24px 26px; }
+.hero-kicker { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gold); font-weight: 600; margin-bottom: 12px; }
+.hero h1 { font-family: var(--serif); font-size: clamp(30px,4vw,46px); line-height: 1.05; font-weight: 700; margin-bottom: 14px; }
+.hero h1 em { font-style: italic; color: var(--teal); }
+.hero-sub { font-size: 16px; color: var(--sub); max-width: 720px; line-height: 1.6; }
+.hero-stats { display: flex; gap: 26px; flex-wrap: wrap; margin-top: 22px; }
+.hero-stat strong { font-family: var(--mono); font-size: 22px; color: var(--text); display: block; }
+.hero-stat span { font-size: 11px; text-transform: uppercase; letter-spacing: .8px; color: var(--muted); }
+
+.sec { max-width: 1140px; margin: 0 auto; padding: 24px 24px 40px; }
+.sec-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gold); margin-bottom: 8px; font-weight: 600; }
+.sec-title { font-family: var(--serif); font-size: 28px; line-height: 1.08; font-weight: 700; margin-bottom: 6px; }
+.sec-sub { font-size: 14px; color: var(--sub); max-width: 720px; margin-bottom: 20px; }
+
+.network-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 14px; }
+.isle { background: var(--card); border: 1px solid var(--border); border-radius: var(--r); padding: 18px; box-shadow: 0 1px 2px rgba(24,37,31,.05); }
+.isle-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-bottom: 10px; }
+.isle-name { font-family: var(--serif); font-size: 20px; font-weight: 700; }
+.isle-tag { font: 700 8px var(--mono); text-transform: uppercase; letter-spacing: .6px; color: var(--muted); }
+.cap-list { display: flex; flex-wrap: wrap; gap: 6px; }
+.cap { font-size: 11px; color: var(--sub); border: 1px solid var(--border); border-radius: 20px; padding: 3px 9px; background: rgba(255,252,244,.6); }
+.cap b { color: var(--teal); font-weight: 700; }
+.cap-blank { font-size: 12px; color: var(--muted); font-style: italic; }
+
+.opp-list { display: grid; gap: 16px; }
+.opp { background: var(--card); border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; box-shadow: 0 2px 6px rgba(24,37,31,.06); }
+.opp-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 14px; padding: 20px 22px 16px; border-bottom: 1px solid var(--border); }
+.opp-title { font-family: var(--serif); font-size: 21px; font-weight: 700; line-height: 1.15; }
+.opp-meta { font: 700 9px var(--mono); text-transform: uppercase; letter-spacing: .8px; color: var(--muted); margin-top: 6px; }
+.score-badge { flex-shrink: 0; width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center; font-family: var(--mono); font-size: 18px; font-weight: 700; border: 2px solid; }
+.score-high { color: var(--teal); border-color: var(--teal); background: rgba(13,118,110,.07); }
+.score-mid { color: var(--gold); border-color: var(--gold); background: rgba(181,122,34,.08); }
+.score-low { color: var(--coral); border-color: var(--coral); background: rgba(185,72,54,.07); }
+.opp-body { padding: 16px 22px 20px; display: grid; gap: 16px; }
+.next-action { background: linear-gradient(155deg, var(--ink), #0f1912 88%); color: var(--bg); border-left: 3px solid var(--gold); border-radius: 6px; padding: 14px 16px; }
+.next-action label { display: block; font-size: 9px; text-transform: uppercase; letter-spacing: 1.1px; font-weight: 700; color: var(--lime); margin-bottom: 6px; }
+.next-action p { font-size: 13.5px; line-height: 1.55; color: rgba(244,235,221,.82); margin: 0; }
+.contrib { display: grid; gap: 8px; }
+.contrib h4, .unlock h4, .facts h4 { font-size: 10px; text-transform: uppercase; letter-spacing: 1.1px; color: var(--gold); font-weight: 700; margin-bottom: 8px; }
+.contrib-row { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; font-size: 12.5px; }
+.contrib-row strong { font-family: var(--serif); font-size: 15px; }
+.contrib-caps { display: flex; flex-wrap: wrap; gap: 5px; }
+.contrib-caps span { font: 600 9px var(--mono); text-transform: uppercase; color: var(--teal); background: rgba(13,118,110,.08); padding: 3px 7px; border-radius: 3px; }
+.facts { display: flex; flex-wrap: wrap; gap: 10px 22px; }
+.fact strong { display: block; font-family: var(--mono); font-size: 15px; color: var(--text); }
+.fact span { font-size: 10px; text-transform: uppercase; letter-spacing: .8px; color: var(--muted); }
+.unlock-list { list-style: none; display: grid; gap: 7px; }
+.unlock-list li { font-size: 12.5px; color: var(--sub); line-height: 1.5; padding-left: 16px; position: relative; }
+.unlock-list li::before { content: "→"; position: absolute; left: 0; color: var(--gold); }
+.iv-section { border-top: 1px solid var(--border); padding-top: 16px; }
+.iv-head { font-size: 10px; text-transform: uppercase; letter-spacing: 1.1px; color: var(--gold); font-weight: 700; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+.iv-grid { display: grid; gap: 10px; }
+.iv-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; padding: 10px 12px; background: var(--card-alt); border: 1px solid var(--border); border-radius: var(--r); }
+.iv-blocker { font-family: var(--serif); font-size: 15px; font-weight: 700; flex: 1 1 200px; }
+.iv-owner { font: 600 10px var(--mono); text-transform: uppercase; letter-spacing: .5px; color: var(--sub); }
+.iv-pill { font: 700 9px var(--mono); text-transform: uppercase; letter-spacing: .6px; padding: 3px 9px; border-radius: 20px; border: 1px solid var(--border-dark); color: var(--muted); }
+.iv-pill.verified { color: var(--teal); border-color: var(--teal); background: rgba(13,118,110,.09); }
+.iv-pill.active { color: var(--gold); border-color: var(--gold); background: rgba(181,122,34,.08); }
+.iv-pill.resolved { color: var(--coral); border-color: var(--coral); background: rgba(185,72,54,.07); }
+.iv-pill.blocked { color: var(--coral); border-color: var(--coral); background: rgba(185,72,54,.09); }
+.iv-badge { font: 700 9px var(--mono); text-transform: uppercase; letter-spacing: .5px; padding: 3px 8px; border-radius: 3px; }
+.iv-badge.supplier_validated { color: var(--teal); background: rgba(13,118,110,.12); }
+.iv-badge.intro_accepted { color: var(--sky); background: rgba(38,118,168,.12); }
+.iv-badge.blocked_logistics { color: var(--coral); background: rgba(185,72,54,.12); }
+.iv-empty { font-size: 12px; color: var(--muted); font-style: italic; }
+.opp-foot { padding: 12px 22px; border-top: 1px solid var(--border); background: var(--card-alt); font-size: 11px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 6px 16px; }
+.opp-foot code { font-family: var(--mono); font-size: 11px; color: var(--sub); }
+.disclaimer { max-width: 1140px; margin: 0 auto; padding: 0 24px 50px; font-size: 12px; color: var(--muted); border-top: 1px solid var(--border); padding-top: 16px; }
+@media(max-width:768px){ .hero-stats { gap: 16px; } }
+</style>
+
+<Base title="Signal Fabric — Regional Connections" description="The Caribbean coordination graph: each island as a node, missing links made visible, and the smallest verifiable step to close them.">
+
+<div class="masthead">
+  <div class="mast-inner">
+    <a href="/" class="mast-name">SIGNAL <em>FABRIC</em></a>
+    <div class="mast-links">
+      <a href="/">← The Dispatch</a>
+      <a href="/build">Build a feed</a>
+    </div>
+  </div>
+</div>
+
+<div class="hero">
+  <p class="hero-kicker">Regional coordination graph</p>
+  <h1>The Caribbean as a <em>network of islands</em> —<br>and the links still missing.</h1>
+  <p class="hero-sub">Every island and market is a node. Capabilities and demand are edges. This view shows which connections exist, which are weak, and — where a signal points to a real gap — the smallest verifiable step that would close it. No models guessing; the graph is built from public regional data.</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><strong>{graph.counts?.nodes ?? 0}</strong><span>Nodes in the graph</span></div>
+    <div class="hero-stat"><strong>{graph.counts?.edges ?? 0}</strong><span>Cited connections</span></div>
+    <div class="hero-stat"><strong>{opportunities.length}</strong><span>Coordination candidates</span></div>
+    <div class="hero-stat"><strong>{memberEdges.length}</strong><span>OECS member links</span></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-label">The network</div>
+  <div class="sec-title">What each island can actually do</div>
+  <div class="sec-sub">Capabilities are cited from public sources (pilot registry). Strength is a 1–5 read of the evidence, not a rating we invented. Islands without a listed capability simply haven't been verified yet.</div>
+  <div class="network-grid">
+    {countryNodes.map((n) => (
+      <div class="isle">
+        <div class="isle-head">
+          <span class="isle-name">{n.label}</span>
+          <span class="isle-tag">{n.status}</span>
+        </div>
+        {countryCaps[n.id]?.length ? (
+          <div class="cap-list">
+            {countryCaps[n.id].map((c) => (
+              <span class="cap">{c.label} <b>{c.strength}</b></span>
+            ))}
+          </div>
+        ) : (
+          <div class="cap-blank">No verified capability yet</div>
+        )}
+      </div>
+    ))}
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-label">Where the signal points to a gap</div>
+  <div class="sec-title">Coordination candidates</div>
+  <div class="sec-sub">Each candidate is one signal where demand, supply, and friction line up. The score is deterministic (evidence quality, capability match, logistics, regional impact, minus friction). The next action is the smallest step that would move it off hold.</div>
+  <div class="opp-list">
+    {opportunities.map((o) => (
+      <article class="opp">
+        <div class="opp-head">
+          <div>
+            <div class="opp-title">{o.title}</div>
+            <div class="opp-meta">{o.signal_kind} · {o.status}</div>
+          </div>
+          <div class={"score-badge score-" + scoreTier(o.coordination_score)}>{o.coordination_score}</div>
+        </div>
+        <div class="opp-body">
+          <div class="next-action">
+            <label>Smallest next step</label>
+            <p>{o.minimum_next_action}</p>
+          </div>
+          <div class="facts">
+            <div class="fact"><strong>{o.unique_intervention_count}</strong><span>Unique interventions</span></div>
+            <div class="fact"><strong>+{o.estimated_total_uplift}</strong><span>Est. score uplift</span></div>
+            <div class="fact"><strong>{(o.contributing_nodes || []).length}</strong><span>Contributing nodes</span></div>
+            <div class="fact"><strong>{(o.missing_capabilities || []).length ? 'Yes' : 'No'}</strong><span>Capability gap</span></div>
+          </div>
+          {(o.contributing_nodes || []).length > 0 && (
+            <div class="contrib">
+              <h4>Who can help close it</h4>
+              {(o.contributing_nodes || []).map((c) => (
+                <div class="contrib-row">
+                  <strong>{c.country}</strong>
+                  <div class="contrib-caps">
+                    {(c.matched_capabilities || []).map((mc) => (
+                      <span>{mc.id.replace(/_/g, ' ')}</span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+          {(o.humanized_unlock_path || []).length > 0 && (
+            <div class="unlock">
+              <h4>The unlock path</h4>
+              <ul class="unlock-list">
+                {(o.humanized_unlock_path || []).map((line) => (
+                  <li>{line}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+          <div class="iv-section">
+            <div class="iv-head">Closed loop — interventions {(o.operator_campaigns || []).length ? `(${(o.operator_campaigns || []).length})` : ''}</div>
+            {(o.operator_campaigns || []).length > 0 ? (
+              <div class="iv-grid">
+                {(o.operator_campaigns || []).map((c) => {
+                  const pulse = campaignPulse(c);
+                  const statusLabel = pulse.statuses.verified ? 'verified' : (pulse.resolved > 0 ? 'resolved' : (pulse.statuses.proposed || pulse.statuses.evidence_requested || pulse.statuses.evidence_received ? 'active' : 'resolved'));
+                  return (
+                    <div class="iv-row">
+                      <span class="iv-blocker">{c.blocker}</span>
+                      <span class="iv-owner">{c.owner_persona}</span>
+                      <span class={`iv-pill ${statusLabel}`}>{statusLabel}{pulse.total > 1 ? ` · ${pulse.total}` : ''}</span>
+                      {pulse.blocked && <span class="iv-pill blocked">blocked</span>}
+                      {pulse.outcomes.map((t) => (
+                        <span class={`iv-badge ${t}`}>{t.replace('_', ' ')}</span>
+                      ))}
+                    </div>
+                  );
+                })}
+              </div>
+            ) : (
+              <div class="iv-empty">No interventions logged yet for this candidate.</div>
+            )}
+          </div>
+        </div>
+        <div class="opp-foot">
+          <span>id: <code>{o.id}</code></span>
+          <span>trigger: <code>{o.trigger_signal_id}</code></span>
+          {(o.missing_capabilities || []).length > 0 && (
+            <span>missing: <code>{(o.missing_capabilities || []).join(', ')}</code></span>
+          )}
+        </div>
+      </article>
+    ))}
+  </div>
+</div>
+
+<div class="disclaimer">
+  Pilot registry — capability strengths are a read of cited public sources, not an audit. Coordination candidates are screening support, not investment advice. The closed loop (intervention → evidence → score recompute) only updates after real evidence is submitted.
+  <br><br>
+  Operators: record outcomes (supplier validated · intro accepted · blocked by logistics) locally with <code>python3 coordination/console.py</code> → http://localhost:8765, then commit + deploy to surface them here.
+</div>
+</Base>

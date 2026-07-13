@@ -77,6 +77,16 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
         if path == "/api/map-data":
             self._api_map_data()
             return
+        if path == "/api/regional-news":
+            self._api_regional_news(parse_qs(parsed.query))
+            return
+        if path == "/api/coordination-opportunities":
+            self._api_coordination_opportunities()
+            return
+        if path.startswith("/api/coordination-opportunities/"):
+            opportunity_id = path[len("/api/coordination-opportunities/"):]
+            self._api_coordination_opportunity(opportunity_id)
+            return
         if path == "/api/pipeline/stream":
             self._api_pipeline_stream(parse_qs(parsed.query).get("replay") == ["1"])
             return
@@ -313,6 +323,36 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
             return
         try:
             self._json(json.loads(pack_path.read_text(encoding="utf-8")))
+        except Exception as exc:
+            self._json({"error": str(exc)}, 500)
+
+    def _api_coordination_opportunities(self) -> None:
+        """Serve ranked, deterministic cross-island coordination candidates."""
+        artifact = APP_DIR / "outbox" / "coordination_opportunities.json"
+        if not artifact.exists():
+            self._json({"error": "Coordination opportunities not generated yet — run the pipeline first."}, 404)
+            return
+        try:
+            self._json(json.loads(artifact.read_text(encoding="utf-8")))
+        except Exception as exc:
+            self._json({"error": str(exc)}, 500)
+
+    def _api_coordination_opportunity(self, opportunity_id: str) -> None:
+        """Serve one coordination candidate by stable id."""
+        if "/" in opportunity_id or ".." in opportunity_id:
+            self._json({"error": "Invalid opportunity_id"}, 400)
+            return
+        artifact = APP_DIR / "outbox" / "coordination_opportunities.json"
+        if not artifact.exists():
+            self._json({"error": "Coordination opportunities not generated yet — run the pipeline first."}, 404)
+            return
+        try:
+            data = json.loads(artifact.read_text(encoding="utf-8"))
+            item = next((entry for entry in data.get("opportunities", []) if entry.get("id") == opportunity_id), None)
+            if item is None:
+                self._json({"error": f"Coordination opportunity '{opportunity_id}' not found"}, 404)
+                return
+            self._json(item)
         except Exception as exc:
             self._json({"error": str(exc)}, 500)
 
@@ -563,6 +603,19 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
         from map_data import build_map_data
 
         self._json(build_map_data(APP_DIR))
+
+    def _api_regional_news(self, query: dict) -> None:
+        """Serve ranked regional news, optionally filtered by country or topic."""
+        from watchers.regional_news_poller import ranked_articles
+
+        source = APP_DIR / "data" / "regional_news" / "latest.json"
+        payload = json.loads(source.read_text(encoding="utf-8")) if source.exists() else {"items": []}
+        try:
+            limit = max(1, min(100, int((query.get("limit") or [30])[0])))
+        except (TypeError, ValueError):
+            limit = 30
+        items = ranked_articles(payload.get("items", []), (query.get("country") or [None])[0], (query.get("topic") or [None])[0], limit)
+        self._json({"ok": True, "fetched_at": payload.get("fetched_at"), "count": len(items), "items": items})
 
     def _api_status(self) -> None:
         global _pipeline_running

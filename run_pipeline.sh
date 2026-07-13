@@ -65,6 +65,7 @@ run_step "Channel Outputs" "python3 \"$ROOT/packagers/build_channel_outputs.py\"
 # Hermes can deliver the human-facing notification.
 
 run_step "Opportunity Dispatch" "python3 \"$ROOT/packagers/opportunity_dispatch.py\"" "opportunity_dispatch"
+run_step "Coordination Graph" "python3 \"$ROOT/coordination/engine.py\"" "coordination_graph"
 run_step "Validation Packs" "python3 \"$ROOT/packagers/validation_pack_generator.py\"" "validation_packs"
 run_step "RSS Feed" "python3 \"$ROOT/packagers/rss_feed.py\"" "rss_feed"
 run_step "Track Record" "python3 \"$ROOT/packagers/track_record.py\"" "track_record"

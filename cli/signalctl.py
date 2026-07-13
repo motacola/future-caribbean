@@ -20,6 +20,10 @@ Commands:
     send [--channel telegram] [--live]
                                    Send the current digest (dry-run by default)
     ask <question>                 Ask the desk a deterministic question (no server needed)
+    coordinator status             Intervention states and operator campaigns
+    coordinator submit-evidence --id I --summary S --source SRC [--country C]
+                                   Attach cited evidence to an intervention
+    coordinator verify --id I      Verify an intervention, update graph, recompute scores
 
 Examples:
     python3 cli/signalctl.py status
@@ -248,6 +252,67 @@ def cmd_send(args) -> int:
     return subprocess.run(["python3", str(script), *flags], cwd=str(ROOT)).returncode
 
 
+def cmd_coordinator_status(args) -> int:
+    from coordination.interventions import get_state, ACTIVE_STATES
+    state = get_state()
+    interventions = state.get("interventions", {})
+    campaigns = state.get("campaigns", {})
+    if not interventions:
+        print(dim("No interventions on record. Run: python3 coordination/engine.py"))
+        return 0
+    by_status: dict[str, list[dict]] = {}
+    for entry in interventions.values():
+        by_status.setdefault(entry.get("status", "proposed"), []).append(entry)
+    print(bold("\nCoordination interventions\n"))
+    for status in ("proposed", "evidence_requested", "evidence_received", "verified", "rejected", "expired"):
+        entries = by_status.get(status)
+        if not entries:
+            continue
+        color = green if status == "verified" else (gold if status in ACTIVE_STATES else dim)
+        print(color(f"  {status} ({len(entries)})"))
+        for entry in sorted(entries, key=lambda item: item.get("id", "")):
+            print(f"    {entry['id']}")
+            print(dim(f"      owner: {entry.get('owner_persona')}  blocker: {entry.get('blocker')}  evidence: {len(entry.get('evidence', []))}"))
+    if campaigns:
+        print(bold("\nOperator campaigns\n"))
+        for campaign in sorted(campaigns.values(), key=lambda item: (-item.get("active_count", 0), item.get("slug", ""))):
+            print(f"  {campaign['slug']}")
+            print(dim(f"      interventions: {campaign.get('intervention_count')}  active: {campaign.get('active_count')}  owner: {campaign.get('owner_persona')}"))
+    print()
+    return 0
+
+
+def cmd_coordinator_submit_evidence(args) -> int:
+    from coordination.interventions import add_evidence
+    try:
+        entry = add_evidence(args.id, args.summary, args.source, country=args.country)
+    except (KeyError, ValueError) as exc:
+        print(red(str(exc)))
+        return 1
+    print(green(f"Evidence recorded for {entry['id']} (status: {entry['status']})"))
+    return 0
+
+
+def cmd_coordinator_verify(args) -> int:
+    from coordination.interventions import verify
+    try:
+        record = verify(args.id)
+    except (KeyError, ValueError) as exc:
+        print(red(str(exc)))
+        return 1
+    print(green(f"Verified {args.id}"))
+    if record.get("verified_edge"):
+        edge = record["verified_edge"]
+        print(dim(f"  cited HAS_CAPABILITY edge: {edge['country']} -> {edge['capability']}"))
+    changes = record.get("score_changes") or {}
+    if changes:
+        for opp_id, change in changes.items():
+            print(f"  {opp_id}: {change['before']} -> {change['after']}")
+    else:
+        print(dim("  no opportunity score changes"))
+    return 0
+
+
 def cmd_ask(args) -> int:
     question = " ".join(args.question)
     desk = _read("outbox/dispatch_desk.json")
@@ -306,6 +371,19 @@ def build_parser() -> argparse.ArgumentParser:
     aq = sub.add_parser("ask", help="ask the desk a deterministic question (no server needed)")
     aq.add_argument("question", nargs="+", help="question to ask (e.g., 'explain the lead signal')")
     aq.set_defaults(fn=cmd_ask)
+
+    co = sub.add_parser("coordinator", help="coordination intervention lifecycle")
+    co_sub = co.add_subparsers(dest="coordinator_cmd", required=True)
+    co_sub.add_parser("status", help="intervention states and operator campaigns").set_defaults(fn=cmd_coordinator_status)
+    ce = co_sub.add_parser("submit-evidence", help="attach cited evidence to an intervention")
+    ce.add_argument("--id", required=True, help="intervention id (see coordinator status)")
+    ce.add_argument("--summary", required=True, help="what the evidence shows")
+    ce.add_argument("--source", required=True, help="where the evidence comes from")
+    ce.add_argument("--country", default=None, help="regional node the evidence names (required to verify capability interventions)")
+    ce.set_defaults(fn=cmd_coordinator_submit_evidence)
+    cv = co_sub.add_parser("verify", help="verify an intervention, update the graph, recompute scores")
+    cv.add_argument("--id", required=True, help="intervention id")
+    cv.set_defaults(fn=cmd_coordinator_verify)
 
     return p
 
