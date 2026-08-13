@@ -1,18 +1,17 @@
 {
   "signal_id": "enhanced-invest-guyana",
-  "dispatch_id": "DSP-20260619-021",
+  "dispatch_id": "DSP-20260724-017",
   "country": "Guyana",
   "signal_title": "Guyana: +860.3% multi-source capital surge — market entry window open",
-  "confidence_score": 100,
-  "raw_confidence_score": 100,
+  "confidence_score": 96,
+  "raw_confidence_score": 96,
   "action_readiness": "high",
-  "evidence_grade": "A - multi-source",
+  "evidence_grade": "B - cross-source",
   "sector_hypotheses": [
     {
       "sector": "Oil & gas and offshore support services",
-      "basis": "Google News — Guyana: Eco (Atlantic) Oil & Gas 2026 operational and business update - BNamericas",
-      "status": "corroborated",
-      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQSktxcWpVQnVmcGNxaERoa0poSXdOUklUNUNXQnZKS3k2cnoxTWlSOEhVRmd4RlJVSkdfQWd4ajZLQmF3TG4zLUthVVFNRC12c1BlN002RHRRVnhlNmd0X3dvenVIekx2UUdVMzE3X0cwTjNYbW9YbFpKMFhrUnZRbDJpNVR4TDlYWjJsc2FMamNGWWdlclhsdA?oc=5"
+      "basis": "Analyst prior from widely reported sector drivers — requires local confirmation",
+      "status": "unconfirmed"
     },
     {
       "sector": "Construction and infrastructure",
@@ -30,12 +29,6 @@
       "status": "unconfirmed"
     },
     {
-      "sector": "Sector mix verifiable from official GDP-by-industry data",
-      "basis": "CARICOM Statistics: Guyana Value added|GDP by industries at constant prices (ISIC 4), GYD: 2012-2023",
-      "status": "data_available",
-      "url": "https://statistics.caricom.org/country_data/guyana-value-addedgdp-by-industries-at-constant-prices-isic-4-gyd-2012-2023/"
-    },
-    {
       "sector": "FDI-receiving sectors (composition not yet broken down)",
       "basis": "World Bank: FDI net inflows moved +860.3% from 2023 to 2024",
       "status": "macro_signal"
@@ -47,74 +40,75 @@
       "source": "IDB Open Data",
       "url": "https://data.iadb.org/en/search?q=Productivity%2C%20Technology%20and%20Innovation%20",
       "topics": []
+    },
+    {
+      "title": "Guyana: Latin American Public Opinion Project - Victimization and Crime survey 2016",
+      "source": "IDB Open Data",
+      "url": "https://data.iadb.org/en/search?q=Guyana%3A%20Latin%20American%20Public%20Opinion%20Pr",
+      "topics": []
+    },
+    {
+      "title": "Guyana Labor Force Survey: Third Quarter 2017",
+      "source": "IDB Open Data",
+      "url": "https://data.iadb.org/en/search?q=Guyana%20Labor%20Force%20Survey%3A%20Third%20Quarter",
+      "topics": [
+        "social"
+      ]
+    },
+    {
+      "title": "Guyana Labor Force Survey: Fourth Quarter 2017",
+      "source": "IDB Open Data",
+      "url": "https://data.iadb.org/en/search?q=Guyana%20Labor%20Force%20Survey%3A%20Fourth%20Quarte",
+      "topics": [
+        "social"
+      ]
     }
   ],
   "procurement_matches": [
     {
-      "title": "Supply and delivery of Asphalt Laboratory Equipment",
+      "title": "Request for Proposal for Engineering, Procurement, Construction + Finance for Rehabilitation & Upgrading of Hinterland Coastal Airstrips Lots 1-4",
       "source": "Guyana eProcure (NPTA)",
       "url": "https://eprocure.gov.gy/",
       "match": "country",
-      "closing_date": "2026-06-23"
+      "closing_date": "2026-07-28"
     },
     {
-      "title": "Supply and Delivery of Materials to Retube #1 Boiler Super Heater and Install New Header for Rose Hall Estate",
+      "title": "Request for Proposal for Engineering, Procurement, Construction + Finance for a Code 4E Municipal Airport at Lethem, Region 9, Guyana",
       "source": "Guyana eProcure (NPTA)",
       "url": "https://eprocure.gov.gy/",
       "match": "country",
-      "closing_date": "2026-06-23"
+      "closing_date": "2026-07-28"
     },
     {
-      "title": "Supply and Delivery of 2Kg & 5Kg Demerara Gold Laminated Films",
+      "title": "Request for Proposal for Engineering, Procurement, Construction + Finance for a Code 3C Municipal Airport at Rose Hall, Canje, Berbice, Region 6, Guyana",
       "source": "Guyana eProcure (NPTA)",
       "url": "https://eprocure.gov.gy/",
       "match": "country",
-      "closing_date": "2026-06-23"
+      "closing_date": "2026-07-28"
     },
     {
-      "title": "Supply and Delivery of Materials for Upgrading from Mild Steel to Stainless Steel at Albion Estate – Lot 1-4",
+      "title": "Procurement of Commodities – Lots 1-4, Kuru Kuru Training Centre.",
       "source": "Guyana eProcure (NPTA)",
       "url": "https://eprocure.gov.gy/",
       "match": "country",
-      "closing_date": "2026-06-23"
+      "closing_date": "2026-07-28"
     },
     {
-      "title": "Supply and Delivery of Materials for Upgrading from Mild Steel to Stainless Steel at Blairmont Estate – Lot 1-4",
+      "title": "Rehabilitation of Road Way from Main Gate to Time Keeper Office for Albion Estate",
       "source": "Guyana eProcure (NPTA)",
       "url": "https://eprocure.gov.gy/",
       "match": "country",
-      "closing_date": "2026-06-23"
+      "closing_date": "2026-07-28"
     },
     {
-      "title": "Supply and Delivery of Tyres for the Industry",
+      "title": "Rehabilitation of Sugar Bond Flooring (10,600 square feet 6” thick concrete) for Rose Hall Estate.",
       "source": "Guyana eProcure (NPTA)",
       "url": "https://eprocure.gov.gy/",
       "match": "country",
-      "closing_date": "2026-06-23"
+      "closing_date": "2026-07-28"
     }
   ],
-  "official_country_data": [
-    {
-      "title": "Guyana: Monthly Consumer Price Index (CPI) by Expenditure Category",
-      "source": "CARICOM Statistics",
-      "url": "https://statistics.caricom.org/country_data/guyana-monthly-consumer-price-index-cpi-by-expenditure-category/"
-    },
-    {
-      "title": "2023_VNR_Report_Guyana",
-      "source": "CARICOM Statistics",
-      "url": "https://statistics.caricom.org/country_data/2023_vnr_report_guyana/"
-    },
-    {
-      "title": "2019_VNR_Report_Guyana",
-      "source": "CARICOM Statistics",
-      "url": "https://statistics.caricom.org/country_data/2019_vnr_report_guyana/"
-    },
-    {
-      "title": "Guyana Value added|GDP by industries at constant prices (ISIC 4), GYD: 2012-2023",
-      "source": "CARICOM Statistics",
-      "url": "https://statistics.caricom.org/country_data/guyana-value-addedgdp-by-industries-at-constant-prices-isic-4-gyd-2012-2023/"
-    }
-  ],
+  "official_country_data": [],
   "credible_local_operators": [
     {
       "name": "Guyana Shore Base Inc. (GSBI)",
@@ -157,17 +151,15 @@
     }
   ],
   "source_links": [
+    "https://data.iadb.org/en/search?q=Guyana%20Labor%20Force%20Survey%3A%20Fourth%20Quarte",
+    "https://data.iadb.org/en/search?q=Guyana%20Labor%20Force%20Survey%3A%20Third%20Quarter",
+    "https://data.iadb.org/en/search?q=Guyana%3A%20Latin%20American%20Public%20Opinion%20Pr",
     "https://data.iadb.org/en/search?q=Productivity%2C%20Technology%20and%20Innovation%20",
-    "https://eprocure.gov.gy/",
-    "https://news.google.com/rss/articles/CBMimAFBVV95cUxQSktxcWpVQnVmcGNxaERoa0poSXdOUklUNUNXQnZKS3k2cnoxTWlSOEhVRmd4RlJVSkdfQWd4ajZLQmF3TG4zLUthVVFNRC12c1BlN002RHRRVnhlNmd0X3dvenVIekx2UUdVMzE3X0cwTjNYbW9YbFpKMFhrUnZRbDJpNVR4TDlYWjJsc2FMamNGWWdlclhsdA?oc=5",
-    "https://statistics.caricom.org/country_data/2019_vnr_report_guyana/",
-    "https://statistics.caricom.org/country_data/2023_vnr_report_guyana/",
-    "https://statistics.caricom.org/country_data/guyana-monthly-consumer-price-index-cpi-by-expenditure-category/",
-    "https://statistics.caricom.org/country_data/guyana-value-addedgdp-by-industries-at-constant-prices-isic-4-gyd-2012-2023/"
+    "https://eprocure.gov.gy/"
   ],
   "unresolved_questions": [
-    "Confirm which sectors in the official Guyana GDP-by-industry data actually align with the FDI movement.",
-    "Tender closes 2026-06-23 — confirm eligibility and bid requirements early.",
+    "Which specific sectors are driving the movement in Guyana? No official sector-breakdown dataset matched this cycle.",
+    "Tender closes 2026-07-28 — confirm eligibility and bid requirements early.",
     "Validate fit with registry-listed operators (Guyana Shore Base Inc. (GSBI), Gaico Construction Inc.) before outreach.",
     "Validate that the underlying FDI movement is sustained, not a one-off transaction or statistical revision."
   ],
@@ -183,8 +175,9 @@
   ],
   "advance_or_reject_recommendation": "hold",
   "recommendation_reason": "Evidence fingerprint unchanged for 2 cycles — downgraded from advance to hold until new corroboration arrives.",
-  "last_validated_at": "2026-06-19T12:20:17.196925+00:00",
-  "evidence_fingerprint": "56fdcca6e2314df6",
+  "last_validated_at": "2026-07-24T18:31:35.517415+00:00",
+  "coordination_path": null,
+  "evidence_fingerprint": "2dbb148f57010aef",
   "cycles_since_refresh": 2,
   "evidence_freshness": "stale"
 }

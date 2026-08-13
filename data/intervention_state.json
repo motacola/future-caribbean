@@ -1,5 +1,4 @@
 {
-  "updated_at": "2026-07-12T17:50:45.762400+00:00",
   "interventions": {
     "unlock:project-guyana-proc-2026-00369:capability:education_services": {
       "id": "unlock:project-guyana-proc-2026-00369:capability:education_services",
@@ -10,8 +9,8 @@
       "related_signals": [
         "dev-pipeline-regional"
       ],
-      "created_at": "2026-07-12T17:36:51.944750+00:00",
-      "updated_at": "2026-07-13T22:21:42.661976+00:00"
+      "created_at": "2026-07-13T22:57:23.619899+00:00",
+      "updated_at": "2026-07-24T00:40:20.352803+00:00"
     },
     "unlock:project-guyana-proc-2026-00370:capability:education_services": {
       "id": "unlock:project-guyana-proc-2026-00370:capability:education_services",
@@ -22,8 +21,8 @@
       "related_signals": [
         "dev-pipeline-regional"
       ],
-      "created_at": "2026-07-12T17:36:51.944750+00:00",
-      "updated_at": "2026-07-13T22:21:42.661976+00:00"
+      "created_at": "2026-07-13T22:57:23.619899+00:00",
+      "updated_at": "2026-07-24T00:40:20.352803+00:00"
     },
     "unlock:project-guyana-proc-2026-00371:capability:education_services": {
       "id": "unlock:project-guyana-proc-2026-00371:capability:education_services",
@@ -34,8 +33,8 @@
       "related_signals": [
         "dev-pipeline-regional"
       ],
-      "created_at": "2026-07-12T17:36:51.944750+00:00",
-      "updated_at": "2026-07-13T22:21:42.661976+00:00"
+      "created_at": "2026-07-13T22:57:23.619899+00:00",
+      "updated_at": "2026-07-24T00:40:20.352803+00:00"
     },
     "unlock:project-guyana-proc-2026-00372:capability:education_services": {
       "id": "unlock:project-guyana-proc-2026-00372:capability:education_services",
@@ -46,32 +45,20 @@
       "related_signals": [
         "dev-pipeline-regional"
       ],
-      "created_at": "2026-07-12T17:36:51.944750+00:00",
-      "updated_at": "2026-07-13T22:21:42.661976+00:00"
+      "created_at": "2026-07-13T22:57:23.619899+00:00",
+      "updated_at": "2026-07-24T00:40:20.352803+00:00"
     },
     "unlock:project-guyana-proc-2026-00363:capability:water_infrastructure": {
       "id": "unlock:project-guyana-proc-2026-00363:capability:water_infrastructure",
-      "status": "verified",
+      "status": "proposed",
       "owner_persona": "procurement_watcher",
       "blocker": "water_infrastructure",
-      "evidence": [
-        {
-          "summary": "CDB approved USD 76.2M Guyana Water Supply Improvement Project: 5 water treatment plants, storage tanks, transmission mains across coastal communities (Bush Lot, Tain, Wakenaam, Leguan).",
-          "source": "https://www.caribank.org/newsroom/news-and-events/cdb-approves-usd-762-million-upgrade-guyana-water-supply-systems",
-          "submitted_at": "2026-07-13T22:21:16.421911+00:00",
-          "country": "Guyana"
-        }
-      ],
+      "evidence": [],
       "related_signals": [
         "dev-pipeline-regional"
       ],
-      "created_at": "2026-07-12T17:36:51.944750+00:00",
-      "updated_at": "2026-07-13T22:21:42.661976+00:00",
-      "verified_edge": {
-        "country": "Guyana",
-        "capability": "water_infrastructure"
-      },
-      "verified_at": "2026-07-13T22:21:16.545637+00:00"
+      "created_at": "2026-07-13T22:57:23.619899+00:00",
+      "updated_at": "2026-07-24T00:40:20.352803+00:00"
     },
     "unlock:project-guyana-proc-2026-00362:friction:eligibility_verification": {
       "id": "unlock:project-guyana-proc-2026-00362:friction:eligibility_verification",
@@ -82,8 +69,8 @@
       "related_signals": [
         "dev-pipeline-regional"
       ],
-      "created_at": "2026-07-12T17:36:51.944750+00:00",
-      "updated_at": "2026-07-13T22:21:42.661976+00:00"
+      "created_at": "2026-07-13T22:57:23.619899+00:00",
+      "updated_at": "2026-07-24T00:40:20.352803+00:00"
     },
     "unlock:project-guyana-proc-2026-00362:friction:logistics_validation": {
       "id": "unlock:project-guyana-proc-2026-00362:friction:logistics_validation",
@@ -94,8 +81,8 @@
       "related_signals": [
         "dev-pipeline-regional"
       ],
-      "created_at": "2026-07-12T17:36:51.944750+00:00",
-      "updated_at": "2026-07-13T22:21:42.661976+00:00"
+      "created_at": "2026-07-13T22:57:23.619899+00:00",
+      "updated_at": "2026-07-24T00:40:20.352803+00:00"
     },
     "unlock:project-guyana-proc-2026-00363:friction:demand_aggregation": {
       "id": "unlock:project-guyana-proc-2026-00363:friction:demand_aggregation",
@@ -106,8 +93,8 @@
       "related_signals": [
         "dev-pipeline-regional"
       ],
-      "created_at": "2026-07-12T17:36:51.944750+00:00",
-      "updated_at": "2026-07-13T22:21:42.661976+00:00"
+      "created_at": "2026-07-13T22:57:23.619899+00:00",
+      "updated_at": "2026-07-24T00:40:20.352803+00:00"
     },
     "unlock:project-guyana-proc-2026-00363:friction:eligibility_verification": {
       "id": "unlock:project-guyana-proc-2026-00363:friction:eligibility_verification",
@@ -118,8 +105,8 @@
       "related_signals": [
         "dev-pipeline-regional"
       ],
-      "created_at": "2026-07-12T17:36:51.944750+00:00",
-      "updated_at": "2026-07-13T22:21:42.661976+00:00"
+      "created_at": "2026-07-13T22:57:23.619899+00:00",
+      "updated_at": "2026-07-24T00:40:20.352803+00:00"
     },
     "unlock:project-guyana-proc-2026-00363:friction:finance_fit": {
       "id": "unlock:project-guyana-proc-2026-00363:friction:finance_fit",
@@ -130,8 +117,8 @@
       "related_signals": [
         "dev-pipeline-regional"
       ],
-      "created_at": "2026-07-12T17:36:51.944750+00:00",
-      "updated_at": "2026-07-13T22:21:42.661976+00:00"
+      "created_at": "2026-07-13T22:57:23.619899+00:00",
+      "updated_at": "2026-07-24T00:40:20.352803+00:00"
     },
     "unlock:project-guyana-proc-2026-00363:friction:logistics_validation": {
       "id": "unlock:project-guyana-proc-2026-00363:friction:logistics_validation",
@@ -142,8 +129,8 @@
       "related_signals": [
         "dev-pipeline-regional"
       ],
-      "created_at": "2026-07-12T17:36:51.944750+00:00",
-      "updated_at": "2026-07-13T22:21:42.661976+00:00"
+      "created_at": "2026-07-13T22:57:23.619899+00:00",
+      "updated_at": "2026-07-24T00:40:20.352803+00:00"
     },
     "unlock:project-guyana-proc-2026-00363:friction:partner_introduction": {
       "id": "unlock:project-guyana-proc-2026-00363:friction:partner_introduction",
@@ -154,8 +141,8 @@
       "related_signals": [
         "dev-pipeline-regional"
       ],
-      "created_at": "2026-07-12T17:36:51.944750+00:00",
-      "updated_at": "2026-07-13T22:21:42.661976+00:00"
+      "created_at": "2026-07-13T22:57:23.619899+00:00",
+      "updated_at": "2026-07-24T00:40:20.352803+00:00"
     },
     "unlock:project-guyana-proc-2026-00364:friction:eligibility_verification": {
       "id": "unlock:project-guyana-proc-2026-00364:friction:eligibility_verification",
@@ -166,8 +153,8 @@
       "related_signals": [
         "dev-pipeline-regional"
       ],
-      "created_at": "2026-07-12T17:36:51.944750+00:00",
-      "updated_at": "2026-07-13T22:21:42.661976+00:00"
+      "created_at": "2026-07-13T22:57:23.619899+00:00",
+      "updated_at": "2026-07-24T00:40:20.352803+00:00"
     },
     "unlock:project-guyana-proc-2026-00364:friction:logistics_validation": {
       "id": "unlock:project-guyana-proc-2026-00364:friction:logistics_validation",
@@ -178,8 +165,8 @@
       "related_signals": [
         "dev-pipeline-regional"
       ],
-      "created_at": "2026-07-12T17:36:51.944750+00:00",
-      "updated_at": "2026-07-13T22:21:42.661976+00:00"
+      "created_at": "2026-07-13T22:57:23.619899+00:00",
+      "updated_at": "2026-07-24T00:40:20.352803+00:00"
     },
     "unlock:project-guyana-proc-2026-00365:friction:eligibility_verification": {
       "id": "unlock:project-guyana-proc-2026-00365:friction:eligibility_verification",
@@ -190,8 +177,8 @@
       "related_signals": [
         "dev-pipeline-regional"
       ],
-      "created_at": "2026-07-12T17:36:51.944750+00:00",
-      "updated_at": "2026-07-13T22:21:42.661976+00:00"
+      "created_at": "2026-07-13T22:57:23.619899+00:00",
+      "updated_at": "2026-07-24T00:40:20.352803+00:00"
     },
     "unlock:project-guyana-proc-2026-00365:friction:logistics_validation": {
       "id": "unlock:project-guyana-proc-2026-00365:friction:logistics_validation",
@@ -202,8 +189,8 @@
       "related_signals": [
         "dev-pipeline-regional"
       ],
-      "created_at": "2026-07-12T17:36:51.944750+00:00",
-      "updated_at": "2026-07-13T22:21:42.661976+00:00"
+      "created_at": "2026-07-13T22:57:23.619899+00:00",
+      "updated_at": "2026-07-24T00:40:20.352803+00:00"
     },
     "unlock:project-guyana-proc-2026-00369:friction:eligibility_verification": {
       "id": "unlock:project-guyana-proc-2026-00369:friction:eligibility_verification",
@@ -214,8 +201,8 @@
       "related_signals": [
         "dev-pipeline-regional"
       ],
-      "created_at": "2026-07-12T17:36:51.944750+00:00",
-      "updated_at": "2026-07-13T22:21:42.661976+00:00"
+      "created_at": "2026-07-13T22:57:23.619899+00:00",
+      "updated_at": "2026-07-24T00:40:20.352803+00:00"
     },
     "unlock:project-guyana-proc-2026-00369:friction:logistics_validation": {
       "id": "unlock:project-guyana-proc-2026-00369:friction:logistics_validation",
@@ -226,8 +213,8 @@
       "related_signals": [
         "dev-pipeline-regional"
       ],
-      "created_at": "2026-07-12T17:36:51.944750+00:00",
-      "updated_at": "2026-07-13T22:21:42.661976+00:00"
+      "created_at": "2026-07-13T22:57:23.619899+00:00",
+      "updated_at": "2026-07-24T00:40:20.352803+00:00"
     },
     "unlock:project-guyana-proc-2026-00370:friction:eligibility_verification": {
       "id": "unlock:project-guyana-proc-2026-00370:friction:eligibility_verification",
@@ -238,8 +225,8 @@
       "related_signals": [
         "dev-pipeline-regional"
       ],
-      "created_at": "2026-07-12T17:36:51.944750+00:00",
-      "updated_at": "2026-07-13T22:21:42.661976+00:00"
+      "created_at": "2026-07-13T22:57:23.619899+00:00",
+      "updated_at": "2026-07-24T00:40:20.352803+00:00"
     },
     "unlock:project-guyana-proc-2026-00370:friction:logistics_validation": {
       "id": "unlock:project-guyana-proc-2026-00370:friction:logistics_validation",
@@ -250,8 +237,8 @@
       "related_signals": [
         "dev-pipeline-regional"
       ],
-      "created_at": "2026-07-12T17:36:51.944750+00:00",
-      "updated_at": "2026-07-13T22:21:42.661976+00:00"
+      "created_at": "2026-07-13T22:57:23.619899+00:00",
+      "updated_at": "2026-07-24T00:40:20.352803+00:00"
     },
     "unlock:project-guyana-proc-2026-00371:friction:eligibility_verification": {
       "id": "unlock:project-guyana-proc-2026-00371:friction:eligibility_verification",
@@ -262,8 +249,8 @@
       "related_signals": [
         "dev-pipeline-regional"
       ],
-      "created_at": "2026-07-12T17:36:51.944750+00:00",
-      "updated_at": "2026-07-13T22:21:42.661976+00:00"
+      "created_at": "2026-07-13T22:57:23.619899+00:00",
+      "updated_at": "2026-07-24T00:40:20.352803+00:00"
     },
     "unlock:project-guyana-proc-2026-00371:friction:logistics_validation": {
       "id": "unlock:project-guyana-proc-2026-00371:friction:logistics_validation",
@@ -274,8 +261,8 @@
       "related_signals": [
         "dev-pipeline-regional"
       ],
-      "created_at": "2026-07-12T17:36:51.944750+00:00",
-      "updated_at": "2026-07-13T22:21:42.661976+00:00"
+      "created_at": "2026-07-13T22:57:23.619899+00:00",
+      "updated_at": "2026-07-24T00:40:20.352803+00:00"
     },
     "unlock:project-guyana-proc-2026-00372:friction:eligibility_verification": {
       "id": "unlock:project-guyana-proc-2026-00372:friction:eligibility_verification",
@@ -286,8 +273,8 @@
       "related_signals": [
         "dev-pipeline-regional"
       ],
-      "created_at": "2026-07-12T17:36:51.944750+00:00",
-      "updated_at": "2026-07-13T22:21:42.661976+00:00"
+      "created_at": "2026-07-13T22:57:23.619899+00:00",
+      "updated_at": "2026-07-24T00:40:20.352803+00:00"
     },
     "unlock:project-guyana-proc-2026-00372:friction:logistics_validation": {
       "id": "unlock:project-guyana-proc-2026-00372:friction:logistics_validation",
@@ -298,8 +285,8 @@
       "related_signals": [
         "dev-pipeline-regional"
       ],
-      "created_at": "2026-07-12T17:36:51.944750+00:00",
-      "updated_at": "2026-07-13T22:21:42.661976+00:00"
+      "created_at": "2026-07-13T22:57:23.619899+00:00",
+      "updated_at": "2026-07-24T00:40:20.352803+00:00"
     },
     "unlock:project-guyana-proc-2026-00377:capability:education_services": {
       "id": "unlock:project-guyana-proc-2026-00377:capability:education_services",
@@ -310,8 +297,8 @@
       "related_signals": [
         "dev-pipeline-regional"
       ],
-      "created_at": "2026-07-24T14:31:38.785067+00:00",
-      "updated_at": "2026-08-13T15:56:51.508849+00:00"
+      "created_at": "2026-07-24T13:42:11.190325+00:00",
+      "updated_at": "2026-08-13T16:27:05.932245+00:00"
     },
     "unlock:project-guyana-proc-2026-00311:friction:eligibility_verification": {
       "id": "unlock:project-guyana-proc-2026-00311:friction:eligibility_verification",
@@ -322,8 +309,8 @@
       "related_signals": [
         "dev-pipeline-regional"
       ],
-      "created_at": "2026-07-24T14:31:38.785067+00:00",
-      "updated_at": "2026-08-13T15:56:51.508849+00:00"
+      "created_at": "2026-07-24T13:42:11.190325+00:00",
+      "updated_at": "2026-08-13T16:27:05.932245+00:00"
     },
     "unlock:project-guyana-proc-2026-00311:friction:logistics_validation": {
       "id": "unlock:project-guyana-proc-2026-00311:friction:logistics_validation",
@@ -334,8 +321,8 @@
       "related_signals": [
         "dev-pipeline-regional"
       ],
-      "created_at": "2026-07-24T14:31:38.785067+00:00",
-      "updated_at": "2026-08-13T15:56:51.508849+00:00"
+      "created_at": "2026-07-24T13:42:11.190325+00:00",
+      "updated_at": "2026-08-13T16:27:05.932245+00:00"
     },
     "unlock:project-guyana-proc-2026-00312:friction:eligibility_verification": {
       "id": "unlock:project-guyana-proc-2026-00312:friction:eligibility_verification",
@@ -346,8 +333,8 @@
       "related_signals": [
         "dev-pipeline-regional"
       ],
-      "created_at": "2026-07-24T14:31:38.785067+00:00",
-      "updated_at": "2026-08-13T15:56:51.508849+00:00"
+      "created_at": "2026-07-24T13:42:11.190325+00:00",
+      "updated_at": "2026-08-13T16:27:05.932245+00:00"
     },
     "unlock:project-guyana-proc-2026-00312:friction:logistics_validation": {
       "id": "unlock:project-guyana-proc-2026-00312:friction:logistics_validation",
@@ -358,8 +345,8 @@
       "related_signals": [
         "dev-pipeline-regional"
       ],
-      "created_at": "2026-07-24T14:31:38.785067+00:00",
-      "updated_at": "2026-08-13T15:56:51.508849+00:00"
+      "created_at": "2026-07-24T13:42:11.190325+00:00",
+      "updated_at": "2026-08-13T16:27:05.932245+00:00"
     },
     "unlock:project-guyana-proc-2026-00313:friction:eligibility_verification": {
       "id": "unlock:project-guyana-proc-2026-00313:friction:eligibility_verification",
@@ -370,8 +357,8 @@
       "related_signals": [
         "dev-pipeline-regional"
       ],
-      "created_at": "2026-07-24T14:31:38.785067+00:00",
-      "updated_at": "2026-08-13T15:56:51.508849+00:00"
+      "created_at": "2026-07-24T13:42:11.190325+00:00",
+      "updated_at": "2026-08-13T16:27:05.932245+00:00"
     },
     "unlock:project-guyana-proc-2026-00313:friction:logistics_validation": {
       "id": "unlock:project-guyana-proc-2026-00313:friction:logistics_validation",
@@ -382,8 +369,8 @@
       "related_signals": [
         "dev-pipeline-regional"
       ],
-      "created_at": "2026-07-24T14:31:38.785067+00:00",
-      "updated_at": "2026-08-13T15:56:51.508849+00:00"
+      "created_at": "2026-07-24T13:42:11.190325+00:00",
+      "updated_at": "2026-08-13T16:27:05.932245+00:00"
     },
     "unlock:project-guyana-proc-2026-00377:friction:eligibility_verification": {
       "id": "unlock:project-guyana-proc-2026-00377:friction:eligibility_verification",
@@ -394,8 +381,8 @@
       "related_signals": [
         "dev-pipeline-regional"
       ],
-      "created_at": "2026-07-24T14:31:38.785067+00:00",
-      "updated_at": "2026-08-13T15:56:51.508849+00:00"
+      "created_at": "2026-07-24T13:42:11.190325+00:00",
+      "updated_at": "2026-08-13T16:27:05.932245+00:00"
     },
     "unlock:project-guyana-proc-2026-00377:friction:logistics_validation": {
       "id": "unlock:project-guyana-proc-2026-00377:friction:logistics_validation",
@@ -406,8 +393,8 @@
       "related_signals": [
         "dev-pipeline-regional"
       ],
-      "created_at": "2026-07-24T14:31:38.785067+00:00",
-      "updated_at": "2026-08-13T15:56:51.508849+00:00"
+      "created_at": "2026-07-24T13:42:11.190325+00:00",
+      "updated_at": "2026-08-13T16:27:05.932245+00:00"
     },
     "unlock:project-guyana-proc-2026-00383:friction:eligibility_verification": {
       "id": "unlock:project-guyana-proc-2026-00383:friction:eligibility_verification",
@@ -418,8 +405,8 @@
       "related_signals": [
         "dev-pipeline-regional"
       ],
-      "created_at": "2026-07-24T14:31:38.785067+00:00",
-      "updated_at": "2026-08-13T15:56:51.508849+00:00"
+      "created_at": "2026-07-24T13:42:11.190325+00:00",
+      "updated_at": "2026-08-13T16:27:05.932245+00:00"
     },
     "unlock:project-guyana-proc-2026-00383:friction:logistics_validation": {
       "id": "unlock:project-guyana-proc-2026-00383:friction:logistics_validation",
@@ -430,8 +417,8 @@
       "related_signals": [
         "dev-pipeline-regional"
       ],
-      "created_at": "2026-07-24T14:31:38.785067+00:00",
-      "updated_at": "2026-08-13T15:56:51.508849+00:00"
+      "created_at": "2026-07-24T13:42:11.190325+00:00",
+      "updated_at": "2026-08-13T16:27:05.932245+00:00"
     },
     "unlock:project-guyana-proc-2026-00384:friction:eligibility_verification": {
       "id": "unlock:project-guyana-proc-2026-00384:friction:eligibility_verification",
@@ -442,8 +429,8 @@
       "related_signals": [
         "dev-pipeline-regional"
       ],
-      "created_at": "2026-07-24T14:31:38.785067+00:00",
-      "updated_at": "2026-08-13T15:56:51.508849+00:00"
+      "created_at": "2026-07-24T13:42:11.190325+00:00",
+      "updated_at": "2026-08-13T16:27:05.932245+00:00"
     },
     "unlock:project-guyana-proc-2026-00384:friction:logistics_validation": {
       "id": "unlock:project-guyana-proc-2026-00384:friction:logistics_validation",
@@ -454,8 +441,8 @@
       "related_signals": [
         "dev-pipeline-regional"
       ],
-      "created_at": "2026-07-24T14:31:38.785067+00:00",
-      "updated_at": "2026-08-13T15:56:51.508849+00:00"
+      "created_at": "2026-07-24T13:42:11.190325+00:00",
+      "updated_at": "2026-08-13T16:27:05.932245+00:00"
     },
     "unlock:project-guyana-proc-2026-00385:friction:eligibility_verification": {
       "id": "unlock:project-guyana-proc-2026-00385:friction:eligibility_verification",
@@ -466,8 +453,8 @@
       "related_signals": [
         "dev-pipeline-regional"
       ],
-      "created_at": "2026-07-24T14:31:38.785067+00:00",
-      "updated_at": "2026-08-13T15:56:51.508849+00:00"
+      "created_at": "2026-07-24T13:42:11.190325+00:00",
+      "updated_at": "2026-08-13T16:27:05.932245+00:00"
     },
     "unlock:project-guyana-proc-2026-00385:friction:logistics_validation": {
       "id": "unlock:project-guyana-proc-2026-00385:friction:logistics_validation",
@@ -478,8 +465,8 @@
       "related_signals": [
         "dev-pipeline-regional"
       ],
-      "created_at": "2026-07-24T14:31:38.785067+00:00",
-      "updated_at": "2026-08-13T15:56:51.508849+00:00"
+      "created_at": "2026-07-24T13:42:11.190325+00:00",
+      "updated_at": "2026-08-13T16:27:05.932245+00:00"
     },
     "unlock:project-guyana-proc-2026-00386:friction:demand_aggregation": {
       "id": "unlock:project-guyana-proc-2026-00386:friction:demand_aggregation",
@@ -490,8 +477,8 @@
       "related_signals": [
         "dev-pipeline-regional"
       ],
-      "created_at": "2026-07-24T14:31:38.785067+00:00",
-      "updated_at": "2026-08-13T15:56:51.508849+00:00"
+      "created_at": "2026-07-24T13:42:11.190325+00:00",
+      "updated_at": "2026-08-13T16:27:05.932245+00:00"
     },
     "unlock:project-guyana-proc-2026-00386:friction:finance_fit": {
       "id": "unlock:project-guyana-proc-2026-00386:friction:finance_fit",
@@ -502,8 +489,8 @@
       "related_signals": [
         "dev-pipeline-regional"
       ],
-      "created_at": "2026-07-24T14:31:38.785067+00:00",
-      "updated_at": "2026-08-13T15:56:51.508849+00:00"
+      "created_at": "2026-07-24T13:42:11.190325+00:00",
+      "updated_at": "2026-08-13T16:27:05.932245+00:00"
     },
     "unlock:project-guyana-proc-2026-00386:friction:logistics_validation": {
       "id": "unlock:project-guyana-proc-2026-00386:friction:logistics_validation",
@@ -514,8 +501,8 @@
       "related_signals": [
         "dev-pipeline-regional"
       ],
-      "created_at": "2026-07-24T14:31:38.785067+00:00",
-      "updated_at": "2026-08-13T15:56:51.508849+00:00"
+      "created_at": "2026-07-24T13:42:11.190325+00:00",
+      "updated_at": "2026-08-13T16:27:05.932245+00:00"
     },
     "unlock:project-guyana-proc-2026-00386:friction:partner_introduction": {
       "id": "unlock:project-guyana-proc-2026-00386:friction:partner_introduction",
@@ -526,8 +513,8 @@
       "related_signals": [
         "dev-pipeline-regional"
       ],
-      "created_at": "2026-07-24T14:31:38.785067+00:00",
-      "updated_at": "2026-08-13T15:56:51.508849+00:00"
+      "created_at": "2026-07-24T13:42:11.190325+00:00",
+      "updated_at": "2026-08-13T16:27:05.932245+00:00"
     }
   },
   "campaigns": {
@@ -541,19 +528,19 @@
       "interventions": [
         "unlock:project-guyana-proc-2026-00377:capability:education_services"
       ],
-      "updated_at": "2026-08-13T15:56:51.508849+00:00"
+      "updated_at": "2026-08-13T16:27:05.932245+00:00"
     },
     "campaign-capability_verification-procurement_watcher-water_infrastructure": {
       "slug": "campaign-capability_verification-procurement_watcher-water_infrastructure",
       "intervention_count": 1,
-      "active_count": 0,
+      "active_count": 1,
       "owner_persona": "procurement_watcher",
       "blocker": "water_infrastructure",
       "intervention_type": null,
       "interventions": [
         "unlock:project-guyana-proc-2026-00363:capability:water_infrastructure"
       ],
-      "updated_at": "2026-07-13T22:21:42.661976+00:00"
+      "updated_at": "2026-07-24T00:40:20.352803+00:00"
     },
     "campaign-eligibility_verification-procurement_watcher-cross-border-supplier-qualification": {
       "slug": "campaign-eligibility_verification-procurement_watcher-cross-border-supplier-qualification",
@@ -571,7 +558,7 @@
         "unlock:project-guyana-proc-2026-00384:friction:eligibility_verification",
         "unlock:project-guyana-proc-2026-00385:friction:eligibility_verification"
       ],
-      "updated_at": "2026-08-13T15:56:51.508849+00:00"
+      "updated_at": "2026-08-13T16:27:05.932245+00:00"
     },
     "campaign-logistics_validation-regional_operator-route-economics": {
       "slug": "campaign-logistics_validation-regional_operator-route-economics",
@@ -589,7 +576,7 @@
         "unlock:project-guyana-proc-2026-00384:friction:logistics_validation",
         "unlock:project-guyana-proc-2026-00385:friction:logistics_validation"
       ],
-      "updated_at": "2026-08-13T15:56:51.508849+00:00"
+      "updated_at": "2026-08-13T16:27:05.932245+00:00"
     },
     "campaign-demand_aggregation-ecosystem_builder-pooled-procurement-required": {
       "slug": "campaign-demand_aggregation-ecosystem_builder-pooled-procurement-required",
@@ -601,7 +588,7 @@
       "interventions": [
         "unlock:project-guyana-proc-2026-00386:friction:demand_aggregation"
       ],
-      "updated_at": "2026-08-13T15:56:51.508849+00:00"
+      "updated_at": "2026-08-13T16:27:05.932245+00:00"
     },
     "campaign-eligibility_verification-procurement_watcher-procurement-eligibility": {
       "slug": "campaign-eligibility_verification-procurement_watcher-procurement-eligibility",
@@ -613,7 +600,7 @@
       "interventions": [
         "unlock:project-guyana-proc-2026-00363:friction:eligibility_verification"
       ],
-      "updated_at": "2026-07-13T22:21:42.661976+00:00"
+      "updated_at": "2026-07-24T00:40:20.352803+00:00"
     },
     "campaign-finance_fit-diaspora_investor-mandate-and-ticket-size-fit": {
       "slug": "campaign-finance_fit-diaspora_investor-mandate-and-ticket-size-fit",
@@ -625,7 +612,7 @@
       "interventions": [
         "unlock:project-guyana-proc-2026-00386:friction:finance_fit"
       ],
-      "updated_at": "2026-08-13T15:56:51.508849+00:00"
+      "updated_at": "2026-08-13T16:27:05.932245+00:00"
     },
     "campaign-logistics_validation-regional_operator-inter-island-logistics": {
       "slug": "campaign-logistics_validation-regional_operator-inter-island-logistics",
@@ -637,7 +624,7 @@
       "interventions": [
         "unlock:project-guyana-proc-2026-00386:friction:logistics_validation"
       ],
-      "updated_at": "2026-08-13T15:56:51.508849+00:00"
+      "updated_at": "2026-08-13T16:27:05.932245+00:00"
     },
     "campaign-partner_introduction-ecosystem_builder-local-delivery-partner-required": {
       "slug": "campaign-partner_introduction-ecosystem_builder-local-delivery-partner-required",
@@ -649,7 +636,7 @@
       "interventions": [
         "unlock:project-guyana-proc-2026-00386:friction:partner_introduction"
       ],
-      "updated_at": "2026-08-13T15:56:51.508849+00:00"
+      "updated_at": "2026-08-13T16:27:05.932245+00:00"
     }
   }
 }

@@ -2,40 +2,26 @@
 
 **Decision job:** Project pipeline tracking and expression of interest preparation
 **Delivery channel:** Email brief
-**Generated:** Jun 19, 2026 at 12:20 UTC
-**Dispatches in this packet:** 2
+**Generated:** Jul 24, 2026 at 18:31 UTC
+**Dispatches in this packet:** 1
 
 ---
 
-## Dispatches (2)
+## Dispatches (1)
 
-### 1. CARICOM: 3 active procurements — bidding window open
+### 1. CARICOM: 9 active procurements — bidding window open
 
-**ID:** `DSP-20260619-016` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 95/100 | B - cross-source
+**ID:** `DSP-20260724-012` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 96/100 | B - cross-source
 **Channel:** Email brief | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** CDB active procurement notices: 3
-**Detail:** CDB active procurement notices: 3
+**Evidence:** CDB active procurement notices: 9; • Enhancing the Quality of the Belize National Quality Infrastructure; • Solar Photo-Voltaic and Battery Energy Storage System Project; • 2025 Annual Procurement Report
+**Detail:** CDB active procurement notices: 9
 **Grade:** B - cross-source
 
-**Recommended action:** Track CDB/IDB project pipeline: CDB active procurement notices: 3. Review opportunity fit and prepare expression of interest.
+**Recommended action:** Track CDB/IDB project pipeline: CDB active procurement notices: 9. Review opportunity fit and prepare expression of interest.
 **Decision to influence:** Which procurement or project opportunity to pursue
 **Routing rationale:** CDB/IDB project pipeline is the primary lead source for project-based business development
-
-### 2. Belize: signal detected
-
-**ID:** `DSP-20260619-031` | **Country:** Belize | **Confidence:** 🔴 Immediate | 94/100 | A - multi-source
-**Channel:** Email brief | **Window:** 21 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** CDB active procurement notices: 3
-**Detail:** signal detected
-**Grade:** A - multi-source
-
-**Recommended action:** CDB procurement (signal detected) aligned with stable shipping lanes. Viable corridor for logistics providers — prepare EOI.
-**Decision to influence:** Which logistics/procurement corridor to bid or partner on
-**Routing rationale:** CDB procurement aligned with maritime stability = viable logistics corridors for project-based entry
 
 ---
 

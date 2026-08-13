@@ -1,27 +1,6 @@
 {
-  "generated_at": "2026-06-19T12:20:17.196925+00:00",
+  "generated_at": "2026-07-24T18:31:35.517415+00:00",
   "packs": [
-    {
-      "signal_id": "enhanced-invest-guyana",
-      "file": "enhanced-invest-guyana.json",
-      "country": "Guyana",
-      "recommendation": "hold",
-      "confidence_score": 100
-    },
-    {
-      "signal_id": "enhanced-invest-belize",
-      "file": "enhanced-invest-belize.json",
-      "country": "Belize",
-      "recommendation": "hold",
-      "confidence_score": 100
-    },
-    {
-      "signal_id": "enhanced-invest-st.-vincent-and-the-grenadines",
-      "file": "enhanced-invest-st.-vincent-and-the-grenadines.json",
-      "country": "St. Vincent and the Grenadines",
-      "recommendation": "hold",
-      "confidence_score": 68
-    },
     {
       "signal_id": "dev-pipeline-regional",
       "file": "dev-pipeline-regional.json",
@@ -30,11 +9,11 @@
       "confidence_score": 78
     },
     {
-      "signal_id": "supply-chain-belize",
-      "file": "supply-chain-belize.json",
-      "country": "Belize",
+      "signal_id": "enhanced-invest-guyana",
+      "file": "enhanced-invest-guyana.json",
+      "country": "Guyana",
       "recommendation": "hold",
-      "confidence_score": 94
+      "confidence_score": 96
     }
   ]
 }

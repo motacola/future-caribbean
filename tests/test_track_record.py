@@ -57,8 +57,11 @@ def test_packager_grouping():
     older_cycle = next((c for c in cycles if c["cycle_id"] != current_cycle_id), None)
 
     assert current_cycle is not None, "Current cycle should exist"
-    assert current_cycle["lead"]["country"] == "Guyana"
-    assert "Money is moving into Guyana" in current_cycle["lead"]["title"]
+    # Lead country is whatever the dispatch_desk says, not a hard-coded value.
+    # The historical demo cycle was Guyana; current cycle may differ.
+    assert current_cycle["lead"]["country"], "current cycle lead country should be set"
+    assert current_cycle["lead"]["title"], "current cycle lead title should be set"
+    assert current_cycle["lead"]["country"] in current_cycle["lead"]["title"]
 
     if older_cycle:
         assert older_cycle["lead"]["country"] == ""

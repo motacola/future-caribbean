@@ -1,6 +1,6 @@
 # Caribbean Opportunity Dispatch — Judge Brief
 
-Generated: 2026-06-19 12:20 UTC
+Generated: 2026-07-24 18:31 UTC
 
 ## What This Proves
 
@@ -8,63 +8,64 @@ Caribbean Opportunity Dispatch is the product. Caribbean Signal OS is the archit
 
 ## Live Run Snapshot
 
-- Total raw signals generated: 26
-- Sources represented: CARICOM, CDB, IDB, NDBC, World Bank
-- Countries/zones: 10
+- Total raw signals generated: 15
+- Sources represented: CDB, IDB, World Bank
+- Countries/zones: 9
 - New/updated this cycle: 0
 - User-facing outputs: opportunity dispatches, regional thesis, why-now context, feedback review, judge brief
 
-**Belize** — 3 signal(s), 5 source(s): 💼 Investment + 💎 Investment + supply_chain_signal
+**Suriname** — 2 signal(s), 3 source(s): 💼 Investment + 💎 Investment
 
-🔴 — **💎 Investment — Belize**
-   Belize: +701.0% multi-source capital surge — market entry window open
-   Immediate | 100/100 | A - multi-source
-   Immediate investigation. Belize has multi-source investment validation (3 signals converging). Priority: assess market entry options, identify existing operators.
+🔴 ⬇️ **💎 Investment — Suriname**
+   Suriname: +206.0% multi-source investment validated — opportunity active
+   Immediate | 96/100 | B - cross-source
+   ⬇️ Weakened (-6 pts)
+   Immediate investigation. Suriname has multi-source investment validation (2 signals converging). Priority: assess market entry options, identify existing operators.
 
 ## Supporting Decision Signals
 
-**1.** 🔴 **💎 Investment — Barbados** — sustained
+**1.** 🔴 **🏗️ Pipeline — CARICOM** — sustained
+   Narrative: CARICOM: 9 active procurements — bidding window open
+   Score: 96/100 | Grade: B - cross-source
+   Audience: investor/founder via Email brief + Telegram
+   Decision: Active procurement pipeline: CDB active procurement notices: 9. Priority: review CDB/IDB opportunities as lead list for project-based entry.
+
+**2.** 🔴 **💎 Investment — Barbados** — weakened
    Narrative: Barbados: +34.8% multi-source investment validated — opportunity active
-   Score: 100/100 | Grade: A - multi-source
+   Score: 96/100 | Grade: B - cross-source
    Audience: investor/founder via Email brief + Telegram
-   Decision: Immediate investigation. Barbados has multi-source investment validation (3 signals converging). Priority: assess market entry options, identify existing operators.
+   Decision: Immediate investigation. Barbados has multi-source investment validation (2 signals converging). Priority: assess market entry options, identify existing operators.
+   ⬇️ Weakened (-6 pts)
 
-**2.** 🔴 **🏗️ Pipeline — CARICOM** — sustained
-   Narrative: CARICOM: 3 active procurements — bidding window open
-   Score: 95/100 | Grade: B - cross-source
+**3.** 🔴 **💎 Investment — Guyana** — sustained
+   Narrative: Guyana: +860.3% multi-source capital surge — market entry window open
+   Score: 96/100 | Grade: B - cross-source
    Audience: investor/founder via Email brief + Telegram
-   Decision: Active procurement pipeline: CDB active procurement notices: 3. Priority: review CDB/IDB opportunities as lead list for project-based entry.
+   Decision: Immediate investigation. Guyana has multi-source investment validation (2 signals converging). Priority: assess market entry options, identify existing operators.
 
-**3.** 🔴 **💼 Investment — Guyana** — sustained
-   Narrative: Guyana: FDI trending at +860.3% — screening trigger active
-   Score: 90/100 | Grade: B - cross-source
+**4.** 🟡 **💼 Investment — Suriname** — sustained
+   Narrative: Suriname: FDI trending at +206.0% — screening trigger active
+   Score: 84/100 | Grade: B - cross-source
    Audience: investor/founder via Email brief + Telegram
-   Decision: Immediate investigation. Guyana FDI signal (860.3% change) with active development datasets. Validate with local market intel.
+   Decision: Validation priority. Suriname FDI movement (206.0% change) signals opportunity. Cross-reference with sector data.
 
-**4.** 🟡 **💼 Investment — St. Kitts and Nevis** — sustained
-   Narrative: St. Kitts and Nevis: FDI trending at +41.1% — screening trigger active
-   Score: 78/100 | Grade: B - cross-source
-   Audience: investor/founder via Email brief + Telegram
-   Decision: Validation priority. St. Kitts and Nevis FDI movement (41.1% change) signals opportunity. Cross-reference with sector data.
-
-**5.** 🟢 **⚠️ Vulnerability — St. Vincent and the Grenadines** — intensified
+**5.** 🟢 **⚠️ Vulnerability — St. Vincent and the Grenadines** — sustained
    Narrative: St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended
-   Score: 68/100 | Grade: C - single-source
+   Score: 69/100 | Grade: C - single-source
    Audience: policy/operator via Telegram digest
    Decision: Monitor. St. Vincent and the Grenadines showing economic stress (18.00%). Track next cycle. Escalates if additional stress indicators appear or existing ones worsen.
-   ⬆️ Strengthened (+8 pts)
 
-**6.** 🟢 **⚠️ Vulnerability — Suriname** — sustained
-   Narrative: Suriname: economic stress indicators rising — portfolio review recommended
-   Score: 56/100 | Grade: C - single-source
-   Audience: policy/operator via Telegram digest
-   Decision: Monitor. Suriname showing economic stress (16.23%). Track next cycle. Escalates if additional stress indicators appear or existing ones worsen.
-
-**7.** ⚪ **🏖️ Tourism — Antigua and Barbuda** — sustained
+**6.** ⚪ **🏖️ Tourism — Antigua and Barbuda** — sustained
    Narrative: Antigua and Barbuda: GDP growth signals expanding tourist economy
    Score: 47/100 | Grade: C - single-source
    Audience: tourism operator via Telegram digest
    Decision: Context. Antigua and Barbuda GDP data point for tourism sector awareness.
+
+**7.** ⚪ **🏖️ Tourism — Dominica** — sustained
+   Narrative: Dominica: GDP growth signals expanding tourist economy
+   Score: 47/100 | Grade: C - single-source
+   Audience: tourism operator via Telegram digest
+   Decision: Context. Dominica GDP data point for tourism sector awareness.
 
 ## Routing Rationale
 
@@ -134,7 +135,7 @@ Each signal is routed to specific personas based on signal kind and evidence lev
 
 ## Cycle Summary
 
-Lead: Belize · 26 composite signal(s) · 1 intensified · 24 persistent
+Lead: Suriname · 15 composite signal(s) · 13 persistent
 ## Judge Demo Path
 
 1. Run `bash run_pipeline.sh`.
@@ -146,7 +147,7 @@ Lead: Belize · 26 composite signal(s) · 1 intensified · 24 persistent
 7. Open `outbox/channel_dispatch_log.md` to show distribution routing.
 8. Open `outbox/feedback_review.md` to show the feedback/learning loop.
 9. Open `outbox/judge_brief.md` for the system and routing rationale.
-10. Open `dashboard.html` last as the operator console.
+10. Open the dashboard site (`python3 server.py`, then `/`) last as the operator console.
 
 ## The Feedback Loop (Live)
 

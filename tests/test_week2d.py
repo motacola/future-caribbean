@@ -167,7 +167,13 @@ def test_astro_data_includes_ported_label_cleaners():
     assert f"All signals point to {lead_country}." in dashboard, (
         f"dashboard should render 'All signals point to {lead_country}.' (got lead={lead_country})"
     )
-    assert "Solid — several sources agree" in dashboard
+    # Lead confidence band: 'Solid' for multi-source / grade A leads, 'Promising'
+    # for cross-source / grade B leads. Either phrasing is valid for a real lead.
+    assert ("Solid — several sources agree" in dashboard
+            or "Promising — more than one source" in dashboard), (
+        "dashboard should render the lead's cleaned grade label "
+        "(Solid for multi-source/A, Promising for cross-source/B)"
+    )
     assert "World Bank" in dashboard
     assert "money on the move" in dashboard
 

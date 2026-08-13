@@ -2,40 +2,26 @@
 
 **Decision job:** Operational readiness and bid pipeline assessment
 **Delivery channel:** Telegram
-**Generated:** Jun 19, 2026 at 12:20 UTC
-**Dispatches in this packet:** 2
+**Generated:** Jul 24, 2026 at 18:31 UTC
+**Dispatches in this packet:** 1
 
 ---
 
-## Dispatches (2)
+## Dispatches (1)
 
-### 1. CARICOM: 3 active procurements — bidding window open
+### 1. CARICOM: 9 active procurements — bidding window open
 
-**ID:** `DSP-20260619-015` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 95/100 | B - cross-source
+**ID:** `DSP-20260724-011` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 96/100 | B - cross-source
 **Channel:** Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** replied
 
-**Evidence:** CDB active procurement notices: 3
-**Detail:** CDB active procurement notices: 3
+**Evidence:** CDB active procurement notices: 9; • Enhancing the Quality of the Belize National Quality Infrastructure; • Solar Photo-Voltaic and Battery Energy Storage System Project; • 2025 Annual Procurement Report
+**Detail:** CDB active procurement notices: 9
 **Grade:** B - cross-source
 
-**Recommended action:** Review operational readiness for CARICOM opportunities. CDB active procurement notices: 3 — assess capacity and bid pipeline.
+**Recommended action:** Review operational readiness for CARICOM opportunities. CDB active procurement notices: 9 — assess capacity and bid pipeline.
 **Decision to influence:** Which procurement or project opportunity to pursue
 **Routing rationale:** Active procurement directly maps to operational capacity needs — first to respond wins
-
-### 2. Belize: signal detected
-
-**ID:** `DSP-20260619-030` | **Country:** Belize | **Confidence:** 🔴 Immediate | 94/100 | A - multi-source
-**Channel:** Telegram | **Window:** 21 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** CDB active procurement notices: 3
-**Detail:** signal detected
-**Grade:** A - multi-source
-
-**Recommended action:** Active supply chain corridor in Belize: procurement live + maritime stable. Assess capacity for logistics, warehousing, transport — bid window open.
-**Decision to influence:** Which logistics/procurement corridor to bid or partner on
-**Routing rationale:** Active procurement + stable maritime = real supply chain corridor opportunity — first to respond wins
 
 ---
 

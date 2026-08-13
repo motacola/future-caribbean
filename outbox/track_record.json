@@ -1,32 +1,58 @@
 {
-  "generated_at": "2026-07-13T22:21:45.174974+00:00",
+  "generated_at": "2026-08-13T15:56:53.475742+00:00",
   "feedback_provenance": "simulated",
   "current_boosts": {
-    "enhanced_investment": {
-      "Guyana": 4,
-      "Belize": -2,
-      "St. Vincent and the Grenadines": -6
-    },
     "development_pipeline": {
-      "CARICOM": 1
+      "CARICOM": 2
     },
-    "supply_chain_signal": {
-      "Belize": -6
+    "enhanced_investment": {
+      "Guyana": 5,
+      "Suriname": -6,
+      "Barbados": -6,
+      "Belize": 1,
+      "St. Vincent and the Grenadines": 0
     },
     "investment_signal": {
       "Guyana": -4,
-      "Belize": -4,
-      "St. Vincent and the Grenadines": -4
-    },
-    "food_security": {
-      "CARICOM": -4
+      "Suriname": -4,
+      "Barbados": -4,
+      "Belize": 0,
+      "St. Vincent and the Grenadines": 0
     },
     "economic_vulnerability": {
-      "St. Vincent and the Grenadines": 8,
-      "Suriname": -4
+      "St. Vincent and the Grenadines": 9,
+      "Suriname": 0
+    },
+    "supply_chain_signal": {
+      "Belize": 0
+    },
+    "food_security": {
+      "CARICOM": 0
     }
   },
   "cycles": [
+    {
+      "cycle_id": "20260724",
+      "responses": {
+        "forwarded": 1,
+        "replied": 1,
+        "opened": 0,
+        "ignored": 17,
+        "decision_changed": 1
+      },
+      "dispatch_count": 20,
+      "countries": [
+        "Guyana",
+        "Suriname",
+        "Barbados",
+        "CARICOM",
+        "St. Vincent and the Grenadines"
+      ],
+      "lead": {
+        "country": "CARICOM",
+        "title": "9 live tenders in CARICOM — bids are open now"
+      }
+    },
     {
       "cycle_id": "20260619",
       "responses": {
@@ -45,8 +71,8 @@
         "Suriname"
       ],
       "lead": {
-        "country": "Guyana",
-        "title": "Money is moving into Guyana — up 860.3%, and more than one source says so"
+        "country": "",
+        "title": ""
       }
     }
   ]

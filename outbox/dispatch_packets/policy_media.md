@@ -2,30 +2,16 @@
 
 **Decision job:** Briefing input and narrative lead sourcing
 **Delivery channel:** Telegram digest
-**Generated:** Jun 19, 2026 at 12:20 UTC
-**Dispatches in this packet:** 3
+**Generated:** Jul 24, 2026 at 18:31 UTC
+**Dispatches in this packet:** 1
 
 ---
 
-## Dispatches (3)
+## Dispatches (1)
 
-### 1. CARICOM: food supply indicators shifting — supply chain implications
+### 1. St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended
 
-**ID:** `DSP-20260619-014` | **Country:** CARICOM | **Confidence:** 🟡 Validation | 80/100 | B - cross-source
-**Channel:** Telegram digest | **Window:** 30 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** CARICOM food trade data: 14 datasets available
-**Detail:** 5%
-**Grade:** B - cross-source
-
-**Recommended action:** Signal context for CARICOM: 5%. Use this dispatch as a briefing input or narrative lead.
-**Decision to influence:** Agricultural/logistics investment case or policy response planning
-**Routing rationale:** Food security is a regional stability indicator — tracks pressure points before they become crises
-
-### 2. St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended
-
-**ID:** `DSP-20260619-010` | **Country:** St. Vincent and the Grenadines | **Confidence:** 🟢 Monitor | 68/100 | C - single-source
+**ID:** `DSP-20260724-010` | **Country:** St. Vincent and the Grenadines | **Confidence:** 🟢 Monitor | 69/100 | C - single-source
 **Channel:** Telegram digest | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -37,21 +23,6 @@
 **Decision to influence:** Risk assessment for capital exposure or policy attention
 **Routing rationale:** Economic stress indicators drive policy response and media narratives
 **Risk flags:** Elevated economic stress in St. Vincent and the Grenadines
-
-### 3. Suriname: economic stress indicators rising — portfolio review recommended
-
-**ID:** `DSP-20260619-012` | **Country:** Suriname | **Confidence:** 🟢 Monitor | 56/100 | C - single-source
-**Channel:** Telegram digest | **Window:** 30 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Suriname: Inflation annual % is 16.23% (2024).
-**Detail:** 16.23%
-**Grade:** C - single-source
-
-**Recommended action:** Signal context for Suriname: 16.23%. Use this dispatch as a briefing input or narrative lead.
-**Decision to influence:** Risk assessment for capital exposure or policy attention
-**Routing rationale:** Economic stress indicators drive policy response and media narratives
-**Risk flags:** Elevated economic stress in Suriname
 
 ---
 

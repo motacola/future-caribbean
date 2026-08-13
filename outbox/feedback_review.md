@@ -1,6 +1,6 @@
-# Signal OS Feedback Review — Cycle 20260619
+# Signal OS Feedback Review — Cycle 20260724
 
-Generated: 2026-06-19 12:20 UTC
+Generated: 2026-07-24 18:31 UTC
 
 Feedback is collected per dispatch via channel interaction (Telegram reactions, replies, forwarding, or explicit feedback links). Each entry records what happened and how the next cycle adapts.
 
@@ -8,34 +8,25 @@ Feedback is collected per dispatch via channel interaction (Telegram reactions, 
 
 ### Guyana: +860.3% multi-source capital surge — market entry window open
 
-- **Dispatch**: DSP-20260619-021
+- **Dispatch**: DSP-20260724-017
 - **Kind**: enhanced_investment
 - **Sent via**: Email brief + Telegram
 - **Feedback**: 📤 forwarded
 - **Detail**: Investor forwarded to partner evaluating Guyana entry opportunities
 - **Next cycle**: Similar capital-momentum signals ranked higher in next cycle
 
-### CARICOM: 3 active procurements — bidding window open
+### CARICOM: 9 active procurements — bidding window open
 
-- **Dispatch**: DSP-20260619-015
+- **Dispatch**: DSP-20260724-011
 - **Kind**: development_pipeline
 - **Sent via**: Telegram
 - **Feedback**: 💬 replied
 - **Detail**: Operator requested more detail on Belize procurement opportunity
 - **Next cycle**: Procurement layer expanded with opportunity-specific detail
 
-### Belize: +701.0% multi-source capital surge — market entry window open
-
-- **Dispatch**: DSP-20260619-024
-- **Kind**: enhanced_investment
-- **Sent via**: Email brief + Telegram
-- **Feedback**: 👁️ opened
-- **Detail**: Opened but no follow-up. Headline may be too generic — testing tighter signal language next cycle
-- **Next cycle**: Tighten headline and add specific founder/operator action
-
 ### St. Vincent and the Grenadines: economic stress indicators rising — portfolio review...
 
-- **Dispatch**: DSP-20260619-009
+- **Dispatch**: DSP-20260724-009
 - **Kind**: economic_vulnerability
 - **Sent via**: Email brief + Telegram
 - **Feedback**: 🔀 decision_changed
@@ -44,11 +35,11 @@ Feedback is collected per dispatch via channel interaction (Telegram reactions, 
 
 ## Summary
 
-- Feedback events reviewed: 4
+- Feedback events reviewed: 3
 - Forwarded: 1
 - Replied: 1
 - Decision changed: 1
-- Opened (no reply): 1
+- Opened (no reply): 0
 - Ignored: 0
 
 ## Learning Loop

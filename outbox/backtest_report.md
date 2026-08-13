@@ -1,56 +1,58 @@
 # Signal Fabric — Backtest Report
 
-**Generated:** 2026-06-19T12:20:17.351752+00:00
-**Cycles analyzed:** 1
-**Total dispatches:** 29
-**Actionable responses:** 4
-**Overall response rate:** 13.8%
-**Avg confidence:** 86.4/100
+**Generated:** 2026-07-24T18:31:35.698523+00:00
+**Cycles analyzed:** 2
+**Total dispatches:** 47
+**Actionable responses:** 7
+**Overall response rate:** 14.9%
+**Avg confidence:** 84.2/100
 
 ## Summary
 
-- **Total validation packs:** 9
-- **Avg confidence:** 86.4/100
-- **Response rate:** 13.8%
+- **Total validation packs:** 13
+- **Avg confidence:** 84.2/100
+- **Response rate:** 14.9%
 
 ## Recommendation Distribution
 
 - **Advance:** 0 (0.0%)
-- **Hold:** 9 (100.0%)
+- **Hold:** 13 (100.0%)
 - **Reject:** 0 (0.0%)
 
 ## Confidence Calibration
 
-- **80-100:** 6 packs (66.7%)
-- **60-79:** 3 packs (33.3%)
+- **80-100:** 7 packs (53.8%)
+- **60-79:** 6 packs (46.2%)
 - **40-59:** 0 packs (0.0%)
 - **0-39:** 0 packs (0.0%)
 
 ## Evidence Category Coverage
 
-- **Sector Hypotheses:** 5 packs (55.6%)
-- **Supporting Projects:** 4 packs (44.4%)
-- **Procurement Matches:** 28 packs (311.1%)
-- **Operators:** 10 packs (111.1%)
+- **Sector Hypotheses:** 7 packs (53.8%)
+- **Supporting Projects:** 6 packs (46.2%)
+- **Procurement Matches:** 52 packs (400.0%)
+- **Operators:** 13 packs (100.0%)
 
 ## Signal Type Performance
 
 - **dev:** Advance 0, Hold 1, Reject 0 (n=1)
-- **enhanced:** Advance 0, Hold 4, Reject 0 (n=4)
-- **regional:** Advance 0, Hold 3, Reject 0 (n=3)
+- **enhanced:** Advance 0, Hold 6, Reject 0 (n=6)
+- **food:** Advance 0, Hold 1, Reject 0 (n=1)
+- **regional:** Advance 0, Hold 4, Reject 0 (n=4)
 - **supply:** Advance 0, Hold 1, Reject 0 (n=1)
 
 ## Cycle Accuracy
 
 | Cycle | Dispatches | Actionable | Response Rate |
 |-------|------------|------------|---------------|
-| 20260619 | 29 | 4 | 13.8% |
+| 20260724 | 20 | 3 | 15.0% |
+| 20260619 | 27 | 4 | 14.8% |
 
 ## Feedback Analysis
 
-- **Total feedback entries:** 29
-- **Actionable rate:** 13.8%
-- **By status:** {'forwarded': 1, 'ignored': 25, 'opened': 1, 'replied': 1, 'decision_changed': 1}
+- **Total feedback entries:** 47
+- **Actionable rate:** 14.9%
+- **By status:** {'replied': 2, 'ignored': 40, 'forwarded': 2, 'decision_changed': 2, 'opened': 1}
 
 ## Recommendation Calibration
 

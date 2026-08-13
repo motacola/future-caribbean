@@ -1,31 +1,38 @@
-*Caribbean Market Pulse — 2026-06-19 12:20 UTC*
+*Caribbean Market Pulse — 2026-07-24 18:31 UTC*
 
-Lead: Belize. 3 converging signal(s) across 5 source(s). Signals: 💼 Investment + 💎 Investment + supply_chain_signal.
+Lead: Suriname. 2 converging signal(s) across 3 source(s). Signals: 💼 Investment + 💎 Investment.
 
-🔴 — **💎 Investment — Belize**
-   Belize: +701.0% multi-source capital surge — market entry window open
-   Immediate | 100/100 | A - multi-source
-   Immediate investigation. Belize has multi-source investment validation (3 signals converging). Priority: assess market entry options, identify existing operators.
-
-🔴 — **💎 Investment — Barbados**
-   Barbados: +34.8% multi-source investment validated — opportunity active
-   Immediate | 100/100 | A - multi-source
-   Immediate investigation. Barbados has multi-source investment validation (3 signals converging). Priority: assess market entry options, identify existing operators.
+🔴 ⬇️ **💎 Investment — Suriname**
+   Suriname: +206.0% multi-source investment validated — opportunity active
+   Immediate | 96/100 | B - cross-source
+   ⬇️ Weakened (-6 pts)
+   Immediate investigation. Suriname has multi-source investment validation (2 signals converging). Priority: assess market entry options, identify existing operators.
 
 🔴 — **🏗️ Pipeline — CARICOM**
-   CARICOM: 3 active procurements — bidding window open
-   Immediate | 95/100 | B - cross-source
-   Active procurement pipeline: CDB active procurement notices: 3. Priority: review CDB/IDB opportunities as lead list for project-based entry.
+   CARICOM: 9 active procurements — bidding window open
+   Immediate | 96/100 | B - cross-source
+   Active procurement pipeline: CDB active procurement notices: 9. Priority: review CDB/IDB opportunities as lead list for project-based entry.
 
-🔴 — **💼 Investment — Guyana**
-   Guyana: FDI trending at +860.3% — screening trigger active
-   Immediate | 90/100 | B - cross-source
-   Immediate investigation. Guyana FDI signal (860.3% change) with active development datasets. Validate with local market intel.
+🔴 ⬇️ **💎 Investment — Barbados**
+   Barbados: +34.8% multi-source investment validated — opportunity active
+   Immediate | 96/100 | B - cross-source
+   ⬇️ Weakened (-6 pts)
+   Immediate investigation. Barbados has multi-source investment validation (2 signals converging). Priority: assess market entry options, identify existing operators.
 
-🟡 — **💼 Investment — St. Kitts and Nevis**
-   St. Kitts and Nevis: FDI trending at +41.1% — screening trigger active
-   Validation | 78/100 | B - cross-source
-   Validation priority. St. Kitts and Nevis FDI movement (41.1% change) signals opportunity. Cross-reference with sector data.
+🔴 — **💎 Investment — Guyana**
+   Guyana: +860.3% multi-source capital surge — market entry window open
+   Immediate | 96/100 | B - cross-source
+   Immediate investigation. Guyana has multi-source investment validation (2 signals converging). Priority: assess market entry options, identify existing operators.
 
-— Lead: Belize · 26 composite signal(s) · 1 intensified · 24 persistent
+🟡 — **💼 Investment — Suriname**
+   Suriname: FDI trending at +206.0% — screening trigger active
+   Validation | 84/100 | B - cross-source
+   Validation priority. Suriname FDI movement (206.0% change) signals opportunity. Cross-reference with sector data.
+
+🟢 — **⚠️ Vulnerability — St. Vincent and the Grenadines**
+   St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended
+   Monitor | 69/100 | C - single-source
+   Monitor. St. Vincent and the Grenadines showing economic stress (18.00%). Track next cycle. Escalates if additional stress indicators appear or existing ones worsen.
+
+— Lead: Suriname · 15 composite signal(s) · 13 persistent
 - Caribbean Signal OS

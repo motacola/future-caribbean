@@ -1,61 +1,7 @@
 {
-  "cycle_intro": "Lead: Belize. 3 converging signal(s) across 5 source(s). Signals: \ud83d\udcbc Investment + \ud83d\udc8e Investment + supply_chain_signal.",
-  "generated_at": "2026-06-19 12:20 UTC",
+  "cycle_intro": "Lead: Suriname. 2 converging signal(s) across 3 source(s). Signals: \ud83d\udcbc Investment + \ud83d\udc8e Investment.",
+  "generated_at": "2026-07-24 18:31 UTC",
   "items": [
-    {
-      "band": "immediate",
-      "channel": "Email brief + Telegram",
-      "country": "Barbados",
-      "freshness": "sustained",
-      "kind": "enhanced_investment",
-      "metrics": {
-        "decision_changed": null,
-        "forwarded": null,
-        "opened": null,
-        "reply_count": null,
-        "sent": false
-      },
-      "persona": "investor/founder",
-      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 100,
-      "signal_id": "enhanced-invest-barbados"
-    },
-    {
-      "band": "immediate",
-      "channel": "Email brief + Telegram",
-      "country": "Belize",
-      "freshness": "sustained",
-      "kind": "enhanced_investment",
-      "metrics": {
-        "decision_changed": null,
-        "forwarded": null,
-        "opened": null,
-        "reply_count": null,
-        "sent": false
-      },
-      "persona": "investor/founder",
-      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 100,
-      "signal_id": "enhanced-invest-belize"
-    },
-    {
-      "band": "immediate",
-      "channel": "Email brief + Telegram",
-      "country": "Dominica",
-      "freshness": "sustained",
-      "kind": "enhanced_investment",
-      "metrics": {
-        "decision_changed": null,
-        "forwarded": null,
-        "opened": null,
-        "reply_count": null,
-        "sent": false
-      },
-      "persona": "investor/founder",
-      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 100,
-      "signal_id": "enhanced-invest-dominica"
-    },
     {
       "band": "immediate",
       "channel": "Email brief + Telegram",
@@ -71,8 +17,134 @@
       },
       "persona": "investor/founder",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 95,
+      "score": 96,
       "signal_id": "dev-pipeline-regional"
+    },
+    {
+      "band": "immediate",
+      "channel": "Email brief + Telegram",
+      "country": "Barbados",
+      "freshness": "weakened",
+      "kind": "enhanced_investment",
+      "metrics": {
+        "decision_changed": null,
+        "forwarded": null,
+        "opened": null,
+        "reply_count": null,
+        "sent": false
+      },
+      "persona": "investor/founder",
+      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
+      "score": 96,
+      "signal_id": "enhanced-invest-barbados"
+    },
+    {
+      "band": "immediate",
+      "channel": "Email brief + Telegram",
+      "country": "Guyana",
+      "freshness": "sustained",
+      "kind": "enhanced_investment",
+      "metrics": {
+        "decision_changed": null,
+        "forwarded": null,
+        "opened": null,
+        "reply_count": null,
+        "sent": false
+      },
+      "persona": "investor/founder",
+      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
+      "score": 96,
+      "signal_id": "enhanced-invest-guyana"
+    },
+    {
+      "band": "immediate",
+      "channel": "Email brief + Telegram",
+      "country": "Suriname",
+      "freshness": "weakened",
+      "kind": "enhanced_investment",
+      "metrics": {
+        "decision_changed": null,
+        "forwarded": null,
+        "opened": null,
+        "reply_count": null,
+        "sent": false
+      },
+      "persona": "investor/founder",
+      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
+      "score": 96,
+      "signal_id": "enhanced-invest-suriname"
+    },
+    {
+      "band": "monitor",
+      "channel": "Telegram digest",
+      "country": "St. Vincent and the Grenadines",
+      "freshness": "sustained",
+      "kind": "economic_vulnerability",
+      "metrics": {
+        "decision_changed": null,
+        "forwarded": null,
+        "opened": null,
+        "reply_count": null,
+        "sent": false
+      },
+      "persona": "policy/operator",
+      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
+      "score": 69,
+      "signal_id": "vuln-st.-vincent-and-the-grenadines"
+    },
+    {
+      "band": "context",
+      "channel": "Telegram digest",
+      "country": "Antigua and Barbuda",
+      "freshness": "sustained",
+      "kind": "tourism_impact",
+      "metrics": {
+        "decision_changed": null,
+        "forwarded": null,
+        "opened": null,
+        "reply_count": null,
+        "sent": false
+      },
+      "persona": "tourism operator",
+      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
+      "score": 47,
+      "signal_id": "tourism-antigua-and-barbuda"
+    },
+    {
+      "band": "context",
+      "channel": "Telegram digest",
+      "country": "Dominica",
+      "freshness": "sustained",
+      "kind": "tourism_impact",
+      "metrics": {
+        "decision_changed": null,
+        "forwarded": null,
+        "opened": null,
+        "reply_count": null,
+        "sent": false
+      },
+      "persona": "tourism operator",
+      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
+      "score": 47,
+      "signal_id": "tourism-dominica"
+    },
+    {
+      "band": "context",
+      "channel": "Telegram digest",
+      "country": "Grenada",
+      "freshness": "sustained",
+      "kind": "tourism_impact",
+      "metrics": {
+        "decision_changed": null,
+        "forwarded": null,
+        "opened": null,
+        "reply_count": null,
+        "sent": false
+      },
+      "persona": "tourism operator",
+      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
+      "score": 47,
+      "signal_id": "tourism-grenada"
     },
     {
       "band": "immediate",
@@ -95,7 +167,7 @@
     {
       "band": "validation",
       "channel": "Email brief + Telegram",
-      "country": "St. Kitts and Nevis",
+      "country": "Suriname",
       "freshness": "sustained",
       "kind": "investment_signal",
       "metrics": {
@@ -107,13 +179,13 @@
       },
       "persona": "investor/founder",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 78,
-      "signal_id": "invest-st.-kitts-and-nevis"
+      "score": 84,
+      "signal_id": "invest-suriname"
     },
     {
       "band": "validation",
       "channel": "Email brief + Telegram",
-      "country": "Trinidad and Tobago",
+      "country": "Barbados",
       "freshness": "sustained",
       "kind": "investment_signal",
       "metrics": {
@@ -125,49 +197,13 @@
       },
       "persona": "investor/founder",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 78,
-      "signal_id": "invest-trinidad-and-tobago"
-    },
-    {
-      "band": "monitor",
-      "channel": "Telegram digest",
-      "country": "St. Vincent and the Grenadines",
-      "freshness": "intensified",
-      "kind": "economic_vulnerability",
-      "metrics": {
-        "decision_changed": null,
-        "forwarded": null,
-        "opened": null,
-        "reply_count": null,
-        "sent": false
-      },
-      "persona": "policy/operator",
-      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 68,
-      "signal_id": "vuln-st.-vincent-and-the-grenadines"
-    },
-    {
-      "band": "monitor",
-      "channel": "Telegram digest",
-      "country": "Suriname",
-      "freshness": "sustained",
-      "kind": "economic_vulnerability",
-      "metrics": {
-        "decision_changed": null,
-        "forwarded": null,
-        "opened": null,
-        "reply_count": null,
-        "sent": false
-      },
-      "persona": "policy/operator",
-      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 56,
-      "signal_id": "vuln-suriname"
+      "score": 74,
+      "signal_id": "invest-barbados"
     },
     {
       "band": "context",
       "channel": "Telegram digest",
-      "country": "Antigua and Barbuda",
+      "country": "Barbados",
       "freshness": "sustained",
       "kind": "tourism_impact",
       "metrics": {
@@ -180,43 +216,7 @@
       "persona": "tourism operator",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
       "score": 47,
-      "signal_id": "tourism-antigua-and-barbuda"
-    },
-    {
-      "band": "immediate",
-      "channel": "Email brief + Telegram",
-      "country": "Guyana",
-      "freshness": "sustained",
-      "kind": "enhanced_investment",
-      "metrics": {
-        "decision_changed": null,
-        "forwarded": null,
-        "opened": null,
-        "reply_count": null,
-        "sent": false
-      },
-      "persona": "investor/founder",
-      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 100,
-      "signal_id": "enhanced-invest-guyana"
-    },
-    {
-      "band": "immediate",
-      "channel": "Email brief + Telegram",
-      "country": "St. Kitts and Nevis",
-      "freshness": "sustained",
-      "kind": "enhanced_investment",
-      "metrics": {
-        "decision_changed": null,
-        "forwarded": null,
-        "opened": null,
-        "reply_count": null,
-        "sent": false
-      },
-      "persona": "investor/founder",
-      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 100,
-      "signal_id": "enhanced-invest-st.-kitts-and-nevis"
+      "signal_id": "tourism-barbados"
     }
   ],
   "purpose": "Feedback agent input queue for distribution performance and trust signals."

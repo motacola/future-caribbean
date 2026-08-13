@@ -2,83 +2,68 @@
 
 **Decision job:** Founder matching and ecosystem support prioritisation
 **Delivery channel:** Telegram
-**Generated:** Jun 19, 2026 at 12:20 UTC
-**Dispatches in this packet:** 5
+**Generated:** Jul 24, 2026 at 18:31 UTC
+**Dispatches in this packet:** 4
 
 ---
 
-## Dispatches (5)
+## Dispatches (4)
 
 ### 1. Guyana: +860.3% multi-source capital surge — market entry window open
 
-**ID:** `DSP-20260619-022` | **Country:** Guyana | **Confidence:** 🔴 Immediate | 100/100 | A - multi-source
+**ID:** `DSP-20260724-018` | **Country:** Guyana | **Confidence:** 🔴 Immediate | 96/100 | B - cross-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** WB FDI surge detected: Guyana
+**Evidence:** WB FDI surge detected: Guyana; CDB procurement/evaluation activity; Confidence: WB FDI data confirmed · CARICOM/CDB data available (2/3 signals); FDI change: 860.3%
 **Detail:** 860.3% change
-**Grade:** A - multi-source
+**Grade:** B - cross-source
 
 **Recommended action:** Route Guyana opportunity to relevant founders and investors in your network. Signal strength (860.3% change) makes this a high-priority introduction target.
 **Decision to influence:** Which verified opportunity to investigate for capital deployment or partnership entry
 **Routing rationale:** Cross-country investment velocity signals where to focus ecosystem support and founder matching
 
-### 2. Belize: +701.0% multi-source capital surge — market entry window open
+### 2. Suriname: +206.0% multi-source investment validated — opportunity active
 
-**ID:** `DSP-20260619-025` | **Country:** Belize | **Confidence:** 🔴 Immediate | 100/100 | A - multi-source
-**Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** WB FDI surge detected: Belize
-**Detail:** 701.0% change
-**Grade:** A - multi-source
-
-**Recommended action:** Route Belize opportunity to relevant founders and investors in your network. Signal strength (701.0% change) makes this a high-priority introduction target.
-**Decision to influence:** Which verified opportunity to investigate for capital deployment or partnership entry
-**Routing rationale:** Cross-country investment velocity signals where to focus ecosystem support and founder matching
-
-### 3. St. Vincent and the Grenadines: +88.2% multi-source investment validated — opportunity active
-
-**ID:** `DSP-20260619-028` | **Country:** St. Vincent and the Grenadines | **Confidence:** 🔴 Immediate | 100/100 | A - multi-source
+**ID:** `DSP-20260724-021` | **Country:** Suriname | **Confidence:** 🔴 Immediate | 96/100 | B - cross-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** weakened
 **Feedback status:** ignored
 
-**Evidence:** WB FDI surge detected: St. Vincent and the Grenadines
-**Detail:** 88.2% change
-**Grade:** A - multi-source
+**Evidence:** WB FDI surge detected: Suriname; CDB procurement/evaluation activity; Confidence: WB FDI data confirmed · CARICOM/CDB data available (2/3 signals); FDI change: 206.0%
+**Detail:** 206.0% change
+**Grade:** B - cross-source
 
-**Recommended action:** Route St. Vincent and the Grenadines opportunity to relevant founders and investors in your network. Signal strength (88.2% change) makes this a high-priority introduction target.
+**Recommended action:** Route Suriname opportunity to relevant founders and investors in your network. Signal strength (206.0% change) makes this a high-priority introduction target.
 **Decision to influence:** Which verified opportunity to investigate for capital deployment or partnership entry
 **Routing rationale:** Cross-country investment velocity signals where to focus ecosystem support and founder matching
-**Risk flags:** St. Vincent and the Grenadines also has vulnerability — validate before committing
 
-### 4. Capital convergence: 8 Caribbean economies showing multi-source investment momentum
+### 3. Barbados: +34.8% multi-source investment validated — opportunity active
 
-**ID:** `DSP-20260619-019` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
+**ID:** `DSP-20260724-024` | **Country:** Barbados | **Confidence:** 🔴 Immediate | 96/100 | B - cross-source
+**Channel:** Telegram | **Window:** 14 days | **Freshness:** weakened
+**Feedback status:** ignored
+
+**Evidence:** WB FDI surge detected: Barbados; CDB procurement/evaluation activity; Confidence: WB FDI data confirmed · CARICOM/CDB data available (2/3 signals); FDI change: 34.8%
+**Detail:** 34.8% change
+**Grade:** B - cross-source
+
+**Recommended action:** Route Barbados opportunity to relevant founders and investors in your network. Signal strength (34.8% change) makes this a high-priority introduction target.
+**Decision to influence:** Which verified opportunity to investigate for capital deployment or partnership entry
+**Routing rationale:** Cross-country investment velocity signals where to focus ecosystem support and founder matching
+
+### 4. Capital convergence: 3 Caribbean economies showing multi-source investment momentum
+
+**ID:** `DSP-20260724-015` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** new
 **Feedback status:** ignored
 
-**Evidence:** Multi-country enhanced investment validated across 8 countries. Top magnitudes: Guyana (860.3% change), Belize (701.0% change), St. Vincent and the Grenadines (88.2% change).
-**Detail:** Guyana (860.3% change), Belize (701.0% change), St. Vincent and the Grenadines (88.2% change)
+**Evidence:** Multi-country enhanced investment validated across 3 countries. Top magnitudes: Guyana (860.3% change), Suriname (206.0% change), Barbados (34.8% change).
+**Detail:** Guyana (860.3% change), Suriname (206.0% change), Barbados (34.8% change)
 **Grade:** B - cross-source
 
-**Recommended action:** Route Caribwide opportunity to relevant founders and investors in your network. Signal strength (Guyana (860.3% change), Belize (701.0% change), St. Vincent and the Grenadines (88.2% change)) makes this a high-priority introduction target.
+**Recommended action:** Route Caribwide opportunity to relevant founders and investors in your network. Signal strength (Guyana (860.3% change), Suriname (206.0% change), Barbados (34.8% change)) makes this a high-priority introduction target.
 **Decision to influence:** Which verified opportunity to investigate for capital deployment or partnership entry
 **Routing rationale:** Cross-country investment velocity signals where to focus ecosystem support and founder matching
-
-### 5. CARICOM: food supply indicators shifting — supply chain implications
-
-**ID:** `DSP-20260619-013` | **Country:** CARICOM | **Confidence:** 🟡 Validation | 80/100 | B - cross-source
-**Channel:** Telegram | **Window:** 30 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** CARICOM food trade data: 14 datasets available
-**Detail:** 5%
-**Grade:** B - cross-source
-
-**Recommended action:** Route CARICOM opportunity to relevant founders and investors in your network. Signal strength (5%) makes this a high-priority introduction target.
-**Decision to influence:** Agricultural/logistics investment case or policy response planning
-**Routing rationale:** Food trade data reveals supply chain gaps that local founders and agri-tech can fill
 
 ---
 
