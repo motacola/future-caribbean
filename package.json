@@ -17,7 +17,9 @@
     "flue:history": "flue run cycle-history --target node --payload",
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "test:e2e": "playwright test",
+    "test:e2e:install": "playwright install chromium"
   },
   "dependencies": {
     "@astrojs/react": "^6.0.2",
@@ -36,6 +38,7 @@
   },
   "devDependencies": {
     "@flue/cli": "^0.9.1",
+    "@playwright/test": "^1.62.1",
     "@types/node": "^24.10.1",
     "typescript": "^5.9.3"
   }
