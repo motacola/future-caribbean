@@ -33,7 +33,8 @@ anything that ends up in `/build` can be a React island.
 pnpm install                                              # one-time
 pnpm run build                                            # static + serverless build; must be green
 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python3 -m pytest tests --ignore=tests/e2e -q
-                                                          # 118 tests, must all pass
+                                                          # 119 tests, must all pass
+pnpm run test:e2e                                         # 8 lollipop e2e tests (also auto-starts the Astro preview)
 ```
 
 Vercel auto-deploys `main` on push. **Do not push unless the user asks**
