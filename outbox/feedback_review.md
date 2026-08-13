@@ -1,6 +1,6 @@
-# Signal OS Feedback Review — Cycle 20260724
+# Signal OS Feedback Review — Cycle 20260813
 
-Generated: 2026-07-24 18:31 UTC
+Generated: 2026-08-13 16:30 UTC
 
 Feedback is collected per dispatch via channel interaction (Telegram reactions, replies, forwarding, or explicit feedback links). Each entry records what happened and how the next cycle adapts.
 
@@ -8,16 +8,16 @@ Feedback is collected per dispatch via channel interaction (Telegram reactions, 
 
 ### Guyana: +860.3% multi-source capital surge — market entry window open
 
-- **Dispatch**: DSP-20260724-017
+- **Dispatch**: DSP-20260813-019
 - **Kind**: enhanced_investment
 - **Sent via**: Email brief + Telegram
 - **Feedback**: 📤 forwarded
 - **Detail**: Investor forwarded to partner evaluating Guyana entry opportunities
 - **Next cycle**: Similar capital-momentum signals ranked higher in next cycle
 
-### CARICOM: 9 active procurements — bidding window open
+### CARICOM: 7 active procurements — bidding window open
 
-- **Dispatch**: DSP-20260724-011
+- **Dispatch**: DSP-20260813-013
 - **Kind**: development_pipeline
 - **Sent via**: Telegram
 - **Feedback**: 💬 replied
@@ -26,7 +26,7 @@ Feedback is collected per dispatch via channel interaction (Telegram reactions, 
 
 ### St. Vincent and the Grenadines: economic stress indicators rising — portfolio review...
 
-- **Dispatch**: DSP-20260724-009
+- **Dispatch**: DSP-20260813-009
 - **Kind**: economic_vulnerability
 - **Sent via**: Email brief + Telegram
 - **Feedback**: 🔀 decision_changed

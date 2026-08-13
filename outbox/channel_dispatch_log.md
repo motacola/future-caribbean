@@ -1,12 +1,12 @@
-# Channel Dispatch Log — Cycle 20260724
+# Channel Dispatch Log — Cycle 20260813
 
-Generated: 2026-07-24 18:31 UTC
+Generated: 2026-08-13 16:30 UTC
 
 Per-channel routing plan for this cycle. Live send receipts are written to `outbox/live_send_log.md` after each delivery run.
 
 ## Email brief
 
-- [✓] CARICOM: 9 active procurements — bidding window open
+- [✓] CARICOM: 7 active procurements — bidding window open
 - **1 dispatches routed to Email brief**
 
 ## Email brief + Telegram
@@ -24,26 +24,28 @@ Per-channel routing plan for this cycle. Live send receipts are written to `outb
 
 ## Telegram
 
-- [✓] CARICOM: 9 active procurements — bidding window open
-- [✓] CARICOM: 9 active procurements — bidding window open
 - [✓] Guyana: +860.3% multi-source capital surge — market entry window open
 - [✓] Guyana: +860.3% multi-source capital surge — market entry window open
 - [✓] Suriname: +206.0% multi-source investment validated — opportunity active
 - [✓] Suriname: +206.0% multi-source investment validated — opportunity active
 - [✓] Barbados: +34.8% multi-source investment validated — opportunity active
 - [✓] Barbados: +34.8% multi-source investment validated — opportunity active
+- [✓] CARICOM: 7 active procurements — bidding window open
+- [✓] CARICOM: 7 active procurements — bidding window open
 - [✓] Regional FDI snapshot: 3 countries with active capital movement
 - [✓] Guyana: FDI trending at +860.3% — screening trigger active
 - [✓] Capital convergence: 3 Caribbean economies showing multi-source investment momentum
 - [✓] Capital convergence: 3 Caribbean economies showing multi-source investment momentum
 - [✓] Suriname: FDI trending at +206.0% — screening trigger active
+- [✓] CARICOM: food supply indicators shifting — supply chain implications
 - [✓] Barbados: FDI trending at +34.8% — screening trigger active
-- **14 dispatches routed to Telegram**
+- **15 dispatches routed to Telegram**
 
 ## Telegram digest
 
+- [✓] CARICOM: food supply indicators shifting — supply chain implications
 - [✓] St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended
-- **1 dispatches routed to Telegram digest**
+- **2 dispatches routed to Telegram digest**
 
 ## Channel Notes
 

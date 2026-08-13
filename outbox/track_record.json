@@ -1,36 +1,52 @@
 {
-  "generated_at": "2026-08-13T15:56:53.475742+00:00",
+  "generated_at": "2026-08-13T16:30:35.447701+00:00",
   "feedback_provenance": "simulated",
   "current_boosts": {
-    "development_pipeline": {
-      "CARICOM": 2
-    },
     "enhanced_investment": {
-      "Guyana": 5,
-      "Suriname": -6,
-      "Barbados": -6,
+      "Guyana": 7,
+      "Suriname": -9,
+      "Barbados": -9,
       "Belize": 1,
       "St. Vincent and the Grenadines": 0
     },
+    "development_pipeline": {
+      "CARICOM": 1
+    },
     "investment_signal": {
-      "Guyana": -4,
-      "Suriname": -4,
-      "Barbados": -4,
-      "Belize": 0,
-      "St. Vincent and the Grenadines": 0
-    },
-    "economic_vulnerability": {
-      "St. Vincent and the Grenadines": 9,
-      "Suriname": 0
-    },
-    "supply_chain_signal": {
-      "Belize": 0
+      "Guyana": -6,
+      "Suriname": -6,
+      "Barbados": -6
     },
     "food_security": {
-      "CARICOM": 0
+      "CARICOM": -4
+    },
+    "economic_vulnerability": {
+      "St. Vincent and the Grenadines": 12
     }
   },
   "cycles": [
+    {
+      "cycle_id": "20260813",
+      "responses": {
+        "forwarded": 1,
+        "replied": 1,
+        "opened": 0,
+        "ignored": 19,
+        "decision_changed": 1
+      },
+      "dispatch_count": 22,
+      "countries": [
+        "Guyana",
+        "Suriname",
+        "Barbados",
+        "CARICOM",
+        "St. Vincent and the Grenadines"
+      ],
+      "lead": {
+        "country": "Guyana",
+        "title": "Money is moving into Guyana — up 860.3%, and more than one source says so"
+      }
+    },
     {
       "cycle_id": "20260724",
       "responses": {
@@ -49,26 +65,24 @@
         "St. Vincent and the Grenadines"
       ],
       "lead": {
-        "country": "CARICOM",
-        "title": "9 live tenders in CARICOM — bids are open now"
+        "country": "",
+        "title": ""
       }
     },
     {
       "cycle_id": "20260619",
       "responses": {
         "forwarded": 1,
-        "replied": 1,
+        "replied": 0,
         "opened": 1,
-        "ignored": 23,
-        "decision_changed": 1
+        "ignored": 6,
+        "decision_changed": 0
       },
-      "dispatch_count": 27,
+      "dispatch_count": 8,
       "countries": [
-        "Belize",
-        "St. Vincent and the Grenadines",
         "Guyana",
-        "CARICOM",
-        "Suriname"
+        "Belize",
+        "St. Vincent and the Grenadines"
       ],
       "lead": {
         "country": "",

@@ -1,27 +1,9 @@
-# Caribbean Opportunity Dispatch — Cycle 20260724
+# Caribbean Opportunity Dispatch — Cycle 20260813
 
-Generated: 2026-07-24 18:31 UTC
-Total dispatches: 25
+Generated: 2026-08-13 16:30 UTC
+Total dispatches: 27
 
 ## ✅ Delivered Dispatches
-
-**CARICOM: 9 active procurements — bidding window open**
-   To: Regional Operator • Via: Telegram
-   💬 Feedback: replied
-   Why this persona: Active procurement directly maps to operational capacity needs — first to respond wins
-   Action: Review operational readiness for CARICOM opportunities. CDB active procurement notices: 9 — assess capacity and bid pipeline.
-
-**CARICOM: 9 active procurements — bidding window open**
-   To: Procurement Watcher • Via: Email brief
-   — Feedback: ignored
-   Why this persona: CDB/IDB project pipeline is the primary lead source for project-based business development
-   Action: Track CDB/IDB project pipeline: CDB active procurement notices: 9. Review opportunity fit and prepare expression of interest.
-
-**CARICOM: 9 active procurements — bidding window open**
-   To: Regional Founder/Operator • Via: Telegram
-   — Feedback: ignored
-   Why this persona: Procurement pipeline signals government and institutional spending direction — follow the money
-   Action: Map CARICOM procurement pipeline against your capability. CDB/IDB projects (CDB active procurement notices: 9) create service and supply opportunities.
 
 **Guyana: +860.3% multi-source capital surge — market entry window open**
    To: Diaspora Investor • Via: Email brief + Telegram
@@ -77,6 +59,24 @@ Total dispatches: 25
    Why this persona: Multi-source investment lift indicates growing market that may support new entry or expansion
    Action: Assess competitive positioning in Barbados. FDI movement (34.8% change) signals growing market or incoming competition — evaluate local advantage before new...
 
+**CARICOM: 7 active procurements — bidding window open**
+   To: Regional Operator • Via: Telegram
+   💬 Feedback: replied
+   Why this persona: Active procurement directly maps to operational capacity needs — first to respond wins
+   Action: Review operational readiness for CARICOM opportunities. CDB active procurement notices: 7 — assess capacity and bid pipeline.
+
+**CARICOM: 7 active procurements — bidding window open**
+   To: Procurement Watcher • Via: Email brief
+   — Feedback: ignored
+   Why this persona: CDB/IDB project pipeline is the primary lead source for project-based business development
+   Action: Track CDB/IDB project pipeline: CDB active procurement notices: 7. Review opportunity fit and prepare expression of interest.
+
+**CARICOM: 7 active procurements — bidding window open**
+   To: Regional Founder/Operator • Via: Telegram
+   — Feedback: ignored
+   Why this persona: Procurement pipeline signals government and institutional spending direction — follow the money
+   Action: Map CARICOM procurement pipeline against your capability. CDB/IDB projects (CDB active procurement notices: 7) create service and supply opportunities.
+
 **Regional FDI snapshot: 3 countries with active capital movement**
    To: Diaspora Investor • Via: Email brief + Telegram
    — Feedback: ignored
@@ -95,4 +95,4 @@ Total dispatches: 25
    Why this persona: Single-source FDI movement is a screening trigger, not a deployment signal — start diligence
    Action: Screen Guyana for investment readiness. FDI movement (860.3% change) is a screening trigger — cross-reference with sector conditions before deploying capital.
 
-*...and 10 more delivered dispatches*
+*...and 12 more delivered dispatches*

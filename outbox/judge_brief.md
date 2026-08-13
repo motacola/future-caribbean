@@ -1,6 +1,6 @@
 # Caribbean Opportunity Dispatch — Judge Brief
 
-Generated: 2026-07-24 18:31 UTC
+Generated: 2026-08-13 16:30 UTC
 
 ## What This Proves
 
@@ -8,40 +8,42 @@ Caribbean Opportunity Dispatch is the product. Caribbean Signal OS is the archit
 
 ## Live Run Snapshot
 
-- Total raw signals generated: 15
-- Sources represented: CDB, IDB, World Bank
+- Total raw signals generated: 16
+- Sources represented: CARICOM, CDB, IDB, World Bank
 - Countries/zones: 9
-- New/updated this cycle: 0
+- New/updated this cycle: 5
 - User-facing outputs: opportunity dispatches, regional thesis, why-now context, feedback review, judge brief
 
-**Suriname** — 2 signal(s), 3 source(s): 💼 Investment + 💎 Investment
+**Suriname** — 2 signal(s), 4 source(s): 💼 Investment + 💎 Investment
 
-🔴 ⬇️ **💎 Investment — Suriname**
+🔴 🔄 **💎 Investment — Suriname**
    Suriname: +206.0% multi-source investment validated — opportunity active
-   Immediate | 96/100 | B - cross-source
-   ⬇️ Weakened (-6 pts)
-   Immediate investigation. Suriname has multi-source investment validation (2 signals converging). Priority: assess market entry options, identify existing operators.
+   Immediate | 100/100 | A - multi-source
+   🔄 Content updated this cycle
+   Immediate investigation. Suriname has multi-source investment validation (3 signals converging). Priority: assess market entry options, identify existing operators.
 
 ## Supporting Decision Signals
 
-**1.** 🔴 **🏗️ Pipeline — CARICOM** — sustained
-   Narrative: CARICOM: 9 active procurements — bidding window open
-   Score: 96/100 | Grade: B - cross-source
-   Audience: investor/founder via Email brief + Telegram
-   Decision: Active procurement pipeline: CDB active procurement notices: 9. Priority: review CDB/IDB opportunities as lead list for project-based entry.
-
-**2.** 🔴 **💎 Investment — Barbados** — weakened
+**1.** 🔴 **💎 Investment — Barbados** — updated
    Narrative: Barbados: +34.8% multi-source investment validated — opportunity active
-   Score: 96/100 | Grade: B - cross-source
+   Score: 100/100 | Grade: A - multi-source
    Audience: investor/founder via Email brief + Telegram
-   Decision: Immediate investigation. Barbados has multi-source investment validation (2 signals converging). Priority: assess market entry options, identify existing operators.
-   ⬇️ Weakened (-6 pts)
+   Decision: Immediate investigation. Barbados has multi-source investment validation (3 signals converging). Priority: assess market entry options, identify existing operators.
+   🔄 Content updated this cycle
 
-**3.** 🔴 **💎 Investment — Guyana** — sustained
+**2.** 🔴 **💎 Investment — Guyana** — updated
    Narrative: Guyana: +860.3% multi-source capital surge — market entry window open
+   Score: 100/100 | Grade: A - multi-source
+   Audience: investor/founder via Email brief + Telegram
+   Decision: Immediate investigation. Guyana has multi-source investment validation (3 signals converging). Priority: assess market entry options, identify existing operators.
+   🔄 Content updated this cycle
+
+**3.** 🔴 **🏗️ Pipeline — CARICOM** — updated
+   Narrative: CARICOM: 7 active procurements — bidding window open
    Score: 96/100 | Grade: B - cross-source
    Audience: investor/founder via Email brief + Telegram
-   Decision: Immediate investigation. Guyana has multi-source investment validation (2 signals converging). Priority: assess market entry options, identify existing operators.
+   Decision: Active procurement pipeline: CDB active procurement notices: 7. Priority: review CDB/IDB opportunities as lead list for project-based entry.
+   🔄 Content updated this cycle
 
 **4.** 🟡 **💼 Investment — Suriname** — sustained
    Narrative: Suriname: FDI trending at +206.0% — screening trigger active
@@ -135,7 +137,7 @@ Each signal is routed to specific personas based on signal kind and evidence lev
 
 ## Cycle Summary
 
-Lead: Suriname · 15 composite signal(s) · 13 persistent
+Lead: Suriname · 16 composite signal(s) · 1 new · 4 updated · 11 persistent
 ## Judge Demo Path
 
 1. Run `bash run_pipeline.sh`.

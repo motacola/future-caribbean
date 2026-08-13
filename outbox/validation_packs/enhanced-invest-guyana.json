@@ -1,12 +1,12 @@
 {
   "signal_id": "enhanced-invest-guyana",
-  "dispatch_id": "DSP-20260724-017",
+  "dispatch_id": "DSP-20260813-019",
   "country": "Guyana",
   "signal_title": "Guyana: +860.3% multi-source capital surge — market entry window open",
-  "confidence_score": 96,
-  "raw_confidence_score": 96,
-  "action_readiness": "high",
-  "evidence_grade": "B - cross-source",
+  "confidence_score": 68,
+  "raw_confidence_score": 100,
+  "action_readiness": "medium (annual macro signal only)",
+  "evidence_grade": "A - multi-source",
   "sector_hypotheses": [
     {
       "sector": "Oil & gas and offshore support services",
@@ -66,49 +66,54 @@
   ],
   "procurement_matches": [
     {
-      "title": "Request for Proposal for Engineering, Procurement, Construction + Finance for Rehabilitation & Upgrading of Hinterland Coastal Airstrips Lots 1-4",
-      "source": "Guyana eProcure (NPTA)",
-      "url": "https://eprocure.gov.gy/",
-      "match": "country",
-      "closing_date": "2026-07-28"
+      "title": "Enhancing the Quality of the Belize National Quality Infrastructure",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure",
+      "match": "regional"
     },
     {
-      "title": "Request for Proposal for Engineering, Procurement, Construction + Finance for a Code 4E Municipal Airport at Lethem, Region 9, Guyana",
-      "source": "Guyana eProcure (NPTA)",
-      "url": "https://eprocure.gov.gy/",
-      "match": "country",
-      "closing_date": "2026-07-28"
+      "title": "Belize Education Secondary Reform Programme II (BESRPII)",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/belize-education-secondary-reform-programme-ii-besrpii-0",
+      "match": "regional"
     },
     {
-      "title": "Request for Proposal for Engineering, Procurement, Construction + Finance for a Code 3C Municipal Airport at Rose Hall, Canje, Berbice, Region 6, Guyana",
-      "source": "Guyana eProcure (NPTA)",
-      "url": "https://eprocure.gov.gy/",
-      "match": "country",
-      "closing_date": "2026-07-28"
+      "title": "Solar Photo-Voltaic and Battery Energy Storage System Project",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/solar-photo-voltaic-and-battery-energy-storage-system-project",
+      "match": "regional"
     },
     {
-      "title": "Procurement of Commodities – Lots 1-4, Kuru Kuru Training Centre.",
-      "source": "Guyana eProcure (NPTA)",
-      "url": "https://eprocure.gov.gy/",
-      "match": "country",
-      "closing_date": "2026-07-28"
+      "title": "2025 Annual Procurement Report",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/publications-and-resources/resource-library/reports/2025-annual-procurement-report",
+      "match": "regional"
     },
     {
-      "title": "Rehabilitation of Road Way from Main Gate to Time Keeper Office for Albion Estate",
-      "source": "Guyana eProcure (NPTA)",
-      "url": "https://eprocure.gov.gy/",
-      "match": "country",
-      "closing_date": "2026-07-28"
+      "title": "Health Sector Strengthening Project",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/health-sector-strengthening-project-2",
+      "match": "regional"
     },
     {
-      "title": "Rehabilitation of Sugar Bond Flooring (10,600 square feet 6” thick concrete) for Rose Hall Estate.",
-      "source": "Guyana eProcure (NPTA)",
-      "url": "https://eprocure.gov.gy/",
-      "match": "country",
-      "closing_date": "2026-07-28"
+      "title": "Health Sector Strengthening Project",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/health-sector-strengthening-project-1",
+      "match": "regional"
     }
   ],
-  "official_country_data": [],
+  "official_country_data": [
+    {
+      "title": "Guyana Balance of Payments (2000 – 2025)",
+      "source": "CARICOM Statistics",
+      "url": "https://statistics.caricom.org/?country_data=guyana-balance-of-payments-2000-2024"
+    },
+    {
+      "title": "Guyana: Monthly Consumer Price Index (CPI) by Expenditure Category",
+      "source": "CARICOM Statistics",
+      "url": "https://statistics.caricom.org/?country_data=guyana-monthly-consumer-price-index-cpi-by-expenditure-category"
+    }
+  ],
   "credible_local_operators": [
     {
       "name": "Guyana Shore Base Inc. (GSBI)",
@@ -155,11 +160,18 @@
     "https://data.iadb.org/en/search?q=Guyana%20Labor%20Force%20Survey%3A%20Third%20Quarter",
     "https://data.iadb.org/en/search?q=Guyana%3A%20Latin%20American%20Public%20Opinion%20Pr",
     "https://data.iadb.org/en/search?q=Productivity%2C%20Technology%20and%20Innovation%20",
-    "https://eprocure.gov.gy/"
+    "https://statistics.caricom.org/?country_data=guyana-balance-of-payments-2000-2024",
+    "https://statistics.caricom.org/?country_data=guyana-monthly-consumer-price-index-cpi-by-expenditure-category",
+    "https://www.caribank.org/publications-and-resources/resource-library/reports/2025-annual-procurement-report",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/belize-education-secondary-reform-programme-ii-besrpii-0",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/health-sector-strengthening-project-1",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/health-sector-strengthening-project-2",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/solar-photo-voltaic-and-battery-energy-storage-system-project"
   ],
   "unresolved_questions": [
     "Which specific sectors are driving the movement in Guyana? No official sector-breakdown dataset matched this cycle.",
-    "Tender closes 2026-07-28 — confirm eligibility and bid requirements early.",
+    "No live Guyana-specific procurement notice matched this cycle — check CDB and national tender portals directly.",
     "Validate fit with registry-listed operators (Guyana Shore Base Inc. (GSBI), Gaico Construction Inc.) before outreach.",
     "Validate that the underlying FDI movement is sustained, not a one-off transaction or statistical revision."
   ],
@@ -174,10 +186,10 @@
     }
   ],
   "advance_or_reject_recommendation": "hold",
-  "recommendation_reason": "Evidence fingerprint unchanged for 2 cycles — downgraded from advance to hold until new corroboration arrives.",
-  "last_validated_at": "2026-07-24T18:31:35.517415+00:00",
+  "recommendation_reason": "Calibrated confidence 68/100 with 2 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.",
+  "last_validated_at": "2026-08-13T16:30:17.637283+00:00",
   "coordination_path": null,
-  "evidence_fingerprint": "2dbb148f57010aef",
-  "cycles_since_refresh": 2,
-  "evidence_freshness": "stale"
+  "evidence_fingerprint": "0484aa564e8b7f6a",
+  "cycles_since_refresh": 0,
+  "evidence_freshness": "refreshing"
 }

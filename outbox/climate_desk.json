@@ -1,35 +1,109 @@
 {
   "instance": "climate",
   "instance_label": "Climate & Catastrophe Risk",
-  "cycle_id": "20260724",
-  "generated_at": "2026-07-24T18:31:35.797663+00:00",
+  "cycle_id": "20260813",
+  "generated_at": "2026-08-13T16:30:21.431952+00:00",
   "clusters": [
     {
-      "cluster_id": "CLIM-allclear",
-      "country_cluster": "Caribbean basin",
-      "signal_kind": "all_clear",
-      "title": "All clear \u2014 no active hazards this cycle",
-      "evidence": "No active NWS alerts in Caribbean zones. Current conditions: 6 buoys reporting; peak seas 2.8m; max wind 17 kt; no tropical development expected (NHC).",
-      "evidence_grade": "A - official sources",
-      "confidence_score": 70,
+      "cluster_id": "CLIM-tropical-outlook",
+      "country_cluster": "North Atlantic / Caribbean basin",
+      "signal_kind": "tropical_development",
+      "title": "Tropical development being monitored (NHC outlook)",
+      "evidence": "NHC Tropical Weather Outlook indicates a system worth watching across the basin.",
+      "evidence_grade": "B - official outlook",
+      "confidence_score": 85,
       "freshness": "new",
-      "decision": "Routine monitoring \u2014 no action required",
+      "decision": "Basin-wide exposure and readiness",
+      "risk_flags": [
+        "Active tropical outlook for the basin"
+      ],
+      "personas": [
+        {
+          "persona": "Insurer / Reinsurer",
+          "channel": "Email + alert",
+          "action": "Tropical development watch \u2014 NHC basin outlook active. Begin exposure modelling for the basin; recovery-capital may be needed within days."
+        },
+        {
+          "persona": "Resilience Planner",
+          "channel": "Telegram/SMS alert",
+          "action": "Tropical outlook active \u2014 NHC basin outlook active. Move readiness posture up; verify supply and communication chains across exposed islands."
+        }
+      ]
+    },
+    {
+      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.d",
+      "country_cluster": "San Juan and Vicinity",
+      "signal_kind": "hazard_alert",
+      "title": "San Juan and Vicinity: Rip Current Statement in effect (Moderate)",
+      "evidence": "NOAA NWS: Rip Current Statement issued August 13 at 11:07AM AST until August 16 at 6:00AM AST by NWS San Juan PR",
+      "evidence_grade": "B - official alert",
+      "confidence_score": 80,
+      "freshness": "new",
+      "decision": "Hazard response and exposure assessment",
       "risk_flags": [],
       "personas": [
         {
           "persona": "Resilience Planner",
           "channel": "Telegram/SMS alert",
-          "action": "All clear across Caribbean zones \u2014 6 buoys reporting; peak seas 2.8m; max wind 17 kt; no tropical development expected (NHC). No action required; the engine keeps watching and will escalate the moment a threshold is crossed."
+          "action": "Active hazard alert \u2014 Rip Current Statement \u2014 Moderate (San Juan and Vicinity). Pre-position resources and confirm evacuation/shelter readiness in the affected area now."
         },
         {
           "persona": "Insurer / Reinsurer",
           "channel": "Email + alert",
-          "action": "No active hazard exposure this cycle (6 buoys reporting; peak seas 2.8m; max wind 17 kt; no tropical development expected (NHC)). Baseline confirmed for parametric monitoring."
+          "action": "Exposure check \u2014 Rip Current Statement \u2014 Moderate (San Juan and Vicinity). Flag policies in the affected zone and prepare parametric-trigger assessment."
+        }
+      ]
+    },
+    {
+      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.9",
+      "country_cluster": "Atlantic Waters of Puerto Rico AND USVI from 10 NM to 19.5N",
+      "signal_kind": "hazard_alert",
+      "title": "Atlantic Waters of Puerto Rico AND USVI from 10 NM to 19.5N: Small Craft Advisory in effect (Minor)",
+      "evidence": "NOAA NWS: Small Craft Advisory issued August 13 at 11:07AM AST until August 16 at 5:00PM AST by NWS San Juan PR",
+      "evidence_grade": "C - advisory",
+      "confidence_score": 60,
+      "freshness": "new",
+      "decision": "Hazard response and exposure assessment",
+      "risk_flags": [],
+      "personas": [
+        {
+          "persona": "Resilience Planner",
+          "channel": "Telegram/SMS alert",
+          "action": "Active hazard alert \u2014 Small Craft Advisory \u2014 Minor (Atlantic Waters of Puerto Rico AND USVI from 10 NM to 19.5N). Pre-position resources and confirm evacuation/shelter readiness in the affected area now."
+        },
+        {
+          "persona": "Insurer / Reinsurer",
+          "channel": "Email + alert",
+          "action": "Exposure check \u2014 Small Craft Advisory \u2014 Minor (Atlantic Waters of Puerto Rico AND USVI from 10 NM to 19.5N). Flag policies in the affected zone and prepare parametric-trigger assessment."
+        }
+      ]
+    },
+    {
+      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.9",
+      "country_cluster": "Coastal Waters of Northern Puerto Rico out 10 NM",
+      "signal_kind": "hazard_alert",
+      "title": "Coastal Waters of Northern Puerto Rico out 10 NM: Small Craft Advisory in effect (Minor)",
+      "evidence": "NOAA NWS: Small Craft Advisory issued August 13 at 11:07AM AST until August 15 at 1:00PM AST by NWS San Juan PR",
+      "evidence_grade": "C - advisory",
+      "confidence_score": 60,
+      "freshness": "new",
+      "decision": "Hazard response and exposure assessment",
+      "risk_flags": [],
+      "personas": [
+        {
+          "persona": "Resilience Planner",
+          "channel": "Telegram/SMS alert",
+          "action": "Active hazard alert \u2014 Small Craft Advisory \u2014 Minor (Coastal Waters of Northern Puerto Rico out 10 NM). Pre-position resources and confirm evacuation/shelter readiness in the affected area now."
+        },
+        {
+          "persona": "Insurer / Reinsurer",
+          "channel": "Email + alert",
+          "action": "Exposure check \u2014 Small Craft Advisory \u2014 Minor (Coastal Waters of Northern Puerto Rico out 10 NM). Flag policies in the affected zone and prepare parametric-trigger assessment."
         }
       ]
     }
   ],
-  "dispatch_count": 2,
+  "dispatch_count": 8,
   "sources": [
     "NOAA NWS",
     "NDBC buoys",

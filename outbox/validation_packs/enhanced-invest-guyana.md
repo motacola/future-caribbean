@@ -1,11 +1,11 @@
 # Opportunity Validation Pack — Guyana
 
-- Signal: `enhanced-invest-guyana` · Dispatch: `DSP-20260724-017`
-- Confidence: 96/100 (raw 96) · B - cross-source
-- Action readiness: high
-- Evidence freshness: stale · cycles since refresh: 2
-- Recommendation: **HOLD** — Evidence fingerprint unchanged for 2 cycles — downgraded from advance to hold until new corroboration arrives.
-- Last validated: 2026-07-24T18:31:35.517415+00:00
+- Signal: `enhanced-invest-guyana` · Dispatch: `DSP-20260813-019`
+- Confidence: 68/100 (raw 100) · A - multi-source
+- Action readiness: medium (annual macro signal only)
+- Evidence freshness: refreshing · cycles since refresh: 0
+- Recommendation: **HOLD** — Calibrated confidence 68/100 with 2 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.
+- Last validated: 2026-08-13T16:30:17.637283+00:00
 
 ## Sector hypotheses
 - Oil & gas and offshore support services [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
@@ -26,15 +26,16 @@
 - [Guyana Labor Force Survey: Fourth Quarter 2017](https://data.iadb.org/en/search?q=Guyana%20Labor%20Force%20Survey%3A%20Fourth%20Quarte) — IDB Open Data
 
 ## Procurement matches
-- [Request for Proposal for Engineering, Procurement, Construction + Finance for Rehabilitation & Upgrading of Hinterland Coastal Airstrips Lots 1-4](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
-- [Request for Proposal for Engineering, Procurement, Construction + Finance for a Code 4E Municipal Airport at Lethem, Region 9, Guyana](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
-- [Request for Proposal for Engineering, Procurement, Construction + Finance for a Code 3C Municipal Airport at Rose Hall, Canje, Berbice, Region 6, Guyana](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
-- [Procurement of Commodities – Lots 1-4, Kuru Kuru Training Centre.](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
-- [Rehabilitation of Road Way from Main Gate to Time Keeper Office for Albion Estate](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
-- [Rehabilitation of Sugar Bond Flooring (10,600 square feet 6” thick concrete) for Rose Hall Estate.](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
+- [Enhancing the Quality of the Belize National Quality Infrastructure](https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure) — Caribbean Development Bank (regional)
+- [Belize Education Secondary Reform Programme II (BESRPII)](https://www.caribank.org/work-with-us/procurement/procurement-notices/belize-education-secondary-reform-programme-ii-besrpii-0) — Caribbean Development Bank (regional)
+- [Solar Photo-Voltaic and Battery Energy Storage System Project](https://www.caribank.org/work-with-us/procurement/procurement-notices/solar-photo-voltaic-and-battery-energy-storage-system-project) — Caribbean Development Bank (regional)
+- [2025 Annual Procurement Report](https://www.caribank.org/publications-and-resources/resource-library/reports/2025-annual-procurement-report) — Caribbean Development Bank (regional)
+- [Health Sector Strengthening Project](https://www.caribank.org/work-with-us/procurement/procurement-notices/health-sector-strengthening-project-2) — Caribbean Development Bank (regional)
+- [Health Sector Strengthening Project](https://www.caribank.org/work-with-us/procurement/procurement-notices/health-sector-strengthening-project-1) — Caribbean Development Bank (regional)
 
 ## Official country data
-- No official country datasets matched.
+- [Guyana Balance of Payments (2000 – 2025)](https://statistics.caricom.org/?country_data=guyana-balance-of-payments-2000-2024) — CARICOM Statistics
+- [Guyana: Monthly Consumer Price Index (CPI) by Expenditure Category](https://statistics.caricom.org/?country_data=guyana-monthly-consumer-price-index-cpi-by-expenditure-category) — CARICOM Statistics
 
 ## Relevant institutions & intro targets
 - Guyana Office for Investment (GO-Invest) — National investment promotion agency
@@ -44,7 +45,7 @@
 
 ## Unresolved questions
 - Which specific sectors are driving the movement in Guyana? No official sector-breakdown dataset matched this cycle.
-- Tender closes 2026-07-28 — confirm eligibility and bid requirements early.
+- No live Guyana-specific procurement notice matched this cycle — check CDB and national tender portals directly.
 - Validate fit with registry-listed operators (Guyana Shore Base Inc. (GSBI), Gaico Construction Inc.) before outreach.
 - Validate that the underlying FDI movement is sustained, not a one-off transaction or statistical revision.
 

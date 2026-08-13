@@ -1,12 +1,66 @@
 {
-  "cycle_intro": "Lead: Suriname. 2 converging signal(s) across 3 source(s). Signals: \ud83d\udcbc Investment + \ud83d\udc8e Investment.",
-  "generated_at": "2026-07-24 18:31 UTC",
+  "cycle_intro": "Lead: Suriname. 2 converging signal(s) across 4 source(s). Signals: \ud83d\udcbc Investment + \ud83d\udc8e Investment.",
+  "generated_at": "2026-08-13 16:30 UTC",
   "items": [
     {
       "band": "immediate",
       "channel": "Email brief + Telegram",
+      "country": "Barbados",
+      "freshness": "updated",
+      "kind": "enhanced_investment",
+      "metrics": {
+        "decision_changed": null,
+        "forwarded": null,
+        "opened": null,
+        "reply_count": null,
+        "sent": false
+      },
+      "persona": "investor/founder",
+      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
+      "score": 100,
+      "signal_id": "enhanced-invest-barbados"
+    },
+    {
+      "band": "immediate",
+      "channel": "Email brief + Telegram",
+      "country": "Guyana",
+      "freshness": "updated",
+      "kind": "enhanced_investment",
+      "metrics": {
+        "decision_changed": null,
+        "forwarded": null,
+        "opened": null,
+        "reply_count": null,
+        "sent": false
+      },
+      "persona": "investor/founder",
+      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
+      "score": 100,
+      "signal_id": "enhanced-invest-guyana"
+    },
+    {
+      "band": "immediate",
+      "channel": "Email brief + Telegram",
+      "country": "Suriname",
+      "freshness": "updated",
+      "kind": "enhanced_investment",
+      "metrics": {
+        "decision_changed": null,
+        "forwarded": null,
+        "opened": null,
+        "reply_count": null,
+        "sent": false
+      },
+      "persona": "investor/founder",
+      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
+      "score": 100,
+      "signal_id": "enhanced-invest-suriname"
+    },
+    {
+      "band": "immediate",
+      "channel": "Email brief + Telegram",
       "country": "CARICOM",
-      "freshness": "sustained",
+      "freshness": "updated",
       "kind": "development_pipeline",
       "metrics": {
         "decision_changed": null,
@@ -19,60 +73,6 @@
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
       "score": 96,
       "signal_id": "dev-pipeline-regional"
-    },
-    {
-      "band": "immediate",
-      "channel": "Email brief + Telegram",
-      "country": "Barbados",
-      "freshness": "weakened",
-      "kind": "enhanced_investment",
-      "metrics": {
-        "decision_changed": null,
-        "forwarded": null,
-        "opened": null,
-        "reply_count": null,
-        "sent": false
-      },
-      "persona": "investor/founder",
-      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 96,
-      "signal_id": "enhanced-invest-barbados"
-    },
-    {
-      "band": "immediate",
-      "channel": "Email brief + Telegram",
-      "country": "Guyana",
-      "freshness": "sustained",
-      "kind": "enhanced_investment",
-      "metrics": {
-        "decision_changed": null,
-        "forwarded": null,
-        "opened": null,
-        "reply_count": null,
-        "sent": false
-      },
-      "persona": "investor/founder",
-      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 96,
-      "signal_id": "enhanced-invest-guyana"
-    },
-    {
-      "band": "immediate",
-      "channel": "Email brief + Telegram",
-      "country": "Suriname",
-      "freshness": "weakened",
-      "kind": "enhanced_investment",
-      "metrics": {
-        "decision_changed": null,
-        "forwarded": null,
-        "opened": null,
-        "reply_count": null,
-        "sent": false
-      },
-      "persona": "investor/founder",
-      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 96,
-      "signal_id": "enhanced-invest-suriname"
     },
     {
       "band": "monitor",
@@ -184,6 +184,24 @@
     },
     {
       "band": "validation",
+      "channel": "Telegram digest",
+      "country": "CARICOM",
+      "freshness": "new",
+      "kind": "food_security",
+      "metrics": {
+        "decision_changed": null,
+        "forwarded": null,
+        "opened": null,
+        "reply_count": null,
+        "sent": false
+      },
+      "persona": "policy/operator",
+      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
+      "score": 84,
+      "signal_id": "food-security-regional"
+    },
+    {
+      "band": "validation",
       "channel": "Email brief + Telegram",
       "country": "Barbados",
       "freshness": "sustained",
@@ -199,24 +217,6 @@
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
       "score": 74,
       "signal_id": "invest-barbados"
-    },
-    {
-      "band": "context",
-      "channel": "Telegram digest",
-      "country": "Barbados",
-      "freshness": "sustained",
-      "kind": "tourism_impact",
-      "metrics": {
-        "decision_changed": null,
-        "forwarded": null,
-        "opened": null,
-        "reply_count": null,
-        "sent": false
-      },
-      "persona": "tourism operator",
-      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 47,
-      "signal_id": "tourism-barbados"
     }
   ],
   "purpose": "Feedback agent input queue for distribution performance and trust signals."

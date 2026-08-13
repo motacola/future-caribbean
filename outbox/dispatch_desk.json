@@ -7,17 +7,17 @@
     "Suriname investment signal downranked -4"
   ],
   "channel_count": 4,
-  "cluster_count": 10,
+  "cluster_count": 11,
   "clusters": [
     {
       "cluster_id": "CL-enhanced-investment-guyana",
-      "confidence_display": "\ud83d\udd34 Immediate | 96/100 | B - cross-source",
-      "confidence_score": 96,
+      "confidence_display": "\ud83d\udd34 Immediate | 100/100 | A - multi-source",
+      "confidence_score": 100,
       "country_cluster": "Guyana",
       "decision": "Which verified opportunity to investigate for capital deployment or partnership entry",
       "detail": "860.3% change",
-      "evidence": "WB FDI surge detected: Guyana; CDB procurement/evaluation activity; Confidence: WB FDI data confirmed \u00b7 CARICOM/CDB data available (2/3 signals); FDI change: 860.3%",
-      "evidence_grade": "B - cross-source",
+      "evidence": "WB FDI surge detected: Guyana; CARICOM trade/FDI data available; CDB procurement/evaluation activity; Confidence: WB FDI data confirmed \u00b7 CARICOM/CDB data available (3/3 signals)",
+      "evidence_grade": "A - multi-source",
       "feedback_counts": {
         "forwarded": 1,
         "ignored": 2
@@ -28,7 +28,7 @@
         {
           "action": "Assess competitive positioning in Guyana. FDI movement (860.3% change) signals growing market or incoming competition \u2014 evaluate local advantage before new entrants arrive.",
           "channel": "Telegram",
-          "dispatch_id": "DSP-20260724-019",
+          "dispatch_id": "DSP-20260813-021",
           "feedback_status": "ignored",
           "persona": "Regional Founder/Operator",
           "ranking_rationale": "",
@@ -37,7 +37,7 @@
         {
           "action": "Route Guyana opportunity to relevant founders and investors in your network. Signal strength (860.3% change) makes this a high-priority introduction target.",
           "channel": "Telegram",
-          "dispatch_id": "DSP-20260724-018",
+          "dispatch_id": "DSP-20260813-020",
           "feedback_status": "ignored",
           "persona": "Ecosystem Builder",
           "ranking_rationale": "",
@@ -46,7 +46,7 @@
         {
           "action": "Investigate Guyana as a capital deployment target this cycle. Multi-source validation (860.3% change) confirms directional signal \u2014 next step is operator discovery and market entry assessment.",
           "channel": "Email brief + Telegram",
-          "dispatch_id": "DSP-20260724-017",
+          "dispatch_id": "DSP-20260813-019",
           "feedback_status": "forwarded",
           "persona": "Diaspora Investor",
           "ranking_rationale": "",
@@ -59,63 +59,14 @@
       "title": "Guyana: +860.3% multi-source capital surge \u2014 market entry window open"
     },
     {
-      "cluster_id": "CL-development-pipeline-caricom",
-      "confidence_display": "\ud83d\udd34 Immediate | 96/100 | B - cross-source",
-      "confidence_score": 96,
-      "country_cluster": "CARICOM",
-      "decision": "Which procurement or project opportunity to pursue",
-      "detail": "CDB active procurement notices: 9",
-      "evidence": "CDB active procurement notices: 9; \u2022 Enhancing the Quality of the Belize National Quality Infrastructure; \u2022 Solar Photo-Voltaic and Battery Energy Storage System Project; \u2022 2025 Annual Procurement Report",
-      "evidence_grade": "B - cross-source",
-      "feedback_counts": {
-        "ignored": 2,
-        "replied": 1
-      },
-      "feedback_summary": "Feedback this cycle: 2 ignored, 1 replied.",
-      "freshness": "sustained",
-      "personas": [
-        {
-          "action": "Review operational readiness for CARICOM opportunities. CDB active procurement notices: 9 \u2014 assess capacity and bid pipeline.",
-          "channel": "Telegram",
-          "dispatch_id": "DSP-20260724-011",
-          "feedback_status": "replied",
-          "persona": "Regional Operator",
-          "ranking_rationale": "",
-          "rationale": "Active procurement directly maps to operational capacity needs \u2014 first to respond wins"
-        },
-        {
-          "action": "Map CARICOM procurement pipeline against your capability. CDB/IDB projects (CDB active procurement notices: 9) create service and supply opportunities.",
-          "channel": "Telegram",
-          "dispatch_id": "DSP-20260724-013",
-          "feedback_status": "ignored",
-          "persona": "Regional Founder/Operator",
-          "ranking_rationale": "",
-          "rationale": "Procurement pipeline signals government and institutional spending direction \u2014 follow the money"
-        },
-        {
-          "action": "Track CDB/IDB project pipeline: CDB active procurement notices: 9. Review opportunity fit and prepare expression of interest.",
-          "channel": "Email brief",
-          "dispatch_id": "DSP-20260724-012",
-          "feedback_status": "ignored",
-          "persona": "Procurement Watcher",
-          "ranking_rationale": "",
-          "rationale": "CDB/IDB project pipeline is the primary lead source for project-based business development"
-        }
-      ],
-      "ranking_rationale": "",
-      "risk_flags": [],
-      "signal_kind": "development_pipeline",
-      "title": "CARICOM: 9 active procurements \u2014 bidding window open"
-    },
-    {
       "cluster_id": "CL-enhanced-investment-suriname",
-      "confidence_display": "\ud83d\udd34 Immediate | 96/100 | B - cross-source",
-      "confidence_score": 96,
+      "confidence_display": "\ud83d\udd34 Immediate | 100/100 | A - multi-source",
+      "confidence_score": 100,
       "country_cluster": "Suriname",
       "decision": "Which verified opportunity to investigate for capital deployment or partnership entry",
       "detail": "206.0% change",
-      "evidence": "WB FDI surge detected: Suriname; CDB procurement/evaluation activity; Confidence: WB FDI data confirmed \u00b7 CARICOM/CDB data available (2/3 signals); FDI change: 206.0%",
-      "evidence_grade": "B - cross-source",
+      "evidence": "WB FDI surge detected: Suriname; CARICOM trade/FDI data available; CDB procurement/evaluation activity; Confidence: WB FDI data confirmed \u00b7 CARICOM/CDB data available (3/3 signals)",
+      "evidence_grade": "A - multi-source",
       "feedback_counts": {
         "ignored": 3
       },
@@ -125,7 +76,7 @@
         {
           "action": "Assess competitive positioning in Suriname. FDI movement (206.0% change) signals growing market or incoming competition \u2014 evaluate local advantage before new entrants arrive.",
           "channel": "Telegram",
-          "dispatch_id": "DSP-20260724-022",
+          "dispatch_id": "DSP-20260813-024",
           "feedback_status": "ignored",
           "persona": "Regional Founder/Operator",
           "ranking_rationale": "",
@@ -134,7 +85,7 @@
         {
           "action": "Route Suriname opportunity to relevant founders and investors in your network. Signal strength (206.0% change) makes this a high-priority introduction target.",
           "channel": "Telegram",
-          "dispatch_id": "DSP-20260724-021",
+          "dispatch_id": "DSP-20260813-023",
           "feedback_status": "ignored",
           "persona": "Ecosystem Builder",
           "ranking_rationale": "",
@@ -143,7 +94,7 @@
         {
           "action": "Investigate Suriname as a capital deployment target this cycle. Multi-source validation (206.0% change) confirms directional signal \u2014 next step is operator discovery and market entry assessment.",
           "channel": "Email brief + Telegram",
-          "dispatch_id": "DSP-20260724-020",
+          "dispatch_id": "DSP-20260813-022",
           "feedback_status": "ignored",
           "persona": "Diaspora Investor",
           "ranking_rationale": "",
@@ -157,13 +108,13 @@
     },
     {
       "cluster_id": "CL-enhanced-investment-barbados",
-      "confidence_display": "\ud83d\udd34 Immediate | 96/100 | B - cross-source",
-      "confidence_score": 96,
+      "confidence_display": "\ud83d\udd34 Immediate | 100/100 | A - multi-source",
+      "confidence_score": 100,
       "country_cluster": "Barbados",
       "decision": "Which verified opportunity to investigate for capital deployment or partnership entry",
       "detail": "34.8% change",
-      "evidence": "WB FDI surge detected: Barbados; CDB procurement/evaluation activity; Confidence: WB FDI data confirmed \u00b7 CARICOM/CDB data available (2/3 signals); FDI change: 34.8%",
-      "evidence_grade": "B - cross-source",
+      "evidence": "WB FDI surge detected: Barbados; CARICOM trade/FDI data available; CDB procurement/evaluation activity; Confidence: WB FDI data confirmed \u00b7 CARICOM/CDB data available (3/3 signals)",
+      "evidence_grade": "A - multi-source",
       "feedback_counts": {
         "ignored": 3
       },
@@ -173,7 +124,7 @@
         {
           "action": "Assess competitive positioning in Barbados. FDI movement (34.8% change) signals growing market or incoming competition \u2014 evaluate local advantage before new entrants arrive.",
           "channel": "Telegram",
-          "dispatch_id": "DSP-20260724-025",
+          "dispatch_id": "DSP-20260813-027",
           "feedback_status": "ignored",
           "persona": "Regional Founder/Operator",
           "ranking_rationale": "",
@@ -182,7 +133,7 @@
         {
           "action": "Route Barbados opportunity to relevant founders and investors in your network. Signal strength (34.8% change) makes this a high-priority introduction target.",
           "channel": "Telegram",
-          "dispatch_id": "DSP-20260724-024",
+          "dispatch_id": "DSP-20260813-026",
           "feedback_status": "ignored",
           "persona": "Ecosystem Builder",
           "ranking_rationale": "",
@@ -191,7 +142,7 @@
         {
           "action": "Investigate Barbados as a capital deployment target this cycle. Multi-source validation (34.8% change) confirms directional signal \u2014 next step is operator discovery and market entry assessment.",
           "channel": "Email brief + Telegram",
-          "dispatch_id": "DSP-20260724-023",
+          "dispatch_id": "DSP-20260813-025",
           "feedback_status": "ignored",
           "persona": "Diaspora Investor",
           "ranking_rationale": "",
@@ -202,6 +153,55 @@
       "risk_flags": [],
       "signal_kind": "enhanced_investment",
       "title": "Barbados: +34.8% multi-source investment validated \u2014 opportunity active"
+    },
+    {
+      "cluster_id": "CL-development-pipeline-caricom",
+      "confidence_display": "\ud83d\udd34 Immediate | 96/100 | B - cross-source",
+      "confidence_score": 96,
+      "country_cluster": "CARICOM",
+      "decision": "Which procurement or project opportunity to pursue",
+      "detail": "CDB active procurement notices: 7",
+      "evidence": "CDB active procurement notices: 7; \u2022 Enhancing the Quality of the Belize National Quality Infrastructure; \u2022 Belize Education Secondary Reform Programme II (BESRPII); \u2022 Solar Photo-Voltaic and Battery Energy Storage System Project",
+      "evidence_grade": "B - cross-source",
+      "feedback_counts": {
+        "ignored": 2,
+        "replied": 1
+      },
+      "feedback_summary": "Feedback this cycle: 2 ignored, 1 replied.",
+      "freshness": "sustained",
+      "personas": [
+        {
+          "action": "Review operational readiness for CARICOM opportunities. CDB active procurement notices: 7 \u2014 assess capacity and bid pipeline.",
+          "channel": "Telegram",
+          "dispatch_id": "DSP-20260813-013",
+          "feedback_status": "replied",
+          "persona": "Regional Operator",
+          "ranking_rationale": "",
+          "rationale": "Active procurement directly maps to operational capacity needs \u2014 first to respond wins"
+        },
+        {
+          "action": "Map CARICOM procurement pipeline against your capability. CDB/IDB projects (CDB active procurement notices: 7) create service and supply opportunities.",
+          "channel": "Telegram",
+          "dispatch_id": "DSP-20260813-015",
+          "feedback_status": "ignored",
+          "persona": "Regional Founder/Operator",
+          "ranking_rationale": "",
+          "rationale": "Procurement pipeline signals government and institutional spending direction \u2014 follow the money"
+        },
+        {
+          "action": "Track CDB/IDB project pipeline: CDB active procurement notices: 7. Review opportunity fit and prepare expression of interest.",
+          "channel": "Email brief",
+          "dispatch_id": "DSP-20260813-014",
+          "feedback_status": "ignored",
+          "persona": "Procurement Watcher",
+          "ranking_rationale": "",
+          "rationale": "CDB/IDB project pipeline is the primary lead source for project-based business development"
+        }
+      ],
+      "ranking_rationale": "",
+      "risk_flags": [],
+      "signal_kind": "development_pipeline",
+      "title": "CARICOM: 7 active procurements \u2014 bidding window open"
     },
     {
       "cluster_id": "CL-enhanced-investment-caribwide",
@@ -221,7 +221,7 @@
         {
           "action": "Assess competitive positioning in Caribwide. FDI movement (Guyana (860.3% change), Suriname (206.0% change), Barbados (34.8% change)) signals growing market or incoming competition \u2014 evaluate local advantage before new entrants arrive.",
           "channel": "Telegram",
-          "dispatch_id": "DSP-20260724-016",
+          "dispatch_id": "DSP-20260813-018",
           "feedback_status": "ignored",
           "persona": "Regional Founder/Operator",
           "ranking_rationale": "Regional enhanced investment summary ranks at 90/100 because 3 country signal(s) are grouped; top markets: Guyana (860.3% change), Suriname (206.0% change), Barbados (34.8% change).",
@@ -230,7 +230,7 @@
         {
           "action": "Route Caribwide opportunity to relevant founders and investors in your network. Signal strength (Guyana (860.3% change), Suriname (206.0% change), Barbados (34.8% change)) makes this a high-priority introduction target.",
           "channel": "Telegram",
-          "dispatch_id": "DSP-20260724-015",
+          "dispatch_id": "DSP-20260813-017",
           "feedback_status": "ignored",
           "persona": "Ecosystem Builder",
           "ranking_rationale": "Regional enhanced investment summary ranks at 90/100 because 3 country signal(s) are grouped; top markets: Guyana (860.3% change), Suriname (206.0% change), Barbados (34.8% change).",
@@ -239,7 +239,7 @@
         {
           "action": "Investigate Caribwide as a capital deployment target this cycle. Multi-source validation (Guyana (860.3% change), Suriname (206.0% change), Barbados (34.8% change)) confirms directional signal \u2014 next step is operator discovery and market entry assessment.",
           "channel": "Email brief + Telegram",
-          "dispatch_id": "DSP-20260724-014",
+          "dispatch_id": "DSP-20260813-016",
           "feedback_status": "ignored",
           "persona": "Diaspora Investor",
           "ranking_rationale": "Regional enhanced investment summary ranks at 90/100 because 3 country signal(s) are grouped; top markets: Guyana (860.3% change), Suriname (206.0% change), Barbados (34.8% change).",
@@ -269,7 +269,7 @@
         {
           "action": "Assess competitive positioning in Caribwide. FDI movement (Guyana (860.3% change), Suriname (206.0% change), Barbados (34.8% change)) signals growing market or incoming competition \u2014 evaluate local advantage before new entrants arrive.",
           "channel": "Telegram",
-          "dispatch_id": "DSP-20260724-002",
+          "dispatch_id": "DSP-20260813-002",
           "feedback_status": "ignored",
           "persona": "Regional Founder/Operator",
           "ranking_rationale": "Regional investment signal summary ranks at 90/100 because 3 country signal(s) are grouped; top markets: Guyana (860.3% change), Suriname (206.0% change), Barbados (34.8% change).",
@@ -278,7 +278,7 @@
         {
           "action": "Screen Caribwide for investment readiness. FDI movement (Guyana (860.3% change), Suriname (206.0% change), Barbados (34.8% change)) is a screening trigger \u2014 cross-reference with sector conditions before deploying capital.",
           "channel": "Email brief + Telegram",
-          "dispatch_id": "DSP-20260724-001",
+          "dispatch_id": "DSP-20260813-001",
           "feedback_status": "ignored",
           "persona": "Diaspora Investor",
           "ranking_rationale": "Regional investment signal summary ranks at 90/100 because 3 country signal(s) are grouped; top markets: Guyana (860.3% change), Suriname (206.0% change), Barbados (34.8% change).",
@@ -308,7 +308,7 @@
         {
           "action": "Assess competitive positioning in Guyana. FDI movement (860.3% change) signals growing market or incoming competition \u2014 evaluate local advantage before new entrants arrive.",
           "channel": "Telegram",
-          "dispatch_id": "DSP-20260724-004",
+          "dispatch_id": "DSP-20260813-004",
           "feedback_status": "ignored",
           "persona": "Regional Founder/Operator",
           "ranking_rationale": "",
@@ -317,7 +317,7 @@
         {
           "action": "Screen Guyana for investment readiness. FDI movement (860.3% change) is a screening trigger \u2014 cross-reference with sector conditions before deploying capital.",
           "channel": "Email brief + Telegram",
-          "dispatch_id": "DSP-20260724-003",
+          "dispatch_id": "DSP-20260813-003",
           "feedback_status": "ignored",
           "persona": "Diaspora Investor",
           "ranking_rationale": "",
@@ -347,7 +347,7 @@
         {
           "action": "Assess competitive positioning in Suriname. FDI movement (206.0% change) signals growing market or incoming competition \u2014 evaluate local advantage before new entrants arrive.",
           "channel": "Telegram",
-          "dispatch_id": "DSP-20260724-006",
+          "dispatch_id": "DSP-20260813-006",
           "feedback_status": "ignored",
           "persona": "Regional Founder/Operator",
           "ranking_rationale": "",
@@ -356,7 +356,7 @@
         {
           "action": "Screen Suriname for investment readiness. FDI movement (206.0% change) is a screening trigger \u2014 cross-reference with sector conditions before deploying capital.",
           "channel": "Email brief + Telegram",
-          "dispatch_id": "DSP-20260724-005",
+          "dispatch_id": "DSP-20260813-005",
           "feedback_status": "ignored",
           "persona": "Diaspora Investor",
           "ranking_rationale": "",
@@ -367,6 +367,45 @@
       "risk_flags": [],
       "signal_kind": "investment_signal",
       "title": "Suriname: FDI trending at +206.0% \u2014 screening trigger active"
+    },
+    {
+      "cluster_id": "CL-food-security-caricom",
+      "confidence_display": "\ud83d\udfe1 Validation | 84/100 | B - cross-source",
+      "confidence_score": 84,
+      "country_cluster": "CARICOM",
+      "decision": "Agricultural/logistics investment case or policy response planning",
+      "detail": "5%",
+      "evidence": "CARICOM food trade data: 40 datasets available; \u2022 Annual Growth Rates of Intra-regional Exports of Food and Beverages by SITC Division 2000\u20132024; \u2022 Recent Trends in Export-to-Import Coverage Ratios; \u2022 Share of CARICOM Exports by Member State, 1973\u20132024",
+      "evidence_grade": "B - cross-source",
+      "feedback_counts": {
+        "ignored": 2
+      },
+      "feedback_summary": "Feedback this cycle: 2 ignored.",
+      "freshness": "sustained",
+      "personas": [
+        {
+          "action": "Signal context for CARICOM: 5%. Use this dispatch as a briefing input or narrative lead.",
+          "channel": "Telegram digest",
+          "dispatch_id": "DSP-20260813-012",
+          "feedback_status": "ignored",
+          "persona": "Policy/Media",
+          "ranking_rationale": "",
+          "rationale": "Food security is a regional stability indicator \u2014 tracks pressure points before they become crises"
+        },
+        {
+          "action": "Route CARICOM opportunity to relevant founders and investors in your network. Signal strength (5%) makes this a high-priority introduction target.",
+          "channel": "Telegram",
+          "dispatch_id": "DSP-20260813-011",
+          "feedback_status": "ignored",
+          "persona": "Ecosystem Builder",
+          "ranking_rationale": "",
+          "rationale": "Food trade data reveals supply chain gaps that local founders and agri-tech can fill"
+        }
+      ],
+      "ranking_rationale": "",
+      "risk_flags": [],
+      "signal_kind": "food_security",
+      "title": "CARICOM: food supply indicators shifting \u2014 supply chain implications"
     },
     {
       "cluster_id": "CL-investment-signal-barbados",
@@ -386,7 +425,7 @@
         {
           "action": "Assess competitive positioning in Barbados. FDI movement (34.8% change) signals growing market or incoming competition \u2014 evaluate local advantage before new entrants arrive.",
           "channel": "Telegram",
-          "dispatch_id": "DSP-20260724-008",
+          "dispatch_id": "DSP-20260813-008",
           "feedback_status": "ignored",
           "persona": "Regional Founder/Operator",
           "ranking_rationale": "",
@@ -395,7 +434,7 @@
         {
           "action": "Screen Barbados for investment readiness. FDI movement (34.8% change) is a screening trigger \u2014 cross-reference with sector conditions before deploying capital.",
           "channel": "Email brief + Telegram",
-          "dispatch_id": "DSP-20260724-007",
+          "dispatch_id": "DSP-20260813-007",
           "feedback_status": "ignored",
           "persona": "Diaspora Investor",
           "ranking_rationale": "",
@@ -426,7 +465,7 @@
         {
           "action": "Signal context for St. Vincent and the Grenadines: 18.00%. Use this dispatch as a briefing input or narrative lead.",
           "channel": "Telegram digest",
-          "dispatch_id": "DSP-20260724-010",
+          "dispatch_id": "DSP-20260813-010",
           "feedback_status": "ignored",
           "persona": "Policy/Media",
           "ranking_rationale": "",
@@ -435,7 +474,7 @@
         {
           "action": "Assess portfolio exposure in St. Vincent and the Grenadines. Economic stress indicators (18.00%) may affect existing positions or timing.",
           "channel": "Email brief + Telegram",
-          "dispatch_id": "DSP-20260724-009",
+          "dispatch_id": "DSP-20260813-009",
           "feedback_status": "decision_changed",
           "persona": "Diaspora Investor",
           "ranking_rationale": "",
@@ -450,11 +489,11 @@
       "title": "St. Vincent and the Grenadines: economic stress indicators rising \u2014 portfolio review recommended"
     }
   ],
-  "cycle_id": "20260724",
-  "dispatch_count": 25,
-  "generated_at": "2026-07-24 18:31 UTC",
+  "cycle_id": "20260813",
+  "dispatch_count": 27,
+  "generated_at": "2026-08-13 16:30 UTC",
   "persona_count": 6,
-  "regional_thesis": "Capital momentum is strongest in Guyana (+860.3%), followed by Suriname, Barbados. Separately, St. Vincent and the Grenadines show elevated economic vulnerability \u2014 relevant for portfolio monitoring and resilience planning. Development pipeline remains active (CDB active procurement notices: 9) \u2014 the bidding window is open for project-based entry. Tourism-related growth signals are visible in Antigua and Barbuda, Barbados, Dominica \u2014 demand-side indicators for capacity planning.",
+  "regional_thesis": "Capital momentum is strongest in Guyana (+860.3%), followed by Suriname, Barbados. Separately, St. Vincent and the Grenadines show elevated economic vulnerability \u2014 relevant for portfolio monitoring and resilience planning. Development pipeline remains active (CDB active procurement notices: 9) \u2014 the bidding window is open for project-based entry. Tourism-related growth signals are visible in Barbados, Antigua and Barbuda, Dominica \u2014 demand-side indicators for capacity planning.",
   "source_count": 2,
   "why_now": [
     "\ud83d\udd34 **Atlantic Hurricane Season** \u2014 Operational risk for all Caribbean stakeholders. Monitoring NHC/NWS/NDBC for tropical development and maritime hazards.",

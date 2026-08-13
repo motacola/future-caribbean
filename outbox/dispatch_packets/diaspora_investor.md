@@ -2,7 +2,7 @@
 
 **Decision job:** Capital deployment screening and market entry assessment
 **Delivery channel:** Email brief + Telegram
-**Generated:** Jul 24, 2026 at 18:31 UTC
+**Generated:** Aug 13, 2026 at 16:30 UTC
 **Dispatches in this packet:** 9
 
 ---
@@ -11,13 +11,13 @@
 
 ### 1. Guyana: +860.3% multi-source capital surge — market entry window open
 
-**ID:** `DSP-20260724-017` | **Country:** Guyana | **Confidence:** 🔴 Immediate | 96/100 | B - cross-source
+**ID:** `DSP-20260813-019` | **Country:** Guyana | **Confidence:** 🔴 Immediate | 100/100 | A - multi-source
 **Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** forwarded
 
-**Evidence:** WB FDI surge detected: Guyana; CDB procurement/evaluation activity; Confidence: WB FDI data confirmed · CARICOM/CDB data available (2/3 signals); FDI change: 860.3%
+**Evidence:** WB FDI surge detected: Guyana; CARICOM trade/FDI data available; CDB procurement/evaluation activity; Confidence: WB FDI data confirmed · CARICOM/CDB data available (3/3 signals)
 **Detail:** 860.3% change
-**Grade:** B - cross-source
+**Grade:** A - multi-source
 
 **Recommended action:** Investigate Guyana as a capital deployment target this cycle. Multi-source validation (860.3% change) confirms directional signal — next step is operator discovery and market entry assessment.
 **Decision to influence:** Which verified opportunity to investigate for capital deployment or partnership entry
@@ -25,13 +25,13 @@
 
 ### 2. Suriname: +206.0% multi-source investment validated — opportunity active
 
-**ID:** `DSP-20260724-020` | **Country:** Suriname | **Confidence:** 🔴 Immediate | 96/100 | B - cross-source
+**ID:** `DSP-20260813-022` | **Country:** Suriname | **Confidence:** 🔴 Immediate | 100/100 | A - multi-source
 **Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** weakened
 **Feedback status:** ignored
 
-**Evidence:** WB FDI surge detected: Suriname; CDB procurement/evaluation activity; Confidence: WB FDI data confirmed · CARICOM/CDB data available (2/3 signals); FDI change: 206.0%
+**Evidence:** WB FDI surge detected: Suriname; CARICOM trade/FDI data available; CDB procurement/evaluation activity; Confidence: WB FDI data confirmed · CARICOM/CDB data available (3/3 signals)
 **Detail:** 206.0% change
-**Grade:** B - cross-source
+**Grade:** A - multi-source
 
 **Recommended action:** Investigate Suriname as a capital deployment target this cycle. Multi-source validation (206.0% change) confirms directional signal — next step is operator discovery and market entry assessment.
 **Decision to influence:** Which verified opportunity to investigate for capital deployment or partnership entry
@@ -39,13 +39,13 @@
 
 ### 3. Barbados: +34.8% multi-source investment validated — opportunity active
 
-**ID:** `DSP-20260724-023` | **Country:** Barbados | **Confidence:** 🔴 Immediate | 96/100 | B - cross-source
+**ID:** `DSP-20260813-025` | **Country:** Barbados | **Confidence:** 🔴 Immediate | 100/100 | A - multi-source
 **Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** weakened
 **Feedback status:** ignored
 
-**Evidence:** WB FDI surge detected: Barbados; CDB procurement/evaluation activity; Confidence: WB FDI data confirmed · CARICOM/CDB data available (2/3 signals); FDI change: 34.8%
+**Evidence:** WB FDI surge detected: Barbados; CARICOM trade/FDI data available; CDB procurement/evaluation activity; Confidence: WB FDI data confirmed · CARICOM/CDB data available (3/3 signals)
 **Detail:** 34.8% change
-**Grade:** B - cross-source
+**Grade:** A - multi-source
 
 **Recommended action:** Investigate Barbados as a capital deployment target this cycle. Multi-source validation (34.8% change) confirms directional signal — next step is operator discovery and market entry assessment.
 **Decision to influence:** Which verified opportunity to investigate for capital deployment or partnership entry
@@ -53,7 +53,7 @@
 
 ### 4. Regional FDI snapshot: 3 countries with active capital movement
 
-**ID:** `DSP-20260724-001` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
+**ID:** `DSP-20260813-001` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
 **Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** new
 **Feedback status:** ignored
 
@@ -67,7 +67,7 @@
 
 ### 5. Guyana: FDI trending at +860.3% — screening trigger active
 
-**ID:** `DSP-20260724-003` | **Country:** Guyana | **Confidence:** 🔴 Immediate | 90/100 | B - cross-source
+**ID:** `DSP-20260813-003` | **Country:** Guyana | **Confidence:** 🔴 Immediate | 90/100 | B - cross-source
 **Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -81,7 +81,7 @@
 
 ### 6. Capital convergence: 3 Caribbean economies showing multi-source investment momentum
 
-**ID:** `DSP-20260724-014` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
+**ID:** `DSP-20260813-016` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
 **Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** new
 **Feedback status:** ignored
 
@@ -95,7 +95,7 @@
 
 ### 7. Suriname: FDI trending at +206.0% — screening trigger active
 
-**ID:** `DSP-20260724-005` | **Country:** Suriname | **Confidence:** 🟡 Validation | 84/100 | B - cross-source
+**ID:** `DSP-20260813-005` | **Country:** Suriname | **Confidence:** 🟡 Validation | 84/100 | B - cross-source
 **Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -109,7 +109,7 @@
 
 ### 8. Barbados: FDI trending at +34.8% — screening trigger active
 
-**ID:** `DSP-20260724-007` | **Country:** Barbados | **Confidence:** 🟡 Validation | 74/100 | B - cross-source
+**ID:** `DSP-20260813-007` | **Country:** Barbados | **Confidence:** 🟡 Validation | 74/100 | B - cross-source
 **Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -123,7 +123,7 @@
 
 ### 9. St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended
 
-**ID:** `DSP-20260724-009` | **Country:** St. Vincent and the Grenadines | **Confidence:** 🟢 Monitor | 69/100 | C - single-source
+**ID:** `DSP-20260813-009` | **Country:** St. Vincent and the Grenadines | **Confidence:** 🟢 Monitor | 69/100 | C - single-source
 **Channel:** Email brief + Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** decision_changed
 

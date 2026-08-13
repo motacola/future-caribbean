@@ -2,16 +2,30 @@
 
 **Decision job:** Briefing input and narrative lead sourcing
 **Delivery channel:** Telegram digest
-**Generated:** Jul 24, 2026 at 18:31 UTC
-**Dispatches in this packet:** 1
+**Generated:** Aug 13, 2026 at 16:30 UTC
+**Dispatches in this packet:** 2
 
 ---
 
-## Dispatches (1)
+## Dispatches (2)
 
-### 1. St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended
+### 1. CARICOM: food supply indicators shifting — supply chain implications
 
-**ID:** `DSP-20260724-010` | **Country:** St. Vincent and the Grenadines | **Confidence:** 🟢 Monitor | 69/100 | C - single-source
+**ID:** `DSP-20260813-012` | **Country:** CARICOM | **Confidence:** 🟡 Validation | 84/100 | B - cross-source
+**Channel:** Telegram digest | **Window:** 30 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** CARICOM food trade data: 40 datasets available; • Annual Growth Rates of Intra-regional Exports of Food and Beverages by SITC Division 2000–2024; • Recent Trends in Export-to-Import Coverage Ratios; • Share of CARICOM Exports by Member State, 1973–2024
+**Detail:** 5%
+**Grade:** B - cross-source
+
+**Recommended action:** Signal context for CARICOM: 5%. Use this dispatch as a briefing input or narrative lead.
+**Decision to influence:** Agricultural/logistics investment case or policy response planning
+**Routing rationale:** Food security is a regional stability indicator — tracks pressure points before they become crises
+
+### 2. St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended
+
+**ID:** `DSP-20260813-010` | **Country:** St. Vincent and the Grenadines | **Confidence:** 🟢 Monitor | 69/100 | C - single-source
 **Channel:** Telegram digest | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** ignored
 

@@ -2,24 +2,24 @@
 
 **Decision job:** Project pipeline tracking and expression of interest preparation
 **Delivery channel:** Email brief
-**Generated:** Jul 24, 2026 at 18:31 UTC
+**Generated:** Aug 13, 2026 at 16:30 UTC
 **Dispatches in this packet:** 1
 
 ---
 
 ## Dispatches (1)
 
-### 1. CARICOM: 9 active procurements — bidding window open
+### 1. CARICOM: 7 active procurements — bidding window open
 
-**ID:** `DSP-20260724-012` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 96/100 | B - cross-source
+**ID:** `DSP-20260813-014` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 96/100 | B - cross-source
 **Channel:** Email brief | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** CDB active procurement notices: 9; • Enhancing the Quality of the Belize National Quality Infrastructure; • Solar Photo-Voltaic and Battery Energy Storage System Project; • 2025 Annual Procurement Report
-**Detail:** CDB active procurement notices: 9
+**Evidence:** CDB active procurement notices: 7; • Enhancing the Quality of the Belize National Quality Infrastructure; • Belize Education Secondary Reform Programme II (BESRPII); • Solar Photo-Voltaic and Battery Energy Storage System Project
+**Detail:** CDB active procurement notices: 7
 **Grade:** B - cross-source
 
-**Recommended action:** Track CDB/IDB project pipeline: CDB active procurement notices: 9. Review opportunity fit and prepare expression of interest.
+**Recommended action:** Track CDB/IDB project pipeline: CDB active procurement notices: 7. Review opportunity fit and prepare expression of interest.
 **Decision to influence:** Which procurement or project opportunity to pursue
 **Routing rationale:** CDB/IDB project pipeline is the primary lead source for project-based business development
 
