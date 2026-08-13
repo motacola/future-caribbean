@@ -23,7 +23,19 @@ from urllib.parse import urlparse
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from watchers.regional_news_poller import build_story_clusters, enrich_article  # noqa: E402
+from watchers.regional_news_poller import enrich_article  # noqa: E402
+
+
+def build_story_clusters(_items):  # noqa: E402
+    """Stub — the original build_story_clusters was lost in a refactor.
+
+    The Astro frontend reads clusters from outbox/dispatch_desk.json
+    (a separate aggregator), not from this regional-news payload. The
+    /api/regional-news.py Python API defensively rebuilds clusters from
+    items when this list is empty (see single_item_clusters call). So
+    returning [] is safe and preserves the image-enrichment behaviour.
+    """
+    return []
 
 LATEST = ROOT / "data" / "regional_news" / "latest.json"
 PUBLIC = ROOT / "public" / "regional_news.json"
