@@ -1,0 +1,19 @@
+---
+const { items = [] } = Astro.props;
+---
+<section class="desk-widget" data-widget-id="fx" aria-labelledby="widget-fx-title">
+  <header class="widget-head"><div><span class="widget-kicker">FX watch</span><h2 id="widget-fx-title">Currency regimes</h2></div><span class="widget-status">Monitor only</span></header>
+  <p class="widget-why">Currency regime and monitoring context, without implying a live executable quote.</p>
+  {items.length ? <div class="fx-grid">
+    {items.slice(0, 4).map((item) => <article class="fx-row" data-filter-item data-countries={item.country.toLowerCase()} data-topics={(item.topics || []).join('|')} data-source-tier={item.sourceTier} data-source-id={item.sourceId}>
+      <div><strong>{item.pair || item.currency}</strong><span>{item.country}</span></div>
+      <div><strong>{item.regime || 'Regime unavailable'}</strong><span>{item.indicator}</span></div>
+      <p>{item.whatToMonitor}</p>
+      {item.sourceUrl
+        ? <a class="widget-text-link" href={item.sourceUrl} target="_blank" rel="noopener">{item.sourceName} ↗</a>
+        : <span class="widget-source-name">{item.sourceName}</span>}
+    </article>)}
+  </div> : <p class="widget-empty">No FX context is available from the current registry.</p>}
+  <p class="widget-empty" data-filter-empty hidden>No FX context matches these presentation filters.</p>
+  <p class="widget-disclaimer">Monitoring context; not a live executable FX quote.</p>
+</section>

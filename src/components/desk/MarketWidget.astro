@@ -1,0 +1,20 @@
+---
+const { items = [] } = Astro.props;
+---
+<section class="desk-widget" data-widget-id="market" aria-labelledby="widget-market-title">
+  <header class="widget-head"><div><span class="widget-kicker">Market watch</span><h2 id="widget-market-title">Market context, without the noise</h2></div><span class="widget-status">Dated source checks</span></header>
+  <p class="widget-why">A quick read of official exchange activity and the context around it. These are not simulated prices or trading calls.</p>
+  {items.length ? <div class="market-mini-grid">
+    {items.slice(0, 3).map((item) => <article class="market-mini" data-filter-item data-countries={item.country.toLowerCase()} data-topics={(item.topics || []).join('|')} data-source-tier={item.sourceTier} data-source-id={item.sourceId}>
+      <div class="widget-item-meta">{item.exchangeCode || 'MARKET'} · {String(item.status || '').replaceAll('_', ' ')}</div>
+      <h3>{item.country}</h3>
+      <p>{item.activityLabel || item.sectors.slice(0, 3).join(' · ')}</p>
+      {item.activityChart ? <div class="desk-candle-shell" set:html={item.activityChart} /> : <p class="widget-empty">No activity context is configured for this market yet.</p>}
+      <p class="desk-chart-label">{item.activityChartLabel || 'Configured market activity index'} · interval path derived from configured observations · not price history</p>
+      <div class="market-observation-mini"><strong>{item.observedAt || 'Date unavailable'}</strong><span>{item.observationAgeDays === null || item.observationAgeDays === undefined ? 'No dated observation exposed' : `${item.observationAgeDays}d old`}</span></div>
+      {item.sourceUrl && <a class="widget-text-link" href={item.sourceUrl} target="_blank" rel="noopener">{item.sourceName} ↗</a>}
+    </article>)}
+  </div> : <p class="widget-empty">No official Caribbean market sources are configured.</p>}
+  <p class="widget-empty" data-filter-empty hidden>No market registry item matches these presentation filters.</p>
+  <p class="widget-disclaimer">Configured activity index · not price history. Dates come from the official source when a dated observation is available.</p>
+</section>

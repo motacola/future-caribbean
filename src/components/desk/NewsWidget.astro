@@ -1,0 +1,46 @@
+---
+const { items = [] } = Astro.props;
+---
+<section class="desk-widget" data-widget-id="news" aria-labelledby="widget-news-title">
+  <header class="widget-head"><div><span class="widget-kicker">Regional news</span><h2 id="widget-news-title">What changed</h2></div><span class="widget-status">{Math.min(4, items.length)} of {items.length}</span></header>
+  <p class="widget-why">Recent regional coverage ranked for relevance, with source tier and freshness visible.</p>
+  <div class="widget-list" data-followed-stories hidden>
+    <div class="widget-list-item"><div><div class="widget-item-meta">My Signal Desk · followed clusters</div><div data-followed-story-list></div></div></div>
+  </div>
+  {items.length ? <div class="widget-list">
+    {items.slice(0, 4).map((item) => <article class="widget-list-item widget-news-item" data-filter-item data-countries={(item.country || []).map((country) => country.toLowerCase()).join('|')} data-topics={(item.topics || []).join('|')} data-source-tier={item.sourceTier} data-source-id={item.sourceId}>
+      <a class="widget-news-thumb" href={item.sourceUrl} target="_blank" rel="noopener" aria-label={`Read ${item.title}`}>
+        <span>{(item.country || [])[0] || 'Caribbean'}</span>
+        {item.imageUrl && <img src={item.imageUrl} alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()" />}
+      </a>
+      <div>
+        <div class="widget-item-meta">Tier {item.sourceTier} · {item.freshness} · {(item.country || []).join(', ') || 'Regional'}</div>
+        <h3><a href={item.sourceUrl} target="_blank" rel="noopener">{item.title} ↗</a></h3>
+        <span class="widget-source-name">{item.sourceName}</span>
+      </div>
+    </article>)}
+  </div> : <p class="widget-empty">No regional news items are available from the configured sources.</p>}
+  <p class="widget-empty" data-filter-empty hidden>No news matches these presentation filters. Change the country, topic, tier, or source settings to restore items.</p>
+</section>
+
+<script>
+  try {
+    const saved = JSON.parse(localStorage.getItem('signal-fabric:news-follows:v1') || '{}');
+    const ids = Array.isArray(saved.ids) ? saved.ids : [];
+    const snapshots = saved.snapshots || {};
+    const shell = document.querySelector('[data-followed-stories]');
+    const list = shell?.querySelector('[data-followed-story-list]');
+    if (shell && list && ids.length) {
+      shell.hidden = false;
+      ids.forEach((id: string) => {
+        const story = snapshots[id] || {};
+        const link = document.createElement('a');
+        link.href = story.url || '/#regional-news';
+        link.target = story.url ? '_blank' : '_self';
+        link.rel = 'noopener';
+        link.textContent = story.title || 'Followed regional story';
+        list.append(link);
+      });
+    }
+  } catch {}
+</script>

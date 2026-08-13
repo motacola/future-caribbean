@@ -1,0 +1,61 @@
+---
+import type { HomepageBriefingData } from '../../lib/data.ts';
+
+interface Props {
+  pulse: HomepageBriefingData['regionalPulse'];
+}
+
+const { pulse } = Astro.props;
+---
+
+<section class="pulse" id="regional-pulse" aria-labelledby="regional-pulse-title">
+  <div class="pulse-heading">
+    <p>Regional Pulse</p>
+    <h2 id="regional-pulse-title">The context behind the lead</h2>
+    <span>Use this to frame the conversation, then check the original sources before making a decision.</span>
+  </div>
+  <div class="pulse-grid">
+    <article data-pulse-market>
+      <span class="label">Market</span>
+      <h3>{pulse.market.title}</h3>
+      <p>{pulse.market.summary}</p>
+      <small data-trust-source>{pulse.market.sourceName}</small>
+    </article>
+    <article data-pulse-fx>
+      <span class="label">FX context</span>
+      <h3>{pulse.fx?.pair || 'Regional currency watch'}</h3>
+      <p>{pulse.fx ? `${pulse.fx.regime || pulse.fx.indicator || 'Monitor'} · ${pulse.fx.whatToMonitor || 'Watch official monetary sources.'}` : 'No directly matched FX record this cycle.'}</p>
+      <small data-trust-freshness>{pulse.fx?.status || 'status unavailable'}</small>
+    </article>
+    <article data-pulse-news>
+      <span class="label">Relevant headline</span>
+      <h3>{pulse.news.title}</h3>
+      <p>{pulse.news.summary}</p>
+      <small>{pulse.news.sourceName} · {pulse.news.freshness}</small>
+    </article>
+    <article class="watch" data-pulse-watch>
+      <span class="label">Before you act</span>
+      <h3>What could change the picture</h3>
+      <p>{pulse.whatToWatch}</p>
+      <small>{pulse.disclaimer}</small>
+    </article>
+  </div>
+</section>
+
+<style>
+  .pulse { max-width: 1140px; margin: 0 auto; padding: 20px 24px 42px; }
+  .pulse-heading { display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, .55fr); column-gap: 26px; align-items: end; margin-bottom: 16px; }
+  .pulse-heading > p { grid-column: 1 / -1; margin: 0 0 7px; font: 700 10px 'IBM Plex Mono', monospace; text-transform: uppercase; letter-spacing: 1.3px; color: #b57a22; }
+  .pulse-heading h2 { margin: 0; font: 700 clamp(26px, 3.5vw, 38px)/1.02 'Cormorant Garamond', Georgia, serif; color: #18251f; }
+  .pulse-heading > span { color: #455a50; font-size: 12px; line-height: 1.5; }
+  .pulse-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); background: #18251f; border-radius: 6px; overflow: hidden; box-shadow: 0 10px 26px rgba(24,37,31,.13); }
+  article { min-width: 0; padding: 19px; color: #f4ebdd; border-right: 1px solid rgba(244,235,221,.14); }
+  article:last-child { border-right: 0; }
+  article.watch { background: rgba(181,122,34,.13); }
+  .label { font: 700 9px 'IBM Plex Mono', monospace; text-transform: uppercase; letter-spacing: .9px; color: #b6c74e; }
+  h3 { margin: 9px 0 7px; font: 700 19px/1.1 'Cormorant Garamond', Georgia, serif; overflow-wrap: anywhere; }
+  article p { margin: 0 0 12px; color: rgba(244,235,221,.7); font-size: 11.5px; line-height: 1.5; overflow-wrap: anywhere; }
+  small { display: block; padding-top: 9px; border-top: 1px solid rgba(244,235,221,.13); color: rgba(244,235,221,.52); font: 8.5px/1.4 'IBM Plex Mono', monospace; }
+  @media (max-width: 900px) { .pulse-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } article:nth-child(2) { border-right: 0; } article:nth-child(-n+2) { border-bottom: 1px solid rgba(244,235,221,.14); } }
+  @media (max-width: 620px) { .pulse { padding: 14px 16px 34px; } .pulse-heading { grid-template-columns: 1fr; gap: 8px; } .pulse-grid { grid-template-columns: 1fr; } article, article:nth-child(2) { border-right: 0; border-bottom: 1px solid rgba(244,235,221,.14); } article:last-child { border-bottom: 0; } }
+</style>

@@ -1,0 +1,40 @@
+---
+import type { HomepageBriefingCard } from '../../lib/data.ts';
+
+interface Props {
+  card: HomepageBriefingCard;
+  cycleId: string;
+}
+
+const { card, cycleId } = Astro.props;
+---
+
+<article class="hero-lead" id="hero-lead" aria-label="Current lead signal">
+  <div class="hero-lead-kicker">
+    <span>Lead signal · cycle {cycleId}</span>
+    <span class="hero-lead-status">{card.status}</span>
+  </div>
+  <h2>{card.title}</h2>
+  <p>{card.summary}</p>
+  <div class="hero-lead-trust">
+    <span data-trust-source>Source: {card.sourceName}</span>
+    <span data-trust-freshness>Freshness: {card.freshness}</span>
+  </div>
+  <div class="hero-lead-actions">
+    <a href="#decision-workspace">Read the full briefing</a>
+    <a href="/build">Open My Signal Desk</a>
+  </div>
+</article>
+
+<style>
+  .hero-lead { margin-top: 20px; padding: 18px; background: #fffcf4; border: 1px solid #d8cbb8; border-left: 3px solid #b57a22; border-radius: 6px; box-shadow: 0 5px 16px rgba(24,37,31,.08); }
+  .hero-lead-kicker, .hero-lead-trust, .hero-lead-actions { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 14px; }
+  .hero-lead-kicker, .hero-lead-trust { font: 700 9px/1.4 'IBM Plex Mono', monospace; letter-spacing: .7px; text-transform: uppercase; color: #5d6b62; }
+  .hero-lead-status { color: #0d766e; }
+  h2 { margin: 10px 0 8px; font: 700 clamp(23px, 3vw, 34px)/1.03 'Cormorant Garamond', Georgia, serif; color: #18251f; }
+  p { margin: 0; color: #455a50; font-size: 13px; line-height: 1.55; }
+  .hero-lead-trust { justify-content: flex-start; margin-top: 13px; padding-top: 11px; border-top: 1px solid #d8cbb8; }
+  .hero-lead-actions { justify-content: flex-start; margin-top: 14px; }
+  .hero-lead-actions a { font-size: 12px; font-weight: 700; color: #0d766e; }
+  .hero-lead-actions a:first-child { color: #18251f; }
+</style>

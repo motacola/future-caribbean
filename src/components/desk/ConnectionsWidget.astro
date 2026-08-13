@@ -1,0 +1,18 @@
+---
+const { items = [] } = Astro.props;
+---
+<section class="desk-widget" data-widget-id="connections" aria-labelledby="widget-connections-title">
+  <header class="widget-head"><div><span class="widget-kicker">Regional connections</span><h2 id="widget-connections-title">Coordination paths</h2></div><span class="widget-status">Read-only</span></header>
+  <p class="widget-why">Cited capability matches that may justify an introduction after human diligence.</p>
+  {items.length ? <div class="widget-list">
+    {items.slice(0, 3).map((item) => <article class="widget-list-item" data-filter-item data-countries={(item.country || []).map((country) => country.toLowerCase()).join('|')} data-topics={(item.topics || []).join('|')}>
+      <div class="widget-item-meta">{item.status} · {(item.country || []).join(', ') || 'Regional'}</div>
+      <h3>{item.title}</h3>
+      <p>{(item.requiredCapabilities || []).slice(0, 3).join(' · ') || 'Capability detail pending'}</p>
+      {item.evidence?.[0]?.sourceUrl && <a class="widget-text-link" href={item.evidence[0].sourceUrl} target="_blank" rel="noopener">{item.evidence[0].sourceName} evidence ↗</a>}
+      {item.introductionIntent && <span class="intro-available">Introduction path available after validation</span>}
+    </article>)}
+  </div> : <p class="widget-empty">No cited coordination opportunity is available. No introduction path is implied.</p>}
+  <p class="widget-empty" data-filter-empty hidden>No cited coordination path matches these presentation filters. No introduction is implied.</p>
+  <p class="widget-disclaimer">Coordination lead only; validate counterparties before outreach.</p>
+</section>

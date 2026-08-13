@@ -12,6 +12,16 @@ planning/
 # Test suite
 tests/
 
+# Hobby-plan function consolidation: /api/ping is routed to /api/status.
+api/ping.py
+# Unwired Python API endpoints (data is read as static JSON by src/lib/data.ts at
+# build time; these .py files exist for local dev and would otherwise push the
+# Hobby-plan function count past 12). The matching *-data.json files are kept
+# (they're static data, not Python, so they don't count as functions).
+api/market-watch.py
+api/regional-news.py
+api/source-health.py
+
 # Data — EXCEPT history/ which the theater replay needs
 data/*
 !data/history/
@@ -20,6 +30,7 @@ data/*
 # src/lib/data.ts. Re-include the whole regional_news dir (the generated latest.json
 # is force-committed) so the section renders on Vercel. Ignore the bulky raw RSS cache.
 !data/regional_news/
+!data/regional_news/**
 data/regional_news/raw/
 # Coordination graph + intervention state are force-committed and read by the
 # Regional Connections page at build time. Un-ignore so the build context has them.
