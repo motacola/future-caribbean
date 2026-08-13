@@ -36,6 +36,11 @@ data/regional_news/raw/
 # Regional Connections page at build time. Un-ignore so the build context has them.
 !data/coordination/
 !data/intervention_state.json
+# Market Watch poller output is force-committed and read by the index page at
+# build time (src/lib/data.ts reads data/market_watch/latest.json to populate the
+# candle charts + watch-sector / news-context cards).
+!data/market_watch/
+!data/market_watch/**
 
 # Pipeline source code (not needed at runtime)
 cli/
