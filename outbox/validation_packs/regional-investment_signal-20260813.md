@@ -3,9 +3,9 @@
 - Signal: `regional-investment_signal-20260813` · Dispatch: `DSP-20260813-001`
 - Confidence: 78/100 (raw 90) · B - cross-source
 - Action readiness: medium (no dated country procurement or news corroboration)
-- Evidence freshness: refreshing · cycles since refresh: 0
+- Evidence freshness: aging · cycles since refresh: 1
 - Recommendation: **HOLD** — Calibrated confidence 78/100 with 0 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.
-- Last validated: 2026-08-13T16:30:17.637283+00:00
+- Last validated: 2026-08-13T16:44:14.475801+00:00
 
 ## Sector hypotheses
 - None identified this cycle

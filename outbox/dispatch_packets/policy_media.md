@@ -2,7 +2,7 @@
 
 **Decision job:** Briefing input and narrative lead sourcing
 **Delivery channel:** Telegram digest
-**Generated:** Aug 13, 2026 at 16:30 UTC
+**Generated:** Aug 13, 2026 at 16:44 UTC
 **Dispatches in this packet:** 2
 
 ---
@@ -11,7 +11,7 @@
 
 ### 1. CARICOM: food supply indicators shifting — supply chain implications
 
-**ID:** `DSP-20260813-012` | **Country:** CARICOM | **Confidence:** 🟡 Validation | 84/100 | B - cross-source
+**ID:** `DSP-20260813-012` | **Country:** CARICOM | **Confidence:** 🟡 Validation | 80/100 | B - cross-source
 **Channel:** Telegram digest | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -25,7 +25,7 @@
 
 ### 2. St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended
 
-**ID:** `DSP-20260813-010` | **Country:** St. Vincent and the Grenadines | **Confidence:** 🟢 Monitor | 69/100 | C - single-source
+**ID:** `DSP-20260813-010` | **Country:** St. Vincent and the Grenadines | **Confidence:** 🟡 Validation | 72/100 | C - single-source
 **Channel:** Telegram digest | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** ignored
 

@@ -2,7 +2,7 @@
 
 **Decision job:** Competitive positioning and capability mapping
 **Delivery channel:** Telegram
-**Generated:** Aug 13, 2026 at 16:30 UTC
+**Generated:** Aug 13, 2026 at 16:44 UTC
 **Dispatches in this packet:** 9
 
 ---
@@ -53,7 +53,7 @@
 
 ### 4. CARICOM: 7 active procurements — bidding window open
 
-**ID:** `DSP-20260813-015` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 96/100 | B - cross-source
+**ID:** `DSP-20260813-015` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 95/100 | B - cross-source
 **Channel:** Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -79,21 +79,7 @@
 **Decision to influence:** Which country-sector pair to validate for investment readiness
 **Routing rationale:** FDI movement in your operating country signals competition or demand growth — assess positioning
 
-### 6. Guyana: FDI trending at +860.3% — screening trigger active
-
-**ID:** `DSP-20260813-004` | **Country:** Guyana | **Confidence:** 🔴 Immediate | 90/100 | B - cross-source
-**Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Guyana: Foreign direct investment net inflows current USD moved up 860.3% from 2023 to 2024.
-**Detail:** 860.3% change
-**Grade:** B - cross-source
-
-**Recommended action:** Assess competitive positioning in Guyana. FDI movement (860.3% change) signals growing market or incoming competition — evaluate local advantage before new entrants arrive.
-**Decision to influence:** Which country-sector pair to validate for investment readiness
-**Routing rationale:** FDI movement in your operating country signals competition or demand growth — assess positioning
-
-### 7. Capital convergence: 3 Caribbean economies showing multi-source investment momentum
+### 6. Capital convergence: 3 Caribbean economies showing multi-source investment momentum
 
 **ID:** `DSP-20260813-018` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** new
@@ -107,9 +93,23 @@
 **Decision to influence:** Which verified opportunity to investigate for capital deployment or partnership entry
 **Routing rationale:** Multi-source investment lift indicates growing market that may support new entry or expansion
 
+### 7. Guyana: FDI trending at +860.3% — screening trigger active
+
+**ID:** `DSP-20260813-004` | **Country:** Guyana | **Confidence:** 🟡 Validation | 88/100 | B - cross-source
+**Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Guyana: Foreign direct investment net inflows current USD moved up 860.3% from 2023 to 2024.
+**Detail:** 860.3% change
+**Grade:** B - cross-source
+
+**Recommended action:** Assess competitive positioning in Guyana. FDI movement (860.3% change) signals growing market or incoming competition — evaluate local advantage before new entrants arrive.
+**Decision to influence:** Which country-sector pair to validate for investment readiness
+**Routing rationale:** FDI movement in your operating country signals competition or demand growth — assess positioning
+
 ### 8. Suriname: FDI trending at +206.0% — screening trigger active
 
-**ID:** `DSP-20260813-006` | **Country:** Suriname | **Confidence:** 🟡 Validation | 84/100 | B - cross-source
+**ID:** `DSP-20260813-006` | **Country:** Suriname | **Confidence:** 🟡 Validation | 82/100 | B - cross-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -123,7 +123,7 @@
 
 ### 9. Barbados: FDI trending at +34.8% — screening trigger active
 
-**ID:** `DSP-20260813-008` | **Country:** Barbados | **Confidence:** 🟡 Validation | 74/100 | B - cross-source
+**ID:** `DSP-20260813-008` | **Country:** Barbados | **Confidence:** 🟡 Validation | 72/100 | B - cross-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 

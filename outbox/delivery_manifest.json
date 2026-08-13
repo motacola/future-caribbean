@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-13T16:30:26.108052+00:00",
+  "generated_at": "2026-08-13T16:44:14.869787+00:00",
   "cycle_id": "20260813",
   "total_deliveries": 27,
   "summary": {
@@ -171,7 +171,7 @@
       "target_artifact_path": "outbox/dispatch_packets/regional_operator.md",
       "cycle_id": "20260813",
       "country_cluster": "CARICOM",
-      "confidence_score": 96,
+      "confidence_score": 95,
       "signal_kind": "development_pipeline"
     },
     {
@@ -186,7 +186,7 @@
       "target_artifact_path": "outbox/dispatch_packets/procurement_watcher.md",
       "cycle_id": "20260813",
       "country_cluster": "CARICOM",
-      "confidence_score": 96,
+      "confidence_score": 95,
       "signal_kind": "development_pipeline"
     },
     {
@@ -201,7 +201,7 @@
       "target_artifact_path": "outbox/dispatch_packets/founder_operator.md",
       "cycle_id": "20260813",
       "country_cluster": "CARICOM",
-      "confidence_score": 96,
+      "confidence_score": 95,
       "signal_kind": "development_pipeline"
     },
     {
@@ -231,36 +231,6 @@
       "target_artifact_path": "outbox/dispatch_packets/founder_operator.md",
       "cycle_id": "20260813",
       "country_cluster": "Caribwide",
-      "confidence_score": 90,
-      "signal_kind": "investment_signal"
-    },
-    {
-      "dispatch_id": "DSP-20260813-003",
-      "title": "Guyana: FDI trending at +860.3% — screening trigger active",
-      "persona_key": "diaspora_investor",
-      "persona_label": "Diaspora Investor",
-      "channel": "Email brief + Telegram",
-      "delivery_status": "delivered",
-      "action_window": "14 days",
-      "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
-      "target_artifact_path": "outbox/dispatch_packets/diaspora_investor.md",
-      "cycle_id": "20260813",
-      "country_cluster": "Guyana",
-      "confidence_score": 90,
-      "signal_kind": "investment_signal"
-    },
-    {
-      "dispatch_id": "DSP-20260813-004",
-      "title": "Guyana: FDI trending at +860.3% — screening trigger active",
-      "persona_key": "founder_operator",
-      "persona_label": "Regional Founder/Operator",
-      "channel": "Telegram",
-      "delivery_status": "delivered",
-      "action_window": "14 days",
-      "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
-      "target_artifact_path": "outbox/dispatch_packets/founder_operator.md",
-      "cycle_id": "20260813",
-      "country_cluster": "Guyana",
       "confidence_score": 90,
       "signal_kind": "investment_signal"
     },
@@ -310,6 +280,36 @@
       "signal_kind": "enhanced_investment"
     },
     {
+      "dispatch_id": "DSP-20260813-003",
+      "title": "Guyana: FDI trending at +860.3% — screening trigger active",
+      "persona_key": "diaspora_investor",
+      "persona_label": "Diaspora Investor",
+      "channel": "Email brief + Telegram",
+      "delivery_status": "delivered",
+      "action_window": "14 days",
+      "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
+      "target_artifact_path": "outbox/dispatch_packets/diaspora_investor.md",
+      "cycle_id": "20260813",
+      "country_cluster": "Guyana",
+      "confidence_score": 88,
+      "signal_kind": "investment_signal"
+    },
+    {
+      "dispatch_id": "DSP-20260813-004",
+      "title": "Guyana: FDI trending at +860.3% — screening trigger active",
+      "persona_key": "founder_operator",
+      "persona_label": "Regional Founder/Operator",
+      "channel": "Telegram",
+      "delivery_status": "delivered",
+      "action_window": "14 days",
+      "feedback_prompt": "Did this dispatch trigger a follow-up, get forwarded, or change a decision?",
+      "target_artifact_path": "outbox/dispatch_packets/founder_operator.md",
+      "cycle_id": "20260813",
+      "country_cluster": "Guyana",
+      "confidence_score": 88,
+      "signal_kind": "investment_signal"
+    },
+    {
       "dispatch_id": "DSP-20260813-005",
       "title": "Suriname: FDI trending at +206.0% — screening trigger active",
       "persona_key": "diaspora_investor",
@@ -321,7 +321,7 @@
       "target_artifact_path": "outbox/dispatch_packets/diaspora_investor.md",
       "cycle_id": "20260813",
       "country_cluster": "Suriname",
-      "confidence_score": 84,
+      "confidence_score": 82,
       "signal_kind": "investment_signal"
     },
     {
@@ -336,7 +336,7 @@
       "target_artifact_path": "outbox/dispatch_packets/founder_operator.md",
       "cycle_id": "20260813",
       "country_cluster": "Suriname",
-      "confidence_score": 84,
+      "confidence_score": 82,
       "signal_kind": "investment_signal"
     },
     {
@@ -351,7 +351,7 @@
       "target_artifact_path": "outbox/dispatch_packets/ecosystem_builder.md",
       "cycle_id": "20260813",
       "country_cluster": "CARICOM",
-      "confidence_score": 84,
+      "confidence_score": 80,
       "signal_kind": "food_security"
     },
     {
@@ -366,7 +366,7 @@
       "target_artifact_path": "outbox/dispatch_packets/policy_media.md",
       "cycle_id": "20260813",
       "country_cluster": "CARICOM",
-      "confidence_score": 84,
+      "confidence_score": 80,
       "signal_kind": "food_security"
     },
     {
@@ -381,7 +381,7 @@
       "target_artifact_path": "outbox/dispatch_packets/diaspora_investor.md",
       "cycle_id": "20260813",
       "country_cluster": "Barbados",
-      "confidence_score": 74,
+      "confidence_score": 72,
       "signal_kind": "investment_signal"
     },
     {
@@ -396,7 +396,7 @@
       "target_artifact_path": "outbox/dispatch_packets/founder_operator.md",
       "cycle_id": "20260813",
       "country_cluster": "Barbados",
-      "confidence_score": 74,
+      "confidence_score": 72,
       "signal_kind": "investment_signal"
     },
     {
@@ -411,7 +411,7 @@
       "target_artifact_path": "outbox/dispatch_packets/diaspora_investor.md",
       "cycle_id": "20260813",
       "country_cluster": "St. Vincent and the Grenadines",
-      "confidence_score": 69,
+      "confidence_score": 72,
       "signal_kind": "economic_vulnerability"
     },
     {
@@ -426,7 +426,7 @@
       "target_artifact_path": "outbox/dispatch_packets/policy_media.md",
       "cycle_id": "20260813",
       "country_cluster": "St. Vincent and the Grenadines",
-      "confidence_score": 69,
+      "confidence_score": 72,
       "signal_kind": "economic_vulnerability"
     }
   ]

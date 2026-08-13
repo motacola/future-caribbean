@@ -14,4 +14,4 @@ Lead: Suriname. 2 converging signal(s) across 4 source(s). Signals: 💼 Investm
 🏗️ CARICOM: 7 active procurements — bidding window open
 
 Generated from public regional data, ranked for decision value.
-Generated: 2026-08-13 16:30 UTC
+Generated: 2026-08-13 16:44 UTC

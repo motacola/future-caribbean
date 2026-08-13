@@ -1,6 +1,6 @@
 # Caribbean Opportunity Dispatch — Judge Brief
 
-Generated: 2026-08-13 16:30 UTC
+Generated: 2026-08-13 16:44 UTC
 
 ## What This Proves
 
@@ -11,51 +11,50 @@ Caribbean Opportunity Dispatch is the product. Caribbean Signal OS is the archit
 - Total raw signals generated: 16
 - Sources represented: CARICOM, CDB, IDB, World Bank
 - Countries/zones: 9
-- New/updated this cycle: 5
+- New/updated this cycle: 1
 - User-facing outputs: opportunity dispatches, regional thesis, why-now context, feedback review, judge brief
 
 **Suriname** — 2 signal(s), 4 source(s): 💼 Investment + 💎 Investment
 
-🔴 🔄 **💎 Investment — Suriname**
+🔴 ⬇️ **💎 Investment — Suriname**
    Suriname: +206.0% multi-source investment validated — opportunity active
    Immediate | 100/100 | A - multi-source
-   🔄 Content updated this cycle
+   ⬇️ Weakened (-9 pts)
    Immediate investigation. Suriname has multi-source investment validation (3 signals converging). Priority: assess market entry options, identify existing operators.
 
 ## Supporting Decision Signals
 
-**1.** 🔴 **💎 Investment — Barbados** — updated
+**1.** 🔴 **💎 Investment — Barbados** — weakened
    Narrative: Barbados: +34.8% multi-source investment validated — opportunity active
    Score: 100/100 | Grade: A - multi-source
    Audience: investor/founder via Email brief + Telegram
    Decision: Immediate investigation. Barbados has multi-source investment validation (3 signals converging). Priority: assess market entry options, identify existing operators.
-   🔄 Content updated this cycle
+   ⬇️ Weakened (-9 pts)
 
-**2.** 🔴 **💎 Investment — Guyana** — updated
+**2.** 🔴 **💎 Investment — Guyana** — sustained
    Narrative: Guyana: +860.3% multi-source capital surge — market entry window open
    Score: 100/100 | Grade: A - multi-source
    Audience: investor/founder via Email brief + Telegram
    Decision: Immediate investigation. Guyana has multi-source investment validation (3 signals converging). Priority: assess market entry options, identify existing operators.
-   🔄 Content updated this cycle
 
 **3.** 🔴 **🏗️ Pipeline — CARICOM** — updated
    Narrative: CARICOM: 7 active procurements — bidding window open
-   Score: 96/100 | Grade: B - cross-source
+   Score: 95/100 | Grade: B - cross-source
    Audience: investor/founder via Email brief + Telegram
    Decision: Active procurement pipeline: CDB active procurement notices: 7. Priority: review CDB/IDB opportunities as lead list for project-based entry.
    🔄 Content updated this cycle
 
 **4.** 🟡 **💼 Investment — Suriname** — sustained
    Narrative: Suriname: FDI trending at +206.0% — screening trigger active
-   Score: 84/100 | Grade: B - cross-source
+   Score: 82/100 | Grade: B - cross-source
    Audience: investor/founder via Email brief + Telegram
    Decision: Validation priority. Suriname FDI movement (206.0% change) signals opportunity. Cross-reference with sector data.
 
-**5.** 🟢 **⚠️ Vulnerability — St. Vincent and the Grenadines** — sustained
+**5.** 🟡 **⚠️ Vulnerability — St. Vincent and the Grenadines** — sustained
    Narrative: St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended
-   Score: 69/100 | Grade: C - single-source
+   Score: 72/100 | Grade: C - single-source
    Audience: policy/operator via Telegram digest
-   Decision: Monitor. St. Vincent and the Grenadines showing economic stress (18.00%). Track next cycle. Escalates if additional stress indicators appear or existing ones worsen.
+   Decision: Watch: St. Vincent and the Grenadines elevated indicators (18.00%). Deeper context check needed before expansion or support decisions.
 
 **6.** ⚪ **🏖️ Tourism — Antigua and Barbuda** — sustained
    Narrative: Antigua and Barbuda: GDP growth signals expanding tourist economy
@@ -137,7 +136,7 @@ Each signal is routed to specific personas based on signal kind and evidence lev
 
 ## Cycle Summary
 
-Lead: Suriname · 16 composite signal(s) · 1 new · 4 updated · 11 persistent
+Lead: Suriname · 16 composite signal(s) · 1 updated · 13 persistent
 ## Judge Demo Path
 
 1. Run `bash run_pipeline.sh`.

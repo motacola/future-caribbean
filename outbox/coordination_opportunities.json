@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-13T16:30:33.567871+00:00",
+  "generated_at": "2026-08-13T16:44:24.943252+00:00",
   "engine": "deterministic",
   "registry_status": "pilot",
   "count": 11,
@@ -409,7 +409,7 @@
         "friction_penalty": 15
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 74/100",
+        "Trigger signal confidence: 72/100",
         "Matched 2 of 2 required capabilities across 2 regional nodes",
         "Registry evidence from 3 primary-source organisations"
       ],
@@ -1392,7 +1392,7 @@
         "friction_penalty": 21
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 90/100",
+        "Trigger signal confidence: 88/100",
         "Matched 2 of 2 required capabilities across 3 regional nodes",
         "Registry evidence from 5 primary-source organisations"
       ],
@@ -1701,7 +1701,7 @@
         "friction_penalty": 21
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 82/100",
         "Matched 2 of 2 required capabilities across 3 regional nodes",
         "Registry evidence from 5 primary-source organisations"
       ],
@@ -2650,7 +2650,7 @@
         "friction_penalty": 21
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 80/100",
         "Matched 3 of 3 required capabilities across 3 regional nodes",
         "Registry evidence from 3 primary-source organisations"
       ],
@@ -3003,7 +3003,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 96/100",
+        "Trigger signal confidence: 95/100",
         "Matched 4 of 4 required capabilities across 5 regional nodes",
         "Registry evidence from 8 primary-source organisations"
       ],
@@ -3360,7 +3360,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 69/100",
+        "Trigger signal confidence: 72/100",
         "Matched 3 of 3 required capabilities across 4 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],

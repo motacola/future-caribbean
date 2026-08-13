@@ -1,12 +1,12 @@
 {
   "cycle_intro": "Lead: Suriname. 2 converging signal(s) across 4 source(s). Signals: \ud83d\udcbc Investment + \ud83d\udc8e Investment.",
-  "generated_at": "2026-08-13 16:30 UTC",
+  "generated_at": "2026-08-13 16:44 UTC",
   "items": [
     {
       "band": "immediate",
       "channel": "Email brief + Telegram",
       "country": "Barbados",
-      "freshness": "updated",
+      "freshness": "weakened",
       "kind": "enhanced_investment",
       "metrics": {
         "decision_changed": null,
@@ -24,7 +24,7 @@
       "band": "immediate",
       "channel": "Email brief + Telegram",
       "country": "Guyana",
-      "freshness": "updated",
+      "freshness": "sustained",
       "kind": "enhanced_investment",
       "metrics": {
         "decision_changed": null,
@@ -42,7 +42,7 @@
       "band": "immediate",
       "channel": "Email brief + Telegram",
       "country": "Suriname",
-      "freshness": "updated",
+      "freshness": "weakened",
       "kind": "enhanced_investment",
       "metrics": {
         "decision_changed": null,
@@ -71,11 +71,11 @@
       },
       "persona": "investor/founder",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 96,
+      "score": 95,
       "signal_id": "dev-pipeline-regional"
     },
     {
-      "band": "monitor",
+      "band": "validation",
       "channel": "Telegram digest",
       "country": "St. Vincent and the Grenadines",
       "freshness": "sustained",
@@ -89,7 +89,7 @@
       },
       "persona": "policy/operator",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 69,
+      "score": 72,
       "signal_id": "vuln-st.-vincent-and-the-grenadines"
     },
     {
@@ -147,7 +147,7 @@
       "signal_id": "tourism-grenada"
     },
     {
-      "band": "immediate",
+      "band": "validation",
       "channel": "Email brief + Telegram",
       "country": "Guyana",
       "freshness": "sustained",
@@ -161,7 +161,7 @@
       },
       "persona": "investor/founder",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 90,
+      "score": 88,
       "signal_id": "invest-guyana"
     },
     {
@@ -179,14 +179,14 @@
       },
       "persona": "investor/founder",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 84,
+      "score": 82,
       "signal_id": "invest-suriname"
     },
     {
       "band": "validation",
       "channel": "Telegram digest",
       "country": "CARICOM",
-      "freshness": "new",
+      "freshness": "sustained",
       "kind": "food_security",
       "metrics": {
         "decision_changed": null,
@@ -197,7 +197,7 @@
       },
       "persona": "policy/operator",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 84,
+      "score": 80,
       "signal_id": "food-security-regional"
     },
     {
@@ -215,7 +215,7 @@
       },
       "persona": "investor/founder",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 74,
+      "score": 72,
       "signal_id": "invest-barbados"
     }
   ],

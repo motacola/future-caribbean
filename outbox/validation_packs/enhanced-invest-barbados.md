@@ -1,14 +1,14 @@
 # Opportunity Validation Pack — Barbados
 
 - Signal: `enhanced-invest-barbados` · Dispatch: `DSP-20260813-025`
-- Confidence: 100/100 (raw 100) · A - multi-source
-- Action readiness: high
-- Evidence freshness: stale · cycles since refresh: 3
-- Recommendation: **HOLD** — Evidence fingerprint unchanged for 3 cycles — downgraded from advance to hold until new corroboration arrives.
-- Last validated: 2026-08-13T16:30:17.637283+00:00
+- Confidence: 68/100 (raw 100) · A - multi-source
+- Action readiness: medium (annual macro signal only)
+- Evidence freshness: refreshing · cycles since refresh: 0
+- Recommendation: **HOLD** — Calibrated confidence 68/100 with 2 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.
+- Last validated: 2026-08-13T16:44:14.475801+00:00
 
 ## Sector hypotheses
-- Tourism and hospitality [corroborated] — _Google News — Barbados: Tourism minister calls for unified labour law framework_
+- Tourism and hospitality [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
 - International business and financial services [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
 - FDI-receiving sectors (composition not yet broken down) [macro_signal] — _World Bank: FDI net inflows moved +34.8% from 2023 to 2024_
 
@@ -19,8 +19,6 @@
 
 ## Supporting projects & publications
 - [Productivity, Technology and Innovation Survey Barbados: 2013-2014](https://data.iadb.org/en/search?q=Productivity%2C%20Technology%20and%20Innovation%20) — IDB Open Data
-- [Finance and Gender Issues Survey Barbados: 2011](https://data.iadb.org/en/search?q=Finance%20and%20Gender%20Issues%20Survey%20Barbado) — IDB Open Data
-- [Finance and Gender Data for Barbados, Jamaica and Trinidad and Tobago: 2012](https://data.iadb.org/en/search?q=Finance%20and%20Gender%20Data%20for%20Barbados%2C%20Ja) — IDB Open Data
 
 ## Procurement matches
 - [Enhancing the Quality of the Belize National Quality Infrastructure](https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure) — Caribbean Development Bank (regional)

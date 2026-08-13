@@ -1,6 +1,6 @@
 # Caribbean Market Pulse — Investor Brief
 
-Generated: 2026-08-13 16:30 UTC
+Generated: 2026-08-13 16:44 UTC
 
 Audience: investors, founders, diaspora capital networks.
 Decision supported: where to investigate deal flow, procurement activity, or market momentum.
@@ -9,14 +9,14 @@ Decision supported: where to investigate deal flow, procurement activity, or mar
 
 Lead: Suriname. 2 converging signal(s) across 4 source(s). Signals: 💼 Investment + 💎 Investment.
 
-*Lead: Suriname · 16 composite signal(s) · 1 new · 4 updated · 11 persistent*
+*Lead: Suriname · 16 composite signal(s) · 1 updated · 13 persistent*
 
 ## Lead Signal
 
-🔴 🔄 **💎 Investment — Suriname**
+🔴 ⬇️ **💎 Investment — Suriname**
    Suriname: +206.0% multi-source investment validated — opportunity active
    Immediate | 100/100 | A - multi-source
-   🔄 Content updated this cycle
+   ⬇️ Weakened (-9 pts)
    Immediate investigation. Suriname has multi-source investment validation (3 signals converging). Priority: assess market entry options, identify existing operators.
 
 ## Regional Investment Overview
@@ -35,7 +35,7 @@ Multi-source investment signals validated across 3 countries. All carry A-grade 
 
 🔴 🔄 **🏗️ Pipeline — CARICOM**
    CARICOM: 7 active procurements — bidding window open
-   Immediate | 96/100 | B - cross-source
+   Immediate | 95/100 | B - cross-source
    🔄 Content updated this cycle
    Active procurement pipeline: CDB active procurement notices: 7. Priority: review CDB/IDB opportunities as lead list for project-based entry.
 

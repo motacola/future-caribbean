@@ -2,7 +2,7 @@
 
 **Decision job:** Capital deployment screening and market entry assessment
 **Delivery channel:** Email brief + Telegram
-**Generated:** Aug 13, 2026 at 16:30 UTC
+**Generated:** Aug 13, 2026 at 16:44 UTC
 **Dispatches in this packet:** 9
 
 ---
@@ -65,21 +65,7 @@
 **Decision to influence:** Which country-sector pair to validate for investment readiness
 **Routing rationale:** Single-source FDI movement is a screening trigger, not a deployment signal — start diligence
 
-### 5. Guyana: FDI trending at +860.3% — screening trigger active
-
-**ID:** `DSP-20260813-003` | **Country:** Guyana | **Confidence:** 🔴 Immediate | 90/100 | B - cross-source
-**Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Guyana: Foreign direct investment net inflows current USD moved up 860.3% from 2023 to 2024.
-**Detail:** 860.3% change
-**Grade:** B - cross-source
-
-**Recommended action:** Screen Guyana for investment readiness. FDI movement (860.3% change) is a screening trigger — cross-reference with sector conditions before deploying capital.
-**Decision to influence:** Which country-sector pair to validate for investment readiness
-**Routing rationale:** Single-source FDI movement is a screening trigger, not a deployment signal — start diligence
-
-### 6. Capital convergence: 3 Caribbean economies showing multi-source investment momentum
+### 5. Capital convergence: 3 Caribbean economies showing multi-source investment momentum
 
 **ID:** `DSP-20260813-016` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
 **Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** new
@@ -93,9 +79,23 @@
 **Decision to influence:** Which verified opportunity to investigate for capital deployment or partnership entry
 **Routing rationale:** Multi-source validation reduces screening risk — capital follows verified signals
 
+### 6. Guyana: FDI trending at +860.3% — screening trigger active
+
+**ID:** `DSP-20260813-003` | **Country:** Guyana | **Confidence:** 🟡 Validation | 88/100 | B - cross-source
+**Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Guyana: Foreign direct investment net inflows current USD moved up 860.3% from 2023 to 2024.
+**Detail:** 860.3% change
+**Grade:** B - cross-source
+
+**Recommended action:** Screen Guyana for investment readiness. FDI movement (860.3% change) is a screening trigger — cross-reference with sector conditions before deploying capital.
+**Decision to influence:** Which country-sector pair to validate for investment readiness
+**Routing rationale:** Single-source FDI movement is a screening trigger, not a deployment signal — start diligence
+
 ### 7. Suriname: FDI trending at +206.0% — screening trigger active
 
-**ID:** `DSP-20260813-005` | **Country:** Suriname | **Confidence:** 🟡 Validation | 84/100 | B - cross-source
+**ID:** `DSP-20260813-005` | **Country:** Suriname | **Confidence:** 🟡 Validation | 82/100 | B - cross-source
 **Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -109,7 +109,7 @@
 
 ### 8. Barbados: FDI trending at +34.8% — screening trigger active
 
-**ID:** `DSP-20260813-007` | **Country:** Barbados | **Confidence:** 🟡 Validation | 74/100 | B - cross-source
+**ID:** `DSP-20260813-007` | **Country:** Barbados | **Confidence:** 🟡 Validation | 72/100 | B - cross-source
 **Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -123,7 +123,7 @@
 
 ### 9. St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended
 
-**ID:** `DSP-20260813-009` | **Country:** St. Vincent and the Grenadines | **Confidence:** 🟢 Monitor | 69/100 | C - single-source
+**ID:** `DSP-20260813-009` | **Country:** St. Vincent and the Grenadines | **Confidence:** 🟡 Validation | 72/100 | C - single-source
 **Channel:** Email brief + Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** decision_changed
 

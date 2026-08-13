@@ -1,26 +1,26 @@
 {
-  "generated_at": "2026-08-13T16:30:17.637283+00:00",
+  "generated_at": "2026-08-13T16:44:14.475801+00:00",
   "packs": [
     {
       "signal_id": "enhanced-invest-guyana",
       "file": "enhanced-invest-guyana.json",
       "country": "Guyana",
-      "recommendation": "hold",
-      "confidence_score": 68
+      "recommendation": "advance",
+      "confidence_score": 100
     },
     {
       "signal_id": "enhanced-invest-suriname",
       "file": "enhanced-invest-suriname.json",
       "country": "Suriname",
-      "recommendation": "hold",
-      "confidence_score": 68
+      "recommendation": "advance",
+      "confidence_score": 100
     },
     {
       "signal_id": "enhanced-invest-barbados",
       "file": "enhanced-invest-barbados.json",
       "country": "Barbados",
       "recommendation": "hold",
-      "confidence_score": 100
+      "confidence_score": 68
     },
     {
       "signal_id": "dev-pipeline-regional",

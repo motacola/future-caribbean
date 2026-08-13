@@ -1,6 +1,6 @@
 # Dispatch Desk — Cycle 20260813
 
-Generated: 2026-08-13 16:30 UTC
+Generated: 2026-08-13 16:44 UTC
 
 Signal Fabric turns fragmented regional data into decision-ready routes. This is the primary product surface; Telegram/email are delivery channels and the dashboard is the operator/audit view.
 
@@ -19,7 +19,7 @@ Fragmented public data → Agentic signal pipeline → Routed decisions → Feed
 
 ## Regional Read
 
-Capital momentum is strongest in Guyana (+860.3%), followed by Suriname, Barbados. Separately, St. Vincent and the Grenadines show elevated economic vulnerability — relevant for portfolio monitoring and resilience planning. Development pipeline remains active (CDB active procurement notices: 9) — the bidding window is open for project-based entry. Tourism-related growth signals are visible in Barbados, Antigua and Barbuda, Dominica — demand-side indicators for capacity planning.
+Capital momentum is strongest in Guyana (+860.3%), followed by Suriname, Barbados. Separately, St. Vincent and the Grenadines show elevated economic vulnerability — relevant for portfolio monitoring and resilience planning. Development pipeline remains active (CDB active procurement notices: 7) — the bidding window is open for project-based entry. Tourism-related growth signals are visible in Barbados, Antigua and Barbuda, Dominica — demand-side indicators for capacity planning.
 
 ## Why This Cycle Matters
 
@@ -77,7 +77,7 @@ Capital momentum is strongest in Guyana (+860.3%), followed by Suriname, Barbado
 
 - **Decision:** Which procurement or project opportunity to pursue
 - **Evidence:** CDB active procurement notices: 7; • Enhancing the Quality of the Belize National Quality Infrastructure; • Belize Education Secondary Reform Programme II (BESRPII); • Solar Photo-Voltaic and Battery Energy Storage System Project (B - cross-source)
-- **Confidence:** 96/100 · sustained
+- **Confidence:** 95/100 · sustained
 - **Signal detail:** CDB active procurement notices: 7
 - **Why ranked here:** Ranking uses confidence, source coverage, evidence count, magnitude, and feedback.
 - **Feedback effect:** Feedback this cycle: 2 ignored, 1 replied.
@@ -121,7 +121,7 @@ Capital momentum is strongest in Guyana (+860.3%), followed by Suriname, Barbado
 
 - **Decision:** Which country-sector pair to validate for investment readiness
 - **Evidence:** Guyana: Foreign direct investment net inflows current USD moved up 860.3% from 2023 to 2024. (B - cross-source)
-- **Confidence:** 90/100 · sustained
+- **Confidence:** 88/100 · sustained
 - **Signal detail:** 860.3% change
 - **Why ranked here:** Ranking uses confidence, source coverage, evidence count, magnitude, and feedback.
 - **Feedback effect:** Feedback this cycle: 2 ignored.
@@ -135,7 +135,7 @@ Capital momentum is strongest in Guyana (+860.3%), followed by Suriname, Barbado
 
 - **Decision:** Which country-sector pair to validate for investment readiness
 - **Evidence:** Suriname: Foreign direct investment net inflows current USD moved up 206.0% from 2024 to 2025. (B - cross-source)
-- **Confidence:** 84/100 · sustained
+- **Confidence:** 82/100 · sustained
 - **Signal detail:** 206.0% change
 - **Why ranked here:** Ranking uses confidence, source coverage, evidence count, magnitude, and feedback.
 - **Feedback effect:** Feedback this cycle: 2 ignored.
@@ -147,11 +147,11 @@ Capital momentum is strongest in Guyana (+860.3%), followed by Suriname, Barbado
 
 ## Feedback-Adjusted Priority
 
-- St. Vincent and the Grenadines economic vulnerability upranked +9
-- Suriname enhanced investment downranked -6
-- Barbados enhanced investment downranked -6
-- Guyana enhanced investment upranked +5
-- Suriname investment signal downranked -4
+- St. Vincent and the Grenadines economic vulnerability upranked +12
+- Suriname enhanced investment downranked -9
+- Barbados enhanced investment downranked -9
+- Guyana enhanced investment upranked +7
+- Suriname investment signal downranked -6
 
 ## Supporting Artifacts
 

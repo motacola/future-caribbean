@@ -1,6 +1,6 @@
 # Channel Dispatch Log — Cycle 20260813
 
-Generated: 2026-08-13 16:30 UTC
+Generated: 2026-08-13 16:44 UTC
 
 Per-channel routing plan for this cycle. Live send receipts are written to `outbox/live_send_log.md` after each delivery run.
 
@@ -15,8 +15,8 @@ Per-channel routing plan for this cycle. Live send receipts are written to `outb
 - [✓] Suriname: +206.0% multi-source investment validated — opportunity active
 - [✓] Barbados: +34.8% multi-source investment validated — opportunity active
 - [✓] Regional FDI snapshot: 3 countries with active capital movement
-- [✓] Guyana: FDI trending at +860.3% — screening trigger active
 - [✓] Capital convergence: 3 Caribbean economies showing multi-source investment momentum
+- [✓] Guyana: FDI trending at +860.3% — screening trigger active
 - [✓] Suriname: FDI trending at +206.0% — screening trigger active
 - [✓] Barbados: FDI trending at +34.8% — screening trigger active
 - [✓] St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended
@@ -33,9 +33,9 @@ Per-channel routing plan for this cycle. Live send receipts are written to `outb
 - [✓] CARICOM: 7 active procurements — bidding window open
 - [✓] CARICOM: 7 active procurements — bidding window open
 - [✓] Regional FDI snapshot: 3 countries with active capital movement
+- [✓] Capital convergence: 3 Caribbean economies showing multi-source investment momentum
+- [✓] Capital convergence: 3 Caribbean economies showing multi-source investment momentum
 - [✓] Guyana: FDI trending at +860.3% — screening trigger active
-- [✓] Capital convergence: 3 Caribbean economies showing multi-source investment momentum
-- [✓] Capital convergence: 3 Caribbean economies showing multi-source investment momentum
 - [✓] Suriname: FDI trending at +206.0% — screening trigger active
 - [✓] CARICOM: food supply indicators shifting — supply chain implications
 - [✓] Barbados: FDI trending at +34.8% — screening trigger active

@@ -1,14 +1,14 @@
 # Opportunity Validation Pack — Suriname
 
 - Signal: `enhanced-invest-suriname` · Dispatch: `DSP-20260813-022`
-- Confidence: 68/100 (raw 100) · A - multi-source
-- Action readiness: medium (annual macro signal only)
+- Confidence: 100/100 (raw 100) · A - multi-source
+- Action readiness: high
 - Evidence freshness: refreshing · cycles since refresh: 0
-- Recommendation: **HOLD** — Calibrated confidence 68/100 with 1 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.
-- Last validated: 2026-08-13T16:30:17.637283+00:00
+- Recommendation: **ADVANCE** — Calibrated confidence 100/100 with 2 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.
+- Last validated: 2026-08-13T16:44:14.475801+00:00
 
 ## Sector hypotheses
-- Offshore oil & gas exploration [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
+- Offshore oil & gas exploration [corroborated] — _Google News — Guyana: Suriname offshore oil and gas momentum builds as GranMorgu advances - World Oil_
 - Gold mining and extractives services [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
 - FDI-receiving sectors (composition not yet broken down) [macro_signal] — _World Bank: FDI net inflows moved +206.0% from 2024 to 2025_
 

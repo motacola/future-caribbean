@@ -1,10 +1,10 @@
 {
   "boost_lines": [
-    "St. Vincent and the Grenadines economic vulnerability upranked +9",
-    "Suriname enhanced investment downranked -6",
-    "Barbados enhanced investment downranked -6",
-    "Guyana enhanced investment upranked +5",
-    "Suriname investment signal downranked -4"
+    "St. Vincent and the Grenadines economic vulnerability upranked +12",
+    "Suriname enhanced investment downranked -9",
+    "Barbados enhanced investment downranked -9",
+    "Guyana enhanced investment upranked +7",
+    "Suriname investment signal downranked -6"
   ],
   "channel_count": 4,
   "cluster_count": 11,
@@ -156,8 +156,8 @@
     },
     {
       "cluster_id": "CL-development-pipeline-caricom",
-      "confidence_display": "\ud83d\udd34 Immediate | 96/100 | B - cross-source",
-      "confidence_score": 96,
+      "confidence_display": "\ud83d\udd34 Immediate | 95/100 | B - cross-source",
+      "confidence_score": 95,
       "country_cluster": "CARICOM",
       "decision": "Which procurement or project opportunity to pursue",
       "detail": "CDB active procurement notices: 7",
@@ -292,8 +292,8 @@
     },
     {
       "cluster_id": "CL-investment-signal-guyana",
-      "confidence_display": "\ud83d\udd34 Immediate | 90/100 | B - cross-source",
-      "confidence_score": 90,
+      "confidence_display": "\ud83d\udfe1 Validation | 88/100 | B - cross-source",
+      "confidence_score": 88,
       "country_cluster": "Guyana",
       "decision": "Which country-sector pair to validate for investment readiness",
       "detail": "860.3% change",
@@ -331,8 +331,8 @@
     },
     {
       "cluster_id": "CL-investment-signal-suriname",
-      "confidence_display": "\ud83d\udfe1 Validation | 84/100 | B - cross-source",
-      "confidence_score": 84,
+      "confidence_display": "\ud83d\udfe1 Validation | 82/100 | B - cross-source",
+      "confidence_score": 82,
       "country_cluster": "Suriname",
       "decision": "Which country-sector pair to validate for investment readiness",
       "detail": "206.0% change",
@@ -370,8 +370,8 @@
     },
     {
       "cluster_id": "CL-food-security-caricom",
-      "confidence_display": "\ud83d\udfe1 Validation | 84/100 | B - cross-source",
-      "confidence_score": 84,
+      "confidence_display": "\ud83d\udfe1 Validation | 80/100 | B - cross-source",
+      "confidence_score": 80,
       "country_cluster": "CARICOM",
       "decision": "Agricultural/logistics investment case or policy response planning",
       "detail": "5%",
@@ -408,48 +408,9 @@
       "title": "CARICOM: food supply indicators shifting \u2014 supply chain implications"
     },
     {
-      "cluster_id": "CL-investment-signal-barbados",
-      "confidence_display": "\ud83d\udfe1 Validation | 74/100 | B - cross-source",
-      "confidence_score": 74,
-      "country_cluster": "Barbados",
-      "decision": "Which country-sector pair to validate for investment readiness",
-      "detail": "34.8% change",
-      "evidence": "Barbados: Foreign direct investment net inflows current USD moved up 34.8% from 2023 to 2024.",
-      "evidence_grade": "B - cross-source",
-      "feedback_counts": {
-        "ignored": 2
-      },
-      "feedback_summary": "Feedback this cycle: 2 ignored.",
-      "freshness": "sustained",
-      "personas": [
-        {
-          "action": "Assess competitive positioning in Barbados. FDI movement (34.8% change) signals growing market or incoming competition \u2014 evaluate local advantage before new entrants arrive.",
-          "channel": "Telegram",
-          "dispatch_id": "DSP-20260813-008",
-          "feedback_status": "ignored",
-          "persona": "Regional Founder/Operator",
-          "ranking_rationale": "",
-          "rationale": "FDI movement in your operating country signals competition or demand growth \u2014 assess positioning"
-        },
-        {
-          "action": "Screen Barbados for investment readiness. FDI movement (34.8% change) is a screening trigger \u2014 cross-reference with sector conditions before deploying capital.",
-          "channel": "Email brief + Telegram",
-          "dispatch_id": "DSP-20260813-007",
-          "feedback_status": "ignored",
-          "persona": "Diaspora Investor",
-          "ranking_rationale": "",
-          "rationale": "Single-source FDI movement is a screening trigger, not a deployment signal \u2014 start diligence"
-        }
-      ],
-      "ranking_rationale": "",
-      "risk_flags": [],
-      "signal_kind": "investment_signal",
-      "title": "Barbados: FDI trending at +34.8% \u2014 screening trigger active"
-    },
-    {
       "cluster_id": "CL-economic-vulnerability-st-vincent-and-the-grenadines",
-      "confidence_display": "\ud83d\udfe2 Monitor | 69/100 | C - single-source",
-      "confidence_score": 69,
+      "confidence_display": "\ud83d\udfe1 Validation | 72/100 | C - single-source",
+      "confidence_score": 72,
       "country_cluster": "St. Vincent and the Grenadines",
       "decision": "Risk assessment for capital exposure or policy attention",
       "detail": "18.00%",
@@ -487,13 +448,52 @@
       ],
       "signal_kind": "economic_vulnerability",
       "title": "St. Vincent and the Grenadines: economic stress indicators rising \u2014 portfolio review recommended"
+    },
+    {
+      "cluster_id": "CL-investment-signal-barbados",
+      "confidence_display": "\ud83d\udfe1 Validation | 72/100 | B - cross-source",
+      "confidence_score": 72,
+      "country_cluster": "Barbados",
+      "decision": "Which country-sector pair to validate for investment readiness",
+      "detail": "34.8% change",
+      "evidence": "Barbados: Foreign direct investment net inflows current USD moved up 34.8% from 2023 to 2024.",
+      "evidence_grade": "B - cross-source",
+      "feedback_counts": {
+        "ignored": 2
+      },
+      "feedback_summary": "Feedback this cycle: 2 ignored.",
+      "freshness": "sustained",
+      "personas": [
+        {
+          "action": "Assess competitive positioning in Barbados. FDI movement (34.8% change) signals growing market or incoming competition \u2014 evaluate local advantage before new entrants arrive.",
+          "channel": "Telegram",
+          "dispatch_id": "DSP-20260813-008",
+          "feedback_status": "ignored",
+          "persona": "Regional Founder/Operator",
+          "ranking_rationale": "",
+          "rationale": "FDI movement in your operating country signals competition or demand growth \u2014 assess positioning"
+        },
+        {
+          "action": "Screen Barbados for investment readiness. FDI movement (34.8% change) is a screening trigger \u2014 cross-reference with sector conditions before deploying capital.",
+          "channel": "Email brief + Telegram",
+          "dispatch_id": "DSP-20260813-007",
+          "feedback_status": "ignored",
+          "persona": "Diaspora Investor",
+          "ranking_rationale": "",
+          "rationale": "Single-source FDI movement is a screening trigger, not a deployment signal \u2014 start diligence"
+        }
+      ],
+      "ranking_rationale": "",
+      "risk_flags": [],
+      "signal_kind": "investment_signal",
+      "title": "Barbados: FDI trending at +34.8% \u2014 screening trigger active"
     }
   ],
   "cycle_id": "20260813",
   "dispatch_count": 27,
-  "generated_at": "2026-08-13 16:30 UTC",
+  "generated_at": "2026-08-13 16:44 UTC",
   "persona_count": 6,
-  "regional_thesis": "Capital momentum is strongest in Guyana (+860.3%), followed by Suriname, Barbados. Separately, St. Vincent and the Grenadines show elevated economic vulnerability \u2014 relevant for portfolio monitoring and resilience planning. Development pipeline remains active (CDB active procurement notices: 9) \u2014 the bidding window is open for project-based entry. Tourism-related growth signals are visible in Barbados, Antigua and Barbuda, Dominica \u2014 demand-side indicators for capacity planning.",
+  "regional_thesis": "Capital momentum is strongest in Guyana (+860.3%), followed by Suriname, Barbados. Separately, St. Vincent and the Grenadines show elevated economic vulnerability \u2014 relevant for portfolio monitoring and resilience planning. Development pipeline remains active (CDB active procurement notices: 7) \u2014 the bidding window is open for project-based entry. Tourism-related growth signals are visible in Barbados, Antigua and Barbuda, Dominica \u2014 demand-side indicators for capacity planning.",
   "source_count": 2,
   "why_now": [
     "\ud83d\udd34 **Atlantic Hurricane Season** \u2014 Operational risk for all Caribbean stakeholders. Monitoring NHC/NWS/NDBC for tropical development and maritime hazards.",

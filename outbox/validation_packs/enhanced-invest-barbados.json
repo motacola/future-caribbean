@@ -3,16 +3,15 @@
   "dispatch_id": "DSP-20260813-025",
   "country": "Barbados",
   "signal_title": "Barbados: +34.8% multi-source investment validated — opportunity active",
-  "confidence_score": 100,
+  "confidence_score": 68,
   "raw_confidence_score": 100,
-  "action_readiness": "high",
+  "action_readiness": "medium (annual macro signal only)",
   "evidence_grade": "A - multi-source",
   "sector_hypotheses": [
     {
       "sector": "Tourism and hospitality",
-      "basis": "Google News — Barbados: Tourism minister calls for unified labour law framework",
-      "status": "corroborated",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOSnZuU3Fkbkk5aW1JbHBHU1lVZERhTC1uOGtXdnZHZ21nYXIwUUc2WmNMUWpIaUJSOVdrcGluRTZpZWVjVnFOZVZCRFNTTzFWSWsxbi1CN09pSFA5eXlTSEhXYUNpV0xhWVlWYXZNUGZqVWlfYkg4UXVDTGQ3WmkwUjFTaXlGOXdXV2U4R2s3Y1hxbk5vcGhZWDFMVVHSAZwBQVVfeXFMTkp2blNxZG5JOWltSWxwR1NZVWREYUwtbjhrV3Z2R2dtZ2FyMFFHNlpjTFFqSGlCUjlXa3BpbkU2aWVlY1ZxTmVWQkRTU08xVklrMW4tQjdPaUhQOXl5U0hIV2FDaVdMYVlZVmF2TVBmalVpX2JIOFF1Q0xkN1ppMFIxU2l5Rjl3V1dlOEdrN2NYcW5Ob3BoWVgxTFVR?oc=5"
+      "basis": "Analyst prior from widely reported sector drivers — requires local confirmation",
+      "status": "unconfirmed"
     },
     {
       "sector": "International business and financial services",
@@ -31,24 +30,6 @@
       "source": "IDB Open Data",
       "url": "https://data.iadb.org/en/search?q=Productivity%2C%20Technology%20and%20Innovation%20",
       "topics": []
-    },
-    {
-      "title": "Finance and Gender Issues Survey Barbados: 2011",
-      "source": "IDB Open Data",
-      "url": "https://data.iadb.org/en/search?q=Finance%20and%20Gender%20Issues%20Survey%20Barbado",
-      "topics": [
-        "economy",
-        "social"
-      ]
-    },
-    {
-      "title": "Finance and Gender Data for Barbados, Jamaica and Trinidad and Tobago: 2012",
-      "source": "IDB Open Data",
-      "url": "https://data.iadb.org/en/search?q=Finance%20and%20Gender%20Data%20for%20Barbados%2C%20Ja",
-      "topics": [
-        "economy",
-        "social"
-      ]
     }
   ],
   "procurement_matches": [
@@ -134,10 +115,7 @@
     }
   ],
   "source_links": [
-    "https://data.iadb.org/en/search?q=Finance%20and%20Gender%20Data%20for%20Barbados%2C%20Ja",
-    "https://data.iadb.org/en/search?q=Finance%20and%20Gender%20Issues%20Survey%20Barbado",
     "https://data.iadb.org/en/search?q=Productivity%2C%20Technology%20and%20Innovation%20",
-    "https://news.google.com/rss/articles/CBMinAFBVV95cUxOSnZuU3Fkbkk5aW1JbHBHU1lVZERhTC1uOGtXdnZHZ21nYXIwUUc2WmNMUWpIaUJSOVdrcGluRTZpZWVjVnFOZVZCRFNTTzFWSWsxbi1CN09pSFA5eXlTSEhXYUNpV0xhWVlWYXZNUGZqVWlfYkg4UXVDTGQ3WmkwUjFTaXlGOXdXV2U4R2s3Y1hxbk5vcGhZWDFMVVHSAZwBQVVfeXFMTkp2blNxZG5JOWltSWxwR1NZVWREYUwtbjhrV3Z2R2dtZ2FyMFFHNlpjTFFqSGlCUjlXa3BpbkU2aWVlY1ZxTmVWQkRTU08xVklrMW4tQjdPaUhQOXl5U0hIV2FDaVdMYVlZVmF2TVBmalVpX2JIOFF1Q0xkN1ppMFIxU2l5Rjl3V1dlOEdrN2NYcW5Ob3BoWVgxTFVR?oc=5",
     "https://statistics.caricom.org/?country_data=barbados-monthly-consumer-price-index-cpi-by-expenditure-category",
     "https://www.caribank.org/publications-and-resources/resource-library/reports/2025-annual-procurement-report",
     "https://www.caribank.org/work-with-us/procurement/procurement-notices/belize-education-secondary-reform-programme-ii-besrpii-0",
@@ -159,10 +137,10 @@
     }
   ],
   "advance_or_reject_recommendation": "hold",
-  "recommendation_reason": "Evidence fingerprint unchanged for 3 cycles — downgraded from advance to hold until new corroboration arrives.",
-  "last_validated_at": "2026-08-13T16:30:17.637283+00:00",
+  "recommendation_reason": "Calibrated confidence 68/100 with 2 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.",
+  "last_validated_at": "2026-08-13T16:44:14.475801+00:00",
   "coordination_path": null,
-  "evidence_fingerprint": "7a65a6b1a348d297",
-  "cycles_since_refresh": 3,
-  "evidence_freshness": "stale"
+  "evidence_fingerprint": "a9e1e109d93259c5",
+  "cycles_since_refresh": 0,
+  "evidence_freshness": "refreshing"
 }
