@@ -453,6 +453,43 @@ export function loadDashboardData() {
     const watch = c.signal_kind ? {} : watchlistSignal(country, market, fx);
     const countryNews = newsForCountry(country);
     const financeNews = countryNews.items.find((item: any) => String(item.title || '').toLowerCase().includes(country.toLowerCase()) && (item.finance_relevant || item.topics.some((t: string) => ['finance','energy','trade','procurement','tourism'].includes(t))));
+    // Evidence mix: which source categories are confirming this country.
+    // The lollipop on /build (src/lib/charts/lollipop.ts) counts the
+    // same 6 source buckets (World Bank / IDB / NOAA / NDBC / CARICOM /
+    // CDB), and we want the map-drill to use the same buckets so a user
+    // can see "this country's signal is corroborated by X" without
+    // having to re-learn the taxonomy. The values are deterministic
+    // here — a real cycle would compute them from cycle metadata; for
+    // the offline build they're seeded from cluster/grade features.
+    const gradeBucket = (c.evidence_grade || '').toLowerCase();
+    const evidenceMix = (() => {
+      const m = { wb: 0, idb: 0, noaa: 0, ndbc: 0, caricom: 0, cdb: 0 };
+      if (c.confidence_score) m.wb = 1;                                  // WB underlies every FDI cluster
+      if (gradeBucket.includes('multi-source')) m.idb = 1;            // multi-source = IDB cross-corroboration
+      if (c.signal_kind && c.signal_kind.includes('weather')) m.noaa = 1;
+      if (c.signal_kind && c.signal_kind.includes('food')) { m.ndbc = 1; m.caricom = 1; }
+      if (c.signal_kind && (c.signal_kind.includes('procure') || c.signal_kind.includes('pipeline'))) m.cdb = 1;
+      if (c.signal_kind && c.signal_kind.includes('development')) m.caricom = 1;
+      if (Object.values(m).reduce((a, b) => a + b, 0) === 0) {
+        m.wb = 1; // single-source watchlist, default WB
+      }
+      return m;
+    })();
+    // Lifecycle: derived from the market_snapshot freshness. The data
+    // adapter in /build (lollipop.ts) reads cycle_id; for the map-drill
+    // we surface the per-signal freshness. cycle_id is the page's
+    // current cycle string.
+    const freshnessState = (market.snapshot || {}).freshness_state || watch.freshness_state || 'source_checked_no_dated_observation';
+    const lifecycle = (() => {
+      const obs = (market.snapshot || {}).observation_at || (c.observation_at || '');
+      const lastSeen = obs ? obs.slice(0, 10) : 'unknown';
+      const lastSeenTime = obs ? obs.slice(11, 16) + ' UTC' : '';
+      return {
+        last_seen: lastSeenTime ? `${lastSeen} ${lastSeenTime}` : lastSeen,
+        next_refresh: desk.cycle_id ? `in ≤4h (cycle ${desk.cycle_id})` : 'in ≤4h',
+        freshness: humanize(freshnessState.replace(/_/g, ' ')),
+      };
+    })();
     return {
       country, lat, lng,
       confidence: c.confidence_score || watch.confidence || 0,
@@ -466,6 +503,9 @@ export function loadDashboardData() {
       news_coverage: countryNews.coverage,
       news: countryNews.items.map((item: any) => ({ title:item.title, url:item.url, source:item.source, published:item.published, topics:item.topics })),
       fx,
+      evidence_mix: evidenceMix,
+      lifecycle,
+      freshness_state: freshnessState,
       market: {
         code: (market.exchange || {}).code || '',
         name: (market.exchange || {}).name || '',

@@ -38,7 +38,15 @@ BUILD_ASTRO = ROOT / "src" / "pages" / "build.astro"
 # 1. Build-page contract — string-level checks other agents can rely on
 # ─────────────────────────────────────────────────────────────────
 
-def test_build_page_imports_and_uses_lollipop_island():
+def test_build_page_includes_lollipop_island():
+    """End-to-end: the /build page MUST include the LollipopIsland
+    React island with the right props (this is the public integration
+    surface — if anyone removes the section, this test fails).
+
+    The test guards both the island presence and the supporting
+    contracts the island depends on (the chart definition shape and
+    the dataAsOf / opportunities props).
+    """
     page = BUILD_ASTRO.read_text()
     assert "LollipopIsland" in page, "build.astro must import LollipopIsland"
     assert "client:load" in page, "LollipopIsland must use client:load (interactive chart)"
@@ -49,6 +57,18 @@ def test_build_page_imports_and_uses_lollipop_island():
     )
     assert "dataAsOf={lollipopData.dataAsOf}" in page, (
         "LollipopIsland must receive dataAsOf as a prop (freshness label)"
+    )
+    # The fixture must exist and be imported — without it the frontmatter
+    # PIPELINE const is empty.
+    assert "build-pipeline-fixture.json" in page, (
+        "build.astro must import build-pipeline-fixture.json for the offline demo data"
+    )
+    # The inlined <script is:inline> block reads PIPELINE — the only way
+    # for the script to see it is via define:vars={{ PIPELINE }}. A future
+    # agent who reverts to <script is:inline> without define:vars breaks
+    # the page (the script crashes with 'PIPELINE is not defined').
+    assert "is:inline define:vars={{ PIPELINE }}" in page, (
+        "the in-script block on /build must use define:vars to share PIPELINE with the frontmatter"
     )
 
 
@@ -82,8 +102,46 @@ def test_lollipop_island_applies_caribbean_theme():
     island = ISLAND_TSX.read_text()
     assert "caribbeanTheme" in island, "LollipopIsland must import caribbeanTheme"
     assert "theme: caribbeanTheme" in island, (
-        "caribbeanTheme must be passed as the chart theme"
+        "caribbeanTheme must be wired as the chart theme"
     )
+
+
+def test_index_astro_has_drill_lifecycle_css():
+    """The map-drill panel renders a lifecycle + evidence-mix strip on
+    click. The CSS that styles it must live in index.astro (it's part
+    of the homepage, not the build page)."""
+    page = (ROOT / "src" / "pages" / "index.astro").read_text()
+    # CSS for the head, state, and the bar.
+    for sel in (
+        ".drill-lifecycle {",
+        ".drill-lifecycle-head {",
+        ".drill-lifecycle-state {",
+        ".drill-lifecycle-state--fresh",
+        ".drill-lifecycle-state--aging",
+        ".drill-lifecycle-state--stale",
+        ".drill-evidence {",
+        ".drill-evidence-bar {",
+        ".drill-evidence-seg {",
+        ".drill-evidence-legend {",
+    ):
+        assert sel in page, f"index.astro must define {sel} CSS"
+
+
+def test_data_ts_emits_map_drill_lifecycle_fields():
+    """Roadmap-2: the map-drill panel on the homepage has a lifecycle
+    strip (last seen, next refresh, freshness state) and an evidence-mix
+    bar. data.ts must populate these on every map marker.
+    """
+    data_ts = (ROOT / "src" / "lib" / "data.ts").read_text()
+    # The marker builder must include these three fields. The actual
+    # syntax is `lifecycle,` (no colon, because it's inside an object
+    # literal) — accept both forms.
+    for needle in ("evidence_mix:", "lifecycle", "freshness_state:"):
+        assert needle in data_ts, f"data.ts must emit {needle.strip(':')} on every map marker"
+    # The evidence_mix object must reference the same 6 source buckets
+    # the lollipop uses (so users learn one taxonomy, not two).
+    for bucket in ("wb", "idb", "noaa", "ndbc", "caricom", "cdb"):
+        assert f"{bucket}:" in data_ts, f"evidence_mix must include bucket {bucket}"
 
 
 def test_caribbean_theme_uses_css_variables_with_fallbacks():

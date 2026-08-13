@@ -443,6 +443,73 @@ footer::before { content: ""; display: block; height: 2px; margin: -44px -24px 4
 .map-drill-grid span { font-family: var(--mono); color: var(--teal); font-size: 9px; text-transform: uppercase; }
 .map-drill-grid h3 { font-family: var(--serif); font-size: 16px; line-height: 1.2; margin: 6px 0; }
 .map-drill-grid p { color: var(--sub); font-size: 11px; line-height: 1.5; }
+
+/* Drill lifecycle + evidence mix panel (roadmap-2). The bar
+   visualises the cross-source agreement of the current signal: a
+   solid bar = a single source type confirming the signal, a full bar
+   = cross-source corroboration. Freshness pill is the
+   freshness_state from the market_snapshot (current/delayed/stale). */
+.drill-lifecycle {
+  padding: 12px 16px 16px;
+  border-top: 1px solid var(--border);
+  background: rgba(0, 0, 0, .015);
+}
+.drill-lifecycle-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.drill-lifecycle-label {
+  font: 700 9px var(--mono);
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  color: var(--muted);
+}
+.drill-lifecycle-state {
+  font: 700 9px var(--mono);
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  padding: 2px 7px;
+  border-radius: 9px;
+  border: 1px solid var(--border);
+  background: var(--card);
+}
+.drill-lifecycle-state--fresh    { color: #2a8c5a; border-color: rgba(42, 140, 90, .35); background: rgba(42, 140, 90, .08); }
+.drill-lifecycle-state--aging    { color: #b57a22; border-color: rgba(181, 122, 34, .35); background: rgba(181, 122, 34, .08); }
+.drill-lifecycle-state--stale    { color: #b94836; border-color: rgba(185, 72, 54, .35);  background: rgba(185, 72, 54, .08); }
+.drill-evidence { display: grid; gap: 6px; }
+.drill-evidence-bar {
+  display: flex;
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, .04);
+  overflow: hidden;
+}
+.drill-evidence-seg {
+  display: block;
+  height: 100%;
+  border-right: 1px solid rgba(255, 252, 244, .35);
+}
+.drill-evidence-seg:last-child { border-right: none; }
+.drill-evidence-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 12px;
+  font: 700 9px var(--mono);
+  text-transform: uppercase;
+  letter-spacing: .6px;
+  color: var(--muted);
+}
+.drill-evidence-legend i {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  margin-right: 4px;
+  vertical-align: middle;
+}
 .map-market-panel { padding: 14px 16px; border-bottom: 1px solid var(--border); background: linear-gradient(90deg, rgba(13,118,110,.06), rgba(181,122,34,.06)); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
 .map-market-panel div { min-width: 0; }
 .map-market-panel span { display: block; font: 700 9px var(--mono); letter-spacing: .8px; color: var(--muted); text-transform: uppercase; margin-bottom: 2px; }
@@ -1245,18 +1312,54 @@ const drillReact = (function () {
     const market = marker.market || {};
     const snapshot = market.snapshot || {};
     const marketLabel = market.code ? `${market.code} · ${snapshot.headline || market.name || 'Market watch'}` : 'No domestic exchange / watchlist';
-    const panel = html`
-      <div class="map-market-panel">
-        <div><span>FX indicator</span><strong>${fx.pair || '—'}</strong><p>${fx.rate_label || 'Watch'} · ${fx.indicator || 'FX watch'}</p></div>
-        <div><span>Market layer</span><strong>${marketLabel}</strong><p>${snapshot.data_status || market.status || 'source watch'} </p></div>
-        <div><span>Finance signal</span><strong>${snapshot.focus || fx.signal || 'Signals, official notices, and local context'}</strong><p>${marker.finance_signal || marker.ranking_rationale || 'Ranking appears when a live signal is active.'}</p></div>
-        <div class="map-news-list"><span>${marker.news_coverage || 'Regional news context'}</span>${(marker.news || []).slice(0,3).map(n => html`<a href=${n.url} target="_blank" rel="noopener">${n.title} · ${n.source}</a>`)}</div>
-      </div>`;
+    // Evidence mix: how many distinct source categories confirmed this
+    // signal, broken down into World Bank / IDB / NOAA / NDBC / CARICOM
+    // / CDB / other. The lifecycle strip shows how fresh the signal is
+    // and when the desk will refresh next. Both are server-rendered into
+    // the drill panel so the chart stays deterministic.
+    const evidence = marker.evidence_mix || { wb: 0, idb: 0, noaa: 0, ndbc: 0, caricom: 0, cdb: 0, other: 0 };
+    const evidenceTotal = Object.values(evidence).reduce((a, b) => a + (Number.isFinite(b) ? b : 0), 0);
+    const evidencePct = (k) => evidenceTotal > 0 ? Math.round(100 * (Number(evidence[k]) || 0) / evidenceTotal) : 0;
+    const evidenceFill = (k) => `linear-gradient(to right, var(--caribbean-${k === 'wb' ? 'sea' : k === 'idb' ? 'reef' : k === 'noaa' ? 'storm' : k === 'ndbc' ? 'sun' : k === 'caricom' ? 'sand' : k === 'cdb' ? 'sand' : 'inspect'}, transparent), transparent)`;
+    const lifecycle = marker.lifecycle || { last_seen: 'unknown', next_refresh: 'in ≤4h', freshness: '—' };
+    const freshnessClass = marker.freshness_state === 'current' ? 'fresh' : marker.freshness_state === 'delayed' ? 'aging' : 'stale';
+    // Inline
     if (!items.length) {
+      // Pre-build the news links as a plain HTML string outside the
+      // template so htm doesn't trip on nested html`...` (React #62).
+      const newsHtml = '';
       return html`
         <div class="rise-in">
           <div class="map-drill-head"><strong>${country}</strong><span>Watchlist signal</span></div>
-          ${panel}
+          <div class="map-market-panel">
+            <div><span>FX indicator</span><strong>${fx.pair || '—'}</strong><p>${fx.rate_label || 'Watch'} · ${fx.indicator || 'FX watch'}</p></div>
+            <div><span>Market layer</span><strong>${marketLabel}</strong><p>${snapshot.data_status || market.status || 'source watch'} </p></div>
+            <div><span>Finance signal</span><strong>${snapshot.focus || fx.signal || 'Signals, official notices, and local context'}</strong><p>${marker.finance_signal || marker.ranking_rationale || 'Ranking appears when a live signal is active.'}</p></div>
+            <div class="map-news-list"><span>${marker.news_coverage || 'Regional news context'}</span>${newsHtml}</div>
+          </div>
+          <div class="drill-lifecycle" data-freshness=${freshnessClass}>
+            <div class="drill-lifecycle-head">
+              <span class="drill-lifecycle-label">Signal lifecycle</span>
+              <span class="drill-lifecycle-state drill-lifecycle-state--${freshnessClass}">${lifecycle.freshness || '—'}</span>
+            </div>
+
+            <div class="drill-lifecycle-fields">
+              <span class="drill-lifecycle-key">Last seen</span>
+              <span class="drill-lifecycle-val">${lifecycle.last_seen || 'unknown'}</span>
+              <span class="drill-lifecycle-key">Next refresh</span>
+              <span class="drill-lifecycle-val">${lifecycle.next_refresh || 'in ≤4h'}</span>
+            </div>
+            <div class="drill-evidence">
+              <span class="drill-lifecycle-key">Evidence mix (${evidenceTotal} sources)</span>
+              <div class="drill-evidence-bar">
+                <span class="drill-evidence-seg" data-key="wb"      style=${{ width: evidencePct('wb') + '%', background: 'var(--caribbean-sea)' }}      title="World Bank: ${evidence.wb || 0}"></span>
+                <span class="drill-evidence-seg" data-key="idb"     style=${{ width: evidencePct('idb') + '%', background: 'var(--caribbean-reef)' }}     title="IDB: ${evidence.idb || 0}"></span>
+                <span class="drill-evidence-seg" data-key="noaa"    style=${{ width: evidencePct('noaa') + '%', background: 'var(--caribbean-storm)' }}   title="NOAA: ${evidence.noaa || 0}"></span>
+                <span class="drill-evidence-seg" data-key="ndbc"    style=${{ width: evidencePct('ndbc') + '%', background: 'var(--caribbean-sun)' }}    title="NDBC: ${evidence.ndbc || 0}"></span>
+                <span class="drill-evidence-seg" data-key="caricom" style=${{ width: evidencePct('caricom') + '%', background: 'var(--caribbean-sand)' }}  title="CARICOM: ${evidence.caricom || 0}"></span>
+                <span class="drill-evidence-seg" data-key="cdb"     style=${{ width: evidencePct('cdb') + '%', background: 'var(--caribbean-reef)' }}     title="CDB: ${evidence.cdb || 0}"></span>
+              </div>
+            </div>          </div>
           <div class="map-drill-grid">
             <article>
               <span>WATCHLIST · ${marker.confidence || 0}/100</span>
@@ -1266,31 +1369,68 @@ const drillReact = (function () {
           </div>
         </div>`;
     }
+    // Inline the panel as a single template so htm doesn't trip on a
+    // pre-built template fragment being interpolated as a child. The
+    // previous version stored `panel` in a const and interpolated it
+    // via `${panel}`; that pattern occasionally produced React error #62
+    // (htm v3 + React 18) when the panel template's root had siblings
+    // that htm couldn't bind. Inlining keeps the AST simple.
+    // Build the news links as a plain HTML string before the
+    // template so htm doesn't trip on nested html`...` (React #62).
+    const newsHtml = (marker.news || []).slice(0, 3).map(n =>
+      `<a href="${escAttr(n.url)}" target="_blank" rel="noopener">${escAttr(n.title)} · ${escAttr(n.source)}</a>`,
+    ).join('');
+    function escAttr(v) { return String(v ?? '').replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;'); }
     return html`
       <div class="rise-in">
         <div class="map-drill-head">
           <strong>${country}</strong>
           <span>${items.length} briefing${items.length === 1 ? '' : 's'} this cycle</span>
         </div>
-        ${panel}
+        <div class="map-market-panel">
+          <div><span>FX indicator</span><strong>${fx.pair || '—'}</strong><p>${fx.rate_label || 'Watch'} · ${fx.indicator || 'FX watch'}</p></div>
+          <div><span>Market layer</span><strong>${marketLabel}</strong><p>${snapshot.data_status || market.status || 'source watch'} </p></div>
+          <div><span>Finance signal</span><strong>${snapshot.focus || fx.signal || 'Signals, official notices, and local context'}</strong><p>${marker.finance_signal || marker.ranking_rationale || 'Ranking appears when a live signal is active.'}</p></div>
+          <div class="map-news-list"><span>${marker.news_coverage || 'Regional news context'}</span>${newsHtml}</div>
+        </div>
+        <div class="drill-lifecycle" data-freshness=${freshnessClass}>
+          <div class="drill-lifecycle-head">
+            <span class="drill-lifecycle-label">Signal lifecycle</span>
+            <span class="drill-lifecycle-state drill-lifecycle-state--${freshnessClass}">${lifecycle.freshness || '—'}</span>
+          </div>
+            <div class="drill-lifecycle-fields">
+              <span class="drill-lifecycle-key">Last seen</span>
+              <span class="drill-lifecycle-val">${lifecycle.last_seen || 'unknown'}</span>
+              <span class="drill-lifecycle-key">Next refresh</span>
+              <span class="drill-lifecycle-val">${lifecycle.next_refresh || 'in ≤4h'}</span>
+            </div>
+            <div class="drill-evidence">
+              <span class="drill-lifecycle-key">Evidence mix (${evidenceTotal} sources)</span>
+              <div class="drill-evidence-bar">
+                <span class="drill-evidence-seg" data-key="wb"      style=${{ width: evidencePct('wb') + '%', background: 'var(--caribbean-sea)' }}      title="World Bank: ${evidence.wb || 0}"></span>
+                <span class="drill-evidence-seg" data-key="idb"     style=${{ width: evidencePct('idb') + '%', background: 'var(--caribbean-reef)' }}     title="IDB: ${evidence.idb || 0}"></span>
+                <span class="drill-evidence-seg" data-key="noaa"    style=${{ width: evidencePct('noaa') + '%', background: 'var(--caribbean-storm)' }}   title="NOAA: ${evidence.noaa || 0}"></span>
+                <span class="drill-evidence-seg" data-key="ndbc"    style=${{ width: evidencePct('ndbc') + '%', background: 'var(--caribbean-sun)' }}    title="NDBC: ${evidence.ndbc || 0}"></span>
+                <span class="drill-evidence-seg" data-key="caricom" style=${{ width: evidencePct('caricom') + '%', background: 'var(--caribbean-sand)' }}  title="CARICOM: ${evidence.caricom || 0}"></span>
+                <span class="drill-evidence-seg" data-key="cdb"     style=${{ width: evidencePct('cdb') + '%', background: 'var(--caribbean-reef)' }}     title="CDB: ${evidence.cdb || 0}"></span>
+              </div>
+            </div>
+
+        </div>
         <div class="map-drill-grid">
-          ${items.slice(0, 6).map((d, i) => {
+          ${items.slice(0, 6).map((d) => {
             const conf = Math.max(0, Math.min(100, d.confidence_score || 0));
             const color = MAP_COLORS[(d.signal_kind || '').includes('invest') ? 'investment' : (d.signal_kind || '').includes('climate') ? 'climate' : (d.signal_kind || '').includes('procure') ? 'procurement' : 'none'];
-            return html`
-              <article key=${d.dispatch_id} class="rise-in drill-card"
-                       style=${{ animationDelay: (i * 70) + 'ms' }}>
-                <span>${d.dispatch_id} · ${d.persona_label}</span>
-                <h3>${d.title}</h3>
-                <p>${d.recommended_action}</p>
+            return `<article class="rise-in drill-card" style="animation-delay:${(items.indexOf(d)) * 70}ms">
+                <span>${escAttr(d.dispatch_id)} · ${escAttr(d.persona_label)}</span>
+                <h3>${escAttr(d.title)}</h3>
+                <p>${escAttr(d.recommended_action)}</p>
                 <div class="conf-row">
-                  <div class="conf-track">
-                    <div class="conf-fill" style=${{ width: conf + '%', background: color }}></div>
-                  </div>
+                  <div class="conf-track"><div class="conf-fill" style="width:${conf}%; background:${color}"></div></div>
                   <span class="conf-num">${conf}/100</span>
                 </div>
               </article>`;
-          })}
+          }).join('')}
         </div>
       </div>`;
   }
