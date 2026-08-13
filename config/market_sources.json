@@ -1,0 +1,77 @@
+{
+  "_comment": "Official Caribbean exchange public pages. The poller reads dated observations from these pages and never manufactures prices. Each entry's URL is the canonical public-facing daily summary or trade page; if the format ever changes, the DATE_PATTERNS / STATUS_PATTERNS regexes in watchers/market_watch_poller.py may need adjustment. To disable a market, set enabled=false (the poller still emits a source_checked_no_dated_observation row).",
+  "markets": [
+    {
+      "id": "jamaica",
+      "exchange": {
+        "name": "Jamaica Stock Exchange (JSE)",
+        "url": "https://www.jamstockex.com/trading/trade-summary",
+        "country": "Jamaica",
+        "currency": "JMD",
+        "mic": "XJAM"
+      },
+      "enabled": true,
+      "_poller": "extracts 'Market Open/Closed YYYY-MM-DD' from the trade-summary page header"
+    },
+    {
+      "id": "trinidad_tobago",
+      "exchange": {
+        "name": "Trinidad and Tobago Stock Exchange (TTSE)",
+        "url": "https://www.stockex.co.tt/",
+        "country": "Trinidad & Tobago",
+        "currency": "TTD",
+        "mic": "XTRD"
+      },
+      "enabled": true,
+      "_poller": "extracts 'Activity for D Mon YYYY' from the live summary on the homepage"
+    },
+    {
+      "id": "barbados",
+      "exchange": {
+        "name": "Barbados Stock Exchange (BSE)",
+        "url": "https://bse.com.bb",
+        "country": "Barbados",
+        "currency": "BBD",
+        "mic": "XBAB"
+      },
+      "enabled": true,
+      "_poller": "extracts 'Market open/closed YYYY-MM-DD' from the homepage market summary; some pages say 'Market Summary - Friday, August 7th' which the regex tolerates"
+    },
+    {
+      "id": "bahamas",
+      "exchange": {
+        "name": "Bahamas International Securities Exchange (BISX)",
+        "url": "https://www.bisxbahamas.com/",
+        "country": "Bahamas",
+        "currency": "BSD",
+        "mic": "XBAA"
+      },
+      "enabled": true,
+      "_poller": "extracts 'Market Open/Closed D Mon YYYY' from the homepage market-status block; SOURCE_DISCLOSURES carries the 30-minute delay notice"
+    },
+    {
+      "id": "cayman",
+      "exchange": {
+        "name": "Cayman Islands Stock Exchange (CSX)",
+        "url": "https://www.csx.ky/trading/daily-trading-summary.asp",
+        "country": "Cayman Islands",
+        "currency": "KYD",
+        "mic": "XCAY"
+      },
+      "enabled": true,
+      "_poller": "extracts 'Trade Date D/M/YYYY' or any YYYY-MM-DD from the daily-trading-summary page (the SOURCE_PATHS constant in the poller carries this URL as the cayman default)"
+    },
+    {
+      "id": "eastern_caribbean",
+      "exchange": {
+        "name": "Eastern Caribbean Securities Exchange (ECSE)",
+        "url": "https://www.ecseonline.com/",
+        "country": "Eastern Caribbean (OECS)",
+        "currency": "XCD",
+        "mic": "XECS"
+      },
+      "enabled": true,
+      "_poller": "extracts 'ECSE Daily Trade Report - D Mon YYYY' from the homepage or trade report"
+    }
+  ]
+}
