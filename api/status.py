@@ -63,15 +63,23 @@ class handler(BaseHTTPRequestHandler):
             dispatch_data = _read_json(ROOT / "outbox" / "opportunity_dispatches.json")
             dispatches = dispatch_data.get("dispatches", []) if dispatch_data else []
 
-            # Source health
+            # Source health — prefer direct data file, fall back to the bundled
+            # snapshot (api/source-health-data.json is committed + in the Vercel
+            # build context; data/* is .vercelignore'd). This is the only way
+            # /api/status can show real source freshness on Vercel.
+            bundled_source_health = _read_json(ROOT / "api" / "source-health-data.json") or {}
             sources = []
             n_sources_ok = 0
             for label, key, desc in SRC:
                 d = _read_json(ROOT / "data" / key / "latest.json")
-                ok = d is not None
+                fetched_at = (d or {}).get("fetched_at") if d else None
+                if not fetched_at:
+                    fallback = bundled_source_health.get(key) or {}
+                    fetched_at = fallback.get("fetched_at")
+                ok = bool(fetched_at)
                 if ok:
                     n_sources_ok += 1
-                age_min = _age_minutes(d.get("fetched_at") if d else None)
+                age_min = _age_minutes(fetched_at)
                 sources.append({
                     "label": label,
                     "key": key,
