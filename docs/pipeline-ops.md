@@ -71,6 +71,33 @@ Then commit the updated `data/`, `outbox/`, `api/*-data.json`,
 `public/market_watch.json` artifacts and push to main. Vercel will
 auto-deploy.
 
+## Skipped local watchers (need configuration)
+
+These are intentionally NOT in the local-fallback list because they
+require credentials Chris hasn't provided yet:
+
+- **`watchers/ais_poller.py`** — needs `AISSTREAM_API_KEY` env var.
+  Free at https://aisstream.io (after signup). Without it, the poller
+  prints `AISSTREAM_API_KEY not set` and writes a 0-row snapshot. The
+  AIS layer (vessel positions, port density, shipping corridors) won't
+  appear on the dashboard until this key is set in both the local env
+  AND in the GitHub Actions secrets (and Vercel env if you want the
+  AIS feed in `data/ais/latest.json` to be visible live — currently
+  `data/ais/*` is `.vercelignore`'d).
+
+- **`watchers/tenders_poller.py`** — works without auth but the
+  Jamaica GOJEP `contract awards` endpoint requires a session cookie;
+  the poller gracefully falls back to its cache when that endpoint is
+  unreachable. No action needed unless you want fresh Jamaica contract
+  awards every cycle.
+
+- **`watchers/regional_news_poller.py` Google News feeds** — Google
+  occasionally rate-limits or blocks cloud IPs. The poller keeps its
+  prior-good cache when this happens. If you see
+  `google-news-* unreachable` for several consecutive runs, the local
+  Python SSL bundle needs `certifi` (`pip install certifi`) — handled
+  by the `_ssl_context()` helper added 2026-08-13.
+
 ## Verification
 
 After any pipeline run (local or GitHub Actions), confirm freshness on
