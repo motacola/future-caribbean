@@ -2,13 +2,15 @@
 import Base from '../layouts/Base.astro';
 import LollipopIsland from '../lib/charts/LollipopIsland.tsx';
 import { opportunitiesFromDesk } from '../lib/charts/lollipop.ts';
+import pipelineFixture from '../data/build-pipeline-fixture.json';
 
-// Lollipop data — derived from PIPELINE on the server so the React
-// island receives a stable, serializable payload. Chart definitions
-// themselves (with their scale functions) are rebuilt on the client —
-// see src/lib/charts/LollipopIsland.tsx.
-const PIPELINE = {"clusters":[{"cluster_id":"CL-enhanced-investment-guyana","confidence_score":100,"country_cluster":"Guyana","decision":"Which verified opportunity to investigate for capital deployment or partnership entry","detail":"860.3% change","evidence":"WB FDI surge detected: Guyana","evidence_grade":"A - multi-source","freshness":"sustained","personas":[{"action":"Assess competitive positioning in Guyana. FDI movement (860.3% change) signals growing market or incoming competition — evaluate local advantage before new entrants arrive.","channel":"Telegram","dispatch_id":"DSP-20260528-025","feedback_status":"ignored","persona":"Regional Founder/Operator"},{"action":"Investigate Guyana as a capital deployment target this cycle. Multi-source validation (860.3% change) confirms directional signal — next step is operator discovery and market entry assessment.","channel":"Email brief + Telegram","dispatch_id":"DSP-20260528-023","feedback_status":"forwarded","persona":"Diaspora Investor"}],"risk_flags":[],"signal_kind":"enhanced_investment","title":"Guyana: +860.3% multi-source capital surge — market entry window open"},{"cluster_id":"CL-enhanced-investment-belize","confidence_score":100,"country_cluster":"Belize","decision":"Which verified opportunity to investigate for capital deployment or partnership entry","detail":"701.0% change","evidence":"WB FDI surge detected: Belize","evidence_grade":"A - multi-source","freshness":"sustained","personas":[{"action":"Assess competitive positioning in Belize. FDI movement (701.0% change) signals growing market or incoming competition — evaluate local advantage before new entrants arrive.","channel":"Telegram","dispatch_id":"DSP-20260528-028","feedback_status":"ignored","persona":"Regional Founder/Operator"},{"action":"Investigate Belize as a capital deployment target this cycle. Multi-source validation (701.0% change) confirms directional signal.","channel":"Email brief + Telegram","dispatch_id":"DSP-20260528-026","feedback_status":"opened","persona":"Diaspora Investor"}],"risk_flags":[],"signal_kind":"enhanced_investment","title":"Belize: +701.0% multi-source capital surge — market entry window open"},{"cluster_id":"CL-development-pipeline-caricom","confidence_score":95,"country_cluster":"CARICOM","decision":"Which procurement or project opportunity to pursue","detail":"CDB active procurement notices: 6","evidence":"CDB active procurement notices: 6","evidence_grade":"B - cross-source","freshness":"sustained","personas":[{"action":"Review operational readiness for CARICOM opportunities. CDB active procurement notices: 6 — assess capacity and bid pipeline.","channel":"Telegram","dispatch_id":"DSP-20260528-017","feedback_status":"replied","persona":"Regional Operator"},{"action":"Track CDB/IDB project pipeline: CDB active procurement notices: 6. Review opportunity fit and prepare expression of interest.","channel":"Email brief","dispatch_id":"DSP-20260528-018","feedback_status":"ignored","persona":"Procurement Watcher"}],"risk_flags":[],"signal_kind":"development_pipeline","title":"CARICOM: 6 active procurements — bidding window open"},{"cluster_id":"CL-food-security-caricom","confidence_score":78,"country_cluster":"CARICOM","decision":"Agricultural/logistics investment case or policy response planning","detail":"5%","evidence":"CARICOM food trade data: 18 datasets available","evidence_grade":"B - cross-source","freshness":"sustained","personas":[{"action":"Signal context for CARICOM: 5%. Use this dispatch as a briefing input or narrative lead.","channel":"Telegram digest","dispatch_id":"DSP-20260528-016","feedback_status":"ignored","persona":"Policy/Media"}],"risk_flags":[],"signal_kind":"food_security","title":"CARICOM: food supply indicators shifting — supply chain implications"},{"cluster_id":"CL-investment-signal-caribwide","confidence_score":90,"country_cluster":"Caribwide","decision":"Which country-sector pair to validate for investment readiness","detail":"Guyana (860.3% change), Belize (701.0% change)","evidence":"Multi-country investment signal validated across 8 countries.","evidence_grade":"B - cross-source","freshness":"new","personas":[{"action":"Screen Caribwide for investment readiness. FDI movement signals a screening trigger — cross-reference with sector conditions before deploying capital.","channel":"Email brief + Telegram","dispatch_id":"DSP-20260528-001","feedback_status":"ignored","persona":"Diaspora Investor"}],"risk_flags":[],"signal_kind":"investment_signal","title":"Regional FDI snapshot: 8 countries with active capital movement"}],"n_sources":6,"n_clusters":13,"n_personas":31,"cycle_id":"20260528"};
-
+// PIPELINE — the build page's offline demo data. Sourced from
+// src/data/build-pipeline-fixture.json so the in-script <script is:inline>
+// block can also reference it (Astro frontmatter `const`s are not visible
+// inside an inlined script). When the live pipeline runs and writes
+// outbox/dispatch_desk.json, the build page can be wired to read that
+// instead — see ROADMAP-2 in AGENTS_GUIDE.md.
+const PIPELINE = pipelineFixture as any;
 const _lollipop = opportunitiesFromDesk(PIPELINE);
 const lollipopData = {
   opportunities: _lollipop.opportunities,
@@ -520,21 +522,15 @@ footer { border-top: 1px solid var(--border); padding: 24px; text-align: center;
   Signal Fabric · Caribbean market intelligence product · Screening signals only, not investment advice · Data: World Bank · IDB · NOAA · NDBC · CARICOM · CDB
 </footer>
 
-<script is:inline>
+<script is:inline define:vars={{ PIPELINE }}>
 
 
 const state = { persona:'investor', countries:['all'], signals:['all'], channel:'telegram', domain:'caribbean' };
 let _previewText = '';
 
-// Lollipop data — derived from PIPELINE on the server so the React island
-// receives a stable, serializable payload (chart definitions themselves
-// are rebuilt on the client — see src/lib/charts/LollipopIsland.tsx).
-const _lollipop = opportunitiesFromDesk(PIPELINE);
-const lollipopData = {
-  opportunities: _lollipop.opportunities,
-  dataAsOf: _lollipop.dataAsOf,
-  cycle: _lollipop.cycle,
-};
+// lollipopData is computed in the frontmatter above and passed to the
+// React island as serializable props. The chart definition is rebuilt
+// client-side in src/lib/charts/LollipopIsland.tsx.
 let _debounce = null;
 
 function initChips(groupId, key, multi) {

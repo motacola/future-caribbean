@@ -60,7 +60,7 @@ function clientLollipop(
       grid: true,
     },
     y: {
-      scale: scalePoint(),
+      scale: scalePoint().domain(opportunities.map((o) => o.name)),
       axis: { label: '' },
       grid: false,
     },
