@@ -39,6 +39,66 @@ def _age_minutes(ts: str | None) -> int | None:
         return None
 
 
+def _regional_news_summary() -> dict:
+    """Build a regional-news freshness summary for the status response.
+
+    Reads from data/regional_news/latest.json when present (local); falls
+    back to public/regional_news.json (Astro build output, also in the
+    Vercel build context) when data/* is .vercelignore'd. Returns counts
+    + the most recent success timestamp so dashboards can show "X fresh
+    articles · Y stale".
+    """
+    candidates = [
+        ROOT / "data" / "regional_news" / "latest.json",
+        ROOT / "public" / "regional_news.json",
+    ]
+    payload: dict | None = None
+    for path in candidates:
+        if path.exists():
+            payload = _read_json(path)
+            if payload:
+                break
+    if not payload:
+        return {
+            "total": 0,
+            "fresh_items": 0,
+            "fresh_within_48h": 0,
+            "stale": True,
+            "last_success_at": None,
+            "snapshot_age_hours": None,
+        }
+    items = payload.get("items") or []
+    fetched_at = payload.get("fetched_at")
+    age_hours: int | None = None
+    if fetched_at:
+        try:
+            dt = datetime.fromisoformat(fetched_at.replace("Z", "+00:00"))
+            age_hours = int((datetime.now(timezone.utc) - dt).total_seconds() / 3600)
+        except Exception:
+            age_hours = None
+    fresh = 0
+    for it in items:
+        age = it.get("age_hours")
+        if age is None:
+            try:
+                dt = datetime.fromisoformat(
+                    (it.get("published") or "").replace("Z", "+00:00")
+                )
+                age = int((datetime.now(timezone.utc) - dt).total_seconds() / 3600)
+            except Exception:
+                continue
+        if age <= 48:
+            fresh += 1
+    return {
+        "total": payload.get("total", len(items)),
+        "fresh_items": len(items),
+        "fresh_within_48h": fresh,
+        "stale": (age_hours or 0) > 24,
+        "last_success_at": fetched_at,
+        "snapshot_age_hours": age_hours,
+    }
+
+
 class handler(BaseHTTPRequestHandler):
     def _json(self, data: dict, status: int = 200) -> None:
         body = json.dumps(data, ensure_ascii=False).encode()
@@ -88,14 +148,26 @@ class handler(BaseHTTPRequestHandler):
                     "age_minutes": age_min,
                 })
 
-            # Feedback counts
+            # Feedback counts — prefer direct data file, fall back to the
+            # bundled snapshot (api/feedback-data.json is committed + in the
+            # Vercel build context; data/* is .vercelignore'd). Same pattern
+            # as the source-health fallback.
+            bundled_feedback = _read_json(ROOT / "api" / "feedback-data.json") or {}
+            bundled_history = bundled_feedback.get("history") or []
+            bundled_actions = bundled_feedback.get("actions") or {}
+            bundled_boosts = bundled_feedback.get("boosts") or {}
+
             fb = _read_json(ROOT / "data" / "feedback" / "state.json") or {}
             fb_hist = fb.get("history", []) or []
-            fb_boosts = fb.get("boosts", {})
+            if not fb_hist and bundled_history:
+                fb_hist = bundled_history
+            fb_boosts = fb.get("boosts", {}) or bundled_boosts
             fb_actions: dict[str, int] = {}
             for e in fb_hist:
                 s = e.get("feedback_status", "unknown")
                 fb_actions[s] = fb_actions.get(s, 0) + 1
+            if not fb_actions and bundled_actions:
+                fb_actions = bundled_actions
 
             cycle_id = desk.get("cycle_id", "unknown")
             cycle_count_path = ROOT / "data" / ".cycle_count.json"
@@ -123,6 +195,7 @@ class handler(BaseHTTPRequestHandler):
                     "actions": fb_actions,
                     "active_boosts": fb_boosts,
                 },
+                "regional_news": _regional_news_summary(),
                 "generated_at": datetime.now(timezone.utc).isoformat(),
             })
         except FileNotFoundError as exc:
