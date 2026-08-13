@@ -1,0 +1,15 @@
+{
+  "name": "pocketbase",
+  "version": "1.0.0",
+  "description": "**Problem PocketBase solves here.** Signal Fabric's state currently lives in three places that don't compose: 1. **JSON files in git** (`track_record.json`, `recipients.json`, `composite_rules.json`, `data/*.json`, `outbox/*.json`) — committed by the 4h GitHub Action. Up to 4h stale on the public site; no auth; no concurrent writes. 2. **`server.py`** (`@vercel/python` serverless) — serves those JSON files over HTTP; public writes are disabled (`writes: False`). 3. **`coordination/console.py`** — a local web operator console for `verify()` / `submit_outcome`.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "pocketbase": "^0.27.0"
+  }
+}
