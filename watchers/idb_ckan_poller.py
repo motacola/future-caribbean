@@ -68,12 +68,25 @@ def fetch_json(url: str, timeout: int) -> Any:
         raise
 
 
-def extract_title(raw: dict[str, str]) -> str:
-    """Get English title, fall back to any available language."""
+def extract_title(raw: dict[str, str] | str | None) -> str:
+    """Get English title, fall back to any available language.
+
+    The IDB CKAN API returns titles as either a language-keyed dict
+    ({"en": "...", "es": "..."}) or a plain string. Handle both shapes
+    and never raise on a malformed record — return "" so the dataset is
+    still emitted with a fingerprint for dedup.
+    """
+    if not raw:
+        return ""
+    if isinstance(raw, str):
+        return raw
+    if not isinstance(raw, dict):
+        return ""
     for lang in ("en", "es", "fr", "pt_BR"):
-        if raw.get(lang):
-            return raw[lang]
-    return str(raw)
+        value = raw.get(lang)
+        if value:
+            return value
+    return ""
 
 
 def extract_description(raw: dict[str, str] | str | None) -> str:

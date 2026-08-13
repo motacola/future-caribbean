@@ -2,7 +2,9 @@
 from __future__ import annotations
 
 import json
+import os
 import re
+import ssl
 import urllib.request
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
@@ -17,6 +19,36 @@ OUT = ROOT / "data" / "regional_news" / "latest.json"
 RAW = ROOT / "data" / "regional_news" / "raw"
 UA = {"User-Agent": "Mozilla/5.0 (compatible; SignalFabric/1.0)"}
 TIMEOUT = 20
+
+# macOS + Homebrew Python environments often ship without a default CA bundle
+# (Homebrew python 3.12+ has no system openssl.cafile wired in, and pip certs
+# live in certifi). Provide a robust SSL context resolver that prefers, in
+# order: explicit env, certifi, well-known Homebrew paths, macOS system certs.
+def _ssl_context() -> ssl.SSLContext:
+    cafile = os.environ.get("SSL_CERT_FILE")
+    candidates: list[str] = []
+    if cafile:
+        candidates.append(cafile)
+    try:
+        import certifi  # type: ignore
+        candidates.append(certifi.where())
+    except ImportError:
+        pass
+    candidates += [
+        "/opt/homebrew/etc/openssl@3/cert.pem",
+        "/usr/local/etc/openssl@3/cert.pem",
+        "/opt/homebrew/etc/openssl/cert.pem",
+        "/usr/local/etc/openssl/cert.pem",
+        "/etc/ssl/cert.pem",
+        "/private/etc/ssl/cert.pem",
+    ]
+    for path in candidates:
+        if path and Path(path).exists():
+            return ssl.create_default_context(cafile=path)
+    # Last resort: trust the system defaults (this is what urllib.request
+    # does when no context is passed); if the env is broken the poller
+    # falls back to its prior behaviour of logging and keeping prior data.
+    return ssl.create_default_context()
 
 COUNTRY_NAMES = [
     "Guyana", "Jamaica", "Belize", "Barbados", "Trinidad & Tobago", "Bahamas",
@@ -54,7 +86,7 @@ def strip_html(text: str) -> str:
 
 def fetch_feed(url: str) -> str:
     req = urllib.request.Request(url, headers=UA)
-    with urllib.request.urlopen(req, timeout=TIMEOUT) as response:
+    with urllib.request.urlopen(req, timeout=TIMEOUT, context=_ssl_context()) as response:
         return response.read().decode("utf-8", errors="replace")
 
 
