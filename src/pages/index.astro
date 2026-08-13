@@ -171,6 +171,75 @@ a:hover { text-decoration: underline; }
 .news-card { background:var(--card); border:1px solid var(--border); border-top:2px solid var(--teal); padding:16px; display:grid; gap:8px; box-shadow:var(--shadow-rest); }
 .news-card.lead { grid-column:span 2; border-top-color:var(--gold); }
 .news-card[hidden] { display:none; }
+
+/* News image asset — restored after a refactor lost the original styling.
+   The .news-media anchor carries the topic-tinted gradient + country/topic
+   overlay; <img> elements (when present) layer on top. If the image fails
+   to load, the .image-failed class collapses to just the gradient + overlay. */
+.news-media {
+  position: relative;
+  display: block;
+  min-height: 168px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0b3f3c 0%, #126e66 58%, #d8a74f 100%);
+  isolation: isolate;
+  border-radius: 4px;
+  text-decoration: none;
+  color: inherit;
+}
+.news-card.lead .news-media { min-height: 310px; }
+.news-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent 46%, rgba(3,25,24,.68) 100%);
+}
+.news-media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+.news-media.image-failed img { display: none; }
+.news-media-fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 5px;
+  padding: 17px;
+  color: #fff9eb;
+  background-image:
+    radial-gradient(circle at 78% 18%, rgba(255,244,205,.22) 0 7%, transparent 7.5%),
+    linear-gradient(115deg, transparent 0 52%, rgba(255,255,255,.08) 52% 53%, transparent 53%);
+  z-index: 3;
+}
+.news-media-fallback b {
+  max-width: 88%;
+  font: 700 clamp(19px, 2.2vw, 35px)/.95 var(--serif);
+  letter-spacing: -.02em;
+}
+.news-media-fallback em {
+  font: 800 9px var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  color: #f7d894;
+}
+/* Topic-tinted gradient palettes per topic — keeps the visual variety
+   the original design had even when no source image is available. */
+.news-media.topic-climate    { background: linear-gradient(135deg, #173d57, #397d91 62%, #d6bd73); }
+.news-media.topic-energy     { background: linear-gradient(135deg, #243d2c, #4f7440 60%, #e0a849); }
+.news-media.topic-tourism    { background: linear-gradient(135deg, #154d62, #1d8491 58%, #e6b96f); }
+.news-media.topic-trade      { background: linear-gradient(135deg, #1c3d2a, #4f7440 56%, #d8a74f); }
+.news-media.topic-procurement{ background: linear-gradient(135deg, #2a2f1f, #6f5fa8 60%, #d8a74f); }
+.news-media.topic-finance    { background: linear-gradient(135deg, #0b3f3c, #126e66 58%, #d8a74f); }
+.news-media.topic-regional   { background: linear-gradient(135deg, #2a2f1f, #6f5fa8 50%, #b57a22); }
+
 .news-meta { display:flex; gap:9px; flex-wrap:wrap; font:700 8px var(--mono); text-transform:uppercase; letter-spacing:.6px; color:var(--muted); }
 .news-card h3 { font:700 18px/1.16 var(--serif); }
 .news-card p { font-size:11.5px; line-height:1.5; color:var(--sub); }
