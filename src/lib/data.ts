@@ -380,7 +380,11 @@ export function loadDashboardData() {
   const dispatchData = readJson('outbox/opportunity_dispatches.json') || {};
   const dispatches: any[] = dispatchData.dispatches || [];
   const marketSources = readJson('config/market_sources.json') || {};
-  const markets: any[] = marketSources.markets || [];
+  // Markets: prefer the poller's enriched snapshot (data/market_watch/latest.json)
+  // because it carries the dashboard contract fields (country, fx, watch_sectors,
+  // market_snapshot.bars) — the config is just the URL/feed metadata.
+  const pollerSnapshot = readJson('data/market_watch/latest.json');
+  const markets: any[] = (pollerSnapshot && pollerSnapshot.markets) || marketSources.markets || [];
   const regionalNewsData = readJson('public/regional_news.json') || readJson('data/regional_news/latest.json') || {};
   const rawNews: any[] = regionalNewsData.items || [];
   const feedback = readJson('data/feedback/state.json') || {};
@@ -715,7 +719,17 @@ export function loadDashboardData() {
   const newsHtml = visibleNews.map((item: any, index: number) => {
     const countries = item.countries.length ? item.countries : ['Regional context'];
     const time = item.age_hours === null ? 'date unavailable' : item.age_hours < 24 ? `${item.age_hours}h ago` : `${Math.floor(item.age_hours / 24)}d ago`;
+    // Visual topic gradient (deterministic from item.id) so the card has a
+    // visual asset even when no source image is available. The CSS at
+    // index.astro:221-247 expects `<a class="news-media topic-X">` with a
+    // `.news-media-fallback` overlay and the country/topic labels.
+    const primaryCountry = countries[0] || 'Caribbean';
+    const primaryTopic = (item.topics && item.topics[0]) || 'regional';
+    const imageUrl = item.image_url || item.imageUrl || '';
     return `<article class="news-card ${index === 0 ? 'lead' : ''}" data-news-topics="${esc(item.topics.join('|'))}" data-news-countries="${esc(item.countries.join('|'))}">
+      <a class="news-media topic-${esc(primaryTopic)}" href="${esc(item.url)}" target="_blank" rel="noopener" aria-label="Read ${esc(item.title)}">
+        <span class="news-media-fallback" aria-hidden="true"><b>${esc(primaryCountry)}</b><em>${esc(primaryTopic)}</em></span>${imageUrl ? `<img class="news-image-backdrop" src="${esc(imageUrl)}" alt="" aria-hidden="true" loading="lazy" decoding="async" referrerpolicy="no-referrer"><img class="news-image-main" src="${esc(imageUrl)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="const media=this.closest('.news-media');media?.classList.add('image-failed');media?.querySelectorAll('img').forEach(img=>img.remove())">` : ''}
+      </a>
       <div class="news-meta"><span>Tier ${esc(item.source_tier)}</span><span>${esc(time)}</span><span>relevance ${esc(item.relevance_score)}</span></div>
       <h3><a href="${esc(item.url)}" target="_blank" rel="noopener">${esc(item.title)}</a></h3>
       <p>${esc((item.summary || '').slice(0, 190))}</p>

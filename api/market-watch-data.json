@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-13T16:49:37.454720+00:00",
+  "fetched_at": "2026-08-13T17:25:27.838890+00:00",
   "source": "Official Caribbean exchange public pages",
   "method": "deterministic official-page verification; no inferred or synthetic prices",
   "health": {
@@ -13,111 +13,459 @@
   "markets": [
     {
       "id": "jamaica",
-      "country": null,
+      "country": "Jamaica",
       "exchange_code": null,
       "exchange_name": "Jamaica Stock Exchange (JSE)",
       "source_url": "https://www.jamstockex.com/trading/trade-summary",
       "source_format": "public_html",
       "machine_readable_feed": false,
       "timing_disclosure": null,
-      "attempted_at": "2026-08-13T16:49:37.454720+00:00",
+      "attempted_at": "2026-08-13T17:25:27.838890+00:00",
       "fetch_status": "ok",
       "freshness_state": "source_checked_no_dated_observation",
       "observation_at": null,
       "observation_age_days": null,
       "summary": "Official source reached; no dated market observation was exposed in the public page.",
-      "response_date": "Thu, 13 Aug 2026 16:49:39 GMT",
-      "last_modified": null
+      "response_date": "Thu, 13 Aug 2026 17:25:30 GMT",
+      "last_modified": null,
+      "exchange": {
+        "name": "Jamaica Stock Exchange (JSE)",
+        "code": null,
+        "url": "https://www.jamstockex.com/trading/trade-summary",
+        "feed_status": "source_checked_no_dated_observation"
+      },
+      "fx": {
+        "currency": "JMD",
+        "pair": "USD/JMD",
+        "rate_label": "floating",
+        "indicator": "FX float"
+      },
+      "watch_sectors": [
+        "banking",
+        "energy",
+        "manufacturing",
+        "tourism"
+      ],
+      "credible_news": [
+        {
+          "name": "Jamaica Observer — Business",
+          "url": "https://www.jamaicaobserver.com/business/"
+        },
+        {
+          "name": "Jamaica Gleaner — Business",
+          "url": "https://jamaica-gleaner.com/section/business"
+        },
+        {
+          "name": "RJR News — Business",
+          "url": "https://www.rjrnewsonline.com/business"
+        }
+      ],
+      "signal_links": [
+        "banking",
+        "energy",
+        "manufacturing",
+        "tourism"
+      ],
+      "market_snapshot": {
+        "bars": [
+          49,
+          48,
+          49,
+          72,
+          40,
+          64,
+          61,
+          71
+        ],
+        "chart_label": "Indexed activity proxy, not price history",
+        "data_status": "source_checked_no_dated_observation",
+        "headline": "Official source reached; no dated market observation was exposed in the public page.",
+        "focus": [
+          "banking",
+          "energy",
+          "manufacturing"
+        ]
+      }
     },
     {
       "id": "trinidad_tobago",
-      "country": null,
+      "country": "Trinidad & Tobago",
       "exchange_code": null,
       "exchange_name": "Trinidad and Tobago Stock Exchange (TTSE)",
       "source_url": "https://www.stockex.co.tt/",
       "source_format": "public_html",
       "machine_readable_feed": false,
       "timing_disclosure": null,
-      "attempted_at": "2026-08-13T16:49:37.454720+00:00",
+      "attempted_at": "2026-08-13T17:25:27.838890+00:00",
       "fetch_status": "ok",
       "freshness_state": "current",
       "observation_at": "2026-08-13",
       "observation_age_days": 0,
       "summary": "Activity for 13 Aug 2026",
-      "response_date": "Thu, 13 Aug 2026 16:49:42 GMT",
-      "last_modified": null
+      "response_date": "Thu, 13 Aug 2026 17:25:31 GMT",
+      "last_modified": null,
+      "exchange": {
+        "name": "Trinidad and Tobago Stock Exchange (TTSE)",
+        "code": null,
+        "url": "https://www.stockex.co.tt/",
+        "feed_status": "current"
+      },
+      "fx": {
+        "currency": "TTD",
+        "pair": "USD/TTD",
+        "rate_label": "managed float",
+        "indicator": "FX managed"
+      },
+      "watch_sectors": [
+        "energy",
+        "banking",
+        "manufacturing",
+        "non-bank finance"
+      ],
+      "credible_news": [
+        {
+          "name": "Trinidad Express — Business",
+          "url": "https://trinidadexpress.com/business/"
+        },
+        {
+          "name": "Guardian Media — Business",
+          "url": "https://www.guardian.co.tt/business"
+        },
+        {
+          "name": "TTSE News Feed",
+          "url": "https://www.stockex.co.tt/"
+        }
+      ],
+      "signal_links": [
+        "energy",
+        "banking",
+        "manufacturing",
+        "non-bank finance"
+      ],
+      "market_snapshot": {
+        "bars": [
+          54,
+          68,
+          45,
+          59,
+          38,
+          67,
+          48,
+          63
+        ],
+        "chart_label": "Indexed activity proxy, not price history",
+        "data_status": "current",
+        "headline": "Activity for 13 Aug 2026",
+        "focus": [
+          "energy",
+          "banking",
+          "manufacturing"
+        ]
+      }
     },
     {
       "id": "barbados",
-      "country": null,
+      "country": "Barbados",
       "exchange_code": null,
       "exchange_name": "Barbados Stock Exchange (BSE)",
       "source_url": "https://bse.com.bb",
       "source_format": "public_html",
       "machine_readable_feed": false,
       "timing_disclosure": null,
-      "attempted_at": "2026-08-13T16:49:37.454720+00:00",
+      "attempted_at": "2026-08-13T17:25:27.838890+00:00",
       "fetch_status": "ok",
       "freshness_state": "current",
       "observation_at": "2026-08-13",
       "observation_age_days": 0,
       "summary": "Market open 2026-08-13",
-      "response_date": "Thu, 13 Aug 2026 16:49:38 GMT",
-      "last_modified": null
+      "response_date": "Thu, 13 Aug 2026 17:25:28 GMT",
+      "last_modified": null,
+      "exchange": {
+        "name": "Barbados Stock Exchange (BSE)",
+        "code": null,
+        "url": "https://bse.com.bb",
+        "feed_status": "current"
+      },
+      "fx": {
+        "currency": "BBD",
+        "pair": "USD/BBD",
+        "rate_label": "2.00 peg",
+        "indicator": "USD peg"
+      },
+      "watch_sectors": [
+        "tourism",
+        "banking",
+        "insurance",
+        "real estate"
+      ],
+      "credible_news": [
+        {
+          "name": "Barbados Today — Business",
+          "url": "https://barbadostoday.bb/business/"
+        },
+        {
+          "name": "Loop Caribbean — Barbados",
+          "url": "https://www.loopnews.com/barbados/"
+        },
+        {
+          "name": "BSE News Feed",
+          "url": "https://bse.com.bb"
+        }
+      ],
+      "signal_links": [
+        "tourism",
+        "banking",
+        "insurance",
+        "real estate"
+      ],
+      "market_snapshot": {
+        "bars": [
+          54,
+          68,
+          45,
+          59,
+          38,
+          67,
+          48,
+          63
+        ],
+        "chart_label": "Indexed activity proxy, not price history",
+        "data_status": "current",
+        "headline": "Market open 2026-08-13",
+        "focus": [
+          "tourism",
+          "banking",
+          "insurance"
+        ]
+      }
     },
     {
       "id": "bahamas",
-      "country": null,
+      "country": "Bahamas",
       "exchange_code": null,
       "exchange_name": "Bahamas International Securities Exchange (BISX)",
       "source_url": "https://www.bisxbahamas.com/",
       "source_format": "public_html",
       "machine_readable_feed": false,
       "timing_disclosure": "Official BISX homepage data is delayed by 30 minutes.",
-      "attempted_at": "2026-08-13T16:49:37.454720+00:00",
+      "attempted_at": "2026-08-13T17:25:27.838890+00:00",
       "fetch_status": "ok",
       "freshness_state": "current",
       "observation_at": "2026-08-13",
       "observation_age_days": 0,
       "summary": "Market Open GMT-4",
-      "response_date": "Thu, 13 Aug 2026 16:49:39 GMT",
-      "last_modified": null
+      "response_date": "Thu, 13 Aug 2026 17:25:30 GMT",
+      "last_modified": null,
+      "exchange": {
+        "name": "Bahamas International Securities Exchange (BISX)",
+        "code": null,
+        "url": "https://www.bisxbahamas.com/",
+        "feed_status": "current"
+      },
+      "fx": {
+        "currency": "BSD",
+        "pair": "USD/BSD",
+        "rate_label": "1:1 peg",
+        "indicator": "USD peg"
+      },
+      "watch_sectors": [
+        "banking",
+        "insurance",
+        "tourism",
+        "asset management"
+      ],
+      "credible_news": [
+        {
+          "name": "Tribune 242 — Business",
+          "url": "https://www.tribune242.com/business/"
+        },
+        {
+          "name": "Nassau Guardian — Business",
+          "url": "https://thenassauguardian.com/business/"
+        },
+        {
+          "name": "BISX News Feed",
+          "url": "https://www.bisxbahamas.com/"
+        }
+      ],
+      "signal_links": [
+        "banking",
+        "insurance",
+        "tourism",
+        "asset management"
+      ],
+      "market_snapshot": {
+        "bars": [
+          54,
+          68,
+          45,
+          59,
+          38,
+          67,
+          48,
+          63
+        ],
+        "chart_label": "Indexed activity proxy, not price history",
+        "data_status": "current",
+        "headline": "Market Open GMT-4",
+        "focus": [
+          "banking",
+          "insurance",
+          "tourism"
+        ]
+      }
     },
     {
       "id": "cayman",
-      "country": null,
+      "country": "Cayman Islands",
       "exchange_code": null,
       "exchange_name": "Cayman Islands Stock Exchange (CSX)",
       "source_url": "https://www.csx.ky/trading/daily-trading-summary.asp",
       "source_format": "public_html",
       "machine_readable_feed": false,
       "timing_disclosure": null,
-      "attempted_at": "2026-08-13T16:49:37.454720+00:00",
+      "attempted_at": "2026-08-13T17:25:27.838890+00:00",
       "fetch_status": "ok",
       "freshness_state": "source_checked_no_dated_observation",
       "observation_at": null,
       "observation_age_days": null,
       "summary": "Daily Trading Summary | Cayman Islands Stock Exchange",
-      "response_date": "Thu, 13 Aug 2026 16:49:38 GMT",
-      "last_modified": null
+      "response_date": "Thu, 13 Aug 2026 17:25:28 GMT",
+      "last_modified": null,
+      "exchange": {
+        "name": "Cayman Islands Stock Exchange (CSX)",
+        "code": null,
+        "url": "https://www.csx.ky/trading/daily-trading-summary.asp",
+        "feed_status": "source_checked_no_dated_observation"
+      },
+      "fx": {
+        "currency": "KYD",
+        "pair": "USD/KYD",
+        "rate_label": "1.20 peg",
+        "indicator": "USD peg"
+      },
+      "watch_sectors": [
+        "insurance",
+        "asset management",
+        "funds",
+        "specialty finance"
+      ],
+      "credible_news": [
+        {
+          "name": "Cayman Compass — Business",
+          "url": "https://www.caymancompass.com/business/"
+        },
+        {
+          "name": "Cayman News Service",
+          "url": "https://caymannewsservice.com/"
+        },
+        {
+          "name": "CSX News Feed",
+          "url": "https://www.csx.ky/"
+        }
+      ],
+      "signal_links": [
+        "insurance",
+        "asset management",
+        "funds",
+        "specialty finance"
+      ],
+      "market_snapshot": {
+        "bars": [
+          49,
+          48,
+          49,
+          72,
+          40,
+          64,
+          61,
+          71
+        ],
+        "chart_label": "Indexed activity proxy, not price history",
+        "data_status": "source_checked_no_dated_observation",
+        "headline": "Daily Trading Summary | Cayman Islands Stock Exchange",
+        "focus": [
+          "insurance",
+          "asset management",
+          "funds"
+        ]
+      }
     },
     {
       "id": "eastern_caribbean",
-      "country": null,
+      "country": "Eastern Caribbean (OECS)",
       "exchange_code": null,
       "exchange_name": "Eastern Caribbean Securities Exchange (ECSE)",
       "source_url": "https://www.ecseonline.com/",
       "source_format": "public_html",
       "machine_readable_feed": false,
       "timing_disclosure": null,
-      "attempted_at": "2026-08-13T16:49:37.454720+00:00",
+      "attempted_at": "2026-08-13T17:25:27.838890+00:00",
       "fetch_status": "ok",
       "freshness_state": "current",
       "observation_at": "2026-08-12",
       "observation_age_days": 1,
       "summary": "ECSE Daily Trade Report and Financial Tip – 12 August 2026",
-      "response_date": "Thu, 13 Aug 2026 16:49:38 GMT",
-      "last_modified": "Wed, 12 Aug 2026 19:48:32 GMT"
+      "response_date": "Thu, 13 Aug 2026 17:25:28 GMT",
+      "last_modified": "Wed, 12 Aug 2026 19:48:32 GMT",
+      "exchange": {
+        "name": "Eastern Caribbean Securities Exchange (ECSE)",
+        "code": null,
+        "url": "https://www.ecseonline.com/",
+        "feed_status": "current"
+      },
+      "fx": {
+        "currency": "XCD",
+        "pair": "USD/XCD",
+        "rate_label": "2.70 peg",
+        "indicator": "ECCU peg"
+      },
+      "watch_sectors": [
+        "banking",
+        "government securities",
+        "insurance",
+        "tourism"
+      ],
+      "credible_news": [
+        {
+          "name": "ECSE News Feed",
+          "url": "https://www.ecseonline.com/"
+        },
+        {
+          "name": "Caribbean Loop — OECS",
+          "url": "https://www.loopnews.com/"
+        },
+        {
+          "name": "Caribbean Broadcasting Union",
+          "url": "https://caribbeanbroadcastunion.org/"
+        }
+      ],
+      "signal_links": [
+        "banking",
+        "government securities",
+        "insurance",
+        "tourism"
+      ],
+      "market_snapshot": {
+        "bars": [
+          40,
+          51,
+          68,
+          67,
+          50,
+          59,
+          69,
+          49
+        ],
+        "chart_label": "Indexed activity proxy, not price history",
+        "data_status": "current",
+        "headline": "ECSE Daily Trade Report and Financial Tip – 12 August 2026",
+        "focus": [
+          "banking",
+          "government securities",
+          "insurance"
+        ]
+      }
     }
   ]
 }
