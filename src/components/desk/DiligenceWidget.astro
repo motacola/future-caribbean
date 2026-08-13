@@ -1,0 +1,16 @@
+---
+const { items = [] } = Astro.props;
+---
+<section class="desk-widget" data-widget-id="diligence" aria-labelledby="widget-diligence-title">
+  <header class="widget-head"><div><span class="widget-kicker">Diligence status</span><h2 id="widget-diligence-title">What still needs checking</h2></div><span class="widget-status">Validation packs</span></header>
+  <p class="widget-why">Confidence is separated from unresolved questions so strong signals do not look fully de-risked.</p>
+  {items.length ? <div class="widget-list">
+    {items.slice(0, 3).map((item) => <article class="widget-list-item" data-filter-item data-countries={item.country.toLowerCase()} data-topics={(item.topics || []).join('|')} data-source-tier={item.sourceTier} data-source-id={item.sourceId}>
+      <div class="widget-item-meta">{item.country} · {item.status} · Grade {item.evidenceGrade || '—'}</div>
+      <h3>{item.title}</h3>
+      <p>{item.unresolvedQuestions?.[0] || 'No unresolved question was recorded in this pack.'}</p>
+      {item.sourceUrl && <a class="widget-text-link" href={item.sourceUrl} target="_blank" rel="noopener">Open cited evidence ↗</a>}
+    </article>)}
+  </div> : <p class="widget-empty">No validation packs are available. Treat the opportunity as unvalidated.</p>}
+  <p class="widget-empty" data-filter-empty hidden>No validation pack matches these presentation filters. The underlying packs remain unchanged.</p>
+</section>

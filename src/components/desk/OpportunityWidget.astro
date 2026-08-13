@@ -1,0 +1,23 @@
+---
+const { lead } = Astro.props;
+---
+<section class="desk-widget widget-opportunity" data-widget-id="opportunity" data-countries={lead?.country?.toLowerCase() || ''} aria-labelledby="widget-opportunity-title">
+  <header class="widget-head">
+    <div><span class="widget-kicker">Today's opportunity</span><h2 id="widget-opportunity-title">{lead?.country || 'Caribbean opportunity'}</h2></div>
+    {lead && <span class="widget-status">{lead.confidenceScore}% confidence</span>}
+  </header>
+  <p class="widget-why">The strongest current signal, shown with its ranking evidence and next screening step.</p>
+  <p class="widget-context-notice" hidden></p>
+  {lead ? (
+    <>
+      <h3>{lead.title}</h3>
+      <p>{lead.evidence || lead.rationale}</p>
+      {lead.action && <div class="widget-action"><strong>Next screen</strong><span>{lead.action}</span></div>}
+      <footer class="widget-source">
+        <span>Grade {lead.evidenceGrade || '—'} · {lead.freshness || 'freshness unknown'}</span>
+        {lead.sourceUrl ? <a href={lead.sourceUrl} target="_blank" rel="noopener">{lead.sourceName} ↗</a> : <span>{lead.sourceName}</span>}
+      </footer>
+      <p class="widget-disclaimer">{lead.disclaimer}</p>
+    </>
+  ) : <p class="widget-empty">No ranked opportunity is available this cycle. The desk will not manufacture one.</p>}
+</section>

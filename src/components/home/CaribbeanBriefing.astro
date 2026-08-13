@@ -1,0 +1,66 @@
+---
+import type { HomepageBriefingCard } from '../../lib/data.ts';
+
+interface Props {
+  cards: HomepageBriefingCard[];
+  generatedAt: string;
+}
+
+const { cards, generatedAt } = Astro.props;
+const labels: Record<HomepageBriefingCard['kind'], string> = {
+  opportunity: 'Opportunity now',
+  'market-fx': 'Market + FX',
+  news: 'Regional context',
+  validation: 'Validation status',
+};
+---
+
+<section class="briefing" id="caribbean-briefing" aria-labelledby="caribbean-briefing-title">
+  <div class="briefing-head">
+    <div>
+      <p class="eyebrow">Your Caribbean briefing</p>
+      <h2 id="caribbean-briefing-title">What matters before your next call</h2>
+      <p class="intro">Start with the strongest opening, then check the market context, the relevant reporting, and the evidence that is still missing.</p>
+    </div>
+    <a href="/build">Personalize in My Signal Desk →</a>
+  </div>
+  <div class="briefing-grid">
+    {cards.map((card) => (
+      <article class={`briefing-card ${card.kind}`} data-briefing-card={card.kind}>
+        <div class="card-top"><span>{labels[card.kind]}</span><b>{card.country}</b></div>
+        <h3>{card.title}</h3>
+        <p>{card.summary}</p>
+        <div class="trust-row">
+          <span data-trust-source>{card.sourceName}</span>
+          <span data-trust-freshness>{card.freshness}</span>
+        </div>
+        <p class="disclaimer">{card.disclaimer}</p>
+        <a href={card.href}>See the evidence →</a>
+      </article>
+    ))}
+  </div>
+  <p class="updated">Briefing generated from cycle artifacts · {generatedAt || 'timestamp unavailable'}</p>
+</section>
+
+<style>
+  .briefing { max-width: 1140px; margin: 0 auto; padding: 44px 24px 36px; }
+  .briefing-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 18px; }
+  .eyebrow { margin: 0 0 7px; font: 700 10px 'IBM Plex Mono', monospace; text-transform: uppercase; letter-spacing: 1.3px; color: #b57a22; }
+  h2 { margin: 0; font: 700 clamp(28px, 4vw, 42px)/1.02 'Cormorant Garamond', Georgia, serif; color: #18251f; }
+  .intro { margin: 8px 0 0; max-width: 650px; color: #455a50; font-size: 14px; }
+  .briefing-head > a { flex: none; font-size: 12px; font-weight: 700; color: #0d766e; }
+  .briefing-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+  .briefing-card { display: flex; flex-direction: column; min-width: 0; padding: 17px; background: #fffcf4; border: 1px solid #d8cbb8; border-top: 3px solid #0d766e; border-radius: 4px; box-shadow: 0 2px 8px rgba(24,37,31,.06); }
+  .briefing-card.opportunity { border-top-color: #b57a22; }
+  .briefing-card.validation { border-top-color: #2676a8; }
+  .card-top, .trust-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 5px 10px; font: 700 8px 'IBM Plex Mono', monospace; text-transform: uppercase; letter-spacing: .65px; color: #5d6b62; }
+  .card-top b { color: #0d766e; }
+  h3 { margin: 12px 0 8px; font: 700 20px/1.08 'Cormorant Garamond', Georgia, serif; color: #18251f; }
+  .briefing-card > p:not(.disclaimer) { margin: 0 0 12px; color: #455a50; font-size: 12px; line-height: 1.5; overflow-wrap: anywhere; }
+  .trust-row { display: grid; gap: 3px; margin-top: auto; padding-top: 11px; border-top: 1px solid #d8cbb8; text-transform: none; letter-spacing: 0; }
+  .disclaimer { margin: 8px 0; color: #5d6b62; font-size: 9px; line-height: 1.4; }
+  .briefing-card > a { font-size: 11px; font-weight: 700; color: #0d766e; }
+  .updated { margin: 12px 0 0; color: #5d6b62; font: 9px 'IBM Plex Mono', monospace; }
+  @media (max-width: 900px) { .briefing-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 620px) { .briefing { padding: 34px 16px 28px; } .briefing-head { display: grid; } .briefing-grid { grid-template-columns: 1fr; } }
+</style>
