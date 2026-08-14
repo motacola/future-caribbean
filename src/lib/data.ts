@@ -515,7 +515,40 @@ export function loadDashboardData() {
     };
   });
 
-  // ── Map dispatches ─────────────────────────────────────────
+  // ── Regional movement strip ─────────────────────────────────
+  // One chip per country with an active signal (confidence > 0 OR has
+  // an evidence mix entry). The chip shows the country, the freshness
+  // state (current/delayed/stale), and a freshness bar (3 segments:
+  // fresh / aging / stale represented by the caribbean-theme palette).
+  // Tapping a chip opens the map-drill for that country.
+  function freshnessClass(state: string): 'fresh' | 'aging' | 'stale' {
+    if (state === 'current' || state === 'fresh') return 'fresh';
+    if (state === 'delayed' || state === 'aging') return 'aging';
+    return 'stale';
+  }
+
+  const regionalMovementItems = mapMarkers
+    .filter((m: any) => (m.confidence || 0) > 0 || (m.evidence_mix && Object.values(m.evidence_mix).reduce((a: number, b: any) => a + (Number(b) || 0), 0) > 0))
+    .map((m: any) => {
+      const cls = freshnessClass(m.freshness_state || '');
+      const conf = Math.max(0, Math.min(100, m.confidence || 0));
+      const totalEv = (m.evidence_mix ? Object.values(m.evidence_mix).reduce((a: number, b: any) => a + (Number(b) || 0), 0) : 0);
+      const confColor = kindColor(m.kind || '');
+      return `<button class="rmv-chip" data-country="${esc(m.country)}" data-freshness="${cls}" title="${esc(m.country)} — ${cls} (${conf}/100)">
+        <span class="rmv-name">${esc(m.country)}</span>
+        <span class="rmv-bar" aria-label="Freshness: ${cls}">
+          <span class="rmv-bar-fill" style="width:${conf}%; background:${confColor}"></span>
+        </span>
+        <span class="rmv-state">${cls}</span>
+        <span class="rmv-meta">${conf}/100${totalEv > 0 ? ` · ${totalEv} src` : ''}</span>
+      </button>`;
+    }).join('');
+
+  const regionalMovementHtml = regionalMovementItems
+    ? `<div class="rmv-strip">${regionalMovementItems}</div>`
+    : '<p class="muted">No active signals this cycle.</p>';
+
+    // ── Map dispatches ─────────────────────────────────────────
   const mapDispatches: Record<string, any[]> = Object.fromEntries(
     Object.keys(COUNTRY_COORDS).map(c => [c, []])
   );
@@ -983,7 +1016,7 @@ export function loadDashboardData() {
     theaterEventsJson: JSON.stringify(theaterEvents).replace(/<\//g, '<\\/'),
     replayJsonlUrl: replayJsonlUrl.replace(/<\//g, '<\\/'),
     humanizeRulesJson,
-    tickerHtml, frontPointersHtml,
+    regionalMovementHtml, tickerHtml, frontPointersHtml,
     // Ticker items for client-side lw-rail width calculation
     tickerItemCount: tickerItems.length,
   };
