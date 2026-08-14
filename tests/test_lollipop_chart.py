@@ -32,6 +32,12 @@ LOLLIPOP_TS = ROOT / "src" / "lib" / "charts" / "lollipop.ts"
 THEME_TS = ROOT / "src" / "lib" / "caribbean-theme.ts"
 ISLAND_TSX = ROOT / "src" / "lib" / "charts" / "LollipopIsland.tsx"
 BUILD_ASTRO = ROOT / "src" / "pages" / "build.astro"
+DATA_TS = ROOT / "src" / "lib" / "data.ts"
+INDEX_ASTRO = ROOT / "src" / "pages" / "index.astro"
+LOLLIPOP_TS = ROOT / "src" / "lib" / "charts" / "lollipop.ts"
+THEME_TS = ROOT / "src" / "lib" / "caribbean-theme.ts"
+ISLAND_TSX = ROOT / "src" / "lib" / "charts" / "LollipopIsland.tsx"
+BUILD_FIXTURE = ROOT / "src" / "data" / "build-pipeline-fixture.json"
 
 
 # ─────────────────────────────────────────────────────────────────
@@ -125,6 +131,31 @@ def test_index_astro_has_drill_lifecycle_css():
         ".drill-evidence-legend {",
     ):
         assert sel in page, f"index.astro must define {sel} CSS"
+
+
+def test_data_ts_reads_market_record_freshness_not_just_snapshot():
+    """Regression: the freshness_state derivation must read from the
+    market record's top-level freshness_state, not from the embedded
+    market_snapshot which doesn't carry freshness_state.
+
+    Before this fix, every chip was marked 'stale' even when the
+    market had freshness_state='current' (Trinidad & Tobago,
+    Barbados, Bahamas, etc.). This test asserts the source code
+    reads the top-level field.
+    """
+    src = DATA_TS.read_text()
+    # The freshness derivation must reach market.freshness_state
+    # (or market.snapshot.data_status as a fallback).
+    assert "market.freshness_state" in src, \
+        "data.ts must read market.freshness_state (top-level), not just market.snapshot.freshness_state"
+    # The buggy pattern (only checking snapshot) must NOT be present
+    assert "(market.snapshot || {}).freshness_state" not in src, \
+        "data.ts must not rely solely on (market.snapshot || {}).freshness_state - the embedded snapshot doesn't carry freshness_state"
+    # The observation_at read must also try the top-level first
+    assert "market.observation_at" in src, \
+        "data.ts must read market.observation_at (top-level) for the lifecycle Last seen field"
+    assert "(market.snapshot || {}).observation_at" not in src, \
+        "data.ts must not rely solely on (market.snapshot || {}).observation_at - the embedded snapshot doesn't carry observation_at"
 
 
 def test_data_ts_emits_map_drill_lifecycle_fields():

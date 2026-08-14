@@ -479,9 +479,23 @@ export function loadDashboardData() {
     // adapter in /build (lollipop.ts) reads cycle_id; for the map-drill
     // we surface the per-signal freshness. cycle_id is the page's
     // current cycle string.
-    const freshnessState = (market.snapshot || {}).freshness_state || watch.freshness_state || 'source_checked_no_dated_observation';
+    // Freshness: read from the market record first (top-level
+    // freshness_state on the source market), then fall back to the
+    // embedded market_snapshot.data_status, then the watch fallback.
+    // Prior to this, the code only checked `market.snapshot` which
+    // doesn't carry freshness_state on its own — every chip ended up
+    // 'stale' even when the market was 'current'.
+    const freshnessState = (market && market.freshness_state)
+      || (market && market.snapshot && market.snapshot.data_status)
+      || watch.freshness_state
+      || 'source_checked_no_dated_observation';
     const lifecycle = (() => {
-      const obs = (market.snapshot || {}).observation_at || (c.observation_at || '');
+      // observation_at lives on the market record (top-level), not in
+      // the embedded market_snapshot. Read both then fall back to the
+      // cluster.
+      const obs = (market && market.observation_at)
+        || (market && market.snapshot && market.snapshot.observation_at)
+        || (c.observation_at || '');
       const lastSeen = obs ? obs.slice(0, 10) : 'unknown';
       const lastSeenTime = obs ? obs.slice(11, 16) + ' UTC' : '';
       return {
