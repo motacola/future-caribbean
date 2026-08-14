@@ -22,26 +22,26 @@ enough. The rest is for new features, refactors, and the chart path.
 | Copy rules | `src/lib/humanize.ts` (header) | You are adding or changing copy |
 
 The product is an Astro 7 + React 18 + TanStack Charts 0.11 site. The
-production surface is the Astro static build; React ships only as
-small islands inside `/build`. Anything you write that ends up in the
-homepage should be plain Astro (HTML + CSS + a tiny inline script);
-anything that ends up in `/build` can be a React island.
+production surface is the Astro static build. React powers the TanStack
+island on `/build` and the existing HTM map-drill renderer on `/`; keep
+new homepage visuals in plain Astro unless an interaction genuinely needs
+the established drill runtime.
 
 ## Build / test / verify
 
 ```bash
 pnpm install                                              # one-time
 pnpm run build                                            # static + serverless build; must be green
+pnpm run test:types                                       # chart/island TypeScript contract
 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python3 -m pytest tests --ignore=tests/e2e -q
-                                                          # 119 tests, must all pass
-pnpm run test:e2e                                         # 8 lollipop e2e tests (also auto-starts the Astro preview)
+pnpm run test:e2e                                         # browser suites; auto-starts Astro preview
 ```
 
 Vercel auto-deploys `main` on push. **Do not push unless the user asks**
 (user's standing rule). Local changes ship via PR after manual
-`gh pr merge --squash`. Watch the build log after merge — Vercel has a
-Hobby-plan 12-function limit; new `api/*.py` files need `.vercelignore`
-treatment.
+`gh pr merge --squash`. Watch the build log after merge. Check Vercel's
+current function limit before adding `api/*.py`; the repo's
+`.vercelignore` data-endpoint pattern is the established fallback.
 
 ## Design system (read before changing colors or copy)
 
@@ -80,8 +80,10 @@ technical term is fine.
 - All chart definitions that show data MUST include a `dataAsOf` label
   (freshness rule).
 - The data adapter `opportunitiesFromDesk()` in
-  `src/lib/charts/lollipop.ts` is the canonical "PIPELINE → lollipop"
-  converter. Use it; do not write your own.
+  `src/lib/charts/lollipop.ts` is the canonical
+  `dispatch_desk.json → lollipop` converter. Use it; do not write your own.
+- `dataAsOf` must come from the source artifact (`generated_at`, then the
+  cycle date as fallback), never from the page build time.
 
 **Anti-patterns (don't do these):**
 - Do NOT hardcode hex colors in chart definitions. Use
@@ -101,8 +103,8 @@ technical term is fine.
 
 ## Layout & responsiveness
 
-- The homepage (`src/pages/index.astro:457`) targets a full-width map
-  hero at 560–720px desktop.
+- The homepage `.map-shell` section targets a full-width map hero at
+  560–720px desktop.
 - `/build` is the configurator page. Sticky left rail (controls) +
   flexible right pane (preview).
 - All sections should be readable on a 360px-wide phone.
@@ -118,7 +120,7 @@ technical term is fine.
   + `config/desk_presets.json`. Update `/build` chips too.
 - **Adding a new API endpoint** → `api/<name>.py` (BaseHTTPRequestHandler
   pattern). Add a route in `vercel.json` only if not covered by the
-  `^/api/([^/]+)$` catch-all. **Hobby plan limit: 12 functions** — if
+  `^/api/([^/]+)$` catch-all. Check the current Vercel plan limit; if
   you hit it, add the new `.py` to `.vercelignore` and serve the data
   as `api/<name>-data.json` instead. See the existing
   `api/market-watch.py` / `api/regional-news.py` / `api/source-health.py`
@@ -154,10 +156,10 @@ technical term is fine.
 ## How to verify a change end-to-end
 
 1. `pnpm run build` — must be green.
-2. `PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python3 -m pytest tests --ignore=tests/e2e -q` — must be 118 passing.
-3. `curl -sL https://signal-fabric.vercel.app/api/status | python3 -m json.tool` — verify cycle_id is today and n_sources_ok equals n_sources_total.
-4. For homepage changes: `curl -sL https://signal-fabric.vercel.app/ | grep -c 'your-new-section-id'` — confirm the section is in the live build.
-5. For /build chart changes: `curl -sL https://signal-fabric.vercel.app/build/ | grep -c 'ranked-section'` — confirm the lollipop is in the live build.
+2. `pnpm run test:types` — must be green.
+3. `PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python3 -m pytest tests --ignore=tests/e2e -q` — all collected tests must pass; do not hard-code a count here.
+4. `pnpm run test:e2e` — required for homepage drill and chart changes; static checks do not catch React runtime failures.
+5. After an approved merge, inspect the Vercel deployment and query `/api/status`; do not treat a preview or local artifact as production proof.
 
 If a check fails, do NOT push — fix and re-verify.
 

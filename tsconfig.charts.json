@@ -1,0 +1,17 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "allowImportingTsExtensions": true,
+    "jsx": "react-jsx",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "noEmit": true,
+    "skipLibCheck": true,
+    "target": "ES2022"
+  },
+  "include": [
+    "src/lib/caribbean-theme.ts",
+    "src/lib/charts/**/*.ts",
+    "src/lib/charts/**/*.tsx"
+  ]
+}

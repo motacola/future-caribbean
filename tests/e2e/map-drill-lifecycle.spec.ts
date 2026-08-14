@@ -1,64 +1,88 @@
 /**
- * Map-drill signal lifecycle + evidence mix panel contract.
+ * Map-drill DOM, provenance, and lifecycle contracts.
  *
- * Roadmap-2: when a country is tapped on the homepage, the map-drill
- * panel that opens must show:
- *   - a 'Signal lifecycle' head with a freshness state pill (fresh /
- *     aging / stale)
- *   - the 'Last seen' / 'Next refresh' fields
- *   - the 'Evidence mix' bar with one segment per source category
- *
- * This is the same shape the desk uses internally when ranking an
- * opportunity — a single-source signal is watchlist, a 3+ source
- * agreement is a routed briefing.
+ * These assertions exercise observable browser output. They deliberately
+ * reject raw HTML strings masquerading as React children and source labels
+ * that are not present in the dispatch artifact.
  */
 import { test, expect } from '@playwright/test';
+import { readFileSync } from 'node:fs';
 
-const HOMEPAGE = 'http://127.0.0.1:4321/';
+const desk = JSON.parse(readFileSync('outbox/dispatch_desk.json', 'utf8'));
+const sourceText = desk.clusters
+  .filter((cluster: { country_cluster?: string }) => cluster.country_cluster === 'Guyana')
+  .map((cluster: { evidence?: string; source?: string }) => `${cluster.evidence || ''} ${cluster.source || ''}`)
+  .join(' ')
+  .toLowerCase();
+const sourceFamilies = [
+  ['World Bank', ['world bank', 'world_bank', 'wb ']],
+  ['IDB', ['inter-american development bank', ' idb']],
+  ['CARICOM', ['caricom']],
+  ['CDB', ['caribbean development bank', ' cdb']],
+  ['NOAA', ['noaa']],
+  ['NDBC', ['ndbc']],
+].filter(([, aliases]) => (aliases as string[]).some(alias => sourceText.includes(alias)))
+  .map(([label]) => `${label}: 1`);
 
-test('tapping a country with items opens a full drill panel', async ({ page }) => {
-  await page.goto(HOMEPAGE, { waitUntil: 'networkidle' });
-  // Open Guyana (5 dispatches)
-  await page.evaluate('openCountryDrill("Guyana")');
-  await page.waitForTimeout(2500);
+async function openDrill(page: import('@playwright/test').Page, country: string) {
+  await page.goto('/', { waitUntil: 'networkidle' });
+  await page.evaluate((name) => {
+    const opener = (window as unknown as { openCountryDrill?: (country: string) => void }).openCountryDrill;
+    if (!opener) throw new Error('openCountryDrill is not available');
+    opener(name);
+  }, country);
   const drill = page.locator('#map-drill');
-  await expect(drill.locator('.map-drill-head strong')).toHaveText('Guyana');
-  await expect(drill.locator('.drill-lifecycle')).toBeVisible();
-  await expect(drill.locator('.drill-lifecycle-state')).toBeVisible();
-  await expect(drill.locator('.drill-lifecycle-fields')).toBeVisible();
-  await expect(drill.locator('.drill-evidence')).toBeVisible();
-  // 6 evidence segments (wb, idb, noaa, ndbc, caricom, cdb)
-  const segments = await drill.locator('.drill-evidence-seg').count();
-  expect(segments).toBe(6);
-});
+  await expect(drill.locator('.map-drill-head strong')).toHaveText(country);
+  return drill;
+}
 
-test('tapping a watchlist country shows the lifecycle without dispatch cards', async ({ page }) => {
-  await page.goto(HOMEPAGE, { waitUntil: 'networkidle' });
-  // Anguilla is a watchlist-only signal (no dispatches)
-  await page.evaluate('openCountryDrill("Anguilla")');
-  await page.waitForTimeout(2500);
-  const drill = page.locator('#map-drill');
-  await expect(drill.locator('.map-drill-head strong')).toHaveText('Anguilla');
-  await expect(drill.locator('.drill-lifecycle')).toBeVisible();
-  // The "WATCHLIST" tag must be present in the no-items branch
-  await expect(drill.getByText('WATCHLIST', { exact: false }).first()).toBeVisible();
-});
-
-test('the freshness state pill has a known class', async ({ page }) => {
-  await page.goto(HOMEPAGE, { waitUntil: 'networkidle' });
-  await page.evaluate('openCountryDrill("Guyana")');
-  await page.waitForTimeout(2500);
-  const state = await page.locator('.drill-lifecycle-state').first().getAttribute('class');
-  expect(state).toMatch(/drill-lifecycle-state--(fresh|aging|stale)/);
-});
-
-test('the lifecycle panel renders with no React errors', async ({ page }) => {
+test('a routed country renders semantic briefing cards and clickable news', async ({ page }) => {
   const errors: string[] = [];
-  page.on('pageerror', e => errors.push(e.message));
-  await page.goto(HOMEPAGE, { waitUntil: 'networkidle' });
-  await page.evaluate('openCountryDrill("Guyana")');
-  await page.waitForTimeout(2500);
-  // No React error #62 (htm v3 + React 18 nested template issue)
-  const reactErrors = errors.filter(e => e.includes('#62') || e.includes('Minified React'));
-  expect(reactErrors).toHaveLength(0);
+  page.on('pageerror', error => errors.push(error.message));
+  const drill = await openDrill(page, 'Guyana');
+
+  await expect(drill.locator('.drill-card').first()).toBeVisible();
+  expect(await drill.locator('.drill-card').count()).toBeGreaterThan(0);
+  await expect(drill.locator('.drill-card h3').first()).not.toHaveText('');
+
+  const news = drill.locator('.map-news-list a');
+  await expect(news.first()).toBeVisible();
+  expect(await news.count()).toBeGreaterThan(0);
+  expect(await news.first().getAttribute('href')).toMatch(/^https?:\/\//);
+
+  const text = await drill.innerText();
+  expect(text).not.toContain('<article');
+  expect(text).not.toContain('<a href=');
+  expect(errors).toEqual([]);
+});
+
+test('Guyana evidence names only source families stated by its cluster', async ({ page }) => {
+  const drill = await openDrill(page, 'Guyana');
+  await expect(drill.locator('.drill-lifecycle-label')).toHaveText('Dispatch desk');
+  await expect(drill.getByText(`Confirmed source groups (${sourceFamilies.length})`, { exact: true })).toBeVisible();
+
+  const titles = await drill.locator('.drill-evidence-seg').evaluateAll(elements =>
+    elements.map(element => element.getAttribute('title')),
+  );
+  expect(titles).toEqual(sourceFamilies);
+});
+
+test('dispatch lifecycle uses the desk observation and honest cadence copy', async ({ page }) => {
+  const drill = await openDrill(page, 'Guyana');
+  const fields = drill.locator('.drill-lifecycle-fields');
+  await expect(fields).toContainText('Published');
+  await expect(fields).toContainText(desk.generated_at);
+  await expect(fields).toContainText('Update cadence');
+  await expect(fields).toContainText(`Scheduled every 4h · cycle ${desk.cycle_id}`);
+  await expect(fields).not.toContainText('Next refresh');
+});
+
+test('watchlist countries render market freshness without invented corroboration', async ({ page }) => {
+  const drill = await openDrill(page, 'Anguilla');
+  await expect(drill.getByText('WATCHLIST', { exact: false }).first()).toBeVisible();
+  await expect(drill.locator('.drill-lifecycle-label')).toHaveText('Market watch');
+  await expect(drill.getByText('No corroborating signal sources yet', { exact: true })).toBeVisible();
+  await expect(drill.locator('.drill-evidence-seg')).toHaveCount(0);
+  await expect(drill.locator('.drill-card')).toHaveCount(0);
+  await expect(drill.locator('.map-news-list')).toBeVisible();
 });

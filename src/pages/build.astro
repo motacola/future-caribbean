@@ -3,15 +3,17 @@ import Base from '../layouts/Base.astro';
 import LollipopIsland from '../lib/charts/LollipopIsland.tsx';
 import { opportunitiesFromDesk } from '../lib/charts/lollipop.ts';
 import pipelineFixture from '../data/build-pipeline-fixture.json';
+import dispatchDesk from '../../outbox/dispatch_desk.json';
 
-// PIPELINE — the build page's offline demo data. Sourced from
+// PIPELINE drives the interactive build-page walkthrough. It remains a
+// labelled offline demo fixture; the ranked chart below reads the current
+// published dispatch desk artifact instead.
+// Sourced from
 // src/data/build-pipeline-fixture.json so the in-script <script is:inline>
 // block can also reference it (Astro frontmatter `const`s are not visible
-// inside an inlined script). When the live pipeline runs and writes
-// outbox/dispatch_desk.json, the build page can be wired to read that
-// instead — see ROADMAP-2 in AGENTS_GUIDE.md.
+// inside an inlined script).
 const PIPELINE = pipelineFixture as any;
-const _lollipop = opportunitiesFromDesk(PIPELINE);
+const _lollipop = opportunitiesFromDesk(dispatchDesk);
 const lollipopData = {
   opportunities: _lollipop.opportunities,
   dataAsOf: _lollipop.dataAsOf,
@@ -442,7 +444,7 @@ footer { border-top: 1px solid var(--border); padding: 24px; text-align: center;
   <div class="ranked-head">
     <span class="ranked-label">Ranked opportunity</span>
     <h2 id="ranked-title">Markets this cycle, in priority order</h2>
-    <p class="ranked-sub">Live TanStack chart fed by the dispatch desk. Dashed line marks the 60-point "watch" threshold. Freshness: <span class="ranked-meta">as of {lollipopData.dataAsOf} · cycle {lollipopData.cycle}</span></p>
+    <p class="ranked-sub">Current published dispatch-desk snapshot. The dashed line marks the 60-point "watch" threshold. Source timestamp: <span class="ranked-meta">{lollipopData.dataAsOf || 'not supplied'} · cycle {lollipopData.cycle}</span></p>
   </div>
   <LollipopIsland
     client:load
@@ -681,6 +683,11 @@ function toggleProof() {
   btn.querySelector('span').textContent=open?'▾':'▸';
 }
 
+// Astro scopes scripts that use define:vars. Keep a deliberately small
+// public surface for the legacy inline controls rather than relying on
+// function declarations leaking onto window.
+Object.assign(window, { openModal, closeModal, openWizard, closeWizard, submitWizard, copyBriefing, toggleProof });
+
 const SRC_VIEW=[{label:'World Bank Indicators',key:'world_bank'},{label:'IDB Open Data',key:'idb'},{label:'NOAA Weather Alerts',key:'noaa'},{label:'NDBC Marine Buoys',key:'ndbc'},{label:'CARICOM Statistics',key:'tier2'},{label:'CDB Procurement Feed',key:'tier2'}];
 function setText(id,val){const el=document.getElementById(id);if(el&&val!=null)el.textContent=val;}
 
@@ -727,7 +734,7 @@ let DOMAINS=[
   {id:'climate',name:'Climate & Catastrophe Risk',status:'blueprint',blurb:'Reuses the marine & weather watchers already wired for the Caribbean.',counts:{sources:4,sources_wired:3,signals:3,recipients:3},pipeline:{watch:'NOAA, NDBC, NHC & hazard feeds — storms, surge, marine conditions in real time.',reason:'Scores exposure and escalates as an event develops toward a threshold.',distribute:'Briefs insurers, reinsurers & resilience planners before impact.'}},
   {id:'compliance',name:'Cross-Jurisdiction Compliance',status:'blueprint',blurb:'Same engine, pointed at regulatory data.',counts:{sources:2,sources_wired:0,signals:2,recipients:2},pipeline:{watch:'Regulatory gazettes, sanctions lists & policy releases across jurisdictions.',reason:'Maps new obligations to each entity and scores compliance risk as rules change.',distribute:'Alerts compliance & legal owners the moment an obligation shifts.'}},
   {id:'trade',name:'Supply Chain & Trade Flows',status:'blueprint',blurb:'Fragmented trade data unified into routed intelligence.',counts:{sources:3,sources_wired:1,signals:3,recipients:2},pipeline:{watch:'Port throughput, customs, shipping & trade-statistic feeds.',reason:'Detects volume shifts and bottlenecks, flags route & supplier risk.',distribute:'Alerts operators & logistics planners to disruption ahead.'}},
-  {id:'capital',name:'Emerging-Market Capital Flows',status:'blueprint',blurb:'The Caribbean method, generalised to any emerging-market set.',counts:{sources:2,sources_wired:1,signals:3,recipients:2},pipeline:{watch:'Multi-region public economic indicators at scale.',reason:'Detects cross-border capital momentum & convergence across markets.',distribute:'Dispatches to allocators & funds on the channels they use.'}},
+  {id:'capital',name:'Caribbean Capital Flows',status:'blueprint',blurb:'Cross-border capital momentum across Caribbean markets.',counts:{sources:2,sources_wired:1,signals:3,recipients:2},pipeline:{watch:'Caribbean public economic indicators at scale.',reason:'Detects cross-border capital momentum & convergence across markets.',distribute:'Dispatches to allocators & funds on the channels they use.'}},
 ];
 let activeDomain='caribbean';
 

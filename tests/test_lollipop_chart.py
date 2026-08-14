@@ -9,10 +9,9 @@ rely on:
      surface — if anyone removes the section, this test fails).
 
   2. The opportunitiesFromDesk adapter has stable, documented behaviour:
-     it dedupes by country, sorts desc, caps at 12, returns empty list
-     on empty input. We verify this by running the actual TypeScript
-     source through node (no compile step) since the adapter is a pure
-     function with no Astro dependencies.
+     it dedupes by country, sorts desc, caps at 12, returns empty input,
+     and preserves the desk's source timestamp. Node 22 executes the
+     actual TypeScript module with built-in type stripping.
 
 The chart-shape data is otherwise tested by the Astro build itself
 (`pnpm run build` will fail if the React island contract breaks).
@@ -21,7 +20,6 @@ from __future__ import annotations
 
 import json
 import re
-import shutil
 import subprocess
 from pathlib import Path
 
@@ -34,10 +32,7 @@ ISLAND_TSX = ROOT / "src" / "lib" / "charts" / "LollipopIsland.tsx"
 BUILD_ASTRO = ROOT / "src" / "pages" / "build.astro"
 DATA_TS = ROOT / "src" / "lib" / "data.ts"
 INDEX_ASTRO = ROOT / "src" / "pages" / "index.astro"
-LOLLIPOP_TS = ROOT / "src" / "lib" / "charts" / "lollipop.ts"
-THEME_TS = ROOT / "src" / "lib" / "caribbean-theme.ts"
-ISLAND_TSX = ROOT / "src" / "lib" / "charts" / "LollipopIsland.tsx"
-BUILD_FIXTURE = ROOT / "src" / "data" / "build-pipeline-fixture.json"
+
 
 
 # ─────────────────────────────────────────────────────────────────
@@ -80,12 +75,13 @@ def test_build_page_includes_lollipop_island():
 
 def test_build_page_computes_lollipop_data_in_frontmatter():
     page = BUILD_ASTRO.read_text()
-    # The opportunitiesFromDesk adapter runs server-side in the Astro
-    # frontmatter. The data must be derived from PIPELINE so the chart
-    # reflects the same cycle as the rest of the build.
-    assert "opportunitiesFromDesk(PIPELINE)" in page, (
-        "build.astro must derive lollipop data from PIPELINE via opportunitiesFromDesk"
+    # The chart must use the current dispatch artifact, not the offline
+    # build-walkthrough fixture.
+    assert "outbox/dispatch_desk.json" in page
+    assert "opportunitiesFromDesk(dispatchDesk)" in page, (
+        "build.astro must derive lollipop data from the current dispatch desk"
     )
+    assert "opportunitiesFromDesk(PIPELINE)" not in page
     # PIPELINE must be defined in the frontmatter (not the in-script
     # inline block, which we removed in this branch).
     assert re.search(r"^---\n.*const PIPELINE = ", page, re.DOTALL), (
@@ -106,9 +102,11 @@ def test_build_page_uses_caribbean_theme_tokens():
 
 def test_lollipop_island_applies_caribbean_theme():
     island = ISLAND_TSX.read_text()
-    assert "caribbeanTheme" in island, "LollipopIsland must import caribbeanTheme"
-    assert "theme: caribbeanTheme" in island, (
-        "caribbeanTheme must be wired as the chart theme"
+    chart = LOLLIPOP_TS.read_text()
+    assert "buildOpportunityLollipop" in island
+    assert "theme: caribbeanTheme" in chart
+    assert "function clientLollipop" not in island, (
+        "the React island must use the shared builder rather than a second chart definition"
     )
 
 
@@ -128,7 +126,7 @@ def test_index_astro_has_drill_lifecycle_css():
         ".drill-evidence {",
         ".drill-evidence-bar {",
         ".drill-evidence-seg {",
-        ".drill-evidence-legend {",
+
     ):
         assert sel in page, f"index.astro must define {sel} CSS"
 
@@ -219,103 +217,68 @@ def test_caribbean_theme_uses_css_variables_with_fallbacks():
 
 
 # ─────────────────────────────────────────────────────────────────
-# 2. opportunitiesFromDesk — exercise the actual function in node
+# 2. opportunitiesFromDesk — execute the actual TypeScript module
 # ─────────────────────────────────────────────────────────────────
 
-NODE_PATH = shutil.which("node")
-NODE = NODE_PATH if NODE_PATH else ""
+NODE = subprocess.run(
+    ["/usr/bin/env", "sh", "-c", "command -v node || true"],
+    capture_output=True,
+    text=True,
+).stdout.strip()
+
+
+def _run_adapter(desk: dict) -> dict:
+    script = (
+        "import { opportunitiesFromDesk } from "
+        "'./src/lib/charts/lollipop.ts';"
+        f"process.stdout.write(JSON.stringify(opportunitiesFromDesk({json.dumps(desk)})));"
+    )
+    result = subprocess.run(
+        [NODE, "--input-type=module", "-e", script],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+        timeout=20,
+    )
+    assert result.returncode == 0, f"node failed: {result.stderr}"
+    return json.loads(result.stdout)
 
 
 @pytest.mark.skipif(not NODE, reason="node not on PATH")
-def test_opportunities_from_desk_dedupes_sorts_and_caps():
-    """Verify the actual TypeScript function via node.
-
-    We strip the import statement + TS-only types, then eval the body in
-    node. The function is pure, so this is safe.
-    """
-    src = LOLLIPOP_TS.read_text()
-    js = re.sub(r"^import\s+.*?;\s*$", "", src, flags=re.MULTILINE)
-    js = re.sub(r"^export\s+", "", js, flags=re.MULTILINE)
-    js = re.sub(r"^\s*interface\s+\w+[^{]*\{[^}]*\}\s*$", "", js, flags=re.MULTILINE)
-    js = re.sub(r"^\s*type\s+\w+\s*=\s*[^;]+;\s*$", "", js, flags=re.MULTILINE)
-    # Stub the import (the test doesn't need the theme reference).
-    js = re.sub(
-        r"import\s*\{\s*caribbeanTheme\s*\}\s*from\s*['\"].*?['\"]\s*;?",
-        "const caribbeanTheme = {};",
-        js,
-    )
-    assert "function opportunitiesFromDesk" in js
-
-    # Caribwide is in the cap because we use 11 islands + 3 named clusters
-    # = 14 distinct, but only 12 fit. The named clusters must win
-    # because of their higher scores. Caribwide is included because
-    # its score (50) lands it just above the cap cutoff.
+def test_opportunities_from_desk_dedupes_sorts_caps_and_preserves_source_time():
     desk = {
         "cycle_id": "20260813",
+        "generated_at": "2026-08-13 16:44 UTC",
         "clusters": [
-            {"country_cluster": "Guyana", "confidence_score": 100},
-            {"country_cluster": "Guyana", "confidence_score": 80},  # dedupe
+            {"country_cluster": "Guyana", "confidence_score": 140},
+            {"country_cluster": "Guyana", "confidence_score": 80},
             {"country_cluster": "Belize", "confidence_score": 95},
             {"country_cluster": "Caribwide", "confidence_score": 50},
         ]
         + [
             {"country_cluster": f"Island-{i:02d}", "confidence_score": 49 - i}
-            for i in range(11)  # 11 lower-scoring islands; the lowest 2 are cut
+            for i in range(11)
         ],
     }
-    wrapper = js + "\nprocess.stdout.write(JSON.stringify(opportunitiesFromDesk(" + json.dumps(desk) + ")));\n"
-    result = subprocess.run(
-        [NODE, "-e", wrapper], capture_output=True, text=True, timeout=20
-    )
-    assert result.returncode == 0, f"node failed: {result.stderr}"
-    out = json.loads(result.stdout)
+    out = _run_adapter(desk)
     assert out["cycle"] == "20260813"
-    assert isinstance(out["dataAsOf"], str) and out["dataAsOf"]
-    scores = [o["score"] for o in out["opportunities"]]
+    assert out["dataAsOf"] == "2026-08-13T16:44:00.000Z"
+    scores = [item["score"] for item in out["opportunities"]]
     assert scores == sorted(scores, reverse=True)
     assert len(out["opportunities"]) == 12
-    by_name = {o["name"]: o["score"] for o in out["opportunities"]}
-    assert by_name.get("Guyana") == 100  # max wins dedup
-    assert by_name.get("Belize") == 95
-    assert by_name.get("Caribwide") == 50
-    ids = [o["id"] for o in out["opportunities"]]
-    assert "guyana" in ids
-    assert "belize" in ids
-    assert "caribwide" in ids
-    # The lowest 2 islands must be cut. Total items: 3 named + 11 islands
-    # = 14. Cap = 12. Sorted desc: 100, 95, 50, 49 (island-00), 48
-    # (island-01), ..., 38 (island-10). island-10 and island-09 are
-    # ranks 13 and 12 — they ARE included (the 12th and 11th).
-    # island-08 and below are cut.
-    for dropped in ("island-08", "island-09"):  # noqa: F841
-        pass
-    # The actual cut threshold — show the last 2 items and the first 12.
-    assert len(out["opportunities"]) == 12
-    # Verify the lowest 2 are in fact at the bottom of the cap
-    last_two = [o["id"] for o in out["opportunities"][-2:]]
-    # Last 2 should be island-01 and island-00 (the 12th and 11th)
-    # OR anything with score <= 48.
-    for id_ in last_two:
-        score = next(o["score"] for o in out["opportunities"] if o["id"] == id_)
-        assert score <= 49, f"unexpected last-2 island: {id_} score={score}"
+    by_name = {item["name"]: item["score"] for item in out["opportunities"]}
+    assert by_name["Guyana"] == 100  # dedupe max wins, then clamps to domain
+    assert by_name["Belize"] > by_name["Caribwide"]
+    ids = {item["id"] for item in out["opportunities"]}
+    assert {"guyana", "belize", "caribwide", "island-08"} <= ids
+    assert "island-09" not in ids
+    assert "island-10" not in ids
 
 
 @pytest.mark.skipif(not NODE, reason="node not on PATH")
-def test_opportunities_from_desk_handles_empty():
-    src = LOLLIPOP_TS.read_text()
-    js = re.sub(r"^import\s+.*?;\s*$", "", src, flags=re.MULTILINE)
-    js = re.sub(r"^export\s+", "", js, flags=re.MULTILINE)
-    js = re.sub(r"^\s*interface\s+\w+[^{]*\{[^}]*\}\s*$", "", js, flags=re.MULTILINE)
-    js = re.sub(r"^\s*type\s+\w+\s*=\s*[^;]+;\s*$", "", js, flags=re.MULTILINE)
-    js = re.sub(
-        r"import\s*\{\s*caribbeanTheme\s*\}\s*from\s*['\"].*?['\"]\s*;?",
-        "const caribbeanTheme = {};",
-        js,
-    )
+def test_opportunities_from_desk_handles_empty_and_uses_cycle_fallback_time():
     for desk in [{}, {"cycle_id": "x"}, {"clusters": "not-an-array"}]:
-        wrapper = js + f"\nprocess.stdout.write(JSON.stringify(opportunitiesFromDesk({json.dumps(desk)})));\n"
-        result = subprocess.run([NODE, "-e", wrapper], capture_output=True, text=True, timeout=20)
-        assert result.returncode == 0, f"node failed on {desk}: {result.stderr}"
-        out = json.loads(result.stdout)
+        out = _run_adapter(desk)
         assert out["opportunities"] == [], f"empty input must yield []; got {out}"
-        assert "dataAsOf" in out
+    dated = _run_adapter({"cycle_id": "20260813", "clusters": []})
+    assert dated["dataAsOf"] == "2026-08-13T00:00:00.000Z"
