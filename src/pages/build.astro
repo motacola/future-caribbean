@@ -580,6 +580,12 @@ function schedulePreview() { clearTimeout(_debounce); _debounce = setTimeout(loa
 function loadPreview() {
   const params = new URLSearchParams({persona:state.persona,countries:state.countries.join(','),signals:Array.isArray(state.signals)?state.signals.join(','):state.signals,channel:state.channel,domain:state.domain||'caribbean'});
   document.getElementById('preview-loading').style.display = 'block';
+  const hasLocalApi = ['localhost', '127.0.0.1', '::1'].includes(location.hostname) && location.port !== '4321';
+  if (!hasLocalApi) {
+    document.getElementById('preview-loading').style.display = 'none';
+    renderClientSide();
+    return;
+  }
   fetch('/api/preview?'+params)
     .then(r => r.ok ? r.json() : null)
     .then(r => { document.getElementById('preview-loading').style.display='none'; if(r&&r.ok){renderPreview(r);}else{renderClientSide();} })

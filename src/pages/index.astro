@@ -1260,6 +1260,11 @@ async function runReplayFromEmbeddedEvents() {
 
 function connectTheater(replay) {
   if (theaterSource) theaterSource.close();
+  const hasLocalApi = ['localhost', '127.0.0.1', '::1'].includes(location.hostname) && location.port !== '4321';
+  if (!hasLocalApi) {
+    runReplayFromEmbeddedEvents();
+    return;
+  }
   setTheaterMode(replay ? 'REPLAY' : 'LIVE');
   theaterSource = new EventSource('/api/pipeline/stream' + (replay ? '?replay=1' : ''));
   ['source_check','signal_found','dispatch_routed','cycle_complete'].forEach(type => {

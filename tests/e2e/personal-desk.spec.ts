@@ -61,13 +61,20 @@ test('offline demo and live ranked snapshot are labelled as different data paths
 
 test('build interactions have no browser runtime errors', async ({ page }) => {
   const errors: string[] = [];
+  const failedResponses: string[] = [];
   page.on('pageerror', error => errors.push(error.message));
+  page.on('response', response => {
+    if (response.status() >= 400 && /\/src\/styles\/|\/api\/preview(?:\?|$)/.test(response.url())) {
+      failedResponses.push(`${response.status()} ${response.url()}`);
+    }
+  });
   await page.goto('/build/');
   await page.getByRole('button', { name: 'Diaspora', exact: true }).click();
   await page.getByRole('button', { name: 'Belize', exact: true }).click();
   await page.getByRole('button', { name: 'Briefing memo', exact: true }).click();
   await expect(page.locator('#device-wrap')).toHaveClass(/device-memo/);
   expect(errors).toEqual([]);
+  expect(failedResponses).toEqual([]);
 });
 
 test('mobile build page has no horizontal overflow and shows results before proof', async ({ page }, testInfo) => {
