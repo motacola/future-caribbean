@@ -58,8 +58,15 @@ test('the strip is ordered between the map and finance chips in the DOM', async 
 
 test('regional movement has no browser runtime errors', async ({ page }) => {
   const errors: string[] = [];
+  const failedResponses: string[] = [];
   page.on('pageerror', error => errors.push(error.message));
+  page.on('response', response => {
+    if (response.status() >= 400 && /\/src\/styles\/|\/api\/pipeline\/stream/.test(response.url())) {
+      failedResponses.push(`${response.status()} ${response.url()}`);
+    }
+  });
   await page.goto('/', { waitUntil: 'networkidle' });
   await expect(page.locator('.rmv-chip').first()).toBeVisible();
   expect(errors).toEqual([]);
+  expect(failedResponses).toEqual([]);
 });
