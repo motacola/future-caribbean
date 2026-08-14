@@ -17,16 +17,28 @@
     "flue:history": "flue run cycle-history --target node --payload",
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "test:e2e": "playwright test",
+    "test:e2e:install": "playwright install chromium"
   },
   "dependencies": {
+    "@astrojs/react": "^6.0.2",
     "@flue/runtime": "^0.9.1",
+    "@tanstack/charts": "^0.11.2",
+    "@tanstack/charts-scales": "^0.11.2",
+    "@tanstack/react-charts": "^0.11.2",
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "astro": "^7.0.0",
+    "d3-scale": "^4.0.2",
     "hono": "^4.10.7",
-    "valibot": "^1.2.0",
-    "astro": "^7.0.0"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "valibot": "^1.2.0"
   },
   "devDependencies": {
     "@flue/cli": "^0.9.1",
+    "@playwright/test": "^1.62.1",
     "@types/node": "^24.10.1",
     "typescript": "^5.9.3"
   }
