@@ -66,6 +66,29 @@ test('tapping a chip opens the map-drill for that country', async ({ page }) => 
   expect(heading).toBe(country);
 });
 
+test('the strip shows freshness variety when data has current markets', async ({ page }) => {
+  // Regression: data.ts had a bug where the freshness_state derivation
+  // only read (market.snapshot || {}).freshness_state, which is always
+  // null. The market record carries freshness_state at the top level,
+  // so the chips all defaulted to 'stale'. This test asserts that
+  // when the live data has 'current' markets (T&T, Barbados, etc.),
+  // the strip shows them as 'fresh' and the count is > 0.
+  await page.goto(HOMEPAGE, { waitUntil: 'networkidle' });
+  const total = await page.locator('.rmv-chip').count();
+  let freshCount = 0;
+  let staleCount = 0;
+  for (let i = 0; i < total; i++) {
+    const state = await page.locator('.rmv-chip').nth(i).getAttribute('data-freshness');
+    if (state === 'fresh') freshCount++;
+    else if (state === 'stale') staleCount++;
+  }
+  // The pipeline has 4 markets with freshness_state='current', so at
+  // least 1 fresh chip must be visible. The remaining 18-22 are
+  // watchlist countries (default stale).
+  expect(freshCount).toBeGreaterThan(0);
+  expect(freshCount + staleCount).toBe(total);
+});
+
 test('the strip is positioned between the map and the finance chips', async ({ page }) => {
   await page.goto(HOMEPAGE, { waitUntil: 'networkidle' });
   const shell = await page.locator('.map-shell').boundingBox();
