@@ -1,119 +1,65 @@
 /**
- * Regional movement strip contract.
- *
- * The homepage must show a strip of country chips between the map and
- * the finance chips. Each chip carries the country name, a confidence
- * bar, a freshness pill (fresh/aging/stale), and a source count.
- * Tapping a chip opens the map-drill for that country.
- *
- * These tests lock the contract so any refactor that drops the strip,
- * drops the click handler, or breaks the freshness pill colour mapping
- * is caught before it ships.
+ * Regional movement strip browser contract.
  */
 import { test, expect } from '@playwright/test';
 
-const HOMEPAGE = 'http://127.0.0.1:4321/';
-
-test('homepage has a regional movement strip', async ({ page }) => {
-  await page.goto(HOMEPAGE, { waitUntil: 'networkidle' });
+test('homepage renders a fully classified regional movement strip', async ({ page }) => {
+  await page.goto('/', { waitUntil: 'networkidle' });
   const strip = page.locator('.regional-movement');
+  const chips = strip.locator('.rmv-chip');
   await expect(strip).toBeVisible();
-  // The strip must render at least one chip — we have 23 markets
-  // configured; the exact count can vary but should match COUNTRY_COORDS.
-  const chips = page.locator('.rmv-chip');
-  const count = await chips.count();
-  expect(count).toBeGreaterThan(10);
+  expect(await chips.count()).toBeGreaterThan(10);
+
+  const states = await chips.evaluateAll(elements =>
+    elements.map(element => element.getAttribute('data-freshness')),
+  );
+  expect(states.every(state => ['fresh', 'aging', 'stale'].includes(state || ''))).toBeTruthy();
 });
 
-test('every chip exposes a freshness state pill', async ({ page }) => {
-  await page.goto(HOMEPAGE, { waitUntil: 'networkidle' });
-  const states = ['fresh', 'aging', 'stale'];
-  const chips = page.locator('.rmv-chip');
-  const count = await chips.count();
-  let rendered = 0;
-  for (let i = 0; i < count; i++) {
-    const state = await chips.nth(i).getAttribute('data-freshness');
-    if (state && states.includes(state)) rendered++;
-  }
-  // Every chip must have a known freshness state. Even if all are stale,
-  // the contract is satisfied.
-  expect(rendered).toBe(count);
-});
-
-test('each chip has a confidence bar with a width', async ({ page }) => {
-  await page.goto(HOMEPAGE, { waitUntil: 'networkidle' });
-  const bars = page.locator('.rmv-bar-fill');
-  const count = await bars.count();
+test('every chip exposes bounded confidence and an accessible label', async ({ page }) => {
+  await page.goto('/', { waitUntil: 'networkidle' });
+  const bars = page.locator('.rmv-bar');
+  const fills = page.locator('.rmv-bar-fill');
+  const count = await fills.count();
   expect(count).toBeGreaterThan(0);
-  // Sample the first 5
-  for (let i = 0; i < Math.min(5, count); i++) {
-    const style = await bars.nth(i).getAttribute('style');
-    expect(style).toMatch(/width:\d+%/);
+  await expect(bars).toHaveCount(count);
+
+  for (let index = 0; index < count; index++) {
+    const style = await fills.nth(index).getAttribute('style');
+    const width = Number(style?.match(/width:\s*([\d.]+)%/)?.[1]);
+    expect(Number.isFinite(width)).toBeTruthy();
+    expect(width).toBeGreaterThanOrEqual(0);
+    expect(width).toBeLessThanOrEqual(100);
+    await expect(bars.nth(index)).toHaveAttribute('aria-label', /^Confidence: \d+(?:\.\d+)? of 100$/);
   }
 });
 
-test('tapping a chip opens the map-drill for that country', async ({ page }) => {
-  await page.goto(HOMEPAGE, { waitUntil: 'networkidle' });
-  // Select the first chip deterministically
+test('activating a chip opens the matching map drill', async ({ page }) => {
+  await page.goto('/', { waitUntil: 'networkidle' });
   const chip = page.locator('.rmv-chip').first();
   const country = await chip.getAttribute('data-country');
   expect(country).toBeTruthy();
   await chip.click();
-  await page.waitForTimeout(2000);
-  // The drill panel must now contain the country name as a heading
-  const drill = page.locator('#map-drill');
-  const heading = await drill.locator('.map-drill-head strong').innerText();
-  expect(heading).toBe(country);
+  await expect(page.locator('#map-drill .map-drill-head strong')).toHaveText(country!);
 });
 
-test('every chip has a valid freshness class and the sum of all classes equals the total', async ({ page }) => {
-  // Per Codex review 0492814: the freshness classifier maps
-  //   'current' / 'fresh' → 'fresh'
-  //   'delayed' / 'aging' → 'aging'
-  //   anything else       → 'stale'
-  // This test asserts every chip's data-freshness attribute is one
-  // of the three known values, and that the sum of all three equals
-  // the total chip count (no orphan states).
-  //
-  // Note: we don't assert any minimum count for fresh / aging / stale
-  // here, because the data is mutable — the pipeline's freshness_state
-  // distribution can vary by cycle. The contract we lock is the
-  // classification function and the chip count integrity, not the
-  // distribution of states.
-  await page.goto(HOMEPAGE, { waitUntil: 'networkidle' });
-  const total = await page.locator('.rmv-chip').count();
-  expect(total).toBeGreaterThan(0);
-  const VALID_STATES = new Set(['fresh', 'aging', 'stale']);
-  let freshCount = 0;
-  let agingCount = 0;
-  let staleCount = 0;
-  let orphanCount = 0;
-  for (let i = 0; i < total; i++) {
-    const state = await page.locator('.rmv-chip').nth(i).getAttribute('data-freshness');
-    if (state === 'fresh') freshCount++;
-    else if (state === 'aging') agingCount++;
-    else if (state === 'stale') staleCount++;
-    else {
-      orphanCount++;
-      // Capture the bad value for the failure message
-      expect({ index: i, state }).toEqual({ index: i, state: expect.stringMatching(/^(fresh|aging|stale)$/) });
-    }
-  }
-  // Total = fresh + aging + stale (no orphans)
-  expect(freshCount + agingCount + staleCount).toBe(total);
-  expect(orphanCount).toBe(0);
+test('the strip is ordered between the map and finance chips in the DOM', async ({ page }) => {
+  await page.goto('/', { waitUntil: 'networkidle' });
+  const orderIsCorrect = await page.evaluate(() => {
+    const map = document.querySelector('.map-shell');
+    const strip = document.querySelector('.regional-movement');
+    const finance = document.querySelector('.map-finance-strip');
+    if (!map || !strip || !finance) return false;
+    return Boolean(map.compareDocumentPosition(strip) & Node.DOCUMENT_POSITION_FOLLOWING)
+      && Boolean(strip.compareDocumentPosition(finance) & Node.DOCUMENT_POSITION_FOLLOWING);
+  });
+  expect(orderIsCorrect).toBeTruthy();
 });
 
-test('the strip is positioned between the map and the finance chips', async ({ page }) => {
-  await page.goto(HOMEPAGE, { waitUntil: 'networkidle' });
-  const shell = await page.locator('.map-shell').boundingBox();
-  const strip = await page.locator('.regional-movement').boundingBox();
-  const finance = await page.locator('.map-finance-strip').boundingBox();
-  expect(shell).toBeTruthy();
-  expect(strip).toBeTruthy();
-  expect(finance).toBeTruthy();
-  // strip.y > shell.y (below the map)
-  expect(strip!.y).toBeGreaterThan(shell!.y);
-  // finance.y > strip.y (below the strip)
-  expect(finance!.y).toBeGreaterThan(strip!.y);
+test('regional movement has no browser runtime errors', async ({ page }) => {
+  const errors: string[] = [];
+  page.on('pageerror', error => errors.push(error.message));
+  await page.goto('/', { waitUntil: 'networkidle' });
+  await expect(page.locator('.rmv-chip').first()).toBeVisible();
+  expect(errors).toEqual([]);
 });

@@ -11,62 +11,7 @@
  */
 import * as React from 'react';
 import { Chart } from '@tanstack/charts/react';
-import { defineChart, barX, ruleX } from '@tanstack/charts';
-import { scaleLinear } from '@tanstack/charts-scales/linear';
-import { scalePoint } from '@tanstack/charts-scales/point';
-import { caribbeanTheme } from '../caribbean-theme.ts';
-import type { CycleOpportunity } from './lollipop.ts';
-
-const WATCH_THRESHOLD = 60;
-
-/**
- * Rebuild the chart definition on the client.
- *
- * The chart definition (with its scale functions) is not serializable, so
- * it must be rebuilt from the same `opportunities` shape the Astro
- * server-side `buildOpportunityLollipop` (in lollipop.ts) used. The two
- * MUST stay in lockstep. If you add a mark to lollipop.ts, add it here.
- */
-function clientLollipop(
-  opportunities: CycleOpportunity[],
-  dataAsOf: string,
-) {
-  const watchLine: CycleOpportunity[] = opportunities.map((o) => ({
-    ...o,
-    score: WATCH_THRESHOLD,
-  }));
-  return defineChart({
-    marks: [
-      ruleX(watchLine, {
-        x: 'score',
-        y: 'name',
-        stroke: caribbeanTheme.sun,
-        strokeOpacity: 0.8,
-        strokeWidth: 2,
-        strokeDasharray: '6 6',
-      }),
-      barX(opportunities, {
-        x: 'score',
-        y: 'name',
-        key: 'id',
-        fill: caribbeanTheme.reef,
-        fillOpacity: 0.85,
-        inset: 0.35,
-      }),
-    ],
-    x: {
-      scale: scaleLinear().domain([0, 100]),
-      axis: { label: `Opportunity score (0–100) · as of ${dataAsOf}` },
-      grid: true,
-    },
-    y: {
-      scale: scalePoint().domain(opportunities.map((o) => o.name)),
-      axis: { label: '' },
-      grid: false,
-    },
-    theme: caribbeanTheme,
-  });
-}
+import { buildOpportunityLollipop, type CycleOpportunity } from './lollipop.ts';
 
 export interface LollipopIslandProps {
   opportunities: CycleOpportunity[];
@@ -82,7 +27,7 @@ export default function LollipopIsland({
   emptyMessage = 'No cycle opportunities yet — the next run will populate this.',
 }: LollipopIslandProps): React.JSX.Element {
   const definition = React.useMemo(
-    () => clientLollipop(opportunities, dataAsOf),
+    () => buildOpportunityLollipop({ opportunities, dataAsOf }),
     [opportunities, dataAsOf],
   );
 

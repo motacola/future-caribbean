@@ -453,55 +453,79 @@ export function loadDashboardData() {
     const watch = c.signal_kind ? {} : watchlistSignal(country, market, fx);
     const countryNews = newsForCountry(country);
     const financeNews = countryNews.items.find((item: any) => String(item.title || '').toLowerCase().includes(country.toLowerCase()) && (item.finance_relevant || item.topics.some((t: string) => ['finance','energy','trade','procurement','tourism'].includes(t))));
-    // Evidence mix: which source categories are confirming this country.
-    // The lollipop on /build (src/lib/charts/lollipop.ts) counts the
-    // same 6 source buckets (World Bank / IDB / NOAA / NDBC / CARICOM /
-    // CDB), and we want the map-drill to use the same buckets so a user
-    // can see "this country's signal is corroborated by X" without
-    // having to re-learn the taxonomy. The values are deterministic
-    // here — a real cycle would compute them from cycle metadata; for
-    // the offline build they're seeded from cluster/grade features.
-    const gradeBucket = (c.evidence_grade || '').toLowerCase();
+    // Evidence mix: count only source families explicitly named in the
+    // cluster's evidence. Do not infer IDB from "multi-source", or assign
+    // World Bank to a watchlist by default: those shortcuts make the UI
+    // claim provenance the source artifact never supplied.
+    const evidenceText = [
+      c.evidence,
+      c.evidence_summary,
+      ...(Array.isArray(c.sources) ? c.sources : []),
+      ...(Array.isArray(c.source_labels) ? c.source_labels : []),
+    ].filter(Boolean).join(' ').toLowerCase();
     const evidenceMix = (() => {
       const m = { wb: 0, idb: 0, noaa: 0, ndbc: 0, caricom: 0, cdb: 0 };
-      if (c.confidence_score) m.wb = 1;                                  // WB underlies every FDI cluster
-      if (gradeBucket.includes('multi-source')) m.idb = 1;            // multi-source = IDB cross-corroboration
-      if (c.signal_kind && c.signal_kind.includes('weather')) m.noaa = 1;
-      if (c.signal_kind && c.signal_kind.includes('food')) { m.ndbc = 1; m.caricom = 1; }
-      if (c.signal_kind && (c.signal_kind.includes('procure') || c.signal_kind.includes('pipeline'))) m.cdb = 1;
-      if (c.signal_kind && c.signal_kind.includes('development')) m.caricom = 1;
-      if (Object.values(m).reduce((a, b) => a + b, 0) === 0) {
-        m.wb = 1; // single-source watchlist, default WB
-      }
+      if (/\bworld bank\b|\bwb\b/.test(evidenceText)) m.wb = 1;
+      if (/\binter-american development bank\b|\bidb\b/.test(evidenceText)) m.idb = 1;
+      if (/\bnational oceanic and atmospheric administration\b|\bnoaa\b/.test(evidenceText)) m.noaa = 1;
+      if (/\bnational data buoy center\b|\bndbc\b/.test(evidenceText)) m.ndbc = 1;
+      if (/\bcaribbean community\b|\bcaricom\b/.test(evidenceText)) m.caricom = 1;
+      if (/\bcaribbean development bank\b|\bcdb\b/.test(evidenceText)) m.cdb = 1;
       return m;
     })();
-    // Lifecycle: derived from the market_snapshot freshness. The data
-    // adapter in /build (lollipop.ts) reads cycle_id; for the map-drill
-    // we surface the per-signal freshness. cycle_id is the page's
-    // current cycle string.
-    // Freshness: read from the market record first (top-level
-    // freshness_state on the source market), then fall back to the
-    // embedded market_snapshot.data_status, then the watch fallback.
-    // Prior to this, the code only checked `market.snapshot` (which
-    // doesn't exist — the loader calls it `market_snapshot`) and
-    // every chip ended up 'stale' even when the market was 'current'.
-    const freshnessState = (market && market.freshness_state)
+
+    // Source status: active dispatches use the desk publication timestamp;
+    // watchlist-only entries use their market observation. These are named
+    // separately in the UI so publication recency is never presented as an
+    // underlying evidence-observation timestamp.
+    const normalizeDeskTimestamp = (raw: any, cycleId: any): string => {
+      const value = String(raw || '').trim();
+      if (value) {
+        const normalized = value
+          .replace(/ UTC$/i, 'Z')
+          .replace(/^(\d{4}-\d{2}-\d{2})\s+(\d{2}:\d{2})Z$/, '$1T$2:00Z');
+        if (Number.isFinite(Date.parse(normalized))) return new Date(normalized).toISOString();
+      }
+      const cycle = String(cycleId || '');
+      if (/^\d{8}$/.test(cycle)) {
+        return `${cycle.slice(0, 4)}-${cycle.slice(4, 6)}-${cycle.slice(6, 8)}T00:00:00.000Z`;
+      }
+      return '';
+    };
+    const signalObservedAt = normalizeDeskTimestamp(desk.generated_at, desk.cycle_id);
+    const marketObservedAt = String(
+      (market && market.observation_at)
+      || (market && market.market_snapshot && market.market_snapshot.observation_at)
+      || '',
+    );
+    const observedAt = c.signal_kind ? signalObservedAt : marketObservedAt;
+    const signalAgeHours = signalObservedAt
+      ? Math.max(0, (Date.now() - Date.parse(signalObservedAt)) / 3_600_000)
+      : Number.POSITIVE_INFINITY;
+    const signalFreshnessState = signalAgeHours <= 6
+      ? 'current'
+      : signalAgeHours <= 24
+        ? 'delayed'
+        : 'stale';
+    const marketFreshnessState = (market && market.freshness_state)
       || (market && market.market_snapshot && market.market_snapshot.data_status)
       || watch.freshness_state
       || 'source_checked_no_dated_observation';
+    const freshnessState = c.signal_kind ? signalFreshnessState : marketFreshnessState;
     const lifecycle = (() => {
-      // observation_at lives on the market record (top-level), not in
-      // the embedded market_snapshot. Read both then fall back to the
-      // cluster.
-      const obs = (market && market.observation_at)
-        || (market && market.market_snapshot && market.market_snapshot.observation_at)
-        || (c.observation_at || '');
-      const lastSeen = obs ? obs.slice(0, 10) : 'unknown';
-      const lastSeenTime = obs ? obs.slice(11, 16) + ' UTC' : '';
+      const lastSeen = observedAt ? observedAt.slice(0, 10) : 'unknown';
+      const hasTime = observedAt.length > 10 && observedAt.includes('T');
+      const lastSeenTime = hasTime ? `${observedAt.slice(11, 16)} UTC` : '';
       return {
         last_seen: lastSeenTime ? `${lastSeen} ${lastSeenTime}` : lastSeen,
-        next_refresh: desk.cycle_id ? `in ≤4h (cycle ${desk.cycle_id})` : 'in ≤4h',
-        freshness: humanize(freshnessState.replace(/_/g, ' ')),
+        cadence: desk.cycle_id ? `Scheduled every 4h · cycle ${desk.cycle_id}` : 'Scheduled every 4h',
+        scope: c.signal_kind ? 'Dispatch desk' : 'Market watch',
+        time_label: c.signal_kind ? 'Published' : 'Observed',
+        freshness: freshnessState === 'current'
+          ? 'fresh'
+          : freshnessState === 'delayed'
+            ? 'aging'
+            : 'stale',
       };
     })();
     return {
@@ -531,9 +555,8 @@ export function loadDashboardData() {
 
   // ── Regional movement strip ─────────────────────────────────
   // One chip per country with an active signal (confidence > 0 OR has
-  // an evidence mix entry). The chip shows the country, the freshness
-  // state (current/delayed/stale), and a freshness bar (3 segments:
-  // fresh / aging / stale represented by the caribbean-theme palette).
+  // an evidence mix entry). The chip shows the country, its source-status
+  // class, and a bounded confidence bar using the signal-kind palette.
   // Tapping a chip opens the map-drill for that country.
   function freshnessClass(state: string): 'fresh' | 'aging' | 'stale' {
     if (state === 'current' || state === 'fresh') return 'fresh';
@@ -545,16 +568,19 @@ export function loadDashboardData() {
     .filter((m: any) => (m.confidence || 0) > 0 || (m.evidence_mix && Object.values(m.evidence_mix).reduce((a: number, b: any) => a + (Number(b) || 0), 0) > 0))
     .map((m: any) => {
       const cls = freshnessClass(m.freshness_state || '');
-      const conf = Math.max(0, Math.min(100, m.confidence || 0));
+      const rawConfidence = Number(m.confidence);
+      const conf = Number.isFinite(rawConfidence)
+        ? Math.max(0, Math.min(100, rawConfidence))
+        : 0;
       const totalEv = (m.evidence_mix ? Object.values(m.evidence_mix).reduce((a: number, b: any) => a + (Number(b) || 0), 0) : 0);
       const confColor = kindColor(m.kind || '');
       return `<button class="rmv-chip" data-country="${esc(m.country)}" data-freshness="${cls}" title="${esc(m.country)} — ${cls} (${conf}/100)">
         <span class="rmv-name">${esc(m.country)}</span>
-        <span class="rmv-bar" aria-label="Freshness: ${cls}">
+        <span class="rmv-bar" role="img" aria-label="Confidence: ${conf} of 100">
           <span class="rmv-bar-fill" style="width:${conf}%; background:${confColor}"></span>
         </span>
         <span class="rmv-state">${cls}</span>
-        <span class="rmv-meta">${conf}/100${totalEv > 0 ? ` · ${totalEv} src` : ''}</span>
+        <span class="rmv-meta">${conf}/100${totalEv > 0 ? ` · ${totalEv} source group${totalEv === 1 ? '' : 's'}` : ' · watchlist'}</span>
       </button>`;
     }).join('');
 
@@ -856,8 +882,12 @@ export function loadDashboardData() {
     const barLabel = snap.chart_label || 'Market activity proxy';
     const candleChart = buildIndexedCandlestickSvg(barVals, barLabel);
     const barMeta = barVals.length
-      ? `<span class="candle-chart-meta"><strong>Latest ${Math.round(barVals[barVals.length - 1] || 0)}</strong><span>range ${Math.round(Math.min(...barVals))}–${Math.round(Math.max(...barVals))} · indexed 0–100</span></span>`
+      ? `<span class="candle-chart-meta"><strong>Index ${Math.round(barVals[barVals.length - 1] || 0)}</strong><span>range ${Math.round(Math.min(...barVals))}–${Math.round(Math.max(...barVals))} · illustrative 0–100</span></span>`
       : '';
+    const observedAt = String(m.observation_at || snap.observation_at || '').slice(0, 10);
+    const observationCopy = observedAt
+      ? `Official source observation: ${observedAt}`
+      : `Official source status: ${humanize(m.freshness_state || snap.data_status || 'date unavailable')}`;
     const exchName = ex.name || 'Market source';
     const exchHtml = ex.url
       ? `<a href="${esc(ex.url)}" target="_blank" rel="noopener">${esc(exchName)}</a>`
@@ -866,6 +896,7 @@ export function loadDashboardData() {
       <div class="market-top"><span class="market-code">${esc(ex.code || '—')}</span><span class="market-status">${esc(status)}</span></div>
       <h3>${esc(humanize(m.country || 'Market'))}</h3>
       <p class="market-exchange">${exchHtml}</p>
+      <p class="market-observation">${esc(observationCopy)}</p>
       <div class="market-finance-row"><span>FX ${esc(humanize(fx.pair || '—'))}</span><span>${esc(humanize(fx.rate_label || 'watch'))}</span></div>
       <p><strong>Watch:</strong> ${esc(humanize(sectors))}</p>
       <p><strong>News context:</strong> ${esc(humanize(news))}</p>
@@ -876,6 +907,7 @@ export function loadDashboardData() {
       <h3>${esc(humanize(snap.headline || exchName))}</h3>
       <div class="candle-chart-shell">${candleChart}</div>
       <p class="candle-chart-caption"><strong>${esc(humanize(barLabel))}</strong>${barMeta}</p>
+      <p class="market-chart-disclosure">Illustrative indexed activity proxy — not exchange price or OHLC data.</p>
       <p>${esc(humanize(snap.focus || 'Market notices and official source updates'))}</p>
       <div class="market-finance-row"><span>${esc(humanize(fx.indicator || 'FX watch'))}</span><span>${esc(humanize(fx.pair || '—'))}</span></div>
     </article>`;

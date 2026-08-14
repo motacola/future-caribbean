@@ -40,9 +40,8 @@ export interface OpportunityLollipopProps {
  * The shape matches the designer's opportunityLollipop: barX for the
  * score bar + ruleX for the watch threshold, with caribbeanTheme applied.
  *
- * The chart definition is serializable (no functions in the output), so
- * it can be passed through Astro's data layer to a React island that
- * imports it from @tanstack/react-charts.
+ * The definition contains scale functions, so it is built inside the
+ * hydrated React island rather than serialized through Astro.
  */
 export function buildOpportunityLollipop(props: OpportunityLollipopProps) {
   const watch = props.watchThreshold ?? 60;
@@ -75,7 +74,7 @@ export function buildOpportunityLollipop(props: OpportunityLollipopProps) {
       grid: true,
     },
     y: {
-      scale: scalePoint().domain(opportunities.map((o) => o.name)),
+      scale: scalePoint().domain(props.opportunities.map((o) => o.name)),
       axis: { label: '' },
       grid: false,
     },
@@ -93,18 +92,31 @@ export function buildOpportunityLollipop(props: OpportunityLollipopProps) {
  */
 export function opportunitiesFromDesk(desk: {
   cycle_id?: string;
+  generated_at?: string;
   clusters?: Array<{
     country_cluster?: string;
     confidence_score?: number;
   }>;
 }): { opportunities: CycleOpportunity[]; dataAsOf: string; cycle: string } {
   const cycle = desk.cycle_id || 'unknown';
-  const dataAsOf = new Date().toISOString();
+  const rawGeneratedAt = String(desk.generated_at || '').trim();
+  const normalizedGeneratedAt = rawGeneratedAt
+    .replace(/ UTC$/i, 'Z')
+    .replace(/^(\d{4}-\d{2}-\d{2})\s+(\d{2}:\d{2})Z$/, '$1T$2:00Z');
+  const cycleTimestamp = /^\d{8}$/.test(cycle)
+    ? `${cycle.slice(0, 4)}-${cycle.slice(4, 6)}-${cycle.slice(6, 8)}T00:00:00.000Z`
+    : '';
+  const dataAsOf = Number.isFinite(Date.parse(normalizedGeneratedAt))
+    ? new Date(normalizedGeneratedAt).toISOString()
+    : cycleTimestamp;
   const byCountry = new Map<string, number>();
   for (const c of desk.clusters || []) {
     const country = String(c.country_cluster || '').trim();
     if (!country) continue;
-    const score = Number(c.confidence_score || 0);
+    const rawScore = Number(c.confidence_score);
+    const score = Number.isFinite(rawScore)
+      ? Math.max(0, Math.min(100, rawScore))
+      : 0;
     const prev = byCountry.get(country) ?? 0;
     if (score > prev) byCountry.set(country, score);
   }

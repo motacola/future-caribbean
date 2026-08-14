@@ -35,6 +35,7 @@ const d = loadDashboardData();
   --caribbean-storm: #315cff;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { overflow-x: clip; }
 body { font-family: var(--sans); background: var(--bg); background-image: radial-gradient(1100px 500px at 75% -120px, rgba(181,122,34,.06), transparent 70%), radial-gradient(900px 420px at -10% 30%, rgba(13,118,110,.04), transparent 70%); color: var(--text); line-height: 1.6; font-size: 15px; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 a { color: var(--teal); text-decoration: none; }
 a:hover { text-decoration: underline; }
@@ -56,6 +57,7 @@ a:hover { text-decoration: underline; }
 .rmv-strip { display: flex; flex-wrap: wrap; gap: 6px; }
 .rmv-chip { display: inline-flex; align-items: center; gap: 7px; background: var(--card); border: 1px solid var(--border); border-radius: 4px; padding: 4px 8px 4px 6px; cursor: pointer; font: 500 11px var(--mono); letter-spacing: .2px; color: var(--ink); transition: background .12s, border-color .12s; }
 .rmv-chip:hover { background: rgba(255,252,244,1); border-color: var(--gold); }
+.rmv-chip:focus-visible { outline: 3px solid color-mix(in srgb, var(--teal) 42%, transparent); outline-offset: 2px; }
 .rmv-chip[data-freshness="fresh"] { border-color: rgba(42,140,90,.4); }
 .rmv-chip[data-freshness="aging"] { border-color: rgba(181,122,34,.4); }
 .rmv-chip[data-freshness="stale"] { border-color: rgba(185,72,54,.4); }
@@ -67,6 +69,10 @@ a:hover { text-decoration: underline; }
 .rmv-chip[data-freshness="aging"] .rmv-state { color: #b57a22; border-color: rgba(181,122,34,.35); background: rgba(181,122,34,.08); }
 .rmv-chip[data-freshness="stale"] .rmv-state { color: #b94836; border-color: rgba(185,72,54,.35); background: rgba(185,72,54,.08); }
 .rmv-meta { color: var(--muted); font: 500 9.5px var(--mono); letter-spacing: .2px; }
+@media(max-width:640px){
+  .rmv-chip { min-height: 44px; padding: 7px 9px; }
+  .rmv-strip { gap: 8px; }
+}
 
 .map-finance-strip { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin-top: 10px; }
 .map-finance-chip { background: rgba(255,252,244,.84); border: 1px solid var(--border); border-radius: 6px; padding: 8px 10px; min-width: 0; }
@@ -194,6 +200,8 @@ a:hover { text-decoration: underline; }
 .market-card.proxy .market-status { color: var(--gold); background: rgba(181,122,34,.1); border-color: rgba(181,122,34,.2); }
 .market-card h3 { font-family: var(--serif); font-size: 20px; line-height: 1.05; }
 .market-exchange { font-size: 12px; color: var(--teal); font-weight: 600; font-style: italic; margin-bottom: 2px; }
+.market-observation, .market-chart-disclosure { font: 600 9px/1.45 var(--mono); color: var(--muted); }
+.market-chart-disclosure { margin: -3px 0 1px; padding-left: 8px; border-left: 2px solid var(--gold); }
 .market-finance-row { display: flex; justify-content: space-between; gap: 10px; align-items: center; padding: 7px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); font: 700 10px var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: .5px; }
 .market-finance-row span:last-child { color: var(--teal); text-align: right; }
 .market-card p { font-size: 12px; color: var(--sub); line-height: 1.45; }
@@ -288,6 +296,8 @@ a:hover { text-decoration: underline; }
 .news-card footer { font:10px var(--mono); color:var(--muted); border-top:1px solid var(--border); padding-top:8px; }
 .map-news-list { grid-column:1/-1; display:grid; gap:5px; padding-top:8px; border-top:1px solid var(--border); }
 .map-news-list a { font-size:11px; line-height:1.35; }
+.map-news-list a:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; border-radius: 2px; }
+.map-news-list em { color: var(--muted); font-size: 10px; font-style: normal; line-height: 1.45; }
 .source-registry { margin-top: 14px; background: var(--card); border: 1px solid var(--border); border-radius: var(--r); padding: 16px; display: grid; gap: 12px; box-shadow: var(--shadow-rest); }
 .source-registry-head { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; flex-wrap: wrap; }
 .source-registry-head h3 { font-family: var(--serif); font-size: 19px; }
@@ -439,7 +449,7 @@ footer::before { content: ""; display: block; height: 2px; margin: -44px -24px 4
 .map-legend span { display: inline-flex; gap: 5px; align-items: center; }
 .map-legend i { width: 7px; height: 7px; border-radius: 50%; }
 .map-shell { position: relative; border-radius: var(--r); overflow: hidden; box-shadow: 0 1px 2px rgba(24,37,31,.06); border: 1px solid var(--border-dark); background: #cfe3e8; }
-#leaflet-map { height: 430px; width: 100%; background: #cfe3e8; font-family: var(--sans); }
+#leaflet-map { height: 560px; width: 100%; background: #cfe3e8; font-family: var(--sans); }
 .leaflet-container a.leaflet-popup-close-button { color: var(--muted); }
 .leaflet-control-attribution { font-size: 9px !important; background: rgba(255,252,244,.85) !important; color: var(--muted) !important; }
 .leaflet-control-attribution a { color: var(--sub) !important; }
@@ -517,23 +527,8 @@ footer::before { content: ""; display: block; height: 2px; margin: -44px -24px 4
   border-right: 1px solid rgba(255, 252, 244, .35);
 }
 .drill-evidence-seg:last-child { border-right: none; }
-.drill-evidence-legend {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 12px;
-  font: 700 9px var(--mono);
-  text-transform: uppercase;
-  letter-spacing: .6px;
-  color: var(--muted);
-}
-.drill-evidence-legend i {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  border-radius: 2px;
-  margin-right: 4px;
-  vertical-align: middle;
-}
+.drill-evidence-empty { margin: 0; color: var(--muted); font-size: 10px; line-height: 1.45; }
+
 .map-market-panel { padding: 14px 16px; border-bottom: 1px solid var(--border); background: linear-gradient(90deg, rgba(13,118,110,.06), rgba(181,122,34,.06)); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
 .map-market-panel div { min-width: 0; }
 .map-market-panel span { display: block; font: 700 9px var(--mono); letter-spacing: .8px; color: var(--muted); text-transform: uppercase; margin-bottom: 2px; }
@@ -570,7 +565,7 @@ html { scroll-behavior: smooth; }
 .masthead.scrolled .mast-inner { min-height: 44px; align-items: center; flex-wrap: nowrap; gap: 12px; }
 .masthead.scrolled .mast-name { font-size: 14px; letter-spacing: 1.1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: none; }
 [id] { scroll-margin-top: 100px; }
-.livewire { display: flex; align-items: stretch; background: var(--ink); border-bottom: 1px solid rgba(244,235,221,.08); overflow: hidden; }
+.livewire { display: flex; align-items: stretch; width: 100%; max-width: 100vw; background: var(--ink); border-bottom: 1px solid rgba(244,235,221,.08); overflow: hidden; contain: paint; }
 .lw-label { flex-shrink: 0; display: flex; align-items: center; gap: 7px; padding: 8px 16px; font: 700 9px var(--mono); letter-spacing: 1.6px; text-transform: uppercase; color: var(--gold); background: rgba(181,122,34,.1); border-right: 1px solid rgba(244,235,221,.1); }
 .lw-label::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); animation: theater-live 1.4s ease-in-out infinite; }
 .lw-track { display: flex; overflow: hidden; flex: 1; min-width: 0; mask-image: linear-gradient(90deg, transparent, #000 26px, #000 calc(100% - 26px), transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 26px, #000 calc(100% - 26px), transparent); }
@@ -586,7 +581,7 @@ html { scroll-behavior: smooth; }
 .desknav.scrolled { box-shadow: 0 6px 18px rgba(24,37,31,.1); }
 .desknav-inner { max-width: 1140px; margin: 0 auto; padding: 0 24px; display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent); -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent); }
 .desknav-inner::-webkit-scrollbar { display: none; }
-.dn-item { padding: 11px 14px; font: 600 11px var(--sans); letter-spacing: 1.1px; text-transform: uppercase; color: var(--sub); white-space: nowrap; text-decoration: none; border-bottom: 2px solid transparent; margin-bottom: -1px; }
+.dn-item { padding: 11px 9px; font: 600 10.2px var(--sans); letter-spacing: .8px; text-transform: uppercase; color: var(--sub); white-space: nowrap; text-decoration: none; border-bottom: 2px solid transparent; margin-bottom: -1px; }
 .dn-item:hover, .dn-item.active { color: var(--ink); text-decoration: none; border-bottom-color: var(--gold); }
 .dn-agents { color: var(--teal); }
 .dateline { display: flex; gap: 14px; align-items: baseline; flex-wrap: wrap; padding-bottom: 10px; margin-bottom: 14px; border-bottom: 3px double var(--border-dark); }
@@ -660,10 +655,11 @@ html { scroll-behavior: smooth; }
   .candle-chart-meta { justify-items: start; text-align: left; }
   .vpack-col + .vpack-col { border-left: none; }
   .mast-edition { display: none; }
-  .mast-inner { align-items: center; flex-wrap: nowrap; gap: 12px; }
-  .mast-name { font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
-  .mast-links { gap: 12px; flex-wrap: nowrap; flex-shrink: 0; }
-  .mast-links a:last-child { display: none; }
+  .mast-inner { align-items: center; flex-wrap: nowrap; gap: 10px; padding: 0 18px; }
+  .mast-name { flex: 1 1 auto; font-size: 12px; letter-spacing: .9px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+  .mast-links { gap: 0; flex-wrap: nowrap; flex-shrink: 0; }
+  .mast-links a { display: none; }
+  .mast-links a:nth-child(2) { display: block; font-size: 10px; }
   .sig-row { align-items: flex-start; flex-direction: column; }
   .decision-facts { grid-template-columns: 1fr; }
   .decision-fact + .decision-fact { border-left: none; border-top: 1px solid var(--border); padding-left: 0; }
@@ -685,7 +681,8 @@ html { scroll-behavior: smooth; }
   .theater-shell { border-radius: 0; }
   .theater-event { grid-template-columns: 58px 1fr; }
   .verdict-filter { flex-wrap: wrap; }
-  .desknav-inner { padding: 0 12px; }
+  .desknav-inner { padding: 0 12px; scroll-snap-type: x proximity; }
+  .dn-item { min-height: 44px; padding: 13px 12px 11px; scroll-snap-align: start; }
   .dateline .dl-when { margin-left: 0; width: 100%; }
   .agents-block { border-radius: 0; }
   .receipt-row { grid-template-columns: 1fr; gap: 6px; }
@@ -1347,6 +1344,86 @@ const drillReact = (function () {
   if (typeof React === 'undefined' || typeof ReactDOM === 'undefined' || typeof htm === 'undefined') return null;
   const html = htm.bind(React.createElement);
 
+  function safeExternalUrl(value) {
+    try {
+      const url = new URL(String(value || ''), window.location.origin);
+      return ['http:', 'https:'].includes(url.protocol) ? url.href : '';
+    } catch {
+      return '';
+    }
+  }
+
+  function NewsLinks({ marker }) {
+    const links = (marker.news || [])
+      .slice(0, 3)
+      .map((item, index) => ({
+        ...item,
+        href: safeExternalUrl(item.url),
+        key: item.url || `${item.title || 'story'}-${index}`,
+      }))
+      .filter(item => item.href);
+    return html`
+      <div class="map-news-list">
+        <span>${marker.news_coverage || 'Regional news context'}</span>
+        ${links.length
+          ? links.map(item => html`
+              <a key=${item.key} href=${item.href} target="_blank" rel="noopener noreferrer">
+                ${item.title || 'Open coverage'} · ${item.source || 'Source'}
+              </a>`)
+          : html`<em>No linked country coverage in this cycle.</em>`}
+      </div>`;
+  }
+
+  function LifecyclePanel({ marker }) {
+    const evidence = marker.evidence_mix || { wb: 0, idb: 0, noaa: 0, ndbc: 0, caricom: 0, cdb: 0 };
+    const sourceKeys = ['wb', 'idb', 'noaa', 'ndbc', 'caricom', 'cdb'];
+    const sourceLabels = { wb: 'World Bank', idb: 'IDB', noaa: 'NOAA', ndbc: 'NDBC', caricom: 'CARICOM', cdb: 'CDB' };
+    const sourceColors = { wb: 'sea', idb: 'reef', noaa: 'storm', ndbc: 'sun', caricom: 'sand', cdb: 'reef' };
+    const evidenceTotal = sourceKeys.reduce((sum, key) => sum + (Number(evidence[key]) || 0), 0);
+    const evidencePct = key => evidenceTotal > 0
+      ? Math.round(100 * (Number(evidence[key]) || 0) / evidenceTotal)
+      : 0;
+    const lifecycle = marker.lifecycle || { last_seen: 'unknown', cadence: 'Cadence not supplied', scope: 'Source status', freshness: 'stale' };
+    const freshnessClass = marker.freshness_state === 'current'
+      ? 'fresh'
+      : marker.freshness_state === 'delayed'
+        ? 'aging'
+        : 'stale';
+    return html`
+      <div class="drill-lifecycle" data-freshness=${freshnessClass}>
+        <div class="drill-lifecycle-head">
+          <span class="drill-lifecycle-label">${lifecycle.scope || 'Source status'}</span>
+          <span class="drill-lifecycle-state drill-lifecycle-state--${freshnessClass}">${lifecycle.freshness || freshnessClass}</span>
+        </div>
+        <div class="drill-lifecycle-fields">
+          <span class="drill-lifecycle-key">${lifecycle.time_label || 'Observed'}</span>
+          <span class="drill-lifecycle-val">${lifecycle.last_seen || 'unknown'}</span>
+          <span class="drill-lifecycle-key">Update cadence</span>
+          <span class="drill-lifecycle-val">${lifecycle.cadence || 'Scheduled every 4h'}</span>
+        </div>
+        <div class="drill-evidence">
+          <span class="drill-lifecycle-key">
+            ${evidenceTotal > 0
+              ? `Confirmed source groups (${evidenceTotal})`
+              : 'No corroborating signal sources yet'}
+          </span>
+          ${evidenceTotal > 0
+            ? html`
+                <div class="drill-evidence-bar" role="img" aria-label=${`${evidenceTotal} confirmed source group${evidenceTotal === 1 ? '' : 's'}`}>
+                  ${sourceKeys.filter(key => Number(evidence[key]) > 0).map(key => html`
+                    <span
+                      key=${key}
+                      class="drill-evidence-seg"
+                      data-key=${key}
+                      style=${{ width: evidencePct(key) + '%', background: `var(--caribbean-${sourceColors[key]})` }}
+                      title=${`${sourceLabels[key]}: ${evidence[key] || 0}`}
+                    ></span>`)}
+                </div>`
+            : html`<p class="drill-evidence-empty">Watchlist context only; no source family is being claimed as corroboration.</p>`}
+        </div>
+      </div>`;
+  }
+
   function DrillPanel({ country }) {
     if (!country) return html`<p class="map-drill-empty">Tap a country to see what the desk found.</p>`;
     const items = MAP_DISPATCHES[country] || [];
@@ -1355,22 +1432,7 @@ const drillReact = (function () {
     const market = marker.market || {};
     const snapshot = market.snapshot || {};
     const marketLabel = market.code ? `${market.code} · ${snapshot.headline || market.name || 'Market watch'}` : 'No domestic exchange / watchlist';
-    // Evidence mix: how many distinct source categories confirmed this
-    // signal, broken down into World Bank / IDB / NOAA / NDBC / CARICOM
-    // / CDB / other. The lifecycle strip shows how fresh the signal is
-    // and when the desk will refresh next. Both are server-rendered into
-    // the drill panel so the chart stays deterministic.
-    const evidence = marker.evidence_mix || { wb: 0, idb: 0, noaa: 0, ndbc: 0, caricom: 0, cdb: 0, other: 0 };
-    const evidenceTotal = Object.values(evidence).reduce((a, b) => a + (Number.isFinite(b) ? b : 0), 0);
-    const evidencePct = (k) => evidenceTotal > 0 ? Math.round(100 * (Number(evidence[k]) || 0) / evidenceTotal) : 0;
-    const evidenceFill = (k) => `linear-gradient(to right, var(--caribbean-${k === 'wb' ? 'sea' : k === 'idb' ? 'reef' : k === 'noaa' ? 'storm' : k === 'ndbc' ? 'sun' : k === 'caricom' ? 'sand' : k === 'cdb' ? 'sand' : 'inspect'}, transparent), transparent)`;
-    const lifecycle = marker.lifecycle || { last_seen: 'unknown', next_refresh: 'in ≤4h', freshness: '—' };
-    const freshnessClass = marker.freshness_state === 'current' ? 'fresh' : marker.freshness_state === 'delayed' ? 'aging' : 'stale';
-    // Inline
     if (!items.length) {
-      // Pre-build the news links as a plain HTML string outside the
-      // template so htm doesn't trip on nested html`...` (React #62).
-      const newsHtml = '';
       return html`
         <div class="rise-in">
           <div class="map-drill-head"><strong>${country}</strong><span>Watchlist signal</span></div>
@@ -1378,31 +1440,9 @@ const drillReact = (function () {
             <div><span>FX indicator</span><strong>${fx.pair || '—'}</strong><p>${fx.rate_label || 'Watch'} · ${fx.indicator || 'FX watch'}</p></div>
             <div><span>Market layer</span><strong>${marketLabel}</strong><p>${snapshot.data_status || market.status || 'source watch'} </p></div>
             <div><span>Finance signal</span><strong>${snapshot.focus || fx.signal || 'Signals, official notices, and local context'}</strong><p>${marker.finance_signal || marker.ranking_rationale || 'Ranking appears when a live signal is active.'}</p></div>
-            <div class="map-news-list"><span>${marker.news_coverage || 'Regional news context'}</span>${newsHtml}</div>
+            <${NewsLinks} marker=${marker} />
           </div>
-          <div class="drill-lifecycle" data-freshness=${freshnessClass}>
-            <div class="drill-lifecycle-head">
-              <span class="drill-lifecycle-label">Signal lifecycle</span>
-              <span class="drill-lifecycle-state drill-lifecycle-state--${freshnessClass}">${lifecycle.freshness || '—'}</span>
-            </div>
-
-            <div class="drill-lifecycle-fields">
-              <span class="drill-lifecycle-key">Last seen</span>
-              <span class="drill-lifecycle-val">${lifecycle.last_seen || 'unknown'}</span>
-              <span class="drill-lifecycle-key">Next refresh</span>
-              <span class="drill-lifecycle-val">${lifecycle.next_refresh || 'in ≤4h'}</span>
-            </div>
-            <div class="drill-evidence">
-              <span class="drill-lifecycle-key">Evidence mix (${evidenceTotal} sources)</span>
-              <div class="drill-evidence-bar">
-                <span class="drill-evidence-seg" data-key="wb"      style=${{ width: evidencePct('wb') + '%', background: 'var(--caribbean-sea)' }}      title="World Bank: ${evidence.wb || 0}"></span>
-                <span class="drill-evidence-seg" data-key="idb"     style=${{ width: evidencePct('idb') + '%', background: 'var(--caribbean-reef)' }}     title="IDB: ${evidence.idb || 0}"></span>
-                <span class="drill-evidence-seg" data-key="noaa"    style=${{ width: evidencePct('noaa') + '%', background: 'var(--caribbean-storm)' }}   title="NOAA: ${evidence.noaa || 0}"></span>
-                <span class="drill-evidence-seg" data-key="ndbc"    style=${{ width: evidencePct('ndbc') + '%', background: 'var(--caribbean-sun)' }}    title="NDBC: ${evidence.ndbc || 0}"></span>
-                <span class="drill-evidence-seg" data-key="caricom" style=${{ width: evidencePct('caricom') + '%', background: 'var(--caribbean-sand)' }}  title="CARICOM: ${evidence.caricom || 0}"></span>
-                <span class="drill-evidence-seg" data-key="cdb"     style=${{ width: evidencePct('cdb') + '%', background: 'var(--caribbean-reef)' }}     title="CDB: ${evidence.cdb || 0}"></span>
-              </div>
-            </div>          </div>
+          <${LifecyclePanel} marker=${marker} />
           <div class="map-drill-grid">
             <article>
               <span>WATCHLIST · ${marker.confidence || 0}/100</span>
@@ -1412,18 +1452,6 @@ const drillReact = (function () {
           </div>
         </div>`;
     }
-    // Inline the panel as a single template so htm doesn't trip on a
-    // pre-built template fragment being interpolated as a child. The
-    // previous version stored `panel` in a const and interpolated it
-    // via `${panel}`; that pattern occasionally produced React error #62
-    // (htm v3 + React 18) when the panel template's root had siblings
-    // that htm couldn't bind. Inlining keeps the AST simple.
-    // Build the news links as a plain HTML string before the
-    // template so htm doesn't trip on nested html`...` (React #62).
-    const newsHtml = (marker.news || []).slice(0, 3).map(n =>
-      `<a href="${escAttr(n.url)}" target="_blank" rel="noopener">${escAttr(n.title)} · ${escAttr(n.source)}</a>`,
-    ).join('');
-    function escAttr(v) { return String(v ?? '').replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;'); }
     return html`
       <div class="rise-in">
         <div class="map-drill-head">
@@ -1434,46 +1462,27 @@ const drillReact = (function () {
           <div><span>FX indicator</span><strong>${fx.pair || '—'}</strong><p>${fx.rate_label || 'Watch'} · ${fx.indicator || 'FX watch'}</p></div>
           <div><span>Market layer</span><strong>${marketLabel}</strong><p>${snapshot.data_status || market.status || 'source watch'} </p></div>
           <div><span>Finance signal</span><strong>${snapshot.focus || fx.signal || 'Signals, official notices, and local context'}</strong><p>${marker.finance_signal || marker.ranking_rationale || 'Ranking appears when a live signal is active.'}</p></div>
-          <div class="map-news-list"><span>${marker.news_coverage || 'Regional news context'}</span>${newsHtml}</div>
+          <${NewsLinks} marker=${marker} />
         </div>
-        <div class="drill-lifecycle" data-freshness=${freshnessClass}>
-          <div class="drill-lifecycle-head">
-            <span class="drill-lifecycle-label">Signal lifecycle</span>
-            <span class="drill-lifecycle-state drill-lifecycle-state--${freshnessClass}">${lifecycle.freshness || '—'}</span>
-          </div>
-            <div class="drill-lifecycle-fields">
-              <span class="drill-lifecycle-key">Last seen</span>
-              <span class="drill-lifecycle-val">${lifecycle.last_seen || 'unknown'}</span>
-              <span class="drill-lifecycle-key">Next refresh</span>
-              <span class="drill-lifecycle-val">${lifecycle.next_refresh || 'in ≤4h'}</span>
-            </div>
-            <div class="drill-evidence">
-              <span class="drill-lifecycle-key">Evidence mix (${evidenceTotal} sources)</span>
-              <div class="drill-evidence-bar">
-                <span class="drill-evidence-seg" data-key="wb"      style=${{ width: evidencePct('wb') + '%', background: 'var(--caribbean-sea)' }}      title="World Bank: ${evidence.wb || 0}"></span>
-                <span class="drill-evidence-seg" data-key="idb"     style=${{ width: evidencePct('idb') + '%', background: 'var(--caribbean-reef)' }}     title="IDB: ${evidence.idb || 0}"></span>
-                <span class="drill-evidence-seg" data-key="noaa"    style=${{ width: evidencePct('noaa') + '%', background: 'var(--caribbean-storm)' }}   title="NOAA: ${evidence.noaa || 0}"></span>
-                <span class="drill-evidence-seg" data-key="ndbc"    style=${{ width: evidencePct('ndbc') + '%', background: 'var(--caribbean-sun)' }}    title="NDBC: ${evidence.ndbc || 0}"></span>
-                <span class="drill-evidence-seg" data-key="caricom" style=${{ width: evidencePct('caricom') + '%', background: 'var(--caribbean-sand)' }}  title="CARICOM: ${evidence.caricom || 0}"></span>
-                <span class="drill-evidence-seg" data-key="cdb"     style=${{ width: evidencePct('cdb') + '%', background: 'var(--caribbean-reef)' }}     title="CDB: ${evidence.cdb || 0}"></span>
-              </div>
-            </div>
-
-        </div>
+        <${LifecyclePanel} marker=${marker} />
         <div class="map-drill-grid">
-          ${items.slice(0, 6).map((d) => {
-            const conf = Math.max(0, Math.min(100, d.confidence_score || 0));
+          ${items.slice(0, 6).map((d, index) => {
+            const rawConfidence = Number(d.confidence_score);
+            const conf = Number.isFinite(rawConfidence) ? Math.max(0, Math.min(100, rawConfidence)) : 0;
             const color = MAP_COLORS[(d.signal_kind || '').includes('invest') ? 'investment' : (d.signal_kind || '').includes('climate') ? 'climate' : (d.signal_kind || '').includes('procure') ? 'procurement' : 'none'];
-            return `<article class="rise-in drill-card" style="animation-delay:${(items.indexOf(d)) * 70}ms">
-                <span>${escAttr(d.dispatch_id)} · ${escAttr(d.persona_label)}</span>
-                <h3>${escAttr(d.title)}</h3>
-                <p>${escAttr(d.recommended_action)}</p>
+            return html`
+              <article key=${d.dispatch_id || index} class="rise-in drill-card" style=${{ animationDelay: `${index * 70}ms` }}>
+                <span>${d.dispatch_id || 'Dispatch'} · ${d.persona_label || 'Desk recipient'}</span>
+                <h3>${d.title || 'Opportunity briefing'}</h3>
+                <p>${d.recommended_action || 'Open the supporting evidence before acting.'}</p>
                 <div class="conf-row">
-                  <div class="conf-track"><div class="conf-fill" style="width:${conf}%; background:${color}"></div></div>
+                  <div class="conf-track" role="img" aria-label=${`Confidence: ${conf} of 100`}>
+                    <div class="conf-fill" style=${{ width: `${conf}%`, background: color }}></div>
+                  </div>
                   <span class="conf-num">${conf}/100</span>
                 </div>
               </article>`;
-          }).join('')}
+          })}
         </div>
       </div>`;
   }
@@ -1538,7 +1547,6 @@ if (typeof L !== 'undefined') {
     attributionControl: true
   });
   map.fitBounds(L.latLngBounds(MAP_MARKERS.map(m => [m.lat, m.lng])).pad(0.18));
-  map.on('click', () => map.scrollWheelZoom.enable());
   L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
     subdomains: 'abcd'
@@ -1869,7 +1877,15 @@ setInterval(updateCycleClock, 30000);
         const link = dnByTarget.get(e.target.id);
         if (link) {
           link.classList.add('active');
-          link.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+          // Keep the active desk visible without scrollIntoView(), which also
+          // scrolls the page viewport back to the sticky navigation bar.
+          const scroller = link.parentElement;
+          if (scroller) {
+            const left = link.offsetLeft;
+            const right = left + link.offsetWidth;
+            if (left < scroller.scrollLeft) scroller.scrollTo({ left: Math.max(0, left - 12), behavior: 'smooth' });
+            else if (right > scroller.scrollLeft + scroller.clientWidth) scroller.scrollTo({ left: right - scroller.clientWidth + 12, behavior: 'smooth' });
+          }
         }
       });
     }, { rootMargin: '-25% 0px -65% 0px' });
