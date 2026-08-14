@@ -66,27 +66,42 @@ test('tapping a chip opens the map-drill for that country', async ({ page }) => 
   expect(heading).toBe(country);
 });
 
-test('the strip shows freshness variety when data has current markets', async ({ page }) => {
-  // Regression: data.ts had a bug where the freshness_state derivation
-  // only read (market.snapshot || {}).freshness_state, which is always
-  // null. The market record carries freshness_state at the top level,
-  // so the chips all defaulted to 'stale'. This test asserts that
-  // when the live data has 'current' markets (T&T, Barbados, etc.),
-  // the strip shows them as 'fresh' and the count is > 0.
+test('every chip has a valid freshness class and the sum of all classes equals the total', async ({ page }) => {
+  // Per Codex review 0492814: the freshness classifier maps
+  //   'current' / 'fresh' → 'fresh'
+  //   'delayed' / 'aging' → 'aging'
+  //   anything else       → 'stale'
+  // This test asserts every chip's data-freshness attribute is one
+  // of the three known values, and that the sum of all three equals
+  // the total chip count (no orphan states).
+  //
+  // Note: we don't assert any minimum count for fresh / aging / stale
+  // here, because the data is mutable — the pipeline's freshness_state
+  // distribution can vary by cycle. The contract we lock is the
+  // classification function and the chip count integrity, not the
+  // distribution of states.
   await page.goto(HOMEPAGE, { waitUntil: 'networkidle' });
   const total = await page.locator('.rmv-chip').count();
+  expect(total).toBeGreaterThan(0);
+  const VALID_STATES = new Set(['fresh', 'aging', 'stale']);
   let freshCount = 0;
+  let agingCount = 0;
   let staleCount = 0;
+  let orphanCount = 0;
   for (let i = 0; i < total; i++) {
     const state = await page.locator('.rmv-chip').nth(i).getAttribute('data-freshness');
     if (state === 'fresh') freshCount++;
+    else if (state === 'aging') agingCount++;
     else if (state === 'stale') staleCount++;
+    else {
+      orphanCount++;
+      // Capture the bad value for the failure message
+      expect({ index: i, state }).toEqual({ index: i, state: expect.stringMatching(/^(fresh|aging|stale)$/) });
+    }
   }
-  // The pipeline has 4 markets with freshness_state='current', so at
-  // least 1 fresh chip must be visible. The remaining 18-22 are
-  // watchlist countries (default stale).
-  expect(freshCount).toBeGreaterThan(0);
-  expect(freshCount + staleCount).toBe(total);
+  // Total = fresh + aging + stale (no orphans)
+  expect(freshCount + agingCount + staleCount).toBe(total);
+  expect(orphanCount).toBe(0);
 });
 
 test('the strip is positioned between the map and the finance chips', async ({ page }) => {

@@ -136,26 +136,45 @@ def test_index_astro_has_drill_lifecycle_css():
 def test_data_ts_reads_market_record_freshness_not_just_snapshot():
     """Regression: the freshness_state derivation must read from the
     market record's top-level freshness_state, not from the embedded
-    market_snapshot which doesn't carry freshness_state.
+    market_snapshot (which the loader calls market_snapshot) that
+    doesn't carry freshness_state.
 
     Before this fix, every chip was marked 'stale' even when the
     market had freshness_state='current' (Trinidad & Tobago,
     Barbados, Bahamas, etc.). This test asserts the source code
-    reads the top-level field.
+    reads the top-level field and uses the correct embedded field
+    name (market_snapshot, not market.snapshot).
+
+    Per Codex review 0492814: market.snapshot does not exist on the
+    market record — snapshotFor() and the loader call it
+    market_snapshot. Asserting market.market_snapshot is the correct
+    fallback path.
     """
     src = DATA_TS.read_text()
     # The freshness derivation must reach market.freshness_state
-    # (or market.snapshot.data_status as a fallback).
     assert "market.freshness_state" in src, \
-        "data.ts must read market.freshness_state (top-level), not just market.snapshot.freshness_state"
+        "data.ts must read market.freshness_state (top-level)"
+    # The fallback must use market_snapshot (not market.snapshot
+    # which doesn't exist on the market record).
+    assert "market.market_snapshot" in src, \
+        "data.ts must read market.market_snapshot (the actual loader field name) for the embedded fallback"
+    # market.snapshot (no underscore) must NOT appear as a JS expression.
+    # Strip line comments first so the bug-recap prose doesn't trigger
+    # the assertion. The bug-recap comment DOES say `market.snapshot`
+    # which is correct as historical context but wrong as a JS reference.
+    import re
+    code_only = re.sub(r"//.*", "", src)
+    code_refs = re.findall(r"market\.snapshot(?![_a-zA-Z])", code_only)
+    assert len(code_refs) == 0, \
+        f"data.ts must not reference market.snapshot as a JS property ({len(code_refs)} references found); the loader field is market_snapshot"
     # The buggy pattern (only checking snapshot) must NOT be present
     assert "(market.snapshot || {}).freshness_state" not in src, \
-        "data.ts must not rely solely on (market.snapshot || {}).freshness_state - the embedded snapshot doesn't carry freshness_state"
+        "data.ts must not rely on (market.snapshot || {}).freshness_state"
     # The observation_at read must also try the top-level first
     assert "market.observation_at" in src, \
-        "data.ts must read market.observation_at (top-level) for the lifecycle Last seen field"
+        "data.ts must read market.observation_at (top-level)"
     assert "(market.snapshot || {}).observation_at" not in src, \
-        "data.ts must not rely solely on (market.snapshot || {}).observation_at - the embedded snapshot doesn't carry observation_at"
+        "data.ts must not rely on (market.snapshot || {}).observation_at"
 
 
 def test_data_ts_emits_map_drill_lifecycle_fields():

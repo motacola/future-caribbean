@@ -482,11 +482,11 @@ export function loadDashboardData() {
     // Freshness: read from the market record first (top-level
     // freshness_state on the source market), then fall back to the
     // embedded market_snapshot.data_status, then the watch fallback.
-    // Prior to this, the code only checked `market.snapshot` which
-    // doesn't carry freshness_state on its own — every chip ended up
-    // 'stale' even when the market was 'current'.
+    // Prior to this, the code only checked `market.snapshot` (which
+    // doesn't exist — the loader calls it `market_snapshot`) and
+    // every chip ended up 'stale' even when the market was 'current'.
     const freshnessState = (market && market.freshness_state)
-      || (market && market.snapshot && market.snapshot.data_status)
+      || (market && market.market_snapshot && market.market_snapshot.data_status)
       || watch.freshness_state
       || 'source_checked_no_dated_observation';
     const lifecycle = (() => {
@@ -494,7 +494,7 @@ export function loadDashboardData() {
       // the embedded market_snapshot. Read both then fall back to the
       // cluster.
       const obs = (market && market.observation_at)
-        || (market && market.snapshot && market.snapshot.observation_at)
+        || (market && market.market_snapshot && market.market_snapshot.observation_at)
         || (c.observation_at || '');
       const lastSeen = obs ? obs.slice(0, 10) : 'unknown';
       const lastSeenTime = obs ? obs.slice(11, 16) + ' UTC' : '';
