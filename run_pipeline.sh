@@ -69,6 +69,7 @@ run_step "Coordination Graph" "python3 \"$ROOT/coordination/engine.py\"" "coordi
 run_step "Validation Packs" "python3 \"$ROOT/packagers/validation_pack_generator.py\"" "validation_packs"
 run_step "RSS Feed" "python3 \"$ROOT/packagers/rss_feed.py\"" "rss_feed"
 run_step "Track Record" "python3 \"$ROOT/packagers/track_record.py\"" "track_record"
+run_step "Calibration Ledger" "python3 \"$ROOT/packagers/calibration.py\"" "calibration"
 run_step "Backtest Report" "python3 \"$ROOT/packagers/backtest_report.py\"" "backtest_report"
 run_step "Dispatch Desk" "python3 \"$ROOT/packagers/dispatch_desk.py\"" "dispatch_desk"
 run_step "Climate Dispatch (2nd instance)" "python3 \"$ROOT/packagers/climate_dispatch.py\"" "climate_dispatch"

@@ -1,12 +1,12 @@
 {
-  "signal_id": "enhanced-invest-guyana",
-  "dispatch_id": "DSP-20260815-019",
+  "signal_id": "invest-guyana",
+  "dispatch_id": "DSP-20260815-003",
   "country": "Guyana",
-  "signal_title": "Guyana: +860.3% capital surge on a single official source — market entry window open",
-  "confidence_score": 100,
-  "raw_confidence_score": 114,
+  "signal_title": "Guyana: FDI trending at +860.3% — screening trigger active",
+  "confidence_score": 90,
+  "raw_confidence_score": 90,
   "action_readiness": "high",
-  "evidence_grade": "C - single-source",
+  "evidence_grade": "B - cross-source",
   "sector_hypotheses": [
     {
       "sector": "Oil & gas and offshore support services",
@@ -190,10 +190,10 @@
     }
   ],
   "advance_or_reject_recommendation": "hold",
-  "recommendation_reason": "Evidence fingerprint unchanged for 7 cycles — downgraded from advance to hold until new corroboration arrives.",
-  "last_validated_at": "2026-08-15T22:00:15.369942+00:00",
+  "recommendation_reason": "Evidence fingerprint unchanged for 3 cycles — downgraded from advance to hold until new corroboration arrives.",
+  "last_validated_at": "2026-08-15T20:21:28.714890+00:00",
   "coordination_path": null,
   "evidence_fingerprint": "01778ed52beb6e60",
-  "cycles_since_refresh": 7,
+  "cycles_since_refresh": 3,
   "evidence_freshness": "stale"
 }

@@ -10,6 +10,11 @@
   --r: 3px;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: var(--sans); background: var(--bg); background-image: radial-gradient(1100px 500px at 75% -120px, rgba(181,122,34,.06), transparent 70%), radial-gradient(900px 420px at -10% 30%, rgba(13,118,110,.04), transparent 70%); color: var(--text); line-height: 1.6; font-size: 15px; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+/* Horizontal containment lives on <html>, not <body>: `overflow-x: hidden`
+   on body turns it into a scroll container, which silently disables
+   position:sticky everywhere inside it. `clip` on the root contains the same
+   overflow without creating one. */
+html { overflow-x: clip; }
+body { font-family: var(--sans); background: var(--bg); background-image: radial-gradient(1100px 500px at 75% -120px, rgba(181,122,34,.06), transparent 70%), radial-gradient(900px 420px at -10% 30%, rgba(13,118,110,.04), transparent 70%); color: var(--text); line-height: 1.6; font-size: 15px; -webkit-font-smoothing: antialiased; }
 a { color: var(--teal); text-decoration: none; }
 a:hover { text-decoration: underline; }

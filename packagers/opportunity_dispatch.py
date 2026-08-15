@@ -59,6 +59,7 @@ def _persona_action_for_kind(
     country: str,
     detail: str,
     action_window: str,
+    n_sources: int = 2,
 ) -> str:
     """Sharper, persona-specific action language."""
     # Supply chain signal - handle first for relevant personas
@@ -91,10 +92,18 @@ def _persona_action_for_kind(
 
     if persona_key == "diaspora_investor":
         if "enhanced" in kind:
+            # Only claim cross-source validation when more than one source
+            # actually corroborates this country.
+            if n_sources > 1:
+                return (
+                    f"Investigate {country} as a capital deployment target this cycle. "
+                    f"Multi-source validation ({detail}) confirms directional signal — "
+                    f"next step is operator discovery and market entry assessment."
+                )
             return (
                 f"Investigate {country} as a capital deployment target this cycle. "
-                f"Multi-source validation ({detail}) confirms directional signal — "
-                f"next step is operator discovery and market entry assessment."
+                f"One official source shows the movement ({detail}) — corroborate it "
+                f"before acting, then move to operator discovery."
             )
         if "investment" in kind:
             return (
@@ -188,6 +197,8 @@ def _make_dispatch(
     risk_flags: list[str],
     decision_influence: str,
     routing_rationale: str,
+    confidence_raw: int | None = None,
+    magnitude_pct: float | None = None,
     ranking_rationale: str = "",
 ) -> dict:
     return {
@@ -207,6 +218,11 @@ def _make_dispatch(
         "channel": channel,
         "confidence_display": confidence_display,
         "confidence_score": confidence_score,
+        # Ranking inputs kept alongside the display score: confidence_score
+        # is clamped to 100 and ties constantly, so cluster ordering needs
+        # the unclamped value and the movement size behind it.
+        "confidence_raw": confidence_raw if confidence_raw is not None else confidence_score,
+        "magnitude_pct": magnitude_pct,
         "evidence_grade": evidence_grade,
         "evidence_summary": evidence_summary,
         "detail": detail,
@@ -322,6 +338,8 @@ def build_dispatches(
                 country = sig.get("_country", "Regional")
                 detail = sig.get("_detail", "")
                 score = sig.get("_score", 0)
+                score_raw = sig.get("_score_raw", score)
+                magnitude = sig.get("_magnitude_pct")
                 grade = sig.get("_evidence_grade", "C")
                 summary = sig.get("summary", "")
                 freshness = sig.get("_freshness", "sustained")
@@ -349,7 +367,10 @@ def build_dispatches(
                     dispatch_title = _narrative_title(
                         kind=kind, country=country, detail=detail,
                         score=score, band=band,
-                        n_sources=len(sig.get("sources", [])),
+                        # Corroborating sources only: the headline claims
+                        # cross-source validation, so it must not count
+                        # regional datasets that confirm nothing here.
+                        n_sources=sig.get("_n_sources", len(sig.get("sources", []))),
                     )
 
                     dispatch = _make_dispatch(
@@ -366,11 +387,14 @@ def build_dispatches(
                         persona_label=_persona_label(config, persona_key),
                         recipient_type=_persona_description(config, persona_key),
                         recommended_action=_persona_action_for_kind(persona_key, kind, country,
-                                                                    detail, action_window),
+                                                                    detail, action_window,
+                                                                    sig.get("_n_sources", 2)),
                         action_window=action_window,
                         channel=config.get("personas", {}).get(persona_key, {}).get("channel", "Telegram"),
                         confidence_display=f"{band_emoji} {band} | {score}/100 | {grade}",
                         confidence_score=score,
+                        confidence_raw=score_raw,
+                        magnitude_pct=magnitude,
                         evidence_grade=grade,
                         evidence_summary=evidence_text,
                         detail=detail,
@@ -387,6 +411,8 @@ def build_dispatches(
             for sig in kind_signals:
                 country = sig.get("_country", "Regional")
                 score = sig.get("_score", 0)
+                score_raw = sig.get("_score_raw", score)
+                magnitude = sig.get("_magnitude_pct")
                 grade = sig.get("_evidence_grade", "C")
                 detail = sig.get("_detail", "")
                 summary = sig.get("summary", "")
@@ -417,7 +443,10 @@ def build_dispatches(
                     dispatch_title = _narrative_title(
                         kind=kind, country=country, detail=detail,
                         score=score, band=sig.get("_band_label", "monitor"),
-                        n_sources=len(sig.get("sources", [])),
+                        # Corroborating sources only: the headline claims
+                        # cross-source validation, so it must not count
+                        # regional datasets that confirm nothing here.
+                        n_sources=sig.get("_n_sources", len(sig.get("sources", []))),
                     )
 
                     dispatch = _make_dispatch(
@@ -439,6 +468,8 @@ def build_dispatches(
                         channel=config.get("personas", {}).get(persona_key, {}).get("channel", "Telegram"),
                         confidence_display=f"{band_emoji} {band} | {score}/100 | {grade}",
                         confidence_score=score,
+                        confidence_raw=score_raw,
+                        magnitude_pct=magnitude,
                         evidence_grade=grade,
                         evidence_summary=evidence_text,
                         detail=detail,

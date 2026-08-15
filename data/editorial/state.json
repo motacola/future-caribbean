@@ -1,6 +1,6 @@
 {
-  "previous_run": "2026-08-13T16:44:14.762777+00:00",
-  "previous_lead_country": "Suriname",
+  "previous_run": "2026-08-15T20:45:50.899300+00:00",
+  "previous_lead_country": "Guyana",
   "previous_signal_ids": [
     "invest-barbados",
     "invest-guyana",
@@ -20,10 +20,10 @@
     "enhanced-invest-suriname"
   ],
   "previous_top_scores": {
-    "invest-barbados": 72,
-    "invest-guyana": 88,
-    "invest-suriname": 82,
-    "vuln-st.-vincent-and-the-grenadines": 72,
+    "invest-barbados": 71,
+    "invest-guyana": 87,
+    "invest-suriname": 84,
+    "vuln-st.-vincent-and-the-grenadines": 70,
     "tourism-barbados": 47,
     "tourism-antigua-and-barbuda": 47,
     "tourism-dominica": 47,
@@ -32,11 +32,12 @@
     "tourism-st.-kitts-and-nevis": 47,
     "tourism-st.-vincent-and-the-grenadines": 47,
     "food-security-regional": 80,
-    "dev-pipeline-regional": 95,
-    "enhanced-invest-barbados": 100,
-    "enhanced-invest-guyana": 100,
-    "enhanced-invest-suriname": 100
+    "dev-pipeline-regional": 96,
+    "enhanced-invest-barbados": 85,
+    "enhanced-invest-guyana": 114,
+    "enhanced-invest-suriname": 98
   },
+  "score_basis": "raw-v1",
   "previous_summaries": {
     "invest-barbados": "Barbados: FDI surge detected with active IDB development datasets available",
     "invest-guyana": "Guyana: FDI surge detected with active IDB development datasets available",
@@ -51,8 +52,8 @@
     "tourism-st.-vincent-and-the-grenadines": "St. Vincent and the Grenadines: strong GDP growth (GDP current USD moved up 8.5% from 2024 to 2025.) \u2014 positive tourism context",
     "food-security-regional": "Regional food trade monitoring active: 40 datasets \u2014 elevated inflation in Suriname",
     "dev-pipeline-regional": "Active development pipeline: 7 CDB procurements + 28 IDB infrastructure datasets",
-    "enhanced-invest-barbados": "Barbados: FDI surge (WB) + supporting context from CARICOM/CDB data availability (3/3 signals)",
-    "enhanced-invest-guyana": "Guyana: FDI surge (WB) + supporting context from CARICOM/CDB data availability (3/3 signals)",
-    "enhanced-invest-suriname": "Suriname: FDI surge (WB) + supporting context from CARICOM/CDB data availability (3/3 signals)"
+    "enhanced-invest-barbados": "Barbados: World Bank FDI surge, with 2 regional dataset(s) available as context",
+    "enhanced-invest-guyana": "Guyana: World Bank FDI surge, with 2 regional dataset(s) available as context",
+    "enhanced-invest-suriname": "Suriname: World Bank FDI surge, with 2 regional dataset(s) available as context"
   }
 }

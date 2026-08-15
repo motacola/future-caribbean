@@ -101,6 +101,14 @@ def test_macro_only_without_tender_stays_hold_or_lower_confidence():
     assert pack["advance_or_reject_recommendation"] in ("hold", "reject")
 
 
+def test_pack_preserves_unclamped_ranking_score_separately():
+    dispatch = {**DISPATCH, "confidence_score": 100, "confidence_raw": 114}
+    pack = build_pack(dispatch, WB, IDB, TIER2, "2026-06-10T00:00:00+00:00")
+
+    assert pack["raw_confidence_score"] == 114
+    assert pack["confidence_score"] <= 100
+
+
 def test_pack_includes_matching_coordination_path():
     path = {
         "trigger_signal_id": DISPATCH["signal_id"],

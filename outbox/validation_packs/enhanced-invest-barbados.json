@@ -1,6 +1,6 @@
 {
   "signal_id": "enhanced-invest-barbados",
-  "dispatch_id": "DSP-20260813-025",
+  "dispatch_id": "DSP-20260815-025",
   "country": "Barbados",
   "signal_title": "Barbados: +34.8% multi-source investment validated — opportunity active",
   "confidence_score": 68,
@@ -138,9 +138,9 @@
   ],
   "advance_or_reject_recommendation": "hold",
   "recommendation_reason": "Calibrated confidence 68/100 with 2 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.",
-  "last_validated_at": "2026-08-13T16:44:14.475801+00:00",
+  "last_validated_at": "2026-08-15T20:03:08.174317+00:00",
   "coordination_path": null,
   "evidence_fingerprint": "a9e1e109d93259c5",
-  "cycles_since_refresh": 0,
-  "evidence_freshness": "refreshing"
+  "cycles_since_refresh": 1,
+  "evidence_freshness": "aging"
 }

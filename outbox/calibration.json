@@ -1,0 +1,94 @@
+{
+  "committed_at": "2026-08-15",
+  "days_elapsed": 0,
+  "commitments": [
+    {
+      "milestone": "Day 30",
+      "day": 30,
+      "min_resolved": 20,
+      "max_brier": null,
+      "due": false,
+      "resolved_so_far": 0,
+      "brier_so_far": null,
+      "status": "pending"
+    },
+    {
+      "milestone": "Day 60",
+      "day": 60,
+      "min_resolved": 80,
+      "max_brier": 0.22,
+      "due": false,
+      "resolved_so_far": 0,
+      "brier_so_far": null,
+      "status": "pending"
+    },
+    {
+      "milestone": "Day 90",
+      "day": 90,
+      "min_resolved": 150,
+      "max_brier": 0.2,
+      "due": false,
+      "resolved_so_far": 0,
+      "brier_so_far": null,
+      "status": "pending"
+    },
+    {
+      "milestone": "Year 1",
+      "day": 365,
+      "min_resolved": 200,
+      "max_brier": 0.18,
+      "due": false,
+      "resolved_so_far": 0,
+      "brier_so_far": null,
+      "status": "pending"
+    }
+  ],
+  "brier": null,
+  "brier_naive_baseline": null,
+  "brier_improvement_over_naive": null,
+  "log_loss": null,
+  "calibration_error": null,
+  "chain_intact": true,
+  "chain_break_at": null,
+  "bands": [
+    {
+      "band": "85-100",
+      "resolved": 0,
+      "confirmed": 0,
+      "confirmation_rate": null,
+      "sufficient_sample": false
+    },
+    {
+      "band": "70-84",
+      "resolved": 0,
+      "confirmed": 0,
+      "confirmation_rate": null,
+      "sufficient_sample": false
+    },
+    {
+      "band": "55-69",
+      "resolved": 0,
+      "confirmed": 0,
+      "confirmation_rate": null,
+      "sufficient_sample": false
+    },
+    {
+      "band": "0-54",
+      "resolved": 0,
+      "confirmed": 0,
+      "confirmation_rate": null,
+      "sufficient_sample": false
+    }
+  ],
+  "total_resolved": 0,
+  "open_claims": 13,
+  "resolved_by": {},
+  "externally_resolved": 0,
+  "external_share": null,
+  "min_sample": 5,
+  "resolution_window_cycles": 3,
+  "calibrated": false,
+  "method": "Claims are resolved after 3 cycles, preferring outside evidence: an independent publisher covering the same country and topic, then a newer release of the same indicator, and only failing those, whether our own pipeline kept reporting the fact.",
+  "cycle_id": "20260815",
+  "generated_at": "2026-08-15T21:38:36.575553+00:00"
+}

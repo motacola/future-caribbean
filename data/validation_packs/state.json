@@ -2,9 +2,9 @@
   "signals": {
     "enhanced-invest-guyana": {
       "evidence_fingerprint": "01778ed52beb6e60",
-      "stale_cycles": 0,
-      "last_validated_at": "2026-08-13T16:44:14.475801+00:00",
-      "recommendation": "advance"
+      "stale_cycles": 7,
+      "last_validated_at": "2026-08-15T22:00:15.369942+00:00",
+      "recommendation": "hold"
     },
     "enhanced-invest-belize": {
       "evidence_fingerprint": "3af35d2df5aa7bf4",
@@ -20,8 +20,8 @@
     },
     "dev-pipeline-regional": {
       "evidence_fingerprint": "e3b0c44298fc1c14",
-      "stale_cycles": 22,
-      "last_validated_at": "2026-08-13T16:44:14.475801+00:00",
+      "stale_cycles": 29,
+      "last_validated_at": "2026-08-15T22:00:15.369942+00:00",
       "recommendation": "hold"
     },
     "supply-chain-belize": {
@@ -38,14 +38,14 @@
     },
     "enhanced-invest-suriname": {
       "evidence_fingerprint": "118b7905bb78c1ee",
-      "stale_cycles": 0,
-      "last_validated_at": "2026-08-13T16:44:14.475801+00:00",
-      "recommendation": "advance"
+      "stale_cycles": 7,
+      "last_validated_at": "2026-08-15T22:00:15.369942+00:00",
+      "recommendation": "hold"
     },
     "enhanced-invest-barbados": {
       "evidence_fingerprint": "a9e1e109d93259c5",
-      "stale_cycles": 0,
-      "last_validated_at": "2026-08-13T16:44:14.475801+00:00",
+      "stale_cycles": 1,
+      "last_validated_at": "2026-08-15T20:03:08.174317+00:00",
       "recommendation": "hold"
     },
     "regional-investment_signal-20260724": {
@@ -59,7 +59,25 @@
       "stale_cycles": 1,
       "last_validated_at": "2026-08-13T16:44:14.475801+00:00",
       "recommendation": "hold"
+    },
+    "regional-investment_signal-20260815": {
+      "evidence_fingerprint": "e3b0c44298fc1c14",
+      "stale_cycles": 6,
+      "last_validated_at": "2026-08-15T22:00:15.369942+00:00",
+      "recommendation": "hold"
+    },
+    "invest-guyana": {
+      "evidence_fingerprint": "01778ed52beb6e60",
+      "stale_cycles": 3,
+      "last_validated_at": "2026-08-15T20:21:28.714890+00:00",
+      "recommendation": "hold"
+    },
+    "regional-enhanced_investment-20260815": {
+      "evidence_fingerprint": "e3b0c44298fc1c14",
+      "stale_cycles": 1,
+      "last_validated_at": "2026-08-15T22:00:15.369942+00:00",
+      "recommendation": "hold"
     }
   },
-  "updated_at": "2026-08-13T16:44:14.475801+00:00"
+  "updated_at": "2026-08-15T22:00:15.369942+00:00"
 }

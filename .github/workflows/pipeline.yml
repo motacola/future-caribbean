@@ -50,7 +50,11 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           # Only add the artifact paths specified in the brief
-          git add outbox/ dashboard.html data/history/ data/.cycle_count.json data/editorial/ data/feedback/ data/ndbc/history.json
+          # The calibration ledger is cumulative state, not a disposable
+          # artifact. If it is not staged here, every scheduled runner starts
+          # again from the repository's old baseline and the track record never
+          # accrues across cycles.
+          git add outbox/ dashboard.html data/history/ data/.cycle_count.json data/editorial/ data/feedback/ data/calibration/ data/ndbc/history.json
           # Guard: no empty commits
           if git diff --staged --quiet; then
             echo "No changes to commit"

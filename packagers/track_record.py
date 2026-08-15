@@ -46,9 +46,6 @@ def main() -> None:
             continue
         by_cycle.setdefault(cycle, []).append(entry)
 
-    # Sort cycles newest first, take max MAX_CYCLES
-    sorted_cycles = sorted(by_cycle.keys(), reverse=True)[:MAX_CYCLES]
-
     # Load opportunity dispatches for lead signal matching
     dispatches_path = ROOT / "outbox" / "opportunity_dispatches.json"
     dispatch_by_cycle: dict[str, list] = {}
@@ -58,6 +55,15 @@ def main() -> None:
             cycle = d.get("cycle_id")
             if cycle:
                 dispatch_by_cycle.setdefault(cycle, []).append(d)
+
+    # The current cycle has dispatches but no feedback until recipients
+    # respond. Keying the record off feedback alone dropped it entirely, so
+    # the receipts page skipped whatever the desk had just published.
+    for cycle in dispatch_by_cycle:
+        by_cycle.setdefault(cycle, [])
+
+    # Sort cycles newest first, take max MAX_CYCLES
+    sorted_cycles = sorted(by_cycle.keys(), reverse=True)[:MAX_CYCLES]
 
     cycles_out = []
     for cycle_id in sorted_cycles:

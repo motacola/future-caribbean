@@ -160,19 +160,29 @@ def test_astro_data_includes_ported_label_cleaners():
     assert "function cleanEvidence" in data_source
     assert "function cleanSignalTitle" in data_source
     # Lead label is derived at build time from outbox/dispatch_desk.json
-    # (clusters[0].country_cluster), so assert the actual current phrasing.
+    # (clusters[0].country_cluster). The headline must name the lead country,
+    # and may only claim consensus when the evidence grade says more than one
+    # source corroborates it — a single-source lead gets the weaker phrasing.
     desk = json.loads((ROOT / "outbox" / "dispatch_desk.json").read_text())
-    lead_country = (desk.get("clusters") or [{}])[0].get("country_cluster", "")
+    lead = (desk.get("clusters") or [{}])[0]
+    lead_country = lead.get("country_cluster", "")
+    grade = str(lead.get("evidence_grade", ""))
     assert lead_country, "dispatch_desk.json has no lead cluster"
-    assert f"All signals point to {lead_country}." in dashboard, (
-        f"dashboard should render 'All signals point to {lead_country}.' (got lead={lead_country})"
+
+    corroborated = grade.startswith(("A", "B")) or "source" in grade.lower() and "single" not in grade.lower()
+    consensus = f"All signals point to {lead_country}." in dashboard
+    watchful = f"{lead_country} is the one to watch." in dashboard
+    assert consensus or watchful, (
+        f"dashboard should render a lead headline naming {lead_country} (grade={grade})"
     )
-    # Lead confidence band: 'Solid' for multi-source / grade A leads, 'Promising'
-    # for cross-source / grade B leads. Either phrasing is valid for a real lead.
+    assert not (consensus and not corroborated), (
+        f"headline claims consensus for {lead_country} on a single-source grade ({grade})"
+    )
+    # Lead confidence band must match the grade the desk actually assigned.
     assert ("Solid — several sources agree" in dashboard
-            or "Promising — more than one source" in dashboard), (
-        "dashboard should render the lead's cleaned grade label "
-        "(Solid for multi-source/A, Promising for cross-source/B)"
+            or "Promising — more than one source" in dashboard
+            or "Early — one source so far" in dashboard), (
+        "dashboard should render the lead's cleaned grade label"
     )
     assert "World Bank" in dashboard
     assert "money on the move" in dashboard

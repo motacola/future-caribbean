@@ -3,7 +3,7 @@
 
 import { readFileSync, existsSync, readdirSync, statSync } from 'fs';
 import { resolve, join } from 'path';
-import { humanize, humanizeRulesJson } from './humanize.ts';
+import { humanize, humanizeRulesJson, cleanHeadline, cleanDek, humanizeStatus } from './humanize.ts';
 
 const ROOT = resolve(process.cwd());
 
@@ -43,9 +43,20 @@ function esc(value: any): string {
 
 // ── Label cleaners (port of generate.py functions) ──────────
 
-function cleanTitle(raw: string): string {
+/**
+ * The lead headline. "All signals point to X" is only honest when more than
+ * one source actually confirms X — the desk's own evidence grade says how
+ * many do, so the headline follows it rather than asserting consensus that
+ * a single-source signal does not have.
+ */
+function cleanTitle(raw: string, evidenceGrade = ''): string {
   const country = raw.includes(':') ? raw.split(':')[0].trim() : 'Caribbean';
-  return `All signals point to ${country}.`;
+  const grade = evidenceGrade.toLowerCase();
+  const corroborated = grade.includes('multi-source') || grade.includes('cross-source')
+    || evidenceGrade.startsWith('A') || evidenceGrade.startsWith('B');
+  return corroborated
+    ? `All signals point to ${country}.`
+    : `${country} is the one to watch.`;
 }
 
 // fallow-ignore-next-line complexity
@@ -149,7 +160,11 @@ function watchlistSignal(country: string, market: any, fx: any): any {
   const snapshot = market?.market_snapshot || {};
   if (market && Object.keys(market).length) {
     const code = exchange.code || 'market source';
-    const focus = snapshot.focus || (market.watch_sectors || []).slice(0, 3).join(', ')
+    // snapshot.focus is sometimes an array of sectors; joining it here is
+    // what keeps "banking,insurance,tourism" from reaching the page.
+    const rawFocus = snapshot.focus;
+    const focus = (Array.isArray(rawFocus) ? rawFocus.join(', ') : rawFocus)
+      || (market.watch_sectors || []).slice(0, 3).join(', ')
       || 'official notices and local market context';
     return {
       confidence: 34,
@@ -177,6 +192,61 @@ function watchlistSignal(country: string, market: any, fx: any): any {
 // ── Validation pack HTML builders ──────────────────────────
 
 // fallow-ignore-next-line complexity
+/**
+ * Reader-facing meaning of a confidence score, from outbox/calibration.json.
+ * The desk publishes a number every cycle; this says whether that number has
+ * ever been checked against what actually happened. Until a band has enough
+ * resolved claims we say so plainly rather than implying a probability.
+ */
+function calibrationNoteFor(score: number | string): string {
+  const report = readJson('outbox/calibration.json');
+  if (!report || !Array.isArray(report.bands)) {
+    return 'Ranking position, not a probability — calibration not yet running.';
+  }
+  const value = Number(score);
+  const band = report.bands.find((b: any) => {
+    const [lo, hi] = String(b.band).split('-').map(Number);
+    return Number.isFinite(value) && value >= lo && value <= hi;
+  });
+  if (band && band.confirmation_rate !== null && band.confirmation_rate !== undefined) {
+    const pct = Math.round(Number(band.confirmation_rate) * 100);
+    return `Signals scored ${band.band} have held up ${pct}% of the time (${band.resolved} resolved).`;
+  }
+  const open = Number(report.open_claims || 0);
+  return `Ranking position, not a probability — ${open} claim${open === 1 ? '' : 's'} still open, `
+    + `${report.min_sample ?? 5} needed per band before a rate is published.`;
+}
+
+/**
+ * The public accuracy commitment. Targets are published before the claims
+ * resolve, so the page shows what was promised and how it is tracking —
+ * including when a gate is missed.
+ */
+function calibrationCommitmentHtml(): string {
+  const report = readJson('outbox/calibration.json');
+  const gates: any[] = (report && report.commitments) || [];
+  if (!gates.length) return '';
+  const rows = gates.map((g: any) => {
+    const target = [`${g.min_resolved} resolved`, g.max_brier ? `Brier ≤ ${g.max_brier}` : '']
+      .filter(Boolean).join(' · ');
+    return `<tr>
+      <td>${esc(g.milestone)}</td>
+      <td>${esc(target)}</td>
+      <td><span class="commit-status commit-${esc(g.status)}">${esc(g.status)}</span></td>
+    </tr>`;
+  }).join('');
+  const brier = report.brier === null || report.brier === undefined ? 'not yet scored' : report.brier;
+  const chain = report.chain_intact ? 'ledger chain intact' : '⚠ LEDGER CHAIN BROKEN';
+  return `<div class="calibration-commitment">
+    <div class="commit-head">
+      <strong>Accuracy we committed to on ${esc(report.committed_at || '—')}</strong>
+      <span>${esc(report.total_resolved ?? 0)} resolved · ${esc(report.open_claims ?? 0)} open · Brier ${esc(brier)} · ${esc(chain)}</span>
+    </div>
+    <table class="commit-table"><tbody>${rows}</tbody></table>
+    <p class="commit-note">Published before the calls resolve. A missed gate stays on this page.</p>
+  </div>`;
+}
+
 function packFreshnessStrip(pack: any): string {
   const freshness = pack.evidence_freshness || 'unknown';
   const cycles = parseInt(pack.cycles_since_refresh || '0', 10) || 0;
@@ -190,8 +260,9 @@ function packFreshnessStrip(pack: any): string {
   return `<div class="vpack-freshness">
     <span class="freshness-pill ${esc(freshness)}">${esc(label)}</span>
     <span class="freshness-meta">Action readiness: <strong>${esc(readiness)}</strong></span>
-    <span class="freshness-meta">Confidence: <strong>${esc(calibrated)}</strong> calibrated <em>(raw ${esc(raw)})</em></span>
+    <span class="freshness-meta">Confidence: <strong>${esc(calibrated)}</strong> <em>(raw ${esc(raw)})</em></span>
     <span class="freshness-meta">Validated ${esc(validated)} · ${esc(cycleNote)}</span>
+    <span class="freshness-meta freshness-calibration">${esc(calibrationNoteFor(calibrated))}</span>
   </div>`;
 }
 
@@ -342,9 +413,17 @@ function buildSignalRowHtml(c: any, allPacks: Record<string, any>, cycleId: stri
   };
 }
 
-// ── Branded indexed candlestick renderer ───────────────────
+// ── Branded indexed activity renderer ──────────────────────
+//
+// `snap.bars` is a single indexed value per period (0-100). It used to be
+// drawn as OHLC candlesticks, which meant inventing three of the four values
+// each candle needs — the highs and lows came from `index % 3`, and the
+// tooltip then read them out as though they were observations. A one-value
+// series gets a one-value mark: a column per period, coloured by its
+// direction against the previous period, which is the only comparison the
+// data actually supports.
 
-function buildIndexedCandlestickSvg(values: number[], label: string): string {
+function buildIndexedActivitySvg(values: number[], label: string): string {
   const points = values.slice(0, 8).map(v => Math.max(0, Math.min(100, Number(v) || 0)));
   if (!points.length) return '';
   const width = 320, height = 126, plotLeft = 14, plotRight = 286, plotTop = 14, plotBottom = 102;
@@ -352,22 +431,25 @@ function buildIndexedCandlestickSvg(values: number[], label: string): string {
   const step = (plotRight - plotLeft) / Math.max(points.length, 1);
   const grid = [0, 25, 50, 75, 100].map(value => {
     const yy = y(value).toFixed(1);
-    return `<line class="candle-grid-line" x1="${plotLeft}" y1="${yy}" x2="${plotRight}" y2="${yy}" />`;
+    return `<line class="activity-grid-line" x1="${plotLeft}" y1="${yy}" x2="${plotRight}" y2="${yy}" />`;
   }).join('');
-  const axis = [100, 50, 0].map(value => `<text class="candle-axis-label" x="312" y="${(y(value) + 3).toFixed(1)}" text-anchor="end">${value}</text>`).join('');
-  const candles = points.map((close, index) => {
-    const open = index === 0 ? Math.max(0, close - 4) : points[index - 1];
-    const high = Math.min(100, Math.max(open, close) + 4 + index % 3);
-    const low = Math.max(0, Math.min(open, close) - 3 - (index + 1) % 3);
+  const axis = [100, 50, 0].map(value => `<text class="activity-axis-label" x="312" y="${(y(value) + 3).toFixed(1)}" text-anchor="end">${value}</text>`).join('');
+  const columns = points.map((value, index) => {
+    const previous = index === 0 ? null : points[index - 1];
+    const delta = previous === null ? 0 : value - previous;
+    const state = index === points.length - 1 ? 'latest' : '';
     const x = plotLeft + step * index + step / 2;
-    const top = Math.min(y(open), y(close));
-    const bodyHeight = Math.max(3, Math.abs(y(open) - y(close)));
-    const state = close >= open ? 'up' : 'down';
-    return `<g class="candle ${state}" tabindex="0"><title>Point ${index + 1}: open ${Math.round(open)}, high ${Math.round(high)}, low ${Math.round(low)}, close ${Math.round(close)} — indexed activity, not price</title><line class="candle-wick" x1="${x.toFixed(1)}" y1="${y(high).toFixed(1)}" x2="${x.toFixed(1)}" y2="${y(low).toFixed(1)}" /><rect class="candle-body" x="${(x - Math.min(8, step * .24)).toFixed(1)}" y="${top.toFixed(1)}" width="${Math.min(16, step * .48).toFixed(1)}" height="${bodyHeight.toFixed(1)}" /></g>`;
+    const barWidth = Math.min(16, step * .48);
+    const top = y(value);
+    const move = previous === null
+      ? 'first period shown'
+      : delta === 0 ? 'unchanged from the previous period'
+      : `${delta > 0 ? 'up' : 'down'} ${Math.abs(Math.round(delta))} from the previous period`;
+    return `<g class="activity-col ${state}" tabindex="0"><title>Period ${index + 1}: indexed activity ${Math.round(value)} of 100 — ${move}. Not a price.</title><rect class="activity-bar" x="${(x - barWidth / 2).toFixed(1)}" y="${top.toFixed(1)}" width="${barWidth.toFixed(1)}" height="${Math.max(2, plotBottom - top).toFixed(1)}" /><circle class="activity-node" cx="${x.toFixed(1)}" cy="${top.toFixed(1)}" r="2.1" /></g>`;
   }).join('');
   const latest = points[points.length - 1];
   const latestY = y(latest).toFixed(1);
-  return `<svg class="candle-chart" viewBox="0 0 ${width} ${height}" role="img" aria-label="${esc(label)}. Indexed activity candlestick chart, not price history."><title>${esc(label)} — indexed activity, not price history</title>${grid}<line class="candle-baseline" x1="${plotLeft}" y1="${plotBottom}" x2="${plotRight}" y2="${plotBottom}" />${candles}<line class="candle-latest-line" x1="${plotLeft}" y1="${latestY}" x2="${plotRight}" y2="${latestY}" /><circle class="candle-latest-dot" cx="${plotRight}" cy="${latestY}" r="3.5" />${axis}<text class="candle-index-label" x="${plotLeft}" y="120">INDEXED ACTIVITY · NOT PRICE HISTORY</text></svg>`;
+  return `<svg class="activity-chart" viewBox="0 0 ${width} ${height}" role="img" aria-label="${esc(label)}. Indexed activity level per period on a 0 to 100 scale, not price history."><title>${esc(label)} — indexed activity, not price history</title>${grid}<line class="activity-baseline" x1="${plotLeft}" y1="${plotBottom}" x2="${plotRight}" y2="${plotBottom}" />${columns}<line class="activity-latest-line" x1="${plotLeft}" y1="${latestY}" x2="${plotRight}" y2="${latestY}" /><circle class="activity-latest-dot" cx="${plotRight}" cy="${latestY}" r="3.5" />${axis}<text class="activity-index-label" x="${plotLeft}" y="120">INDEXED ACTIVITY · NOT PRICE HISTORY</text></svg>`;
 }
 
 // ── Main data loader ────────────────────────────────────────
@@ -406,7 +488,10 @@ export function loadDashboardData() {
   }
   function snapshotFor(country: string): any {
     const m = marketProfileFor(country);
-    return m.market_snapshot || {};
+    const snap = m.market_snapshot || {};
+    // The drill panel interpolates these straight into a tagged template,
+    // which concatenates array items with no separator at all.
+    return Array.isArray(snap.focus) ? { ...snap, focus: snap.focus.join(', ') } : snap;
   }
 
   // ── Regional news intelligence ──────────────────────────────
@@ -574,13 +659,18 @@ export function loadDashboardData() {
         : 0;
       const totalEv = (m.evidence_mix ? Object.values(m.evidence_mix).reduce((a: number, b: any) => a + (Number(b) || 0), 0) : 0);
       const confColor = kindColor(m.kind || '');
-      return `<button class="rmv-chip" data-country="${esc(m.country)}" data-freshness="${cls}" title="${esc(m.country)} — ${cls} (${conf}/100)">
+      // Chips sit in a fixed-width grid, so the visible text stays terse —
+      // the full reading lives in the title and the bar's aria-label.
+      const evidence = totalEv > 0
+        ? `${totalEv} source group${totalEv === 1 ? '' : 's'}`
+        : 'watchlist';
+      return `<button class="rmv-chip" data-country="${esc(m.country)}" data-freshness="${cls}" title="${esc(m.country)} — ${cls}, confidence ${conf}/100, ${evidence}">
         <span class="rmv-name">${esc(m.country)}</span>
         <span class="rmv-bar" role="img" aria-label="Confidence: ${conf} of 100">
           <span class="rmv-bar-fill" style="width:${conf}%; background:${confColor}"></span>
         </span>
+        <span class="rmv-meta">${conf}</span>
         <span class="rmv-state">${cls}</span>
-        <span class="rmv-meta">${conf}/100${totalEv > 0 ? ` · ${totalEv} source group${totalEv === 1 ? '' : 's'}` : ' · watchlist'}</span>
       </button>`;
     }).join('');
 
@@ -639,7 +729,16 @@ export function loadDashboardData() {
 
   // ── Lead signal ────────────────────────────────────────────
   const lCountry = lead.country_cluster || 'Guyana';
-  const lTitle = cleanTitle(lead.title || '');
+  const lTitle = cleanTitle(lead.title || '', lead.evidence_grade || '');
+  // Describe the ranking honestly. The old sentence asserted "evidence,
+  // source coverage, movement size and feedback signals" for every lead,
+  // including single-source ones where source coverage is exactly one.
+  const leadGrade = String(lead.evidence_grade || '');
+  const leadCorroborated = leadGrade.startsWith('A') || leadGrade.startsWith('B')
+    || /multi-source|cross-source/i.test(leadGrade);
+  const lRankingBasis = leadCorroborated
+    ? `The desk is ranking ${lCountry} as the lead market this cycle because the evidence, source coverage, movement size, and feedback signals put it ahead of the rest of the regional wire.`
+    : `The desk is ranking ${lCountry} as the lead market this cycle on the size of the movement and the feedback signals. Only one source confirms it so far — corroboration is the next step, not a reason to wait.`;
   const lEvidence = humanize(cleanEvidence(lead.evidence || ''));
   const lRanking = humanize(lead.ranking_rationale || '')
     || 'Ranking uses confidence, source coverage, evidence count, magnitude, and feedback.';
@@ -835,22 +934,34 @@ export function loadDashboardData() {
   const newsHtml = visibleNews.map((item: any, index: number) => {
     const countries = item.countries.length ? item.countries : ['Regional context'];
     const time = item.age_hours === null ? 'date unavailable' : item.age_hours < 24 ? `${item.age_hours}h ago` : `${Math.floor(item.age_hours / 24)}d ago`;
-    // Visual topic gradient (deterministic from item.id) so the card has a
-    // visual asset even when no source image is available. The CSS at
-    // index.astro:221-247 expects `<a class="news-media topic-X">` with a
-    // `.news-media-fallback` overlay and the country/topic labels.
     const primaryCountry = countries[0] || 'Caribbean';
     const primaryTopic = (item.topics && item.topics[0]) || 'regional';
     const imageUrl = item.image_url || item.imageUrl || '';
-    return `<article class="news-card ${index === 0 ? 'lead' : ''}" data-news-topics="${esc(item.topics.join('|'))}" data-news-countries="${esc(item.countries.join('|'))}">
-      <a class="news-media topic-${esc(primaryTopic)}" href="${esc(item.url)}" target="_blank" rel="noopener" aria-label="Read ${esc(item.title)}">
+    // Feed hygiene: de-shout notice headlines, strip CMS debris from the
+    // summary, and drop the dek entirely when it only restates the headline.
+    const headline = cleanHeadline(item.title || '');
+    const isLead = index === 0;
+    const dek = cleanDek(item.summary, headline, isLead ? 260 : 170);
+    // The topic gradient is a stand-in picture, not a picture. It reads as
+    // photography at a glance and there is nothing behind it, so it is now
+    // reserved for the lead — every other story runs text-first and shows an
+    // image only when the publisher actually gave us one.
+    const showMedia = isLead || Boolean(imageUrl);
+    const mediaHtml = showMedia
+      ? `<a class="news-media topic-${esc(primaryTopic)}" href="${esc(item.url)}" target="_blank" rel="noopener" aria-label="Read ${esc(headline)}">
         <span class="news-media-fallback" aria-hidden="true"><b>${esc(primaryCountry)}</b><em>${esc(primaryTopic)}</em></span>${imageUrl ? `<img class="news-image-backdrop" src="${esc(imageUrl)}" alt="" aria-hidden="true" loading="lazy" decoding="async" referrerpolicy="no-referrer"><img class="news-image-main" src="${esc(imageUrl)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="const media=this.closest('.news-media');media?.classList.add('image-failed');media?.querySelectorAll('img').forEach(img=>img.remove())">` : ''}
-      </a>
-      <div class="news-meta"><span>Tier ${esc(item.source_tier)}</span><span>${esc(time)}</span><span>relevance ${esc(item.relevance_score)}</span></div>
-      <h3><a href="${esc(item.url)}" target="_blank" rel="noopener">${esc(humanize(item.title || ''))}</a></h3>
-      <p>${esc(humanize((item.summary || '').slice(0, 190)))}</p>
-      <div class="news-tags">${countries.map((c: string) => `<span>${esc(c)}</span>`).join('')}${item.topics.map((t: string) => `<span class="topic">${esc(humanize(t))}</span>`).join('')}</div>
-      <footer>${esc(humanize(item.source || 'Regional source'))} · <a href="${esc(item.url)}" target="_blank" rel="noopener">Read original ↗</a></footer>
+      </a>`
+      : '';
+    // Country and topic move into a single kicker line. They used to be five
+    // coloured pills per story, which is what made the board look busy — the
+    // filter row above already does the job those pills were doing.
+    const kicker = [primaryCountry, humanize(primaryTopic)].filter(Boolean).join(' · ');
+    return `<article class="news-card ${isLead ? 'lead' : ''}${showMedia ? '' : ' no-media'}" data-news-topics="${esc(item.topics.join('|'))}" data-news-countries="${esc(item.countries.join('|'))}">
+      ${mediaHtml}
+      <div class="news-kicker">${esc(kicker)}</div>
+      <h3><a href="${esc(item.url)}" target="_blank" rel="noopener">${esc(headline)}</a></h3>
+      ${dek ? `<p>${esc(dek)}</p>` : ''}
+      <footer><span class="news-source">${esc(humanize(item.source || 'Regional source'))}</span><span class="news-stamp">Tier ${esc(item.source_tier)} · ${esc(time)} · relevance ${esc(item.relevance_score)}</span></footer>
     </article>`;
   }).join('') || '<p class="muted">Regional feeds have not been refreshed yet.</p>';
 
@@ -880,35 +991,48 @@ export function loadDashboardData() {
     const snap = m.market_snapshot || {};
     const barVals = ((snap.bars || []) as number[]).slice(0, 8);
     const barLabel = snap.chart_label || 'Market activity proxy';
-    const candleChart = buildIndexedCandlestickSvg(barVals, barLabel);
+    const activityChart = buildIndexedActivitySvg(barVals, barLabel);
     const barMeta = barVals.length
-      ? `<span class="candle-chart-meta"><strong>Index ${Math.round(barVals[barVals.length - 1] || 0)}</strong><span>range ${Math.round(Math.min(...barVals))}–${Math.round(Math.max(...barVals))} · illustrative 0–100</span></span>`
+      ? `<span class="activity-chart-meta"><strong>Index ${Math.round(barVals[barVals.length - 1] || 0)}</strong><span>range ${Math.round(Math.min(...barVals))}–${Math.round(Math.max(...barVals))} · illustrative 0–100</span></span>`
       : '';
     const observedAt = String(m.observation_at || snap.observation_at || '').slice(0, 10);
     const observationCopy = observedAt
       ? `Official source observation: ${observedAt}`
-      : `Official source status: ${humanize(m.freshness_state || snap.data_status || 'date unavailable')}`;
+      : `Official source status: ${humanizeStatus(m.freshness_state || snap.data_status, 'Date unavailable')}`;
     const exchName = ex.name || 'Market source';
     const exchHtml = ex.url
       ? `<a href="${esc(ex.url)}" target="_blank" rel="noopener">${esc(exchName)}</a>`
       : esc(exchName);
+    // The exchange ticker is the card's identifier; when a market has none,
+    // print nothing rather than a dangling dash.
+    const codeHtml = ex.code ? `<span class="market-code">${esc(ex.code)}</span>` : '<span class="market-code"></span>';
+    // watch_sectors and signal_links are usually the same list — say it once.
+    // snap.focus arrives as either a sentence or a list of sectors; an array
+    // stringified by the template literal is what produced "a,b,c".
+    const focusCopy = Array.isArray(snap.focus)
+      ? snap.focus.join(', ')
+      : String(snap.focus || '').replace(/,(?=\S)/g, ', ') || 'Market notices and official source updates';
+    const linksHtml = links && links !== sectors
+      ? `<p><strong>Linked signals:</strong> ${esc(humanize(links))}</p>`
+      : '';
     marketWatchHtml += `<article class="market-card ${statusClass}">
-      <div class="market-top"><span class="market-code">${esc(ex.code || '—')}</span><span class="market-status">${esc(status)}</span></div>
+      <div class="market-top">${codeHtml}<span class="market-status">${esc(status)}</span></div>
       <h3>${esc(humanize(m.country || 'Market'))}</h3>
       <p class="market-exchange">${exchHtml}</p>
       <p class="market-observation">${esc(observationCopy)}</p>
       <div class="market-finance-row"><span>FX ${esc(humanize(fx.pair || '—'))}</span><span>${esc(humanize(fx.rate_label || 'watch'))}</span></div>
       <p><strong>Watch:</strong> ${esc(humanize(sectors))}</p>
       <p><strong>News context:</strong> ${esc(humanize(news))}</p>
-      <p><strong>Linked signals:</strong> ${esc(humanize(links))}</p>
+      ${linksHtml}
     </article>`;
     marketChartHtml += `<article class="market-chart-card ${statusClass}">
-      <div class="market-top"><span class="market-code">${esc(ex.code || '—')}</span><span class="market-status">${esc(snap.data_status || status)}</span></div>
-      <h3>${esc(humanize(snap.headline || exchName))}</h3>
-      <div class="candle-chart-shell">${candleChart}</div>
-      <p class="candle-chart-caption"><strong>${esc(humanize(barLabel))}</strong>${barMeta}</p>
+      <div class="market-top">${codeHtml}<span class="market-status">${esc(snap.data_status ? humanizeStatus(snap.data_status) : status)}</span></div>
+      <h3>${esc(humanize(m.country || exchName))}</h3>
+      <div class="activity-chart-shell">${activityChart}</div>
+      <p class="activity-chart-caption"><strong>${esc(humanize(barLabel))}</strong>${barMeta}</p>
       <p class="market-chart-disclosure">Illustrative indexed activity proxy — not exchange price or OHLC data.</p>
-      <p>${esc(humanize(snap.focus || 'Market notices and official source updates'))}</p>
+      ${snap.headline ? `<p class="market-chart-headline">${esc(humanize(snap.headline))}</p>` : ''}
+      <p>${esc(humanize(focusCopy))}</p>
       <div class="market-finance-row"><span>${esc(humanize(fx.indicator || 'FX watch'))}</span><span>${esc(humanize(fx.pair || '—'))}</span></div>
     </article>`;
   }
@@ -918,16 +1042,76 @@ export function loadDashboardData() {
     .map((src: any) => `<span>${esc(src.name || '')}</span>`).join('');
   const marketDataSources: any[] = marketSources.market_data_sources || [];
   const fxSources: any[] = marketSources.fx_sources || [];
+  // config/market_sources.json only defines `markets`, so these three arrays
+  // are empty and the registry rendered as blank scaffolding. Derive it from
+  // the market records the page already tracks instead of maintaining a
+  // parallel list that drifts — and carry each source's fetch status, which
+  // is the part with real value: which of these actually publish.
+  const derivedMarketSources = marketDataSources.length ? marketDataSources : markets
+    .map((m: any) => {
+      const ex = m.exchange || {};
+      // "Responding" means the source published a dated observation, not
+      // merely that the page loaded. Jamaica and Cayman return HTTP 200 and
+      // no date, which is exactly the gap worth reporting.
+      const reachable = Boolean(m.observation_at);
+      return ex.name || m.exchange_name
+        ? {
+            name: ex.name || m.exchange_name,
+            code: ex.code || m.exchange_code || '',
+            url: ex.url || m.source_url || '',
+            reachable,
+          }
+        : null;
+    })
+    .filter(Boolean);
+
+  const derivedFxSources = fxSources.length ? fxSources : Object.values(
+    Object.fromEntries(
+      markets
+        .filter((m: any) => (m.fx || {}).pair)
+        .map((m: any) => [m.fx.pair, { name: m.fx.pair, code: m.fx.currency || '', url: '' }]),
+    ),
+  );
+
+  const derivedRegionalSources = regionalSources.length ? regionalSources : Object.values(
+    Object.fromEntries(
+      markets.flatMap((m: any) => (m.credible_news || []) as any[])
+        .filter((n: any) => n && n.name)
+        .map((n: any) => [n.name, { name: n.name, url: n.url || '' }]),
+    ),
+  );
+
   const registryGroups = [
-    ['Official market data', marketDataSources],
-    ['FX / currency', fxSources],
-    ['Regional context', regionalSources],
+    ['Official market data', derivedMarketSources],
+    ['FX / currency', derivedFxSources],
+    ['Regional context', derivedRegionalSources],
   ] as [string, any[]][];
-  for (const [label, sources] of registryGroups) {
-    const chips = sources.map((src: any) =>
-      `<a href="${esc(src.url || '#')}" target="_blank" rel="noopener">${src.code ? esc(src.code) + ' · ' : ''}${esc(src.name || '')}</a>`
-    ).join('');
+  // Skip groups with nothing in them. config/market_sources.json currently
+  // carries only `markets`, so these arrays are empty and the registry was
+  // rendering three labelled rows with no sources beside them.
+  for (const [label, sources] of registryGroups.filter(([, s]) => s.length)) {
+    const chips = sources.map((src: any) => {
+      const label = `${src.code ? esc(src.code) + ' · ' : ''}${esc(src.name || '')}`;
+      const unreachable = src.reachable === false;
+      const cls = unreachable ? ' class="src-unreachable"' : '';
+      const title = unreachable ? ' title="Tracked, but no dated observation retrieved this cycle"' : '';
+      return src.url
+        ? `<a${cls}${title} href="${esc(src.url)}" target="_blank" rel="noopener">${label}</a>`
+        : `<span${cls}${title}>${label}</span>`;
+    }).join('');
     sourceRegistryHtml += `<div class="source-registry-group"><strong>${esc(label)}</strong><div>${chips}</div></div>`;
+  }
+  // An honest empty state beats "0 market data sources" over three blank
+  // rows. config/market_sources.json currently defines `markets` only, so
+  // the registry has nothing to list until those arrays are populated.
+  const registryTotal = derivedMarketSources.length + derivedFxSources.length + derivedRegionalSources.length;
+  const reachableCount = derivedMarketSources.filter((src: any) => src.reachable !== false).length;
+  const sourceRegistrySummary = registryTotal
+    ? `${derivedMarketSources.length} market data sources (${reachableCount} responding) · `
+      + `${derivedFxSources.length} FX references · ${derivedRegionalSources.length} regional outlets`
+    : 'Not populated in this cycle';
+  if (!registryTotal) {
+    sourceRegistryHtml = '<p class="source-registry-empty">Exchange, FX and regional-context sources are named on each market above. The consolidated registry is not populated in this cycle\'s configuration.</p>';
   }
 
   // ── All clusters (audit) ───────────────────────────────────
@@ -1040,12 +1224,13 @@ export function loadDashboardData() {
     // Scalars
     cycleId, nowStr, nCountries, nSources, nClusters, nPersonas, nFb, nComposite,
     // Lead signal
-    lTitle, lCountry, lEvidence, lRanking, lDecision, lGrade, lRisks, leadPctStr,
+    lTitle, lRankingBasis, lCountry, lEvidence, lRanking, lDecision, lGrade, lRisks, leadPctStr,
     leadAction, leadWindow, leadOwner, leadDispatchId, leadDelivery, leadFeedback, leadRationale,
     // HTML fragments
     leadRoutesHtml, validationPackHtml, secSignals, receiptsHtml, boostsHtml,
-    receiptsProvenanceHtml, newsHtml, newsFilterHtml, marketWatchHtml, marketChartHtml, regionalSourceHtml,
-    sourceRegistryHtml, allClustersHtml, fbActionPills,
+    receiptsProvenanceHtml, newsHtml, newsFilterHtml,
+    calibrationCommitmentHtml: calibrationCommitmentHtml(), marketWatchHtml, marketChartHtml, regionalSourceHtml,
+    sourceRegistryHtml, sourceRegistrySummary, allClustersHtml, fbActionPills,
     srcRows,
     // Counts
     marketSourceCount: marketDataSources.length,

@@ -262,40 +262,172 @@ SOURCE_SCORE_WEIGHT: dict[str, int] = {
 }
 
 
-def compute_signal_score(signal: dict[str, Any]) -> int:
-    """Score a single composite signal from 0-100.
+# Percentage movements reach us in several phrasings. The merger writes
+# "moved up 860.3%", _transfer_fdi_magnitudes writes "FDI change: 860.3%",
+# and some sources write a bare "+860.3%". Scoring read only the first of
+# those, so magnitudes carried across by the transfer were silently ignored.
+_MAGNITUDE_PATTERNS = (
+    re.compile(r"moved (?:up|down) ([\d.]+)\s*%"),
+    re.compile(r"change:\s*([\d.]+)\s*%", re.IGNORECASE),
+    re.compile(r"(?:^|[\s(])[+-]([\d.]+)\s*%"),
+    re.compile(r"([\d.]+)\s*% change", re.IGNORECASE),
+)
 
-    Includes magnitude boost for FDI/inflation/unemployment signals where
-    the evidence text contains a percentage — bigger moves score higher
-    even when the structural properties are identical.
+MAGNITUDE_BANDS = ((500.0, 20), (200.0, 14), (75.0, 8), (30.0, 4))
+
+
+def signal_magnitude_pct(signal: dict[str, Any]) -> float | None:
+    """Size of the movement this signal describes, as a percentage.
+
+    Prefers the structured `_magnitude_pct` stamped by
+    _transfer_fdi_magnitudes; falls back to parsing the evidence prose so
+    signals that never went through the transfer still score on magnitude.
+    """
+    stamped = signal.get("_magnitude_pct")
+    if isinstance(stamped, (int, float)):
+        return float(stamped)
+    for ev in signal.get("evidence") or []:
+        for pattern in _MAGNITUDE_PATTERNS:
+            match = pattern.search(str(ev))
+            if match:
+                try:
+                    return float(match.group(1))
+                except ValueError:
+                    continue
+    return None
+
+
+def magnitude_boost(pct: float | None) -> int:
+    if pct is None:
+        return 0
+    for threshold, boost in MAGNITUDE_BANDS:
+        if pct >= threshold:
+            return boost
+    return 0
+
+
+# ── Evidence age ───────────────────────────────────────────
+# Age matters relative to how often a source is *expected* to refresh, not in
+# absolute days. A World Bank annual series 18 months old is normal; a tender
+# notice 18 months old is dead. Scoring on raw age would punish the former and
+# excuse the latter, so staleness is measured in refresh intervals.
+
+REFRESH_CADENCE_DAYS: dict[str, int] = {
+    "World Bank": 365,
+    "IDB": 365,
+    "CARICOM": 180,
+    "CDB": 90,
+    "ECCB": 90,
+    "NOAA": 1,
+    "NDBC": 1,
+    "NHC": 1,
+    "CCRIF": 30,
+}
+DEFAULT_CADENCE_DAYS = 90
+
+# Staleness (age ÷ cadence) → score penalty. One interval is on time.
+STALENESS_PENALTY = ((4.0, 18), (3.0, 12), (2.0, 7), (1.5, 3))
+
+
+def observed_period_end(period: str) -> datetime | None:
+    """End of the period the evidence describes. '2024' -> 2024-12-31."""
+    text = str(period or "").strip()
+    if not text:
+        return None
+    try:
+        if len(text) == 4 and text.isdigit():
+            return datetime(int(text), 12, 31, tzinfo=timezone.utc)
+        return datetime.fromisoformat(text.replace("Z", "+00:00")).astimezone(timezone.utc)
+    except (ValueError, OverflowError):
+        return None
+
+
+def evidence_age_days(signal: dict[str, Any], now: datetime | None = None) -> int | None:
+    end = observed_period_end(signal.get("observed_period", ""))
+    if end is None:
+        return None
+    now = now or datetime.now(timezone.utc)
+    return max(0, (now - end).days)
+
+
+def expected_cadence_days(signal: dict[str, Any]) -> int:
+    """Fastest cadence among the sources that actually corroborate."""
+    cadences = [
+        REFRESH_CADENCE_DAYS.get(src, DEFAULT_CADENCE_DAYS)
+        for src in corroborating_sources(signal)
+    ]
+    return min(cadences) if cadences else DEFAULT_CADENCE_DAYS
+
+
+def staleness_ratio(signal: dict[str, Any], now: datetime | None = None) -> float | None:
+    """How many refresh intervals have passed since the evidence period."""
+    age = evidence_age_days(signal, now)
+    if age is None:
+        return None
+    return age / max(expected_cadence_days(signal), 1)
+
+
+def staleness_penalty(ratio: float | None) -> int:
+    if ratio is None:
+        return 0
+    for threshold, penalty in STALENESS_PENALTY:
+        if ratio >= threshold:
+            return penalty
+    return 0
+
+
+def corroborating_sources(signal: dict[str, Any]) -> list[str]:
+    """Sources that confirm this signal's claim for its own country.
+
+    Falls back to `sources` for signal kinds that never split the two, so
+    older records and simpler detectors keep their previous weighting.
+    """
+    explicit = signal.get("corroborating_sources")
+    if isinstance(explicit, list) and explicit:
+        return list(explicit)
+    if isinstance(explicit, list) and signal.get("context_sources"):
+        return []
+    return list(signal.get("sources") or [])
+
+
+def context_sources(signal: dict[str, Any]) -> list[str]:
+    """Regional datasets available this cycle, not country confirmation."""
+    extra = signal.get("context_sources")
+    return list(extra) if isinstance(extra, list) else []
+
+
+def compute_signal_score(signal: dict[str, Any]) -> int:
+    """Score a single composite signal.
+
+    Returns the RAW score, which may exceed 100. Ranking needs the raw value:
+    clamping here made every strong FDI signal land on exactly 100, so the
+    lead market was decided by list order rather than by evidence. Clamp with
+    `display_score()` at the point of display instead.
     """
     score = KIND_SCORE_WEIGHT.get(signal.get("kind", ""), 50)
     pb = {"high": 18, "medium": 10, "low": 3}
     score += pb.get(signal.get("priority", "low"), 0)
     score += min(len(signal.get("evidence") or []) * 4, 12)
-    score += sum(SOURCE_SCORE_WEIGHT.get(s, 4) for s in signal.get("sources", []))
-    if len(signal.get("sources", [])) >= 3:
+
+    # Only sources that speak to THIS country's claim earn corroboration
+    # weight. Regional datasets that merely exist this cycle are context:
+    # they were being counted as per-country confirmation, which handed
+    # every FDI country the same two extra sources and the 3-source bonus.
+    corroborating = corroborating_sources(signal)
+    score += sum(SOURCE_SCORE_WEIGHT.get(src, 4) for src in corroborating)
+    score += min(len(context_sources(signal)) * 2, 4)
+    if len(corroborating) >= 3:
         score += 8
+    score += magnitude_boost(signal_magnitude_pct(signal))
+    # Evidence that is overdue against its own source's cadence should not
+    # rank alongside evidence that arrived on time.
+    score -= staleness_penalty(staleness_ratio(signal))
+    return score
 
-    # ── Magnitude boost ───────────────────────────────────
-    # Heavier weight for signals that show large numeric movements
-    # this differentiates Guyana 860% from St Kitts 41%
-    evidence = signal.get("evidence") or []
-    for ev in evidence:
-        m = re.search(r"moved (?:up|down) ([\d.]+)%", ev)
-        if m:
-            pct = float(m.group(1))
-            if pct >= 500:
-                score += 20  # exceptional move
-            elif pct >= 200:
-                score += 14  # major move
-            elif pct >= 75:
-                score += 8   # significant move
-            elif pct >= 30:
-                score += 4   # notable move
-            break  # one magnitude boost per signal
 
-    return min(score, 100)
+def display_score(raw: int | float) -> int:
+    """Clamp a raw score into the 0-100 range shown to readers."""
+    return max(0, min(int(raw), 100))
 
 
 def feedback_boost_for(signal: dict[str, Any]) -> int:
@@ -357,8 +489,13 @@ def extract_country(signal: dict[str, Any]) -> str:
 
 
 def evidence_grade(signal: dict[str, Any]) -> str:
-    """Evidence grade: A/B/C based on source and evidence count."""
-    source_count = len(signal.get("sources", []))
+    """Evidence grade: A/B/C based on source and evidence count.
+
+    Counts corroborating sources only. Grading on the full source list
+    awarded "A - multi-source" to signals whose extra sources were regional
+    datasets that confirmed nothing about the country in question.
+    """
+    source_count = len(corroborating_sources(signal))
     evidence_count = len(signal.get("evidence") or [])
     if source_count >= 3 and evidence_count >= 2:
         return "A - multi-source"
@@ -368,6 +505,10 @@ def evidence_grade(signal: dict[str, Any]) -> str:
 
 
 # ── Freshness / temporal tracking ──────────────────────────
+
+# Bumped when the meaning of `previous_top_scores` changes.
+SCORE_BASIS = "raw-v1"
+
 
 def load_editorial_state() -> dict[str, Any]:
     if STATE_FILE.exists():
@@ -395,6 +536,9 @@ def save_editorial_state(
         "previous_lead_country": lead_country,
         "previous_signal_ids": [s.get("id", "") for s in signals],
         "previous_top_scores": scores,
+        # Scores moved from clamped (0-100) to raw when ranking stopped
+        # capping. Diffing across that change would misreport every signal.
+        "score_basis": SCORE_BASIS,
         "previous_summaries": {s.get("id", ""): s.get("summary", "") for s in signals},
     }
     STATE_FILE.parent.mkdir(parents=True, exist_ok=True)
@@ -418,7 +562,11 @@ def signal_freshness(
     if prev_summaries.get(signal_id, "") != summary:
         return ("updated", "Content updated this cycle")
 
-    prev = prev_scores.get(signal_id, 0)
+    prev = prev_scores.get(signal_id)
+    if prev is None:
+        # Seen last cycle but no score on record — treat as unchanged rather
+        # than diffing against an implicit zero, which reads as a huge jump.
+        return ("sustained", "Unchanged from last cycle")
     diff = score - prev
     if abs(diff) < 5:
         return ("sustained", "Unchanged from last cycle")
@@ -458,20 +606,37 @@ def select_lead(
     best_rationale = ""
 
     for country, sigs in clusters_to_score.items():
-        n_signals = len(sigs)
+        # Count distinct FACTS, not records. investment_signal and
+        # enhanced_investment are generated from the same World Bank
+        # observation, so counting both paid the corroboration bonus twice
+        # for one piece of evidence.
+        distinct_facts = {
+            sig.get("fact_key") or f"id:{sig.get('id', '')}" for sig in sigs
+        }
+        n_signals = len(distinct_facts)
         unique_sources: set[str] = set()
-        weighted_sum = 0.0
+        weighted_scores: list[float] = []
 
         for sig in sigs:
             base_score = scores.get(sig.get("id", ""), 50)
             kw = KIND_LEAD_WEIGHT.get(sig.get("kind", ""), 1.0)
-            weighted_sum += base_score * kw
-            unique_sources.update(sig.get("sources", []))
+            weighted_scores.append(base_score * kw)
+            # Only corroborating sources count toward breadth; regional
+            # datasets that confirm nothing are not extra coverage.
+            unique_sources.update(corroborating_sources(sig))
+        if not weighted_scores:
+            continue
 
         n_sources = len(unique_sources)
         cross_signal_bonus = min(n_signals * 5, 20)
         cross_source_bonus = min(n_sources * 10, 30)
-        cluster_score = (weighted_sum / max(len(sigs), 1)) + cross_signal_bonus + cross_source_bonus
+        # Lead on the country's strongest signal, not the mean of its
+        # signals. Averaging punished breadth: Guyana's 860% FDI surge lost
+        # the lead to Suriname purely because Guyana also carried a weak
+        # tourism signal, which dragged its average below a country with
+        # fewer, narrower signals. Corroboration should only ever help, and
+        # it still does — through the two bonuses below.
+        cluster_score = max(weighted_scores) + cross_signal_bonus + cross_source_bonus
 
         if cluster_score > best_cluster_score:
             best_cluster_score = cluster_score
@@ -536,11 +701,9 @@ def _transfer_fdi_magnitudes(enriched: list[dict[str, Any]]) -> None:
     for sig in enriched:
         if sig.get("kind") == "investment_signal":
             country = sig.get("_country", "")
-            for ev in sig.get("evidence") or []:
-                m = re.search(r"moved (?:up|down) ([\d.]+)%", ev)
-                if m:
-                    fdi_pct_by_country[country] = float(m.group(1))
-                    break
+            pct = signal_magnitude_pct(sig)
+            if pct is not None:
+                fdi_pct_by_country[country] = pct
 
     if not fdi_pct_by_country:
         return
@@ -551,7 +714,12 @@ def _transfer_fdi_magnitudes(enriched: list[dict[str, Any]]) -> None:
             country = sig.get("_country", "")
             pct = fdi_pct_by_country.get(country)
             if pct is not None:
-                # Append percentage to evidence
+                # Stamp the magnitude as structured data. Appending it to the
+                # evidence prose alone was not enough: the transfer wrote
+                # "FDI change: 860.3%" while scoring looked for "moved up
+                # 860.3%", so the boost it exists to apply never applied.
+                sig["_magnitude_pct"] = pct
+
                 evidence = list(sig.get("evidence") or [])
                 pct_line = f"FDI change: {pct:.1f}%"
                 if pct_line not in evidence:
@@ -561,8 +729,12 @@ def _transfer_fdi_magnitudes(enriched: list[dict[str, Any]]) -> None:
                 # Update detail
                 sig["_detail"] = f"{pct:.1f}% change"
 
-                # Recompute score with magnitude
-                new_score = compute_signal_score(sig)
+                # Recompute with magnitude. The feedback boost has to be
+                # re-added: this runs after enrich_signals, so recomputing
+                # the base score alone would silently drop it.
+                new_raw = compute_signal_score(sig) + feedback_boost_for(sig)
+                new_score = display_score(new_raw)
+                sig["_score_raw"] = new_raw
                 sig["_score"] = new_score
 
                 # Update band (same module — no import needed)
@@ -617,15 +789,22 @@ def enrich_signals(
 ) -> dict[str, Any]:
     """Main entry point. Returns a full editorial package dict."""
     load_feedback_boosts()
+    # Raw scores, uncapped. Feedback is added to the raw value: clamping
+    # first made the loop one-sided, because a signal already sitting on 100
+    # absorbed every negative boost but discarded every positive one.
     scores = {s.get("id", ""): compute_signal_score(s) for s in signals}
-    # Apply feedback boosts from previous cycles
     for sig in signals:
         sid = sig.get("id", "")
         if sid in scores:
-            scores[sid] = min(scores[sid] + feedback_boost_for(sig), 100)
+            scores[sid] = scores[sid] + feedback_boost_for(sig)
     state = load_editorial_state()
     previous_ids = set(state.get("previous_signal_ids", []))
     prev_scores = state.get("previous_top_scores", {})
+    if state.get("score_basis") != SCORE_BASIS:
+        # State written before the raw-score change: the numbers are on a
+        # different scale, so skip the comparison for one cycle instead of
+        # reporting spurious intensification.
+        prev_scores = {}
     prev_summaries = state.get("previous_summaries", {})
 
     # Enrich each signal
@@ -634,27 +813,27 @@ def enrich_signals(
         sid = sig.get("id", "") or ""
         country = extract_country(sig)
         detail = extract_detail(sig)
-        score = scores.get(sid, 50)
+        raw = scores.get(sid, 50)
+        score = display_score(raw)
         band = resolve_band(score)
-        n_sources = len(sig.get("sources", []))
-        fresh, fresh_detail = signal_freshness(
-            sid, previous_ids, prev_scores, score, prev_summaries,
-            sig.get("summary", ""),
-        )
+        # Corroborating count: this drives the headline wording and the
+        # evidence grade, both of which claim cross-source validation.
+        n_sources = len(corroborating_sources(sig))
 
         enriched_sig = dict(sig)
+        # _score is what readers see (0-100); _score_raw is what ranking uses.
         enriched_sig["_score"] = score
+        enriched_sig["_score_raw"] = raw
         enriched_sig["_band"] = band
         enriched_sig["_band_label"] = band.replace("_", " ").title()
         enriched_sig["_band_emoji"] = band_emoji(band)
         enriched_sig["_decision"] = get_decision(
             sig.get("kind", ""), band, country, detail, n_sources,
         )
-        enriched_sig["_freshness"] = fresh
-        enriched_sig["_freshness_detail"] = fresh_detail
         enriched_sig["_country"] = country
         enriched_sig["_detail"] = detail
         enriched_sig["_n_sources"] = n_sources
+        enriched_sig["_n_context_sources"] = len(context_sources(sig))
         enriched_sig["_evidence_grade"] = evidence_grade(sig)
         enriched_sig["_kind_label"] = KIND_LABELS.get(sig.get("kind", ""), sig.get("kind", ""))
         enriched.append(enriched_sig)
@@ -663,7 +842,27 @@ def enrich_signals(
     # selecting the lead, otherwise structurally similar FDI signals tie too
     # often and the editorial lead ignores magnitude.
     _transfer_fdi_magnitudes(enriched)
-    scores = {s.get("id", ""): int(s.get("_score", compute_signal_score(s))) for s in enriched}
+
+    # Freshness is measured after the transfer, on raw scores, because that is
+    # what save_editorial_state records. Comparing the clamped score against a
+    # stored raw one reported every capped signal as "weakened" next cycle,
+    # and comparing pre-transfer against post-transfer did the same to any
+    # signal the transfer had lifted.
+    for sig in enriched:
+        fresh, fresh_detail = signal_freshness(
+            sig.get("id", "") or "", previous_ids, prev_scores,
+            int(sig.get("_score_raw", sig.get("_score", 0))),
+            prev_summaries, sig.get("summary", ""),
+        )
+        sig["_freshness"] = fresh
+        sig["_freshness_detail"] = fresh_detail
+
+    # Lead selection ranks on the raw score, so signals that would both clamp
+    # to 100 can still be told apart.
+    scores = {
+        s.get("id", ""): int(s.get("_score_raw", s.get("_score", compute_signal_score(s))))
+        for s in enriched
+    }
 
     # Stamp narrative title on every enriched signal
     from packagers.narrative import narrative_title as _narrative_title

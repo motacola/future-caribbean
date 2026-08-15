@@ -1,26 +1,19 @@
 {
-  "generated_at": "2026-08-13T16:44:14.475801+00:00",
+  "generated_at": "2026-08-15T22:00:15.369942+00:00",
   "packs": [
     {
       "signal_id": "enhanced-invest-guyana",
       "file": "enhanced-invest-guyana.json",
       "country": "Guyana",
-      "recommendation": "advance",
+      "recommendation": "hold",
       "confidence_score": 100
     },
     {
       "signal_id": "enhanced-invest-suriname",
       "file": "enhanced-invest-suriname.json",
       "country": "Suriname",
-      "recommendation": "advance",
-      "confidence_score": 100
-    },
-    {
-      "signal_id": "enhanced-invest-barbados",
-      "file": "enhanced-invest-barbados.json",
-      "country": "Barbados",
       "recommendation": "hold",
-      "confidence_score": 68
+      "confidence_score": 98
     },
     {
       "signal_id": "dev-pipeline-regional",
@@ -30,8 +23,15 @@
       "confidence_score": 78
     },
     {
-      "signal_id": "regional-investment_signal-20260813",
-      "file": "regional-investment_signal-20260813.json",
+      "signal_id": "regional-investment_signal-20260815",
+      "file": "regional-investment_signal-20260815.json",
+      "country": "Caribwide",
+      "recommendation": "hold",
+      "confidence_score": 78
+    },
+    {
+      "signal_id": "regional-enhanced_investment-20260815",
+      "file": "regional-enhanced_investment-20260815.json",
       "country": "Caribwide",
       "recommendation": "hold",
       "confidence_score": 78

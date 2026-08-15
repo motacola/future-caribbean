@@ -1,11 +1,11 @@
 # Opportunity Validation Pack — Guyana
 
-- Signal: `enhanced-invest-guyana` · Dispatch: `DSP-20260815-019`
-- Confidence: 100/100 (raw 114) · C - single-source
+- Signal: `invest-guyana` · Dispatch: `DSP-20260815-003`
+- Confidence: 90/100 (raw 90) · B - cross-source
 - Action readiness: high
-- Evidence freshness: stale · cycles since refresh: 7
-- Recommendation: **HOLD** — Evidence fingerprint unchanged for 7 cycles — downgraded from advance to hold until new corroboration arrives.
-- Last validated: 2026-08-15T22:00:15.369942+00:00
+- Evidence freshness: stale · cycles since refresh: 3
+- Recommendation: **HOLD** — Evidence fingerprint unchanged for 3 cycles — downgraded from advance to hold until new corroboration arrives.
+- Last validated: 2026-08-15T20:21:28.714890+00:00
 
 ## Sector hypotheses
 - Oil & gas and offshore support services [corroborated] — _Google News — Guyana: Suriname offshore oil and gas momentum builds as GranMorgu advances - World Oil_
