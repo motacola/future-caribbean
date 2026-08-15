@@ -54,7 +54,14 @@ jobs:
           # artifact. If it is not staged here, every scheduled runner starts
           # again from the repository's old baseline and the track record never
           # accrues across cycles.
-          git add outbox/ dashboard.html data/history/ data/.cycle_count.json data/editorial/ data/feedback/ data/calibration/ data/ndbc/history.json
+          # dashboard.html was retired in 4e16d2a (Astro is the only UI) but
+          # stayed in this list, so `git add` exited 128 on a missing pathspec
+          # and every cycle since died here without publishing. Paths are
+          # filtered to those that exist so one retired artefact cannot block
+          # the whole publish again.
+          for p in outbox/ data/history/ data/.cycle_count.json data/editorial/ data/feedback/ data/calibration/ data/ndbc/history.json; do
+            [ -e "$p" ] && git add "$p" || echo "skipping missing path: $p"
+          done
           # Guard: no empty commits
           if git diff --staged --quiet; then
             echo "No changes to commit"
