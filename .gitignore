@@ -45,3 +45,6 @@ data/tenders/raw/
 
 # Agent worktrees — scratch, never committed
 .worktrees/
+
+# Per-fetch RSS snapshots — regenerated each cycle
+data/regional_news/raw/

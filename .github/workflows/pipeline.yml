@@ -66,7 +66,20 @@ jobs:
           # and every cycle since died here without publishing. Paths are
           # filtered to those that exist so one retired artefact cannot block
           # the whole publish again.
-          for p in outbox/ data/history/ data/.cycle_count.json data/editorial/ data/feedback/ data/calibration/ data/ndbc/history.json; do
+          #
+          # The list must cover everything src/lib/data.ts reads, or the cycle
+          # fetches fresh data and then discards it. Regional news, market
+          # watch and the composite signals were all missing: the RSS poller
+          # pulled 75 fresh articles every run and none of them ever reached
+          # the site. data/regional_news/raw/ is deliberately excluded — those
+          # are per-fetch XML snapshots that would bloat history.
+          for p in outbox/ data/history/ data/.cycle_count.json data/editorial/ \
+                   data/feedback/ data/calibration/ data/ndbc/history.json \
+                   data/regional_news/latest.json data/regional_news/image_cache.json \
+                   data/market_watch/ data/composite/ \
+                   public/regional_news.json public/market_watch.json \
+                   api/market-watch-data.json api/regional-news-data.json \
+                   api/feedback-data.json api/source-health-data.json; do
             [ -e "$p" ] && git add "$p" || echo "skipping missing path: $p"
           done
           # Guard: no empty commits
