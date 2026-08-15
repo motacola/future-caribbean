@@ -3,12 +3,16 @@
 from __future__ import annotations
 
 import json
+import sys
 import re
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+from pipeline_util import output_path  # noqa: E402
+
 REGISTRY = ROOT / "config" / "regional_capabilities.json"
 DISPATCHES = ROOT / "outbox" / "opportunity_dispatches.json"
 TENDERS = ROOT / "data" / "tenders" / "latest.json"
@@ -484,8 +488,10 @@ def run(root: Path = ROOT) -> tuple[dict[str, Any], dict[str, Any]]:
     projects = extract_demand_projects(_load(root / "data" / "tenders" / "latest.json"))
     graph = build_graph(registry, projects)
     opportunities = build_opportunities(registry, _load(root / "outbox" / "opportunity_dispatches.json"), projects)
-    graph_path = root / "data" / "coordination" / "graph.json"
-    opportunities_path = root / "outbox" / "coordination_opportunities.json"
+    # Resolved here, not at import time — the test harness sets the output
+    # root after this module has already been imported during collection.
+    graph_path = output_path(root / "data" / "coordination" / "graph.json")
+    opportunities_path = output_path(root / "outbox" / "coordination_opportunities.json")
     graph_path.parent.mkdir(parents=True, exist_ok=True)
     opportunities_path.parent.mkdir(parents=True, exist_ok=True)
     try:

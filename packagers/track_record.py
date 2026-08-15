@@ -11,6 +11,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
+from pipeline_util import output_path  # noqa: E402
+
+sys.path.insert(0, str(ROOT))
 
 from humanizer import humanize  # noqa: E402
 
@@ -28,7 +31,7 @@ def parse_cycle_date(cycle_id: str) -> str:
 
 
 def main() -> None:
-    dest = ROOT / "outbox" / "track_record.json"
+    dest = output_path(ROOT / "outbox" / "track_record.json")
     previous_by_cycle: dict[str, dict] = {}
     if dest.exists():
         try:

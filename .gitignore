@@ -42,3 +42,6 @@ output/
 
 # Tender portal raw snapshots — regenerated each cycle
 data/tenders/raw/
+
+# Agent worktrees — scratch, never committed
+.worktrees/

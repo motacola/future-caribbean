@@ -56,3 +56,39 @@ def retry(
             raise  # pragma: no cover
         return wrapper  # type: ignore
     return decorator
+
+# ── Output redirection ─────────────────────────────────────
+# Packagers write artefacts the live site serves. A test run must never change
+# what the site publishes, but several writers run in subprocesses where
+# monkeypatching cannot reach them. So every writer resolves its destination
+# through `output_path()`, and the test harness points that at a temp dir via
+# SIGNAL_FABRIC_OUTPUT_ROOT. Inputs are unaffected — only writes are redirected.
+
+OUTPUT_ROOT_ENV = "SIGNAL_FABRIC_OUTPUT_ROOT"
+
+
+def output_path(default: "Path") -> "Path":
+    """Where an artefact should actually be written.
+
+    Returns `default` unless SIGNAL_FABRIC_OUTPUT_ROOT is set, in which case
+    the path is remapped under that root, preserving its position relative to
+    the repository so callers keep their directory layout.
+    """
+    import os
+    from pathlib import Path as _Path
+
+    root = os.environ.get(OUTPUT_ROOT_ENV)
+    if not root:
+        return default
+
+    repo = _Path(__file__).resolve().parent
+    default = _Path(default)
+    try:
+        relative = default.resolve().relative_to(repo)
+    except ValueError:
+        # Outside the repo — leave it alone rather than guess.
+        return default
+
+    destination = _Path(root) / relative
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    return destination
