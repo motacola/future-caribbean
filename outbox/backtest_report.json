@@ -7,28 +7,10 @@
   },
   "cycle_accuracy": [
     {
-      "actionable_responses": 0,
-      "cycle_id": "20260815",
-      "dispatches": 214,
-      "response_rate": 0.0
-    },
-    {
-      "actionable_responses": 3,
-      "cycle_id": "20260813",
-      "dispatches": 22,
-      "response_rate": 0.13636363636363635
-    },
-    {
-      "actionable_responses": 3,
-      "cycle_id": "20260724",
-      "dispatches": 20,
-      "response_rate": 0.15
-    },
-    {
       "actionable_responses": 2,
-      "cycle_id": "20260619",
-      "dispatches": 8,
-      "response_rate": 0.25
+      "cycle_id": "20260815",
+      "dispatches": 50,
+      "response_rate": 0.04
     }
   ],
   "evidence_category_coverage": {
@@ -38,28 +20,25 @@
     "supporting_projects": 8
   },
   "feedback_analysis": {
-    "actionable_count": 8,
-    "actionable_rate": 0.16,
+    "actionable_count": 2,
+    "actionable_rate": 0.04,
     "by_cycle": {
       "unknown": 50
     },
     "by_signal_kind": {
-      "development_pipeline": 6,
-      "economic_vulnerability": 4,
-      "enhanced_investment": 26,
-      "food_security": 2,
-      "investment_signal": 12
+      "ccrif_payout": 34,
+      "development_pipeline": 3,
+      "enhanced_investment": 9,
+      "investment_signal": 4
     },
     "by_status": {
-      "decision_changed": 2,
-      "forwarded": 3,
-      "ignored": 42,
-      "opened": 1,
-      "replied": 2
+      "forwarded": 1,
+      "ignored": 48,
+      "replied": 1
     },
     "total_feedback": 50
   },
-  "generated_at": "2026-08-15T23:35:01.563709+00:00",
+  "generated_at": "2026-08-15T23:37:39.546000+00:00",
   "recommendation_calibration": {
     "advance_rate": 0.0625,
     "hold_rate": 0.9375,
@@ -105,10 +84,10 @@
   },
   "summary": {
     "avg_confidence": 84.125,
-    "overall_response_rate": 0.030303030303030304,
-    "total_actionable_responses": 8,
-    "total_cycles_analyzed": 4,
-    "total_dispatches": 264,
+    "overall_response_rate": 0.04,
+    "total_actionable_responses": 2,
+    "total_cycles_analyzed": 1,
+    "total_dispatches": 50,
     "total_validation_packs": 16
   }
 }

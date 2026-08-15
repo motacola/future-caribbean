@@ -1,5 +1,5 @@
 🌴 *Signal Fabric — Decision Routes Ready*
-Cycle: `20260815` · 2026-08-15 23:35 UTC
+Cycle: `20260815` · 2026-08-15 23:37 UTC
 
 *What this is:*
 A Dispatch Desk notification. The product is the decision route: signal → persona → action → feedback. Telegram is only the delivery channel.
@@ -29,17 +29,17 @@ Data → 52 signal clusters → 214 persona routes → 7 personas → action/cap
 3) *CARICOM: 7 active procurements — bidding window open*
    Decision: Which procurement or project opportunity to pursue
    Evidence: CDB active procurement notices: 7; • Enhancing the Quality of the Belize National Quality… · B - cross-source
-   Confidence: 96/100 · sustained
+   Confidence: 95/100 · sustained
    → Regional Operator: Review operational readiness for CARICOM opportunities. CDB active…
    → Regional Founder/Operator: Map CARICOM procurement pipeline against your capability. CDB/IDB projects…
    → Procurement Watcher: Track CDB/IDB project pipeline: CDB active procurement notices: 7. Review…
    Loop: Feedback this cycle: 2 ignored, 1 replied.
 
 *Feedback-adjusted priority*
-• St. Vincent and the Grenadines economic vulnerability upranked +10
-• Guyana enhanced investment upranked +7
-• Suriname enhanced investment downranked -6
-• Barbados enhanced investment downranked -6
+• Haiti ccrif payout downranked -16
+• Barbados ccrif payout downranked -16
+• Turks and Caicos Islands ccrif payout downranked -8
+• Nicaragua ccrif payout downranked -8
 
 *Open the product surface*
 • `outbox/dispatch_desk.md` — judge/user-facing decision desk

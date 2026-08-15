@@ -5,7 +5,7 @@
 - Action readiness: high
 - Evidence freshness: stale · cycles since refresh: 8
 - Recommendation: **HOLD** — Evidence fingerprint unchanged for 8 cycles — downgraded from advance to hold until new corroboration arrives.
-- Last validated: 2026-08-15T23:35:00.978872+00:00
+- Last validated: 2026-08-15T23:37:39.290287+00:00
 
 ## Sector hypotheses
 - Offshore oil & gas exploration [corroborated] — _Google News — Guyana: Suriname offshore oil and gas momentum builds as GranMorgu advances - World Oil_

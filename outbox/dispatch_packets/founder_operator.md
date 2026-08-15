@@ -2,7 +2,7 @@
 
 **Decision job:** Competitive positioning and capability mapping
 **Delivery channel:** Telegram
-**Generated:** Aug 15, 2026 at 23:35 UTC
+**Generated:** Aug 15, 2026 at 23:37 UTC
 **Dispatches in this packet:** 10
 
 ---
@@ -39,7 +39,7 @@
 
 ### 3. CARICOM: 7 active procurements — bidding window open
 
-**ID:** `DSP-20260815-015` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 96/100 | B - cross-source
+**ID:** `DSP-20260815-015` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 95/100 | B - cross-source
 **Channel:** Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -137,7 +137,7 @@
 
 ### 10. Barbados: FDI trending at +34.8% — screening trigger active
 
-**ID:** `DSP-20260815-008` | **Country:** Barbados | **Confidence:** 🟡 Validation | 71/100 | B - cross-source
+**ID:** `DSP-20260815-008` | **Country:** Barbados | **Confidence:** 🟡 Validation | 75/100 | B - cross-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 

@@ -1,6 +1,6 @@
 {
   "cycle_intro": "Lead: Guyana. 3 converging signal(s) across 4 source(s). Signals: \ud83d\udcbc Investment + \ud83c\udfd6\ufe0f Tourism + \ud83d\udc8e Investment.",
-  "generated_at": "2026-08-15 23:35 UTC",
+  "generated_at": "2026-08-15 23:37 UTC",
   "items": [
     {
       "band": "immediate",
@@ -53,7 +53,7 @@
       },
       "persona": "investor/founder",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 96,
+      "score": 95,
       "signal_id": "dev-pipeline-regional"
     },
     {
@@ -77,8 +77,8 @@
     {
       "band": "validation",
       "channel": "Telegram digest",
-      "country": "Turks and Caicos Islands",
-      "freshness": "new",
+      "country": "Dominica",
+      "freshness": "sustained",
       "kind": "ccrif_payout",
       "metrics": {
         "decision_changed": null,
@@ -90,13 +90,13 @@
       "persona": "regional intelligence",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
       "score": 84,
-      "signal_id": "ccrif-payout-tc-tropical_cyclone-2008-01-01"
+      "signal_id": "ccrif-payout-dm-tropical_cyclone-2017-01-01"
     },
     {
       "band": "validation",
       "channel": "Telegram digest",
-      "country": "Haiti",
-      "freshness": "new",
+      "country": "Excess Rainfall policy - Trinidad",
+      "freshness": "sustained",
       "kind": "ccrif_payout",
       "metrics": {
         "decision_changed": null,
@@ -108,13 +108,13 @@
       "persona": "regional intelligence",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
       "score": 84,
-      "signal_id": "ccrif-payout-ht-earthquake-2010-01-01"
+      "signal_id": "ccrif-payout-tt-excess_rainfall-2017-01-01"
     },
     {
       "band": "validation",
       "channel": "Telegram digest",
-      "country": "Anguilla",
-      "freshness": "new",
+      "country": "Excess Rainfall policy - Barbados",
+      "freshness": "sustained",
       "kind": "ccrif_payout",
       "metrics": {
         "decision_changed": null,
@@ -126,13 +126,13 @@
       "persona": "regional intelligence",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
       "score": 84,
-      "signal_id": "ccrif-payout-ai-tropical_cyclone-2010-01-01"
+      "signal_id": "ccrif-payout-bb-excess_rainfall-2018-01-01"
     },
     {
       "band": "validation",
       "channel": "Telegram digest",
       "country": "Eastern Caribbean Currency Union",
-      "freshness": "new",
+      "freshness": "sustained",
       "kind": "eccb_credit_surge",
       "metrics": {
         "decision_changed": null,
@@ -147,10 +147,10 @@
       "signal_id": "eccb-credit-surge-eccu"
     },
     {
-      "band": "validation",
+      "band": "monitor",
       "channel": "Telegram digest",
       "country": "St. Vincent and the Grenadines",
-      "freshness": "sustained",
+      "freshness": "weakened",
       "kind": "economic_vulnerability",
       "metrics": {
         "decision_changed": null,
@@ -161,7 +161,7 @@
       },
       "persona": "policy/operator",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 70,
+      "score": 60,
       "signal_id": "vuln-st.-vincent-and-the-grenadines"
     },
     {
@@ -185,24 +185,6 @@
     {
       "band": "context",
       "channel": "Telegram digest",
-      "country": "Dominica",
-      "freshness": "sustained",
-      "kind": "tourism_impact",
-      "metrics": {
-        "decision_changed": null,
-        "forwarded": null,
-        "opened": null,
-        "reply_count": null,
-        "sent": false
-      },
-      "persona": "tourism operator",
-      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 47,
-      "signal_id": "tourism-dominica"
-    },
-    {
-      "band": "context",
-      "channel": "Telegram digest",
       "country": "Grenada",
       "freshness": "sustained",
       "kind": "tourism_impact",
@@ -217,6 +199,24 @@
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
       "score": 47,
       "signal_id": "tourism-grenada"
+    },
+    {
+      "band": "context",
+      "channel": "Telegram digest",
+      "country": "St. Kitts and Nevis",
+      "freshness": "sustained",
+      "kind": "tourism_impact",
+      "metrics": {
+        "decision_changed": null,
+        "forwarded": null,
+        "opened": null,
+        "reply_count": null,
+        "sent": false
+      },
+      "persona": "tourism operator",
+      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
+      "score": 47,
+      "signal_id": "tourism-st.-kitts-and-nevis"
     }
   ],
   "purpose": "Feedback agent input queue for distribution performance and trust signals."

@@ -1,6 +1,6 @@
 # Channel Dispatch Log — Cycle 20260815
 
-Generated: 2026-08-15 23:35 UTC
+Generated: 2026-08-15 23:37 UTC
 
 Per-channel routing plan for this cycle. Live send receipts are written to `outbox/live_send_log.md` after each delivery run.
 
@@ -18,15 +18,6 @@ Per-channel routing plan for this cycle. Live send receipts are written to `outb
 - [✓] Guyana: FDI trending at +860.3% — screening trigger active
 - [✓] Barbados: +34.8% FDI momentum validated — cross-reference before deploying
 - [✓] Suriname: FDI trending at +206.0% — screening trigger active
-- [✓] Turks and Caicos Islands: signal detected
-- [✓] Haiti: signal detected
-- [✓] Anguilla: signal detected
-- [✓] Barbados: signal detected
-- [✓] Barbados: signal detected
-- [✓] Excess Rainfall policy - Dominica: signal detected
-- [✓] Haiti: signal detected
-- [✓] Nicaragua: signal detected
-- [✓] St. Kitts and Nevis: signal detected
 - [✓] Dominica: signal detected
 - [✓] Excess Rainfall policy - Trinidad: signal detected
 - [✓] Excess Rainfall policy - Barbados: signal detected
@@ -41,10 +32,8 @@ Per-channel routing plan for this cycle. Live send receipts are written to `outb
 - [✓] Tropical Cyclone policy - Nicaragua: signal detected
 - [✓] Tropical Cyclone policy - Barbados: signal detected
 - [✓] Excess Rainfall policy - Barbados: signal detected
-- [✓] Haiti: signal detected
 - [✓] Excess Rainfall policy - Trinidad: signal detected
 - [✓] Excess Rainfall policy - Trinidad: signal detected
-- [✓] Nicaragua: signal detected
 - [✓] Excess Rainfall policy - Trinidad: signal detected
 - [✓] Excess Rainfall policy - Antigua & Barbuda: signal detected
 - [✓] Excess Rainfall policy - St. Kitts & Nevis: signal detected
@@ -62,10 +51,21 @@ Per-channel routing plan for this cycle. Live send receipts are written to `outb
 - [✓] Jamaica: signal detected
 - [✓] Excess Rainfall - Jamaica: signal detected
 - [✓] Trinidad: signal detected
-- [✓] Haiti: signal detected
+- [✓] St. Kitts and Nevis: signal detected
+- [✓] Turks and Caicos Islands: signal detected
+- [✓] Anguilla: signal detected
+- [✓] Excess Rainfall policy - Dominica: signal detected
+- [✓] Nicaragua: signal detected
+- [✓] Nicaragua: signal detected
 - [✓] Eastern Caribbean Currency Union: 5.8%
-- [✓] Eastern Caribbean Currency Union: 4.6%
 - [✓] Barbados: FDI trending at +34.8% — screening trigger active
+- [✓] Eastern Caribbean Currency Union: 4.6%
+- [✓] Haiti: signal detected
+- [✓] Barbados: signal detected
+- [✓] Barbados: signal detected
+- [✓] Haiti: signal detected
+- [✓] Haiti: signal detected
+- [✓] Haiti: signal detected
 - [✓] St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended
 - **56 dispatches routed to Email brief + Telegram**
 
@@ -84,15 +84,7 @@ Per-channel routing plan for this cycle. Live send receipts are written to `outb
 - [✓] Barbados: +34.8% FDI momentum validated — cross-reference before deploying
 - [✓] Barbados: +34.8% FDI momentum validated — cross-reference before deploying
 - [✓] Suriname: FDI trending at +206.0% — screening trigger active
-- [✓] Turks and Caicos Islands: signal detected
-- [✓] Haiti: signal detected
-- [✓] Anguilla: signal detected
-- [✓] Barbados: signal detected
-- [✓] Barbados: signal detected
-- [✓] Excess Rainfall policy - Dominica: signal detected
-- [✓] Haiti: signal detected
-- [✓] Nicaragua: signal detected
-- [✓] St. Kitts and Nevis: signal detected
+- [✓] CARICOM: food supply indicators shifting — supply chain implications
 - [✓] Dominica: signal detected
 - [✓] Excess Rainfall policy - Trinidad: signal detected
 - [✓] Excess Rainfall policy - Barbados: signal detected
@@ -107,10 +99,8 @@ Per-channel routing plan for this cycle. Live send receipts are written to `outb
 - [✓] Tropical Cyclone policy - Nicaragua: signal detected
 - [✓] Tropical Cyclone policy - Barbados: signal detected
 - [✓] Excess Rainfall policy - Barbados: signal detected
-- [✓] Haiti: signal detected
 - [✓] Excess Rainfall policy - Trinidad: signal detected
 - [✓] Excess Rainfall policy - Trinidad: signal detected
-- [✓] Nicaragua: signal detected
 - [✓] Excess Rainfall policy - Trinidad: signal detected
 - [✓] Excess Rainfall policy - Antigua & Barbuda: signal detected
 - [✓] Excess Rainfall policy - St. Kitts & Nevis: signal detected
@@ -128,27 +118,29 @@ Per-channel routing plan for this cycle. Live send receipts are written to `outb
 - [✓] Jamaica: signal detected
 - [✓] Excess Rainfall - Jamaica: signal detected
 - [✓] Trinidad: signal detected
-- [✓] Haiti: signal detected
-- [✓] CARICOM: food supply indicators shifting — supply chain implications
+- [✓] St. Kitts and Nevis: signal detected
+- [✓] Turks and Caicos Islands: signal detected
+- [✓] Anguilla: signal detected
+- [✓] Excess Rainfall policy - Dominica: signal detected
+- [✓] Nicaragua: signal detected
+- [✓] Nicaragua: signal detected
 - [✓] Eastern Caribbean Currency Union: 5.8%
 - [✓] Eastern Caribbean Currency Union: 5.8%
 - [✓] Eastern Caribbean Currency Union: 5.8%
-- [✓] Eastern Caribbean Currency Union: 4.6%
-- [✓] Eastern Caribbean Currency Union: 4.6%
 - [✓] Barbados: FDI trending at +34.8% — screening trigger active
+- [✓] Eastern Caribbean Currency Union: 4.6%
+- [✓] Eastern Caribbean Currency Union: 4.6%
+- [✓] Haiti: signal detected
+- [✓] Barbados: signal detected
+- [✓] Barbados: signal detected
+- [✓] Haiti: signal detected
+- [✓] Haiti: signal detected
+- [✓] Haiti: signal detected
 - **65 dispatches routed to Telegram**
 
 ## Telegram digest
 
-- [✓] Turks and Caicos Islands: signal detected
-- [✓] Haiti: signal detected
-- [✓] Anguilla: signal detected
-- [✓] Barbados: signal detected
-- [✓] Barbados: signal detected
-- [✓] Excess Rainfall policy - Dominica: signal detected
-- [✓] Haiti: signal detected
-- [✓] Nicaragua: signal detected
-- [✓] St. Kitts and Nevis: signal detected
+- [✓] CARICOM: food supply indicators shifting — supply chain implications
 - [✓] Dominica: signal detected
 - [✓] Excess Rainfall policy - Trinidad: signal detected
 - [✓] Excess Rainfall policy - Barbados: signal detected
@@ -163,10 +155,8 @@ Per-channel routing plan for this cycle. Live send receipts are written to `outb
 - [✓] Tropical Cyclone policy - Nicaragua: signal detected
 - [✓] Tropical Cyclone policy - Barbados: signal detected
 - [✓] Excess Rainfall policy - Barbados: signal detected
-- [✓] Haiti: signal detected
 - [✓] Excess Rainfall policy - Trinidad: signal detected
 - [✓] Excess Rainfall policy - Trinidad: signal detected
-- [✓] Nicaragua: signal detected
 - [✓] Excess Rainfall policy - Trinidad: signal detected
 - [✓] Excess Rainfall policy - Antigua & Barbuda: signal detected
 - [✓] Excess Rainfall policy - St. Kitts & Nevis: signal detected
@@ -184,22 +174,23 @@ Per-channel routing plan for this cycle. Live send receipts are written to `outb
 - [✓] Jamaica: signal detected
 - [✓] Excess Rainfall - Jamaica: signal detected
 - [✓] Trinidad: signal detected
+- [✓] St. Kitts and Nevis: signal detected
+- [✓] Turks and Caicos Islands: signal detected
+- [✓] Anguilla: signal detected
+- [✓] Excess Rainfall policy - Dominica: signal detected
+- [✓] Nicaragua: signal detected
+- [✓] Nicaragua: signal detected
 - [✓] Haiti: signal detected
-- [✓] CARICOM: food supply indicators shifting — supply chain implications
+- [✓] Barbados: signal detected
+- [✓] Barbados: signal detected
+- [✓] Haiti: signal detected
+- [✓] Haiti: signal detected
+- [✓] Haiti: signal detected
 - [✓] St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended
 - **47 dispatches routed to Telegram digest**
 
 ## Telegram/SMS alert
 
-- [✓] Turks and Caicos Islands: signal detected
-- [✓] Haiti: signal detected
-- [✓] Anguilla: signal detected
-- [✓] Barbados: signal detected
-- [✓] Barbados: signal detected
-- [✓] Excess Rainfall policy - Dominica: signal detected
-- [✓] Haiti: signal detected
-- [✓] Nicaragua: signal detected
-- [✓] St. Kitts and Nevis: signal detected
 - [✓] Dominica: signal detected
 - [✓] Excess Rainfall policy - Trinidad: signal detected
 - [✓] Excess Rainfall policy - Barbados: signal detected
@@ -214,10 +205,8 @@ Per-channel routing plan for this cycle. Live send receipts are written to `outb
 - [✓] Tropical Cyclone policy - Nicaragua: signal detected
 - [✓] Tropical Cyclone policy - Barbados: signal detected
 - [✓] Excess Rainfall policy - Barbados: signal detected
-- [✓] Haiti: signal detected
 - [✓] Excess Rainfall policy - Trinidad: signal detected
 - [✓] Excess Rainfall policy - Trinidad: signal detected
-- [✓] Nicaragua: signal detected
 - [✓] Excess Rainfall policy - Trinidad: signal detected
 - [✓] Excess Rainfall policy - Antigua & Barbuda: signal detected
 - [✓] Excess Rainfall policy - St. Kitts & Nevis: signal detected
@@ -235,6 +224,17 @@ Per-channel routing plan for this cycle. Live send receipts are written to `outb
 - [✓] Jamaica: signal detected
 - [✓] Excess Rainfall - Jamaica: signal detected
 - [✓] Trinidad: signal detected
+- [✓] St. Kitts and Nevis: signal detected
+- [✓] Turks and Caicos Islands: signal detected
+- [✓] Anguilla: signal detected
+- [✓] Excess Rainfall policy - Dominica: signal detected
+- [✓] Nicaragua: signal detected
+- [✓] Nicaragua: signal detected
+- [✓] Haiti: signal detected
+- [✓] Barbados: signal detected
+- [✓] Barbados: signal detected
+- [✓] Haiti: signal detected
+- [✓] Haiti: signal detected
 - [✓] Haiti: signal detected
 - **45 dispatches routed to Telegram/SMS alert**
 

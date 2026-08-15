@@ -1,10 +1,10 @@
 {
   "boost_lines": [
-    "St. Vincent and the Grenadines economic vulnerability upranked +10",
-    "Guyana enhanced investment upranked +7",
-    "Suriname enhanced investment downranked -6",
-    "Barbados enhanced investment downranked -6",
-    "Suriname investment signal downranked -4"
+    "Haiti ccrif payout downranked -16",
+    "Barbados ccrif payout downranked -16",
+    "Turks and Caicos Islands ccrif payout downranked -8",
+    "Nicaragua ccrif payout downranked -8",
+    "Excess Rainfall policy - Dominica ccrif payout downranked -8"
   ],
   "channel_count": 5,
   "cluster_count": 52,
@@ -12,7 +12,7 @@
     {
       "cluster_id": "CL-enhanced-investment-guyana",
       "confidence_display": "\ud83d\udd34 Immediate | 100/100 | C - single-source",
-      "confidence_raw": 114,
+      "confidence_raw": 111,
       "confidence_score": 100,
       "country_cluster": "Guyana",
       "decision": "Which verified opportunity to investigate for capital deployment or partnership entry",
@@ -112,9 +112,9 @@
     },
     {
       "cluster_id": "CL-development-pipeline-caricom",
-      "confidence_display": "\ud83d\udd34 Immediate | 96/100 | B - cross-source",
-      "confidence_raw": 96,
-      "confidence_score": 96,
+      "confidence_display": "\ud83d\udd34 Immediate | 95/100 | B - cross-source",
+      "confidence_raw": 95,
+      "confidence_score": 95,
       "country_cluster": "CARICOM",
       "decision": "Which procurement or project opportunity to pursue",
       "detail": "CDB active procurement notices: 7",
@@ -794,537 +794,6 @@
       "risk_flags": [],
       "signal_kind": "ccrif_payout",
       "title": "Excess Rainfall - Panama: signal detected"
-    },
-    {
-      "cluster_id": "CL-ccrif-payout-turks-and-caicos-islands",
-      "confidence_display": "\ud83d\udfe1 Validation | 84/100 | C - single-source",
-      "confidence_raw": 84,
-      "confidence_score": 84,
-      "country_cluster": "Turks and Caicos Islands",
-      "decision": "Insurance capital deployment for reconstruction / parametric trigger validation",
-      "detail": "signal detected",
-      "evidence": "Payout: US$6,303,913; Peril: tropical_cyclone; Event date: 2008-01-01; Announced: 2008-01-01",
-      "evidence_grade": "C - single-source",
-      "feedback_counts": {
-        "ignored": 4
-      },
-      "feedback_summary": "Feedback this cycle: 4 ignored.",
-      "freshness": "sustained",
-      "magnitude_pct": 0.0,
-      "personas": [
-        {
-          "action": "Signal context for Turks and Caicos Islands: signal detected. Use this dispatch as a briefing input or narrative lead.",
-          "channel": "Telegram digest",
-          "dispatch_id": "DSP-20260815-029",
-          "feedback_status": "ignored",
-          "persona": "Policy/Media",
-          "ranking_rationale": "",
-          "rationale": "Parametric payout = quantified sovereign risk event = fiscal impact story"
-        },
-        {
-          "action": "Prepare operational response: Turks and Caicos Islands. Action window: 7 days. Evidence: signal detected",
-          "channel": "Telegram/SMS alert",
-          "dispatch_id": "DSP-20260815-030",
-          "feedback_status": "ignored",
-          "persona": "Operations/Resilience",
-          "ranking_rationale": "",
-          "rationale": "Payout confirms hazard severity = operational recovery capital available"
-        },
-        {
-          "action": "Route Turks and Caicos Islands opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.",
-          "channel": "Telegram",
-          "dispatch_id": "DSP-20260815-031",
-          "feedback_status": "ignored",
-          "persona": "Ecosystem Builder",
-          "ranking_rationale": "",
-          "rationale": "Payout triggers regional reconstruction = supply chain, logistics, construction pipeline"
-        },
-        {
-          "action": "Review Turks and Caicos Islands: signal detected. Validate locally before action.",
-          "channel": "Email brief + Telegram",
-          "dispatch_id": "DSP-20260815-028",
-          "feedback_status": "ignored",
-          "persona": "Diaspora Investor",
-          "ranking_rationale": "",
-          "rationale": "CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens"
-        }
-      ],
-      "ranking_rationale": "",
-      "risk_flags": [],
-      "signal_kind": "ccrif_payout",
-      "title": "Turks and Caicos Islands: signal detected"
-    },
-    {
-      "cluster_id": "CL-ccrif-payout-haiti",
-      "confidence_display": "\ud83d\udfe1 Validation | 84/100 | C - single-source",
-      "confidence_raw": 84,
-      "confidence_score": 84,
-      "country_cluster": "Haiti",
-      "decision": "Insurance capital deployment for reconstruction / parametric trigger validation",
-      "detail": "signal detected",
-      "evidence": "Payout: US$7,753,579; Peril: earthquake; Event date: 2010-01-01; Announced: 2010-01-01",
-      "evidence_grade": "C - single-source",
-      "feedback_counts": {
-        "ignored": 4
-      },
-      "feedback_summary": "Feedback this cycle: 4 ignored.",
-      "freshness": "sustained",
-      "magnitude_pct": 0.0,
-      "personas": [
-        {
-          "action": "Signal context for Haiti: signal detected. Use this dispatch as a briefing input or narrative lead.",
-          "channel": "Telegram digest",
-          "dispatch_id": "DSP-20260815-033",
-          "feedback_status": "ignored",
-          "persona": "Policy/Media",
-          "ranking_rationale": "",
-          "rationale": "Parametric payout = quantified sovereign risk event = fiscal impact story"
-        },
-        {
-          "action": "Prepare operational response: Haiti. Action window: 7 days. Evidence: signal detected",
-          "channel": "Telegram/SMS alert",
-          "dispatch_id": "DSP-20260815-034",
-          "feedback_status": "ignored",
-          "persona": "Operations/Resilience",
-          "ranking_rationale": "",
-          "rationale": "Payout confirms hazard severity = operational recovery capital available"
-        },
-        {
-          "action": "Route Haiti opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.",
-          "channel": "Telegram",
-          "dispatch_id": "DSP-20260815-035",
-          "feedback_status": "ignored",
-          "persona": "Ecosystem Builder",
-          "ranking_rationale": "",
-          "rationale": "Payout triggers regional reconstruction = supply chain, logistics, construction pipeline"
-        },
-        {
-          "action": "Review Haiti: signal detected. Validate locally before action.",
-          "channel": "Email brief + Telegram",
-          "dispatch_id": "DSP-20260815-032",
-          "feedback_status": "ignored",
-          "persona": "Diaspora Investor",
-          "ranking_rationale": "",
-          "rationale": "CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens"
-        }
-      ],
-      "ranking_rationale": "",
-      "risk_flags": [],
-      "signal_kind": "ccrif_payout",
-      "title": "Haiti: signal detected"
-    },
-    {
-      "cluster_id": "CL-ccrif-payout-anguilla",
-      "confidence_display": "\ud83d\udfe1 Validation | 84/100 | C - single-source",
-      "confidence_raw": 84,
-      "confidence_score": 84,
-      "country_cluster": "Anguilla",
-      "decision": "Insurance capital deployment for reconstruction / parametric trigger validation",
-      "detail": "signal detected",
-      "evidence": "Payout: US$4,282,733; Peril: tropical_cyclone; Event date: 2010-01-01; Announced: 2010-01-01",
-      "evidence_grade": "C - single-source",
-      "feedback_counts": {
-        "ignored": 4
-      },
-      "feedback_summary": "Feedback this cycle: 4 ignored.",
-      "freshness": "sustained",
-      "magnitude_pct": 0.0,
-      "personas": [
-        {
-          "action": "Signal context for Anguilla: signal detected. Use this dispatch as a briefing input or narrative lead.",
-          "channel": "Telegram digest",
-          "dispatch_id": "DSP-20260815-037",
-          "feedback_status": "ignored",
-          "persona": "Policy/Media",
-          "ranking_rationale": "",
-          "rationale": "Parametric payout = quantified sovereign risk event = fiscal impact story"
-        },
-        {
-          "action": "Prepare operational response: Anguilla. Action window: 7 days. Evidence: signal detected",
-          "channel": "Telegram/SMS alert",
-          "dispatch_id": "DSP-20260815-038",
-          "feedback_status": "ignored",
-          "persona": "Operations/Resilience",
-          "ranking_rationale": "",
-          "rationale": "Payout confirms hazard severity = operational recovery capital available"
-        },
-        {
-          "action": "Route Anguilla opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.",
-          "channel": "Telegram",
-          "dispatch_id": "DSP-20260815-039",
-          "feedback_status": "ignored",
-          "persona": "Ecosystem Builder",
-          "ranking_rationale": "",
-          "rationale": "Payout triggers regional reconstruction = supply chain, logistics, construction pipeline"
-        },
-        {
-          "action": "Review Anguilla: signal detected. Validate locally before action.",
-          "channel": "Email brief + Telegram",
-          "dispatch_id": "DSP-20260815-036",
-          "feedback_status": "ignored",
-          "persona": "Diaspora Investor",
-          "ranking_rationale": "",
-          "rationale": "CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens"
-        }
-      ],
-      "ranking_rationale": "",
-      "risk_flags": [],
-      "signal_kind": "ccrif_payout",
-      "title": "Anguilla: signal detected"
-    },
-    {
-      "cluster_id": "CL-ccrif-payout-barbados",
-      "confidence_display": "\ud83d\udfe1 Validation | 84/100 | C - single-source",
-      "confidence_raw": 84,
-      "confidence_score": 84,
-      "country_cluster": "Barbados",
-      "decision": "Insurance capital deployment for reconstruction / parametric trigger validation",
-      "detail": "signal detected",
-      "evidence": "Payout: US$8,560,247; Peril: tropical_cyclone; Event date: 2010-01-01; Announced: 2010-01-01",
-      "evidence_grade": "C - single-source",
-      "feedback_counts": {
-        "ignored": 4
-      },
-      "feedback_summary": "Feedback this cycle: 4 ignored.",
-      "freshness": "sustained",
-      "magnitude_pct": 0.0,
-      "personas": [
-        {
-          "action": "Signal context for Barbados: signal detected. Use this dispatch as a briefing input or narrative lead.",
-          "channel": "Telegram digest",
-          "dispatch_id": "DSP-20260815-041",
-          "feedback_status": "ignored",
-          "persona": "Policy/Media",
-          "ranking_rationale": "",
-          "rationale": "Parametric payout = quantified sovereign risk event = fiscal impact story"
-        },
-        {
-          "action": "Prepare operational response: Barbados. Action window: 7 days. Evidence: signal detected",
-          "channel": "Telegram/SMS alert",
-          "dispatch_id": "DSP-20260815-042",
-          "feedback_status": "ignored",
-          "persona": "Operations/Resilience",
-          "ranking_rationale": "",
-          "rationale": "Payout confirms hazard severity = operational recovery capital available"
-        },
-        {
-          "action": "Route Barbados opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.",
-          "channel": "Telegram",
-          "dispatch_id": "DSP-20260815-043",
-          "feedback_status": "ignored",
-          "persona": "Ecosystem Builder",
-          "ranking_rationale": "",
-          "rationale": "Payout triggers regional reconstruction = supply chain, logistics, construction pipeline"
-        },
-        {
-          "action": "Review Barbados: signal detected. Validate locally before action.",
-          "channel": "Email brief + Telegram",
-          "dispatch_id": "DSP-20260815-040",
-          "feedback_status": "ignored",
-          "persona": "Diaspora Investor",
-          "ranking_rationale": "",
-          "rationale": "CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens"
-        }
-      ],
-      "ranking_rationale": "",
-      "risk_flags": [],
-      "signal_kind": "ccrif_payout",
-      "title": "Barbados: signal detected"
-    },
-    {
-      "cluster_id": "CL-ccrif-payout-barbados",
-      "confidence_display": "\ud83d\udfe1 Validation | 84/100 | C - single-source",
-      "confidence_raw": 84,
-      "confidence_score": 84,
-      "country_cluster": "Barbados",
-      "decision": "Insurance capital deployment for reconstruction / parametric trigger validation",
-      "detail": "signal detected",
-      "evidence": "Payout: US$1,284,882; Peril: excess_rainfall; Event date: 2014-01-01; Announced: 2014-01-01",
-      "evidence_grade": "C - single-source",
-      "feedback_counts": {
-        "ignored": 4
-      },
-      "feedback_summary": "Feedback this cycle: 4 ignored.",
-      "freshness": "sustained",
-      "magnitude_pct": 0.0,
-      "personas": [
-        {
-          "action": "Signal context for Barbados: signal detected. Use this dispatch as a briefing input or narrative lead.",
-          "channel": "Telegram digest",
-          "dispatch_id": "DSP-20260815-045",
-          "feedback_status": "ignored",
-          "persona": "Policy/Media",
-          "ranking_rationale": "",
-          "rationale": "Parametric payout = quantified sovereign risk event = fiscal impact story"
-        },
-        {
-          "action": "Prepare operational response: Barbados. Action window: 7 days. Evidence: signal detected",
-          "channel": "Telegram/SMS alert",
-          "dispatch_id": "DSP-20260815-046",
-          "feedback_status": "ignored",
-          "persona": "Operations/Resilience",
-          "ranking_rationale": "",
-          "rationale": "Payout confirms hazard severity = operational recovery capital available"
-        },
-        {
-          "action": "Route Barbados opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.",
-          "channel": "Telegram",
-          "dispatch_id": "DSP-20260815-047",
-          "feedback_status": "ignored",
-          "persona": "Ecosystem Builder",
-          "ranking_rationale": "",
-          "rationale": "Payout triggers regional reconstruction = supply chain, logistics, construction pipeline"
-        },
-        {
-          "action": "Review Barbados: signal detected. Validate locally before action.",
-          "channel": "Email brief + Telegram",
-          "dispatch_id": "DSP-20260815-044",
-          "feedback_status": "ignored",
-          "persona": "Diaspora Investor",
-          "ranking_rationale": "",
-          "rationale": "CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens"
-        }
-      ],
-      "ranking_rationale": "",
-      "risk_flags": [],
-      "signal_kind": "ccrif_payout",
-      "title": "Barbados: signal detected"
-    },
-    {
-      "cluster_id": "CL-ccrif-payout-excess-rainfall-policy-dominica",
-      "confidence_display": "\ud83d\udfe1 Validation | 84/100 | C - single-source",
-      "confidence_raw": 84,
-      "confidence_score": 84,
-      "country_cluster": "Excess Rainfall policy - Dominica",
-      "decision": "Insurance capital deployment for reconstruction / parametric trigger validation",
-      "detail": "signal detected",
-      "evidence": "Payout: US$2,402,153; Peril: excess_rainfall; Event date: 2015-01-01; Announced: 2015-01-01",
-      "evidence_grade": "C - single-source",
-      "feedback_counts": {
-        "ignored": 4
-      },
-      "feedback_summary": "Feedback this cycle: 4 ignored.",
-      "freshness": "sustained",
-      "magnitude_pct": 0.0,
-      "personas": [
-        {
-          "action": "Signal context for Excess Rainfall policy - Dominica: signal detected. Use this dispatch as a briefing input or narrative lead.",
-          "channel": "Telegram digest",
-          "dispatch_id": "DSP-20260815-049",
-          "feedback_status": "ignored",
-          "persona": "Policy/Media",
-          "ranking_rationale": "",
-          "rationale": "Parametric payout = quantified sovereign risk event = fiscal impact story"
-        },
-        {
-          "action": "Prepare operational response: Excess Rainfall policy - Dominica. Action window: 7 days. Evidence: signal detected",
-          "channel": "Telegram/SMS alert",
-          "dispatch_id": "DSP-20260815-050",
-          "feedback_status": "ignored",
-          "persona": "Operations/Resilience",
-          "ranking_rationale": "",
-          "rationale": "Payout confirms hazard severity = operational recovery capital available"
-        },
-        {
-          "action": "Route Excess Rainfall policy - Dominica opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.",
-          "channel": "Telegram",
-          "dispatch_id": "DSP-20260815-051",
-          "feedback_status": "ignored",
-          "persona": "Ecosystem Builder",
-          "ranking_rationale": "",
-          "rationale": "Payout triggers regional reconstruction = supply chain, logistics, construction pipeline"
-        },
-        {
-          "action": "Review Excess Rainfall policy - Dominica: signal detected. Validate locally before action.",
-          "channel": "Email brief + Telegram",
-          "dispatch_id": "DSP-20260815-048",
-          "feedback_status": "ignored",
-          "persona": "Diaspora Investor",
-          "ranking_rationale": "",
-          "rationale": "CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens"
-        }
-      ],
-      "ranking_rationale": "",
-      "risk_flags": [],
-      "signal_kind": "ccrif_payout",
-      "title": "Excess Rainfall policy - Dominica: signal detected"
-    },
-    {
-      "cluster_id": "CL-ccrif-payout-haiti",
-      "confidence_display": "\ud83d\udfe1 Validation | 84/100 | C - single-source",
-      "confidence_raw": 84,
-      "confidence_score": 84,
-      "country_cluster": "Haiti",
-      "decision": "Insurance capital deployment for reconstruction / parametric trigger validation",
-      "detail": "signal detected",
-      "evidence": "Payout: US$20,388,067; Peril: tropical_cyclone; Event date: 2016-01-01; Announced: 2016-01-01",
-      "evidence_grade": "C - single-source",
-      "feedback_counts": {
-        "ignored": 4
-      },
-      "feedback_summary": "Feedback this cycle: 4 ignored.",
-      "freshness": "sustained",
-      "magnitude_pct": 0.0,
-      "personas": [
-        {
-          "action": "Signal context for Haiti: signal detected. Use this dispatch as a briefing input or narrative lead.",
-          "channel": "Telegram digest",
-          "dispatch_id": "DSP-20260815-053",
-          "feedback_status": "ignored",
-          "persona": "Policy/Media",
-          "ranking_rationale": "",
-          "rationale": "Parametric payout = quantified sovereign risk event = fiscal impact story"
-        },
-        {
-          "action": "Prepare operational response: Haiti. Action window: 7 days. Evidence: signal detected",
-          "channel": "Telegram/SMS alert",
-          "dispatch_id": "DSP-20260815-054",
-          "feedback_status": "ignored",
-          "persona": "Operations/Resilience",
-          "ranking_rationale": "",
-          "rationale": "Payout confirms hazard severity = operational recovery capital available"
-        },
-        {
-          "action": "Route Haiti opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.",
-          "channel": "Telegram",
-          "dispatch_id": "DSP-20260815-055",
-          "feedback_status": "ignored",
-          "persona": "Ecosystem Builder",
-          "ranking_rationale": "",
-          "rationale": "Payout triggers regional reconstruction = supply chain, logistics, construction pipeline"
-        },
-        {
-          "action": "Review Haiti: signal detected. Validate locally before action.",
-          "channel": "Email brief + Telegram",
-          "dispatch_id": "DSP-20260815-052",
-          "feedback_status": "ignored",
-          "persona": "Diaspora Investor",
-          "ranking_rationale": "",
-          "rationale": "CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens"
-        }
-      ],
-      "ranking_rationale": "",
-      "risk_flags": [],
-      "signal_kind": "ccrif_payout",
-      "title": "Haiti: signal detected"
-    },
-    {
-      "cluster_id": "CL-ccrif-payout-nicaragua",
-      "confidence_display": "\ud83d\udfe1 Validation | 84/100 | C - single-source",
-      "confidence_raw": 84,
-      "confidence_score": 84,
-      "country_cluster": "Nicaragua",
-      "decision": "Insurance capital deployment for reconstruction / parametric trigger validation",
-      "detail": "signal detected",
-      "evidence": "Payout: US$1,110,193; Peril: tropical_cyclone; Event date: 2016-01-01; Announced: 2016-01-01",
-      "evidence_grade": "C - single-source",
-      "feedback_counts": {
-        "ignored": 4
-      },
-      "feedback_summary": "Feedback this cycle: 4 ignored.",
-      "freshness": "sustained",
-      "magnitude_pct": 0.0,
-      "personas": [
-        {
-          "action": "Signal context for Nicaragua: signal detected. Use this dispatch as a briefing input or narrative lead.",
-          "channel": "Telegram digest",
-          "dispatch_id": "DSP-20260815-057",
-          "feedback_status": "ignored",
-          "persona": "Policy/Media",
-          "ranking_rationale": "",
-          "rationale": "Parametric payout = quantified sovereign risk event = fiscal impact story"
-        },
-        {
-          "action": "Prepare operational response: Nicaragua. Action window: 7 days. Evidence: signal detected",
-          "channel": "Telegram/SMS alert",
-          "dispatch_id": "DSP-20260815-058",
-          "feedback_status": "ignored",
-          "persona": "Operations/Resilience",
-          "ranking_rationale": "",
-          "rationale": "Payout confirms hazard severity = operational recovery capital available"
-        },
-        {
-          "action": "Route Nicaragua opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.",
-          "channel": "Telegram",
-          "dispatch_id": "DSP-20260815-059",
-          "feedback_status": "ignored",
-          "persona": "Ecosystem Builder",
-          "ranking_rationale": "",
-          "rationale": "Payout triggers regional reconstruction = supply chain, logistics, construction pipeline"
-        },
-        {
-          "action": "Review Nicaragua: signal detected. Validate locally before action.",
-          "channel": "Email brief + Telegram",
-          "dispatch_id": "DSP-20260815-056",
-          "feedback_status": "ignored",
-          "persona": "Diaspora Investor",
-          "ranking_rationale": "",
-          "rationale": "CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens"
-        }
-      ],
-      "ranking_rationale": "",
-      "risk_flags": [],
-      "signal_kind": "ccrif_payout",
-      "title": "Nicaragua: signal detected"
-    },
-    {
-      "cluster_id": "CL-ccrif-payout-st-kitts-and-nevis",
-      "confidence_display": "\ud83d\udfe1 Validation | 84/100 | C - single-source",
-      "confidence_raw": 84,
-      "confidence_score": 84,
-      "country_cluster": "St. Kitts and Nevis",
-      "decision": "Insurance capital deployment for reconstruction / parametric trigger validation",
-      "detail": "signal detected",
-      "evidence": "Payout: US$2,294,603; Peril: tropical_cyclone; Event date: 2017-01-01; Announced: 2017-01-01",
-      "evidence_grade": "C - single-source",
-      "feedback_counts": {
-        "ignored": 4
-      },
-      "feedback_summary": "Feedback this cycle: 4 ignored.",
-      "freshness": "sustained",
-      "magnitude_pct": 0.0,
-      "personas": [
-        {
-          "action": "Signal context for St. Kitts and Nevis: signal detected. Use this dispatch as a briefing input or narrative lead.",
-          "channel": "Telegram digest",
-          "dispatch_id": "DSP-20260815-061",
-          "feedback_status": "ignored",
-          "persona": "Policy/Media",
-          "ranking_rationale": "",
-          "rationale": "Parametric payout = quantified sovereign risk event = fiscal impact story"
-        },
-        {
-          "action": "Prepare operational response: St. Kitts and Nevis. Action window: 7 days. Evidence: signal detected",
-          "channel": "Telegram/SMS alert",
-          "dispatch_id": "DSP-20260815-062",
-          "feedback_status": "ignored",
-          "persona": "Operations/Resilience",
-          "ranking_rationale": "",
-          "rationale": "Payout confirms hazard severity = operational recovery capital available"
-        },
-        {
-          "action": "Route St. Kitts and Nevis opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.",
-          "channel": "Telegram",
-          "dispatch_id": "DSP-20260815-063",
-          "feedback_status": "ignored",
-          "persona": "Ecosystem Builder",
-          "ranking_rationale": "",
-          "rationale": "Payout triggers regional reconstruction = supply chain, logistics, construction pipeline"
-        },
-        {
-          "action": "Review St. Kitts and Nevis: signal detected. Validate locally before action.",
-          "channel": "Email brief + Telegram",
-          "dispatch_id": "DSP-20260815-060",
-          "feedback_status": "ignored",
-          "persona": "Diaspora Investor",
-          "ranking_rationale": "",
-          "rationale": "CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens"
-        }
-      ],
-      "ranking_rationale": "",
-      "risk_flags": [],
-      "signal_kind": "ccrif_payout",
-      "title": "St. Kitts and Nevis: signal detected"
     },
     {
       "cluster_id": "CL-ccrif-payout-dominica",
@@ -2035,65 +1504,6 @@
       "title": "Excess Rainfall policy - Barbados: signal detected"
     },
     {
-      "cluster_id": "CL-ccrif-payout-haiti",
-      "confidence_display": "\ud83d\udfe1 Validation | 84/100 | C - single-source",
-      "confidence_raw": 84,
-      "confidence_score": 84,
-      "country_cluster": "Haiti",
-      "decision": "Insurance capital deployment for reconstruction / parametric trigger validation",
-      "detail": "signal detected",
-      "evidence": "Payout: US$39,953,272; Peril: earthquake; Event date: 2021-01-01; Announced: 2021-01-01",
-      "evidence_grade": "C - single-source",
-      "feedback_counts": {
-        "ignored": 4
-      },
-      "feedback_summary": "Feedback this cycle: 4 ignored.",
-      "freshness": "sustained",
-      "magnitude_pct": 0.0,
-      "personas": [
-        {
-          "action": "Signal context for Haiti: signal detected. Use this dispatch as a briefing input or narrative lead.",
-          "channel": "Telegram digest",
-          "dispatch_id": "DSP-20260815-121",
-          "feedback_status": "ignored",
-          "persona": "Policy/Media",
-          "ranking_rationale": "",
-          "rationale": "Parametric payout = quantified sovereign risk event = fiscal impact story"
-        },
-        {
-          "action": "Prepare operational response: Haiti. Action window: 7 days. Evidence: signal detected",
-          "channel": "Telegram/SMS alert",
-          "dispatch_id": "DSP-20260815-122",
-          "feedback_status": "ignored",
-          "persona": "Operations/Resilience",
-          "ranking_rationale": "",
-          "rationale": "Payout confirms hazard severity = operational recovery capital available"
-        },
-        {
-          "action": "Route Haiti opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.",
-          "channel": "Telegram",
-          "dispatch_id": "DSP-20260815-123",
-          "feedback_status": "ignored",
-          "persona": "Ecosystem Builder",
-          "ranking_rationale": "",
-          "rationale": "Payout triggers regional reconstruction = supply chain, logistics, construction pipeline"
-        },
-        {
-          "action": "Review Haiti: signal detected. Validate locally before action.",
-          "channel": "Email brief + Telegram",
-          "dispatch_id": "DSP-20260815-120",
-          "feedback_status": "ignored",
-          "persona": "Diaspora Investor",
-          "ranking_rationale": "",
-          "rationale": "CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens"
-        }
-      ],
-      "ranking_rationale": "",
-      "risk_flags": [],
-      "signal_kind": "ccrif_payout",
-      "title": "Haiti: signal detected"
-    },
-    {
       "cluster_id": "CL-ccrif-payout-excess-rainfall-policy-trinidad",
       "confidence_display": "\ud83d\udfe1 Validation | 84/100 | C - single-source",
       "confidence_raw": 84,
@@ -2151,65 +1561,6 @@
       "risk_flags": [],
       "signal_kind": "ccrif_payout",
       "title": "Excess Rainfall policy - Trinidad: signal detected"
-    },
-    {
-      "cluster_id": "CL-ccrif-payout-nicaragua",
-      "confidence_display": "\ud83d\udfe1 Validation | 84/100 | C - single-source",
-      "confidence_raw": 84,
-      "confidence_score": 84,
-      "country_cluster": "Nicaragua",
-      "decision": "Insurance capital deployment for reconstruction / parametric trigger validation",
-      "detail": "signal detected",
-      "evidence": "Payout: US$8,924,577; Peril: tropical_cyclone; Event date: 2022-01-01; Announced: 2022-01-01",
-      "evidence_grade": "C - single-source",
-      "feedback_counts": {
-        "ignored": 4
-      },
-      "feedback_summary": "Feedback this cycle: 4 ignored.",
-      "freshness": "sustained",
-      "magnitude_pct": 0.0,
-      "personas": [
-        {
-          "action": "Signal context for Nicaragua: signal detected. Use this dispatch as a briefing input or narrative lead.",
-          "channel": "Telegram digest",
-          "dispatch_id": "DSP-20260815-133",
-          "feedback_status": "ignored",
-          "persona": "Policy/Media",
-          "ranking_rationale": "",
-          "rationale": "Parametric payout = quantified sovereign risk event = fiscal impact story"
-        },
-        {
-          "action": "Prepare operational response: Nicaragua. Action window: 7 days. Evidence: signal detected",
-          "channel": "Telegram/SMS alert",
-          "dispatch_id": "DSP-20260815-134",
-          "feedback_status": "ignored",
-          "persona": "Operations/Resilience",
-          "ranking_rationale": "",
-          "rationale": "Payout confirms hazard severity = operational recovery capital available"
-        },
-        {
-          "action": "Route Nicaragua opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.",
-          "channel": "Telegram",
-          "dispatch_id": "DSP-20260815-135",
-          "feedback_status": "ignored",
-          "persona": "Ecosystem Builder",
-          "ranking_rationale": "",
-          "rationale": "Payout triggers regional reconstruction = supply chain, logistics, construction pipeline"
-        },
-        {
-          "action": "Review Nicaragua: signal detected. Validate locally before action.",
-          "channel": "Email brief + Telegram",
-          "dispatch_id": "DSP-20260815-132",
-          "feedback_status": "ignored",
-          "persona": "Diaspora Investor",
-          "ranking_rationale": "",
-          "rationale": "CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens"
-        }
-      ],
-      "ranking_rationale": "",
-      "risk_flags": [],
-      "signal_kind": "ccrif_payout",
-      "title": "Nicaragua: signal detected"
     },
     {
       "cluster_id": "CL-ccrif-payout-excess-rainfall-policy-antigua-barbuda",
@@ -2802,65 +2153,6 @@
       "title": "Trinidad: signal detected"
     },
     {
-      "cluster_id": "CL-ccrif-payout-haiti",
-      "confidence_display": "\ud83d\udfe1 Validation | 84/100 | C - single-source",
-      "confidence_raw": 84,
-      "confidence_score": 84,
-      "country_cluster": "Haiti",
-      "decision": "Insurance capital deployment for reconstruction / parametric trigger validation",
-      "detail": "signal detected",
-      "evidence": "Payout: US$1,198,434; Peril: tropical_cyclone; Event date: 2025-01-01; Announced: 2025-01-01",
-      "evidence_grade": "C - single-source",
-      "feedback_counts": {
-        "ignored": 4
-      },
-      "feedback_summary": "Feedback this cycle: 4 ignored.",
-      "freshness": "sustained",
-      "magnitude_pct": 0.0,
-      "personas": [
-        {
-          "action": "Signal context for Haiti: signal detected. Use this dispatch as a briefing input or narrative lead.",
-          "channel": "Telegram digest",
-          "dispatch_id": "DSP-20260815-205",
-          "feedback_status": "ignored",
-          "persona": "Policy/Media",
-          "ranking_rationale": "",
-          "rationale": "Parametric payout = quantified sovereign risk event = fiscal impact story"
-        },
-        {
-          "action": "Prepare operational response: Haiti. Action window: 7 days. Evidence: signal detected",
-          "channel": "Telegram/SMS alert",
-          "dispatch_id": "DSP-20260815-206",
-          "feedback_status": "ignored",
-          "persona": "Operations/Resilience",
-          "ranking_rationale": "",
-          "rationale": "Payout confirms hazard severity = operational recovery capital available"
-        },
-        {
-          "action": "Route Haiti opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.",
-          "channel": "Telegram",
-          "dispatch_id": "DSP-20260815-207",
-          "feedback_status": "ignored",
-          "persona": "Ecosystem Builder",
-          "ranking_rationale": "",
-          "rationale": "Payout triggers regional reconstruction = supply chain, logistics, construction pipeline"
-        },
-        {
-          "action": "Review Haiti: signal detected. Validate locally before action.",
-          "channel": "Email brief + Telegram",
-          "dispatch_id": "DSP-20260815-204",
-          "feedback_status": "ignored",
-          "persona": "Diaspora Investor",
-          "ranking_rationale": "",
-          "rationale": "CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens"
-        }
-      ],
-      "ranking_rationale": "",
-      "risk_flags": [],
-      "signal_kind": "ccrif_payout",
-      "title": "Haiti: signal detected"
-    },
-    {
       "cluster_id": "CL-investment-signal-suriname",
       "confidence_display": "\ud83d\udfe1 Validation | 84/100 | B - cross-source",
       "confidence_raw": 84,
@@ -2903,9 +2195,9 @@
     },
     {
       "cluster_id": "CL-food-security-caricom",
-      "confidence_display": "\ud83d\udfe1 Validation | 80/100 | B - cross-source",
-      "confidence_raw": 80,
-      "confidence_score": 80,
+      "confidence_display": "\ud83d\udfe1 Validation | 84/100 | B - cross-source",
+      "confidence_raw": 84,
+      "confidence_score": 84,
       "country_cluster": "CARICOM",
       "decision": "Agricultural/logistics investment case or policy response planning",
       "detail": "5%",
@@ -2941,6 +2233,360 @@
       "risk_flags": [],
       "signal_kind": "food_security",
       "title": "CARICOM: food supply indicators shifting \u2014 supply chain implications"
+    },
+    {
+      "cluster_id": "CL-ccrif-payout-st-kitts-and-nevis",
+      "confidence_display": "\ud83d\udfe1 Validation | 80/100 | C - single-source",
+      "confidence_raw": 80,
+      "confidence_score": 80,
+      "country_cluster": "St. Kitts and Nevis",
+      "decision": "Insurance capital deployment for reconstruction / parametric trigger validation",
+      "detail": "signal detected",
+      "evidence": "Payout: US$2,294,603; Peril: tropical_cyclone; Event date: 2017-01-01; Announced: 2017-01-01",
+      "evidence_grade": "C - single-source",
+      "feedback_counts": {
+        "ignored": 4
+      },
+      "feedback_summary": "Feedback this cycle: 4 ignored.",
+      "freshness": "sustained",
+      "magnitude_pct": 0.0,
+      "personas": [
+        {
+          "action": "Signal context for St. Kitts and Nevis: signal detected. Use this dispatch as a briefing input or narrative lead.",
+          "channel": "Telegram digest",
+          "dispatch_id": "DSP-20260815-061",
+          "feedback_status": "ignored",
+          "persona": "Policy/Media",
+          "ranking_rationale": "",
+          "rationale": "Parametric payout = quantified sovereign risk event = fiscal impact story"
+        },
+        {
+          "action": "Prepare operational response: St. Kitts and Nevis. Action window: 7 days. Evidence: signal detected",
+          "channel": "Telegram/SMS alert",
+          "dispatch_id": "DSP-20260815-062",
+          "feedback_status": "ignored",
+          "persona": "Operations/Resilience",
+          "ranking_rationale": "",
+          "rationale": "Payout confirms hazard severity = operational recovery capital available"
+        },
+        {
+          "action": "Route St. Kitts and Nevis opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.",
+          "channel": "Telegram",
+          "dispatch_id": "DSP-20260815-063",
+          "feedback_status": "ignored",
+          "persona": "Ecosystem Builder",
+          "ranking_rationale": "",
+          "rationale": "Payout triggers regional reconstruction = supply chain, logistics, construction pipeline"
+        },
+        {
+          "action": "Review St. Kitts and Nevis: signal detected. Validate locally before action.",
+          "channel": "Email brief + Telegram",
+          "dispatch_id": "DSP-20260815-060",
+          "feedback_status": "ignored",
+          "persona": "Diaspora Investor",
+          "ranking_rationale": "",
+          "rationale": "CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens"
+        }
+      ],
+      "ranking_rationale": "",
+      "risk_flags": [],
+      "signal_kind": "ccrif_payout",
+      "title": "St. Kitts and Nevis: signal detected"
+    },
+    {
+      "cluster_id": "CL-ccrif-payout-turks-and-caicos-islands",
+      "confidence_display": "\ud83d\udfe1 Validation | 76/100 | C - single-source",
+      "confidence_raw": 76,
+      "confidence_score": 76,
+      "country_cluster": "Turks and Caicos Islands",
+      "decision": "Insurance capital deployment for reconstruction / parametric trigger validation",
+      "detail": "signal detected",
+      "evidence": "Payout: US$6,303,913; Peril: tropical_cyclone; Event date: 2008-01-01; Announced: 2008-01-01",
+      "evidence_grade": "C - single-source",
+      "feedback_counts": {
+        "ignored": 4
+      },
+      "feedback_summary": "Feedback this cycle: 4 ignored.",
+      "freshness": "sustained",
+      "magnitude_pct": 0.0,
+      "personas": [
+        {
+          "action": "Signal context for Turks and Caicos Islands: signal detected. Use this dispatch as a briefing input or narrative lead.",
+          "channel": "Telegram digest",
+          "dispatch_id": "DSP-20260815-029",
+          "feedback_status": "ignored",
+          "persona": "Policy/Media",
+          "ranking_rationale": "",
+          "rationale": "Parametric payout = quantified sovereign risk event = fiscal impact story"
+        },
+        {
+          "action": "Prepare operational response: Turks and Caicos Islands. Action window: 7 days. Evidence: signal detected",
+          "channel": "Telegram/SMS alert",
+          "dispatch_id": "DSP-20260815-030",
+          "feedback_status": "ignored",
+          "persona": "Operations/Resilience",
+          "ranking_rationale": "",
+          "rationale": "Payout confirms hazard severity = operational recovery capital available"
+        },
+        {
+          "action": "Route Turks and Caicos Islands opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.",
+          "channel": "Telegram",
+          "dispatch_id": "DSP-20260815-031",
+          "feedback_status": "ignored",
+          "persona": "Ecosystem Builder",
+          "ranking_rationale": "",
+          "rationale": "Payout triggers regional reconstruction = supply chain, logistics, construction pipeline"
+        },
+        {
+          "action": "Review Turks and Caicos Islands: signal detected. Validate locally before action.",
+          "channel": "Email brief + Telegram",
+          "dispatch_id": "DSP-20260815-028",
+          "feedback_status": "ignored",
+          "persona": "Diaspora Investor",
+          "ranking_rationale": "",
+          "rationale": "CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens"
+        }
+      ],
+      "ranking_rationale": "",
+      "risk_flags": [],
+      "signal_kind": "ccrif_payout",
+      "title": "Turks and Caicos Islands: signal detected"
+    },
+    {
+      "cluster_id": "CL-ccrif-payout-anguilla",
+      "confidence_display": "\ud83d\udfe1 Validation | 76/100 | C - single-source",
+      "confidence_raw": 76,
+      "confidence_score": 76,
+      "country_cluster": "Anguilla",
+      "decision": "Insurance capital deployment for reconstruction / parametric trigger validation",
+      "detail": "signal detected",
+      "evidence": "Payout: US$4,282,733; Peril: tropical_cyclone; Event date: 2010-01-01; Announced: 2010-01-01",
+      "evidence_grade": "C - single-source",
+      "feedback_counts": {
+        "ignored": 4
+      },
+      "feedback_summary": "Feedback this cycle: 4 ignored.",
+      "freshness": "sustained",
+      "magnitude_pct": 0.0,
+      "personas": [
+        {
+          "action": "Signal context for Anguilla: signal detected. Use this dispatch as a briefing input or narrative lead.",
+          "channel": "Telegram digest",
+          "dispatch_id": "DSP-20260815-037",
+          "feedback_status": "ignored",
+          "persona": "Policy/Media",
+          "ranking_rationale": "",
+          "rationale": "Parametric payout = quantified sovereign risk event = fiscal impact story"
+        },
+        {
+          "action": "Prepare operational response: Anguilla. Action window: 7 days. Evidence: signal detected",
+          "channel": "Telegram/SMS alert",
+          "dispatch_id": "DSP-20260815-038",
+          "feedback_status": "ignored",
+          "persona": "Operations/Resilience",
+          "ranking_rationale": "",
+          "rationale": "Payout confirms hazard severity = operational recovery capital available"
+        },
+        {
+          "action": "Route Anguilla opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.",
+          "channel": "Telegram",
+          "dispatch_id": "DSP-20260815-039",
+          "feedback_status": "ignored",
+          "persona": "Ecosystem Builder",
+          "ranking_rationale": "",
+          "rationale": "Payout triggers regional reconstruction = supply chain, logistics, construction pipeline"
+        },
+        {
+          "action": "Review Anguilla: signal detected. Validate locally before action.",
+          "channel": "Email brief + Telegram",
+          "dispatch_id": "DSP-20260815-036",
+          "feedback_status": "ignored",
+          "persona": "Diaspora Investor",
+          "ranking_rationale": "",
+          "rationale": "CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens"
+        }
+      ],
+      "ranking_rationale": "",
+      "risk_flags": [],
+      "signal_kind": "ccrif_payout",
+      "title": "Anguilla: signal detected"
+    },
+    {
+      "cluster_id": "CL-ccrif-payout-excess-rainfall-policy-dominica",
+      "confidence_display": "\ud83d\udfe1 Validation | 76/100 | C - single-source",
+      "confidence_raw": 76,
+      "confidence_score": 76,
+      "country_cluster": "Excess Rainfall policy - Dominica",
+      "decision": "Insurance capital deployment for reconstruction / parametric trigger validation",
+      "detail": "signal detected",
+      "evidence": "Payout: US$2,402,153; Peril: excess_rainfall; Event date: 2015-01-01; Announced: 2015-01-01",
+      "evidence_grade": "C - single-source",
+      "feedback_counts": {
+        "ignored": 4
+      },
+      "feedback_summary": "Feedback this cycle: 4 ignored.",
+      "freshness": "sustained",
+      "magnitude_pct": 0.0,
+      "personas": [
+        {
+          "action": "Signal context for Excess Rainfall policy - Dominica: signal detected. Use this dispatch as a briefing input or narrative lead.",
+          "channel": "Telegram digest",
+          "dispatch_id": "DSP-20260815-049",
+          "feedback_status": "ignored",
+          "persona": "Policy/Media",
+          "ranking_rationale": "",
+          "rationale": "Parametric payout = quantified sovereign risk event = fiscal impact story"
+        },
+        {
+          "action": "Prepare operational response: Excess Rainfall policy - Dominica. Action window: 7 days. Evidence: signal detected",
+          "channel": "Telegram/SMS alert",
+          "dispatch_id": "DSP-20260815-050",
+          "feedback_status": "ignored",
+          "persona": "Operations/Resilience",
+          "ranking_rationale": "",
+          "rationale": "Payout confirms hazard severity = operational recovery capital available"
+        },
+        {
+          "action": "Route Excess Rainfall policy - Dominica opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.",
+          "channel": "Telegram",
+          "dispatch_id": "DSP-20260815-051",
+          "feedback_status": "ignored",
+          "persona": "Ecosystem Builder",
+          "ranking_rationale": "",
+          "rationale": "Payout triggers regional reconstruction = supply chain, logistics, construction pipeline"
+        },
+        {
+          "action": "Review Excess Rainfall policy - Dominica: signal detected. Validate locally before action.",
+          "channel": "Email brief + Telegram",
+          "dispatch_id": "DSP-20260815-048",
+          "feedback_status": "ignored",
+          "persona": "Diaspora Investor",
+          "ranking_rationale": "",
+          "rationale": "CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens"
+        }
+      ],
+      "ranking_rationale": "",
+      "risk_flags": [],
+      "signal_kind": "ccrif_payout",
+      "title": "Excess Rainfall policy - Dominica: signal detected"
+    },
+    {
+      "cluster_id": "CL-ccrif-payout-nicaragua",
+      "confidence_display": "\ud83d\udfe1 Validation | 76/100 | C - single-source",
+      "confidence_raw": 76,
+      "confidence_score": 76,
+      "country_cluster": "Nicaragua",
+      "decision": "Insurance capital deployment for reconstruction / parametric trigger validation",
+      "detail": "signal detected",
+      "evidence": "Payout: US$1,110,193; Peril: tropical_cyclone; Event date: 2016-01-01; Announced: 2016-01-01",
+      "evidence_grade": "C - single-source",
+      "feedback_counts": {
+        "ignored": 4
+      },
+      "feedback_summary": "Feedback this cycle: 4 ignored.",
+      "freshness": "sustained",
+      "magnitude_pct": 0.0,
+      "personas": [
+        {
+          "action": "Signal context for Nicaragua: signal detected. Use this dispatch as a briefing input or narrative lead.",
+          "channel": "Telegram digest",
+          "dispatch_id": "DSP-20260815-057",
+          "feedback_status": "ignored",
+          "persona": "Policy/Media",
+          "ranking_rationale": "",
+          "rationale": "Parametric payout = quantified sovereign risk event = fiscal impact story"
+        },
+        {
+          "action": "Prepare operational response: Nicaragua. Action window: 7 days. Evidence: signal detected",
+          "channel": "Telegram/SMS alert",
+          "dispatch_id": "DSP-20260815-058",
+          "feedback_status": "ignored",
+          "persona": "Operations/Resilience",
+          "ranking_rationale": "",
+          "rationale": "Payout confirms hazard severity = operational recovery capital available"
+        },
+        {
+          "action": "Route Nicaragua opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.",
+          "channel": "Telegram",
+          "dispatch_id": "DSP-20260815-059",
+          "feedback_status": "ignored",
+          "persona": "Ecosystem Builder",
+          "ranking_rationale": "",
+          "rationale": "Payout triggers regional reconstruction = supply chain, logistics, construction pipeline"
+        },
+        {
+          "action": "Review Nicaragua: signal detected. Validate locally before action.",
+          "channel": "Email brief + Telegram",
+          "dispatch_id": "DSP-20260815-056",
+          "feedback_status": "ignored",
+          "persona": "Diaspora Investor",
+          "ranking_rationale": "",
+          "rationale": "CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens"
+        }
+      ],
+      "ranking_rationale": "",
+      "risk_flags": [],
+      "signal_kind": "ccrif_payout",
+      "title": "Nicaragua: signal detected"
+    },
+    {
+      "cluster_id": "CL-ccrif-payout-nicaragua",
+      "confidence_display": "\ud83d\udfe1 Validation | 76/100 | C - single-source",
+      "confidence_raw": 76,
+      "confidence_score": 76,
+      "country_cluster": "Nicaragua",
+      "decision": "Insurance capital deployment for reconstruction / parametric trigger validation",
+      "detail": "signal detected",
+      "evidence": "Payout: US$8,924,577; Peril: tropical_cyclone; Event date: 2022-01-01; Announced: 2022-01-01",
+      "evidence_grade": "C - single-source",
+      "feedback_counts": {
+        "ignored": 4
+      },
+      "feedback_summary": "Feedback this cycle: 4 ignored.",
+      "freshness": "sustained",
+      "magnitude_pct": 0.0,
+      "personas": [
+        {
+          "action": "Signal context for Nicaragua: signal detected. Use this dispatch as a briefing input or narrative lead.",
+          "channel": "Telegram digest",
+          "dispatch_id": "DSP-20260815-133",
+          "feedback_status": "ignored",
+          "persona": "Policy/Media",
+          "ranking_rationale": "",
+          "rationale": "Parametric payout = quantified sovereign risk event = fiscal impact story"
+        },
+        {
+          "action": "Prepare operational response: Nicaragua. Action window: 7 days. Evidence: signal detected",
+          "channel": "Telegram/SMS alert",
+          "dispatch_id": "DSP-20260815-134",
+          "feedback_status": "ignored",
+          "persona": "Operations/Resilience",
+          "ranking_rationale": "",
+          "rationale": "Payout confirms hazard severity = operational recovery capital available"
+        },
+        {
+          "action": "Route Nicaragua opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.",
+          "channel": "Telegram",
+          "dispatch_id": "DSP-20260815-135",
+          "feedback_status": "ignored",
+          "persona": "Ecosystem Builder",
+          "ranking_rationale": "",
+          "rationale": "Payout triggers regional reconstruction = supply chain, logistics, construction pipeline"
+        },
+        {
+          "action": "Review Nicaragua: signal detected. Validate locally before action.",
+          "channel": "Email brief + Telegram",
+          "dispatch_id": "DSP-20260815-132",
+          "feedback_status": "ignored",
+          "persona": "Diaspora Investor",
+          "ranking_rationale": "",
+          "rationale": "CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens"
+        }
+      ],
+      "ranking_rationale": "",
+      "risk_flags": [],
+      "signal_kind": "ccrif_payout",
+      "title": "Nicaragua: signal detected"
     },
     {
       "cluster_id": "CL-eccb-credit-surge-eastern-caribbean-currency-union",
@@ -3002,6 +2648,47 @@
       "title": "Eastern Caribbean Currency Union: 5.8%"
     },
     {
+      "cluster_id": "CL-investment-signal-barbados",
+      "confidence_display": "\ud83d\udfe1 Validation | 75/100 | B - cross-source",
+      "confidence_raw": 75,
+      "confidence_score": 75,
+      "country_cluster": "Barbados",
+      "decision": "Which country-sector pair to validate for investment readiness",
+      "detail": "34.8% change",
+      "evidence": "Barbados: Foreign direct investment net inflows current USD moved up 34.8% from 2023 to 2024.",
+      "evidence_grade": "B - cross-source",
+      "feedback_counts": {
+        "ignored": 2
+      },
+      "feedback_summary": "Feedback this cycle: 2 ignored.",
+      "freshness": "sustained",
+      "magnitude_pct": 0.0,
+      "personas": [
+        {
+          "action": "Assess competitive positioning in Barbados. FDI movement (34.8% change) signals growing market or incoming competition \u2014 evaluate local advantage before new entrants arrive.",
+          "channel": "Telegram",
+          "dispatch_id": "DSP-20260815-008",
+          "feedback_status": "ignored",
+          "persona": "Regional Founder/Operator",
+          "ranking_rationale": "",
+          "rationale": "FDI movement in your operating country signals competition or demand growth \u2014 assess positioning"
+        },
+        {
+          "action": "Screen Barbados for investment readiness. FDI movement (34.8% change) is a screening trigger \u2014 cross-reference with sector conditions before deploying capital.",
+          "channel": "Email brief + Telegram",
+          "dispatch_id": "DSP-20260815-007",
+          "feedback_status": "ignored",
+          "persona": "Diaspora Investor",
+          "ranking_rationale": "",
+          "rationale": "Single-source FDI movement is a screening trigger, not a deployment signal \u2014 start diligence"
+        }
+      ],
+      "ranking_rationale": "",
+      "risk_flags": [],
+      "signal_kind": "investment_signal",
+      "title": "Barbados: FDI trending at +34.8% \u2014 screening trigger active"
+    },
+    {
       "cluster_id": "CL-eccb-deposit-growth-eastern-caribbean-currency-union",
       "confidence_display": "\ud83d\udfe1 Validation | 72/100 | C - single-source",
       "confidence_raw": 72,
@@ -3052,51 +2739,364 @@
       "title": "Eastern Caribbean Currency Union: 4.6%"
     },
     {
-      "cluster_id": "CL-investment-signal-barbados",
-      "confidence_display": "\ud83d\udfe1 Validation | 71/100 | B - cross-source",
-      "confidence_raw": 71,
-      "confidence_score": 71,
-      "country_cluster": "Barbados",
-      "decision": "Which country-sector pair to validate for investment readiness",
-      "detail": "34.8% change",
-      "evidence": "Barbados: Foreign direct investment net inflows current USD moved up 34.8% from 2023 to 2024.",
-      "evidence_grade": "B - cross-source",
+      "cluster_id": "CL-ccrif-payout-haiti",
+      "confidence_display": "\ud83d\udfe2 Monitor | 68/100 | C - single-source",
+      "confidence_raw": 68,
+      "confidence_score": 68,
+      "country_cluster": "Haiti",
+      "decision": "Insurance capital deployment for reconstruction / parametric trigger validation",
+      "detail": "signal detected",
+      "evidence": "Payout: US$7,753,579; Peril: earthquake; Event date: 2010-01-01; Announced: 2010-01-01",
+      "evidence_grade": "C - single-source",
       "feedback_counts": {
-        "ignored": 2
+        "ignored": 4
       },
-      "feedback_summary": "Feedback this cycle: 2 ignored.",
+      "feedback_summary": "Feedback this cycle: 4 ignored.",
       "freshness": "sustained",
       "magnitude_pct": 0.0,
       "personas": [
         {
-          "action": "Assess competitive positioning in Barbados. FDI movement (34.8% change) signals growing market or incoming competition \u2014 evaluate local advantage before new entrants arrive.",
-          "channel": "Telegram",
-          "dispatch_id": "DSP-20260815-008",
+          "action": "Signal context for Haiti: signal detected. Use this dispatch as a briefing input or narrative lead.",
+          "channel": "Telegram digest",
+          "dispatch_id": "DSP-20260815-033",
           "feedback_status": "ignored",
-          "persona": "Regional Founder/Operator",
+          "persona": "Policy/Media",
           "ranking_rationale": "",
-          "rationale": "FDI movement in your operating country signals competition or demand growth \u2014 assess positioning"
+          "rationale": "Parametric payout = quantified sovereign risk event = fiscal impact story"
         },
         {
-          "action": "Screen Barbados for investment readiness. FDI movement (34.8% change) is a screening trigger \u2014 cross-reference with sector conditions before deploying capital.",
+          "action": "Prepare operational response: Haiti. Action window: 7 days. Evidence: signal detected",
+          "channel": "Telegram/SMS alert",
+          "dispatch_id": "DSP-20260815-034",
+          "feedback_status": "ignored",
+          "persona": "Operations/Resilience",
+          "ranking_rationale": "",
+          "rationale": "Payout confirms hazard severity = operational recovery capital available"
+        },
+        {
+          "action": "Route Haiti opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.",
+          "channel": "Telegram",
+          "dispatch_id": "DSP-20260815-035",
+          "feedback_status": "ignored",
+          "persona": "Ecosystem Builder",
+          "ranking_rationale": "",
+          "rationale": "Payout triggers regional reconstruction = supply chain, logistics, construction pipeline"
+        },
+        {
+          "action": "Review Haiti: signal detected. Validate locally before action.",
           "channel": "Email brief + Telegram",
-          "dispatch_id": "DSP-20260815-007",
+          "dispatch_id": "DSP-20260815-032",
           "feedback_status": "ignored",
           "persona": "Diaspora Investor",
           "ranking_rationale": "",
-          "rationale": "Single-source FDI movement is a screening trigger, not a deployment signal \u2014 start diligence"
+          "rationale": "CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens"
         }
       ],
       "ranking_rationale": "",
       "risk_flags": [],
-      "signal_kind": "investment_signal",
-      "title": "Barbados: FDI trending at +34.8% \u2014 screening trigger active"
+      "signal_kind": "ccrif_payout",
+      "title": "Haiti: signal detected"
+    },
+    {
+      "cluster_id": "CL-ccrif-payout-barbados",
+      "confidence_display": "\ud83d\udfe2 Monitor | 68/100 | C - single-source",
+      "confidence_raw": 68,
+      "confidence_score": 68,
+      "country_cluster": "Barbados",
+      "decision": "Insurance capital deployment for reconstruction / parametric trigger validation",
+      "detail": "signal detected",
+      "evidence": "Payout: US$8,560,247; Peril: tropical_cyclone; Event date: 2010-01-01; Announced: 2010-01-01",
+      "evidence_grade": "C - single-source",
+      "feedback_counts": {
+        "ignored": 4
+      },
+      "feedback_summary": "Feedback this cycle: 4 ignored.",
+      "freshness": "sustained",
+      "magnitude_pct": 0.0,
+      "personas": [
+        {
+          "action": "Signal context for Barbados: signal detected. Use this dispatch as a briefing input or narrative lead.",
+          "channel": "Telegram digest",
+          "dispatch_id": "DSP-20260815-041",
+          "feedback_status": "ignored",
+          "persona": "Policy/Media",
+          "ranking_rationale": "",
+          "rationale": "Parametric payout = quantified sovereign risk event = fiscal impact story"
+        },
+        {
+          "action": "Prepare operational response: Barbados. Action window: 7 days. Evidence: signal detected",
+          "channel": "Telegram/SMS alert",
+          "dispatch_id": "DSP-20260815-042",
+          "feedback_status": "ignored",
+          "persona": "Operations/Resilience",
+          "ranking_rationale": "",
+          "rationale": "Payout confirms hazard severity = operational recovery capital available"
+        },
+        {
+          "action": "Route Barbados opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.",
+          "channel": "Telegram",
+          "dispatch_id": "DSP-20260815-043",
+          "feedback_status": "ignored",
+          "persona": "Ecosystem Builder",
+          "ranking_rationale": "",
+          "rationale": "Payout triggers regional reconstruction = supply chain, logistics, construction pipeline"
+        },
+        {
+          "action": "Review Barbados: signal detected. Validate locally before action.",
+          "channel": "Email brief + Telegram",
+          "dispatch_id": "DSP-20260815-040",
+          "feedback_status": "ignored",
+          "persona": "Diaspora Investor",
+          "ranking_rationale": "",
+          "rationale": "CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens"
+        }
+      ],
+      "ranking_rationale": "",
+      "risk_flags": [],
+      "signal_kind": "ccrif_payout",
+      "title": "Barbados: signal detected"
+    },
+    {
+      "cluster_id": "CL-ccrif-payout-barbados",
+      "confidence_display": "\ud83d\udfe2 Monitor | 68/100 | C - single-source",
+      "confidence_raw": 68,
+      "confidence_score": 68,
+      "country_cluster": "Barbados",
+      "decision": "Insurance capital deployment for reconstruction / parametric trigger validation",
+      "detail": "signal detected",
+      "evidence": "Payout: US$1,284,882; Peril: excess_rainfall; Event date: 2014-01-01; Announced: 2014-01-01",
+      "evidence_grade": "C - single-source",
+      "feedback_counts": {
+        "ignored": 4
+      },
+      "feedback_summary": "Feedback this cycle: 4 ignored.",
+      "freshness": "sustained",
+      "magnitude_pct": 0.0,
+      "personas": [
+        {
+          "action": "Signal context for Barbados: signal detected. Use this dispatch as a briefing input or narrative lead.",
+          "channel": "Telegram digest",
+          "dispatch_id": "DSP-20260815-045",
+          "feedback_status": "ignored",
+          "persona": "Policy/Media",
+          "ranking_rationale": "",
+          "rationale": "Parametric payout = quantified sovereign risk event = fiscal impact story"
+        },
+        {
+          "action": "Prepare operational response: Barbados. Action window: 7 days. Evidence: signal detected",
+          "channel": "Telegram/SMS alert",
+          "dispatch_id": "DSP-20260815-046",
+          "feedback_status": "ignored",
+          "persona": "Operations/Resilience",
+          "ranking_rationale": "",
+          "rationale": "Payout confirms hazard severity = operational recovery capital available"
+        },
+        {
+          "action": "Route Barbados opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.",
+          "channel": "Telegram",
+          "dispatch_id": "DSP-20260815-047",
+          "feedback_status": "ignored",
+          "persona": "Ecosystem Builder",
+          "ranking_rationale": "",
+          "rationale": "Payout triggers regional reconstruction = supply chain, logistics, construction pipeline"
+        },
+        {
+          "action": "Review Barbados: signal detected. Validate locally before action.",
+          "channel": "Email brief + Telegram",
+          "dispatch_id": "DSP-20260815-044",
+          "feedback_status": "ignored",
+          "persona": "Diaspora Investor",
+          "ranking_rationale": "",
+          "rationale": "CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens"
+        }
+      ],
+      "ranking_rationale": "",
+      "risk_flags": [],
+      "signal_kind": "ccrif_payout",
+      "title": "Barbados: signal detected"
+    },
+    {
+      "cluster_id": "CL-ccrif-payout-haiti",
+      "confidence_display": "\ud83d\udfe2 Monitor | 68/100 | C - single-source",
+      "confidence_raw": 68,
+      "confidence_score": 68,
+      "country_cluster": "Haiti",
+      "decision": "Insurance capital deployment for reconstruction / parametric trigger validation",
+      "detail": "signal detected",
+      "evidence": "Payout: US$20,388,067; Peril: tropical_cyclone; Event date: 2016-01-01; Announced: 2016-01-01",
+      "evidence_grade": "C - single-source",
+      "feedback_counts": {
+        "ignored": 4
+      },
+      "feedback_summary": "Feedback this cycle: 4 ignored.",
+      "freshness": "sustained",
+      "magnitude_pct": 0.0,
+      "personas": [
+        {
+          "action": "Signal context for Haiti: signal detected. Use this dispatch as a briefing input or narrative lead.",
+          "channel": "Telegram digest",
+          "dispatch_id": "DSP-20260815-053",
+          "feedback_status": "ignored",
+          "persona": "Policy/Media",
+          "ranking_rationale": "",
+          "rationale": "Parametric payout = quantified sovereign risk event = fiscal impact story"
+        },
+        {
+          "action": "Prepare operational response: Haiti. Action window: 7 days. Evidence: signal detected",
+          "channel": "Telegram/SMS alert",
+          "dispatch_id": "DSP-20260815-054",
+          "feedback_status": "ignored",
+          "persona": "Operations/Resilience",
+          "ranking_rationale": "",
+          "rationale": "Payout confirms hazard severity = operational recovery capital available"
+        },
+        {
+          "action": "Route Haiti opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.",
+          "channel": "Telegram",
+          "dispatch_id": "DSP-20260815-055",
+          "feedback_status": "ignored",
+          "persona": "Ecosystem Builder",
+          "ranking_rationale": "",
+          "rationale": "Payout triggers regional reconstruction = supply chain, logistics, construction pipeline"
+        },
+        {
+          "action": "Review Haiti: signal detected. Validate locally before action.",
+          "channel": "Email brief + Telegram",
+          "dispatch_id": "DSP-20260815-052",
+          "feedback_status": "ignored",
+          "persona": "Diaspora Investor",
+          "ranking_rationale": "",
+          "rationale": "CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens"
+        }
+      ],
+      "ranking_rationale": "",
+      "risk_flags": [],
+      "signal_kind": "ccrif_payout",
+      "title": "Haiti: signal detected"
+    },
+    {
+      "cluster_id": "CL-ccrif-payout-haiti",
+      "confidence_display": "\ud83d\udfe2 Monitor | 68/100 | C - single-source",
+      "confidence_raw": 68,
+      "confidence_score": 68,
+      "country_cluster": "Haiti",
+      "decision": "Insurance capital deployment for reconstruction / parametric trigger validation",
+      "detail": "signal detected",
+      "evidence": "Payout: US$39,953,272; Peril: earthquake; Event date: 2021-01-01; Announced: 2021-01-01",
+      "evidence_grade": "C - single-source",
+      "feedback_counts": {
+        "ignored": 4
+      },
+      "feedback_summary": "Feedback this cycle: 4 ignored.",
+      "freshness": "sustained",
+      "magnitude_pct": 0.0,
+      "personas": [
+        {
+          "action": "Signal context for Haiti: signal detected. Use this dispatch as a briefing input or narrative lead.",
+          "channel": "Telegram digest",
+          "dispatch_id": "DSP-20260815-121",
+          "feedback_status": "ignored",
+          "persona": "Policy/Media",
+          "ranking_rationale": "",
+          "rationale": "Parametric payout = quantified sovereign risk event = fiscal impact story"
+        },
+        {
+          "action": "Prepare operational response: Haiti. Action window: 7 days. Evidence: signal detected",
+          "channel": "Telegram/SMS alert",
+          "dispatch_id": "DSP-20260815-122",
+          "feedback_status": "ignored",
+          "persona": "Operations/Resilience",
+          "ranking_rationale": "",
+          "rationale": "Payout confirms hazard severity = operational recovery capital available"
+        },
+        {
+          "action": "Route Haiti opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.",
+          "channel": "Telegram",
+          "dispatch_id": "DSP-20260815-123",
+          "feedback_status": "ignored",
+          "persona": "Ecosystem Builder",
+          "ranking_rationale": "",
+          "rationale": "Payout triggers regional reconstruction = supply chain, logistics, construction pipeline"
+        },
+        {
+          "action": "Review Haiti: signal detected. Validate locally before action.",
+          "channel": "Email brief + Telegram",
+          "dispatch_id": "DSP-20260815-120",
+          "feedback_status": "ignored",
+          "persona": "Diaspora Investor",
+          "ranking_rationale": "",
+          "rationale": "CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens"
+        }
+      ],
+      "ranking_rationale": "",
+      "risk_flags": [],
+      "signal_kind": "ccrif_payout",
+      "title": "Haiti: signal detected"
+    },
+    {
+      "cluster_id": "CL-ccrif-payout-haiti",
+      "confidence_display": "\ud83d\udfe2 Monitor | 68/100 | C - single-source",
+      "confidence_raw": 68,
+      "confidence_score": 68,
+      "country_cluster": "Haiti",
+      "decision": "Insurance capital deployment for reconstruction / parametric trigger validation",
+      "detail": "signal detected",
+      "evidence": "Payout: US$1,198,434; Peril: tropical_cyclone; Event date: 2025-01-01; Announced: 2025-01-01",
+      "evidence_grade": "C - single-source",
+      "feedback_counts": {
+        "ignored": 4
+      },
+      "feedback_summary": "Feedback this cycle: 4 ignored.",
+      "freshness": "sustained",
+      "magnitude_pct": 0.0,
+      "personas": [
+        {
+          "action": "Signal context for Haiti: signal detected. Use this dispatch as a briefing input or narrative lead.",
+          "channel": "Telegram digest",
+          "dispatch_id": "DSP-20260815-205",
+          "feedback_status": "ignored",
+          "persona": "Policy/Media",
+          "ranking_rationale": "",
+          "rationale": "Parametric payout = quantified sovereign risk event = fiscal impact story"
+        },
+        {
+          "action": "Prepare operational response: Haiti. Action window: 7 days. Evidence: signal detected",
+          "channel": "Telegram/SMS alert",
+          "dispatch_id": "DSP-20260815-206",
+          "feedback_status": "ignored",
+          "persona": "Operations/Resilience",
+          "ranking_rationale": "",
+          "rationale": "Payout confirms hazard severity = operational recovery capital available"
+        },
+        {
+          "action": "Route Haiti opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.",
+          "channel": "Telegram",
+          "dispatch_id": "DSP-20260815-207",
+          "feedback_status": "ignored",
+          "persona": "Ecosystem Builder",
+          "ranking_rationale": "",
+          "rationale": "Payout triggers regional reconstruction = supply chain, logistics, construction pipeline"
+        },
+        {
+          "action": "Review Haiti: signal detected. Validate locally before action.",
+          "channel": "Email brief + Telegram",
+          "dispatch_id": "DSP-20260815-204",
+          "feedback_status": "ignored",
+          "persona": "Diaspora Investor",
+          "ranking_rationale": "",
+          "rationale": "CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens"
+        }
+      ],
+      "ranking_rationale": "",
+      "risk_flags": [],
+      "signal_kind": "ccrif_payout",
+      "title": "Haiti: signal detected"
     },
     {
       "cluster_id": "CL-economic-vulnerability-st-vincent-and-the-grenadines",
-      "confidence_display": "\ud83d\udfe1 Validation | 70/100 | C - single-source",
-      "confidence_raw": 70,
-      "confidence_score": 70,
+      "confidence_display": "\ud83d\udfe2 Monitor | 60/100 | C - single-source",
+      "confidence_raw": 60,
+      "confidence_score": 60,
       "country_cluster": "St. Vincent and the Grenadines",
       "decision": "Risk assessment for capital exposure or policy attention",
       "detail": "18.00%",
@@ -3139,9 +3139,9 @@
   ],
   "cycle_id": "20260815",
   "dispatch_count": 214,
-  "generated_at": "2026-08-15 23:35 UTC",
+  "generated_at": "2026-08-15 23:37 UTC",
   "persona_count": 7,
-  "regional_thesis": "Capital momentum is strongest in Guyana (+860.3%), followed by Suriname, Barbados. Separately, St. Vincent and the Grenadines show elevated economic vulnerability \u2014 relevant for portfolio monitoring and resilience planning. Development pipeline remains active (CDB active procurement notices: 7) \u2014 the bidding window is open for project-based entry. Tourism-related growth signals are visible in Barbados, Antigua and Barbuda, Dominica \u2014 demand-side indicators for capacity planning.",
+  "regional_thesis": "Capital momentum is strongest in Guyana (+860.3%), followed by Suriname. Separately, St. Vincent and the Grenadines show elevated economic vulnerability \u2014 relevant for portfolio monitoring and resilience planning. Development pipeline remains active (CDB active procurement notices: 7) \u2014 the bidding window is open for project-based entry. Tourism-related growth signals are visible in Barbados, Antigua and Barbuda, Dominica \u2014 demand-side indicators for capacity planning.",
   "source_count": 2,
   "why_now": [
     "\ud83d\udd34 **Atlantic Hurricane Season** \u2014 Operational risk for all Caribbean stakeholders. Monitoring NHC/NWS/NDBC for tropical development and maritime hazards.",

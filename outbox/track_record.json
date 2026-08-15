@@ -1,147 +1,55 @@
 {
-  "generated_at": "2026-08-15T23:35:01.465578+00:00",
+  "generated_at": "2026-08-15T23:37:39.440532+00:00",
   "feedback_provenance": "simulated",
   "current_boosts": {
     "enhanced_investment": {
-      "Guyana": 7,
+      "Guyana": 4,
       "Suriname": -6,
-      "Barbados": -6,
-      "Belize": 1,
-      "St. Vincent and the Grenadines": 0
+      "Barbados": -6
     },
     "development_pipeline": {
-      "CARICOM": 2
+      "CARICOM": 1
     },
     "investment_signal": {
       "Guyana": -4,
-      "Suriname": -4,
-      "Barbados": -4
+      "Suriname": -4
     },
-    "food_security": {
-      "CARICOM": -4
-    },
-    "economic_vulnerability": {
-      "St. Vincent and the Grenadines": 10
+    "ccrif_payout": {
+      "Turks and Caicos Islands": -8,
+      "Haiti": -16,
+      "Anguilla": -8,
+      "Barbados": -16,
+      "Excess Rainfall policy - Dominica": -8,
+      "Nicaragua": -8,
+      "St. Kitts and Nevis": -4
     }
   },
   "cycles": [
     {
       "cycle_id": "20260815",
       "responses": {
-        "forwarded": 0,
-        "replied": 0,
+        "forwarded": 1,
+        "replied": 1,
         "opened": 0,
-        "ignored": 0,
+        "ignored": 48,
         "decision_changed": 0
       },
-      "dispatch_count": 214,
+      "dispatch_count": 50,
       "countries": [
-        "Excess Rainfall policy - Trinidad",
-        "Haiti",
         "Barbados",
-        "Nicaragua",
-        "Excess Rainfall policy - Barbados",
-        "Tropical Cyclone policy - Nicaragua",
-        "Jamaica",
-        "Excess Rainfall - Jamaica",
-        "Eastern Caribbean Currency Union",
+        "Haiti",
         "Guyana",
         "Suriname",
-        "CARICOM",
-        "Caribwide",
         "Turks and Caicos Islands",
         "Anguilla",
         "Excess Rainfall policy - Dominica",
-        "St. Kitts and Nevis",
-        "Dominica",
-        "Tropical Cyclone policy - The Bahamas",
-        "Excess Rainfall policy - Guatemala",
-        "Excess Rainfall policy - Haiti",
-        "Excess Rainfall policy - Jamaica",
-        "Excess Rainfall policy - Panama",
-        "Excess Rainfall policy -  Nicaragua",
-        "Tropical Cyclone policy - Barbados",
-        "Excess Rainfall policy - Antigua & Barbuda",
-        "Excess Rainfall policy - St. Kitts & Nevis",
-        "Excess Rainfall - Guatemala",
-        "St. Vincent & the Grenadines",
-        "Grenada",
-        "COAST - Grenada",
-        "Electric Utilities - GRENLEC - Grenada",
-        "CWUIC - NAWASA - Grenada",
-        "Excess Rainfall - Panama",
-        "Excess Rainfall - Panama (FAP)",
-        "Excess Rainfall - Honduras",
-        "Trinidad",
-        "St. Vincent and the Grenadines"
+        "Nicaragua",
+        "CARICOM",
+        "St. Kitts and Nevis"
       ],
       "lead": {
         "country": "Guyana",
         "title": "Guyana: +860.3% capital surge on a single official source — market entry window open"
-      }
-    },
-    {
-      "cycle_id": "20260813",
-      "responses": {
-        "forwarded": 1,
-        "replied": 1,
-        "opened": 0,
-        "ignored": 19,
-        "decision_changed": 1
-      },
-      "dispatch_count": 22,
-      "countries": [
-        "Guyana",
-        "Suriname",
-        "Barbados",
-        "CARICOM",
-        "St. Vincent and the Grenadines"
-      ],
-      "lead": {
-        "country": "Guyana",
-        "title": "Money is moving into Guyana — up 860.3%, and more than one source says so"
-      }
-    },
-    {
-      "cycle_id": "20260724",
-      "responses": {
-        "forwarded": 1,
-        "replied": 1,
-        "opened": 0,
-        "ignored": 17,
-        "decision_changed": 1
-      },
-      "dispatch_count": 20,
-      "countries": [
-        "Guyana",
-        "Suriname",
-        "Barbados",
-        "CARICOM",
-        "St. Vincent and the Grenadines"
-      ],
-      "lead": {
-        "country": "",
-        "title": ""
-      }
-    },
-    {
-      "cycle_id": "20260619",
-      "responses": {
-        "forwarded": 1,
-        "replied": 0,
-        "opened": 1,
-        "ignored": 6,
-        "decision_changed": 0
-      },
-      "dispatch_count": 8,
-      "countries": [
-        "Guyana",
-        "Belize",
-        "St. Vincent and the Grenadines"
-      ],
-      "lead": {
-        "country": "",
-        "title": ""
       }
     }
   ]
