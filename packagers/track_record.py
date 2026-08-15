@@ -28,6 +28,19 @@ def parse_cycle_date(cycle_id: str) -> str:
 
 
 def main() -> None:
+    dest = ROOT / "outbox" / "track_record.json"
+    previous_by_cycle: dict[str, dict] = {}
+    if dest.exists():
+        try:
+            previous = json.loads(dest.read_text())
+            previous_by_cycle = {
+                str(c.get("cycle_id")): c
+                for c in previous.get("cycles", []) or []
+                if c.get("cycle_id")
+            }
+        except (OSError, json.JSONDecodeError):
+            previous_by_cycle = {}
+
     # Load feedback state
     state_path = ROOT / "data" / "feedback" / "state.json"
     if not state_path.exists():
@@ -68,6 +81,7 @@ def main() -> None:
     cycles_out = []
     for cycle_id in sorted_cycles:
         entries = by_cycle[cycle_id]
+        cycle_dispatches = dispatch_by_cycle.get(cycle_id, [])
 
         # Count feedback status
         counts = {"forwarded": 0, "replied": 0, "opened": 0, "ignored": 0, "decision_changed": 0}
@@ -76,27 +90,35 @@ def main() -> None:
             if status in counts:
                 counts[status] += 1
 
-        dispatch_count = len(entries)
+        # Before the first response lands, the current cycle still published
+        # real briefings. Count those dispatches instead of rendering a fresh
+        # cycle as "0 briefings".
+        dispatch_count = len(entries) if entries else len(cycle_dispatches)
 
         # Unique countries by response volume desc
         country_counts: dict[str, int] = {}
-        for e in entries:
-            country = e.get("country", "")
+        country_rows = entries if entries else cycle_dispatches
+        for e in country_rows:
+            country = e.get("country", "") or e.get("country_cluster", "")
             if country:
                 country_counts[country] = country_counts.get(country, 0) + 1
         countries = sorted(country_counts.keys(), key=lambda c: -country_counts[c])
 
         # Lead signal: only if we have dispatches for this cycle
-        lead = {"country": "", "title": ""}
-        if cycle_id in dispatch_by_cycle:
-            cycle_dispatches = dispatch_by_cycle[cycle_id]
-            if cycle_dispatches:
-                # Highest confidence dispatch
-                best = max(cycle_dispatches, key=lambda d: d.get("confidence_score", 0) or 0)
-                lead = {
-                    "country": best.get("country_cluster", ""),
-                    "title": humanize(best.get("title", "")) or "",
-                }
+        # Historical lead claims are part of the public receipt. Preserve the
+        # previously published value when the rolling dispatch artifact no
+        # longer contains that old cycle; recompute only when source
+        # dispatches for the cycle are available.
+        lead = previous_by_cycle.get(cycle_id, {}).get("lead") or {"country": "", "title": ""}
+        if cycle_dispatches:
+            best = max(
+                cycle_dispatches,
+                key=lambda d: d.get("confidence_raw", d.get("confidence_score", 0)) or 0,
+            )
+            lead = {
+                "country": best.get("country_cluster", ""),
+                "title": humanize(best.get("title", "")) or "",
+            }
 
         cycles_out.append({
             "cycle_id": cycle_id,
@@ -113,7 +135,6 @@ def main() -> None:
         "cycles": cycles_out,
     }
 
-    dest = ROOT / "outbox" / "track_record.json"
     dest.write_text(json.dumps(output, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"track_record: {len(cycles_out)} cycles -> {dest}")
 

@@ -49,9 +49,10 @@ def test_packager_grouping():
         assert "opened" in responses
         assert "decision_changed" in responses
 
-    # Lead only filled for cycles present in opportunity_dispatches.json
-    # Current cycle should have lead, older (if exists) should not
+    # The current cycle is published before feedback arrives, so its receipt
+    # must still count the live dispatches and markets.
     desk = json.loads((ROOT / "outbox" / "dispatch_desk.json").read_text())
+    dispatches = json.loads((ROOT / "outbox" / "opportunity_dispatches.json").read_text())["dispatches"]
     current_cycle_id = desk["cycle_id"]
     current_cycle = next((c for c in cycles if c["cycle_id"] == current_cycle_id), None)
     older_cycle = next((c for c in cycles if c["cycle_id"] != current_cycle_id), None)
@@ -62,10 +63,13 @@ def test_packager_grouping():
     assert current_cycle["lead"]["country"], "current cycle lead country should be set"
     assert current_cycle["lead"]["title"], "current cycle lead title should be set"
     assert current_cycle["lead"]["country"] in current_cycle["lead"]["title"]
+    current_dispatches = [d for d in dispatches if d.get("cycle_id") == current_cycle_id]
+    assert current_cycle["dispatch_count"] == len(current_dispatches)
+    assert current_cycle["countries"]
 
     if older_cycle:
-        assert older_cycle["lead"]["country"] == ""
-        assert older_cycle["lead"]["title"] == ""
+        assert isinstance(older_cycle["lead"]["country"], str)
+        assert isinstance(older_cycle["lead"]["title"], str)
 
 
 def test_contract_keys():
