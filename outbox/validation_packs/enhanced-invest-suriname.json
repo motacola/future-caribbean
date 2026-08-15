@@ -1,12 +1,12 @@
 {
   "signal_id": "enhanced-invest-suriname",
-  "dispatch_id": "DSP-20260813-022",
+  "dispatch_id": "DSP-20260815-022",
   "country": "Suriname",
-  "signal_title": "Suriname: +206.0% multi-source investment validated — opportunity active",
-  "confidence_score": 100,
-  "raw_confidence_score": 100,
+  "signal_title": "Suriname: +206.0% investment movement, one source — needs corroboration",
+  "confidence_score": 98,
+  "raw_confidence_score": 98,
   "action_readiness": "high",
-  "evidence_grade": "A - multi-source",
+  "evidence_grade": "C - single-source",
   "sector_hypotheses": [
     {
       "sector": "Offshore oil & gas exploration",
@@ -129,11 +129,11 @@
       "why": "The national chamber — a shortcut to who's doing business"
     }
   ],
-  "advance_or_reject_recommendation": "advance",
-  "recommendation_reason": "Calibrated confidence 100/100 with 2 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.",
-  "last_validated_at": "2026-08-13T16:44:14.475801+00:00",
+  "advance_or_reject_recommendation": "hold",
+  "recommendation_reason": "Evidence fingerprint unchanged for 7 cycles — downgraded from advance to hold until new corroboration arrives.",
+  "last_validated_at": "2026-08-15T22:00:15.369942+00:00",
   "coordination_path": null,
   "evidence_fingerprint": "118b7905bb78c1ee",
-  "cycles_since_refresh": 0,
-  "evidence_freshness": "refreshing"
+  "cycles_since_refresh": 7,
+  "evidence_freshness": "stale"
 }

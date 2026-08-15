@@ -1,63 +1,45 @@
-# Caribbean Opportunity Dispatch — Cycle 20260813
+# Caribbean Opportunity Dispatch — Cycle 20260815
 
-Generated: 2026-08-13 16:44 UTC
+Generated: 2026-08-15 20:45 UTC
 Total dispatches: 27
 
 ## ✅ Delivered Dispatches
 
-**Guyana: +860.3% multi-source capital surge — market entry window open**
+**Guyana: +860.3% capital surge on a single official source — market entry window open**
    To: Diaspora Investor • Via: Email brief + Telegram
    📤 Feedback: forwarded
    Why this persona: Multi-source validation reduces screening risk — capital follows verified signals
-   Action: Investigate Guyana as a capital deployment target this cycle. Multi-source validation (860.3% change) confirms directional signal — next step is operator...
+   Action: Investigate Guyana as a capital deployment target this cycle. One official source shows the movement (860.3% change) — corroborate it before acting, then move...
 
-**Guyana: +860.3% multi-source capital surge — market entry window open**
+**Guyana: +860.3% capital surge on a single official source — market entry window open**
    To: Ecosystem Builder • Via: Telegram
    — Feedback: ignored
    Why this persona: Cross-country investment velocity signals where to focus ecosystem support and founder matching
    Action: Route Guyana opportunity to relevant founders and investors in your network. Signal strength (860.3% change) makes this a high-priority introduction target.
 
-**Guyana: +860.3% multi-source capital surge — market entry window open**
+**Guyana: +860.3% capital surge on a single official source — market entry window open**
    To: Regional Founder/Operator • Via: Telegram
    — Feedback: ignored
    Why this persona: Multi-source investment lift indicates growing market that may support new entry or expansion
    Action: Assess competitive positioning in Guyana. FDI movement (860.3% change) signals growing market or incoming competition — evaluate local advantage before new...
 
-**Suriname: +206.0% multi-source investment validated — opportunity active**
+**Suriname: +206.0% investment movement, one source — needs corroboration**
    To: Diaspora Investor • Via: Email brief + Telegram
    — Feedback: ignored
    Why this persona: Multi-source validation reduces screening risk — capital follows verified signals
-   Action: Investigate Suriname as a capital deployment target this cycle. Multi-source validation (206.0% change) confirms directional signal — next step is operator...
+   Action: Investigate Suriname as a capital deployment target this cycle. One official source shows the movement (206.0% change) — corroborate it before acting, then...
 
-**Suriname: +206.0% multi-source investment validated — opportunity active**
+**Suriname: +206.0% investment movement, one source — needs corroboration**
    To: Ecosystem Builder • Via: Telegram
    — Feedback: ignored
    Why this persona: Cross-country investment velocity signals where to focus ecosystem support and founder matching
    Action: Route Suriname opportunity to relevant founders and investors in your network. Signal strength (206.0% change) makes this a high-priority introduction target.
 
-**Suriname: +206.0% multi-source investment validated — opportunity active**
+**Suriname: +206.0% investment movement, one source — needs corroboration**
    To: Regional Founder/Operator • Via: Telegram
    — Feedback: ignored
    Why this persona: Multi-source investment lift indicates growing market that may support new entry or expansion
    Action: Assess competitive positioning in Suriname. FDI movement (206.0% change) signals growing market or incoming competition — evaluate local advantage before new...
-
-**Barbados: +34.8% multi-source investment validated — opportunity active**
-   To: Diaspora Investor • Via: Email brief + Telegram
-   — Feedback: ignored
-   Why this persona: Multi-source validation reduces screening risk — capital follows verified signals
-   Action: Investigate Barbados as a capital deployment target this cycle. Multi-source validation (34.8% change) confirms directional signal — next step is operator...
-
-**Barbados: +34.8% multi-source investment validated — opportunity active**
-   To: Ecosystem Builder • Via: Telegram
-   — Feedback: ignored
-   Why this persona: Cross-country investment velocity signals where to focus ecosystem support and founder matching
-   Action: Route Barbados opportunity to relevant founders and investors in your network. Signal strength (34.8% change) makes this a high-priority introduction target.
-
-**Barbados: +34.8% multi-source investment validated — opportunity active**
-   To: Regional Founder/Operator • Via: Telegram
-   — Feedback: ignored
-   Why this persona: Multi-source investment lift indicates growing market that may support new entry or expansion
-   Action: Assess competitive positioning in Barbados. FDI movement (34.8% change) signals growing market or incoming competition — evaluate local advantage before new...
 
 **CARICOM: 7 active procurements — bidding window open**
    To: Regional Operator • Via: Telegram
@@ -94,5 +76,23 @@ Total dispatches: 27
    — Feedback: ignored
    Why this persona: Multi-source validation reduces screening risk — capital follows verified signals
    Action: Investigate Caribwide as a capital deployment target this cycle. Multi-source validation (Guyana (860.3% change), Suriname (206.0% change), Barbados (34.8%...
+
+**Capital convergence: 3 Caribbean economies showing multi-source investment momentum**
+   To: Ecosystem Builder • Via: Telegram
+   — Feedback: ignored
+   Why this persona: Cross-country investment velocity signals where to focus ecosystem support and founder matching
+   Action: Route Caribwide opportunity to relevant founders and investors in your network. Signal strength (Guyana (860.3% change), Suriname (206.0% change), Barbados...
+
+**Capital convergence: 3 Caribbean economies showing multi-source investment momentum**
+   To: Regional Founder/Operator • Via: Telegram
+   — Feedback: ignored
+   Why this persona: Multi-source investment lift indicates growing market that may support new entry or expansion
+   Action: Assess competitive positioning in Caribwide. FDI movement (Guyana (860.3% change), Suriname (206.0% change), Barbados (34.8% change)) signals growing market...
+
+**Guyana: FDI trending at +860.3% — screening trigger active**
+   To: Diaspora Investor • Via: Email brief + Telegram
+   — Feedback: ignored
+   Why this persona: Single-source FDI movement is a screening trigger, not a deployment signal — start diligence
+   Action: Screen Guyana for investment readiness. FDI movement (860.3% change) is a screening trigger — cross-reference with sector conditions before deploying capital.
 
 *...and 12 more delivered dispatches*

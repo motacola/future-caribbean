@@ -14,10 +14,14 @@ const d = loadDashboardData();
   --sans: 'Inter', -apple-system, system-ui, sans-serif;
   --mono: 'IBM Plex Mono', monospace;
   --r: 3px;
-  --shadow-rest: 0 1px 2px rgba(24,37,31,.05), 0 1px 1px rgba(24,37,31,.03);
-  --shadow-card: 0 2px 6px rgba(24,37,31,.06), 0 8px 20px rgba(24,37,31,.05);
-  --shadow-raised: 0 6px 16px rgba(24,37,31,.09), 0 16px 40px rgba(24,37,31,.08);
-  --shadow-hero: 0 10px 24px rgba(24,37,31,.10), 0 24px 56px rgba(24,37,31,.10);
+  /* Print surfaces do not float. Every panel used to sit on a drop shadow,
+     which is what made a page of flat editorial content read as a pile of
+     app cards. Depth is now carried by rules and whitespace; only genuinely
+     raised things (the sticky bar, the dark call-out) keep a shadow. */
+  --shadow-rest: none;
+  --shadow-card: none;
+  --shadow-raised: 0 1px 2px rgba(24,37,31,.06);
+  --shadow-hero: none;
   /* caribbeanTheme tokens (mirrors src/lib/caribbean-theme.ts).
      Kept in sync with the designer's signal-fabric-designer palette so
      any chart the index embeds in the future inherits the same
@@ -33,10 +37,32 @@ const d = loadDashboardData();
   --caribbean-sand: #f2d94c;
   --caribbean-sun: #ff8a3d;
   --caribbean-storm: #315cff;
+
+  /* Chart roles for the server-rendered activity charts in src/lib/data.ts.
+     Structure (surface, grid, axis, tick, annotation) is derived from the
+     caribbeanTheme tokens above using the same formulas as
+     src/lib/caribbean-theme.ts, so the static SVGs and the TanStack charts
+     on /build agree on how a chart is built.
+
+     The series mark deliberately does NOT use reef/sea. Those are the
+     designer's saturated marks, tuned for a chart-first canvas; against this
+     page's cream editorial surface they read as alerts rather than data, so
+     the series stays on the masthead teal. Change --chart-series and
+     --chart-annotate to restyle every chart on the page. */
+  --chart-surface: #FAF3E7;
+  --chart-grid: color-mix(in oklab, var(--caribbean-fg) 12%, transparent);
+  --chart-axis: color-mix(in oklab, var(--caribbean-fg) 60%, transparent);
+  --chart-tick: color-mix(in oklab, var(--caribbean-fg) 75%, transparent);
+  --chart-annotate: var(--caribbean-inspect);
+  --chart-series: var(--teal);
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { overflow-x: clip; }
-body { font-family: var(--sans); background: var(--bg); background-image: radial-gradient(1100px 500px at 75% -120px, rgba(181,122,34,.06), transparent 70%), radial-gradient(900px 420px at -10% 30%, rgba(13,118,110,.04), transparent 70%); color: var(--text); line-height: 1.6; font-size: 15px; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+body { font-family: var(--sans); background: var(--bg); background-image: radial-gradient(1100px 500px at 75% -120px, rgba(181,122,34,.06), transparent 70%), radial-gradient(900px 420px at -10% 30%, rgba(13,118,110,.04), transparent 70%); color: var(--text); line-height: 1.6; font-size: 15px; -webkit-font-smoothing: antialiased; }
+/* No overflow-x here on purpose: `hidden` made <body> a scroll container,
+   which silently disabled position:sticky for everything inside it, and
+   `clip` on both html and body clamps vertical scrolling. `html` already
+   carries `overflow-x: clip`, which contains the horizontal overflow. */
 a { color: var(--teal); text-decoration: none; }
 a:hover { text-decoration: underline; }
 .masthead { background: linear-gradient(155deg, var(--ink), #0F1912 88%); color: var(--bg); padding: 8px 0 14px; }
@@ -54,37 +80,48 @@ a:hover { text-decoration: underline; }
 .regional-movement-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 6px; }
 .regional-movement-label { font: 700 9px var(--mono); letter-spacing: .8px; text-transform: uppercase; color: var(--muted); }
 .regional-movement-sub { font: 500 10px var(--mono); color: var(--muted); letter-spacing: .3px; }
-.rmv-strip { display: flex; flex-wrap: wrap; gap: 6px; }
-.rmv-chip { display: inline-flex; align-items: center; gap: 7px; background: var(--card); border: 1px solid var(--border); border-radius: 4px; padding: 4px 8px 4px 6px; cursor: pointer; font: 500 11px var(--mono); letter-spacing: .2px; color: var(--ink); transition: background .12s, border-color .12s; }
+/* A fixed grid, not flex-wrap: 23 variable-width chips wrapping freely read
+   as a ragged wall. Equal columns keep the names, bars, and state pills on
+   shared vertical rules so the block scans as a table. */
+.rmv-strip { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 4px 6px; }
+.rmv-chip { display: grid; grid-template-columns: minmax(0, 1fr) 36px 3ch auto; align-items: center; gap: 8px; background: var(--card); border: 1px solid var(--border); border-radius: 4px; padding: 4px 8px 4px 7px; cursor: pointer; font: 500 11px var(--mono); letter-spacing: .2px; color: var(--ink); text-align: left; transition: background .12s, border-color .12s; }
 .rmv-chip:hover { background: rgba(255,252,244,1); border-color: var(--gold); }
 .rmv-chip:focus-visible { outline: 3px solid color-mix(in srgb, var(--teal) 42%, transparent); outline-offset: 2px; }
 .rmv-chip[data-freshness="fresh"] { border-color: rgba(42,140,90,.4); }
 .rmv-chip[data-freshness="aging"] { border-color: rgba(181,122,34,.4); }
 .rmv-chip[data-freshness="stale"] { border-color: rgba(185,72,54,.4); }
-.rmv-name { font-weight: 600; }
-.rmv-bar { display: inline-block; width: 36px; height: 6px; background: rgba(0,0,0,.06); border-radius: 3px; overflow: hidden; }
+.rmv-name { font-weight: 600; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rmv-bar { display: block; width: 36px; height: 6px; background: rgba(0,0,0,.06); border-radius: 3px; overflow: hidden; }
 .rmv-bar-fill { display: block; height: 100%; }
-.rmv-state { font: 700 8.5px var(--mono); text-transform: uppercase; letter-spacing: .6px; padding: 1px 5px; border-radius: 8px; border: 1px solid var(--border); background: var(--card); }
+.rmv-state { justify-self: end; min-width: 46px; text-align: center; font: 700 8.5px var(--mono); text-transform: uppercase; letter-spacing: .6px; padding: 1px 5px; border-radius: 8px; border: 1px solid var(--border); background: var(--card); }
 .rmv-chip[data-freshness="fresh"] .rmv-state { color: #2a8c5a; border-color: rgba(42,140,90,.35); background: rgba(42,140,90,.08); }
 .rmv-chip[data-freshness="aging"] .rmv-state { color: #b57a22; border-color: rgba(181,122,34,.35); background: rgba(181,122,34,.08); }
 .rmv-chip[data-freshness="stale"] .rmv-state { color: #b94836; border-color: rgba(185,72,54,.35); background: rgba(185,72,54,.08); }
-.rmv-meta { color: var(--muted); font: 500 9.5px var(--mono); letter-spacing: .2px; }
+.rmv-meta { color: var(--muted); font: 500 9.5px var(--mono); letter-spacing: .2px; text-align: right; }
 @media(max-width:640px){
   .rmv-chip { min-height: 44px; padding: 7px 9px; }
-  .rmv-strip { gap: 8px; }
+  .rmv-strip { grid-template-columns: 1fr; gap: 6px; }
 }
 
 .map-finance-strip { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin-top: 10px; }
 .map-finance-chip { background: rgba(255,252,244,.84); border: 1px solid var(--border); border-radius: 6px; padding: 8px 10px; min-width: 0; }
 .map-finance-chip span { display: block; font: 700 9px var(--mono); letter-spacing: .8px; text-transform: uppercase; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.map-finance-chip strong { display: block; font-size: 12px; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+/* The value line was ellipsising to "Currency + market …"; two wrapped lines
+   fit the chip and say the whole thing. */
+.map-finance-chip strong { display: block; font-size: 12px; line-height: 1.3; color: var(--ink); }
 .map-finance-chip.fx strong { color: var(--teal); }
 .map-finance-chip.market strong { color: var(--gold); }
-.mast-inner { max-width: 1140px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
-.mast-name { font-family: var(--serif); font-size: 18px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
+/* Unscrolled: a centred nameplate, the way a paper opens. The compact
+   left-aligned bar below (.masthead.scrolled) is the scrolled state, and its
+   44px height is what .desknav's sticky offset is measured against — change
+   one and you must change the other. */
+.mast-inner { max-width: 1140px; margin: 0 auto; padding: 6px 24px 2px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.mast-brand { text-align: center; }
+.mast-name { font-family: var(--serif); font-size: 34px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; line-height: 1; }
 .mast-name em { font-style: normal; color: var(--gold); }
-.mast-links { display: flex; gap: 20px; }
-.mast-links a { color: color-mix(in srgb, var(--bg) 62%, transparent); font-size: 12px; letter-spacing: .5px; text-transform: uppercase; font-weight: 500; }
+.mast-tagline { margin-top: 7px; font: 500 9px var(--mono); letter-spacing: 2.4px; text-transform: uppercase; color: rgba(244,235,221,.42); }
+.mast-links { display: flex; gap: 22px; flex-wrap: wrap; justify-content: center; }
+.mast-links a { color: color-mix(in srgb, var(--bg) 62%, transparent); font-size: 11px; letter-spacing: .8px; text-transform: uppercase; font-weight: 500; }
 .mast-links a:hover { color: var(--bg); text-decoration: none; }
 .btn { display: inline-block; padding: 10px 22px; border-radius: 5px; font-size: 13px; font-weight: 600; cursor: pointer; border: none; font-family: var(--sans); letter-spacing: .3px; }
 .btn-p { background: var(--ink); color: var(--bg); box-shadow: 0 2px 6px rgba(24,37,31,.18), 0 1px 2px rgba(24,37,31,.12); }
@@ -98,7 +135,11 @@ a:hover { text-decoration: underline; }
 .proof-k { display: block; font-family: var(--mono); font-size: 18px; line-height: 1.1; color: var(--ink); margin-bottom: 4px; }
 .proof-v { display: block; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .8px; font-weight: 700; }
 .sec { max-width: 1140px; margin: 0 auto; padding: 0 24px 40px; }
-.sec-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gold); margin-bottom: 10px; font-weight: 600; }
+/* Wire-service section label: lowercase mono under a full-width rule, the
+   way a newsroom board separates desks. Replaces the gold uppercase kicker,
+   which competed with the headline beneath it. */
+.sec-label { display: block; border-top: 1px solid var(--ink); padding-top: 9px; margin-bottom: 12px; font: 500 11px var(--mono); text-transform: lowercase; letter-spacing: .4px; color: var(--muted); }
+.sec-label::before { content: "// "; color: var(--gold); }
 .sec-title, .st { font-family: var(--serif); font-size: 28px; line-height: 1.08; font-weight: 700; margin-bottom: 8px; letter-spacing: 0; }
 .sec-sub { font-size: 14px; color: var(--sub); margin-bottom: 20px; max-width: 520px; }
 .ss { font-size: 14px; color: var(--sub); margin-bottom: 20px; max-width: 560px; }
@@ -107,8 +148,17 @@ a:hover { text-decoration: underline; }
 .lead-disclaimer strong { color: var(--gold); }
 .decision-shell { display: grid; grid-template-columns: minmax(0,1.25fr) minmax(300px,.75fr); gap: 16px; align-items: start; }
 .decision-main, .decision-side { background: var(--card); border: 1px solid var(--border); border-radius: var(--r); }
-.decision-main { padding: 30px; box-shadow: var(--shadow-hero); }
+.decision-main { padding: 30px; box-shadow: none; }
+/* The routing rail is a fraction of the briefing's height; pinning it keeps
+   "who gets this" beside the evidence instead of stranding 900px of gutter. */
 .decision-side { box-shadow: var(--shadow-card); }
+/* Pinned only when the viewport can hold the whole rail. `overflow: clip`
+   rather than `hidden`: hidden makes the rail a scroll container, and a
+   pinned scroll container parked under the cursor eats the page's wheel
+   events. clip trims the corners without capturing scroll. */
+@media(min-width:901px) and (min-height:760px) {
+  .decision-side { position: sticky; top: 128px; }
+}
 .decision-kicker { display: flex; justify-content: space-between; gap: 12px; align-items: center; margin-bottom: 18px; }
 .decision-id { font-family: var(--mono); font-size: 10px; color: var(--muted); }
 .decision-status { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; color: var(--teal); text-transform: uppercase; letter-spacing: .7px; }
@@ -135,7 +185,7 @@ a:hover { text-decoration: underline; }
 .check-item.done strong, .check-item.done span { opacity: .48; text-decoration: line-through; }
 .check-item strong { display: block; font-size: 13px; margin-bottom: 2px; }
 .check-item span { display: block; font-size: 11px; color: var(--muted); }
-.decision-side { overflow: hidden; }
+.decision-side { overflow: clip; }
 .side-head { padding: 18px; border-bottom: 1px solid var(--border); }
 .side-head span { display: block; font-size: 10px; color: var(--gold); text-transform: uppercase; letter-spacing: 1.1px; font-weight: 700; margin-bottom: 5px; }
 .side-head h3 { font-family: var(--serif); font-size: 20px; }
@@ -179,26 +229,43 @@ a:hover { text-decoration: underline; }
 .freshness-meta { font-size: 11px; color: var(--sub); }
 .freshness-meta strong { color: var(--text); font-weight: 600; }
 .freshness-meta em { color: var(--muted); font-style: normal; }
+.freshness-calibration { flex-basis: 100%; color: var(--muted); font-size: 10.5px; border-top: 1px dotted var(--border); padding-top: 7px; margin-top: 2px; }
+/* Public accuracy commitment — targets published before the calls resolve. */
+.calibration-commitment { margin-top: 18px; border-top: 1px solid var(--ink); padding-top: 12px; }
+.commit-head { display: flex; flex-wrap: wrap; gap: 4px 16px; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
+.commit-head strong { font-family: var(--serif); font-size: 17px; font-weight: 700; }
+.commit-head span { font: 500 10px var(--mono); letter-spacing: .3px; color: var(--muted); }
+.commit-table { width: 100%; border-collapse: collapse; font: 500 11px var(--mono); }
+.commit-table td { padding: 7px 0; border-bottom: 1px solid var(--border); color: var(--sub); }
+.commit-table td:first-child { color: var(--ink); font-weight: 700; width: 90px; }
+.commit-table td:last-child { text-align: right; }
+.commit-status { text-transform: uppercase; letter-spacing: .7px; font-size: 9px; padding: 2px 7px; border-radius: 3px; border: 1px solid var(--border); }
+.commit-pending { color: var(--muted); }
+.commit-met { color: #2a8c5a; border-color: rgba(42,140,90,.4); background: rgba(42,140,90,.08); }
+.commit-missed { color: var(--coral); border-color: rgba(185,72,54,.4); background: rgba(185,72,54,.08); }
+.commit-note { margin-top: 9px; font-size: 11px; color: var(--muted); }
 .hyp-status { display: inline-block; font-family: var(--mono); font-size: 8px; text-transform: uppercase; letter-spacing: .6px; padding: 2px 6px; border-radius: 3px; margin-left: 6px; vertical-align: middle; }
 .hyp-status.corroborated { color: var(--teal); background: rgba(31,122,110,.1); }
 .hyp-status.unconfirmed { color: var(--muted); background: rgba(24,37,31,.06); }
 .hyp-status.data_available { color: var(--gold); background: rgba(176,137,52,.12); }
 .hyp-status.macro_signal { color: var(--sub); background: rgba(24,37,31,.05); }
 .vpack-tag.closing { color: var(--coral); }
-.sig-list { background: var(--card); border: 1px solid var(--border); border-radius: var(--r); padding: 18px; box-shadow: var(--shadow-card); }
+.sig-list { background: none; border: none; border-top: 1px solid var(--ink); padding: 0; box-shadow: none; }
 .risk-tag { font-size: 11px; color: var(--coral); background: rgba(201,76,76,.07); padding: 3px 8px; border-radius: 4px; max-width: 100%; overflow-wrap: anywhere; }
 .market-watch { padding-top: 4px; }
 .market-head { display: flex; justify-content: space-between; gap: 18px; align-items: end; margin-bottom: 16px; flex-wrap: wrap; }
 .market-head .ss { margin-bottom: 0; max-width: 660px; }
-.market-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
-.market-card { background: var(--card); border: 1px solid var(--border); border-top: 2px solid var(--gold); border-radius: 0 0 var(--r) var(--r); padding: 18px; min-height: 226px; display: flex; flex-direction: column; gap: 8px; box-shadow: var(--shadow-rest); transition: transform .18s ease, box-shadow .18s ease; }
-.market-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-raised); }
-.market-card.proxy { border-color: rgba(181,122,34,.55); background: linear-gradient(180deg, rgba(181,122,34,.07), var(--card) 42%); }
-.market-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 4px; }
+.market-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 30px; row-gap: 0; }
+.market-card { background: none; border: none; border-top: 1px solid var(--border); padding: 15px 0 18px; display: flex; flex-direction: column; gap: 7px; box-shadow: none; }
+.market-card.proxy { border-top-color: rgba(181,122,34,.55); }
+.market-top { display: flex; justify-content: space-between; align-items: start; gap: 10px; margin-bottom: 4px; min-height: 18px; }
 .market-code { font-family: var(--mono); font-size: 11px; color: var(--gold); font-weight: 700; letter-spacing: .8px; }
-.market-status { font-family: var(--mono); font-size: 9px; text-transform: uppercase; letter-spacing: .7px; color: var(--teal); background: rgba(13,118,110,.08); border: 1px solid rgba(13,118,110,.16); border-radius: 20px; padding: 3px 8px; white-space: nowrap; }
+/* Longer status phrasings ("Source checked — no dated close published") used
+   to run past the card edge on nowrap; let them wrap inside the pill. */
+.market-status { font-family: var(--mono); font-size: 9px; line-height: 1.5; text-transform: uppercase; letter-spacing: .7px; color: var(--teal); background: rgba(13,118,110,.08); border: 1px solid rgba(13,118,110,.16); border-radius: 10px; padding: 3px 8px; text-align: right; max-width: 62%; }
+.market-card .market-status, .market-chart-card .market-status { text-wrap: balance; }
 .market-card.proxy .market-status { color: var(--gold); background: rgba(181,122,34,.1); border-color: rgba(181,122,34,.2); }
-.market-card h3 { font-family: var(--serif); font-size: 20px; line-height: 1.05; }
+.market-card h3 { font-family: var(--serif); font-size: 21px; line-height: 1.08; }
 .market-exchange { font-size: 12px; color: var(--teal); font-weight: 600; font-style: italic; margin-bottom: 2px; }
 .market-observation, .market-chart-disclosure { font: 600 9px/1.45 var(--mono); color: var(--muted); }
 .market-chart-disclosure { margin: -3px 0 1px; padding-left: 8px; border-left: 2px solid var(--gold); }
@@ -209,14 +276,41 @@ a:hover { text-decoration: underline; }
 .market-note { margin-top: 12px; padding: 12px 14px; border-left: 2px solid var(--gold); background: rgba(181,122,34,.06); font-size: 12px; color: var(--sub); }
 .regional-sources { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 14px; }
 .regional-sources span { font-size: 10px; color: var(--muted); border: 1px solid var(--border); border-radius: 20px; padding: 4px 9px; background: rgba(255,252,244,.55); }
-.news-head { display:flex; justify-content:space-between; gap:18px; align-items:end; flex-wrap:wrap; margin-bottom:14px; }
+/* align-items:end left the article-count pill floating mid-gutter once the
+   standfirst wrapped; top-aligning docks it to the section label. */
+.news-head { display:flex; justify-content:space-between; gap:18px; align-items:start; flex-wrap:wrap; margin-bottom:14px; }
+.news-head > .market-status { flex:none; margin-top:2px; }
+/* When the label sits inside a flexed header its rule only spans that
+   column. Lift the rule onto the header so it runs the full measure. */
+.news-head, .market-head { border-top: 1px solid var(--ink); padding-top: 9px; }
+.news-head .sec-label, .market-head .sec-label { border-top: none; padding-top: 0; }
 .news-filters { display:flex; flex-wrap:wrap; gap:6px; margin:12px 0 16px; }
-.news-filter { border:1px solid var(--border); background:var(--card); color:var(--sub); border-radius:20px; padding:5px 10px; font:600 10px var(--sans); text-transform:capitalize; cursor:pointer; }
+.news-filter { border:1px solid var(--border); background:transparent; color:var(--sub); border-radius:3px; padding:5px 9px; font:600 9.5px var(--mono); letter-spacing:.4px; text-transform:uppercase; cursor:pointer; }
 .news-filter.active { background:var(--ink); border-color:var(--ink); color:var(--bg); }
 .news-filter.country { border-style:dashed; }
-.news-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
-.news-card { background:var(--card); border:1px solid var(--border); border-top:2px solid var(--teal); padding:16px; display:grid; gap:8px; box-shadow:var(--shadow-rest); }
-.news-card.lead { grid-column:span 2; border-top-color:var(--gold); }
+/* A newsroom board, not a card wall. Stories are separated by hairlines and
+   whitespace — the borders, fills and drop shadows they used to carry made
+   eighteen equally-weighted boxes compete with each other. */
+/* Multi-column, not grid: grid aligned every row to its tallest card and
+   left holes under the short ones. Columns let stories pack the way a page
+   sets, and column-rule gives the board its vertical hairlines. */
+.news-grid { columns:3; column-gap:30px; column-rule:1px solid var(--border); }
+.news-card { break-inside:avoid; padding:16px 0 18px; display:grid; gap:7px; align-content:start; border-top:1px solid var(--border); background:none; box-shadow:none; }
+/* The lead runs full width above the columns, as a front page does. */
+.news-card.lead { column-span:all; }
+.news-card:hover .news-media img { transform:scale(1.03); }
+.news-kicker { font:700 9px var(--mono); letter-spacing:1.3px; text-transform:uppercase; color:var(--gold); }
+.news-card footer { display:flex; flex-wrap:wrap; gap:4px 10px; justify-content:space-between; align-items:baseline; font:10px var(--mono); color:var(--muted); border-top:none; padding-top:2px; }
+.news-source { color:var(--sub); }
+.news-stamp { letter-spacing:.3px; }
+/* The lead spans two columns, so run it horizontally: a 310px-tall gradient
+   above three lines of text left the card mostly empty. */
+/* Lead: picture left, story right, on explicit rows so `grid-row: 1 / -1`
+   resolves and the image carries the full height of the text beside it. */
+.news-card.lead { border-top:2px solid var(--ink); padding-bottom:26px; margin-bottom:6px; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr); grid-template-rows:repeat(4, min-content) 1fr; column-gap:30px; align-content:stretch; }
+.news-card.lead > .news-media { grid-row:1 / -1; align-self:stretch; }
+.news-card.lead > :not(.news-media) { grid-column:2; }
+.news-card.lead > .news-kicker { padding-top:2px; }
 .news-card[hidden] { display:none; }
 
 /* News image asset — restored after a refactor lost the original styling.
@@ -226,7 +320,7 @@ a:hover { text-decoration: underline; }
 .news-media {
   position: relative;
   display: block;
-  min-height: 168px;
+  min-height: 132px;
   overflow: hidden;
   background: linear-gradient(135deg, #0b3f3c 0%, #126e66 58%, #d8a74f 100%);
   isolation: isolate;
@@ -234,7 +328,9 @@ a:hover { text-decoration: underline; }
   text-decoration: none;
   color: inherit;
 }
-.news-card.lead .news-media { min-height: 310px; }
+.news-card.lead .news-media { min-height: 300px; }
+.news-card:not(.lead) .news-media-fallback { display:none; }
+.news-media img { transition: transform .4s cubic-bezier(.22,1,.36,1); }
 .news-media::after {
   content: "";
   position: absolute;
@@ -287,18 +383,16 @@ a:hover { text-decoration: underline; }
 .news-media.topic-finance    { background: linear-gradient(135deg, #0b3f3c, #126e66 58%, #d8a74f); }
 .news-media.topic-regional   { background: linear-gradient(135deg, #2a2f1f, #6f5fa8 50%, #b57a22); }
 
-.news-meta { display:flex; gap:9px; flex-wrap:wrap; font:700 8px var(--mono); text-transform:uppercase; letter-spacing:.6px; color:var(--muted); }
-.news-card h3 { font:700 18px/1.16 var(--serif); }
-.news-card p { font-size:11.5px; line-height:1.5; color:var(--sub); }
-.news-tags { display:flex; flex-wrap:wrap; gap:5px; }
-.news-tags span { font:700 8px var(--mono); text-transform:uppercase; color:var(--teal); background:rgba(13,118,110,.08); padding:3px 6px; border-radius:3px; }
-.news-tags span.topic { color:var(--gold); background:rgba(181,122,34,.08); }
-.news-card footer { font:10px var(--mono); color:var(--muted); border-top:1px solid var(--border); padding-top:8px; }
+.news-card h3 { font:700 20px/1.2 var(--serif); letter-spacing:-.1px; }
+.news-card h3 a { color:var(--ink); }
+.news-card h3 a:hover { color:var(--teal); text-decoration:none; }
+.news-card.lead h3 { font-size:30px; line-height:1.08; }
+.news-card p { font-size:13px; line-height:1.55; color:var(--sub); }
 .map-news-list { grid-column:1/-1; display:grid; gap:5px; padding-top:8px; border-top:1px solid var(--border); }
 .map-news-list a { font-size:11px; line-height:1.35; }
 .map-news-list a:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; border-radius: 2px; }
 .map-news-list em { color: var(--muted); font-size: 10px; font-style: normal; line-height: 1.45; }
-.source-registry { margin-top: 14px; background: var(--card); border: 1px solid var(--border); border-radius: var(--r); padding: 16px; display: grid; gap: 12px; box-shadow: var(--shadow-rest); }
+.source-registry { margin-top: 22px; background: none; border: none; border-top: 1px solid var(--border); padding: 14px 0 0; display: grid; gap: 12px; box-shadow: none; }
 .source-registry-head { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; flex-wrap: wrap; }
 .source-registry-head h3 { font-family: var(--serif); font-size: 19px; }
 .source-registry-head span { font: 700 10px var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: .8px; }
@@ -307,32 +401,40 @@ a:hover { text-decoration: underline; }
 .source-registry-group div { display: flex; flex-wrap: wrap; gap: 7px; }
 .source-registry-group a { font-size: 10px; color: var(--sub); border: 1px solid var(--border); border-radius: 20px; padding: 4px 9px; background: rgba(255,252,244,.6); text-decoration: none; }
 .source-registry-group a:hover { border-color: var(--teal); color: var(--teal); }
-.market-chart-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 14px; }
-.market-chart-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--r); padding: 16px; display: grid; gap: 9px; box-shadow: var(--shadow-rest); transition: transform .18s ease, box-shadow .18s ease; }
-.market-chart-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-card); }
-.market-chart-card.proxy { border-color: rgba(181,122,34,.5); }
-.market-chart-card h3 { font-family: var(--serif); font-size: 17px; line-height: 1.12; }
+.source-registry-group span { font-size: 10px; color: var(--sub); border: 1px solid var(--border); border-radius: 20px; padding: 4px 9px; background: rgba(255,252,244,.6); }
+/* Tracked but silent this cycle — shown, not hidden, because knowing which
+   sources fail to publish is part of what the desk is for. */
+.source-registry-group .src-unreachable { color: var(--muted); border-style: dashed; opacity: .8; }
+.source-registry-empty { font-size: 12px; color: var(--muted); line-height: 1.55; max-width: 640px; }
+.market-chart-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 30px; row-gap: 0; margin-top: 4px; }
+.market-chart-card { background: none; border: none; border-top: 1px solid var(--border); padding: 15px 0 18px; display: grid; gap: 8px; align-content: start; box-shadow: none; }
+.market-chart-card.proxy { border-top-color: rgba(181,122,34,.5); }
+.market-chart-card h3 { font-family: var(--serif); font-size: 19px; line-height: 1.1; }
 .market-chart-card p { font-size: 12px; color: var(--sub); line-height: 1.4; }
+.market-chart-headline { font-style: italic; color: var(--text) !important; }
 .market-chart-card p strong { color: var(--text); }
-.candle-chart-shell { border: 1px solid var(--border); background: #FAF3E7; padding: 6px 7px 2px; overflow: hidden; }
-.candle-chart { display: block; width: 100%; height: auto; min-height: 126px; }
-.candle-grid-line { stroke: rgba(69,90,80,.14); stroke-width: .7; stroke-dasharray: 2 3; }
-.candle-baseline { stroke: var(--ink); stroke-width: 1; opacity: .62; }
-.candle-wick { stroke: currentColor; stroke-width: 1.15; vector-effect: non-scaling-stroke; }
-.candle-body { fill: currentColor; stroke: currentColor; stroke-width: .7; shape-rendering: crispEdges; }
-.candle.up { color: var(--teal); }
-.candle.down { color: var(--coral); }
-.candle:focus { outline: none; filter: drop-shadow(0 0 2px currentColor); }
-.candle-latest-line { stroke: var(--gold); stroke-width: .8; stroke-dasharray: 4 3; opacity: .85; }
-.candle-latest-dot { fill: var(--gold); stroke: #FAF3E7; stroke-width: 1.5; }
-.candle-axis-label, .candle-index-label { fill: var(--muted); font-family: var(--mono); font-size: 7px; letter-spacing: .4px; }
-.candle-index-label { fill: var(--ink); font-size: 6.8px; font-weight: 700; letter-spacing: .65px; }
-.candle-chart-caption { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 8px; }
-.candle-chart-meta { display: grid; justify-items: end; font: 500 9px var(--mono); color: var(--muted); line-height: 1.35; text-align: right; }
-.candle-chart-meta strong { color: var(--gold) !important; font-size: 11px; }
-.candle-chart-meta span { white-space: nowrap; }
+.activity-chart-shell { border: 1px solid var(--border); background: var(--chart-surface); padding: 6px 7px 2px; overflow: hidden; }
+.activity-chart { display: block; width: 100%; height: auto; min-height: 126px; }
+.activity-grid-line { stroke: var(--chart-grid); stroke-width: .7; stroke-dasharray: 2 3; }
+.activity-baseline { stroke: var(--chart-axis); stroke-width: 1; }
+/* One colour for the series — direction is already legible from the shape,
+   and per-period colouring made eight bars flicker teal/red. The closing
+   period picks up the annotation colour so it ties to the latest-value line. */
+.activity-col { color: var(--chart-series); }
+.activity-col.latest { color: var(--chart-annotate); }
+.activity-bar { fill: currentColor; fill-opacity: .2; stroke: currentColor; stroke-width: .8; shape-rendering: crispEdges; }
+.activity-node { fill: currentColor; }
+.activity-col:focus { outline: none; filter: drop-shadow(0 0 2px currentColor); }
+.activity-latest-line { stroke: var(--chart-annotate); stroke-width: .8; stroke-dasharray: 4 3; opacity: .85; }
+.activity-latest-dot { fill: var(--chart-annotate); stroke: var(--chart-surface); stroke-width: 1.5; }
+.activity-axis-label, .activity-index-label { fill: var(--chart-tick); font-family: var(--mono); font-size: 7px; letter-spacing: .4px; }
+.activity-index-label { fill: var(--caribbean-fg); font-size: 6.8px; font-weight: 700; letter-spacing: .65px; }
+.activity-chart-caption { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 8px; }
+.activity-chart-meta { display: grid; justify-items: end; font: 500 9px var(--mono); color: var(--muted); line-height: 1.35; text-align: right; }
+.activity-chart-meta strong { color: var(--chart-annotate) !important; font-size: 11px; }
+.activity-chart-meta span { white-space: nowrap; }
 .out-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.out { background: var(--card); border: 1px solid var(--border); border-radius: var(--r); padding: 0; overflow: hidden; }
+.out { background: none; border: none; border-top: 1px solid var(--border); padding: 0; overflow: hidden; }
 .out-head { padding: 14px 20px 12px; border-bottom: 3px double var(--border-dark); }
 .out-head h4 { font-family: var(--serif); font-size: 17px; font-weight: 700; margin-bottom: 4px; }
 .out-ch { font-size: 9px; color: var(--gold); text-transform: uppercase; letter-spacing: 1.1px; font-weight: 700; font-family: var(--mono); }
@@ -392,8 +494,11 @@ a:hover { text-decoration: underline; }
 .eb-reason { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--gold); border-radius: var(--r); padding: 16px 18px; }
 .eb-reason-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--gold); font-weight: 600; }
 .eb-reason-text { font-size: 14px; color: var(--text); line-height: 1.6; margin-top: 8px; }
-footer { background: var(--ink); color: var(--bg); margin-top: 56px; padding: 44px 24px 30px; }
-footer::before { content: ""; display: block; height: 2px; margin: -44px -24px 42px; background: linear-gradient(90deg, transparent, var(--teal) 45%, var(--gold)); opacity: .85; }
+/* Scoped to the page footer. As a bare `footer` selector this was also
+   painting every news card's <footer> ink-black with 44px of padding — the
+   dark bars that used to sit under each story. */
+body > footer { background: var(--ink); color: var(--bg); margin-top: 56px; padding: 44px 24px 30px; }
+body > footer::before { content: ""; display: block; height: 2px; margin: -44px -24px 42px; background: linear-gradient(90deg, transparent, var(--teal) 45%, var(--gold)); opacity: .85; }
 .foot-inner { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 28px; align-items: start; }
 .foot-brand { font-family: var(--serif); font-size: 22px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
 .foot-brand em { font-style: normal; color: var(--gold); }
@@ -420,8 +525,12 @@ footer::before { content: ""; display: block; height: 2px; margin: -44px -24px 4
 .send-btn:hover:not(:disabled) { background: var(--teal); color: white; }
 .send-btn:disabled { opacity: .45; cursor: not-allowed; }
 .map-hero { max-width: 1140px; margin: 0 auto; padding: 40px 24px 30px; }
-.front-grid { display: grid; grid-template-columns: minmax(0,5fr) minmax(0,7fr); gap: 0 36px; align-items: start; }
+/* The lede runs shorter than the map column. Stretching it (rather than
+   align-items:start) carries the column rule the full height of the row, so
+   the difference reads as an editorial gutter instead of a truncated line. */
+.front-grid { display: grid; grid-template-columns: minmax(0,5fr) minmax(0,7fr); gap: 0 36px; align-items: stretch; }
 .front-lede { padding-right: 36px; border-right: 1px solid var(--border); }
+.front-lede > :last-child { margin-bottom: 0; }
 .front-lede h1 { font-family: var(--serif); font-size: clamp(34px,4.2vw,52px); line-height: 1.0; margin: 10px 0 14px; }
 .front-standfirst { color: var(--sub); font-size: 15px; line-height: 1.55; margin-bottom: 18px; }
 .front-cta { display: inline-block; font: 600 12px var(--sans); letter-spacing: .8px; text-transform: uppercase; color: var(--teal); border-bottom: 1px solid var(--teal); padding-bottom: 2px; margin-bottom: 22px; }
@@ -450,6 +559,41 @@ footer::before { content: ""; display: block; height: 2px; margin: -44px -24px 4
 .map-legend i { width: 7px; height: 7px; border-radius: 50%; }
 .map-shell { position: relative; border-radius: var(--r); overflow: hidden; box-shadow: 0 1px 2px rgba(24,37,31,.06); border: 1px solid var(--border-dark); background: #cfe3e8; }
 #leaflet-map { height: 560px; width: 100%; background: #cfe3e8; font-family: var(--sans); }
+
+/* Expand affordance — sits opposite Leaflet's zoom controls so it never
+   overlaps them, and above the tile pane's stacking context. */
+.map-expand { position: absolute; right: 10px; top: 10px; z-index: 500; display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border: 1px solid var(--border-dark); border-radius: 3px; background: rgba(255,252,244,.94); color: var(--ink); font: 600 9.5px var(--mono); letter-spacing: .8px; text-transform: uppercase; cursor: pointer; box-shadow: 0 1px 3px rgba(24,37,31,.16); }
+.map-expand:hover { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.map-expand:focus-visible { outline: 3px solid color-mix(in srgb, var(--teal) 42%, transparent); outline-offset: 2px; }
+.map-expand svg { width: 11px; height: 11px; }
+
+.map-overlay { position: fixed; inset: 0; z-index: 2000; background: rgba(15,25,18,.82); backdrop-filter: blur(3px); display: grid; padding: 24px; overscroll-behavior: contain; }
+.map-overlay[hidden] { display: none; }
+.map-overlay-inner { width: min(1400px, 100%); max-height: 100%; margin: 0 auto; display: grid; grid-template-rows: auto minmax(0, 1fr); background: var(--bg); border: 1px solid var(--border-dark); border-radius: var(--r); overflow: hidden; }
+.map-overlay-bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 18px; background: var(--ink); color: var(--bg); }
+.map-overlay-kicker { display: block; font: 500 9px var(--mono); letter-spacing: 1.6px; text-transform: uppercase; color: rgba(244,235,221,.5); margin-bottom: 3px; }
+.map-overlay-bar strong { font-family: var(--serif); font-size: 19px; font-weight: 700; }
+.map-overlay-close { display: inline-flex; align-items: center; gap: 8px; padding: 7px 12px; border: 1px solid rgba(244,235,221,.28); border-radius: 3px; background: transparent; color: var(--bg); font: 600 10px var(--mono); letter-spacing: 1px; text-transform: uppercase; cursor: pointer; }
+.map-overlay-close:hover { background: rgba(244,235,221,.12); }
+.map-overlay-close:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+.map-overlay-close kbd { font: inherit; opacity: .6; }
+/* The map takes every row of slack the dialog has; the drill sits under it
+   at its natural height. */
+.map-overlay-stage { overflow-y: auto; padding: 16px 18px 18px; display: grid; grid-template-rows: minmax(300px, 1fr) auto; gap: 12px; }
+.map-overlay-stage .map-shell { height: auto; min-height: 0; }
+.map-overlay-stage #leaflet-map { height: 100%; min-height: 300px; }
+.map-overlay-stage .map-drill { margin-top: 0; }
+/* The expand control travels with the shell; hide it once expanded, and
+   stop the hero's entrance animation from replaying on the moved node. */
+.map-overlay-stage .map-expand { display: none; }
+.map-overlay-stage .map-shell { animation: none; opacity: 1; transform: none; }
+body.map-overlay-open { overflow: hidden; }
+@media (max-width: 640px) {
+  .map-overlay { padding: 0; }
+  .map-overlay-inner { border: none; border-radius: 0; }
+  .map-overlay-bar strong { font-size: 16px; }
+}
+@media (prefers-reduced-motion: reduce) { .map-overlay { backdrop-filter: none; } }
 .leaflet-container a.leaflet-popup-close-button { color: var(--muted); }
 .leaflet-control-attribution { font-size: 9px !important; background: rgba(255,252,244,.85) !important; color: var(--muted) !important; }
 .leaflet-control-attribution a { color: var(--sub) !important; }
@@ -512,6 +656,14 @@ footer::before { content: ""; display: block; height: 2px; margin: -44px -24px 4
 .drill-lifecycle-state--fresh    { color: #2a8c5a; border-color: rgba(42, 140, 90, .35); background: rgba(42, 140, 90, .08); }
 .drill-lifecycle-state--aging    { color: #b57a22; border-color: rgba(181, 122, 34, .35); background: rgba(181, 122, 34, .08); }
 .drill-lifecycle-state--stale    { color: #b94836; border-color: rgba(185, 72, 54, .35);  background: rgba(185, 72, 54, .08); }
+/* These three classes were in the markup with no rules behind them, so the
+   spans ran together as "Observed2026-08-13Update cadence…". A definition
+   grid gives each label its own column and its value the line beneath. */
+.drill-lifecycle-fields { display: grid; grid-auto-flow: column; grid-template-rows: auto auto; justify-content: start; gap: 2px 34px; margin-top: 8px; }
+.drill-lifecycle-key { display: block; font: 700 8.5px var(--mono); letter-spacing: .9px; text-transform: uppercase; color: var(--muted); }
+.drill-lifecycle-val { display: block; font-size: 12px; color: var(--text); line-height: 1.45; margin-bottom: 4px; }
+.drill-lifecycle-key + .drill-lifecycle-val { margin-top: 1px; }
+@media (max-width: 520px) { .drill-lifecycle-fields { grid-auto-flow: row; grid-template-rows: none; } }
 .drill-evidence { display: grid; gap: 6px; }
 .drill-evidence-bar {
   display: flex;
@@ -562,13 +714,21 @@ html { scroll-behavior: smooth; }
 .masthead { position: sticky; top: 0; z-index: 1200; transition: background .3s ease, box-shadow .3s ease, padding .25s ease; }
 .masthead.scrolled { background: var(--ink); box-shadow: 0 8px 24px rgba(24,37,31,.25); padding: 0; }
 .masthead.scrolled .mast-edition { display: none; }
-.masthead.scrolled .mast-inner { min-height: 44px; align-items: center; flex-wrap: nowrap; gap: 12px; }
+/* Collapse the nameplate back to the 44px horizontal bar the sticky
+   offsets are measured against. */
+.masthead.scrolled .mast-inner { min-height: 44px; flex-direction: row; justify-content: space-between; align-items: center; flex-wrap: nowrap; gap: 12px; padding: 0 24px; }
+.masthead.scrolled .mast-brand { text-align: left; min-width: 0; }
 .masthead.scrolled .mast-name { font-size: 14px; letter-spacing: 1.1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: none; }
+.masthead.scrolled .mast-tagline { display: none; }
+.masthead.scrolled .mast-links a { font-size: 11px; }
 [id] { scroll-margin-top: 100px; }
 .livewire { display: flex; align-items: stretch; width: 100%; max-width: 100vw; background: var(--ink); border-bottom: 1px solid rgba(244,235,221,.08); overflow: hidden; contain: paint; }
 .lw-label { flex-shrink: 0; display: flex; align-items: center; gap: 7px; padding: 8px 16px; font: 700 9px var(--mono); letter-spacing: 1.6px; text-transform: uppercase; color: var(--gold); background: rgba(181,122,34,.1); border-right: 1px solid rgba(244,235,221,.1); }
 .lw-label::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); animation: theater-live 1.4s ease-in-out infinite; }
-.lw-track { display: flex; overflow: hidden; flex: 1; min-width: 0; mask-image: linear-gradient(90deg, transparent, #000 26px, #000 calc(100% - 26px), transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 26px, #000 calc(100% - 26px), transparent); }
+/* A 26px fade was too short to hide the cut: entries emerged from behind the
+   LIVE WIRE label already chopped mid-word. A longer ramp reads as copy
+   travelling in from off-stage. */
+.lw-track { display: flex; overflow: hidden; flex: 1; min-width: 0; mask-image: linear-gradient(90deg, transparent, #000 72px, #000 calc(100% - 72px), transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 72px, #000 calc(100% - 72px), transparent); }
 .lw-rail { display: flex; flex-shrink: 0; align-items: center; animation: lw-scroll var(--lw-dur, 60s) linear infinite; }
 .livewire:hover .lw-rail, .livewire:focus-within .lw-rail { animation-play-state: paused; }
 @keyframes lw-scroll { to { transform: translateX(-100%); } }
@@ -624,8 +784,7 @@ html { scroll-behavior: smooth; }
 .reveal.in { opacity: 1; transform: none; }
 .stagger-child { opacity: 0; transform: translateY(14px); transition: opacity .55s cubic-bezier(.22,1,.36,1), transform .55s cubic-bezier(.22,1,.36,1); transition-delay: var(--sd, 0s); }
 .reveal.in .stagger-child { opacity: 1; transform: none; }
-.sec-label::after { content: ""; display: inline-block; width: 0; height: 1px; background: var(--gold); margin-left: 10px; vertical-align: middle; transition: width .7s ease .25s; }
-.reveal.in .sec-label::after { width: 36px; }
+
 .out, .aud, .cluster-card { box-shadow: var(--shadow-rest); transition: transform .18s ease, box-shadow .18s ease; }
 .out:hover, .cluster-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-raised); }
 .vpack { transition: box-shadow .18s ease; }
@@ -650,9 +809,12 @@ html { scroll-behavior: smooth; }
 }
 @media(max-width:768px) {
   .out-grid, .lead-details, .coordination-inner, .decision-shell, .vpack-grid, .market-grid, .market-chart-grid, .news-grid, .map-finance-strip, .map-market-panel, .source-registry-group { grid-template-columns: 1fr; }
-  .news-card.lead { grid-column:span 1; }
-  .candle-chart-caption { grid-template-columns: 1fr; }
-  .candle-chart-meta { justify-items: start; text-align: left; }
+  .news-grid { columns:1; column-rule:none; }
+  .news-card.lead { grid-template-columns:1fr; grid-template-rows:none; align-content:start; }
+  .news-card.lead > .news-media { grid-row:auto; }
+  .news-card.lead > :not(.news-media) { grid-column:1; }
+  .activity-chart-caption { grid-template-columns: 1fr; }
+  .activity-chart-meta { justify-items: start; text-align: left; }
   .vpack-col + .vpack-col { border-left: none; }
   .mast-edition { display: none; }
   .mast-inner { align-items: center; flex-wrap: nowrap; gap: 10px; padding: 0 18px; }
@@ -790,7 +952,10 @@ html { scroll-behavior: smooth; }
 <div class="masthead">
   <div class="mast-edition"><span>Vol. I · Caribbean Edition</span><span>Cycle {d.cycleId} · {d.nowStr}</span></div>
   <div class="mast-inner">
-    <div class="mast-name">CARIBBEAN <em>OPPORTUNITY</em> DISPATCH</div>
+    <div class="mast-brand">
+      <div class="mast-name">CARIBBEAN <em>OPPORTUNITY</em> DISPATCH</div>
+      <div class="mast-tagline">Where Caribbean capital is moving</div>
+    </div>
     <div class="mast-links">
       <a href="#decision-workspace"><span style="color:var(--teal)">●</span> Cycle {d.cycleId}</a>
       <a href="/build">Build your feed</a>
@@ -845,6 +1010,10 @@ html { scroll-behavior: smooth; }
     <div class="front-map">
       <div class="map-shell">
         <div id="leaflet-map" role="application" aria-label="Map of watched Caribbean countries and territories with confidence pulses"></div>
+        <button type="button" class="map-expand" id="map-expand" aria-expanded="false" aria-controls="map-overlay">
+          <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M6 1H1v5M10 1h5v5M10 15h5v-5M6 15H1v-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"/></svg>
+          Expand
+        </button>
       </div>
       <div class="regional-movement" aria-label="Countries with active signals and their freshness state">
         <div class="regional-movement-head">
@@ -875,6 +1044,22 @@ html { scroll-behavior: smooth; }
     <p class="map-drill-empty">Tap a country to see what the desk found.</p>
   </div>
 </section>
+
+<!-- Expanded map. The live .map-shell and #map-drill are moved in here on
+     open and returned to their placeholders on close, so there is only ever
+     one Leaflet instance and its markers, zoom and selection survive. -->
+<div class="map-overlay" id="map-overlay" hidden>
+  <div class="map-overlay-inner" role="dialog" aria-modal="true" aria-labelledby="map-overlay-title">
+    <div class="map-overlay-bar">
+      <div>
+        <span class="map-overlay-kicker">Front page · cycle {d.cycleId}</span>
+        <strong id="map-overlay-title">Where Caribbean opportunity is moving</strong>
+      </div>
+      <button type="button" class="map-overlay-close" id="map-overlay-close">Close <kbd>Esc</kbd></button>
+    </div>
+    <div class="map-overlay-stage" id="map-overlay-stage"></div>
+  </div>
+</div>
 
 <div class="sec" id="about-fabric">
   <div class="sec-label">What is Signal Fabric?</div>
@@ -940,7 +1125,7 @@ html { scroll-behavior: smooth; }
         <span class="decision-status">{d.leadDelivery}</span>
       </div>
       <h2>{d.lTitle}</h2>
-      <p class="decision-summary">The desk is ranking {d.lCountry} as the lead market this cycle because the evidence, source coverage, movement size, and feedback signals put it ahead of the rest of the regional wire.</p>
+      <p class="decision-summary">{d.lRankingBasis}</p>
       <div class="decision-call">
         <label>The move · next {d.leadWindow}</label>
         <strong>{d.leadAction}</strong>
@@ -993,11 +1178,11 @@ html { scroll-behavior: smooth; }
   </div>
   <div class="market-grid"><Fragment set:html={d.marketWatchHtml} /></div>
   <div class="market-chart-grid" aria-label="Stock market data charts and market activity indicators"><Fragment set:html={d.marketChartHtml} /></div>
-  <div class="market-note"><strong>Source policy:</strong> exchange prices and notices come from official exchanges or regulators first. News outlets are used for context and validation; social posts are discovery leads only. Regional context sources include: <span class="regional-sources"><Fragment set:html={d.regionalSourceHtml} /></span></div>
+  <div class="market-note"><strong>Source policy:</strong> exchange prices and notices come from official exchanges or regulators first. News outlets are used for context and validation; social posts are discovery leads only.{d.regionalSourceHtml && <Fragment> Regional context sources include: <span class="regional-sources"><Fragment set:html={d.regionalSourceHtml} /></span></Fragment>}</div>
   <div class="source-registry" id="source-registry">
     <div class="source-registry-head">
       <h3>Source registry now tracked by the desk</h3>
-      <span>{d.marketSourceCount} market data sources · {d.fxSourceCount} FX sources · core regional APIs</span>
+      <span>{d.sourceRegistrySummary}</span>
     </div>
     <Fragment set:html={d.sourceRegistryHtml} />
   </div>
@@ -1022,6 +1207,7 @@ html { scroll-behavior: smooth; }
   <Fragment set:html={d.receiptsProvenanceHtml} />
   <div class="receipts-table"><Fragment set:html={d.receiptsHtml} /></div>
   <div class="receipts-boosts"><span class="fp-head">Current priorities, shaped by responses</span><Fragment set:html={d.boostsHtml} /></div>
+  <Fragment set:html={d.calibrationCommitmentHtml} />
   <p class="receipts-foot">Machine-readable record: <a href="/api/track-record">/api/track-record</a></p>
 </div>
 
@@ -1538,10 +1724,86 @@ function sigTip(entry) {
 
 function renderMapFallback() {
   const shell = document.querySelector('.map-shell');
+  // The expand control lives inside the shell, so lift it out before the
+  // fallback overwrites the shell's contents and put it back after.
+  const expand = shell.querySelector('.map-expand');
   shell.innerHTML = '<div class="map-fallback">' + MAP_MARKERS.map(m =>
     '<button data-country="' + escapeMapText(m.country) + '" style="--c:' + (MAP_COLORS[m.kind] || MAP_COLORS.none) + '"><i></i>' + escapeMapText(m.country) + '</button>'
   ).join('') + '</div>';
   shell.querySelectorAll('button').forEach(b => b.addEventListener('click', () => openCountryDrill(b.dataset.country)));
+  if (expand) shell.appendChild(expand);
+}
+
+// Expanded map. Rather than building a second Leaflet instance, the live
+// .map-shell and #map-drill are moved into the overlay and returned to
+// placeholder comments on close — markers, zoom and the current selection all
+// survive because it is the same map the whole time.
+let leafletMap = null;
+
+function setupMapOverlay() {
+  const overlay = document.getElementById('map-overlay');
+  const stage = document.getElementById('map-overlay-stage');
+  const openBtn = document.getElementById('map-expand');
+  const closeBtn = document.getElementById('map-overlay-close');
+  const shell = document.querySelector('.map-shell');
+  const drill = document.getElementById('map-drill');
+  if (!overlay || !stage || !openBtn || !closeBtn || !shell || !drill) return;
+
+  const shellHome = document.createComment('map-shell');
+  const drillHome = document.createComment('map-drill');
+  let lastFocus = null;
+
+  // Reframe rather than just resize. invalidateSize alone keeps the old zoom,
+  // so expanding just revealed more ocean around the same-sized islands
+  // instead of showing the region larger.
+  function reframe() {
+    if (!leafletMap) return;
+    leafletMap.invalidateSize();
+    const points = (typeof MAP_MARKERS !== 'undefined' ? MAP_MARKERS : []).map(m => [m.lat, m.lng]);
+    if (points.length) leafletMap.fitBounds(L.latLngBounds(points).pad(0.18), { animate: false });
+  }
+
+  function openOverlay() {
+    if (!overlay.hidden) return;
+    lastFocus = document.activeElement;
+    shell.before(shellHome);
+    drill.before(drillHome);
+    stage.append(shell, drill);
+    overlay.hidden = false;
+    document.body.classList.add('map-overlay-open');
+    openBtn.setAttribute('aria-expanded', 'true');
+    // The page behind is locked, so the wheel belongs to the map now.
+    if (leafletMap) leafletMap.scrollWheelZoom.enable();
+    requestAnimationFrame(() => { reframe(); closeBtn.focus(); });
+  }
+
+  function closeOverlay() {
+    if (overlay.hidden) return;
+    shellHome.replaceWith(shell);
+    drillHome.replaceWith(drill);
+    overlay.hidden = true;
+    document.body.classList.remove('map-overlay-open');
+    openBtn.setAttribute('aria-expanded', 'false');
+    if (leafletMap) leafletMap.scrollWheelZoom.disable();
+    requestAnimationFrame(reframe);
+    (lastFocus instanceof HTMLElement ? lastFocus : openBtn).focus();
+  }
+
+  openBtn.addEventListener('click', openOverlay);
+  closeBtn.addEventListener('click', closeOverlay);
+  overlay.addEventListener('mousedown', event => { if (event.target === overlay) closeOverlay(); });
+  addEventListener('resize', () => { if (!overlay.hidden) reframe(); });
+  document.addEventListener('keydown', event => {
+    if (overlay.hidden) return;
+    if (event.key === 'Escape') { event.preventDefault(); closeOverlay(); return; }
+    if (event.key !== 'Tab') return;
+    const focusable = [...overlay.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])')]
+      .filter(el => el.offsetWidth || el.offsetHeight || el === document.activeElement);
+    if (!focusable.length) return;
+    const first = focusable[0], last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+    else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+  });
 }
 
 if (typeof L !== 'undefined') {
@@ -1556,6 +1818,7 @@ if (typeof L !== 'undefined') {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
     subdomains: 'abcd'
   }).addTo(map);
+  leafletMap = map;
 
   MAP_MARKERS.forEach((entry, idx) => {
     const m = L.marker([entry.lat, entry.lng], { icon: sigIcon(entry, idx), keyboard: true, title: entry.country });
@@ -1586,6 +1849,8 @@ if (typeof L !== 'undefined') {
 } else {
   renderMapFallback();
 }
+
+setupMapOverlay();
 
 if (risks.length) {
   document.getElementById('risk-area').innerHTML = '<div class="lead-risk">⚠️ ' + risks[0] + '</div>';

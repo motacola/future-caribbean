@@ -119,7 +119,11 @@ def build_clusters(dispatches: list[dict[str, Any]]) -> list[dict[str, Any]]:
 
     clusters: list[dict[str, Any]] = []
     for (_, _), items in grouped.items():
-        items = sorted(items, key=lambda d: (d.get("confidence_score", 0), d.get("persona_label", "")), reverse=True)
+        items = sorted(
+            items,
+            key=lambda d: (d.get("confidence_raw", d.get("confidence_score", 0)), d.get("persona_label", "")),
+            reverse=True,
+        )
         lead = items[0]
         personas = []
         for item in items:
@@ -149,6 +153,8 @@ def build_clusters(dispatches: list[dict[str, Any]]) -> list[dict[str, Any]]:
             "evidence": lead.get("evidence_summary", "Evidence summary unavailable."),
             "detail": lead.get("detail", ""),
             "confidence_score": int(lead.get("confidence_score", 0) or 0),
+            "confidence_raw": int(lead.get("confidence_raw", lead.get("confidence_score", 0)) or 0),
+            "magnitude_pct": float(lead.get("magnitude_pct") or 0.0),
             "confidence_display": lead.get("confidence_display", ""),
             "evidence_grade": lead.get("evidence_grade", ""),
             "freshness": lead.get("freshness", ""),
@@ -160,9 +166,14 @@ def build_clusters(dispatches: list[dict[str, Any]]) -> list[dict[str, Any]]:
         }
         clusters.append(cluster)
 
+    # Rank on the unclamped score first, then on the size of the movement.
+    # Ranking on the clamped score alone put every strong FDI signal on 100,
+    # so the lead was decided by persona count — a routing artefact — and
+    # then by list order. Magnitude now breaks the tie before either.
     clusters.sort(
         key=lambda c: (
-            c["confidence_score"],
+            c["confidence_raw"],
+            c["magnitude_pct"],
             len(c["personas"]),
             1 if c["feedback_counts"].get("forwarded") or c["feedback_counts"].get("decision_changed") else 0,
         ),

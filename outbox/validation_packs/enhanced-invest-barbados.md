@@ -1,11 +1,11 @@
 # Opportunity Validation Pack — Barbados
 
-- Signal: `enhanced-invest-barbados` · Dispatch: `DSP-20260813-025`
+- Signal: `enhanced-invest-barbados` · Dispatch: `DSP-20260815-025`
 - Confidence: 68/100 (raw 100) · A - multi-source
 - Action readiness: medium (annual macro signal only)
-- Evidence freshness: refreshing · cycles since refresh: 0
+- Evidence freshness: aging · cycles since refresh: 1
 - Recommendation: **HOLD** — Calibrated confidence 68/100 with 2 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.
-- Last validated: 2026-08-13T16:44:14.475801+00:00
+- Last validated: 2026-08-15T20:03:08.174317+00:00
 
 ## Sector hypotheses
 - Tourism and hospitality [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_

@@ -57,10 +57,18 @@ def narrative_title(
 
     # ── Per-country titles ─────────────────────────────────
     if kind == "enhanced_investment":
+        # "multi-source" is only true when more than one source actually
+        # confirms this country. n_sources counts corroborating sources, not
+        # regional datasets that happen to exist this cycle.
+        corroborated = n_sources > 1
         if band == "immediate":
             if pct and float(pct) >= 300:
-                return f"{country}: +{pct}% multi-source capital surge — market entry window open"
-            return f"{country}: +{pct}% multi-source investment validated — opportunity active"
+                if corroborated:
+                    return f"{country}: +{pct}% multi-source capital surge — market entry window open"
+                return f"{country}: +{pct}% capital surge on a single official source — market entry window open"
+            if corroborated:
+                return f"{country}: +{pct}% multi-source investment validated — opportunity active"
+            return f"{country}: +{pct}% investment movement, one source — needs corroboration"
         if band == "validation":
             src = f" across {n_sources} sources" if n_sources > 1 else ""
             return f"{country}: +{pct}% FDI momentum validated{src} — cross-reference before deploying"

@@ -20,7 +20,7 @@ import argparse
 import json
 import re
 from collections import defaultdict
-from dataclasses import dataclass, asdict
+from dataclasses import dataclass, field, asdict
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -51,6 +51,42 @@ class CompositeSignal:
     evidence: list[str]
     countries: list[str]
     sources: list[str]
+    # Sources that say something about THIS country's claim, versus datasets
+    # that merely exist for the region this cycle. Conflating the two let a
+    # region-wide "CARICOM has trade data" flag count as per-country
+    # corroboration for every country at once. Defaults keep older
+    # constructors working; scoring falls back to `sources` when unset.
+    corroborating_sources: list[str] = field(default_factory=list)
+    context_sources: list[str] = field(default_factory=list)
+    # Identity of the underlying fact: country + indicator + period. Two
+    # signals sharing a fact_key describe the SAME observation, so they must
+    # not be counted as two independent pieces of corroboration.
+    fact_key: str = ""
+    # The period the evidence actually describes (e.g. "2024"), which is not
+    # the same as when we fetched it. World Bank series run a year or more
+    # behind, and a page that says "moving now" has to be able to say so.
+    observed_period: str = ""
+
+
+def fdi_observation_index(wb_observations: list[dict]) -> dict[str, dict]:
+    """country -> the FDI observation, so detectors can carry its period."""
+    index: dict[str, dict] = {}
+    for obs in wb_observations or []:
+        if "DINV" not in str(obs.get("indicator_code", "")):
+            continue
+        country = obs.get("country_name") or ""
+        if country:
+            index[country] = obs
+    return index
+
+
+def fact_identity(country: str, obs: dict | None, fallback_indicator: str = "FDI") -> tuple[str, str]:
+    """(fact_key, observed_period) for a country's observation."""
+    if not obs:
+        return (f"{country}|{fallback_indicator}|unknown", "")
+    period = str(obs.get("year") or "")
+    indicator = str(obs.get("indicator_code") or fallback_indicator)
+    return (f"{country}|{indicator}|{period or 'unknown'}", period)
 
 
 def load_json(path: Path) -> dict | None:
@@ -260,11 +296,14 @@ def detect_investment_signal(
             if topic in ("economy", "infrastructure", "climate"):
                 idb_countries.add(topic)
 
+    fdi_index = fdi_observation_index(wb_observations)
+
     signals: list[CompositeSignal] = []
     for country in countries_with_fdi:
         evidence = countries_with_fdi[country]
         if need_idb and not idb_countries:
             continue
+        key, period = fact_identity(country, fdi_index.get(country))
         signals.append(CompositeSignal(
             id=f"invest-{country.lower().replace(' ','-')}",
             kind="investment_signal",
@@ -274,6 +313,8 @@ def detect_investment_signal(
             evidence=evidence,
             countries=[country],
             sources=["World Bank", "IDB"],
+            fact_key=key,
+            observed_period=period,
         ))
 
     return signals
@@ -480,6 +521,7 @@ def detect_enhanced_investment(
     rules: dict,
     wb_signals: list[str],
     tier2_items: list[dict],
+    wb_observations: list[dict] | None = None,
 ) -> list[CompositeSignal]:
     """Triple-source validation: WB FDI surge + CARICOM trade data + CDB activity."""
     cond = rules.get("conditions", {})
@@ -519,32 +561,55 @@ def detect_enhanced_investment(
             for i in tier2_items
         )
 
-    # Score: how many of the three sources confirm
-    sources_active = sum([bool(countries_fdi), has_caricom_trade, has_cdb_activity])
-    if require_two and sources_active < 2:
+    # has_caricom_trade and has_cdb_activity are region-wide: they say a
+    # dataset exists this cycle, not that it says anything about a given
+    # country. They are therefore context, never corroboration — computing
+    # them once outside the loop handed every country the same two "sources"
+    # and made three unrelated markets score identically.
+    context_available = [
+        name for name, present in (("CARICOM", has_caricom_trade), ("CDB", has_cdb_activity))
+        if present
+    ]
+    if require_two and not countries_fdi:
         return []
+
+    fdi_index = fdi_observation_index(wb_observations or [])
+    enhanced_facts = {c: fact_identity(c, fdi_index.get(c)) for c in countries_fdi}
 
     signals: list[CompositeSignal] = []
     for country in countries_fdi:
-        sources_list = ["World Bank"]
+        # Only the World Bank observation is country-specific here.
+        corroborating = ["World Bank"]
+        sources_list = corroborating + context_available
         evidence_parts = [f"WB FDI surge detected: {country}"]
         if has_caricom_trade:
-            sources_list.append("CARICOM")
-            evidence_parts.append("CARICOM trade/FDI data available")
+            evidence_parts.append("CARICOM trade/FDI data available (regional context, not country confirmation)")
         if has_cdb_activity:
-            sources_list.append("CDB")
-            evidence_parts.append("CDB procurement/evaluation activity")
-        evidence_parts.append(f"Confidence: WB FDI data confirmed · CARICOM/CDB data available ({sources_active}/3 signals)")
+            evidence_parts.append("CDB procurement/evaluation activity (regional context, not country confirmation)")
+        evidence_parts.append(
+            f"Confidence: {len(corroborating)} country-specific source confirmed"
+            + (f" · {len(context_available)} regional dataset(s) available as context" if context_available else "")
+        )
 
         signals.append(CompositeSignal(
             id=f"enhanced-invest-{country.lower().replace(' ','-')}",
             kind="enhanced_investment",
             label="💎 Enhanced Investment Signal",
             priority="medium",
-            summary=f"{country}: FDI surge (WB) + supporting context from CARICOM/CDB data availability ({sources_active}/3 signals)",
+            summary=(
+                f"{country}: World Bank FDI surge"
+                + (f", with {len(context_available)} regional dataset(s) available as context"
+                   if context_available else "")
+            ),
             evidence=evidence_parts,
             countries=[country],
             sources=sources_list,
+            corroborating_sources=list(corroborating),
+            context_sources=list(context_available),
+            # Same World Bank observation as the investment_signal for this
+            # country — one fact, described twice.
+            fact_key=enhanced_facts.get(country, (f"{country}|FDI|unknown", ""))[0],
+            observed_period=enhanced_facts.get(country, ("", ""))[1],
         ))
 
     return signals
@@ -1249,7 +1314,7 @@ def run(rules_path: Path, data_dir: Path, signal_dir: Path) -> int:
 
     enhanced_rules = combined_rules.get("enhanced_investment", {})
     if tier2_items:
-        all_signals.extend(detect_enhanced_investment(enhanced_rules, wb_sigs, tier2_items))
+        all_signals.extend(detect_enhanced_investment(enhanced_rules, wb_sigs, tier2_items, wb_obs))
 
     # Supply chain signal (Tier 2 + maritime + NDBC)
     supply_chain_rules = combined_rules.get("supply_chain_signal", {})

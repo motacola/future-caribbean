@@ -490,8 +490,15 @@ def build_pack(
     institutions = INSTITUTIONS.get(country, []) + REGIONAL_INSTITUTIONS
     operators = load_operators_from_registry(country)
 
-    raw_confidence = int(dispatch.get("confidence_score", 0) or 0)
-    confidence, action_readiness = calibrate_confidence(raw_confidence, hyps, procurement, wb_obs)
+    # Action-readiness calibration starts from the bounded score published to
+    # readers. Preserve the ranking score separately: after raw-score ranking
+    # was introduced it can exceed 100, and calling the already-clamped display
+    # score "raw" made the validation pack misstate what the algorithm used.
+    published_confidence = int(dispatch.get("confidence_score", 0) or 0)
+    ranking_confidence = int(dispatch.get("confidence_raw", published_confidence) or 0)
+    confidence, action_readiness = calibrate_confidence(
+        published_confidence, hyps, procurement, wb_obs
+    )
     decision, reason = recommend(confidence, hyps, projects, procurement, operators)
     questions = unresolved_questions_for(country, hyps, procurement, operators)
 
@@ -512,7 +519,7 @@ def build_pack(
         "country": country,
         "signal_title": dispatch.get("title", ""),
         "confidence_score": confidence,
-        "raw_confidence_score": raw_confidence,
+        "raw_confidence_score": ranking_confidence,
         "action_readiness": action_readiness,
         "evidence_grade": dispatch.get("evidence_grade", ""),
         "sector_hypotheses": hyps,

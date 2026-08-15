@@ -1,0 +1,290 @@
+{
+  "claims": [
+    {
+      "cycle_id": "20260815",
+      "fact_key": "Barbados|BX.KLT.DINV.CD.WD|2024",
+      "signal_id": "enhanced-invest-barbados",
+      "kind": "enhanced_investment",
+      "country": "Barbados",
+      "score": 85,
+      "band": "85-100",
+      "corroborating_at_claim": 2,
+      "source_names": [
+        "CARICOM",
+        "CDB",
+        "IDB",
+        "World Bank"
+      ],
+      "recorded_at": "2026-08-15T21:38:36.574978+00:00",
+      "forecast_probability": 0.85,
+      "prior_basis": "naive",
+      "outcome": null,
+      "resolved_by": null,
+      "resolved_at": null,
+      "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "hash": "cf307c92e2b797422821a2e12b219e41368b0a2c0a4cd9d0f063f6b9cba6bf3d"
+    },
+    {
+      "cycle_id": "20260815",
+      "fact_key": "Guyana|BX.KLT.DINV.CD.WD|2024",
+      "signal_id": "enhanced-invest-guyana",
+      "kind": "enhanced_investment",
+      "country": "Guyana",
+      "score": 100,
+      "band": "85-100",
+      "corroborating_at_claim": 2,
+      "source_names": [
+        "CARICOM",
+        "CDB",
+        "IDB",
+        "World Bank"
+      ],
+      "recorded_at": "2026-08-15T21:38:36.575013+00:00",
+      "forecast_probability": 0.95,
+      "prior_basis": "naive",
+      "outcome": null,
+      "resolved_by": null,
+      "resolved_at": null,
+      "prev_hash": "cf307c92e2b797422821a2e12b219e41368b0a2c0a4cd9d0f063f6b9cba6bf3d",
+      "hash": "85e5e350c356a525a4b938e3e8a8c497a41c9445c9816e15648a5df4b59fd51b"
+    },
+    {
+      "cycle_id": "20260815",
+      "fact_key": "Suriname|BX.KLT.DINV.CD.WD|2025",
+      "signal_id": "enhanced-invest-suriname",
+      "kind": "enhanced_investment",
+      "country": "Suriname",
+      "score": 98,
+      "band": "85-100",
+      "corroborating_at_claim": 2,
+      "source_names": [
+        "CARICOM",
+        "CDB",
+        "IDB",
+        "World Bank"
+      ],
+      "recorded_at": "2026-08-15T21:38:36.575029+00:00",
+      "forecast_probability": 0.95,
+      "prior_basis": "naive",
+      "outcome": null,
+      "resolved_by": null,
+      "resolved_at": null,
+      "prev_hash": "85e5e350c356a525a4b938e3e8a8c497a41c9445c9816e15648a5df4b59fd51b",
+      "hash": "fa55eaa5f74c2fc27e87a12b44d26387b13429e88b9999d54c9e59363a6f2a02"
+    },
+    {
+      "cycle_id": "20260815",
+      "fact_key": "id:dev-pipeline-regional",
+      "signal_id": "dev-pipeline-regional",
+      "kind": "development_pipeline",
+      "country": "CARICOM",
+      "score": 96,
+      "band": "85-100",
+      "corroborating_at_claim": 2,
+      "source_names": [
+        "CDB",
+        "IDB"
+      ],
+      "recorded_at": "2026-08-15T21:38:36.575039+00:00",
+      "forecast_probability": 0.95,
+      "prior_basis": "naive",
+      "outcome": null,
+      "resolved_by": null,
+      "resolved_at": null,
+      "prev_hash": "fa55eaa5f74c2fc27e87a12b44d26387b13429e88b9999d54c9e59363a6f2a02",
+      "hash": "49fd116d4027c1ebc42dccf1fa82e840df9fec6a4dd29e7cc41dc096385f1012"
+    },
+    {
+      "cycle_id": "20260815",
+      "fact_key": "id:food-security-regional",
+      "signal_id": "food-security-regional",
+      "kind": "food_security",
+      "country": "CARICOM",
+      "score": 80,
+      "band": "70-84",
+      "corroborating_at_claim": 2,
+      "source_names": [
+        "CARICOM",
+        "World Bank"
+      ],
+      "recorded_at": "2026-08-15T21:38:36.575047+00:00",
+      "forecast_probability": 0.8,
+      "prior_basis": "naive",
+      "outcome": null,
+      "resolved_by": null,
+      "resolved_at": null,
+      "prev_hash": "49fd116d4027c1ebc42dccf1fa82e840df9fec6a4dd29e7cc41dc096385f1012",
+      "hash": "f379dd41244fe0b02489929d178a38fcb8d1d73d015b7779e4a91fa29bba3440"
+    },
+    {
+      "cycle_id": "20260815",
+      "fact_key": "id:tourism-antigua-and-barbuda",
+      "signal_id": "tourism-antigua-and-barbuda",
+      "kind": "tourism_impact",
+      "country": "Antigua and Barbuda",
+      "score": 47,
+      "band": "0-54",
+      "corroborating_at_claim": 1,
+      "source_names": [
+        "World Bank"
+      ],
+      "recorded_at": "2026-08-15T21:38:36.575055+00:00",
+      "forecast_probability": 0.47,
+      "prior_basis": "naive",
+      "outcome": null,
+      "resolved_by": null,
+      "resolved_at": null,
+      "prev_hash": "f379dd41244fe0b02489929d178a38fcb8d1d73d015b7779e4a91fa29bba3440",
+      "hash": "b6d00ac0b9dfa6d94e82f00ba7fc2dcada454d395f38bd3bb3dbed3b5b8cc590"
+    },
+    {
+      "cycle_id": "20260815",
+      "fact_key": "id:tourism-barbados",
+      "signal_id": "tourism-barbados",
+      "kind": "tourism_impact",
+      "country": "Barbados",
+      "score": 47,
+      "band": "0-54",
+      "corroborating_at_claim": 1,
+      "source_names": [
+        "World Bank"
+      ],
+      "recorded_at": "2026-08-15T21:38:36.575062+00:00",
+      "forecast_probability": 0.47,
+      "prior_basis": "naive",
+      "outcome": null,
+      "resolved_by": null,
+      "resolved_at": null,
+      "prev_hash": "b6d00ac0b9dfa6d94e82f00ba7fc2dcada454d395f38bd3bb3dbed3b5b8cc590",
+      "hash": "f290a24dac2bc308db8a538aa516834aeb28fc8cea6366d943d2b1fbb98d2d13"
+    },
+    {
+      "cycle_id": "20260815",
+      "fact_key": "id:tourism-dominica",
+      "signal_id": "tourism-dominica",
+      "kind": "tourism_impact",
+      "country": "Dominica",
+      "score": 47,
+      "band": "0-54",
+      "corroborating_at_claim": 1,
+      "source_names": [
+        "World Bank"
+      ],
+      "recorded_at": "2026-08-15T21:38:36.575069+00:00",
+      "forecast_probability": 0.47,
+      "prior_basis": "naive",
+      "outcome": null,
+      "resolved_by": null,
+      "resolved_at": null,
+      "prev_hash": "f290a24dac2bc308db8a538aa516834aeb28fc8cea6366d943d2b1fbb98d2d13",
+      "hash": "028b9f6c9c3319a250a426a025299454f7946dd3a3fb6b5b2cbaa39d761865f2"
+    },
+    {
+      "cycle_id": "20260815",
+      "fact_key": "id:tourism-grenada",
+      "signal_id": "tourism-grenada",
+      "kind": "tourism_impact",
+      "country": "Grenada",
+      "score": 47,
+      "band": "0-54",
+      "corroborating_at_claim": 1,
+      "source_names": [
+        "World Bank"
+      ],
+      "recorded_at": "2026-08-15T21:38:36.575076+00:00",
+      "forecast_probability": 0.47,
+      "prior_basis": "naive",
+      "outcome": null,
+      "resolved_by": null,
+      "resolved_at": null,
+      "prev_hash": "028b9f6c9c3319a250a426a025299454f7946dd3a3fb6b5b2cbaa39d761865f2",
+      "hash": "c2301dc82e9041252c4cebf2118c7d404cd912c74a4aae51930d4f46a92c21c5"
+    },
+    {
+      "cycle_id": "20260815",
+      "fact_key": "id:tourism-guyana",
+      "signal_id": "tourism-guyana",
+      "kind": "tourism_impact",
+      "country": "Guyana",
+      "score": 47,
+      "band": "0-54",
+      "corroborating_at_claim": 1,
+      "source_names": [
+        "World Bank"
+      ],
+      "recorded_at": "2026-08-15T21:38:36.575082+00:00",
+      "forecast_probability": 0.47,
+      "prior_basis": "naive",
+      "outcome": null,
+      "resolved_by": null,
+      "resolved_at": null,
+      "prev_hash": "c2301dc82e9041252c4cebf2118c7d404cd912c74a4aae51930d4f46a92c21c5",
+      "hash": "3fa2aaeef86d34efe03f826e5f7d139f5a31eb204f97dd7a98cfdcd7ba5a4af0"
+    },
+    {
+      "cycle_id": "20260815",
+      "fact_key": "id:tourism-st.-kitts-and-nevis",
+      "signal_id": "tourism-st.-kitts-and-nevis",
+      "kind": "tourism_impact",
+      "country": "St. Kitts and Nevis",
+      "score": 47,
+      "band": "0-54",
+      "corroborating_at_claim": 1,
+      "source_names": [
+        "World Bank"
+      ],
+      "recorded_at": "2026-08-15T21:38:36.575089+00:00",
+      "forecast_probability": 0.47,
+      "prior_basis": "naive",
+      "outcome": null,
+      "resolved_by": null,
+      "resolved_at": null,
+      "prev_hash": "3fa2aaeef86d34efe03f826e5f7d139f5a31eb204f97dd7a98cfdcd7ba5a4af0",
+      "hash": "f9b137e5118c996fe40b36efa157bad837bd9771e65966a2b5ec7f654239086d"
+    },
+    {
+      "cycle_id": "20260815",
+      "fact_key": "id:tourism-st.-vincent-and-the-grenadines",
+      "signal_id": "tourism-st.-vincent-and-the-grenadines",
+      "kind": "tourism_impact",
+      "country": "St. Vincent and the Grenadines",
+      "score": 47,
+      "band": "0-54",
+      "corroborating_at_claim": 1,
+      "source_names": [
+        "World Bank"
+      ],
+      "recorded_at": "2026-08-15T21:38:36.575095+00:00",
+      "forecast_probability": 0.47,
+      "prior_basis": "naive",
+      "outcome": null,
+      "resolved_by": null,
+      "resolved_at": null,
+      "prev_hash": "f9b137e5118c996fe40b36efa157bad837bd9771e65966a2b5ec7f654239086d",
+      "hash": "56c95eb027306d84af2a12043ffa87869ee95e9b3c0ebc6c1eb7904d9ab781fe"
+    },
+    {
+      "cycle_id": "20260815",
+      "fact_key": "id:vuln-st.-vincent-and-the-grenadines",
+      "signal_id": "vuln-st.-vincent-and-the-grenadines",
+      "kind": "economic_vulnerability",
+      "country": "St. Vincent and the Grenadines",
+      "score": 70,
+      "band": "70-84",
+      "corroborating_at_claim": 1,
+      "source_names": [
+        "World Bank"
+      ],
+      "recorded_at": "2026-08-15T21:38:36.575102+00:00",
+      "forecast_probability": 0.7,
+      "prior_basis": "naive",
+      "outcome": null,
+      "resolved_by": null,
+      "resolved_at": null,
+      "prev_hash": "56c95eb027306d84af2a12043ffa87869ee95e9b3c0ebc6c1eb7904d9ab781fe",
+      "hash": "1eb6cc24505cd4f4afa5e34f27e8ec4260b7a98bc80b00c5043cc75882d50e37"
+    }
+  ],
+  "created_at": "2026-08-15T21:38:36.574954+00:00",
+  "updated_at": "2026-08-15T21:38:36.575128+00:00"
+}

@@ -1,25 +1,7 @@
 {
-  "cycle_intro": "Lead: Suriname. 2 converging signal(s) across 4 source(s). Signals: \ud83d\udcbc Investment + \ud83d\udc8e Investment.",
-  "generated_at": "2026-08-13 16:44 UTC",
+  "cycle_intro": "Lead: Guyana. 3 converging signal(s) across 4 source(s). Signals: \ud83d\udcbc Investment + \ud83c\udfd6\ufe0f Tourism + \ud83d\udc8e Investment.",
+  "generated_at": "2026-08-15 20:45 UTC",
   "items": [
-    {
-      "band": "immediate",
-      "channel": "Email brief + Telegram",
-      "country": "Barbados",
-      "freshness": "weakened",
-      "kind": "enhanced_investment",
-      "metrics": {
-        "decision_changed": null,
-        "forwarded": null,
-        "opened": null,
-        "reply_count": null,
-        "sent": false
-      },
-      "persona": "investor/founder",
-      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 100,
-      "signal_id": "enhanced-invest-barbados"
-    },
     {
       "band": "immediate",
       "channel": "Email brief + Telegram",
@@ -42,7 +24,7 @@
       "band": "immediate",
       "channel": "Email brief + Telegram",
       "country": "Suriname",
-      "freshness": "weakened",
+      "freshness": "sustained",
       "kind": "enhanced_investment",
       "metrics": {
         "decision_changed": null,
@@ -53,14 +35,14 @@
       },
       "persona": "investor/founder",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 100,
+      "score": 98,
       "signal_id": "enhanced-invest-suriname"
     },
     {
       "band": "immediate",
       "channel": "Email brief + Telegram",
       "country": "CARICOM",
-      "freshness": "updated",
+      "freshness": "sustained",
       "kind": "development_pipeline",
       "metrics": {
         "decision_changed": null,
@@ -71,8 +53,26 @@
       },
       "persona": "investor/founder",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 95,
+      "score": 96,
       "signal_id": "dev-pipeline-regional"
+    },
+    {
+      "band": "validation",
+      "channel": "Email brief + Telegram",
+      "country": "Barbados",
+      "freshness": "sustained",
+      "kind": "enhanced_investment",
+      "metrics": {
+        "decision_changed": null,
+        "forwarded": null,
+        "opened": null,
+        "reply_count": null,
+        "sent": false
+      },
+      "persona": "investor/founder",
+      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
+      "score": 85,
+      "signal_id": "enhanced-invest-barbados"
     },
     {
       "band": "validation",
@@ -89,7 +89,7 @@
       },
       "persona": "policy/operator",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 72,
+      "score": 70,
       "signal_id": "vuln-st.-vincent-and-the-grenadines"
     },
     {
@@ -161,7 +161,7 @@
       },
       "persona": "investor/founder",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 88,
+      "score": 87,
       "signal_id": "invest-guyana"
     },
     {
@@ -179,7 +179,7 @@
       },
       "persona": "investor/founder",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 82,
+      "score": 84,
       "signal_id": "invest-suriname"
     },
     {
@@ -215,7 +215,7 @@
       },
       "persona": "investor/founder",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 72,
+      "score": 71,
       "signal_id": "invest-barbados"
     }
   ],
