@@ -7,6 +7,13 @@ on:
   workflow_dispatch:
     # Manual run button
 
+# The cycle commits its artefacts back to the repository, so the job token
+# needs write access. Declared here rather than by widening the repository-wide
+# default, which would grant it to every workflow. Without this the run builds
+# everything, commits, then fails to push with a 403.
+permissions:
+  contents: write
+
 concurrency:
   group: pipeline
   cancel-in-progress: true
