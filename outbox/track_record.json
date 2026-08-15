@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-13T16:44:27.089581+00:00",
+  "generated_at": "2026-08-15T22:13:37.496082+00:00",
   "feedback_provenance": "simulated",
   "current_boosts": {
     "enhanced_investment": {
@@ -25,6 +25,29 @@
     }
   },
   "cycles": [
+    {
+      "cycle_id": "20260815",
+      "responses": {
+        "forwarded": 0,
+        "replied": 0,
+        "opened": 0,
+        "ignored": 0,
+        "decision_changed": 0
+      },
+      "dispatch_count": 27,
+      "countries": [
+        "Guyana",
+        "Suriname",
+        "CARICOM",
+        "Caribwide",
+        "Barbados",
+        "St. Vincent and the Grenadines"
+      ],
+      "lead": {
+        "country": "Guyana",
+        "title": "Guyana: +860.3% capital surge on a single official source — market entry window open"
+      }
+    },
     {
       "cycle_id": "20260813",
       "responses": {
