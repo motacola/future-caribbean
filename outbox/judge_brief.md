@@ -1,6 +1,6 @@
 # Caribbean Opportunity Dispatch — Judge Brief
 
-Generated: 2026-08-15 20:45 UTC
+Generated: 2026-08-15 23:35 UTC
 
 ## What This Proves
 
@@ -8,10 +8,10 @@ Caribbean Opportunity Dispatch is the product. Caribbean Signal OS is the archit
 
 ## Live Run Snapshot
 
-- Total raw signals generated: 16
-- Sources represented: CARICOM, CDB, IDB, World Bank
-- Countries/zones: 9
-- New/updated this cycle: 0
+- Total raw signals generated: 63
+- Sources represented: CARICOM, CCRIF SPC, CDB, ECCB, IDB, World Bank
+- Countries/zones: 38
+- New/updated this cycle: 48
 - User-facing outputs: opportunity dispatches, regional thesis, why-now context, feedback review, judge brief
 
 **Guyana** — 3 signal(s), 4 source(s): 💼 Investment + 🏖️ Tourism + 💎 Investment
@@ -35,35 +35,38 @@ Caribbean Opportunity Dispatch is the product. Caribbean Signal OS is the archit
    Audience: investor/founder via Email brief + Telegram
    Decision: Active procurement pipeline: CDB active procurement notices: 7. Priority: review CDB/IDB opportunities as lead list for project-based entry.
 
-**3.** 🟡 **💼 Investment — Barbados** — sustained
+**3.** 🟡 **ccrif_payout — Turks and Caicos Islands** — new
+   Narrative: Turks and Caicos Islands: signal detected
+   Score: 84/100 | Grade: C - single-source
+   Audience: regional intelligence via Telegram digest
+   Decision: Validation — Turks and Caicos Islands: ccrif_payout (signal detected). Validate locally.
+   🆕 New this cycle
+
+**4.** 🟡 **ccrif_payout — Haiti** — new
+   Narrative: Haiti: signal detected
+   Score: 84/100 | Grade: C - single-source
+   Audience: regional intelligence via Telegram digest
+   Decision: Validation — Haiti: ccrif_payout (signal detected). Validate locally.
+   🆕 New this cycle
+
+**5.** 🟡 **eccb_credit_surge — Eastern Caribbean Currency Union** — new
+   Narrative: Eastern Caribbean Currency Union: 5.8%
+   Score: 76/100 | Grade: C - single-source
+   Audience: regional intelligence via Telegram digest
+   Decision: Validation — Eastern Caribbean Currency Union: eccb_credit_surge (5.8%). Validate locally.
+   🆕 New this cycle
+
+**6.** 🟡 **💼 Investment — Barbados** — sustained
    Narrative: Barbados: FDI trending at +34.8% — screening trigger active
    Score: 71/100 | Grade: B - cross-source
    Audience: investor/founder via Email brief + Telegram
    Decision: Validation priority. Barbados FDI movement (34.8% change) signals opportunity. Cross-reference with sector data.
 
-**4.** 🟡 **⚠️ Vulnerability — St. Vincent and the Grenadines** — sustained
+**7.** 🟡 **⚠️ Vulnerability — St. Vincent and the Grenadines** — sustained
    Narrative: St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended
    Score: 70/100 | Grade: C - single-source
    Audience: policy/operator via Telegram digest
    Decision: Watch: St. Vincent and the Grenadines elevated indicators (18.00%). Deeper context check needed before expansion or support decisions.
-
-**5.** ⚪ **🏖️ Tourism — Antigua and Barbuda** — sustained
-   Narrative: Antigua and Barbuda: GDP growth signals expanding tourist economy
-   Score: 47/100 | Grade: C - single-source
-   Audience: tourism operator via Telegram digest
-   Decision: Context. Antigua and Barbuda GDP data point for tourism sector awareness.
-
-**6.** ⚪ **🏖️ Tourism — Dominica** — sustained
-   Narrative: Dominica: GDP growth signals expanding tourist economy
-   Score: 47/100 | Grade: C - single-source
-   Audience: tourism operator via Telegram digest
-   Decision: Context. Dominica GDP data point for tourism sector awareness.
-
-**7.** 🟡 **💼 Investment — Guyana** — sustained
-   Narrative: Guyana: FDI trending at +860.3% — screening trigger active
-   Score: 87/100 | Grade: B - cross-source
-   Audience: investor/founder via Email brief + Telegram
-   Decision: Validation priority. Guyana FDI movement (860.3% change) signals opportunity. Cross-reference with sector data.
 
 ## Routing Rationale
 
@@ -133,7 +136,7 @@ Each signal is routed to specific personas based on signal kind and evidence lev
 
 ## Cycle Summary
 
-Lead: Guyana · 16 composite signal(s) · 16 persistent
+Lead: Guyana · 63 composite signal(s) · 47 new · 1 updated · 15 persistent
 ## Judge Demo Path
 
 1. Run `bash run_pipeline.sh`.

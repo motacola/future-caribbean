@@ -86,6 +86,11 @@
   ],
   "official_country_data": [
     {
+      "title": "CARICOM Travel Trade Balance",
+      "source": "CARICOM Statistics",
+      "url": "https://statistics.caricom.org/?country_data=caricom-travel-trade-balance"
+    },
+    {
       "title": "Share of CARICOM Exports by Member State, 1973–2024",
       "source": "CARICOM Statistics",
       "url": "https://statistics.caricom.org/?country_data=share-of-caricom-exports-by-member-state-1973-2024"
@@ -109,11 +114,6 @@
       "title": "CARICOM&#8217;s Intra-regional Total Exports: 1973-2024",
       "source": "CARICOM Statistics",
       "url": "https://statistics.caricom.org/?country_data=caricoms-intra-regional-total-exports-1973-2023"
-    },
-    {
-      "title": "CARICOM Total Exports by SITC, 1973-2024",
-      "source": "CARICOM Statistics",
-      "url": "https://statistics.caricom.org/?country_data=caricom-total-exports-by-sitc-1973-2024"
     }
   ],
   "credible_local_operators": [],
@@ -130,8 +130,8 @@
   "source_links": [
     "https://statistics.caricom.org/?country_data=caricom-balance-of-trade",
     "https://statistics.caricom.org/?country_data=caricom-total-exports-1973-2023",
-    "https://statistics.caricom.org/?country_data=caricom-total-exports-by-sitc-1973-2024",
     "https://statistics.caricom.org/?country_data=caricom-total-imports-by-sitc-1973-2024",
+    "https://statistics.caricom.org/?country_data=caricom-travel-trade-balance",
     "https://statistics.caricom.org/?country_data=caricoms-intra-regional-total-exports-1973-2023",
     "https://statistics.caricom.org/?country_data=share-of-caricom-exports-by-member-state-1973-2024",
     "https://statistics.caricom.org/?publications=caricom-trade-in-services-2012-2018",
@@ -161,9 +161,9 @@
   ],
   "advance_or_reject_recommendation": "hold",
   "recommendation_reason": "Calibrated confidence 78/100 with 1 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.",
-  "last_validated_at": "2026-08-15T22:00:15.369942+00:00",
+  "last_validated_at": "2026-08-15T23:35:00.978872+00:00",
   "coordination_path": null,
   "evidence_fingerprint": "e3b0c44298fc1c14",
-  "cycles_since_refresh": 29,
+  "cycles_since_refresh": 30,
   "evidence_freshness": "stale"
 }

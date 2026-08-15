@@ -1,4 +1,4 @@
-*Caribbean Market Pulse — 2026-08-15 20:45 UTC*
+*Caribbean Market Pulse — 2026-08-15 23:35 UTC*
 
 Lead: Guyana. 3 converging signal(s) across 4 source(s). Signals: 💼 Investment + 🏖️ Tourism + 💎 Investment.
 
@@ -17,15 +17,17 @@ Lead: Guyana. 3 converging signal(s) across 4 source(s). Signals: 💼 Investmen
    Immediate | 96/100 | B - cross-source
    Active procurement pipeline: CDB active procurement notices: 7. Priority: review CDB/IDB opportunities as lead list for project-based entry.
 
-🟡 — **💼 Investment — Barbados**
-   Barbados: FDI trending at +34.8% — screening trigger active
-   Validation | 71/100 | B - cross-source
-   Validation priority. Barbados FDI movement (34.8% change) signals opportunity. Cross-reference with sector data.
+🟡 🆕 **ccrif_payout — Turks and Caicos Islands**
+   Turks and Caicos Islands: signal detected
+   Validation | 84/100 | C - single-source
+   🆕 New this cycle
+   Validation — Turks and Caicos Islands: ccrif_payout (signal detected). Validate locally.
 
-🟡 — **⚠️ Vulnerability — St. Vincent and the Grenadines**
-   St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended
-   Validation | 70/100 | C - single-source
-   Watch: St. Vincent and the Grenadines elevated indicators (18.00%). Deeper context check needed before expansion or support decisions.
+🟡 🆕 **ccrif_payout — Haiti**
+   Haiti: signal detected
+   Validation | 84/100 | C - single-source
+   🆕 New this cycle
+   Validation — Haiti: ccrif_payout (signal detected). Validate locally.
 
-— Lead: Guyana · 16 composite signal(s) · 16 persistent
+— Lead: Guyana · 63 composite signal(s) · 47 new · 1 updated · 15 persistent
 - Caribbean Signal OS

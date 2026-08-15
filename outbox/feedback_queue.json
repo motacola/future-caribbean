@@ -1,6 +1,6 @@
 {
   "cycle_intro": "Lead: Guyana. 3 converging signal(s) across 4 source(s). Signals: \ud83d\udcbc Investment + \ud83c\udfd6\ufe0f Tourism + \ud83d\udc8e Investment.",
-  "generated_at": "2026-08-15 20:45 UTC",
+  "generated_at": "2026-08-15 23:35 UTC",
   "items": [
     {
       "band": "immediate",
@@ -77,6 +77,78 @@
     {
       "band": "validation",
       "channel": "Telegram digest",
+      "country": "Turks and Caicos Islands",
+      "freshness": "new",
+      "kind": "ccrif_payout",
+      "metrics": {
+        "decision_changed": null,
+        "forwarded": null,
+        "opened": null,
+        "reply_count": null,
+        "sent": false
+      },
+      "persona": "regional intelligence",
+      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
+      "score": 84,
+      "signal_id": "ccrif-payout-tc-tropical_cyclone-2008-01-01"
+    },
+    {
+      "band": "validation",
+      "channel": "Telegram digest",
+      "country": "Haiti",
+      "freshness": "new",
+      "kind": "ccrif_payout",
+      "metrics": {
+        "decision_changed": null,
+        "forwarded": null,
+        "opened": null,
+        "reply_count": null,
+        "sent": false
+      },
+      "persona": "regional intelligence",
+      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
+      "score": 84,
+      "signal_id": "ccrif-payout-ht-earthquake-2010-01-01"
+    },
+    {
+      "band": "validation",
+      "channel": "Telegram digest",
+      "country": "Anguilla",
+      "freshness": "new",
+      "kind": "ccrif_payout",
+      "metrics": {
+        "decision_changed": null,
+        "forwarded": null,
+        "opened": null,
+        "reply_count": null,
+        "sent": false
+      },
+      "persona": "regional intelligence",
+      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
+      "score": 84,
+      "signal_id": "ccrif-payout-ai-tropical_cyclone-2010-01-01"
+    },
+    {
+      "band": "validation",
+      "channel": "Telegram digest",
+      "country": "Eastern Caribbean Currency Union",
+      "freshness": "new",
+      "kind": "eccb_credit_surge",
+      "metrics": {
+        "decision_changed": null,
+        "forwarded": null,
+        "opened": null,
+        "reply_count": null,
+        "sent": false
+      },
+      "persona": "regional intelligence",
+      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
+      "score": 76,
+      "signal_id": "eccb-credit-surge-eccu"
+    },
+    {
+      "band": "validation",
+      "channel": "Telegram digest",
       "country": "St. Vincent and the Grenadines",
       "freshness": "sustained",
       "kind": "economic_vulnerability",
@@ -145,78 +217,6 @@
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
       "score": 47,
       "signal_id": "tourism-grenada"
-    },
-    {
-      "band": "validation",
-      "channel": "Email brief + Telegram",
-      "country": "Guyana",
-      "freshness": "sustained",
-      "kind": "investment_signal",
-      "metrics": {
-        "decision_changed": null,
-        "forwarded": null,
-        "opened": null,
-        "reply_count": null,
-        "sent": false
-      },
-      "persona": "investor/founder",
-      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 87,
-      "signal_id": "invest-guyana"
-    },
-    {
-      "band": "validation",
-      "channel": "Email brief + Telegram",
-      "country": "Suriname",
-      "freshness": "sustained",
-      "kind": "investment_signal",
-      "metrics": {
-        "decision_changed": null,
-        "forwarded": null,
-        "opened": null,
-        "reply_count": null,
-        "sent": false
-      },
-      "persona": "investor/founder",
-      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 84,
-      "signal_id": "invest-suriname"
-    },
-    {
-      "band": "validation",
-      "channel": "Telegram digest",
-      "country": "CARICOM",
-      "freshness": "sustained",
-      "kind": "food_security",
-      "metrics": {
-        "decision_changed": null,
-        "forwarded": null,
-        "opened": null,
-        "reply_count": null,
-        "sent": false
-      },
-      "persona": "policy/operator",
-      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 80,
-      "signal_id": "food-security-regional"
-    },
-    {
-      "band": "validation",
-      "channel": "Email brief + Telegram",
-      "country": "Barbados",
-      "freshness": "sustained",
-      "kind": "investment_signal",
-      "metrics": {
-        "decision_changed": null,
-        "forwarded": null,
-        "opened": null,
-        "reply_count": null,
-        "sent": false
-      },
-      "persona": "investor/founder",
-      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 71,
-      "signal_id": "invest-barbados"
     }
   ],
   "purpose": "Feedback agent input queue for distribution performance and trust signals."

@@ -1,5 +1,5 @@
 🌴 **Caribbean Opportunity Brief** — what's moving this week
-Cycle 20260724 • 2026-07-24 18:31 UTC
+Cycle 20260815 • 2026-08-15 23:35 UTC
 
 Plain-language signals for builders, business owners, and community leaders.
 No jargon. Just what matters for your next move.
@@ -9,32 +9,32 @@ No jargon. Just what matters for your next move.
 1. **Guyana**: money flowing in from multiple sources — verified opportunity — 860.3% movement
    New money = new competition AND new customers. Map your advantage before they arrive. (holding steady)
    🔴 High confidence — multiple sources agree
-   📊 Cross-source validation
+   📊 Single-source indicator — verify locally
 
 2. **Suriname**: money flowing in from multiple sources — verified opportunity — 206.0% movement
-   New money = new competition AND new customers. Map your advantage before they arrive. (fading)
+   New money = new competition AND new customers. Map your advantage before they arrive. (holding steady)
    🔴 High confidence — multiple sources agree
-   📊 Cross-source validation
+   📊 Single-source indicator — verify locally
 
-3. **Barbados**: money flowing in from multiple sources — verified opportunity — 34.8% movement
-   New money = new competition AND new customers. Map your advantage before they arrive. (fading)
-   🔴 High confidence — multiple sources agree
-   📊 Cross-source validation
-
-4. **Guyana**: foreign investment spiking — worth watching — 860.3% movement
+3. **Guyana**: foreign investment spiking — worth watching — 860.3% movement
    Investment noise in your market. Could mean competitors coming or demand growing. (holding steady)
-   🔴 High confidence — multiple sources agree
+   🟡 Solid signal — some corroboration
    📊 Cross-source validation
+
+4. **Barbados**: money flowing in from multiple sources — verified opportunity — 34.8% movement
+   New money = new competition AND new customers. Map your advantage before they arrive. (holding steady)
+   🟡 Solid signal — some corroboration
+   📊 Single-source indicator — verify locally
 
 5. **Suriname**: foreign investment spiking — worth watching — 206.0% movement
    Investment noise in your market. Could mean competitors coming or demand growing. (holding steady)
    🟡 Solid signal — some corroboration
    📊 Cross-source validation
 
-6. **Barbados**: foreign investment spiking — worth watching — 34.8% movement
-   Investment noise in your market. Could mean competitors coming or demand growing. (holding steady)
+6. **Grenada**: ccrif payout
+   Pay attention — something real is happening.
    🟡 Solid signal — some corroboration
-   📊 Cross-source validation
+   📊 Single-source indicator — verify locally
 
 ---
 
