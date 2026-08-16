@@ -1,6 +1,6 @@
 # Dispatch Desk — Cycle 20260815
 
-Generated: 2026-08-15 20:45 UTC
+Generated: 2026-08-15 23:37 UTC
 
 Signal Fabric turns fragmented regional data into decision-ready routes. This is the primary product surface; Telegram/email are delivery channels and the dashboard is the operator/audit view.
 
@@ -11,15 +11,15 @@ Fragmented public data → Agentic signal pipeline → Routed decisions → Feed
 | Stage | This cycle proof |
 |---|---|
 | Data | 2 source families represented |
-| Signal | 11 decision clusters from 27 persona routes |
+| Signal | 52 decision clusters from 214 persona routes |
 | Packaging | Persona actions, evidence grades, risk flags, and action windows attached |
-| Distribution | 6 personas across 4 channel types |
+| Distribution | 7 personas across 5 channel types |
 | Action | Every route names the decision it should influence |
 | Capital | Investor/operator/procurement routes identify where to investigate, bid, pause, or partner |
 
 ## Regional Read
 
-Capital momentum is strongest in Guyana (+860.3%), followed by Suriname, Barbados. Separately, St. Vincent and the Grenadines show elevated economic vulnerability — relevant for portfolio monitoring and resilience planning. Development pipeline remains active (CDB active procurement notices: 7) — the bidding window is open for project-based entry. Tourism-related growth signals are visible in Barbados, Antigua and Barbuda, Dominica — demand-side indicators for capacity planning.
+Capital momentum is strongest in Guyana (+860.3%), followed by Suriname. Separately, St. Vincent and the Grenadines show elevated economic vulnerability — relevant for portfolio monitoring and resilience planning. Development pipeline remains active (CDB active procurement notices: 7) — the bidding window is open for project-based entry. Tourism-related growth signals are visible in Barbados, Antigua and Barbuda, Dominica — demand-side indicators for capacity planning.
 
 ## Why This Cycle Matters
 
@@ -62,7 +62,7 @@ Capital momentum is strongest in Guyana (+860.3%), followed by Suriname, Barbado
 
 - **Decision:** Which procurement or project opportunity to pursue
 - **Evidence:** CDB active procurement notices: 7; • Enhancing the Quality of the Belize National Quality Infrastructure; • Belize Education Secondary Reform Programme II (BESRPII); • Solar Photo-Voltaic and Battery Energy Storage System Project (B - cross-source)
-- **Confidence:** 96/100 · sustained
+- **Confidence:** 95/100 · sustained
 - **Signal detail:** CDB active procurement notices: 7
 - **Why ranked here:** Ranking uses confidence, source coverage, evidence count, magnitude, and feedback.
 - **Feedback effect:** Feedback this cycle: 2 ignored, 1 replied.
@@ -131,27 +131,41 @@ Capital momentum is strongest in Guyana (+860.3%), followed by Suriname, Barbado
 | Ecosystem Builder | Telegram | Route Barbados opportunity to relevant founders and investors in your network. Signal strength (34.8% change) makes this a… | ignored (`DSP-20260815-026`) |
 | Diaspora Investor | Email brief + Telegram | Investigate Barbados as a capital deployment target this cycle. One official source shows the movement (34.8% change) — corroborate… | ignored (`DSP-20260815-025`) |
 
-### 8. Suriname: FDI trending at +206.0% — screening trigger active
+### 8. Grenada: signal detected
 
-- **Decision:** Which country-sector pair to validate for investment readiness
-- **Evidence:** Suriname: Foreign direct investment net inflows current USD moved up 206.0% from 2024 to 2025. (B - cross-source)
-- **Confidence:** 84/100 · sustained
-- **Signal detail:** 206.0% change
+- **Decision:** Insurance capital deployment for reconstruction / parametric trigger validation
+- **Evidence:** Payout: US$42,425,110; Peril: tropical_cyclone; Event date: 2024-01-01; Announced: 2024-01-01 (C - single-source)
+- **Confidence:** 84/100 · updated
+- **Signal detail:** signal detected
 - **Why ranked here:** Ranking uses confidence, source coverage, evidence count, magnitude, and feedback.
-- **Feedback effect:** Feedback this cycle: 2 ignored.
+- **Feedback effect:** Feedback this cycle: 16 ignored.
 
 | Persona | Channel | Next action | Feedback |
 |---|---|---|---|
-| Regional Founder/Operator | Telegram | Assess competitive positioning in Suriname. FDI movement (206.0% change) signals growing market or incoming competition — evaluate… | ignored (`DSP-20260815-006`) |
-| Diaspora Investor | Email brief + Telegram | Screen Suriname for investment readiness. FDI movement (206.0% change) is a screening trigger — cross-reference with sector… | ignored (`DSP-20260815-005`) |
+| Policy/Media | Telegram digest | Signal context for Grenada: signal detected. Use this dispatch as a briefing input or narrative lead. | ignored (`DSP-20260815-157`) |
+| Policy/Media | Telegram digest | Signal context for COAST - Grenada: signal detected. Use this dispatch as a briefing input or narrative lead. | ignored (`DSP-20260815-161`) |
+| Policy/Media | Telegram digest | Signal context for Electric Utilities - GRENLEC - Grenada: signal detected. Use this dispatch as a briefing input or narrative lead. | ignored (`DSP-20260815-165`) |
+| Policy/Media | Telegram digest | Signal context for CWUIC - NAWASA - Grenada: signal detected. Use this dispatch as a briefing input or narrative lead. | ignored (`DSP-20260815-169`) |
+| Operations/Resilience | Telegram/SMS alert | Prepare operational response: Grenada. Action window: 7 days. Evidence: signal detected | ignored (`DSP-20260815-158`) |
+| Operations/Resilience | Telegram/SMS alert | Prepare operational response: COAST - Grenada. Action window: 7 days. Evidence: signal detected | ignored (`DSP-20260815-162`) |
+| Operations/Resilience | Telegram/SMS alert | Prepare operational response: Electric Utilities - GRENLEC - Grenada. Action window: 7 days. Evidence: signal detected | ignored (`DSP-20260815-166`) |
+| Operations/Resilience | Telegram/SMS alert | Prepare operational response: CWUIC - NAWASA - Grenada. Action window: 7 days. Evidence: signal detected | ignored (`DSP-20260815-170`) |
+| Ecosystem Builder | Telegram | Route Grenada opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a… | ignored (`DSP-20260815-159`) |
+| Ecosystem Builder | Telegram | Route COAST - Grenada opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a… | ignored (`DSP-20260815-163`) |
+| Ecosystem Builder | Telegram | Route Electric Utilities - GRENLEC - Grenada opportunity to relevant founders and investors in your network. Signal strength (signal… | ignored (`DSP-20260815-167`) |
+| Ecosystem Builder | Telegram | Route CWUIC - NAWASA - Grenada opportunity to relevant founders and investors in your network. Signal strength (signal detected)… | ignored (`DSP-20260815-171`) |
+| Diaspora Investor | Email brief + Telegram | Review Grenada: signal detected. Validate locally before action. | ignored (`DSP-20260815-156`) |
+| Diaspora Investor | Email brief + Telegram | Review COAST - Grenada: signal detected. Validate locally before action. | ignored (`DSP-20260815-160`) |
+| Diaspora Investor | Email brief + Telegram | Review Electric Utilities - GRENLEC - Grenada: signal detected. Validate locally before action. | ignored (`DSP-20260815-164`) |
+| Diaspora Investor | Email brief + Telegram | Review CWUIC - NAWASA - Grenada: signal detected. Validate locally before action. | ignored (`DSP-20260815-168`) |
 
 ## Feedback-Adjusted Priority
 
-- St. Vincent and the Grenadines economic vulnerability upranked +10
-- Guyana enhanced investment upranked +7
-- Suriname enhanced investment downranked -6
-- Barbados enhanced investment downranked -6
-- Suriname investment signal downranked -4
+- Haiti ccrif payout downranked -16
+- Barbados ccrif payout downranked -16
+- Turks and Caicos Islands ccrif payout downranked -8
+- Nicaragua ccrif payout downranked -8
+- Excess Rainfall policy - Dominica ccrif payout downranked -8
 
 ## Supporting Artifacts
 

@@ -2,58 +2,44 @@
 
 **Decision job:** Capital deployment screening and market entry assessment
 **Delivery channel:** Email brief + Telegram
-**Generated:** Aug 13, 2026 at 16:44 UTC
-**Dispatches in this packet:** 9
+**Generated:** Aug 15, 2026 at 23:37 UTC
+**Dispatches in this packet:** 56
 
 ---
 
-## Dispatches (9)
+## Dispatches (56)
 
-### 1. Guyana: +860.3% multi-source capital surge — market entry window open
+### 1. Guyana: +860.3% capital surge on a single official source — market entry window open
 
-**ID:** `DSP-20260813-019` | **Country:** Guyana | **Confidence:** 🔴 Immediate | 100/100 | A - multi-source
+**ID:** `DSP-20260815-019` | **Country:** Guyana | **Confidence:** 🔴 Immediate | 100/100 | C - single-source
 **Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** forwarded
 
-**Evidence:** WB FDI surge detected: Guyana; CARICOM trade/FDI data available; CDB procurement/evaluation activity; Confidence: WB FDI data confirmed · CARICOM/CDB data available (3/3 signals)
+**Evidence:** WB FDI surge detected: Guyana; CARICOM trade/FDI data available (regional context, not country confirmation); CDB procurement/evaluation activity (regional context, not country confirmation); Confidence: 1 country-specific source confirmed · 2 regional dataset(s) available as context
 **Detail:** 860.3% change
-**Grade:** A - multi-source
+**Grade:** C - single-source
 
-**Recommended action:** Investigate Guyana as a capital deployment target this cycle. Multi-source validation (860.3% change) confirms directional signal — next step is operator discovery and market entry assessment.
+**Recommended action:** Investigate Guyana as a capital deployment target this cycle. One official source shows the movement (860.3% change) — corroborate it before acting, then move to operator discovery.
 **Decision to influence:** Which verified opportunity to investigate for capital deployment or partnership entry
 **Routing rationale:** Multi-source validation reduces screening risk — capital follows verified signals
 
-### 2. Suriname: +206.0% multi-source investment validated — opportunity active
+### 2. Suriname: +206.0% investment movement, one source — needs corroboration
 
-**ID:** `DSP-20260813-022` | **Country:** Suriname | **Confidence:** 🔴 Immediate | 100/100 | A - multi-source
-**Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** weakened
+**ID:** `DSP-20260815-022` | **Country:** Suriname | **Confidence:** 🔴 Immediate | 98/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** WB FDI surge detected: Suriname; CARICOM trade/FDI data available; CDB procurement/evaluation activity; Confidence: WB FDI data confirmed · CARICOM/CDB data available (3/3 signals)
+**Evidence:** WB FDI surge detected: Suriname; CARICOM trade/FDI data available (regional context, not country confirmation); CDB procurement/evaluation activity (regional context, not country confirmation); Confidence: 1 country-specific source confirmed · 2 regional dataset(s) available as context
 **Detail:** 206.0% change
-**Grade:** A - multi-source
+**Grade:** C - single-source
 
-**Recommended action:** Investigate Suriname as a capital deployment target this cycle. Multi-source validation (206.0% change) confirms directional signal — next step is operator discovery and market entry assessment.
+**Recommended action:** Investigate Suriname as a capital deployment target this cycle. One official source shows the movement (206.0% change) — corroborate it before acting, then move to operator discovery.
 **Decision to influence:** Which verified opportunity to investigate for capital deployment or partnership entry
 **Routing rationale:** Multi-source validation reduces screening risk — capital follows verified signals
 
-### 3. Barbados: +34.8% multi-source investment validated — opportunity active
+### 3. Regional FDI snapshot: 3 countries with active capital movement
 
-**ID:** `DSP-20260813-025` | **Country:** Barbados | **Confidence:** 🔴 Immediate | 100/100 | A - multi-source
-**Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** weakened
-**Feedback status:** ignored
-
-**Evidence:** WB FDI surge detected: Barbados; CARICOM trade/FDI data available; CDB procurement/evaluation activity; Confidence: WB FDI data confirmed · CARICOM/CDB data available (3/3 signals)
-**Detail:** 34.8% change
-**Grade:** A - multi-source
-
-**Recommended action:** Investigate Barbados as a capital deployment target this cycle. Multi-source validation (34.8% change) confirms directional signal — next step is operator discovery and market entry assessment.
-**Decision to influence:** Which verified opportunity to investigate for capital deployment or partnership entry
-**Routing rationale:** Multi-source validation reduces screening risk — capital follows verified signals
-
-### 4. Regional FDI snapshot: 3 countries with active capital movement
-
-**ID:** `DSP-20260813-001` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
+**ID:** `DSP-20260815-001` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
 **Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** new
 **Feedback status:** ignored
 
@@ -65,9 +51,9 @@
 **Decision to influence:** Which country-sector pair to validate for investment readiness
 **Routing rationale:** Single-source FDI movement is a screening trigger, not a deployment signal — start diligence
 
-### 5. Capital convergence: 3 Caribbean economies showing multi-source investment momentum
+### 4. Capital convergence: 3 Caribbean economies showing multi-source investment momentum
 
-**ID:** `DSP-20260813-016` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
+**ID:** `DSP-20260815-016` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
 **Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** new
 **Feedback status:** ignored
 
@@ -79,9 +65,9 @@
 **Decision to influence:** Which verified opportunity to investigate for capital deployment or partnership entry
 **Routing rationale:** Multi-source validation reduces screening risk — capital follows verified signals
 
-### 6. Guyana: FDI trending at +860.3% — screening trigger active
+### 5. Guyana: FDI trending at +860.3% — screening trigger active
 
-**ID:** `DSP-20260813-003` | **Country:** Guyana | **Confidence:** 🟡 Validation | 88/100 | B - cross-source
+**ID:** `DSP-20260815-003` | **Country:** Guyana | **Confidence:** 🟡 Validation | 87/100 | B - cross-source
 **Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -93,9 +79,23 @@
 **Decision to influence:** Which country-sector pair to validate for investment readiness
 **Routing rationale:** Single-source FDI movement is a screening trigger, not a deployment signal — start diligence
 
+### 6. Barbados: +34.8% FDI momentum validated — cross-reference before deploying
+
+**ID:** `DSP-20260815-025` | **Country:** Barbados | **Confidence:** 🟡 Validation | 85/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** WB FDI surge detected: Barbados; CARICOM trade/FDI data available (regional context, not country confirmation); CDB procurement/evaluation activity (regional context, not country confirmation); Confidence: 1 country-specific source confirmed · 2 regional dataset(s) available as context
+**Detail:** 34.8% change
+**Grade:** C - single-source
+
+**Recommended action:** Investigate Barbados as a capital deployment target this cycle. One official source shows the movement (34.8% change) — corroborate it before acting, then move to operator discovery.
+**Decision to influence:** Which verified opportunity to investigate for capital deployment or partnership entry
+**Routing rationale:** Multi-source validation reduces screening risk — capital follows verified signals
+
 ### 7. Suriname: FDI trending at +206.0% — screening trigger active
 
-**ID:** `DSP-20260813-005` | **Country:** Suriname | **Confidence:** 🟡 Validation | 82/100 | B - cross-source
+**ID:** `DSP-20260815-005` | **Country:** Suriname | **Confidence:** 🟡 Validation | 84/100 | B - cross-source
 **Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -107,9 +107,569 @@
 **Decision to influence:** Which country-sector pair to validate for investment readiness
 **Routing rationale:** Single-source FDI movement is a screening trigger, not a deployment signal — start diligence
 
-### 8. Barbados: FDI trending at +34.8% — screening trigger active
+### 8. Dominica: signal detected
 
-**ID:** `DSP-20260813-007` | **Country:** Barbados | **Confidence:** 🟡 Validation | 72/100 | B - cross-source
+**ID:** `DSP-20260815-064` | **Country:** Dominica | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$19,294,800; Peril: tropical_cyclone; Event date: 2017-01-01; Announced: 2017-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Dominica: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 9. Excess Rainfall policy - Trinidad: signal detected
+
+**ID:** `DSP-20260815-068` | **Country:** Excess Rainfall policy - Trinidad | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$7,007,886; Peril: excess_rainfall; Event date: 2017-01-01; Announced: 2017-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Excess Rainfall policy - Trinidad: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 10. Excess Rainfall policy - Barbados: signal detected
+
+**ID:** `DSP-20260815-072` | **Country:** Excess Rainfall policy - Barbados | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$5,813,299; Peril: excess_rainfall; Event date: 2018-01-01; Announced: 2018-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Excess Rainfall policy - Barbados: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 11. Excess Rainfall policy - Trinidad: signal detected
+
+**ID:** `DSP-20260815-076` | **Country:** Excess Rainfall policy - Trinidad | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$2,534,550; Peril: excess_rainfall; Event date: 2018-01-01; Announced: 2018-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Excess Rainfall policy - Trinidad: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 12. Tropical Cyclone policy - The Bahamas: signal detected
+
+**ID:** `DSP-20260815-080` | **Country:** Tropical Cyclone policy - The Bahamas | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$11,527,151; Peril: tropical_cyclone; Event date: 2019-01-01; Announced: 2019-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Tropical Cyclone policy - The Bahamas: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 13. Excess Rainfall policy - Guatemala: signal detected
+
+**ID:** `DSP-20260815-084` | **Country:** Excess Rainfall policy - Guatemala | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$3,628,013; Peril: excess_rainfall; Event date: 2020-01-01; Announced: 2020-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Excess Rainfall policy - Guatemala: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 14. Excess Rainfall policy - Haiti: signal detected
+
+**ID:** `DSP-20260815-088` | **Country:** Excess Rainfall policy - Haiti | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$7,163,958; Peril: excess_rainfall; Event date: 2020-01-01; Announced: 2020-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Excess Rainfall policy - Haiti: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 15. Excess Rainfall policy - Jamaica: signal detected
+
+**ID:** `DSP-20260815-092` | **Country:** Excess Rainfall policy - Jamaica | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$3,500,000; Peril: excess_rainfall; Event date: 2020-01-01; Announced: 2020-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Excess Rainfall policy - Jamaica: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 16. Excess Rainfall policy - Panama: signal detected
+
+**ID:** `DSP-20260815-096` | **Country:** Excess Rainfall policy - Panama | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$2,670,556; Peril: excess_rainfall; Event date: 2020-01-01; Announced: 2020-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Excess Rainfall policy - Panama: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 17. Tropical Cyclone policy - Nicaragua: signal detected
+
+**ID:** `DSP-20260815-100` | **Country:** Tropical Cyclone policy - Nicaragua | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** updated
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$7,793,524; Peril: tropical_cyclone; Event date: 2020-01-01; Announced: 2020-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Tropical Cyclone policy - Nicaragua: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 18. Excess Rainfall policy -  Nicaragua: signal detected
+
+**ID:** `DSP-20260815-104` | **Country:** Excess Rainfall policy -  Nicaragua | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$2,956,021; Peril: excess_rainfall; Event date: 2020-01-01; Announced: 2020-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Excess Rainfall policy -  Nicaragua: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 19. Tropical Cyclone policy - Nicaragua: signal detected
+
+**ID:** `DSP-20260815-108` | **Country:** Tropical Cyclone policy - Nicaragua | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$19,891,162; Peril: tropical_cyclone; Event date: 2020-01-01; Announced: 2020-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Tropical Cyclone policy - Nicaragua: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 20. Tropical Cyclone policy - Barbados: signal detected
+
+**ID:** `DSP-20260815-112` | **Country:** Tropical Cyclone policy - Barbados | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$1,345,500; Peril: tropical_cyclone; Event date: 2021-01-01; Announced: 2021-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Tropical Cyclone policy - Barbados: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 21. Excess Rainfall policy - Barbados: signal detected
+
+**ID:** `DSP-20260815-116` | **Country:** Excess Rainfall policy - Barbados | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$1,124,424; Peril: excess_rainfall; Event date: 2021-01-01; Announced: 2021-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Excess Rainfall policy - Barbados: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 22. Excess Rainfall policy - Trinidad: signal detected
+
+**ID:** `DSP-20260815-124` | **Country:** Excess Rainfall policy - Trinidad | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$2,381,464; Peril: excess_rainfall; Event date: 2021-01-01; Announced: 2021-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Excess Rainfall policy - Trinidad: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 23. Excess Rainfall policy - Trinidad: signal detected
+
+**ID:** `DSP-20260815-128` | **Country:** Excess Rainfall policy - Trinidad | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** updated
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$5,115,782; Peril: excess_rainfall; Event date: 2022-01-01; Announced: 2022-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Excess Rainfall policy - Trinidad: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 24. Excess Rainfall policy - Trinidad: signal detected
+
+**ID:** `DSP-20260815-136` | **Country:** Excess Rainfall policy - Trinidad | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$1,400,000; Peril: excess_rainfall; Event date: 2022-01-01; Announced: 2022-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Excess Rainfall policy - Trinidad: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 25. Excess Rainfall policy - Antigua & Barbuda: signal detected
+
+**ID:** `DSP-20260815-140` | **Country:** Excess Rainfall policy - Antigua & Barbuda | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$2,880,424; Peril: excess_rainfall; Event date: 2023-01-01; Announced: 2023-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Excess Rainfall policy - Antigua & Barbuda: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 26. Excess Rainfall policy - St. Kitts & Nevis: signal detected
+
+**ID:** `DSP-20260815-144` | **Country:** Excess Rainfall policy - St. Kitts & Nevis | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$1,509,804; Peril: excess_rainfall; Event date: 2023-01-01; Announced: 2023-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Excess Rainfall policy - St. Kitts & Nevis: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 27. Excess Rainfall - Guatemala: signal detected
+
+**ID:** `DSP-20260815-148` | **Country:** Excess Rainfall - Guatemala | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$6,376,184; Peril: excess_rainfall; Event date: 2024-01-01; Announced: 2024-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Excess Rainfall - Guatemala: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 28. St. Vincent & the Grenadines: signal detected
+
+**ID:** `DSP-20260815-152` | **Country:** St. Vincent & the Grenadines | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$1,862,728; Peril: tropical_cyclone; Event date: 2024-01-01; Announced: 2024-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review St. Vincent & the Grenadines: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 29. Grenada: signal detected
+
+**ID:** `DSP-20260815-156` | **Country:** Grenada | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** updated
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$42,425,110; Peril: tropical_cyclone; Event date: 2024-01-01; Announced: 2024-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Grenada: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 30. COAST - Grenada: signal detected
+
+**ID:** `DSP-20260815-160` | **Country:** COAST - Grenada | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** updated
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$1,066,667; Peril: tropical_cyclone; Event date: 2024-01-01; Announced: 2024-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review COAST - Grenada: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 31. Electric Utilities - GRENLEC - Grenada: signal detected
+
+**ID:** `DSP-20260815-164` | **Country:** Electric Utilities - GRENLEC - Grenada | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** updated
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$9,323,276; Peril: tropical_cyclone; Event date: 2024-01-01; Announced: 2024-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Electric Utilities - GRENLEC - Grenada: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 32. CWUIC - NAWASA - Grenada: signal detected
+
+**ID:** `DSP-20260815-168` | **Country:** CWUIC - NAWASA - Grenada | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$2,201,833; Peril: tropical_cyclone; Event date: 2024-01-01; Announced: 2024-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review CWUIC - NAWASA - Grenada: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 33. Jamaica: signal detected
+
+**ID:** `DSP-20260815-172` | **Country:** Jamaica | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$16,309,185; Peril: tropical_cyclone; Event date: 2024-01-01; Announced: 2024-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Jamaica: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 34. Excess Rainfall - Jamaica: signal detected
+
+**ID:** `DSP-20260815-176` | **Country:** Excess Rainfall - Jamaica | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$10,278,754; Peril: excess_rainfall; Event date: 2024-01-01; Announced: 2024-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Excess Rainfall - Jamaica: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 35. Excess Rainfall - Panama: signal detected
+
+**ID:** `DSP-20260815-180` | **Country:** Excess Rainfall - Panama | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** updated
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$7,599,765; Peril: excess_rainfall; Event date: 2024-01-01; Announced: 2024-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Excess Rainfall - Panama: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 36. Excess Rainfall - Panama (FAP): signal detected
+
+**ID:** `DSP-20260815-184` | **Country:** Excess Rainfall - Panama (FAP) | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$19,100,504; Peril: excess_rainfall; Event date: 2024-01-01; Announced: 2024-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Excess Rainfall - Panama (FAP): signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 37. Excess Rainfall - Honduras: signal detected
+
+**ID:** `DSP-20260815-188` | **Country:** Excess Rainfall - Honduras | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$4,665,090; Peril: excess_rainfall; Event date: 2024-01-01; Announced: 2024-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Excess Rainfall - Honduras: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 38. Jamaica: signal detected
+
+**ID:** `DSP-20260815-192` | **Country:** Jamaica | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$70,803,832; Peril: tropical_cyclone; Event date: 2025-01-01; Announced: 2025-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Jamaica: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 39. Excess Rainfall - Jamaica: signal detected
+
+**ID:** `DSP-20260815-196` | **Country:** Excess Rainfall - Jamaica | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$21,085,860; Peril: excess_rainfall; Event date: 2025-01-01; Announced: 2025-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Excess Rainfall - Jamaica: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 40. Trinidad: signal detected
+
+**ID:** `DSP-20260815-200` | **Country:** Trinidad | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$1,461,583; Peril: excess_rainfall; Event date: 2025-01-01; Announced: 2025-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Trinidad: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 41. St. Kitts and Nevis: signal detected
+
+**ID:** `DSP-20260815-060` | **Country:** St. Kitts and Nevis | **Confidence:** 🟡 Validation | 80/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$2,294,603; Peril: tropical_cyclone; Event date: 2017-01-01; Announced: 2017-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review St. Kitts and Nevis: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 42. Turks and Caicos Islands: signal detected
+
+**ID:** `DSP-20260815-028` | **Country:** Turks and Caicos Islands | **Confidence:** 🟡 Validation | 76/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$6,303,913; Peril: tropical_cyclone; Event date: 2008-01-01; Announced: 2008-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Turks and Caicos Islands: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 43. Anguilla: signal detected
+
+**ID:** `DSP-20260815-036` | **Country:** Anguilla | **Confidence:** 🟡 Validation | 76/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$4,282,733; Peril: tropical_cyclone; Event date: 2010-01-01; Announced: 2010-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Anguilla: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 44. Excess Rainfall policy - Dominica: signal detected
+
+**ID:** `DSP-20260815-048` | **Country:** Excess Rainfall policy - Dominica | **Confidence:** 🟡 Validation | 76/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$2,402,153; Peril: excess_rainfall; Event date: 2015-01-01; Announced: 2015-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Excess Rainfall policy - Dominica: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 45. Nicaragua: signal detected
+
+**ID:** `DSP-20260815-056` | **Country:** Nicaragua | **Confidence:** 🟡 Validation | 76/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$1,110,193; Peril: tropical_cyclone; Event date: 2016-01-01; Announced: 2016-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Nicaragua: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 46. Nicaragua: signal detected
+
+**ID:** `DSP-20260815-132` | **Country:** Nicaragua | **Confidence:** 🟡 Validation | 76/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$8,924,577; Peril: tropical_cyclone; Event date: 2022-01-01; Announced: 2022-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Nicaragua: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 47. Eastern Caribbean Currency Union: 5.8%
+
+**ID:** `DSP-20260815-208` | **Country:** Eastern Caribbean Currency Union | **Confidence:** 🟡 Validation | 76/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 21 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Private sector credit: EC$13,350.8M; Total deposits: EC$22,353.3M; Net foreign assets: EC$14,080.2M; Period: 2025 (YoY: +5.8%)
+**Detail:** 5.8%
+**Grade:** C - single-source
+
+**Recommended action:** Review Eastern Caribbean Currency Union: 5.8%. Validate locally before action.
+**Decision to influence:** Private sector credit expansion = banking confidence = investment timing signal
+**Routing rationale:** Credit surge = banking system confidence = deploy capital alongside local lending
+
+### 48. Barbados: FDI trending at +34.8% — screening trigger active
+
+**ID:** `DSP-20260815-007` | **Country:** Barbados | **Confidence:** 🟡 Validation | 75/100 | B - cross-source
 **Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -121,9 +681,107 @@
 **Decision to influence:** Which country-sector pair to validate for investment readiness
 **Routing rationale:** Single-source FDI movement is a screening trigger, not a deployment signal — start diligence
 
-### 9. St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended
+### 49. Eastern Caribbean Currency Union: 4.6%
 
-**ID:** `DSP-20260813-009` | **Country:** St. Vincent and the Grenadines | **Confidence:** 🟡 Validation | 72/100 | C - single-source
+**ID:** `DSP-20260815-212` | **Country:** Eastern Caribbean Currency Union | **Confidence:** 🟡 Validation | 72/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 30 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Total deposits: EC$22,353.3M; Period: 2025 (YoY: +4.6%)
+**Detail:** 4.6%
+**Grade:** C - single-source
+
+**Recommended action:** Review Eastern Caribbean Currency Union: 4.6%. Validate locally before action.
+**Decision to influence:** Deposit base expansion = currency union stability = confidence signal
+**Routing rationale:** Deposit growth = institutional confidence = favorable capital environment
+
+### 50. Haiti: signal detected
+
+**ID:** `DSP-20260815-032` | **Country:** Haiti | **Confidence:** 🟢 Monitor | 68/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$7,753,579; Peril: earthquake; Event date: 2010-01-01; Announced: 2010-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Haiti: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 51. Barbados: signal detected
+
+**ID:** `DSP-20260815-040` | **Country:** Barbados | **Confidence:** 🟢 Monitor | 68/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$8,560,247; Peril: tropical_cyclone; Event date: 2010-01-01; Announced: 2010-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Barbados: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 52. Barbados: signal detected
+
+**ID:** `DSP-20260815-044` | **Country:** Barbados | **Confidence:** 🟢 Monitor | 68/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$1,284,882; Peril: excess_rainfall; Event date: 2014-01-01; Announced: 2014-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Barbados: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 53. Haiti: signal detected
+
+**ID:** `DSP-20260815-052` | **Country:** Haiti | **Confidence:** 🟢 Monitor | 68/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$20,388,067; Peril: tropical_cyclone; Event date: 2016-01-01; Announced: 2016-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Haiti: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 54. Haiti: signal detected
+
+**ID:** `DSP-20260815-120` | **Country:** Haiti | **Confidence:** 🟢 Monitor | 68/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$39,953,272; Peril: earthquake; Event date: 2021-01-01; Announced: 2021-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Haiti: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 55. Haiti: signal detected
+
+**ID:** `DSP-20260815-204` | **Country:** Haiti | **Confidence:** 🟢 Monitor | 68/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$1,198,434; Peril: tropical_cyclone; Event date: 2025-01-01; Announced: 2025-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Haiti: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 56. St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended
+
+**ID:** `DSP-20260815-009` | **Country:** St. Vincent and the Grenadines | **Confidence:** 🟢 Monitor | 60/100 | C - single-source
 **Channel:** Email brief + Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** decision_changed
 

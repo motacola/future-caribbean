@@ -7,6 +7,13 @@ on:
   workflow_dispatch:
     # Manual run button
 
+# The cycle commits its artefacts back to the repository, so the job token
+# needs write access. Declared here rather than by widening the repository-wide
+# default, which would grant it to every workflow. Without this the run builds
+# everything, commits, then fails to push with a 403.
+permissions:
+  contents: write
+
 concurrency:
   group: pipeline
   cancel-in-progress: true
@@ -54,7 +61,27 @@ jobs:
           # artifact. If it is not staged here, every scheduled runner starts
           # again from the repository's old baseline and the track record never
           # accrues across cycles.
-          git add outbox/ dashboard.html data/history/ data/.cycle_count.json data/editorial/ data/feedback/ data/calibration/ data/ndbc/history.json
+          # dashboard.html was retired in 4e16d2a (Astro is the only UI) but
+          # stayed in this list, so `git add` exited 128 on a missing pathspec
+          # and every cycle since died here without publishing. Paths are
+          # filtered to those that exist so one retired artefact cannot block
+          # the whole publish again.
+          #
+          # The list must cover everything src/lib/data.ts reads, or the cycle
+          # fetches fresh data and then discards it. Regional news, market
+          # watch and the composite signals were all missing: the RSS poller
+          # pulled 75 fresh articles every run and none of them ever reached
+          # the site. data/regional_news/raw/ is deliberately excluded — those
+          # are per-fetch XML snapshots that would bloat history.
+          for p in outbox/ data/history/ data/.cycle_count.json data/editorial/ \
+                   data/feedback/ data/calibration/ data/ndbc/history.json \
+                   data/regional_news/latest.json data/regional_news/image_cache.json \
+                   data/market_watch/ data/composite/ \
+                   public/regional_news.json public/market_watch.json \
+                   api/market-watch-data.json api/regional-news-data.json \
+                   api/feedback-data.json api/source-health-data.json; do
+            [ -e "$p" ] && git add "$p" || echo "skipping missing path: $p"
+          done
           # Guard: no empty commits
           if git diff --staged --quiet; then
             echo "No changes to commit"

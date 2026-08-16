@@ -7,8 +7,30 @@ ROOT="$(cd "$(dirname "$0")" && pwd)"
 echo "=== Caribbean Signal OS Pipeline ==="
 echo ""
 
-# Track step success for summary
+# Track step success for summary.
+#
+# Two classes of failure. External data sources are EXPECTED to be unavailable
+# sometimes — feeds go down, keys expire, portals change shape — and the
+# pipeline is built to degrade: watchers cache, the merger tolerates missing
+# inputs, and the site renders "stale — fallback cached" states. Failing the
+# whole run on one of those meant a single optional source with a missing API
+# key silently blocked publication of everything else, which is how the site
+# stopped updating.
+#
+# Only a failure in the steps that BUILD what the site serves should stop the
+# publish.
 FAILED=""
+FAILED_OPTIONAL=""
+
+# Steps that may fail without invalidating the cycle.
+OPTIONAL_STEPS="World Bank|IDB CKAN|Tier 2 (CARICOM + CDB)|Tenders (Guyana eProcure + GOJEP)|Regional News RSS|CCRIF (Parametric Payouts)|ECCB (Monetary Stats)|NOAA NWS|NDBC Buoys|AIS Maritime|NHC Storms|Telegram Send|Webhook Alerts"
+
+is_optional() {
+    case "|$OPTIONAL_STEPS|" in
+        *"|$1|"*) return 0 ;;
+        *) return 1 ;;
+    esac
+}
 
 run_step() {
     local label="$1"
@@ -24,8 +46,13 @@ run_step() {
         fi
     else
         local rc=$?
-        echo "  ✗ ${label} (exit $rc)" >&2
-        FAILED="$FAILED $label"
+        if is_optional "$label"; then
+            echo "  ⚠ ${label} unavailable (exit $rc) — continuing on cached data" >&2
+            FAILED_OPTIONAL="$FAILED_OPTIONAL $label"
+        else
+            echo "  ✗ ${label} (exit $rc)" >&2
+            FAILED="$FAILED $label"
+        fi
     fi
     echo ""
 }
@@ -128,8 +155,14 @@ echo "Operator console: $ROOT/dist/index.html (serve with: python3 server.py)"
 echo "Dispatch log:     $ROOT/outbox/live_send_log.md"
 echo ""
 
+if [ -n "$FAILED_OPTIONAL" ]; then
+    echo "⚠ Optional sources unavailable this cycle:$FAILED_OPTIONAL" >&2
+    echo "  The cycle still published; affected surfaces show cached/stale state." >&2
+fi
+
 if [ -n "$FAILED" ]; then
-    echo "⚠ WARNING: These steps reported errors:$FAILED" >&2
+    echo "✗ ESSENTIAL steps failed:$FAILED" >&2
+    echo "  Refusing to publish — the artefacts would not reflect a complete cycle." >&2
     exit 1
 fi
 

@@ -1,11 +1,11 @@
 # Opportunity Validation Pack — CARICOM
 
 - Signal: `dev-pipeline-regional` · Dispatch: `DSP-20260815-013`
-- Confidence: 78/100 (raw 96) · B - cross-source
+- Confidence: 78/100 (raw 95) · B - cross-source
 - Action readiness: medium (no dated country procurement or news corroboration)
-- Evidence freshness: stale · cycles since refresh: 29
+- Evidence freshness: stale · cycles since refresh: 30
 - Recommendation: **HOLD** — Calibrated confidence 78/100 with 1 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.
-- Last validated: 2026-08-15T22:00:15.369942+00:00
+- Last validated: 2026-08-15T23:37:39.290287+00:00
 
 ## Sector hypotheses
 - None identified this cycle
@@ -30,12 +30,12 @@
 - [Health Sector Strengthening Project](https://www.caribank.org/work-with-us/procurement/procurement-notices/health-sector-strengthening-project-1) — Caribbean Development Bank (regional)
 
 ## Official country data
+- [CARICOM Travel Trade Balance](https://statistics.caricom.org/?country_data=caricom-travel-trade-balance) — CARICOM Statistics
 - [Share of CARICOM Exports by Member State, 1973–2024](https://statistics.caricom.org/?country_data=share-of-caricom-exports-by-member-state-1973-2024) — CARICOM Statistics
 - [CARICOM Intra-regional Balance of Trade 1973-2024](https://statistics.caricom.org/?country_data=caricom-balance-of-trade) — CARICOM Statistics
 - [CARICOM Total Imports by SITC, 1973-2024](https://statistics.caricom.org/?country_data=caricom-total-imports-by-sitc-1973-2024) — CARICOM Statistics
 - [CARICOM Total Exports: 1973-2024](https://statistics.caricom.org/?country_data=caricom-total-exports-1973-2023) — CARICOM Statistics
 - [CARICOM&#8217;s Intra-regional Total Exports: 1973-2024](https://statistics.caricom.org/?country_data=caricoms-intra-regional-total-exports-1973-2023) — CARICOM Statistics
-- [CARICOM Total Exports by SITC, 1973-2024](https://statistics.caricom.org/?country_data=caricom-total-exports-by-sitc-1973-2024) — CARICOM Statistics
 
 ## Relevant institutions & intro targets
 - Caribbean Export Development Agency — Regional trade and investment promotion
