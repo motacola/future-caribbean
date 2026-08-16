@@ -1,6 +1,6 @@
 # Caribbean Opportunity Dispatch — Judge Brief
 
-Generated: 2026-08-15 23:37 UTC
+Generated: 2026-08-16 07:11 UTC
 
 ## What This Proves
 
@@ -35,17 +35,19 @@ Caribbean Opportunity Dispatch is the product. Caribbean Signal OS is the archit
    Audience: investor/founder via Email brief + Telegram
    Decision: Active procurement pipeline: CDB active procurement notices: 7. Priority: review CDB/IDB opportunities as lead list for project-based entry.
 
-**3.** 🟡 **ccrif_payout — Dominica** — sustained
-   Narrative: Dominica: signal detected
+**3.** 🟡 **ccrif_payout — Turks and Caicos Islands** — intensified
+   Narrative: Turks and Caicos Islands: signal detected
    Score: 84/100 | Grade: C - single-source
    Audience: regional intelligence via Telegram digest
-   Decision: Validation — Dominica: ccrif_payout (signal detected). Validate locally.
+   Decision: Validation — Turks and Caicos Islands: ccrif_payout (signal detected). Validate locally.
+   ⬆️ Strengthened (+8 pts)
 
-**4.** 🟡 **ccrif_payout — Excess Rainfall policy - Trinidad** — sustained
-   Narrative: Excess Rainfall policy - Trinidad: signal detected
+**4.** 🟡 **ccrif_payout — Haiti** — intensified
+   Narrative: Haiti: signal detected
    Score: 84/100 | Grade: C - single-source
    Audience: regional intelligence via Telegram digest
-   Decision: Validation — Excess Rainfall policy - Trinidad: ccrif_payout (signal detected). Validate locally.
+   Decision: Validation — Haiti: ccrif_payout (signal detected). Validate locally.
+   ⬆️ Strengthened (+16 pts)
 
 **5.** 🟡 **eccb_credit_surge — Eastern Caribbean Currency Union** — sustained
    Narrative: Eastern Caribbean Currency Union: 5.8%
@@ -59,12 +61,11 @@ Caribbean Opportunity Dispatch is the product. Caribbean Signal OS is the archit
    Audience: investor/founder via Email brief + Telegram
    Decision: Validation priority. Barbados FDI movement (34.8% change) signals opportunity. Cross-reference with sector data.
 
-**7.** 🟢 **⚠️ Vulnerability — St. Vincent and the Grenadines** — weakened
+**7.** 🟢 **⚠️ Vulnerability — St. Vincent and the Grenadines** — sustained
    Narrative: St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended
    Score: 60/100 | Grade: C - single-source
    Audience: policy/operator via Telegram digest
    Decision: Monitor. St. Vincent and the Grenadines showing economic stress (18.00%). Track next cycle. Escalates if additional stress indicators appear or existing ones worsen.
-   ⬇️ Weakened (-10 pts)
 
 ## Routing Rationale
 
@@ -134,7 +135,7 @@ Each signal is routed to specific personas based on signal kind and evidence lev
 
 ## Cycle Summary
 
-Lead: Guyana · 63 composite signal(s) · 6 updated · 45 persistent
+Lead: Guyana · 63 composite signal(s) · 6 updated · 11 intensified · 35 persistent
 ## Judge Demo Path
 
 1. Run `bash run_pipeline.sh`.

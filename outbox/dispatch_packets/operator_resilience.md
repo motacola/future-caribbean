@@ -2,492 +2,16 @@
 
 **Decision job:** Immediate operational readiness and response
 **Delivery channel:** Telegram/SMS alert
-**Generated:** Aug 15, 2026 at 23:37 UTC
+**Generated:** Aug 16, 2026 at 07:11 UTC
 **Dispatches in this packet:** 45
 
 ---
 
 ## Dispatches (45)
 
-### 1. Dominica: signal detected
+### 1. Turks and Caicos Islands: signal detected
 
-**ID:** `DSP-20260815-066` | **Country:** Dominica | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$19,294,800; Peril: tropical_cyclone; Event date: 2017-01-01; Announced: 2017-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: Dominica. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 2. Excess Rainfall policy - Trinidad: signal detected
-
-**ID:** `DSP-20260815-070` | **Country:** Excess Rainfall policy - Trinidad | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$7,007,886; Peril: excess_rainfall; Event date: 2017-01-01; Announced: 2017-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: Excess Rainfall policy - Trinidad. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 3. Excess Rainfall policy - Barbados: signal detected
-
-**ID:** `DSP-20260815-074` | **Country:** Excess Rainfall policy - Barbados | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$5,813,299; Peril: excess_rainfall; Event date: 2018-01-01; Announced: 2018-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: Excess Rainfall policy - Barbados. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 4. Excess Rainfall policy - Trinidad: signal detected
-
-**ID:** `DSP-20260815-078` | **Country:** Excess Rainfall policy - Trinidad | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$2,534,550; Peril: excess_rainfall; Event date: 2018-01-01; Announced: 2018-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: Excess Rainfall policy - Trinidad. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 5. Tropical Cyclone policy - The Bahamas: signal detected
-
-**ID:** `DSP-20260815-082` | **Country:** Tropical Cyclone policy - The Bahamas | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$11,527,151; Peril: tropical_cyclone; Event date: 2019-01-01; Announced: 2019-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: Tropical Cyclone policy - The Bahamas. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 6. Excess Rainfall policy - Guatemala: signal detected
-
-**ID:** `DSP-20260815-086` | **Country:** Excess Rainfall policy - Guatemala | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$3,628,013; Peril: excess_rainfall; Event date: 2020-01-01; Announced: 2020-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: Excess Rainfall policy - Guatemala. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 7. Excess Rainfall policy - Haiti: signal detected
-
-**ID:** `DSP-20260815-090` | **Country:** Excess Rainfall policy - Haiti | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$7,163,958; Peril: excess_rainfall; Event date: 2020-01-01; Announced: 2020-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: Excess Rainfall policy - Haiti. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 8. Excess Rainfall policy - Jamaica: signal detected
-
-**ID:** `DSP-20260815-094` | **Country:** Excess Rainfall policy - Jamaica | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$3,500,000; Peril: excess_rainfall; Event date: 2020-01-01; Announced: 2020-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: Excess Rainfall policy - Jamaica. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 9. Excess Rainfall policy - Panama: signal detected
-
-**ID:** `DSP-20260815-098` | **Country:** Excess Rainfall policy - Panama | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$2,670,556; Peril: excess_rainfall; Event date: 2020-01-01; Announced: 2020-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: Excess Rainfall policy - Panama. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 10. Tropical Cyclone policy - Nicaragua: signal detected
-
-**ID:** `DSP-20260815-102` | **Country:** Tropical Cyclone policy - Nicaragua | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** updated
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$7,793,524; Peril: tropical_cyclone; Event date: 2020-01-01; Announced: 2020-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: Tropical Cyclone policy - Nicaragua. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 11. Excess Rainfall policy -  Nicaragua: signal detected
-
-**ID:** `DSP-20260815-106` | **Country:** Excess Rainfall policy -  Nicaragua | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$2,956,021; Peril: excess_rainfall; Event date: 2020-01-01; Announced: 2020-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: Excess Rainfall policy -  Nicaragua. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 12. Tropical Cyclone policy - Nicaragua: signal detected
-
-**ID:** `DSP-20260815-110` | **Country:** Tropical Cyclone policy - Nicaragua | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$19,891,162; Peril: tropical_cyclone; Event date: 2020-01-01; Announced: 2020-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: Tropical Cyclone policy - Nicaragua. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 13. Tropical Cyclone policy - Barbados: signal detected
-
-**ID:** `DSP-20260815-114` | **Country:** Tropical Cyclone policy - Barbados | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$1,345,500; Peril: tropical_cyclone; Event date: 2021-01-01; Announced: 2021-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: Tropical Cyclone policy - Barbados. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 14. Excess Rainfall policy - Barbados: signal detected
-
-**ID:** `DSP-20260815-118` | **Country:** Excess Rainfall policy - Barbados | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$1,124,424; Peril: excess_rainfall; Event date: 2021-01-01; Announced: 2021-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: Excess Rainfall policy - Barbados. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 15. Excess Rainfall policy - Trinidad: signal detected
-
-**ID:** `DSP-20260815-126` | **Country:** Excess Rainfall policy - Trinidad | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$2,381,464; Peril: excess_rainfall; Event date: 2021-01-01; Announced: 2021-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: Excess Rainfall policy - Trinidad. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 16. Excess Rainfall policy - Trinidad: signal detected
-
-**ID:** `DSP-20260815-130` | **Country:** Excess Rainfall policy - Trinidad | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** updated
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$5,115,782; Peril: excess_rainfall; Event date: 2022-01-01; Announced: 2022-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: Excess Rainfall policy - Trinidad. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 17. Excess Rainfall policy - Trinidad: signal detected
-
-**ID:** `DSP-20260815-138` | **Country:** Excess Rainfall policy - Trinidad | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$1,400,000; Peril: excess_rainfall; Event date: 2022-01-01; Announced: 2022-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: Excess Rainfall policy - Trinidad. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 18. Excess Rainfall policy - Antigua & Barbuda: signal detected
-
-**ID:** `DSP-20260815-142` | **Country:** Excess Rainfall policy - Antigua & Barbuda | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$2,880,424; Peril: excess_rainfall; Event date: 2023-01-01; Announced: 2023-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: Excess Rainfall policy - Antigua & Barbuda. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 19. Excess Rainfall policy - St. Kitts & Nevis: signal detected
-
-**ID:** `DSP-20260815-146` | **Country:** Excess Rainfall policy - St. Kitts & Nevis | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$1,509,804; Peril: excess_rainfall; Event date: 2023-01-01; Announced: 2023-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: Excess Rainfall policy - St. Kitts & Nevis. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 20. Excess Rainfall - Guatemala: signal detected
-
-**ID:** `DSP-20260815-150` | **Country:** Excess Rainfall - Guatemala | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$6,376,184; Peril: excess_rainfall; Event date: 2024-01-01; Announced: 2024-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: Excess Rainfall - Guatemala. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 21. St. Vincent & the Grenadines: signal detected
-
-**ID:** `DSP-20260815-154` | **Country:** St. Vincent & the Grenadines | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$1,862,728; Peril: tropical_cyclone; Event date: 2024-01-01; Announced: 2024-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: St. Vincent & the Grenadines. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 22. Grenada: signal detected
-
-**ID:** `DSP-20260815-158` | **Country:** Grenada | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** updated
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$42,425,110; Peril: tropical_cyclone; Event date: 2024-01-01; Announced: 2024-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: Grenada. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 23. COAST - Grenada: signal detected
-
-**ID:** `DSP-20260815-162` | **Country:** COAST - Grenada | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** updated
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$1,066,667; Peril: tropical_cyclone; Event date: 2024-01-01; Announced: 2024-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: COAST - Grenada. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 24. Electric Utilities - GRENLEC - Grenada: signal detected
-
-**ID:** `DSP-20260815-166` | **Country:** Electric Utilities - GRENLEC - Grenada | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** updated
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$9,323,276; Peril: tropical_cyclone; Event date: 2024-01-01; Announced: 2024-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: Electric Utilities - GRENLEC - Grenada. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 25. CWUIC - NAWASA - Grenada: signal detected
-
-**ID:** `DSP-20260815-170` | **Country:** CWUIC - NAWASA - Grenada | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$2,201,833; Peril: tropical_cyclone; Event date: 2024-01-01; Announced: 2024-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: CWUIC - NAWASA - Grenada. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 26. Jamaica: signal detected
-
-**ID:** `DSP-20260815-174` | **Country:** Jamaica | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$16,309,185; Peril: tropical_cyclone; Event date: 2024-01-01; Announced: 2024-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: Jamaica. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 27. Excess Rainfall - Jamaica: signal detected
-
-**ID:** `DSP-20260815-178` | **Country:** Excess Rainfall - Jamaica | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$10,278,754; Peril: excess_rainfall; Event date: 2024-01-01; Announced: 2024-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: Excess Rainfall - Jamaica. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 28. Excess Rainfall - Panama: signal detected
-
-**ID:** `DSP-20260815-182` | **Country:** Excess Rainfall - Panama | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** updated
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$7,599,765; Peril: excess_rainfall; Event date: 2024-01-01; Announced: 2024-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: Excess Rainfall - Panama. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 29. Excess Rainfall - Panama (FAP): signal detected
-
-**ID:** `DSP-20260815-186` | **Country:** Excess Rainfall - Panama (FAP) | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$19,100,504; Peril: excess_rainfall; Event date: 2024-01-01; Announced: 2024-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: Excess Rainfall - Panama (FAP). Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 30. Excess Rainfall - Honduras: signal detected
-
-**ID:** `DSP-20260815-190` | **Country:** Excess Rainfall - Honduras | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$4,665,090; Peril: excess_rainfall; Event date: 2024-01-01; Announced: 2024-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: Excess Rainfall - Honduras. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 31. Jamaica: signal detected
-
-**ID:** `DSP-20260815-194` | **Country:** Jamaica | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$70,803,832; Peril: tropical_cyclone; Event date: 2025-01-01; Announced: 2025-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: Jamaica. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 32. Excess Rainfall - Jamaica: signal detected
-
-**ID:** `DSP-20260815-198` | **Country:** Excess Rainfall - Jamaica | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$21,085,860; Peril: excess_rainfall; Event date: 2025-01-01; Announced: 2025-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: Excess Rainfall - Jamaica. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 33. Trinidad: signal detected
-
-**ID:** `DSP-20260815-202` | **Country:** Trinidad | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$1,461,583; Peril: excess_rainfall; Event date: 2025-01-01; Announced: 2025-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: Trinidad. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 34. St. Kitts and Nevis: signal detected
-
-**ID:** `DSP-20260815-062` | **Country:** St. Kitts and Nevis | **Confidence:** 🟡 Validation | 80/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$2,294,603; Peril: tropical_cyclone; Event date: 2017-01-01; Announced: 2017-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: St. Kitts and Nevis. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 35. Turks and Caicos Islands: signal detected
-
-**ID:** `DSP-20260815-030` | **Country:** Turks and Caicos Islands | **Confidence:** 🟡 Validation | 76/100 | C - single-source
+**ID:** `DSP-20260816-030` | **Country:** Turks and Caicos Islands | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -499,65 +23,9 @@
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout confirms hazard severity = operational recovery capital available
 
-### 36. Anguilla: signal detected
+### 2. Haiti: signal detected
 
-**ID:** `DSP-20260815-038` | **Country:** Anguilla | **Confidence:** 🟡 Validation | 76/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$4,282,733; Peril: tropical_cyclone; Event date: 2010-01-01; Announced: 2010-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: Anguilla. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 37. Excess Rainfall policy - Dominica: signal detected
-
-**ID:** `DSP-20260815-050` | **Country:** Excess Rainfall policy - Dominica | **Confidence:** 🟡 Validation | 76/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$2,402,153; Peril: excess_rainfall; Event date: 2015-01-01; Announced: 2015-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: Excess Rainfall policy - Dominica. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 38. Nicaragua: signal detected
-
-**ID:** `DSP-20260815-058` | **Country:** Nicaragua | **Confidence:** 🟡 Validation | 76/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$1,110,193; Peril: tropical_cyclone; Event date: 2016-01-01; Announced: 2016-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: Nicaragua. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 39. Nicaragua: signal detected
-
-**ID:** `DSP-20260815-134` | **Country:** Nicaragua | **Confidence:** 🟡 Validation | 76/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$8,924,577; Peril: tropical_cyclone; Event date: 2022-01-01; Announced: 2022-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: Nicaragua. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 40. Haiti: signal detected
-
-**ID:** `DSP-20260815-034` | **Country:** Haiti | **Confidence:** 🟢 Monitor | 68/100 | C - single-source
+**ID:** `DSP-20260816-034` | **Country:** Haiti | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -569,9 +37,23 @@
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout confirms hazard severity = operational recovery capital available
 
-### 41. Barbados: signal detected
+### 3. Anguilla: signal detected
 
-**ID:** `DSP-20260815-042` | **Country:** Barbados | **Confidence:** 🟢 Monitor | 68/100 | C - single-source
+**ID:** `DSP-20260816-038` | **Country:** Anguilla | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$4,282,733; Peril: tropical_cyclone; Event date: 2010-01-01; Announced: 2010-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: Anguilla. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 4. Barbados: signal detected
+
+**ID:** `DSP-20260816-042` | **Country:** Barbados | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -583,9 +65,9 @@
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout confirms hazard severity = operational recovery capital available
 
-### 42. Barbados: signal detected
+### 5. Barbados: signal detected
 
-**ID:** `DSP-20260815-046` | **Country:** Barbados | **Confidence:** 🟢 Monitor | 68/100 | C - single-source
+**ID:** `DSP-20260816-046` | **Country:** Barbados | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -597,9 +79,23 @@
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout confirms hazard severity = operational recovery capital available
 
-### 43. Haiti: signal detected
+### 6. Excess Rainfall policy - Dominica: signal detected
 
-**ID:** `DSP-20260815-054` | **Country:** Haiti | **Confidence:** 🟢 Monitor | 68/100 | C - single-source
+**ID:** `DSP-20260816-050` | **Country:** Excess Rainfall policy - Dominica | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$2,402,153; Peril: excess_rainfall; Event date: 2015-01-01; Announced: 2015-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: Excess Rainfall policy - Dominica. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 7. Haiti: signal detected
+
+**ID:** `DSP-20260816-054` | **Country:** Haiti | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -611,9 +107,107 @@
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout confirms hazard severity = operational recovery capital available
 
-### 44. Haiti: signal detected
+### 8. Nicaragua: signal detected
 
-**ID:** `DSP-20260815-122` | **Country:** Haiti | **Confidence:** 🟢 Monitor | 68/100 | C - single-source
+**ID:** `DSP-20260816-058` | **Country:** Nicaragua | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$1,110,193; Peril: tropical_cyclone; Event date: 2016-01-01; Announced: 2016-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: Nicaragua. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 9. St. Kitts and Nevis: signal detected
+
+**ID:** `DSP-20260816-062` | **Country:** St. Kitts and Nevis | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$2,294,603; Peril: tropical_cyclone; Event date: 2017-01-01; Announced: 2017-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: St. Kitts and Nevis. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 10. Excess Rainfall policy - Panama: signal detected
+
+**ID:** `DSP-20260816-098` | **Country:** Excess Rainfall policy - Panama | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$2,670,556; Peril: excess_rainfall; Event date: 2020-01-01; Announced: 2020-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: Excess Rainfall policy - Panama. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 11. Tropical Cyclone policy - Nicaragua: signal detected
+
+**ID:** `DSP-20260816-102` | **Country:** Tropical Cyclone policy - Nicaragua | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** updated
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$7,793,524; Peril: tropical_cyclone; Event date: 2020-01-01; Announced: 2020-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: Tropical Cyclone policy - Nicaragua. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 12. Excess Rainfall policy -  Nicaragua: signal detected
+
+**ID:** `DSP-20260816-106` | **Country:** Excess Rainfall policy -  Nicaragua | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$2,956,021; Peril: excess_rainfall; Event date: 2020-01-01; Announced: 2020-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: Excess Rainfall policy -  Nicaragua. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 13. Tropical Cyclone policy - Nicaragua: signal detected
+
+**ID:** `DSP-20260816-110` | **Country:** Tropical Cyclone policy - Nicaragua | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$19,891,162; Peril: tropical_cyclone; Event date: 2020-01-01; Announced: 2020-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: Tropical Cyclone policy - Nicaragua. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 14. Tropical Cyclone policy - Barbados: signal detected
+
+**ID:** `DSP-20260816-114` | **Country:** Tropical Cyclone policy - Barbados | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$1,345,500; Peril: tropical_cyclone; Event date: 2021-01-01; Announced: 2021-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: Tropical Cyclone policy - Barbados. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 15. Haiti: signal detected
+
+**ID:** `DSP-20260816-122` | **Country:** Haiti | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -625,9 +219,247 @@
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout confirms hazard severity = operational recovery capital available
 
-### 45. Haiti: signal detected
+### 16. Nicaragua: signal detected
 
-**ID:** `DSP-20260815-206` | **Country:** Haiti | **Confidence:** 🟢 Monitor | 68/100 | C - single-source
+**ID:** `DSP-20260816-134` | **Country:** Nicaragua | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$8,924,577; Peril: tropical_cyclone; Event date: 2022-01-01; Announced: 2022-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: Nicaragua. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 17. Excess Rainfall policy - Antigua & Barbuda: signal detected
+
+**ID:** `DSP-20260816-142` | **Country:** Excess Rainfall policy - Antigua & Barbuda | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$2,880,424; Peril: excess_rainfall; Event date: 2023-01-01; Announced: 2023-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: Excess Rainfall policy - Antigua & Barbuda. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 18. Excess Rainfall policy - St. Kitts & Nevis: signal detected
+
+**ID:** `DSP-20260816-146` | **Country:** Excess Rainfall policy - St. Kitts & Nevis | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$1,509,804; Peril: excess_rainfall; Event date: 2023-01-01; Announced: 2023-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: Excess Rainfall policy - St. Kitts & Nevis. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 19. Excess Rainfall - Guatemala: signal detected
+
+**ID:** `DSP-20260816-150` | **Country:** Excess Rainfall - Guatemala | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$6,376,184; Peril: excess_rainfall; Event date: 2024-01-01; Announced: 2024-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: Excess Rainfall - Guatemala. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 20. St. Vincent & the Grenadines: signal detected
+
+**ID:** `DSP-20260816-154` | **Country:** St. Vincent & the Grenadines | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$1,862,728; Peril: tropical_cyclone; Event date: 2024-01-01; Announced: 2024-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: St. Vincent & the Grenadines. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 21. Grenada: signal detected
+
+**ID:** `DSP-20260816-158` | **Country:** Grenada | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** updated
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$42,425,110; Peril: tropical_cyclone; Event date: 2024-01-01; Announced: 2024-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: Grenada. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 22. COAST - Grenada: signal detected
+
+**ID:** `DSP-20260816-162` | **Country:** COAST - Grenada | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** updated
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$1,066,667; Peril: tropical_cyclone; Event date: 2024-01-01; Announced: 2024-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: COAST - Grenada. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 23. Electric Utilities - GRENLEC - Grenada: signal detected
+
+**ID:** `DSP-20260816-166` | **Country:** Electric Utilities - GRENLEC - Grenada | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** updated
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$9,323,276; Peril: tropical_cyclone; Event date: 2024-01-01; Announced: 2024-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: Electric Utilities - GRENLEC - Grenada. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 24. CWUIC - NAWASA - Grenada: signal detected
+
+**ID:** `DSP-20260816-170` | **Country:** CWUIC - NAWASA - Grenada | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$2,201,833; Peril: tropical_cyclone; Event date: 2024-01-01; Announced: 2024-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: CWUIC - NAWASA - Grenada. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 25. Jamaica: signal detected
+
+**ID:** `DSP-20260816-174` | **Country:** Jamaica | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$16,309,185; Peril: tropical_cyclone; Event date: 2024-01-01; Announced: 2024-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: Jamaica. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 26. Excess Rainfall - Jamaica: signal detected
+
+**ID:** `DSP-20260816-178` | **Country:** Excess Rainfall - Jamaica | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$10,278,754; Peril: excess_rainfall; Event date: 2024-01-01; Announced: 2024-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: Excess Rainfall - Jamaica. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 27. Excess Rainfall - Panama: signal detected
+
+**ID:** `DSP-20260816-182` | **Country:** Excess Rainfall - Panama | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** updated
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$7,599,765; Peril: excess_rainfall; Event date: 2024-01-01; Announced: 2024-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: Excess Rainfall - Panama. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 28. Excess Rainfall - Panama (FAP): signal detected
+
+**ID:** `DSP-20260816-186` | **Country:** Excess Rainfall - Panama (FAP) | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$19,100,504; Peril: excess_rainfall; Event date: 2024-01-01; Announced: 2024-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: Excess Rainfall - Panama (FAP). Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 29. Excess Rainfall - Honduras: signal detected
+
+**ID:** `DSP-20260816-190` | **Country:** Excess Rainfall - Honduras | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$4,665,090; Peril: excess_rainfall; Event date: 2024-01-01; Announced: 2024-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: Excess Rainfall - Honduras. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 30. Jamaica: signal detected
+
+**ID:** `DSP-20260816-194` | **Country:** Jamaica | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$70,803,832; Peril: tropical_cyclone; Event date: 2025-01-01; Announced: 2025-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: Jamaica. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 31. Excess Rainfall - Jamaica: signal detected
+
+**ID:** `DSP-20260816-198` | **Country:** Excess Rainfall - Jamaica | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$21,085,860; Peril: excess_rainfall; Event date: 2025-01-01; Announced: 2025-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: Excess Rainfall - Jamaica. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 32. Trinidad: signal detected
+
+**ID:** `DSP-20260816-202` | **Country:** Trinidad | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$1,461,583; Peril: excess_rainfall; Event date: 2025-01-01; Announced: 2025-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: Trinidad. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 33. Haiti: signal detected
+
+**ID:** `DSP-20260816-206` | **Country:** Haiti | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -636,6 +468,174 @@
 **Grade:** C - single-source
 
 **Recommended action:** Prepare operational response: Haiti. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 34. Dominica: signal detected
+
+**ID:** `DSP-20260816-066` | **Country:** Dominica | **Confidence:** 🟡 Validation | 76/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$19,294,800; Peril: tropical_cyclone; Event date: 2017-01-01; Announced: 2017-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: Dominica. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 35. Excess Rainfall policy - Barbados: signal detected
+
+**ID:** `DSP-20260816-074` | **Country:** Excess Rainfall policy - Barbados | **Confidence:** 🟡 Validation | 76/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$5,813,299; Peril: excess_rainfall; Event date: 2018-01-01; Announced: 2018-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: Excess Rainfall policy - Barbados. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 36. Tropical Cyclone policy - The Bahamas: signal detected
+
+**ID:** `DSP-20260816-082` | **Country:** Tropical Cyclone policy - The Bahamas | **Confidence:** 🟡 Validation | 76/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$11,527,151; Peril: tropical_cyclone; Event date: 2019-01-01; Announced: 2019-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: Tropical Cyclone policy - The Bahamas. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 37. Excess Rainfall policy - Guatemala: signal detected
+
+**ID:** `DSP-20260816-086` | **Country:** Excess Rainfall policy - Guatemala | **Confidence:** 🟡 Validation | 76/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$3,628,013; Peril: excess_rainfall; Event date: 2020-01-01; Announced: 2020-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: Excess Rainfall policy - Guatemala. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 38. Excess Rainfall policy - Haiti: signal detected
+
+**ID:** `DSP-20260816-090` | **Country:** Excess Rainfall policy - Haiti | **Confidence:** 🟡 Validation | 76/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$7,163,958; Peril: excess_rainfall; Event date: 2020-01-01; Announced: 2020-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: Excess Rainfall policy - Haiti. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 39. Excess Rainfall policy - Jamaica: signal detected
+
+**ID:** `DSP-20260816-094` | **Country:** Excess Rainfall policy - Jamaica | **Confidence:** 🟡 Validation | 76/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$3,500,000; Peril: excess_rainfall; Event date: 2020-01-01; Announced: 2020-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: Excess Rainfall policy - Jamaica. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 40. Excess Rainfall policy - Barbados: signal detected
+
+**ID:** `DSP-20260816-118` | **Country:** Excess Rainfall policy - Barbados | **Confidence:** 🟡 Validation | 76/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$1,124,424; Peril: excess_rainfall; Event date: 2021-01-01; Announced: 2021-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: Excess Rainfall policy - Barbados. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 41. Excess Rainfall policy - Trinidad: signal detected
+
+**ID:** `DSP-20260816-070` | **Country:** Excess Rainfall policy - Trinidad | **Confidence:** 🟢 Monitor | 68/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$7,007,886; Peril: excess_rainfall; Event date: 2017-01-01; Announced: 2017-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: Excess Rainfall policy - Trinidad. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 42. Excess Rainfall policy - Trinidad: signal detected
+
+**ID:** `DSP-20260816-078` | **Country:** Excess Rainfall policy - Trinidad | **Confidence:** 🟢 Monitor | 68/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$2,534,550; Peril: excess_rainfall; Event date: 2018-01-01; Announced: 2018-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: Excess Rainfall policy - Trinidad. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 43. Excess Rainfall policy - Trinidad: signal detected
+
+**ID:** `DSP-20260816-126` | **Country:** Excess Rainfall policy - Trinidad | **Confidence:** 🟢 Monitor | 68/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$2,381,464; Peril: excess_rainfall; Event date: 2021-01-01; Announced: 2021-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: Excess Rainfall policy - Trinidad. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 44. Excess Rainfall policy - Trinidad: signal detected
+
+**ID:** `DSP-20260816-130` | **Country:** Excess Rainfall policy - Trinidad | **Confidence:** 🟢 Monitor | 52/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** updated
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$5,115,782; Peril: excess_rainfall; Event date: 2022-01-01; Announced: 2022-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: Excess Rainfall policy - Trinidad. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 45. Excess Rainfall policy - Trinidad: signal detected
+
+**ID:** `DSP-20260816-138` | **Country:** Excess Rainfall policy - Trinidad | **Confidence:** 🟢 Monitor | 52/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$1,400,000; Peril: excess_rainfall; Event date: 2022-01-01; Announced: 2022-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: Excess Rainfall policy - Trinidad. Action window: 7 days. Evidence: signal detected
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout confirms hazard severity = operational recovery capital available
 

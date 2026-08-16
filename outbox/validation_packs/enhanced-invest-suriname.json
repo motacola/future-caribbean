@@ -1,6 +1,6 @@
 {
   "signal_id": "enhanced-invest-suriname",
-  "dispatch_id": "DSP-20260815-022",
+  "dispatch_id": "DSP-20260816-022",
   "country": "Suriname",
   "signal_title": "Suriname: +206.0% investment movement, one source — needs corroboration",
   "confidence_score": 98,
@@ -10,7 +10,7 @@
   "sector_hypotheses": [
     {
       "sector": "Offshore oil & gas exploration",
-      "basis": "Google News — Guyana: Suriname offshore oil and gas momentum builds as GranMorgu advances - World Oil",
+      "basis": "Google News — Guyana: Suriname offshore oil and gas momentum builds as GranMorgu advances - worldoil.com",
       "status": "corroborated",
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPNDBrcjE3d1NZMXdjOXZOOGgzc3JkZUdMNVNaRmh0WXQyYU9aVG5QWjgwazdTT0dDMnlsYWlkMzRMb0E5dXV4OEMxdHpMY3pPalY5QmRtdHJmanNSeU9RVHVCbnVuNWRON0Vkd3B4V1hYdUdYbEFsSmIyS3BmR2tscHVVYndhVmtjNW5QVVZUQ0szemtwb3JYNzFNaHZ3QmU1Q3l3dTdLX1BNVkJ3?oc=5"
     },
@@ -131,7 +131,7 @@
   ],
   "advance_or_reject_recommendation": "hold",
   "recommendation_reason": "Evidence fingerprint unchanged for 8 cycles — downgraded from advance to hold until new corroboration arrives.",
-  "last_validated_at": "2026-08-15T23:37:39.290287+00:00",
+  "last_validated_at": "2026-08-16T07:11:28.923398+00:00",
   "coordination_path": null,
   "evidence_fingerprint": "118b7905bb78c1ee",
   "cycles_since_refresh": 8,

@@ -1,15 +1,39 @@
 {
   "instance": "climate",
   "instance_label": "Climate & Catastrophe Risk",
-  "cycle_id": "20260815",
-  "generated_at": "2026-08-15T23:37:39.632954+00:00",
+  "cycle_id": "20260816",
+  "generated_at": "2026-08-16T07:11:29.264589+00:00",
   "clusters": [
     {
-      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.b",
+      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.c",
+      "country_cluster": "San Juan and Vicinity",
+      "signal_kind": "hazard_alert",
+      "title": "San Juan and Vicinity: Heat Advisory in effect (Moderate)",
+      "evidence": "NOAA NWS: Heat Advisory issued August 16 at 1:21AM AST until August 16 at 5:00PM AST by NWS San Juan PR",
+      "evidence_grade": "B - official alert",
+      "confidence_score": 80,
+      "freshness": "new",
+      "decision": "Hazard response and exposure assessment",
+      "risk_flags": [],
+      "personas": [
+        {
+          "persona": "Resilience Planner",
+          "channel": "Telegram/SMS alert",
+          "action": "Active hazard alert \u2014 Heat Advisory \u2014 Moderate (San Juan and Vicinity). Pre-position resources and confirm evacuation/shelter readiness in the affected area now."
+        },
+        {
+          "persona": "Insurer / Reinsurer",
+          "channel": "Email + alert",
+          "action": "Exposure check \u2014 Heat Advisory \u2014 Moderate (San Juan and Vicinity). Flag policies in the affected zone and prepare parametric-trigger assessment."
+        }
+      ]
+    },
+    {
+      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.d",
       "country_cluster": "San Juan and Vicinity",
       "signal_kind": "hazard_alert",
       "title": "San Juan and Vicinity: Rip Current Statement in effect (Moderate)",
-      "evidence": "NOAA NWS: Rip Current Statement issued August 15 at 4:37PM AST until August 17 at 6:00AM AST by NWS San Juan PR",
+      "evidence": "NOAA NWS: Rip Current Statement issued August 15 at 8:56PM AST until August 17 at 6:00AM AST by NWS San Juan PR",
       "evidence_grade": "B - official alert",
       "confidence_score": 80,
       "freshness": "new",
@@ -29,35 +53,11 @@
       ]
     },
     {
-      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.b",
-      "country_cluster": "Coastal Waters OF Northwestern Puerto Rico out 10 NM",
-      "signal_kind": "hazard_alert",
-      "title": "Coastal Waters OF Northwestern Puerto Rico out 10 NM: Small Craft Advisory in effect (Minor)",
-      "evidence": "NOAA NWS: Small Craft Advisory issued August 15 at 4:42PM AST until August 16 at 12:00AM AST by NWS San Juan PR",
-      "evidence_grade": "C - advisory",
-      "confidence_score": 60,
-      "freshness": "new",
-      "decision": "Hazard response and exposure assessment",
-      "risk_flags": [],
-      "personas": [
-        {
-          "persona": "Resilience Planner",
-          "channel": "Telegram/SMS alert",
-          "action": "Active hazard alert \u2014 Small Craft Advisory \u2014 Minor (Coastal Waters OF Northwestern Puerto Rico out 10 NM). Pre-position resources and confirm evacuation/shelter readiness in the affected area now."
-        },
-        {
-          "persona": "Insurer / Reinsurer",
-          "channel": "Email + alert",
-          "action": "Exposure check \u2014 Small Craft Advisory \u2014 Minor (Coastal Waters OF Northwestern Puerto Rico out 10 NM). Flag policies in the affected zone and prepare parametric-trigger assessment."
-        }
-      ]
-    },
-    {
-      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.b",
+      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.3",
       "country_cluster": "Atlantic Waters of Puerto Rico AND USVI from 10 NM to 19.5N",
       "signal_kind": "hazard_alert",
       "title": "Atlantic Waters of Puerto Rico AND USVI from 10 NM to 19.5N: Small Craft Advisory in effect (Minor)",
-      "evidence": "NOAA NWS: Small Craft Advisory issued August 15 at 4:42PM AST until August 17 at 12:00AM AST by NWS San Juan PR",
+      "evidence": "NOAA NWS: Small Craft Advisory issued August 15 at 8:57PM AST until August 17 at 12:00AM AST by NWS San Juan PR",
       "evidence_grade": "C - advisory",
       "confidence_score": 60,
       "freshness": "new",
@@ -77,11 +77,11 @@
       ]
     },
     {
-      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.b",
+      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.3",
       "country_cluster": "Coastal Waters of Northern Puerto Rico out 10 NM",
       "signal_kind": "hazard_alert",
       "title": "Coastal Waters of Northern Puerto Rico out 10 NM: Small Craft Advisory in effect (Minor)",
-      "evidence": "NOAA NWS: Small Craft Advisory issued August 15 at 4:42PM AST until August 16 at 12:00PM AST by NWS San Juan PR",
+      "evidence": "NOAA NWS: Small Craft Advisory issued August 15 at 8:57PM AST until August 16 at 12:00PM AST by NWS San Juan PR",
       "evidence_grade": "C - advisory",
       "confidence_score": 60,
       "freshness": "new",
