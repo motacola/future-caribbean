@@ -1,6 +1,6 @@
 # Caribbean Market Pulse — Investor Brief
 
-Generated: 2026-08-16 08:44 UTC
+Generated: 2026-08-16 12:57 UTC
 
 Audience: investors, founders, diaspora capital networks.
 Decision supported: where to investigate deal flow, procurement activity, or market momentum.

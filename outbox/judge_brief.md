@@ -1,6 +1,6 @@
 # Caribbean Opportunity Dispatch — Judge Brief
 
-Generated: 2026-08-16 08:44 UTC
+Generated: 2026-08-16 12:57 UTC
 
 ## What This Proves
 
@@ -35,18 +35,18 @@ Caribbean Opportunity Dispatch is the product. Caribbean Signal OS is the archit
    Audience: investor/founder via Email brief + Telegram
    Decision: Active procurement pipeline: CDB active procurement notices: 7. Priority: review CDB/IDB opportunities as lead list for project-based entry.
 
-**3.** 🟡 **ccrif_payout — Dominica** — intensified
-   Narrative: Dominica: signal detected
+**3.** 🟡 **ccrif_payout — Turks and Caicos Islands** — intensified
+   Narrative: Turks and Caicos Islands: signal detected
    Score: 84/100 | Grade: C - single-source
    Audience: regional intelligence via Telegram digest
-   Decision: Validation — Dominica: ccrif_payout (signal detected). Validate locally.
+   Decision: Validation — Turks and Caicos Islands: ccrif_payout (signal detected). Validate locally.
    ⬆️ Strengthened (+8 pts)
 
-**4.** 🟡 **ccrif_payout — Excess Rainfall policy - Trinidad** — intensified
-   Narrative: Excess Rainfall policy - Trinidad: signal detected
+**4.** 🟡 **ccrif_payout — Haiti** — intensified
+   Narrative: Haiti: signal detected
    Score: 84/100 | Grade: C - single-source
    Audience: regional intelligence via Telegram digest
-   Decision: Validation — Excess Rainfall policy - Trinidad: ccrif_payout (signal detected). Validate locally.
+   Decision: Validation — Haiti: ccrif_payout (signal detected). Validate locally.
    ⬆️ Strengthened (+16 pts)
 
 **5.** 🟡 **eccb_credit_surge — Eastern Caribbean Currency Union** — sustained
