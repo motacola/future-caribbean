@@ -5,10 +5,10 @@
 - Action readiness: high
 - Evidence freshness: stale · cycles since refresh: 8
 - Recommendation: **HOLD** — Evidence fingerprint unchanged for 8 cycles — downgraded from advance to hold until new corroboration arrives.
-- Last validated: 2026-08-16T07:11:28.923398+00:00
+- Last validated: 2026-08-16T08:44:22.823111+00:00
 
 ## Sector hypotheses
-- Offshore oil & gas exploration [corroborated] — _Google News — Guyana: Suriname offshore oil and gas momentum builds as GranMorgu advances - worldoil.com_
+- Offshore oil & gas exploration [corroborated] — _Google News — Guyana: Suriname offshore oil and gas momentum builds as GranMorgu advances - World Oil_
 - Gold mining and extractives services [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
 - FDI-receiving sectors (composition not yet broken down) [macro_signal] — _World Bank: FDI net inflows moved +206.0% from 2024 to 2025_
 
