@@ -1,14 +1,14 @@
 # Opportunity Validation Pack — Belize
 
 - Signal: `supply-chain-belize` · Dispatch: `DSP-20260817-028`
-- Confidence: 100/100 (raw 108) · A - multi-source
-- Action readiness: high
+- Confidence: 68/100 (raw 102) · A - multi-source
+- Action readiness: medium (annual macro signal only)
 - Evidence freshness: refreshing · cycles since refresh: 0
-- Recommendation: **ADVANCE** — Calibrated confidence 100/100 with 3 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.
-- Last validated: 2026-08-17T04:54:35.848200+00:00
+- Recommendation: **HOLD** — Calibrated confidence 68/100 with 2 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.
+- Last validated: 2026-08-17T08:57:11.582763+00:00
 
 ## Sector hypotheses
-- Tourism and hospitality [corroborated] — _Google News — Belize: Belize Tourism Board opens nominations for 2026 National Tourism Awards - Belize News and Opinion on www.breakingbelizenews.com_
+- Tourism and hospitality [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
 - Agribusiness and agro-exports [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
 - Business process outsourcing [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
 - FDI-receiving sectors (composition not yet broken down) [macro_signal] — _World Bank: FDI net inflows moved -99.8% from 2024 to 2025_

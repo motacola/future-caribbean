@@ -2,14 +2,14 @@
   "instance": "climate",
   "instance_label": "Climate & Catastrophe Risk",
   "cycle_id": "20260817",
-  "generated_at": "2026-08-17T04:54:36.206587+00:00",
+  "generated_at": "2026-08-17T08:57:11.949671+00:00",
   "clusters": [
     {
-      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.2",
+      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.0",
       "country_cluster": "San Juan and Vicinity",
       "signal_kind": "hazard_alert",
-      "title": "San Juan and Vicinity: Rip Current Statement in effect (Moderate)",
-      "evidence": "NOAA NWS: Rip Current Statement issued August 16 at 8:03PM AST until August 17 at 6:00AM AST by NWS San Juan PR",
+      "title": "San Juan and Vicinity: Heat Advisory in effect (Moderate)",
+      "evidence": "NOAA NWS: Heat Advisory issued August 17 at 1:14AM AST until August 17 at 5:00PM AST by NWS San Juan PR",
       "evidence_grade": "B - official alert",
       "confidence_score": 80,
       "freshness": "new",
@@ -19,12 +19,12 @@
         {
           "persona": "Resilience Planner",
           "channel": "Telegram/SMS alert",
-          "action": "Active hazard alert \u2014 Rip Current Statement \u2014 Moderate (San Juan and Vicinity). Pre-position resources and confirm evacuation/shelter readiness in the affected area now."
+          "action": "Active hazard alert \u2014 Heat Advisory \u2014 Moderate (San Juan and Vicinity). Pre-position resources and confirm evacuation/shelter readiness in the affected area now."
         },
         {
           "persona": "Insurer / Reinsurer",
           "channel": "Email + alert",
-          "action": "Exposure check \u2014 Rip Current Statement \u2014 Moderate (San Juan and Vicinity). Flag policies in the affected zone and prepare parametric-trigger assessment."
+          "action": "Exposure check \u2014 Heat Advisory \u2014 Moderate (San Juan and Vicinity). Flag policies in the affected zone and prepare parametric-trigger assessment."
         }
       ]
     }

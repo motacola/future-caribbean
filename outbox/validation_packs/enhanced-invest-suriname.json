@@ -3,16 +3,15 @@
   "dispatch_id": "DSP-20260817-022",
   "country": "Suriname",
   "signal_title": "Suriname: +206.0% investment movement, one source — needs corroboration",
-  "confidence_score": 98,
+  "confidence_score": 68,
   "raw_confidence_score": 98,
-  "action_readiness": "high",
+  "action_readiness": "medium (annual macro signal only)",
   "evidence_grade": "C - single-source",
   "sector_hypotheses": [
     {
       "sector": "Offshore oil & gas exploration",
-      "basis": "Google News — Guyana: Suriname offshore oil and gas momentum builds as GranMorgu advances - World Oil",
-      "status": "corroborated",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPNDBrcjE3d1NZMXdjOXZOOGgzc3JkZUdMNVNaRmh0WXQyYU9aVG5QWjgwazdTT0dDMnlsYWlkMzRMb0E5dXV4OEMxdHpMY3pPalY5QmRtdHJmanNSeU9RVHVCbnVuNWRON0Vkd3B4V1hYdUdYbEFsSmIyS3BmR2tscHVVYndhVmtjNW5QVVZUQ0szemtwb3JYNzFNaHZ3QmU1Q3l3dTdLX1BNVkJ3?oc=5"
+      "basis": "Analyst prior from widely reported sector drivers — requires local confirmation",
+      "status": "unconfirmed"
     },
     {
       "sector": "Gold mining and extractives services",
@@ -107,7 +106,6 @@
   "source_links": [
     "https://data.iadb.org/en/search?q=Suriname%20COVID-19%20Survey%3A%202020",
     "https://data.iadb.org/en/search?q=Suriname%20Survey%20of%20Living%20Conditions%3A%2020",
-    "https://news.google.com/rss/articles/CBMirAFBVV95cUxPNDBrcjE3d1NZMXdjOXZOOGgzc3JkZUdMNVNaRmh0WXQyYU9aVG5QWjgwazdTT0dDMnlsYWlkMzRMb0E5dXV4OEMxdHpMY3pPalY5QmRtdHJmanNSeU9RVHVCbnVuNWRON0Vkd3B4V1hYdUdYbEFsSmIyS3BmR2tscHVVYndhVmtjNW5QVVZUQ0szemtwb3JYNzFNaHZ3QmU1Q3l3dTdLX1BNVkJ3?oc=5",
     "https://statistics.caricom.org/?country_data=suriname-balance-of-payments-2017-2024",
     "https://statistics.caricom.org/?country_data=suriname-monthly-consumer-price-index-cpi-by-expenditure-category",
     "https://www.caribank.org/publications-and-resources/resource-library/reports/2025-annual-procurement-report",
@@ -130,10 +128,10 @@
     }
   ],
   "advance_or_reject_recommendation": "hold",
-  "recommendation_reason": "Evidence fingerprint unchanged for 8 cycles — downgraded from advance to hold until new corroboration arrives.",
-  "last_validated_at": "2026-08-17T04:54:35.848200+00:00",
+  "recommendation_reason": "Calibrated confidence 68/100 with 1 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.",
+  "last_validated_at": "2026-08-17T08:57:11.582763+00:00",
   "coordination_path": null,
-  "evidence_fingerprint": "118b7905bb78c1ee",
-  "cycles_since_refresh": 8,
-  "evidence_freshness": "stale"
+  "evidence_fingerprint": "e3b0c44298fc1c14",
+  "cycles_since_refresh": 0,
+  "evidence_freshness": "refreshing"
 }

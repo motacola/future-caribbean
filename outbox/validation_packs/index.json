@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-17T04:54:35.848200+00:00",
+  "generated_at": "2026-08-17T08:57:11.582763+00:00",
   "packs": [
     {
       "signal_id": "enhanced-invest-guyana",
@@ -12,15 +12,15 @@
       "signal_id": "supply-chain-belize",
       "file": "supply-chain-belize.json",
       "country": "Belize",
-      "recommendation": "advance",
-      "confidence_score": 100
+      "recommendation": "hold",
+      "confidence_score": 68
     },
     {
       "signal_id": "enhanced-invest-suriname",
       "file": "enhanced-invest-suriname.json",
       "country": "Suriname",
       "recommendation": "hold",
-      "confidence_score": 98
+      "confidence_score": 68
     },
     {
       "signal_id": "dev-pipeline-regional",

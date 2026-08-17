@@ -1,28 +1,28 @@
 # Signal Fabric — Backtest Report
 
-**Generated:** 2026-08-17T04:54:36.109913+00:00
+**Generated:** 2026-08-17T08:57:11.863920+00:00
 **Cycles analyzed:** 1
 **Total dispatches:** 50
 **Actionable responses:** 2
 **Overall response rate:** 4.0%
-**Avg confidence:** 83.2/100
+**Avg confidence:** 80.1/100
 
 ## Summary
 
 - **Total validation packs:** 20
-- **Avg confidence:** 83.2/100
+- **Avg confidence:** 80.1/100
 - **Response rate:** 4.0%
 
 ## Recommendation Distribution
 
-- **Advance:** 2 (10.0%)
-- **Hold:** 18 (90.0%)
+- **Advance:** 1 (5.0%)
+- **Hold:** 19 (95.0%)
 - **Reject:** 0 (0.0%)
 
 ## Confidence Calibration
 
-- **80-100:** 8 packs (40.0%)
-- **60-79:** 12 packs (60.0%)
+- **80-100:** 6 packs (30.0%)
+- **60-79:** 14 packs (70.0%)
 - **40-59:** 0 packs (0.0%)
 - **0-39:** 0 packs (0.0%)
 
@@ -40,7 +40,7 @@
 - **food:** Advance 0, Hold 1, Reject 0 (n=1)
 - **invest:** Advance 0, Hold 1, Reject 0 (n=1)
 - **regional:** Advance 0, Hold 10, Reject 0 (n=10)
-- **supply:** Advance 1, Hold 0, Reject 0 (n=1)
+- **supply:** Advance 0, Hold 1, Reject 0 (n=1)
 
 ## Cycle Accuracy
 
@@ -56,15 +56,15 @@
 
 ## Recommendation Calibration
 
-- **Advance rate:** 10.0%
-- **Hold rate:** 90.0%
+- **Advance rate:** 5.0%
+- **Hold rate:** 95.0%
 - **Reject rate:** 0.0%
 
 > **Calibration note:** Advance = high confidence + 2+ evidence categories. Hold = moderate. Reject = low.
 
 ## Calibration Assessment
 
-✅ **Advance rate in healthy range** (10-50%).
+⚠️ **Low advance rate** — may be too conservative; consider lowering thresholds.
 ⚠️ **Low feedback response rate** — improve distribution or simplify feedback.
 
 ---

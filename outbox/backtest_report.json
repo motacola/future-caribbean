@@ -2,8 +2,8 @@
   "confidence_calibration": {
     "0-39": 0,
     "40-59": 0,
-    "60-79": 12,
-    "80-100": 8
+    "60-79": 14,
+    "80-100": 6
   },
   "cycle_accuracy": [
     {
@@ -26,11 +26,11 @@
       "unknown": 50
     },
     "by_signal_kind": {
-      "ccrif_payout": 32,
+      "ccrif_payout": 31,
       "development_pipeline": 3,
       "enhanced_investment": 9,
-      "food_security": 2,
-      "investment_signal": 4
+      "investment_signal": 4,
+      "supply_chain_signal": 3
     },
     "by_status": {
       "forwarded": 1,
@@ -39,16 +39,16 @@
     },
     "total_feedback": 50
   },
-  "generated_at": "2026-08-17T04:54:36.109913+00:00",
+  "generated_at": "2026-08-17T08:57:11.863920+00:00",
   "recommendation_calibration": {
-    "advance_rate": 0.1,
-    "hold_rate": 0.9,
+    "advance_rate": 0.05,
+    "hold_rate": 0.95,
     "note": "Advance = high confidence + 2+ evidence categories. Hold = moderate. Reject = low.",
     "reject_rate": 0.0
   },
   "recommendation_distribution": {
-    "advance": 2,
-    "hold": 18,
+    "advance": 1,
+    "hold": 19,
     "reject": 0
   },
   "signal_type_performance": {
@@ -78,13 +78,13 @@
       "reject": 0
     },
     "supply": {
-      "advance": 1,
-      "hold": 0,
+      "advance": 0,
+      "hold": 1,
       "reject": 0
     }
   },
   "summary": {
-    "avg_confidence": 83.2,
+    "avg_confidence": 80.1,
     "overall_response_rate": 0.04,
     "total_actionable_responses": 2,
     "total_cycles_analyzed": 1,

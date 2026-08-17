@@ -3,16 +3,15 @@
   "dispatch_id": "DSP-20260817-028",
   "country": "Belize",
   "signal_title": "Belize: signal detected",
-  "confidence_score": 100,
-  "raw_confidence_score": 108,
-  "action_readiness": "high",
+  "confidence_score": 68,
+  "raw_confidence_score": 102,
+  "action_readiness": "medium (annual macro signal only)",
   "evidence_grade": "A - multi-source",
   "sector_hypotheses": [
     {
       "sector": "Tourism and hospitality",
-      "basis": "Google News — Belize: Belize Tourism Board opens nominations for 2026 National Tourism Awards - Belize News and Opinion on www.breakingbelizenews.com",
-      "status": "corroborated",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPbVpxaVJCVk5tOWVjT0NPRmQ5TFVXcGNIZFFuTjctalo0aHBvZFJCaXJURnZPYkN3THQ0ZmJZSkpJeC1RSDNKc0ZTaVp1TVZqLUtlX0hFU21fUmV0Zmp2U1FlRHIzc1VTVGhsWUFzNGQzS252YWZGNzk0SGJIcXdhY29zMGFfNWJ6WHkxVUFYb1pkV3YtQWxaYlhxOE5HZHEtZkJWR3YzNGJwc0VjVzRTeUJob3gwNGF4d0E?oc=5"
+      "basis": "Analyst prior from widely reported sector drivers — requires local confirmation",
+      "status": "unconfirmed"
     },
     {
       "sector": "Agribusiness and agro-exports",
@@ -117,7 +116,6 @@
     }
   ],
   "source_links": [
-    "https://news.google.com/rss/articles/CBMiugFBVV95cUxPbVpxaVJCVk5tOWVjT0NPRmQ5TFVXcGNIZFFuTjctalo0aHBvZFJCaXJURnZPYkN3THQ0ZmJZSkpJeC1RSDNKc0ZTaVp1TVZqLUtlX0hFU21fUmV0Zmp2U1FlRHIzc1VTVGhsWUFzNGQzS252YWZGNzk0SGJIcXdhY29zMGFfNWJ6WHkxVUFYb1pkV3YtQWxaYlhxOE5HZHEtZkJWR3YzNGJwc0VjVzRTeUJob3gwNGF4d0E?oc=5",
     "https://statistics.caricom.org/?country_data=belize-balance-of-payments-2000-2024",
     "https://statistics.caricom.org/?country_data=belize-balance-ofpayments-2000-2025-bz",
     "https://statistics.caricom.org/?country_data=belize-monthly-consumer-price-index-cpi-by-expenditure-category",
@@ -139,11 +137,11 @@
       "why": "National trade and investment promotion agency"
     }
   ],
-  "advance_or_reject_recommendation": "advance",
-  "recommendation_reason": "Calibrated confidence 100/100 with 3 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.",
-  "last_validated_at": "2026-08-17T04:54:35.848200+00:00",
+  "advance_or_reject_recommendation": "hold",
+  "recommendation_reason": "Calibrated confidence 68/100 with 2 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.",
+  "last_validated_at": "2026-08-17T08:57:11.582763+00:00",
   "coordination_path": null,
-  "evidence_fingerprint": "dfab1958b607a48e",
+  "evidence_fingerprint": "0e9debdfd7830a51",
   "cycles_since_refresh": 0,
   "evidence_freshness": "refreshing"
 }
