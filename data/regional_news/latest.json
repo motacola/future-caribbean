@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-08-17T16:41:03.414182+00:00",
+ "fetched_at": "2026-08-17T20:39:50.271805+00:00",
  "source": "regional_news",
  "total": 109,
  "items": [
@@ -15,14 +15,14 @@
     "Belize",
     "Barbados"
    ],
-   "fetched_at": "2026-08-17T16:41:03.412827+00:00",
+   "fetched_at": "2026-08-17T20:39:50.270482+00:00",
    "topics": [
     "finance",
     "trade",
     "procurement"
    ],
    "source_tier": 1,
-   "age_hours": 143,
+   "age_hours": 147,
    "relevance_score": 87,
    "finance_relevant": true
   },
@@ -37,7 +37,7 @@
    "countries": [
     "Anguilla"
    ],
-   "fetched_at": "2026-08-17T16:41:03.413263+00:00",
+   "fetched_at": "2026-08-17T20:39:50.270865+00:00",
    "topics": [
     "finance",
     "energy",
@@ -45,7 +45,7 @@
     "procurement"
    ],
    "source_tier": 1,
-   "age_hours": 601,
+   "age_hours": 605,
    "relevance_score": 79,
    "finance_relevant": true
   },
@@ -60,13 +60,13 @@
    "countries": [
     "Guyana"
    ],
-   "fetched_at": "2026-08-17T16:41:02.177220+00:00",
+   "fetched_at": "2026-08-17T20:39:49.114941+00:00",
    "topics": [
     "energy",
     "trade"
    ],
    "source_tier": 3,
-   "age_hours": 2,
+   "age_hours": 6,
    "relevance_score": 79,
    "finance_relevant": true
   },
@@ -99,32 +99,12 @@
     "St Vincent & the Grenadines",
     "Turks & Caicos"
    ],
-   "fetched_at": "2026-08-17T16:41:03.413129+00:00",
+   "fetched_at": "2026-08-17T20:39:50.270723+00:00",
    "topics": [
     "finance"
    ],
    "source_tier": 1,
-   "age_hours": 285,
-   "relevance_score": 73,
-   "finance_relevant": true
-  },
-  {
-   "id": "https-news-google-com-rss-articles-cbmihwfbvv95cuxnnjfonnzjakriagp0z1ljrjnmbgxfafhlzlzyvuh4swvmwdftwhvwzulrtm5mrljedtqww",
-   "title": "Public Service Must Facilitate Investment and Development – PM - Jamaica Information Service",
-   "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNNjFoNnZJakRIaGp0Z1ljRjNmbGxFaFhlZlZYVUh4SWVmWDFTWHVWZUlrTm5mRlJEdTQwWU16c3N5Wl9VT3hpbVFXemxuT2dfYWZrQnVxLVpSeVo0TGN5bl9DQ2trTDNOUE5acDcxZkYyTmFZRnk2bWx5VDBpckVWenI4VnZBdEE?oc=5",
-   "published": "Sun, 16 Aug 2026 17:55:00 GMT",
-   "summary": "Public Service Must Facilitate Investment and Development – PM Jamaica Information Service",
-   "source": "Google News — Jamaica",
-   "feed_slug": "google-news-jamaica",
-   "countries": [
-    "Jamaica"
-   ],
-   "fetched_at": "2026-08-17T16:41:02.742697+00:00",
-   "topics": [
-    "finance"
-   ],
-   "source_tier": 3,
-   "age_hours": 22,
+   "age_hours": 289,
    "relevance_score": 73,
    "finance_relevant": true
   },
@@ -139,14 +119,34 @@
    "countries": [
     "Grenada"
    ],
-   "fetched_at": "2026-08-17T16:41:03.413596+00:00",
+   "fetched_at": "2026-08-17T20:39:50.271248+00:00",
    "topics": [
     "finance",
     "trade",
     "procurement"
    ],
    "source_tier": 1,
-   "age_hours": 671,
+   "age_hours": 675,
+   "relevance_score": 73,
+   "finance_relevant": true
+  },
+  {
+   "id": "https-news-google-com-rss-articles-cbmijgfbvv95cuxobew0oxngtvhzs0djwejbqmzdvu1wzvnhywtnntyxyzdzqum2ztv5x3bfbei0c2zeb0o1q",
+   "title": "Jamaica Launches Product Exchange 2026 - Caribbean Today",
+   "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxObEw0OXNGTVhzS0djWEJBQmZDVU1wZVNHYWtnNTYxYzdZQUM2ZTV5X3BfbEI0c2ZEb0o1QWtXQVE1TjJIbmxmcUd6dGFid1BIbGJJdGlQbl9EWU5lejhmaGtIRUlPRmNZVkVVbi1ad1FEd2xaMnUzbk1HWks2UVNFMHAwMm94TF9KNjZ5czV3?oc=5",
+   "published": "Mon, 17 Aug 2026 17:26:34 GMT",
+   "summary": "Jamaica Launches Product Exchange 2026 Caribbean Today",
+   "source": "Google News — Jamaica",
+   "feed_slug": "google-news-jamaica",
+   "countries": [
+    "Jamaica"
+   ],
+   "fetched_at": "2026-08-17T20:39:49.636892+00:00",
+   "topics": [
+    "finance"
+   ],
+   "source_tier": 3,
+   "age_hours": 3,
    "relevance_score": 73,
    "finance_relevant": true
   },
@@ -161,12 +161,12 @@
    "countries": [
     "Jamaica"
    ],
-   "fetched_at": "2026-08-17T16:41:02.742451+00:00",
+   "fetched_at": "2026-08-17T20:39:49.637049+00:00",
    "topics": [
     "tourism"
    ],
    "source_tier": 3,
-   "age_hours": 7,
+   "age_hours": 11,
    "relevance_score": 73,
    "finance_relevant": true
   },
@@ -181,12 +181,12 @@
    "countries": [
     "Guyana"
    ],
-   "fetched_at": "2026-08-17T16:41:02.177105+00:00",
+   "fetched_at": "2026-08-17T20:39:49.114619+00:00",
    "topics": [
     "trade"
    ],
    "source_tier": 3,
-   "age_hours": 9,
+   "age_hours": 13,
    "relevance_score": 73,
    "finance_relevant": true
   },
@@ -201,13 +201,13 @@
    "countries": [
     "Guyana"
    ],
-   "fetched_at": "2026-08-17T16:41:02.176677+00:00",
+   "fetched_at": "2026-08-17T20:39:49.114196+00:00",
    "topics": [
     "energy",
     "procurement"
    ],
    "source_tier": 3,
-   "age_hours": 26,
+   "age_hours": 30,
    "relevance_score": 69,
    "finance_relevant": true
   },
@@ -222,13 +222,13 @@
    "countries": [
     "Belize"
    ],
-   "fetched_at": "2026-08-17T16:41:03.412438+00:00",
+   "fetched_at": "2026-08-17T20:39:50.270104+00:00",
    "topics": [
     "finance",
     "procurement"
    ],
    "source_tier": 1,
-   "age_hours": 29187,
+   "age_hours": 29191,
    "relevance_score": 67,
    "finance_relevant": true
   },
@@ -241,14 +241,14 @@
    "source": "Caribbean Development Bank",
    "feed_slug": "cdb-rss",
    "countries": [],
-   "fetched_at": "2026-08-17T16:41:03.413366+00:00",
+   "fetched_at": "2026-08-17T20:39:50.270997+00:00",
    "topics": [
     "finance",
     "trade",
     "procurement"
    ],
    "source_tier": 1,
-   "age_hours": 646,
+   "age_hours": 650,
    "relevance_score": 67,
    "finance_relevant": true
   },
@@ -263,33 +263,35 @@
    "countries": [
     "Jamaica"
    ],
-   "fetched_at": "2026-08-17T16:41:03.412555+00:00",
+   "fetched_at": "2026-08-17T20:39:50.270208+00:00",
    "topics": [
     "finance",
     "procurement"
    ],
    "source_tier": 1,
-   "age_hours": 56041,
+   "age_hours": 56045,
    "relevance_score": 67,
    "finance_relevant": true
   },
   {
-   "id": "https-news-google-com-rss-articles-cbmipwfbvv95cuxqavbsmvfiuwlac0qyn0x1zufgevlqys1haknadkdyltlfcy1nytnbeffvylhovgnuewjpr",
-   "title": "AI infrastructure has arrived in the Caribbean - Trinidad Guardian",
-   "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQaVBSMVFiUWlac0QyN0x1ZUFGeVlQYS1hakNadkdYLTlFcy1NYTNBeFFvYlhOVGNueWJPRDE2dmFvZTFOdjd0UlpzZHpEXzZqeC1sVk5mSy1nZmRpRHFRUmRvUFFmNUpMM25Jb09vYjBiWDR0MTM2bnBmR0hlNkI3TWYwVTB4a0ltREFIM3ZHVkhxVnZuNEMwdl9nVlRjWnBSbTY5MWVIWQ?oc=5",
-   "published": "Sun, 16 Aug 2026 18:55:28 GMT",
-   "summary": "AI infrastructure has arrived in the Caribbean Trinidad Guardian",
-   "source": "Google News — Caribbean economy",
-   "feed_slug": "google-news-caribbean",
-   "countries": [],
-   "fetched_at": "2026-08-17T16:41:01.598590+00:00",
+   "id": "https-news-google-com-rss-articles-cbmiuafbvv95cuxnctawwurougrgutk1awtcdldyafvlvhiyznnyadnom1hsdtruseotwg9zzkjva3v4dkhry",
+   "title": "Cardi B to headline BZR WKND Jamaica in first Caribbean stadium concert - Caribbean National Weekly",
+   "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNcTAwWURoUGRGUTk1aWtCdldyaFVLVHIyZnNyaDNoM1hsdTRUSEotWG9ZZkJVa3V4dkhRYmJnMVNYNy1za2psejRmZTRiZkJMWm5OOWpiU1doeDN5WjhzbDl2OGlkdWZVLWUwV1JWQzVsbU9iZUVnak1Ld3hTbzRWTU9zanpqckRGd1IwSm9jR1IxbkFwZ2ZONEtRNVZoVmNQTDAwaGNJU3JrY2pKbHZ2V2ZDdUFtak5I?oc=5",
+   "published": "Mon, 17 Aug 2026 18:15:31 GMT",
+   "summary": "Cardi B to headline BZR WKND Jamaica in first Caribbean stadium concert Caribbean National Weekly",
+   "source": "Google News — Jamaica",
+   "feed_slug": "google-news-jamaica",
+   "countries": [
+    "Jamaica"
+   ],
+   "fetched_at": "2026-08-17T20:39:49.636991+00:00",
    "topics": [
-    "procurement"
+    "regional"
    ],
    "source_tier": 3,
-   "age_hours": 21,
+   "age_hours": 2,
    "relevance_score": 67,
-   "finance_relevant": true
+   "finance_relevant": false
   },
   {
    "id": "https-news-google-com-rss-articles-cbmioafbvv95cuxpwxh1v1y1shnqvf9xnnaxbhjdwhfcz1ruwu5hcur2wezranmyrnjesnrpehaxze5twti3w",
@@ -302,32 +304,12 @@
    "countries": [
     "Jamaica"
    ],
-   "fetched_at": "2026-08-17T16:41:02.742600+00:00",
+   "fetched_at": "2026-08-17T20:39:49.637193+00:00",
    "topics": [
     "regional"
    ],
    "source_tier": 3,
-   "age_hours": 3,
-   "relevance_score": 67,
-   "finance_relevant": false
-  },
-  {
-   "id": "https-news-google-com-rss-articles-cbmiuafbvv95cuxnctawwurougrgutk1awtcdldyafvlvhiyznnyadnom1hsdtruseotwg9zzkjva3v4dkhry",
-   "title": "Cardi B to headline BZR WKND Jamaica in first Caribbean stadium concert - Caribbean National Weekly",
-   "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNcTAwWURoUGRGUTk1aWtCdldyaFVLVHIyZnNyaDNoM1hsdTRUSEotWG9ZZkJVa3V4dkhRYmJnMVNYNy1za2psejRmZTRiZkJMWm5OOWpiU1doeDN5WjhzbDl2OGlkdWZVLWUwV1JWQzVsbU9iZUVnak1Ld3hTbzRWTU9zanpqckRGd1IwSm9jR1IxbkFwZ2ZONEtRNVZoVmNQTDAwaGNJU3JrY2pKbHZ2V2ZDdUFtak5I?oc=5",
-   "published": "Mon, 17 Aug 2026 13:19:06 GMT",
-   "summary": "Cardi B to headline BZR WKND Jamaica in first Caribbean stadium concert Caribbean National Weekly",
-   "source": "Google News — Jamaica",
-   "feed_slug": "google-news-jamaica",
-   "countries": [
-    "Jamaica"
-   ],
-   "fetched_at": "2026-08-17T16:41:02.742364+00:00",
-   "topics": [
-    "regional"
-   ],
-   "source_tier": 3,
-   "age_hours": 3,
+   "age_hours": 7,
    "relevance_score": 67,
    "finance_relevant": false
   },
@@ -340,34 +322,54 @@
    "source": "Caribbean Development Bank",
    "feed_slug": "cdb-rss",
    "countries": [],
-   "fetched_at": "2026-08-17T16:41:03.412959+00:00",
+   "fetched_at": "2026-08-17T20:39:50.270578+00:00",
    "topics": [
     "finance",
     "energy",
     "climate"
    ],
    "source_tier": 1,
-   "age_hours": 238,
+   "age_hours": 242,
    "relevance_score": 67,
    "finance_relevant": true
   },
   {
+   "id": "https-news-google-com-rss-articles-cbmihwfbvv95cuxnnjfonnzjakriagp0z1ljrjnmbgxfafhlzlzyvuh4swvmwdftwhvwzulrtm5mrljedtqww",
+   "title": "Public Service Must Facilitate Investment and Development – PM - Jamaica Information Service",
+   "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNNjFoNnZJakRIaGp0Z1ljRjNmbGxFaFhlZlZYVUh4SWVmWDFTWHVWZUlrTm5mRlJEdTQwWU16c3N5Wl9VT3hpbVFXemxuT2dfYWZrQnVxLVpSeVo0TGN5bl9DQ2trTDNOUE5acDcxZkYyTmFZRnk2bWx5VDBpckVWenI4VnZBdEE?oc=5",
+   "published": "Sun, 16 Aug 2026 17:55:00 GMT",
+   "summary": "Public Service Must Facilitate Investment and Development – PM Jamaica Information Service",
+   "source": "Google News — Jamaica",
+   "feed_slug": "google-news-jamaica",
+   "countries": [
+    "Jamaica"
+   ],
+   "fetched_at": "2026-08-17T20:39:49.637620+00:00",
+   "topics": [
+    "finance"
+   ],
+   "source_tier": 3,
+   "age_hours": 26,
+   "relevance_score": 63,
+   "finance_relevant": true
+  },
+  {
    "id": "https-news-google-com-rss-articles-cbmiugfbvv95cuxpbvpxavjcvk5towvjt0nprmq5tfvxcgnizffutjctalo0ahbvzfjcaxjurnzpykn3thq0z",
-   "title": "Belize Tourism Board opens nominations for 2026 National Tourism Awards - breakingbelizenews.com",
+   "title": "Belize Tourism Board opens nominations for 2026 National Tourism Awards - Belize News and Opinion on www.breakingbelizenews.com",
    "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPbVpxaVJCVk5tOWVjT0NPRmQ5TFVXcGNIZFFuTjctalo0aHBvZFJCaXJURnZPYkN3THQ0ZmJZSkpJeC1RSDNKc0ZTaVp1TVZqLUtlX0hFU21fUmV0Zmp2U1FlRHIzc1VTVGhsWUFzNGQzS252YWZGNzk0SGJIcXdhY29zMGFfNWJ6WHkxVUFYb1pkV3YtQWxaYlhxOE5HZHEtZkJWR3YzNGJwc0VjVzRTeUJob3gwNGF4d0E?oc=5",
    "published": "Sat, 15 Aug 2026 15:30:09 GMT",
-   "summary": "Belize Tourism Board opens nominations for 2026 National Tourism Awards breakingbelizenews.com",
+   "summary": "Belize Tourism Board opens nominations for 2026 National Tourism Awards Belize News and Opinion on www.breakingbelizenews.com",
    "source": "Google News — Belize",
    "feed_slug": "google-news-belize",
    "countries": [
     "Belize"
    ],
-   "fetched_at": "2026-08-17T16:41:03.292422+00:00",
+   "fetched_at": "2026-08-17T20:39:50.212681+00:00",
    "topics": [
     "tourism"
    ],
    "source_tier": 3,
-   "age_hours": 49,
+   "age_hours": 53,
    "relevance_score": 63,
    "finance_relevant": true
   },
@@ -382,49 +384,29 @@
    "countries": [
     "Jamaica"
    ],
-   "fetched_at": "2026-08-17T16:41:02.742560+00:00",
+   "fetched_at": "2026-08-17T20:39:49.637154+00:00",
    "topics": [
     "tourism"
    ],
    "source_tier": 3,
-   "age_hours": 53,
+   "age_hours": 57,
    "relevance_score": 63,
    "finance_relevant": true
   },
   {
    "id": "https-news-google-com-rss-articles-cbmipgfbvv95cuxnuersn0nhbzf1cnhzx25fzjlnnhnpahzgmvi4u0huwgu0nevfc2pqdg1uqlhoreraduw4n",
-   "title": "Belize expands Tourism reach with 2026 Colombia Roadshow - breakingbelizenews.com",
+   "title": "Belize expands Tourism reach with 2026 Colombia Roadshow - Belize News and Opinion on www.breakingbelizenews.com",
    "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNUERSN0NhbzF1cnhzX25FZjlNNHNPaHZGMVI4U0huWGU0NEVFc2pQdG1uQlhoRERadUw4NWNzNGFGVHlzQ2hkWDhvQVhOTFJLWEgwdzRHbkh6aTgzRUhaZnRadHFqTU9MNU04VllMMmZkMkNQd1ZpV1V6VVhmcmxoRGhxTWtEYlNoTTRObHBDMEdtUkdqMVlFay1ubktweEFJUEVwUGxR?oc=5",
    "published": "Fri, 14 Aug 2026 20:47:23 GMT",
-   "summary": "Belize expands Tourism reach with 2026 Colombia Roadshow breakingbelizenews.com",
+   "summary": "Belize expands Tourism reach with 2026 Colombia Roadshow Belize News and Opinion on www.breakingbelizenews.com",
    "source": "Google News — Belize",
    "feed_slug": "google-news-belize",
    "countries": [
     "Belize"
    ],
-   "fetched_at": "2026-08-17T16:41:03.292835+00:00",
+   "fetched_at": "2026-08-17T20:39:50.213205+00:00",
    "topics": [
     "tourism"
-   ],
-   "source_tier": 3,
-   "age_hours": 67,
-   "relevance_score": 63,
-   "finance_relevant": true
-  },
-  {
-   "id": "https-news-google-com-rss-articles-cbmiqwfbvv95cuxobnfcz2hidmlobwrmaktvm0gxbky2ow96zlk2ze1ptdjzzetvqndtd0fhyzjivzjnai1ue",
-   "title": "Guyana oil output declined in May and June, mostly at Liza field - Brazil Energy Insight",
-   "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxObnFCZ2hIdmlobWRMaktvM0gxbkY2OW96Zlk2ZE1pTDJzZEtvQndTd0FhYzJIVzJNai1UeUVKWXJxZ25xRmFxTmpOa0pid2ZHNEFhUkQ4ZE1uaTZYemJjdGFEMUtEd3F6OEJRcUpsT19iM05JSHBkM0ZYTXNiQU9XWHN5YW9SX3lTSFplc21CaXc5Q2xnNWFldXh4OExJMXVlT1M1cnFpd2RhMU0?oc=5",
-   "published": "Fri, 14 Aug 2026 17:06:24 GMT",
-   "summary": "Guyana oil output declined in May and June, mostly at Liza field Brazil Energy Insight",
-   "source": "Google News — Guyana",
-   "feed_slug": "google-news-guyana",
-   "countries": [
-    "Guyana"
-   ],
-   "fetched_at": "2026-08-17T16:41:02.176721+00:00",
-   "topics": [
-    "energy"
    ],
    "source_tier": 3,
    "age_hours": 71,
@@ -442,13 +424,34 @@
    "countries": [
     "Guyana"
    ],
-   "fetched_at": "2026-08-17T16:41:02.176888+00:00",
+   "fetched_at": "2026-08-17T20:39:49.114409+00:00",
    "topics": [
     "energy",
     "procurement"
    ],
    "source_tier": 3,
-   "age_hours": 118,
+   "age_hours": 122,
+   "relevance_score": 59,
+   "finance_relevant": true
+  },
+  {
+   "id": "https-news-google-com-rss-articles-cbmiwgfbvv95cuxnzuw0dvdwmv9vrlzicdlsq25toetsoxe4rfbuenndymx2aki3depwcxn3yvzvzndtdgrpc",
+   "title": "Tourism stakeholders eye big business through JAPEX amid hurricane recovery - Jamaica Gleaner",
+   "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNZUw0dVdWMV9vRlZicDlsQ25tOEtsOXE4RFBUenNDYmx2akI3dEpwcXN3YVZvZndTdGRpc1JnbW5CT0MxV3l5WjFmVUVfRGJoQkFzbG5CS1NLUzE1T3Qzck94NUJ5RkVhdFpXLV9OTkJneHU5emtWcFRkd0RwckxMb1A2NnUyU21jSkdCNnM2TW0wWFVFcm0zeU56X3FNRS1tbEQyOHZWNUo2VGEzejNKbExFTzJPV3d4VlRJNzFFSnZzQQ?oc=5",
+   "published": "Tue, 11 Aug 2026 05:10:20 GMT",
+   "summary": "Tourism stakeholders eye big business through JAPEX amid hurricane recovery Jamaica Gleaner",
+   "source": "Google News — Jamaica",
+   "feed_slug": "google-news-jamaica",
+   "countries": [
+    "Jamaica"
+   ],
+   "fetched_at": "2026-08-17T20:39:49.637376+00:00",
+   "topics": [
+    "tourism",
+    "climate"
+   ],
+   "source_tier": 3,
+   "age_hours": 159,
    "relevance_score": 59,
    "finance_relevant": true
   },
@@ -463,13 +466,13 @@
    "countries": [
     "Jamaica"
    ],
-   "fetched_at": "2026-08-17T16:41:02.742512+00:00",
+   "fetched_at": "2026-08-17T20:39:49.637106+00:00",
    "topics": [
     "tourism",
     "trade"
    ],
    "source_tier": 3,
-   "age_hours": 95,
+   "age_hours": 99,
    "relevance_score": 59,
    "finance_relevant": true
   },
@@ -485,12 +488,12 @@
     "Guyana",
     "Suriname"
    ],
-   "fetched_at": "2026-08-17T16:41:02.177262+00:00",
+   "fetched_at": "2026-08-17T20:39:49.114657+00:00",
    "topics": [
     "energy"
    ],
    "source_tier": 3,
-   "age_hours": 96,
+   "age_hours": 100,
    "relevance_score": 59,
    "finance_relevant": true
   },
@@ -505,13 +508,13 @@
    "countries": [
     "Guyana"
    ],
-   "fetched_at": "2026-08-17T16:41:02.176543+00:00",
+   "fetched_at": "2026-08-17T20:39:49.114059+00:00",
    "topics": [
     "energy",
     "trade"
    ],
    "source_tier": 3,
-   "age_hours": 96,
+   "age_hours": 100,
    "relevance_score": 59,
    "finance_relevant": true
   },
@@ -526,13 +529,13 @@
    "countries": [
     "Guyana"
    ],
-   "fetched_at": "2026-08-17T16:41:02.176760+00:00",
+   "fetched_at": "2026-08-17T20:39:49.114279+00:00",
    "topics": [
     "energy",
     "trade"
    ],
    "source_tier": 3,
-   "age_hours": 73,
+   "age_hours": 77,
    "relevance_score": 59,
    "finance_relevant": true
   },
@@ -547,14 +550,32 @@
    "countries": [
     "Belize"
    ],
-   "fetched_at": "2026-08-17T16:41:03.292325+00:00",
+   "fetched_at": "2026-08-17T20:39:50.212337+00:00",
    "topics": [
     "finance",
     "energy",
     "trade"
    ],
    "source_tier": 3,
-   "age_hours": 2145,
+   "age_hours": 2149,
+   "relevance_score": 57,
+   "finance_relevant": true
+  },
+  {
+   "id": "https-news-google-com-rss-articles-cbmipwfbvv95cuxqavbsmvfiuwlac0qyn0x1zufgevlqys1haknadkdyltlfcy1nytnbeffvylhovgnuewjpr",
+   "title": "AI infrastructure has arrived in the Caribbean - Trinidad Guardian",
+   "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQaVBSMVFiUWlac0QyN0x1ZUFGeVlQYS1hakNadkdYLTlFcy1NYTNBeFFvYlhOVGNueWJPRDE2dmFvZTFOdjd0UlpzZHpEXzZqeC1sVk5mSy1nZmRpRHFRUmRvUFFmNUpMM25Jb09vYjBiWDR0MTM2bnBmR0hlNkI3TWYwVTB4a0ltREFIM3ZHVkhxVnZuNEMwdl9nVlRjWnBSbTY5MWVIWQ?oc=5",
+   "published": "Sun, 16 Aug 2026 18:55:28 GMT",
+   "summary": "AI infrastructure has arrived in the Caribbean Trinidad Guardian",
+   "source": "Google News — Caribbean economy",
+   "feed_slug": "google-news-caribbean",
+   "countries": [],
+   "fetched_at": "2026-08-17T20:39:48.616401+00:00",
+   "topics": [
+    "procurement"
+   ],
+   "source_tier": 3,
+   "age_hours": 25,
    "relevance_score": 57,
    "finance_relevant": true
   },
@@ -569,12 +590,12 @@
    "countries": [
     "Guyana"
    ],
-   "fetched_at": "2026-08-17T16:41:02.176840+00:00",
+   "fetched_at": "2026-08-17T20:39:49.114360+00:00",
    "topics": [
     "regional"
    ],
    "source_tier": 3,
-   "age_hours": 37,
+   "age_hours": 41,
    "relevance_score": 57,
    "finance_relevant": false
   },
@@ -589,12 +610,12 @@
    "countries": [
     "Jamaica"
    ],
-   "fetched_at": "2026-08-17T16:41:02.742645+00:00",
+   "fetched_at": "2026-08-17T20:39:49.637237+00:00",
    "topics": [
     "tourism"
    ],
    "source_tier": 3,
-   "age_hours": 112,
+   "age_hours": 116,
    "relevance_score": 53,
    "finance_relevant": true
   },
@@ -609,12 +630,12 @@
    "countries": [
     "Jamaica"
    ],
-   "fetched_at": "2026-08-17T16:41:02.743221+00:00",
+   "fetched_at": "2026-08-17T20:39:49.637336+00:00",
    "topics": [
     "tourism"
    ],
    "source_tier": 3,
-   "age_hours": 129,
+   "age_hours": 133,
    "relevance_score": 53,
    "finance_relevant": true
   },
@@ -627,13 +648,13 @@
    "source": "Google News — Caribbean economy",
    "feed_slug": "google-news-caribbean",
    "countries": [],
-   "fetched_at": "2026-08-17T16:41:01.598502+00:00",
+   "fetched_at": "2026-08-17T20:39:48.615562+00:00",
    "topics": [
     "finance",
     "trade"
    ],
    "source_tier": 3,
-   "age_hours": 151,
+   "age_hours": 155,
    "relevance_score": 53,
    "finance_relevant": true
   },
@@ -648,92 +669,92 @@
    "countries": [
     "Guyana"
    ],
-   "fetched_at": "2026-08-17T16:41:02.177062+00:00",
+   "fetched_at": "2026-08-17T20:39:49.114506+00:00",
    "topics": [
     "energy"
    ],
    "source_tier": 3,
-   "age_hours": 91,
+   "age_hours": 95,
    "relevance_score": 53,
    "finance_relevant": true
   },
   {
-   "id": "https-news-google-com-rss-articles-cbmiykfvx3lxte1yvexqtnpnc1vtzl9wcuhir0twc3rfvtfhvmmweumznlz3rtnpofl3z2pzwlfmtxl0tuluz",
-   "title": "Barbados to Host Caribbean Investment Forum 2026 as Region Unveils Bold Vision for Global Investment - SKNVibes",
-   "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1yVExqTnpNc1VTZl9wcUhiR0tWc3RfVTFHVmMweUMzNlZ3RTNPOFl3Z2pzWlFmTXl0TUluZlV3dDVsWGJSNUxpQjVZUmQwUGloRXFWSi1lWVA5S09Id1IzQ0hR?oc=5",
-   "published": "Thu, 13 Aug 2026 20:51:48 GMT",
-   "summary": "Barbados to Host Caribbean Investment Forum 2026 as Region Unveils Bold Vision for Global Investment SKNVibes",
-   "source": "Google News — Caribbean economy",
-   "feed_slug": "google-news-caribbean",
-   "countries": [
-    "Barbados"
-   ],
-   "fetched_at": "2026-08-17T16:41:01.598824+00:00",
-   "topics": [
-    "finance"
-   ],
-   "source_tier": 3,
-   "age_hours": 91,
-   "relevance_score": 53,
-   "finance_relevant": true
-  },
-  {
-   "id": "https-news-google-com-rss-articles-cbmiigfbvv95cuxpdnrwxzf4nwl0r1vebwdxoehhak5uuuvktzludtnox2thdgqxr1zxc2tmni1wvtlfcdjzu",
-   "title": "Caribbean Investment Forum 2026 launches here - Barbados Today",
-   "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPdnRWXzF4NWl0R1VEbWdxOEhhak5UUUVKTzlUdTNOX2tHdGQxR1ZXc2tmNi1WVTlfcDJzUlJmRmRvaVJqbkIyWnNFZzUwb3AtUFlSaVFvMnhXRmNKY2U4eG9OakY5cFFFMUF1RDJTWUQ0SEJLVGR3djNacVllcy1iaTlJM3Z5bzNjZ0HSAY8BQVVfeXFMUGhNM2ZwLVp0LTRnR19aeDdtcDQtU0t3YzF1V2NaYlQyeW5Fa3lfTEw0OGQwMElGcHVRUmdodGJlVk5Ibm11VG51WnVNMVg1S3NxZ1hIX2FNTksyQmI2bVBwUUx3TDI5eV9TOUpoYUVsMmd1UlY5ajUwOUkxb0pCc011OXFpTHJzbzNmTHhuRVk?oc=5",
-   "published": "Thu, 13 Aug 2026 15:00:14 GMT",
-   "summary": "Caribbean Investment Forum 2026 launches here Barbados Today",
-   "source": "Google News — Caribbean economy",
-   "feed_slug": "google-news-caribbean",
-   "countries": [
-    "Barbados"
-   ],
-   "fetched_at": "2026-08-17T16:41:01.599028+00:00",
-   "topics": [
-    "finance"
-   ],
-   "source_tier": 3,
-   "age_hours": 97,
-   "relevance_score": 53,
-   "finance_relevant": true
-  },
-  {
-   "id": "https-news-google-com-rss-articles-cbmitafbvv95cuxpvvm2ne01ungwqy1mt0fzsku2oetmsdb5tdzyvhfmmha3ymronxvmudrtb0prd1g5ul9fc",
-   "title": "Airlift to Jamaica from Canada Reaches a Milestone for Winter 2026-27 - TravelPulse Canada",
-   "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPVVM2NE01UngwQy1MT0FzSkU2OEtmSDB5TDZyVHFMMHA3YmRoNXVMUDRtb0pRd1g5Ul9fcVRWWlFoc3hpNzVFMkdvcktuWmVWdWFGem9NbGVqcTg5UWxaVWJtY2I1NTRKUDU3ZXFzSkNEVGZ5c2tfOUE4ZHZORWxVbVhTMlhjbUNiRHlCLUFORkdENW9IRmt2MVNJNXliblZzcDhNN3BYanlBaGpSeTYzdEVIa0Q?oc=5",
-   "published": "Thu, 13 Aug 2026 00:05:00 GMT",
-   "summary": "Airlift to Jamaica from Canada Reaches a Milestone for Winter 2026-27 TravelPulse Canada",
+   "id": "https-news-google-com-rss-articles-cbmiiafbvv95cuxqnfzjwlrxblhozfzjudfan2u1uvntexd5t2p5mg5vvwq1dhbqmjvncgkysmtem0vrs3rkn",
+   "title": "$4B Allocated to Boost Jamaica’s Global Tourism Competitiveness - Jamaica Information Service",
+   "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQNFZjWlRXblhoZFZjUDFaN2U1UVNteXd5T2p5MG5VVWQ1dHBqMjVNcGkySmtEM0VrS3RkNGlrcXBvT2psaEFtRDFySm45Q1djMGRMOHpLcjh6WDRQSlYwT2M4WHdKZ092RVp3UmkxaWVSYXVTU3ZWbGNodlZ3cWh6NGptYkFsTkps?oc=5",
+   "published": "Thu, 13 Aug 2026 13:43:54 GMT",
+   "summary": "$4B Allocated to Boost Jamaica’s Global Tourism Competitiveness Jamaica Information Service",
    "source": "Google News — Jamaica",
    "feed_slug": "google-news-jamaica",
    "countries": [
     "Jamaica"
    ],
-   "fetched_at": "2026-08-17T16:41:02.743096+00:00",
+   "fetched_at": "2026-08-17T20:39:49.637290+00:00",
    "topics": [
     "tourism"
    ],
    "source_tier": 3,
-   "age_hours": 112,
+   "age_hours": 102,
    "relevance_score": 53,
    "finance_relevant": true
   },
   {
-   "id": "https-news-google-com-rss-articles-cbmimwfbvv95cuxnnkrinfzyvwq5ovhyvgq5s3d2q2g0tmp5cknnckz5shmzmfn2bnjqmve0ohbpnzzznwxiz",
-   "title": "Guyana is set to get more Stabroek oil, but how much? - Brazil Energy Insight",
-   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNNkRiNFZyVWQ5OVhYVGQ5S3d2Q2g0Tmp5ckNnckZ5SHMzMFN2bnJqMVE0OHBPNzZZNWxIZHB3R2NwNi1HTk5UeVBxQk1FQ3Ztc0Iybzkza3oxVFUwVTFDbkdLSFZUUE0wMUdxVmxTU0o1ekFUQmloTkpTbWNHdjdBQ19rTFZBQXBJVVE1YU1wQ3FxVnVfTVlMWkZHSQ?oc=5",
-   "published": "Mon, 10 Aug 2026 16:25:21 GMT",
-   "summary": "Guyana is set to get more Stabroek oil, but how much? Brazil Energy Insight",
+   "id": "https-news-google-com-rss-articles-cbmijwfbvv95cuxongpocme2v1cwoe14vm5srnjtb21hytzsu0xrnuy0ruy2em1zngnltfnbr2rsulrmazrec",
+   "title": "Barbados to Host Caribbean Investment Forum 2026 - Business Barbados",
+   "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxONGpOcmE2V1cwOE14Vm5SRnJTb21hYTZSU0xrNUY0RUY2em1zNGNLTFNBR2RSUlRmazREcVdWdUd1Rk1fMktvZ01PYWpkeTRlb2hBSWNXU3hSMndWX1NGVkFNQmNGeFZPbWZiRS1xNExSYkxJWHh2dUFkX1E1bU16SlpZdzVUZ3dzUmFfWkxlbw?oc=5",
+   "published": "Fri, 14 Aug 2026 19:24:44 GMT",
+   "summary": "Barbados to Host Caribbean Investment Forum 2026 Business Barbados",
+   "source": "Google News — Caribbean economy",
+   "feed_slug": "google-news-caribbean",
+   "countries": [
+    "Barbados"
+   ],
+   "fetched_at": "2026-08-17T20:39:48.615854+00:00",
+   "topics": [
+    "finance"
+   ],
+   "source_tier": 3,
+   "age_hours": 73,
+   "relevance_score": 53,
+   "finance_relevant": true
+  },
+  {
+   "id": "https-news-google-com-rss-articles-cbmif0fvx3lxte0yd29kamqzdklpenexvzljcgpldg0zeffqovvatlbjzfuzqktpvllkthhhrvzqrjfftthmm",
+   "title": "Jamaica Tourism: Bartlett Calls for New CSR Approach - eTurboNews",
+   "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE0yd29kamQzdklPenExVzlJcGpLdG0zeFFQOVVaTlBjZFUzQktpVllKTHhHRVZQRjFfTThMMWhXZEZQbkpCSVVQR0pSNld6aHRzZ2lfM2N1aUFBUmJTNFJDek1MWVBwWmlDUjNUcDk4U29oNXNFZXNHc2Fyc0NKNG8?oc=5",
+   "published": "Fri, 14 Aug 2026 17:22:27 GMT",
+   "summary": "Jamaica Tourism: Bartlett Calls for New CSR Approach eTurboNews",
+   "source": "Google News — Jamaica",
+   "feed_slug": "google-news-jamaica",
+   "countries": [
+    "Jamaica"
+   ],
+   "fetched_at": "2026-08-17T20:39:49.637752+00:00",
+   "topics": [
+    "tourism"
+   ],
+   "source_tier": 3,
+   "age_hours": 75,
+   "relevance_score": 53,
+   "finance_relevant": true
+  },
+  {
+   "id": "https-news-google-com-rss-articles-cbmiqwfbvv95cuxobnfcz2hidmlobwrmaktvm0gxbky2ow96zlk2ze1ptdjzzetvqndtd0fhyzjivzjnai1ue",
+   "title": "Guyana oil output declined in May and June, mostly at Liza field - Brazil Energy Insight",
+   "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxObnFCZ2hIdmlobWRMaktvM0gxbkY2OW96Zlk2ZE1pTDJzZEtvQndTd0FhYzJIVzJNai1UeUVKWXJxZ25xRmFxTmpOa0pid2ZHNEFhUkQ4ZE1uaTZYemJjdGFEMUtEd3F6OEJRcUpsT19iM05JSHBkM0ZYTXNiQU9XWHN5YW9SX3lTSFplc21CaXc5Q2xnNWFldXh4OExJMXVlT1M1cnFpd2RhMU0?oc=5",
+   "published": "Fri, 14 Aug 2026 17:06:24 GMT",
+   "summary": "Guyana oil output declined in May and June, mostly at Liza field Brazil Energy Insight",
    "source": "Google News — Guyana",
    "feed_slug": "google-news-guyana",
    "countries": [
     "Guyana"
    ],
-   "fetched_at": "2026-08-17T16:41:02.177594+00:00",
+   "fetched_at": "2026-08-17T20:39:49.114240+00:00",
    "topics": [
     "energy"
    ],
    "source_tier": 3,
-   "age_hours": 168,
+   "age_hours": 75,
    "relevance_score": 53,
    "finance_relevant": true
   },
@@ -748,53 +769,14 @@
    "countries": [
     "Guyana"
    ],
-   "fetched_at": "2026-08-17T16:41:02.177487+00:00",
+   "fetched_at": "2026-08-17T20:39:49.114893+00:00",
    "topics": [
     "finance"
    ],
    "source_tier": 3,
-   "age_hours": 81,
+   "age_hours": 85,
    "relevance_score": 53,
    "finance_relevant": true
-  },
-  {
-   "id": "https-news-google-com-rss-articles-cbmiigfbvv95cuxotxh1zkdhz1hwt2hlohljaknrcxbwzxbzovf1wdhbqvlyakqtdjdfefzqqxzfsm5ktnlun",
-   "title": "Jamaica tourism reopens after devastating Hurricane Melissa. It wasn’t easy - Miami Herald",
-   "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOTXh1ZkdhZ1hwT2hlOHlJakNRcXBWZXBZOVF1WDhBQVlyakQtdjdFeFZqQXZfSm5KTnluNXJQUEdySGhGdXBHRGRUTnRoR0RJVktmX0dkYXZnbDJ3V1FudDc2NGI0N0R2UUVqbTFSVFVKRG9TSTREZXJ5SUd5U3NaM3NJWmlFbzFmVnfSAYoBQVVfeXFMTUpraG1iVlg1QzFnOExfZkZvNDBWQ0J6dmw4d1U1NS1ZbDNfMFo4cEFwVDcyaTlzdEt0anFIZXpVR01EX0xabGVHX1BidVV5RmdacWE0cUtQUU81ZHhmc1ZyWlRGZ1E2eEowNGdxZXpMaFdBc2E3M1oxTmw5cFZuaU95b3RQLW9HeWtR?oc=5",
-   "published": "Tue, 16 Dec 2025 08:00:00 GMT",
-   "summary": "Jamaica tourism reopens after devastating Hurricane Melissa. It wasn’t easy Miami Herald",
-   "source": "Google News — Jamaica",
-   "feed_slug": "google-news-jamaica",
-   "countries": [
-    "Jamaica"
-   ],
-   "fetched_at": "2026-08-17T16:41:02.743520+00:00",
-   "topics": [
-    "tourism",
-    "climate"
-   ],
-   "source_tier": 3,
-   "age_hours": 5864,
-   "relevance_score": 51,
-   "finance_relevant": true
-  },
-  {
-   "id": "https-news-google-com-rss-articles-cbmipgfbvv95cuxpcfzqvlvyadv5tk1wttvrou05q25vvzfrdgzvdjhhm1vhwwzsovo5zmnsuks1n1rpwjnva",
-   "title": "Hidden attractions in Bonny as unveiling of Caribbean links begins - Business News Nigeria",
-   "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPcFZQVlVYaDV5Tk1WTTVROU05Q25VVzFrdGZvdjhHM1VhWWZsOVo5ZmNsUks1N1RPWjNVajBlcXhOTzV3YkZFa3pRZmlZdHdOYTE0WGVwLVllOU4weTRYbVptUFFYWWdTS3VkV3JaM0sxb09DV3hvTGE5cE83LTFCWVkyXzhrczU1OHRDclJuUEpaVGl2dWdTbXJGNGxfTnJvelVOS0h3?oc=5",
-   "published": "Sun, 16 Aug 2026 12:15:52 GMT",
-   "summary": "Hidden attractions in Bonny as unveiling of Caribbean links begins Business News Nigeria",
-   "source": "Google News — Caribbean economy",
-   "feed_slug": "google-news-caribbean",
-   "countries": [],
-   "fetched_at": "2026-08-17T16:41:01.598870+00:00",
-   "topics": [
-    "regional"
-   ],
-   "source_tier": 3,
-   "age_hours": 28,
-   "relevance_score": 51,
-   "finance_relevant": false
   },
   {
    "id": "https-news-google-com-rss-articles-cbmirgfbvv95cuxnnv9cder6ufledddooe1dvg9udktvszlyykjvbefvyxzdx1vnngwybkf2zlphq19oywvmn",
@@ -808,12 +790,12 @@
     "Guyana",
     "Suriname"
    ],
-   "fetched_at": "2026-08-17T16:41:02.177416+00:00",
+   "fetched_at": "2026-08-17T20:39:49.114854+00:00",
    "topics": [
     "energy"
    ],
    "source_tier": 3,
-   "age_hours": 502,
+   "age_hours": 506,
    "relevance_score": 51,
    "finance_relevant": true
   },
@@ -828,13 +810,34 @@
    "countries": [
     "Jamaica"
    ],
-   "fetched_at": "2026-08-17T16:41:02.742955+00:00",
+   "fetched_at": "2026-08-17T20:39:49.637495+00:00",
    "topics": [
     "finance",
     "tourism"
    ],
    "source_tier": 3,
-   "age_hours": 2193,
+   "age_hours": 2197,
+   "relevance_score": 51,
+   "finance_relevant": true
+  },
+  {
+   "id": "https-news-google-com-rss-articles-cbmi4afbvv95cuxndelqejriouhmltrjx3r2uhzsv201nznsnfj6tlpiue1esxrfvmk0x2fwqtloq3jhrvj6a",
+   "title": "The Great Blue Hole in Belize Photo credit: Belize Tourism Board - Caribbean National Weekly",
+   "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNdElQejRIOUhMLTRjX3R2UHZsV201NzNSNFJ6TlpIUE1ESXRFVmk0X2FwQTloQ3JhRVJ6a3BETmQwV0RGc1FpNWxobFQtQ0NKNGRJczZ2SVlVODFwTnNGRk9DVllGQ3U3QkUwTV9ZRnludENVSUF2emtLTzJjQWl1UUlZX0tDWlNzUG5EQjIxdHBYN1JROENoVV9fVWJQSXVVV21SRV8yTEdzNF9fcGFaSXZqVWlwTEVaeThJSFc1UHZKMy0xNmF2ejh1TWcxX1l1aDR2aHVrelJES3FSVS1JdQ?oc=5",
+   "published": "Fri, 20 Mar 2026 20:25:31 GMT",
+   "summary": "The Great Blue Hole in Belize Photo credit: Belize Tourism Board Caribbean National Weekly",
+   "source": "Google News — Belize",
+   "feed_slug": "google-news-belize",
+   "countries": [
+    "Belize"
+   ],
+   "fetched_at": "2026-08-17T20:39:50.212888+00:00",
+   "topics": [
+    "finance",
+    "tourism"
+   ],
+   "source_tier": 3,
+   "age_hours": 3600,
    "relevance_score": 51,
    "finance_relevant": true
   },
@@ -847,30 +850,12 @@
    "source": "Google News — Caribbean economy",
    "feed_slug": "google-news-caribbean",
    "countries": [],
-   "fetched_at": "2026-08-17T16:41:01.598296+00:00",
+   "fetched_at": "2026-08-17T20:39:48.615352+00:00",
    "topics": [
     "procurement"
    ],
    "source_tier": 3,
-   "age_hours": 121,
-   "relevance_score": 47,
-   "finance_relevant": true
-  },
-  {
-   "id": "https-news-google-com-rss-articles-cbmiggfbvv95cuxnrmr5a3r0thdkagzsu0m5thrxzudwalc1lw1drhzavu94bejoberor0xmd0fioexic0mza",
-   "title": "This Under-the-radar Caribbean Island Has One of the Most Affordable Citizenship-by-investment Programs - Travel + Leisure",
-   "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNRmR5a3R0THdkaGZSU0M5THRXZUdWalc1LW1DRHZaVU94bEJObEROR0xmd0FiOExic0MzamxuWVNZM1RickQ5T295OWJISnNvMWtGcVF1MmJiaW9yLW82N1RsdEJqTDBhdnV0eERGejVNVHBzTVg4X0QzM1hFZlRlQkh3?oc=5",
-   "published": "Mon, 10 Aug 2026 15:55:42 GMT",
-   "summary": "This Under-the-radar Caribbean Island Has One of the Most Affordable Citizenship-by-investment Programs Travel + Leisure",
-   "source": "Google News — Caribbean economy",
-   "feed_slug": "google-news-caribbean",
-   "countries": [],
-   "fetched_at": "2026-08-17T16:41:01.598667+00:00",
-   "topics": [
-    "finance"
-   ],
-   "source_tier": 3,
-   "age_hours": 168,
+   "age_hours": 125,
    "relevance_score": 47,
    "finance_relevant": true
   },
@@ -883,12 +868,12 @@
    "source": "Google News — Caribbean economy",
    "feed_slug": "google-news-caribbean",
    "countries": [],
-   "fetched_at": "2026-08-17T16:41:01.598356+00:00",
+   "fetched_at": "2026-08-17T20:39:48.615414+00:00",
    "topics": [
     "procurement"
    ],
    "source_tier": 3,
-   "age_hours": 73,
+   "age_hours": 77,
    "relevance_score": 47,
    "finance_relevant": true
   },
@@ -901,12 +886,12 @@
    "source": "Google News — Caribbean economy",
    "feed_slug": "google-news-caribbean",
    "countries": [],
-   "fetched_at": "2026-08-17T16:41:01.598404+00:00",
+   "fetched_at": "2026-08-17T20:39:48.615462+00:00",
    "topics": [
     "procurement"
    ],
    "source_tier": 3,
-   "age_hours": 74,
+   "age_hours": 78,
    "relevance_score": 47,
    "finance_relevant": true
   },
@@ -921,12 +906,12 @@
    "countries": [
     "Guyana"
    ],
-   "fetched_at": "2026-08-17T16:41:02.176801+00:00",
+   "fetched_at": "2026-08-17T20:39:49.114321+00:00",
    "topics": [
     "energy"
    ],
    "source_tier": 3,
-   "age_hours": 465,
+   "age_hours": 469,
    "relevance_score": 45,
    "finance_relevant": true
   },
@@ -941,12 +926,12 @@
    "countries": [
     "Guyana"
    ],
-   "fetched_at": "2026-08-17T16:41:02.177302+00:00",
+   "fetched_at": "2026-08-17T20:39:49.114698+00:00",
    "topics": [
     "energy"
    ],
    "source_tier": 3,
-   "age_hours": 465,
+   "age_hours": 469,
    "relevance_score": 45,
    "finance_relevant": true
   },
@@ -961,52 +946,12 @@
    "countries": [
     "Guyana"
    ],
-   "fetched_at": "2026-08-17T16:41:02.177451+00:00",
+   "fetched_at": "2026-08-17T20:39:49.114815+00:00",
    "topics": [
     "energy"
    ],
    "source_tier": 3,
-   "age_hours": 465,
-   "relevance_score": 45,
-   "finance_relevant": true
-  },
-  {
-   "id": "https-news-google-com-rss-articles-cbmijwfbvv95cuxqnvdscefusgrprzzzevrdazayuwxprnoyeew3c3ptwxvczktpzvzibwz6zhhjm1dxwuy2t",
-   "title": "Panton Calls SSB’s Hydro Belize Investment A BEL Bailout - Greater Belize Media",
-   "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQNVdScEFUSGRpRzZZeVRDazAyUWxPRnoyeEw3c3pTWXVCZktpZVZibWZ6ZHhJM1dxWUY2TzZnRDU0dFVITENfSy0zRjl0RTdzTjVfY081SjBfanhVUkN6Skg4MGdSZzg4Wnp0TWVDY0xSQVJHN0RudmFQQWFkMHU4RnEzYmhFUTdQLXA4T1BXRQ?oc=5",
-   "published": "Wed, 22 Jul 2026 01:14:40 GMT",
-   "summary": "Panton Calls SSB’s Hydro Belize Investment A BEL Bailout Greater Belize Media",
-   "source": "Google News — Belize",
-   "feed_slug": "google-news-belize",
-   "countries": [
-    "Belize"
-   ],
-   "fetched_at": "2026-08-17T16:41:03.293025+00:00",
-   "topics": [
-    "finance"
-   ],
-   "source_tier": 3,
-   "age_hours": 639,
-   "relevance_score": 45,
-   "finance_relevant": true
-  },
-  {
-   "id": "https-news-google-com-rss-articles-cbmi9ajbvv95cuxnumtvd3diykjscl9uugm5ntd0u0twudrhzljezfzrdkrbrfy4tg13nmwxt2nqmhniunptc",
-   "title": "Jamaica’s Minister of Tourism Shares Blueprint for Thriving in a Changing Travel World - WJLA",
-   "url": "https://news.google.com/rss/articles/CBMi9AJBVV95cUxNUmtvd3dIYkJscl9UUGM5NTd0U0tWUDRhZlJEZFZrdkRBRFY4TG13NmwxT2NQMHNiUnptck9WRVZBaWZOZi1pUkY5U1hWUVZ4VHJwZFJIZnk5S19YSjNOWXYwV0sycUFOMzRndWNrMFk0TTNnVkJVZzZhVy0xQjFDUXFhZTAtQ2JYWl9LQUJqX25nWm9KTEQ4QThIN3NUaUhfR1c4TGRIeC1MTGZGMGRKUUpieGdob2ZFeVdzbjVtVGFlMGt4MjFqU3JYLXhYV3k2NGY2RUJCWnYzUlRCVEF1M3pvQ25IZHVaNDZEZkVuaTNHenNBMDNyb0VsRWZzdmZkOEFZTTNEY1lmQ2ozcmw2X3o4YUFQSW83bnZMcV9mU1ctMjM3cVhrdy1aZzYtaEV2cnZKQVNzSG1qUlRPNy1WOENOREktaE1Uck1NeUY0MjNoY1AxNzlUOFdhMEtSVkNCbEttOTNqWHhSYnYxcWdyQ0I4RDc?oc=5",
-   "published": "Wed, 08 Apr 2026 07:00:00 GMT",
-   "summary": "Jamaica’s Minister of Tourism Shares Blueprint for Thriving in a Changing Travel World WJLA",
-   "source": "Google News — Jamaica",
-   "feed_slug": "google-news-jamaica",
-   "countries": [
-    "Jamaica"
-   ],
-   "fetched_at": "2026-08-17T16:41:02.743430+00:00",
-   "topics": [
-    "tourism"
-   ],
-   "source_tier": 3,
-   "age_hours": 3153,
+   "age_hours": 469,
    "relevance_score": 45,
    "finance_relevant": true
   },
@@ -1021,12 +966,12 @@
    "countries": [
     "Jamaica"
    ],
-   "fetched_at": "2026-08-17T16:41:02.743020+00:00",
+   "fetched_at": "2026-08-17T20:39:49.637822+00:00",
    "topics": [
     "tourism"
    ],
    "source_tier": 3,
-   "age_hours": 2481,
+   "age_hours": 2485,
    "relevance_score": 45,
    "finance_relevant": true
   },
@@ -1041,12 +986,12 @@
    "countries": [
     "Guyana"
    ],
-   "fetched_at": "2026-08-17T16:41:01.598707+00:00",
+   "fetched_at": "2026-08-17T20:39:48.615892+00:00",
    "topics": [
     "energy"
    ],
    "source_tier": 3,
-   "age_hours": 297,
+   "age_hours": 301,
    "relevance_score": 45,
    "finance_relevant": true
   },
@@ -1061,32 +1006,31 @@
    "countries": [
     "Guyana"
    ],
-   "fetched_at": "2026-08-17T16:41:02.177560+00:00",
+   "fetched_at": "2026-08-17T20:39:49.115080+00:00",
    "topics": [
     "energy"
    ],
    "source_tier": 3,
-   "age_hours": 1809,
+   "age_hours": 1813,
    "relevance_score": 45,
    "finance_relevant": true
   },
   {
-   "id": "https-news-google-com-rss-articles-cbmimwfbvv95cuxqoxvmm3i5tdlwmhjjmmjcy0gyqurkxzroa1k2tlbrx25swe01rmxqt0n4dedmajjgcufwu",
-   "title": "Jamaica Tourism 3.0 Charts Industry’s Growth Path - TravelPulse",
-   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQOXVMM3I5TDlWMHJJMmJCY0gyQURkXzRoa1k2TlBrX25sWE01RmxqT0N4dEdmajJGcUFWUTJ5cFhaWGtzQU0yT18wNTFGaW5HcTl4cDVIU2dybVQwWVlrN3haSmJjOFBNSHc3YUpxU2lxaGpLa3MwakJKNmFBVGUzdTBEOFNOOEVRREFjdVlJNkFYa2FXX1cteXN1UQ?oc=5",
-   "published": "Wed, 03 Jun 2026 07:00:00 GMT",
-   "summary": "Jamaica Tourism 3.0 Charts Industry’s Growth Path TravelPulse",
-   "source": "Google News — Jamaica",
-   "feed_slug": "google-news-jamaica",
-   "countries": [
-    "Jamaica"
-   ],
-   "fetched_at": "2026-08-17T16:41:02.743475+00:00",
+   "id": "https-news-google-com-rss-articles-cbmiygfbvv95cuxnm3j3dxdadevimmw2wgzhamzflxu5mkhsbvf2lww3q3bgt01sws03ulkwq3f2dkfswvnut",
+   "title": "Tourism in Latin America and the Caribbean: Five Concrete Actions to Turn Potential Into Results - Inter-American Development Bank",
+   "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNM3J3dXdadEViMmw2WGZHamZFLXU5MkhSbVF2LWw3Q3BGT01sWS03UlkwQ3F2dkFSWVNUT3hibTlWYi1nTEhUTmgxSzlvWVcwOGFYc25DcEVNZ2pqYmRGQWdVZUZoSTZHdkRvZDBXdkpjVzlYYzAySE1tWDh6S0E3ZFlGSHZNb1pPR1JkU2VBUXJoS3poSGNRdC1Hb2R5MFpQd0V1bkdqUENPbWRUZWE3WkIxanhyRy13MmZRNXhxU0ItaXl2UDFXU2FB?oc=5",
+   "published": "Tue, 28 Apr 2026 07:00:00 GMT",
+   "summary": "Tourism in Latin America and the Caribbean: Five Concrete Actions to Turn Potential Into Results Inter-American Development Bank",
+   "source": "Google News — Caribbean economy",
+   "feed_slug": "google-news-caribbean",
+   "countries": [],
+   "fetched_at": "2026-08-17T20:39:48.616363+00:00",
    "topics": [
+    "finance",
     "tourism"
    ],
    "source_tier": 3,
-   "age_hours": 1809,
+   "age_hours": 2677,
    "relevance_score": 45,
    "finance_relevant": true
   },
@@ -1101,12 +1045,12 @@
    "countries": [
     "Belize"
    ],
-   "fetched_at": "2026-08-17T16:41:03.293119+00:00",
+   "fetched_at": "2026-08-17T20:39:50.213162+00:00",
    "topics": [
     "tourism"
    ],
    "source_tier": 3,
-   "age_hours": 2673,
+   "age_hours": 2677,
    "relevance_score": 45,
    "finance_relevant": true
   },
@@ -1121,12 +1065,12 @@
    "countries": [
     "Guyana"
    ],
-   "fetched_at": "2026-08-17T16:41:02.177179+00:00",
+   "fetched_at": "2026-08-17T20:39:49.114581+00:00",
    "topics": [
     "energy"
    ],
    "source_tier": 3,
-   "age_hours": 321,
+   "age_hours": 325,
    "relevance_score": 45,
    "finance_relevant": true
   },
@@ -1141,12 +1085,12 @@
    "countries": [
     "Guyana"
    ],
-   "fetched_at": "2026-08-17T16:41:02.177345+00:00",
+   "fetched_at": "2026-08-17T20:39:49.114741+00:00",
    "topics": [
     "energy"
    ],
    "source_tier": 3,
-   "age_hours": 1833,
+   "age_hours": 1837,
    "relevance_score": 45,
    "finance_relevant": true
   },
@@ -1161,12 +1105,12 @@
    "countries": [
     "Jamaica"
    ],
-   "fetched_at": "2026-08-17T16:41:02.742742+00:00",
+   "fetched_at": "2026-08-17T20:39:49.637413+00:00",
    "topics": [
     "tourism"
    ],
    "source_tier": 3,
-   "age_hours": 1953,
+   "age_hours": 1957,
    "relevance_score": 45,
    "finance_relevant": true
   },
@@ -1181,12 +1125,12 @@
    "countries": [
     "Belize"
    ],
-   "fetched_at": "2026-08-17T16:41:03.292567+00:00",
+   "fetched_at": "2026-08-17T20:39:50.212509+00:00",
    "topics": [
     "tourism"
    ],
    "source_tier": 3,
-   "age_hours": 1953,
+   "age_hours": 1957,
    "relevance_score": 45,
    "finance_relevant": true
   },
@@ -1201,51 +1145,51 @@
    "countries": [
     "Jamaica"
    ],
-   "fetched_at": "2026-08-17T16:41:02.742871+00:00",
+   "fetched_at": "2026-08-17T20:39:49.637671+00:00",
    "topics": [
     "tourism"
    ],
    "source_tier": 3,
-   "age_hours": 601,
+   "age_hours": 605,
    "relevance_score": 45,
    "finance_relevant": true
   },
   {
-   "id": "https-news-google-com-rss-articles-cbmib0fvx3lxte56dgttblvknu5nahfmmfntekrydy1nmu1en09uau1hvmnpbl9uajbysu1dvhfmourkv20ty",
-   "title": "Edmund Bartlett, Jamaica’s Minister of Tourism, Shares 2026 Outlook - TravelAge West",
-   "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE56dGttblVkNU5naHFmMFNtekRYdy1NMU1EN09uaU1HVmNpbl9uajBySU1DVHFmOURkV20tYXBUTG9kTVNMTkVrQ3BPbmhsSW1XZ1kyZ2J6YktYdmlpS1lvSkdicXVmSlBlZEVBR0VLUQ?oc=5",
-   "published": "Thu, 19 Feb 2026 08:00:00 GMT",
-   "summary": "Edmund Bartlett, Jamaica’s Minister of Tourism, Shares 2026 Outlook TravelAge West",
+   "id": "https-news-google-com-rss-articles-cbmimgfbvv95cuxqrzdsulrjdgmxzdztczvqr0fpn1bnvgrpu0uzcelqs09vbkvkwvzorw5kteq4em81ak5tm",
+   "title": "Jamaica Tourism Minister Edmund Bartlett named to 2026 MIPAD Global Top 100 - South Florida Caribbean News",
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQRzdsUlRJdGMxZDZtczVqR0FPN1BnVGRPU0UzcElQS09vbkVKWVZoRW5kTEQ4em81ak5tMHNQa0RKc3ZiYkE1NERrNjVEY0NyUkFSNzdMTTctSE9nM0NTVGZ6WWgwNkY0TFVQSGtPeExEQTBrUFhjX1oxOWVZUC1VWTBxcG9ybnRyXzk3YVNnbU4xUkw0MllMSzFB0gGfAUFVX3lxTFB6WFotZ1NMZzFjVVozLXJEZDNWbzNVT2F6b1dxMm93blIxbTdDLWtFcVFZaU1ZR1U0MjZQWThITkJOUU9adG44N0ZscXA2LVUxMVJwTGpwUUhPSkU4eFdHQWl5eXNiSjJ6S3cwRldFeTN1dE51bWtfRnpmbVJPYlV2SXJqWklkcDNjUERfc2NVX2NpenZlbW8xWVpkaEF2SQ?oc=5",
+   "published": "Thu, 23 Jul 2026 00:29:29 GMT",
+   "summary": "Jamaica Tourism Minister Edmund Bartlett named to 2026 MIPAD Global Top 100 South Florida Caribbean News",
    "source": "Google News — Jamaica",
    "feed_slug": "google-news-jamaica",
    "countries": [
     "Jamaica"
    ],
-   "fetched_at": "2026-08-17T16:41:02.742821+00:00",
+   "fetched_at": "2026-08-17T20:39:49.638007+00:00",
    "topics": [
     "tourism"
    ],
    "source_tier": 3,
-   "age_hours": 4304,
+   "age_hours": 620,
    "relevance_score": 45,
    "finance_relevant": true
   },
   {
    "id": "https-news-google-com-rss-articles-cbmivafbvv95cuxqsmflqzf3rzbszwlhtvlju3lozg8yds1fazh0dejvvwq3ste2ohc5dhheuwpjt1h4y3fbn",
-   "title": "Foreign Direct Investment in Latin America and the Caribbean in Light of New U.S. Trade Policy: ECLAC Will Present Updated Figures on June 23 - cepal.org",
+   "title": "Foreign Direct Investment in Latin America and the Caribbean in Light of New U.S. Trade Policy: ECLAC Will Present Updated Figures on June 23 - Comisión Económica para América Latina y el Caribe",
    "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQSmFlQzF3RzBsZWlhTVlJU3loZG8ydS1Fazh0dEJVVWQ3STE2OHc5dHhEUWpjT1h4Y3FBN0E0eTJJd3Nzd2JUMGdpU1JhSlBCcHZuNjdxY0F4NmcwSFlGZzY0X3pZdU9yS3JJMXZjY280ZWQtcEhlaEZ3cU1zUElMb0htQkZEN0U4VmN5U25jUjZJa2xhb21yWkZ2a0xlaUZjTUFRTkhMalN1aFl1QTl5NFl2cXViVzhBakd3UQ?oc=5",
    "published": "Thu, 18 Jun 2026 07:00:00 GMT",
-   "summary": "Foreign Direct Investment in Latin America and the Caribbean in Light of New U.S. Trade Policy: ECLAC Will Present Updated Figures on June 23 cepal.org",
+   "summary": "Foreign Direct Investment in Latin America and the Caribbean in Light of New U.S. Trade Policy: ECLAC Will Present Updated Figures on June 23 Comisión Económica para América Latina y el Caribe",
    "source": "Google News — Caribbean economy",
    "feed_slug": "google-news-caribbean",
    "countries": [],
-   "fetched_at": "2026-08-17T16:41:01.598912+00:00",
+   "fetched_at": "2026-08-17T20:39:48.615716+00:00",
    "topics": [
     "finance",
     "trade"
    ],
    "source_tier": 3,
-   "age_hours": 1449,
+   "age_hours": 1453,
    "relevance_score": 45,
    "finance_relevant": true
   },
@@ -1258,13 +1202,13 @@
    "source": "Google News — Caribbean economy",
    "feed_slug": "google-news-caribbean",
    "countries": [],
-   "fetched_at": "2026-08-17T16:41:01.599122+00:00",
+   "fetched_at": "2026-08-17T20:39:48.616142+00:00",
    "topics": [
     "finance",
     "energy"
    ],
    "source_tier": 3,
-   "age_hours": 1449,
+   "age_hours": 1453,
    "relevance_score": 45,
    "finance_relevant": true
   },
@@ -1279,32 +1223,12 @@
    "countries": [
     "Guyana"
    ],
-   "fetched_at": "2026-08-17T16:41:02.177527+00:00",
+   "fetched_at": "2026-08-17T20:39:49.115030+00:00",
    "topics": [
     "energy"
    ],
    "source_tier": 3,
-   "age_hours": 1449,
-   "relevance_score": 45,
-   "finance_relevant": true
-  },
-  {
-   "id": "https-news-google-com-rss-articles-cbmi6afbvv95cuxoml9pbejyq3zpwersbgrpehrkbtnivg5aafvvswlorhl4anznunpsrkhly3i3d3nkyxy2y",
-   "title": "June Overnight Tourism Arrivals Decline 5%; San Pedro Continues to Lead Belize's Tourism Market - The San Pedro Sun",
-   "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxOMl9PbEJYQ3ZpWERSbGRPeHRKbTNiVG5aaFVVSWlORHl4anZNUnpSRkhlY3I3d3NkYXY2YzRuc2NhcFBBVlppeHlxRjYwVS1GSk9Pdm1yM2gxdVFEVnU0TjE4OEI4dW5wQnVOcDRPSmNkLV9RMkhNMlN0Z2EtQkprZFZLVjBKQVdBMzZad2g3M19HR2lpOUJKMnZldXZCUy10X2g3R3hpV0pBVWVjRDNtYU1iM0FqakZxdDJDaW83enNUOTd6emRDX2QwZDRzcnNoUWdJanBBbFYxbjhtQ082SHU1ZGNlbUtY?oc=5",
-   "published": "Thu, 16 Jul 2026 07:00:00 GMT",
-   "summary": "June Overnight Tourism Arrivals Decline 5%; San Pedro Continues to Lead Belize's Tourism Market The San Pedro Sun",
-   "source": "Google News — Belize",
-   "feed_slug": "google-news-belize",
-   "countries": [
-    "Belize"
-   ],
-   "fetched_at": "2026-08-17T16:41:03.293163+00:00",
-   "topics": [
-    "tourism"
-   ],
-   "source_tier": 3,
-   "age_hours": 777,
+   "age_hours": 1453,
    "relevance_score": 45,
    "finance_relevant": true
   },
@@ -1319,32 +1243,32 @@
    "countries": [
     "Belize"
    ],
-   "fetched_at": "2026-08-17T16:41:03.292605+00:00",
+   "fetched_at": "2026-08-17T20:39:50.212634+00:00",
    "topics": [
     "tourism"
    ],
    "source_tier": 3,
-   "age_hours": 873,
+   "age_hours": 877,
    "relevance_score": 45,
    "finance_relevant": true
   },
   {
    "id": "https-news-google-com-rss-articles-cbmimafbvv95cuxqzfjbq01vns1ns0lkq1rus3bqumfbq2rdm0vhy3nnltr1cm1vqlbvrdrpmkflt3zrqwhym",
-   "title": "Announcing Olo Caye: A Landmark Investment in the Future of Belize - natlawreview.com",
+   "title": "Announcing Olo Caye: A Landmark Investment in the Future of Belize - The National Law Review",
    "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQZFJBQ01VNS1NS0lKQ1RUS3BqUmFBQ2RDM0VHY3NnLTR1cm1vQlBvRDRpMkFlT3ZrQWhyMl9TZG1ueUlYenFuZ3JvbTFYMTM2bFRXZzdTVGVLQk1CSHdjMHJOLWw4YXdkNDl3ZUZqaGJ2UXh2YkQ2MzBFNWhRYTA5YkdWSEp1eTg4TGNLYzlBS2VGckJPbXpOeg?oc=5",
    "published": "Sat, 11 Apr 2026 06:31:14 GMT",
-   "summary": "Announcing Olo Caye: A Landmark Investment in the Future of Belize natlawreview.com",
+   "summary": "Announcing Olo Caye: A Landmark Investment in the Future of Belize The National Law Review",
    "source": "Google News — Belize",
    "feed_slug": "google-news-belize",
    "countries": [
     "Belize"
    ],
-   "fetched_at": "2026-08-17T16:41:03.292690+00:00",
+   "fetched_at": "2026-08-17T20:39:50.212592+00:00",
    "topics": [
     "finance"
    ],
    "source_tier": 3,
-   "age_hours": 3082,
+   "age_hours": 3086,
    "relevance_score": 45,
    "finance_relevant": true
   },
@@ -1359,12 +1283,12 @@
    "countries": [
     "Jamaica"
    ],
-   "fetched_at": "2026-08-17T16:41:02.743058+00:00",
+   "fetched_at": "2026-08-17T20:39:49.637580+00:00",
    "topics": [
     "tourism"
    ],
    "source_tier": 3,
-   "age_hours": 1737,
+   "age_hours": 1741,
    "relevance_score": 45,
    "finance_relevant": true
   },
@@ -1379,12 +1303,12 @@
    "countries": [
     "Guyana"
    ],
-   "fetched_at": "2026-08-17T16:41:02.176997+00:00",
+   "fetched_at": "2026-08-17T20:39:49.114465+00:00",
    "topics": [
     "energy"
    ],
    "source_tier": 3,
-   "age_hours": 393,
+   "age_hours": 397,
    "relevance_score": 45,
    "finance_relevant": true
   },
@@ -1399,12 +1323,12 @@
    "countries": [
     "Guyana"
    ],
-   "fetched_at": "2026-08-17T16:41:02.177633+00:00",
+   "fetched_at": "2026-08-17T20:39:49.115160+00:00",
    "topics": [
     "energy"
    ],
    "source_tier": 3,
-   "age_hours": 499,
+   "age_hours": 503,
    "relevance_score": 45,
    "finance_relevant": true
   },
@@ -1419,12 +1343,12 @@
    "countries": [
     "Belize"
    ],
-   "fetched_at": "2026-08-17T16:41:03.292498+00:00",
+   "fetched_at": "2026-08-17T20:39:50.212433+00:00",
    "topics": [
     "tourism"
    ],
    "source_tier": 3,
-   "age_hours": 2697,
+   "age_hours": 2701,
    "relevance_score": 45,
    "finance_relevant": true
   },
@@ -1439,12 +1363,70 @@
    "countries": [
     "Belize"
    ],
-   "fetched_at": "2026-08-17T16:41:03.292378+00:00",
+   "fetched_at": "2026-08-17T20:39:50.212391+00:00",
    "topics": [
     "finance"
    ],
    "source_tier": 3,
-   "age_hours": 1353,
+   "age_hours": 1357,
+   "relevance_score": 45,
+   "finance_relevant": true
+  },
+  {
+   "id": "https-news-google-com-rss-articles-cbmiwafbvv95cuxqyjl4enlwdwprr2y0rgpbttbxb0n0ee1rawqwazzbvhytctvidezmznb2t3pamxv1vgtes",
+   "title": "Development of the Sargassum Industry in the Caribbean: The Wrong Kind of Abundance - Inter-American Development Bank",
+   "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQYjl4enlWdWprR2Y0RGpBTTBxb0N0eE1RaWQwazZBVHYtcTVIdEZMZnB2T3paMXV1VGtESFJ4NWV0VHJPU1JPaVo0aEJnUkNaVTNTR1BHbmVUZ2h1RFNTZm1PQWU3Um9aVW4zc3NJRGlQODB4bzB0NlRRcTU0b1FMYklQdUpQTUMwN2Vpa2t3d0QzMFh6cElKcFVILTVHamRQb1c3YzBhTU5rSXNEU0w0OW5iay0wM3VIZkQ4MG1lLVk?oc=5",
+   "published": "Mon, 18 May 2026 07:00:00 GMT",
+   "summary": "Development of the Sargassum Industry in the Caribbean: The Wrong Kind of Abundance Inter-American Development Bank",
+   "source": "Google News — Caribbean economy",
+   "feed_slug": "google-news-caribbean",
+   "countries": [],
+   "fetched_at": "2026-08-17T20:39:48.616322+00:00",
+   "topics": [
+    "finance",
+    "energy"
+   ],
+   "source_tier": 3,
+   "age_hours": 2197,
+   "relevance_score": 45,
+   "finance_relevant": true
+  },
+  {
+   "id": "https-news-google-com-rss-articles-cbmi7gfbvv95cuxotut1t1uymji1ymlqwvzydhjjx0ktdg9wrdrratkxd0n2vzb1yy1ivvdpqv9vyxftclnra",
+   "title": "Six Innovative Nature-Based Solution Projects for Social Infrastructure in Latin America and the Caribbean - Inter-American Development Bank",
+   "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxOTUt1T1UyMjI1YmlQWVZydHJjX0ktdG9WRDRraTkxd0N2VzB1Yy1iVVdpQV9vYXFtclNRakRyc3I2QVVsdVdoNG9vQlhDLVpYekVGMk1iVmUyX1lOYVRWMEdSX1J3eWZVbFo0amZXbGZnenJ0X1RwZWo1UW85eFBoTzVYeC1vTDY5WnVvSnJ3Z2xDNmcwa0ZNYl9GVnJ3WUNUN25TY0FNSG0xQ0c3UUZyWlJIV0FBNjdKQnVNQXU5dEc5RE1jNDdsd1ppM0FHUm94a1ZTVG12V3VMdVktSUg4MVpxcjVoTENEVDQ0RG9n?oc=5",
+   "published": "Mon, 12 Jan 2026 08:00:00 GMT",
+   "summary": "Six Innovative Nature-Based Solution Projects for Social Infrastructure in Latin America and the Caribbean Inter-American Development Bank",
+   "source": "Google News — Caribbean economy",
+   "feed_slug": "google-news-caribbean",
+   "countries": [],
+   "fetched_at": "2026-08-17T20:39:48.616240+00:00",
+   "topics": [
+    "finance",
+    "procurement"
+   ],
+   "source_tier": 3,
+   "age_hours": 5220,
+   "relevance_score": 45,
+   "finance_relevant": true
+  },
+  {
+   "id": "https-news-google-com-rss-articles-cbmimwfbvv95cuxnnkrinfzyvwq5ovhyvgq5s3d2q2g0tmp5cknnckz5shmzmfn2bnjqmve0ohbpnzzznwxiz",
+   "title": "Guyana is set to get more Stabroek oil, but how much? - Brazil Energy Insight",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNNkRiNFZyVWQ5OVhYVGQ5S3d2Q2g0Tmp5ckNnckZ5SHMzMFN2bnJqMVE0OHBPNzZZNWxIZHB3R2NwNi1HTk5UeVBxQk1FQ3Ztc0Iybzkza3oxVFUwVTFDbkdLSFZUUE0wMUdxVmxTU0o1ekFUQmloTkpTbWNHdjdBQ19rTFZBQXBJVVE1YU1wQ3FxVnVfTVlMWkZHSQ?oc=5",
+   "published": "Mon, 10 Aug 2026 16:25:21 GMT",
+   "summary": "Guyana is set to get more Stabroek oil, but how much? Brazil Energy Insight",
+   "source": "Google News — Guyana",
+   "feed_slug": "google-news-guyana",
+   "countries": [
+    "Guyana"
+   ],
+   "fetched_at": "2026-08-17T20:39:49.115118+00:00",
+   "topics": [
+    "energy"
+   ],
+   "source_tier": 3,
+   "age_hours": 172,
    "relevance_score": 45,
    "finance_relevant": true
   },
@@ -1459,12 +1441,12 @@
    "countries": [
     "Belize"
    ],
-   "fetched_at": "2026-08-17T16:41:03.292871+00:00",
+   "fetched_at": "2026-08-17T20:39:50.213029+00:00",
    "topics": [
     "tourism"
    ],
    "source_tier": 3,
-   "age_hours": 2529,
+   "age_hours": 2533,
    "relevance_score": 45,
    "finance_relevant": true
   },
@@ -1479,52 +1461,32 @@
    "countries": [
     "Belize"
    ],
-   "fetched_at": "2026-08-17T16:41:03.293236+00:00",
+   "fetched_at": "2026-08-17T20:39:50.213329+00:00",
    "topics": [
     "tourism"
    ],
    "source_tier": 3,
-   "age_hours": 2529,
+   "age_hours": 2533,
    "relevance_score": 45,
    "finance_relevant": true
   },
   {
-   "id": "https-news-google-com-rss-articles-cbmihwfbvv95cuxqtulomuzhwlfgm1jvynjtcla5rwyzsdnpunnwym1lvkpxqvv5oufivlg1rfe5x2ncdfh1u",
-   "title": "What Jamaica Wants After Deadly Hurricane? ‘Visit Us,’ Island Says. - The New York Times",
-   "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQTUlOMUZHWlFGM1JvYnJTclA5RWYzSDNpUnNWYm1lVkpxQVV5OUFIVlg1RFE5X2NCdFh1UDJ6ODZWMHpOSUdqNERyMGQtRnpuYXFzRzBWVUItZ29KNEtqc29Qdm1iTS1QNXFwMjA0U2xLcnZpY1dhcFUwUlBCOXFuS3kxcUFWSHM?oc=5",
-   "published": "Mon, 01 Dec 2025 08:00:00 GMT",
-   "summary": "What Jamaica Wants After Deadly Hurricane? ‘Visit Us,’ Island Says. The New York Times",
+   "id": "https-news-google-com-rss-articles-cbmimafbvv95cuxotuvltu1vu1n5u1nvwu1mexk3z0i2uhhjdgzpbufnmkj3b0nhodq3a2fxwmxjmgvwyuiyw",
+   "title": "Hotels warn GCT could stall tourism recovery - Jamaica Gleaner",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOTUVlTU1vU1N5U1NvWU1MeXk3Z0I2UHhjdGZPbUFnMkJ3b0NHODQ3a2FxWmxjMGVwYUIyWWlnM1lpQURuSXY3RG41T0FIanhfMERBTkJwMXc4NTk5TUR4Zk9HSmZUWHhuTTZNXy1wUzZZZGN5NG1rTW1seHQ5bzgyM3lMUHZXLTNiTEZrbC0zcmhnRTBWanBDZQ?oc=5",
+   "published": "Mon, 03 Aug 2026 07:00:00 GMT",
+   "summary": "Hotels warn GCT could stall tourism recovery Jamaica Gleaner",
    "source": "Google News — Jamaica",
    "feed_slug": "google-news-jamaica",
    "countries": [
     "Jamaica"
    ],
-   "fetched_at": "2026-08-17T16:41:02.743261+00:00",
-   "topics": [
-    "climate"
-   ],
-   "source_tier": 3,
-   "age_hours": 6224,
-   "relevance_score": 45,
-   "finance_relevant": false
-  },
-  {
-   "id": "https-news-google-com-rss-articles-cbmi1gfbvv95cuxnternd0rgu0ozddvscjf6lvvpwnz6yxbnmtlpmmutauxsekv1qxhtt1b0vhezzhl0ce9wr",
-   "title": "BELTRAIDE meets with Belize Tourism Industry Association to strengthen Tourism collaboration - breakingbelizenews.com",
-   "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNTERNd0RGU0ozdDVScjF6LVVPWnZ6YXBNMTlPMmUtaUxSekV1QXhTT1B0VHEzZHl0cE9WR0VIcU84YXdXYXBaaUJ6N2lTNVg0MUwyOHViRzE3dGh1UGZod0tGeC1PRnY5eEdEbTRMcnZ5aXhXcEh3bFVKTXctc1AyUVhHYUdTVkhoQy00SklqV1V0WG1rc2E4YmloajFOUFJMeE44dm9uRnhXQVFyZ1pZa3JVZHVPcnNxbFVpc3hkR3NrV0VGQTFBbDk0eWZ5WW53VTkwelh3?oc=5",
-   "published": "Fri, 31 Jul 2026 19:13:11 GMT",
-   "summary": "BELTRAIDE meets with Belize Tourism Industry Association to strengthen Tourism collaboration breakingbelizenews.com",
-   "source": "Google News — Belize",
-   "feed_slug": "google-news-belize",
-   "countries": [
-    "Belize"
-   ],
-   "fetched_at": "2026-08-17T16:41:03.293077+00:00",
+   "fetched_at": "2026-08-17T20:39:49.637717+00:00",
    "topics": [
     "tourism"
    ],
    "source_tier": 3,
-   "age_hours": 405,
+   "age_hours": 349,
    "relevance_score": 45,
    "finance_relevant": true
   },
@@ -1537,13 +1499,13 @@
    "source": "Google News — Caribbean economy",
    "feed_slug": "google-news-caribbean",
    "countries": [],
-   "fetched_at": "2026-08-17T16:41:01.598450+00:00",
+   "fetched_at": "2026-08-17T20:39:48.615510+00:00",
    "topics": [
     "finance",
     "energy"
    ],
    "source_tier": 3,
-   "age_hours": 415,
+   "age_hours": 419,
    "relevance_score": 45,
    "finance_relevant": true
   },
@@ -1558,12 +1520,12 @@
    "countries": [
     "Guyana"
    ],
-   "fetched_at": "2026-08-17T16:41:02.176629+00:00",
+   "fetched_at": "2026-08-17T20:39:49.114146+00:00",
    "topics": [
     "energy"
    ],
    "source_tier": 3,
-   "age_hours": 417,
+   "age_hours": 421,
    "relevance_score": 45,
    "finance_relevant": true
   },
@@ -1579,32 +1541,12 @@
     "Jamaica",
     "Cuba"
    ],
-   "fetched_at": "2026-08-17T16:41:02.743304+00:00",
+   "fetched_at": "2026-08-17T20:39:49.637787+00:00",
    "topics": [
     "regional"
    ],
    "source_tier": 3,
-   "age_hours": 1257,
-   "relevance_score": 45,
-   "finance_relevant": false
-  },
-  {
-   "id": "https-news-google-com-rss-articles-cbmiiwfbvv95cuxpcflycs1janluterqqnpomgezmho2mvbwrgm3v3kyyxbymmwzoxu2c0dbazktbl96uzfly",
-   "title": "Just 3 Months After Hurricane Melissa, Jamaica Is Ready for Travelers - AFAR",
-   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPcFlYcS1JanlUTERqQnpOMGEzMHo2MVBWRGM3V3kyYXBYMmwzOXU2c0dBazktbl96UzFlYllzSHZLZlJmZ21fWjIyejU5c2MydWVsWk8tdmU3T2VPTU1rVU5tQkxWNmtPN0VTTTNxZ2dNTWhhMHdZYlEzYzhqZHh0MG5jTGpfaGRnU3g4?oc=5",
-   "published": "Fri, 23 Jan 2026 08:00:00 GMT",
-   "summary": "Just 3 Months After Hurricane Melissa, Jamaica Is Ready for Travelers AFAR",
-   "source": "Google News — Jamaica",
-   "feed_slug": "google-news-jamaica",
-   "countries": [
-    "Jamaica"
-   ],
-   "fetched_at": "2026-08-17T16:41:02.743185+00:00",
-   "topics": [
-    "climate"
-   ],
-   "source_tier": 3,
-   "age_hours": 4952,
+   "age_hours": 1261,
    "relevance_score": 45,
    "finance_relevant": false
   },
@@ -1619,14 +1561,32 @@
    "countries": [
     "Jamaica"
    ],
-   "fetched_at": "2026-08-17T16:41:02.743136+00:00",
+   "fetched_at": "2026-08-17T20:39:49.637453+00:00",
    "topics": [
     "tourism"
    ],
    "source_tier": 3,
-   "age_hours": 1593,
+   "age_hours": 1597,
    "relevance_score": 45,
    "finance_relevant": true
+  },
+  {
+   "id": "https-news-google-com-rss-articles-cbmijafbvv95cuxnu1lquw5puwhjtmtanxbntvcym1jlouvirddrquv0mlqxuvvox0hbdwjtvhzlckjrtklvz",
+   "title": "9 Best Places in the Caribbean to Buy a Home—including Island Nations Where You Can Become a Citizen - Travel + Leisure",
+   "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNU1lQUW5PUWhjTmtaNXBNTVcyM1JLOUVIRDdrQUV0MlQxUVVoX0hBdWJtVHZLckJrTklVZjJWWXZITHVzQ0FTS3NuUkdoMHVwR0x1TmdDZ1VVcUVxNS1qblBUbmgySFRvR2xkT0pQSGE1WU1IX2h0Q1l5RDNYVnNNdGM5bHUtRDVHVzVmcA?oc=5",
+   "published": "Thu, 13 Aug 2026 07:00:00 GMT",
+   "summary": "9 Best Places in the Caribbean to Buy a Home—including Island Nations Where You Can Become a Citizen Travel + Leisure",
+   "source": "Google News — Caribbean economy",
+   "feed_slug": "google-news-caribbean",
+   "countries": [],
+   "fetched_at": "2026-08-17T20:39:48.615658+00:00",
+   "topics": [
+    "regional"
+   ],
+   "source_tier": 3,
+   "age_hours": 109,
+   "relevance_score": 41,
+   "finance_relevant": false
   },
   {
    "id": "https-news-google-com-rss-articles-cbmijafbvv95cuxqvg9sa1noennxumi3vvf1rzrlmdhzxzu5szhmn0lfci1ndgjzanbus1bmmfb2zervqvhxd",
@@ -1639,12 +1599,12 @@
    "countries": [
     "Guyana"
    ],
-   "fetched_at": "2026-08-17T16:41:02.177143+00:00",
+   "fetched_at": "2026-08-17T20:39:49.114544+00:00",
    "topics": [
     "regional"
    ],
    "source_tier": 3,
-   "age_hours": 460,
+   "age_hours": 464,
    "relevance_score": 39,
    "finance_relevant": false
   },
@@ -1657,30 +1617,12 @@
    "source": "Google News — Caribbean economy",
    "feed_slug": "google-news-caribbean",
    "countries": [],
-   "fetched_at": "2026-08-17T16:41:01.598628+00:00",
+   "fetched_at": "2026-08-17T20:39:48.615816+00:00",
    "topics": [
     "energy"
    ],
    "source_tier": 3,
-   "age_hours": 465,
-   "relevance_score": 39,
-   "finance_relevant": true
-  },
-  {
-   "id": "https-news-google-com-rss-articles-cbmi1gfbvv95cuxqsu5dztl4emu4umrvsthplws0bljsz21zsfrkefn3ul9zctravnlncgo0tlo2bnvis3dza",
-   "title": "Nigerian-owned Caribbean bank takes Zambia to court in $40 million fight over failed bank investment - Business Insider Africa",
-   "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQSU5DZTl4emU4UmRVSThpLWs0blJsZ21ZSFRKeFN3Ul9zcTRaVnlncGo0Tlo2bnViS3dZalVmbXgxeFZrYXBoMkFpS044MlJneDJkT0FfVmhSWTJfY1JLLXJDYThSSmdaU2p4TUdJWFdNVDdKZDV4cGJidVFzRk1Zd1IyYlF4TzhucE85UnFXTVlnUWRhLWxIWWFWdTJkVEJ5ZDlWTXhzcUlrSjRpaHkyYnBXenRYSm80X3dNM0ljaUdybEZsMWtOWFVmSmJBQ1dxcUpDSDNn?oc=5",
-   "published": "Wed, 29 Jul 2026 07:00:00 GMT",
-   "summary": "Nigerian-owned Caribbean bank takes Zambia to court in $40 million fight over failed bank investment Business Insider Africa",
-   "source": "Google News — Caribbean economy",
-   "feed_slug": "google-news-caribbean",
-   "countries": [],
-   "fetched_at": "2026-08-17T16:41:01.598785+00:00",
-   "topics": [
-    "finance"
-   ],
-   "source_tier": 3,
-   "age_hours": 465,
+   "age_hours": 469,
    "relevance_score": 39,
    "finance_relevant": true
   },
@@ -1695,110 +1637,90 @@
    "countries": [
     "Belize"
    ],
-   "fetched_at": "2026-08-17T16:41:03.292461+00:00",
+   "fetched_at": "2026-08-17T20:39:50.212719+00:00",
    "topics": [
     "regional"
    ],
    "source_tier": 3,
-   "age_hours": 625,
+   "age_hours": 629,
    "relevance_score": 39,
    "finance_relevant": false
   },
   {
-   "id": "https-news-google-com-rss-articles-cbmigwfbvv95cuxptk43uzb1z2lrdhd6rjewugnkuy1nsjhgsufld0xvs2mtdwhly1l1nxjxrs1rswvgshawy",
-   "title": "Fifty Million Reasons for an Overdue BTB Audit? - Greater Belize Media",
-   "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPTk43UzB1Z2lrdHd6RjEwUGNKUy1nSjhGSUFld0xVS2MtdWhlY1l1NXJXRS1RSWVGSHAwYW5vTDVlMlF3N25EY3V5R2RHSUtKOVF2dDc3OWhCbk1ZNm12VTNkSGJvZDFIY0F2ZUxBaDF1TEFyMk1ETUp1b3ZnWFMySTlBUQ?oc=5",
-   "published": "Wed, 22 Jul 2026 02:35:40 GMT",
-   "summary": "Fifty Million Reasons for an Overdue BTB Audit? Greater Belize Media",
+   "id": "https-news-google-com-rss-articles-cbmipafbvv95cuxpq3hqoun2rddfaenxnujzekowamlnajdjdffsu2jtcklzdzv0yxi0ehbhrufxdul3uwtoc",
+   "title": "Belize Welcomes Nonstop Flights from N.Y. & Fort Lauderdale - luxurytraveladvisor.com",
+   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPQ3hQOUN2RDdfaENxNUJzekowamlnajdjdFFSU2JtcklZdzV0YXI0eHBHRUFxdUl3UWtOcWZIalFtSGFocV8tQWg3SGtubG5RRGZibDBRN29HZHlFMm1Yd3ZZYnNqU05HdmFxZE4ybUZ4dHFKVWJvSE1WQVR1NmhodnBYcFE1TFpfWmhoeDUyUnhyS2FUWWNhTnJYa0ZRWUVqNjRiWQ?oc=5",
+   "published": "Wed, 08 Oct 2025 07:00:00 GMT",
+   "summary": "Belize Welcomes Nonstop Flights from N.Y. & Fort Lauderdale luxurytraveladvisor.com",
    "source": "Google News — Belize",
    "feed_slug": "google-news-belize",
    "countries": [
     "Belize"
    ],
-   "fetched_at": "2026-08-17T16:41:03.292762+00:00",
+   "fetched_at": "2026-08-17T20:39:50.213370+00:00",
    "topics": [
     "regional"
    ],
    "source_tier": 3,
-   "age_hours": 638,
+   "age_hours": 7525,
    "relevance_score": 39,
    "finance_relevant": false
+  },
+  {
+   "id": "https-news-google-com-rss-articles-cbmiowfbvv95cuxpt2txuevzn1f1eddhderfd19mmddvwmd1uja1tvk1cefgv1rmt1ytdf9puv8tvdbuz083w",
+   "title": "From Islands to Integration: The Future of Digital Health in the Caribbean - Inter-American Development Bank",
+   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPT2txUEVZN1F1eDdHdERfd19mMDdvWmd1UjA1TVk1cEFGV1RMT1YtdF9PUV8tVDBuZ083WTdnbWJpa045SnlfbU5oU3h6bXJFaTIwd1U0V1FrbFN1dVdDYzJVS0htNVh3Z3V3V0Z6b1FkaGRqbGhENG5Rb202WnRocml5N2tsR05rQTNvR3Zta2dzRGdVUEU2OWpaWng3WHBYdW80?oc=5",
+   "published": "Tue, 28 Apr 2026 07:00:00 GMT",
+   "summary": "From Islands to Integration: The Future of Digital Health in the Caribbean Inter-American Development Bank",
+   "source": "Google News — Caribbean economy",
+   "feed_slug": "google-news-caribbean",
+   "countries": [],
+   "fetched_at": "2026-08-17T20:39:48.616281+00:00",
+   "topics": [
+    "finance"
+   ],
+   "source_tier": 3,
+   "age_hours": 2677,
+   "relevance_score": 39,
+   "finance_relevant": true
   },
   {
    "id": "https-news-google-com-rss-articles-cbmikwfbvv95cuxpothkrwjsbg9guutmbzluelzfrvkxvef4ade0cjawekrau3d2es1vn0j0mjkxq2dgtkfvu",
-   "title": "CARPHA helps Belize to advance early warning surveillance - St Vincent Times",
+   "title": "CARPHA helps Belize to advance early warning surveillance - stvincenttimes.com",
    "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPOThkRWJSbG9GUUtMbzlUelZfRVkxVEF4aDE0cjAwekRaU3d2eS1vN0J0MjkxQ2dGTkFVUjZBUnU0bkhqdWxvTVR1cFVwYk5Od0pCc1ZtMEgtMXFKRklzM1VIbzVlSjkwaGFfZUZOWkVWRmlBUjRJd3ZmcXNoZkhWSmZEcDE3Wkl1WThpQUgwSzFUTFE?oc=5",
    "published": "Tue, 28 Apr 2026 07:00:00 GMT",
-   "summary": "CARPHA helps Belize to advance early warning surveillance St Vincent Times",
+   "summary": "CARPHA helps Belize to advance early warning surveillance stvincenttimes.com",
    "source": "Google News — Belize",
    "feed_slug": "google-news-belize",
    "countries": [
     "Belize"
    ],
-   "fetched_at": "2026-08-17T16:41:03.293201+00:00",
+   "fetched_at": "2026-08-17T20:39:50.213244+00:00",
    "topics": [
     "regional"
    ],
    "source_tier": 3,
-   "age_hours": 2673,
+   "age_hours": 2677,
    "relevance_score": 39,
    "finance_relevant": false
   },
   {
    "id": "https-news-google-com-rss-articles-cbmivgfbvv95cuxqc2xwy053t0fgbglovjftym1lag82y204txv2vfdxuel3nhlkbgnprhh3zju2qmzaq3vnc",
-   "title": "In a Context of Marked Geopolitical and Global Technological Rivalry, Exacerbated by U.S. Tariff Policy, Foreign Direct Investment in Latin America and the Caribbean Grew Just 1.7% in 2025 - cepal.org",
+   "title": "In a Context of Marked Geopolitical and Global Technological Rivalry, Exacerbated by U.S. Tariff Policy, Foreign Direct Investment in Latin America and the Caribbean Grew Just 1.7% in 2025 - Comisión Económica para América Latina y el Caribe",
    "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQc2xwY053T0FGbGlOVjFTYm1laG82Y204TXV2VFdxUEl3NHlKbGNPRHh3ZjU2QmZaQ3VNcmtkRXN3bTFjT3JXb0dmYVd2M3htZzdyaFk0c1dEMVhSMVpnbFRzYnROQ3oyeGVibFFYOHJUclVjcHhQTlhMTlp6RHJKdmJwTTJ4XzRtVlJHTWJLV1F4YTd5akpPUnNxdl84eGx0bGlZZERZX3dKcEZqZV9BZHdTVEdJdjdfY2pTbmdn?oc=5",
    "published": "Tue, 23 Jun 2026 18:48:03 GMT",
-   "summary": "In a Context of Marked Geopolitical and Global Technological Rivalry, Exacerbated by U.S. Tariff Policy, Foreign Direct Investment in Latin America and the Caribbean Grew Just 1.7% in 2025 cepal.org",
+   "summary": "In a Context of Marked Geopolitical and Global Technological Rivalry, Exacerbated by U.S. Tariff Policy, Foreign Direct Investment in Latin America and the Caribbean Grew Just 1.7% in 2025 Comisión Económica para América Latina y el Caribe",
    "source": "Google News — Caribbean economy",
    "feed_slug": "google-news-caribbean",
    "countries": [],
-   "fetched_at": "2026-08-17T16:41:01.599071+00:00",
+   "fetched_at": "2026-08-17T20:39:48.616075+00:00",
    "topics": [
     "finance"
    ],
    "source_tier": 3,
-   "age_hours": 1317,
+   "age_hours": 1321,
    "relevance_score": 39,
    "finance_relevant": true
-  },
-  {
-   "id": "https-news-google-com-rss-articles-cbmiugfbvv95cuxnmk1kcnzicutblupzyjh3ne9imkvmmlgym3b2wefswgzirkg4zu8ydtdlzdizynlcowfub",
-   "title": "Solar Power and Strategic Influence: China’s Expanding Footprint in the Caribbean - Diálogo Americas",
-   "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNMk1kcnZIcUtBLUpzYjh3NE9IMkVMMlgyM3B2WEFSWGZIRkg4ZU8ydTdlZDIzYnlCOWFUbDJiWlk3OEN3d0pMZk1WQy03Tk9mM1pWNm9Uc3FMVmlhVkJhRW45bE5qanVVdnBmMHNiQUFGTTFLd3RLeXh2cEp4RTk3NlFKVks1UmNiOXN2RHc1dHB2S1JaeXpCRzZhdTdpc1FLbEZfM1FqbWIxS2p5VmR3UmRENGlUdDZMbkE?oc=5",
-   "published": "Tue, 21 Jul 2026 07:00:00 GMT",
-   "summary": "Solar Power and Strategic Influence: China’s Expanding Footprint in the Caribbean Diálogo Americas",
-   "source": "Google News — Caribbean economy",
-   "feed_slug": "google-news-caribbean",
-   "countries": [],
-   "fetched_at": "2026-08-17T16:41:01.599177+00:00",
-   "topics": [
-    "energy"
-   ],
-   "source_tier": 3,
-   "age_hours": 657,
-   "relevance_score": 39,
-   "finance_relevant": true
-  },
-  {
-   "id": "https-news-google-com-rss-articles-cbmizwfbvv95cuxnbjfsz01gre5rdepbufdaueq4vggwahdzt2zonf9zegz5t1ktz2vhnmdjylruognjumnoq",
-   "title": "Additional flights from Canada to Belize expected to boost tourist arrivals - The San Pedro Sun",
-   "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNbjFsZ01GRE5RdEpBUFdaUEQ4VGgwaHdZT2ZoNF9zeGZ5T1ktZ2VHNmdjYlRUOGNjUmNOQmV6X2NfaFlKcndCWWF3U28zQU0wZUxUdG1JcHNFZnpCemFlSTB1VW1aZHhNUElGbzdOOEE3QnV5VjQzVEVOZDRyTnlLelUyeVkwRFd2V1NaaGxOQ0Jha3V6ajMyUzVaUzFZWGdJYzdqajNrRzREWWtodG9VRmZqT1NGR21TVFlUem1lUUlzem9jNzN3RVZaY01adlU?oc=5",
-   "published": "Thu, 30 Jul 2026 20:00:20 GMT",
-   "summary": "Additional flights from Canada to Belize expected to boost tourist arrivals The San Pedro Sun",
-   "source": "Google News — Belize",
-   "feed_slug": "google-news-belize",
-   "countries": [
-    "Belize"
-   ],
-   "fetched_at": "2026-08-17T16:41:03.292799+00:00",
-   "topics": [
-    "regional"
-   ],
-   "source_tier": 3,
-   "age_hours": 428,
-   "relevance_score": 39,
-   "finance_relevant": false
   },
   {
    "id": "https-news-google-com-rss-articles-cbmiqwfbvv95cuxpm3kzd1ywuhllcljlrjbaekf0zvzus3hsc19jv3nhvfdotkexzzzmotdsugptn19yr05gz",
@@ -1809,12 +1731,12 @@
    "source": "Google News — Caribbean economy",
    "feed_slug": "google-news-caribbean",
    "countries": [],
-   "fetched_at": "2026-08-17T16:41:01.598549+00:00",
+   "fetched_at": "2026-08-17T20:39:48.615609+00:00",
    "topics": [
     "trade"
    ],
    "source_tier": 3,
-   "age_hours": 273,
+   "age_hours": 277,
    "relevance_score": 39,
    "finance_relevant": true
   },
@@ -1829,12 +1751,32 @@
    "countries": [
     "Belize"
    ],
-   "fetched_at": "2026-08-17T16:41:03.292948+00:00",
+   "fetched_at": "2026-08-17T20:39:50.212934+00:00",
    "topics": [
     "regional"
    ],
    "source_tier": 3,
-   "age_hours": 1104,
+   "age_hours": 1108,
+   "relevance_score": 39,
+   "finance_relevant": false
+  },
+  {
+   "id": "https-news-google-com-rss-articles-cbmieefvx3lxtfa0rljwy2jfx0jpclbvn2c1b2pvuu1tv3pxd2hotvfpdvhunxy5yi1fzzazy1hqu0dntmvxz",
+   "title": "Belize Makes Its Pitch as the Caribbean’s Next Sustainability Leader - Caribbean Journal",
+   "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFA0RlJwY2JfX0JPclBVN2c1b2pvUU1tV3pxd2hoTVFPdVhuNXY5Yi1fZzAzY1hqU0dnTmVxZFEzakNzNElMX0h4Q29qaVN3RW9EMUNHRjJYc3FTbGdqNTNMcGkyOFdPcmJtRWU1OHU5d0o4UE9IakwtVg?oc=5",
+   "published": "Sun, 22 Mar 2026 07:00:00 GMT",
+   "summary": "Belize Makes Its Pitch as the Caribbean’s Next Sustainability Leader Caribbean Journal",
+   "source": "Google News — Belize",
+   "feed_slug": "google-news-belize",
+   "countries": [
+    "Belize"
+   ],
+   "fetched_at": "2026-08-17T20:39:50.213286+00:00",
+   "topics": [
+    "regional"
+   ],
+   "source_tier": 3,
+   "age_hours": 3565,
    "relevance_score": 39,
    "finance_relevant": false
   },
@@ -1849,12 +1791,12 @@
    "countries": [
     "Jamaica"
    ],
-   "fetched_at": "2026-08-17T16:41:02.743386+00:00",
+   "fetched_at": "2026-08-17T20:39:49.637854+00:00",
    "topics": [
     "regional"
    ],
    "source_tier": 3,
-   "age_hours": 1377,
+   "age_hours": 1381,
    "relevance_score": 39,
    "finance_relevant": false
   },
@@ -1869,12 +1811,12 @@
    "countries": [
     "Jamaica"
    ],
-   "fetched_at": "2026-08-17T16:41:02.743343+00:00",
+   "fetched_at": "2026-08-17T20:39:49.637536+00:00",
    "topics": [
     "regional"
    ],
    "source_tier": 3,
-   "age_hours": 1545,
+   "age_hours": 1549,
    "relevance_score": 39,
    "finance_relevant": false
   },
@@ -1889,12 +1831,12 @@
    "countries": [
     "Belize"
    ],
-   "fetched_at": "2026-08-17T16:41:03.292727+00:00",
+   "fetched_at": "2026-08-17T20:39:50.213122+00:00",
    "topics": [
     "regional"
    ],
    "source_tier": 3,
-   "age_hours": 883,
+   "age_hours": 887,
    "relevance_score": 39,
    "finance_relevant": false
   },
@@ -1909,12 +1851,12 @@
    "countries": [
     "Belize"
    ],
-   "fetched_at": "2026-08-17T16:41:03.292651+00:00",
+   "fetched_at": "2026-08-17T20:39:50.212795+00:00",
    "topics": [
     "regional"
    ],
    "source_tier": 3,
-   "age_hours": 1337,
+   "age_hours": 1341,
    "relevance_score": 39,
    "finance_relevant": false
   },
@@ -1929,34 +1871,32 @@
    "countries": [
     "Belize"
    ],
-   "fetched_at": "2026-08-17T16:41:03.292230+00:00",
+   "fetched_at": "2026-08-17T20:39:50.212244+00:00",
    "topics": [
     "regional"
    ],
    "source_tier": 3,
-   "age_hours": 681,
+   "age_hours": 685,
    "relevance_score": 39,
    "finance_relevant": false
   },
   {
-   "id": "https-news-google-com-rss-articles-cbmis0fvx3lxte1dwkh3ovdlqzhbc1dqnxdowjbjtznqnzk5uevzb1j1sgvcy1pfzm5grfpqrnzysml1yktds",
-   "title": "FM Lin receives Belize educational delegation - Taiwan Today",
-   "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1DWkh3OVdlQzhBc1dqNXdOWjBJTzNqNzk5UEVZb1J1SGVCY1pFZm5GRFpQRnZYSml1YktDSms0TTFrX1FRZTEtNW16dw?oc=5",
-   "published": "Mon, 20 Apr 2026 07:00:00 GMT",
-   "summary": "FM Lin receives Belize educational delegation Taiwan Today",
-   "source": "Google News — Belize",
-   "feed_slug": "google-news-belize",
-   "countries": [
-    "Belize"
-   ],
-   "fetched_at": "2026-08-17T16:41:03.293321+00:00",
+   "id": "https-news-google-com-rss-articles-cbmiggfbvv95cuxnrmr5a3r0thdkagzsu0m5thrxzudwalc1lw1drhzavu94bejoberor0xmd0fioexic0mza",
+   "title": "This Under-the-radar Caribbean Island Has One of the Most Affordable Citizenship-by-investment Programs - Travel + Leisure",
+   "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNRmR5a3R0THdkaGZSU0M5THRXZUdWalc1LW1DRHZaVU94bEJObEROR0xmd0FiOExic0MzamxuWVNZM1RickQ5T295OWJISnNvMWtGcVF1MmJiaW9yLW82N1RsdEJqTDBhdnV0eERGejVNVHBzTVg4X0QzM1hFZlRlQkh3?oc=5",
+   "published": "Mon, 10 Aug 2026 15:55:42 GMT",
+   "summary": "This Under-the-radar Caribbean Island Has One of the Most Affordable Citizenship-by-investment Programs Travel + Leisure",
+   "source": "Google News — Caribbean economy",
+   "feed_slug": "google-news-caribbean",
+   "countries": [],
+   "fetched_at": "2026-08-17T20:39:48.616194+00:00",
    "topics": [
-    "regional"
+    "finance"
    ],
    "source_tier": 3,
-   "age_hours": 2865,
+   "age_hours": 172,
    "relevance_score": 39,
-   "finance_relevant": false
+   "finance_relevant": true
   },
   {
    "id": "https-news-google-com-rss-articles-cbmi8wfbvv95cuxpeknhs05xeu5ndw92tkzmsdzbrxvbtkrqwfhoq0zpdvvsamrctuq5odfpchjitdzatkjva",
@@ -1967,70 +1907,92 @@
    "source": "Google News — Caribbean economy",
    "feed_slug": "google-news-caribbean",
    "countries": [],
-   "fetched_at": "2026-08-17T16:41:01.599229+00:00",
+   "fetched_at": "2026-08-17T20:39:48.615934+00:00",
    "topics": [
     "trade"
    ],
    "source_tier": 3,
-   "age_hours": 1857,
-   "relevance_score": 39,
-   "finance_relevant": true
-  },
-  {
-   "id": "https-news-google-com-rss-articles-cbmitgfbvv95cuxqqlaxrhzvnvywxzffogrzqm44nzlgve83ujjxy3nuq2nfdxd3afewm3pdt3v2djnmzf9av",
-   "title": "EU Targets Caribbean Citizenship-by-Investment Programs in Schengen Visa Crackdown - CEOWORLD magazine",
-   "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQQlAxRHZvNVYwXzFFOGRzQm44NzlGVE83UjJxY3NUQ2NFdXd3aFEwM3pDT3V2djNmZF9aV1UweXJteGlBUmItWmpjSUhPOUMxZjc0RUtrWXB4US14clkyYUw2NXNlaThsc3RHLVhvVUcxVHhFamczWlhmM0JlTmNHaUlKSXYySGVZbkFpbUZNaHZRb19Ib1E1SC1Ca1hOMjQwWWdxNmJCeU1lbUZ0cFlVUHVDblR2QQ?oc=5",
-   "published": "Fri, 31 Jul 2026 07:00:00 GMT",
-   "summary": "EU Targets Caribbean Citizenship-by-Investment Programs in Schengen Visa Crackdown CEOWORLD magazine",
-   "source": "Google News — Caribbean economy",
-   "feed_slug": "google-news-caribbean",
-   "countries": [],
-   "fetched_at": "2026-08-17T16:41:01.599319+00:00",
-   "topics": [
-    "finance"
-   ],
-   "source_tier": 3,
-   "age_hours": 417,
+   "age_hours": 1861,
    "relevance_score": 39,
    "finance_relevant": true
   },
   {
    "id": "https-news-google-com-rss-articles-cbmikafbvv95cuxps3vvvjfyemdilvq5tvpqdm1kqnlvwlhfceoxblfwbmu5x3rochqyv0nmsmryrwzmm3baw",
-   "title": "From reef to rainforest: CTO’s Sustainability conference in Belize explores culture, conservation, and community - TheGATE.ca",
+   "title": "From reef to rainforest: CTO’s Sustainability conference in Belize explores culture, conservation, and community - thegate.ca",
    "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPS3VVVjFYemdiLVQ5TVpQdm1KQnlVWlhFcEoxblFWbmU5X3RocHQyV0NmSmRYRWZmM3BaWWpYYXhFSHlCRnBZU2UxZFJ3R21vVU5KbXlPQXc2NEY1cTZwTjd1ZHhkUUIwWTkzaUNFR0JDeGdndGRtcklvUVB0eXpnZWlLeWdjd2RJc1hLTXZ2TlY?oc=5",
    "published": "Fri, 20 Mar 2026 07:00:00 GMT",
-   "summary": "From reef to rainforest: CTO’s Sustainability conference in Belize explores culture, conservation, and community TheGATE.ca",
+   "summary": "From reef to rainforest: CTO’s Sustainability conference in Belize explores culture, conservation, and community thegate.ca",
    "source": "Google News — Belize",
    "feed_slug": "google-news-belize",
    "countries": [
     "Belize"
    ],
-   "fetched_at": "2026-08-17T16:41:03.293277+00:00",
+   "fetched_at": "2026-08-17T20:39:50.212839+00:00",
    "topics": [
     "regional"
    ],
    "source_tier": 3,
-   "age_hours": 3609,
+   "age_hours": 3613,
+   "relevance_score": 39,
+   "finance_relevant": false
+  },
+  {
+   "id": "https-news-google-com-rss-articles-cbmiwgfbvv95cuxnbe9ptfhksln3wgqynxvydgxivmxuls1xu2hhnf9pbvryahlentaydlvrnlkwchc2dffsm",
+   "title": "Belize spotlights natural assets, sustainability agenda ahead of CTO conference - Caribbean National Weekly",
+   "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNbE9pTFhkSlN3WGQyNXVydGxiVmxuLS1XU2hhNF9PbVRyaHlENTAydlVRNlkwcHc2dFFSMTZsMDY5TG9QOUFrSWpKR3NnYkNYejRBQ3BqMVhsV2h4SHZWckZjUnpEa2M1cmxCS1RUSURpejZUaFdwbHIwZ0tvRFRodUJ1Um1iU2M2YlhabGlGWnJqUWU5OHRQVERQUm1ZTlhzMVhCbngtVXkxVlRwV2JpQktTekUzVE1zdkNyT3ExMnA3dw?oc=5",
+   "published": "Fri, 20 Mar 2026 07:00:00 GMT",
+   "summary": "Belize spotlights natural assets, sustainability agenda ahead of CTO conference Caribbean National Weekly",
+   "source": "Google News — Belize",
+   "feed_slug": "google-news-belize",
+   "countries": [
+    "Belize"
+   ],
+   "fetched_at": "2026-08-17T20:39:50.213082+00:00",
+   "topics": [
+    "regional"
+   ],
+   "source_tier": 3,
+   "age_hours": 3613,
    "relevance_score": 39,
    "finance_relevant": false
   },
   {
    "id": "https-news-google-com-rss-articles-cbmiiwfbvv95cuxqs01eczb2ngntvgh1ntdlwgs0bwjqwtrcs2jhmnf6d255r05ueecznzzwmurledlcmtnnn",
-   "title": "Belize Shows Why Investing in Early Warnings Pays Off - wmo.int",
+   "title": "Belize Shows Why Investing in Early Warnings Pays Off - World Meteorological Organization WMO",
    "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQS01EczB2NGNTVGh1NTdLWGs0bWJqWTRCS2JHMnF6d255R05UeEczNzZwMURleDlCMTNNNVNOWG5sNHJ6ZmF4NlM2YkkzanNQbmRUc0pFdUFKaHcyQlc5aml6TXdGTFo2M3ZuYlF3bnEyWXl4QVJDbkpsTjZKcktjQkJtNVA3aGdxVnlR?oc=5",
    "published": "Fri, 19 Jun 2026 07:00:00 GMT",
-   "summary": "Belize Shows Why Investing in Early Warnings Pays Off wmo.int",
+   "summary": "Belize Shows Why Investing in Early Warnings Pays Off World Meteorological Organization WMO",
    "source": "Google News — Belize",
    "feed_slug": "google-news-belize",
    "countries": [
     "Belize"
    ],
-   "fetched_at": "2026-08-17T16:41:03.292533+00:00",
+   "fetched_at": "2026-08-17T20:39:50.212472+00:00",
    "topics": [
     "regional"
    ],
    "source_tier": 3,
-   "age_hours": 1425,
+   "age_hours": 1429,
+   "relevance_score": 39,
+   "finance_relevant": false
+  },
+  {
+   "id": "https-news-google-com-rss-articles-cbminafbvv95cuxnlwy1nho5s2pzmdq3ovdmedf3awzxbmzqowpxrnrlbjbmmvfidw0wdlgywgjiqwfjclbpt",
+   "title": "Mike Heusner, steward of Belize’s waters, has died, aged 86 - news - Mongabay",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNLWY1NHo5S2pzMDQ3OVdMeDF3aWZxbmZqOWpxRnRlbjBmMVFIdW0wdlgyWGJIQWFjclBPTkJoMWs4NWNmV0VhbTJpWDRvSE9mRUEzR0JRMlJUQUVXU0MzT3IxVzFKczZHNjRtRDJLMEZPeTZrLVVsLTdSZXZrbDdQZjl6TDM4bFlDenVvWGhTMzlDeXZPX255VEVQTmc?oc=5",
+   "published": "Fri, 16 Jan 2026 08:00:00 GMT",
+   "summary": "Mike Heusner, steward of Belize’s waters, has died, aged 86 news - Mongabay",
+   "source": "Google News — Belize",
+   "feed_slug": "google-news-belize",
+   "countries": [
+    "Belize"
+   ],
+   "fetched_at": "2026-08-17T20:39:50.212548+00:00",
+   "topics": [
+    "regional"
+   ],
+   "source_tier": 3,
+   "age_hours": 5124,
    "relevance_score": 39,
    "finance_relevant": false
   },
@@ -2043,12 +2005,12 @@
    "source": "Google News — Caribbean economy",
    "feed_slug": "google-news-caribbean",
    "countries": [],
-   "fetched_at": "2026-08-17T16:41:01.598984+00:00",
+   "fetched_at": "2026-08-17T20:39:48.615774+00:00",
    "topics": [
     "finance"
    ],
    "source_tier": 3,
-   "age_hours": 920,
+   "age_hours": 924,
    "relevance_score": 39,
    "finance_relevant": true
   },
@@ -2063,12 +2025,52 @@
    "countries": [
     "Jamaica"
    ],
-   "fetched_at": "2026-08-17T16:41:02.742781+00:00",
+   "fetched_at": "2026-08-17T20:39:49.637934+00:00",
    "topics": [
     "regional"
    ],
    "source_tier": 3,
-   "age_hours": 3105,
+   "age_hours": 3109,
+   "relevance_score": 39,
+   "finance_relevant": false
+  },
+  {
+   "id": "https-news-google-com-rss-articles-cbmilwfbvv95cuxqmm9cm1nfnmftq1o2wwu5wudqtlzonzburlhfcwzmmfbhsgl6wu9pq2lttepbdufny3ayz",
+   "title": "Atlanta United 2 to play friendly against Belize National Team - Atlanta United FC",
+   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQMm9CM1NfNmFTQ1o2WWU5WUdQTlZONzBURlhFcWZMMFBHSGl6WU9PQ2ltTEpBdUFnY3AyZ2IzT0E3TGRMYk1zZGxZZjJ1Q2hHX3JVSWdMMU5NcmwwVTFiZ241VUg5UDIzM3UxQUFrSXB1N3BfN2dvbEVPSUpVdVNlNW9HMFJxWE1UdFpvdkQtOWNmYWplaHBN?oc=5",
+   "published": "Fri, 05 Sep 2025 07:00:00 GMT",
+   "summary": "Atlanta United 2 to play friendly against Belize National Team Atlanta United FC",
+   "source": "Google News — Belize",
+   "feed_slug": "google-news-belize",
+   "countries": [
+    "Belize"
+   ],
+   "fetched_at": "2026-08-17T20:39:50.212755+00:00",
+   "topics": [
+    "regional"
+   ],
+   "source_tier": 3,
+   "age_hours": 8317,
+   "relevance_score": 39,
+   "finance_relevant": false
+  },
+  {
+   "id": "https-news-google-com-rss-articles-cbmiugfbvv95cuxpvlizmwk0avnieusywwgzwdm4bg82aulcslvft25gvxd4sg5mbwi5djnfcm1vnxd1sjdiv",
+   "title": "The battle for access to Jamaica’s billion-dollar beaches - The Guardian",
+   "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPVlIzMWk0aVNieUsyWWgzWDM4bG82aUlCSlVFT25GVXd4SG5mbWI5djNFcm1VNXd1SjdIVnFDdmd5a2hVUGRGelJZZlVaZDNyWC0ycWhnYldRcTlzczMwdnpOMTg5aDBOdzFEb2U4WVhvanp0bVAyQzlJX1dpYmFlNWdxNjRCc04wRDlSQ2xmNU53VVROWTllZXNSVWVZUlNWYVlmZ1pCY3pMVjNkZDFxREFkOFo1TmVHYVE?oc=5",
+   "published": "Fri, 03 Jul 2026 07:00:00 GMT",
+   "summary": "The battle for access to Jamaica’s billion-dollar beaches The Guardian",
+   "source": "Google News — Jamaica",
+   "feed_slug": "google-news-jamaica",
+   "countries": [
+    "Jamaica"
+   ],
+   "fetched_at": "2026-08-17T20:39:49.637894+00:00",
+   "topics": [
+    "regional"
+   ],
+   "source_tier": 3,
+   "age_hours": 1093,
    "relevance_score": 39,
    "finance_relevant": false
   },
@@ -2081,13 +2083,13 @@
    "source": "Google News — Caribbean economy",
    "feed_slug": "google-news-caribbean",
    "countries": [],
-   "fetched_at": "2026-08-17T16:41:01.598198+00:00",
+   "fetched_at": "2026-08-17T20:39:48.615249+00:00",
    "topics": [
     "finance",
     "tourism"
    ],
    "source_tier": 3,
-   "age_hours": 5,
+   "age_hours": 9,
    "relevance_score": 38,
    "finance_relevant": true
   },
@@ -2100,12 +2102,30 @@
    "source": "Google News — Caribbean economy",
    "feed_slug": "google-news-caribbean",
    "countries": [],
-   "fetched_at": "2026-08-17T16:41:01.599274+00:00",
+   "fetched_at": "2026-08-17T20:39:48.616012+00:00",
    "topics": [
     "regional"
    ],
    "source_tier": 3,
-   "age_hours": 2169,
+   "age_hours": 2173,
+   "relevance_score": 33,
+   "finance_relevant": false
+  },
+  {
+   "id": "https-news-google-com-rss-articles-cbmic0fvx3lxte96ufduv2dfq0y5d3q4tzhsogdmruxmbvvbv1czbtzmnmztvex3cm1hx3o4utm2vknvrhn3c",
+   "title": "China’s economic footprint in Latin America and the Caribbean - ODI: Think change",
+   "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE96UFdUV2dFQ0Y5d3Q4TzhsOGdMRUxmbVVBV1czbTZMNmZTVEx3cm1HX3o4UTM2VkNVRHN3cTZTblo4LW1TMHVXVmJ2dC1tN1IyMlVxVmk3ZHRFTHMxTHNEMl9pTGQyUG04ZXBNYmMteWJxTnM?oc=5",
+   "published": "Tue, 03 Mar 2026 08:00:00 GMT",
+   "summary": "China’s economic footprint in Latin America and the Caribbean ODI: Think change",
+   "source": "Google News — Caribbean economy",
+   "feed_slug": "google-news-caribbean",
+   "countries": [],
+   "fetched_at": "2026-08-17T20:39:48.616441+00:00",
+   "topics": [
+    "regional"
+   ],
+   "source_tier": 3,
+   "age_hours": 4020,
    "relevance_score": 33,
    "finance_relevant": false
   },
@@ -2118,33 +2138,14 @@
    "source": "Google News — Caribbean economy",
    "feed_slug": "google-news-caribbean",
    "countries": [],
-   "fetched_at": "2026-08-17T16:41:01.598744+00:00",
+   "fetched_at": "2026-08-17T20:39:48.616485+00:00",
    "topics": [
     "regional"
    ],
    "source_tier": 3,
-   "age_hours": 172,
+   "age_hours": 176,
    "relevance_score": 33,
    "finance_relevant": false
-  },
-  {
-   "id": "https-news-google-com-rss-articles-cbmi7gfbvv95cuxqmmjfyvvcytl6z3q3vdltzgd4vlpgvm1dt21hcerslxa4vdfgmld0tfbllu9zuhvwb0tod",
-   "title": "Helix Partners Management LP Makes New $5.75 Million Investment in Royal Caribbean Cruises Ltd. $RCL - MarketBeat",
-   "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxQMmJFYVVCYTl6Z3Q3VDltZGd4VlpGVm1DT21HcERsLXA4VDFGMld0TFBLLU9zUHVwb0tOdWNHb1I3ejg2Wks3Q0Rld3cyc0Jac0IwdHdvZGFNY0tpNTFKV21VaW5vTjdSQ3JCd3g0WUhVWllyaE0tQWdTMmJVdHFNNG9uVGJOZHpRY3g5WEx0UHFsVUwtMEVoX0EwVjBqdFVSZDNwTXlyTHNnUldaekpMTHp1cEFzWUhBeU1INWlsN2NTOGhOWGt0dTRETHp6OW02MXQwTFZwY2FIeVJRWFBVNVU2b0ZianlBTGJFQVdR?oc=5",
-   "published": "Sat, 25 Jul 2026 07:00:00 GMT",
-   "summary": "Helix Partners Management LP Makes New $5.75 Million Investment in Royal Caribbean Cruises Ltd. $RCL MarketBeat",
-   "source": "Google News — Caribbean economy",
-   "feed_slug": "google-news-caribbean",
-   "countries": [],
-   "fetched_at": "2026-08-17T16:41:01.599361+00:00",
-   "topics": [
-    "finance",
-    "tourism"
-   ],
-   "source_tier": 3,
-   "age_hours": 561,
-   "relevance_score": 10,
-   "finance_relevant": true
   }
  ]
 }

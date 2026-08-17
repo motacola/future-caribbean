@@ -5,7 +5,7 @@
 - Action readiness: high
 - Evidence freshness: refreshing · cycles since refresh: 0
 - Recommendation: **ADVANCE** — Calibrated confidence 100/100 with 4 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.
-- Last validated: 2026-08-17T16:41:09.150122+00:00
+- Last validated: 2026-08-17T20:39:56.710309+00:00
 
 ## Sector hypotheses
 - Oil & gas and offshore support services [corroborated] — _Google News — Guyana: Eco Atlantic Oil & Gas Stock Drops 3.12% as Investors Weigh Offshore Exploration, Guyana Potential and Namibia Opportunities - kalkine.ca_
