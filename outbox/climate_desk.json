@@ -2,7 +2,7 @@
   "instance": "climate",
   "instance_label": "Climate & Catastrophe Risk",
   "cycle_id": "20260817",
-  "generated_at": "2026-08-17T01:52:02.392244+00:00",
+  "generated_at": "2026-08-17T04:54:36.206587+00:00",
   "clusters": [
     {
       "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.2",
@@ -27,33 +27,9 @@
           "action": "Exposure check \u2014 Rip Current Statement \u2014 Moderate (San Juan and Vicinity). Flag policies in the affected zone and prepare parametric-trigger assessment."
         }
       ]
-    },
-    {
-      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.4",
-      "country_cluster": "Caribbean Waters of Puerto Rico from 10 NM to 17N, including the Coastal Waters of Saint Croix",
-      "signal_kind": "hazard_alert",
-      "title": "Caribbean Waters of Puerto Rico from 10 NM to 17N, including the Coastal Waters of Saint Croix: Small Craft Advisory in effect (Minor)",
-      "evidence": "NOAA NWS: Small Craft Advisory issued August 16 at 8:02PM AST until August 17 at 12:00AM AST by NWS San Juan PR",
-      "evidence_grade": "C - advisory",
-      "confidence_score": 60,
-      "freshness": "new",
-      "decision": "Hazard response and exposure assessment",
-      "risk_flags": [],
-      "personas": [
-        {
-          "persona": "Resilience Planner",
-          "channel": "Telegram/SMS alert",
-          "action": "Active hazard alert \u2014 Small Craft Advisory \u2014 Minor (Caribbean Waters of Puerto Rico from 10 NM to 17N, including the Coastal Waters of Saint Croix). Pre-position resources and confirm evacuation/shelter readiness in the affected area now."
-        },
-        {
-          "persona": "Insurer / Reinsurer",
-          "channel": "Email + alert",
-          "action": "Exposure check \u2014 Small Craft Advisory \u2014 Minor (Caribbean Waters of Puerto Rico from 10 NM to 17N, including the Coastal Waters of Saint Croix). Flag policies in the affected zone and prepare parametric-trigger assessment."
-        }
-      ]
     }
   ],
-  "dispatch_count": 4,
+  "dispatch_count": 2,
   "sources": [
     "NOAA NWS",
     "NDBC buoys",

@@ -1,17 +1,17 @@
 # Opportunity Validation Pack — Belize
 
-- Signal: `supply-chain-belize` · Dispatch: `DSP-20260619-030`
-- Confidence: 94/100 (raw 94) · A - multi-source
+- Signal: `supply-chain-belize` · Dispatch: `DSP-20260817-028`
+- Confidence: 100/100 (raw 108) · A - multi-source
 - Action readiness: high
-- Evidence freshness: stale · cycles since refresh: 2
-- Recommendation: **HOLD** — Evidence fingerprint unchanged for 2 cycles — downgraded from advance to hold until new corroboration arrives.
-- Last validated: 2026-06-19T12:20:17.196925+00:00
+- Evidence freshness: refreshing · cycles since refresh: 0
+- Recommendation: **ADVANCE** — Calibrated confidence 100/100 with 3 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.
+- Last validated: 2026-08-17T04:54:35.848200+00:00
 
 ## Sector hypotheses
-- Tourism and hospitality [corroborated] — _Google News — Belize: What a Trip to Belize Taught Me About American Tourism - D Magazine_
+- Tourism and hospitality [corroborated] — _Google News — Belize: Belize Tourism Board opens nominations for 2026 National Tourism Awards - Belize News and Opinion on www.breakingbelizenews.com_
 - Agribusiness and agro-exports [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
 - Business process outsourcing [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
-- FDI-receiving sectors (composition not yet broken down) [macro_signal] — _World Bank: FDI net inflows moved +701.0% from 2023 to 2024_
+- FDI-receiving sectors (composition not yet broken down) [macro_signal] — _World Bank: FDI net inflows moved -99.8% from 2024 to 2025_
 
 ## Credible local operators (registry-backed)
 - Belize Tourism Industry Association (BTIA) — National tourism industry body — gateway to operators and investors ([profile](https://www.btia.org/))
@@ -22,13 +22,16 @@
 
 ## Procurement matches
 - [Enhancing the Quality of the Belize National Quality Infrastructure](https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure) — Caribbean Development Bank (country)
-- [School Improvement Project (SIP) Phase 1](https://www.caribank.org/work-with-us/procurement/procurement-notices/school-improvement-project-sip-phase-1-0) — Caribbean Development Bank (regional)
-- [Support for Institutional Strengthening of the Caribbean Disaster Emergency Project](https://www.caribank.org/work-with-us/procurement/procurement-notices/support-institutional-strengthening-caribbean-disaster-emergency-project) — Caribbean Development Bank (regional)
+- [Belize Education Secondary Reform Programme II (BESRPII)](https://www.caribank.org/work-with-us/procurement/procurement-notices/belize-education-secondary-reform-programme-ii-besrpii-0) — Caribbean Development Bank (country)
+- [Solar Photo-Voltaic and Battery Energy Storage System Project](https://www.caribank.org/work-with-us/procurement/procurement-notices/solar-photo-voltaic-and-battery-energy-storage-system-project) — Caribbean Development Bank (regional)
+- [2025 Annual Procurement Report](https://www.caribank.org/publications-and-resources/resource-library/reports/2025-annual-procurement-report) — Caribbean Development Bank (regional)
+- [Health Sector Strengthening Project](https://www.caribank.org/work-with-us/procurement/procurement-notices/health-sector-strengthening-project-2) — Caribbean Development Bank (regional)
+- [Health Sector Strengthening Project](https://www.caribank.org/work-with-us/procurement/procurement-notices/health-sector-strengthening-project-1) — Caribbean Development Bank (regional)
 
 ## Official country data
-- [Belize: Monthly Consumer Price Index (CPI) by Expenditure Category](https://statistics.caricom.org/country_data/belize-monthly-consumer-price-index-cpi-by-expenditure-category/) — CARICOM Statistics
-- [2024_VNR_Report_Belize](https://statistics.caricom.org/country_data/2024_vnr_report_belize/) — CARICOM Statistics
-- [2017_VNR_Report_Belize](https://statistics.caricom.org/country_data/2017_vnr_report_belize/) — CARICOM Statistics
+- [Belize Balance of Payments (2000-2025) BZ$](https://statistics.caricom.org/?country_data=belize-balance-ofpayments-2000-2025-bz) — CARICOM Statistics
+- [Belize Balance of Payments (2000 &#8211; 2025)](https://statistics.caricom.org/?country_data=belize-balance-of-payments-2000-2024) — CARICOM Statistics
+- [Belize: Monthly Consumer Price Index (CPI) by Expenditure Category](https://statistics.caricom.org/?country_data=belize-monthly-consumer-price-index-cpi-by-expenditure-category) — CARICOM Statistics
 
 ## Relevant institutions & intro targets
 - BELTRAIDE (Belize Trade and Investment Development Service) — National trade and investment promotion agency

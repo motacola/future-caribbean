@@ -1,18 +1,18 @@
 {
   "signal_id": "supply-chain-belize",
-  "dispatch_id": "DSP-20260619-030",
+  "dispatch_id": "DSP-20260817-028",
   "country": "Belize",
   "signal_title": "Belize: signal detected",
-  "confidence_score": 94,
-  "raw_confidence_score": 94,
+  "confidence_score": 100,
+  "raw_confidence_score": 108,
   "action_readiness": "high",
   "evidence_grade": "A - multi-source",
   "sector_hypotheses": [
     {
       "sector": "Tourism and hospitality",
-      "basis": "Google News — Belize: What a Trip to Belize Taught Me About American Tourism - D Magazine",
+      "basis": "Google News — Belize: Belize Tourism Board opens nominations for 2026 National Tourism Awards - Belize News and Opinion on www.breakingbelizenews.com",
       "status": "corroborated",
-      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9Gc1M1dU8xbXJKN3pHbS1VNWVpTnpSUjk4a1h1NmY4VHVSQnpkdnVyb3BNSTRYR3ZDNW1zcnlGcG91d1BiSTBJUVpnQkl6TWVMcnlTVmtHRVlOa21maXNmWUU0NWt4VnQxREVROW80Z3Z6ZTMwQl84ai13?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPbVpxaVJCVk5tOWVjT0NPRmQ5TFVXcGNIZFFuTjctalo0aHBvZFJCaXJURnZPYkN3THQ0ZmJZSkpJeC1RSDNKc0ZTaVp1TVZqLUtlX0hFU21fUmV0Zmp2U1FlRHIzc1VTVGhsWUFzNGQzS252YWZGNzk0SGJIcXdhY29zMGFfNWJ6WHkxVUFYb1pkV3YtQWxaYlhxOE5HZHEtZkJWR3YzNGJwc0VjVzRTeUJob3gwNGF4d0E?oc=5"
     },
     {
       "sector": "Agribusiness and agro-exports",
@@ -26,7 +26,7 @@
     },
     {
       "sector": "FDI-receiving sectors (composition not yet broken down)",
-      "basis": "World Bank: FDI net inflows moved +701.0% from 2023 to 2024",
+      "basis": "World Bank: FDI net inflows moved -99.8% from 2024 to 2025",
       "status": "macro_signal"
     }
   ],
@@ -39,33 +39,51 @@
       "match": "country"
     },
     {
-      "title": "School Improvement Project (SIP) Phase 1",
+      "title": "Belize Education Secondary Reform Programme II (BESRPII)",
       "source": "Caribbean Development Bank",
-      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/school-improvement-project-sip-phase-1-0",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/belize-education-secondary-reform-programme-ii-besrpii-0",
+      "match": "country"
+    },
+    {
+      "title": "Solar Photo-Voltaic and Battery Energy Storage System Project",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/solar-photo-voltaic-and-battery-energy-storage-system-project",
       "match": "regional"
     },
     {
-      "title": "Support for Institutional Strengthening of the Caribbean Disaster Emergency Project",
+      "title": "2025 Annual Procurement Report",
       "source": "Caribbean Development Bank",
-      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/support-institutional-strengthening-caribbean-disaster-emergency-project",
+      "url": "https://www.caribank.org/publications-and-resources/resource-library/reports/2025-annual-procurement-report",
+      "match": "regional"
+    },
+    {
+      "title": "Health Sector Strengthening Project",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/health-sector-strengthening-project-2",
+      "match": "regional"
+    },
+    {
+      "title": "Health Sector Strengthening Project",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/health-sector-strengthening-project-1",
       "match": "regional"
     }
   ],
   "official_country_data": [
     {
+      "title": "Belize Balance of Payments (2000-2025) BZ$",
+      "source": "CARICOM Statistics",
+      "url": "https://statistics.caricom.org/?country_data=belize-balance-ofpayments-2000-2025-bz"
+    },
+    {
+      "title": "Belize Balance of Payments (2000 &#8211; 2025)",
+      "source": "CARICOM Statistics",
+      "url": "https://statistics.caricom.org/?country_data=belize-balance-of-payments-2000-2024"
+    },
+    {
       "title": "Belize: Monthly Consumer Price Index (CPI) by Expenditure Category",
       "source": "CARICOM Statistics",
-      "url": "https://statistics.caricom.org/country_data/belize-monthly-consumer-price-index-cpi-by-expenditure-category/"
-    },
-    {
-      "title": "2024_VNR_Report_Belize",
-      "source": "CARICOM Statistics",
-      "url": "https://statistics.caricom.org/country_data/2024_vnr_report_belize/"
-    },
-    {
-      "title": "2017_VNR_Report_Belize",
-      "source": "CARICOM Statistics",
-      "url": "https://statistics.caricom.org/country_data/2017_vnr_report_belize/"
+      "url": "https://statistics.caricom.org/?country_data=belize-monthly-consumer-price-index-cpi-by-expenditure-category"
     }
   ],
   "credible_local_operators": [
@@ -99,13 +117,16 @@
     }
   ],
   "source_links": [
-    "https://news.google.com/rss/articles/CBMiekFVX3lxTE9Gc1M1dU8xbXJKN3pHbS1VNWVpTnpSUjk4a1h1NmY4VHVSQnpkdnVyb3BNSTRYR3ZDNW1zcnlGcG91d1BiSTBJUVpnQkl6TWVMcnlTVmtHRVlOa21maXNmWUU0NWt4VnQxREVROW80Z3Z6ZTMwQl84ai13?oc=5",
-    "https://statistics.caricom.org/country_data/2017_vnr_report_belize/",
-    "https://statistics.caricom.org/country_data/2024_vnr_report_belize/",
-    "https://statistics.caricom.org/country_data/belize-monthly-consumer-price-index-cpi-by-expenditure-category/",
+    "https://news.google.com/rss/articles/CBMiugFBVV95cUxPbVpxaVJCVk5tOWVjT0NPRmQ5TFVXcGNIZFFuTjctalo0aHBvZFJCaXJURnZPYkN3THQ0ZmJZSkpJeC1RSDNKc0ZTaVp1TVZqLUtlX0hFU21fUmV0Zmp2U1FlRHIzc1VTVGhsWUFzNGQzS252YWZGNzk0SGJIcXdhY29zMGFfNWJ6WHkxVUFYb1pkV3YtQWxaYlhxOE5HZHEtZkJWR3YzNGJwc0VjVzRTeUJob3gwNGF4d0E?oc=5",
+    "https://statistics.caricom.org/?country_data=belize-balance-of-payments-2000-2024",
+    "https://statistics.caricom.org/?country_data=belize-balance-ofpayments-2000-2025-bz",
+    "https://statistics.caricom.org/?country_data=belize-monthly-consumer-price-index-cpi-by-expenditure-category",
+    "https://www.caribank.org/publications-and-resources/resource-library/reports/2025-annual-procurement-report",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/belize-education-secondary-reform-programme-ii-besrpii-0",
     "https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure",
-    "https://www.caribank.org/work-with-us/procurement/procurement-notices/school-improvement-project-sip-phase-1-0",
-    "https://www.caribank.org/work-with-us/procurement/procurement-notices/support-institutional-strengthening-caribbean-disaster-emergency-project"
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/health-sector-strengthening-project-1",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/health-sector-strengthening-project-2",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/solar-photo-voltaic-and-battery-energy-storage-system-project"
   ],
   "unresolved_questions": [
     "Which specific sectors are driving the movement in Belize? No official sector-breakdown dataset matched this cycle.",
@@ -118,10 +139,11 @@
       "why": "National trade and investment promotion agency"
     }
   ],
-  "advance_or_reject_recommendation": "hold",
-  "recommendation_reason": "Evidence fingerprint unchanged for 2 cycles — downgraded from advance to hold until new corroboration arrives.",
-  "last_validated_at": "2026-06-19T12:20:17.196925+00:00",
-  "evidence_fingerprint": "3af35d2df5aa7bf4",
-  "cycles_since_refresh": 2,
-  "evidence_freshness": "stale"
+  "advance_or_reject_recommendation": "advance",
+  "recommendation_reason": "Calibrated confidence 100/100 with 3 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.",
+  "last_validated_at": "2026-08-17T04:54:35.848200+00:00",
+  "coordination_path": null,
+  "evidence_fingerprint": "dfab1958b607a48e",
+  "cycles_since_refresh": 0,
+  "evidence_freshness": "refreshing"
 }
