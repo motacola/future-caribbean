@@ -1,15 +1,15 @@
 {
   "instance": "climate",
   "instance_label": "Climate & Catastrophe Risk",
-  "cycle_id": "20260816",
-  "generated_at": "2026-08-16T20:34:55.853427+00:00",
+  "cycle_id": "20260817",
+  "generated_at": "2026-08-17T01:52:02.392244+00:00",
   "clusters": [
     {
-      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.0",
+      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.2",
       "country_cluster": "San Juan and Vicinity",
       "signal_kind": "hazard_alert",
       "title": "San Juan and Vicinity: Rip Current Statement in effect (Moderate)",
-      "evidence": "NOAA NWS: Rip Current Statement issued August 16 at 10:18AM AST until August 17 at 6:00AM AST by NWS San Juan PR",
+      "evidence": "NOAA NWS: Rip Current Statement issued August 16 at 8:03PM AST until August 17 at 6:00AM AST by NWS San Juan PR",
       "evidence_grade": "B - official alert",
       "confidence_score": 80,
       "freshness": "new",
@@ -29,11 +29,11 @@
       ]
     },
     {
-      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.0",
-      "country_cluster": "Atlantic Waters of Puerto Rico AND USVI from 10 NM to 19.5N",
+      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.4",
+      "country_cluster": "Caribbean Waters of Puerto Rico from 10 NM to 17N, including the Coastal Waters of Saint Croix",
       "signal_kind": "hazard_alert",
-      "title": "Atlantic Waters of Puerto Rico AND USVI from 10 NM to 19.5N: Small Craft Advisory in effect (Minor)",
-      "evidence": "NOAA NWS: Small Craft Advisory issued August 16 at 10:19AM AST until August 17 at 12:00AM AST by NWS San Juan PR",
+      "title": "Caribbean Waters of Puerto Rico from 10 NM to 17N, including the Coastal Waters of Saint Croix: Small Craft Advisory in effect (Minor)",
+      "evidence": "NOAA NWS: Small Craft Advisory issued August 16 at 8:02PM AST until August 17 at 12:00AM AST by NWS San Juan PR",
       "evidence_grade": "C - advisory",
       "confidence_score": 60,
       "freshness": "new",
@@ -43,12 +43,12 @@
         {
           "persona": "Resilience Planner",
           "channel": "Telegram/SMS alert",
-          "action": "Active hazard alert \u2014 Small Craft Advisory \u2014 Minor (Atlantic Waters of Puerto Rico AND USVI from 10 NM to 19.5N). Pre-position resources and confirm evacuation/shelter readiness in the affected area now."
+          "action": "Active hazard alert \u2014 Small Craft Advisory \u2014 Minor (Caribbean Waters of Puerto Rico from 10 NM to 17N, including the Coastal Waters of Saint Croix). Pre-position resources and confirm evacuation/shelter readiness in the affected area now."
         },
         {
           "persona": "Insurer / Reinsurer",
           "channel": "Email + alert",
-          "action": "Exposure check \u2014 Small Craft Advisory \u2014 Minor (Atlantic Waters of Puerto Rico AND USVI from 10 NM to 19.5N). Flag policies in the affected zone and prepare parametric-trigger assessment."
+          "action": "Exposure check \u2014 Small Craft Advisory \u2014 Minor (Caribbean Waters of Puerto Rico from 10 NM to 17N, including the Coastal Waters of Saint Croix). Flag policies in the affected zone and prepare parametric-trigger assessment."
         }
       ]
     }
