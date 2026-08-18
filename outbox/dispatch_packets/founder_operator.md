@@ -2,7 +2,7 @@
 
 **Decision job:** Competitive positioning and capability mapping
 **Delivery channel:** Telegram
-**Generated:** Aug 18, 2026 at 08:52 UTC
+**Generated:** Aug 18, 2026 at 13:04 UTC
 **Dispatches in this packet:** 11
 
 ---
@@ -11,7 +11,7 @@
 
 ### 1. Guyana: +860.3% capital surge on a single official source — market entry window open
 
-**ID:** `DSP-20260818-019` | **Country:** Guyana | **Confidence:** 🔴 Immediate | 100/100 | C - single-source
+**ID:** `DSP-20260818-021` | **Country:** Guyana | **Confidence:** 🔴 Immediate | 100/100 | C - single-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -25,7 +25,7 @@
 
 ### 2. Belize: signal detected
 
-**ID:** `DSP-20260818-028` | **Country:** Belize | **Confidence:** 🔴 Immediate | 100/100 | A - multi-source
+**ID:** `DSP-20260818-030` | **Country:** Belize | **Confidence:** 🔴 Immediate | 100/100 | A - multi-source
 **Channel:** Telegram | **Window:** 21 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -39,7 +39,7 @@
 
 ### 3. Suriname: +206.0% investment movement, one source — needs corroboration
 
-**ID:** `DSP-20260818-022` | **Country:** Suriname | **Confidence:** 🔴 Immediate | 98/100 | C - single-source
+**ID:** `DSP-20260818-024` | **Country:** Suriname | **Confidence:** 🔴 Immediate | 98/100 | C - single-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -53,7 +53,7 @@
 
 ### 4. CARICOM: 7 active procurements — bidding window open
 
-**ID:** `DSP-20260818-013` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 95/100 | B - cross-source
+**ID:** `DSP-20260818-015` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 95/100 | B - cross-source
 **Channel:** Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -81,7 +81,7 @@
 
 ### 6. Capital convergence: 3 Caribbean economies showing multi-source investment momentum
 
-**ID:** `DSP-20260818-016` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
+**ID:** `DSP-20260818-018` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** new
 **Feedback status:** ignored
 
@@ -109,7 +109,7 @@
 
 ### 8. Barbados: +34.8% FDI momentum validated — cross-reference before deploying
 
-**ID:** `DSP-20260818-025` | **Country:** Barbados | **Confidence:** 🟡 Validation | 85/100 | C - single-source
+**ID:** `DSP-20260818-027` | **Country:** Barbados | **Confidence:** 🟡 Validation | 85/100 | C - single-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -137,7 +137,7 @@
 
 ### 10. Eastern Caribbean Currency Union: 5.8%
 
-**ID:** `DSP-20260818-210` | **Country:** Eastern Caribbean Currency Union | **Confidence:** 🟡 Validation | 76/100 | C - single-source
+**ID:** `DSP-20260818-212` | **Country:** Eastern Caribbean Currency Union | **Confidence:** 🟡 Validation | 76/100 | C - single-source
 **Channel:** Telegram | **Window:** 21 days | **Freshness:** sustained
 **Feedback status:** ignored
 

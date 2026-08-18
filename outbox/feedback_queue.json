@@ -1,6 +1,6 @@
 {
-  "cycle_intro": "Lead: Guyana. 2 converging signal(s) across 4 source(s). Signals: \ud83d\udcbc Investment + \ud83d\udc8e Investment.",
-  "generated_at": "2026-08-18 08:52 UTC",
+  "cycle_intro": "Lead: Guyana. 3 converging signal(s) across 4 source(s). Signals: \ud83d\udcbc Investment + \ud83c\udfd6\ufe0f Tourism + \ud83d\udc8e Investment.",
+  "generated_at": "2026-08-18 13:04 UTC",
   "items": [
     {
       "band": "immediate",
@@ -95,7 +95,7 @@
     {
       "band": "validation",
       "channel": "Telegram digest",
-      "country": "St. Kitts and Nevis",
+      "country": "Turks and Caicos Islands",
       "freshness": "intensified",
       "kind": "ccrif_payout",
       "metrics": {
@@ -108,12 +108,12 @@
       "persona": "regional intelligence",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
       "score": 84,
-      "signal_id": "ccrif-payout-kn-tropical_cyclone-2017-01-01"
+      "signal_id": "ccrif-payout-tc-tropical_cyclone-2008-01-01"
     },
     {
       "band": "validation",
       "channel": "Telegram digest",
-      "country": "Dominica",
+      "country": "Haiti",
       "freshness": "intensified",
       "kind": "ccrif_payout",
       "metrics": {
@@ -126,12 +126,12 @@
       "persona": "regional intelligence",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
       "score": 84,
-      "signal_id": "ccrif-payout-dm-tropical_cyclone-2017-01-01"
+      "signal_id": "ccrif-payout-ht-earthquake-2010-01-01"
     },
     {
       "band": "validation",
       "channel": "Telegram digest",
-      "country": "Excess Rainfall policy - Trinidad",
+      "country": "Anguilla",
       "freshness": "intensified",
       "kind": "ccrif_payout",
       "metrics": {
@@ -144,7 +144,7 @@
       "persona": "regional intelligence",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
       "score": 84,
-      "signal_id": "ccrif-payout-tt-excess_rainfall-2017-01-01"
+      "signal_id": "ccrif-payout-ai-tropical_cyclone-2010-01-01"
     },
     {
       "band": "validation",
@@ -165,6 +165,24 @@
       "signal_id": "eccb-credit-surge-eccu"
     },
     {
+      "band": "monitor",
+      "channel": "Telegram digest",
+      "country": "St. Vincent and the Grenadines",
+      "freshness": "new",
+      "kind": "economic_vulnerability",
+      "metrics": {
+        "decision_changed": null,
+        "forwarded": null,
+        "opened": null,
+        "reply_count": null,
+        "sent": false
+      },
+      "persona": "policy/operator",
+      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
+      "score": 60,
+      "signal_id": "vuln-st.-vincent-and-the-grenadines"
+    },
+    {
       "band": "context",
       "channel": "Telegram digest",
       "country": "Antigua and Barbuda",
@@ -183,11 +201,11 @@
       "signal_id": "tourism-antigua-and-barbuda"
     },
     {
-      "band": "validation",
-      "channel": "Email brief + Telegram",
-      "country": "Guyana",
+      "band": "context",
+      "channel": "Telegram digest",
+      "country": "Dominica",
       "freshness": "sustained",
-      "kind": "investment_signal",
+      "kind": "tourism_impact",
       "metrics": {
         "decision_changed": null,
         "forwarded": null,
@@ -195,28 +213,10 @@
         "reply_count": null,
         "sent": false
       },
-      "persona": "investor/founder",
+      "persona": "tourism operator",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 87,
-      "signal_id": "invest-guyana"
-    },
-    {
-      "band": "validation",
-      "channel": "Email brief + Telegram",
-      "country": "Suriname",
-      "freshness": "sustained",
-      "kind": "investment_signal",
-      "metrics": {
-        "decision_changed": null,
-        "forwarded": null,
-        "opened": null,
-        "reply_count": null,
-        "sent": false
-      },
-      "persona": "investor/founder",
-      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 84,
-      "signal_id": "invest-suriname"
+      "score": 47,
+      "signal_id": "tourism-dominica"
     }
   ],
   "purpose": "Feedback agent input queue for distribution performance and trust signals."

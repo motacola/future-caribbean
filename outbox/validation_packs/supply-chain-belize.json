@@ -1,6 +1,6 @@
 {
   "signal_id": "supply-chain-belize",
-  "dispatch_id": "DSP-20260818-026",
+  "dispatch_id": "DSP-20260818-028",
   "country": "Belize",
   "signal_title": "Belize: signal detected",
   "confidence_score": 100,
@@ -10,7 +10,7 @@
   "sector_hypotheses": [
     {
       "sector": "Tourism and hospitality",
-      "basis": "Google News — Belize: Belize Tourism Board opens nominations for 2026 National Tourism Awards - breakingbelizenews.com",
+      "basis": "Google News — Belize: Belize Tourism Board opens nominations for 2026 National Tourism Awards - Belize News and Opinion on www.breakingbelizenews.com",
       "status": "corroborated",
       "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPbVpxaVJCVk5tOWVjT0NPRmQ5TFVXcGNIZFFuTjctalo0aHBvZFJCaXJURnZPYkN3THQ0ZmJZSkpJeC1RSDNKc0ZTaVp1TVZqLUtlX0hFU21fUmV0Zmp2U1FlRHIzc1VTVGhsWUFzNGQzS252YWZGNzk0SGJIcXdhY29zMGFfNWJ6WHkxVUFYb1pkV3YtQWxaYlhxOE5HZHEtZkJWR3YzNGJwc0VjVzRTeUJob3gwNGF4d0E?oc=5"
     },
@@ -141,7 +141,7 @@
   ],
   "advance_or_reject_recommendation": "advance",
   "recommendation_reason": "Calibrated confidence 100/100 with 3 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.",
-  "last_validated_at": "2026-08-18T08:52:32.698471+00:00",
+  "last_validated_at": "2026-08-18T13:04:54.945304+00:00",
   "coordination_path": null,
   "evidence_fingerprint": "dfab1958b607a48e",
   "cycles_since_refresh": 0,

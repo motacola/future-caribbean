@@ -1,7 +1,7 @@
 # Caribbean Opportunity Dispatch — Cycle 20260818
 
-Generated: 2026-08-18 08:52 UTC
-Total dispatches: 215
+Generated: 2026-08-18 13:04 UTC
+Total dispatches: 217
 
 ## ✅ Delivered Dispatches
 
@@ -95,4 +95,4 @@ Total dispatches: 215
    Why this persona: Multi-source validation reduces screening risk — capital follows verified signals
    Action: Investigate Caribwide as a capital deployment target this cycle. Multi-source validation (Guyana (860.3% change), Suriname (206.0% change), Barbados (34.8%...
 
-*...and 200 more delivered dispatches*
+*...and 202 more delivered dispatches*

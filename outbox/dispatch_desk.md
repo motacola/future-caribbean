@@ -1,6 +1,6 @@
 # Dispatch Desk — Cycle 20260818
 
-Generated: 2026-08-18 08:52 UTC
+Generated: 2026-08-18 13:04 UTC
 
 Signal Fabric turns fragmented regional data into decision-ready routes. This is the primary product surface; Telegram/email are delivery channels and the dashboard is the operator/audit view.
 
@@ -11,7 +11,7 @@ Fragmented public data → Agentic signal pipeline → Routed decisions → Feed
 | Stage | This cycle proof |
 |---|---|
 | Data | 2 source families represented |
-| Signal | 52 decision clusters from 215 persona routes |
+| Signal | 53 decision clusters from 217 persona routes |
 | Packaging | Persona actions, evidence grades, risk flags, and action windows attached |
 | Distribution | 7 personas across 5 channel types |
 | Action | Every route names the decision it should influence |
@@ -19,7 +19,7 @@ Fragmented public data → Agentic signal pipeline → Routed decisions → Feed
 
 ## Regional Read
 
-Capital momentum is strongest in Guyana (+860.3%), followed by Suriname. Separately, St. Vincent and the Grenadines show elevated economic vulnerability — relevant for portfolio monitoring and resilience planning. Development pipeline remains active (CDB active procurement notices: 7) — the bidding window is open for project-based entry. Tourism-related growth signals are visible in Antigua and Barbuda, Barbados, Dominica — demand-side indicators for capacity planning.
+Capital momentum is strongest in Guyana (+860.3%), followed by Suriname. Development pipeline remains active (CDB active procurement notices: 7) — the bidding window is open for project-based entry. Tourism-related growth signals are visible in Antigua and Barbuda, Barbados, Dominica — demand-side indicators for capacity planning.
 
 ## Why This Cycle Matters
 
@@ -39,9 +39,9 @@ Capital momentum is strongest in Guyana (+860.3%), followed by Suriname. Separat
 
 | Persona | Channel | Next action | Feedback |
 |---|---|---|---|
-| Regional Founder/Operator | Telegram | Assess competitive positioning in Guyana. FDI movement (860.3% change) signals growing market or incoming competition — evaluate… | ignored (`DSP-20260818-019`) |
-| Ecosystem Builder | Telegram | Route Guyana opportunity to relevant founders and investors in your network. Signal strength (860.3% change) makes this a… | ignored (`DSP-20260818-018`) |
-| Diaspora Investor | Email brief + Telegram | Investigate Guyana as a capital deployment target this cycle. One official source shows the movement (860.3% change) — corroborate it… | forwarded (`DSP-20260818-017`) |
+| Regional Founder/Operator | Telegram | Assess competitive positioning in Guyana. FDI movement (860.3% change) signals growing market or incoming competition — evaluate… | ignored (`DSP-20260818-021`) |
+| Ecosystem Builder | Telegram | Route Guyana opportunity to relevant founders and investors in your network. Signal strength (860.3% change) makes this a… | ignored (`DSP-20260818-020`) |
+| Diaspora Investor | Email brief + Telegram | Investigate Guyana as a capital deployment target this cycle. One official source shows the movement (860.3% change) — corroborate it… | forwarded (`DSP-20260818-019`) |
 
 ### 2. Belize: signal detected
 
@@ -54,9 +54,9 @@ Capital momentum is strongest in Guyana (+860.3%), followed by Suriname. Separat
 
 | Persona | Channel | Next action | Feedback |
 |---|---|---|---|
-| Regional Operator | Telegram | Active supply chain corridor in Belize: procurement live + maritime stable. Assess capacity for logistics, warehousing, transport —… | ignored (`DSP-20260818-026`) |
-| Regional Founder/Operator | Telegram | Supply chain gap in Belize confirmed. Procurement pipeline + stable maritime = build warehousing, transport, or last-mile services… | ignored (`DSP-20260818-028`) |
-| Procurement Watcher | Email brief | CDB procurement (signal detected) aligned with stable shipping lanes. Viable corridor for logistics providers — prepare EOI. | ignored (`DSP-20260818-027`) |
+| Regional Operator | Telegram | Active supply chain corridor in Belize: procurement live + maritime stable. Assess capacity for logistics, warehousing, transport —… | ignored (`DSP-20260818-028`) |
+| Regional Founder/Operator | Telegram | Supply chain gap in Belize confirmed. Procurement pipeline + stable maritime = build warehousing, transport, or last-mile services… | ignored (`DSP-20260818-030`) |
+| Procurement Watcher | Email brief | CDB procurement (signal detected) aligned with stable shipping lanes. Viable corridor for logistics providers — prepare EOI. | ignored (`DSP-20260818-029`) |
 
 ### 3. Suriname: +206.0% investment movement, one source — needs corroboration
 
@@ -69,9 +69,9 @@ Capital momentum is strongest in Guyana (+860.3%), followed by Suriname. Separat
 
 | Persona | Channel | Next action | Feedback |
 |---|---|---|---|
-| Regional Founder/Operator | Telegram | Assess competitive positioning in Suriname. FDI movement (206.0% change) signals growing market or incoming competition — evaluate… | ignored (`DSP-20260818-022`) |
-| Ecosystem Builder | Telegram | Route Suriname opportunity to relevant founders and investors in your network. Signal strength (206.0% change) makes this a… | ignored (`DSP-20260818-021`) |
-| Diaspora Investor | Email brief + Telegram | Investigate Suriname as a capital deployment target this cycle. One official source shows the movement (206.0% change) — corroborate… | ignored (`DSP-20260818-020`) |
+| Regional Founder/Operator | Telegram | Assess competitive positioning in Suriname. FDI movement (206.0% change) signals growing market or incoming competition — evaluate… | ignored (`DSP-20260818-024`) |
+| Ecosystem Builder | Telegram | Route Suriname opportunity to relevant founders and investors in your network. Signal strength (206.0% change) makes this a… | ignored (`DSP-20260818-023`) |
+| Diaspora Investor | Email brief + Telegram | Investigate Suriname as a capital deployment target this cycle. One official source shows the movement (206.0% change) — corroborate… | ignored (`DSP-20260818-022`) |
 
 ### 4. CARICOM: 7 active procurements — bidding window open
 
@@ -84,9 +84,9 @@ Capital momentum is strongest in Guyana (+860.3%), followed by Suriname. Separat
 
 | Persona | Channel | Next action | Feedback |
 |---|---|---|---|
-| Regional Operator | Telegram | Review operational readiness for CARICOM opportunities. CDB active procurement notices: 7 — assess capacity and bid pipeline. | replied (`DSP-20260818-011`) |
-| Regional Founder/Operator | Telegram | Map CARICOM procurement pipeline against your capability. CDB/IDB projects (CDB active procurement notices: 7) create service and… | ignored (`DSP-20260818-013`) |
-| Procurement Watcher | Email brief | Track CDB/IDB project pipeline: CDB active procurement notices: 7. Review opportunity fit and prepare expression of interest. | ignored (`DSP-20260818-012`) |
+| Regional Operator | Telegram | Review operational readiness for CARICOM opportunities. CDB active procurement notices: 7 — assess capacity and bid pipeline. | replied (`DSP-20260818-013`) |
+| Regional Founder/Operator | Telegram | Map CARICOM procurement pipeline against your capability. CDB/IDB projects (CDB active procurement notices: 7) create service and… | ignored (`DSP-20260818-015`) |
+| Procurement Watcher | Email brief | Track CDB/IDB project pipeline: CDB active procurement notices: 7. Review opportunity fit and prepare expression of interest. | ignored (`DSP-20260818-014`) |
 
 ### 5. Capital convergence: 3 Caribbean economies showing multi-source investment momentum
 
@@ -99,9 +99,9 @@ Capital momentum is strongest in Guyana (+860.3%), followed by Suriname. Separat
 
 | Persona | Channel | Next action | Feedback |
 |---|---|---|---|
-| Regional Founder/Operator | Telegram | Assess competitive positioning in Caribwide. FDI movement (Guyana (860.3% change), Suriname (206.0% change), Barbados (34.8% change))… | ignored (`DSP-20260818-016`) |
-| Ecosystem Builder | Telegram | Route Caribwide opportunity to relevant founders and investors in your network. Signal strength (Guyana (860.3% change), Suriname… | ignored (`DSP-20260818-015`) |
-| Diaspora Investor | Email brief + Telegram | Investigate Caribwide as a capital deployment target this cycle. Multi-source validation (Guyana (860.3% change), Suriname (206.0%… | ignored (`DSP-20260818-014`) |
+| Regional Founder/Operator | Telegram | Assess competitive positioning in Caribwide. FDI movement (Guyana (860.3% change), Suriname (206.0% change), Barbados (34.8% change))… | ignored (`DSP-20260818-018`) |
+| Ecosystem Builder | Telegram | Route Caribwide opportunity to relevant founders and investors in your network. Signal strength (Guyana (860.3% change), Suriname… | ignored (`DSP-20260818-017`) |
+| Diaspora Investor | Email brief + Telegram | Investigate Caribwide as a capital deployment target this cycle. Multi-source validation (Guyana (860.3% change), Suriname (206.0%… | ignored (`DSP-20260818-016`) |
 
 ### 6. Regional FDI snapshot: 3 countries with active capital movement
 
@@ -142,17 +142,17 @@ Capital momentum is strongest in Guyana (+860.3%), followed by Suriname. Separat
 
 | Persona | Channel | Next action | Feedback |
 |---|---|---|---|
-| Regional Founder/Operator | Telegram | Assess competitive positioning in Barbados. FDI movement (34.8% change) signals growing market or incoming competition — evaluate… | ignored (`DSP-20260818-025`) |
-| Ecosystem Builder | Telegram | Route Barbados opportunity to relevant founders and investors in your network. Signal strength (34.8% change) makes this a… | ignored (`DSP-20260818-024`) |
-| Diaspora Investor | Email brief + Telegram | Investigate Barbados as a capital deployment target this cycle. One official source shows the movement (34.8% change) — corroborate… | ignored (`DSP-20260818-023`) |
+| Regional Founder/Operator | Telegram | Assess competitive positioning in Barbados. FDI movement (34.8% change) signals growing market or incoming competition — evaluate… | ignored (`DSP-20260818-027`) |
+| Ecosystem Builder | Telegram | Route Barbados opportunity to relevant founders and investors in your network. Signal strength (34.8% change) makes this a… | ignored (`DSP-20260818-026`) |
+| Diaspora Investor | Email brief + Telegram | Investigate Barbados as a capital deployment target this cycle. One official source shows the movement (34.8% change) — corroborate… | ignored (`DSP-20260818-025`) |
 
 ## Feedback-Adjusted Priority
 
-- Haiti ccrif payout downranked -16
-- Barbados ccrif payout downranked -16
-- Turks and Caicos Islands ccrif payout downranked -8
-- Excess Rainfall policy - Dominica ccrif payout downranked -8
-- Anguilla ccrif payout downranked -8
+- Excess Rainfall policy - Trinidad ccrif payout downranked -16
+- Tropical Cyclone policy - The Bahamas ccrif payout downranked -8
+- St. Kitts and Nevis ccrif payout downranked -8
+- Excess Rainfall policy - Guatemala ccrif payout downranked -8
+- Excess Rainfall policy - Barbados ccrif payout downranked -8
 
 ## Supporting Artifacts
 
