@@ -1,6 +1,6 @@
 # Caribbean Market Pulse — Investor Brief
 
-Generated: 2026-08-18 16:45 UTC
+Generated: 2026-08-18 20:36 UTC
 
 Audience: investors, founders, diaspora capital networks.
 Decision supported: where to investigate deal flow, procurement activity, or market momentum.
@@ -9,7 +9,7 @@ Decision supported: where to investigate deal flow, procurement activity, or mar
 
 Lead: Guyana. 3 converging signal(s) across 4 source(s). Signals: 💼 Investment + 🏖️ Tourism + 💎 Investment.
 
-*Lead: Guyana · 64 composite signal(s) · 7 updated · 10 intensified · 36 persistent*
+*Lead: Guyana · 64 composite signal(s) · 7 updated · 11 intensified · 36 persistent*
 
 ## Lead Signal
 
@@ -32,9 +32,10 @@ Multi-source investment signals validated across 3 countries. All carry A-grade 
 
 ## Development Pipeline
 
-🔴 — **🏗️ Pipeline — CARICOM**
+🔴 🔄 **🏗️ Pipeline — CARICOM**
    CARICOM: 7 active procurements — bidding window open
    Immediate | 95/100 | B - cross-source
+   🔄 Content updated this cycle
    Active procurement pipeline: CDB active procurement notices: 7. Priority: review CDB/IDB opportunities as lead list for project-based entry.
 
 Active procurement:
