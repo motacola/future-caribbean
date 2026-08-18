@@ -1,11 +1,11 @@
 # Opportunity Validation Pack — Guyana
 
-- Signal: `enhanced-invest-guyana` · Dispatch: `DSP-20260817-019`
+- Signal: `enhanced-invest-guyana` · Dispatch: `DSP-20260818-019`
 - Confidence: 100/100 (raw 111) · C - single-source
 - Action readiness: high
 - Evidence freshness: refreshing · cycles since refresh: 0
 - Recommendation: **ADVANCE** — Calibrated confidence 100/100 with 4 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.
-- Last validated: 2026-08-17T20:39:56.710309+00:00
+- Last validated: 2026-08-18T01:47:32.565428+00:00
 
 ## Sector hypotheses
 - Oil & gas and offshore support services [corroborated] — _Google News — Guyana: Eco Atlantic Oil & Gas Stock Drops 3.12% as Investors Weigh Offshore Exploration, Guyana Potential and Namibia Opportunities - kalkine.ca_

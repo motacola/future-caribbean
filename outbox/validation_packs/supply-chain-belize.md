@@ -1,11 +1,11 @@
 # Opportunity Validation Pack — Belize
 
-- Signal: `supply-chain-belize` · Dispatch: `DSP-20260817-028`
+- Signal: `supply-chain-belize` · Dispatch: `DSP-20260818-028`
 - Confidence: 100/100 (raw 102) · A - multi-source
 - Action readiness: high
 - Evidence freshness: refreshing · cycles since refresh: 0
 - Recommendation: **ADVANCE** — Calibrated confidence 100/100 with 3 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.
-- Last validated: 2026-08-17T20:39:56.710309+00:00
+- Last validated: 2026-08-18T01:47:32.565428+00:00
 
 ## Sector hypotheses
 - Tourism and hospitality [corroborated] — _Google News — Belize: Belize Tourism Board opens nominations for 2026 National Tourism Awards - Belize News and Opinion on www.breakingbelizenews.com_
