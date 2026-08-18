@@ -1,11 +1,11 @@
 # Opportunity Validation Pack — Suriname
 
-- Signal: `enhanced-invest-suriname` · Dispatch: `DSP-20260818-022`
+- Signal: `enhanced-invest-suriname` · Dispatch: `DSP-20260818-020`
 - Confidence: 98/100 (raw 98) · C - single-source
 - Action readiness: high
 - Evidence freshness: stale · cycles since refresh: 8
 - Recommendation: **HOLD** — Evidence fingerprint unchanged for 8 cycles — downgraded from advance to hold until new corroboration arrives.
-- Last validated: 2026-08-18T04:47:46.726674+00:00
+- Last validated: 2026-08-18T08:52:32.698471+00:00
 
 ## Sector hypotheses
 - Offshore oil & gas exploration [corroborated] — _Google News — Guyana: Suriname offshore oil and gas momentum builds as GranMorgu advances - World Oil_
