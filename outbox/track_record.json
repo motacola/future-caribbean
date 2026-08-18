@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-18T01:47:32.754773+00:00",
+  "generated_at": "2026-08-18T04:47:46.916080+00:00",
   "feedback_provenance": "simulated",
   "current_boosts": {
     "enhanced_investment": {
@@ -17,74 +17,22 @@
       "Guyana": -4,
       "Suriname": -4
     },
+    "food_security": {
+      "CARICOM": -4
+    },
     "ccrif_payout": {
-      "Turks and Caicos Islands": -8,
-      "Haiti": -16,
-      "Anguilla": -8,
-      "Barbados": -16,
-      "Excess Rainfall policy - Dominica": -8,
-      "Nicaragua": -6
+      "St. Kitts and Nevis": -8,
+      "Dominica": -8,
+      "Excess Rainfall policy - Trinidad": -16,
+      "Excess Rainfall policy - Barbados": -8,
+      "Tropical Cyclone policy - The Bahamas": -8,
+      "Excess Rainfall policy - Guatemala": -8,
+      "Excess Rainfall policy - Haiti": -2
     }
   },
   "cycles": [
     {
       "cycle_id": "20260818",
-      "responses": {
-        "forwarded": 0,
-        "replied": 0,
-        "opened": 0,
-        "ignored": 0,
-        "decision_changed": 0
-      },
-      "dispatch_count": 217,
-      "countries": [
-        "Excess Rainfall policy - Trinidad",
-        "Haiti",
-        "Barbados",
-        "Excess Rainfall policy - Barbados",
-        "Tropical Cyclone policy - Nicaragua",
-        "Jamaica",
-        "Excess Rainfall - Jamaica",
-        "Nicaragua",
-        "Eastern Caribbean Currency Union",
-        "Guyana",
-        "Suriname",
-        "CARICOM",
-        "Caribwide",
-        "St. Kitts and Nevis",
-        "Dominica",
-        "Tropical Cyclone policy - The Bahamas",
-        "Excess Rainfall policy - Guatemala",
-        "Excess Rainfall policy - Haiti",
-        "Excess Rainfall policy - Jamaica",
-        "Excess Rainfall policy - Panama",
-        "Excess Rainfall policy -  Nicaragua",
-        "Tropical Cyclone policy - Barbados",
-        "Excess Rainfall policy - Antigua & Barbuda",
-        "Excess Rainfall policy - St. Kitts & Nevis",
-        "Excess Rainfall - Guatemala",
-        "St. Vincent & the Grenadines",
-        "Grenada",
-        "COAST - Grenada",
-        "Electric Utilities - GRENLEC - Grenada",
-        "CWUIC - NAWASA - Grenada",
-        "Excess Rainfall - Panama",
-        "Excess Rainfall - Panama (FAP)",
-        "Excess Rainfall - Honduras",
-        "Trinidad",
-        "Turks and Caicos Islands",
-        "Anguilla",
-        "Excess Rainfall policy - Dominica",
-        "Belize",
-        "St. Vincent and the Grenadines"
-      ],
-      "lead": {
-        "country": "Guyana",
-        "title": "Guyana: +860.3% capital surge on a single official source — market entry window open"
-      }
-    },
-    {
-      "cycle_id": "20260817",
       "responses": {
         "forwarded": 1,
         "replied": 1,
@@ -94,16 +42,18 @@
       },
       "dispatch_count": 50,
       "countries": [
-        "Barbados",
-        "Haiti",
+        "Excess Rainfall policy - Trinidad",
         "Guyana",
         "Suriname",
-        "Turks and Caicos Islands",
-        "Anguilla",
-        "Excess Rainfall policy - Dominica",
-        "Belize",
         "CARICOM",
-        "Nicaragua"
+        "St. Kitts and Nevis",
+        "Dominica",
+        "Excess Rainfall policy - Barbados",
+        "Tropical Cyclone policy - The Bahamas",
+        "Excess Rainfall policy - Guatemala",
+        "Belize",
+        "Barbados",
+        "Excess Rainfall policy - Haiti"
       ],
       "lead": {
         "country": "Guyana",

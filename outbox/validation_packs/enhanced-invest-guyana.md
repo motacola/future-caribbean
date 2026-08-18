@@ -5,7 +5,7 @@
 - Action readiness: high
 - Evidence freshness: refreshing · cycles since refresh: 0
 - Recommendation: **ADVANCE** — Calibrated confidence 100/100 with 4 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.
-- Last validated: 2026-08-18T01:47:32.565428+00:00
+- Last validated: 2026-08-18T04:47:46.726674+00:00
 
 ## Sector hypotheses
 - Oil & gas and offshore support services [corroborated] — _Google News — Guyana: Eco Atlantic Oil & Gas Stock Drops 3.12% as Investors Weigh Offshore Exploration, Guyana Potential and Namibia Opportunities - kalkine.ca_
@@ -26,19 +26,12 @@
 - [Guyana Labor Force Survey: Fourth Quarter 2017](https://data.iadb.org/en/search?q=Guyana%20Labor%20Force%20Survey%3A%20Fourth%20Quarte) — IDB Open Data
 
 ## Procurement matches
-- [1.	Construction of Little Daimond- Herstelling  NDC Building, Region 4
-2.	Construction of Bloomfield-Whim  NDC Building, Region 6
-3.	Construction of Tuschen-Uitvlugt NDC Building, Region 3
-4.	Construction of Best-Klien Pouderyon NDC Building, Region 3
-5.	Construction of La Penitence Market, G/town: Lots 1-3
-6.	Upgrade to Lusignan Market, Region 4
-7.	Construction of Plaisance Market, Region 4: Lots 1-4
-8.	Construction of Tuschen Market, EBE, Region 3: Lots 1-4](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
-- [Provision of Patrol Security Services for the National Park.](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
-- [Provision of Baton Security Services for the Guyana China Friendship Park.](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
 - [Improvement (Rehabilitation and Upgrade) of the Selected Regional Road Corridor - Reconstruction of Existing Road Network on the East Coast Demerara – Lot 2: Design and Build Bridges: Across the Mahaica, Mahaicony and Abary Rivers/Creeks](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
 - [Selection Improvement (Rehabilitation and Upgrade) of the Selected Regional Road Corridor -Reconstruction of Existing Road Network on the East Coast Demerara – Lot 2: Design and Build Bridges: Across the Mahaica, Mahaicony and Abary Rivers/Creeks.](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
 - [Supply, Installation and Commission Leguan Power Plant Switchgear, Essequibo Islands Guyana.](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
+- [1.	Construction of Pump Basin at Kitty Pump Station, Georgetown. Lots 1 & 2](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
+- [Rehabilitation of Drainage Structure at Morawhana, Region No.1](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
+- [Supply and Delivery of: 805 Metric Ton Sulphate Of Ammonia](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
 
 ## Official country data
 - [Guyana Balance of Payments (2000 – 2025)](https://statistics.caricom.org/?country_data=guyana-balance-of-payments-2000-2024) — CARICOM Statistics
@@ -52,7 +45,7 @@
 
 ## Unresolved questions
 - Which specific sectors are driving the movement in Guyana? No official sector-breakdown dataset matched this cycle.
-- Tender closes 2026-08-18 — confirm eligibility and bid requirements early.
+- Tender closes 2026-08-19 — confirm eligibility and bid requirements early.
 - Validate fit with registry-listed operators (Guyana Shore Base Inc. (GSBI), Gaico Construction Inc.) before outreach.
 - Validate that the underlying FDI movement is sustained, not a one-off transaction or statistical revision.
 
