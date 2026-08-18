@@ -2,14 +2,14 @@
   "instance": "climate",
   "instance_label": "Climate & Catastrophe Risk",
   "cycle_id": "20260818",
-  "generated_at": "2026-08-18T13:04:55.233412+00:00",
+  "generated_at": "2026-08-18T16:45:50.883804+00:00",
   "clusters": [
     {
-      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.3",
+      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.d",
       "country_cluster": "San Juan and Vicinity",
       "signal_kind": "hazard_alert",
       "title": "San Juan and Vicinity: Heat Advisory in effect (Moderate)",
-      "evidence": "NOAA NWS: Heat Advisory issued August 18 at 1:44AM AST until August 18 at 5:00PM AST by NWS San Juan PR",
+      "evidence": "NOAA NWS: Heat Advisory issued August 18 at 9:51AM AST until August 18 at 5:00PM AST by NWS San Juan PR",
       "evidence_grade": "B - official alert",
       "confidence_score": 80,
       "freshness": "new",
