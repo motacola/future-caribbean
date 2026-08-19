@@ -1,14 +1,14 @@
 # Opportunity Validation Pack — Guyana
 
-- Signal: `enhanced-invest-guyana` · Dispatch: `DSP-20260818-019`
+- Signal: `enhanced-invest-guyana` · Dispatch: `DSP-20260819-019`
 - Confidence: 100/100 (raw 111) · C - single-source
 - Action readiness: high
 - Evidence freshness: refreshing · cycles since refresh: 0
 - Recommendation: **ADVANCE** — Calibrated confidence 100/100 with 4 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.
-- Last validated: 2026-08-18T20:36:38.126439+00:00
+- Last validated: 2026-08-19T01:49:49.349976+00:00
 
 ## Sector hypotheses
-- Oil & gas and offshore support services [corroborated] — _Google News — Guyana: Guyana increases its share of ExxonMobil's offshore oil production to 39.8% - Report.az_
+- Oil & gas and offshore support services [corroborated] — _Google News — Guyana: Exxon looks to add to Guyana exploration program - Oil & Gas Journal_
 - Construction and infrastructure [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
 - Logistics serving the energy supply chain [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
 - Agriculture and agro-processing [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_

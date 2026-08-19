@@ -1,11 +1,11 @@
 # Opportunity Validation Pack — Belize
 
-- Signal: `supply-chain-belize` · Dispatch: `DSP-20260818-028`
+- Signal: `supply-chain-belize` · Dispatch: `DSP-20260819-028`
 - Confidence: 100/100 (raw 102) · A - multi-source
 - Action readiness: high
 - Evidence freshness: refreshing · cycles since refresh: 0
 - Recommendation: **ADVANCE** — Calibrated confidence 100/100 with 3 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.
-- Last validated: 2026-08-18T20:36:38.126439+00:00
+- Last validated: 2026-08-19T01:49:49.349976+00:00
 
 ## Sector hypotheses
 - Tourism and hospitality [corroborated] — _Google News — Belize: Belize Tourism Board opens nominations for 2026 National Tourism Awards - Belize News and Opinion on www.breakingbelizenews.com_
@@ -23,10 +23,10 @@
 ## Procurement matches
 - [Enhancing the Quality of the Belize National Quality Infrastructure](https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure) — Caribbean Development Bank (country)
 - [Belize Education Secondary Reform Programme II (BESRPII)](https://www.caribank.org/work-with-us/procurement/procurement-notices/belize-education-secondary-reform-programme-ii-besrpii-0) — Caribbean Development Bank (country)
+- [Building National and Community Capacity for Climate and Disaster Risk-Informed Decision Making](https://www.caribank.org/work-with-us/procurement/procurement-plans/building-national-and-community-capacity-climate-and-disaster-risk-informed-decision-making) — Caribbean Development Bank (regional)
 - [Solar Photo-Voltaic and Battery Energy Storage System Project](https://www.caribank.org/work-with-us/procurement/procurement-notices/solar-photo-voltaic-and-battery-energy-storage-system-project) — Caribbean Development Bank (regional)
 - [2025 Annual Procurement Report](https://www.caribank.org/publications-and-resources/resource-library/reports/2025-annual-procurement-report) — Caribbean Development Bank (regional)
 - [Health Sector Strengthening Project](https://www.caribank.org/work-with-us/procurement/procurement-notices/health-sector-strengthening-project-2) — Caribbean Development Bank (regional)
-- [Health Sector Strengthening Project](https://www.caribank.org/work-with-us/procurement/procurement-notices/health-sector-strengthening-project-1) — Caribbean Development Bank (regional)
 
 ## Official country data
 - [Belize Balance of Payments (2000-2025) BZ$](https://statistics.caricom.org/?country_data=belize-balance-ofpayments-2000-2025-bz) — CARICOM Statistics

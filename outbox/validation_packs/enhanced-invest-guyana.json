@@ -1,6 +1,6 @@
 {
   "signal_id": "enhanced-invest-guyana",
-  "dispatch_id": "DSP-20260818-019",
+  "dispatch_id": "DSP-20260819-019",
   "country": "Guyana",
   "signal_title": "Guyana: +860.3% capital surge on a single official source — market entry window open",
   "confidence_score": 100,
@@ -10,9 +10,9 @@
   "sector_hypotheses": [
     {
       "sector": "Oil & gas and offshore support services",
-      "basis": "Google News — Guyana: Guyana increases its share of ExxonMobil's offshore oil production to 39.8% - Report.az",
+      "basis": "Google News — Guyana: Exxon looks to add to Guyana exploration program - Oil & Gas Journal",
       "status": "corroborated",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNWnhZNXFKcHVVd25FN2dGVE80WXo4ZGxJWkhURHVwTUVOLWpuaDh6N2ptcEdyaXRoa1hqeXZ3NmRSS2RINnd0Yl9xeURoVkFVNURiQ25oOTA5amNFR244SGo1UGFRWnV1YzRKdVZpNEFGdzdTeEpjUFp1T2tEa1drNkg2cUVQeVBjbUZXblY1X2FQN2hILXFTQmJ0dTRZb2gxWVpDWlBCVVp3TW5aUmt4SdIBtgFBVV95cUxPSW5ZLWRXbXB5M1ZVS1I1ZGRwZGhHRGZMdnFmWlJDZHRJWW9ZcW5xU3VJb080VXl4ZFExUnFmcmFVUnJLWFRLa3lGQWNwZnBGNmhrTWcxT25pTEN5YlpENG5Zc05nVFc1cFhwai1HaXQwNWd0RFp0T004V25yOFVBMnJEdjZqYlU5SmRrTG9MaGg0R09fNXZhTWVJdjNQeGxYWDhITXJXZzFmMDlhN2dWM283MVY4dw?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNMGRRdDlCc3FrOThUa1lpWXVWLWxSRUlRMHp1UjZZUEtGRXA4NTAxcWpoM3ZiRm5Xcm40aGNYUmZvMlhCS3hGNWw3a01CaGdnQ2NxWUxod3VjUWNXckFuU0JIblMwUFpSc2Z5ellELXpnTGZmdkJqTE92bm5FNXFCM2RRMDFibTFwOUhGdnVJRVFPczBSMXRaRmt0dmlRUmY4MEgwcHJETDdqOWR5bEE?oc=5"
     },
     {
       "sector": "Construction and infrastructure",
@@ -168,7 +168,7 @@
     "https://data.iadb.org/en/search?q=Guyana%3A%20Latin%20American%20Public%20Opinion%20Pr",
     "https://data.iadb.org/en/search?q=Productivity%2C%20Technology%20and%20Innovation%20",
     "https://eprocure.gov.gy/",
-    "https://news.google.com/rss/articles/CBMisAFBVV95cUxNWnhZNXFKcHVVd25FN2dGVE80WXo4ZGxJWkhURHVwTUVOLWpuaDh6N2ptcEdyaXRoa1hqeXZ3NmRSS2RINnd0Yl9xeURoVkFVNURiQ25oOTA5amNFR244SGo1UGFRWnV1YzRKdVZpNEFGdzdTeEpjUFp1T2tEa1drNkg2cUVQeVBjbUZXblY1X2FQN2hILXFTQmJ0dTRZb2gxWVpDWlBCVVp3TW5aUmt4SdIBtgFBVV95cUxPSW5ZLWRXbXB5M1ZVS1I1ZGRwZGhHRGZMdnFmWlJDZHRJWW9ZcW5xU3VJb080VXl4ZFExUnFmcmFVUnJLWFRLa3lGQWNwZnBGNmhrTWcxT25pTEN5YlpENG5Zc05nVFc1cFhwai1HaXQwNWd0RFp0T004V25yOFVBMnJEdjZqYlU5SmRrTG9MaGg0R09fNXZhTWVJdjNQeGxYWDhITXJXZzFmMDlhN2dWM283MVY4dw?oc=5",
+    "https://news.google.com/rss/articles/CBMirgFBVV95cUxNMGRRdDlCc3FrOThUa1lpWXVWLWxSRUlRMHp1UjZZUEtGRXA4NTAxcWpoM3ZiRm5Xcm40aGNYUmZvMlhCS3hGNWw3a01CaGdnQ2NxWUxod3VjUWNXckFuU0JIblMwUFpSc2Z5ellELXpnTGZmdkJqTE92bm5FNXFCM2RRMDFibTFwOUhGdnVJRVFPczBSMXRaRmt0dmlRUmY4MEgwcHJETDdqOWR5bEE?oc=5",
     "https://statistics.caricom.org/?country_data=guyana-balance-of-payments-2000-2024",
     "https://statistics.caricom.org/?country_data=guyana-monthly-consumer-price-index-cpi-by-expenditure-category"
   ],
@@ -190,9 +190,9 @@
   ],
   "advance_or_reject_recommendation": "advance",
   "recommendation_reason": "Calibrated confidence 100/100 with 4 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.",
-  "last_validated_at": "2026-08-18T20:36:38.126439+00:00",
+  "last_validated_at": "2026-08-19T01:49:49.349976+00:00",
   "coordination_path": null,
-  "evidence_fingerprint": "dc6fd1d3ff896366",
+  "evidence_fingerprint": "43ca0df84e86837e",
   "cycles_since_refresh": 0,
   "evidence_freshness": "refreshing"
 }

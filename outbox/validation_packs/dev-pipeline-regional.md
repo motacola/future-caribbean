@@ -1,11 +1,11 @@
 # Opportunity Validation Pack — CARICOM
 
-- Signal: `dev-pipeline-regional` · Dispatch: `DSP-20260818-013`
+- Signal: `dev-pipeline-regional` · Dispatch: `DSP-20260819-013`
 - Confidence: 78/100 (raw 95) · B - cross-source
 - Action readiness: medium (no dated country procurement or news corroboration)
 - Evidence freshness: stale · cycles since refresh: 30
 - Recommendation: **HOLD** — Calibrated confidence 78/100 with 1 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.
-- Last validated: 2026-08-18T20:36:38.126439+00:00
+- Last validated: 2026-08-19T01:49:49.349976+00:00
 
 ## Sector hypotheses
 - None identified this cycle
@@ -23,11 +23,11 @@
 
 ## Procurement matches
 - [Enhancing the Quality of the Belize National Quality Infrastructure](https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure) — Caribbean Development Bank (regional)
+- [Building National and Community Capacity for Climate and Disaster Risk-Informed Decision Making](https://www.caribank.org/work-with-us/procurement/procurement-plans/building-national-and-community-capacity-climate-and-disaster-risk-informed-decision-making) — Caribbean Development Bank (regional)
 - [Belize Education Secondary Reform Programme II (BESRPII)](https://www.caribank.org/work-with-us/procurement/procurement-notices/belize-education-secondary-reform-programme-ii-besrpii-0) — Caribbean Development Bank (regional)
 - [Solar Photo-Voltaic and Battery Energy Storage System Project](https://www.caribank.org/work-with-us/procurement/procurement-notices/solar-photo-voltaic-and-battery-energy-storage-system-project) — Caribbean Development Bank (regional)
 - [2025 Annual Procurement Report](https://www.caribank.org/publications-and-resources/resource-library/reports/2025-annual-procurement-report) — Caribbean Development Bank (regional)
 - [Health Sector Strengthening Project](https://www.caribank.org/work-with-us/procurement/procurement-notices/health-sector-strengthening-project-2) — Caribbean Development Bank (regional)
-- [Health Sector Strengthening Project](https://www.caribank.org/work-with-us/procurement/procurement-notices/health-sector-strengthening-project-1) — Caribbean Development Bank (regional)
 
 ## Official country data
 - [CARICOM Travel Trade Balance](https://statistics.caricom.org/?country_data=caricom-travel-trade-balance) — CARICOM Statistics
