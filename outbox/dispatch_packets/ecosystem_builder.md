@@ -2,7 +2,7 @@
 
 **Decision job:** Founder matching and ecosystem support prioritisation
 **Delivery channel:** Telegram
-**Generated:** Aug 19, 2026 at 04:48 UTC
+**Generated:** Aug 19, 2026 at 08:51 UTC
 **Dispatches in this packet:** 52
 
 ---
@@ -65,119 +65,133 @@
 **Decision to influence:** Which verified opportunity to investigate for capital deployment or partnership entry
 **Routing rationale:** Cross-country investment velocity signals where to focus ecosystem support and founder matching
 
-### 5. Turks and Caicos Islands: signal detected
+### 5. CARICOM: food supply indicators shifting — supply chain implications
 
-**ID:** `DSP-20260819-034` | **Country:** Turks and Caicos Islands | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**ID:** `DSP-20260819-011` | **Country:** CARICOM | **Confidence:** 🟡 Validation | 84/100 | B - cross-source
+**Channel:** Telegram | **Window:** 30 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** CARICOM food trade data: 42 datasets available; • Travel Service Imports, Balance of Payments; • Travel Services Exports, Balance of Payments; • Annual Growth Rates of Intra-regional Exports of Food and Beverages by SITC Division 2000–2024
+**Detail:** 5%
+**Grade:** B - cross-source
+
+**Recommended action:** Route CARICOM opportunity to relevant founders and investors in your network. Signal strength (5%) makes this a high-priority introduction target.
+**Decision to influence:** Agricultural/logistics investment case or policy response planning
+**Routing rationale:** Food trade data reveals supply chain gaps that local founders and agri-tech can fill
+
+### 6. St. Kitts and Nevis: signal detected
+
+**ID:** `DSP-20260819-066` | **Country:** St. Kitts and Nevis | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** Payout: US$6,303,913; Peril: tropical_cyclone; Event date: 2008-01-01; Announced: 2008-01-01
+**Evidence:** Payout: US$2,294,603; Peril: tropical_cyclone; Event date: 2017-01-01; Announced: 2017-01-01
 **Detail:** signal detected
 **Grade:** C - single-source
 
-**Recommended action:** Route Turks and Caicos Islands opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
+**Recommended action:** Route St. Kitts and Nevis opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 6. Haiti: signal detected
+### 7. Dominica: signal detected
 
-**ID:** `DSP-20260819-038` | **Country:** Haiti | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**ID:** `DSP-20260819-070` | **Country:** Dominica | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** Payout: US$7,753,579; Peril: earthquake; Event date: 2010-01-01; Announced: 2010-01-01
+**Evidence:** Payout: US$19,294,800; Peril: tropical_cyclone; Event date: 2017-01-01; Announced: 2017-01-01
 **Detail:** signal detected
 **Grade:** C - single-source
 
-**Recommended action:** Route Haiti opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
+**Recommended action:** Route Dominica opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 7. Anguilla: signal detected
+### 8. Excess Rainfall policy - Trinidad: signal detected
 
-**ID:** `DSP-20260819-042` | **Country:** Anguilla | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**ID:** `DSP-20260819-074` | **Country:** Excess Rainfall policy - Trinidad | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** Payout: US$4,282,733; Peril: tropical_cyclone; Event date: 2010-01-01; Announced: 2010-01-01
+**Evidence:** Payout: US$7,007,886; Peril: excess_rainfall; Event date: 2017-01-01; Announced: 2017-01-01
 **Detail:** signal detected
 **Grade:** C - single-source
 
-**Recommended action:** Route Anguilla opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
+**Recommended action:** Route Excess Rainfall policy - Trinidad opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 8. Barbados: signal detected
+### 9. Excess Rainfall policy - Barbados: signal detected
 
-**ID:** `DSP-20260819-046` | **Country:** Barbados | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**ID:** `DSP-20260819-078` | **Country:** Excess Rainfall policy - Barbados | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** Payout: US$8,560,247; Peril: tropical_cyclone; Event date: 2010-01-01; Announced: 2010-01-01
+**Evidence:** Payout: US$5,813,299; Peril: excess_rainfall; Event date: 2018-01-01; Announced: 2018-01-01
 **Detail:** signal detected
 **Grade:** C - single-source
 
-**Recommended action:** Route Barbados opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
+**Recommended action:** Route Excess Rainfall policy - Barbados opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 9. Barbados: signal detected
+### 10. Excess Rainfall policy - Trinidad: signal detected
 
-**ID:** `DSP-20260819-050` | **Country:** Barbados | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**ID:** `DSP-20260819-082` | **Country:** Excess Rainfall policy - Trinidad | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** Payout: US$1,284,882; Peril: excess_rainfall; Event date: 2014-01-01; Announced: 2014-01-01
+**Evidence:** Payout: US$2,534,550; Peril: excess_rainfall; Event date: 2018-01-01; Announced: 2018-01-01
 **Detail:** signal detected
 **Grade:** C - single-source
 
-**Recommended action:** Route Barbados opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
+**Recommended action:** Route Excess Rainfall policy - Trinidad opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 10. Excess Rainfall policy - Dominica: signal detected
+### 11. Tropical Cyclone policy - The Bahamas: signal detected
 
-**ID:** `DSP-20260819-054` | **Country:** Excess Rainfall policy - Dominica | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**ID:** `DSP-20260819-086` | **Country:** Tropical Cyclone policy - The Bahamas | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** Payout: US$2,402,153; Peril: excess_rainfall; Event date: 2015-01-01; Announced: 2015-01-01
+**Evidence:** Payout: US$11,527,151; Peril: tropical_cyclone; Event date: 2019-01-01; Announced: 2019-01-01
 **Detail:** signal detected
 **Grade:** C - single-source
 
-**Recommended action:** Route Excess Rainfall policy - Dominica opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
+**Recommended action:** Route Tropical Cyclone policy - The Bahamas opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 11. Haiti: signal detected
+### 12. Excess Rainfall policy - Guatemala: signal detected
 
-**ID:** `DSP-20260819-058` | **Country:** Haiti | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**ID:** `DSP-20260819-090` | **Country:** Excess Rainfall policy - Guatemala | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** Payout: US$20,388,067; Peril: tropical_cyclone; Event date: 2016-01-01; Announced: 2016-01-01
+**Evidence:** Payout: US$3,628,013; Peril: excess_rainfall; Event date: 2020-01-01; Announced: 2020-01-01
 **Detail:** signal detected
 **Grade:** C - single-source
 
-**Recommended action:** Route Haiti opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
+**Recommended action:** Route Excess Rainfall policy - Guatemala opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 12. Nicaragua: signal detected
+### 13. Excess Rainfall policy - Haiti: signal detected
 
-**ID:** `DSP-20260819-062` | **Country:** Nicaragua | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**ID:** `DSP-20260819-094` | **Country:** Excess Rainfall policy - Haiti | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** Payout: US$1,110,193; Peril: tropical_cyclone; Event date: 2016-01-01; Announced: 2016-01-01
+**Evidence:** Payout: US$7,163,958; Peril: excess_rainfall; Event date: 2020-01-01; Announced: 2020-01-01
 **Detail:** signal detected
 **Grade:** C - single-source
 
-**Recommended action:** Route Nicaragua opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
+**Recommended action:** Route Excess Rainfall policy - Haiti opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 13. Excess Rainfall policy - Jamaica: signal detected
+### 14. Excess Rainfall policy - Jamaica: signal detected
 
 **ID:** `DSP-20260819-098` | **Country:** Excess Rainfall policy - Jamaica | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
@@ -191,7 +205,7 @@
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 14. Excess Rainfall policy - Panama: signal detected
+### 15. Excess Rainfall policy - Panama: signal detected
 
 **ID:** `DSP-20260819-102` | **Country:** Excess Rainfall policy - Panama | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
@@ -205,7 +219,7 @@
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 15. Tropical Cyclone policy - Nicaragua: signal detected
+### 16. Tropical Cyclone policy - Nicaragua: signal detected
 
 **ID:** `DSP-20260819-106` | **Country:** Tropical Cyclone policy - Nicaragua | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** updated
@@ -219,7 +233,7 @@
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 16. Excess Rainfall policy -  Nicaragua: signal detected
+### 17. Excess Rainfall policy -  Nicaragua: signal detected
 
 **ID:** `DSP-20260819-110` | **Country:** Excess Rainfall policy -  Nicaragua | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
@@ -233,7 +247,7 @@
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 17. Tropical Cyclone policy - Nicaragua: signal detected
+### 18. Tropical Cyclone policy - Nicaragua: signal detected
 
 **ID:** `DSP-20260819-114` | **Country:** Tropical Cyclone policy - Nicaragua | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
@@ -247,7 +261,7 @@
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 18. Tropical Cyclone policy - Barbados: signal detected
+### 19. Tropical Cyclone policy - Barbados: signal detected
 
 **ID:** `DSP-20260819-118` | **Country:** Tropical Cyclone policy - Barbados | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
@@ -261,35 +275,63 @@
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 19. Haiti: signal detected
+### 20. Excess Rainfall policy - Barbados: signal detected
 
-**ID:** `DSP-20260819-126` | **Country:** Haiti | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**ID:** `DSP-20260819-122` | **Country:** Excess Rainfall policy - Barbados | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** Payout: US$39,953,272; Peril: earthquake; Event date: 2021-01-01; Announced: 2021-01-01
+**Evidence:** Payout: US$1,124,424; Peril: excess_rainfall; Event date: 2021-01-01; Announced: 2021-01-01
 **Detail:** signal detected
 **Grade:** C - single-source
 
-**Recommended action:** Route Haiti opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
+**Recommended action:** Route Excess Rainfall policy - Barbados opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 20. Nicaragua: signal detected
+### 21. Excess Rainfall policy - Trinidad: signal detected
 
-**ID:** `DSP-20260819-138` | **Country:** Nicaragua | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**ID:** `DSP-20260819-130` | **Country:** Excess Rainfall policy - Trinidad | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** Payout: US$8,924,577; Peril: tropical_cyclone; Event date: 2022-01-01; Announced: 2022-01-01
+**Evidence:** Payout: US$2,381,464; Peril: excess_rainfall; Event date: 2021-01-01; Announced: 2021-01-01
 **Detail:** signal detected
 **Grade:** C - single-source
 
-**Recommended action:** Route Nicaragua opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
+**Recommended action:** Route Excess Rainfall policy - Trinidad opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 21. Excess Rainfall policy - Antigua & Barbuda: signal detected
+### 22. Excess Rainfall policy - Trinidad: signal detected
+
+**ID:** `DSP-20260819-134` | **Country:** Excess Rainfall policy - Trinidad | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Telegram | **Window:** 7 days | **Freshness:** updated
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$5,115,782; Peril: excess_rainfall; Event date: 2022-01-01; Announced: 2022-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Route Excess Rainfall policy - Trinidad opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
+
+### 23. Excess Rainfall policy - Trinidad: signal detected
+
+**ID:** `DSP-20260819-142` | **Country:** Excess Rainfall policy - Trinidad | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$1,400,000; Peril: excess_rainfall; Event date: 2022-01-01; Announced: 2022-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Route Excess Rainfall policy - Trinidad opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
+
+### 24. Excess Rainfall policy - Antigua & Barbuda: signal detected
 
 **ID:** `DSP-20260819-146` | **Country:** Excess Rainfall policy - Antigua & Barbuda | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
@@ -303,7 +345,7 @@
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 22. Excess Rainfall policy - St. Kitts & Nevis: signal detected
+### 25. Excess Rainfall policy - St. Kitts & Nevis: signal detected
 
 **ID:** `DSP-20260819-150` | **Country:** Excess Rainfall policy - St. Kitts & Nevis | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
@@ -317,7 +359,7 @@
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 23. Excess Rainfall - Guatemala: signal detected
+### 26. Excess Rainfall - Guatemala: signal detected
 
 **ID:** `DSP-20260819-154` | **Country:** Excess Rainfall - Guatemala | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
@@ -331,7 +373,7 @@
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 24. St. Vincent & the Grenadines: signal detected
+### 27. St. Vincent & the Grenadines: signal detected
 
 **ID:** `DSP-20260819-158` | **Country:** St. Vincent & the Grenadines | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
@@ -345,7 +387,7 @@
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 25. Grenada: signal detected
+### 28. Grenada: signal detected
 
 **ID:** `DSP-20260819-162` | **Country:** Grenada | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** updated
@@ -359,7 +401,7 @@
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 26. COAST - Grenada: signal detected
+### 29. COAST - Grenada: signal detected
 
 **ID:** `DSP-20260819-166` | **Country:** COAST - Grenada | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** updated
@@ -373,7 +415,7 @@
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 27. Electric Utilities - GRENLEC - Grenada: signal detected
+### 30. Electric Utilities - GRENLEC - Grenada: signal detected
 
 **ID:** `DSP-20260819-170` | **Country:** Electric Utilities - GRENLEC - Grenada | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** updated
@@ -387,7 +429,7 @@
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 28. CWUIC - NAWASA - Grenada: signal detected
+### 31. CWUIC - NAWASA - Grenada: signal detected
 
 **ID:** `DSP-20260819-174` | **Country:** CWUIC - NAWASA - Grenada | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
@@ -401,7 +443,7 @@
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 29. Jamaica: signal detected
+### 32. Jamaica: signal detected
 
 **ID:** `DSP-20260819-178` | **Country:** Jamaica | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
@@ -415,7 +457,7 @@
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 30. Excess Rainfall - Jamaica: signal detected
+### 33. Excess Rainfall - Jamaica: signal detected
 
 **ID:** `DSP-20260819-182` | **Country:** Excess Rainfall - Jamaica | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
@@ -429,7 +471,7 @@
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 31. Excess Rainfall - Panama: signal detected
+### 34. Excess Rainfall - Panama: signal detected
 
 **ID:** `DSP-20260819-186` | **Country:** Excess Rainfall - Panama | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** updated
@@ -443,7 +485,7 @@
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 32. Excess Rainfall - Panama (FAP): signal detected
+### 35. Excess Rainfall - Panama (FAP): signal detected
 
 **ID:** `DSP-20260819-190` | **Country:** Excess Rainfall - Panama (FAP) | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
@@ -457,7 +499,7 @@
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 33. Excess Rainfall - Honduras: signal detected
+### 36. Excess Rainfall - Honduras: signal detected
 
 **ID:** `DSP-20260819-194` | **Country:** Excess Rainfall - Honduras | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
@@ -471,7 +513,7 @@
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 34. Jamaica: signal detected
+### 37. Jamaica: signal detected
 
 **ID:** `DSP-20260819-198` | **Country:** Jamaica | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
@@ -485,7 +527,7 @@
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 35. Excess Rainfall - Jamaica: signal detected
+### 38. Excess Rainfall - Jamaica: signal detected
 
 **ID:** `DSP-20260819-202` | **Country:** Excess Rainfall - Jamaica | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
@@ -499,7 +541,7 @@
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 36. Trinidad: signal detected
+### 39. Trinidad: signal detected
 
 **ID:** `DSP-20260819-206` | **Country:** Trinidad | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
@@ -513,133 +555,77 @@
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 37. Haiti: signal detected
+### 40. Nicaragua: signal detected
 
-**ID:** `DSP-20260819-210` | **Country:** Haiti | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**ID:** `DSP-20260819-062` | **Country:** Nicaragua | **Confidence:** 🟡 Validation | 78/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** Payout: US$1,198,434; Peril: tropical_cyclone; Event date: 2025-01-01; Announced: 2025-01-01
+**Evidence:** Payout: US$1,110,193; Peril: tropical_cyclone; Event date: 2016-01-01; Announced: 2016-01-01
 **Detail:** signal detected
 **Grade:** C - single-source
 
-**Recommended action:** Route Haiti opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
+**Recommended action:** Route Nicaragua opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 38. Excess Rainfall policy - Haiti: signal detected
+### 41. Nicaragua: signal detected
 
-**ID:** `DSP-20260819-094` | **Country:** Excess Rainfall policy - Haiti | **Confidence:** 🟡 Validation | 82/100 | C - single-source
+**ID:** `DSP-20260819-138` | **Country:** Nicaragua | **Confidence:** 🟡 Validation | 78/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** Payout: US$7,163,958; Peril: excess_rainfall; Event date: 2020-01-01; Announced: 2020-01-01
+**Evidence:** Payout: US$8,924,577; Peril: tropical_cyclone; Event date: 2022-01-01; Announced: 2022-01-01
 **Detail:** signal detected
 **Grade:** C - single-source
 
-**Recommended action:** Route Excess Rainfall policy - Haiti opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
+**Recommended action:** Route Nicaragua opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 39. CARICOM: food supply indicators shifting — supply chain implications
+### 42. Turks and Caicos Islands: signal detected
 
-**ID:** `DSP-20260819-011` | **Country:** CARICOM | **Confidence:** 🟡 Validation | 80/100 | B - cross-source
-**Channel:** Telegram | **Window:** 30 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** CARICOM food trade data: 42 datasets available; • Travel Service Imports, Balance of Payments; • Travel Services Exports, Balance of Payments; • Annual Growth Rates of Intra-regional Exports of Food and Beverages by SITC Division 2000–2024
-**Detail:** 5%
-**Grade:** B - cross-source
-
-**Recommended action:** Route CARICOM opportunity to relevant founders and investors in your network. Signal strength (5%) makes this a high-priority introduction target.
-**Decision to influence:** Agricultural/logistics investment case or policy response planning
-**Routing rationale:** Food trade data reveals supply chain gaps that local founders and agri-tech can fill
-
-### 40. St. Kitts and Nevis: signal detected
-
-**ID:** `DSP-20260819-066` | **Country:** St. Kitts and Nevis | **Confidence:** 🟡 Validation | 76/100 | C - single-source
+**ID:** `DSP-20260819-034` | **Country:** Turks and Caicos Islands | **Confidence:** 🟡 Validation | 76/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** Payout: US$2,294,603; Peril: tropical_cyclone; Event date: 2017-01-01; Announced: 2017-01-01
+**Evidence:** Payout: US$6,303,913; Peril: tropical_cyclone; Event date: 2008-01-01; Announced: 2008-01-01
 **Detail:** signal detected
 **Grade:** C - single-source
 
-**Recommended action:** Route St. Kitts and Nevis opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
+**Recommended action:** Route Turks and Caicos Islands opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 41. Dominica: signal detected
+### 43. Anguilla: signal detected
 
-**ID:** `DSP-20260819-070` | **Country:** Dominica | **Confidence:** 🟡 Validation | 76/100 | C - single-source
+**ID:** `DSP-20260819-042` | **Country:** Anguilla | **Confidence:** 🟡 Validation | 76/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** Payout: US$19,294,800; Peril: tropical_cyclone; Event date: 2017-01-01; Announced: 2017-01-01
+**Evidence:** Payout: US$4,282,733; Peril: tropical_cyclone; Event date: 2010-01-01; Announced: 2010-01-01
 **Detail:** signal detected
 **Grade:** C - single-source
 
-**Recommended action:** Route Dominica opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
+**Recommended action:** Route Anguilla opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 42. Excess Rainfall policy - Barbados: signal detected
+### 44. Excess Rainfall policy - Dominica: signal detected
 
-**ID:** `DSP-20260819-078` | **Country:** Excess Rainfall policy - Barbados | **Confidence:** 🟡 Validation | 76/100 | C - single-source
+**ID:** `DSP-20260819-054` | **Country:** Excess Rainfall policy - Dominica | **Confidence:** 🟡 Validation | 76/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** Payout: US$5,813,299; Peril: excess_rainfall; Event date: 2018-01-01; Announced: 2018-01-01
+**Evidence:** Payout: US$2,402,153; Peril: excess_rainfall; Event date: 2015-01-01; Announced: 2015-01-01
 **Detail:** signal detected
 **Grade:** C - single-source
 
-**Recommended action:** Route Excess Rainfall policy - Barbados opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
+**Recommended action:** Route Excess Rainfall policy - Dominica opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 43. Tropical Cyclone policy - The Bahamas: signal detected
-
-**ID:** `DSP-20260819-086` | **Country:** Tropical Cyclone policy - The Bahamas | **Confidence:** 🟡 Validation | 76/100 | C - single-source
-**Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$11,527,151; Peril: tropical_cyclone; Event date: 2019-01-01; Announced: 2019-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Route Tropical Cyclone policy - The Bahamas opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
-
-### 44. Excess Rainfall policy - Guatemala: signal detected
-
-**ID:** `DSP-20260819-090` | **Country:** Excess Rainfall policy - Guatemala | **Confidence:** 🟡 Validation | 76/100 | C - single-source
-**Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$3,628,013; Peril: excess_rainfall; Event date: 2020-01-01; Announced: 2020-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Route Excess Rainfall policy - Guatemala opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
-
-### 45. Excess Rainfall policy - Barbados: signal detected
-
-**ID:** `DSP-20260819-122` | **Country:** Excess Rainfall policy - Barbados | **Confidence:** 🟡 Validation | 76/100 | C - single-source
-**Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$1,124,424; Peril: excess_rainfall; Event date: 2021-01-01; Announced: 2021-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Route Excess Rainfall policy - Barbados opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
-
-### 46. Eastern Caribbean Currency Union: 5.8%
+### 45. Eastern Caribbean Currency Union: 5.8%
 
 **ID:** `DSP-20260819-213` | **Country:** Eastern Caribbean Currency Union | **Confidence:** 🟡 Validation | 76/100 | C - single-source
 **Channel:** Telegram | **Window:** 21 days | **Freshness:** sustained
@@ -653,7 +639,7 @@
 **Decision to influence:** Private sector credit expansion = banking confidence = investment timing signal
 **Routing rationale:** Credit expansion = fintech, SME lending, financial inclusion opportunities
 
-### 47. Eastern Caribbean Currency Union: 4.6%
+### 46. Eastern Caribbean Currency Union: 4.6%
 
 **ID:** `DSP-20260819-216` | **Country:** Eastern Caribbean Currency Union | **Confidence:** 🟡 Validation | 72/100 | C - single-source
 **Channel:** Telegram | **Window:** 30 days | **Freshness:** sustained
@@ -667,73 +653,87 @@
 **Decision to influence:** Deposit base expansion = currency union stability = confidence signal
 **Routing rationale:** Deposit surge = remittance inflow or FDI settlement = ecosystem liquidity
 
-### 48. Excess Rainfall policy - Trinidad: signal detected
+### 47. Haiti: signal detected
 
-**ID:** `DSP-20260819-074` | **Country:** Excess Rainfall policy - Trinidad | **Confidence:** 🟢 Monitor | 68/100 | C - single-source
+**ID:** `DSP-20260819-038` | **Country:** Haiti | **Confidence:** 🟢 Monitor | 68/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** Payout: US$7,007,886; Peril: excess_rainfall; Event date: 2017-01-01; Announced: 2017-01-01
+**Evidence:** Payout: US$7,753,579; Peril: earthquake; Event date: 2010-01-01; Announced: 2010-01-01
 **Detail:** signal detected
 **Grade:** C - single-source
 
-**Recommended action:** Route Excess Rainfall policy - Trinidad opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
+**Recommended action:** Route Haiti opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 49. Excess Rainfall policy - Trinidad: signal detected
+### 48. Barbados: signal detected
 
-**ID:** `DSP-20260819-082` | **Country:** Excess Rainfall policy - Trinidad | **Confidence:** 🟢 Monitor | 68/100 | C - single-source
+**ID:** `DSP-20260819-046` | **Country:** Barbados | **Confidence:** 🟢 Monitor | 68/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** Payout: US$2,534,550; Peril: excess_rainfall; Event date: 2018-01-01; Announced: 2018-01-01
+**Evidence:** Payout: US$8,560,247; Peril: tropical_cyclone; Event date: 2010-01-01; Announced: 2010-01-01
 **Detail:** signal detected
 **Grade:** C - single-source
 
-**Recommended action:** Route Excess Rainfall policy - Trinidad opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
+**Recommended action:** Route Barbados opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 50. Excess Rainfall policy - Trinidad: signal detected
+### 49. Barbados: signal detected
 
-**ID:** `DSP-20260819-130` | **Country:** Excess Rainfall policy - Trinidad | **Confidence:** 🟢 Monitor | 68/100 | C - single-source
+**ID:** `DSP-20260819-050` | **Country:** Barbados | **Confidence:** 🟢 Monitor | 68/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** Payout: US$2,381,464; Peril: excess_rainfall; Event date: 2021-01-01; Announced: 2021-01-01
+**Evidence:** Payout: US$1,284,882; Peril: excess_rainfall; Event date: 2014-01-01; Announced: 2014-01-01
 **Detail:** signal detected
 **Grade:** C - single-source
 
-**Recommended action:** Route Excess Rainfall policy - Trinidad opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
+**Recommended action:** Route Barbados opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 51. Excess Rainfall policy - Trinidad: signal detected
+### 50. Haiti: signal detected
 
-**ID:** `DSP-20260819-134` | **Country:** Excess Rainfall policy - Trinidad | **Confidence:** 🟢 Monitor | 52/100 | C - single-source
-**Channel:** Telegram | **Window:** 7 days | **Freshness:** updated
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$5,115,782; Peril: excess_rainfall; Event date: 2022-01-01; Announced: 2022-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Route Excess Rainfall policy - Trinidad opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
-
-### 52. Excess Rainfall policy - Trinidad: signal detected
-
-**ID:** `DSP-20260819-142` | **Country:** Excess Rainfall policy - Trinidad | **Confidence:** 🟢 Monitor | 52/100 | C - single-source
+**ID:** `DSP-20260819-058` | **Country:** Haiti | **Confidence:** 🟢 Monitor | 68/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** Payout: US$1,400,000; Peril: excess_rainfall; Event date: 2022-01-01; Announced: 2022-01-01
+**Evidence:** Payout: US$20,388,067; Peril: tropical_cyclone; Event date: 2016-01-01; Announced: 2016-01-01
 **Detail:** signal detected
 **Grade:** C - single-source
 
-**Recommended action:** Route Excess Rainfall policy - Trinidad opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
+**Recommended action:** Route Haiti opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
+
+### 51. Haiti: signal detected
+
+**ID:** `DSP-20260819-126` | **Country:** Haiti | **Confidence:** 🟢 Monitor | 68/100 | C - single-source
+**Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$39,953,272; Peril: earthquake; Event date: 2021-01-01; Announced: 2021-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Route Haiti opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
+
+### 52. Haiti: signal detected
+
+**ID:** `DSP-20260819-210` | **Country:** Haiti | **Confidence:** 🟢 Monitor | 68/100 | C - single-source
+**Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$1,198,434; Peril: tropical_cyclone; Event date: 2025-01-01; Announced: 2025-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Route Haiti opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 

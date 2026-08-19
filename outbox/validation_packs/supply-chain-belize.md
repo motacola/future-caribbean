@@ -5,10 +5,10 @@
 - Action readiness: high
 - Evidence freshness: refreshing · cycles since refresh: 0
 - Recommendation: **ADVANCE** — Calibrated confidence 100/100 with 3 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.
-- Last validated: 2026-08-19T04:48:39.003105+00:00
+- Last validated: 2026-08-19T08:51:27.478893+00:00
 
 ## Sector hypotheses
-- Tourism and hospitality [corroborated] — _Google News — Belize: Belize Tourism Board opens nominations for 2026 National Tourism Awards - Belize News and Opinion on www.breakingbelizenews.com_
+- Tourism and hospitality [corroborated] — _Google News — Belize: BTB Stakeholders Explore New Ideas for Belize’s Tourism Sector - Love FM Belize News_
 - Agribusiness and agro-exports [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
 - Business process outsourcing [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
 - FDI-receiving sectors (composition not yet broken down) [macro_signal] — _World Bank: FDI net inflows moved -99.8% from 2024 to 2025_
