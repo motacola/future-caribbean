@@ -1,5 +1,5 @@
 🌴 **Caribbean Opportunity Brief** — what's moving this week
-Cycle 20260819 • 2026-08-19 01:49 UTC
+Cycle 20260819 • 2026-08-19 04:48 UTC
 
 Plain-language signals for builders, business owners, and community leaders.
 No jargon. Just what matters for your next move.

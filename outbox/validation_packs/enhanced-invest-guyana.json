@@ -10,9 +10,8 @@
   "sector_hypotheses": [
     {
       "sector": "Oil & gas and offshore support services",
-      "basis": "Google News — Guyana: Exxon looks to add to Guyana exploration program - Oil & Gas Journal",
-      "status": "corroborated",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNMGRRdDlCc3FrOThUa1lpWXVWLWxSRUlRMHp1UjZZUEtGRXA4NTAxcWpoM3ZiRm5Xcm40aGNYUmZvMlhCS3hGNWw3a01CaGdnQ2NxWUxod3VjUWNXckFuU0JIblMwUFpSc2Z5ellELXpnTGZmdkJqTE92bm5FNXFCM2RRMDFibTFwOUhGdnVJRVFPczBSMXRaRmt0dmlRUmY4MEgwcHJETDdqOWR5bEE?oc=5"
+      "basis": "Analyst prior from widely reported sector drivers — requires local confirmation",
+      "status": "unconfirmed"
     },
     {
       "sector": "Construction and infrastructure",
@@ -67,20 +66,6 @@
   ],
   "procurement_matches": [
     {
-      "title": "Improvement (Rehabilitation and Upgrade) of the Selected Regional Road Corridor - Reconstruction of Existing Road Network on the East Coast Demerara – Lot 2: Design and Build Bridges: Across the Mahaica, Mahaicony and Abary Rivers/Creeks",
-      "source": "Guyana eProcure (NPTA)",
-      "url": "https://eprocure.gov.gy/",
-      "match": "country",
-      "closing_date": "2026-08-19"
-    },
-    {
-      "title": "Selection Improvement (Rehabilitation and Upgrade) of the Selected Regional Road Corridor -Reconstruction of Existing Road Network on the East Coast Demerara – Lot 2: Design and Build Bridges: Across the Mahaica, Mahaicony and Abary Rivers/Creeks.",
-      "source": "Guyana eProcure (NPTA)",
-      "url": "https://eprocure.gov.gy/",
-      "match": "country",
-      "closing_date": "2026-08-19"
-    },
-    {
       "title": "Supply, Installation and Commission Leguan Power Plant Switchgear, Essequibo Islands Guyana.",
       "source": "Guyana eProcure (NPTA)",
       "url": "https://eprocure.gov.gy/",
@@ -103,6 +88,20 @@
     },
     {
       "title": "Supply and Delivery of: 805 Metric Ton Sulphate Of Ammonia",
+      "source": "Guyana eProcure (NPTA)",
+      "url": "https://eprocure.gov.gy/",
+      "match": "country",
+      "closing_date": "2026-08-25"
+    },
+    {
+      "title": "Supply and Delivery of: 371 Metric Ton Muriate Of Potash",
+      "source": "Guyana eProcure (NPTA)",
+      "url": "https://eprocure.gov.gy/",
+      "match": "country",
+      "closing_date": "2026-08-25"
+    },
+    {
+      "title": "Supply and Delivery of: 403 Metric Ton Urea",
       "source": "Guyana eProcure (NPTA)",
       "url": "https://eprocure.gov.gy/",
       "match": "country",
@@ -168,13 +167,12 @@
     "https://data.iadb.org/en/search?q=Guyana%3A%20Latin%20American%20Public%20Opinion%20Pr",
     "https://data.iadb.org/en/search?q=Productivity%2C%20Technology%20and%20Innovation%20",
     "https://eprocure.gov.gy/",
-    "https://news.google.com/rss/articles/CBMirgFBVV95cUxNMGRRdDlCc3FrOThUa1lpWXVWLWxSRUlRMHp1UjZZUEtGRXA4NTAxcWpoM3ZiRm5Xcm40aGNYUmZvMlhCS3hGNWw3a01CaGdnQ2NxWUxod3VjUWNXckFuU0JIblMwUFpSc2Z5ellELXpnTGZmdkJqTE92bm5FNXFCM2RRMDFibTFwOUhGdnVJRVFPczBSMXRaRmt0dmlRUmY4MEgwcHJETDdqOWR5bEE?oc=5",
     "https://statistics.caricom.org/?country_data=guyana-balance-of-payments-2000-2024",
     "https://statistics.caricom.org/?country_data=guyana-monthly-consumer-price-index-cpi-by-expenditure-category"
   ],
   "unresolved_questions": [
     "Which specific sectors are driving the movement in Guyana? No official sector-breakdown dataset matched this cycle.",
-    "Tender closes 2026-08-19 — confirm eligibility and bid requirements early.",
+    "Tender closes 2026-08-20 — confirm eligibility and bid requirements early.",
     "Validate fit with registry-listed operators (Guyana Shore Base Inc. (GSBI), Gaico Construction Inc.) before outreach.",
     "Validate that the underlying FDI movement is sustained, not a one-off transaction or statistical revision."
   ],
@@ -189,10 +187,10 @@
     }
   ],
   "advance_or_reject_recommendation": "advance",
-  "recommendation_reason": "Calibrated confidence 100/100 with 4 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.",
-  "last_validated_at": "2026-08-19T01:49:49.349976+00:00",
+  "recommendation_reason": "Calibrated confidence 100/100 with 3 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.",
+  "last_validated_at": "2026-08-19T04:48:39.003105+00:00",
   "coordination_path": null,
-  "evidence_fingerprint": "43ca0df84e86837e",
+  "evidence_fingerprint": "f408a2173cf5ce35",
   "cycles_since_refresh": 0,
   "evidence_freshness": "refreshing"
 }
