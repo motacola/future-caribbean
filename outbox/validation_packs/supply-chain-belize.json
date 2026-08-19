@@ -1,6 +1,6 @@
 {
   "signal_id": "supply-chain-belize",
-  "dispatch_id": "DSP-20260819-028",
+  "dispatch_id": "DSP-20260819-026",
   "country": "Belize",
   "signal_title": "Belize: signal detected",
   "confidence_score": 100,
@@ -141,7 +141,7 @@
   ],
   "advance_or_reject_recommendation": "advance",
   "recommendation_reason": "Calibrated confidence 100/100 with 3 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.",
-  "last_validated_at": "2026-08-19T16:43:36.534503+00:00",
+  "last_validated_at": "2026-08-19T20:42:12.897181+00:00",
   "coordination_path": null,
   "evidence_fingerprint": "bddefb9581281cdf",
   "cycles_since_refresh": 0,

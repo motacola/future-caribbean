@@ -1,11 +1,11 @@
 # Opportunity Validation Pack — Belize
 
-- Signal: `supply-chain-belize` · Dispatch: `DSP-20260819-028`
+- Signal: `supply-chain-belize` · Dispatch: `DSP-20260819-026`
 - Confidence: 100/100 (raw 102) · A - multi-source
 - Action readiness: high
 - Evidence freshness: refreshing · cycles since refresh: 0
 - Recommendation: **ADVANCE** — Calibrated confidence 100/100 with 3 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.
-- Last validated: 2026-08-19T16:43:36.534503+00:00
+- Last validated: 2026-08-19T20:42:12.897181+00:00
 
 ## Sector hypotheses
 - Tourism and hospitality [corroborated] — _Google News — Belize: BTB Stakeholders Explore New Ideas for Belize’s Tourism Sector - Love FM Belize News_

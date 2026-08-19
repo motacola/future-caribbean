@@ -2,16 +2,16 @@
   "instance": "climate",
   "instance_label": "Climate & Catastrophe Risk",
   "cycle_id": "20260819",
-  "generated_at": "2026-08-19T16:43:37.126411+00:00",
+  "generated_at": "2026-08-19T20:42:13.273245+00:00",
   "clusters": [
     {
-      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.d",
-      "country_cluster": "Northwest",
+      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.b",
+      "country_cluster": "Atlantic Waters of Puerto Rico AND USVI from 10 NM to 19.5N",
       "signal_kind": "hazard_alert",
-      "title": "Northwest: Special Weather Statement in effect (Moderate)",
-      "evidence": "NOAA NWS: Special Weather Statement issued August 19 at 12:29PM AST by NWS San Juan PR",
-      "evidence_grade": "B - official alert",
-      "confidence_score": 80,
+      "title": "Atlantic Waters of Puerto Rico AND USVI from 10 NM to 19.5N: Marine Weather Statement in effect (Minor)",
+      "evidence": "NOAA NWS: Marine Weather Statement issued August 19 at 3:24PM AST by NWS San Juan PR",
+      "evidence_grade": "C - advisory",
+      "confidence_score": 60,
       "freshness": "new",
       "decision": "Hazard response and exposure assessment",
       "risk_flags": [],
@@ -19,12 +19,12 @@
         {
           "persona": "Resilience Planner",
           "channel": "Telegram/SMS alert",
-          "action": "Active hazard alert \u2014 Special Weather Statement \u2014 Moderate (Northwest). Pre-position resources and confirm evacuation/shelter readiness in the affected area now."
+          "action": "Active hazard alert \u2014 Marine Weather Statement \u2014 Minor (Atlantic Waters of Puerto Rico AND USVI from 10 NM to 19.5N). Pre-position resources and confirm evacuation/shelter readiness in the affected area now."
         },
         {
           "persona": "Insurer / Reinsurer",
           "channel": "Email + alert",
-          "action": "Exposure check \u2014 Special Weather Statement \u2014 Moderate (Northwest). Flag policies in the affected zone and prepare parametric-trigger assessment."
+          "action": "Exposure check \u2014 Marine Weather Statement \u2014 Minor (Atlantic Waters of Puerto Rico AND USVI from 10 NM to 19.5N). Flag policies in the affected zone and prepare parametric-trigger assessment."
         }
       ]
     }
