@@ -99,6 +99,14 @@ run_step "Channel Outputs" "python3 \"$ROOT/packagers/build_channel_outputs.py\"
 # Hermes can deliver the human-facing notification.
 
 run_step "Opportunity Dispatch" "python3 \"$ROOT/packagers/opportunity_dispatch.py\"" "opportunity_dispatch"
+# ── Procurement outcomes ─────────────────────────────────
+# Folds this cycle's tender snapshot into the canonical corpus, then
+# publishes the outcome view. The corpus is cumulative state like the
+# calibration ledger: without it, latest.json's live snapshot is all we
+# would ever know and no detection lead time could be proved.
+run_step "Procurement Resolver" "python3 \"$ROOT/resolvers/procurement.py\"" "procurement_resolver"
+run_step "Procurement Outcomes" "python3 \"$ROOT/packagers/procurement_outcomes.py\"" "procurement_outcomes"
+
 run_step "Coordination Graph" "python3 \"$ROOT/coordination/engine.py\"" "coordination_graph"
 run_step "Validation Packs" "python3 \"$ROOT/packagers/validation_pack_generator.py\"" "validation_packs"
 run_step "RSS Feed" "python3 \"$ROOT/packagers/rss_feed.py\"" "rss_feed"

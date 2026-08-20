@@ -135,12 +135,25 @@ def parse_award_notices_html(html: str) -> list[dict[str, Any]]:
 
 
 def latest_snapshot(slug: str) -> str | None:
+    """Newest cached snapshot that actually has content.
+
+    GOJEP started returning empty bodies in mid-August and the cache wrote
+    them out as 0-byte files. Because the fallback took the newest file
+    unconditionally, every later run "recovered" to an empty snapshot and
+    parsed zero records — a dead feed that looked like a working one.
+    """
     if not RAW.exists():
         return None
-    files = sorted(RAW.glob(f"{slug}-*.html"), reverse=True)
-    if not files:
-        return None
-    return files[0].read_text(encoding="utf-8", errors="replace")
+    for path in sorted(RAW.glob(f"{slug}-*.html"), reverse=True):
+        try:
+            if path.stat().st_size == 0:
+                continue
+            html = path.read_text(encoding="utf-8", errors="replace")
+        except OSError:
+            continue
+        if '<table id="T01">' in html:
+            return html
+    return None
 
 
 class JamaicaGojepAdapter(TenderAdapter):
@@ -166,6 +179,8 @@ class JamaicaGojepAdapter(TenderAdapter):
     def _load(self, url: str, snap_slug: str, label: str) -> str | None:
         try:
             html = http_get(url).decode("utf-8", errors="replace")
+            if not html.strip():
+                raise RuntimeError(f"GOJEP returned an empty body for {label}")
             if "An error has occurred" in html and '<table id="T01">' not in html:
                 raise RuntimeError(f"GOJEP error page for {label}")
             RAW.mkdir(parents=True, exist_ok=True)
