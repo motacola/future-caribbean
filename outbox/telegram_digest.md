@@ -1,4 +1,4 @@
-*Caribbean Market Pulse — 2026-08-20 13:08 UTC*
+*Caribbean Market Pulse — 2026-08-20 16:47 UTC*
 
 Lead: Guyana. 3 converging signal(s) across 4 source(s). Signals: 💼 Investment + 🏖️ Tourism + 💎 Investment.
 
@@ -22,11 +22,11 @@ Lead: Guyana. 3 converging signal(s) across 4 source(s). Signals: 💼 Investmen
    Immediate | 95/100 | B - cross-source
    Active procurement pipeline: CDB active procurement notices: 8. Priority: review CDB/IDB opportunities as lead list for project-based entry.
 
-🟡 ⬆️ **ccrif_payout — Turks and Caicos Islands**
-   Turks and Caicos Islands: signal detected
+🟡 ⬆️ **ccrif_payout — St. Kitts and Nevis**
+   St. Kitts and Nevis: signal detected
    Validation | 84/100 | C - single-source
    ⬆️ Strengthened (+8 pts)
-   Validation — Turks and Caicos Islands: ccrif_payout (signal detected). Validate locally.
+   Validation — St. Kitts and Nevis: ccrif_payout (signal detected). Validate locally.
 
-— Lead: Guyana · 64 composite signal(s) · 6 updated · 11 intensified · 37 persistent
+— Lead: Guyana · 64 composite signal(s) · 6 updated · 10 intensified · 37 persistent
 - Caribbean Signal OS

@@ -1,6 +1,6 @@
 # Caribbean Opportunity Dispatch — Judge Brief
 
-Generated: 2026-08-20 13:08 UTC
+Generated: 2026-08-20 16:47 UTC
 
 ## What This Proves
 
@@ -41,19 +41,19 @@ Caribbean Opportunity Dispatch is the product. Caribbean Signal OS is the archit
    Audience: investor/founder via Email brief + Telegram
    Decision: Active procurement pipeline: CDB active procurement notices: 8. Priority: review CDB/IDB opportunities as lead list for project-based entry.
 
-**4.** 🟡 **ccrif_payout — Turks and Caicos Islands** — intensified
-   Narrative: Turks and Caicos Islands: signal detected
+**4.** 🟡 **ccrif_payout — St. Kitts and Nevis** — intensified
+   Narrative: St. Kitts and Nevis: signal detected
    Score: 84/100 | Grade: C - single-source
    Audience: regional intelligence via Telegram digest
-   Decision: Validation — Turks and Caicos Islands: ccrif_payout (signal detected). Validate locally.
+   Decision: Validation — St. Kitts and Nevis: ccrif_payout (signal detected). Validate locally.
    ⬆️ Strengthened (+8 pts)
 
-**5.** 🟡 **ccrif_payout — Haiti** — intensified
-   Narrative: Haiti: signal detected
+**5.** 🟡 **ccrif_payout — Dominica** — intensified
+   Narrative: Dominica: signal detected
    Score: 84/100 | Grade: C - single-source
    Audience: regional intelligence via Telegram digest
-   Decision: Validation — Haiti: ccrif_payout (signal detected). Validate locally.
-   ⬆️ Strengthened (+16 pts)
+   Decision: Validation — Dominica: ccrif_payout (signal detected). Validate locally.
+   ⬆️ Strengthened (+8 pts)
 
 **6.** 🟡 **eccb_credit_surge — Eastern Caribbean Currency Union** — sustained
    Narrative: Eastern Caribbean Currency Union: 5.8%
@@ -135,7 +135,7 @@ Each signal is routed to specific personas based on signal kind and evidence lev
 
 ## Cycle Summary
 
-Lead: Guyana · 64 composite signal(s) · 6 updated · 11 intensified · 37 persistent
+Lead: Guyana · 64 composite signal(s) · 6 updated · 10 intensified · 37 persistent
 ## Judge Demo Path
 
 1. Run `bash run_pipeline.sh`.

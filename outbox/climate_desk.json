@@ -2,14 +2,14 @@
   "instance": "climate",
   "instance_label": "Climate & Catastrophe Risk",
   "cycle_id": "20260820",
-  "generated_at": "2026-08-20T13:08:02.160143+00:00",
+  "generated_at": "2026-08-20T16:47:58.393421+00:00",
   "clusters": [
     {
-      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.b",
+      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.2",
       "country_cluster": "San Juan and Vicinity",
       "signal_kind": "hazard_alert",
       "title": "San Juan and Vicinity: Heat Advisory in effect (Moderate)",
-      "evidence": "NOAA NWS: Heat Advisory issued August 20 at 1:34AM AST until August 20 at 5:00PM AST by NWS San Juan PR",
+      "evidence": "NOAA NWS: Heat Advisory issued August 20 at 9:50AM AST until August 20 at 5:00PM AST by NWS San Juan PR",
       "evidence_grade": "B - official alert",
       "confidence_score": 80,
       "freshness": "new",
@@ -27,9 +27,33 @@
           "action": "Exposure check \u2014 Heat Advisory \u2014 Moderate (San Juan and Vicinity). Flag policies in the affected zone and prepare parametric-trigger assessment."
         }
       ]
+    },
+    {
+      "cluster_id": "CLIM-marine-80698",
+      "country_cluster": "Caribbean marine zones",
+      "signal_kind": "maritime_hazard",
+      "title": "Marine hazard: High seas at Eastern Caribbean (E of Barbados): 3.0m",
+      "evidence": "NDBC buoy network: High seas at Eastern Caribbean (E of Barbados): 3.0m",
+      "evidence_grade": "B - sensor",
+      "confidence_score": 80,
+      "freshness": "new",
+      "decision": "Marine operations and coastal risk",
+      "risk_flags": [],
+      "personas": [
+        {
+          "persona": "Operations/Resilience",
+          "channel": "Telegram/SMS alert",
+          "action": "Marine hazard \u2014 High seas at Eastern Caribbean (E of Barbados): 3.0m. Advise vessels and coastal operations; delay exposed activity until conditions ease."
+        },
+        {
+          "persona": "Resilience Planner",
+          "channel": "Telegram/SMS alert",
+          "action": "Marine conditions deteriorating \u2014 High seas at Eastern Caribbean (E of Barbados): 3.0m. Monitor for escalation toward small-craft / coastal-flood thresholds."
+        }
+      ]
     }
   ],
-  "dispatch_count": 2,
+  "dispatch_count": 4,
   "sources": [
     "NOAA NWS",
     "NDBC buoys",
