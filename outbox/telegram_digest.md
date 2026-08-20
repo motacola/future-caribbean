@@ -1,4 +1,4 @@
-*Caribbean Market Pulse — 2026-08-20 01:48 UTC*
+*Caribbean Market Pulse — 2026-08-20 04:49 UTC*
 
 Lead: Guyana. 3 converging signal(s) across 4 source(s). Signals: 💼 Investment + 🏖️ Tourism + 💎 Investment.
 
@@ -7,10 +7,10 @@ Lead: Guyana. 3 converging signal(s) across 4 source(s). Signals: 💼 Investmen
    Immediate | 100/100 | C - single-source
    Immediate investigation. Guyana has multi-source investment validation (3 signals converging). Priority: assess market entry options, identify existing operators.
 
-🔴 🆕 **supply_chain_signal — Bahamas, Belize**
+🔴 ⬇️ **supply_chain_signal — Bahamas, Belize**
    Bahamas, Belize: signal detected
    Immediate | 100/100 | A - multi-source
-   🆕 New this cycle
+   ⬇️ Weakened (-6 pts)
    Immediate — Bahamas, Belize: supply_chain_signal (signal detected). Validate locally.
 
 🔴 — **💎 Investment — Suriname**
@@ -18,17 +18,16 @@ Lead: Guyana. 3 converging signal(s) across 4 source(s). Signals: 💼 Investmen
    Immediate | 98/100 | C - single-source
    Immediate investigation. Suriname has multi-source investment validation (3 signals converging). Priority: assess market entry options, identify existing operators.
 
-🔴 🔄 **🏗️ Pipeline — CARICOM**
+🔴 — **🏗️ Pipeline — CARICOM**
    CARICOM: 8 active procurements — bidding window open
    Immediate | 95/100 | B - cross-source
-   🔄 Content updated this cycle
    Active procurement pipeline: CDB active procurement notices: 8. Priority: review CDB/IDB opportunities as lead list for project-based entry.
 
-🟡 ⬆️ **ccrif_payout — St. Kitts and Nevis**
-   St. Kitts and Nevis: signal detected
+🟡 ⬆️ **ccrif_payout — Turks and Caicos Islands**
+   Turks and Caicos Islands: signal detected
    Validation | 84/100 | C - single-source
    ⬆️ Strengthened (+8 pts)
-   Validation — St. Kitts and Nevis: ccrif_payout (signal detected). Validate locally.
+   Validation — Turks and Caicos Islands: ccrif_payout (signal detected). Validate locally.
 
-— Lead: Guyana · 64 composite signal(s) · 2 new · 7 updated · 10 intensified · 34 persistent
+— Lead: Guyana · 64 composite signal(s) · 6 updated · 11 intensified · 36 persistent
 - Caribbean Signal OS
