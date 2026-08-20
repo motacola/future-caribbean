@@ -28,6 +28,7 @@ sys.path.insert(0, str(ROOT))
 
 from resolvers import procurement as proc  # noqa: E402
 from watchers.tenders.guyana_eprocure import parse_guyana_records  # noqa: E402
+from watchers.tenders.idb_procurement import parse_idb_notices  # noqa: E402
 from watchers.tenders.jamaica_gojep import (  # noqa: E402
     parse_award_notices_html,
     parse_opened_tenders_html,
@@ -40,9 +41,14 @@ PARSERS = {
     "jamaica-gojep-opened": ("html", parse_opened_tenders_html),
     "jamaica-gojep-awards": ("html", parse_award_notices_html),
     "guyana-eprocure": ("json", lambda text: parse_guyana_records(json.loads(text))),
+    # One dated CSV covering years of IDB notices. Every row enters at the
+    # snapshot date rather than its own publication date: the corpus records
+    # when this desk first had the data, and backdating it to when IDB
+    # published would claim detections we never made.
+    "idb-procurement": ("csv", parse_idb_notices),
 }
 
-_STAMP = re.compile(r"-(\d{8})\.(?:html|json)$")
+_STAMP = re.compile(r"-(\d{8})\.(?:html|json|csv)$")
 
 
 def snapshot_date(path: Path) -> str | None:

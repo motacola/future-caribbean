@@ -397,3 +397,122 @@ def test_published_artefact_matches_the_corpus():
     payload = json.loads(published.read_text())
     assert payload["summary"]["tenders"] == len(corpus["tenders"])
     assert {t["tender_id"] for t in payload["tenders"]} == set(corpus["tenders"])
+
+
+# ── second publisher: IDB ───────────────────────────────────────────────
+
+IDB_CSV = (
+    "noticeid,type,countryname,projectnumber,proyecturl,loannumber,noticetitle,ezshareid,"
+    "documenturl,projectname,publicationyear,publicationdate,deadline,sector,sectorenglnm,"
+    "projectstatus,procurement_id,process_id,category_nm,prcrmnt_mthd_engl_nm,process_nm,process_desc\n"
+    "1,SPECIFIC,GUYANA,GY-L1081,https://p/1,GY-L1081,Upgrade of the East Bank Public Road,EZ-1,"
+    "https://doc/1,Road Programme,2026,2026-06-09T00:00,7/21/2026,NULL,TRANSPORTATION,NULL,NULL,NULL,NULL,ICB,NULL,NULL\n"
+    "2,AWARD,GUYANA,GY-L1081,https://p/1,GY-L1081,Upgrade of the East Bank Public Road,EZ-2,"
+    "https://doc/2,Road Programme,2026,2026-08-01T00:00,NULL,NULL,TRANSPORTATION,NULL,NULL,NULL,NULL,ICB,NULL,NULL\n"
+    "3,GENERAL,GUYANA,GY-L1081,https://p/1,GY-L1081,General Procurement Notice,EZ-3,"
+    "https://doc/3,Road Programme,2026,2026-05-01T00:00,NULL,NULL,TRANSPORTATION,NULL,NULL,NULL,NULL,NULL,NULL,NULL\n"
+    "4,SPECIFIC,URUGUAY,UR-L1174,https://p/4,UR-L1174,Out of region,EZ-4,"
+    "https://doc/4,Other,2026,2026-06-01T00:00,7/1/2026,NULL,NULL,NULL,NULL,NULL,NULL,ICB,NULL,NULL\n"
+    "5,SPECIFIC,GUYANA,GY-OLD,https://p/5,GY-OLD,Ancient notice nobody can resolve,EZ-5,"
+    "https://doc/5,Old Programme,2012,2012-06-01T00:00,7/1/2012,NULL,NULL,NULL,NULL,NULL,NULL,ICB,NULL,NULL\n"
+)
+
+
+def test_idb_parser_splits_opportunities_from_outcomes():
+    from watchers.tenders.idb_procurement import AWARD_SOURCE, NOTICE_SOURCE, parse_idb_notices
+    recs = parse_idb_notices(IDB_CSV)
+    by_source = {r["source"] for r in recs}
+    assert by_source == {NOTICE_SOURCE, AWARD_SOURCE}
+    notice = next(r for r in recs if r["source"] == NOTICE_SOURCE)
+    assert notice["closing_date"] == "2026-07-21", "M/D/YYYY deadline must parse"
+    assert notice["country"] == "Guyana"
+    award = next(r for r in recs if r["source"] == AWARD_SOURCE)
+    assert award["status"] == "awarded"
+
+
+def test_idb_parser_drops_out_of_region_and_programme_level_notices():
+    from watchers.tenders.idb_procurement import parse_idb_notices
+    titles = {r["title"] for r in parse_idb_notices(IDB_CSV)}
+    assert "Out of region" not in titles, "Caribbean-only scope"
+    assert "General Procurement Notice" not in titles, "programme notices are not tenders"
+
+
+def test_idb_parser_drops_programme_notices_even_when_typed_as_specific():
+    """One such row typed itself SPECIFIC and carried its loan operation's
+    horizon as a deadline, producing a 1,032-day detection lead time."""
+    from watchers.tenders.idb_procurement import parse_idb_notices
+    csv_text = IDB_CSV + (
+        "6,SPECIFIC,SURINAME,SU-L1,https://p/6,SU-L1,General Procurement Notice - Urban Rehabilitation,EZ-6,"
+        "https://doc/6,Urban Programme,2026,2026-06-01T00:00,6/17/2029,NULL,NULL,NULL,NULL,NULL,NULL,ICB,NULL,NULL\n"
+    )
+    titles = {r["title"] for r in parse_idb_notices(csv_text)}
+    assert not any(t.lower().startswith("general procurement notice") for t in titles)
+
+
+def test_idb_parser_drops_notices_older_than_the_recency_window():
+    """A 2012 notice can never be resolved by this desk; keeping it would
+    only pad the corpus with permanent `unresolved` records."""
+    from watchers.tenders.idb_procurement import parse_idb_notices
+    titles = {r["title"] for r in parse_idb_notices(IDB_CSV)}
+    assert "Ancient notice nobody can resolve" not in titles
+
+
+def test_idb_recency_window_is_relative_to_the_file_not_the_clock():
+    """Replaying the same snapshot must always yield the same corpus."""
+    from watchers.tenders.idb_procurement import parse_idb_notices
+    assert len(parse_idb_notices(IDB_CSV)) == len(parse_idb_notices(IDB_CSV))
+
+
+def test_idb_award_resolves_its_own_notice_as_same_publisher_not_independent():
+    """The bug this pins: reading 'IDB Procurement Notices' and 'IDB
+    Contract Award Notifications' as two publishers manufactured 68
+    independent resolutions out of one institution resolving itself."""
+    from watchers.tenders.idb_procurement import parse_idb_notices
+    corpus = proc.observe(parse_idb_notices(IDB_CSV), observed_at="2026-08-20T00:00:00+00:00")
+    resolved = [t for t in corpus["tenders"].values() if t.get("resolution")]
+    assert len(resolved) == 1
+    assert resolved[0]["resolution"]["independence"] == "same_publisher"
+
+
+def test_publisher_registry_covers_every_wired_feed():
+    from watchers.tenders.idb_procurement import AWARD_SOURCE, NOTICE_SOURCE
+    for source in (NOTICE_SOURCE, AWARD_SOURCE,
+                   "Jamaica GOJEP (opened bids)", "Jamaica GOJEP (contract award)",
+                   "Guyana eProcure (NPTA)"):
+        assert source in proc.PUBLISHERS, f"{source} must declare its publisher"
+
+
+def test_a_national_portal_award_independently_resolves_a_multilateral_notice():
+    """The point of wiring a second publisher: when two institutions cover
+    the same tender, one's award notice resolves the other's detection."""
+    from watchers.tenders.idb_procurement import NOTICE_SOURCE
+    title = "Upgrade of the East Bank Public Road"
+    corpus = proc.observe(
+        [_notice(title, country="Guyana", agency="", source=NOTICE_SOURCE, closing="2026-07-21")],
+        observed_at="2026-06-09T00:00:00+00:00",
+    )
+    corpus = proc.observe(
+        [_award(title, country="Guyana", agency="Ministry of Public Works",
+                source="Guyana eProcure (NPTA)", published="2026-08-01")],
+        corpus, observed_at="2026-08-01T00:00:00+00:00",
+    )
+    assert len(corpus["tenders"]) == 1, "the award must attach to the IDB detection"
+    entry = next(iter(corpus["tenders"].values()))
+    assert entry["resolution"]["independence"] == "independent"
+    assert entry["buyer"] == "Ministry of Public Works", "the named buyer fills in the blank one"
+
+
+def test_alias_matching_refuses_an_ambiguous_merge():
+    """Two buyers running a same-titled tender must not be collapsed into
+    one record just because a third feed omitted the buyer."""
+    from watchers.tenders.idb_procurement import NOTICE_SOURCE
+    title = "Supply of Printers"
+    corpus = proc.observe([
+        _notice(title, country="Jamaica", agency="Ministry of Health", closing="2026-07-01"),
+        _notice(title, country="Jamaica", agency="Ministry of Works", closing="2026-07-01"),
+    ], observed_at="2026-06-01T00:00:00+00:00")
+    corpus = proc.observe(
+        [_notice(title, country="Jamaica", agency="", source=NOTICE_SOURCE, closing="2026-07-01")],
+        corpus, observed_at="2026-06-02T00:00:00+00:00",
+    )
+    assert len(corpus["tenders"]) == 3, "an ambiguous match must stay separate"

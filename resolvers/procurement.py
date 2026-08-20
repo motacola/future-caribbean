@@ -127,9 +127,30 @@ def lifecycle_from_status(status: str) -> str | None:
 
 # ── independence ────────────────────────────────────────────────────────
 
+# Which institution stands behind each feed. Independence is a claim about
+# publishers, not about feed names, so this mapping is explicit: inferring
+# it from the source string classified "IDB Procurement Notices" and "IDB
+# Contract Award Notifications" as two publishers and manufactured 68
+# independent resolutions out of one institution resolving itself.
+PUBLISHERS = {
+    "Jamaica GOJEP (opened bids)": "jamaica-gojep",
+    "Jamaica GOJEP (contract award)": "jamaica-gojep",
+    "Jamaica GOJEP (cancellation)": "jamaica-gojep",
+    "Guyana eProcure (NPTA)": "guyana-eprocure",
+    "IDB Procurement Notices": "idb",
+    "IDB Contract Award Notifications": "idb",
+}
+
+
 def _publisher(source: str) -> str:
-    """Strip the feed qualifier so 'X (opened bids)' and 'X (contract
-    award)' are recognized as the same publisher."""
+    """The institution behind a feed.
+
+    Registered feeds map to their publisher. An unregistered source falls
+    back to stripping the parenthetical feed qualifier — a guess, so a new
+    feed should be added to PUBLISHERS rather than relying on it.
+    """
+    if source in PUBLISHERS:
+        return PUBLISHERS[source]
     return re.sub(r"\s*\(.*?\)\s*", " ", source or "").strip().lower()
 
 
@@ -320,6 +341,47 @@ def _derive_timings(entry: dict[str, Any]) -> None:
         entry["award_lead_time_days"] = _days_between(detected, resolution.get("resolved_at"))
 
 
+def _title_index(tenders: dict[str, Any]) -> dict[tuple[str, str], list[str]]:
+    index: dict[tuple[str, str], list[str]] = {}
+    for tid, entry in tenders.items():
+        index.setdefault((entry["country"].lower(), normalize_title(entry["title"])), []).append(tid)
+    return index
+
+
+def resolve_identity(rec: dict[str, Any], tenders: dict[str, Any],
+                     index: dict[tuple[str, str], list[str]]) -> str:
+    """Which canonical tender a record belongs to.
+
+    The strict identity is country + buyer + title. Multilateral notice
+    feeds publish no executing agency, so a strict key would file the IDB
+    notice and the national portal's record for the same tender as two
+    unrelated opportunities — and an award from one publisher could never
+    resolve a detection from the other.
+
+    So when one side carries no buyer, a record may join an existing
+    tender with the same country and title. Only an unambiguous match is
+    accepted: if two buyers are running tenders with the same title, the
+    records stay separate rather than being merged on a guess.
+    """
+    strict = canonical_id(rec.get("country") or "", rec.get("agency") or "", rec.get("title") or "")
+    if strict in tenders:
+        return strict
+
+    key = ((rec.get("country") or "").lower(), normalize_title(rec.get("title") or ""))
+    incoming_buyer = normalize_buyer(rec.get("agency") or "")
+    candidates = [
+        tid for tid in index.get(key, [])
+        if not incoming_buyer or not normalize_buyer(tenders[tid]["buyer"])
+    ]
+    if len(candidates) == 1:
+        tid = candidates[0]
+        # A record that names the buyer fills in one that did not.
+        if incoming_buyer and not tenders[tid]["buyer"]:
+            tenders[tid]["buyer"] = rec.get("agency") or ""
+        return tid
+    return strict
+
+
 def observe(
     records: Iterable[dict[str, Any]],
     corpus: dict[str, Any] | None = None,
@@ -344,12 +406,17 @@ def observe(
         key=lambda r: (is_resolution_notice(r), r.get("id") or "", r.get("source") or ""),
     )
 
+    index = _title_index(tenders)
+
     for rec in batch:
-        tender_id = canonical_id(rec.get("country") or "", rec.get("agency") or "", rec.get("title") or "")
+        tender_id = resolve_identity(rec, tenders, index)
         entry = tenders.get(tender_id)
         if entry is None:
             entry = _new_record(rec, tender_id, observed_at)
             tenders[tender_id] = entry
+            index.setdefault(
+                (entry["country"].lower(), normalize_title(entry["title"])), []
+            ).append(tender_id)
 
         entry["last_seen_at"] = observed_at
         ref = rec.get("id") or ""
