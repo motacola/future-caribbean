@@ -1,13 +1,13 @@
 # Channel Dispatch Log — Cycle 20260820
 
-Generated: 2026-08-20 16:47 UTC
+Generated: 2026-08-20 20:42 UTC
 
 Per-channel routing plan for this cycle. Live send receipts are written to `outbox/live_send_log.md` after each delivery run.
 
 ## Email brief
 
-- [✓] Bahamas, Belize: signal detected
-- [✓] CARICOM: 8 active procurements — bidding window open
+- [✓] Bahamas, Belize, Grenada: signal detected
+- [✓] CARICOM: 9 active procurements — bidding window open
 - **2 dispatches routed to Email brief**
 
 ## Email brief + Telegram
@@ -19,24 +19,22 @@ Per-channel routing plan for this cycle. Live send receipts are written to `outb
 - [✓] Guyana: FDI trending at +860.3% — screening trigger active
 - [✓] Barbados: +34.8% FDI momentum validated — cross-reference before deploying
 - [✓] Suriname: FDI trending at +206.0% — screening trigger active
-- [✓] St. Kitts and Nevis: signal detected
-- [✓] Dominica: signal detected
-- [✓] Excess Rainfall policy - Trinidad: signal detected
-- [✓] Excess Rainfall policy - Barbados: signal detected
-- [✓] Excess Rainfall policy - Trinidad: signal detected
-- [✓] Tropical Cyclone policy - The Bahamas: signal detected
-- [✓] Excess Rainfall policy - Guatemala: signal detected
-- [✓] Excess Rainfall policy - Haiti: signal detected
+- [✓] Turks and Caicos Islands: signal detected
+- [✓] Haiti: signal detected
+- [✓] Anguilla: signal detected
+- [✓] Barbados: signal detected
+- [✓] Barbados: signal detected
+- [✓] Excess Rainfall policy - Dominica: signal detected
+- [✓] Haiti: signal detected
+- [✓] Nicaragua: signal detected
 - [✓] Excess Rainfall policy - Jamaica: signal detected
 - [✓] Excess Rainfall policy - Panama: signal detected
 - [✓] Tropical Cyclone policy - Nicaragua: signal detected
 - [✓] Excess Rainfall policy -  Nicaragua: signal detected
 - [✓] Tropical Cyclone policy - Nicaragua: signal detected
 - [✓] Tropical Cyclone policy - Barbados: signal detected
-- [✓] Excess Rainfall policy - Barbados: signal detected
-- [✓] Excess Rainfall policy - Trinidad: signal detected
-- [✓] Excess Rainfall policy - Trinidad: signal detected
-- [✓] Excess Rainfall policy - Trinidad: signal detected
+- [✓] Haiti: signal detected
+- [✓] Nicaragua: signal detected
 - [✓] Excess Rainfall policy - Antigua & Barbuda: signal detected
 - [✓] Excess Rainfall policy - St. Kitts & Nevis: signal detected
 - [✓] Excess Rainfall - Guatemala: signal detected
@@ -53,33 +51,35 @@ Per-channel routing plan for this cycle. Live send receipts are written to `outb
 - [✓] Jamaica: signal detected
 - [✓] Excess Rainfall - Jamaica: signal detected
 - [✓] Trinidad: signal detected
-- [✓] Nicaragua: signal detected
-- [✓] Nicaragua: signal detected
-- [✓] Turks and Caicos Islands: signal detected
-- [✓] Anguilla: signal detected
-- [✓] Excess Rainfall policy - Dominica: signal detected
+- [✓] Haiti: signal detected
+- [✓] Excess Rainfall policy - Haiti: signal detected
+- [✓] St. Kitts and Nevis: signal detected
+- [✓] Dominica: signal detected
+- [✓] Excess Rainfall policy - Barbados: signal detected
+- [✓] Tropical Cyclone policy - The Bahamas: signal detected
+- [✓] Excess Rainfall policy - Guatemala: signal detected
+- [✓] Excess Rainfall policy - Barbados: signal detected
 - [✓] Eastern Caribbean Currency Union: 5.8%
 - [✓] Barbados: FDI trending at +34.8% — screening trigger active
 - [✓] Eastern Caribbean Currency Union: 4.6%
-- [✓] Haiti: signal detected
-- [✓] Barbados: signal detected
-- [✓] Barbados: signal detected
-- [✓] Haiti: signal detected
-- [✓] Haiti: signal detected
-- [✓] Haiti: signal detected
+- [✓] Excess Rainfall policy - Trinidad: signal detected
+- [✓] Excess Rainfall policy - Trinidad: signal detected
+- [✓] Excess Rainfall policy - Trinidad: signal detected
 - [✓] St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended
+- [✓] Excess Rainfall policy - Trinidad: signal detected
+- [✓] Excess Rainfall policy - Trinidad: signal detected
 - **56 dispatches routed to Email brief + Telegram**
 
 ## Telegram
 
 - [✓] Guyana: +860.3% capital surge on a single official source — market entry window open
 - [✓] Guyana: +860.3% capital surge on a single official source — market entry window open
-- [✓] Bahamas, Belize: signal detected
-- [✓] Bahamas, Belize: signal detected
+- [✓] Bahamas, Belize, Grenada: signal detected
+- [✓] Bahamas, Belize, Grenada: signal detected
 - [✓] Suriname: +206.0% investment movement, one source — needs corroboration
 - [✓] Suriname: +206.0% investment movement, one source — needs corroboration
-- [✓] CARICOM: 8 active procurements — bidding window open
-- [✓] CARICOM: 8 active procurements — bidding window open
+- [✓] CARICOM: 9 active procurements — bidding window open
+- [✓] CARICOM: 9 active procurements — bidding window open
 - [✓] Regional FDI snapshot: 3 countries with active capital movement
 - [✓] Capital convergence: 3 Caribbean economies showing multi-source investment momentum
 - [✓] Capital convergence: 3 Caribbean economies showing multi-source investment momentum
@@ -87,25 +87,22 @@ Per-channel routing plan for this cycle. Live send receipts are written to `outb
 - [✓] Barbados: +34.8% FDI momentum validated — cross-reference before deploying
 - [✓] Barbados: +34.8% FDI momentum validated — cross-reference before deploying
 - [✓] Suriname: FDI trending at +206.0% — screening trigger active
-- [✓] CARICOM: food supply indicators shifting — supply chain implications
-- [✓] St. Kitts and Nevis: signal detected
-- [✓] Dominica: signal detected
-- [✓] Excess Rainfall policy - Trinidad: signal detected
-- [✓] Excess Rainfall policy - Barbados: signal detected
-- [✓] Excess Rainfall policy - Trinidad: signal detected
-- [✓] Tropical Cyclone policy - The Bahamas: signal detected
-- [✓] Excess Rainfall policy - Guatemala: signal detected
-- [✓] Excess Rainfall policy - Haiti: signal detected
+- [✓] Turks and Caicos Islands: signal detected
+- [✓] Haiti: signal detected
+- [✓] Anguilla: signal detected
+- [✓] Barbados: signal detected
+- [✓] Barbados: signal detected
+- [✓] Excess Rainfall policy - Dominica: signal detected
+- [✓] Haiti: signal detected
+- [✓] Nicaragua: signal detected
 - [✓] Excess Rainfall policy - Jamaica: signal detected
 - [✓] Excess Rainfall policy - Panama: signal detected
 - [✓] Tropical Cyclone policy - Nicaragua: signal detected
 - [✓] Excess Rainfall policy -  Nicaragua: signal detected
 - [✓] Tropical Cyclone policy - Nicaragua: signal detected
 - [✓] Tropical Cyclone policy - Barbados: signal detected
-- [✓] Excess Rainfall policy - Barbados: signal detected
-- [✓] Excess Rainfall policy - Trinidad: signal detected
-- [✓] Excess Rainfall policy - Trinidad: signal detected
-- [✓] Excess Rainfall policy - Trinidad: signal detected
+- [✓] Haiti: signal detected
+- [✓] Nicaragua: signal detected
 - [✓] Excess Rainfall policy - Antigua & Barbuda: signal detected
 - [✓] Excess Rainfall policy - St. Kitts & Nevis: signal detected
 - [✓] Excess Rainfall - Guatemala: signal detected
@@ -122,46 +119,46 @@ Per-channel routing plan for this cycle. Live send receipts are written to `outb
 - [✓] Jamaica: signal detected
 - [✓] Excess Rainfall - Jamaica: signal detected
 - [✓] Trinidad: signal detected
-- [✓] Nicaragua: signal detected
-- [✓] Nicaragua: signal detected
-- [✓] Turks and Caicos Islands: signal detected
-- [✓] Anguilla: signal detected
-- [✓] Excess Rainfall policy - Dominica: signal detected
+- [✓] Haiti: signal detected
+- [✓] Excess Rainfall policy - Haiti: signal detected
+- [✓] CARICOM: food supply indicators shifting — supply chain implications
+- [✓] St. Kitts and Nevis: signal detected
+- [✓] Dominica: signal detected
+- [✓] Excess Rainfall policy - Barbados: signal detected
+- [✓] Tropical Cyclone policy - The Bahamas: signal detected
+- [✓] Excess Rainfall policy - Guatemala: signal detected
+- [✓] Excess Rainfall policy - Barbados: signal detected
 - [✓] Eastern Caribbean Currency Union: 5.8%
 - [✓] Eastern Caribbean Currency Union: 5.8%
 - [✓] Eastern Caribbean Currency Union: 5.8%
 - [✓] Barbados: FDI trending at +34.8% — screening trigger active
 - [✓] Eastern Caribbean Currency Union: 4.6%
 - [✓] Eastern Caribbean Currency Union: 4.6%
-- [✓] Haiti: signal detected
-- [✓] Barbados: signal detected
-- [✓] Barbados: signal detected
-- [✓] Haiti: signal detected
-- [✓] Haiti: signal detected
-- [✓] Haiti: signal detected
+- [✓] Excess Rainfall policy - Trinidad: signal detected
+- [✓] Excess Rainfall policy - Trinidad: signal detected
+- [✓] Excess Rainfall policy - Trinidad: signal detected
+- [✓] Excess Rainfall policy - Trinidad: signal detected
+- [✓] Excess Rainfall policy - Trinidad: signal detected
 - **67 dispatches routed to Telegram**
 
 ## Telegram digest
 
-- [✓] CARICOM: food supply indicators shifting — supply chain implications
-- [✓] St. Kitts and Nevis: signal detected
-- [✓] Dominica: signal detected
-- [✓] Excess Rainfall policy - Trinidad: signal detected
-- [✓] Excess Rainfall policy - Barbados: signal detected
-- [✓] Excess Rainfall policy - Trinidad: signal detected
-- [✓] Tropical Cyclone policy - The Bahamas: signal detected
-- [✓] Excess Rainfall policy - Guatemala: signal detected
-- [✓] Excess Rainfall policy - Haiti: signal detected
+- [✓] Turks and Caicos Islands: signal detected
+- [✓] Haiti: signal detected
+- [✓] Anguilla: signal detected
+- [✓] Barbados: signal detected
+- [✓] Barbados: signal detected
+- [✓] Excess Rainfall policy - Dominica: signal detected
+- [✓] Haiti: signal detected
+- [✓] Nicaragua: signal detected
 - [✓] Excess Rainfall policy - Jamaica: signal detected
 - [✓] Excess Rainfall policy - Panama: signal detected
 - [✓] Tropical Cyclone policy - Nicaragua: signal detected
 - [✓] Excess Rainfall policy -  Nicaragua: signal detected
 - [✓] Tropical Cyclone policy - Nicaragua: signal detected
 - [✓] Tropical Cyclone policy - Barbados: signal detected
-- [✓] Excess Rainfall policy - Barbados: signal detected
-- [✓] Excess Rainfall policy - Trinidad: signal detected
-- [✓] Excess Rainfall policy - Trinidad: signal detected
-- [✓] Excess Rainfall policy - Trinidad: signal detected
+- [✓] Haiti: signal detected
+- [✓] Nicaragua: signal detected
 - [✓] Excess Rainfall policy - Antigua & Barbuda: signal detected
 - [✓] Excess Rainfall policy - St. Kitts & Nevis: signal detected
 - [✓] Excess Rainfall - Guatemala: signal detected
@@ -178,40 +175,41 @@ Per-channel routing plan for this cycle. Live send receipts are written to `outb
 - [✓] Jamaica: signal detected
 - [✓] Excess Rainfall - Jamaica: signal detected
 - [✓] Trinidad: signal detected
-- [✓] Nicaragua: signal detected
-- [✓] Nicaragua: signal detected
-- [✓] Turks and Caicos Islands: signal detected
-- [✓] Anguilla: signal detected
-- [✓] Excess Rainfall policy - Dominica: signal detected
 - [✓] Haiti: signal detected
-- [✓] Barbados: signal detected
-- [✓] Barbados: signal detected
-- [✓] Haiti: signal detected
-- [✓] Haiti: signal detected
-- [✓] Haiti: signal detected
+- [✓] Excess Rainfall policy - Haiti: signal detected
+- [✓] CARICOM: food supply indicators shifting — supply chain implications
+- [✓] St. Kitts and Nevis: signal detected
+- [✓] Dominica: signal detected
+- [✓] Excess Rainfall policy - Barbados: signal detected
+- [✓] Tropical Cyclone policy - The Bahamas: signal detected
+- [✓] Excess Rainfall policy - Guatemala: signal detected
+- [✓] Excess Rainfall policy - Barbados: signal detected
+- [✓] Excess Rainfall policy - Trinidad: signal detected
+- [✓] Excess Rainfall policy - Trinidad: signal detected
+- [✓] Excess Rainfall policy - Trinidad: signal detected
 - [✓] St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended
+- [✓] Excess Rainfall policy - Trinidad: signal detected
+- [✓] Excess Rainfall policy - Trinidad: signal detected
 - **47 dispatches routed to Telegram digest**
 
 ## Telegram/SMS alert
 
-- [✓] St. Kitts and Nevis: signal detected
-- [✓] Dominica: signal detected
-- [✓] Excess Rainfall policy - Trinidad: signal detected
-- [✓] Excess Rainfall policy - Barbados: signal detected
-- [✓] Excess Rainfall policy - Trinidad: signal detected
-- [✓] Tropical Cyclone policy - The Bahamas: signal detected
-- [✓] Excess Rainfall policy - Guatemala: signal detected
-- [✓] Excess Rainfall policy - Haiti: signal detected
+- [✓] Turks and Caicos Islands: signal detected
+- [✓] Haiti: signal detected
+- [✓] Anguilla: signal detected
+- [✓] Barbados: signal detected
+- [✓] Barbados: signal detected
+- [✓] Excess Rainfall policy - Dominica: signal detected
+- [✓] Haiti: signal detected
+- [✓] Nicaragua: signal detected
 - [✓] Excess Rainfall policy - Jamaica: signal detected
 - [✓] Excess Rainfall policy - Panama: signal detected
 - [✓] Tropical Cyclone policy - Nicaragua: signal detected
 - [✓] Excess Rainfall policy -  Nicaragua: signal detected
 - [✓] Tropical Cyclone policy - Nicaragua: signal detected
 - [✓] Tropical Cyclone policy - Barbados: signal detected
-- [✓] Excess Rainfall policy - Barbados: signal detected
-- [✓] Excess Rainfall policy - Trinidad: signal detected
-- [✓] Excess Rainfall policy - Trinidad: signal detected
-- [✓] Excess Rainfall policy - Trinidad: signal detected
+- [✓] Haiti: signal detected
+- [✓] Nicaragua: signal detected
 - [✓] Excess Rainfall policy - Antigua & Barbuda: signal detected
 - [✓] Excess Rainfall policy - St. Kitts & Nevis: signal detected
 - [✓] Excess Rainfall - Guatemala: signal detected
@@ -228,17 +226,19 @@ Per-channel routing plan for this cycle. Live send receipts are written to `outb
 - [✓] Jamaica: signal detected
 - [✓] Excess Rainfall - Jamaica: signal detected
 - [✓] Trinidad: signal detected
-- [✓] Nicaragua: signal detected
-- [✓] Nicaragua: signal detected
-- [✓] Turks and Caicos Islands: signal detected
-- [✓] Anguilla: signal detected
-- [✓] Excess Rainfall policy - Dominica: signal detected
 - [✓] Haiti: signal detected
-- [✓] Barbados: signal detected
-- [✓] Barbados: signal detected
-- [✓] Haiti: signal detected
-- [✓] Haiti: signal detected
-- [✓] Haiti: signal detected
+- [✓] Excess Rainfall policy - Haiti: signal detected
+- [✓] St. Kitts and Nevis: signal detected
+- [✓] Dominica: signal detected
+- [✓] Excess Rainfall policy - Barbados: signal detected
+- [✓] Tropical Cyclone policy - The Bahamas: signal detected
+- [✓] Excess Rainfall policy - Guatemala: signal detected
+- [✓] Excess Rainfall policy - Barbados: signal detected
+- [✓] Excess Rainfall policy - Trinidad: signal detected
+- [✓] Excess Rainfall policy - Trinidad: signal detected
+- [✓] Excess Rainfall policy - Trinidad: signal detected
+- [✓] Excess Rainfall policy - Trinidad: signal detected
+- [✓] Excess Rainfall policy - Trinidad: signal detected
 - **45 dispatches routed to Telegram/SMS alert**
 
 ## Channel Notes

@@ -1,6 +1,6 @@
 # Caribbean Opportunity Dispatch — Cycle 20260820
 
-Generated: 2026-08-20 16:47 UTC
+Generated: 2026-08-20 20:42 UTC
 Total dispatches: 217
 
 ## ✅ Delivered Dispatches
@@ -23,23 +23,23 @@ Total dispatches: 217
    Why this persona: Multi-source investment lift indicates growing market that may support new entry or expansion
    Action: Assess competitive positioning in Guyana. FDI movement (860.3% change) signals growing market or incoming competition — evaluate local advantage before new...
 
-**Bahamas, Belize: signal detected**
+**Bahamas, Belize, Grenada: signal detected**
    To: Regional Operator • Via: Telegram
    — Feedback: ignored
    Why this persona: Active procurement + stable maritime = real supply chain corridor opportunity — first to respond win
-   Action: Active supply chain corridor in Bahamas, Belize: procurement live + maritime stable. Assess capacity for logistics, warehousing, transport — bid window open.
+   Action: Active supply chain corridor in Bahamas, Belize, Grenada: procurement live + maritime stable. Assess capacity for logistics, warehousing, transport — bid...
 
-**Bahamas, Belize: signal detected**
+**Bahamas, Belize, Grenada: signal detected**
    To: Procurement Watcher • Via: Email brief
    — Feedback: ignored
    Why this persona: CDB procurement aligned with maritime stability = viable logistics corridors for project-based entry
    Action: CDB procurement (signal detected) aligned with stable shipping lanes. Viable corridor for logistics providers — prepare EOI.
 
-**Bahamas, Belize: signal detected**
+**Bahamas, Belize, Grenada: signal detected**
    To: Regional Founder/Operator • Via: Telegram
    — Feedback: ignored
    Why this persona: Supply chain gaps + procurement pipeline = where to build logistics, warehousing, or last-mile servi
-   Action: Supply chain gap in Bahamas, Belize confirmed. Procurement pipeline + stable maritime = build warehousing, transport, or last-mile services here.
+   Action: Supply chain gap in Bahamas, Belize, Grenada confirmed. Procurement pipeline + stable maritime = build warehousing, transport, or last-mile services here.
 
 **Suriname: +206.0% investment movement, one source — needs corroboration**
    To: Diaspora Investor • Via: Email brief + Telegram
@@ -59,23 +59,23 @@ Total dispatches: 217
    Why this persona: Multi-source investment lift indicates growing market that may support new entry or expansion
    Action: Assess competitive positioning in Suriname. FDI movement (206.0% change) signals growing market or incoming competition — evaluate local advantage before new...
 
-**CARICOM: 8 active procurements — bidding window open**
+**CARICOM: 9 active procurements — bidding window open**
    To: Regional Operator • Via: Telegram
    💬 Feedback: replied
    Why this persona: Active procurement directly maps to operational capacity needs — first to respond wins
-   Action: Review operational readiness for CARICOM opportunities. CDB active procurement notices: 8 — assess capacity and bid pipeline.
+   Action: Review operational readiness for CARICOM opportunities. CDB active procurement notices: 9 — assess capacity and bid pipeline.
 
-**CARICOM: 8 active procurements — bidding window open**
+**CARICOM: 9 active procurements — bidding window open**
    To: Procurement Watcher • Via: Email brief
    — Feedback: ignored
    Why this persona: CDB/IDB project pipeline is the primary lead source for project-based business development
-   Action: Track CDB/IDB project pipeline: CDB active procurement notices: 8. Review opportunity fit and prepare expression of interest.
+   Action: Track CDB/IDB project pipeline: CDB active procurement notices: 9. Review opportunity fit and prepare expression of interest.
 
-**CARICOM: 8 active procurements — bidding window open**
+**CARICOM: 9 active procurements — bidding window open**
    To: Regional Founder/Operator • Via: Telegram
    — Feedback: ignored
    Why this persona: Procurement pipeline signals government and institutional spending direction — follow the money
-   Action: Map CARICOM procurement pipeline against your capability. CDB/IDB projects (CDB active procurement notices: 8) create service and supply opportunities.
+   Action: Map CARICOM procurement pipeline against your capability. CDB/IDB projects (CDB active procurement notices: 9) create service and supply opportunities.
 
 **Regional FDI snapshot: 3 countries with active capital movement**
    To: Diaspora Investor • Via: Email brief + Telegram

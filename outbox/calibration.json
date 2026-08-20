@@ -81,7 +81,7 @@
     }
   ],
   "total_resolved": 163,
-  "open_claims": 166,
+  "open_claims": 167,
   "resolved_by": {
     "internal_persistence": 163
   },
@@ -92,5 +92,5 @@
   "calibrated": true,
   "method": "Claims are resolved after 3 cycles, preferring outside evidence: an independent publisher covering the same country and topic, then a newer release of the same indicator, and only failing those, whether our own pipeline kept reporting the fact.",
   "cycle_id": "20260820",
-  "generated_at": "2026-08-20T16:47:58.269868+00:00"
+  "generated_at": "2026-08-20T20:42:18.062801+00:00"
 }

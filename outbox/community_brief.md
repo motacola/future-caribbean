@@ -1,5 +1,5 @@
 🌴 **Caribbean Opportunity Brief** — what's moving this week
-Cycle 20260820 • 2026-08-20 16:47 UTC
+Cycle 20260820 • 2026-08-20 20:42 UTC
 
 Plain-language signals for builders, business owners, and community leaders.
 No jargon. Just what matters for your next move.
@@ -11,7 +11,7 @@ No jargon. Just what matters for your next move.
    🔴 High confidence — multiple sources agree
    📊 Single-source indicator — verify locally
 
-2. **Bahamas, Belize**: supply chain corridor opening — logistics/procurement opportunity
+2. **Bahamas, Belize, Grenada**: supply chain corridor opening — logistics/procurement opportunity
    Supply chain gap + procurement pipeline = build warehousing, transport, or last-mile here. (holding steady)
    🔴 High confidence — multiple sources agree
    📊 Backed by multiple independent data sources

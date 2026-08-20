@@ -15,9 +15,8 @@
     },
     {
       "sector": "Construction and infrastructure",
-      "basis": "Google News — Guyana: U.S. seeks role in Guyana’s infrastructure and economic development as oil boom accelerates - Caribbean National Weekly",
-      "status": "corroborated",
-      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQT1gzUE1UT21XNDVVaUN1VElUdlRFS0xNRlc0Y1R3YUozc2Y1TDRwbFJhR2t2TjhfOGdzN1ctckstcUVWUFZTdVM5bnlTRGdrejNQNUFPWE9IbUx3cEZ0SHFJRVpwWGdabzVLbkRnVm9vUG9aU0pPMW1jN1U2Y0RjaTJDc24yS3ROVC1QSXFLa0taeWRaa1FVNkU4eTlHN2k2YTlHYUNSNDhQRWg0REJxVjVTcGNMbkRJb1EzX0dBektheWFueTgwUlpBLVptWVk?oc=5"
+      "basis": "Analyst prior from widely reported sector drivers — requires local confirmation",
+      "status": "unconfirmed"
     },
     {
       "sector": "Logistics serving the energy supply chain",
@@ -168,7 +167,6 @@
     "https://data.iadb.org/en/search?q=Guyana%3A%20Latin%20American%20Public%20Opinion%20Pr",
     "https://data.iadb.org/en/search?q=Productivity%2C%20Technology%20and%20Innovation%20",
     "https://eprocure.gov.gy/",
-    "https://news.google.com/rss/articles/CBMizwFBVV95cUxQT1gzUE1UT21XNDVVaUN1VElUdlRFS0xNRlc0Y1R3YUozc2Y1TDRwbFJhR2t2TjhfOGdzN1ctckstcUVWUFZTdVM5bnlTRGdrejNQNUFPWE9IbUx3cEZ0SHFJRVpwWGdabzVLbkRnVm9vUG9aU0pPMW1jN1U2Y0RjaTJDc24yS3ROVC1QSXFLa0taeWRaa1FVNkU4eTlHN2k2YTlHYUNSNDhQRWg0REJxVjVTcGNMbkRJb1EzX0dBektheWFueTgwUlpBLVptWVk?oc=5",
     "https://statistics.caricom.org/?country_data=guyana-balance-of-payments-2000-2024",
     "https://statistics.caricom.org/?country_data=guyana-monthly-consumer-price-index-cpi-by-expenditure-category"
   ],
@@ -189,10 +187,10 @@
     }
   ],
   "advance_or_reject_recommendation": "advance",
-  "recommendation_reason": "Calibrated confidence 100/100 with 4 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.",
-  "last_validated_at": "2026-08-20T16:47:57.943634+00:00",
+  "recommendation_reason": "Calibrated confidence 100/100 with 3 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.",
+  "last_validated_at": "2026-08-20T20:42:17.832754+00:00",
   "coordination_path": null,
-  "evidence_fingerprint": "e4cd4829d2eec2f6",
+  "evidence_fingerprint": "30024be8e9b88b89",
   "cycles_since_refresh": 0,
   "evidence_freshness": "refreshing"
 }

@@ -1,37 +1,37 @@
 # Signal Fabric — Backtest Report
 
-**Generated:** 2026-08-20T16:47:58.308948+00:00
+**Generated:** 2026-08-20T20:42:18.106401+00:00
 **Cycles analyzed:** 1
 **Total dispatches:** 50
 **Actionable responses:** 2
 **Overall response rate:** 4.0%
-**Avg confidence:** 81.1/100
+**Avg confidence:** 81.0/100
 
 ## Summary
 
-- **Total validation packs:** 24
-- **Avg confidence:** 81.1/100
+- **Total validation packs:** 25
+- **Avg confidence:** 81.0/100
 - **Response rate:** 4.0%
 
 ## Recommendation Distribution
 
-- **Advance:** 2 (8.3%)
-- **Hold:** 22 (91.7%)
+- **Advance:** 2 (8.0%)
+- **Hold:** 23 (92.0%)
 - **Reject:** 0 (0.0%)
 
 ## Confidence Calibration
 
-- **80-100:** 7 packs (29.2%)
-- **60-79:** 17 packs (70.8%)
+- **80-100:** 7 packs (28.0%)
+- **60-79:** 18 packs (72.0%)
 - **40-59:** 0 packs (0.0%)
 - **0-39:** 0 packs (0.0%)
 
 ## Evidence Category Coverage
 
-- **Sector Hypotheses:** 8 packs (33.3%)
-- **Supporting Projects:** 8 packs (33.3%)
-- **Procurement Matches:** 121 packs (504.2%)
-- **Operators:** 16 packs (66.7%)
+- **Sector Hypotheses:** 8 packs (32.0%)
+- **Supporting Projects:** 8 packs (32.0%)
+- **Procurement Matches:** 127 packs (508.0%)
+- **Operators:** 16 packs (64.0%)
 
 ## Signal Type Performance
 
@@ -40,7 +40,7 @@
 - **food:** Advance 0, Hold 1, Reject 0 (n=1)
 - **invest:** Advance 0, Hold 1, Reject 0 (n=1)
 - **regional:** Advance 0, Hold 13, Reject 0 (n=13)
-- **supply:** Advance 1, Hold 1, Reject 0 (n=2)
+- **supply:** Advance 1, Hold 2, Reject 0 (n=3)
 
 ## Cycle Accuracy
 
@@ -56,8 +56,8 @@
 
 ## Recommendation Calibration
 
-- **Advance rate:** 8.3%
-- **Hold rate:** 91.7%
+- **Advance rate:** 8.0%
+- **Hold rate:** 92.0%
 - **Reject rate:** 0.0%
 
 > **Calibration note:** Advance = high confidence + 2+ evidence categories. Hold = moderate. Reject = low.
