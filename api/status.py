@@ -39,6 +39,26 @@ def _age_minutes(ts: str | None) -> int | None:
         return None
 
 
+# Grace of one missed refresh before a source is called stale. The pipeline
+# cadence is 4h, so the floor here is a full cycle either way.
+_DEFAULT_REFRESH_MINUTES = 1440
+_STALENESS_GRACE_FACTOR = 2
+
+
+def _max_age_minutes(health_entry: dict) -> int:
+    """Age at which a source stops counting as current.
+
+    Derived from the refresh interval the publisher recorded for that
+    source (packagers/source_health.py), so slow annual indicators and
+    four-hourly hazard alerts are not judged against the same number.
+    """
+    try:
+        refresh = int(health_entry.get("refresh_minutes") or _DEFAULT_REFRESH_MINUTES)
+    except (TypeError, ValueError):
+        refresh = _DEFAULT_REFRESH_MINUTES
+    return max(refresh, 1) * _STALENESS_GRACE_FACTOR
+
+
 def _regional_news_summary() -> dict:
     """Build a regional-news freshness summary for the status response.
 
@@ -130,22 +150,34 @@ class handler(BaseHTTPRequestHandler):
             bundled_source_health = _read_json(ROOT / "api" / "source-health-data.json") or {}
             sources = []
             n_sources_ok = 0
+            n_sources_stale = 0
             for label, key, desc in SRC:
                 d = _read_json(ROOT / "data" / key / "latest.json")
                 fetched_at = (d or {}).get("fetched_at") if d else None
+                fallback = bundled_source_health.get(key) or {}
                 if not fetched_at:
-                    fallback = bundled_source_health.get(key) or {}
                     fetched_at = fallback.get("fetched_at")
                 ok = bool(fetched_at)
                 if ok:
                     n_sources_ok += 1
                 age_min = _age_minutes(fetched_at)
+                # Staleness is cadence-relative: compare against the source's
+                # own refresh interval, not a universal number of days. A
+                # source that answered once and then went silent must not keep
+                # reading as healthy just because a timestamp exists.
+                max_age = _max_age_minutes(fallback)
+                stale = age_min is not None and age_min > max_age
+                if stale:
+                    n_sources_stale += 1
                 sources.append({
                     "label": label,
                     "key": key,
                     "description": desc,
                     "ok": ok,
                     "age_minutes": age_min,
+                    "max_age_minutes": max_age,
+                    "stale": stale,
+                    "carried_forward": bool(fallback.get("carried_forward")),
                 })
 
             # Feedback counts — prefer direct data file, fall back to the
@@ -186,6 +218,8 @@ class handler(BaseHTTPRequestHandler):
                 "cycle_count": cycle_count,
                 "cadence_hours": 4,
                 "n_sources_ok": n_sources_ok,
+                "n_sources_stale": n_sources_stale,
+                "n_sources_fresh": n_sources_ok - n_sources_stale,
                 "n_sources_total": len(SRC),
                 "sources": sources,
                 "n_clusters": len(clusters),

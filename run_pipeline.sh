@@ -74,6 +74,13 @@ run_step "AIS Maritime" "python3 \"$ROOT/watchers/ais_poller.py\"" "ais_maritime
 # ── NHC Storm Intelligence ──────────────────────────────
 run_step "NHC Storms" "python3 \"$ROOT/watchers/nhc_storm_poller.py\"" "nhc_storms"
 
+# ── Source health bundle ─────────────────────────────────
+# Must run after the watchers and before publication: data/*/latest.json is
+# gitignored and .vercelignore'd, so this bundle is the only source-freshness
+# signal that reaches production. Without it /api/status serves whatever
+# timestamps were last committed by hand.
+run_step "Source Health" "python3 \"$ROOT/packagers/source_health.py\"" "source_health"
+
 # ── Cross-source merger ──────────────────────────────────
 # Validate: at least one signal source should have completed
 if [ ! -f "$ROOT/.pipeline/noaa_nws" ] && [ ! -f "$ROOT/.pipeline/ndbc_buoys" ] && [ ! -f "$ROOT/.pipeline/tier2" ]; then
