@@ -1,6 +1,6 @@
 # Caribbean Opportunity Dispatch — Judge Brief
 
-Generated: 2026-08-19 20:42 UTC
+Generated: 2026-08-20 01:48 UTC
 
 ## What This Proves
 
@@ -8,10 +8,10 @@ Caribbean Opportunity Dispatch is the product. Caribbean Signal OS is the archit
 
 ## Live Run Snapshot
 
-- Total raw signals generated: 63
+- Total raw signals generated: 64
 - Sources represented: CARICOM, CCRIF SPC, CDB, ECCB, IDB, NDBC, World Bank
 - Countries/zones: 39
-- New/updated this cycle: 6
+- New/updated this cycle: 9
 - User-facing outputs: opportunity dispatches, regional thesis, why-now context, feedback review, judge brief
 
 **Guyana** — 3 signal(s), 4 source(s): 💼 Investment + 🏖️ Tourism + 💎 Investment
@@ -23,11 +23,12 @@ Caribbean Opportunity Dispatch is the product. Caribbean Signal OS is the archit
 
 ## Supporting Decision Signals
 
-**1.** 🔴 **supply_chain_signal — Belize** — sustained
-   Narrative: Belize: signal detected
+**1.** 🔴 **supply_chain_signal — Bahamas, Belize** — new
+   Narrative: Bahamas, Belize: signal detected
    Score: 100/100 | Grade: A - multi-source
    Audience: regional intelligence via Telegram digest
-   Decision: Immediate — Belize: supply_chain_signal (signal detected). Validate locally.
+   Decision: Immediate — Bahamas, Belize: supply_chain_signal (signal detected). Validate locally.
+   🆕 New this cycle
 
 **2.** 🔴 **💎 Investment — Suriname** — sustained
    Narrative: Suriname: +206.0% investment movement, one source — needs corroboration
@@ -35,25 +36,26 @@ Caribbean Opportunity Dispatch is the product. Caribbean Signal OS is the archit
    Audience: investor/founder via Email brief + Telegram
    Decision: Immediate investigation. Suriname has multi-source investment validation (3 signals converging). Priority: assess market entry options, identify existing operators.
 
-**3.** 🔴 **🏗️ Pipeline — CARICOM** — sustained
-   Narrative: CARICOM: 7 active procurements — bidding window open
+**3.** 🔴 **🏗️ Pipeline — CARICOM** — updated
+   Narrative: CARICOM: 8 active procurements — bidding window open
    Score: 95/100 | Grade: B - cross-source
    Audience: investor/founder via Email brief + Telegram
-   Decision: Active procurement pipeline: CDB active procurement notices: 7. Priority: review CDB/IDB opportunities as lead list for project-based entry.
+   Decision: Active procurement pipeline: CDB active procurement notices: 8. Priority: review CDB/IDB opportunities as lead list for project-based entry.
+   🔄 Content updated this cycle
 
-**4.** 🟡 **ccrif_payout — Turks and Caicos Islands** — intensified
-   Narrative: Turks and Caicos Islands: signal detected
+**4.** 🟡 **ccrif_payout — St. Kitts and Nevis** — intensified
+   Narrative: St. Kitts and Nevis: signal detected
    Score: 84/100 | Grade: C - single-source
    Audience: regional intelligence via Telegram digest
-   Decision: Validation — Turks and Caicos Islands: ccrif_payout (signal detected). Validate locally.
+   Decision: Validation — St. Kitts and Nevis: ccrif_payout (signal detected). Validate locally.
    ⬆️ Strengthened (+8 pts)
 
-**5.** 🟡 **ccrif_payout — Haiti** — intensified
-   Narrative: Haiti: signal detected
+**5.** 🟡 **ccrif_payout — Dominica** — intensified
+   Narrative: Dominica: signal detected
    Score: 84/100 | Grade: C - single-source
    Audience: regional intelligence via Telegram digest
-   Decision: Validation — Haiti: ccrif_payout (signal detected). Validate locally.
-   ⬆️ Strengthened (+16 pts)
+   Decision: Validation — Dominica: ccrif_payout (signal detected). Validate locally.
+   ⬆️ Strengthened (+8 pts)
 
 **6.** 🟡 **eccb_credit_surge — Eastern Caribbean Currency Union** — sustained
    Narrative: Eastern Caribbean Currency Union: 5.8%
@@ -135,7 +137,7 @@ Each signal is routed to specific personas based on signal kind and evidence lev
 
 ## Cycle Summary
 
-Lead: Guyana · 63 composite signal(s) · 6 updated · 11 intensified · 36 persistent
+Lead: Guyana · 64 composite signal(s) · 2 new · 7 updated · 10 intensified · 34 persistent
 ## Judge Demo Path
 
 1. Run `bash run_pipeline.sh`.

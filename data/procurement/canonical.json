@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-08-20T00:44:30.205273+00:00",
+ "updated_at": "2026-08-20T01:48:19.464349+00:00",
  "tenders": {
   "bahamas-09a150a1385c": {
    "schema_version": 1,
@@ -20815,6 +20815,86 @@
    "award_lead_time_days": null,
    "last_seen_at": "2026-07-24T00:00:00+00:00"
   },
+  "guyana-3e142bd839e4": {
+   "schema_version": 1,
+   "tender_id": "guyana-3e142bd839e4",
+   "country": "Guyana",
+   "buyer": "40-Ministry of Education",
+   "title": "Completion of Works at 58 Miles Primary School",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00421"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-08-11",
+   "original_closing_date": "2026-08-25",
+   "current_closing_date": "2026-08-25",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00421",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-08-25",
+     "published": "2026-08-11",
+     "observed_at": "2026-08-20T01:48:19.464349+00:00"
+    }
+   ],
+   "first_detected_at": "2026-08-20T01:48:19.464349+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 5,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-08-20T01:48:19.464349+00:00"
+  },
+  "guyana-3e1f7ffb425e": {
+   "schema_version": 1,
+   "tender_id": "guyana-3e1f7ffb425e",
+   "country": "Guyana",
+   "buyer": "21-Ministry of Agriculture",
+   "title": "Supply and Delivery of: 371 Metric Ton Muriate Of Potash",
+   "sector": "Goods",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00419"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-08-05",
+   "original_closing_date": "2026-08-25",
+   "current_closing_date": "2026-08-25",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00419",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-08-25",
+     "published": "2026-08-05",
+     "observed_at": "2026-08-20T01:48:19.464349+00:00"
+    }
+   ],
+   "first_detected_at": "2026-08-20T01:48:19.464349+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 5,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-08-20T01:48:19.464349+00:00"
+  },
   "guyana-42917bcc8c18": {
    "schema_version": 1,
    "tender_id": "guyana-42917bcc8c18",
@@ -20975,6 +21055,46 @@
    "lead_time_days": 21,
    "award_lead_time_days": null,
    "last_seen_at": "2026-06-25T00:00:00+00:00"
+  },
+  "guyana-4601f99159ea": {
+   "schema_version": 1,
+   "tender_id": "guyana-4601f99159ea",
+   "country": "Guyana",
+   "buyer": "40-Ministry of Education",
+   "title": "Consultancy for TVET & Training Diagnostic for SEND Students",
+   "sector": "Consultancy Services",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00422"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-08-13",
+   "original_closing_date": "2026-08-31",
+   "current_closing_date": "2026-08-31",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00422",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-08-31",
+     "published": "2026-08-13",
+     "observed_at": "2026-08-20T01:48:19.464349+00:00"
+    }
+   ],
+   "first_detected_at": "2026-08-20T01:48:19.464349+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 11,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-08-20T01:48:19.464349+00:00"
   },
   "guyana-4b27e2ad0628": {
    "schema_version": 1,
@@ -22620,6 +22740,46 @@
    "award_lead_time_days": null,
    "last_seen_at": "2026-08-20T00:00:00+00:00"
   },
+  "guyana-927793101f25": {
+   "schema_version": 1,
+   "tender_id": "guyana-927793101f25",
+   "country": "Guyana",
+   "buyer": "47-Ministry of Health",
+   "title": "EOI for the Design and Supervision of the National Public Health Reference Laboratory Building",
+   "sector": "Services",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00416"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-08-04",
+   "original_closing_date": "2026-08-31",
+   "current_closing_date": "2026-08-31",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00416",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-08-31",
+     "published": "2026-08-04",
+     "observed_at": "2026-08-20T01:48:19.464349+00:00"
+    }
+   ],
+   "first_detected_at": "2026-08-20T01:48:19.464349+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 11,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-08-20T01:48:19.464349+00:00"
+  },
   "guyana-93056c717a7b": {
    "schema_version": 1,
    "tender_id": "guyana-93056c717a7b",
@@ -22905,6 +23065,46 @@
    "lead_time_days": 13,
    "award_lead_time_days": null,
    "last_seen_at": "2026-07-06T00:00:00+00:00"
+  },
+  "guyana-a20d6eedd7a1": {
+   "schema_version": 1,
+   "tender_id": "guyana-a20d6eedd7a1",
+   "country": "Guyana",
+   "buyer": "21-Ministry of Agriculture",
+   "title": "Supply and Delivery of: 403 Metric Ton Urea",
+   "sector": "Goods",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00420"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-08-05",
+   "original_closing_date": "2026-08-25",
+   "current_closing_date": "2026-08-25",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00420",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-08-25",
+     "published": "2026-08-05",
+     "observed_at": "2026-08-20T01:48:19.464349+00:00"
+    }
+   ],
+   "first_detected_at": "2026-08-20T01:48:19.464349+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 5,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-08-20T01:48:19.464349+00:00"
   },
   "guyana-a4d1cd0edf41": {
    "schema_version": 1,
@@ -23595,6 +23795,86 @@
    "award_lead_time_days": null,
    "last_seen_at": "2026-08-20T00:00:00+00:00"
   },
+  "guyana-b7270d757455": {
+   "schema_version": 1,
+   "tender_id": "guyana-b7270d757455",
+   "country": "Guyana",
+   "buyer": "34-Ministry of Public Utilities and Aviation",
+   "title": "Supply, Installation and Commission Leguan Power Plant Switchgear, Essequibo Islands Guyana.",
+   "sector": "Goods",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00410"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-07-27",
+   "original_closing_date": "2026-08-20",
+   "current_closing_date": "2026-08-20",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00410",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-08-20",
+     "published": "2026-07-27",
+     "observed_at": "2026-08-20T01:48:19.464349+00:00"
+    }
+   ],
+   "first_detected_at": "2026-08-20T01:48:19.464349+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": false,
+   "lead_time_days": 0,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-08-20T01:48:19.464349+00:00"
+  },
+  "guyana-b9463d5f9a4b": {
+   "schema_version": 1,
+   "tender_id": "guyana-b9463d5f9a4b",
+   "country": "Guyana",
+   "buyer": "21-Ministry of Agriculture",
+   "title": "Supply and Delivery of: 805 Metric Ton Sulphate Of Ammonia",
+   "sector": "Goods",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00418"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-08-05",
+   "original_closing_date": "2026-08-25",
+   "current_closing_date": "2026-08-25",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00418",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-08-25",
+     "published": "2026-08-05",
+     "observed_at": "2026-08-20T01:48:19.464349+00:00"
+    }
+   ],
+   "first_detected_at": "2026-08-20T01:48:19.464349+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 5,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-08-20T01:48:19.464349+00:00"
+  },
   "guyana-bf3b04c5b747": {
    "schema_version": 1,
    "tender_id": "guyana-bf3b04c5b747",
@@ -23679,6 +23959,46 @@
    "lead_time_days": 22,
    "award_lead_time_days": null,
    "last_seen_at": "2026-07-10T00:00:00+00:00"
+  },
+  "guyana-c0cbde59762b": {
+   "schema_version": 1,
+   "tender_id": "guyana-c0cbde59762b",
+   "country": "Guyana",
+   "buyer": "21-Ministry of Agriculture",
+   "title": "Rehabilitation of Drainage Structure at Morawhana, Region No.1",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00413"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-07-30",
+   "original_closing_date": "2026-08-20",
+   "current_closing_date": "2026-08-20",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00413",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-08-20",
+     "published": "2026-07-30",
+     "observed_at": "2026-08-20T01:48:19.464349+00:00"
+    }
+   ],
+   "first_detected_at": "2026-08-20T01:48:19.464349+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": false,
+   "lead_time_days": 0,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-08-20T01:48:19.464349+00:00"
   },
   "guyana-c18a827b84ea": {
    "schema_version": 1,
@@ -23829,6 +24149,46 @@
    "lead_time_days": 36,
    "award_lead_time_days": null,
    "last_seen_at": "2026-07-10T00:00:00+00:00"
+  },
+  "guyana-c808e0592ec1": {
+   "schema_version": 1,
+   "tender_id": "guyana-c808e0592ec1",
+   "country": "Guyana",
+   "buyer": "40-Ministry of Education",
+   "title": "Consultancy for Service of Behavioural Therapist",
+   "sector": "Consultancy Services",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00423"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-08-13",
+   "original_closing_date": "2026-08-31",
+   "current_closing_date": "2026-08-31",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00423",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-08-31",
+     "published": "2026-08-13",
+     "observed_at": "2026-08-20T01:48:19.464349+00:00"
+    }
+   ],
+   "first_detected_at": "2026-08-20T01:48:19.464349+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 11,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-08-20T01:48:19.464349+00:00"
   },
   "guyana-c857836802bb": {
    "schema_version": 1,
@@ -23983,6 +24343,46 @@
    "lead_time_days": -729,
    "award_lead_time_days": null,
    "last_seen_at": "2026-08-20T00:00:00+00:00"
+  },
+  "guyana-cf0b9fb5d97d": {
+   "schema_version": 1,
+   "tender_id": "guyana-cf0b9fb5d97d",
+   "country": "Guyana",
+   "buyer": "21-Ministry of Agriculture",
+   "title": "1.\tConstruction of Pump Basin at Kitty Pump Station, Georgetown. Lots 1 & 2",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00412"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-07-30",
+   "original_closing_date": "2026-08-20",
+   "current_closing_date": "2026-08-20",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00412",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-08-20",
+     "published": "2026-07-30",
+     "observed_at": "2026-08-20T01:48:19.464349+00:00"
+    }
+   ],
+   "first_detected_at": "2026-08-20T01:48:19.464349+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": false,
+   "lead_time_days": 0,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-08-20T01:48:19.464349+00:00"
   },
   "guyana-d1f7aae3f8f9": {
    "schema_version": 1,
@@ -24871,6 +25271,46 @@
    "lead_time_days": 21,
    "award_lead_time_days": null,
    "last_seen_at": "2026-06-25T00:00:00+00:00"
+  },
+  "guyana-f59a5e5d1dac": {
+   "schema_version": 1,
+   "tender_id": "guyana-f59a5e5d1dac",
+   "country": "Guyana",
+   "buyer": "39-Ministry of Human Services and Social Security",
+   "title": "Construction of Elderly Assisted Living Facility, Enmore, Region No.4, Phase 1",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00417"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-08-05",
+   "original_closing_date": "2026-08-27",
+   "current_closing_date": "2026-08-27",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00417",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-08-27",
+     "published": "2026-08-05",
+     "observed_at": "2026-08-20T01:48:19.464349+00:00"
+    }
+   ],
+   "first_detected_at": "2026-08-20T01:48:19.464349+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 7,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-08-20T01:48:19.464349+00:00"
   },
   "guyana-f634fed120cb": {
    "schema_version": 1,

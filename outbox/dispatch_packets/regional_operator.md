@@ -2,44 +2,44 @@
 
 **Decision job:** Operational readiness and bid pipeline assessment
 **Delivery channel:** Telegram
-**Generated:** Aug 19, 2026 at 20:42 UTC
+**Generated:** Aug 20, 2026 at 01:48 UTC
 **Dispatches in this packet:** 4
 
 ---
 
 ## Dispatches (4)
 
-### 1. Belize: signal detected
+### 1. Bahamas, Belize: signal detected
 
-**ID:** `DSP-20260819-026` | **Country:** Belize | **Confidence:** 🔴 Immediate | 100/100 | A - multi-source
+**ID:** `DSP-20260820-028` | **Country:** Bahamas, Belize | **Confidence:** 🔴 Immediate | 100/100 | A - multi-source
 **Channel:** Telegram | **Window:** 21 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** CDB active procurement notices: 7;   • Enhancing the Quality of the Belize National Quality Infrastructure;   • Building National and Community Capacity for Climate and Disaster Risk-Informed ; Maritime conditions stable — no high-wind or marine alerts
+**Evidence:** CDB active procurement notices: 8;   • Enhancing the Quality of the Belize National Quality Infrastructure;   • Kalinago Development Project; Maritime conditions stable — no high-wind or marine alerts
 **Detail:** signal detected
 **Grade:** A - multi-source
 
-**Recommended action:** Active supply chain corridor in Belize: procurement live + maritime stable. Assess capacity for logistics, warehousing, transport — bid window open.
+**Recommended action:** Active supply chain corridor in Bahamas, Belize: procurement live + maritime stable. Assess capacity for logistics, warehousing, transport — bid window open.
 **Decision to influence:** Which logistics/procurement corridor to bid or partner on
 **Routing rationale:** Active procurement + stable maritime = real supply chain corridor opportunity — first to respond wins
 
-### 2. CARICOM: 7 active procurements — bidding window open
+### 2. CARICOM: 8 active procurements — bidding window open
 
-**ID:** `DSP-20260819-011` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 95/100 | B - cross-source
+**ID:** `DSP-20260820-013` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 95/100 | B - cross-source
 **Channel:** Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** replied
 
-**Evidence:** CDB active procurement notices: 7; • Enhancing the Quality of the Belize National Quality Infrastructure; • Building National and Community Capacity for Climate and Disaster Risk-Informed Decision Making; • Belize Education Secondary Reform Programme II (BESRPII)
-**Detail:** CDB active procurement notices: 7
+**Evidence:** CDB active procurement notices: 8; • Enhancing the Quality of the Belize National Quality Infrastructure; • Kalinago Development Project; • Kalinago Development Project
+**Detail:** CDB active procurement notices: 8
 **Grade:** B - cross-source
 
-**Recommended action:** Review operational readiness for CARICOM opportunities. CDB active procurement notices: 7 — assess capacity and bid pipeline.
+**Recommended action:** Review operational readiness for CARICOM opportunities. CDB active procurement notices: 8 — assess capacity and bid pipeline.
 **Decision to influence:** Which procurement or project opportunity to pursue
 **Routing rationale:** Active procurement directly maps to operational capacity needs — first to respond wins
 
 ### 3. Eastern Caribbean Currency Union: 5.8%
 
-**ID:** `DSP-20260819-212` | **Country:** Eastern Caribbean Currency Union | **Confidence:** 🟡 Validation | 76/100 | C - single-source
+**ID:** `DSP-20260820-214` | **Country:** Eastern Caribbean Currency Union | **Confidence:** 🟡 Validation | 76/100 | C - single-source
 **Channel:** Telegram | **Window:** 21 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -53,7 +53,7 @@
 
 ### 4. Eastern Caribbean Currency Union: 4.6%
 
-**ID:** `DSP-20260819-215` | **Country:** Eastern Caribbean Currency Union | **Confidence:** 🟡 Validation | 72/100 | C - single-source
+**ID:** `DSP-20260820-217` | **Country:** Eastern Caribbean Currency Union | **Confidence:** 🟡 Validation | 72/100 | C - single-source
 **Channel:** Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** ignored
 

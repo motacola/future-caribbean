@@ -5793,8 +5793,31 @@
       "resolved_at": null,
       "prev_hash": "afc1943cea6962672f66bce30ef0e67e0a6888ee2f70b6e15324cd53d55b21ae",
       "hash": "5ecb29e5383531a743d30fefc412c5d20a3804f0fe117d2b635fe228a2c8a315"
+    },
+    {
+      "cycle_id": "20260819",
+      "fact_key": "id:supply-chain-bahamas-belize",
+      "signal_id": "supply-chain-bahamas-belize",
+      "kind": "supply_chain_signal",
+      "country": "Bahamas, Belize",
+      "score": 100,
+      "band": "85-100",
+      "corroborating_at_claim": 3,
+      "source_names": [
+        "CARICOM",
+        "CDB",
+        "NDBC"
+      ],
+      "recorded_at": "2026-08-20T01:48:20.087901+00:00",
+      "forecast_probability": 0.95,
+      "prior_basis": "calibrated",
+      "outcome": null,
+      "resolved_by": null,
+      "resolved_at": null,
+      "prev_hash": "5ecb29e5383531a743d30fefc412c5d20a3804f0fe117d2b635fe228a2c8a315",
+      "hash": "e8c8a31e80cd5ac7fd2783c422d32c9695ced4ff3de8ded77691d1a143b76a67"
     }
   ],
   "created_at": "2026-08-15T21:38:36.574954+00:00",
-  "updated_at": "2026-08-19T20:42:13.167498+00:00"
+  "updated_at": "2026-08-20T01:48:20.088241+00:00"
 }

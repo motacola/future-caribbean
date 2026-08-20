@@ -1,405 +1,405 @@
 {
-  "cycle": "20260819",
+  "cycle": "20260820",
   "feedback_provenance": "simulated",
   "history": [
     {
-      "dispatch_id": "DSP-20260819-017",
+      "dispatch_id": "DSP-20260820-019",
       "signal_kind": "enhanced_investment",
       "country": "Guyana",
       "feedback_status": "forwarded",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-018",
+      "dispatch_id": "DSP-20260820-020",
       "signal_kind": "enhanced_investment",
       "country": "Guyana",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-019",
+      "dispatch_id": "DSP-20260820-021",
       "signal_kind": "enhanced_investment",
       "country": "Guyana",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-026",
+      "dispatch_id": "DSP-20260820-028",
       "signal_kind": "supply_chain_signal",
-      "country": "Belize",
+      "country": "Bahamas, Belize",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-027",
+      "dispatch_id": "DSP-20260820-029",
       "signal_kind": "supply_chain_signal",
-      "country": "Belize",
+      "country": "Bahamas, Belize",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-028",
+      "dispatch_id": "DSP-20260820-030",
       "signal_kind": "supply_chain_signal",
-      "country": "Belize",
+      "country": "Bahamas, Belize",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-020",
+      "dispatch_id": "DSP-20260820-022",
       "signal_kind": "enhanced_investment",
       "country": "Suriname",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-021",
+      "dispatch_id": "DSP-20260820-023",
       "signal_kind": "enhanced_investment",
       "country": "Suriname",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-022",
+      "dispatch_id": "DSP-20260820-024",
       "signal_kind": "enhanced_investment",
       "country": "Suriname",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-011",
+      "dispatch_id": "DSP-20260820-013",
       "signal_kind": "development_pipeline",
       "country": "CARICOM",
       "feedback_status": "replied",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-012",
+      "dispatch_id": "DSP-20260820-014",
       "signal_kind": "development_pipeline",
       "country": "CARICOM",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-013",
+      "dispatch_id": "DSP-20260820-015",
       "signal_kind": "development_pipeline",
       "country": "CARICOM",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-003",
+      "dispatch_id": "DSP-20260820-003",
       "signal_kind": "investment_signal",
       "country": "Guyana",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-004",
+      "dispatch_id": "DSP-20260820-004",
       "signal_kind": "investment_signal",
       "country": "Guyana",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-023",
+      "dispatch_id": "DSP-20260820-025",
       "signal_kind": "enhanced_investment",
       "country": "Barbados",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-024",
+      "dispatch_id": "DSP-20260820-026",
       "signal_kind": "enhanced_investment",
       "country": "Barbados",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-025",
+      "dispatch_id": "DSP-20260820-027",
       "signal_kind": "enhanced_investment",
       "country": "Barbados",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-005",
+      "dispatch_id": "DSP-20260820-005",
       "signal_kind": "investment_signal",
       "country": "Suriname",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-006",
+      "dispatch_id": "DSP-20260820-006",
       "signal_kind": "investment_signal",
       "country": "Suriname",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-029",
-      "signal_kind": "ccrif_payout",
-      "country": "Turks and Caicos Islands",
+      "dispatch_id": "DSP-20260820-011",
+      "signal_kind": "food_security",
+      "country": "CARICOM",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-030",
-      "signal_kind": "ccrif_payout",
-      "country": "Turks and Caicos Islands",
+      "dispatch_id": "DSP-20260820-012",
+      "signal_kind": "food_security",
+      "country": "CARICOM",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-031",
+      "dispatch_id": "DSP-20260820-063",
       "signal_kind": "ccrif_payout",
-      "country": "Turks and Caicos Islands",
+      "country": "St. Kitts and Nevis",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-032",
+      "dispatch_id": "DSP-20260820-064",
       "signal_kind": "ccrif_payout",
-      "country": "Turks and Caicos Islands",
+      "country": "St. Kitts and Nevis",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-033",
+      "dispatch_id": "DSP-20260820-065",
       "signal_kind": "ccrif_payout",
-      "country": "Haiti",
+      "country": "St. Kitts and Nevis",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-034",
+      "dispatch_id": "DSP-20260820-066",
       "signal_kind": "ccrif_payout",
-      "country": "Haiti",
+      "country": "St. Kitts and Nevis",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-035",
+      "dispatch_id": "DSP-20260820-067",
       "signal_kind": "ccrif_payout",
-      "country": "Haiti",
+      "country": "Dominica",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-036",
+      "dispatch_id": "DSP-20260820-068",
       "signal_kind": "ccrif_payout",
-      "country": "Haiti",
+      "country": "Dominica",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-037",
+      "dispatch_id": "DSP-20260820-069",
       "signal_kind": "ccrif_payout",
-      "country": "Anguilla",
+      "country": "Dominica",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-038",
+      "dispatch_id": "DSP-20260820-070",
       "signal_kind": "ccrif_payout",
-      "country": "Anguilla",
+      "country": "Dominica",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-039",
+      "dispatch_id": "DSP-20260820-071",
       "signal_kind": "ccrif_payout",
-      "country": "Anguilla",
+      "country": "Excess Rainfall policy - Trinidad",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-040",
+      "dispatch_id": "DSP-20260820-072",
       "signal_kind": "ccrif_payout",
-      "country": "Anguilla",
+      "country": "Excess Rainfall policy - Trinidad",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-041",
+      "dispatch_id": "DSP-20260820-073",
       "signal_kind": "ccrif_payout",
-      "country": "Barbados",
+      "country": "Excess Rainfall policy - Trinidad",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-042",
+      "dispatch_id": "DSP-20260820-074",
       "signal_kind": "ccrif_payout",
-      "country": "Barbados",
+      "country": "Excess Rainfall policy - Trinidad",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-043",
+      "dispatch_id": "DSP-20260820-075",
       "signal_kind": "ccrif_payout",
-      "country": "Barbados",
+      "country": "Excess Rainfall policy - Barbados",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-044",
+      "dispatch_id": "DSP-20260820-076",
       "signal_kind": "ccrif_payout",
-      "country": "Barbados",
+      "country": "Excess Rainfall policy - Barbados",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-045",
+      "dispatch_id": "DSP-20260820-077",
       "signal_kind": "ccrif_payout",
-      "country": "Barbados",
+      "country": "Excess Rainfall policy - Barbados",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-046",
+      "dispatch_id": "DSP-20260820-078",
       "signal_kind": "ccrif_payout",
-      "country": "Barbados",
+      "country": "Excess Rainfall policy - Barbados",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-047",
+      "dispatch_id": "DSP-20260820-079",
       "signal_kind": "ccrif_payout",
-      "country": "Barbados",
+      "country": "Excess Rainfall policy - Trinidad",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-048",
+      "dispatch_id": "DSP-20260820-080",
       "signal_kind": "ccrif_payout",
-      "country": "Barbados",
+      "country": "Excess Rainfall policy - Trinidad",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-049",
+      "dispatch_id": "DSP-20260820-081",
       "signal_kind": "ccrif_payout",
-      "country": "Excess Rainfall policy - Dominica",
+      "country": "Excess Rainfall policy - Trinidad",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-050",
+      "dispatch_id": "DSP-20260820-082",
       "signal_kind": "ccrif_payout",
-      "country": "Excess Rainfall policy - Dominica",
+      "country": "Excess Rainfall policy - Trinidad",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-051",
+      "dispatch_id": "DSP-20260820-083",
       "signal_kind": "ccrif_payout",
-      "country": "Excess Rainfall policy - Dominica",
+      "country": "Tropical Cyclone policy - The Bahamas",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-052",
+      "dispatch_id": "DSP-20260820-084",
       "signal_kind": "ccrif_payout",
-      "country": "Excess Rainfall policy - Dominica",
+      "country": "Tropical Cyclone policy - The Bahamas",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-053",
+      "dispatch_id": "DSP-20260820-085",
       "signal_kind": "ccrif_payout",
-      "country": "Haiti",
+      "country": "Tropical Cyclone policy - The Bahamas",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-054",
+      "dispatch_id": "DSP-20260820-086",
       "signal_kind": "ccrif_payout",
-      "country": "Haiti",
+      "country": "Tropical Cyclone policy - The Bahamas",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-055",
+      "dispatch_id": "DSP-20260820-087",
       "signal_kind": "ccrif_payout",
-      "country": "Haiti",
+      "country": "Excess Rainfall policy - Guatemala",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-056",
+      "dispatch_id": "DSP-20260820-088",
       "signal_kind": "ccrif_payout",
-      "country": "Haiti",
+      "country": "Excess Rainfall policy - Guatemala",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-057",
+      "dispatch_id": "DSP-20260820-089",
       "signal_kind": "ccrif_payout",
-      "country": "Nicaragua",
+      "country": "Excess Rainfall policy - Guatemala",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-058",
+      "dispatch_id": "DSP-20260820-090",
       "signal_kind": "ccrif_payout",
-      "country": "Nicaragua",
+      "country": "Excess Rainfall policy - Guatemala",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260819-059",
+      "dispatch_id": "DSP-20260820-091",
       "signal_kind": "ccrif_payout",
-      "country": "Nicaragua",
+      "country": "Excess Rainfall policy - Haiti",
       "feedback_status": "ignored",
-      "cycle": "20260819",
+      "cycle": "20260820",
       "cycles_ago": 0
     }
   ],
@@ -410,7 +410,7 @@
       "Barbados": -6
     },
     "supply_chain_signal": {
-      "Belize": -6
+      "Bahamas, Belize": -6
     },
     "development_pipeline": {
       "CARICOM": 1
@@ -419,13 +419,17 @@
       "Guyana": -4,
       "Suriname": -4
     },
+    "food_security": {
+      "CARICOM": -4
+    },
     "ccrif_payout": {
-      "Turks and Caicos Islands": -8,
-      "Haiti": -16,
-      "Anguilla": -8,
-      "Barbados": -16,
-      "Excess Rainfall policy - Dominica": -8,
-      "Nicaragua": -6
+      "St. Kitts and Nevis": -8,
+      "Dominica": -8,
+      "Excess Rainfall policy - Trinidad": -16,
+      "Excess Rainfall policy - Barbados": -8,
+      "Tropical Cyclone policy - The Bahamas": -8,
+      "Excess Rainfall policy - Guatemala": -8,
+      "Excess Rainfall policy - Haiti": -2
     }
   }
 }
