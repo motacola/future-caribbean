@@ -73,11 +73,17 @@ jobs:
           # pulled 75 fresh articles every run and none of them ever reached
           # the site. data/regional_news/raw/ is deliberately excluded — those
           # are per-fetch XML snapshots that would bloat history.
+          # data/procurement/ is cumulative state, same as data/calibration/:
+          # it is the only record of when a tender was first detected, so a
+          # runner that does not stage it restarts the corpus every cycle and
+          # every lead time collapses to zero.
           for p in outbox/ data/history/ data/.cycle_count.json data/editorial/ \
-                   data/feedback/ data/calibration/ data/ndbc/history.json \
+                   data/feedback/ data/calibration/ data/procurement/ \
+                   data/ndbc/history.json \
                    data/regional_news/latest.json data/regional_news/image_cache.json \
                    data/market_watch/ data/composite/ \
                    public/regional_news.json public/market_watch.json \
+                   public/procurement_outcomes.json \
                    api/market-watch-data.json api/regional-news-data.json \
                    api/feedback-data.json api/source-health-data.json; do
             [ -e "$p" ] && git add "$p" || echo "skipping missing path: $p"

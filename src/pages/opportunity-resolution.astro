@@ -1,0 +1,226 @@
+---
+import Base from '../layouts/Base.astro';
+import { readFileSync, existsSync } from 'fs';
+import { resolve, join } from 'path';
+
+function readJson(path: string): any {
+  const p = join(resolve(process.cwd()), path);
+  try {
+    if (!existsSync(p)) return null;
+    return JSON.parse(readFileSync(p, 'utf-8'));
+  } catch {
+    return null;
+  }
+}
+
+// Same artefact the /api/procurement-outcomes function serves, so the page
+// and the API can never disagree about a record.
+const data = readJson('outbox/procurement_outcomes.json')
+          || readJson('public/procurement_outcomes.json')
+          || { summary: {}, provenance: {}, tenders: [] };
+
+const summary = data.summary || {};
+const provenance = data.provenance || {};
+const tenders = data.tenders || [];
+
+const resolved = tenders.filter((t) => t.resolution);
+const earlyDetections = tenders
+  .filter((t) => t.detected_before_close && t.lead_time_days != null)
+  .sort((a, b) => b.lead_time_days - a.lead_time_days);
+const amended = tenders.filter((t) => (t.amendments || []).length > 0);
+
+const stateLabel = {
+  detected: 'Detected',
+  open: 'Open',
+  amended: 'Amended',
+  closed: 'Closed — awaiting outcome',
+  awarded: 'Awarded',
+  cancelled: 'Cancelled',
+  unresolved: 'Unresolved',
+};
+
+const independenceLabel = {
+  independent: 'Independent source',
+  same_publisher: 'Same portal, different notice',
+  same_source: 'Same source — not corroboration',
+  no_prior_detection: 'No prior detection',
+};
+
+function fmtDate(value) {
+  if (!value) return '—';
+  return String(value).slice(0, 10);
+}
+---
+
+<Base title="Signal Fabric — Opportunity Resolution" description="What happened after a Caribbean procurement opportunity was detected: closing-date amendments, awards, cancellations, and the detection lead time behind each.">
+
+<div class="masthead">
+  <div class="mast-inner">
+    <a href="/" class="mast-name">SIGNAL <em>FABRIC</em></a>
+    <div class="mast-links">
+      <a href="/">← The Dispatch</a>
+      <a href="/regional-connections">Regional connections</a>
+    </div>
+  </div>
+</div>
+
+<div class="hero">
+  <p class="hero-kicker">Procurement outcome resolver</p>
+  <h1>What happened <em>after</em> we saw it.</h1>
+  <p class="hero-sub">A detection is only worth something if someone checks what became of it. Every tender below is a canonical record built from dated public portal snapshots: when it was first seen, how its closing date moved, and whether an award or cancellation notice followed. Nothing here is inferred — where a portal never named a winner, no winner is shown.</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><strong>{summary.tenders ?? 0}</strong><span>Canonical tenders</span></div>
+    <div class="hero-stat"><strong>{summary.detected_before_close ?? 0}</strong><span>Detected before close</span></div>
+    <div class="hero-stat"><strong>{summary.median_lead_days ?? '—'}{summary.median_lead_days != null ? 'd' : ''}</strong><span>Median lead time</span></div>
+    <div class="hero-stat"><strong>{summary.resolved_outcomes ?? 0}</strong><span>Recorded outcomes</span></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-label">What this evidence does and does not show</div>
+  <div class="sec-title">The honest read</div>
+  <div class="sec-sub">
+    <p>Of {summary.resolved_outcomes ?? 0} recorded outcomes, {summary.outcomes_resolving_a_prior_detection ?? 0} resolve a tender this desk had already detected; the rest are award notices for tenders that were never in our opportunity feed.</p>
+    <p>{summary.independently_resolved ?? 0} outcomes are confirmed by a publisher independent of the one that generated the claim — a source cannot corroborate itself.</p>
+    <p>{summary.outcomes_without_named_supplier ?? 0} outcomes carry no supplier name because the notice did not publish one.</p>
+  </div>
+  <div class="state-row">
+    {Object.entries(summary.by_state || {}).map(([state, count]) => (
+      <div class={`state-chip state-${state}`}>
+        <strong>{count}</strong>
+        <span>{stateLabel[state] || state}</span>
+      </div>
+    ))}
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-label">Detection lead time</div>
+  <div class="sec-title">Seen this far before bids closed</div>
+  <div class="sec-sub">Lead time is the gap between the first dated snapshot containing the tender and its closing date. Where a closing date was later amended, the current date is used and the change is shown on the record.</div>
+  <div class="res-list">
+    {earlyDetections.slice(0, 12).map((t) => (
+      <div class="res-row">
+        <div class="res-lead"><strong>+{t.lead_time_days}</strong><span>days</span></div>
+        <div class="res-body">
+          <div class="res-title">{t.title}</div>
+          <div class="res-meta">
+            <span>{t.country}</span>
+            <span>{t.buyer}</span>
+            <span>First seen {fmtDate(t.first_detected_at)}</span>
+            <span>Closed {fmtDate(t.current_closing_date)}</span>
+            <span class={`res-state state-${t.lifecycle_state}`}>{stateLabel[t.lifecycle_state] || t.lifecycle_state}</span>
+          </div>
+          {(t.amendments || []).length > 0 && (
+            <div class="res-amend">
+              {t.amendments.map((a) => (
+                <span>Closing date moved {fmtDate(a.from)} → {fmtDate(a.to)}</span>
+              ))}
+            </div>
+          )}
+          <div class="res-src">
+            {(t.generating_sources || []).join(' · ')}
+            {t.urls?.[0] && <a href={t.urls[0]} rel="nofollow noopener" target="_blank">notice ↗</a>}
+          </div>
+        </div>
+      </div>
+    ))}
+    {earlyDetections.length === 0 && (
+      <div class="res-blank">No tender in the corpus was detected before its closing date yet.</div>
+    )}
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-label">Recorded outcomes</div>
+  <div class="sec-title">Awards and cancellations</div>
+  <div class="sec-sub">Each outcome is labelled with how much distance the resolving source has from the source that generated the claim. Only “independent source” counts as external confirmation.</div>
+  <div class="res-list">
+    {resolved.slice(0, 20).map((t) => (
+      <div class="res-row">
+        <div class={`res-badge badge-${t.resolution.state}`}>{stateLabel[t.resolution.state] || t.resolution.state}</div>
+        <div class="res-body">
+          <div class="res-title">{t.title}</div>
+          <div class="res-meta">
+            <span>{t.country}</span>
+            <span>{t.buyer}</span>
+            <span>Resolved {fmtDate(t.resolution.resolved_at)}</span>
+            {t.award_lead_time_days != null && <span>{t.award_lead_time_days}d from first sighting</span>}
+          </div>
+          <div class="res-meta">
+            <span class="res-indep">{independenceLabel[t.resolution.independence] || t.resolution.independence}</span>
+            <span>Supplier: {t.resolution.supplier || 'not published by source'}</span>
+            <span>Value: {t.resolution.award_value ?? 'not published by source'}</span>
+          </div>
+          <div class="res-src">
+            {t.resolution.resolution_source}
+            {t.resolution.resolution_url && <a href={t.resolution.resolution_url} rel="nofollow noopener" target="_blank">award notice ↗</a>}
+          </div>
+        </div>
+      </div>
+    ))}
+    {resolved.length === 0 && <div class="res-blank">No outcome has been recorded yet.</div>}
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-label">Provenance</div>
+  <div class="sec-title">Where these records come from</div>
+  <div class="prov">
+    <div class="prov-block">
+      <h4>Opportunity sources</h4>
+      <ul>{(provenance.generating_sources || []).map((s) => <li>{s}</li>)}</ul>
+    </div>
+    <div class="prov-block">
+      <h4>Resolution sources</h4>
+      <ul>{(provenance.resolution_sources || []).map((s) => <li>{s}</li>)}</ul>
+    </div>
+    <div class="prov-block">
+      <h4>Caveats</h4>
+      <ul>{(provenance.notes || []).map((n) => <li>{n}</li>)}</ul>
+    </div>
+  </div>
+  <div class="prov-foot">
+    {amended.length} tender{amended.length === 1 ? '' : 's'} had a closing-date amendment linked to the original record.
+    Corpus updated {fmtDate(data.corpus_updated_at)}. Same data as <a href="/api/procurement-outcomes">/api/procurement-outcomes</a>.
+  </div>
+</div>
+
+<style>
+  .sec-sub p { margin:0 0 .4rem; }
+  .state-row { display:flex; flex-wrap:wrap; gap:.6rem; margin-top:1.1rem; }
+  .state-chip { display:flex; flex-direction:column; gap:.15rem; padding:.55rem .85rem; border:1px solid var(--rule,#d9d3c7); border-radius:3px; min-width:7.5rem; }
+  .state-chip strong { font-size:1.35rem; font-family:'Cormorant Garamond',serif; }
+  .state-chip span { font-size:.72rem; letter-spacing:.05em; text-transform:uppercase; opacity:.7; }
+  .state-awarded { border-left:3px solid #4a7c59; }
+  .state-cancelled { border-left:3px solid #9c4a3c; }
+  .state-unresolved { border-left:3px solid #8a8378; }
+  .res-list { display:flex; flex-direction:column; gap:.9rem; margin-top:1.2rem; }
+  .res-row { display:flex; gap:1rem; padding:.9rem 0; border-top:1px solid var(--rule,#e5e0d6); }
+  .res-lead { flex:0 0 4.5rem; text-align:center; }
+  .res-lead strong { display:block; font-family:'Cormorant Garamond',serif; font-size:1.7rem; line-height:1; }
+  .res-lead span { font-size:.68rem; text-transform:uppercase; letter-spacing:.06em; opacity:.65; }
+  .res-badge { flex:0 0 8.5rem; align-self:flex-start; font-size:.7rem; letter-spacing:.06em; text-transform:uppercase; padding:.3rem .5rem; border-radius:2px; text-align:center; }
+  .badge-awarded { background:rgba(74,124,89,.14); color:#3c6a4a; }
+  .badge-cancelled { background:rgba(156,74,60,.14); color:#8c4335; }
+  .res-body { flex:1 1 auto; min-width:0; }
+  .res-title { font-family:'Cormorant Garamond',serif; font-size:1.12rem; line-height:1.3; }
+  .res-meta { display:flex; flex-wrap:wrap; gap:.35rem .9rem; margin-top:.3rem; font-size:.78rem; opacity:.8; }
+  .res-indep { font-weight:600; opacity:1; }
+  .res-amend { margin-top:.35rem; font-size:.76rem; color:#8c6a1f; }
+  .res-amend span { display:block; }
+  .res-src { margin-top:.35rem; font-family:'IBM Plex Mono',monospace; font-size:.7rem; opacity:.62; }
+  .res-src a { margin-left:.5rem; }
+  .res-blank { padding:1.2rem 0; opacity:.7; font-style:italic; }
+  .prov { display:grid; grid-template-columns:repeat(auto-fit,minmax(15rem,1fr)); gap:1.4rem; margin-top:1.1rem; }
+  .prov-block h4 { font-size:.72rem; text-transform:uppercase; letter-spacing:.07em; opacity:.7; margin:0 0 .4rem; }
+  .prov-block ul { margin:0; padding-left:1.1rem; font-size:.82rem; line-height:1.55; }
+  .prov-foot { margin-top:1.2rem; font-size:.8rem; opacity:.75; }
+  @media (max-width:640px) {
+    .res-row { flex-direction:column; gap:.5rem; }
+    .res-lead, .res-badge { flex:none; text-align:left; }
+    .res-lead strong { display:inline; margin-right:.3rem; }
+  }
+</style>
+
+</Base>

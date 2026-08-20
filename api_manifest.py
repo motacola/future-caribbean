@@ -90,6 +90,24 @@ TOOLS_MANIFEST = {
             "example_response_keys": ["ok", "engine", "model", "thesis", "connections"]
         },
         {
+            "name": "procurement_outcomes.list",
+            "description": "Canonical Caribbean tender records with detection date, closing-date amendments, and recorded outcome (awarded/cancelled/unresolved). Supplier and award value appear only where a source states them; `resolution.independence` reports how much distance the resolving source has from the source that generated the claim.",
+            "method": "GET",
+            "path": "/api/procurement-outcomes",
+            "params": {
+                "type": "object",
+                "properties": {
+                    "country": {"type": "string", "description": "Filter to one jurisdiction, e.g. Guyana"},
+                    "state": {"type": "string", "description": "detected|open|amended|closed|awarded|cancelled|unresolved"},
+                    "resolved": {"type": "boolean", "description": "Only tenders with a recorded outcome"},
+                    "limit": {"type": "integer", "description": "Max records returned (default 100, max 500)"}
+                }
+            },
+            "example_request": {"country": "Guyana", "state": "closed", "limit": 10},
+            "example_response_keys": ["ok", "summary", "provenance", "count", "tenders"],
+            "writes": False
+        },
+        {
             "name": "track_record",
             "description": "Public record of what the desk said each cycle, feedback provenance, responses, and current priority adjustments",
             "method": "GET",

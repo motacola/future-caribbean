@@ -48,3 +48,6 @@ data/tenders/raw/
 
 # Per-fetch RSS snapshots — regenerated each cycle
 data/regional_news/raw/
+
+# Playwright run artefacts (traces, error contexts) — never commit
+test-results/
