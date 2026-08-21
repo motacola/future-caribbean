@@ -1,6 +1,6 @@
 {
   "cycle_intro": "Lead: Guyana. 3 converging signal(s) across 4 source(s). Signals: \ud83d\udcbc Investment + \ud83c\udfd6\ufe0f Tourism + \ud83d\udc8e Investment.",
-  "generated_at": "2026-08-21 01:54 UTC",
+  "generated_at": "2026-08-21 04:50 UTC",
   "items": [
     {
       "band": "immediate",
@@ -24,7 +24,7 @@
       "band": "immediate",
       "channel": "Telegram digest",
       "country": "Bahamas, Belize, Grenada",
-      "freshness": "weakened",
+      "freshness": "sustained",
       "kind": "supply_chain_signal",
       "metrics": {
         "decision_changed": null,
@@ -95,7 +95,7 @@
     {
       "band": "validation",
       "channel": "Telegram digest",
-      "country": "St. Kitts and Nevis",
+      "country": "Turks and Caicos Islands",
       "freshness": "intensified",
       "kind": "ccrif_payout",
       "metrics": {
@@ -108,12 +108,12 @@
       "persona": "regional intelligence",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
       "score": 84,
-      "signal_id": "ccrif-payout-kn-tropical_cyclone-2017-01-01"
+      "signal_id": "ccrif-payout-tc-tropical_cyclone-2008-01-01"
     },
     {
       "band": "validation",
       "channel": "Telegram digest",
-      "country": "Dominica",
+      "country": "Haiti",
       "freshness": "intensified",
       "kind": "ccrif_payout",
       "metrics": {
@@ -126,12 +126,12 @@
       "persona": "regional intelligence",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
       "score": 84,
-      "signal_id": "ccrif-payout-dm-tropical_cyclone-2017-01-01"
+      "signal_id": "ccrif-payout-ht-earthquake-2010-01-01"
     },
     {
       "band": "validation",
       "channel": "Telegram digest",
-      "country": "Excess Rainfall policy - Trinidad",
+      "country": "Anguilla",
       "freshness": "intensified",
       "kind": "ccrif_payout",
       "metrics": {
@@ -144,7 +144,7 @@
       "persona": "regional intelligence",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
       "score": 84,
-      "signal_id": "ccrif-payout-tt-excess_rainfall-2017-01-01"
+      "signal_id": "ccrif-payout-ai-tropical_cyclone-2010-01-01"
     },
     {
       "band": "validation",
