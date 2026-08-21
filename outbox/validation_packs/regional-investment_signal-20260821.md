@@ -1,7 +1,7 @@
-# Opportunity Validation Pack — Bahamas, Belize, Grenada
+# Opportunity Validation Pack — Caribwide
 
-- Signal: `supply-chain-bahamas-belize-grenada` · Dispatch: `DSP-20260821-028`
-- Confidence: 78/100 (raw 102) · A - multi-source
+- Signal: `regional-investment_signal-20260821` · Dispatch: `DSP-20260821-001`
+- Confidence: 78/100 (raw 90) · B - cross-source
 - Action readiness: medium (no dated country procurement or news corroboration)
 - Evidence freshness: refreshing · cycles since refresh: 0
 - Recommendation: **HOLD** — Calibrated confidence 78/100 with 0 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.
@@ -32,8 +32,8 @@
 - Caribbean Development Bank (CDB) — Regional development finance and procurement
 
 ## Unresolved questions
-- Which specific sectors are driving the movement in Bahamas, Belize, Grenada? No official sector-breakdown dataset matched this cycle.
-- No live Bahamas, Belize, Grenada-specific procurement notice matched this cycle — check CDB and national tender portals directly.
+- Which specific sectors are driving the movement in Caribwide? No official sector-breakdown dataset matched this cycle.
+- No live Caribwide-specific procurement notice matched this cycle — check CDB and national tender portals directly.
 - No registry-backed local operators matched — source two credible operators via the listed institutions.
 - Validate that the underlying FDI movement is sustained, not a one-off transaction or statistical revision.
 

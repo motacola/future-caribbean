@@ -2,10 +2,16 @@
   "confidence_calibration": {
     "0-39": 0,
     "40-59": 0,
-    "60-79": 18,
+    "60-79": 19,
     "80-100": 7
   },
   "cycle_accuracy": [
+    {
+      "actionable_responses": 0,
+      "cycle_id": "20260821",
+      "dispatches": 217,
+      "response_rate": 0.0
+    },
     {
       "actionable_responses": 2,
       "cycle_id": "20260820",
@@ -15,7 +21,7 @@
   ],
   "evidence_category_coverage": {
     "operators": 16,
-    "procurement_matches": 127,
+    "procurement_matches": 133,
     "sector_hypotheses": 8,
     "supporting_projects": 8
   },
@@ -26,10 +32,9 @@
       "unknown": 50
     },
     "by_signal_kind": {
-      "ccrif_payout": 29,
+      "ccrif_payout": 31,
       "development_pipeline": 3,
       "enhanced_investment": 9,
-      "food_security": 2,
       "investment_signal": 4,
       "supply_chain_signal": 3
     },
@@ -40,16 +45,16 @@
     },
     "total_feedback": 50
   },
-  "generated_at": "2026-08-20T20:42:18.106401+00:00",
+  "generated_at": "2026-08-21T01:54:38.951852+00:00",
   "recommendation_calibration": {
-    "advance_rate": 0.08,
-    "hold_rate": 0.92,
+    "advance_rate": 0.07692307692307693,
+    "hold_rate": 0.9230769230769231,
     "note": "Advance = high confidence + 2+ evidence categories. Hold = moderate. Reject = low.",
     "reject_rate": 0.0
   },
   "recommendation_distribution": {
     "advance": 2,
-    "hold": 23,
+    "hold": 24,
     "reject": 0
   },
   "signal_type_performance": {
@@ -75,7 +80,7 @@
     },
     "regional": {
       "advance": 0,
-      "hold": 13,
+      "hold": 14,
       "reject": 0
     },
     "supply": {
@@ -85,11 +90,11 @@
     }
   },
   "summary": {
-    "avg_confidence": 80.96,
-    "overall_response_rate": 0.04,
+    "avg_confidence": 80.84615384615384,
+    "overall_response_rate": 0.00749063670411985,
     "total_actionable_responses": 2,
-    "total_cycles_analyzed": 1,
-    "total_dispatches": 50,
-    "total_validation_packs": 25
+    "total_cycles_analyzed": 2,
+    "total_dispatches": 267,
+    "total_validation_packs": 26
   }
 }
