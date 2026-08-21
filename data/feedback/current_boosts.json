@@ -1,10 +1,8 @@
 {
-  "generated_at": "2026-08-21T16:48:45.592478+00:00",
+  "generated_at": "2026-08-21T20:36:50.983758+00:00",
   "boosts": {
     "enhanced_investment": {
-      "Guyana": 4,
-      "Suriname": -6,
-      "Barbados": -6
+      "Guyana": 4
     },
     "supply_chain_signal": {
       "Bahamas, Belize, Grenada": -6
@@ -13,16 +11,21 @@
       "CARICOM": 1
     },
     "investment_signal": {
-      "Guyana": -4,
-      "Suriname": -4
+      "Guyana": -4
+    },
+    "food_security": {
+      "CARICOM": -4
     },
     "ccrif_payout": {
-      "Turks and Caicos Islands": -8,
-      "Haiti": -16,
-      "Anguilla": -8,
-      "Barbados": -16,
-      "Excess Rainfall policy - Dominica": -8,
-      "Nicaragua": -6
+      "St. Kitts and Nevis": -8,
+      "Dominica": -8,
+      "Excess Rainfall policy - Trinidad": -16,
+      "Excess Rainfall policy - Barbados": -8,
+      "Tropical Cyclone policy - The Bahamas": -8,
+      "Excess Rainfall policy - Guatemala": -8,
+      "Excess Rainfall policy - Haiti": -8,
+      "Excess Rainfall policy - Jamaica": -8,
+      "Excess Rainfall policy - Panama": -2
     }
   }
 }

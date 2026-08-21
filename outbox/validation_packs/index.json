@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-21T16:48:46.166274+00:00",
+  "generated_at": "2026-08-21T20:36:51.553127+00:00",
   "packs": [
     {
       "signal_id": "enhanced-invest-guyana",
@@ -7,6 +7,13 @@
       "country": "Guyana",
       "recommendation": "advance",
       "confidence_score": 100
+    },
+    {
+      "signal_id": "enhanced-invest-suriname",
+      "file": "enhanced-invest-suriname.json",
+      "country": "Suriname",
+      "recommendation": "hold",
+      "confidence_score": 68
     },
     {
       "signal_id": "supply-chain-bahamas-belize-grenada",
@@ -23,18 +30,11 @@
       "confidence_score": 78
     },
     {
-      "signal_id": "invest-guyana",
-      "file": "invest-guyana.json",
-      "country": "Guyana",
-      "recommendation": "advance",
-      "confidence_score": 87
-    },
-    {
-      "signal_id": "food-security-regional",
-      "file": "food-security-regional.json",
-      "country": "CARICOM",
+      "signal_id": "enhanced-invest-barbados",
+      "file": "enhanced-invest-barbados.json",
+      "country": "Barbados",
       "recommendation": "hold",
-      "confidence_score": 78
+      "confidence_score": 68
     }
   ]
 }

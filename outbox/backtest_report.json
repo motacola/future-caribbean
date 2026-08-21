@@ -26,10 +26,11 @@
       "unknown": 50
     },
     "by_signal_kind": {
-      "ccrif_payout": 31,
+      "ccrif_payout": 37,
       "development_pipeline": 3,
-      "enhanced_investment": 9,
-      "investment_signal": 4,
+      "enhanced_investment": 3,
+      "food_security": 2,
+      "investment_signal": 2,
       "supply_chain_signal": 3
     },
     "by_status": {
@@ -39,7 +40,7 @@
     },
     "total_feedback": 50
   },
-  "generated_at": "2026-08-21T16:48:46.477291+00:00",
+  "generated_at": "2026-08-21T20:36:51.830816+00:00",
   "recommendation_calibration": {
     "advance_rate": 0.11538461538461539,
     "hold_rate": 0.8846153846153846,

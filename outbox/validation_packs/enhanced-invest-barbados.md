@@ -1,11 +1,11 @@
 # Opportunity Validation Pack — Barbados
 
-- Signal: `enhanced-invest-barbados` · Dispatch: `DSP-20260815-025`
-- Confidence: 68/100 (raw 100) · A - multi-source
+- Signal: `enhanced-invest-barbados` · Dispatch: `DSP-20260821-025`
+- Confidence: 68/100 (raw 91) · C - single-source
 - Action readiness: medium (annual macro signal only)
-- Evidence freshness: aging · cycles since refresh: 1
+- Evidence freshness: stale · cycles since refresh: 2
 - Recommendation: **HOLD** — Calibrated confidence 68/100 with 2 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.
-- Last validated: 2026-08-15T20:03:08.174317+00:00
+- Last validated: 2026-08-21T20:36:51.553127+00:00
 
 ## Sector hypotheses
 - Tourism and hospitality [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
@@ -22,11 +22,11 @@
 
 ## Procurement matches
 - [Enhancing the Quality of the Belize National Quality Infrastructure](https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure) — Caribbean Development Bank (regional)
-- [Belize Education Secondary Reform Programme II (BESRPII)](https://www.caribank.org/work-with-us/procurement/procurement-notices/belize-education-secondary-reform-programme-ii-besrpii-0) — Caribbean Development Bank (regional)
-- [Solar Photo-Voltaic and Battery Energy Storage System Project](https://www.caribank.org/work-with-us/procurement/procurement-notices/solar-photo-voltaic-and-battery-energy-storage-system-project) — Caribbean Development Bank (regional)
-- [2025 Annual Procurement Report](https://www.caribank.org/publications-and-resources/resource-library/reports/2025-annual-procurement-report) — Caribbean Development Bank (regional)
-- [Health Sector Strengthening Project](https://www.caribank.org/work-with-us/procurement/procurement-notices/health-sector-strengthening-project-2) — Caribbean Development Bank (regional)
-- [Health Sector Strengthening Project](https://www.caribank.org/work-with-us/procurement/procurement-notices/health-sector-strengthening-project-1) — Caribbean Development Bank (regional)
+- [Grenada Education Enhancement Project - Phase II](https://www.caribank.org/work-with-us/procurement/procurement-plans/grenada-education-enhancement-project-phase-ii) — Caribbean Development Bank (regional)
+- [The Bahamas Water Supply Improvement Project Phase 2](https://www.caribank.org/work-with-us/procurement/procurement-notices/bahamas-water-supply-improvement-project-phase-2-1) — Caribbean Development Bank (regional)
+- [The Bahamas Water Supply Improvement Project Phase 2](https://www.caribank.org/work-with-us/procurement/procurement-notices/bahamas-water-supply-improvement-project-phase-2-0) — Caribbean Development Bank (regional)
+- [Kalinago Development Project](https://www.caribank.org/work-with-us/procurement/procurement-notices/kalinago-development-project-2) — Caribbean Development Bank (regional)
+- [Kalinago Development Project](https://www.caribank.org/work-with-us/procurement/procurement-notices/kalinago-development-project-1) — Caribbean Development Bank (regional)
 
 ## Official country data
 - [Barbados: Monthly Consumer Price Index (CPI) by Expenditure Category](https://statistics.caricom.org/?country_data=barbados-monthly-consumer-price-index-cpi-by-expenditure-category) — CARICOM Statistics
