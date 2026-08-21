@@ -1,6 +1,6 @@
 # Caribbean Opportunity Dispatch — Judge Brief
 
-Generated: 2026-08-21 13:07 UTC
+Generated: 2026-08-21 16:48 UTC
 
 ## What This Proves
 
@@ -8,9 +8,9 @@ Caribbean Opportunity Dispatch is the product. Caribbean Signal OS is the archit
 
 ## Live Run Snapshot
 
-- Total raw signals generated: 64
+- Total raw signals generated: 59
 - Sources represented: CARICOM, CCRIF SPC, CDB, ECCB, IDB, NDBC, World Bank
-- Countries/zones: 39
+- Countries/zones: 38
 - New/updated this cycle: 6
 - User-facing outputs: opportunity dispatches, regional thesis, why-now context, feedback review, judge brief
 
@@ -29,43 +29,43 @@ Caribbean Opportunity Dispatch is the product. Caribbean Signal OS is the archit
    Audience: regional intelligence via Telegram digest
    Decision: Immediate — Bahamas, Belize, Grenada: supply_chain_signal (signal detected). Validate locally.
 
-**2.** 🔴 **💎 Investment — Suriname** — sustained
-   Narrative: Suriname: +206.0% investment movement, one source — needs corroboration
-   Score: 98/100 | Grade: C - single-source
-   Audience: investor/founder via Email brief + Telegram
-   Decision: Immediate investigation. Suriname has multi-source investment validation (3 signals converging). Priority: assess market entry options, identify existing operators.
-
-**3.** 🔴 **🏗️ Pipeline — CARICOM** — sustained
+**2.** 🔴 **🏗️ Pipeline — CARICOM** — sustained
    Narrative: CARICOM: 9 active procurements — bidding window open
    Score: 95/100 | Grade: B - cross-source
    Audience: investor/founder via Email brief + Telegram
    Decision: Active procurement pipeline: CDB active procurement notices: 9. Priority: review CDB/IDB opportunities as lead list for project-based entry.
 
-**4.** 🟡 **ccrif_payout — Turks and Caicos Islands** — intensified
-   Narrative: Turks and Caicos Islands: signal detected
+**3.** 🟡 **ccrif_payout — St. Kitts and Nevis** — intensified
+   Narrative: St. Kitts and Nevis: signal detected
    Score: 84/100 | Grade: C - single-source
    Audience: regional intelligence via Telegram digest
-   Decision: Validation — Turks and Caicos Islands: ccrif_payout (signal detected). Validate locally.
+   Decision: Validation — St. Kitts and Nevis: ccrif_payout (signal detected). Validate locally.
    ⬆️ Strengthened (+8 pts)
 
-**5.** 🟡 **ccrif_payout — Haiti** — intensified
-   Narrative: Haiti: signal detected
+**4.** 🟡 **ccrif_payout — Dominica** — intensified
+   Narrative: Dominica: signal detected
    Score: 84/100 | Grade: C - single-source
    Audience: regional intelligence via Telegram digest
-   Decision: Validation — Haiti: ccrif_payout (signal detected). Validate locally.
-   ⬆️ Strengthened (+16 pts)
+   Decision: Validation — Dominica: ccrif_payout (signal detected). Validate locally.
+   ⬆️ Strengthened (+8 pts)
 
-**6.** 🟡 **eccb_credit_surge — Eastern Caribbean Currency Union** — sustained
+**5.** 🟡 **eccb_credit_surge — Eastern Caribbean Currency Union** — sustained
    Narrative: Eastern Caribbean Currency Union: 5.8%
    Score: 76/100 | Grade: C - single-source
    Audience: regional intelligence via Telegram digest
    Decision: Validation — Eastern Caribbean Currency Union: eccb_credit_surge (5.8%). Validate locally.
 
-**7.** 🟡 **💼 Investment — Barbados** — sustained
-   Narrative: Barbados: FDI trending at +34.8% — screening trigger active
-   Score: 75/100 | Grade: B - cross-source
-   Audience: investor/founder via Email brief + Telegram
-   Decision: Validation priority. Barbados FDI movement (34.8% change) signals opportunity. Cross-reference with sector data.
+**6.** ⚪ **🏖️ Tourism — Antigua and Barbuda** — sustained
+   Narrative: Antigua and Barbuda: GDP growth signals expanding tourist economy
+   Score: 47/100 | Grade: C - single-source
+   Audience: tourism operator via Telegram digest
+   Decision: Context. Antigua and Barbuda GDP data point for tourism sector awareness.
+
+**7.** ⚪ **🏖️ Tourism — Barbados** — sustained
+   Narrative: Barbados: GDP growth signals expanding tourist economy
+   Score: 47/100 | Grade: C - single-source
+   Audience: tourism operator via Telegram digest
+   Decision: Context. Barbados GDP data point for tourism sector awareness.
 
 ## Routing Rationale
 
@@ -135,7 +135,7 @@ Each signal is routed to specific personas based on signal kind and evidence lev
 
 ## Cycle Summary
 
-Lead: Guyana · 64 composite signal(s) · 6 updated · 11 intensified · 37 persistent
+Lead: Guyana · 59 composite signal(s) · 6 updated · 10 intensified · 32 persistent
 ## Judge Demo Path
 
 1. Run `bash run_pipeline.sh`.

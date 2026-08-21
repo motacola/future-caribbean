@@ -1,15 +1,15 @@
 # Opportunity Validation Pack — Guyana
 
-- Signal: `invest-guyana` · Dispatch: `DSP-20260815-003`
-- Confidence: 90/100 (raw 90) · B - cross-source
+- Signal: `invest-guyana` · Dispatch: `DSP-20260821-001`
+- Confidence: 87/100 (raw 87) · B - cross-source
 - Action readiness: high
-- Evidence freshness: stale · cycles since refresh: 3
-- Recommendation: **HOLD** — Evidence fingerprint unchanged for 3 cycles — downgraded from advance to hold until new corroboration arrives.
-- Last validated: 2026-08-15T20:21:28.714890+00:00
+- Evidence freshness: refreshing · cycles since refresh: 0
+- Recommendation: **ADVANCE** — Calibrated confidence 87/100 with 3 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.
+- Last validated: 2026-08-21T16:48:46.166274+00:00
 
 ## Sector hypotheses
-- Oil & gas and offshore support services [corroborated] — _Google News — Guyana: Suriname offshore oil and gas momentum builds as GranMorgu advances - World Oil_
-- Construction and infrastructure [corroborated] — _Google News — Guyana: U.S. seeks role in Guyana’s infrastructure and economic development as oil boom accelerates - Caribbean National Weekly_
+- Oil & gas and offshore support services [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
+- Construction and infrastructure [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
 - Logistics serving the energy supply chain [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
 - Agriculture and agro-processing [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
 - FDI-receiving sectors (composition not yet broken down) [macro_signal] — _World Bank: FDI net inflows moved +860.3% from 2023 to 2024_
@@ -26,12 +26,12 @@
 - [Guyana Labor Force Survey: Fourth Quarter 2017](https://data.iadb.org/en/search?q=Guyana%20Labor%20Force%20Survey%3A%20Fourth%20Quarte) — IDB Open Data
 
 ## Procurement matches
-- [Enhancing the Quality of the Belize National Quality Infrastructure](https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure) — Caribbean Development Bank (regional)
-- [Belize Education Secondary Reform Programme II (BESRPII)](https://www.caribank.org/work-with-us/procurement/procurement-notices/belize-education-secondary-reform-programme-ii-besrpii-0) — Caribbean Development Bank (regional)
-- [Solar Photo-Voltaic and Battery Energy Storage System Project](https://www.caribank.org/work-with-us/procurement/procurement-notices/solar-photo-voltaic-and-battery-energy-storage-system-project) — Caribbean Development Bank (regional)
-- [2025 Annual Procurement Report](https://www.caribank.org/publications-and-resources/resource-library/reports/2025-annual-procurement-report) — Caribbean Development Bank (regional)
-- [Health Sector Strengthening Project](https://www.caribank.org/work-with-us/procurement/procurement-notices/health-sector-strengthening-project-2) — Caribbean Development Bank (regional)
-- [Health Sector Strengthening Project](https://www.caribank.org/work-with-us/procurement/procurement-notices/health-sector-strengthening-project-1) — Caribbean Development Bank (regional)
+- [Supply and Delivery of: 805 Metric Ton Sulphate Of Ammonia](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
+- [Supply and Delivery of: 371 Metric Ton Muriate Of Potash](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
+- [Supply and Delivery of: 403 Metric Ton Urea](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
+- [Completion of Works at 58 Miles Primary School](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
+- [Construction of Elderly Assisted Living Facility, Enmore, Region No.4, Phase 1](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
+- [EOI for the Design and Supervision of the National Public Health Reference Laboratory Building](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
 
 ## Official country data
 - [Guyana Balance of Payments (2000 – 2025)](https://statistics.caricom.org/?country_data=guyana-balance-of-payments-2000-2024) — CARICOM Statistics
@@ -45,7 +45,7 @@
 
 ## Unresolved questions
 - Which specific sectors are driving the movement in Guyana? No official sector-breakdown dataset matched this cycle.
-- No live Guyana-specific procurement notice matched this cycle — check CDB and national tender portals directly.
+- Tender closes 2026-08-25 — confirm eligibility and bid requirements early.
 - Validate fit with registry-listed operators (Guyana Shore Base Inc. (GSBI), Gaico Construction Inc.) before outreach.
 - Validate that the underlying FDI movement is sustained, not a one-off transaction or statistical revision.
 

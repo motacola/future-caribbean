@@ -15,7 +15,7 @@
   ],
   "evidence_category_coverage": {
     "operators": 16,
-    "procurement_matches": 133,
+    "procurement_matches": 136,
     "sector_hypotheses": 8,
     "supporting_projects": 8
   },
@@ -26,10 +26,9 @@
       "unknown": 50
     },
     "by_signal_kind": {
-      "ccrif_payout": 29,
+      "ccrif_payout": 31,
       "development_pipeline": 3,
       "enhanced_investment": 9,
-      "food_security": 2,
       "investment_signal": 4,
       "supply_chain_signal": 3
     },
@@ -40,16 +39,16 @@
     },
     "total_feedback": 50
   },
-  "generated_at": "2026-08-21T13:07:33.381485+00:00",
+  "generated_at": "2026-08-21T16:48:46.477291+00:00",
   "recommendation_calibration": {
-    "advance_rate": 0.07692307692307693,
-    "hold_rate": 0.9230769230769231,
+    "advance_rate": 0.11538461538461539,
+    "hold_rate": 0.8846153846153846,
     "note": "Advance = high confidence + 2+ evidence categories. Hold = moderate. Reject = low.",
     "reject_rate": 0.0
   },
   "recommendation_distribution": {
-    "advance": 2,
-    "hold": 24,
+    "advance": 3,
+    "hold": 23,
     "reject": 0
   },
   "signal_type_performance": {
@@ -69,8 +68,8 @@
       "reject": 0
     },
     "invest": {
-      "advance": 0,
-      "hold": 1,
+      "advance": 1,
+      "hold": 0,
       "reject": 0
     },
     "regional": {
@@ -85,7 +84,7 @@
     }
   },
   "summary": {
-    "avg_confidence": 80.84615384615384,
+    "avg_confidence": 80.73076923076923,
     "overall_response_rate": 0.04,
     "total_actionable_responses": 2,
     "total_cycles_analyzed": 1,

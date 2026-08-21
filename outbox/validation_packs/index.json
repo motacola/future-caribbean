@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-21T13:07:33.159330+00:00",
+  "generated_at": "2026-08-21T16:48:46.166274+00:00",
   "packs": [
     {
       "signal_id": "enhanced-invest-guyana",
@@ -16,13 +16,6 @@
       "confidence_score": 78
     },
     {
-      "signal_id": "enhanced-invest-suriname",
-      "file": "enhanced-invest-suriname.json",
-      "country": "Suriname",
-      "recommendation": "hold",
-      "confidence_score": 68
-    },
-    {
       "signal_id": "dev-pipeline-regional",
       "file": "dev-pipeline-regional.json",
       "country": "CARICOM",
@@ -30,9 +23,16 @@
       "confidence_score": 78
     },
     {
-      "signal_id": "regional-investment_signal-20260821",
-      "file": "regional-investment_signal-20260821.json",
-      "country": "Caribwide",
+      "signal_id": "invest-guyana",
+      "file": "invest-guyana.json",
+      "country": "Guyana",
+      "recommendation": "advance",
+      "confidence_score": 87
+    },
+    {
+      "signal_id": "food-security-regional",
+      "file": "food-security-regional.json",
+      "country": "CARICOM",
       "recommendation": "hold",
       "confidence_score": 78
     }

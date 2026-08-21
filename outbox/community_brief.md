@@ -1,5 +1,5 @@
 🌴 **Caribbean Opportunity Brief** — what's moving this week
-Cycle 20260821 • 2026-08-21 13:07 UTC
+Cycle 20260821 • 2026-08-21 16:48 UTC
 
 Plain-language signals for builders, business owners, and community leaders.
 No jargon. Just what matters for your next move.
@@ -16,25 +16,25 @@ No jargon. Just what matters for your next move.
    🔴 High confidence — multiple sources agree
    📊 Backed by multiple independent data sources
 
-3. **Suriname**: money flowing in from multiple sources — verified opportunity — 206.0% movement
-   New money = new competition AND new customers. Map your advantage before they arrive. (holding steady)
-   🔴 High confidence — multiple sources agree
-   📊 Single-source indicator — verify locally
-
-4. **Guyana**: foreign investment spiking — worth watching — 860.3% movement
+3. **Guyana**: foreign investment spiking — worth watching — 860.3% movement
    Investment noise in your market. Could mean competitors coming or demand growing. (holding steady)
    🟡 Solid signal — some corroboration
    📊 Cross-source validation
 
-5. **Barbados**: money flowing in from multiple sources — verified opportunity — 34.8% movement
-   New money = new competition AND new customers. Map your advantage before they arrive. (holding steady)
+4. **Grenada**: ccrif payout
+   Pay attention — something real is happening.
    🟡 Solid signal — some corroboration
    📊 Single-source indicator — verify locally
 
-6. **Suriname**: foreign investment spiking — worth watching — 206.0% movement
-   Investment noise in your market. Could mean competitors coming or demand growing. (holding steady)
+5. **Tropical Cyclone policy - Nicaragua**: ccrif payout
+   Pay attention — something real is happening.
    🟡 Solid signal — some corroboration
-   📊 Cross-source validation
+   📊 Single-source indicator — verify locally
+
+6. **Excess Rainfall policy - Trinidad**: ccrif payout
+   Pay attention — something real is happening.
+   🟡 Solid signal — some corroboration
+   📊 Single-source indicator — verify locally
 
 ---
 
