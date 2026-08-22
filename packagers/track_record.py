@@ -93,10 +93,12 @@ def main() -> None:
             if status in counts:
                 counts[status] += 1
 
-        # Before the first response lands, the current cycle still published
-        # real briefings. Count those dispatches instead of rendering a fresh
-        # cycle as "0 briefings".
-        dispatch_count = len(entries) if entries else len(cycle_dispatches)
+        # Published receipts count what the desk actually routed for the
+        # cycle — the same number dispatch_desk.json reports. Feedback
+        # entries measure who responded, not how much went out; they are
+        # already rendered as response pills. Fall back to entry count only
+        # when the rolling dispatch artifact no longer holds that cycle.
+        dispatch_count = len(cycle_dispatches) if cycle_dispatches else len(entries)
 
         # Unique countries by response volume desc
         country_counts: dict[str, int] = {}
