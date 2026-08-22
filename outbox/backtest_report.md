@@ -1,17 +1,17 @@
 # Signal Fabric — Backtest Report
 
-**Generated:** 2026-08-22T16:36:34.176361+00:00
+**Generated:** 2026-08-22T20:36:09.465543+00:00
 **Cycles analyzed:** 1
-**Total dispatches:** 50
+**Total dispatches:** 97
 **Actionable responses:** 2
-**Overall response rate:** 4.0%
+**Overall response rate:** 2.1%
 **Avg confidence:** 80.6/100
 
 ## Summary
 
 - **Total validation packs:** 27
 - **Avg confidence:** 80.6/100
-- **Response rate:** 4.0%
+- **Response rate:** 2.1%
 
 ## Recommendation Distribution
 
@@ -46,7 +46,7 @@
 
 | Cycle | Dispatches | Actionable | Response Rate |
 |-------|------------|------------|---------------|
-| 20260822 | 50 | 2 | 4.0% |
+| 20260822 | 97 | 2 | 2.1% |
 
 ## Feedback Analysis
 

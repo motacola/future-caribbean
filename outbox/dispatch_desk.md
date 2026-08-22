@@ -1,6 +1,6 @@
 # Dispatch Desk — Cycle 20260822
 
-Generated: 2026-08-22 16:36 UTC
+Generated: 2026-08-22 20:36 UTC
 
 Signal Fabric turns fragmented regional data into decision-ready routes. This is the primary product surface; Telegram/email are delivery channels and the dashboard is the operator/audit view.
 
@@ -11,7 +11,7 @@ Fragmented public data → Agentic signal pipeline → Routed decisions → Feed
 | Stage | This cycle proof |
 |---|---|
 | Data | 2 source families represented |
-| Signal | 53 decision clusters from 217 persona routes |
+| Signal | 29 decision clusters from 97 persona routes |
 | Packaging | Persona actions, evidence grades, risk flags, and action windows attached |
 | Distribution | 7 personas across 5 channel types |
 | Action | Every route names the decision it should influence |
@@ -19,7 +19,7 @@ Fragmented public data → Agentic signal pipeline → Routed decisions → Feed
 
 ## Regional Read
 
-Capital momentum is strongest in Guyana (+860.3%), followed by Suriname. Separately, St. Vincent and the Grenadines show elevated economic vulnerability — relevant for portfolio monitoring and resilience planning. Development pipeline remains active (CDB active procurement notices: 9) — the bidding window is open for project-based entry. Tourism-related growth signals are visible in Antigua and Barbuda, Barbados, Dominica — demand-side indicators for capacity planning.
+Capital momentum is strongest in Guyana (+860.3%), followed by Suriname. Separately, St. Vincent and the Grenadines show elevated economic vulnerability — relevant for portfolio monitoring and resilience planning. Development pipeline remains active (CDB active procurement notices: 9) — the bidding window is open for project-based entry. Tourism-related growth signals are visible in Antigua and Barbuda, Barbados, Grenada — demand-side indicators for capacity planning.
 
 ## Why This Cycle Matters
 
@@ -148,11 +148,11 @@ Capital momentum is strongest in Guyana (+860.3%), followed by Suriname. Separat
 
 ## Feedback-Adjusted Priority
 
-- Haiti ccrif payout downranked -16
-- Barbados ccrif payout downranked -16
-- Turks and Caicos Islands ccrif payout downranked -8
-- Excess Rainfall policy - Dominica ccrif payout downranked -8
-- Anguilla ccrif payout downranked -8
+- Excess Rainfall policy - Trinidad ccrif payout downranked -16
+- Tropical Cyclone policy - The Bahamas ccrif payout downranked -8
+- St. Kitts and Nevis ccrif payout downranked -8
+- Excess Rainfall policy - Guatemala ccrif payout downranked -8
+- Excess Rainfall policy - Barbados ccrif payout downranked -8
 
 ## Supporting Artifacts
 

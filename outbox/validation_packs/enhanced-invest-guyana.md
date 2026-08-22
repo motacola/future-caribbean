@@ -5,10 +5,10 @@
 - Action readiness: high
 - Evidence freshness: refreshing · cycles since refresh: 0
 - Recommendation: **ADVANCE** — Calibrated confidence 100/100 with 4 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.
-- Last validated: 2026-08-22T16:36:33.871116+00:00
+- Last validated: 2026-08-22T20:36:09.232198+00:00
 
 ## Sector hypotheses
-- Oil & gas and offshore support services [corroborated] — _Google News — Guyana: Oil & Gas Energy Chamber welcomes arrival of Guyana’s fifth FPSO - News Room Guyana_
+- Oil & gas and offshore support services [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
 - Construction and infrastructure [corroborated] — _Google News — Guyana: One Communications urges greater protection of telecom infrastructure amid vandalism, copper theft - Guyana Chronicle_
 - Logistics serving the energy supply chain [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
 - Agriculture and agro-processing [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_

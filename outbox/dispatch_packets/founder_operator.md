@@ -2,12 +2,12 @@
 
 **Decision job:** Competitive positioning and capability mapping
 **Delivery channel:** Telegram
-**Generated:** Aug 22, 2026 at 16:36 UTC
-**Dispatches in this packet:** 11
+**Generated:** Aug 22, 2026 at 20:36 UTC
+**Dispatches in this packet:** 10
 
 ---
 
-## Dispatches (11)
+## Dispatches (10)
 
 ### 1. Guyana: +860.3% capital surge on a single official source — market entry window open
 
@@ -135,21 +135,7 @@
 **Decision to influence:** Which country-sector pair to validate for investment readiness
 **Routing rationale:** FDI movement in your operating country signals competition or demand growth — assess positioning
 
-### 10. Eastern Caribbean Currency Union: 5.8%
-
-**ID:** `DSP-20260822-212` | **Country:** Eastern Caribbean Currency Union | **Confidence:** 🟡 Validation | 76/100 | C - single-source
-**Channel:** Telegram | **Window:** 21 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Private sector credit: EC$13,350.8M; Total deposits: EC$22,353.3M; Net foreign assets: EC$14,080.2M; Period: 2025 (YoY: +5.8%)
-**Detail:** 5.8%
-**Grade:** C - single-source
-
-**Recommended action:** Review Eastern Caribbean Currency Union: 5.8%. Validate locally before action.
-**Decision to influence:** Private sector credit expansion = banking confidence = investment timing signal
-**Routing rationale:** Credit growth = working capital available = demand for local goods/services rising
-
-### 11. Barbados: FDI trending at +34.8% — screening trigger active
+### 10. Barbados: FDI trending at +34.8% — screening trigger active
 
 **ID:** `DSP-20260822-008` | **Country:** Barbados | **Confidence:** 🟡 Validation | 75/100 | B - cross-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
