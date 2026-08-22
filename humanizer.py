@@ -69,6 +69,25 @@ HUMANIZE_RULES = [
     (r"WB FDI surge detected:\s*", r"World Bank sees money moving into "),
     (r"\bWB\b", "World Bank"),
     (r"\bFDI\b", "foreign investment"),
+    # ── 2026-08-22 voice pass: strings found live on the homepage ──
+    # CCRIF payout routing decision (was rendering 39× on the front page)
+    (r"^Insurance capital deployment for reconstruction / parametric trigger validation$",
+     r"Insurance money is moving for rebuilding — check what the payout trigger covers"),
+    (r"^Private sector credit expansion = banking confidence = investment timing signal$",
+     r"Banks are lending more — usually a good moment to time an investment"),
+    (r"^Deposit base expansion = currency union stability = confidence signal$",
+     r"Deposits are growing across the currency union — a quiet sign of confidence"),
+    (r"^Which country-sector pair to validate for investment readiness$",
+     r"Pick the country and sector most ready for investment, and check it holds up"),
+    # Validation-pack verdict lines
+    (r"Calibrated confidence (\d+)/100 with (\d+) evidence categories including dated procurement or corroborated sector news\. Worth one validation conversation\.",
+     r"Confidence sits at \1 out of 100, backed by \2 kinds of evidence including a dated tender or corroborated news. Worth one real conversation."),
+    (r"Calibrated confidence (\d+)/100 with (\d+) evidence categories, but no dated country tender or corroborated sector article yet — advance after confirmation\.",
+     r"Confidence sits at \1 out of 100 with \2 kinds of evidence — but nothing dated or independently corroborated yet. Hold until that lands."),
+    (r"Calibrated confidence (\d+)/100 with (\d+) evidence categories\. Keep on the desk; advance only after the unresolved questions below are answered\.",
+     r"Confidence sits at \1 out of 100 with \2 kinds of evidence. Keep it on the desk until the open questions below get answers."),
+    (r"Calibrated confidence (\d+)/100 with no corroborating evidence categories\. Park unless new corroborating data arrives next cycle\.",
+     r"Confidence sits at just \1 out of 100 with nothing to back it yet. Park it unless fresh evidence arrives next cycle."),
 ]
 _HUMANIZE_COMPILED = [(re.compile(p), r) for p, r in HUMANIZE_RULES]
 
@@ -80,7 +99,7 @@ def humanize(text: str) -> str:
     return text
 
 # JS twin for live content (theater stream, ask-desk answers):
-# same patterns, replacement backrefs converted \1 -> $1
+# same patterns, replacement backrefs converted \1 -> \1
 humanize_rules_json = json.dumps(
     [[p, re.sub(r"\\(\d)", r"$\1", r)] for p, r in HUMANIZE_RULES],
     ensure_ascii=False).replace("</", "<\\/")

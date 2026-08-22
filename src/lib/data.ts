@@ -169,23 +169,23 @@ function watchlistSignal(country: string, market: any, fx: any): any {
     return {
       confidence: 34,
       kind: 'market',
-      summary: `Market watch signal: ${code} / ${fx?.pair || 'FX'} — monitor ${focus}`,
-      ranking_rationale: 'Watchlist signal from official market-source registry; promoted to a live briefing when core data or source corroboration moves.',
+      summary: `Market watch: ${code} — watching ${focus}`,
+      ranking_rationale: 'From the market watchlist. It becomes a live briefing once core data or a second source confirms movement.',
     };
   }
   if (fx?.pair) {
     return {
       confidence: 28,
       kind: 'market',
-      summary: `FX watch signal: ${fx.pair} ${fx.rate_label || 'watch'} — ${fx.signal || 'monitor reserves, flows, and official notices'}`,
-      ranking_rationale: 'Watchlist signal from FX/market coverage; promoted to a live briefing when source corroboration moves.',
+      summary: `Currency watch: ${fx.pair} ${fx.rate_label || ''} — keeping an eye on reserves, flows, and official notices`.replace(/\\s+/g, ' '),
+      ranking_rationale: 'From FX and market coverage. It becomes a live briefing once a second source confirms movement.',
     };
   }
   return {
     confidence: 28,
     kind: 'market',
-    summary: 'Regional watch signal: monitor official notices, tourism/logistics activity, and local market context',
-    ranking_rationale: 'Watchlist signal from regional market coverage; promoted to a live briefing when source corroboration moves.',
+    summary: 'Watching official notices plus tourism and shipping activity for signs of movement',
+    ranking_rationale: 'From regional market coverage. It becomes a live briefing once a second source confirms movement.',
   };
 }
 
@@ -1121,7 +1121,7 @@ export function loadDashboardData() {
     const cc = c.country_cluster || '';
     const cg = cleanGrade(c.evidence_grade || '');
     const cf = c.freshness || '';
-    const cd = (c.decision || '').slice(0, 100);
+    const cd = humanize(c.decision || '').slice(0, 100);
     const ce = cleanEvidence(c.evidence || '');
     const cr: string[] = c.risk_flags || [];
     const crHtml = cr.length ? `<div class="risk-inline">⚠️ ${esc(cr[0].slice(0, 80))}</div>` : '';

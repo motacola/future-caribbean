@@ -1172,7 +1172,7 @@ html { scroll-behavior: smooth; }
   <div class="market-head">
     <div>
       <div class="sec-label">Caribbean Market Watch</div>
-      <div class="st">Listed markets and market-moving news to monitor this cycle</div>
+      <div class="st">Every listed market, and the news that moved it this cycle</div>
       <div class="ss">The product now tracks the official exchanges, regulators, central banks, and credible business press needed to connect regional signals to listed-market context. This is market intelligence, not brokerage advice.</div>
     </div>
   </div>
@@ -1637,8 +1637,8 @@ const drillReact = (function () {
           <div class="map-drill-grid">
             <article>
               <span>WATCHLIST · ${marker.confidence || 0}/100</span>
-              <h3>${marker.summary || 'Regional market watch signal'}</h3>
-              <p>${marker.ranking_rationale || 'The desk is monitoring this island for official notices, FX pressure, market-source updates, and local context. It becomes a routed briefing when corroborated movement appears.'}</p>
+              <h3>${marker.summary || 'Regional market watch'}</h3>
+              <p>${marker.ranking_rationale || 'Nothing confirmed yet. We watch official notices, currency pressure, and market sources on this island, and a briefing goes out the moment two sources agree.'}</p>
             </article>
           </div>
         </div>`;
@@ -1693,7 +1693,7 @@ function openCountryDrill(country) {
   const drill = document.getElementById('map-drill');
   drill.innerHTML = '<div class="map-drill-head"><strong>' + escapeMapText(country) + '</strong><span>' + items.length + ' dispatches</span></div>' +
     (items.length ? '<div class="map-drill-grid">' + items.slice(0, 6).map(d => '<article><span>' + escapeMapText(d.dispatch_id) + ' · ' + escapeMapText(d.persona_label) + '</span><h3>' + escapeMapText(d.title) + '</h3><p>' + escapeMapText(d.recommended_action) + '</p></article>').join('') + '</div>'
-                 : '<div class="map-drill-grid"><article><span>WATCHLIST · ' + escapeMapText(marker.confidence || 0) + '/100</span><h3>' + escapeMapText(marker.summary || 'Regional market watch signal') + '</h3><p>' + escapeMapText(marker.ranking_rationale || 'The desk is monitoring this island for official notices, FX pressure, market-source updates, and local context.') + '</p></article></div>');
+                 : '<div class="map-drill-grid"><article><span>WATCHLIST · ' + escapeMapText(marker.confidence || 0) + '/100</span><h3>' + escapeMapText(marker.summary || 'Regional market watch') + '</h3><p>' + escapeMapText(marker.ranking_rationale || 'Nothing confirmed yet — we watch official notices, currency pressure, and market sources here.') + '</p></article></div>');
 }
 
 const mapMarkerRefs = {};

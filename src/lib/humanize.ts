@@ -67,6 +67,23 @@ const HUMANIZE_RULES: [string, string][] = [
   ["WB FDI surge detected:\\s*", "World Bank sees money moving into "],
   ["\\bWB\\b", "World Bank"],
   ["\\bFDI\\b", "foreign investment"],
+  // ── 2026-08-22 voice pass — mirrors the rules added to humanizer.py ──
+  ["^Insurance capital deployment for reconstruction / parametric trigger validation$",
+   "Insurance money is moving for rebuilding — check what the payout trigger covers"],
+  ["^Private sector credit expansion = banking confidence = investment timing signal$",
+   "Banks are lending more — usually a good moment to time an investment"],
+  ["^Deposit base expansion = currency union stability = confidence signal$",
+   "Deposits are growing across the currency union — a quiet sign of confidence"],
+  ["^Which country-sector pair to validate for investment readiness$",
+   "Pick the country and sector most ready for investment, and check it holds up"],
+  ["Calibrated confidence (\\d+)/100 with (\\d+) evidence categories including dated procurement or corroborated sector news\\. Worth one validation conversation\\.",
+   "Confidence sits at $1 out of 100, backed by $2 kinds of evidence including a dated tender or corroborated news. Worth one real conversation."],
+  ["Calibrated confidence (\\d+)/100 with (\\d+) evidence categories, but no dated country tender or corroborated sector article yet — advance after confirmation\\.",
+   "Confidence sits at $1 out of 100 with $2 kinds of evidence — but nothing dated or independently corroborated yet. Hold until that lands."],
+  ["Calibrated confidence (\\d+)/100 with (\\d+) evidence categories\\. Keep on the desk; advance only after the unresolved questions below are answered\\.",
+   "Confidence sits at $1 out of 100 with $2 kinds of evidence. Keep it on the desk until the open questions below get answers."],
+  ["Calibrated confidence (\\d+)/100 with no corroborating evidence categories\\. Park unless new corroborating data arrives next cycle\\.",
+   "Confidence sits at just $1 out of 100 with nothing to back it yet. Park it unless fresh evidence arrives next cycle."],
 ];
 
 const _compiled: [RegExp, string][] = HUMANIZE_RULES.map(([p, r]) => {
