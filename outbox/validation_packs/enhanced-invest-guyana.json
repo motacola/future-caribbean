@@ -10,8 +10,9 @@
   "sector_hypotheses": [
     {
       "sector": "Oil & gas and offshore support services",
-      "basis": "Analyst prior from widely reported sector drivers — requires local confirmation",
-      "status": "unconfirmed"
+      "basis": "Google News — Guyana: Oil & Gas Energy Chamber welcomes arrival of Guyana’s fifth FPSO - News Room Guyana",
+      "status": "corroborated",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPWGpNVktram95RFR0Yl9PclVUTmFLMW5FQUR3NDJtWEdOVFRoUi1ualJRVFJTNUVpUzYxZ0VQb2Y5b040UEl3UHpXYlVWdTE1ZnhYNkNQZklCYnFxZkJJUnR2Mk5HT1EzTUpaU3BtdmxsdkZBd2F6UkhyZkhwY3pxQm92eUdSeC1ya3d0ZjhoeUh4ZGY5UXhDZA?oc=5"
     },
     {
       "sector": "Construction and infrastructure",
@@ -169,6 +170,7 @@
     "https://data.iadb.org/en/search?q=Productivity%2C%20Technology%20and%20Innovation%20",
     "https://eprocure.gov.gy/",
     "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQSzhaRHM3TWhaZGJNMkZ6OUsybExQOXI2a3hRZDlyYlZveGJLTm5FLWx1MEhTRUwtVVlGRFJPS2k0dDNFT2FqeFhBNDJfd293MXN3cVRseE40U09NcGlVMWZlTjdBSmU0bmZNN2wtbVN0MWFLQzNNN201ZkhRb3ZINlRNQmtjM0pSOTFieFpkWnpfeXNJbEtKWXBYYkRPTmw5VUIyQ2YtblVGel80ekZJLVZucUJFU2VrQWJRS25aWHdRNlFvSFF4ZU9rbEZBZVI5Yk9N?oc=5",
+    "https://news.google.com/rss/articles/CBMimAFBVV95cUxPWGpNVktram95RFR0Yl9PclVUTmFLMW5FQUR3NDJtWEdOVFRoUi1ualJRVFJTNUVpUzYxZ0VQb2Y5b040UEl3UHpXYlVWdTE1ZnhYNkNQZklCYnFxZkJJUnR2Mk5HT1EzTUpaU3BtdmxsdkZBd2F6UkhyZkhwY3pxQm92eUdSeC1ya3d0ZjhoeUh4ZGY5UXhDZA?oc=5",
     "https://statistics.caricom.org/?country_data=guyana-balance-of-payments-2000-2024",
     "https://statistics.caricom.org/?country_data=guyana-monthly-consumer-price-index-cpi-by-expenditure-category"
   ],
@@ -190,9 +192,9 @@
   ],
   "advance_or_reject_recommendation": "advance",
   "recommendation_reason": "Calibrated confidence 100/100 with 4 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.",
-  "last_validated_at": "2026-08-22T08:44:04.014862+00:00",
+  "last_validated_at": "2026-08-22T12:57:20.520414+00:00",
   "coordination_path": null,
-  "evidence_fingerprint": "56a3d28643ba2e49",
+  "evidence_fingerprint": "e03bb9fc35e7f265",
   "cycles_since_refresh": 0,
   "evidence_freshness": "refreshing"
 }
