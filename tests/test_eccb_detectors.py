@@ -17,6 +17,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from mergers.cross_source_merger import (  # noqa: E402
+    detect_ccrif_payout,
     detect_eccb_credit_surge,
     detect_eccb_deposit_growth,
 )
@@ -116,6 +117,50 @@ def test_deposit_growth_corroborates_credit_when_published():
         _obs("ECCU", "private_sector_credit", 5200, 4.0),
     ]}
     assert detect_eccb_deposit_growth(RULES_DEPOSIT, data) == []
+
+
+# ── CCRIF member_only guard ────────────────────────────────
+
+RULES_CCRIF = {
+    "conditions": {
+        "payout_usd_min": 1000000,
+        "peril_match": ["tropical_cyclone", "earthquake", "excess_rainfall"],
+        "ccrif_member_only": True,
+    }
+}
+
+
+def _payout(country: str) -> dict:
+    return {
+        "country": country,
+        "country_code": country[:2].upper(),
+        "payout_usd": 5_000_000,
+        "peril": "tropical_cyclone",
+        "event_date": "2026-08-01",
+        "announced_date": "2026-08-05",
+        "policy_type": "parametric",
+    }
+
+
+def test_ccrif_member_payouts_pass():
+    data = {"payouts": [_payout("Grenada"), _payout("St. Lucia")]}
+    out = detect_ccrif_payout(RULES_CCRIF, data)
+    assert len(out) == 2
+
+
+def test_ccrif_nonmember_payout_suppressed():
+    """The docstring promised 'member country only' — now it is enforced."""
+    data = {"payouts": [_payout("Atlantis"), _payout("Grenada")]}
+    out = detect_ccrif_payout(RULES_CCRIF, data)
+    assert len(out) == 1
+    assert out[0].countries == ["Grenada"]
+
+
+def test_ccrif_guard_can_be_disabled():
+    rules = dict(RULES_CCRIF)
+    rules["conditions"] = dict(RULES_CCRIF["conditions"], ccrif_member_only=False)
+    data = {"payouts": [_payout("Atlantis")]}
+    assert len(detect_ccrif_payout(rules, data)) == 1
 
 
 if __name__ == "__main__":

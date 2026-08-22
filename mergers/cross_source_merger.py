@@ -910,6 +910,31 @@ def detect_ccrif_payout(
     peril_match = cond.get("peril_match", ["tropical_cyclone", "earthquake", "excess_rainfall"])
     member_only = cond.get("ccrif_member_only", True)
 
+    # CCRIF government membership, cited from ccrif.org/about-us
+    # (19 Caribbean + 4 Central American governments). Matched on a
+    # normalised name so poller spellings ("St. Lucia" vs "Saint Lucia",
+    # "St. Kitts & Nevis") still resolve. Utilities/other members are not
+    # country payouts and stay out of the list.
+    CCRIF_MEMBER_COUNTRIES = {
+        "anguilla", "antigua and barbuda", "antigua & barbuda", "antigua",
+        "the bahamas", "bahamas", "barbados", "belize", "bermuda",
+        "british virgin islands", "cayman islands", "dominica", "grenada",
+        "haiti", "jamaica", "montserrat", "st kitts and nevis",
+        "st kitts & nevis", "st. kitts and nevis", "saint kitts and nevis",
+        "saint kitts & nevis", "st lucia", "st. lucia", "saint lucia",
+        "sint maarten", "st martin", "st. maarten",
+        "st vincent and the grenadines", "st vincent & the grenadines",
+        "st. vincent and the grenadines", "st vincent", "st. vincent",
+        "saint vincent and the grenadines", "trinidad and tobago",
+        "trinidad & tobago", "turks and caicos islands",
+        "turks & caicos islands", "turks and caicos", "guatemala",
+        "honduras", "nicaragua", "panama",
+    }
+
+    def _is_member(country_name: str) -> bool:
+        normalized = re.sub(r"[^a-z& ]", "", (country_name or "").lower()).strip()
+        return normalized in CCRIF_MEMBER_COUNTRIES
+
     payouts = ccrif_data.get("payouts", []) if ccrif_data else []
     if not payouts:
         return []
@@ -926,6 +951,9 @@ def detect_ccrif_payout(
 
         country_code = payout.get("country_code", "unknown")
         country = payout.get("country", "unknown")
+
+        if member_only and not _is_member(country):
+            continue
 
         signals.append(CompositeSignal(
             id=f"ccrif-payout-{country_code.lower()}-{peril.lower()}-{payout.get('event_date', 'unknown')}",

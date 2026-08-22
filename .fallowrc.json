@@ -1,4 +1,14 @@
 {
   "$schema": "https://raw.githubusercontent.com/fallow-rs/fallow/main/schema.json",
-  "ignoreDependencies": ["@flue/runtime", "hono", "valibot"]
+  "ignoreDependencies": ["@flue/runtime", "hono", "valibot"],
+  "ignorePatterns": [
+    "src/lib/vendor/**"
+  ],
+  "entry": [
+    "backend/pocketbase/setup.mjs",
+    "backend/pocketbase/sync_to_pb.mjs",
+    "backend/pocketbase/verify_rules.mjs",
+    "backend/pocketbase/verify_viewrule.mjs",
+    "backend/pocketbase/realtime-leaderboard.example.ts"
+  ]
 }
