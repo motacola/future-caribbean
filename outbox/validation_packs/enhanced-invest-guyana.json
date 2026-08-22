@@ -15,8 +15,9 @@
     },
     {
       "sector": "Construction and infrastructure",
-      "basis": "Analyst prior from widely reported sector drivers — requires local confirmation",
-      "status": "unconfirmed"
+      "basis": "Google News — Guyana: One Communications urges greater protection of telecom infrastructure amid vandalism, copper theft - Guyana Chronicle",
+      "status": "corroborated",
+      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQSzhaRHM3TWhaZGJNMkZ6OUsybExQOXI2a3hRZDlyYlZveGJLTm5FLWx1MEhTRUwtVVlGRFJPS2k0dDNFT2FqeFhBNDJfd293MXN3cVRseE40U09NcGlVMWZlTjdBSmU0bmZNN2wtbVN0MWFLQzNNN201ZkhRb3ZINlRNQmtjM0pSOTFieFpkWnpfeXNJbEtKWXBYYkRPTmw5VUIyQ2YtblVGel80ekZJLVZucUJFU2VrQWJRS25aWHdRNlFvSFF4ZU9rbEZBZVI5Yk9N?oc=5"
     },
     {
       "sector": "Logistics serving the energy supply chain",
@@ -167,6 +168,7 @@
     "https://data.iadb.org/en/search?q=Guyana%3A%20Latin%20American%20Public%20Opinion%20Pr",
     "https://data.iadb.org/en/search?q=Productivity%2C%20Technology%20and%20Innovation%20",
     "https://eprocure.gov.gy/",
+    "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQSzhaRHM3TWhaZGJNMkZ6OUsybExQOXI2a3hRZDlyYlZveGJLTm5FLWx1MEhTRUwtVVlGRFJPS2k0dDNFT2FqeFhBNDJfd293MXN3cVRseE40U09NcGlVMWZlTjdBSmU0bmZNN2wtbVN0MWFLQzNNN201ZkhRb3ZINlRNQmtjM0pSOTFieFpkWnpfeXNJbEtKWXBYYkRPTmw5VUIyQ2YtblVGel80ekZJLVZucUJFU2VrQWJRS25aWHdRNlFvSFF4ZU9rbEZBZVI5Yk9N?oc=5",
     "https://statistics.caricom.org/?country_data=guyana-balance-of-payments-2000-2024",
     "https://statistics.caricom.org/?country_data=guyana-monthly-consumer-price-index-cpi-by-expenditure-category"
   ],
@@ -187,10 +189,10 @@
     }
   ],
   "advance_or_reject_recommendation": "advance",
-  "recommendation_reason": "Calibrated confidence 100/100 with 3 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.",
-  "last_validated_at": "2026-08-22T04:45:30.255370+00:00",
+  "recommendation_reason": "Calibrated confidence 100/100 with 4 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.",
+  "last_validated_at": "2026-08-22T08:44:04.014862+00:00",
   "coordination_path": null,
-  "evidence_fingerprint": "30024be8e9b88b89",
+  "evidence_fingerprint": "56a3d28643ba2e49",
   "cycles_since_refresh": 0,
   "evidence_freshness": "refreshing"
 }
