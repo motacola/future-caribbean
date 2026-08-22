@@ -172,8 +172,17 @@ class ECCBTableParser(HTMLParser):
         return observations
 
 
+BROWSER_HEADERS = {
+    # ECCB's WAF started rejecting requests without browser-like Accept
+    # headers (HTTP 403 from 2026-08-13); UA alone is not enough.
+    "User-Agent": USER_AGENT,
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
+}
+
+
 def fetch_html(url: str, timeout: int) -> str:
-    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+    req = urllib.request.Request(url, headers=BROWSER_HEADERS)
     try:
         with urllib.request.urlopen(req, timeout=timeout) as response:
             return response.read().decode("utf-8")
@@ -287,7 +296,14 @@ def run(
     if not unique_obs:
         print("No new ECCB observations found.", flush=True)
 
-    json_path, md_path = write_outputs(unique_obs, data_dir, signal_dir)
+    # latest.json must always carry the full current table. Writing only
+    # the never-seen slice zeroed the file on every run after the first
+    # (fingerprints were already in .sent_eccb.json), and the merger's
+    # ECCB detectors then read an empty observations list forever.
+    current: dict[str, ECCBObservation] = {}
+    for o in all_observations:
+        current.setdefault(o.fingerprint(), o)
+    json_path, md_path = write_outputs(list(current.values()), data_dir, signal_dir)
     print(f"Wrote {json_path}", flush=True)
     print(f"Wrote {md_path}", flush=True)
     print(f"New observations: {len(unique_obs)}", flush=True)

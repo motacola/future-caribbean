@@ -910,6 +910,31 @@ def detect_ccrif_payout(
     peril_match = cond.get("peril_match", ["tropical_cyclone", "earthquake", "excess_rainfall"])
     member_only = cond.get("ccrif_member_only", True)
 
+    # CCRIF government membership, cited from ccrif.org/about-us
+    # (19 Caribbean + 4 Central American governments). Matched on a
+    # normalised name so poller spellings ("St. Lucia" vs "Saint Lucia",
+    # "St. Kitts & Nevis") still resolve. Utilities/other members are not
+    # country payouts and stay out of the list.
+    CCRIF_MEMBER_COUNTRIES = {
+        "anguilla", "antigua and barbuda", "antigua & barbuda", "antigua",
+        "the bahamas", "bahamas", "barbados", "belize", "bermuda",
+        "british virgin islands", "cayman islands", "dominica", "grenada",
+        "haiti", "jamaica", "montserrat", "st kitts and nevis",
+        "st kitts & nevis", "st. kitts and nevis", "saint kitts and nevis",
+        "saint kitts & nevis", "st lucia", "st. lucia", "saint lucia",
+        "sint maarten", "st martin", "st. maarten",
+        "st vincent and the grenadines", "st vincent & the grenadines",
+        "st. vincent and the grenadines", "st vincent", "st. vincent",
+        "saint vincent and the grenadines", "trinidad and tobago",
+        "trinidad & tobago", "turks and caicos islands",
+        "turks & caicos islands", "turks and caicos", "guatemala",
+        "honduras", "nicaragua", "panama",
+    }
+
+    def _is_member(country_name: str) -> bool:
+        normalized = re.sub(r"[^a-z& ]", "", (country_name or "").lower()).strip()
+        return normalized in CCRIF_MEMBER_COUNTRIES
+
     payouts = ccrif_data.get("payouts", []) if ccrif_data else []
     if not payouts:
         return []
@@ -926,6 +951,9 @@ def detect_ccrif_payout(
 
         country_code = payout.get("country_code", "unknown")
         country = payout.get("country", "unknown")
+
+        if member_only and not _is_member(country):
+            continue
 
         signals.append(CompositeSignal(
             id=f"ccrif-payout-{country_code.lower()}-{peril.lower()}-{payout.get('event_date', 'unknown')}",
@@ -949,6 +977,19 @@ def detect_ccrif_payout(
 # ── ECCB Signals ────────────────────────────────────────────
 
 
+def _eccb_growth_pct(obs: dict | None) -> float | None:
+    """Parse the YoY growth the poller embeds in the period label.
+
+    ECCB observations carry values like ``{"period": "2025 (YoY: +7.4%)"}``.
+    Without a measured change we return None — a "surge"/"growth" claim
+    must never fire off raw stock levels alone.
+    """
+    if not obs:
+        return None
+    m = re.search(r"YoY:\s*([+-]?\d+(?:\.\d+)?)%", str(obs.get("period", "")))
+    return float(m.group(1)) if m else None
+
+
 def detect_eccb_credit_surge(
     rules: dict,
     eccb_data: dict,
@@ -958,7 +999,7 @@ def detect_eccb_credit_surge(
     Conditions:
       - Private sector credit growth >= threshold %
       - Total deposits growth >= threshold %
-      - Net foreign assets growth >= threshold %
+      - Net foreign assets growth >= threshold % (when NFA data is present)
     """
     cond = rules.get("conditions", {})
     credit_min = cond.get("private_credit_growth_pct_min", 10)
@@ -969,12 +1010,12 @@ def detect_eccb_credit_surge(
     if not observations:
         return []
 
-    signals: list[CompositeSignal] = []
     credit_items = [o for o in observations if o.get("indicator") == "private_sector_credit"]
     deposit_items = [o for o in observations if o.get("indicator") == "total_deposits"]
     nfa_items = [o for o in observations if o.get("indicator") == "net_foreign_assets"]
 
-    # Group by country
+    # Group by country (one observation per indicator/country today, but
+    # keep the latest if several ever appear).
     by_country: dict[str, dict] = {}
     for item in credit_items:
         cc = item.get("country_code", "")
@@ -989,36 +1030,51 @@ def detect_eccb_credit_surge(
         if cc:
             by_country.setdefault(cc, {})["nfa"] = item
 
+    signals: list[CompositeSignal] = []
     for cc, items in by_country.items():
         credit = items.get("credit")
         deposits = items.get("deposits")
         nfa = items.get("nfa")
+        if credit is None or deposits is None:
+            continue
 
-        credit_growth = 0
-        if credit:
-            # Need to calculate growth - for now use value as proxy
-            pass
+        credit_growth = _eccb_growth_pct(credit)
+        deposits_growth = _eccb_growth_pct(deposits)
+        nfa_growth = _eccb_growth_pct(nfa)
 
-        # For now, check if all three indicators exist and have meaningful values
-        if credit and deposits:
-            signals: list[CompositeSignal] = []
-            signals.append(CompositeSignal(
-                id=f"eccb-credit-surge-{cc.lower()}",
-                kind="eccb_credit_surge",
-                label="🏦 ECCB Private Credit Surge",
-                priority="medium",
-                summary=f"{credit.get('country', cc)}: Private sector credit EC${credit.get('value', 0):,.1f}M + deposits EC${deposits.get('value', 0):,.1f}M — banking expansion signal",
-                evidence=[
-                    f"Private sector credit: EC${credit.get('value', 0):,.1f}M",
-                    f"Total deposits: EC${deposits.get('value', 0):,.1f}M",
-                    f"Net foreign assets: EC${nfa.get('value', 0):,.1f}M" if nfa else "NFA: data available in reports",
-                    f"Period: {credit.get('period', 'latest')}",
-                ],
-                countries=[credit.get("country", cc)],
-                sources=["ECCB"],
-            ))
-            return signals
-    return []
+        # Credit + deposits are the core pair; NFA is evaluated only when
+        # the union publishes it (it frequently lags the other series).
+        if credit_growth is None or deposits_growth is None:
+            continue
+        if credit_growth < credit_min or deposits_growth < deposits_min:
+            continue
+        if nfa is not None and (nfa_growth is None or nfa_growth < nfa_min):
+            continue
+
+        signals.append(CompositeSignal(
+            id=f"eccb-credit-surge-{cc.lower()}",
+            kind="eccb_credit_surge",
+            label="🏦 ECCB Private Credit Surge",
+            priority="medium",
+            summary=(
+                f"{credit.get('country', cc)}: Private sector credit {credit_growth:+.1f}% "
+                f"(EC${credit.get('value', 0):,.1f}M) + deposits {deposits_growth:+.1f}% "
+                f"(EC${deposits.get('value', 0):,.1f}M) — banking expansion signal"
+            ),
+            evidence=[
+                f"Private sector credit growth: {credit_growth:+.1f}% YoY (threshold {credit_min}%)",
+                f"Total deposits growth: {deposits_growth:+.1f}% YoY (threshold {deposits_min}%)",
+                (
+                    f"Net foreign assets growth: {nfa_growth:+.1f}% YoY (threshold {nfa_min}%)"
+                    if nfa is not None and nfa_growth is not None
+                    else "NFA: data available in reports"
+                ),
+                f"Period: {credit.get('period', 'latest')}",
+            ],
+            countries=[credit.get("country", cc)],
+            sources=["ECCB"],
+        ))
+    return signals
 
 
 def detect_eccb_deposit_growth(
@@ -1040,6 +1096,11 @@ def detect_eccb_deposit_growth(
         return []
 
     deposit_items = [o for o in observations if o.get("indicator") == "total_deposits"]
+    credit_by_cc = {
+        o.get("country_code", ""): o
+        for o in observations
+        if o.get("indicator") == "private_sector_credit"
+    }
 
     signals: list[CompositeSignal] = []
     for dep in deposit_items:
@@ -1047,24 +1108,39 @@ def detect_eccb_deposit_growth(
         if not cc:
             continue
 
-        # Simple signal for significant deposit base
-        if dep.get("value", 0) > 1000:  # EC$1B+ deposits
-            signals: list[CompositeSignal] = []
-            signals.append(CompositeSignal(
-                id=f"eccb-deposit-growth-{cc.lower()}",
-                kind="eccb_deposit_growth",
-                label="🏦 ECCB Deposit Growth",
-                priority="medium",
-                summary=f"{dep.get('country', cc)}: Deposit base EC${dep.get('value', 0):,.1f}M — currency union stability signal",
-                evidence=[
-                    f"Total deposits: EC${dep.get('value', 0):,.1f}M",
-                    f"Period: {dep.get('period', 'latest')}",
-                ],
-                countries=[dep.get("country", cc)],
-                sources=["ECCB"],
-            ))
-            return signals
-    return []
+        deposits_growth = _eccb_growth_pct(dep)
+        if deposits_growth is None or deposits_growth < deposits_min:
+            continue
+
+        # Credit corroboration applies whenever the union publishes the
+        # companion series; deposits alone can still qualify without it.
+        credit = credit_by_cc.get(cc)
+        credit_growth = _eccb_growth_pct(credit)
+        if credit is not None and (credit_growth is None or credit_growth < credit_min):
+            continue
+
+        evidence = [
+            f"Total deposits growth: {deposits_growth:+.1f}% YoY (threshold {deposits_min}%)",
+            f"Total deposits: EC${dep.get('value', 0):,.1f}M",
+        ]
+        if credit is not None and credit_growth is not None:
+            evidence.insert(1, f"Private sector credit growth: {credit_growth:+.1f}% YoY (threshold {credit_min}%)")
+        evidence.append(f"Period: {dep.get('period', 'latest')}")
+
+        signals.append(CompositeSignal(
+            id=f"eccb-deposit-growth-{cc.lower()}",
+            kind="eccb_deposit_growth",
+            label="🏦 ECCB Deposit Growth",
+            priority="medium",
+            summary=(
+                f"{dep.get('country', cc)}: Deposits {deposits_growth:+.1f}% YoY "
+                f"(EC${dep.get('value', 0):,.1f}M) — currency union stability signal"
+            ),
+            evidence=evidence,
+            countries=[dep.get("country", cc)],
+            sources=["ECCB"],
+        ))
+    return signals
 
 
 # ── NHC Storm Risk ─────────────────────────────────────────
