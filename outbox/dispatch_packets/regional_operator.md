@@ -2,7 +2,7 @@
 
 **Decision job:** Operational readiness and bid pipeline assessment
 **Delivery channel:** Telegram
-**Generated:** Aug 21, 2026 at 20:36 UTC
+**Generated:** Aug 22, 2026 at 01:47 UTC
 **Dispatches in this packet:** 4
 
 ---
@@ -11,7 +11,7 @@
 
 ### 1. Bahamas, Belize, Grenada: signal detected
 
-**ID:** `DSP-20260821-028` | **Country:** Bahamas, Belize, Grenada | **Confidence:** 🔴 Immediate | 100/100 | A - multi-source
+**ID:** `DSP-20260822-028` | **Country:** Bahamas, Belize, Grenada | **Confidence:** 🔴 Immediate | 100/100 | A - multi-source
 **Channel:** Telegram | **Window:** 21 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -25,7 +25,7 @@
 
 ### 2. CARICOM: 9 active procurements — bidding window open
 
-**ID:** `DSP-20260821-013` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 95/100 | B - cross-source
+**ID:** `DSP-20260822-013` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 95/100 | B - cross-source
 **Channel:** Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** replied
 
@@ -39,7 +39,7 @@
 
 ### 3. Eastern Caribbean Currency Union: 5.8%
 
-**ID:** `DSP-20260821-214` | **Country:** Eastern Caribbean Currency Union | **Confidence:** 🟡 Validation | 76/100 | C - single-source
+**ID:** `DSP-20260822-214` | **Country:** Eastern Caribbean Currency Union | **Confidence:** 🟡 Validation | 76/100 | C - single-source
 **Channel:** Telegram | **Window:** 21 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -53,7 +53,7 @@
 
 ### 4. Eastern Caribbean Currency Union: 4.6%
 
-**ID:** `DSP-20260821-217` | **Country:** Eastern Caribbean Currency Union | **Confidence:** 🟡 Validation | 72/100 | C - single-source
+**ID:** `DSP-20260822-217` | **Country:** Eastern Caribbean Currency Union | **Confidence:** 🟡 Validation | 72/100 | C - single-source
 **Channel:** Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** ignored
 
