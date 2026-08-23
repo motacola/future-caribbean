@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-23T01:57:02.462952+00:00",
+  "generated_at": "2026-08-23T02:46:37.246118+00:00",
   "feedback_provenance": "simulated",
   "current_boosts": {
     "enhanced_investment": {
@@ -17,22 +17,27 @@
       "Guyana": -4,
       "Suriname": -4
     },
+    "food_security": {
+      "CARICOM": -4
+    },
     "ccrif_payout": {
+      "St. Kitts and Nevis": -8,
+      "Dominica": -8,
+      "St. Vincent & the Grenadines": -8,
+      "Grenada": -8,
+      "Jamaica": -16,
       "Turks and Caicos Islands": -8,
-      "Haiti": -22,
-      "Anguilla": -8,
-      "Barbados": -16,
-      "Nicaragua": -8
+      "Anguilla": -2
     }
   },
   "cycles": [
     {
       "cycle_id": "20260823",
       "responses": {
-        "forwarded": 0,
-        "replied": 0,
+        "forwarded": 1,
+        "replied": 1,
         "opened": 0,
-        "ignored": 0,
+        "ignored": 48,
         "decision_changed": 0
       },
       "dispatch_count": 97,
@@ -63,23 +68,53 @@
     {
       "cycle_id": "20260822",
       "responses": {
-        "forwarded": 1,
-        "replied": 1,
+        "forwarded": 0,
+        "replied": 0,
         "opened": 0,
-        "ignored": 48,
+        "ignored": 0,
         "decision_changed": 0
       },
-      "dispatch_count": 50,
+      "dispatch_count": 217,
       "countries": [
-        "Barbados",
+        "Excess Rainfall policy - Trinidad",
         "Haiti",
+        "Barbados",
+        "Excess Rainfall policy - Barbados",
+        "Tropical Cyclone policy - Nicaragua",
+        "Jamaica",
+        "Excess Rainfall - Jamaica",
+        "Nicaragua",
+        "Eastern Caribbean Currency Union",
         "Guyana",
         "Suriname",
+        "CARICOM",
+        "Caribwide",
+        "St. Kitts and Nevis",
+        "Dominica",
+        "Tropical Cyclone policy - The Bahamas",
+        "Excess Rainfall policy - Guatemala",
+        "Excess Rainfall policy - Haiti",
+        "Excess Rainfall policy - Jamaica",
+        "Excess Rainfall policy - Panama",
+        "Excess Rainfall policy -  Nicaragua",
+        "Tropical Cyclone policy - Barbados",
+        "Excess Rainfall policy - Antigua & Barbuda",
+        "Excess Rainfall policy - St. Kitts & Nevis",
+        "Excess Rainfall - Guatemala",
+        "St. Vincent & the Grenadines",
+        "Grenada",
+        "COAST - Grenada",
+        "Electric Utilities - GRENLEC - Grenada",
+        "CWUIC - NAWASA - Grenada",
+        "Excess Rainfall - Panama",
+        "Excess Rainfall - Panama (FAP)",
+        "Excess Rainfall - Honduras",
+        "Trinidad",
         "Turks and Caicos Islands",
         "Anguilla",
-        "Nicaragua",
+        "Excess Rainfall policy - Dominica",
         "Bahamas, Belize, Grenada",
-        "CARICOM"
+        "St. Vincent and the Grenadines"
       ],
       "lead": {
         "country": "Guyana",
