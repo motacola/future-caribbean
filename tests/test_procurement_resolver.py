@@ -591,3 +591,45 @@ def test_coverage_does_not_double_count_a_resolution_source_seen_as_notice():
     portal_a = next(p for p in cov["portals"] if p["source"] == "Portal A")
     assert portal_a["resolutions_recorded"] == 1
     assert portal_a["total_snapshots"] >= 2
+
+
+def test_coverage_deduplicates_outcome_notices_across_polling_days():
+    c = {"tenders": {"tender-a": {
+        "lifecycle_state": "resolved",
+        "generating_sources": ["Portal A"],
+        "notices": [
+            {
+                "source": "Portal A",
+                "source_ref_id": "award-123",
+                "url": "https://example.test/award/123",
+                "status": "awarded",
+                "published": "2026-07-20",
+                "observed_at": "2026-07-20T00:00:00+00:00",
+            },
+            {
+                "source": "Portal A",
+                "source_ref_id": "award-123",
+                "url": "https://example.test/award/123",
+                "status": "awarded",
+                "published": "2026-07-20",
+                "observed_at": "2026-07-21T00:00:00+00:00",
+            },
+        ],
+        "resolution": None,
+    }, "tender-b": {
+        "lifecycle_state": "resolved",
+        "generating_sources": ["Portal A"],
+        "notices": [{
+            "source": "Portal A",
+            "source_ref_id": "award-123",
+            "url": "https://example.test/award/123",
+            "status": "awarded",
+            "published": "2026-07-20",
+            "observed_at": "2026-07-21T00:00:00+00:00",
+        }],
+        "resolution": None,
+    }}}
+    cov = proc.derive_coverage(c, today=date(2026, 7, 22))
+    portal = cov["portals"][0]
+    assert portal["outcome_notices"] == 2
+    assert portal["outcome_snapshot_observations"] == 3

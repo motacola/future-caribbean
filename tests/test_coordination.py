@@ -98,6 +98,23 @@ def test_tender_classifier_covers_priority_procurement_sectors():
         assert result["classification"] == "deterministic_keyword"
 
 
+def test_tender_classifier_requires_keyword_boundaries():
+    for title in (
+        "Project support officer",
+        "Quarterly implementation report",
+        "Install solar carports",
+    ):
+        result = classify_tender({"title": title, "category": "Consulting Services"})
+        assert "port" not in result["matched_keywords"]
+        assert result["sector"] != "transport_and_logistics"
+
+
+def test_tender_classifier_preserves_explicit_prefix_keywords():
+    result = classify_tender({"title": "Supply laboratory equipment", "category": "Goods"})
+    assert result["sector"] == "education_infrastructure"
+    assert result["matched_keywords"] == ["laborator"]
+
+
 def test_project_demand_matches_specific_regional_capabilities():
     dispatches = {"dispatches": [{
         "signal_id": "dev-project", "signal_kind": "development_pipeline",

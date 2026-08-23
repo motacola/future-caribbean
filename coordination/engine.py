@@ -48,6 +48,15 @@ TENDER_CLASSIFIERS: list[tuple[str, tuple[str, ...], list[str]]] = [
     ("construction_and_works", ("construction", "rehabilitation", "reconstruction", "works"), ["construction_delivery", "civil_engineering"]),
 ]
 
+# Intentional lexical stems or singular forms whose inflections should match.
+# Every other keyword is an exact token or phrase. The left boundary prevents
+# false positives such as support/report/carport → port and district → ict.
+TENDER_PREFIX_KEYWORDS = {
+    "airport", "airstrip", "bridge", "canal", "cartridge", "flood",
+    "hospital", "laborator", "pharmaceutical", "phone", "road", "runway",
+    "school", "server", "taxiway", "transport", "university", "warehouse",
+}
+
 CAPABILITY_INTERVENTIONS: dict[str, dict[str, str]] = {
     "water_infrastructure": {"owner": "procurement_watcher", "evidence": "Two eligible regional operators with comparable water or irrigation project references"},
     "medical_supply": {"owner": "regional_operator", "evidence": "Two authorised suppliers with product registration and regional delivery evidence"},
@@ -87,11 +96,16 @@ def classify_tender(item: dict[str, Any]) -> dict[str, Any]:
     """Classify procurement demand with ordered, inspectable keyword rules."""
     text = " ".join(str(item.get(key) or "") for key in ("title", "category", "agency")).lower()
     for sector, keywords, capabilities in TENDER_CLASSIFIERS:
-        matched = sorted({keyword for keyword in keywords if keyword in text})
+        matched = sorted({keyword for keyword in keywords if _keyword_matches(text, keyword)})
         if matched:
             return {"sector": sector, "required_capabilities": capabilities, "matched_keywords": matched, "classification": "deterministic_keyword"}
     fallback = ["construction_delivery", "civil_engineering"] if (item.get("category") or "").lower() == "works" else ["professional_services"]
     return {"sector": "general_procurement", "required_capabilities": fallback, "matched_keywords": [], "classification": "category_fallback"}
+
+
+def _keyword_matches(text: str, keyword: str) -> bool:
+    suffix = r"\w*" if keyword in TENDER_PREFIX_KEYWORDS else ""
+    return re.search(rf"(?<!\w){re.escape(keyword)}{suffix}(?!\w)", text) is not None
 
 
 def build_unlock_path(project_match: dict[str, Any], frictions: list[str]) -> list[dict[str, Any]]:

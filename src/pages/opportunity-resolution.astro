@@ -174,7 +174,7 @@ function fmtDate(value) {
     <div class="cov-head">
       <span>Portal</span>
       <span>Opportunities</span>
-      <span>Outcome notices</span>
+      <span>Distinct outcome notices</span>
       <span>Resolving prior detection</span>
       <span>Last seen</span>
       <span>Cadence</span>
@@ -183,10 +183,10 @@ function fmtDate(value) {
       <div class="cov-row">
         <span class="cov-src">{p.source}</span>
         <span>{p.opportunities_observed}</span>
-        <span>{p.outcome_notices}</span>
+        <span title={`${p.outcome_snapshot_observations} polling snapshot observation${p.outcome_snapshot_observations === 1 ? '' : 's'}`}>{p.outcome_notices}</span>
         <span>{p.resolutions_of_prior_detection}</span>
         <span>{p.last_seen_age_days != null ? `${p.last_seen_age_days}d ago` : '—'}</span>
-        <span class={`cov-cad cov-cad-${p.cadence_slug}`}>{p.cadence} · {p.distinct_observation_days} day{p.distinct_observation_days === 1 ? '' : 's'} observed{p.observation_span_days != null ? ` / ${p.observation_span_days}d span` : ''}</span>
+        <span class={`cov-cad cov-cad-${p.cadence_slug}`}>{p.cadence} · {p.distinct_observation_days} day{p.distinct_observation_days === 1 ? '' : 's'} observed{p.observation_span_days != null ? ` / ${p.observation_span_days}d span` : ''} · {p.outcome_snapshot_observations} outcome snapshot{p.outcome_snapshot_observations === 1 ? '' : 's'}</span>
       </div>
     ))}
   </div>
