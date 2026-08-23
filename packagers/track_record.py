@@ -156,12 +156,15 @@ def main() -> None:
         # Per-signal-kind response attribution: which signal families earn
         # engagement, cycle over cycle. Feeds the loop — kinds nobody
         # responds to are candidates for downranking in feedback boosts.
-        # "Ignored" is sampled feedback, not engagement (Codex P2): a kind
-        # with 48 ignores and 1 forward must not read as 49 engagements.
+        # Allowlist, not blacklist (Codex P2s on #31/#32): "ignored" is
+        # sampled absence of interest and "delivered" is a zero-boost
+        # transport receipt — neither is engagement. New intake statuses
+        # must opt in here explicitly or they will not inflate totals.
+        ENGAGEMENT_STATUSES = {"forwarded", "replied", "opened", "decision_changed"}
         kind_totals: dict[str, int] = {}
         for e in entries:
             k = e.get("signal_kind", "")
-            if k and e.get("feedback_status") != "ignored":
+            if k and e.get("feedback_status") in ENGAGEMENT_STATUSES:
                 kind_totals[k] = kind_totals.get(k, 0) + 1
         engagement_by_kind = dict(sorted(kind_totals.items(), key=lambda kv: -kv[1]))
 

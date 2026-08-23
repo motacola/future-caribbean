@@ -76,14 +76,28 @@ def test_packager_grouping():
 
     # Engagement attribution counts responses, not ignored samples
     # (Codex P2 on #31): a kind with 48 ignores + 1 forward is 1 engagement.
+    history = json.loads((ROOT / "data" / "feedback" / "state.json").read_text()).get("history") or []
+    ENGAGEMENT = {"forwarded", "replied", "opened", "decision_changed"}
     for kind, n in current_cycle.get("engagement_by_kind", {}).items():
         actual = sum(
-            1 for e in (json.loads((ROOT / "data" / "feedback" / "state.json").read_text()).get("history") or [])
+            1 for e in history
             if e.get("cycle") == current_cycle_id
             and e.get("signal_kind") == kind
-            and e.get("feedback_status") != "ignored"
+            and e.get("feedback_status") in ENGAGEMENT
         )
-        assert n == actual, f"{kind}: artifact says {n}, non-ignored history says {actual}"
+        assert n == actual, f"{kind}: artifact says {n}, engaged history says {actual}"
+    # Transport receipts ('delivered') are zero-boost events: they must be
+    # absent from engagement attribution entirely (Codex P2 on #32).
+    delivered_kinds = {e.get("signal_kind") for e in history
+                       if e.get("cycle") == current_cycle_id and e.get("feedback_status") == "delivered"}
+    overlap = delivered_kinds & {
+        k for k, n in current_cycle.get("engagement_by_kind", {}).items() if n > 0
+    }
+    assert not overlap or all(
+        n == sum(1 for e in history if e.get("cycle") == current_cycle_id
+                 and e.get("signal_kind") == k and e.get("feedback_status") in ENGAGEMENT)
+        for k, n in current_cycle.get("engagement_by_kind", {}).items() if k in overlap
+    ), "delivered-only kinds must not appear as engagements"
 
     if older_cycle:
         assert isinstance(older_cycle["lead"]["country"], str)
