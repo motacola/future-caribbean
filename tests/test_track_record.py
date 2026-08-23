@@ -74,6 +74,17 @@ def test_packager_grouping():
     } - {""}
     assert set(current_cycle["countries"]) == expected_markets
 
+    # Engagement attribution counts responses, not ignored samples
+    # (Codex P2 on #31): a kind with 48 ignores + 1 forward is 1 engagement.
+    for kind, n in current_cycle.get("engagement_by_kind", {}).items():
+        actual = sum(
+            1 for e in (json.loads((ROOT / "data" / "feedback" / "state.json").read_text()).get("history") or [])
+            if e.get("cycle") == current_cycle_id
+            and e.get("signal_kind") == kind
+            and e.get("feedback_status") != "ignored"
+        )
+        assert n == actual, f"{kind}: artifact says {n}, non-ignored history says {actual}"
+
     if older_cycle:
         assert isinstance(older_cycle["lead"]["country"], str)
         assert isinstance(older_cycle["lead"]["title"], str)

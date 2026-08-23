@@ -268,3 +268,26 @@ def test_signals_without_the_split_keep_their_old_weighting():
     import packagers.editorial_enrichment as ee
     assert ee.corroborating_sources(legacy) == ["World Bank", "IDB"]
     assert compute_signal_score(legacy) > 0
+
+def test_external_brier_needs_min_sample(monkeypatch):
+    """One externally-resolved claim must NOT publish a Brier score (Codex P2 #31)."""
+    import packagers.calibration as cal
+
+    def fake_ledger():
+        return {
+            "claims": [
+                {
+                    "band": "70-84", "score": 76, "outcome": "confirmed",
+                    "resolved_by": "external_publisher", "forecast_probability": 0.76,
+                    "fact_key": "k1", "cycle_id": "20260801",
+                },
+            ],
+            "prev_hash": None,
+        }
+
+    monkeypatch.setattr(cal, "load_ledger", fake_ledger, raising=False)
+    report = cal.reliability(fake_ledger())
+    assert report["external_resolved_n"] == 1
+    assert report["brier_external_only"] is None, (
+        "a single observation must stay unpublished"
+    )
