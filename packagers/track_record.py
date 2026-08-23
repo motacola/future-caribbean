@@ -153,9 +153,20 @@ def main() -> None:
                 "title": humanize(best.get("title", "")) or "",
             }
 
+        # Per-signal-kind response attribution: which signal families earn
+        # engagement, cycle over cycle. Feeds the loop — kinds nobody
+        # responds to are candidates for downranking in feedback boosts.
+        kind_totals: dict[str, int] = {}
+        for e in entries:
+            k = e.get("signal_kind", "")
+            if k:
+                kind_totals[k] = kind_totals.get(k, 0) + 1
+        engagement_by_kind = dict(sorted(kind_totals.items(), key=lambda kv: -kv[1]))
+
         cycles_out.append({
             "cycle_id": cycle_id,
             "responses": counts,
+            "engagement_by_kind": engagement_by_kind,
             "dispatch_count": dispatch_count,
             "countries": countries,
             "lead": lead,

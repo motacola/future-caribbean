@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-23T12:58:51.953884+00:00",
+  "generated_at": "2026-08-23T14:59:54.058728+00:00",
   "feedback_provenance": "simulated",
   "current_boosts": {
     "enhanced_investment": {
@@ -17,17 +17,10 @@
       "Guyana": -4,
       "Suriname": -4
     },
-    "food_security": {
-      "CARICOM": -4
-    },
     "ccrif_payout": {
-      "Turks and Caicos Islands": -8,
-      "Anguilla": -8,
-      "St. Kitts and Nevis": -8,
-      "Dominica": -8,
-      "St. Vincent & the Grenadines": -8,
-      "Grenada": -8,
-      "Jamaica": -10
+      "Haiti": -30,
+      "Barbados": -16,
+      "Nicaragua": -16
     }
   },
   "cycles": [
@@ -39,6 +32,13 @@
         "opened": 0,
         "ignored": 48,
         "decision_changed": 0
+      },
+      "engagement_by_kind": {
+        "ccrif_payout": 31,
+        "enhanced_investment": 9,
+        "investment_signal": 4,
+        "supply_chain_signal": 3,
+        "development_pipeline": 3
       },
       "dispatch_count": 97,
       "countries": [
@@ -74,6 +74,7 @@
         "ignored": 0,
         "decision_changed": 0
       },
+      "engagement_by_kind": {},
       "dispatch_count": 217,
       "countries": [
         "Excess Rainfall policy - Trinidad",

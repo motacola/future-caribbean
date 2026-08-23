@@ -48,6 +48,8 @@
   "brier_improvement_over_naive": 0.0206,
   "log_loss": 0.2219,
   "calibration_error": 0.2833,
+  "brier_external_only": null,
+  "external_resolved_n": 0,
   "chain_intact": true,
   "chain_break_at": null,
   "bands": [
@@ -92,5 +94,5 @@
   "calibrated": true,
   "method": "Claims are resolved after 3 cycles, preferring outside evidence: an independent publisher covering the same country and topic, then a newer release of the same indicator, and only failing those, whether our own pipeline kept reporting the fact.",
   "cycle_id": "20260823",
-  "generated_at": "2026-08-23T12:58:52.012999+00:00"
+  "generated_at": "2026-08-23T14:49:45.823495+00:00"
 }

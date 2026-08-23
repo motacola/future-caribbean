@@ -513,6 +513,7 @@ def reliability(ledger: dict[str, Any]) -> dict[str, Any]:
     # Probabilistic scoring. `pairs` is (forecast, actual) over resolved claims.
     pairs: list[tuple[float, int]] = []
     naive_pairs: list[tuple[float, int]] = []
+    external_pairs: list[tuple[float, int]] = []
     for claim in ledger["claims"]:
         if claim.get("outcome") is None:
             continue
@@ -522,6 +523,8 @@ def reliability(ledger: dict[str, Any]) -> dict[str, Any]:
             forecast = _clamp_probability(claim.get("score", 50) / 100)
         pairs.append((float(forecast), actual))
         naive_pairs.append((_clamp_probability(claim.get("score", 50) / 100), actual))
+        if (claim.get("resolved_by") or RESOLVER_INTERNAL) in EXTERNAL_RESOLVERS:
+            external_pairs.append((float(forecast), actual))
 
     # Mean gap between what a band promised and what it delivered.
     gaps = [
@@ -570,6 +573,12 @@ def reliability(ledger: dict[str, Any]) -> dict[str, Any]:
         ),
         "log_loss": log_loss(pairs),
         "calibration_error": calibration_error,
+        # Score computed ONLY over externally corroborated resolutions.
+        # None until the desk earns it: internal-persistence resolution
+        # (our own pipeline agreeing with itself) is excluded here so a
+        # public accuracy claim can never rest on self-graded homework.
+        "brier_external_only": brier_score(external_pairs) if external_pairs else None,
+        "external_resolved_n": len(external_pairs),
         "chain_intact": chain_ok,
         "chain_break_at": chain_break,
         "bands": bands_out,

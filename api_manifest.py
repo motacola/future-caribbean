@@ -48,6 +48,15 @@ TOOLS_MANIFEST = {
             "example_response_keys": ["ok", "sources", "n_sources_ok", "n_dispatches", "n_clusters", "cycle_id", "generated_at", "cadence_hours", "cycle_count", "feedback", "pipeline_running"]
         },
         {
+            "name": "accuracy",
+            "description": "Get the desk's public accuracy record: Brier score vs naive baseline, externally-resolved-only Brier, public commitment milestones, resolution mix by confidence band, and ledger chain integrity.",
+            "method": "GET",
+            "path": "/api/calibration",
+            "params": {"type": "object", "properties": {}},
+            "example_request": {},
+            "example_response_keys": ["ok", "committed_at", "days_elapsed", "commitments", "brier", "brier_naive_baseline", "brier_improvement_over_naive", "brier_external_only", "external_resolved_n", "externally_resolved", "bands", "chain_intact"]
+        },
+        {
             "name": "validation_packs.index",
             "description": "List all validation packs for the current cycle with signal_id, country, recommendation, and confidence.",
             "method": "GET",
@@ -69,6 +78,7 @@ TOOLS_MANIFEST = {
                 "required": ["signal_id"]
             },
             "example_request": {"signal_id": "enhanced-invest-guyana"},
+            "bundle": "GET /api/validation-packs/bundle returns every current pack (.json + .md) as one zip download",
             "example_response_keys": ["signal_id", "country", "sector_hypotheses", "supporting_projects", "procurement_matches", "advance_or_reject_recommendation", "recommendation_reason", "last_validated_at"]
         },
         {
