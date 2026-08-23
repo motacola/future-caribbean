@@ -24,6 +24,7 @@ sys.path.insert(0, str(ROOT))
 
 from packagers.editorial_enrichment import enrich_signals  # noqa: E402
 from packagers.narrative import narrative_title as _narrative_title  # noqa: E402
+from mergers.signal_track import track_for_kind, track_label  # noqa: E402
 
 DEFAULT_INPUT = ROOT / "data" / "composite" / "latest.json"
 DEFAULT_CONFIG = ROOT / "config" / "recipients.json"
@@ -207,6 +208,8 @@ def _make_dispatch(
         "signal_id": signal_id,
         "signal_kind": kind,
         "signal_kind_label": kind_label,
+        "track": track_for_kind(kind),
+        "track_label": track_label(track_for_kind(kind)),
         "cycle_id": cycle_id,
         "title": title,
         "country_cluster": country_cluster,

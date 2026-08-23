@@ -6,7 +6,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-API_FUNCTIONS = ["ask.py", "status.py", "tools.py", "map-data.py", "validation-packs.py"]
+API_FUNCTIONS = [
+    "ask.py",
+    "status.py",
+    "tools.py",
+    "map-data.py",
+    "validation-packs.py",
+    "procurement-outcomes.py",
+]
 
 
 def _load(name: str):
@@ -49,6 +56,23 @@ def test_vercelignore_keeps_runtime_needs():
         assert needed not in excluded, f".vercelignore excludes runtime dependency {needed}"
     # Theater replay needs history despite the data/* exclusion.
     assert any(n.startswith("data/history") for n in negated), "data/history not re-included"
+
+
+def test_vercel_python_function_count_stays_within_hobby_limit():
+    """Top-level api/*.py files not named in .vercelignore become functions."""
+    ignored = {
+        line.strip()
+        for line in (ROOT / ".vercelignore").read_text().splitlines()
+        if line.strip().startswith("api/") and not line.strip().startswith("!")
+    }
+    deployed = [p for p in (ROOT / "api").glob("*.py") if str(p.relative_to(ROOT)) not in ignored]
+    assert len(deployed) <= 12, [str(p.relative_to(ROOT)) for p in deployed]
+
+
+def test_capability_match_route_reuses_procurement_function():
+    config = (ROOT / "vercel.json").read_text()
+    assert '"src": "/api/capability-matches"' in config
+    assert '"dest": "/api/procurement-outcomes.py?view=capability_matches"' in config
 
 
 def test_discovery_files_mention_manifest():

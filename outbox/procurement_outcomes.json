@@ -53,6 +53,88 @@
    "Jamaica GOJEP's opened-bid feed lists tenders whose bids have already been opened, so detections from it are at or after close, not before it."
   ]
  },
+ "coverage": {
+  "portals": [
+   {
+    "source": "IDB Procurement Notices",
+    "opportunities_observed": 599,
+    "total_snapshots": 629,
+    "distinct_observation_days": 1,
+    "outcome_notices": 0,
+    "resolutions_recorded": 0,
+    "resolutions_of_prior_detection": 0,
+    "last_seen_at": "2026-08-20T00:00:00+00:00",
+    "first_seen_at": "2026-08-20T00:00:00+00:00",
+    "last_seen_age_days": 3,
+    "observation_span_days": 0,
+    "cadence": "single/rare sighting",
+    "cadence_slug": "rare"
+   },
+   {
+    "source": "Guyana eProcure (NPTA)",
+    "opportunities_observed": 80,
+    "total_snapshots": 308,
+    "distinct_observation_days": 15,
+    "outcome_notices": 0,
+    "resolutions_recorded": 0,
+    "resolutions_of_prior_detection": 0,
+    "last_seen_at": "2026-08-23T01:57:01.977024+00:00",
+    "first_seen_at": "2026-06-11T00:00:00+00:00",
+    "last_seen_age_days": 0,
+    "observation_span_days": 73,
+    "cadence": "regular",
+    "cadence_slug": "regular"
+   },
+   {
+    "source": "Jamaica GOJEP (opened bids)",
+    "opportunities_observed": 68,
+    "total_snapshots": 120,
+    "distinct_observation_days": 12,
+    "outcome_notices": 3,
+    "resolutions_recorded": 1,
+    "resolutions_of_prior_detection": 0,
+    "last_seen_at": "2026-07-24T00:00:00+00:00",
+    "first_seen_at": "2026-06-18T00:00:00+00:00",
+    "last_seen_age_days": 30,
+    "observation_span_days": 36,
+    "cadence": "regular",
+    "cadence_slug": "regular"
+   },
+   {
+    "source": "IDB Contract Award Notifications",
+    "opportunities_observed": 0,
+    "total_snapshots": 213,
+    "distinct_observation_days": 1,
+    "outcome_notices": 213,
+    "resolutions_recorded": 213,
+    "resolutions_of_prior_detection": 14,
+    "last_seen_at": "2026-08-20T00:00:00+00:00",
+    "first_seen_at": "2026-08-20T00:00:00+00:00",
+    "last_seen_age_days": 3,
+    "observation_span_days": 0,
+    "cadence": "single/rare sighting",
+    "cadence_slug": "rare"
+   },
+   {
+    "source": "Jamaica GOJEP (contract award)",
+    "opportunities_observed": 0,
+    "total_snapshots": 120,
+    "distinct_observation_days": 12,
+    "outcome_notices": 120,
+    "resolutions_recorded": 94,
+    "resolutions_of_prior_detection": 2,
+    "last_seen_at": "2026-07-24T00:00:00+00:00",
+    "first_seen_at": "2026-06-18T00:00:00+00:00",
+    "last_seen_age_days": 30,
+    "observation_span_days": 36,
+    "cadence": "regular",
+    "cadence_slug": "regular"
+   }
+  ],
+  "unresolved_total": 585,
+  "outcomes_without_prior_detection": 292,
+  "independently_resolved": 0
+ },
  "tenders": [
   {
    "tender_id": "guyana-f59a5e5d1dac",

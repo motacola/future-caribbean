@@ -1,0 +1,195 @@
+---
+import Base from '../layouts/Base.astro';
+import { readFileSync, existsSync } from 'fs';
+import { resolve, join } from 'path';
+
+function readJson(path: string): any {
+  const p = join(resolve(process.cwd()), path);
+  try {
+    if (!existsSync(p)) return null;
+    return JSON.parse(readFileSync(p, 'utf-8'));
+  } catch {
+    return null;
+  }
+}
+
+// Same artefact the /api/capability-matches function serves, so the page
+// and the API can never disagree about a match.
+const data = readJson('outbox/capability_matches.json')
+          || { total_tenders: 0, classified_tenders: 0, tenders_with_capability_match: 0,
+               by_capability: {}, by_country: {}, matches: [], registry_status: undefined };
+
+const total = data.total_tenders ?? 0;
+const classified = data.classified_tenders ?? 0;
+const matched = data.tenders_with_capability_match ?? 0;
+const byCapability = data.by_capability || {};
+const byCountry = data.by_country || {};
+const matches = data.matches || [];
+
+const gradeLabel: Record<string, string> = {
+  primary: 'primary-source',
+  corroborated: 'corroborated',
+  claimed: 'claimed (pilot)',
+};
+
+function bestEvidence(holder: any): any {
+  const order: Record<string, number> = { primary: 0, corroborated: 1, claimed: 2 };
+  return [...(holder.evidence || [])].sort((a, b) => (order[a.grade] ?? 3) - (order[b.grade] ?? 3))[0];
+}
+---
+
+<Base title="Signal Fabric — Capability Matches" description="Detected Caribbean tenders matched to cited country-level capability-registry entries.">
+
+<div class="masthead">
+  <div class="mast-inner">
+    <a href="/" class="mast-name">SIGNAL <em>FABRIC</em></a>
+    <div class="mast-links">
+      <a href="/">← The Dispatch</a>
+      <a href="/opportunity-resolution">Opportunity resolution</a>
+    </div>
+  </div>
+</div>
+
+<div class="hero">
+  <p class="hero-kicker">Detected demand → cited regional capability</p>
+  <h1>Where does the region show relevant capability?</h1>
+  <p class="hero-sub">Every tender below was detected by the resolver, classified into a sector with deterministic keyword rules, and matched to country or bloc entries in the capability registry — with the registry's cited source and evidence grade. This is a screening path, not proof that a named supplier can bid or deliver. The registry is a <strong>pilot</strong> and is not audited supplier capacity.</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><strong>{total}</strong><span>Canonical tenders</span></div>
+    <div class="hero-stat"><strong>{classified}</strong><span>Classified by sector</span></div>
+    <div class="hero-stat"><strong>{matched}</strong><span>With a capability match</span></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-label">Where the matches concentrate</div>
+  <div class="sec-title">Required capability vs cited registry evidence</div>
+  <div class="sec-sub">Counts are tender-capability links. The country view counts tender-capability-country links, so one tender can contribute more than once.</div>
+  <div class="split">
+    <div class="split-col">
+      <h4>By required capability</h4>
+      <ul class="tally">
+        {Object.entries(byCapability).map(([cap, n]) => (
+          <li><span>{cap}</span><strong>{n}</strong></li>
+        ))}
+        {Object.keys(byCapability).length === 0 && <li class="empty">No classified matches yet.</li>}
+      </ul>
+    </div>
+    <div class="split-col">
+      <h4>By registry country / bloc</h4>
+      <ul class="tally">
+        {Object.entries(byCountry).map(([c, n]) => (
+          <li><span>{c}</span><strong>{n}</strong></li>
+        ))}
+        {Object.keys(byCountry).length === 0 && <li class="empty">No classified matches yet.</li>}
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-label">Detected → matched</div>
+  <div class="sec-title">Tenders and the capabilities they require</div>
+  <div class="sec-sub">Each row shows the detected tender, its classified sector, required capabilities, and the country or bloc entries recorded against those capabilities. Sources and grades are taken verbatim from the pilot registry; they do not establish supplier eligibility or delivery capacity.</div>
+  <div class="match-list">
+    {matches.slice(0, 40).map((m) => (
+      <div class="match-row">
+        <div class="match-head">
+          <div class="match-title">{m.title}</div>
+          <div class="match-meta">
+            <span>{m.country}</span>
+            {m.buyer && <span>{m.buyer}</span>}
+            <span class="match-sector">{m.sector}</span>
+            <span class={`match-state state-${m.lifecycle_state}`}>{m.lifecycle_state}</span>
+          </div>
+        </div>
+        <div class="match-caps">
+          {(m.capability_matches || []).map((cm) => (
+            <div class={`cap-chip ${cm.matched ? 'cap-yes' : 'cap-no'}`}>
+              <span class="cap-id">{cm.capability}</span>
+              {cm.matched
+                ? <span class="cap-holders">
+                    {(cm.holders || []).map((h) => {
+                      const ev = bestEvidence(h);
+                      return <span class="holder">
+                        {h.country} (screening strength {h.strength ?? '?'})
+                        {ev?.url
+                          ? <> · <a href={ev.url} target="_blank" rel="noopener noreferrer">{ev.source}</a> ({gradeLabel[ev.grade] || ev.grade || 'unrated'})</>
+                          : <> · no cited source</>}
+                      </span>;
+                    })}
+                  </span>
+                : <span class="cap-holders">no registry entry</span>}
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+    {matches.length === 0 && <div class="res-blank">No tenders have been matched to a registry capability yet.</div>}
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-label">Provenance</div>
+  <div class="sec-title">What this rests on</div>
+  <div class="prov">
+    <div class="prov-block">
+      <h4>Method</h4>
+      <ul>
+        <li>Sector classification: deterministic ordered keyword rules (resolvers reuse coordination.engine.classify_tender).</li>
+        <li>Capability registry: config/regional_capabilities.json (status: {data.registry_status ?? 'unknown'}).</li>
+        <li>A match requires the registry to already assert the country or bloc has the capability. No supplier is inferred.</li>
+      </ul>
+    </div>
+    <div class="prov-block">
+      <h4>Caveats</h4>
+      <ul>
+        <li>The registry is a pilot and is not audited supplier capacity.</li>
+        <li>Evidence grades (primary / corroborated / claimed) are the registry's own, propagated verbatim.</li>
+        <li>Tenders whose required capability has no registry entry are shown as unmatched, never filled with a guessed supplier.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="prov-foot">
+    Same data as <a href="/api/capability-matches">/api/capability-matches</a>.
+  </div>
+</div>
+
+<style>
+  .sec-sub p { margin:0 0 .4rem; }
+  .hero-stats { display:flex; flex-wrap:wrap; gap:1rem; margin-top:1.1rem; }
+  .hero-stat { display:flex; flex-direction:column; gap:.15rem; padding:.6rem 1rem; border:1px solid var(--rule,#d9d3c7); border-radius:3px; min-width:8rem; }
+  .hero-stat strong { font-size:1.5rem; font-family:'Cormorant Garamond',serif; }
+  .hero-stat span { font-size:.72rem; letter-spacing:.05em; text-transform:uppercase; opacity:.7; }
+  .split { display:grid; grid-template-columns:repeat(auto-fit,minmax(15rem,1fr)); gap:1.6rem; margin-top:1.1rem; }
+  .split-col h4 { font-size:.72rem; text-transform:uppercase; letter-spacing:.07em; opacity:.7; margin:0 0 .5rem; }
+  .tally { list-style:none; margin:0; padding:0; }
+  .tally li { display:flex; justify-content:space-between; gap:1rem; padding:.35rem 0; border-top:1px solid var(--rule,#ece7dd); font-size:.82rem; font-family:'IBM Plex Mono',monospace; }
+  .tally li.empty { opacity:.6; font-style:italic; }
+  .match-list { display:flex; flex-direction:column; gap:1rem; margin-top:1.2rem; }
+  .match-row { padding:.9rem 0; border-top:1px solid var(--rule,#e5e0d6); }
+  .match-title { font-family:'Cormorant Garamond',serif; font-size:1.12rem; line-height:1.3; }
+  .match-meta { display:flex; flex-wrap:wrap; gap:.35rem .9rem; margin-top:.3rem; font-size:.76rem; opacity:.8; }
+  .match-sector { font-weight:600; opacity:1; }
+  .match-state { font-size:.68rem; text-transform:uppercase; letter-spacing:.05em; padding:.1rem .4rem; border-radius:2px; }
+  .state-awarded { border-left:3px solid #4a7c59; }
+  .state-cancelled { border-left:3px solid #9c4a3c; }
+  .state-unresolved { border-left:3px solid #8a8378; }
+  .match-caps { display:flex; flex-wrap:wrap; gap:.5rem; margin-top:.6rem; }
+  .cap-chip { display:flex; flex-direction:column; gap:.15rem; padding:.4rem .6rem; border:1px solid var(--rule,#e5e0d6); border-radius:3px; min-width:11rem; }
+  .cap-yes { border-left:3px solid #4a7c59; }
+  .cap-no { border-left:3px solid #b08a2e; }
+  .cap-id { font-family:'IBM Plex Mono',monospace; font-size:.74rem; }
+  .cap-holders { font-size:.7rem; opacity:.8; }
+  .holder { display:block; margin-top:.12rem; }
+  .prov { display:grid; grid-template-columns:repeat(auto-fit,minmax(15rem,1fr)); gap:1.4rem; margin-top:1.1rem; }
+  .prov-block h4 { font-size:.72rem; text-transform:uppercase; letter-spacing:.07em; opacity:.7; margin:0 0 .4rem; }
+  .prov-block ul { margin:0; padding-left:1.1rem; font-size:.82rem; line-height:1.55; }
+  .prov-foot { margin-top:1.2rem; font-size:.8rem; opacity:.75; }
+  .res-blank { padding:1.2rem 0; opacity:.7; font-style:italic; }
+  @media (max-width:640px) {
+    .hero-stat { flex:1 1 100%; }
+  }
+</style>
+
+</Base>

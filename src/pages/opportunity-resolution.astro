@@ -21,6 +21,7 @@ const data = readJson('outbox/procurement_outcomes.json')
 
 const summary = data.summary || {};
 const provenance = data.provenance || {};
+const coverage = data.coverage || { portals: [], unresolved_total: 0, outcomes_without_prior_detection: 0, independently_resolved: 0 };
 const tenders = data.tenders || [];
 
 const resolved = tenders.filter((t) => t.resolution);
@@ -164,6 +165,37 @@ function fmtDate(value) {
 </div>
 
 <div class="sec">
+  <div class="sec-label">Source cadence & coverage gaps</div>
+  <div class="sec-title">Why the unresolved rate looks the way it does</div>
+  <div class="sec-sub">
+    <p>{coverage.unresolved_total ?? 0} tenders sit unresolved and {coverage.outcomes_without_prior_detection ?? 0} recorded outcomes correspond to no prior detection. The rates reflect uneven observation histories and outcome coverage across portals. The table is derived from dated snapshots already in the corpus; nothing here was re-fetched.</p>
+  </div>
+  <div class="cov-table">
+    <div class="cov-head">
+      <span>Portal</span>
+      <span>Opportunities</span>
+      <span>Outcome notices</span>
+      <span>Resolving prior detection</span>
+      <span>Last seen</span>
+      <span>Cadence</span>
+    </div>
+    {coverage.portals?.map((p) => (
+      <div class="cov-row">
+        <span class="cov-src">{p.source}</span>
+        <span>{p.opportunities_observed}</span>
+        <span>{p.outcome_notices}</span>
+        <span>{p.resolutions_of_prior_detection}</span>
+        <span>{p.last_seen_age_days != null ? `${p.last_seen_age_days}d ago` : '—'}</span>
+        <span class={`cov-cad cov-cad-${p.cadence_slug}`}>{p.cadence} · {p.distinct_observation_days} day{p.distinct_observation_days === 1 ? '' : 's'} observed{p.observation_span_days != null ? ` / ${p.observation_span_days}d span` : ''}</span>
+      </div>
+    ))}
+  </div>
+  <div class="sec-sub cov-note">
+    <p>Independently-resolved outcomes (a publisher different from the one that generated the detection): <strong>{coverage.independently_resolved ?? 0}</strong>. The resolver refuses to count same-publisher awards as independent corroboration, so this stays honest until a second publisher is wired to the same tenders.</p>
+  </div>
+</div>
+
+<div class="sec">
   <div class="sec-label">Provenance</div>
   <div class="sec-title">Where these records come from</div>
   <div class="prov">
@@ -216,6 +248,20 @@ function fmtDate(value) {
   .prov-block h4 { font-size:.72rem; text-transform:uppercase; letter-spacing:.07em; opacity:.7; margin:0 0 .4rem; }
   .prov-block ul { margin:0; padding-left:1.1rem; font-size:.82rem; line-height:1.55; }
   .prov-foot { margin-top:1.2rem; font-size:.8rem; opacity:.75; }
+  .cov-table { margin-top:1.1rem; border:1px solid var(--rule,#e5e0d6); border-radius:3px; overflow:hidden; }
+  .cov-head, .cov-row { display:grid; grid-template-columns:2.2fr 1fr 1fr 1.2fr .9fr 1.3fr; gap:.5rem; padding:.55rem .8rem; font-size:.78rem; }
+  .cov-head { background:rgba(0,0,0,.03); text-transform:uppercase; letter-spacing:.05em; opacity:.7; font-size:.68rem; }
+  .cov-row { border-top:1px solid var(--rule,#ece7dd); }
+  .cov-row:hover { background:rgba(0,0,0,.015); }
+  .cov-src { font-family:'IBM Plex Mono',monospace; font-size:.72rem; }
+  .cov-cad { font-size:.7rem; }
+  .cov-cad-rare { color:#8a8378; }
+  .cov-cad-regular { color:#3c6a4a; }
+  .cov-cad-occasional { color:#8c6a1f; }
+  .cov-cad-stale { color:#9c4a3c; }
+  .cov-cad-nodatedsnapshots { color:#9c4a3c; }
+  .cov-cad-unknownlastseen { color:#9c4a3c; }
+  .cov-note { margin-top:1.1rem; }
   @media (max-width:640px) {
     .res-row { flex-direction:column; gap:.5rem; }
     .res-lead, .res-badge { flex:none; text-align:left; }

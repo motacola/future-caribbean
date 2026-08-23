@@ -80,6 +80,12 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
         if path == "/api/regional-news":
             self._api_regional_news(parse_qs(parsed.query))
             return
+        if path == "/api/procurement-outcomes":
+            self._api_procurement_outcomes(parse_qs(parsed.query))
+            return
+        if path == "/api/capability-matches":
+            self._api_capability_matches(parse_qs(parsed.query))
+            return
         if path == "/api/coordination-opportunities":
             self._api_coordination_opportunities()
             return
@@ -353,6 +359,81 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
                 self._json({"error": f"Coordination opportunity '{opportunity_id}' not found"}, 404)
                 return
             self._json(item)
+        except Exception as exc:
+            self._json({"error": str(exc)}, 500)
+
+    def _api_procurement_outcomes(self, params: dict) -> None:
+        """Serve the procurement outcome artifact with local/Vercel filter parity."""
+        artifact = APP_DIR / "outbox" / "procurement_outcomes.json"
+        if not artifact.exists():
+            self._json({"error": "Procurement outcomes not generated yet — run the pipeline first."}, 404)
+            return
+        try:
+            data = json.loads(artifact.read_text(encoding="utf-8"))
+            country = (params.get("country", [""])[0] or "").strip().lower()
+            state = (params.get("state", [""])[0] or "").strip().lower()
+            resolved = (params.get("resolved", [""])[0] or "").strip().lower() in {"1", "true", "yes"}
+            try:
+                limit = max(1, min(500, int(params.get("limit", [100])[0])))
+            except (TypeError, ValueError):
+                limit = 100
+            tenders = data.get("tenders", [])
+            if country:
+                tenders = [t for t in tenders if (t.get("country") or "").lower() == country]
+            if state:
+                tenders = [t for t in tenders if (t.get("lifecycle_state") or "").lower() == state]
+            if resolved:
+                tenders = [t for t in tenders if t.get("resolution")]
+            self._json({
+                "ok": True,
+                "schema_version": data.get("schema_version"),
+                "corpus_updated_at": data.get("corpus_updated_at"),
+                "summary": data.get("summary", {}),
+                "coverage": data.get("coverage", {}),
+                "provenance": data.get("provenance", {}),
+                "count": len(tenders),
+                "returned": min(len(tenders), limit),
+                "tenders": tenders[:limit],
+            })
+        except Exception as exc:
+            self._json({"error": str(exc)}, 500)
+
+    def _api_capability_matches(self, params: dict) -> None:
+        """Serve cited country/bloc capability-registry matches."""
+        artifact = APP_DIR / "outbox" / "capability_matches.json"
+        if not artifact.exists():
+            self._json({"error": "Capability matches not generated yet — run the pipeline first."}, 404)
+            return
+        try:
+            data = json.loads(artifact.read_text(encoding="utf-8"))
+            country = (params.get("country", [""])[0] or "").strip().lower()
+            capability = (params.get("capability", [""])[0] or "").strip().lower()
+            try:
+                limit = max(1, min(500, int(params.get("limit", [100])[0])))
+            except (TypeError, ValueError):
+                limit = 100
+            matches = data.get("matches", [])
+            if country:
+                matches = [m for m in matches if (m.get("country") or "").lower() == country]
+            if capability:
+                matches = [
+                    m for m in matches
+                    if any((c.get("capability") or "").lower() == capability for c in m.get("capability_matches", []))
+                ]
+            self._json({
+                "ok": True,
+                "schema_version": data.get("schema_version"),
+                "registry_status": data.get("registry_status"),
+                "total_tenders": data.get("total_tenders"),
+                "classified_tenders": data.get("classified_tenders"),
+                "tenders_with_capability_match": data.get("tenders_with_capability_match"),
+                "by_capability": data.get("by_capability", {}),
+                "by_country": data.get("by_country", {}),
+                "count_semantics": data.get("count_semantics", {}),
+                "count": len(matches),
+                "returned": min(len(matches), limit),
+                "matches": matches[:limit],
+            })
         except Exception as exc:
             self._json({"error": str(exc)}, 500)
 

@@ -1,9 +1,13 @@
-"""Vercel serverless function: GET /api/procurement-outcomes
+"""Consolidated Vercel procurement read function.
 
-Read-only view of the canonical procurement corpus: what was detected,
+``/api/procurement-outcomes`` is the read-only canonical outcome view: what was detected,
 when, what changed, and what happened to it. Serves exactly the artefact
 the Opportunity Resolution page renders, so the API and the page cannot
 disagree about a record.
+
+``/api/capability-matches`` is rewritten here with
+``?view=capability_matches`` to stay within Vercel's 12-function Hobby-plan
+limit. It serves the cited country/bloc screening matches artifact.
 
 Query params:
   country=<name>     filter to one jurisdiction
@@ -26,6 +30,7 @@ CANDIDATES = (
     ROOT / "outbox" / "procurement_outcomes.json",
     ROOT / "public" / "procurement_outcomes.json",
 )
+CAPABILITY_MATCHES = ROOT / "outbox" / "capability_matches.json"
 
 DEFAULT_LIMIT = 100
 MAX_LIMIT = 500
@@ -62,6 +67,23 @@ def filter_tenders(tenders: list[dict], params: dict) -> list[dict]:
     return out
 
 
+def filter_capability_matches(matches: list[dict], params: dict) -> list[dict]:
+    country = (params.get("country", [""])[0] or "").strip().lower()
+    capability = (params.get("capability", [""])[0] or "").strip().lower()
+    out = matches
+    if country:
+        out = [m for m in out if (m.get("country") or "").lower() == country]
+    if capability:
+        out = [
+            m for m in out
+            if any(
+                (c.get("capability") or "").lower() == capability
+                for c in (m.get("capability_matches") or [])
+            )
+        ]
+    return out
+
+
 class handler(BaseHTTPRequestHandler):
     def _json(self, payload: dict, status: int = 200) -> None:
         body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
@@ -81,6 +103,31 @@ class handler(BaseHTTPRequestHandler):
         self.end_headers()
 
     def do_GET(self):
+        params = parse_qs(urlparse(self.path).query)
+        if params.get("view") == ["capability_matches"]:
+            try:
+                payload = json.loads(CAPABILITY_MATCHES.read_text(encoding="utf-8"))
+            except (FileNotFoundError, json.JSONDecodeError, OSError):
+                self._json({"ok": False, "error": "capability matches not published yet"}, status=503)
+                return
+            matches = filter_capability_matches(payload.get("matches", []), params)
+            limit = _int_param(params, "limit", DEFAULT_LIMIT, MAX_LIMIT)
+            self._json({
+                "ok": True,
+                "schema_version": payload.get("schema_version"),
+                "registry_status": payload.get("registry_status"),
+                "total_tenders": payload.get("total_tenders"),
+                "classified_tenders": payload.get("classified_tenders"),
+                "tenders_with_capability_match": payload.get("tenders_with_capability_match"),
+                "by_capability": payload.get("by_capability", {}),
+                "by_country": payload.get("by_country", {}),
+                "count_semantics": payload.get("count_semantics", {}),
+                "count": len(matches),
+                "returned": min(len(matches), limit),
+                "matches": matches[:limit],
+            })
+            return
+
         payload = _load()
         if not payload:
             self._json({
@@ -90,7 +137,6 @@ class handler(BaseHTTPRequestHandler):
             }, status=503)
             return
 
-        params = parse_qs(urlparse(self.path).query)
         tenders = filter_tenders(payload.get("tenders", []), params)
         limit = _int_param(params, "limit", DEFAULT_LIMIT, MAX_LIMIT)
 
@@ -101,6 +147,7 @@ class handler(BaseHTTPRequestHandler):
             "corpus_updated_at": payload.get("corpus_updated_at"),
             "summary": payload.get("summary", {}),
             "provenance": payload.get("provenance", {}),
+            "coverage": payload.get("coverage", {}),
             "count": len(tenders),
             "returned": min(len(tenders), limit),
             "tenders": tenders[:limit],

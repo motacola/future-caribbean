@@ -80,6 +80,12 @@ a:hover { text-decoration: underline; }
 .regional-movement-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 6px; }
 .regional-movement-label { font: 700 9px var(--mono); letter-spacing: .8px; text-transform: uppercase; color: var(--muted); }
 .regional-movement-sub { font: 500 10px var(--mono); color: var(--muted); letter-spacing: .3px; }
+.track-filter { display: flex; gap: 6px; margin: 6px 0 8px; flex-wrap: wrap; }
+.track-btn { font: 600 10px var(--mono); letter-spacing: .4px; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--border); border-radius: 999px; background: var(--card); color: var(--muted); cursor: pointer; transition: background .12s, color .12s, border-color .12s; }
+.track-btn:hover { border-color: var(--gold); }
+.track-btn.is-active { background: var(--ink); color: var(--card); border-color: var(--ink); }
+.rmv-chip[hidden] { display: none; }
+@media (prefers-reduced-motion: reduce) { .track-btn { transition: none; } }
 /* A fixed grid, not flex-wrap: 23 variable-width chips wrapping freely read
    as a ragged wall. Equal columns keep the names, bars, and state pills on
    shared vertical rules so the block scans as a table. */
@@ -1020,6 +1026,11 @@ html { scroll-behavior: smooth; }
           <span class="regional-movement-label">Regional movement</span>
           <span class="regional-movement-sub">tap a chip to drill into the country</span>
         </div>
+        <div class="track-filter" role="group" aria-label="Filter regional movement by track">
+          <button type="button" class="track-btn is-active" data-track-filter="all">All</button>
+          <button type="button" class="track-btn" data-track-filter="opportunity">Opportunities</button>
+          <button type="button" class="track-btn" data-track-filter="risk">Dislocation / Risk</button>
+        </div>
         <Fragment set:html={d.regionalMovementHtml} />
       </div>
       <div class="map-finance-strip" aria-label="FX and market indicators for selected islands">
@@ -1522,6 +1533,21 @@ document.querySelectorAll('.rmv-chip').forEach(chip => {
     if (!country) return;
     openCountryDrill(country);
     document.getElementById('map-drill')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+});
+
+// Track filter: show only chips matching the selected Opportunity vs
+// Dislocation/Risk track. The track is a pure function of the signal kind,
+// carried on each chip as data-track, so filtering never reclassifies.
+const trackBtns = document.querySelectorAll('.track-btn');
+trackBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const filter = btn.dataset.trackFilter || 'all';
+    trackBtns.forEach(b => b.classList.toggle('is-active', b === btn));
+    document.querySelectorAll('.rmv-chip').forEach(chip => {
+      const t = chip.dataset.track || 'unclassified';
+      chip.hidden = !(filter === 'all' || t === filter);
+    });
   });
 });
 
