@@ -495,13 +495,19 @@ def run(root: Path = ROOT) -> tuple[dict[str, Any], dict[str, Any]]:
     graph_path.parent.mkdir(parents=True, exist_ok=True)
     opportunities_path.parent.mkdir(parents=True, exist_ok=True)
     try:
-        from coordination.interventions import apply_interventions, _outcome_adjustment
+        from coordination.interventions import apply_interventions
     except ImportError:
-        from interventions import apply_interventions, _outcome_adjustment
+        from interventions import apply_interventions
     try:
         for item in opportunities.get("opportunities", []):
             apply_interventions(item, root=root)
         _apply_outcomes(opportunities.get("opportunities", []), root=root)
+        # Outcome deltas mutate coordination_score AFTER the list was
+        # sorted at build time (Codex P2 on #9): without this re-sort a
+        # boosted candidate stays rendered below lower-scored entries.
+        opportunities.get("opportunities", []).sort(
+            key=lambda item: (-item.get("coordination_score", 0), item.get("id", ""))
+        )
         persisted = True
     except Exception:
         persisted = False

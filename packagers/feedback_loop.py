@@ -16,6 +16,7 @@ import json
 import os
 import sys
 import tempfile
+from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -41,6 +42,18 @@ FEEDBACK_BOOST: dict[str, int] = {
 
 # Decay: each cycle after the feedback, boost halves
 DECAY_PER_CYCLE = 0.5
+
+# ── Kind-level loop closure (2026-08-23) ───────────────────
+# Actual recipient responses; mirrors the engagement_by_kind allowlist in
+# track_record.py. 'delivered' is transport (zero boost) and 'ignored' is
+# sampling — neither counts as engagement.
+ENGAGEMENT_STATUSES = {"forwarded", "replied", "opened", "decision_changed"}
+# A kind needs at least this many sampled entries before zero-engagement
+# downranking kicks in — tiny samples stay silent.
+MIN_KIND_SAMPLE = 10
+# Flat, uniform penalty per country for a fully unresponded kind. Deliberately
+# smaller than a single 'opened' (+2): absence of interest nudges, responses lead.
+UNRESPONDED_KIND_PENALTY = 2
 
 
 # ── State I/O ──────────────────────────────────────────────
@@ -89,12 +102,21 @@ def load_available_feedback() -> list[dict[str, Any]]:
 
 # ── Boost computation ──────────────────────────────────────
 
-def compute_boosts(state: dict[str, Any]) -> dict[str, dict[str, int]]:
+def compute_boosts(state: dict[str, dict[str, Any] | list[dict[str, Any]]]) -> dict[str, dict[str, int]]:
     """Compute net boost per signal kind + country from accumulated history.
 
     Returns: {signal_kind: {country: net_boost_int}}
+
+    Kind-level loop closure (2026-08-23): a signal kind with enough sampled
+    entries and ZERO actual responses (forwarded/replied/opened/decision_
+    changed) takes a small uniform penalty on every country. Ignored is
+    sampling; delivered is transport. This is the published
+    engagement_by_kind receipt feeding back into ranking.
     """
     boosts: dict[str, dict[str, int]] = {}
+
+    kind_sampled: dict[str, int] = defaultdict(int)
+    kind_engaged: dict[str, int] = defaultdict(int)
 
     for entry in state.get("history", []):
         kind = entry.get("signal_kind", "")
@@ -105,6 +127,10 @@ def compute_boosts(state: dict[str, Any]) -> dict[str, dict[str, int]]:
         if not kind or not country:
             continue
 
+        kind_sampled[kind] += 1
+        if status in ENGAGEMENT_STATUSES:
+            kind_engaged[kind] += 1
+
         base = FEEDBACK_BOOST.get(status, 0)
         # Apply decay: each cycle halves the effect
         effective = int(base * (DECAY_PER_CYCLE ** cycles_ago))
@@ -113,6 +139,14 @@ def compute_boosts(state: dict[str, Any]) -> dict[str, dict[str, int]]:
 
         per_country = boosts.setdefault(kind, {})
         per_country[country] = per_country.get(country, 0) + effective
+
+    # Unresponded kinds drift down: same flat nudge everywhere, so this
+    # never outweighs a real positive response anywhere.
+    for kind, sampled in kind_sampled.items():
+        if sampled >= MIN_KIND_SAMPLE and kind_engaged.get(kind, 0) == 0:
+            per_country = boosts.setdefault(kind, {})
+            for country in list(per_country):
+                per_country[country] -= UNRESPONDED_KIND_PENALTY
 
     return boosts
 

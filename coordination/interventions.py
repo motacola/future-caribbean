@@ -99,8 +99,18 @@ def apply_interventions(opportunity: dict[str, Any], root: Path = ROOT) -> dict[
         for item in (opportunity.get("unlock_path") or [])
         if item.get("id") in mapped
     ]
-    opportunity["operator_campaigns"] = list(state["campaigns"].values())
-    opportunity["operator_campaigns"].sort(key=lambda item: (-item.get("active_count", 0), item.get("slug", "")))
+    # Scope campaigns to THIS opportunity's interventions (Codex P2 on
+    # #9/#10/#11/#12): the global campaign list is shared state — attaching
+    # it wholesale made every candidate display the same 9 unrelated
+    # intervention rows. Only campaigns whose member interventions belong
+    # to this opportunity's unlock path are rendered on its card.
+    own_ids = {item.get("id") for item in opportunity.get("intervention_state", [])}
+    own_campaigns = [
+        c for c in state["campaigns"].values()
+        if own_ids & set(c.get("interventions") or [])
+    ]
+    own_campaigns.sort(key=lambda item: (-item.get("active_count", 0), item.get("slug", "")))
+    opportunity["operator_campaigns"] = own_campaigns
     return opportunity
 
 

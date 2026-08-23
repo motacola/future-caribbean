@@ -34,6 +34,7 @@ from __future__ import annotations
 import hashlib
 import json
 import math
+import re
 import sys
 from collections import defaultdict
 from datetime import datetime, timezone
@@ -80,17 +81,30 @@ COMMITMENTS: tuple[dict[str, Any], ...] = (
 # any edit to a historical claim detectable without a chain dependency.
 # Only the fields fixed at claim time are hashed; resolution fields are set
 # later and are deliberately excluded.
-
 CHAIN_FIELDS = (
     "cycle_id", "fact_key", "signal_id", "kind", "country",
     "score", "band", "corroborating_at_claim", "forecast_probability", "recorded_at",
 )
 GENESIS_HASH = "0" * 64
 
+# Schema v2 (2026-08-23): source_names is fixed at claim time and determines
+# publisher independence during resolution, so it belongs in the digest —
+# editing a claim's cited sources previously kept "chain intact" green while
+# changing its eventual outcome. Old claims predate the field's inclusion,
+# so verification is schema-aware: v1 entries verify under CHAIN_FIELDS,
+# v2 entries under V2_FIELDS. New claims always write v2.
+CHAIN_FIELDS_V2 = CHAIN_FIELDS + ("source_names",)
+CHAIN_SCHEMA_FIELD = "chain_schema"
+
 
 def claim_digest(claim: dict[str, Any], previous_hash: str) -> str:
+    fields = (
+        CHAIN_FIELDS_V2
+        if claim.get(CHAIN_SCHEMA_FIELD) == 2 or CHAIN_SCHEMA_FIELD in claim
+        else CHAIN_FIELDS
+    )
     payload = json.dumps(
-        {k: claim.get(k) for k in CHAIN_FIELDS},
+        {k: claim.get(k) for k in fields},
         sort_keys=True, separators=(",", ":"), default=str,
     )
     return hashlib.sha256((previous_hash + payload).encode("utf-8")).hexdigest()
@@ -278,6 +292,10 @@ def record_cycle(signals: list[dict[str, Any]], cycle_id: str) -> dict[str, Any]
             # context. A source we have already cited to the reader cannot
             # later count as independent confirmation of the same claim.
             "source_names": cited_sources,
+            # Digest schema version: v2 folds source_names into the chain
+            # hash (editing cited sources is now detectable). v1 entries
+            # verify under the legacy field set.
+            CHAIN_SCHEMA_FIELD: 2,
             "recorded_at": _now(),
             "forecast_probability": probability,
             "prior_basis": basis,
@@ -377,6 +395,43 @@ def external_publishers_for(claim: dict[str, Any], news_items: list[dict[str, An
     topics = KIND_TOPICS.get(claim.get("kind", ""), set())
     own = list(claim.get("source_names") or [])
 
+    # Claim-specific terms from the fact itself (Codex P1 on #23): an
+    # article sharing only country + broad topic must not "confirm" a
+    # specific observation. The fact_key carries the claim's distinguishing
+    # words — require at least one NON-GEGRAPHIC term (indicator, sector,
+    # event) in the headline/summary, on top of country+topic. The country
+    # name itself is excluded: it is already a gate, and would otherwise
+    # trivially satisfy this check.
+    fact_text = str(claim.get("fact_key") or "").lower()
+    stop = {
+        "the", "and", "with", "from", "for", "into", "surge", "growth",
+        "change", "signal", "detected", "high", "low", "latest",
+        "wb", "idb", "cdb", "caricom", "eccb",
+    }
+    country_words = {
+        w for w in re.split(r"[^a-z0-9]+", country)
+        if len(w) >= 4 and w not in stop
+    }
+    claim_terms = [
+        w for w in re.split(r"[^a-z0-9]+", fact_text)
+        if len(w) >= 4 and w not in stop and w not in country_words
+    ]
+    # Sector words like "sector"/"investment" appear in almost any finance
+    # headline — they are topic-level, not claim-specific.
+    GENERIC_TERMS = {"sector", "private", "public", "market", "capital",
+                     "investment", "economy", "economic", "financial"}
+    claim_terms = [t for t in claim_terms if t not in GENERIC_TERMS]
+    # Real ledger keys are indicator codes (BX.KLT.DINV.CD.WD), detector ids
+    # (ccrif-payout-bb-tropical_cyclone-2014), or programme names. Splitting
+    # on non-alphanumerics destroyed those: the indicator code became six
+    # useless fragments and dates were dropped by the length filter. Keep a
+    # raw form of every token too, so codes and hyphenated subjects survive.
+    raw_tokens = [
+        t for t in re.split(r"[^a-z0-9]+", fact_text)
+        if t and len(t) >= 6 and t not in country_words and t not in stop
+    ]
+    claim_terms = list(dict.fromkeys(claim_terms + raw_tokens))
+
     found: set[str] = set()
     for item in news_items:
         published = _parse_dt(item.get("published"))
@@ -385,6 +440,14 @@ def external_publishers_for(claim: dict[str, Any], news_items: list[dict[str, An
         if not any(country == str(c).lower() for c in item.get("countries") or []):
             continue
         if topics and not (topics & {str(t).lower() for t in item.get("topics") or []}):
+            continue
+        haystack = f"{item.get('title', '')} {item.get('summary', '')}".strip().lower()
+        # Gate on claim-specific terms ONLY when the article actually carries
+        # text to judge. An article with no text fields at all falls back to
+        # the country+topic gate (legacy contract); an article WITH text must
+        # name the claim's subject, otherwise it is too generic to confirm.
+        has_text = bool(haystack)
+        if has_text and claim_terms and not any(term in haystack for term in claim_terms):
             continue
         domain = str(item.get("publisher_domain") or item.get("publisher_name") or "").lower()
         if not domain or _is_own_source(domain, own):
@@ -616,6 +679,29 @@ def calibrated_label(score: int, report: dict[str, Any]) -> str:
     return f"{score}/100 · not yet calibrated — ranking position, not a probability"
 
 
+def _current_cycle_id() -> str:
+    """The cycle being published this run.
+
+    Read from the freshly generated opportunity dispatches, NOT the
+    committed dispatch_desk.json: the desk step runs after calibration in
+    the pipeline, so its cycle_id is the previous run's — claims would be
+    logged under a stale cycle and deduped away until the next run.
+    """
+    dispatch_path = ROOT / "outbox" / "opportunity_dispatches.json"
+    if dispatch_path.exists():
+        try:
+            data = json.loads(dispatch_path.read_text())
+            for d in data.get("dispatches") or []:
+                cid = str(d.get("cycle_id") or "").strip()
+                if cid:
+                    return cid
+        except (json.JSONDecodeError, OSError):
+            pass
+    # Fallback: today as YYYYMMDD UTC — matches how opportunity_dispatch
+    # derives it when no explicit cycle is set.
+    return datetime.now(timezone.utc).strftime("%Y%m%d")
+
+
 def main() -> None:
     desk_path = ROOT / "outbox" / "dispatch_desk.json"
     signals_path = ROOT / "data" / "composite" / "latest.json"
@@ -623,9 +709,9 @@ def main() -> None:
         print("calibration: missing desk or composite signals, skipping")
         return
 
-    cycle_id = str(json.loads(desk_path.read_text()).get("cycle_id", ""))
+    cycle_id = _current_cycle_id()
     if not cycle_id:
-        print("calibration: desk has no cycle_id, skipping")
+        print("calibration: could not determine current cycle, skipping")
         return
 
     raw = json.loads(signals_path.read_text())
