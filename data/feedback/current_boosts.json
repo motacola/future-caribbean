@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-23T01:57:01.781375+00:00",
+  "generated_at": "2026-08-23T04:49:10.827038+00:00",
   "boosts": {
     "enhanced_investment": {
       "Guyana": 4,
@@ -16,12 +16,17 @@
       "Guyana": -4,
       "Suriname": -4
     },
+    "food_security": {
+      "CARICOM": -4
+    },
     "ccrif_payout": {
+      "St. Kitts and Nevis": -8,
+      "Dominica": -8,
+      "St. Vincent & the Grenadines": -8,
+      "Grenada": -8,
+      "Jamaica": -16,
       "Turks and Caicos Islands": -8,
-      "Haiti": -22,
-      "Anguilla": -8,
-      "Barbados": -16,
-      "Nicaragua": -8
+      "Anguilla": -2
     }
   }
 }
