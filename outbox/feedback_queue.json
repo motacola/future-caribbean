@@ -1,6 +1,6 @@
 {
   "cycle_intro": "Lead: Guyana. 3 converging signal(s) across 4 source(s). Signals: \ud83d\udcbc Investment + \ud83c\udfd6\ufe0f Tourism + \ud83d\udc8e Investment.",
-  "generated_at": "2026-08-22 20:36 UTC",
+  "generated_at": "2026-08-23 01:57 UTC",
   "items": [
     {
       "band": "immediate",
@@ -95,7 +95,7 @@
     {
       "band": "validation",
       "channel": "Telegram digest",
-      "country": "Turks and Caicos Islands",
+      "country": "St. Kitts and Nevis",
       "freshness": "intensified",
       "kind": "ccrif_payout",
       "metrics": {
@@ -108,12 +108,12 @@
       "persona": "regional intelligence",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
       "score": 84,
-      "signal_id": "ccrif-payout-tc-tropical_cyclone-2008-01-01"
+      "signal_id": "ccrif-payout-kn-tropical_cyclone-2017-01-01"
     },
     {
       "band": "validation",
       "channel": "Telegram digest",
-      "country": "Haiti",
+      "country": "Dominica",
       "freshness": "intensified",
       "kind": "ccrif_payout",
       "metrics": {
@@ -126,13 +126,13 @@
       "persona": "regional intelligence",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
       "score": 84,
-      "signal_id": "ccrif-payout-ht-earthquake-2010-01-01"
+      "signal_id": "ccrif-payout-dm-tropical_cyclone-2017-01-01"
     },
     {
       "band": "validation",
       "channel": "Telegram digest",
-      "country": "Anguilla",
-      "freshness": "intensified",
+      "country": "St. Vincent & the Grenadines",
+      "freshness": "sustained",
       "kind": "ccrif_payout",
       "metrics": {
         "decision_changed": null,
@@ -144,13 +144,13 @@
       "persona": "regional intelligence",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
       "score": 84,
-      "signal_id": "ccrif-payout-ai-tropical_cyclone-2010-01-01"
+      "signal_id": "ccrif-payout-vc-tropical_cyclone-2024-01-01"
     },
     {
       "band": "validation",
       "channel": "Telegram digest",
       "country": "Eastern Caribbean Currency Union",
-      "freshness": "updated",
+      "freshness": "sustained",
       "kind": "eccb_deposit_growth",
       "metrics": {
         "decision_changed": null,
@@ -203,7 +203,7 @@
     {
       "band": "context",
       "channel": "Telegram digest",
-      "country": "Dominica",
+      "country": "Grenada",
       "freshness": "sustained",
       "kind": "tourism_impact",
       "metrics": {
@@ -216,7 +216,7 @@
       "persona": "tourism operator",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
       "score": 47,
-      "signal_id": "tourism-dominica"
+      "signal_id": "tourism-grenada"
     }
   ],
   "purpose": "Feedback agent input queue for distribution performance and trust signals."
