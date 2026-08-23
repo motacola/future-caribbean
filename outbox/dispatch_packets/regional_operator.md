@@ -2,7 +2,7 @@
 
 **Decision job:** Operational readiness and bid pipeline assessment
 **Delivery channel:** Telegram
-**Generated:** Aug 23, 2026 at 08:45 UTC
+**Generated:** Aug 23, 2026 at 12:58 UTC
 **Dispatches in this packet:** 3
 
 ---
