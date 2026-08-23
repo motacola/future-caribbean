@@ -1,0 +1,191 @@
+---
+import Base from '../layouts/Base.astro';
+import { readFileSync, existsSync } from 'fs';
+import { resolve, join } from 'path';
+
+function readJson(path: string): any {
+  const p = join(resolve(process.cwd()), path);
+  try {
+    if (!existsSync(p)) return null;
+    return JSON.parse(readFileSync(p, 'utf-8'));
+  } catch {
+    return null;
+  }
+}
+
+const cal = readJson('outbox/calibration.json');
+if (!cal) {
+  throw new Error('outbox/calibration.json missing — run the pipeline before building.');
+}
+
+const pct = (v: number | null): string =>
+  v === null || v === undefined ? '—' : `${Math.round(v * 1000) / 10}`;
+
+// Brier scores live on the 0-1 scale; readers know "5.3 points", not "0.053".
+// (Multiply by 100, keep one decimal.)
+const pts = (v: number | null): string =>
+  v === null || v === undefined ? '—' : `${Math.round(v * 1000) / 10}`;
+
+const brier = cal.brier;
+const naive = cal.brier_naive_baseline;
+const improvement = cal.brier_improvement_over_naive;
+
+// The honest headline: internal resolution means our own pipeline kept
+// reporting the fact; external means an independent publisher or a newer
+// indicator release confirmed it. Until external_resolved_n is large
+// enough to score, the page says so plainly instead of hiding it.
+const externalN = cal.external_resolved_n ?? 0;
+const totalResolved = cal.total_resolved ?? 0;
+const internalN = Math.max(0, (cal.resolved_by?.internal_persistence ?? 0));
+const externalShare = cal.external_share ?? 0;
+
+const statusColor: Record<string, string> = {
+  met: 'var(--teal)',
+  missed: 'var(--coral)',
+  pending: 'var(--muted)',
+};
+
+const fmtDate = (iso: string): string => {
+  const d = new Date(iso);
+  return Number.isFinite(d.getTime())
+    ? d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })
+    : iso;
+};
+---
+<Base title="Accuracy — Signal Fabric">
+  <main class="wrap">
+    <div class="kicker">Public accountability</div>
+    <h1>The desk keeps score. In public.</h1>
+    <p class="standfirst">
+      Every signal the desk publishes becomes a dated, hash-chained claim in a public
+      ledger. Three cycles later each claim is resolved and scored against what actually
+      happened. This page is generated from that ledger at build time — the same numbers
+      the pipeline computed, nothing retyped.
+    </p>
+
+    <section class="cards">
+      <div class="card">
+        <div class="label">Brier score (resolved claims)</div>
+        <div class="big">{pts(brier)}<span class="unit"> pts</span></div>
+        <div class="sub">lower is better · naive baseline {pts(naive)} pts</div>
+        <div class="delta" style={improvement !== null && improvement > 0 ? 'color: var(--teal)' : 'color: var(--coral)'}>
+          {improvement !== null
+            ? `${improvement > 0 ? 'beats' : 'worse than'} the naive baseline by ${pts(Math.abs(improvement))} pts`
+            : 'not yet computable'}
+        </div>
+      </div>
+      <div class="card">
+        <div class="label">Ledger integrity</div>
+        <div class="big" style={`color: ${cal.chain_intact ? 'var(--teal)' : 'var(--coral)'}`}>
+          {cal.chain_intact ? 'Intact' : `Broken`}
+        </div>
+        <div class="sub">{totalResolved} resolved · {cal.open_claims} open claims</div>
+        <div class="sub">every entry hash-chained to the one before it</div>
+      </div>
+      <div class="card">
+        <div class="label">External corroboration</div>
+        <div class="big">{externalShare !== null ? `${Math.round(externalShare * 100)}%` : '—'}</div>
+        <div class="sub">{externalN} of {totalResolved} resolved by outside evidence</div>
+        <div class="sub">the rest: our own pipeline kept reporting the fact</div>
+      </div>
+      <div class="card">
+        <div class="label">Day {cal.days_elapsed} of the public promise</div>
+        <div class="big">{cal.commitments.filter((c: any) => c.status === 'met').length}/{cal.commitments.length}</div>
+        <div class="sub">milestones met so far — the rest are pending, not failed</div>
+        <div class="sub">promise made {fmtDate(cal.committed_at)}</div>
+      </div>
+    </section>
+
+    <section class="honesty">
+      <strong>How claims are graded — including the uncomfortable part.</strong>
+      {cal.method} Today, {internalN} of {totalResolved} resolutions came from that internal
+      check, and only {externalN} from independent outside evidence.
+      {cal.brier_external_only !== null && cal.brier_external_only !== undefined
+        ? `Scored on external resolutions alone, the Brier score is ${pts(cal.brier_external_only)} points.`
+        : `An externally-graded score needs more independent resolutions before it is statistically honest — until then we publish none rather than flatter ourselves.`}
+    </section>
+
+    <section>
+      <h2>Resolution mix by confidence band</h2>
+      <table>
+        <thead>
+          <tr><th>Band</th><th>Resolved</th><th>Confirmed</th><th>Confirmation rate</th></tr>
+        </thead>
+        <tbody>
+          {cal.bands.map((b: any) => (
+            <tr>
+              <td>{b.band}</td>
+              <td>{b.resolved}</td>
+              <td>{b.confirmed}</td>
+              <td>{b.confirmation_rate === null
+                ? <span class="muted">sample too small to claim</span>
+                : `${Math.round(b.confirmation_rate * 100)}%`}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>The public commitment record</h2>
+      <table>
+        <thead>
+          <tr><th>Milestone</th><th>Needs resolved</th><th>Brier ceiling</th><th>So far</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          {cal.commitments.map((c: any) => (
+            <tr>
+              <td>{c.milestone}</td>
+              <td>{c.min_resolved}</td>
+              <td>{c.max_brier === null ? '—' : c.max_brier}</td>
+              <td>{c.resolved_so_far} resolved · Brier {pts(c.brier_so_far)}</td>
+              <td><span class="pill" style={`color:${statusColor[c.status]};border-color:${statusColor[c.status]}`}>{c.status}</span></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+
+    <section class="method">
+      <h2>Why this page exists</h2>
+      <p>
+        Most intelligence desks publish their hits and quietly retire their misses.
+        This desk commits to accuracy gates in advance, resolves every claim on a fixed
+        schedule, scores itself with proper probabilistic metrics, and lets the ledger
+        — not a marketing claim — say how it is doing. The raw artifact behind this page
+        is <a href="/api/calibration">served verbatim as JSON</a>, and the claim ledger
+        itself ships in the repo.
+      </p>
+    </section>
+  </main>
+</Base>
+<script is:inline>
+  // Scoped page styles (kept inline so they ship with the static page).
+  const css = `
+    .accuracy-wrap { max-width: 880px; margin: 0 auto; padding: 40px 24px 80px; }
+    .accuracy-wrap .kicker { font-family: var(--mono); font-size: 11px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--teal); margin-bottom: 8px; }
+    .accuracy-wrap h1 { font-size: clamp(28px, 4vw, 40px); margin: 0 0 12px; }
+    .accuracy-wrap .standfirst { color: var(--sub); max-width: 640px; line-height: 1.55; }
+    .accuracy-wrap .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; margin: 32px 0; }
+    .accuracy-wrap .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--r); padding: 16px; }
+    .accuracy-wrap .label { font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 8px; }
+    .accuracy-wrap .big { font-size: 30px; font-weight: 700; }
+    .accuracy-wrap .unit { font-size: 15px; color: var(--muted); }
+    .accuracy-wrap .sub { font-size: 12px; color: var(--sub); margin-top: 4px; }
+    .accuracy-wrap .delta { font-size: 12px; margin-top: 8px; font-weight: 600; }
+    .accuracy-wrap h2 { font-size: 19px; margin: 36px 0 12px; }
+    .accuracy-wrap table { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; }
+    .accuracy-wrap th { font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); }
+    .accuracy-wrap td { padding: 10px 12px; border-bottom: 1px solid var(--border); font-size: 13px; }
+    .accuracy-wrap tr:last-child td { border-bottom: none; }
+    .accuracy-wrap .pill { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: .5px; border: 1px solid; border-radius: 3px; padding: 2px 8px; }
+    .accuracy-wrap .muted { color: var(--muted); font-style: italic; }
+    .accuracy-wrap .honesty { background: rgba(181,122,34,.06); border: 1px solid rgba(181,122,34,.25); border-radius: var(--r); padding: 14px 16px; font-size: 13px; line-height: 1.55; }
+    .accuracy-wrap .method { color: var(--sub); }
+    .accuracy-wrap .method a { color: var(--teal); }
+  `;
+  const style = document.createElement('style');
+  style.textContent = css;
+  document.head.appendChild(style);
+  document.querySelector('main.wrap')?.classList.add('accuracy-wrap');
+</script>

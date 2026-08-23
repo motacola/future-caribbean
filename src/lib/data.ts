@@ -508,9 +508,13 @@ export function loadDashboardData() {
     const topics = item.topics?.length ? item.topics : Object.entries(NEWS_TOPICS)
       .filter(([, terms]) => terms.some(term => text.includes(term))).map(([topic]) => topic);
     const countries = (item.countries || []).map(canonicalCountry);
-    const ageHours = item.age_hours ?? (() => { const t = Date.parse(item.published || ''); return Number.isFinite(t) ? Math.max(0, Math.floor((Date.now() - t) / 3600000)) : null; })();
+    // Recompute age at BUILD time from the published timestamp. The
+    // poller's serialized age_hours was true when IT ran; trusting it on
+    // later rebuilds froze articles as "20h ago" forever (Codex P2).
+    const parsedAge = (() => { const t = Date.parse(item.published || ''); return Number.isFinite(t) ? Math.max(0, Math.floor((Date.now() - t) / 3600000)) : null; })();
+    const ageHours = parsedAge ?? (typeof item.age_hours === 'number' ? item.age_hours : null);
     const tier = item.source_tier || (String(item.feed_slug || '').startsWith('google-news') ? 3 : 2);
-    const score = item.relevance_score ?? Math.max(0, Math.min(100, 25 + (4-tier)*8 + topics.length*6 + countries.length*6 + (ageHours === null ? 0 : ageHours <= 24 ? 28 : ageHours <= 72 ? 18 : ageHours <= 168 ? 8 : 0)));
+    const score = Math.max(0, Math.min(100, 25 + (4-tier)*8 + topics.length*6 + countries.length*6 + (ageHours === null ? 0 : ageHours <= 24 ? 28 : ageHours <= 72 ? 18 : ageHours <= 168 ? 8 : 0)));
     return { ...item, countries, topics: topics.length ? topics : ['regional'], age_hours: ageHours, source_tier:tier, relevance_score:score };
   }).sort((a: any, b: any) => b.relevance_score - a.relevance_score || String(b.published || '').localeCompare(String(a.published || '')));
   const regionalContext = newsItems.filter((item: any) => !item.countries.length).slice(0, 3);
