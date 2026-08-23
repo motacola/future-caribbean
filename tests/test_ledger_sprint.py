@@ -85,15 +85,34 @@ def _claim() -> dict:
 
 
 def test_unrelated_same_topic_article_does_not_confirm():
-    """Country + finance topic alone must NOT confirm an FDI indicator claim."""
-    item = _news("Guyana banking sector sees record profits")
+    """Country + finance topic + a year fragment must NOT confirm an indicator claim.
+
+    Codex P1 on #34: a fact_key like `Guyana|BX.KLT.DINV.CD.WD|2024` reduces to
+    technical fragments only (country excluded, code/year dropped). An article
+    merely mentioning "Guyana 2024" must NOT confirm it.
+    """
+    item = _news("Guyana 2024 budget allocates funds to public works")
     assert external_publishers_for(_claim(), [item]) == []
 
 
-def test_claim_specific_headline_confirms():
-    """A headline naming the actual indicator/subject does confirm."""
-    item = _news("Guyana foreign investment rises per BX.KLT.DINV.CD.WD series")
-    assert external_publishers_for(_claim(), [item]) == ["independent-news.example"]
+def test_technical_fact_key_is_not_headline_corroborable():
+    """A fact_key with no natural-language subject cannot be headline-confirmed.
+
+    Codex P1 #34: opaque indicator codes / years / IDs carry no confirmable
+    subject, so even an article naming the code fragment stays non-corroborable
+    (it falls back to internal-persistence — the honest outcome, not a false
+    positive feeding the public Brier).
+    """
+    item = _news("BX.KLT.DINV.CD.WD series updated for Guyana")
+    assert external_publishers_for(_claim(), [item]) == []
+
+
+def test_natural_language_subject_confirmed():
+    """A claim whose fact_key has a real subject word is confirmed by a matching
+    plain-English headline (the behaviour Codex wanted preserved)."""
+    claim = dict(_claim(), fact_key="Belize|flood-risk-coastal|2026")
+    item = _news("Belize coastal communities face rising flood risk from storm surge")
+    assert external_publishers_for(claim, [item]) == ["independent-news.example"]
 
 
 # ── 3/4. Campaign scoping + outcome re-sort ─────────────────

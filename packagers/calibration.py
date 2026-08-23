@@ -395,42 +395,49 @@ def external_publishers_for(claim: dict[str, Any], news_items: list[dict[str, An
     topics = KIND_TOPICS.get(claim.get("kind", ""), set())
     own = list(claim.get("source_names") or [])
 
-    # Claim-specific terms from the fact itself (Codex P1 on #23): an
-    # article sharing only country + broad topic must not "confirm" a
-    # specific observation. The fact_key carries the claim's distinguishing
-    # words — require at least one NON-GEGRAPHIC term (indicator, sector,
-    # event) in the headline/summary, on top of country+topic. The country
-    # name itself is excluded: it is already a gate, and would otherwise
-    # trivially satisfy this check.
+    # Claim-specific terms from the fact itself (Codex P1 on #23, tightened
+    # per Codex P1 on #34): an article sharing only country + broad topic
+    # must not "confirm" a specific observation. The fact_key is a
+    # normalized identity — indicator codes (BX.KLT.DINV.CD.WD), detector
+    # ids (ccrif-payout-bb-tropical_cyclone-2014), years, or programme
+    # names. Treating those fragments as headline-match terms is wrong two
+    # ways: a year fragment ("2024") or code fragment ("dinv") lets an
+    # unrelated article mentioning that year/code falsely confirm the claim,
+    # while a legitimate plain-English headline ("foreign investment rises")
+    # is rejected. So: drop purely technical fragments (codes, years, IDs)
+    # entirely, then require a real subject WORD from the fact to appear in
+    # the article text. Claims that reduce to no natural-language subject
+    # cannot be headline-corroborated at all and stay internal-persistence
+    # — the honest outcome, not a false positive.
     fact_text = str(claim.get("fact_key") or "").lower()
     stop = {
         "the", "and", "with", "from", "for", "into", "surge", "growth",
         "change", "signal", "detected", "high", "low", "latest",
         "wb", "idb", "cdb", "caricom", "eccb",
+        "sector", "private", "public", "market", "capital",
+        "investment", "economy", "economic", "financial",
     }
     country_words = {
         w for w in re.split(r"[^a-z0-9]+", country)
         if len(w) >= 4 and w not in stop
     }
-    claim_terms = [
-        w for w in re.split(r"[^a-z0-9]+", fact_text)
-        if len(w) >= 4 and w not in stop and w not in country_words
-    ]
-    # Sector words like "sector"/"investment" appear in almost any finance
-    # headline — they are topic-level, not claim-specific.
-    GENERIC_TERMS = {"sector", "private", "public", "market", "capital",
-                     "investment", "economy", "economic", "financial"}
-    claim_terms = [t for t in claim_terms if t not in GENERIC_TERMS]
-    # Real ledger keys are indicator codes (BX.KLT.DINV.CD.WD), detector ids
-    # (ccrif-payout-bb-tropical_cyclone-2014), or programme names. Splitting
-    # on non-alphanumerics destroyed those: the indicator code became six
-    # useless fragments and dates were dropped by the length filter. Keep a
-    # raw form of every token too, so codes and hyphenated subjects survive.
-    raw_tokens = [
+
+    def _is_technical(token: str) -> bool:
+        """Indicator codes, years, and opaque IDs are metadata, not subjects."""
+        if token.isdigit():
+            return True  # years / periods
+        if re.fullmatch(r"[a-z]{2,4}\.[a-z]{3}\.[a-z0-9]{3,4}\.[a-z]{2}\.[a-z0-9]{2}", token):
+            return True  # World Bank style BX.KLT.DINV.CD.WD
+        if re.fullmatch(r"[a-z]{2,4}", token):
+            return True  # bare code fragments (dinv, cdb, klt)
+        return False
+
+    candidate_terms = [
         t for t in re.split(r"[^a-z0-9]+", fact_text)
-        if t and len(t) >= 6 and t not in country_words and t not in stop
+        if len(t) >= 4 and t.isalpha() and t not in stop
+        and t not in country_words and not _is_technical(t)
     ]
-    claim_terms = list(dict.fromkeys(claim_terms + raw_tokens))
+    claim_terms = list(dict.fromkeys(candidate_terms))
 
     found: set[str] = set()
     for item in news_items:
@@ -442,13 +449,22 @@ def external_publishers_for(claim: dict[str, Any], news_items: list[dict[str, An
         if topics and not (topics & {str(t).lower() for t in item.get("topics") or []}):
             continue
         haystack = f"{item.get('title', '')} {item.get('summary', '')}".strip().lower()
-        # Gate on claim-specific terms ONLY when the article actually carries
-        # text to judge. An article with no text fields at all falls back to
-        # the country+topic gate (legacy contract); an article WITH text must
-        # name the claim's subject, otherwise it is too generic to confirm.
+        # Corroboration gate (Codex P1 #34): the article's text must name a
+        # real natural-language subject from the claim. Two consequences:
+        #  - A text article with the subject present confirms (correct).
+        #  - A text article WITHOUT the subject is rejected even if it shares
+        #    country + topic + a year/code fragment — that is the false
+        #    positive Codex caught.
+        #  - A text article for a TECHNICAL-ONLY claim (fact_key reduced to
+        #    indicator codes / years / IDs with no NL subject) cannot be
+        #    headline-corroborated: it stays internal-persistence rather than
+        #    falling through on country+topic alone.
+        #  - An article with NO text at all falls back to the country+topic
+        #    gate (legacy contract), which is unchanged behaviour.
         has_text = bool(haystack)
-        if has_text and claim_terms and not any(term in haystack for term in claim_terms):
-            continue
+        if has_text:
+            if not claim_terms or not any(term in haystack for term in claim_terms):
+                continue
         domain = str(item.get("publisher_domain") or item.get("publisher_name") or "").lower()
         if not domain or _is_own_source(domain, own):
             continue
