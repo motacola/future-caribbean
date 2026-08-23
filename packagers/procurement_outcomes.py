@@ -117,6 +117,7 @@ def build(corpus: dict[str, Any] | None = None) -> dict[str, Any]:
         "corpus_updated_at": corpus.get("updated_at"),
         "summary": summarize(entries),
         "provenance": provenance(entries),
+        "coverage": proc.derive_coverage(corpus),
         "tenders": entries,
     }
 

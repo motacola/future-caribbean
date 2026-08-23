@@ -11,12 +11,18 @@ from __future__ import annotations
 
 import json
 import re
+import sys
 from collections import Counter, defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from mergers.signal_track import track_for_kind, track_label  # noqa: E402
+
 DISPATCH_JSON = ROOT / "outbox" / "opportunity_dispatches.json"
 THESIS_MD = ROOT / "outbox" / "regional_thesis.md"
 WHY_NOW_MD = ROOT / "outbox" / "why_now.md"
@@ -149,6 +155,8 @@ def build_clusters(dispatches: list[dict[str, Any]]) -> list[dict[str, Any]]:
             "title": lead.get("title", "Untitled dispatch cluster"),
             "country_cluster": lead.get("country_cluster", "Regional"),
             "signal_kind": lead.get("signal_kind", "signal"),
+            "track": lead.get("track") or track_for_kind(str(lead.get("signal_kind", ""))),
+            "track_label": lead.get("track_label") or track_label(track_for_kind(str(lead.get("signal_kind", "")))),
             "decision": lead.get("decision_influence", "Decision not recorded."),
             "evidence": lead.get("evidence_summary", "Evidence summary unavailable."),
             "detail": lead.get("detail", ""),

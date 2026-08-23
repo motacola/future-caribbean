@@ -516,3 +516,78 @@ def test_alias_matching_refuses_an_ambiguous_merge():
         corpus, observed_at="2026-06-02T00:00:00+00:00",
     )
     assert len(corpus["tenders"]) == 3, "an ambiguous match must stay separate"
+
+
+# ── coverage derivation (handover §7.1: source-silence + cadence) ──────
+
+def _corpus_with(records, **kw):
+    c = proc.observe(records, observed_at=kw.get("observed_at", "2026-06-01T00:00:00+00:00"))
+    if kw.get("refresh"):
+        proc.refresh(c)
+    return c
+
+
+def test_coverage_reports_per_portal_opportunity_and_resolution_counts():
+    c = _corpus_with([
+        _notice("Procurement of Chairs", source="Portal A", agency="Buyer A",
+                closing="2026-07-01", ref="A1", observed_at="2026-06-01T00:00:00+00:00"),
+        _award("Procurement of Chairs", source="Portal A", agency="Buyer A",
+               published="2026-07-20", observed_at="2026-07-20T00:00:00+00:00"),
+    ])
+    cov = proc.derive_coverage(c, today=date(2026, 7, 21))
+    portal_a = next(p for p in cov["portals"] if p["source"] == "Portal A")
+    assert portal_a["opportunities_observed"] == 1
+    assert portal_a["resolutions_recorded"] == 1
+    assert portal_a["resolutions_of_prior_detection"] == 1
+
+
+def test_coverage_labels_a_single_snapshot_portal_as_rare():
+    c = _corpus_with([
+        _notice("Procurement of Desks", source="Backfill Feed", agency="Buyer",
+                closing="2026-07-01", observed_at="2026-06-01T00:00:00+00:00"),
+    ])
+    cov = proc.derive_coverage(c, today=date(2026, 6, 2))
+    portal = next(p for p in cov["portals"] if p["source"] == "Backfill Feed")
+    assert portal["cadence"] == "single/rare sighting"
+    assert portal["cadence_slug"] == "rare"
+    assert portal["distinct_observation_days"] == 1
+    assert portal["observation_span_days"] == 0
+
+
+def test_coverage_skips_blank_portals_and_clamps_future_age():
+    c = {"tenders": {"x": {
+        "lifecycle_state": "open",
+        "generating_sources": [],
+        "notices": [
+            {"source": "", "observed_at": "2026-06-02T00:00:00+00:00", "status": "open"},
+            {"source": "Portal A", "observed_at": "2026-06-03T00:00:00+00:00", "status": "open"},
+        ],
+        "resolution": None,
+    }}}
+    cov = proc.derive_coverage(c, today=date(2026, 6, 2))
+    assert [p["source"] for p in cov["portals"]] == ["Portal A"]
+    assert cov["portals"][0]["last_seen_age_days"] == 0
+
+
+def test_coverage_counts_unresolved_total_and_independent():
+    c = _corpus_with([
+        _notice("Procurement of Desks", closing="2026-01-05", status="Evaluation",
+                observed_at="2026-01-06T00:00:00+00:00"),
+    ], refresh=True)
+    proc.refresh(c, today=date(2026, 12, 1))
+    cov = proc.derive_coverage(c, today=date(2026, 12, 1))
+    assert cov["unresolved_total"] == 1
+    assert cov["independently_resolved"] == 0
+
+
+def test_coverage_does_not_double_count_a_resolution_source_seen_as_notice():
+    c = _corpus_with([
+        _notice("Procurement of Chairs", source="Portal A", agency="Buyer A",
+                closing="2026-07-01", ref="A1", observed_at="2026-06-01T00:00:00+00:00"),
+        _award("Procurement of Chairs", source="Portal A", agency="Buyer A",
+               published="2026-07-20", observed_at="2026-07-20T00:00:00+00:00"),
+    ])
+    cov = proc.derive_coverage(c, today=date(2026, 7, 21))
+    portal_a = next(p for p in cov["portals"] if p["source"] == "Portal A")
+    assert portal_a["resolutions_recorded"] == 1
+    assert portal_a["total_snapshots"] >= 2

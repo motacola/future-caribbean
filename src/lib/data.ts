@@ -624,6 +624,7 @@ export function loadDashboardData() {
         : c.signal_kind.includes('climate') || c.signal_kind.includes('weather') || c.signal_kind.includes('vulnerability') || c.signal_kind.includes('food_security') ? 'climate'
         : c.signal_kind.includes('procure') || c.signal_kind.includes('pipeline') ? 'procurement'
         : 'none') : watch.kind || 'none',
+      track: c.track === 'opportunity' || c.track === 'risk' ? c.track : 'unclassified',
       summary: humanize(c.top_signal_summary || c.title || c.decision || watch.summary || ''),
       ranking_rationale: humanize(c.ranking_rationale || watch.ranking_rationale || ''),
       finance_signal: financeNews ? `${countryNews.coverage}: ${financeNews.title}` : (fx.signal || 'Monitor official financial and market notices'),
@@ -668,7 +669,7 @@ export function loadDashboardData() {
       const evidence = totalEv > 0
         ? `${totalEv} source group${totalEv === 1 ? '' : 's'}`
         : 'watchlist';
-      return `<button class="rmv-chip" data-country="${esc(m.country)}" data-freshness="${cls}" title="${esc(m.country)} — ${cls}, confidence ${conf}/100, ${evidence}">
+      return `<button class="rmv-chip" data-country="${esc(m.country)}" data-freshness="${cls}" data-track="${esc(m.track || 'unclassified')}" title="${esc(m.country)} — ${cls}, confidence ${conf}/100, ${evidence}">
         <span class="rmv-name">${esc(m.country)}</span>
         <span class="rmv-bar" role="img" aria-label="Confidence: ${conf} of 100">
           <span class="rmv-bar-fill" style="width:${conf}%; background:${confColor}"></span>

@@ -106,6 +106,7 @@ run_step "Opportunity Dispatch" "python3 \"$ROOT/packagers/opportunity_dispatch.
 # would ever know and no detection lead time could be proved.
 run_step "Procurement Resolver" "python3 \"$ROOT/resolvers/procurement.py\"" "procurement_resolver"
 run_step "Procurement Outcomes" "python3 \"$ROOT/packagers/procurement_outcomes.py\"" "procurement_outcomes"
+run_step "Procurement Capability Matches" "python3 \"$ROOT/resolvers/capability_match.py\"" "capability_matches"
 
 run_step "Coordination Graph" "python3 \"$ROOT/coordination/engine.py\"" "coordination_graph"
 run_step "Validation Packs" "python3 \"$ROOT/packagers/validation_pack_generator.py\"" "validation_packs"

@@ -446,6 +446,142 @@ def observe(
     return corpus
 
 
+def derive_coverage(corpus: dict[str, Any], today: date | None = None) -> dict[str, Any]:
+    """Per-portal cadence, coverage, and resolution-silence, derived only
+    from the canonical corpus — no fresh collection.
+
+    The point of this surface (handover §7 item 1) is to make the honest
+    read explicit: *why* so many tenders sit unresolved and *what* evidence
+    distance exists. Every number here comes from fields the resolver
+    already accumulates (``notices``, ``generating_sources``, ``resolution``,
+    ``last_seen_at``); nothing is fetched or inferred.
+    """
+    today = today or datetime.now(timezone.utc).date()
+    tenders = list(corpus.get("tenders", {}).values())
+
+    portals: dict[str, dict[str, Any]] = {}
+    for entry in tenders:
+        # Opportunities observed by a portal.
+        for src in entry.get("generating_sources", []):
+            p = portals.setdefault(src, _blank_portal(src))
+            p["opportunities"] += 1
+        # Every dated snapshot a portal contributed, with its observation day.
+        for notice in entry.get("notices", []):
+            src = notice.get("source") or ""
+            if not src:
+                continue
+            day = (notice.get("observed_at") or "")[:10]
+            p = portals.setdefault(src, _blank_portal(src))
+            p["snapshots"] += 1
+            if day:
+                p["observation_days"].add(day)
+            st = (notice.get("status") or "").lower()
+            if st in {"awarded", "award", "cancelled", "canceled", "annulled"}:
+                p["outcome_notices"] += 1
+            # Last-seen age per portal.
+            last = notice.get("observed_at")
+            if last and (p["last_seen_at"] is None or last > p["last_seen_at"]):
+                p["last_seen_at"] = last
+            if last and (p["first_seen_at"] is None or last < p["first_seen_at"]):
+                p["first_seen_at"] = last
+        # Resolution contributed by a portal.
+        res = entry.get("resolution")
+        if res:
+            src = res.get("resolution_source") or ""
+            if not src:
+                continue
+            p = portals.setdefault(src, _blank_portal(src))
+            p["resolutions"] += 1
+            if res.get("resolves_prior_detection"):
+                p["resolutions_of_prior_detection"] += 1
+
+    rows = []
+    for src, p in portals.items():
+        last = p["last_seen_at"]
+        last_day = last[:10] if last else None
+        age_days = None
+        if last_day:
+            try:
+                age_days = max(0, (today - datetime.fromisoformat(last_day).date()).days)
+            except ValueError:
+                age_days = None
+        distinct_days = len(p["observation_days"])
+        first = p["first_seen_at"]
+        first_day = first[:10] if first else None
+        observation_span_days = None
+        if first_day and last_day:
+            try:
+                observation_span_days = max(
+                    0,
+                    (datetime.fromisoformat(last_day).date() - datetime.fromisoformat(first_day).date()).days,
+                )
+            except ValueError:
+                observation_span_days = None
+        cadence, cadence_slug = _cadence_label(distinct_days, age_days)
+        rows.append({
+            "source": src,
+            "opportunities_observed": p["opportunities"],
+            "total_snapshots": p["snapshots"],
+            "distinct_observation_days": distinct_days,
+            "outcome_notices": p["outcome_notices"],
+            "resolutions_recorded": p["resolutions"],
+            "resolutions_of_prior_detection": p["resolutions_of_prior_detection"],
+            "last_seen_at": last,
+            "first_seen_at": first,
+            "last_seen_age_days": age_days,
+            "observation_span_days": observation_span_days,
+            "cadence": cadence,
+            "cadence_slug": cadence_slug,
+        })
+    rows.sort(
+        key=lambda r: (-r["opportunities_observed"], -r["resolutions_recorded"], r["source"])
+    )
+
+    return {
+        "portals": rows,
+        "unresolved_total": sum(1 for e in tenders if e.get("lifecycle_state") == STATE_UNRESOLVED),
+        "outcomes_without_prior_detection": sum(
+            1 for e in tenders
+            if e.get("resolution") and not e["resolution"].get("resolves_prior_detection")
+        ),
+        "independently_resolved": sum(
+            1 for e in tenders
+            if e.get("resolution") and e["resolution"].get("independence") == "independent"
+        ),
+    }
+
+
+def _blank_portal(source: str) -> dict[str, Any]:
+    return {
+        "source": source,
+        "opportunities": 0,
+        "snapshots": 0,
+        "observation_days": set(),
+        "outcome_notices": 0,
+        "resolutions": 0,
+        "resolutions_of_prior_detection": 0,
+        "first_seen_at": None,
+        "last_seen_at": None,
+    }
+
+
+def _cadence_label(distinct_days: int, age_days: int | None) -> tuple[str, str]:
+    """Honest cadence: distinct observation days over the corpus window, not
+    a synthetic per-month rate. ``null`` day count means no dated snapshot.
+    Returns a ``(label, slug)`` pair; the slug is CSS-safe."""
+    if distinct_days == 0:
+        return ("no dated snapshots", "nodatedsnapshots")
+    if age_days is None:
+        return ("unknown last-seen", "unknownlastseen")
+    if age_days > 90:
+        return ("stale (not seen in 90d+)", "stale")
+    if distinct_days <= 2:
+        return ("single/rare sighting", "rare")
+    if distinct_days <= 6:
+        return ("occasional", "occasional")
+    return ("regular", "regular")
+
+
 def refresh(corpus: dict[str, Any], today: date | None = None) -> dict[str, Any]:
     """Re-derive states without new observations, so a closed tender ages
     into `unresolved` on its own rather than waiting for a poll."""

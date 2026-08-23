@@ -183,6 +183,23 @@ TOOLS_MANIFEST = {
             "example_request": {"opportunity_id": "coord-dev-pipeline-regional"},
             "example_response_keys": ["id", "demand_node", "project_coordination_matches", "contributing_nodes", "frictions", "unlock_path", "minimum_next_action", "coordination_score"],
             "writes": False
+        },
+        {
+            "name": "capability_matches.list",
+            "description": "Detected Caribbean tenders matched to cited country/bloc capability-registry entries. Each match classifies the tender's required capability with deterministic keyword rules and carries the registry source, URL, and grade. This is screening evidence, not audited supplier capacity; unmatched capabilities are never guessed.",
+            "method": "GET",
+            "path": "/api/capability-matches",
+            "params": {
+                "type": "object",
+                "properties": {
+                    "country": {"type": "string", "description": "Filter matches to tenders from one jurisdiction, e.g. Guyana"},
+                    "capability": {"type": "string", "description": "Filter to matches requiring a capability id, e.g. water_infrastructure"},
+                    "limit": {"type": "integer", "description": "Max matches returned (default 100, max 500)"}
+                }
+            },
+            "example_request": {"capability": "water_infrastructure", "limit": 10},
+            "example_response_keys": ["ok", "registry_status", "classified_tenders", "tenders_with_capability_match", "by_capability", "by_country", "count_semantics", "count", "matches"],
+            "writes": False
         }
     ]
 }
