@@ -77,6 +77,12 @@ def main() -> None:
     # the receipts page skipped whatever the desk had just published.
     for cycle in dispatch_by_cycle:
         by_cycle.setdefault(cycle, [])
+    # Previously published receipts must also stay candidates: once a cycle
+    # ages out of BOTH the rolling dispatch artifact and the capped feedback
+    # window it vanishes from by_cycle, and its public record would silently
+    # disappear instead of being preserved below.
+    for cycle in previous_by_cycle:
+        by_cycle.setdefault(cycle, [])
 
     # Sort cycles newest first, take max MAX_CYCLES
     sorted_cycles = sorted(by_cycle.keys(), reverse=True)[:MAX_CYCLES]
@@ -98,16 +104,38 @@ def main() -> None:
         # entries measure who responded, not how much went out; they are
         # already rendered as response pills. Fall back to entry count only
         # when the rolling dispatch artifact no longer holds that cycle.
-        dispatch_count = len(cycle_dispatches) if cycle_dispatches else len(entries)
+        # When that rollover happens, preserve the previously PUBLISHED
+        # count/markets instead of shrinking the receipt to the capped
+        # 50-entry feedback sample (Codex P2 on PR #30) — same principle
+        # as the historical lead preservation below.
+        previous = previous_by_cycle.get(cycle_id, {})
+        if cycle_dispatches:
+            dispatch_count = len(cycle_dispatches)
+        elif previous.get("dispatch_count") is not None:
+            dispatch_count = previous["dispatch_count"]
+        else:
+            dispatch_count = len(entries)
 
-        # Unique countries by response volume desc
-        country_counts: dict[str, int] = {}
-        country_rows = entries if entries else cycle_dispatches
-        for e in country_rows:
-            country = e.get("country", "") or e.get("country_cluster", "")
-            if country:
-                country_counts[country] = country_counts.get(country, 0) + 1
-        countries = sorted(country_counts.keys(), key=lambda c: -country_counts[c])
+        # Unique countries by response volume desc. Markets must come from
+        # the same source as dispatch_count above: live cycles report the
+        # countries the published dispatches actually span (the feedback
+        # set is a small sample and understates coverage). Start from the
+        # previously published list so rollover preserves it.
+        countries: list[str] = list(previous.get("countries") or [])
+        if cycle_dispatches:
+            country_counts: dict[str, int] = {}
+            for e in cycle_dispatches:
+                country = e.get("country", "") or e.get("country_cluster", "")
+                if country:
+                    country_counts[country] = country_counts.get(country, 0) + 1
+            countries = sorted(country_counts.keys(), key=lambda c: -country_counts[c])
+        elif not previous.get("countries"):
+            country_counts = {}
+            for e in entries:
+                country = e.get("country", "") or e.get("country_cluster", "")
+                if country:
+                    country_counts[country] = country_counts.get(country, 0) + 1
+            countries = sorted(country_counts.keys(), key=lambda c: -country_counts[c])
 
         # Lead signal: only if we have dispatches for this cycle
         # Historical lead claims are part of the public receipt. Preserve the
