@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-23T16:39:19.942926+00:00",
+  "generated_at": "2026-08-23T20:35:29.439062+00:00",
   "engine": "deterministic",
   "registry_status": "pilot",
   "count": 28,
@@ -158,128 +158,7 @@
       ],
       "unknowns": [],
       "intervention_state": [],
-      "operator_campaigns": [
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-cross-border-supplier-qualification",
-          "intervention_count": 7,
-          "active_count": 7,
-          "owner_persona": "procurement_watcher",
-          "blocker": "cross-border supplier qualification",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00311:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00312:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00313:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00377:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00383:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00384:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00385:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-route-economics",
-          "intervention_count": 7,
-          "active_count": 7,
-          "owner_persona": "regional_operator",
-          "blocker": "route economics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00311:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00312:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00313:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00377:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00383:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00384:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00385:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-ecosystem_builder-education_services",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "education_services",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00377:capability:education_services"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-procurement_watcher-water_infrastructure",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "water_infrastructure",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:capability:water_infrastructure"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        },
-        {
-          "slug": "campaign-demand_aggregation-ecosystem_builder-pooled-procurement-required",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "pooled procurement required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00386:friction:demand_aggregation"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-procurement-eligibility",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "procurement eligibility",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        },
-        {
-          "slug": "campaign-finance_fit-diaspora_investor-mandate-and-ticket-size-fit",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "diaspora_investor",
-          "blocker": "mandate and ticket-size fit",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00386:friction:finance_fit"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-inter-island-logistics",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "regional_operator",
-          "blocker": "inter-island logistics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00386:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-partner_introduction-ecosystem_builder-local-delivery-partner-required",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "local delivery partner required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00386:friction:partner_introduction"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        }
-      ]
+      "operator_campaigns": []
     },
     {
       "id": "coord-enhanced-invest-barbados",
@@ -446,128 +325,7 @@
       ],
       "unknowns": [],
       "intervention_state": [],
-      "operator_campaigns": [
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-cross-border-supplier-qualification",
-          "intervention_count": 7,
-          "active_count": 7,
-          "owner_persona": "procurement_watcher",
-          "blocker": "cross-border supplier qualification",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00311:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00312:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00313:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00377:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00383:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00384:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00385:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-route-economics",
-          "intervention_count": 7,
-          "active_count": 7,
-          "owner_persona": "regional_operator",
-          "blocker": "route economics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00311:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00312:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00313:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00377:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00383:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00384:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00385:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-ecosystem_builder-education_services",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "education_services",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00377:capability:education_services"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-procurement_watcher-water_infrastructure",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "water_infrastructure",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:capability:water_infrastructure"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        },
-        {
-          "slug": "campaign-demand_aggregation-ecosystem_builder-pooled-procurement-required",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "pooled procurement required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00386:friction:demand_aggregation"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-procurement-eligibility",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "procurement eligibility",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        },
-        {
-          "slug": "campaign-finance_fit-diaspora_investor-mandate-and-ticket-size-fit",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "diaspora_investor",
-          "blocker": "mandate and ticket-size fit",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00386:friction:finance_fit"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-inter-island-logistics",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "regional_operator",
-          "blocker": "inter-island logistics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00386:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-partner_introduction-ecosystem_builder-local-delivery-partner-required",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "local delivery partner required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00386:friction:partner_introduction"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        }
-      ]
+      "operator_campaigns": []
     },
     {
       "id": "coord-invest-barbados",
@@ -705,128 +463,7 @@
       ],
       "unknowns": [],
       "intervention_state": [],
-      "operator_campaigns": [
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-cross-border-supplier-qualification",
-          "intervention_count": 7,
-          "active_count": 7,
-          "owner_persona": "procurement_watcher",
-          "blocker": "cross-border supplier qualification",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00311:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00312:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00313:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00377:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00383:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00384:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00385:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-route-economics",
-          "intervention_count": 7,
-          "active_count": 7,
-          "owner_persona": "regional_operator",
-          "blocker": "route economics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00311:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00312:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00313:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00377:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00383:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00384:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00385:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-ecosystem_builder-education_services",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "education_services",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00377:capability:education_services"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-procurement_watcher-water_infrastructure",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "water_infrastructure",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:capability:water_infrastructure"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        },
-        {
-          "slug": "campaign-demand_aggregation-ecosystem_builder-pooled-procurement-required",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "pooled procurement required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00386:friction:demand_aggregation"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-procurement-eligibility",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "procurement eligibility",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        },
-        {
-          "slug": "campaign-finance_fit-diaspora_investor-mandate-and-ticket-size-fit",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "diaspora_investor",
-          "blocker": "mandate and ticket-size fit",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00386:friction:finance_fit"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-inter-island-logistics",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "regional_operator",
-          "blocker": "inter-island logistics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00386:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-partner_introduction-ecosystem_builder-local-delivery-partner-required",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "local delivery partner required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00386:friction:partner_introduction"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        }
-      ]
+      "operator_campaigns": []
     },
     {
       "id": "coord-enhanced-invest-guyana",
@@ -1047,128 +684,7 @@
       ],
       "unknowns": [],
       "intervention_state": [],
-      "operator_campaigns": [
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-cross-border-supplier-qualification",
-          "intervention_count": 7,
-          "active_count": 7,
-          "owner_persona": "procurement_watcher",
-          "blocker": "cross-border supplier qualification",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00311:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00312:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00313:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00377:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00383:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00384:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00385:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-route-economics",
-          "intervention_count": 7,
-          "active_count": 7,
-          "owner_persona": "regional_operator",
-          "blocker": "route economics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00311:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00312:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00313:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00377:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00383:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00384:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00385:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-ecosystem_builder-education_services",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "education_services",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00377:capability:education_services"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-procurement_watcher-water_infrastructure",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "water_infrastructure",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:capability:water_infrastructure"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        },
-        {
-          "slug": "campaign-demand_aggregation-ecosystem_builder-pooled-procurement-required",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "pooled procurement required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00386:friction:demand_aggregation"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-procurement-eligibility",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "procurement eligibility",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        },
-        {
-          "slug": "campaign-finance_fit-diaspora_investor-mandate-and-ticket-size-fit",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "diaspora_investor",
-          "blocker": "mandate and ticket-size fit",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00386:friction:finance_fit"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-inter-island-logistics",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "regional_operator",
-          "blocker": "inter-island logistics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00386:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-partner_introduction-ecosystem_builder-local-delivery-partner-required",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "local delivery partner required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00386:friction:partner_introduction"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        }
-      ]
+      "operator_campaigns": []
     },
     {
       "id": "coord-enhanced-invest-suriname",
@@ -1389,128 +905,7 @@
       ],
       "unknowns": [],
       "intervention_state": [],
-      "operator_campaigns": [
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-cross-border-supplier-qualification",
-          "intervention_count": 7,
-          "active_count": 7,
-          "owner_persona": "procurement_watcher",
-          "blocker": "cross-border supplier qualification",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00311:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00312:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00313:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00377:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00383:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00384:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00385:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-route-economics",
-          "intervention_count": 7,
-          "active_count": 7,
-          "owner_persona": "regional_operator",
-          "blocker": "route economics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00311:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00312:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00313:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00377:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00383:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00384:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00385:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-ecosystem_builder-education_services",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "education_services",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00377:capability:education_services"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-procurement_watcher-water_infrastructure",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "water_infrastructure",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:capability:water_infrastructure"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        },
-        {
-          "slug": "campaign-demand_aggregation-ecosystem_builder-pooled-procurement-required",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "pooled procurement required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00386:friction:demand_aggregation"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-procurement-eligibility",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "procurement eligibility",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        },
-        {
-          "slug": "campaign-finance_fit-diaspora_investor-mandate-and-ticket-size-fit",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "diaspora_investor",
-          "blocker": "mandate and ticket-size fit",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00386:friction:finance_fit"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-inter-island-logistics",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "regional_operator",
-          "blocker": "inter-island logistics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00386:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-partner_introduction-ecosystem_builder-local-delivery-partner-required",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "local delivery partner required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00386:friction:partner_introduction"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        }
-      ]
+      "operator_campaigns": []
     },
     {
       "id": "coord-invest-guyana",
@@ -1698,128 +1093,7 @@
       ],
       "unknowns": [],
       "intervention_state": [],
-      "operator_campaigns": [
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-cross-border-supplier-qualification",
-          "intervention_count": 7,
-          "active_count": 7,
-          "owner_persona": "procurement_watcher",
-          "blocker": "cross-border supplier qualification",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00311:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00312:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00313:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00377:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00383:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00384:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00385:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-route-economics",
-          "intervention_count": 7,
-          "active_count": 7,
-          "owner_persona": "regional_operator",
-          "blocker": "route economics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00311:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00312:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00313:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00377:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00383:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00384:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00385:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-ecosystem_builder-education_services",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "education_services",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00377:capability:education_services"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-procurement_watcher-water_infrastructure",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "water_infrastructure",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:capability:water_infrastructure"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        },
-        {
-          "slug": "campaign-demand_aggregation-ecosystem_builder-pooled-procurement-required",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "pooled procurement required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00386:friction:demand_aggregation"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-procurement-eligibility",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "procurement eligibility",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        },
-        {
-          "slug": "campaign-finance_fit-diaspora_investor-mandate-and-ticket-size-fit",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "diaspora_investor",
-          "blocker": "mandate and ticket-size fit",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00386:friction:finance_fit"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-inter-island-logistics",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "regional_operator",
-          "blocker": "inter-island logistics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00386:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-partner_introduction-ecosystem_builder-local-delivery-partner-required",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "local delivery partner required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00386:friction:partner_introduction"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        }
-      ]
+      "operator_campaigns": []
     },
     {
       "id": "coord-invest-suriname",
@@ -2007,128 +1281,7 @@
       ],
       "unknowns": [],
       "intervention_state": [],
-      "operator_campaigns": [
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-cross-border-supplier-qualification",
-          "intervention_count": 7,
-          "active_count": 7,
-          "owner_persona": "procurement_watcher",
-          "blocker": "cross-border supplier qualification",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00311:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00312:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00313:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00377:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00383:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00384:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00385:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-route-economics",
-          "intervention_count": 7,
-          "active_count": 7,
-          "owner_persona": "regional_operator",
-          "blocker": "route economics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00311:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00312:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00313:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00377:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00383:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00384:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00385:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-ecosystem_builder-education_services",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "education_services",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00377:capability:education_services"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-procurement_watcher-water_infrastructure",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "water_infrastructure",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:capability:water_infrastructure"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        },
-        {
-          "slug": "campaign-demand_aggregation-ecosystem_builder-pooled-procurement-required",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "pooled procurement required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00386:friction:demand_aggregation"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-procurement-eligibility",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "procurement eligibility",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        },
-        {
-          "slug": "campaign-finance_fit-diaspora_investor-mandate-and-ticket-size-fit",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "diaspora_investor",
-          "blocker": "mandate and ticket-size fit",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00386:friction:finance_fit"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-inter-island-logistics",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "regional_operator",
-          "blocker": "inter-island logistics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00386:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-partner_introduction-ecosystem_builder-local-delivery-partner-required",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "local delivery partner required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00386:friction:partner_introduction"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        }
-      ]
+      "operator_campaigns": []
     },
     {
       "id": "coord-regional-enhanced-investment-20260823",
@@ -2349,128 +1502,7 @@
       ],
       "unknowns": [],
       "intervention_state": [],
-      "operator_campaigns": [
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-cross-border-supplier-qualification",
-          "intervention_count": 7,
-          "active_count": 7,
-          "owner_persona": "procurement_watcher",
-          "blocker": "cross-border supplier qualification",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00311:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00312:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00313:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00377:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00383:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00384:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00385:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-route-economics",
-          "intervention_count": 7,
-          "active_count": 7,
-          "owner_persona": "regional_operator",
-          "blocker": "route economics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00311:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00312:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00313:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00377:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00383:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00384:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00385:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-ecosystem_builder-education_services",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "education_services",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00377:capability:education_services"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-procurement_watcher-water_infrastructure",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "water_infrastructure",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:capability:water_infrastructure"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        },
-        {
-          "slug": "campaign-demand_aggregation-ecosystem_builder-pooled-procurement-required",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "pooled procurement required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00386:friction:demand_aggregation"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-procurement-eligibility",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "procurement eligibility",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        },
-        {
-          "slug": "campaign-finance_fit-diaspora_investor-mandate-and-ticket-size-fit",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "diaspora_investor",
-          "blocker": "mandate and ticket-size fit",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00386:friction:finance_fit"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-inter-island-logistics",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "regional_operator",
-          "blocker": "inter-island logistics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00386:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-partner_introduction-ecosystem_builder-local-delivery-partner-required",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "local delivery partner required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00386:friction:partner_introduction"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        }
-      ]
+      "operator_campaigns": []
     },
     {
       "id": "coord-regional-investment-signal-20260823",
@@ -2658,128 +1690,7 @@
       ],
       "unknowns": [],
       "intervention_state": [],
-      "operator_campaigns": [
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-cross-border-supplier-qualification",
-          "intervention_count": 7,
-          "active_count": 7,
-          "owner_persona": "procurement_watcher",
-          "blocker": "cross-border supplier qualification",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00311:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00312:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00313:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00377:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00383:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00384:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00385:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-route-economics",
-          "intervention_count": 7,
-          "active_count": 7,
-          "owner_persona": "regional_operator",
-          "blocker": "route economics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00311:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00312:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00313:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00377:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00383:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00384:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00385:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-ecosystem_builder-education_services",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "education_services",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00377:capability:education_services"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-procurement_watcher-water_infrastructure",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "water_infrastructure",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:capability:water_infrastructure"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        },
-        {
-          "slug": "campaign-demand_aggregation-ecosystem_builder-pooled-procurement-required",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "pooled procurement required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00386:friction:demand_aggregation"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-procurement-eligibility",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "procurement eligibility",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        },
-        {
-          "slug": "campaign-finance_fit-diaspora_investor-mandate-and-ticket-size-fit",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "diaspora_investor",
-          "blocker": "mandate and ticket-size fit",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00386:friction:finance_fit"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-inter-island-logistics",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "regional_operator",
-          "blocker": "inter-island logistics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00386:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-partner_introduction-ecosystem_builder-local-delivery-partner-required",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "local delivery partner required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00386:friction:partner_introduction"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        }
-      ]
+      "operator_campaigns": []
     },
     {
       "id": "coord-food-security-regional",
@@ -2923,7 +1834,7 @@
         "friction_penalty": 21
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 80/100",
         "Matched 3 of 3 required capabilities across 3 regional nodes",
         "Registry evidence from 3 primary-source organisations"
       ],
@@ -2946,128 +1857,7 @@
       ],
       "unknowns": [],
       "intervention_state": [],
-      "operator_campaigns": [
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-cross-border-supplier-qualification",
-          "intervention_count": 7,
-          "active_count": 7,
-          "owner_persona": "procurement_watcher",
-          "blocker": "cross-border supplier qualification",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00311:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00312:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00313:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00377:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00383:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00384:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00385:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-route-economics",
-          "intervention_count": 7,
-          "active_count": 7,
-          "owner_persona": "regional_operator",
-          "blocker": "route economics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00311:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00312:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00313:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00377:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00383:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00384:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00385:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-ecosystem_builder-education_services",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "education_services",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00377:capability:education_services"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-procurement_watcher-water_infrastructure",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "water_infrastructure",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:capability:water_infrastructure"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        },
-        {
-          "slug": "campaign-demand_aggregation-ecosystem_builder-pooled-procurement-required",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "pooled procurement required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00386:friction:demand_aggregation"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-procurement-eligibility",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "procurement eligibility",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        },
-        {
-          "slug": "campaign-finance_fit-diaspora_investor-mandate-and-ticket-size-fit",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "diaspora_investor",
-          "blocker": "mandate and ticket-size fit",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00386:friction:finance_fit"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-inter-island-logistics",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "regional_operator",
-          "blocker": "inter-island logistics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00386:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        },
-        {
-          "slug": "campaign-partner_introduction-ecosystem_builder-local-delivery-partner-required",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "local delivery partner required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00386:friction:partner_introduction"
-          ],
-          "updated_at": "2026-08-13T16:27:05.932245+00:00"
-        }
-      ]
+      "operator_campaigns": []
     },
     {
       "id": "coord-dev-pipeline-regional",
@@ -4789,8 +3579,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-08-23T16:39:19.951659+00:00",
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
+          "created_at": "2026-08-23T20:35:29.447694+00:00",
+          "updated_at": "2026-08-23T20:35:29.447694+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00421:capability:education_services",
@@ -4801,8 +3591,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-08-23T16:39:19.951659+00:00",
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
+          "created_at": "2026-08-23T20:35:29.447694+00:00",
+          "updated_at": "2026-08-23T20:35:29.447694+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00422:capability:education_services",
@@ -4813,8 +3603,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-08-23T16:39:19.951659+00:00",
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
+          "created_at": "2026-08-23T20:35:29.447694+00:00",
+          "updated_at": "2026-08-23T20:35:29.447694+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00423:capability:education_services",
@@ -4825,8 +3615,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-08-23T16:39:19.951659+00:00",
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
+          "created_at": "2026-08-23T20:35:29.447694+00:00",
+          "updated_at": "2026-08-23T20:35:29.447694+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00416:friction:eligibility_verification",
@@ -4837,8 +3627,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-08-23T16:39:19.951659+00:00",
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
+          "created_at": "2026-08-23T20:35:29.447694+00:00",
+          "updated_at": "2026-08-23T20:35:29.447694+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00416:friction:logistics_validation",
@@ -4849,8 +3639,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-08-23T16:39:19.951659+00:00",
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
+          "created_at": "2026-08-23T20:35:29.447694+00:00",
+          "updated_at": "2026-08-23T20:35:29.447694+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00417:friction:eligibility_verification",
@@ -4861,8 +3651,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-08-23T16:39:19.951659+00:00",
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
+          "created_at": "2026-08-23T20:35:29.447694+00:00",
+          "updated_at": "2026-08-23T20:35:29.447694+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00417:friction:logistics_validation",
@@ -4873,8 +3663,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-08-23T16:39:19.951659+00:00",
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
+          "created_at": "2026-08-23T20:35:29.447694+00:00",
+          "updated_at": "2026-08-23T20:35:29.447694+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00418:friction:demand_aggregation",
@@ -4885,8 +3675,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-08-23T16:39:19.951659+00:00",
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
+          "created_at": "2026-08-23T20:35:29.447694+00:00",
+          "updated_at": "2026-08-23T20:35:29.447694+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00418:friction:finance_fit",
@@ -4897,8 +3687,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-08-23T16:39:19.951659+00:00",
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
+          "created_at": "2026-08-23T20:35:29.447694+00:00",
+          "updated_at": "2026-08-23T20:35:29.447694+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00418:friction:logistics_validation",
@@ -4909,8 +3699,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-08-23T16:39:19.951659+00:00",
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
+          "created_at": "2026-08-23T20:35:29.447694+00:00",
+          "updated_at": "2026-08-23T20:35:29.447694+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00418:friction:partner_introduction",
@@ -4921,8 +3711,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-08-23T16:39:19.951659+00:00",
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
+          "created_at": "2026-08-23T20:35:29.447694+00:00",
+          "updated_at": "2026-08-23T20:35:29.447694+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00419:friction:demand_aggregation",
@@ -4933,8 +3723,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-08-23T16:39:19.951659+00:00",
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
+          "created_at": "2026-08-23T20:35:29.447694+00:00",
+          "updated_at": "2026-08-23T20:35:29.447694+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00419:friction:finance_fit",
@@ -4945,8 +3735,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-08-23T16:39:19.951659+00:00",
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
+          "created_at": "2026-08-23T20:35:29.447694+00:00",
+          "updated_at": "2026-08-23T20:35:29.447694+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00419:friction:logistics_validation",
@@ -4957,8 +3747,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-08-23T16:39:19.951659+00:00",
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
+          "created_at": "2026-08-23T20:35:29.447694+00:00",
+          "updated_at": "2026-08-23T20:35:29.447694+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00419:friction:partner_introduction",
@@ -4969,8 +3759,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-08-23T16:39:19.951659+00:00",
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
+          "created_at": "2026-08-23T20:35:29.447694+00:00",
+          "updated_at": "2026-08-23T20:35:29.447694+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00420:friction:demand_aggregation",
@@ -4981,8 +3771,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-08-23T16:39:19.951659+00:00",
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
+          "created_at": "2026-08-23T20:35:29.447694+00:00",
+          "updated_at": "2026-08-23T20:35:29.447694+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00420:friction:finance_fit",
@@ -4993,8 +3783,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-08-23T16:39:19.951659+00:00",
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
+          "created_at": "2026-08-23T20:35:29.447694+00:00",
+          "updated_at": "2026-08-23T20:35:29.447694+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00420:friction:logistics_validation",
@@ -5005,8 +3795,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-08-23T16:39:19.951659+00:00",
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
+          "created_at": "2026-08-23T20:35:29.447694+00:00",
+          "updated_at": "2026-08-23T20:35:29.447694+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00420:friction:partner_introduction",
@@ -5017,8 +3807,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-08-23T16:39:19.951659+00:00",
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
+          "created_at": "2026-08-23T20:35:29.447694+00:00",
+          "updated_at": "2026-08-23T20:35:29.447694+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00421:friction:eligibility_verification",
@@ -5029,8 +3819,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-08-23T16:39:19.951659+00:00",
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
+          "created_at": "2026-08-23T20:35:29.447694+00:00",
+          "updated_at": "2026-08-23T20:35:29.447694+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00421:friction:logistics_validation",
@@ -5041,8 +3831,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-08-23T16:39:19.951659+00:00",
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
+          "created_at": "2026-08-23T20:35:29.447694+00:00",
+          "updated_at": "2026-08-23T20:35:29.447694+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00422:friction:eligibility_verification",
@@ -5053,8 +3843,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-08-23T16:39:19.951659+00:00",
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
+          "created_at": "2026-08-23T20:35:29.447694+00:00",
+          "updated_at": "2026-08-23T20:35:29.447694+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00422:friction:logistics_validation",
@@ -5065,8 +3855,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-08-23T16:39:19.951659+00:00",
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
+          "created_at": "2026-08-23T20:35:29.447694+00:00",
+          "updated_at": "2026-08-23T20:35:29.447694+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00423:friction:eligibility_verification",
@@ -5077,8 +3867,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-08-23T16:39:19.951659+00:00",
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
+          "created_at": "2026-08-23T20:35:29.447694+00:00",
+          "updated_at": "2026-08-23T20:35:29.447694+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00423:friction:logistics_validation",
@@ -5089,8 +3879,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-08-23T16:39:19.951659+00:00",
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
+          "created_at": "2026-08-23T20:35:29.447694+00:00",
+          "updated_at": "2026-08-23T20:35:29.447694+00:00"
         }
       ],
       "operator_campaigns": [
@@ -5108,7 +3898,7 @@
             "unlock:project-guyana-proc-2026-00422:friction:eligibility_verification",
             "unlock:project-guyana-proc-2026-00423:friction:eligibility_verification"
           ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
+          "updated_at": "2026-08-23T20:35:29.447694+00:00"
         },
         {
           "slug": "campaign-logistics_validation-regional_operator-route-economics",
@@ -5124,7 +3914,7 @@
             "unlock:project-guyana-proc-2026-00422:friction:logistics_validation",
             "unlock:project-guyana-proc-2026-00423:friction:logistics_validation"
           ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
+          "updated_at": "2026-08-23T20:35:29.447694+00:00"
         },
         {
           "slug": "campaign-capability_verification-ecosystem_builder-education_services",
@@ -5139,7 +3929,7 @@
             "unlock:project-guyana-proc-2026-00422:capability:education_services",
             "unlock:project-guyana-proc-2026-00423:capability:education_services"
           ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
+          "updated_at": "2026-08-23T20:35:29.447694+00:00"
         },
         {
           "slug": "campaign-demand_aggregation-ecosystem_builder-pooled-procurement-required",
@@ -5153,7 +3943,7 @@
             "unlock:project-guyana-proc-2026-00419:friction:demand_aggregation",
             "unlock:project-guyana-proc-2026-00420:friction:demand_aggregation"
           ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
+          "updated_at": "2026-08-23T20:35:29.447694+00:00"
         },
         {
           "slug": "campaign-finance_fit-diaspora_investor-mandate-and-ticket-size-fit",
@@ -5167,7 +3957,7 @@
             "unlock:project-guyana-proc-2026-00419:friction:finance_fit",
             "unlock:project-guyana-proc-2026-00420:friction:finance_fit"
           ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
+          "updated_at": "2026-08-23T20:35:29.447694+00:00"
         },
         {
           "slug": "campaign-logistics_validation-regional_operator-inter-island-logistics",
@@ -5181,7 +3971,7 @@
             "unlock:project-guyana-proc-2026-00419:friction:logistics_validation",
             "unlock:project-guyana-proc-2026-00420:friction:logistics_validation"
           ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
+          "updated_at": "2026-08-23T20:35:29.447694+00:00"
         },
         {
           "slug": "campaign-partner_introduction-ecosystem_builder-local-delivery-partner-required",
@@ -5195,31 +3985,7 @@
             "unlock:project-guyana-proc-2026-00419:friction:partner_introduction",
             "unlock:project-guyana-proc-2026-00420:friction:partner_introduction"
           ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-procurement_watcher-water_infrastructure",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "water_infrastructure",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:capability:water_infrastructure"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        },
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-procurement-eligibility",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "procurement eligibility",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
+          "updated_at": "2026-08-23T20:35:29.447694+00:00"
         }
       ]
     },
@@ -5410,7 +4176,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 74/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -5443,135 +4209,7 @@
       ],
       "unknowns": [],
       "intervention_state": [],
-      "operator_campaigns": [
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-cross-border-supplier-qualification",
-          "intervention_count": 5,
-          "active_count": 5,
-          "owner_persona": "procurement_watcher",
-          "blocker": "cross-border supplier qualification",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00417:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00421:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00422:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00423:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-route-economics",
-          "intervention_count": 5,
-          "active_count": 5,
-          "owner_persona": "regional_operator",
-          "blocker": "route economics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00417:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00421:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00422:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00423:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-ecosystem_builder-education_services",
-          "intervention_count": 4,
-          "active_count": 4,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "education_services",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:capability:education_services",
-            "unlock:project-guyana-proc-2026-00421:capability:education_services",
-            "unlock:project-guyana-proc-2026-00422:capability:education_services",
-            "unlock:project-guyana-proc-2026-00423:capability:education_services"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-demand_aggregation-ecosystem_builder-pooled-procurement-required",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "pooled procurement required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:demand_aggregation",
-            "unlock:project-guyana-proc-2026-00419:friction:demand_aggregation",
-            "unlock:project-guyana-proc-2026-00420:friction:demand_aggregation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-finance_fit-diaspora_investor-mandate-and-ticket-size-fit",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "diaspora_investor",
-          "blocker": "mandate and ticket-size fit",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:finance_fit",
-            "unlock:project-guyana-proc-2026-00419:friction:finance_fit",
-            "unlock:project-guyana-proc-2026-00420:friction:finance_fit"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-inter-island-logistics",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "regional_operator",
-          "blocker": "inter-island logistics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00419:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00420:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-partner_introduction-ecosystem_builder-local-delivery-partner-required",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "local delivery partner required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:partner_introduction",
-            "unlock:project-guyana-proc-2026-00419:friction:partner_introduction",
-            "unlock:project-guyana-proc-2026-00420:friction:partner_introduction"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-procurement_watcher-water_infrastructure",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "water_infrastructure",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:capability:water_infrastructure"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        },
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-procurement-eligibility",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "procurement eligibility",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        }
-      ]
+      "operator_campaigns": []
     },
     {
       "id": "coord-ccrif-payout-bb-excess-rainfall-2014-01-01",
@@ -5758,7 +4396,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 68/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 4 regional nodes",
         "Registry evidence from 5 primary-source organisations"
       ],
@@ -5791,135 +4429,7 @@
       ],
       "unknowns": [],
       "intervention_state": [],
-      "operator_campaigns": [
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-cross-border-supplier-qualification",
-          "intervention_count": 5,
-          "active_count": 5,
-          "owner_persona": "procurement_watcher",
-          "blocker": "cross-border supplier qualification",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00417:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00421:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00422:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00423:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-route-economics",
-          "intervention_count": 5,
-          "active_count": 5,
-          "owner_persona": "regional_operator",
-          "blocker": "route economics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00417:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00421:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00422:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00423:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-ecosystem_builder-education_services",
-          "intervention_count": 4,
-          "active_count": 4,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "education_services",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:capability:education_services",
-            "unlock:project-guyana-proc-2026-00421:capability:education_services",
-            "unlock:project-guyana-proc-2026-00422:capability:education_services",
-            "unlock:project-guyana-proc-2026-00423:capability:education_services"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-demand_aggregation-ecosystem_builder-pooled-procurement-required",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "pooled procurement required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:demand_aggregation",
-            "unlock:project-guyana-proc-2026-00419:friction:demand_aggregation",
-            "unlock:project-guyana-proc-2026-00420:friction:demand_aggregation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-finance_fit-diaspora_investor-mandate-and-ticket-size-fit",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "diaspora_investor",
-          "blocker": "mandate and ticket-size fit",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:finance_fit",
-            "unlock:project-guyana-proc-2026-00419:friction:finance_fit",
-            "unlock:project-guyana-proc-2026-00420:friction:finance_fit"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-inter-island-logistics",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "regional_operator",
-          "blocker": "inter-island logistics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00419:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00420:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-partner_introduction-ecosystem_builder-local-delivery-partner-required",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "local delivery partner required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:partner_introduction",
-            "unlock:project-guyana-proc-2026-00419:friction:partner_introduction",
-            "unlock:project-guyana-proc-2026-00420:friction:partner_introduction"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-procurement_watcher-water_infrastructure",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "water_infrastructure",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:capability:water_infrastructure"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        },
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-procurement-eligibility",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "procurement eligibility",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        }
-      ]
+      "operator_campaigns": []
     },
     {
       "id": "coord-ccrif-payout-bb-tropical-cyclone-2010-01-01",
@@ -6106,7 +4616,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 68/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 4 regional nodes",
         "Registry evidence from 5 primary-source organisations"
       ],
@@ -6139,135 +4649,7 @@
       ],
       "unknowns": [],
       "intervention_state": [],
-      "operator_campaigns": [
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-cross-border-supplier-qualification",
-          "intervention_count": 5,
-          "active_count": 5,
-          "owner_persona": "procurement_watcher",
-          "blocker": "cross-border supplier qualification",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00417:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00421:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00422:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00423:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-route-economics",
-          "intervention_count": 5,
-          "active_count": 5,
-          "owner_persona": "regional_operator",
-          "blocker": "route economics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00417:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00421:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00422:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00423:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-ecosystem_builder-education_services",
-          "intervention_count": 4,
-          "active_count": 4,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "education_services",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:capability:education_services",
-            "unlock:project-guyana-proc-2026-00421:capability:education_services",
-            "unlock:project-guyana-proc-2026-00422:capability:education_services",
-            "unlock:project-guyana-proc-2026-00423:capability:education_services"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-demand_aggregation-ecosystem_builder-pooled-procurement-required",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "pooled procurement required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:demand_aggregation",
-            "unlock:project-guyana-proc-2026-00419:friction:demand_aggregation",
-            "unlock:project-guyana-proc-2026-00420:friction:demand_aggregation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-finance_fit-diaspora_investor-mandate-and-ticket-size-fit",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "diaspora_investor",
-          "blocker": "mandate and ticket-size fit",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:finance_fit",
-            "unlock:project-guyana-proc-2026-00419:friction:finance_fit",
-            "unlock:project-guyana-proc-2026-00420:friction:finance_fit"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-inter-island-logistics",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "regional_operator",
-          "blocker": "inter-island logistics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00419:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00420:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-partner_introduction-ecosystem_builder-local-delivery-partner-required",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "local delivery partner required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:partner_introduction",
-            "unlock:project-guyana-proc-2026-00419:friction:partner_introduction",
-            "unlock:project-guyana-proc-2026-00420:friction:partner_introduction"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-procurement_watcher-water_infrastructure",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "water_infrastructure",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:capability:water_infrastructure"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        },
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-procurement-eligibility",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "procurement eligibility",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        }
-      ]
+      "operator_campaigns": []
     },
     {
       "id": "coord-ccrif-payout-dm-tropical-cyclone-2017-01-01",
@@ -6456,7 +4838,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 74/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -6489,135 +4871,7 @@
       ],
       "unknowns": [],
       "intervention_state": [],
-      "operator_campaigns": [
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-cross-border-supplier-qualification",
-          "intervention_count": 5,
-          "active_count": 5,
-          "owner_persona": "procurement_watcher",
-          "blocker": "cross-border supplier qualification",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00417:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00421:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00422:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00423:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-route-economics",
-          "intervention_count": 5,
-          "active_count": 5,
-          "owner_persona": "regional_operator",
-          "blocker": "route economics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00417:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00421:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00422:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00423:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-ecosystem_builder-education_services",
-          "intervention_count": 4,
-          "active_count": 4,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "education_services",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:capability:education_services",
-            "unlock:project-guyana-proc-2026-00421:capability:education_services",
-            "unlock:project-guyana-proc-2026-00422:capability:education_services",
-            "unlock:project-guyana-proc-2026-00423:capability:education_services"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-demand_aggregation-ecosystem_builder-pooled-procurement-required",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "pooled procurement required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:demand_aggregation",
-            "unlock:project-guyana-proc-2026-00419:friction:demand_aggregation",
-            "unlock:project-guyana-proc-2026-00420:friction:demand_aggregation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-finance_fit-diaspora_investor-mandate-and-ticket-size-fit",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "diaspora_investor",
-          "blocker": "mandate and ticket-size fit",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:finance_fit",
-            "unlock:project-guyana-proc-2026-00419:friction:finance_fit",
-            "unlock:project-guyana-proc-2026-00420:friction:finance_fit"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-inter-island-logistics",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "regional_operator",
-          "blocker": "inter-island logistics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00419:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00420:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-partner_introduction-ecosystem_builder-local-delivery-partner-required",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "local delivery partner required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:partner_introduction",
-            "unlock:project-guyana-proc-2026-00419:friction:partner_introduction",
-            "unlock:project-guyana-proc-2026-00420:friction:partner_introduction"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-procurement_watcher-water_infrastructure",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "water_infrastructure",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:capability:water_infrastructure"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        },
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-procurement-eligibility",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "procurement eligibility",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        }
-      ]
+      "operator_campaigns": []
     },
     {
       "id": "coord-ccrif-payout-gd-tropical-cyclone-2024-01-01",
@@ -6806,7 +5060,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 74/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -6839,135 +5093,7 @@
       ],
       "unknowns": [],
       "intervention_state": [],
-      "operator_campaigns": [
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-cross-border-supplier-qualification",
-          "intervention_count": 5,
-          "active_count": 5,
-          "owner_persona": "procurement_watcher",
-          "blocker": "cross-border supplier qualification",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00417:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00421:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00422:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00423:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-route-economics",
-          "intervention_count": 5,
-          "active_count": 5,
-          "owner_persona": "regional_operator",
-          "blocker": "route economics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00417:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00421:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00422:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00423:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-ecosystem_builder-education_services",
-          "intervention_count": 4,
-          "active_count": 4,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "education_services",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:capability:education_services",
-            "unlock:project-guyana-proc-2026-00421:capability:education_services",
-            "unlock:project-guyana-proc-2026-00422:capability:education_services",
-            "unlock:project-guyana-proc-2026-00423:capability:education_services"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-demand_aggregation-ecosystem_builder-pooled-procurement-required",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "pooled procurement required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:demand_aggregation",
-            "unlock:project-guyana-proc-2026-00419:friction:demand_aggregation",
-            "unlock:project-guyana-proc-2026-00420:friction:demand_aggregation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-finance_fit-diaspora_investor-mandate-and-ticket-size-fit",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "diaspora_investor",
-          "blocker": "mandate and ticket-size fit",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:finance_fit",
-            "unlock:project-guyana-proc-2026-00419:friction:finance_fit",
-            "unlock:project-guyana-proc-2026-00420:friction:finance_fit"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-inter-island-logistics",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "regional_operator",
-          "blocker": "inter-island logistics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00419:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00420:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-partner_introduction-ecosystem_builder-local-delivery-partner-required",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "local delivery partner required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:partner_introduction",
-            "unlock:project-guyana-proc-2026-00419:friction:partner_introduction",
-            "unlock:project-guyana-proc-2026-00420:friction:partner_introduction"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-procurement_watcher-water_infrastructure",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "water_infrastructure",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:capability:water_infrastructure"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        },
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-procurement-eligibility",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "procurement eligibility",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        }
-      ]
+      "operator_campaigns": []
     },
     {
       "id": "coord-ccrif-payout-ht-earthquake-2010-01-01",
@@ -7156,7 +5282,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 54/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -7189,135 +5315,7 @@
       ],
       "unknowns": [],
       "intervention_state": [],
-      "operator_campaigns": [
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-cross-border-supplier-qualification",
-          "intervention_count": 5,
-          "active_count": 5,
-          "owner_persona": "procurement_watcher",
-          "blocker": "cross-border supplier qualification",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00417:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00421:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00422:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00423:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-route-economics",
-          "intervention_count": 5,
-          "active_count": 5,
-          "owner_persona": "regional_operator",
-          "blocker": "route economics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00417:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00421:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00422:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00423:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-ecosystem_builder-education_services",
-          "intervention_count": 4,
-          "active_count": 4,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "education_services",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:capability:education_services",
-            "unlock:project-guyana-proc-2026-00421:capability:education_services",
-            "unlock:project-guyana-proc-2026-00422:capability:education_services",
-            "unlock:project-guyana-proc-2026-00423:capability:education_services"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-demand_aggregation-ecosystem_builder-pooled-procurement-required",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "pooled procurement required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:demand_aggregation",
-            "unlock:project-guyana-proc-2026-00419:friction:demand_aggregation",
-            "unlock:project-guyana-proc-2026-00420:friction:demand_aggregation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-finance_fit-diaspora_investor-mandate-and-ticket-size-fit",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "diaspora_investor",
-          "blocker": "mandate and ticket-size fit",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:finance_fit",
-            "unlock:project-guyana-proc-2026-00419:friction:finance_fit",
-            "unlock:project-guyana-proc-2026-00420:friction:finance_fit"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-inter-island-logistics",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "regional_operator",
-          "blocker": "inter-island logistics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00419:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00420:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-partner_introduction-ecosystem_builder-local-delivery-partner-required",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "local delivery partner required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:partner_introduction",
-            "unlock:project-guyana-proc-2026-00419:friction:partner_introduction",
-            "unlock:project-guyana-proc-2026-00420:friction:partner_introduction"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-procurement_watcher-water_infrastructure",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "water_infrastructure",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:capability:water_infrastructure"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        },
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-procurement-eligibility",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "procurement eligibility",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        }
-      ]
+      "operator_campaigns": []
     },
     {
       "id": "coord-ccrif-payout-ht-earthquake-2021-01-01",
@@ -7506,7 +5504,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 54/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -7539,135 +5537,7 @@
       ],
       "unknowns": [],
       "intervention_state": [],
-      "operator_campaigns": [
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-cross-border-supplier-qualification",
-          "intervention_count": 5,
-          "active_count": 5,
-          "owner_persona": "procurement_watcher",
-          "blocker": "cross-border supplier qualification",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00417:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00421:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00422:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00423:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-route-economics",
-          "intervention_count": 5,
-          "active_count": 5,
-          "owner_persona": "regional_operator",
-          "blocker": "route economics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00417:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00421:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00422:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00423:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-ecosystem_builder-education_services",
-          "intervention_count": 4,
-          "active_count": 4,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "education_services",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:capability:education_services",
-            "unlock:project-guyana-proc-2026-00421:capability:education_services",
-            "unlock:project-guyana-proc-2026-00422:capability:education_services",
-            "unlock:project-guyana-proc-2026-00423:capability:education_services"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-demand_aggregation-ecosystem_builder-pooled-procurement-required",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "pooled procurement required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:demand_aggregation",
-            "unlock:project-guyana-proc-2026-00419:friction:demand_aggregation",
-            "unlock:project-guyana-proc-2026-00420:friction:demand_aggregation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-finance_fit-diaspora_investor-mandate-and-ticket-size-fit",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "diaspora_investor",
-          "blocker": "mandate and ticket-size fit",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:finance_fit",
-            "unlock:project-guyana-proc-2026-00419:friction:finance_fit",
-            "unlock:project-guyana-proc-2026-00420:friction:finance_fit"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-inter-island-logistics",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "regional_operator",
-          "blocker": "inter-island logistics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00419:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00420:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-partner_introduction-ecosystem_builder-local-delivery-partner-required",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "local delivery partner required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:partner_introduction",
-            "unlock:project-guyana-proc-2026-00419:friction:partner_introduction",
-            "unlock:project-guyana-proc-2026-00420:friction:partner_introduction"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-procurement_watcher-water_infrastructure",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "water_infrastructure",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:capability:water_infrastructure"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        },
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-procurement-eligibility",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "procurement eligibility",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        }
-      ]
+      "operator_campaigns": []
     },
     {
       "id": "coord-ccrif-payout-ht-tropical-cyclone-2016-01-01",
@@ -7856,7 +5726,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 54/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -7889,135 +5759,7 @@
       ],
       "unknowns": [],
       "intervention_state": [],
-      "operator_campaigns": [
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-cross-border-supplier-qualification",
-          "intervention_count": 5,
-          "active_count": 5,
-          "owner_persona": "procurement_watcher",
-          "blocker": "cross-border supplier qualification",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00417:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00421:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00422:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00423:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-route-economics",
-          "intervention_count": 5,
-          "active_count": 5,
-          "owner_persona": "regional_operator",
-          "blocker": "route economics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00417:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00421:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00422:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00423:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-ecosystem_builder-education_services",
-          "intervention_count": 4,
-          "active_count": 4,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "education_services",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:capability:education_services",
-            "unlock:project-guyana-proc-2026-00421:capability:education_services",
-            "unlock:project-guyana-proc-2026-00422:capability:education_services",
-            "unlock:project-guyana-proc-2026-00423:capability:education_services"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-demand_aggregation-ecosystem_builder-pooled-procurement-required",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "pooled procurement required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:demand_aggregation",
-            "unlock:project-guyana-proc-2026-00419:friction:demand_aggregation",
-            "unlock:project-guyana-proc-2026-00420:friction:demand_aggregation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-finance_fit-diaspora_investor-mandate-and-ticket-size-fit",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "diaspora_investor",
-          "blocker": "mandate and ticket-size fit",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:finance_fit",
-            "unlock:project-guyana-proc-2026-00419:friction:finance_fit",
-            "unlock:project-guyana-proc-2026-00420:friction:finance_fit"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-inter-island-logistics",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "regional_operator",
-          "blocker": "inter-island logistics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00419:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00420:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-partner_introduction-ecosystem_builder-local-delivery-partner-required",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "local delivery partner required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:partner_introduction",
-            "unlock:project-guyana-proc-2026-00419:friction:partner_introduction",
-            "unlock:project-guyana-proc-2026-00420:friction:partner_introduction"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-procurement_watcher-water_infrastructure",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "water_infrastructure",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:capability:water_infrastructure"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        },
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-procurement-eligibility",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "procurement eligibility",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        }
-      ]
+      "operator_campaigns": []
     },
     {
       "id": "coord-ccrif-payout-ht-tropical-cyclone-2025-01-01",
@@ -8206,7 +5948,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 54/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -8239,135 +5981,7 @@
       ],
       "unknowns": [],
       "intervention_state": [],
-      "operator_campaigns": [
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-cross-border-supplier-qualification",
-          "intervention_count": 5,
-          "active_count": 5,
-          "owner_persona": "procurement_watcher",
-          "blocker": "cross-border supplier qualification",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00417:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00421:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00422:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00423:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-route-economics",
-          "intervention_count": 5,
-          "active_count": 5,
-          "owner_persona": "regional_operator",
-          "blocker": "route economics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00417:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00421:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00422:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00423:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-ecosystem_builder-education_services",
-          "intervention_count": 4,
-          "active_count": 4,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "education_services",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:capability:education_services",
-            "unlock:project-guyana-proc-2026-00421:capability:education_services",
-            "unlock:project-guyana-proc-2026-00422:capability:education_services",
-            "unlock:project-guyana-proc-2026-00423:capability:education_services"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-demand_aggregation-ecosystem_builder-pooled-procurement-required",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "pooled procurement required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:demand_aggregation",
-            "unlock:project-guyana-proc-2026-00419:friction:demand_aggregation",
-            "unlock:project-guyana-proc-2026-00420:friction:demand_aggregation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-finance_fit-diaspora_investor-mandate-and-ticket-size-fit",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "diaspora_investor",
-          "blocker": "mandate and ticket-size fit",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:finance_fit",
-            "unlock:project-guyana-proc-2026-00419:friction:finance_fit",
-            "unlock:project-guyana-proc-2026-00420:friction:finance_fit"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-inter-island-logistics",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "regional_operator",
-          "blocker": "inter-island logistics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00419:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00420:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-partner_introduction-ecosystem_builder-local-delivery-partner-required",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "local delivery partner required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:partner_introduction",
-            "unlock:project-guyana-proc-2026-00419:friction:partner_introduction",
-            "unlock:project-guyana-proc-2026-00420:friction:partner_introduction"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-procurement_watcher-water_infrastructure",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "water_infrastructure",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:capability:water_infrastructure"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        },
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-procurement-eligibility",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "procurement eligibility",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        }
-      ]
+      "operator_campaigns": []
     },
     {
       "id": "coord-ccrif-payout-kn-tropical-cyclone-2017-01-01",
@@ -8556,7 +6170,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 74/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -8589,135 +6203,7 @@
       ],
       "unknowns": [],
       "intervention_state": [],
-      "operator_campaigns": [
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-cross-border-supplier-qualification",
-          "intervention_count": 5,
-          "active_count": 5,
-          "owner_persona": "procurement_watcher",
-          "blocker": "cross-border supplier qualification",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00417:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00421:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00422:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00423:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-route-economics",
-          "intervention_count": 5,
-          "active_count": 5,
-          "owner_persona": "regional_operator",
-          "blocker": "route economics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00417:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00421:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00422:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00423:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-ecosystem_builder-education_services",
-          "intervention_count": 4,
-          "active_count": 4,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "education_services",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:capability:education_services",
-            "unlock:project-guyana-proc-2026-00421:capability:education_services",
-            "unlock:project-guyana-proc-2026-00422:capability:education_services",
-            "unlock:project-guyana-proc-2026-00423:capability:education_services"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-demand_aggregation-ecosystem_builder-pooled-procurement-required",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "pooled procurement required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:demand_aggregation",
-            "unlock:project-guyana-proc-2026-00419:friction:demand_aggregation",
-            "unlock:project-guyana-proc-2026-00420:friction:demand_aggregation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-finance_fit-diaspora_investor-mandate-and-ticket-size-fit",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "diaspora_investor",
-          "blocker": "mandate and ticket-size fit",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:finance_fit",
-            "unlock:project-guyana-proc-2026-00419:friction:finance_fit",
-            "unlock:project-guyana-proc-2026-00420:friction:finance_fit"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-inter-island-logistics",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "regional_operator",
-          "blocker": "inter-island logistics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00419:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00420:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-partner_introduction-ecosystem_builder-local-delivery-partner-required",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "local delivery partner required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:partner_introduction",
-            "unlock:project-guyana-proc-2026-00419:friction:partner_introduction",
-            "unlock:project-guyana-proc-2026-00420:friction:partner_introduction"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-procurement_watcher-water_infrastructure",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "water_infrastructure",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:capability:water_infrastructure"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        },
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-procurement-eligibility",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "procurement eligibility",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        }
-      ]
+      "operator_campaigns": []
     },
     {
       "id": "coord-ccrif-payout-ni-tropical-cyclone-2016-01-01",
@@ -8906,7 +6392,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 68/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -8939,135 +6425,7 @@
       ],
       "unknowns": [],
       "intervention_state": [],
-      "operator_campaigns": [
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-cross-border-supplier-qualification",
-          "intervention_count": 5,
-          "active_count": 5,
-          "owner_persona": "procurement_watcher",
-          "blocker": "cross-border supplier qualification",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00417:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00421:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00422:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00423:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-route-economics",
-          "intervention_count": 5,
-          "active_count": 5,
-          "owner_persona": "regional_operator",
-          "blocker": "route economics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00417:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00421:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00422:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00423:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-ecosystem_builder-education_services",
-          "intervention_count": 4,
-          "active_count": 4,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "education_services",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:capability:education_services",
-            "unlock:project-guyana-proc-2026-00421:capability:education_services",
-            "unlock:project-guyana-proc-2026-00422:capability:education_services",
-            "unlock:project-guyana-proc-2026-00423:capability:education_services"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-demand_aggregation-ecosystem_builder-pooled-procurement-required",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "pooled procurement required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:demand_aggregation",
-            "unlock:project-guyana-proc-2026-00419:friction:demand_aggregation",
-            "unlock:project-guyana-proc-2026-00420:friction:demand_aggregation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-finance_fit-diaspora_investor-mandate-and-ticket-size-fit",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "diaspora_investor",
-          "blocker": "mandate and ticket-size fit",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:finance_fit",
-            "unlock:project-guyana-proc-2026-00419:friction:finance_fit",
-            "unlock:project-guyana-proc-2026-00420:friction:finance_fit"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-inter-island-logistics",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "regional_operator",
-          "blocker": "inter-island logistics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00419:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00420:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-partner_introduction-ecosystem_builder-local-delivery-partner-required",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "local delivery partner required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:partner_introduction",
-            "unlock:project-guyana-proc-2026-00419:friction:partner_introduction",
-            "unlock:project-guyana-proc-2026-00420:friction:partner_introduction"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-procurement_watcher-water_infrastructure",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "water_infrastructure",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:capability:water_infrastructure"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        },
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-procurement-eligibility",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "procurement eligibility",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        }
-      ]
+      "operator_campaigns": []
     },
     {
       "id": "coord-ccrif-payout-ni-tropical-cyclone-2022-01-01",
@@ -9256,7 +6614,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 68/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -9289,135 +6647,7 @@
       ],
       "unknowns": [],
       "intervention_state": [],
-      "operator_campaigns": [
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-cross-border-supplier-qualification",
-          "intervention_count": 5,
-          "active_count": 5,
-          "owner_persona": "procurement_watcher",
-          "blocker": "cross-border supplier qualification",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00417:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00421:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00422:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00423:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-route-economics",
-          "intervention_count": 5,
-          "active_count": 5,
-          "owner_persona": "regional_operator",
-          "blocker": "route economics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00417:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00421:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00422:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00423:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-ecosystem_builder-education_services",
-          "intervention_count": 4,
-          "active_count": 4,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "education_services",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:capability:education_services",
-            "unlock:project-guyana-proc-2026-00421:capability:education_services",
-            "unlock:project-guyana-proc-2026-00422:capability:education_services",
-            "unlock:project-guyana-proc-2026-00423:capability:education_services"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-demand_aggregation-ecosystem_builder-pooled-procurement-required",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "pooled procurement required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:demand_aggregation",
-            "unlock:project-guyana-proc-2026-00419:friction:demand_aggregation",
-            "unlock:project-guyana-proc-2026-00420:friction:demand_aggregation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-finance_fit-diaspora_investor-mandate-and-ticket-size-fit",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "diaspora_investor",
-          "blocker": "mandate and ticket-size fit",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:finance_fit",
-            "unlock:project-guyana-proc-2026-00419:friction:finance_fit",
-            "unlock:project-guyana-proc-2026-00420:friction:finance_fit"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-inter-island-logistics",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "regional_operator",
-          "blocker": "inter-island logistics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00419:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00420:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-partner_introduction-ecosystem_builder-local-delivery-partner-required",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "local delivery partner required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:partner_introduction",
-            "unlock:project-guyana-proc-2026-00419:friction:partner_introduction",
-            "unlock:project-guyana-proc-2026-00420:friction:partner_introduction"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-procurement_watcher-water_infrastructure",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "water_infrastructure",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:capability:water_infrastructure"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        },
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-procurement-eligibility",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "procurement eligibility",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        }
-      ]
+      "operator_campaigns": []
     },
     {
       "id": "coord-ccrif-payout-tc-tropical-cyclone-2008-01-01",
@@ -9606,7 +6836,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 74/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -9639,135 +6869,7 @@
       ],
       "unknowns": [],
       "intervention_state": [],
-      "operator_campaigns": [
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-cross-border-supplier-qualification",
-          "intervention_count": 5,
-          "active_count": 5,
-          "owner_persona": "procurement_watcher",
-          "blocker": "cross-border supplier qualification",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00417:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00421:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00422:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00423:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-route-economics",
-          "intervention_count": 5,
-          "active_count": 5,
-          "owner_persona": "regional_operator",
-          "blocker": "route economics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00417:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00421:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00422:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00423:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-ecosystem_builder-education_services",
-          "intervention_count": 4,
-          "active_count": 4,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "education_services",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:capability:education_services",
-            "unlock:project-guyana-proc-2026-00421:capability:education_services",
-            "unlock:project-guyana-proc-2026-00422:capability:education_services",
-            "unlock:project-guyana-proc-2026-00423:capability:education_services"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-demand_aggregation-ecosystem_builder-pooled-procurement-required",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "pooled procurement required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:demand_aggregation",
-            "unlock:project-guyana-proc-2026-00419:friction:demand_aggregation",
-            "unlock:project-guyana-proc-2026-00420:friction:demand_aggregation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-finance_fit-diaspora_investor-mandate-and-ticket-size-fit",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "diaspora_investor",
-          "blocker": "mandate and ticket-size fit",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:finance_fit",
-            "unlock:project-guyana-proc-2026-00419:friction:finance_fit",
-            "unlock:project-guyana-proc-2026-00420:friction:finance_fit"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-inter-island-logistics",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "regional_operator",
-          "blocker": "inter-island logistics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00419:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00420:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-partner_introduction-ecosystem_builder-local-delivery-partner-required",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "local delivery partner required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:partner_introduction",
-            "unlock:project-guyana-proc-2026-00419:friction:partner_introduction",
-            "unlock:project-guyana-proc-2026-00420:friction:partner_introduction"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-procurement_watcher-water_infrastructure",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "water_infrastructure",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:capability:water_infrastructure"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        },
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-procurement-eligibility",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "procurement eligibility",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        }
-      ]
+      "operator_campaigns": []
     },
     {
       "id": "coord-ccrif-payout-vc-tropical-cyclone-2024-01-01",
@@ -9956,7 +7058,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 74/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -9989,135 +7091,7 @@
       ],
       "unknowns": [],
       "intervention_state": [],
-      "operator_campaigns": [
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-cross-border-supplier-qualification",
-          "intervention_count": 5,
-          "active_count": 5,
-          "owner_persona": "procurement_watcher",
-          "blocker": "cross-border supplier qualification",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00417:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00421:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00422:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00423:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-route-economics",
-          "intervention_count": 5,
-          "active_count": 5,
-          "owner_persona": "regional_operator",
-          "blocker": "route economics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00417:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00421:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00422:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00423:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-ecosystem_builder-education_services",
-          "intervention_count": 4,
-          "active_count": 4,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "education_services",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:capability:education_services",
-            "unlock:project-guyana-proc-2026-00421:capability:education_services",
-            "unlock:project-guyana-proc-2026-00422:capability:education_services",
-            "unlock:project-guyana-proc-2026-00423:capability:education_services"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-demand_aggregation-ecosystem_builder-pooled-procurement-required",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "pooled procurement required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:demand_aggregation",
-            "unlock:project-guyana-proc-2026-00419:friction:demand_aggregation",
-            "unlock:project-guyana-proc-2026-00420:friction:demand_aggregation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-finance_fit-diaspora_investor-mandate-and-ticket-size-fit",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "diaspora_investor",
-          "blocker": "mandate and ticket-size fit",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:finance_fit",
-            "unlock:project-guyana-proc-2026-00419:friction:finance_fit",
-            "unlock:project-guyana-proc-2026-00420:friction:finance_fit"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-inter-island-logistics",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "regional_operator",
-          "blocker": "inter-island logistics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00419:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00420:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-partner_introduction-ecosystem_builder-local-delivery-partner-required",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "local delivery partner required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:partner_introduction",
-            "unlock:project-guyana-proc-2026-00419:friction:partner_introduction",
-            "unlock:project-guyana-proc-2026-00420:friction:partner_introduction"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-procurement_watcher-water_infrastructure",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "water_infrastructure",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:capability:water_infrastructure"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        },
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-procurement-eligibility",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "procurement eligibility",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        }
-      ]
+      "operator_campaigns": []
     },
     {
       "id": "coord-vuln-st-vincent-and-the-grenadines",
@@ -10348,135 +7322,7 @@
       ],
       "unknowns": [],
       "intervention_state": [],
-      "operator_campaigns": [
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-cross-border-supplier-qualification",
-          "intervention_count": 5,
-          "active_count": 5,
-          "owner_persona": "procurement_watcher",
-          "blocker": "cross-border supplier qualification",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00417:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00421:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00422:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00423:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-route-economics",
-          "intervention_count": 5,
-          "active_count": 5,
-          "owner_persona": "regional_operator",
-          "blocker": "route economics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00417:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00421:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00422:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00423:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-ecosystem_builder-education_services",
-          "intervention_count": 4,
-          "active_count": 4,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "education_services",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:capability:education_services",
-            "unlock:project-guyana-proc-2026-00421:capability:education_services",
-            "unlock:project-guyana-proc-2026-00422:capability:education_services",
-            "unlock:project-guyana-proc-2026-00423:capability:education_services"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-demand_aggregation-ecosystem_builder-pooled-procurement-required",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "pooled procurement required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:demand_aggregation",
-            "unlock:project-guyana-proc-2026-00419:friction:demand_aggregation",
-            "unlock:project-guyana-proc-2026-00420:friction:demand_aggregation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-finance_fit-diaspora_investor-mandate-and-ticket-size-fit",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "diaspora_investor",
-          "blocker": "mandate and ticket-size fit",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:finance_fit",
-            "unlock:project-guyana-proc-2026-00419:friction:finance_fit",
-            "unlock:project-guyana-proc-2026-00420:friction:finance_fit"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-inter-island-logistics",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "regional_operator",
-          "blocker": "inter-island logistics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00419:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00420:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-partner_introduction-ecosystem_builder-local-delivery-partner-required",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "local delivery partner required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:partner_introduction",
-            "unlock:project-guyana-proc-2026-00419:friction:partner_introduction",
-            "unlock:project-guyana-proc-2026-00420:friction:partner_introduction"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-procurement_watcher-water_infrastructure",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "water_infrastructure",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:capability:water_infrastructure"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        },
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-procurement-eligibility",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "procurement eligibility",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        }
-      ]
+      "operator_campaigns": []
     },
     {
       "id": "coord-ccrif-payout-jm-tropical-cyclone-2024-01-01",
@@ -10650,7 +7496,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 72/100",
         "Matched 3 of 3 required capabilities across 4 regional nodes",
         "Registry evidence from 4 primary-source organisations"
       ],
@@ -10678,135 +7524,7 @@
       ],
       "unknowns": [],
       "intervention_state": [],
-      "operator_campaigns": [
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-cross-border-supplier-qualification",
-          "intervention_count": 5,
-          "active_count": 5,
-          "owner_persona": "procurement_watcher",
-          "blocker": "cross-border supplier qualification",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00417:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00421:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00422:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00423:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-route-economics",
-          "intervention_count": 5,
-          "active_count": 5,
-          "owner_persona": "regional_operator",
-          "blocker": "route economics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00417:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00421:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00422:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00423:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-ecosystem_builder-education_services",
-          "intervention_count": 4,
-          "active_count": 4,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "education_services",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:capability:education_services",
-            "unlock:project-guyana-proc-2026-00421:capability:education_services",
-            "unlock:project-guyana-proc-2026-00422:capability:education_services",
-            "unlock:project-guyana-proc-2026-00423:capability:education_services"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-demand_aggregation-ecosystem_builder-pooled-procurement-required",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "pooled procurement required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:demand_aggregation",
-            "unlock:project-guyana-proc-2026-00419:friction:demand_aggregation",
-            "unlock:project-guyana-proc-2026-00420:friction:demand_aggregation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-finance_fit-diaspora_investor-mandate-and-ticket-size-fit",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "diaspora_investor",
-          "blocker": "mandate and ticket-size fit",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:finance_fit",
-            "unlock:project-guyana-proc-2026-00419:friction:finance_fit",
-            "unlock:project-guyana-proc-2026-00420:friction:finance_fit"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-inter-island-logistics",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "regional_operator",
-          "blocker": "inter-island logistics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00419:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00420:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-partner_introduction-ecosystem_builder-local-delivery-partner-required",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "local delivery partner required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:partner_introduction",
-            "unlock:project-guyana-proc-2026-00419:friction:partner_introduction",
-            "unlock:project-guyana-proc-2026-00420:friction:partner_introduction"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-procurement_watcher-water_infrastructure",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "water_infrastructure",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:capability:water_infrastructure"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        },
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-procurement-eligibility",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "procurement eligibility",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        }
-      ]
+      "operator_campaigns": []
     },
     {
       "id": "coord-ccrif-payout-jm-tropical-cyclone-2025-01-01",
@@ -10980,7 +7698,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 72/100",
         "Matched 3 of 3 required capabilities across 4 regional nodes",
         "Registry evidence from 4 primary-source organisations"
       ],
@@ -11008,135 +7726,7 @@
       ],
       "unknowns": [],
       "intervention_state": [],
-      "operator_campaigns": [
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-cross-border-supplier-qualification",
-          "intervention_count": 5,
-          "active_count": 5,
-          "owner_persona": "procurement_watcher",
-          "blocker": "cross-border supplier qualification",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00417:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00421:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00422:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00423:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-route-economics",
-          "intervention_count": 5,
-          "active_count": 5,
-          "owner_persona": "regional_operator",
-          "blocker": "route economics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00417:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00421:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00422:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00423:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-ecosystem_builder-education_services",
-          "intervention_count": 4,
-          "active_count": 4,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "education_services",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00416:capability:education_services",
-            "unlock:project-guyana-proc-2026-00421:capability:education_services",
-            "unlock:project-guyana-proc-2026-00422:capability:education_services",
-            "unlock:project-guyana-proc-2026-00423:capability:education_services"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-demand_aggregation-ecosystem_builder-pooled-procurement-required",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "pooled procurement required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:demand_aggregation",
-            "unlock:project-guyana-proc-2026-00419:friction:demand_aggregation",
-            "unlock:project-guyana-proc-2026-00420:friction:demand_aggregation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-finance_fit-diaspora_investor-mandate-and-ticket-size-fit",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "diaspora_investor",
-          "blocker": "mandate and ticket-size fit",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:finance_fit",
-            "unlock:project-guyana-proc-2026-00419:friction:finance_fit",
-            "unlock:project-guyana-proc-2026-00420:friction:finance_fit"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-logistics_validation-regional_operator-inter-island-logistics",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "regional_operator",
-          "blocker": "inter-island logistics",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00419:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00420:friction:logistics_validation"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-partner_introduction-ecosystem_builder-local-delivery-partner-required",
-          "intervention_count": 3,
-          "active_count": 3,
-          "owner_persona": "ecosystem_builder",
-          "blocker": "local delivery partner required",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00418:friction:partner_introduction",
-            "unlock:project-guyana-proc-2026-00419:friction:partner_introduction",
-            "unlock:project-guyana-proc-2026-00420:friction:partner_introduction"
-          ],
-          "updated_at": "2026-08-23T16:39:19.951659+00:00"
-        },
-        {
-          "slug": "campaign-capability_verification-procurement_watcher-water_infrastructure",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "water_infrastructure",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:capability:water_infrastructure"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        },
-        {
-          "slug": "campaign-eligibility_verification-procurement_watcher-procurement-eligibility",
-          "intervention_count": 1,
-          "active_count": 1,
-          "owner_persona": "procurement_watcher",
-          "blocker": "procurement eligibility",
-          "intervention_type": null,
-          "interventions": [
-            "unlock:project-guyana-proc-2026-00363:friction:eligibility_verification"
-          ],
-          "updated_at": "2026-07-24T00:40:20.352803+00:00"
-        }
-      ]
+      "operator_campaigns": []
     }
   ]
 }
