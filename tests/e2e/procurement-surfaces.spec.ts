@@ -27,8 +27,10 @@ test('opportunity resolution renders dated coverage evidence', async ({ page }) 
   page.on('pageerror', error => errors.push(error.message));
   await page.goto('/opportunity-resolution', { waitUntil: 'networkidle' });
   await expect(page.getByText('Source cadence & coverage gaps')).toBeVisible();
+  await expect(page.getByText('Distinct outcome notices')).toBeVisible();
   expect(await page.locator('.cov-row').count()).toBeGreaterThan(0);
   await expect(page.locator('.cov-row').first()).toContainText(/day(s)? observed/);
+  await expect(page.locator('.cov-row').first()).toContainText(/outcome snapshots?/);
   expect(errors).toEqual([]);
 });
 

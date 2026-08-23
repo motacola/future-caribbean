@@ -457,10 +457,11 @@ def derive_coverage(corpus: dict[str, Any], today: date | None = None) -> dict[s
     ``last_seen_at``); nothing is fetched or inferred.
     """
     today = today or datetime.now(timezone.utc).date()
-    tenders = list(corpus.get("tenders", {}).values())
+    tender_items = list(corpus.get("tenders", {}).items())
+    tenders = [entry for _, entry in tender_items]
 
     portals: dict[str, dict[str, Any]] = {}
-    for entry in tenders:
+    for tender_key, entry in tender_items:
         # Opportunities observed by a portal.
         for src in entry.get("generating_sources", []):
             p = portals.setdefault(src, _blank_portal(src))
@@ -477,7 +478,10 @@ def derive_coverage(corpus: dict[str, Any], today: date | None = None) -> dict[s
                 p["observation_days"].add(day)
             st = (notice.get("status") or "").lower()
             if st in {"awarded", "award", "cancelled", "canceled", "annulled"}:
-                p["outcome_notices"] += 1
+                p["outcome_snapshot_observations"] += 1
+                p["outcome_notice_ids"].add(
+                    _outcome_notice_identity(tender_key, notice, st)
+                )
             # Last-seen age per portal.
             last = notice.get("observed_at")
             if last and (p["last_seen_at"] is None or last > p["last_seen_at"]):
@@ -523,7 +527,8 @@ def derive_coverage(corpus: dict[str, Any], today: date | None = None) -> dict[s
             "opportunities_observed": p["opportunities"],
             "total_snapshots": p["snapshots"],
             "distinct_observation_days": distinct_days,
-            "outcome_notices": p["outcome_notices"],
+            "outcome_notices": len(p["outcome_notice_ids"]),
+            "outcome_snapshot_observations": p["outcome_snapshot_observations"],
             "resolutions_recorded": p["resolutions"],
             "resolutions_of_prior_detection": p["resolutions_of_prior_detection"],
             "last_seen_at": last,
@@ -557,12 +562,41 @@ def _blank_portal(source: str) -> dict[str, Any]:
         "opportunities": 0,
         "snapshots": 0,
         "observation_days": set(),
-        "outcome_notices": 0,
+        "outcome_notice_ids": set(),
+        "outcome_snapshot_observations": 0,
         "resolutions": 0,
         "resolutions_of_prior_detection": 0,
         "first_seen_at": None,
         "last_seen_at": None,
     }
+
+
+def _outcome_notice_identity(
+    tender_key: str,
+    notice: dict[str, Any],
+    normalized_status: str,
+) -> tuple[str, ...]:
+    """Return an outcome identity that deliberately excludes ``observed_at``.
+
+    A portal may expose one notice on many polling days. Prefer the portal's
+    stable reference, then its URL; only fall back to tender/status/date fields
+    when neither identifier exists.
+    """
+    source = str(notice.get("source") or "")
+    source_ref = str(notice.get("source_ref_id") or "").strip()
+    if source_ref:
+        return (source, tender_key, "source_ref_id", source_ref, normalized_status)
+    url = str(notice.get("url") or "").strip()
+    if url:
+        return (source, tender_key, "url", url, normalized_status)
+    return (
+        source,
+        "tender",
+        tender_key,
+        normalized_status,
+        str(notice.get("published") or notice.get("notice_date") or ""),
+        str(notice.get("closing_date") or ""),
+    )
 
 
 def _cadence_label(distinct_days: int, age_days: int | None) -> tuple[str, str]:
