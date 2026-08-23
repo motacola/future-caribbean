@@ -98,15 +98,30 @@ def main() -> None:
         # entries measure who responded, not how much went out; they are
         # already rendered as response pills. Fall back to entry count only
         # when the rolling dispatch artifact no longer holds that cycle.
-        dispatch_count = len(cycle_dispatches) if cycle_dispatches else len(entries)
+        # When that rollover happens, preserve the previously PUBLISHED
+        # count/markets instead of shrinking the receipt to the capped
+        # 50-entry feedback sample (Codex P2 on PR #30) — same principle
+        # as the historical lead preservation below.
+        previous = previous_by_cycle.get(cycle_id, {})
+        if cycle_dispatches:
+            dispatch_count = len(cycle_dispatches)
+        elif previous.get("dispatch_count") is not None:
+            dispatch_count = previous["dispatch_count"]
+        else:
+            dispatch_count = len(entries)
 
         # Unique countries by response volume desc. Markets must come from
         # the same source as dispatch_count above: live cycles report the
         # countries the published dispatches actually span (the feedback
-        # set is a small sample and understates coverage); feedback only
-        # for historical cycles pruned from the rolling artifact.
+        # set is a small sample and understates coverage).
+        if cycle_dispatches:
+            country_rows: list[dict] = cycle_dispatches
+        elif previous.get("countries"):
+            country_rows = []
+            countries = list(previous["countries"])
+        else:
+            country_rows = entries
         country_counts: dict[str, int] = {}
-        country_rows = cycle_dispatches if cycle_dispatches else entries
         for e in country_rows:
             country = e.get("country", "") or e.get("country_cluster", "")
             if country:
