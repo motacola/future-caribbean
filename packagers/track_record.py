@@ -100,9 +100,13 @@ def main() -> None:
         # when the rolling dispatch artifact no longer holds that cycle.
         dispatch_count = len(cycle_dispatches) if cycle_dispatches else len(entries)
 
-        # Unique countries by response volume desc
+        # Unique countries by response volume desc. Markets must come from
+        # the same source as dispatch_count above: live cycles report the
+        # countries the published dispatches actually span (the feedback
+        # set is a small sample and understates coverage); feedback only
+        # for historical cycles pruned from the rolling artifact.
         country_counts: dict[str, int] = {}
-        country_rows = entries if entries else cycle_dispatches
+        country_rows = cycle_dispatches if cycle_dispatches else entries
         for e in country_rows:
             country = e.get("country", "") or e.get("country_cluster", "")
             if country:

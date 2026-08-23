@@ -66,6 +66,13 @@ def test_packager_grouping():
     current_dispatches = [d for d in dispatches if d.get("cycle_id") == current_cycle_id]
     assert current_cycle["dispatch_count"] == len(current_dispatches)
     assert current_cycle["countries"]
+    # Markets must derive from the same published dispatches as the count
+    # (Codex P2, PR #29): the feedback sample understates real coverage.
+    expected_markets = {
+        d.get("country", "") or d.get("country_cluster", "")
+        for d in current_dispatches
+    } - {""}
+    assert set(current_cycle["countries"]) == expected_markets
 
     if older_cycle:
         assert isinstance(older_cycle["lead"]["country"], str)
