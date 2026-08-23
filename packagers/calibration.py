@@ -574,10 +574,14 @@ def reliability(ledger: dict[str, Any]) -> dict[str, Any]:
         "log_loss": log_loss(pairs),
         "calibration_error": calibration_error,
         # Score computed ONLY over externally corroborated resolutions.
-        # None until the desk earns it: internal-persistence resolution
-        # (our own pipeline agreeing with itself) is excluded here so a
-        # public accuracy claim can never rest on self-graded homework.
-        "brier_external_only": brier_score(external_pairs) if external_pairs else None,
+        # None until the desk earns it twice over: internal-persistence
+        # resolution (our own pipeline agreeing with itself) is excluded,
+        # AND the external sample must clear MIN_SAMPLE before any number
+        # is published — one lucky observation is not a track record
+        # (Codex P2).
+        "brier_external_only": (
+            brier_score(external_pairs) if len(external_pairs) >= MIN_SAMPLE else None
+        ),
         "external_resolved_n": len(external_pairs),
         "chain_intact": chain_ok,
         "chain_break_at": chain_break,
