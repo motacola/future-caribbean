@@ -1,6 +1,6 @@
 {
   "cycle_intro": "Lead: Guyana. 3 converging signal(s) across 4 source(s). Signals: \ud83d\udcbc Investment + \ud83c\udfd6\ufe0f Tourism + \ud83d\udc8e Investment.",
-  "generated_at": "2026-08-22 16:36 UTC",
+  "generated_at": "2026-08-23 01:57 UTC",
   "items": [
     {
       "band": "immediate",
@@ -131,8 +131,8 @@
     {
       "band": "validation",
       "channel": "Telegram digest",
-      "country": "Excess Rainfall policy - Trinidad",
-      "freshness": "intensified",
+      "country": "St. Vincent & the Grenadines",
+      "freshness": "sustained",
       "kind": "ccrif_payout",
       "metrics": {
         "decision_changed": null,
@@ -144,14 +144,14 @@
       "persona": "regional intelligence",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
       "score": 84,
-      "signal_id": "ccrif-payout-tt-excess_rainfall-2017-01-01"
+      "signal_id": "ccrif-payout-vc-tropical_cyclone-2024-01-01"
     },
     {
       "band": "validation",
       "channel": "Telegram digest",
       "country": "Eastern Caribbean Currency Union",
       "freshness": "sustained",
-      "kind": "eccb_credit_surge",
+      "kind": "eccb_deposit_growth",
       "metrics": {
         "decision_changed": null,
         "forwarded": null,
@@ -162,7 +162,7 @@
       "persona": "regional intelligence",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
       "score": 76,
-      "signal_id": "eccb-credit-surge-eccu"
+      "signal_id": "eccb-deposit-growth-eccu"
     },
     {
       "band": "monitor",

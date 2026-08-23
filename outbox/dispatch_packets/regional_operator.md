@@ -2,16 +2,16 @@
 
 **Decision job:** Operational readiness and bid pipeline assessment
 **Delivery channel:** Telegram
-**Generated:** Aug 22, 2026 at 16:36 UTC
-**Dispatches in this packet:** 4
+**Generated:** Aug 23, 2026 at 01:57 UTC
+**Dispatches in this packet:** 3
 
 ---
 
-## Dispatches (4)
+## Dispatches (3)
 
 ### 1. Bahamas, Belize, Grenada: signal detected
 
-**ID:** `DSP-20260822-028` | **Country:** Bahamas, Belize, Grenada | **Confidence:** 🔴 Immediate | 100/100 | A - multi-source
+**ID:** `DSP-20260823-028` | **Country:** Bahamas, Belize, Grenada | **Confidence:** 🔴 Immediate | 100/100 | A - multi-source
 **Channel:** Telegram | **Window:** 21 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -25,7 +25,7 @@
 
 ### 2. CARICOM: 9 active procurements — bidding window open
 
-**ID:** `DSP-20260822-013` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 95/100 | B - cross-source
+**ID:** `DSP-20260823-013` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 95/100 | B - cross-source
 **Channel:** Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** replied
 
@@ -37,27 +37,13 @@
 **Decision to influence:** Which procurement or project opportunity to pursue
 **Routing rationale:** Active procurement directly maps to operational capacity needs — first to respond wins
 
-### 3. Eastern Caribbean Currency Union: 5.8%
+### 3. Eastern Caribbean Currency Union: 4.6%
 
-**ID:** `DSP-20260822-214` | **Country:** Eastern Caribbean Currency Union | **Confidence:** 🟡 Validation | 76/100 | C - single-source
-**Channel:** Telegram | **Window:** 21 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Private sector credit: EC$13,350.8M; Total deposits: EC$22,353.3M; Net foreign assets: EC$14,080.2M; Period: 2025 (YoY: +5.8%)
-**Detail:** 5.8%
-**Grade:** C - single-source
-
-**Recommended action:** Review operational readiness for Eastern Caribbean Currency Union opportunities. 5.8% — assess capacity and bid pipeline.
-**Decision to influence:** Private sector credit expansion = banking confidence = investment timing signal
-**Routing rationale:** Deposit growth = local liquidity = procurement and supply chain capacity
-
-### 4. Eastern Caribbean Currency Union: 4.6%
-
-**ID:** `DSP-20260822-217` | **Country:** Eastern Caribbean Currency Union | **Confidence:** 🟡 Validation | 72/100 | C - single-source
+**ID:** `DSP-20260823-097` | **Country:** Eastern Caribbean Currency Union | **Confidence:** 🟡 Validation | 76/100 | C - single-source
 **Channel:** Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** Total deposits: EC$22,353.3M; Period: 2025 (YoY: +4.6%)
+**Evidence:** Total deposits growth: +4.6% YoY (threshold 3%); Private sector credit growth: +5.8% YoY (threshold 5%); Total deposits: EC$22,353.3M; Period: 2025 (YoY: +4.6%)
 **Detail:** 4.6%
 **Grade:** C - single-source
 

@@ -1,12 +1,12 @@
 {
-  "signal_id": "supply-chain-bahamas-belize-grenada",
-  "dispatch_id": "DSP-20260823-028",
-  "country": "Bahamas, Belize, Grenada",
-  "signal_title": "Bahamas, Belize, Grenada: signal detected",
+  "signal_id": "regional-investment_signal-20260823",
+  "dispatch_id": "DSP-20260823-001",
+  "country": "Caribwide",
+  "signal_title": "Regional FDI snapshot: 3 countries with active capital movement",
   "confidence_score": 78,
-  "raw_confidence_score": 102,
+  "raw_confidence_score": 90,
   "action_readiness": "medium (no dated country procurement or news corroboration)",
-  "evidence_grade": "A - multi-source",
+  "evidence_grade": "B - cross-source",
   "sector_hypotheses": [],
   "supporting_projects": [],
   "procurement_matches": [
@@ -68,8 +68,8 @@
     "https://www.caribank.org/work-with-us/procurement/procurement-plans/grenada-education-enhancement-project-phase-ii"
   ],
   "unresolved_questions": [
-    "Which specific sectors are driving the movement in Bahamas, Belize, Grenada? No official sector-breakdown dataset matched this cycle.",
-    "No live Bahamas, Belize, Grenada-specific procurement notice matched this cycle — check CDB and national tender portals directly.",
+    "Which specific sectors are driving the movement in Caribwide? No official sector-breakdown dataset matched this cycle.",
+    "No live Caribwide-specific procurement notice matched this cycle — check CDB and national tender portals directly.",
     "No registry-backed local operators matched — source two credible operators via the listed institutions.",
     "Validate that the underlying FDI movement is sustained, not a one-off transaction or statistical revision."
   ],
