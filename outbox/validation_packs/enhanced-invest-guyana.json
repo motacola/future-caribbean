@@ -10,8 +10,9 @@
   "sector_hypotheses": [
     {
       "sector": "Oil & gas and offshore support services",
-      "basis": "Analyst prior from widely reported sector drivers — requires local confirmation",
-      "status": "unconfirmed"
+      "basis": "Google News — Guyana: MODEC’s FPSO reaches Guyana as ExxonMobil’s fifth oil project nears start-up - Offshore-Energy.biz",
+      "status": "corroborated",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQYWZOQ3EySk03UE9vYjZ0OS1ycTk3TlZRQVRnSHdid19uLVVWdFdFSEZYanVrS0J3YUl0RmRaQWd5X3lGY3MwUkF1RnhwUWs1WTRETV9pb0tabWpZZEdzM1QxUjVCOGFLYVMzLTBqbDhJTWZXeFZ5cXM5UHJuc19rT2RxS1NiUGk2LWN2ZERNTnZQYUNtMVc4SU9XeThMYzNxS1NvdXhsQUNPdVE?oc=5"
     },
     {
       "sector": "Construction and infrastructure",
@@ -167,6 +168,7 @@
     "https://data.iadb.org/en/search?q=Guyana%3A%20Latin%20American%20Public%20Opinion%20Pr",
     "https://data.iadb.org/en/search?q=Productivity%2C%20Technology%20and%20Innovation%20",
     "https://eprocure.gov.gy/",
+    "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQYWZOQ3EySk03UE9vYjZ0OS1ycTk3TlZRQVRnSHdid19uLVVWdFdFSEZYanVrS0J3YUl0RmRaQWd5X3lGY3MwUkF1RnhwUWs1WTRETV9pb0tabWpZZEdzM1QxUjVCOGFLYVMzLTBqbDhJTWZXeFZ5cXM5UHJuc19rT2RxS1NiUGk2LWN2ZERNTnZQYUNtMVc4SU9XeThMYzNxS1NvdXhsQUNPdVE?oc=5",
     "https://statistics.caricom.org/?country_data=guyana-balance-of-payments-2000-2024",
     "https://statistics.caricom.org/?country_data=guyana-monthly-consumer-price-index-cpi-by-expenditure-category"
   ],
@@ -187,10 +189,10 @@
     }
   ],
   "advance_or_reject_recommendation": "advance",
-  "recommendation_reason": "Calibrated confidence 100/100 with 3 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.",
-  "last_validated_at": "2026-08-24T13:10:33.107323+00:00",
+  "recommendation_reason": "Calibrated confidence 100/100 with 4 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.",
+  "last_validated_at": "2026-08-24T16:52:23.651800+00:00",
   "coordination_path": null,
-  "evidence_fingerprint": "30024be8e9b88b89",
+  "evidence_fingerprint": "742781c5253c3e97",
   "cycles_since_refresh": 0,
   "evidence_freshness": "refreshing"
 }

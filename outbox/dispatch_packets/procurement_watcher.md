@@ -2,7 +2,7 @@
 
 **Decision job:** Project pipeline tracking and expression of interest preparation
 **Delivery channel:** Email brief
-**Generated:** Aug 24, 2026 at 13:10 UTC
+**Generated:** Aug 24, 2026 at 16:52 UTC
 **Dispatches in this packet:** 2
 
 ---

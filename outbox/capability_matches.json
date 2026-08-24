@@ -1,22 +1,22 @@
 {
  "schema_version": 1,
  "registry_status": "pilot",
- "total_tenders": 1039,
- "classified_tenders": 414,
- "tenders_with_capability_match": 414,
+ "total_tenders": 1040,
+ "classified_tenders": 415,
+ "tenders_with_capability_match": 415,
  "by_capability": {
-  "civil_engineering": 199,
+  "civil_engineering": 200,
   "construction_delivery": 169,
-  "shipping_logistics": 160,
-  "warehousing_distribution": 87,
+  "shipping_logistics": 161,
+  "warehousing_distribution": 88,
   "digital_services": 54,
   "ict_integration": 54,
   "climate_resilience": 31,
   "aviation_infrastructure": 10
  },
  "by_country": {
-  "Jamaica": 733,
-  "Trinidad & Tobago": 528,
+  "Jamaica": 736,
+  "Trinidad & Tobago": 530,
   "Guyana": 200,
   "Barbados": 139,
   "Eastern Caribbean / OECS": 85
@@ -15553,6 +15553,115 @@
         {
          "source": "Trinidad and Tobago Ministry of Trade and Industry",
          "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    }
+   ],
+   "has_capability_match": true
+  },
+  {
+   "tender_id": "guyana-74a917bc7542",
+   "country": "Guyana",
+   "title": "Rehabilitation and Upgrade of Mahaica Bridge to Abary Bridge Road Corridor",
+   "buyer": "31-Ministry of Public Works",
+   "lifecycle_state": "detected",
+   "sector": "transport_and_logistics",
+   "classification": "deterministic_keyword",
+   "matched_keywords": [
+    "bridge",
+    "road"
+   ],
+   "required_capabilities": [
+    "civil_engineering",
+    "shipping_logistics",
+    "warehousing_distribution"
+   ],
+   "capability_matches": [
+    {
+     "capability": "civil_engineering",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "shipping_logistics",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 5,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Port Authority of Trinidad and Tobago",
+         "url": "https://www.patnt.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "warehousing_distribution",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 5,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
          "grade": "primary"
         }
        ],
