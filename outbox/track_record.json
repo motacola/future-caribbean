@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-23T20:35:29.704460+00:00",
+  "generated_at": "2026-08-24T01:54:45.072268+00:00",
   "feedback_provenance": "simulated",
   "current_boosts": {
     "enhanced_investment": {
@@ -17,20 +17,48 @@
       "Guyana": -4,
       "Suriname": -4
     },
-    "food_security": {
-      "CARICOM": -4
-    },
     "ccrif_payout": {
-      "Turks and Caicos Islands": -8,
-      "Anguilla": -8,
-      "St. Kitts and Nevis": -8,
-      "Dominica": -8,
-      "St. Vincent & the Grenadines": -8,
-      "Grenada": -8,
-      "Jamaica": -10
+      "Haiti": -32,
+      "Barbados": -18,
+      "Nicaragua": -18
     }
   },
   "cycles": [
+    {
+      "cycle_id": "20260824",
+      "responses": {
+        "forwarded": 0,
+        "replied": 0,
+        "opened": 0,
+        "ignored": 0,
+        "decision_changed": 0
+      },
+      "engagement_by_kind": {},
+      "dispatch_count": 97,
+      "countries": [
+        "Haiti",
+        "Barbados",
+        "Jamaica",
+        "Nicaragua",
+        "Guyana",
+        "Suriname",
+        "CARICOM",
+        "Caribwide",
+        "Turks and Caicos Islands",
+        "Anguilla",
+        "St. Kitts and Nevis",
+        "Dominica",
+        "St. Vincent & the Grenadines",
+        "Grenada",
+        "Bahamas, Belize, Grenada",
+        "Eastern Caribbean Currency Union",
+        "St. Vincent and the Grenadines"
+      ],
+      "lead": {
+        "country": "Guyana",
+        "title": "Money is moving into Guyana — up 860.3%, on one official source so far"
+      }
+    },
     {
       "cycle_id": "20260823",
       "responses": {
