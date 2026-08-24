@@ -2,7 +2,7 @@
   "instance": "climate",
   "instance_label": "Climate & Catastrophe Risk",
   "cycle_id": "20260824",
-  "generated_at": "2026-08-24T16:52:24.080218+00:00",
+  "generated_at": "2026-08-24T20:45:01.111905+00:00",
   "clusters": [
     {
       "cluster_id": "CLIM-tropical-outlook",
@@ -29,57 +29,9 @@
           "action": "Tropical outlook active \u2014 NHC basin outlook active. Move readiness posture up; verify supply and communication chains across exposed islands."
         }
       ]
-    },
-    {
-      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.3",
-      "country_cluster": "San Juan and Vicinity",
-      "signal_kind": "hazard_alert",
-      "title": "San Juan and Vicinity: Heat Advisory in effect (Moderate)",
-      "evidence": "NOAA NWS: Heat Advisory issued August 24 at 10:10AM AST until August 24 at 4:00PM AST by NWS San Juan PR",
-      "evidence_grade": "B - official alert",
-      "confidence_score": 80,
-      "freshness": "new",
-      "decision": "Hazard response and exposure assessment",
-      "risk_flags": [],
-      "personas": [
-        {
-          "persona": "Resilience Planner",
-          "channel": "Telegram/SMS alert",
-          "action": "Active hazard alert \u2014 Heat Advisory \u2014 Moderate (San Juan and Vicinity). Pre-position resources and confirm evacuation/shelter readiness in the affected area now."
-        },
-        {
-          "persona": "Insurer / Reinsurer",
-          "channel": "Email + alert",
-          "action": "Exposure check \u2014 Heat Advisory \u2014 Moderate (San Juan and Vicinity). Flag policies in the affected zone and prepare parametric-trigger assessment."
-        }
-      ]
-    },
-    {
-      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.4",
-      "country_cluster": "Bayamon, PR",
-      "signal_kind": "hazard_alert",
-      "title": "Bayamon, PR: Flood Advisory in effect (Minor)",
-      "evidence": "NOAA NWS: Flood Advisory issued August 24 at 12:31PM AST until August 24 at 3:30PM AST by NWS San Juan PR",
-      "evidence_grade": "C - advisory",
-      "confidence_score": 60,
-      "freshness": "new",
-      "decision": "Hazard response and exposure assessment",
-      "risk_flags": [],
-      "personas": [
-        {
-          "persona": "Resilience Planner",
-          "channel": "Telegram/SMS alert",
-          "action": "Active hazard alert \u2014 Flood Advisory \u2014 Minor (Bayamon, PR). Pre-position resources and confirm evacuation/shelter readiness in the affected area now."
-        },
-        {
-          "persona": "Insurer / Reinsurer",
-          "channel": "Email + alert",
-          "action": "Exposure check \u2014 Flood Advisory \u2014 Minor (Bayamon, PR). Flag policies in the affected zone and prepare parametric-trigger assessment."
-        }
-      ]
     }
   ],
-  "dispatch_count": 6,
+  "dispatch_count": 2,
   "sources": [
     "NOAA NWS",
     "NDBC buoys",
