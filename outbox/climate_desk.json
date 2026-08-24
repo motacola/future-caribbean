@@ -2,7 +2,7 @@
   "instance": "climate",
   "instance_label": "Climate & Catastrophe Risk",
   "cycle_id": "20260824",
-  "generated_at": "2026-08-24T01:54:45.378372+00:00",
+  "generated_at": "2026-08-24T04:57:53.392272+00:00",
   "clusters": [
     {
       "cluster_id": "CLIM-tropical-outlook",
@@ -29,33 +29,9 @@
           "action": "Tropical outlook active \u2014 NHC basin outlook active. Move readiness posture up; verify supply and communication chains across exposed islands."
         }
       ]
-    },
-    {
-      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.4",
-      "country_cluster": "Atlantic Waters of Puerto Rico AND USVI from 10 NM to 19.5N",
-      "signal_kind": "hazard_alert",
-      "title": "Atlantic Waters of Puerto Rico AND USVI from 10 NM to 19.5N: Marine Weather Statement in effect (Minor)",
-      "evidence": "NOAA NWS: Marine Weather Statement issued August 23 at 8:49PM AST by NWS San Juan PR",
-      "evidence_grade": "C - advisory",
-      "confidence_score": 60,
-      "freshness": "new",
-      "decision": "Hazard response and exposure assessment",
-      "risk_flags": [],
-      "personas": [
-        {
-          "persona": "Resilience Planner",
-          "channel": "Telegram/SMS alert",
-          "action": "Active hazard alert \u2014 Marine Weather Statement \u2014 Minor (Atlantic Waters of Puerto Rico AND USVI from 10 NM to 19.5N). Pre-position resources and confirm evacuation/shelter readiness in the affected area now."
-        },
-        {
-          "persona": "Insurer / Reinsurer",
-          "channel": "Email + alert",
-          "action": "Exposure check \u2014 Marine Weather Statement \u2014 Minor (Atlantic Waters of Puerto Rico AND USVI from 10 NM to 19.5N). Flag policies in the affected zone and prepare parametric-trigger assessment."
-        }
-      ]
     }
   ],
-  "dispatch_count": 4,
+  "dispatch_count": 2,
   "sources": [
     "NOAA NWS",
     "NDBC buoys",
