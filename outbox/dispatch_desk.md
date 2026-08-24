@@ -1,6 +1,6 @@
 # Dispatch Desk — Cycle 20260824
 
-Generated: 2026-08-24 09:00 UTC
+Generated: 2026-08-24 13:10 UTC
 
 Signal Fabric turns fragmented regional data into decision-ready routes. This is the primary product surface; Telegram/email are delivery channels and the dashboard is the operator/audit view.
 
@@ -148,11 +148,11 @@ Capital momentum is strongest in Guyana (+860.3%), followed by Suriname. Separat
 
 ## Feedback-Adjusted Priority
 
-- Haiti ccrif payout downranked -32
-- Nicaragua ccrif payout downranked -18
-- Barbados ccrif payout downranked -18
-- Suriname enhanced investment downranked -6
-- Barbados enhanced investment downranked -6
+- Jamaica ccrif payout downranked -12
+- Turks and Caicos Islands ccrif payout downranked -10
+- St. Vincent & the Grenadines ccrif payout downranked -10
+- St. Kitts and Nevis ccrif payout downranked -10
+- Grenada ccrif payout downranked -10
 
 ## Supporting Artifacts
 

@@ -5,7 +5,7 @@
 - Action readiness: high
 - Evidence freshness: refreshing · cycles since refresh: 0
 - Recommendation: **ADVANCE** — Calibrated confidence 100/100 with 3 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.
-- Last validated: 2026-08-24T09:00:48.939315+00:00
+- Last validated: 2026-08-24T13:10:33.107323+00:00
 
 ## Sector hypotheses
 - Oil & gas and offshore support services [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
