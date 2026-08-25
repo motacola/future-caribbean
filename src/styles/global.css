@@ -7,6 +7,21 @@
   --text: #1A1714; --sub: #4A443C; --muted: #857D71;
   --gold: #9A6B15; --teal: #0D5257; --coral: #7A1E1E; --sky: #2676A8;
   --lime: #B6C74E; --border: rgba(26,23,20,.18); --border-dark: rgba(26,23,20,.45);
+  /* Grounds and accents for the tonal bands. The ink band reuses --ink
+     rather than introducing a deeper black, so band and masthead share
+     one ink register. The -on-ink accents are the same hues lifted to
+     hold contrast on that ground; each is a role (this hue, on ink),
+     not a new primitive. */
+  /* --ink-ground resolves here at :root, where --ink is still the dark
+     value. The ink band shadows --ink to a light value so section rules
+     and hairlines invert, so a band ground written as var(--ink) would
+     resolve against that shadow and paint cream on cream. This token is
+     never shadowed, so it keeps the real ink. */
+  --ink-ground: var(--ink);
+  --paper-deep: #EBDCC6;
+  --teal-on-ink: #5FA8AD; --gold-on-ink: #D0A03F;
+  --coral-on-ink: #D08078; --sky-on-ink: #6FAFD6;
+  --ink-fg: #F4EBDD;
   --serif: 'Playfair Display', Georgia, serif;
   --sans: 'Inter', -apple-system, system-ui, sans-serif;
   --mono: 'IBM Plex Mono', monospace;

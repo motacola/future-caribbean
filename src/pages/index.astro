@@ -323,7 +323,7 @@ a:hover { text-decoration: underline; }
 .news-card { break-inside:avoid; padding:16px 0 18px; display:grid; gap:7px; align-content:start; border-top:1px solid var(--border); background:none; box-shadow:none; }
 /* The lead runs full width above the columns, as a front page does. */
 .news-card.lead { column-span:all; }
-.news-card:hover .news-media img { transform:scale(1.05); filter:saturate(1.06); }
+
 .news-kicker { font:700 9px var(--mono); letter-spacing:1.3px; text-transform:uppercase; color:var(--gold); }
 .news-card footer { display:flex; flex-wrap:wrap; gap:4px 10px; justify-content:space-between; align-items:baseline; font:10px var(--mono); color:var(--muted); border-top:none; padding-top:2px; }
 .news-source { color:var(--sub); }
@@ -572,7 +572,7 @@ body > footer::before { content: ""; display: block; height: 2px; margin: -44px 
 .front-cta { display: inline-block; font: 600 12px var(--sans); letter-spacing: .8px; text-transform: uppercase; color: var(--teal); border-bottom: 1px solid var(--teal); padding-bottom: 2px; margin-bottom: 22px; }
 .front-cta { position: relative; }
 .front-cta::after { content: " ↓"; display: inline-block; transition: transform .2s var(--fe-ease-out); }
-.front-cta:hover::after { transform: translateY(3px); }
+
 .front-cta:hover { text-decoration: none; color: var(--ink); border-color: var(--ink); }
 .how-to { border-top: 1px solid var(--border); padding: 12px 0 14px; }
 .how-to ol { list-style: none; counter-reset: ht; display: grid; gap: 7px; margin-top: 2px; }
@@ -650,7 +650,7 @@ body.map-overlay-open { overflow: hidden; }
 .sig-marker .sig-dot { position: absolute; inset: 0; border-radius: 50%; background: var(--c); border: 2px solid #fffcf4; box-shadow: 0 2px 10px rgba(24,37,31,.35); transition: transform .15s; }
 .sig-marker .sig-ring { position: absolute; inset: 0; border-radius: 50%; background: var(--c); opacity: .3; animation: sig-pulse 2.6s ease-out infinite; animation-delay: var(--delay, 0s); }
 .sig-marker.quiet .sig-ring { animation: none; opacity: 0; }
-.sig-marker:hover .sig-dot, .sig-marker.selected .sig-dot { transform: scale(1.22); }
+.sig-marker.selected .sig-dot { transform: scale(1.22); }
 .sig-marker.selected .sig-dot { border-color: var(--ink); }
 @keyframes sig-pulse { 0% { transform: scale(.8); opacity: .35; } 75%, 100% { transform: scale(2.4); opacity: 0; } }
 .sig-tip { background: var(--card) !important; color: var(--ink) !important; border: 1px solid var(--border) !important; border-radius: 6px !important; box-shadow: 0 10px 30px rgba(24,37,31,.16) !important; font-family: var(--sans) !important; font-size: 11px !important; line-height: 1.45 !important; padding: 8px 11px !important; max-width: 240px; white-space: normal !important; }
@@ -855,11 +855,11 @@ html { scroll-behavior: smooth; }
 .reveal .sec-label { animation: rule-draw .7s var(--fe-ease-out) both .1s; }
 
 .out, .aud, .cluster-card { box-shadow: var(--shadow-rest); transition: transform .18s ease, box-shadow .18s ease; }
-.out:hover, .cluster-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-raised); }
+
 .vpack { transition: box-shadow .18s ease; }
 .vpack:hover { box-shadow: 0 14px 40px rgba(24,37,31,.08); }
 .btn { transition: transform .12s ease, box-shadow .15s ease; }
-.btn:hover { transform: translateY(-1px); }
+
 .btn:active { transform: translateY(0) scale(.98); }
 .btn-p:hover { box-shadow: 0 8px 24px rgba(24,37,31,.3); }
 .ans-sweep { position: relative; overflow: hidden; }
@@ -953,7 +953,7 @@ html { scroll-behavior: smooth; }
 .sig-main strong { display: block; font-family: var(--serif); font-size: 16.5px; font-weight: 600; margin-bottom: 2px; line-height: 1.25; }
 .sig-loc { font-size: 12px; color: var(--muted); }
 .sig-expand { display: flex; align-items: center; justify-content: center; width: 28px; height: 28px; border: 1px solid var(--border); border-radius: 50%; background: var(--card); color: var(--muted); font-size: 12px; cursor: pointer; transition: all 0.15s; flex-shrink: 0; }
-.sig-expand:hover { border-color: var(--teal); color: var(--teal); transform: rotate(180deg); }
+.sig-expand:hover { border-color: var(--teal); color: var(--teal); }
 .sig-row.expanded .sig-expand { transform: rotate(180deg); border-color: var(--teal); color: var(--teal); }
 .sig-validation { display: none; padding: 16px 0 0; border-top: 1px solid var(--border); margin-top: 8px; animation: expand-in 0.25s var(--fe-ease-out); }
 .sig-row.expanded .sig-validation { display: block; }
@@ -991,14 +991,14 @@ html { scroll-behavior: smooth; }
 .rise-in { animation: rise-in .35s cubic-bezier(.22,1,.36,1) both; }
 @keyframes dot-bounce { 0%, 80%, 100% { transform: translateY(0); opacity: .45; } 40% { transform: translateY(-4px); opacity: 1; } }
 .drill-card { transition: background .2s ease, transform .2s ease; }
-.drill-card:hover { background: var(--card); transform: translateY(-2px); }
+.drill-card:hover { background: var(--card); }
 .conf-row { margin-top: 8px; display: flex; align-items: center; gap: 8px; }
 .conf-track { height: 4px; flex: 1; border-radius: 999px; background: color-mix(in srgb, var(--border) 60%, transparent); overflow: hidden; }
 .conf-fill { height: 100%; border-radius: 999px; transition: width .7s ease-out; }
 .conf-num { font-family: var(--mono); font-size: 10px; color: var(--muted); }
 .ask-chips { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
 .ask-chip { padding: 6px 14px; border-radius: 999px; border: 1px solid var(--border); background: var(--card); color: var(--ink); font: 400 12px var(--sans); cursor: pointer; transition: all .15s ease; }
-.ask-chip:hover { border-color: var(--teal); color: var(--teal); transform: translateY(-1px); }
+.ask-chip:hover { border-color: var(--teal); color: var(--teal); }
 .ask-chip:active { transform: translateY(0); }
 .ask-chip:disabled { opacity: .4; cursor: default; }
 .ask-row { display: grid; grid-template-columns: 1fr auto; gap: 8px; margin-bottom: 12px; }
@@ -1019,6 +1019,163 @@ html { scroll-behavior: smooth; }
 @keyframes caret-blink { 50% { opacity: 0; } }
 .type-caret { display: inline-block; width: 7px; height: 14px; background: var(--gold); vertical-align: middle; margin-left: 1px; animation: caret-blink 1s step-end infinite; }
 .type-caret.done { display: none; }
+
+/* ── Tonal sectioning pass ────────────────────────────────────────────
+   Diagnosis: the front page ran 9,213px (77% of its height) as one
+   unbroken cream field, so every desk read at identical weight and the
+   page felt static regardless of how much motion sat on top of it.
+   Fix is compositional, not more animation: full-bleed tonal bands that
+   break the run into readable movements, plus a section-weight scale so
+   a major desk outranks a minor list.
+
+   Bands are pure presentation. They re-map existing design tokens inside
+   their own scope, which is why the market charts, status pills, and
+   registry chips invert correctly without touching data.ts or any of the
+   set:html fragments. No data semantics, freshness labels, source links,
+   or evidence grades are affected. ── */
+
+/* Full-bleed ground without touching layout: the ::before breaks out to
+   the viewport edges while the section keeps its 1140px measure.
+   html{overflow-x:clip} (global.css) contains the 100vw breakout. */
+.band { position: relative; }
+.band::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background: var(--band-bg);
+}
+
+/* ── Ink band: the terminal register. Used for Market Watch, the section
+   whose subject (listed markets, exchange data) earns Bloomberg-dark. ── */
+.band-ink {
+  --band-bg: var(--ink-ground);
+  /* Re-map the palette inside this scope. Everything downstream —
+     including server-rendered fragments — follows automatically. */
+  --ink: var(--ink-fg);
+  --text: var(--ink-fg);
+  --sub: rgba(244,235,221,.74);
+  --muted: rgba(244,235,221,.52);
+  --border: rgba(244,235,221,.16);
+  --border-dark: rgba(244,235,221,.34);
+  --card: rgba(244,235,221,.045);
+  --card-alt: rgba(244,235,221,.08);
+  /* Accents lifted to hold contrast on ink; same hue family, higher value. */
+  --teal: var(--teal-on-ink);
+  --gold: var(--gold-on-ink);
+  --coral: var(--coral-on-ink);
+  --sky: var(--sky-on-ink);
+  /* Chart tokens derive from --caribbean-fg and --teal, so the activity
+     charts re-key themselves from these two lines. */
+  --caribbean-fg: var(--ink-fg);
+  --chart-surface: rgba(244,235,221,.05);
+  --chart-annotate: var(--gold-on-ink);
+  /* --chart-grid/axis/tick are declared at :root as color-mix() over
+     var(--caribbean-fg). Custom properties substitute where they are
+     DECLARED, not where they are used, so those three froze to the dark
+     :root value and inherited into the band as near-black on near-black —
+     the axis labels, grid lines and baseline went invisible. Re-declaring
+     them here re-resolves the var against this scope. */
+  --chart-grid: color-mix(in oklab, var(--ink-fg) 14%, transparent);
+  --chart-axis: color-mix(in oklab, var(--ink-fg) 55%, transparent);
+  --chart-tick: color-mix(in oklab, var(--ink-fg) 72%, transparent);
+  color: var(--text);
+  padding-top: 58px;
+  padding-bottom: 62px;
+  margin-top: 44px;
+  margin-bottom: 44px;
+}
+/* Hairline rules top and bottom read as an edition break rather than a
+   block of colour dropped on the page. */
+.band-ink::before { box-shadow: inset 0 1px 0 rgba(244,235,221,.18), inset 0 -1px 0 rgba(244,235,221,.18); }
+
+/* Hardcoded rgba() values predating the token system need explicit
+   inversion; the tokenised rules above already handle the rest. */
+.band-ink .market-status { color: var(--teal); background: rgba(95,168,173,.12); border-color: rgba(95,168,173,.28); }
+.band-ink .market-card.proxy .market-status { color: var(--gold); background: rgba(208,160,63,.13); border-color: rgba(208,160,63,.3); }
+.band-ink .market-card.proxy, .band-ink .market-chart-card.proxy { border-top-color: rgba(208,160,63,.5); }
+.band-ink .market-note { background: rgba(208,160,63,.09); border-left-color: var(--gold); color: var(--sub); }
+.band-ink .source-registry-group a,
+.band-ink .source-registry-group span { background: rgba(244,235,221,.05); border-color: var(--border); color: var(--sub); }
+.band-ink .source-registry-group a:hover { border-color: var(--teal); color: var(--teal); background: rgba(95,168,173,.1); }
+.band-ink a { color: var(--teal); }
+
+/* data.ts emits an empty .market-code span to hold the flex slot when an
+   exchange has no ticker code, which left the ::after caret blinking on its
+   own. Near-invisible on cream; obvious once the band went to ink. */
+.market-code:empty::after { content: none; }
+
+@media (hover: hover) and (pointer: fine) {
+  .band-ink .market-chart-card:hover .activity-chart-shell { box-shadow: 0 4px 16px rgba(0,0,0,.5); }
+  .band-ink tbody tr:hover { background: rgba(244,235,221,.05); }
+}
+
+/* ── Paper band: the deeper stock. A second tonal step that is not a
+   second black slab — avoids zebra-striping the page. Cards keyed to
+   --card now sit above their ground instead of dissolving into it. ── */
+.band-paper {
+  --band-bg: var(--paper-deep);
+  --border: rgba(26,23,20,.22);
+  padding-top: 48px;
+  padding-bottom: 52px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.band-paper::before { box-shadow: inset 0 1px 0 rgba(26,23,20,.14), inset 0 -1px 0 rgba(26,23,20,.14); }
+
+/* ── Section weight scale ──────────────────────────────────────────
+   Previously every section opened identically (mono label + 2px rule),
+   so nothing distinguished a lead desk from a supporting list. ── */
+.sec-major .st, .sec-major .sec-title { font-size: clamp(32px, 4.6vw, 51px); letter-spacing: -.018em; line-height: 1.02; }
+.sec-major .ss, .sec-major .sec-sub { font-size: 15px; max-width: 620px; }
+.sec-major .sec-label { border-top-width: 3px; letter-spacing: 1.9px; }
+
+.sec-minor { padding-bottom: 26px; }
+.sec-minor .sec-label { border-top-width: 1px; color: var(--muted); margin-bottom: 14px; }
+.sec-minor .st, .sec-minor .sec-title { font-size: clamp(18px, 1.9vw, 22px); }
+
+@media (max-width: 768px) {
+  .band-ink { padding-top: 38px; padding-bottom: 40px; margin-top: 28px; margin-bottom: 28px; }
+  .band-paper { padding-top: 32px; padding-bottom: 34px; margin-top: 26px; margin-bottom: 26px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .band-ink .market-chart-card:hover .activity-chart-shell { box-shadow: none; }
+}
+
+/* ── Hover motion: pointer-gated and reduced-motion safe ──────────────
+   Eight hover rules moved transform out of their base declarations and
+   into this block. Previously they fired on touch (sticky hover states
+   after a tap) and four of them — .out, .btn, .sig-expand, .ask-chip —
+   kept animating under prefers-reduced-motion, verified in a real
+   browser with reducedMotion:'reduce'.
+
+   Colour and background feedback stays ungated above: it is not motion,
+   and it is the half that still reads correctly on a touch device.
+   .sig-marker.selected keeps its scale unconditionally — that one is a
+   selected-state indicator, not hover, and removing it would leave the
+   state carried by colour alone. ── */
+@media (hover: hover) and (pointer: fine) {
+  .news-card:hover .news-media img { transform: scale(1.05); filter: saturate(1.06); }
+  .front-cta:hover::after { transform: translateY(3px); }
+  .sig-marker:hover .sig-dot { transform: scale(1.22); }
+  .out:hover, .cluster-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-raised); }
+  .btn:hover { transform: translateY(-1px); }
+  .sig-expand:hover { transform: rotate(180deg); }
+  .drill-card:hover { transform: translateY(-2px); }
+  .ask-chip:hover { transform: translateY(-1px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .out, .btn, .sig-expand, .ask-chip, .drill-card { transition: none !important; }
+  .news-card:hover .news-media img, .front-cta:hover::after, .sig-marker:hover .sig-dot,
+  .out:hover, .cluster-card:hover, .btn:hover, .sig-expand:hover,
+  .drill-card:hover, .ask-chip:hover { transform: none !important; }
+}
 </style>
 
 <Base title="Signal Fabric — see where the region is moving">
@@ -1203,7 +1360,7 @@ html { scroll-behavior: smooth; }
   </div>
 </div>
 
-<div class="sec" id="decision-workspace">
+<div class="sec band band-paper sec-major" id="decision-workspace">
   <div class="sec-label">Today's call</div>
   <div class="decision-shell">
     <div class="decision-main">
@@ -1247,7 +1404,7 @@ html { scroll-behavior: smooth; }
   </div>
 </div>
 
-<section class="sec" id="regional-news" aria-labelledby="regional-news-title">
+<section class="sec sec-major" id="regional-news" aria-labelledby="regional-news-title">
   <div class="news-head">
     <div><div class="sec-label">Regional News Desk</div><div class="st" id="regional-news-title">What is moving across the Caribbean</div><div class="ss">Ranked by freshness, source tier, country relevance, and connection to finance, trade, tourism, energy, procurement, or climate signals. Headlines link to the original publisher.</div></div>
     <span class="market-status">{d.regionalNewsCount} articles tracked</span>
@@ -1256,7 +1413,7 @@ html { scroll-behavior: smooth; }
   <div class="news-grid" id="news-grid"><Fragment set:html={d.newsHtml} /></div>
 </section>
 
-<div class="sec market-watch" id="market-watch">
+<div class="sec market-watch band band-ink sec-major" id="market-watch">
   <div class="market-head">
     <div>
       <div class="sec-label">Caribbean Market Watch</div>
@@ -1276,7 +1433,7 @@ html { scroll-behavior: smooth; }
   </div>
 </div>
 
-<div class="sec">
+<div class="sec sec-minor">
   <div class="sec-label" id="more-wire">More from the wire</div>
   <div class="verdict-filter" id="verdict-filter" role="group" aria-label="Filter signals by validation verdict">
     <label>Filter:</label>
@@ -1288,7 +1445,7 @@ html { scroll-behavior: smooth; }
   <div class="sig-list" id="sig-list"><Fragment set:html={d.secSignals} /></div>
 </div>
 
-<div class="sec" id="receipts">
+<div class="sec band band-paper" id="receipts">
   <div class="sec-label">The desk's receipts</div>
   <div class="st">What the desk said — and how responses reshape the next cycle</div>
   <div class="ss">Every briefing is recorded, and response signals change what the desk prioritises. Here is that loop, in public.</div>
