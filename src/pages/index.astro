@@ -325,6 +325,11 @@ a:hover { text-decoration: underline; }
 .news-head .sec-label, .market-head .sec-label { border-top: none; padding-top: 0; }
 .news-filters { display:flex; flex-wrap:wrap; gap:6px; margin:12px 0 16px; }
 .news-filter { border:1px solid var(--border); background:transparent; color:var(--sub); border-radius:3px; padding:5px 9px; font:600 9.5px var(--mono); letter-spacing:.4px; text-transform:uppercase; cursor:pointer; }
+.news-filter-more { border-style:dashed; color:var(--gold); border-color:var(--gold); }
+.news-filter-more[aria-expanded="true"] span { display:none; }
+.news-countries { display:contents; }
+/* `hidden` sets display:none, but display:contents above wins — restate it. */
+.news-countries[hidden] { display:none; }
 .news-filter.active { background:var(--ink); border-color:var(--ink); color:var(--bg); }
 .news-filter.country { border-style:dashed; }
 /* A newsroom board, not a card wall. Stories are separated by hairlines and
@@ -1222,14 +1227,14 @@ html { scroll-behavior: smooth; }
 <div id="scroll-progress" aria-hidden="true"></div>
 
 <div class="masthead">
-  <div class="mast-edition"><span>Vol. I · Caribbean Edition</span><span>Cycle {d.cycleId} · {d.nowStr}</span></div>
+  <div class="mast-edition"><span>Vol. I · Caribbean Edition</span><span title={`Cycle ${d.cycleId}`}>{d.nowStr}</span></div>
   <div class="mast-inner">
     <div class="mast-brand">
       <div class="mast-name">CARIBBEAN <em>OPPORTUNITY</em> DISPATCH</div>
       <div class="mast-tagline">Where Caribbean capital is moving</div>
     </div>
     <div class="mast-links">
-      <a href="#decision-workspace"><span style="color:var(--teal)">●</span> Cycle {d.cycleId}</a>
+      <a href="#decision-workspace" title={`Cycle ${d.cycleId}`}><span style="color:var(--teal)">●</span> Updated {d.cycleLabel}</a>
       <a href="/build">Build your feed</a>
       <a href="/regional-connections">Regional Connections</a>
       <a href="javascript:void(0)" onclick="toggleDeep();return false;">Under the hood</a>
@@ -1262,7 +1267,7 @@ html { scroll-behavior: smooth; }
 <section class="map-hero" aria-labelledby="map-title">
   <div class="front-grid">
     <div class="front-lede">
-      <p class="sec-label">The front page · cycle {d.cycleId}</p>
+      <p class="sec-label" title={`Cycle ${d.cycleId}`}>The front page · {d.cycleLabel}</p>
       <h1 id="map-title">Where Caribbean opportunity is moving <em>now.</em></h1>
       <p class="front-standfirst">{d.nCountries} Caribbean markets and territories, watched around the clock. The bigger the pulse on the map, the stronger the signal — tap a country to see what's moving.</p>
       <a class="front-cta" href="#decision-workspace">Read today's briefing ↓</a>
@@ -1329,7 +1334,7 @@ html { scroll-behavior: smooth; }
   <div class="map-overlay-inner" role="dialog" aria-modal="true" aria-labelledby="map-overlay-title">
     <div class="map-overlay-bar">
       <div>
-        <span class="map-overlay-kicker">Front page · cycle {d.cycleId}</span>
+        <span class="map-overlay-kicker" title={`Cycle ${d.cycleId}`}>Front page · {d.cycleLabel}</span>
         <strong id="map-overlay-title">Where Caribbean opportunity is moving</strong>
       </div>
       <button type="button" class="map-overlay-close" id="map-overlay-close">Close <kbd>Esc</kbd></button>
@@ -1338,67 +1343,22 @@ html { scroll-behavior: smooth; }
   </div>
 </div>
 
-<div class="sec" id="about-fabric">
-  <div class="sec-label">What is Signal Fabric?</div>
-  <p class="fabric-line">The engine under this page. It reads the region's public data every four hours and checks signals against each other before they become briefings.</p>
-  <div class="coordination-strip">
-  <div class="coordination-inner">
-    <div class="coord-step"><span>01</span><strong>Watch</strong><p>We read the region's public data so you don't have to.</p></div>
-    <div class="coord-arrow">-></div>
-    <div class="coord-step"><span>02</span><strong>Sift</strong><p>Weak signals get checked against each other and graded.</p></div>
-    <div class="coord-arrow">-></div>
-    <div class="coord-step"><span>03</span><strong>Brief</strong><p>The right person gets a clear next move, not a chart.</p></div>
-    <div class="coord-arrow">-></div>
-    <div class="coord-step"><span>04</span><strong>Learn</strong><p>Your response shapes what the desk sends next.</p></div>
+<section class="sec sec-major" id="regional-news" aria-labelledby="regional-news-title">
+  <div class="news-head">
+    <div><div class="sec-label">Regional News Desk</div><div class="st" id="regional-news-title">What is moving across the Caribbean</div><div class="ss">Newest and most relevant first. Headlines link to the publisher.</div></div>
+    <span class="market-status">{d.regionalNewsCount} articles tracked</span>
   </div>
-  </div>
-  <p class="fabric-foot">Want this engine on a different market? <a href="/build">Build your own feed →</a></p>
-</div>
-
-<section class="theater" id="theater" aria-labelledby="theater-title">
-  <div class="live-grid">
-  <div class="sec-pane" id="ask-desk">
-    <div class="sec-label">Got a question?</div>
-    <div class="st">Ask the desk</div>
-    <div class="ss">It answers from today's data — with receipts, not guesswork.</div>
-    <div id="ask-desk-root"></div>
-  </div>
-  <div class="theater-shell">
-    <div class="theater-head">
-      <div class="theater-title">
-        <strong id="theater-title">Watch the desk work</strong>
-        <span class="stream-mode" id="stream-mode">LIVE</span>
-      </div>
-      <div class="cycle-clock" id="cycle-clock">
-        <span class="clock-item"><span class="clock-label">Next cycle:</span><span class="clock-value" id="next-cycle">—</span></span>
-        <span class="clock-item"><span class="clock-label">Last:</span><span class="clock-value" id="last-cycle">—</span></span>
-      </div>
-      <button class="theater-toggle" id="theater-toggle" type="button">Pause</button>
-    </div>
-    <div class="theater-feed" id="theater-feed" aria-live="polite">
-      <div class="theater-event event-source"><span class="theater-time">waiting</span><p><span>Pipeline ↻</span></p></div>
-    </div>
-  </div>
-  </div>
+  <div class="news-filters" id="news-filters"><Fragment set:html={d.newsFilterHtml} /></div>
+  <div class="news-grid" id="news-grid"><Fragment set:html={d.newsHtml} /></div>
 </section>
-
-<div class="proof-band">
-  <div class="proof-line">
-    <div class="proof-cell"><span class="proof-k">{d.nCountries}</span><span class="proof-v">Markets watched</span></div>
-    <div class="proof-cell"><span class="proof-k">{d.nSources}/6</span><span class="proof-v">Core sources live</span></div>
-    <div class="proof-cell"><span class="proof-k">{d.nClusters}</span><span class="proof-v">Live signals</span></div>
-    <div class="proof-cell"><span class="proof-k">{d.nPersonas}</span><span class="proof-v">Briefings routed</span></div>
-    <div class="proof-cell"><span class="proof-k">4h</span><span class="proof-v">Update rhythm</span></div>
-  </div>
-</div>
 
 <div class="sec band band-paper sec-major" id="decision-workspace">
   <div class="sec-label">Today's call</div>
   <div class="decision-shell">
     <div class="decision-main">
-      <div class="dateline"><span class="dl-desk">Investment Desk</span><span class="dl-by">By the Desk</span><span class="dl-when">Cycle {d.cycleId} · {d.nowStr}</span></div>
+      <div class="dateline"><span class="dl-desk">Investment Desk</span><span class="dl-by">By the Desk</span><span class="dl-when" title={`Cycle ${d.cycleId}`}>{d.nowStr}</span></div>
       <div class="decision-kicker">
-        <span class="decision-id">{d.leadDispatchId} · Cycle {d.cycleId}</span>
+        <span class="decision-id" title={`${d.leadDispatchId} · Cycle ${d.cycleId}`}>Briefing {d.cycleLabel}</span>
         <span class="decision-status">{d.leadDelivery}</span>
       </div>
       <h2>{d.lTitle}</h2>
@@ -1437,15 +1397,6 @@ html { scroll-behavior: smooth; }
   </div>
 </div>
 
-<section class="sec sec-major" id="regional-news" aria-labelledby="regional-news-title">
-  <div class="news-head">
-    <div><div class="sec-label">Regional News Desk</div><div class="st" id="regional-news-title">What is moving across the Caribbean</div><div class="ss">Ranked by freshness, source tier, and country relevance. Headlines link to the publisher.</div></div>
-    <span class="market-status">{d.regionalNewsCount} articles tracked</span>
-  </div>
-  <div class="news-filters" id="news-filters"><Fragment set:html={d.newsFilterHtml} /></div>
-  <div class="news-grid" id="news-grid"><Fragment set:html={d.newsHtml} /></div>
-</section>
-
 <div class="sec market-watch band band-ink sec-major" id="market-watch">
   <div class="market-head">
     <div>
@@ -1477,6 +1428,43 @@ html { scroll-behavior: smooth; }
   </div>
   <div class="sig-list" id="sig-list"><Fragment set:html={d.secSignals} /></div>
 </div>
+
+<div class="proof-band">
+  <div class="proof-line">
+    <div class="proof-cell"><span class="proof-k">{d.nCountries}</span><span class="proof-v">Markets watched</span></div>
+    <div class="proof-cell"><span class="proof-k">{d.nSources}/6</span><span class="proof-v">Core sources live</span></div>
+    <div class="proof-cell"><span class="proof-k">{d.nClusters}</span><span class="proof-v">Live signals</span></div>
+    <div class="proof-cell"><span class="proof-k">{d.nPersonas}</span><span class="proof-v">Briefings routed</span></div>
+    <div class="proof-cell"><span class="proof-k">4h</span><span class="proof-v">Update rhythm</span></div>
+  </div>
+</div>
+
+<section class="theater" id="theater" aria-labelledby="theater-title">
+  <div class="live-grid">
+  <div class="sec-pane" id="ask-desk">
+    <div class="sec-label">Got a question?</div>
+    <div class="st">Ask the desk</div>
+    <div class="ss">It answers from today's data — with receipts, not guesswork.</div>
+    <div id="ask-desk-root"></div>
+  </div>
+  <div class="theater-shell">
+    <div class="theater-head">
+      <div class="theater-title">
+        <strong id="theater-title">Watch the desk work</strong>
+        <span class="stream-mode" id="stream-mode">LIVE</span>
+      </div>
+      <div class="cycle-clock" id="cycle-clock">
+        <span class="clock-item"><span class="clock-label">Next cycle:</span><span class="clock-value" id="next-cycle">—</span></span>
+        <span class="clock-item"><span class="clock-label">Last:</span><span class="clock-value" id="last-cycle">—</span></span>
+      </div>
+      <button class="theater-toggle" id="theater-toggle" type="button">Pause</button>
+    </div>
+    <div class="theater-feed" id="theater-feed" aria-live="polite">
+      <div class="theater-event event-source"><span class="theater-time">waiting</span><p><span>Pipeline ↻</span></p></div>
+    </div>
+  </div>
+  </div>
+</section>
 
 <div class="sec band band-paper" id="receipts">
   <div class="sec-label">The desk's receipts</div>
@@ -1577,6 +1565,23 @@ Source: World Bank indicators, 2023 to 2024 comparison.`}</div>
   </div>
 </div>
 
+<div class="sec" id="about-fabric">
+  <div class="sec-label">What is Signal Fabric?</div>
+  <p class="fabric-line">The engine under this page. It reads the region's public data every four hours and checks signals against each other before they become briefings.</p>
+  <div class="coordination-strip">
+  <div class="coordination-inner">
+    <div class="coord-step"><span>01</span><strong>Watch</strong><p>We read the region's public data so you don't have to.</p></div>
+    <div class="coord-arrow">-></div>
+    <div class="coord-step"><span>02</span><strong>Sift</strong><p>Weak signals get checked against each other and graded.</p></div>
+    <div class="coord-arrow">-></div>
+    <div class="coord-step"><span>03</span><strong>Brief</strong><p>The right person gets a clear next move, not a chart.</p></div>
+    <div class="coord-arrow">-></div>
+    <div class="coord-step"><span>04</span><strong>Learn</strong><p>Your response shapes what the desk sends next.</p></div>
+  </div>
+  </div>
+  <p class="fabric-foot">Want this engine on a different market? <a href="/build">Build your own feed →</a></p>
+</div>
+
 <div class="sec deep">
   <button class="deep-btn" id="db" onclick="toggleDeep()">▸ System audit</button>
   <div class="deep-c" id="dc">
@@ -1614,6 +1619,7 @@ Source: World Bank indicators, 2023 to 2024 comparison.`}</div>
     </div>
   </div>
 </div>
+
 
 <Fragment set:html={`<script>
 const D = ${d.analystData};
@@ -2197,6 +2203,16 @@ document.querySelectorAll('.market-chart-card').forEach(card => {
     col.addEventListener('focus', () => show(col));
   });
 });
+
+const countryToggle = document.getElementById('news-country-toggle');
+const countryWrap = document.getElementById('news-countries');
+if (countryToggle && countryWrap) {
+  countryToggle.addEventListener('click', () => {
+    const open = countryWrap.hasAttribute('hidden');
+    if (open) countryWrap.removeAttribute('hidden'); else countryWrap.setAttribute('hidden', '');
+    countryToggle.setAttribute('aria-expanded', String(open));
+  });
+}
 
 const outTabs = [...document.querySelectorAll('.out-tab')];
 const outPanels = [...document.querySelectorAll('.out-panel')];
