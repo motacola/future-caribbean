@@ -928,6 +928,10 @@ html { scroll-behavior: smooth; }
 .lw-rail .lw-item:nth-child(3) { animation-delay: .15s } .lw-rail .lw-item:nth-child(4) { animation-delay: .2s }
 .lw-rail .lw-item:nth-child(n+5) { animation-delay: .25s }
 .lw-item:hover { color: #fff; text-decoration: none; }
+/* Weak signals ride the same wire as validated leads; they should not read
+   with the same authority. */
+.lw-watch { color: rgba(244,235,221,.5); }
+.lw-tag { padding: 1px 5px; border: 1px solid rgba(244,235,221,.28); border-radius: 2px; font: 700 8px var(--mono); letter-spacing: .9px; text-transform: uppercase; color: rgba(244,235,221,.62); }
 .lw-item i { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
 .lw-kicker { font: 700 9px var(--mono); letter-spacing: 1px; text-transform: uppercase; color: var(--lime); }
 @media (prefers-reduced-motion: reduce) { .lw-rail { animation: none; } .lw-track { overflow-x: auto; } .lw-rail[aria-hidden] { display: none; } }
@@ -1361,11 +1365,7 @@ html { scroll-behavior: smooth; }
     <a href="#decision-workspace" class="dn-item dn-invest">Investment Desk</a>
     <a href="#regional-news" class="dn-item">Regional News</a>
     <a href="#market-watch" class="dn-item">Market Watch</a>
-    <a href="#theater" class="dn-item">Watch It Work</a>
     <a href="#ask-desk" class="dn-item">Ask the Desk</a>
-    <a href="#more-wire" class="dn-item">More from the Wire</a>
-    <a href="#receipts" class="dn-item">Receipts</a>
-    <a href="#for-agents" class="dn-item dn-agents">For Agents</a>
   </div>
 </nav>
 
@@ -1945,6 +1945,28 @@ document.querySelectorAll('[data-news-filter]').forEach(button => button.addEven
   });
 }));
 
+// Several destinations are collapsed accordions now. An anchor that lands on a
+// closed panel looks like a dead link, so opening the target is part of going
+// there — for nav clicks, for the desk guide, and for a pasted #hash on load.
+function revealTarget(id) {
+  const target = id && document.getElementById(id);
+  if (!target) return null;
+  const panel = target.closest('details') || (target.tagName === 'DETAILS' ? target : target.querySelector('details'));
+  if (panel) panel.open = true;
+  return target;
+}
+
+document.addEventListener('click', event => {
+  const link = event.target.closest('a[href^="#"]');
+  if (!link) return;
+  revealTarget(decodeURIComponent(link.getAttribute('href').slice(1)));
+});
+
+if (location.hash) {
+  const landed = revealTarget(decodeURIComponent(location.hash.slice(1)));
+  if (landed) setTimeout(() => landed.scrollIntoView({ block: 'start' }), 60);
+}
+
 // ── Desk guide ────────────────────────────────────────────────────────────
 // A navigator first, a Q&A second. Navigation intents resolve here and act on
 // the page immediately; anything else goes to /api/ask, the same deterministic
@@ -2000,7 +2022,7 @@ function guideSay(role, text, actions) {
 }
 
 function guideGoto(id, label) {
-  const target = document.getElementById(id);
+  const target = revealTarget(id);
   if (!target) return false;
   target.scrollIntoView({ behavior: 'smooth', block: 'start' });
   guideSay('desk', `Taking you to ${label}.`);

@@ -15,9 +15,19 @@ DASH = DIST.read_text()
 
 
 def test_desk_navigation_present():
+    """The desk nav carries the reader's destinations only.
+
+    It was trimmed from nine entries to five: the sections that are now
+    collapsed accordions (Watch It Work, More from the Wire, Receipts) and the
+    machine surface (For Agents) came out, because an anchor that lands on a
+    closed panel reads as a dead link. Those sections still exist and are
+    covered by their own tests; they are reachable by scrolling and via the
+    desk guide.
+    """
     assert 'class="desknav"' in DASH
-    for label in ("Front Page", "Investment Desk", "Ask the Desk", "For Agents"):
+    for label in ("Front Page", "Investment Desk", "Regional News", "Market Watch", "Ask the Desk"):
         assert label in DASH, f"desk nav missing {label}"
+    assert DASH.count('class="dn-item') <= 6, "desk nav is growing back past the reader's five"
 
 
 def test_lead_story_dateline():

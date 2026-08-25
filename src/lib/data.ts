@@ -738,13 +738,24 @@ export function loadDashboardData() {
   // Dedupe again on the rendered headline, not just signal_id: separate signals
   // routinely humanize to the same sentence ("Early signal in Barbados — no
   // detail yet"), and the reader sees the sentence, not the id.
+  // Two passes. First drop identical rendered headlines, then drop items that
+  // are the same story told twice: same market, same figure. "Money is moving
+  // into Guyana — up 860.3%" and "Foreign investment into Guyana is up 860.3%"
+  // are one fact, and the wire should carry it once.
   const tickerSeenText = new Set<string>();
+  const tickerSeenFact = new Set<string>();
   const tickerItems = Object.values(seenTicker)
     .sort((a, b) => (b.confidence_score || 0) - (a.confidence_score || 0))
     .filter((t: any) => {
-      const key = `${canonicalCountry(t.country_cluster || '')}|${humanize(t.title || '')}`.toLowerCase();
-      if (tickerSeenText.has(key)) return false;
-      tickerSeenText.add(key);
+      const country = canonicalCountry(t.country_cluster || '');
+      const title = humanize(t.title || '');
+      const textKey = `${country}|${title}`.toLowerCase();
+      if (tickerSeenText.has(textKey)) return false;
+      tickerSeenText.add(textKey);
+      const figures = (title.match(/\d+(?:\.\d+)?/g) || []).join(',');
+      const factKey = `${country}|${figures}`.toLowerCase();
+      if (figures && tickerSeenFact.has(factKey)) return false;
+      if (figures) tickerSeenFact.add(factKey);
       return true;
     })
     .slice(0, 12);
@@ -753,10 +764,15 @@ export function loadDashboardData() {
   let tickerHtml = tickerItems.map((t: any) => {
     const color = kindColor(t.signal_kind || '');
     const country = canonicalCountry(t.country_cluster || '');
-    return `<a class="lw-item" href="#leaflet-map" data-country="${esc(country)}">` +
+    const title = humanize(t.title || '');
+    // A market with nothing behind it yet should not speak in the same voice as
+    // a validated lead.
+    const watchlist = /no detail yet/i.test(title);
+    return `<a class="lw-item${watchlist ? ' lw-watch' : ''}" href="#leaflet-map" data-country="${esc(country)}">` +
       `<i style="background:${color}"></i>` +
       `<span class="lw-kicker">${esc(t.country_cluster || 'Region')}</span>` +
-      `<span>${esc(humanize(t.title || ''))}</span></a>`;
+      (watchlist ? '<span class="lw-tag">Watchlist</span>' : '') +
+      `<span>${esc(title)}</span></a>`;
   }).join('');
 
   // ── Front pointers ─────────────────────────────────────────
