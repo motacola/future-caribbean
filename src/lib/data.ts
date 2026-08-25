@@ -735,8 +735,18 @@ export function loadDashboardData() {
       seenTicker[sid] = d;
     }
   }
+  // Dedupe again on the rendered headline, not just signal_id: separate signals
+  // routinely humanize to the same sentence ("Early signal in Barbados — no
+  // detail yet"), and the reader sees the sentence, not the id.
+  const tickerSeenText = new Set<string>();
   const tickerItems = Object.values(seenTicker)
     .sort((a, b) => (b.confidence_score || 0) - (a.confidence_score || 0))
+    .filter((t: any) => {
+      const key = `${canonicalCountry(t.country_cluster || '')}|${humanize(t.title || '')}`.toLowerCase();
+      if (tickerSeenText.has(key)) return false;
+      tickerSeenText.add(key);
+      return true;
+    })
     .slice(0, 12);
 
   // fallow-ignore-next-line complexity

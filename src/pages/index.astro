@@ -527,6 +527,7 @@ a:hover { text-decoration: underline; }
 .drill-follow:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
 .drill-follow.on { background: var(--teal); border-color: var(--teal); color: var(--card); }
 .drill-card.for-you { box-shadow: inset 3px 0 0 var(--gold); }
+.drill-also { margin-top: 5px; font: 600 9px var(--mono); letter-spacing: .6px; text-transform: uppercase; color: var(--muted); }
 .for-you-tag { display: inline-block; margin-left: 6px; padding: 1px 5px; border-radius: 2px; background: var(--gold); color: var(--card); font: 700 8px var(--mono); letter-spacing: .8px; text-transform: uppercase; }
 @media(max-width:768px) {
   .deskbar-row { grid-template-columns: 1fr; gap: 12px; }
@@ -1582,10 +1583,14 @@ html { scroll-behavior: smooth; }
     </summary>
     <div id="ask-desk-root"></div>
   </details>
-  <div class="theater-shell">
+  <details class="theater-shell sec-accordion">
+    <summary>
+      <span class="sec-label">Behind the desk</span>
+      <strong id="theater-title">Watch the desk work</strong>
+      <em>The cycle log, event by event, as the desk builds today's briefings.</em>
+    </summary>
     <div class="theater-head">
       <div class="theater-title">
-        <strong id="theater-title">Watch the desk work</strong>
         <span class="stream-mode" id="stream-mode">LIVE</span>
       </div>
       <div class="cycle-clock" id="cycle-clock">
@@ -1597,14 +1602,17 @@ html { scroll-behavior: smooth; }
     <div class="theater-feed" id="theater-feed" aria-live="polite">
       <div class="theater-event event-source"><span class="theater-time">waiting</span><p><span>Pipeline ↻</span></p></div>
     </div>
-  </div>
+  </details>
   </div>
 </section>
 
 <div class="sec band band-paper" id="receipts">
-  <div class="sec-label">The desk's receipts</div>
-  <div class="st">What the desk said — and how responses reshape the next cycle</div>
-  <div class="ss">Every briefing is recorded. Responses change what the desk prioritises next.</div>
+  <details class="sec-accordion">
+    <summary>
+      <span class="sec-label">The desk's receipts</span>
+      <strong>What the desk said — and how responses reshape the next cycle</strong>
+      <em>Every briefing is recorded. Responses change what the desk prioritises next.</em>
+    </summary>
   <div class="receipts-table"><Fragment set:html={d.receiptsHtml} /></div>
   <div class="receipts-boosts"><span class="fp-head">Current priorities, shaped by responses</span><Fragment set:html={d.boostsHtml} /></div>
   <details class="meta-disclose"><summary>How the desk records and calibrates this</summary><div class="meta-disclose-body">
@@ -1612,6 +1620,7 @@ html { scroll-behavior: smooth; }
     <Fragment set:html={d.calibrationCommitmentHtml} />
   </div></details>
   <p class="receipts-foot">Machine-readable record: <a href="/api/track-record">/api/track-record</a></p>
+  </details>
 </div>
 
 <div class="sec">
@@ -2440,7 +2449,20 @@ const drillReact = (function () {
               ? [...items].sort((a, b) =>
                   ((b.persona_label || '') === lens ? 1 : 0) - ((a.persona_label || '') === lens ? 1 : 0))
               : items;
-            return ordered.slice(0, 6);
+            // One signal routed to six personas rendered as six identical cards.
+            // Keep the first, and carry the other recipients on it, so the panel
+            // says "also routed to" instead of repeating itself.
+            const byTitle = new Map();
+            for (const d of ordered) {
+              const key = (d.title || '').trim().toLowerCase();
+              if (!byTitle.has(key)) byTitle.set(key, { ...d, alsoRouted: [] });
+              else {
+                const seen = byTitle.get(key);
+                const who = d.persona_label || '';
+                if (who && who !== seen.persona_label && !seen.alsoRouted.includes(who)) seen.alsoRouted.push(who);
+              }
+            }
+            return [...byTitle.values()].slice(0, 6);
           })().map((d, index) => {
             const rawConfidence = Number(d.confidence_score);
             const conf = Number.isFinite(rawConfidence) ? Math.max(0, Math.min(100, rawConfidence)) : 0;
@@ -2454,6 +2476,9 @@ const drillReact = (function () {
                 </span>
                 <h3>${d.title || 'Opportunity briefing'}</h3>
                 <p>${d.recommended_action || 'Open the supporting evidence before acting.'}</p>
+                ${d.alsoRouted && d.alsoRouted.length
+                  ? html`<p class="drill-also">Also routed to ${d.alsoRouted.join(', ')}</p>`
+                  : null}
                 <div class="conf-row">
                   <div class="conf-track" role="img" aria-label=${`Confidence: ${conf} of 100`}>
                     <div class="conf-fill" style=${{ width: `${conf}%`, background: color }}></div>
