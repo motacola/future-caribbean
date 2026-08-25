@@ -456,6 +456,9 @@ a:hover { text-decoration: underline; }
 .sec-accordion > summary strong { font-family: var(--serif); font-size: 19px; line-height: 1.25; }
 .sec-accordion > summary em { font-style: normal; font-size: 12px; color: var(--muted); }
 .sec-accordion > summary .agents-eyebrow { margin: 0; }
+/* .sec-label carries its own top rule and 18px gap; inside a summary the
+   accordion supplies the framing, so strip both. */
+.sec-accordion > summary .sec-label { margin: 0 0 2px; padding: 0; border-top: none; background-image: none; }
 .sec-accordion[open] > summary { border-bottom: 1px solid var(--border); }
 .sec-accordion > *:not(summary) { margin: 14px 18px; }
 
@@ -1571,12 +1574,14 @@ html { scroll-behavior: smooth; }
 
 <section class="theater" id="theater" aria-labelledby="theater-title">
   <div class="live-grid">
-  <div class="sec-pane" id="ask-desk">
-    <div class="sec-label">Got a question?</div>
-    <div class="st">Ask the desk</div>
-    <div class="ss">It answers from today's data — with receipts, not guesswork.</div>
+  <details class="sec-pane sec-accordion" id="ask-desk">
+    <summary>
+      <span class="sec-label">Got a question?</span>
+      <strong>Ask the desk</strong>
+      <em>It answers from today's data — with receipts, not guesswork.</em>
+    </summary>
     <div id="ask-desk-root"></div>
-  </div>
+  </details>
   <div class="theater-shell">
     <div class="theater-head">
       <div class="theater-title">
@@ -3121,18 +3126,30 @@ window.addEventListener('scroll', () => {
   setTimeout(revealAll, 1200);
   window.addEventListener('load', () => setTimeout(revealAll, 400));
 
+  // The count-up overwrites the real figure while it runs, so it must be
+  // guaranteed to land on the true value. requestAnimationFrame is throttled in
+  // background tabs and can stop mid-count, which would leave "4 markets
+  // watched" on screen when the answer is 23 — on a data page a stale number is
+  // worse than no animation. Every counter keeps its final text and a timer
+  // writes it back whether or not the frames ever arrive.
   function animateCounters(band) {
+    const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     band.querySelectorAll('.proof-k').forEach(el => {
-      const m = el.textContent.match(/^(\d+)(.*)$/);
+      const finalText = el.textContent;
+      const m = finalText.match(/^(\d+)(.*)$/);
       if (!m) return;
       const target = parseInt(m[1], 10), suffix = m[2];
-      if (!target) return;
-      const t0 = performance.now(), dur = 900;
+      if (!target || reduced) return;
+      const dur = 900;
+      const settle = () => { el.textContent = finalText; };
+      const t0 = performance.now();
       (function tick(now) {
         const p = Math.min(1, (now - t0) / dur);
+        if (p >= 1) { settle(); return; }
         el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3))) + suffix;
-        if (p < 1) requestAnimationFrame(tick);
+        requestAnimationFrame(tick);
       })(t0);
+      setTimeout(settle, dur + 400);
     });
   }
 })();
