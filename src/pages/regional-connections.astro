@@ -72,11 +72,9 @@ const scoreTier = (s) => (s >= 60 ? 'high' : s >= 45 ? 'mid' : 'low');
 
 <style is:global>
 :root {
-  --bg: #F4EBDD; --card: #FFFCF4; --card-alt: #EDE8DF;
-  --ink: #18251F; --text: #18251F; --sub: #455A50; --muted: #5D6B62;
-  --gold: #B57A22; --teal: #0D766E; --coral: #B94836; --sky: #2676A8; --lime: #B6C74E;
-  --border: #D8CBB8; --border-dark: #AA9A82;
-  --serif: 'Cormorant Garamond', Georgia, serif;
+  /* Inherits the site-wide financial-editorial tokens from
+     src/styles/global.css. */
+  --serif: 'Playfair Display', Georgia, serif;
   --sans: 'Inter', -apple-system, system-ui, sans-serif;
   --mono: 'IBM Plex Mono', monospace;
   --r: 3px;
