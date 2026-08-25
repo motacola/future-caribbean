@@ -23,11 +23,9 @@ const lollipopData = {
 
 <style is:global>
 :root {
-  --bg: #F4EBDD; --card: #FFFCF4; --card-alt: #EAF2EC;
-  --ink: #18251F; --text: #18251F; --sub: #455A50; --muted: #7F8C83;
-  --gold: #B57A22; --teal: #0D766E; --coral: #B94836; --sky: #2676A8; --lime: #B6C74E;
-  --border: #D8CBB8; --border-dark: #AA9A82;
-  --serif: 'Cormorant Garamond', Georgia, serif;
+  /* Inherits the site-wide financial-editorial tokens from
+     src/styles/global.css; only chart-specific tokens live here. */
+  --serif: 'Playfair Display', Georgia, serif;
   --sans: 'Inter', -apple-system, system-ui, sans-serif;
   --mono: 'IBM Plex Mono', monospace;
   --r: 3px;
@@ -48,7 +46,7 @@ const lollipopData = {
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.6; font-size: 15px; -webkit-font-smoothing: antialiased; }
 
-.masthead { background: var(--ink); color: var(--bg); padding: 14px 0; }
+.masthead { background: linear-gradient(160deg, #211D19, #14110E 88%); color: var(--bg); padding: 14px 0; }
 .masthead::after { content: ""; display: block; height: 2px; margin-bottom: -2px; background: linear-gradient(90deg, var(--gold), var(--teal) 55%, transparent); opacity: .85; }
 .mast-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
 .mast-name { font-family: var(--serif); font-size: 18px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--bg); text-decoration: none; }
@@ -60,14 +58,17 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); line
 .live-dot { width: 6px; height: 6px; border-radius: 50%; background: #3fb950; animation: pulse 2.4s ease-in-out infinite; }
 @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
 
+/* Financial-editorial: section eyebrows (FT desk break) */
+.build-sec-title { font-family: var(--serif); font-size: clamp(24px, 3vw, 32px); font-weight: 700; margin: 36px 0 14px; letter-spacing: -.01em; border-top: 2px solid var(--ink); padding-top: 10px; }
+.build-sec-title::first-letter { color: var(--teal); }
 .hero { max-width: 1100px; margin: 0 auto; padding: 52px 24px 40px; }
 .hero-kicker { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gold); font-weight: 600; margin-bottom: 14px; }
 .hero-headline { font-family: var(--serif); font-size: clamp(30px, 4vw, 46px); font-weight: 700; line-height: 1.1; letter-spacing: -.5px; margin-bottom: 14px; }
-.hero-headline em { font-style: italic; color: var(--teal); }
+.hero-headline em { font-style: normal; color: var(--teal); }
 .hero-sub { font-size: 16px; color: var(--sub); max-width: 580px; line-height: 1.6; margin-bottom: 28px; }
 .hero-stats { display: flex; gap: 28px; flex-wrap: wrap; }
 .hero-stat { font-size: 12px; color: var(--muted); }
-.hero-stat strong { color: var(--text); font-family: var(--mono); font-size: 13px; }
+.hero-stat strong { color: var(--text); font-family: var(--serif); font-size: 18px; font-weight: 700; font-variant-numeric: tabular-nums; }
 
 .builder-wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px 56px; }
 .builder { display: grid; grid-template-columns: 380px 1fr; gap: 28px; align-items: start; }
@@ -360,7 +361,7 @@ footer { border-top: 1px solid var(--border); padding: 24px; text-align: center;
 <section class="pb-live-section" aria-labelledby="pb-live-title">
   <div class="pb-live-head">
     <span class="pb-live-label">Live interventions</span>
-    <h3 id="pb-live-title">Verified in the operator console</h3>
+    <h3 class="build-sec-title" id="pb-live-title">Verified in the operator console</h3>
     <p class="pb-live-sub">Streams only when <code>PUBLIC_PB_URL</code> is configured. Without it, this slot stays empty and the rest of the page is identical to the build-time desk.</p>
   </div>
   <div id="pb-live-feed" class="pb-live-feed" aria-live="polite"></div>
@@ -430,7 +431,7 @@ footer { border-top: 1px solid var(--border); padding: 24px; text-align: center;
 <div class="cta-section">
   <div class="cta-card">
     <div class="cta-copy">
-      <h3>Use this feed, or create a new desk.</h3>
+      <h3 class="build-sec-title">Use this feed, or create a new desk.</h3>
       <p>Copy the current briefing, or define another market where scattered public data needs to become useful intelligence.</p>
     </div>
     <div class="cta-btns">
@@ -443,7 +444,7 @@ footer { border-top: 1px solid var(--border); padding: 24px; text-align: center;
 <section class="ranked-section" aria-labelledby="ranked-title">
   <div class="ranked-head">
     <span class="ranked-label">Ranked opportunity</span>
-    <h2 id="ranked-title">Markets this cycle, in priority order</h2>
+    <h2 class="build-sec-title" id="ranked-title">Markets this cycle, in priority order</h2>
     <p class="ranked-sub">Current published dispatch-desk snapshot. The dashed line marks the 60-point "watch" threshold. Source timestamp: <span class="ranked-meta">{lollipopData.dataAsOf || 'not supplied'} · cycle {lollipopData.cycle}</span></p>
   </div>
   <LollipopIsland
@@ -481,7 +482,7 @@ footer { border-top: 1px solid var(--border); padding: 24px; text-align: center;
 <div class="modal-overlay" id="modal" onclick="if(event.target===this)closeModal()">
   <div class="modal-card">
     <button class="modal-close" onclick="closeModal()">✕</button>
-    <h3>Deploy Signal Fabric.</h3>
+    <h3 class="build-sec-title">Deploy Signal Fabric.</h3>
     <p>Define a new market, choose its sources, and route the resulting briefings to the people who need them.</p>
     <div class="modal-actions">
       <button class="modal-btn primary" onclick="copyBriefing();closeModal()">📋 Copy a live briefing</button>
@@ -494,7 +495,7 @@ footer { border-top: 1px solid var(--border); padding: 24px; text-align: center;
 <div class="modal-overlay" id="wizard" onclick="if(event.target===this)closeWizard()">
   <div class="modal-card">
     <button class="modal-close" onclick="closeWizard()">✕</button>
-    <h3>Define a new domain</h3>
+    <h3 class="build-sec-title">Define a new domain</h3>
     <p>Fill this in to add a blueprint desk: what it watches, what it should notice, and who should receive the briefing.</p>
     <div class="wiz-field">
       <label>Domain name</label>

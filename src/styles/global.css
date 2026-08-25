@@ -1,20 +1,56 @@
-/* fallow-ignore-file unused-file */
+/* Signal Fabric — financial-editorial design system (site-wide).
+   Single source of truth for the palette, type, and motion tokens on every
+   page. Page-local <style> blocks may override specifics but inherit these.
+   Previous warm-Caribbean system preserved in tag old-design-20260824. */
 :root {
-  --bg: #F4EBDD; --ink: #18251F; --card: #FFFCF4; --card-alt: #EDE8DF;
-  --text: #18251F; --sub: #455A50; --muted: #7F8C83;
-  --gold: #B57A22; --teal: #0D766E; --coral: #B94836; --sky: #2676A8;
-  --lime: #B6C74E; --border: #D8CBB8; --border-dark: #AA9A82;
-  --serif: 'Cormorant Garamond', Georgia, serif;
+  --bg: #FFF9F0; --ink: #1A1714; --card: #FFFCF4; --card-alt: #F2E8D9;
+  --text: #1A1714; --sub: #4A443C; --muted: #857D71;
+  --gold: #9A6B15; --teal: #0D5257; --coral: #7A1E1E; --sky: #2676A8;
+  --lime: #B6C74E; --border: rgba(26,23,20,.18); --border-dark: rgba(26,23,20,.45);
+  --serif: 'Playfair Display', Georgia, serif;
   --sans: 'Inter', -apple-system, system-ui, sans-serif;
   --mono: 'IBM Plex Mono', monospace;
   --r: 3px;
+  /* Motion tokens (animate skill): strong ease-out for entrances,
+     strong ease-in-out for on-screen movement, linear for marquees. */
+  --fe-ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --fe-ease-inout: cubic-bezier(0.77, 0, 0.175, 1);
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-/* Horizontal containment lives on <html>, not <body>: `overflow-x: hidden`
-   on body turns it into a scroll container, which silently disables
-   position:sticky everywhere inside it. `clip` on the root contains the same
-   overflow without creating one. */
 html { overflow-x: clip; }
-body { font-family: var(--sans); background: var(--bg); background-image: radial-gradient(1100px 500px at 75% -120px, rgba(181,122,34,.06), transparent 70%), radial-gradient(900px 420px at -10% 30%, rgba(13,118,110,.04), transparent 70%); color: var(--text); line-height: 1.6; font-size: 15px; -webkit-font-smoothing: antialiased; }
+body { font-family: var(--sans); background: var(--bg); background-image: radial-gradient(1100px 500px at 75% -120px, rgba(154,107,21,.05), transparent 70%), radial-gradient(900px 420px at -10% 30%, rgba(13,82,87,.04), transparent 70%); color: var(--text); line-height: 1.6; font-size: 15px; -webkit-font-smoothing: antialiased; }
 a { color: var(--teal); text-decoration: none; }
 a:hover { text-decoration: underline; }
+
+/* ── Site-wide motion pass ──────────────────────────────────
+   Subtle, editorial. Every rule here is transform/opacity only and is
+   disabled under prefers-reduced-motion. */
+
+/* Section-level scroll reveal (opt-in via .reveal, driven by each page's
+   IntersectionObserver if present; harmless without JS because the base
+   state only applies when .reveal exists AND JS adds it). */
+@keyframes fe-rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+/* Tables (accuracy, capability-matches, opportunity-resolution):
+   rows read as pressable records. */
+@media (hover: hover) and (pointer: fine) {
+  tbody tr { transition: background .15s ease; }
+  tbody tr:hover { background: rgba(154,107,21,.04); }
+  .card { transition: transform .18s var(--fe-ease-out), border-color .18s var(--fe-ease-out); }
+}
+
+/* Headline serif tracking settles in — first-paint polish, marketing-tier
+   duration allowed. */
+h1, h2 { animation: fe-rise .7s var(--fe-ease-out) both; }
+
+@media (prefers-reduced-motion: reduce) {
+  h1, h2 { animation: none !important; }
+  tbody tr, .card { transition: none !important; }
+}
+
+/* ── Site-wide scroll reveal (driven by fe-site-motion script in Base.astro).
+   Hidden state only applies once JS adds .fe-reveal, so no-JS users and
+   crawlers always see full content. ── */
+.fe-reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s var(--fe-ease-out), transform .6s var(--fe-ease-out); transition-delay: var(--fe-d, 0s); }
+.fe-reveal.fe-in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .fe-reveal { opacity: 1; transform: none; transition: none; } }

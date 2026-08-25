@@ -951,7 +951,10 @@ export function loadDashboardData() {
     // photography at a glance and there is nothing behind it, so it is now
     // reserved for the lead — every other story runs text-first and shows an
     // image only when the publisher actually gave us one.
-    const showMedia = isLead || Boolean(imageUrl);
+    // Financial-editorial pass: every card carries a media block. Publisher
+    // images win when present; otherwise the topic gradient stand-in gives
+    // the board consistent visual rhythm instead of text-only rows.
+    const showMedia = true;
     const mediaHtml = showMedia
       ? `<a class="news-media topic-${esc(primaryTopic)}" href="${esc(item.url)}" target="_blank" rel="noopener" aria-label="Read ${esc(headline)}">
         <span class="news-media-fallback" aria-hidden="true"><b>${esc(primaryCountry)}</b><em>${esc(primaryTopic)}</em></span>${imageUrl ? `<img class="news-image-backdrop" src="${esc(imageUrl)}" alt="" aria-hidden="true" loading="lazy" decoding="async" referrerpolicy="no-referrer"><img class="news-image-main" src="${esc(imageUrl)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="const media=this.closest('.news-media');media?.classList.add('image-failed');media?.querySelectorAll('img').forEach(img=>img.remove())">` : ''}
