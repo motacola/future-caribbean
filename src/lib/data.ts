@@ -267,18 +267,27 @@ function packFreshnessStrip(pack: any): string {
 }
 
 // fallow-ignore-next-line complexity
+const NOW_YEAR = new Date().getUTCFullYear();
+
+/** Pipeline records are loosely typed; normalise a field to a string once. */
+const str = (v: any): string => String(v ?? '');
+/** Every 4-digit year in a blob of text, ignoring anything in the future. */
+const yearsIn = (text: string): number[] =>
+  (text.match(/(19|20)\d{2}/g) || []).map(Number).filter(y => y <= NOW_YEAR);
+
+const HYP_STATUS_LABEL: Record<string, string> = {
+  corroborated: 'Confirmed',
+  unconfirmed: 'Not confirmed yet',
+  contradicted: 'Contradicted',
+};
+
 function packHypothesisLi(h: any): string {
-  const status = h.status || '';
   // The class keeps the raw token for styling; the label is what a reader sees.
-  const STATUS_LABEL: Record<string, string> = {
-    corroborated: 'Confirmed',
-    unconfirmed: 'Not confirmed yet',
-    contradicted: 'Contradicted',
-  };
-  const badge = status
-    ? `<span class="hyp-status ${esc(status)}">${esc(STATUS_LABEL[status] || status.replace(/_/g, ' '))}</span>` : '';
+  const status = str(h.status);
+  const label = HYP_STATUS_LABEL[status] || status.replace(/_/g, ' ');
+  const badge = status ? `<span class="hyp-status ${esc(status)}">${esc(label)}</span>` : '';
   const basis = h.basis ? `<em>${esc(humanize(h.basis))}</em>` : '';
-  return `<li><strong>${esc(h.sector || '')}</strong>${badge}${basis}</li>`;
+  return `<li><strong>${esc(str(h.sector))}</strong>${badge}${basis}</li>`;
 }
 
 // fallow-ignore-next-line complexity
@@ -311,12 +320,33 @@ function buildValidationPackHtml(pack: any, country: string): string {
   const opLis = ((pack.credible_local_operators || []) as any[]).slice(0, 4).map(packOperatorLi).join('')
     || '<li>No registry-backed operators for this country yet.</li>';
   // fallow-ignore-next-line complexity
-  const projLis = ((pack.supporting_projects || []) as any[]).slice(0, 4).map((p: any) => {
-    const url = p.url || '';
-    const title = esc((p.title || '').slice(0, 90));
-    if (url) return `<li><a href="${esc(url)}" target="_blank" rel="noopener">${title}</a><em>${esc(p.source || '')}</em></li>`;
-    return `<li>${title}</li>`;
-  }).join('') || '<li>No matched projects this cycle.</li>';
+  // Supporting projects arrive with no date field; the year is only ever in the
+  // title ("Guyana Labor Force Survey: Third Quarter 2017"). Listed undated
+  // under "today's call" a 2013 survey reads as evidence for a move that
+  // happened last month, so pull the year out and separate current evidence
+  // from background.
+  const projectYear = (p: any): number | null => {
+    const years = yearsIn([p.date, p.approval_date, p.year, p.title].map(str).join(' '));
+    return years.length ? Math.max(...years) : null;
+  };
+  const yearTag = (year: number | null) => (year ? `<span class="vpack-year">${year}</span>` : '');
+  const projectLi = (p: any, year: number | null) => {
+    const title = esc(str(p.title).slice(0, 90));
+    const meta = `${yearTag(year)}<em>${esc(str(p.source))}</em>`;
+    const url = str(p.url);
+    return url
+      ? `<li><a href="${esc(url)}" target="_blank" rel="noopener">${title}</a>${meta}</li>`
+      : `<li>${title}${meta}</li>`;
+  };
+  const allProjects = ((pack.supporting_projects || []) as any[])
+    .map((p: any) => ({ p, year: projectYear(p) }));
+  const currentProjects = allProjects.filter(x => x.year === null || x.year >= NOW_YEAR - 2);
+  const olderProjects = allProjects.filter(x => x.year !== null && x.year < NOW_YEAR - 2);
+  const projLis = (currentProjects.slice(0, 4).map(x => projectLi(x.p, x.year)).join('')
+    || '<li class="vpack-empty">Nothing current matched this cycle.</li>')
+    + (olderProjects.length
+      ? `<li class="vpack-older"><details><summary>${olderProjects.length} older item${olderProjects.length === 1 ? '' : 's'} for background</summary><ul>${olderProjects.slice(0, 4).map(x => projectLi(x.p, x.year)).join('')}</ul></details></li>`
+      : '');
   const procLis = ((pack.procurement_matches || []) as any[]).slice(0, 4).map((p: any) => packProcurementLi(p)).join('')
     || '<li>No live procurement notices matched.</li>';
   const qLis = ((pack.unresolved_questions || []) as any[]).slice(0, 4)

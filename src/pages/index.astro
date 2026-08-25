@@ -527,6 +527,25 @@ a:hover { text-decoration: underline; }
 .drill-follow:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
 .drill-follow.on { background: var(--teal); border-color: var(--teal); color: var(--card); }
 .drill-card.for-you { box-shadow: inset 3px 0 0 var(--gold); }
+/* Compact lead preview in the hero. */
+.lead-peek { display: grid; gap: 7px; padding: 16px 18px; margin: 4px 0 18px; background: var(--card); border: 1px solid var(--border-dark); border-left: 3px solid var(--gold); border-radius: var(--r); text-decoration: none; color: inherit; }
+.lead-peek:hover { text-decoration: none; border-left-color: var(--teal); }
+.lead-peek:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+.lead-peek-eyebrow { font: 700 9px var(--mono); letter-spacing: 1.4px; text-transform: uppercase; color: var(--gold); }
+.lead-peek-title { font-family: var(--serif); font-size: 22px; line-height: 1.2; color: var(--text); }
+.lead-peek-move { font-size: 12.5px; line-height: 1.5; color: var(--sub); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.lead-peek-meta { display: flex; flex-wrap: wrap; gap: 6px 20px; padding-top: 3px; border-top: 1px solid var(--border); margin-top: 3px; }
+.lead-peek-fact { display: grid; gap: 1px; font-size: 12px; color: var(--text); padding-top: 7px; }
+.lead-peek-fact b { font: 700 8.5px var(--mono); letter-spacing: 1px; text-transform: uppercase; color: var(--muted); }
+.lead-peek-go { justify-self: start; margin-top: 6px; }
+.vpack-year { display: inline-block; margin-right: 6px; font: 700 9px var(--mono); letter-spacing: .6px; color: var(--gold); }
+.vpack-empty { color: var(--muted); font-size: 11px; }
+.vpack-older > details > summary { list-style: none; cursor: pointer; font: 700 9px var(--mono); letter-spacing: .8px; text-transform: uppercase; color: var(--muted); padding: 6px 0; }
+.vpack-older > details > summary::-webkit-details-marker { display: none; }
+.vpack-older > details > summary::before { content: "+ "; color: var(--gold); }
+.vpack-older > details[open] > summary::before { content: "– "; }
+.vpack-older > details > summary:hover { color: var(--text); }
+.vpack-older ul { margin-top: 4px; }
 .drill-also { margin-top: 5px; font: 600 9px var(--mono); letter-spacing: .6px; text-transform: uppercase; color: var(--muted); }
 .for-you-tag { display: inline-block; margin-left: 6px; padding: 1px 5px; border-radius: 2px; background: var(--gold); color: var(--card); font: 700 8px var(--mono); letter-spacing: .8px; text-transform: uppercase; }
 @media(max-width:768px) {
@@ -1375,7 +1394,19 @@ html { scroll-behavior: smooth; }
       <p class="sec-label" title={`Cycle ${d.cycleId}`}>The front page · {d.cycleLabel}</p>
       <h1 id="map-title">Where Caribbean opportunity is moving <em>now.</em></h1>
       <p class="front-standfirst">{d.nCountries} Caribbean markets and territories, watched around the clock. The bigger the pulse on the map, the stronger the signal — tap a country to see what's moving.</p>
-      <a class="front-cta" href="#decision-workspace">Read today's briefing ↓</a>
+      <!-- The hero used to point at the payoff; now it delivers a piece of it.
+           Country, call, confidence, who it is for, and the move — then the
+           link down for the evidence. -->
+      <a class="lead-peek" href="#decision-workspace">
+        <span class="lead-peek-eyebrow">Lead this cycle · {d.lCountry}</span>
+        <strong class="lead-peek-title">{d.lTitle}</strong>
+        <span class="lead-peek-move">{d.leadAction}</span>
+        <span class="lead-peek-meta">
+          <span class="lead-peek-fact"><b>Confidence</b>{d.lGrade}</span>
+          <span class="lead-peek-fact"><b>Best placed to act</b>{d.leadOwner}</span>
+        </span>
+        <span class="front-cta lead-peek-go">Read the full briefing</span>
+      </a>
       <div class="how-to">
         <span class="fp-head">New here? How to read this page</span>
         <ol>
