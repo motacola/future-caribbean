@@ -441,6 +441,66 @@ a:hover { text-decoration: underline; }
 .news-card p { font-size:13px; line-height:1.55; color:var(--sub); }
 /* Country news inside the map drill — the map is now a way to read a country,
    so its stories get a proper section rather than three links in a corner. */
+.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0; }
+
+/* Section-level accordion for the agent-facing / provenance blocks. These are
+   correct and worth keeping, but they are reference material for machines and
+   auditors, not the reading path — so they open on request. */
+.sec-accordion { border: 1px solid var(--border); border-radius: var(--r); background: var(--card); overflow: hidden; }
+.sec-accordion > summary { list-style: none; cursor: pointer; padding: 16px 18px; display: grid; gap: 3px; position: relative; padding-right: 46px; }
+.sec-accordion > summary::-webkit-details-marker { display: none; }
+.sec-accordion > summary::after { content: "+"; position: absolute; right: 18px; top: 50%; transform: translateY(-50%); font: 400 20px var(--mono); line-height: 1; color: var(--gold); }
+.sec-accordion[open] > summary::after { content: "\2013"; }
+.sec-accordion > summary:hover { background: var(--card-alt); }
+.sec-accordion > summary:focus-visible { outline: 2px solid var(--teal); outline-offset: -2px; }
+.sec-accordion > summary strong { font-family: var(--serif); font-size: 19px; line-height: 1.25; }
+.sec-accordion > summary em { font-style: normal; font-size: 12px; color: var(--muted); }
+.sec-accordion > summary .agents-eyebrow { margin: 0; }
+.sec-accordion[open] > summary { border-bottom: 1px solid var(--border); }
+.sec-accordion > *:not(summary) { margin: 14px 18px; }
+
+/* Desk guide — persistent assistant */
+.guide-fab { position: fixed; right: 18px; bottom: 18px; z-index: 900; display: inline-flex; align-items: center; gap: 9px; appearance: none; cursor: pointer;
+  background: var(--ink, #12100e); color: #fff; border: 1px solid var(--ink, #12100e); border-radius: 999px; padding: 11px 18px 11px 13px;
+  font: 700 11px var(--mono); letter-spacing: 1px; text-transform: uppercase; box-shadow: 0 6px 22px rgb(0 0 0 / .22); }
+.guide-fab-mark { display: grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: var(--gold); color: var(--ink, #12100e); font: 700 12px var(--mono); }
+.guide-fab:hover { background: var(--teal); border-color: var(--teal); }
+.guide-fab:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
+.guide-fab[aria-expanded="true"] { display: none; }
+
+.guide-panel { position: fixed; right: 18px; bottom: 18px; z-index: 950; width: min(380px, calc(100vw - 36px)); max-height: min(560px, calc(100vh - 36px));
+  display: flex; flex-direction: column; background: var(--card); border: 1px solid var(--border-dark); border-radius: var(--r);
+  box-shadow: 0 18px 48px rgb(0 0 0 / .28); overflow: hidden; }
+.guide-panel[hidden] { display: none; }
+.guide-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 13px 15px; border-bottom: 3px double var(--border-dark); }
+.guide-eyebrow { display: block; font: 700 8.5px var(--mono); letter-spacing: 1.4px; text-transform: uppercase; color: var(--gold); margin-bottom: 3px; }
+.guide-head strong { font-family: var(--serif); font-size: 16px; }
+.guide-close { appearance: none; background: none; border: 1px solid var(--border); border-radius: 3px; padding: 4px 8px; cursor: pointer; font: 700 9px var(--mono); letter-spacing: .8px; text-transform: uppercase; color: var(--muted); }
+.guide-close:hover { border-color: var(--coral); color: var(--coral); }
+.guide-close:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+.guide-thread { flex: 1 1 auto; overflow-y: auto; padding: 13px 15px; display: grid; gap: 11px; align-content: start; }
+.guide-msg { font-size: 12.5px; line-height: 1.55; }
+.guide-msg.you { justify-self: end; max-width: 85%; background: var(--card-alt); border: 1px solid var(--border); border-radius: 10px 10px 2px 10px; padding: 7px 10px; color: var(--text); }
+.guide-msg.desk { color: var(--sub); white-space: pre-wrap; }
+.guide-msg.desk b { color: var(--text); }
+.guide-act { margin-top: 7px; display: flex; flex-wrap: wrap; gap: 5px; }
+.guide-act button { appearance: none; background: none; border: 1px solid var(--teal); border-radius: 3px; padding: 4px 9px; cursor: pointer; font: 700 9px var(--mono); letter-spacing: .7px; text-transform: uppercase; color: var(--teal); }
+.guide-act button:hover { background: color-mix(in oklab, var(--teal) 10%, transparent); }
+.guide-chips { display: flex; flex-wrap: wrap; gap: 5px; padding: 0 15px 10px; }
+.guide-chips button { appearance: none; background: none; border: 1px dashed var(--border-dark); border-radius: 3px; padding: 4px 8px; cursor: pointer; font: 600 9.5px var(--mono); letter-spacing: .4px; text-transform: uppercase; color: var(--muted); }
+.guide-chips button:hover { border-color: var(--teal); color: var(--teal); border-style: solid; }
+.guide-form { display: flex; gap: 7px; padding: 11px 15px; border-top: 1px solid var(--border); }
+.guide-input { flex: 1 1 auto; min-width: 0; background: var(--bg); border: 1px solid var(--border-dark); border-radius: 3px; padding: 8px 10px; font: 400 13px var(--sans); color: var(--text); }
+.guide-input:focus-visible { outline: 2px solid var(--teal); outline-offset: 1px; }
+.guide-send { appearance: none; background: var(--teal); border: 1px solid var(--teal); color: var(--card); border-radius: 3px; padding: 8px 13px; cursor: pointer; font: 700 10px var(--mono); letter-spacing: .8px; text-transform: uppercase; }
+.guide-send[disabled] { opacity: .55; cursor: default; }
+@media(max-width:768px) {
+  .guide-fab { right: 12px; bottom: 12px; padding: 10px 15px 10px 11px; }
+  .guide-fab-text { display: none; }
+  .guide-panel { right: 10px; left: 10px; bottom: 10px; width: auto; max-height: min(70vh, 520px); }
+}
+@media(prefers-reduced-motion: reduce) { .guide-fab, .guide-panel { transition: none; } }
+
 /* Reader preferences bar */
 .deskbar { padding-top: 0; }
 .deskbar-row { display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: start; border-top: 1px solid var(--border-dark); border-bottom: 1px solid var(--border); padding: 12px 0; }
@@ -1474,14 +1534,17 @@ html { scroll-behavior: smooth; }
   </div>
   <div class="market-grid"><Fragment set:html={d.marketWatchHtml} /></div>
   <div class="market-chart-grid" aria-label="Stock market data charts and market activity indicators"><Fragment set:html={d.marketChartHtml} /></div>
-  <div class="market-note"><strong>Source policy:</strong> exchange prices and notices come from official exchanges or regulators first. News outlets are used for context and validation; social posts are discovery leads only.{d.regionalSourceHtml && <Fragment> Regional context sources include: <span class="regional-sources"><Fragment set:html={d.regionalSourceHtml} /></span></Fragment>}</div>
-  <div class="source-registry" id="source-registry">
-    <div class="source-registry-head">
-      <h3>Source registry now tracked by the desk</h3>
-      <span>{d.sourceRegistrySummary}</span>
+  <details class="sec-accordion" id="source-registry">
+    <summary>
+      <span class="agents-eyebrow">// provenance</span>
+      <strong>Where every number on this board comes from</strong>
+      <em>{d.sourceRegistrySummary}</em>
+    </summary>
+    <div class="market-note"><strong>Source policy:</strong> exchange prices and notices come from official exchanges or regulators first. News outlets are used for context and validation; social posts are discovery leads only.{d.regionalSourceHtml && <Fragment> Regional context sources include: <span class="regional-sources"><Fragment set:html={d.regionalSourceHtml} /></span></Fragment>}</div>
+    <div class="source-registry">
+      <Fragment set:html={d.sourceRegistryHtml} />
     </div>
-    <Fragment set:html={d.sourceRegistryHtml} />
-  </div>
+  </details>
 </div>
 
 <div class="sec sec-minor">
@@ -1867,6 +1930,220 @@ document.querySelectorAll('[data-news-filter]').forEach(button => button.addEven
     card.hidden = filter !== 'all' && !(kind === 'topic' ? (card.dataset.newsTopics || '').split('|').includes(value) : (card.dataset.newsCountries || '').split('|').includes(value));
   });
 }));
+
+// ── Desk guide ────────────────────────────────────────────────────────────
+// A navigator first, a Q&A second. Navigation intents resolve here and act on
+// the page immediately; anything else goes to /api/ask, the same deterministic
+// endpoint the inline "Ask the desk" panel uses. No model runs in the browser.
+const GUIDE_PLACES = [
+  { id: 'regional-news',      label: 'Regional news desk', terms: ['news', 'headlines', 'stories', 'press', 'wire'] },
+  { id: 'decision-workspace', label: "Today's call",       terms: ["today's call", 'todays call', 'the call', 'briefing', 'lead call', 'decision'] },
+  { id: 'market-watch',       label: 'Market watch',       terms: ['market', 'markets', 'exchange', 'stocks', 'chart', 'fx'] },
+  { id: 'receipts',           label: "The desk's receipts", terms: ['receipts', 'track record', 'accuracy', 'past calls', 'history'] },
+  { id: 'map-hero',           label: 'The map',            terms: ['map', 'top', 'start', 'home', 'front page'] },
+  { id: 'theater',            label: 'Watch the desk work', terms: ['theater', 'watch the desk', 'live feed', 'stream'] },
+  { id: 'about-fabric',       label: 'What is Signal Fabric', terms: ['what is this', 'about', 'how it works', 'explain the site'] },
+  { id: 'for-agents',         label: 'Machine-readable edition', terms: ['api', 'agent', 'machine readable', 'json', 'mcp', 'developer'] },
+];
+
+const guideEls = {};
+let guideBusy = false;
+
+function guideKnownCountries() {
+  const fromMap = (typeof MAP_MARKERS !== 'undefined' ? MAP_MARKERS : []).map(m => m.country);
+  const fromNews = typeof NEWS_BY_COUNTRY !== 'undefined' ? Object.keys(NEWS_BY_COUNTRY) : [];
+  return [...new Set([...fromMap, ...fromNews])].filter(Boolean);
+}
+
+function guideMatchCountry(text) {
+  const q = text.toLowerCase();
+  // Longest name first so "St Kitts & Nevis" is not shadowed by a shorter match.
+  return guideKnownCountries()
+    .sort((a, b) => b.length - a.length)
+    .find(c => q.includes(c.toLowerCase())) || '';
+}
+
+function guideSay(role, text, actions) {
+  const thread = guideEls.thread;
+  if (!thread) return;
+  const msg = document.createElement('div');
+  msg.className = `guide-msg ${role}`;
+  msg.textContent = text;
+  if (actions && actions.length) {
+    const row = document.createElement('div');
+    row.className = 'guide-act';
+    for (const action of actions) {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.textContent = action.label;
+      button.addEventListener('click', action.run);
+      row.appendChild(button);
+    }
+    msg.appendChild(row);
+  }
+  thread.appendChild(msg);
+  thread.scrollTop = thread.scrollHeight;
+}
+
+function guideGoto(id, label) {
+  const target = document.getElementById(id);
+  if (!target) return false;
+  target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  guideSay('desk', `Taking you to ${label}.`);
+  return true;
+}
+
+function guideOpenCountry(country) {
+  openCountryDrill(country);
+  document.getElementById('map-drill')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  const stories = (typeof NEWS_BY_COUNTRY !== 'undefined' && NEWS_BY_COUNTRY[country] || []).length;
+  const briefings = (typeof MAP_DISPATCHES !== 'undefined' && MAP_DISPATCHES[country] || []).length;
+  const parts = [];
+  if (briefings) parts.push(`${briefings} briefing${briefings === 1 ? '' : 's'}`);
+  if (stories) parts.push(`${stories} ${stories === 1 ? 'story' : 'stories'}`);
+  guideSay('desk', `${country} is open on the map — ${parts.length ? parts.join(' and ') + ' this cycle.' : 'watchlist only this cycle.'}`,
+    [
+      stories ? { label: `${country} news`, run: () => showCountryInNewsDesk(country) } : null,
+      { label: isFollowed(country) ? `Unfollow ${country}` : `Follow ${country}`, run: () => { toggleFollow(country); guideSay('desk', isFollowed(country) ? `Following ${country}.` : `No longer following ${country}.`); } },
+    ].filter(Boolean));
+}
+
+async function guideAskApi(question) {
+  guideBusy = true;
+  if (guideEls.send) guideEls.send.disabled = true;
+  guideSay('desk', 'Checking this cycle’s files…');
+  const pending = guideEls.thread?.lastElementChild;
+  try {
+    const res = await fetch('/api/ask', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ question }),
+    });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+    pending?.remove();
+    guideSay('desk', humanizeJs(data.answer) || 'No answer came back for that.');
+  } catch {
+    pending?.remove();
+    guideSay('desk', 'The desk API is not reachable from this copy of the page. Navigation still works — try "show me Guyana" or "take me to market watch".');
+  }
+  guideBusy = false;
+  if (guideEls.send) guideEls.send.disabled = false;
+}
+
+function guideHandle(rawInput) {
+  const input = (rawInput || '').trim();
+  if (!input || guideBusy) return;
+  guideSay('you', input);
+  const q = input.toLowerCase();
+
+  if (/^(help|what can you do|options)\b/.test(q)) {
+    guideSay('desk', 'I can move you around the page and answer questions about this cycle.\nTry: "show me Guyana", "news about Jamaica", "take me to market watch", "follow Belize", "read as investor", or "explain the lead".');
+    return;
+  }
+
+  const country = guideMatchCountry(q);
+
+  // "news about X" is a different destination from "show me X".
+  if (country && /\b(news|headlines|stories|press)\b/.test(q)) {
+    showCountryInNewsDesk(country);
+    guideSay('desk', `Filtered the news desk to ${country}.`);
+    return;
+  }
+  if (country && /\b(follow|watch|track)\b/.test(q)) {
+    if (!isFollowed(country)) toggleFollow(country);
+    guideSay('desk', `Following ${country}. It is in your desk bar now.`);
+    return;
+  }
+  if (/\bread(ing)? as\b|\blens\b|\bpersona\b/.test(q)) {
+    const select = document.getElementById('lens-select');
+    // Match on any distinctive word of the option, so "read as investor" finds
+    // "Diaspora Investor" and "operator" finds "Regional Founder/Operator".
+    const option = [...(select?.options || [])]
+      .filter(o => o.value)
+      .map(o => ({
+        o,
+        hits: o.value.toLowerCase().split(/[^a-z]+/).filter(w => w.length > 3 && q.includes(w)).length,
+      }))
+      .filter(x => x.hits > 0)
+      .sort((a, b) => b.hits - a.hits)[0]?.o;
+    if (select && option) {
+      select.value = option.value;
+      select.dispatchEvent(new Event('change'));
+      document.getElementById('deskbar')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      guideSay('desk', `Reading as ${option.value}. Briefings routed to you now lead the map drill.`);
+      return;
+    }
+    guideSay('desk', 'Pick a lens in the desk bar: Diaspora Investor, Ecosystem Builder, Founder / Operator, Procurement Watcher, Policy / Media, or Operations / Resilience.',
+      [{ label: 'Open desk bar', run: () => document.getElementById('deskbar')?.scrollIntoView({ behavior: 'smooth', block: 'center' }) }]);
+    return;
+  }
+  // A bare country name, or "show me X", is a map drill.
+  if (country && (/\b(show|open|go to|take me|drill|look at)\b/.test(q) || q.split(/\s+/).length <= 3)) {
+    guideOpenCountry(country);
+    return;
+  }
+  const place = GUIDE_PLACES.find(p => p.terms.some(t => q.includes(t)));
+  if (place && /\b(show|open|go|take me|jump|scroll|where)\b/.test(q)) {
+    if (guideGoto(place.id, place.label)) return;
+  }
+  if (country) { guideOpenCountry(country); return; }
+  if (place && guideGoto(place.id, place.label)) return;
+
+  guideAskApi(input);
+}
+
+function setupGuide() {
+  guideEls.fab = document.getElementById('guide-fab');
+  guideEls.panel = document.getElementById('guide-panel');
+  guideEls.thread = document.getElementById('guide-thread');
+  guideEls.form = document.getElementById('guide-form');
+  guideEls.input = document.getElementById('guide-input');
+  guideEls.send = document.getElementById('guide-send');
+  guideEls.chips = document.getElementById('guide-chips');
+  if (!guideEls.fab || !guideEls.panel) return;
+
+  const open = () => {
+    guideEls.panel.hidden = false;
+    guideEls.fab.setAttribute('aria-expanded', 'true');
+    guideEls.input?.focus();
+    if (!guideEls.thread.childElementCount) {
+      guideSay('desk', 'Ask me about this cycle, or tell me where to go. Say "help" for what I can do.');
+    }
+  };
+  const close = () => {
+    guideEls.panel.hidden = true;
+    guideEls.fab.setAttribute('aria-expanded', 'false');
+    guideEls.fab.focus();
+  };
+
+  guideEls.fab.addEventListener('click', open);
+  document.getElementById('guide-close')?.addEventListener('click', close);
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && !guideEls.panel.hidden) close();
+  });
+  guideEls.form?.addEventListener('submit', e => {
+    e.preventDefault();
+    const value = guideEls.input.value;
+    guideEls.input.value = '';
+    guideHandle(value);
+  });
+
+  for (const chip of ['Show me Guyana', 'Take me to market watch', 'Explain the lead', 'What changed this cycle?']) {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.textContent = chip;
+    button.addEventListener('click', () => guideHandle(chip));
+    guideEls.chips?.appendChild(button);
+  }
+}
+
+// The guide markup sits at the end of the document, below this script, so wait
+// for the parser before wiring it up.
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', setupGuide);
+} else {
+  setupGuide();
+}
 
 // ── Reader preferences ────────────────────────────────────────────────────
 // Persona and followed markets, kept in localStorage. The desk already routes
@@ -2862,20 +3139,47 @@ window.addEventListener('scroll', () => {
 </script>
 
 <div class="sec" id="for-agents">
-  <div class="agents-block">
-    <div class="agents-head">
+  <details class="agents-block sec-accordion">
+    <summary>
       <span class="agents-eyebrow">// machine-readable edition</span>
-      <h2>Reading this as an AI agent? This page is yours too.</h2>
-      <p>Everything the desk publishes is available as structured data — same facts, no scraping required.</p>
-    </div>
+      <strong>Reading this as an AI agent? This page is yours too.</strong>
+      <em>Structured data — same facts, no scraping required.</em>
+    </summary>
     <div class="agents-grid">
       <div class="agents-card"><h4>One question, one answer</h4><pre set:html={`curl -X POST https://signal-fabric.vercel.app/api/ask \\\n  -d '{"question":"explain lead"}'`}></pre><span>Deterministic, cited — no hallucinations</span></div>
       <div class="agents-card"><h4>Every tool, self-described</h4><pre>GET /api/tools.json</pre><span>Ingest the manifest, configure yourself</span></div>
       <div class="agents-card"><h4>Follow the wire</h4><pre>GET /feed.xml</pre><span>RSS of every signal, every cycle</span></div>
     </div>
     <div class="agents-foot">Full connection guide for Claude (MCP), Hermes, OpenClaw, and anything HTTP-capable: <a href="/agents.md">agents.md</a> · <a href="/llms.txt">llms.txt</a></div>
-  </div>
+  </details>
 </div>
+
+<!-- Desk guide: a persistent assistant that both navigates the page and
+     answers content questions. Navigation intents are resolved client-side and
+     act on the page directly; anything else is handed to /api/ask, the same
+     deterministic endpoint the inline "Ask the desk" panel uses. -->
+<button type="button" class="guide-fab" id="guide-fab" aria-expanded="false" aria-controls="guide-panel">
+  <span class="guide-fab-mark" aria-hidden="true">?</span>
+  <span class="guide-fab-text">Ask / navigate</span>
+</button>
+
+<aside class="guide-panel" id="guide-panel" role="dialog" aria-modal="false" aria-labelledby="guide-title" hidden>
+  <header class="guide-head">
+    <div>
+      <span class="guide-eyebrow">Desk guide</span>
+      <strong id="guide-title">Ask, or say where to go</strong>
+    </div>
+    <button type="button" class="guide-close" id="guide-close" aria-label="Close the desk guide">Close</button>
+  </header>
+  <div class="guide-thread" id="guide-thread" role="log" aria-live="polite"></div>
+  <div class="guide-chips" id="guide-chips"></div>
+  <form class="guide-form" id="guide-form">
+    <label class="sr-only" for="guide-input">Ask the desk or name a place to go</label>
+    <input id="guide-input" class="guide-input" autocomplete="off"
+           placeholder="Try: show me Guyana, or explain the lead" />
+    <button type="submit" class="guide-send" id="guide-send">Send</button>
+  </form>
+</aside>
 
 <footer>
   <div class="foot-inner">
