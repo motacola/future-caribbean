@@ -956,6 +956,30 @@ export function loadDashboardData() {
   const visibleNews = newsItems.filter((item: any) => item.relevance_score >= 35).slice(0, 18);
   const newsCountries = [...new Set(visibleNews.flatMap((item: any) => item.countries))].sort();
   const newsTopics = [...new Set(visibleNews.flatMap((item: any) => item.topics))].sort();
+
+  // Country -> stories, so the map drill can show a country's news beside its
+  // data instead of the three-link stub it carried before. Same source as the
+  // news desk, so the two surfaces cannot disagree.
+  const newsByCountry: Record<string, any[]> = {};
+  for (const item of visibleNews) {
+    const age = item.age_hours === null ? 'date unavailable'
+      : item.age_hours < 24 ? `${item.age_hours}h ago`
+      : `${Math.floor(item.age_hours / 24)}d ago`;
+    for (const country of (item.countries.length ? item.countries : ['Regional context'])) {
+      (newsByCountry[country] ||= []).push({
+        title: cleanHeadline(item.title || ''),
+        url: item.url,
+        source: humanize(item.source || 'Regional source'),
+        topic: (item.topics && item.topics[0]) || 'regional',
+        tier: item.source_tier,
+        ageHours: item.age_hours === null ? Number.MAX_SAFE_INTEGER : item.age_hours,
+        age,
+      });
+    }
+  }
+  // The drill shows the first five, so freshest must lead — relevance order
+  // alone let a six-year-old bank post outrank this week's coverage.
+  for (const list of Object.values(newsByCountry)) list.sort((a, b) => a.ageHours - b.ageHours);
   // Topics stay in view; ~25 country chips would otherwise put a screen of
   // buttons between the reader and the first headline on mobile.
   const newsFilterHtml = [
@@ -1272,6 +1296,7 @@ export function loadDashboardData() {
     // HTML fragments
     leadRoutesHtml, validationPackHtml, secSignals, receiptsHtml, boostsHtml,
     receiptsProvenanceHtml, newsHtml, newsFilterHtml,
+    newsByCountryJson: JSON.stringify(newsByCountry),
     calibrationCommitmentHtml: calibrationCommitmentHtml(), marketWatchHtml, marketChartHtml, regionalSourceHtml,
     sourceRegistryHtml, sourceRegistrySummary, allClustersHtml, fbActionPills,
     srcRows,

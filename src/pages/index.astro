@@ -439,10 +439,23 @@ a:hover { text-decoration: underline; }
 .news-card h3 a:hover { color:var(--teal); text-decoration:none; }
 .news-card.lead h3 { font-size:30px; line-height:1.08; }
 .news-card p { font-size:13px; line-height:1.55; color:var(--sub); }
-.map-news-list { grid-column:1/-1; display:grid; gap:5px; padding-top:8px; border-top:1px solid var(--border); }
-.map-news-list a { font-size:11px; line-height:1.35; }
-.map-news-list a:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; border-radius: 2px; }
-.map-news-list em { color: var(--muted); font-size: 10px; font-style: normal; line-height: 1.45; }
+/* Country news inside the map drill — the map is now a way to read a country,
+   so its stories get a proper section rather than three links in a corner. */
+.drill-news { border-top: 1px solid var(--border); padding: 14px 16px; }
+.drill-news-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin-bottom: 9px; }
+.drill-news-head strong { font: 700 9px var(--mono); letter-spacing: 1.4px; text-transform: uppercase; color: var(--gold); }
+.drill-news-head span { font: 600 9px var(--mono); letter-spacing: .6px; text-transform: uppercase; color: var(--muted); }
+.drill-news-empty { color: var(--muted); font-size: 11px; line-height: 1.5; }
+.drill-news-list { display: grid; gap: 0; list-style: none; margin: 0; padding: 0; }
+.drill-news-list li { padding: 8px 0; border-top: 1px solid var(--border); }
+.drill-news-list li:first-child { border-top: none; padding-top: 0; }
+.drill-news-list a { display: block; font-family: var(--serif); font-size: 14px; line-height: 1.3; color: var(--text); }
+.drill-news-list a:hover { color: var(--teal); }
+.drill-news-list a:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; border-radius: 2px; }
+.drill-news-list span { display: block; margin-top: 3px; font: 600 9px var(--mono); letter-spacing: .6px; text-transform: uppercase; color: var(--muted); }
+.drill-news-more { margin-top: 10px; appearance: none; background: none; border: 1px solid var(--border); border-radius: 3px; padding: 6px 11px; cursor: pointer; font: 700 9.5px var(--mono); letter-spacing: .8px; text-transform: uppercase; color: var(--teal); }
+.drill-news-more:hover { border-color: var(--teal); background: color-mix(in oklab, var(--teal) 8%, transparent); }
+.drill-news-more:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
 .source-registry { margin-top: 22px; background: none; border: none; border-top: 1px solid var(--border); padding: 14px 0 0; display: grid; gap: 12px; box-shadow: none; }
 .source-registry-head { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; flex-wrap: wrap; }
 .source-registry-head h3 { font-family: var(--serif); font-size: 19px; }
@@ -1626,6 +1639,7 @@ const D = ${d.analystData};
 const MAP_DISPATCHES = ${d.mapDispatchesJson};
 const MAP_MARKERS = ${d.mapMarkersJson};
 const MAP_MARKER_BY_COUNTRY = Object.fromEntries(MAP_MARKERS.map(m => [m.country, m]));
+const NEWS_BY_COUNTRY = ${d.newsByCountryJson};
 const THEATER_EVENTS = ${d.theaterEventsJson};
 const HUMANIZE_RULES = ${d.humanizeRulesJson}.map(([p, r]) => { try { return [new RegExp(p), r]; } catch (e) { return null; } }).filter(Boolean);
 function humanizeJs(t) {
@@ -1800,6 +1814,20 @@ document.querySelectorAll('[data-news-filter]').forEach(button => button.addEven
   });
 }));
 
+// Bridge from the map drill to the news desk: apply the country filter, open
+// the country chip row if it is collapsed, and scroll the reader to the board.
+function showCountryInNewsDesk(country) {
+  const button = document.querySelector(`[data-news-filter="country:${CSS.escape(country)}"]`);
+  const wrap = document.getElementById('news-countries');
+  const toggle = document.getElementById('news-country-toggle');
+  if (wrap && wrap.hasAttribute('hidden')) {
+    wrap.removeAttribute('hidden');
+    toggle?.setAttribute('aria-expanded', 'true');
+  }
+  if (button) button.click();
+  document.getElementById('regional-news')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
 // Regional movement strip: tapping a country chip opens the same map-drill
 // that the leaflet marker click does. We scroll into view so the user lands
 // on the relevant triage panel.
@@ -1846,24 +1874,43 @@ const drillReact = (function () {
     }
   }
 
-  function NewsLinks({ marker }) {
-    const links = (marker.news || [])
-      .slice(0, 3)
-      .map((item, index) => ({
-        ...item,
-        href: safeExternalUrl(item.url),
-        key: item.url || `${item.title || 'story'}-${index}`,
-      }))
+  // The drill used to show three bare links from the marker payload. It now
+  // serves the news desk's own stories for the country, so tapping the map is a
+  // way to read a country — news beside data — not just a signal readout.
+  function CountryNews({ country, marker }) {
+    const desk = (typeof NEWS_BY_COUNTRY !== 'undefined' && NEWS_BY_COUNTRY[country]) || [];
+    const fallback = (marker.news || []).map(item => ({
+      title: item.title, url: item.url, source: item.source, age: '', topic: '', tier: '',
+    }));
+    const stories = (desk.length ? desk : fallback)
+      .map((item, index) => ({ ...item, href: safeExternalUrl(item.url), key: item.url || `${item.title}-${index}` }))
       .filter(item => item.href);
+
+    if (!stories.length) {
+      return html`
+        <div class="drill-news">
+          <div class="drill-news-head"><strong>In the news</strong></div>
+          <p class="drill-news-empty">No ${country} coverage in this cycle. The desk keeps watching.</p>
+        </div>`;
+    }
     return html`
-      <div class="map-news-list">
-        <span>${marker.news_coverage || 'Regional news context'}</span>
-        ${links.length
-          ? links.map(item => html`
-              <a key=${item.key} href=${item.href} target="_blank" rel="noopener noreferrer">
-                ${item.title || 'Open coverage'} · ${item.source || 'Source'}
-              </a>`)
-          : html`<em>No linked country coverage in this cycle.</em>`}
+      <div class="drill-news">
+        <div class="drill-news-head">
+          <strong>In the news</strong>
+          <span>${stories.length} ${stories.length === 1 ? 'story' : 'stories'}</span>
+        </div>
+        <ul class="drill-news-list">
+          ${stories.slice(0, 5).map(item => html`
+            <li key=${item.key}>
+              <a href=${item.href} target="_blank" rel="noopener noreferrer">${item.title || 'Open coverage'}</a>
+              <span>${[item.source, item.age].filter(Boolean).join(' · ')}</span>
+            </li>`)}
+        </ul>
+        ${desk.length > 5
+          ? html`<button type="button" class="drill-news-more" onClick=${() => showCountryInNewsDesk(country)}>
+              All ${desk.length} ${country} stories →
+            </button>`
+          : null}
       </div>`;
   }
 
@@ -1933,9 +1980,9 @@ const drillReact = (function () {
             <div><span>FX indicator</span><strong>${fx.pair || '—'}</strong><p>${fx.rate_label || 'Watch'} · ${fx.indicator || 'FX watch'}</p></div>
             <div><span>Market layer</span><strong>${marketLabel}</strong><p>${snapshot.data_status || market.status || 'source watch'} </p></div>
             <div><span>Finance signal</span><strong>${snapshot.focus || fx.signal || 'Signals, official notices, and local context'}</strong><p>${marker.finance_signal || marker.ranking_rationale || 'Ranking appears when a live signal is active.'}</p></div>
-            <${NewsLinks} marker=${marker} />
           </div>
           <${LifecyclePanel} marker=${marker} />
+          <${CountryNews} country=${country} marker=${marker} />
           <div class="map-drill-grid">
             <article>
               <span>WATCHLIST · ${marker.confidence || 0}/100</span>
@@ -1955,9 +2002,9 @@ const drillReact = (function () {
           <div><span>FX indicator</span><strong>${fx.pair || '—'}</strong><p>${fx.rate_label || 'Watch'} · ${fx.indicator || 'FX watch'}</p></div>
           <div><span>Market layer</span><strong>${marketLabel}</strong><p>${snapshot.data_status || market.status || 'source watch'} </p></div>
           <div><span>Finance signal</span><strong>${snapshot.focus || fx.signal || 'Signals, official notices, and local context'}</strong><p>${marker.finance_signal || marker.ranking_rationale || 'Ranking appears when a live signal is active.'}</p></div>
-          <${NewsLinks} marker=${marker} />
         </div>
         <${LifecyclePanel} marker=${marker} />
+        <${CountryNews} country=${country} marker=${marker} />
         <div class="map-drill-grid">
           ${items.slice(0, 6).map((d, index) => {
             const rawConfidence = Number(d.confidence_score);
