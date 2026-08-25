@@ -108,6 +108,16 @@ HUMANIZE_RULES = [
     (r"\bcorroboration\b", "a second source"),
     (r"\boperator discovery\b", "finding local partners"),
     (r"^Source registry now tracked by the desk$", r"Where the desk gets this"),
+    # Generic dispatch fallbacks. The pipeline has no specifics for these, so
+    # say that plainly rather than dressing an empty card as an insight.
+    (r"Review (.+?): signal detected\. Validate locally before action\.",
+     r"The desk logged movement in \1 but nothing specific yet — worth a local check before it firms up."),
+    (r"Signal context for (.+?): signal detected\. Use this dispatch as a briefing input or narrative lead\.",
+     r"Movement logged in \1, with no detail attached yet — background for a briefing rather than a story on its own."),
+    (r"^(.+?): signal detected$", r"Early signal in \1 — no detail yet"),
+    # The generic placeholder also gets interpolated into templates that expect a
+    # figure, producing "Signal strength (signal detected)".
+    (r"\(signal detected\)", r"(no figure attached yet)"),
 ]
 _HUMANIZE_COMPILED = [(re.compile(p), r) for p, r in HUMANIZE_RULES]
 

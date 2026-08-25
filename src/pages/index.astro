@@ -441,6 +441,34 @@ a:hover { text-decoration: underline; }
 .news-card p { font-size:13px; line-height:1.55; color:var(--sub); }
 /* Country news inside the map drill — the map is now a way to read a country,
    so its stories get a proper section rather than three links in a corner. */
+/* Reader preferences bar */
+.deskbar { padding-top: 0; }
+.deskbar-row { display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: start; border-top: 1px solid var(--border-dark); border-bottom: 1px solid var(--border); padding: 12px 0; }
+.deskbar-label { display: block; font: 700 9px var(--mono); letter-spacing: 1.4px; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+.deskbar-lens { display: block; }
+.deskbar-select { appearance: none; background: var(--card); border: 1px solid var(--border-dark); border-radius: 3px; padding: 7px 28px 7px 10px; font: 600 12px var(--sans); color: var(--text); cursor: pointer;
+  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-position: calc(100% - 15px) 55%, calc(100% - 10px) 55%; background-size: 5px 5px, 5px 5px; background-repeat: no-repeat; }
+.deskbar-select:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+.deskbar-hint { display: block; margin-top: 5px; font: 600 9.5px var(--mono); letter-spacing: .5px; text-transform: uppercase; color: var(--muted); }
+.deskbar-chips { display: flex; flex-wrap: wrap; gap: 5px; }
+.deskbar-none { font-size: 11px; color: var(--muted); }
+.follow-chip { display: inline-flex; align-items: center; gap: 6px; appearance: none; background: var(--card); border: 1px solid var(--teal); border-radius: 3px; padding: 4px 8px; cursor: pointer; font: 700 9.5px var(--mono); letter-spacing: .5px; text-transform: uppercase; color: var(--teal); }
+.follow-chip b { font-weight: 700; }
+.follow-chip i { font-style: normal; opacity: .6; }
+.follow-chip:hover { background: color-mix(in oklab, var(--teal) 10%, transparent); }
+.follow-chip:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+/* Follow control inside the map drill */
+.drill-follow { appearance: none; background: none; border: 1px solid var(--border-dark); border-radius: 3px; padding: 5px 10px; cursor: pointer; font: 700 9.5px var(--mono); letter-spacing: .7px; text-transform: uppercase; color: var(--sub); }
+.drill-follow:hover { border-color: var(--teal); color: var(--teal); }
+.drill-follow:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+.drill-follow.on { background: var(--teal); border-color: var(--teal); color: var(--card); }
+.drill-card.for-you { box-shadow: inset 3px 0 0 var(--gold); }
+.for-you-tag { display: inline-block; margin-left: 6px; padding: 1px 5px; border-radius: 2px; background: var(--gold); color: var(--card); font: 700 8px var(--mono); letter-spacing: .8px; text-transform: uppercase; }
+@media(max-width:768px) {
+  .deskbar-row { grid-template-columns: 1fr; gap: 12px; }
+}
+
 .drill-news { border-top: 1px solid var(--border); padding: 14px 16px; }
 .drill-news-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin-bottom: 9px; }
 .drill-news-head strong { font: 700 9px var(--mono); letter-spacing: 1.4px; text-transform: uppercase; color: var(--gold); }
@@ -1340,6 +1368,32 @@ html { scroll-behavior: smooth; }
   </div>
 </section>
 
+<!-- Persistent reader preferences. The desk already routes the same signal
+     differently per persona; this makes that choice the reader's, carries it
+     across the page, and gives followed markets a home. localStorage only —
+     no account, no backend. -->
+<div class="sec deskbar" id="deskbar">
+  <div class="deskbar-row">
+    <div class="deskbar-lens">
+      <label class="deskbar-label" for="lens-select">Reading as</label>
+      <select id="lens-select" class="deskbar-select">
+        <option value="">Anyone</option>
+        <option value="Diaspora Investor">Diaspora Investor</option>
+        <option value="Ecosystem Builder">Ecosystem Builder</option>
+        <option value="Regional Founder/Operator">Founder / Operator</option>
+        <option value="Procurement Watcher">Procurement Watcher</option>
+        <option value="Policy/Media">Policy / Media</option>
+        <option value="Operations/Resilience">Operations / Resilience</option>
+      </select>
+      <span class="deskbar-hint" id="lens-hint"></span>
+    </div>
+    <div class="deskbar-follows">
+      <span class="deskbar-label">Following</span>
+      <div class="deskbar-chips" id="follow-chips"><span class="deskbar-none">Tap a country on the map, then Follow.</span></div>
+    </div>
+  </div>
+</div>
+
 <!-- Expanded map. The live .map-shell and #map-drill are moved in here on
      open and returned to their placeholders on close, so there is only ever
      one Leaflet instance and its markers, zoom and selection survive. -->
@@ -1814,6 +1868,84 @@ document.querySelectorAll('[data-news-filter]').forEach(button => button.addEven
   });
 }));
 
+// ── Reader preferences ────────────────────────────────────────────────────
+// Persona and followed markets, kept in localStorage. The desk already routes
+// one signal to several personas; this lets the reader claim one and have the
+// page lead with their lane instead of broadcasting the same order to everyone.
+const PREFS_KEY = 'future-caribbean:prefs';
+const prefs = (() => {
+  try {
+    const raw = JSON.parse(localStorage.getItem(PREFS_KEY) || '{}');
+    return { lens: raw.lens || '', follows: Array.isArray(raw.follows) ? raw.follows : [] };
+  } catch { return { lens: '', follows: [] }; }
+})();
+function savePrefs() {
+  try { localStorage.setItem(PREFS_KEY, JSON.stringify(prefs)); } catch {}
+}
+function isFollowed(country) { return prefs.follows.includes(country); }
+function toggleFollow(country) {
+  const i = prefs.follows.indexOf(country);
+  if (i >= 0) prefs.follows.splice(i, 1); else prefs.follows.push(country);
+  savePrefs();
+  paintFollows();
+  renderDrill();
+}
+
+function countForLens(lens) {
+  if (!lens) return 0;
+  return Object.values(MAP_DISPATCHES).flat()
+    .filter(d => (d.persona_label || '') === lens).length;
+}
+
+function paintLens() {
+  const select = document.getElementById('lens-select');
+  const hint = document.getElementById('lens-hint');
+  if (select) select.value = prefs.lens;
+  if (hint) {
+    const n = countForLens(prefs.lens);
+    hint.textContent = prefs.lens
+      ? `${n} briefing${n === 1 ? '' : 's'} routed to you this cycle`
+      : 'Pick a lens and the desk leads with your briefings';
+  }
+}
+
+function paintFollows() {
+  const wrap = document.getElementById('follow-chips');
+  if (!wrap) return;
+  if (!prefs.follows.length) {
+    wrap.innerHTML = '<span class="deskbar-none">Tap a country on the map, then Follow.</span>';
+    return;
+  }
+  wrap.textContent = '';
+  for (const country of prefs.follows) {
+    const stories = (typeof NEWS_BY_COUNTRY !== 'undefined' && NEWS_BY_COUNTRY[country] || []).length;
+    const chip = document.createElement('button');
+    chip.type = 'button';
+    chip.className = 'follow-chip';
+    chip.title = `Open ${country}`;
+    const name = document.createElement('b');
+    name.textContent = country;
+    chip.appendChild(name);
+    if (stories) {
+      const count = document.createElement('i');
+      count.textContent = String(stories);
+      chip.appendChild(count);
+    }
+    chip.addEventListener('click', () => {
+      openCountryDrill(country);
+      document.getElementById('map-drill')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+    wrap.appendChild(chip);
+  }
+}
+
+document.getElementById('lens-select')?.addEventListener('change', event => {
+  prefs.lens = event.target.value;
+  savePrefs();
+  paintLens();
+  renderDrill();
+});
+
 // Bridge from the map drill to the news desk: apply the country filter, open
 // the country chip row if it is collapsed, and scroll the reader to the board.
 function showCountryInNewsDesk(country) {
@@ -1872,6 +2004,18 @@ const drillReact = (function () {
     } catch {
       return '';
     }
+  }
+
+  function FollowButton({ country }) {
+    const on = typeof isFollowed === 'function' && isFollowed(country);
+    return html`
+      <button
+        type="button"
+        class=${`drill-follow${on ? ' on' : ''}`}
+        aria-pressed=${on ? 'true' : 'false'}
+        onClick=${() => toggleFollow(country)}>
+        ${on ? '\u2713 Following' : 'Follow'}
+      </button>`;
   }
 
   // The drill used to show three bare links from the marker payload. It now
@@ -1975,7 +2119,7 @@ const drillReact = (function () {
     if (!items.length) {
       return html`
         <div class="rise-in">
-          <div class="map-drill-head"><strong>${country}</strong><span>Watchlist signal</span></div>
+          <div class="map-drill-head"><strong>${country}</strong><${FollowButton} country=${country} /></div>
           <div class="map-market-panel">
             <div><span>FX indicator</span><strong>${fx.pair || '—'}</strong><p>${fx.rate_label || 'Watch'} · ${fx.indicator || 'FX watch'}</p></div>
             <div><span>Market layer</span><strong>${marketLabel}</strong><p>${snapshot.data_status || market.status || 'source watch'} </p></div>
@@ -1996,7 +2140,7 @@ const drillReact = (function () {
       <div class="rise-in">
         <div class="map-drill-head">
           <strong>${country}</strong>
-          <span>${items.length} briefing${items.length === 1 ? '' : 's'} this cycle</span>
+          <${FollowButton} country=${country} />
         </div>
         <div class="map-market-panel">
           <div><span>FX indicator</span><strong>${fx.pair || '—'}</strong><p>${fx.rate_label || 'Watch'} · ${fx.indicator || 'FX watch'}</p></div>
@@ -2006,13 +2150,26 @@ const drillReact = (function () {
         <${LifecyclePanel} marker=${marker} />
         <${CountryNews} country=${country} marker=${marker} />
         <div class="map-drill-grid">
-          ${items.slice(0, 6).map((d, index) => {
+          ${(() => {
+            // A reader with a lens sees their own lane first; everyone else
+            // keeps the desk's order.
+            const lens = (typeof prefs !== 'undefined' && prefs.lens) || '';
+            const ordered = lens
+              ? [...items].sort((a, b) =>
+                  ((b.persona_label || '') === lens ? 1 : 0) - ((a.persona_label || '') === lens ? 1 : 0))
+              : items;
+            return ordered.slice(0, 6);
+          })().map((d, index) => {
             const rawConfidence = Number(d.confidence_score);
             const conf = Number.isFinite(rawConfidence) ? Math.max(0, Math.min(100, rawConfidence)) : 0;
+            const mine = !!((typeof prefs !== 'undefined' && prefs.lens) && (d.persona_label || '') === prefs.lens);
             const color = MAP_COLORS[(d.signal_kind || '').includes('invest') ? 'investment' : (d.signal_kind || '').includes('climate') ? 'climate' : (d.signal_kind || '').includes('procure') ? 'procurement' : 'none'];
             return html`
-              <article key=${d.dispatch_id || index} class="rise-in drill-card" style=${{ animationDelay: `${index * 70}ms` }}>
-                <span>${d.dispatch_id || 'Dispatch'} · ${d.persona_label || 'Desk recipient'}</span>
+              <article key=${d.dispatch_id || index} class=${`rise-in drill-card${mine ? ' for-you' : ''}`} style=${{ animationDelay: `${index * 70}ms` }}>
+                <span>
+                  ${d.dispatch_id || 'Dispatch'} · ${d.persona_label || 'Desk recipient'}
+                  ${mine ? html`<span class="for-you-tag">For you</span>` : null}
+                </span>
                 <h3>${d.title || 'Opportunity briefing'}</h3>
                 <p>${d.recommended_action || 'Open the supporting evidence before acting.'}</p>
                 <div class="conf-row">
@@ -2034,7 +2191,15 @@ const drillReact = (function () {
   return { render: c => root.render(html`<${DrillPanel} country=${c} />`) };
 })();
 
+// Current drill selection, so a preference change can repaint the open panel
+// without the reader having to tap the country again.
+let drillCountry = null;
+function renderDrill() {
+  if (drillReact) drillReact.render(drillCountry);
+}
+
 function openCountryDrill(country) {
+  drillCountry = country;
   document.querySelectorAll('.sig-marker').forEach(x => x.classList.toggle('selected', x.dataset.country === country));
   if (drillReact) { drillReact.render(country); return; }
   const items = MAP_DISPATCHES[country] || [];
@@ -2205,14 +2370,17 @@ if (risks.length) {
   document.getElementById('risk-area').innerHTML = '<div class="lead-risk">⚠️ ' + risks[0] + '</div>';
 }
 
-const checklistKey = 'future-caribbean:' + D.cycle + ':lead-checklist';
+// Keyed by market, not by cycle: diligence on Guyana is still diligence on
+// Guyana next cycle, so progress should survive the desk moving on.
+const checklistCountry = (D.lead && D.lead.country) || 'region';
+const checklistKey = 'future-caribbean:checks:' + checklistCountry;
 const savedChecks = JSON.parse(localStorage.getItem(checklistKey) || '[]');
 const checkItems = [...document.querySelectorAll('#lead-checklist .check-item')];
 const checkProgress = document.getElementById('check-progress');
 
 function paintChecklist() {
   const done = checkItems.filter(x => x.classList.contains('done'));
-  if (checkProgress) checkProgress.textContent = done.length + ' of ' + checkItems.length + ' done';
+  if (checkProgress) checkProgress.textContent = done.length + ' of ' + checkItems.length + ' done for ' + checklistCountry;
   return done.map(x => x.dataset.check);
 }
 
@@ -2232,6 +2400,9 @@ checkItems.forEach(item => {
   });
 });
 paintChecklist();
+
+paintLens();
+paintFollows();
 
 // Chart bars carry their reading in an SVG <title>, which touch devices never
 // surface. Mirror it into a live readout under the chart.

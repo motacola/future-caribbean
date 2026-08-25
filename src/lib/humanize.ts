@@ -106,6 +106,14 @@ const HUMANIZE_RULES: [string, string][] = [
    "finding local partners"],
   ["^Source registry now tracked by the desk$",
    "Where the desk gets this"],
+  ["Review (.+?): signal detected\\. Validate locally before action\\.",
+   "The desk logged movement in $1 but nothing specific yet — worth a local check before it firms up."],
+  ["Signal context for (.+?): signal detected\\. Use this dispatch as a briefing input or narrative lead\\.",
+   "Movement logged in $1, with no detail attached yet — background for a briefing rather than a story on its own."],
+  ["^(.+?): signal detected$",
+   "Early signal in $1 — no detail yet"],
+  ["\\(signal detected\\)",
+   "(no figure attached yet)"],
 ];
 
 const _compiled: [RegExp, string][] = HUMANIZE_RULES.map(([p, r]) => {
