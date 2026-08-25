@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-08-24T20:45:00.146314+00:00",
+ "updated_at": "2026-08-25T01:49:08.200758+00:00",
  "tenders": {
   "bahamas-09a150a1385c": {
    "schema_version": 1,
@@ -20881,6 +20881,15 @@
      "closing_date": "2026-08-25",
      "published": "2026-08-11",
      "observed_at": "2026-08-24T01:54:44.228489+00:00"
+    },
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00421",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-08-25",
+     "published": "2026-08-11",
+     "observed_at": "2026-08-25T01:49:08.200758+00:00"
     }
    ],
    "first_detected_at": "2026-08-20T01:48:19.464349+00:00",
@@ -20889,7 +20898,7 @@
    "detected_before_close": true,
    "lead_time_days": 5,
    "award_lead_time_days": null,
-   "last_seen_at": "2026-08-24T20:45:00.146314+00:00"
+   "last_seen_at": "2026-08-25T01:49:08.200758+00:00"
   },
   "guyana-3e1f7ffb425e": {
    "schema_version": 1,
@@ -20957,6 +20966,15 @@
      "closing_date": "2026-08-25",
      "published": "2026-08-05",
      "observed_at": "2026-08-24T01:54:44.228489+00:00"
+    },
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00419",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-08-25",
+     "published": "2026-08-05",
+     "observed_at": "2026-08-25T01:49:08.200758+00:00"
     }
    ],
    "first_detected_at": "2026-08-20T01:48:19.464349+00:00",
@@ -20965,7 +20983,7 @@
    "detected_before_close": true,
    "lead_time_days": 5,
    "award_lead_time_days": null,
-   "last_seen_at": "2026-08-24T20:45:00.146314+00:00"
+   "last_seen_at": "2026-08-25T01:49:08.200758+00:00"
   },
   "guyana-42917bcc8c18": {
    "schema_version": 1,
@@ -21194,6 +21212,15 @@
      "closing_date": "2026-08-31",
      "published": "2026-08-13",
      "observed_at": "2026-08-24T01:54:44.228489+00:00"
+    },
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00422",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-08-31",
+     "published": "2026-08-13",
+     "observed_at": "2026-08-25T01:49:08.200758+00:00"
     }
    ],
    "first_detected_at": "2026-08-20T01:48:19.464349+00:00",
@@ -21202,7 +21229,7 @@
    "detected_before_close": true,
    "lead_time_days": 11,
    "award_lead_time_days": null,
-   "last_seen_at": "2026-08-24T20:45:00.146314+00:00"
+   "last_seen_at": "2026-08-25T01:49:08.200758+00:00"
   },
   "guyana-4b27e2ad0628": {
    "schema_version": 1,
@@ -21919,6 +21946,15 @@
      "closing_date": "2026-10-02",
      "published": "2026-08-24",
      "observed_at": "2026-08-24T16:52:22.987577+00:00"
+    },
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00425",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-10-02",
+     "published": "2026-08-24",
+     "observed_at": "2026-08-25T01:49:08.200758+00:00"
     }
    ],
    "first_detected_at": "2026-08-24T16:52:22.987577+00:00",
@@ -21927,7 +21963,7 @@
    "detected_before_close": true,
    "lead_time_days": 39,
    "award_lead_time_days": null,
-   "last_seen_at": "2026-08-24T20:45:00.146314+00:00"
+   "last_seen_at": "2026-08-25T01:49:08.200758+00:00"
   },
   "guyana-7b390e26a29b": {
    "schema_version": 1,
@@ -22954,6 +22990,15 @@
      "closing_date": "2026-08-31",
      "published": "2026-08-04",
      "observed_at": "2026-08-24T01:54:44.228489+00:00"
+    },
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00416",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-08-31",
+     "published": "2026-08-04",
+     "observed_at": "2026-08-25T01:49:08.200758+00:00"
     }
    ],
    "first_detected_at": "2026-08-20T01:48:19.464349+00:00",
@@ -22962,7 +23007,7 @@
    "detected_before_close": true,
    "lead_time_days": 11,
    "award_lead_time_days": null,
-   "last_seen_at": "2026-08-24T20:45:00.146314+00:00"
+   "last_seen_at": "2026-08-25T01:49:08.200758+00:00"
   },
   "guyana-93056c717a7b": {
    "schema_version": 1,
@@ -23316,6 +23361,15 @@
      "closing_date": "2026-08-25",
      "published": "2026-08-05",
      "observed_at": "2026-08-24T01:54:44.228489+00:00"
+    },
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00420",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-08-25",
+     "published": "2026-08-05",
+     "observed_at": "2026-08-25T01:49:08.200758+00:00"
     }
    ],
    "first_detected_at": "2026-08-20T01:48:19.464349+00:00",
@@ -23324,7 +23378,7 @@
    "detected_before_close": true,
    "lead_time_days": 5,
    "award_lead_time_days": null,
-   "last_seen_at": "2026-08-24T20:45:00.146314+00:00"
+   "last_seen_at": "2026-08-25T01:49:08.200758+00:00"
   },
   "guyana-a4d1cd0edf41": {
    "schema_version": 1,
@@ -24121,6 +24175,15 @@
      "closing_date": "2026-08-25",
      "published": "2026-08-05",
      "observed_at": "2026-08-24T01:54:44.228489+00:00"
+    },
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00418",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-08-25",
+     "published": "2026-08-05",
+     "observed_at": "2026-08-25T01:49:08.200758+00:00"
     }
    ],
    "first_detected_at": "2026-08-20T01:48:19.464349+00:00",
@@ -24129,7 +24192,7 @@
    "detected_before_close": true,
    "lead_time_days": 5,
    "award_lead_time_days": null,
-   "last_seen_at": "2026-08-24T20:45:00.146314+00:00"
+   "last_seen_at": "2026-08-25T01:49:08.200758+00:00"
   },
   "guyana-bf3b04c5b747": {
    "schema_version": 1,
@@ -24472,6 +24535,15 @@
      "closing_date": "2026-08-31",
      "published": "2026-08-13",
      "observed_at": "2026-08-24T01:54:44.228489+00:00"
+    },
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00423",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-08-31",
+     "published": "2026-08-13",
+     "observed_at": "2026-08-25T01:49:08.200758+00:00"
     }
    ],
    "first_detected_at": "2026-08-20T01:48:19.464349+00:00",
@@ -24480,7 +24552,7 @@
    "detected_before_close": true,
    "lead_time_days": 11,
    "award_lead_time_days": null,
-   "last_seen_at": "2026-08-24T20:45:00.146314+00:00"
+   "last_seen_at": "2026-08-25T01:49:08.200758+00:00"
   },
   "guyana-c857836802bb": {
    "schema_version": 1,
@@ -25630,6 +25702,15 @@
      "closing_date": "2026-08-27",
      "published": "2026-08-05",
      "observed_at": "2026-08-24T01:54:44.228489+00:00"
+    },
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00417",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-08-27",
+     "published": "2026-08-05",
+     "observed_at": "2026-08-25T01:49:08.200758+00:00"
     }
    ],
    "first_detected_at": "2026-08-20T01:48:19.464349+00:00",
@@ -25638,7 +25719,7 @@
    "detected_before_close": true,
    "lead_time_days": 7,
    "award_lead_time_days": null,
-   "last_seen_at": "2026-08-24T20:45:00.146314+00:00"
+   "last_seen_at": "2026-08-25T01:49:08.200758+00:00"
   },
   "guyana-f634fed120cb": {
    "schema_version": 1,
