@@ -1081,6 +1081,12 @@ html { scroll-behavior: smooth; }
      :root value and inherited into the band as near-black on near-black —
      the axis labels, grid lines and baseline went invisible. Re-declaring
      them here re-resolves the var against this scope. */
+  /* --chart-series is declared at :root as var(--teal) and froze to the
+     dark #0D5257 there, so the series bars kept stroking dark teal on the
+     near-black chart surface — measured 1.78:1, below the 3.0 UI floor,
+     with the fill at 20% opacity on top of that. Same substitution-timing
+     trap as the three tokens below. Caught by Codex on PR #39. */
+  --chart-series: var(--teal);
   --chart-grid: color-mix(in oklab, var(--ink-fg) 14%, transparent);
   --chart-axis: color-mix(in oklab, var(--ink-fg) 55%, transparent);
   --chart-tick: color-mix(in oklab, var(--ink-fg) 72%, transparent);
