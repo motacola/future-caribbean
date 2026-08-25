@@ -324,8 +324,10 @@ function buildValidationPackHtml(pack: any, country: string): string {
       </div>
       <span class="vpack-verdict ${esc(verdict)}">${esc(verdictLabel)}</span>
     </div>
-    ${packFreshnessStrip(pack)}
-    <div class="vpack-reason">${esc(humanize(pack.recommendation_reason || ''))}</div>
+    <details class="meta-disclose"><summary>How this was scored</summary><div class="meta-disclose-body">
+      ${packFreshnessStrip(pack)}
+      <div class="vpack-reason">${esc(humanize(pack.recommendation_reason || ''))}</div>
+    </div></details>
     <div class="vpack-grid">
       <div class="vpack-col"><h4>Sector hypotheses</h4><ul>${hypLis}</ul></div>
       <div class="vpack-col"><h4>Registry operators</h4><ul>${opLis}</ul></div>
@@ -1037,6 +1039,7 @@ export function loadDashboardData() {
       <div class="market-top">${codeHtml}<span class="market-status">${esc(snap.data_status ? humanizeStatus(snap.data_status) : status)}</span></div>
       <h3>${esc(humanize(m.country || exchName))}</h3>
       <div class="activity-chart-shell">${activityChart}</div>
+      <p class="activity-readout" aria-live="polite"></p>
       <p class="activity-chart-caption"><strong>${esc(humanize(barLabel))}</strong>${barMeta}</p>
       <p class="market-chart-disclosure">Illustrative indexed activity proxy — not exchange price or OHLC data.</p>
       ${snap.headline ? `<p class="market-chart-headline">${esc(humanize(snap.headline))}</p>` : ''}

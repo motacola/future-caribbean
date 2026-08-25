@@ -206,7 +206,11 @@ a:hover { text-decoration: underline; }
 .check-item { display: grid; grid-template-columns: 25px 1fr; gap: 10px; align-items: start; padding: 11px 0; border-top: 1px solid var(--border); cursor: pointer; }
 .check-box { width: 20px; height: 20px; border: 1px solid var(--border-dark); display: grid; place-items: center; font-size: 12px; color: transparent; transition: .15s ease; }
 .check-item.done .check-box { background: var(--teal); border-color: var(--teal); color: var(--card); }
+.check-item:hover .check-box, .check-item:focus-visible .check-box { border-color: var(--teal); color: color-mix(in oklab, var(--teal) 40%, transparent); }
+.check-item.done:hover .check-box, .check-item.done:focus-visible .check-box { color: var(--card); }
+.check-item:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
 .check-item.done strong, .check-item.done span { opacity: .48; text-decoration: line-through; }
+.check-progress { font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-top: 10px; }
 .check-item strong { display: block; font-size: 13px; margin-bottom: 2px; }
 .check-item span { display: block; font-size: 11px; color: var(--muted); }
 .decision-side { overflow: clip; }
@@ -222,6 +226,16 @@ a:hover { text-decoration: underline; }
 .route-state { position: absolute; right: 18px; top: 17px; font-family: var(--mono); font-size: 9px; color: var(--teal); text-transform: uppercase; }
 .decision-note { padding: 16px 18px; background: var(--card-alt); font-size: 12px; color: var(--sub); }
 .decision-note strong { color: var(--text); }
+
+/* Disclosure for system-explanation copy: kept on the page for anyone who wants
+   it, but never the default read. See docs/handover/BRIEF_2026-08-25_MOBILE_ENGAGEMENT.md */
+.meta-disclose { border-top: 1px solid var(--border); margin: 14px 0; }
+.meta-disclose > summary { list-style: none; cursor: pointer; padding: 11px 0; font: 700 10px var(--mono); letter-spacing: 1.1px; text-transform: uppercase; color: var(--muted); display: flex; align-items: center; gap: 8px; }
+.meta-disclose > summary::-webkit-details-marker { display: none; }
+.meta-disclose > summary::before { content: "+"; font-size: 13px; line-height: 1; color: var(--gold); }
+.meta-disclose[open] > summary::before { content: "–"; }
+.meta-disclose > summary:hover, .meta-disclose > summary:focus-visible { color: var(--text); }
+.meta-disclose-body { padding: 0 0 14px; font-size: 12px; color: var(--sub); line-height: 1.6; }
 .vpack { margin-top: 22px; border: 1px solid var(--border-dark); border-radius: 7px; overflow: hidden; box-shadow: var(--shadow-card); }
 .vpack-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; padding: 14px 16px; background: var(--card-alt); }
 .vpack-head div span { display: block; font-size: 9px; text-transform: uppercase; letter-spacing: 1.1px; font-weight: 700; color: var(--gold); margin-bottom: 4px; }
@@ -461,6 +475,12 @@ a:hover { text-decoration: underline; }
 .activity-bar { fill: currentColor; fill-opacity: .2; stroke: currentColor; stroke-width: .8; shape-rendering: crispEdges; }
 .activity-node { fill: currentColor; }
 .activity-col:focus { outline: none; filter: drop-shadow(0 0 2px currentColor); }
+.activity-col { cursor: pointer; }
+.activity-col.picked { filter: drop-shadow(0 0 3px currentColor); }
+/* SVG <title> is hover/keyboard only — on touch the bars are mute. This is
+   where the tapped bar's reading goes. */
+.activity-readout { font: 700 10px var(--mono); letter-spacing: .6px; color: var(--muted); min-height: 14px; margin-top: 6px; }
+.activity-readout.on { color: var(--chart-annotate); }
 .activity-latest-line { stroke: var(--chart-annotate); stroke-width: .8; stroke-dasharray: 4 3; opacity: .85; }
 .activity-latest-dot { fill: var(--chart-annotate); stroke: var(--chart-surface); stroke-width: 1.5; }
 .activity-axis-label, .activity-index-label { fill: var(--chart-tick); font-family: var(--mono); font-size: 7px; letter-spacing: .4px; }
@@ -469,13 +489,14 @@ a:hover { text-decoration: underline; }
 .activity-chart-meta { display: grid; justify-items: end; font: 500 9px var(--mono); color: var(--muted); line-height: 1.35; text-align: right; }
 .activity-chart-meta strong { color: var(--chart-annotate) !important; font-size: 11px; }
 .activity-chart-meta span { white-space: nowrap; }
-.out-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.out { background: none; border: none; border-top: 1px solid var(--border); padding: 0; overflow: hidden; }
-.out-head { padding: 14px 20px 12px; border-bottom: 3px double var(--border-dark); }
-.out-head h4 { font-family: var(--serif); font-size: 17px; font-weight: 700; margin-bottom: 4px; }
-.out-ch { font-size: 9px; color: var(--gold); text-transform: uppercase; letter-spacing: 1.1px; font-weight: 700; font-family: var(--mono); }
-.out-body { padding: 16px 20px; font-size: 12px; color: var(--sub); white-space: pre-wrap; font-family: var(--mono); line-height: 1.6; max-height: 220px; overflow: auto; }
-.out-static { padding: 10px 20px 14px; border-top: 1px solid var(--border); font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .8px; font-weight: 700; }
+.out-tabs { display: flex; flex-wrap: wrap; gap: 0; border-bottom: 3px double var(--border-dark); }
+.out-tab { appearance: none; background: none; border: none; border-bottom: 2px solid transparent; margin-bottom: -2px; padding: 10px 16px 9px; cursor: pointer; text-align: left; font-family: var(--serif); font-size: 15px; font-weight: 700; color: var(--muted); }
+.out-tab span { display: block; font: 700 9px var(--mono); letter-spacing: 1.1px; text-transform: uppercase; color: var(--muted); margin-top: 2px; }
+.out-tab:hover { color: var(--text); }
+.out-tab.active { color: var(--text); border-bottom-color: var(--gold); }
+.out-tab.active span { color: var(--gold); }
+.out-tab:focus-visible { outline: 2px solid var(--teal); outline-offset: -2px; }
+.out-body { padding: 16px 20px; font-size: 12px; color: var(--sub); white-space: pre-wrap; font-family: var(--mono); line-height: 1.6; max-height: 260px; overflow: auto; }
 .coordination-strip { background: transparent; color: var(--text); padding: 0; margin: 18px 0 14px; max-width: none; }
 .fabric-line { font-size: 14.5px; color: var(--sub); line-height: 1.6; max-width: 760px; }
 .fabric-foot { font-size: 13px; color: var(--sub); }
@@ -854,7 +875,7 @@ html { scroll-behavior: smooth; }
 @keyframes rule-draw { from { background-size: 0% 2px; } to { background-size: 100% 2px; } }
 .reveal .sec-label { animation: rule-draw .7s var(--fe-ease-out) both .1s; }
 
-.out, .aud, .cluster-card { box-shadow: var(--shadow-rest); transition: transform .18s ease, box-shadow .18s ease; }
+.aud, .cluster-card { box-shadow: var(--shadow-rest); transition: transform .18s ease, box-shadow .18s ease; }
 
 .vpack { transition: box-shadow .18s ease; }
 .vpack:hover { box-shadow: 0 14px 40px rgba(24,37,31,.08); }
@@ -887,7 +908,12 @@ html { scroll-behavior: smooth; }
   .reveal:not(.in) .rmv-bar-fill, .reveal.in .rmv-bar-fill { transform: scaleX(1); transition: none; }
 }
 @media(max-width:768px) {
-  .out-grid, .lead-details, .coordination-inner, .decision-shell, .vpack-grid, .market-grid, .market-chart-grid, .news-grid, .map-finance-strip, .map-market-panel, .source-registry-group { grid-template-columns: 1fr; }
+  .lead-details, .coordination-inner, .decision-shell, .vpack-grid, .market-grid, .market-chart-grid, .news-grid, .map-finance-strip, .map-market-panel, .source-registry-group { grid-template-columns: 1fr; }
+  /* Four serif tabs wrap to two tall rows at 375px; shrink rather than scroll,
+     so every channel stays visible without a swipe. */
+  .out-tabs { display: grid; grid-template-columns: 1fr 1fr; }
+  .out-tab { padding: 9px 10px 8px; font-size: 13px; }
+  .out-tab span { font-size: 8px; letter-spacing: .9px; }
   .news-grid { columns:1; column-rule:none; }
   .news-card.lead { grid-template-columns:1fr; grid-template-rows:none; align-content:start; }
   .news-card.lead > .news-media { grid-row:auto; }
@@ -1157,7 +1183,7 @@ html { scroll-behavior: smooth; }
 /* ── Hover motion: pointer-gated and reduced-motion safe ──────────────
    Eight hover rules moved transform out of their base declarations and
    into this block. Previously they fired on touch (sticky hover states
-   after a tap) and four of them — .out, .btn, .sig-expand, .ask-chip —
+   after a tap) and three of them — .btn, .sig-expand, .ask-chip —
    kept animating under prefers-reduced-motion, verified in a real
    browser with reducedMotion:'reduce'.
 
@@ -1170,16 +1196,16 @@ html { scroll-behavior: smooth; }
   .news-card:hover .news-media img { transform: scale(1.05); filter: saturate(1.06); }
   .front-cta:hover::after { transform: translateY(3px); }
   .sig-marker:hover .sig-dot { transform: scale(1.22); }
-  .out:hover, .cluster-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-raised); }
+  .cluster-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-raised); }
   .btn:hover { transform: translateY(-1px); }
   .sig-expand:hover { transform: rotate(180deg); }
   .drill-card:hover { transform: translateY(-2px); }
   .ask-chip:hover { transform: translateY(-1px); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .out, .btn, .sig-expand, .ask-chip, .drill-card { transition: none !important; }
+  .btn, .sig-expand, .ask-chip, .drill-card { transition: none !important; }
   .news-card:hover .news-media img, .front-cta:hover::after, .sig-marker:hover .sig-dot,
-  .out:hover, .cluster-card:hover, .btn:hover, .sig-expand:hover,
+  .cluster-card:hover, .btn:hover, .sig-expand:hover,
   .drill-card:hover, .ask-chip:hover { transform: none !important; }
 }
 </style>
@@ -1314,7 +1340,7 @@ html { scroll-behavior: smooth; }
 
 <div class="sec" id="about-fabric">
   <div class="sec-label">What is Signal Fabric?</div>
-  <p class="fabric-line">Signal Fabric is the engine under this page. Every four hours it reads the core regional data layer — World Bank, IDB, NOAA, NDBC, CARICOM, and CDB — plus the Market Watch registry for exchanges, FX references, regulators, central banks, and credible business press. Signals are checked against each other before they become briefings.</p>
+  <p class="fabric-line">The engine under this page. It reads the region's public data every four hours and checks signals against each other before they become briefings.</p>
   <div class="coordination-strip">
   <div class="coordination-inner">
     <div class="coord-step"><span>01</span><strong>Watch</strong><p>We read the region's public data so you don't have to.</p></div>
@@ -1387,14 +1413,15 @@ html { scroll-behavior: smooth; }
         <div class="decision-fact"><label>How solid is this</label><strong>{d.lGrade}</strong></div>
         <div class="decision-fact"><label>What's happened so far</label><strong>{d.leadFeedback}</strong></div>
       </div>
-      <div class="decision-note"><strong>Why this ranks high:</strong> {d.lRanking}</div>
+      <details class="meta-disclose"><summary>Why this ranks high</summary><div class="meta-disclose-body">{d.lRanking}</div></details>
       <h3 class="check-title">Three checks before you commit</h3>
       <p class="check-sub">The desk has already pulled the evidence below — tick each one off before you spend more time or money.</p>
-      <div class="checklist" id="lead-checklist">
-        <div class="check-item" data-check="sector"><span class="check-box">✓</span><div><strong>Pin down which industry is driving this</strong><span>Big numbers hide specifics. Find the sectors actually creating the opening.</span></div></div>
-        <div class="check-item" data-check="operator"><span class="check-box">✓</span><div><strong>Find two people on the ground</strong><span>Who is already doing business there — and what do they know that the data doesn't?</span></div></div>
-        <div class="check-item" data-check="pipeline"><span class="check-box">✓</span><div><strong>Check for a concrete way in</strong><span>A live tender, a project, a partnership — something with a date on it.</span></div></div>
+      <div class="checklist" id="lead-checklist" role="group" aria-label="Three checks before you commit">
+        <div class="check-item" data-check="sector" role="checkbox" tabindex="0" aria-checked="false"><span class="check-box">✓</span><div><strong>Pin down which industry is driving this</strong><span>Big numbers hide specifics. Find the sectors actually creating the opening.</span></div></div>
+        <div class="check-item" data-check="operator" role="checkbox" tabindex="0" aria-checked="false"><span class="check-box">✓</span><div><strong>Find two people on the ground</strong><span>Who is already doing business there — and what do they know that the data doesn't?</span></div></div>
+        <div class="check-item" data-check="pipeline" role="checkbox" tabindex="0" aria-checked="false"><span class="check-box">✓</span><div><strong>Check for a concrete way in</strong><span>A live tender, a project, a partnership — something with a date on it.</span></div></div>
       </div>
+      <p class="check-progress" id="check-progress" aria-live="polite">0 of 3 done</p>
       <Fragment set:html={d.validationPackHtml} />
       <div id="risk-area"></div>
       <div class="lead-disclaimer"><strong>A signal, not advice.</strong> The data points; people on the ground confirm.</div>
@@ -1412,7 +1439,7 @@ html { scroll-behavior: smooth; }
 
 <section class="sec sec-major" id="regional-news" aria-labelledby="regional-news-title">
   <div class="news-head">
-    <div><div class="sec-label">Regional News Desk</div><div class="st" id="regional-news-title">What is moving across the Caribbean</div><div class="ss">Ranked by freshness, source tier, country relevance, and connection to finance, trade, tourism, energy, procurement, or climate signals. Headlines link to the original publisher.</div></div>
+    <div><div class="sec-label">Regional News Desk</div><div class="st" id="regional-news-title">What is moving across the Caribbean</div><div class="ss">Ranked by freshness, source tier, and country relevance. Headlines link to the publisher.</div></div>
     <span class="market-status">{d.regionalNewsCount} articles tracked</span>
   </div>
   <div class="news-filters" id="news-filters"><Fragment set:html={d.newsFilterHtml} /></div>
@@ -1424,7 +1451,7 @@ html { scroll-behavior: smooth; }
     <div>
       <div class="sec-label">Caribbean Market Watch</div>
       <div class="st">Every listed market, and the news that moved it this cycle</div>
-      <div class="ss">The product now tracks the official exchanges, regulators, central banks, and credible business press needed to connect regional signals to listed-market context. This is market intelligence, not brokerage advice.</div>
+      <div class="ss">Official exchanges, regulators, and central banks. Market intelligence, not brokerage advice.</div>
     </div>
   </div>
   <div class="market-grid"><Fragment set:html={d.marketWatchHtml} /></div>
@@ -1454,11 +1481,13 @@ html { scroll-behavior: smooth; }
 <div class="sec band band-paper" id="receipts">
   <div class="sec-label">The desk's receipts</div>
   <div class="st">What the desk said — and how responses reshape the next cycle</div>
-  <div class="ss">Every briefing is recorded, and response signals change what the desk prioritises. Here is that loop, in public.</div>
-  <Fragment set:html={d.receiptsProvenanceHtml} />
+  <div class="ss">Every briefing is recorded. Responses change what the desk prioritises next.</div>
   <div class="receipts-table"><Fragment set:html={d.receiptsHtml} /></div>
   <div class="receipts-boosts"><span class="fp-head">Current priorities, shaped by responses</span><Fragment set:html={d.boostsHtml} /></div>
-  <Fragment set:html={d.calibrationCommitmentHtml} />
+  <details class="meta-disclose"><summary>How the desk records and calibrates this</summary><div class="meta-disclose-body">
+    <Fragment set:html={d.receiptsProvenanceHtml} />
+    <Fragment set:html={d.calibrationCommitmentHtml} />
+  </div></details>
   <p class="receipts-foot">Machine-readable record: <a href="/api/track-record">/api/track-record</a></p>
 </div>
 
@@ -1466,10 +1495,15 @@ html { scroll-behavior: smooth; }
   <div class="sec-label">Ready to forward</div>
   <div class="st">Written to travel</div>
   <div class="ss">Live outputs from today's cycle — made to be forwarded, not filed.</div>
-  <div class="out-grid">
-    <div class="out">
-      <div class="out-head"><h4>Telegram Briefing</h4><div class="out-ch">Telegram channel</div></div>
-      <div class="out-body" id="tg-body">{`Signal Fabric
+  <div class="out-tabs" id="out-tabs" role="tablist" aria-label="Forwardable outputs">
+    <button type="button" class="out-tab active" role="tab" id="out-tab-tg" aria-controls="out-panel-tg" aria-selected="true" data-out="tg">Telegram<span>Channel</span></button>
+    <button type="button" class="out-tab" role="tab" id="out-tab-memo" aria-controls="out-panel-memo" aria-selected="false" tabindex="-1" data-out="memo">Investor Memo<span>Email</span></button>
+    <button type="button" class="out-tab" role="tab" id="out-tab-alert" aria-controls="out-panel-alert" aria-selected="false" tabindex="-1" data-out="alert">Message Alert<span>WhatsApp</span></button>
+    <button type="button" class="out-tab" role="tab" id="out-tab-policy" aria-controls="out-panel-policy" aria-selected="false" tabindex="-1" data-out="policy">Policy Brief<span>Document</span></button>
+  </div>
+  <div class="out-stage">
+    <div class="out-panel" id="out-panel-tg" role="tabpanel" aria-labelledby="out-tab-tg" data-out="tg">
+      <div class="out-body">{`Signal Fabric
 
 Today's lead: ${d.lCountry}
 
@@ -1488,10 +1522,8 @@ How solid: ${d.lGrade}
 Based on: ${d.lEvidence}
 
 A signal, not advice.`}</div>
-      <div class="out-static">Ready to send</div>
     </div>
-    <div class="out">
-      <div class="out-head"><h4>Investor Memo</h4><div class="out-ch">Email</div></div>
+    <div class="out-panel" id="out-panel-memo" role="tabpanel" aria-labelledby="out-tab-memo" data-out="memo" hidden>
       <div class="out-body">{`Caribbean Capital Momentum Brief
 
 Lead market: ${d.lCountry}
@@ -1510,10 +1542,8 @@ Before you act:
 This is a pointer, not a recommendation. Check the sector, the local risks, and the people you'd be working with.
 
 Signal Fabric`}</div>
-      <div class="out-static">Written for investors</div>
     </div>
-    <div class="out">
-      <div class="out-head"><h4>Message Alert</h4><div class="out-ch">WhatsApp / messaging</div></div>
+    <div class="out-panel" id="out-panel-alert" role="tabpanel" aria-labelledby="out-tab-alert" data-out="alert" hidden>
       <div class="out-body">{`${d.lCountry} — lead signal
 
 ${d.lEvidence}
@@ -1525,10 +1555,8 @@ Next: ${d.leadAction}
 Screening signal only. Not investment advice.
 
 Full brief: [link]`}</div>
-      <div class="out-static">Channel copy generated</div>
     </div>
-    <div class="out">
-      <div class="out-head"><h4>Policy Brief</h4><div class="out-ch">Email / document</div></div>
+    <div class="out-panel" id="out-panel-policy" role="tabpanel" aria-labelledby="out-tab-policy" data-out="policy" hidden>
       <div class="out-body">{`Regional Investment Signal
 
 Capital momentum is concentrating in ${d.lCountry}, with secondary movement noted in the regional wire.
@@ -1542,8 +1570,10 @@ Monitoring recommended:
 CDB and IDB project pipelines, trade data, and where the investment is landing by sector.
 
 Source: World Bank indicators, 2023 to 2024 comparison.`}</div>
-      <div class="out-static">Institution brief generated</div>
     </div>
+  </div>
+  <div class="out-foot">
+    <button type="button" class="btn out-copy" id="out-copy">Copy to clipboard</button>
   </div>
 </div>
 
@@ -2124,14 +2154,94 @@ if (risks.length) {
 
 const checklistKey = 'future-caribbean:' + D.cycle + ':lead-checklist';
 const savedChecks = JSON.parse(localStorage.getItem(checklistKey) || '[]');
-document.querySelectorAll('#lead-checklist .check-item').forEach(item => {
-  if (savedChecks.includes(item.dataset.check)) item.classList.add('done');
-  item.addEventListener('click', () => {
-    item.classList.toggle('done');
-    const done = [...document.querySelectorAll('#lead-checklist .check-item.done')].map(x => x.dataset.check);
-    localStorage.setItem(checklistKey, JSON.stringify(done));
+const checkItems = [...document.querySelectorAll('#lead-checklist .check-item')];
+const checkProgress = document.getElementById('check-progress');
+
+function paintChecklist() {
+  const done = checkItems.filter(x => x.classList.contains('done'));
+  if (checkProgress) checkProgress.textContent = done.length + ' of ' + checkItems.length + ' done';
+  return done.map(x => x.dataset.check);
+}
+
+checkItems.forEach(item => {
+  const on = savedChecks.includes(item.dataset.check);
+  item.classList.toggle('done', on);
+  item.setAttribute('aria-checked', String(on));
+  const toggle = () => {
+    const next = !item.classList.contains('done');
+    item.classList.toggle('done', next);
+    item.setAttribute('aria-checked', String(next));
+    localStorage.setItem(checklistKey, JSON.stringify(paintChecklist()));
+  };
+  item.addEventListener('click', toggle);
+  item.addEventListener('keydown', e => {
+    if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); toggle(); }
   });
 });
+paintChecklist();
+
+// Chart bars carry their reading in an SVG <title>, which touch devices never
+// surface. Mirror it into a live readout under the chart.
+document.querySelectorAll('.market-chart-card').forEach(card => {
+  const readout = card.querySelector('.activity-readout');
+  const cols = [...card.querySelectorAll('.activity-col')];
+  if (!readout || !cols.length) return;
+  const show = col => {
+    cols.forEach(c => c.classList.toggle('picked', c === col));
+    // The card already carries the "not a price" disclosure; no need to repeat it here.
+    readout.textContent = (col.querySelector('title')?.textContent || '').replace(/\s*Not a price\.\s*$/, '');
+    readout.classList.add('on');
+  };
+  cols.forEach(col => {
+    col.addEventListener('click', () => show(col));
+    col.addEventListener('focus', () => show(col));
+  });
+});
+
+const outTabs = [...document.querySelectorAll('.out-tab')];
+const outPanels = [...document.querySelectorAll('.out-panel')];
+const outCopy = document.getElementById('out-copy');
+
+function selectOut(name, focus) {
+  outTabs.forEach(t => {
+    const on = t.dataset.out === name;
+    t.classList.toggle('active', on);
+    t.setAttribute('aria-selected', String(on));
+    t.tabIndex = on ? 0 : -1;
+    if (on && focus) t.focus();
+  });
+  outPanels.forEach(p => { p.hidden = p.dataset.out !== name; });
+  if (outCopy) outCopy.textContent = 'Copy to clipboard';
+}
+
+outTabs.forEach((tab, i) => {
+  tab.addEventListener('click', () => selectOut(tab.dataset.out));
+  tab.addEventListener('keydown', e => {
+    const step = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+    if (!step) return;
+    e.preventDefault();
+    selectOut(outTabs[(i + step + outTabs.length) % outTabs.length].dataset.out, true);
+  });
+});
+
+if (outCopy) {
+  outCopy.addEventListener('click', async () => {
+    const panel = outPanels.find(p => !p.hidden);
+    if (!panel) return;
+    try {
+      await navigator.clipboard.writeText(panel.querySelector('.out-body').textContent.trim());
+      outCopy.textContent = 'Copied';
+    } catch {
+      outCopy.textContent = 'Selected — copy it';
+      const r = document.createRange();
+      r.selectNodeContents(panel.querySelector('.out-body'));
+      const sel = getSelection();
+      sel.removeAllRanges();
+      sel.addRange(r);
+    }
+    setTimeout(() => { outCopy.textContent = 'Copy to clipboard'; }, 2000);
+  });
+}
 
 function toggleDeep() {
   const c = document.getElementById('dc'); const b = document.getElementById('db');
@@ -2474,7 +2584,7 @@ window.addEventListener('scroll', () => {
 
   if (!('IntersectionObserver' in window)) return;
   const sections = document.querySelectorAll('.sec, .map-hero, .theater, .proof-band, .coordination-strip');
-  const CHILD_SEL = '.proof-cell, .aud, .out, .cluster-card, .coord-step, .sig-row, .vpack-col, .route-lane';
+  const CHILD_SEL = '.proof-cell, .aud, .out-panel, .cluster-card, .coord-step, .sig-row, .vpack-col, .route-lane';
   sections.forEach(s => {
     s.classList.add('reveal');
     s.querySelectorAll(CHILD_SEL).forEach((c, i) => {
