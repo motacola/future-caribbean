@@ -1,6 +1,6 @@
 # Signal Fabric — Backtest Report
 
-**Generated:** 2026-08-26T16:56:23.807079+00:00
+**Generated:** 2026-08-26T23:27:22.460544+00:00
 **Cycles analyzed:** 5
 **Total dispatches:** 605
 **Actionable responses:** 2

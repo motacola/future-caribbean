@@ -5,7 +5,7 @@
 - Action readiness: high
 - Evidence freshness: refreshing · cycles since refresh: 0
 - Recommendation: **ADVANCE** — Calibrated confidence 100/100 with 3 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.
-- Last validated: 2026-08-26T16:56:23.411611+00:00
+- Last validated: 2026-08-26T23:27:22.185941+00:00
 
 ## Sector hypotheses
 - Oil & gas and offshore support services [corroborated] — _Google News — Guyana: MODEC’s FPSO reaches Guyana as ExxonMobil’s fifth oil project nears start-up - Offshore-Energy.biz_
