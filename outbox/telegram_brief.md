@@ -1,5 +1,5 @@
 🌴 *Signal Fabric — Decision Routes Ready*
-Cycle: `20260825` · 2026-08-25 20:42 UTC
+Cycle: `20260826` · 2026-08-26 01:55 UTC
 
 *What this is:*
 A Dispatch Desk notification. The product is the decision route: signal → persona → action → feedback. Telegram is only the delivery channel.
@@ -36,10 +36,10 @@ Data → 29 signal clusters → 97 persona routes → 7 personas → action/capi
    Loop: Feedback this cycle: 3 ignored.
 
 *Feedback-adjusted priority*
-• Jamaica ccrif payout downranked -12
-• Turks and Caicos Islands ccrif payout downranked -10
-• St. Vincent & the Grenadines ccrif payout downranked -10
-• St. Kitts and Nevis ccrif payout downranked -10
+• Haiti ccrif payout downranked -32
+• Nicaragua ccrif payout downranked -18
+• Barbados ccrif payout downranked -18
+• Suriname enhanced investment downranked -6
 
 *Open the product surface*
 • `outbox/dispatch_desk.md` — judge/user-facing decision desk

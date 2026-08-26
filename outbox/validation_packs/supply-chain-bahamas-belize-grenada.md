@@ -1,11 +1,11 @@
 # Opportunity Validation Pack — Bahamas, Belize, Grenada
 
-- Signal: `supply-chain-bahamas-belize-grenada` · Dispatch: `DSP-20260825-028`
+- Signal: `supply-chain-bahamas-belize-grenada` · Dispatch: `DSP-20260826-028`
 - Confidence: 78/100 (raw 102) · A - multi-source
 - Action readiness: medium (no dated country procurement or news corroboration)
 - Evidence freshness: refreshing · cycles since refresh: 0
 - Recommendation: **HOLD** — Calibrated confidence 78/100 with 0 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.
-- Last validated: 2026-08-25T20:42:26.321213+00:00
+- Last validated: 2026-08-26T01:55:24.754347+00:00
 
 ## Sector hypotheses
 - None identified this cycle

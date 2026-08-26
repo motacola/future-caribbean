@@ -1,11 +1,11 @@
 # Opportunity Validation Pack — Guyana
 
-- Signal: `enhanced-invest-guyana` · Dispatch: `DSP-20260825-019`
+- Signal: `enhanced-invest-guyana` · Dispatch: `DSP-20260826-019`
 - Confidence: 100/100 (raw 111) · C - single-source
 - Action readiness: high
 - Evidence freshness: refreshing · cycles since refresh: 0
 - Recommendation: **ADVANCE** — Calibrated confidence 100/100 with 4 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.
-- Last validated: 2026-08-25T20:42:26.321213+00:00
+- Last validated: 2026-08-26T01:55:24.754347+00:00
 
 ## Sector hypotheses
 - Oil & gas and offshore support services [corroborated] — _Google News — Guyana: MODEC’s FPSO reaches Guyana as ExxonMobil’s fifth oil project nears start-up - Offshore-Energy.biz_
@@ -21,9 +21,6 @@
 
 ## Supporting projects & publications
 - [Productivity, Technology and Innovation Survey Guyana: 2013-2014](https://data.iadb.org/en/search?q=Productivity%2C%20Technology%20and%20Innovation%20) — IDB Open Data
-- [Guyana: Latin American Public Opinion Project - Victimization and Crime survey 2016](https://data.iadb.org/en/search?q=Guyana%3A%20Latin%20American%20Public%20Opinion%20Pr) — IDB Open Data
-- [Guyana Labor Force Survey: Third Quarter 2017](https://data.iadb.org/en/search?q=Guyana%20Labor%20Force%20Survey%3A%20Third%20Quarter) — IDB Open Data
-- [Guyana Labor Force Survey: Fourth Quarter 2017](https://data.iadb.org/en/search?q=Guyana%20Labor%20Force%20Survey%3A%20Fourth%20Quarte) — IDB Open Data
 
 ## Procurement matches
 - [Construction of Elderly Assisted Living Facility, Enmore, Region No.4, Phase 1](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)

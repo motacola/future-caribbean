@@ -1,6 +1,6 @@
 {
   "signal_id": "enhanced-invest-guyana",
-  "dispatch_id": "DSP-20260825-019",
+  "dispatch_id": "DSP-20260826-019",
   "country": "Guyana",
   "signal_title": "Guyana: +860.3% capital surge on a single official source — market entry window open",
   "confidence_score": 100,
@@ -41,28 +41,6 @@
       "source": "IDB Open Data",
       "url": "https://data.iadb.org/en/search?q=Productivity%2C%20Technology%20and%20Innovation%20",
       "topics": []
-    },
-    {
-      "title": "Guyana: Latin American Public Opinion Project - Victimization and Crime survey 2016",
-      "source": "IDB Open Data",
-      "url": "https://data.iadb.org/en/search?q=Guyana%3A%20Latin%20American%20Public%20Opinion%20Pr",
-      "topics": []
-    },
-    {
-      "title": "Guyana Labor Force Survey: Third Quarter 2017",
-      "source": "IDB Open Data",
-      "url": "https://data.iadb.org/en/search?q=Guyana%20Labor%20Force%20Survey%3A%20Third%20Quarter",
-      "topics": [
-        "social"
-      ]
-    },
-    {
-      "title": "Guyana Labor Force Survey: Fourth Quarter 2017",
-      "source": "IDB Open Data",
-      "url": "https://data.iadb.org/en/search?q=Guyana%20Labor%20Force%20Survey%3A%20Fourth%20Quarte",
-      "topics": [
-        "social"
-      ]
     }
   ],
   "procurement_matches": [
@@ -162,9 +140,6 @@
     }
   ],
   "source_links": [
-    "https://data.iadb.org/en/search?q=Guyana%20Labor%20Force%20Survey%3A%20Fourth%20Quarte",
-    "https://data.iadb.org/en/search?q=Guyana%20Labor%20Force%20Survey%3A%20Third%20Quarter",
-    "https://data.iadb.org/en/search?q=Guyana%3A%20Latin%20American%20Public%20Opinion%20Pr",
     "https://data.iadb.org/en/search?q=Productivity%2C%20Technology%20and%20Innovation%20",
     "https://eprocure.gov.gy/",
     "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQYWZOQ3EySk03UE9vYjZ0OS1ycTk3TlZRQVRnSHdid19uLVVWdFdFSEZYanVrS0J3YUl0RmRaQWd5X3lGY3MwUkF1RnhwUWs1WTRETV9pb0tabWpZZEdzM1QxUjVCOGFLYVMzLTBqbDhJTWZXeFZ5cXM5UHJuc19rT2RxS1NiUGk2LWN2ZERNTnZQYUNtMVc4SU9XeThMYzNxS1NvdXhsQUNPdVE?oc=5",
@@ -190,7 +165,7 @@
   ],
   "advance_or_reject_recommendation": "advance",
   "recommendation_reason": "Calibrated confidence 100/100 with 4 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.",
-  "last_validated_at": "2026-08-25T20:42:26.321213+00:00",
+  "last_validated_at": "2026-08-26T01:55:24.754347+00:00",
   "coordination_path": null,
   "evidence_fingerprint": "017584e4acd971c0",
   "cycles_since_refresh": 0,
