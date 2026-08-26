@@ -1,14 +1,11 @@
 {
-  "generated_at": "2026-08-26T08:58:58.812195+00:00",
+  "generated_at": "2026-08-26T13:12:31.213288+00:00",
   "feedback_provenance": "simulated",
   "current_boosts": {
     "enhanced_investment": {
       "Guyana": 4,
       "Suriname": -6,
       "Barbados": -6
-    },
-    "supply_chain_signal": {
-      "Bahamas, Belize, Grenada": -6
     },
     "development_pipeline": {
       "CARICOM": 1
@@ -18,9 +15,16 @@
       "Suriname": -4
     },
     "ccrif_payout": {
-      "Haiti": -32,
-      "Barbados": -18,
-      "Nicaragua": -18
+      "Turks and Caicos Islands": -10,
+      "Anguilla": -10,
+      "St. Kitts and Nevis": -10,
+      "Dominica": -10,
+      "St. Vincent & the Grenadines": -10,
+      "Grenada": -10,
+      "Jamaica": -18
+    },
+    "eccb_deposit_growth": {
+      "Eastern Caribbean Currency Union": -4
     }
   },
   "cycles": [
@@ -37,14 +41,15 @@
         "enhanced_investment": 1,
         "development_pipeline": 1
       },
-      "dispatch_count": 92,
+      "dispatch_count": 97,
       "countries": [
         "Haiti",
         "Barbados",
-        "Jamaica",
         "Nicaragua",
+        "Jamaica",
         "Guyana",
         "Suriname",
+        "CARICOM",
         "Caribwide",
         "Turks and Caicos Islands",
         "Anguilla",
@@ -52,7 +57,7 @@
         "Dominica",
         "St. Vincent & the Grenadines",
         "Grenada",
-        "CARICOM",
+        "Bahamas, Belize, Grenada",
         "Eastern Caribbean Currency Union",
         "St. Vincent and the Grenadines"
       ],

@@ -1,6 +1,6 @@
 {
-  "cycle_intro": "Lead: Guyana. 3 converging signal(s) across 3 source(s). Signals: \ud83d\udcbc Investment + \ud83c\udfd6\ufe0f Tourism + \ud83d\udc8e Investment.",
-  "generated_at": "2026-08-26 08:58 UTC",
+  "cycle_intro": "Lead: Guyana. 3 converging signal(s) across 4 source(s). Signals: \ud83d\udcbc Investment + \ud83c\udfd6\ufe0f Tourism + \ud83d\udc8e Investment.",
+  "generated_at": "2026-08-26 13:12 UTC",
   "items": [
     {
       "band": "immediate",
@@ -22,6 +22,24 @@
     },
     {
       "band": "immediate",
+      "channel": "Telegram digest",
+      "country": "Bahamas, Belize, Grenada",
+      "freshness": "new",
+      "kind": "supply_chain_signal",
+      "metrics": {
+        "decision_changed": null,
+        "forwarded": null,
+        "opened": null,
+        "reply_count": null,
+        "sent": false
+      },
+      "persona": "regional intelligence",
+      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
+      "score": 100,
+      "signal_id": "supply-chain-bahamas-belize-grenada"
+    },
+    {
+      "band": "immediate",
       "channel": "Email brief + Telegram",
       "country": "Suriname",
       "freshness": "updated",
@@ -35,7 +53,7 @@
       },
       "persona": "investor/founder",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 96,
+      "score": 98,
       "signal_id": "enhanced-invest-suriname"
     },
     {
@@ -58,60 +76,6 @@
     },
     {
       "band": "validation",
-      "channel": "Telegram digest",
-      "country": "Turks and Caicos Islands",
-      "freshness": "intensified",
-      "kind": "ccrif_payout",
-      "metrics": {
-        "decision_changed": null,
-        "forwarded": null,
-        "opened": null,
-        "reply_count": null,
-        "sent": false
-      },
-      "persona": "regional intelligence",
-      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 84,
-      "signal_id": "ccrif-payout-tc-tropical_cyclone-2008-01-01"
-    },
-    {
-      "band": "validation",
-      "channel": "Telegram digest",
-      "country": "Anguilla",
-      "freshness": "intensified",
-      "kind": "ccrif_payout",
-      "metrics": {
-        "decision_changed": null,
-        "forwarded": null,
-        "opened": null,
-        "reply_count": null,
-        "sent": false
-      },
-      "persona": "regional intelligence",
-      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 84,
-      "signal_id": "ccrif-payout-ai-tropical_cyclone-2010-01-01"
-    },
-    {
-      "band": "validation",
-      "channel": "Telegram digest",
-      "country": "St. Kitts and Nevis",
-      "freshness": "intensified",
-      "kind": "ccrif_payout",
-      "metrics": {
-        "decision_changed": null,
-        "forwarded": null,
-        "opened": null,
-        "reply_count": null,
-        "sent": false
-      },
-      "persona": "regional intelligence",
-      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 84,
-      "signal_id": "ccrif-payout-kn-tropical_cyclone-2017-01-01"
-    },
-    {
-      "band": "validation",
       "channel": "Email brief + Telegram",
       "country": "Barbados",
       "freshness": "updated",
@@ -125,8 +89,62 @@
       },
       "persona": "investor/founder",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 83,
+      "score": 85,
       "signal_id": "enhanced-invest-barbados"
+    },
+    {
+      "band": "validation",
+      "channel": "Telegram digest",
+      "country": "Haiti",
+      "freshness": "intensified",
+      "kind": "ccrif_payout",
+      "metrics": {
+        "decision_changed": null,
+        "forwarded": null,
+        "opened": null,
+        "reply_count": null,
+        "sent": false
+      },
+      "persona": "regional intelligence",
+      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
+      "score": 84,
+      "signal_id": "ccrif-payout-ht-earthquake-2010-01-01"
+    },
+    {
+      "band": "validation",
+      "channel": "Telegram digest",
+      "country": "Nicaragua",
+      "freshness": "intensified",
+      "kind": "ccrif_payout",
+      "metrics": {
+        "decision_changed": null,
+        "forwarded": null,
+        "opened": null,
+        "reply_count": null,
+        "sent": false
+      },
+      "persona": "regional intelligence",
+      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
+      "score": 84,
+      "signal_id": "ccrif-payout-ni-tropical_cyclone-2016-01-01"
+    },
+    {
+      "band": "validation",
+      "channel": "Telegram digest",
+      "country": "Turks and Caicos Islands",
+      "freshness": "weakened",
+      "kind": "ccrif_payout",
+      "metrics": {
+        "decision_changed": null,
+        "forwarded": null,
+        "opened": null,
+        "reply_count": null,
+        "sent": false
+      },
+      "persona": "regional intelligence",
+      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
+      "score": 74,
+      "signal_id": "ccrif-payout-tc-tropical_cyclone-2008-01-01"
     },
     {
       "band": "validation",
@@ -143,7 +161,7 @@
       },
       "persona": "regional intelligence",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 76,
+      "score": 72,
       "signal_id": "eccb-deposit-growth-eccu"
     },
     {
@@ -199,24 +217,6 @@
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
       "score": 47,
       "signal_id": "tourism-dominica"
-    },
-    {
-      "band": "context",
-      "channel": "Telegram digest",
-      "country": "Grenada",
-      "freshness": "sustained",
-      "kind": "tourism_impact",
-      "metrics": {
-        "decision_changed": null,
-        "forwarded": null,
-        "opened": null,
-        "reply_count": null,
-        "sent": false
-      },
-      "persona": "tourism operator",
-      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 47,
-      "signal_id": "tourism-grenada"
     }
   ],
   "purpose": "Feedback agent input queue for distribution performance and trust signals."

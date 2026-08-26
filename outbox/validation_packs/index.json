@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T08:58:58.630344+00:00",
+  "generated_at": "2026-08-26T13:12:30.366801+00:00",
   "packs": [
     {
       "signal_id": "enhanced-invest-guyana",
@@ -7,6 +7,13 @@
       "country": "Guyana",
       "recommendation": "advance",
       "confidence_score": 100
+    },
+    {
+      "signal_id": "supply-chain-bahamas-belize-grenada",
+      "file": "supply-chain-bahamas-belize-grenada.json",
+      "country": "Bahamas, Belize, Grenada",
+      "recommendation": "hold",
+      "confidence_score": 78
     },
     {
       "signal_id": "enhanced-invest-suriname",
@@ -25,13 +32,6 @@
     {
       "signal_id": "regional-investment_signal-20260826",
       "file": "regional-investment_signal-20260826.json",
-      "country": "Caribwide",
-      "recommendation": "hold",
-      "confidence_score": 78
-    },
-    {
-      "signal_id": "regional-enhanced_investment-20260826",
-      "file": "regional-enhanced_investment-20260826.json",
       "country": "Caribwide",
       "recommendation": "hold",
       "confidence_score": 78
