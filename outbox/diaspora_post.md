@@ -3,7 +3,7 @@ Caribbean Market Pulse
 The Caribbean does not need another static dashboard.
 It needs useful signals that move to the people who can act.
 
-Lead: Guyana. 3 converging signal(s) across 4 source(s). Signals: 💼 Investment + 🏖️ Tourism + 💎 Investment.
+Lead: Guyana. 3 converging signal(s) across 3 source(s). Signals: 💼 Investment + 🏖️ Tourism + 💎 Investment.
 
 ★ **Guyana**: +860.3% capital surge on a single official source — market entry window open
 
@@ -14,4 +14,4 @@ Lead: Guyana. 3 converging signal(s) across 4 source(s). Signals: 💼 Investmen
 🏗️ CARICOM: 9 active procurements — bidding window open
 
 Generated from public regional data, ranked for decision value.
-Generated: 2026-08-26 04:52 UTC
+Generated: 2026-08-26 08:58 UTC

@@ -1,10 +1,10 @@
 {
   "signal_id": "enhanced-invest-guyana",
-  "dispatch_id": "DSP-20260826-019",
+  "dispatch_id": "DSP-20260826-017",
   "country": "Guyana",
   "signal_title": "Guyana: +860.3% capital surge on a single official source — market entry window open",
   "confidence_score": 100,
-  "raw_confidence_score": 111,
+  "raw_confidence_score": 109,
   "action_readiness": "high",
   "evidence_grade": "C - single-source",
   "sector_hypotheses": [
@@ -79,18 +79,7 @@
       "match": "regional"
     }
   ],
-  "official_country_data": [
-    {
-      "title": "Guyana Balance of Payments (2000 – 2025)",
-      "source": "CARICOM Statistics",
-      "url": "https://statistics.caricom.org/?country_data=guyana-balance-of-payments-2000-2024"
-    },
-    {
-      "title": "Guyana: Monthly Consumer Price Index (CPI) by Expenditure Category",
-      "source": "CARICOM Statistics",
-      "url": "https://statistics.caricom.org/?country_data=guyana-monthly-consumer-price-index-cpi-by-expenditure-category"
-    }
-  ],
+  "official_country_data": [],
   "credible_local_operators": [
     {
       "name": "Guyana Shore Base Inc. (GSBI)",
@@ -135,8 +124,6 @@
   "source_links": [
     "https://eprocure.gov.gy/",
     "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQYWZOQ3EySk03UE9vYjZ0OS1ycTk3TlZRQVRnSHdid19uLVVWdFdFSEZYanVrS0J3YUl0RmRaQWd5X3lGY3MwUkF1RnhwUWs1WTRETV9pb0tabWpZZEdzM1QxUjVCOGFLYVMzLTBqbDhJTWZXeFZ5cXM5UHJuc19rT2RxS1NiUGk2LWN2ZERNTnZQYUNtMVc4SU9XeThMYzNxS1NvdXhsQUNPdVE?oc=5",
-    "https://statistics.caricom.org/?country_data=guyana-balance-of-payments-2000-2024",
-    "https://statistics.caricom.org/?country_data=guyana-monthly-consumer-price-index-cpi-by-expenditure-category",
     "https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure"
   ],
   "unresolved_questions": [
@@ -157,7 +144,7 @@
   ],
   "advance_or_reject_recommendation": "advance",
   "recommendation_reason": "Calibrated confidence 100/100 with 3 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.",
-  "last_validated_at": "2026-08-26T04:52:30.763091+00:00",
+  "last_validated_at": "2026-08-26T08:58:58.630344+00:00",
   "coordination_path": null,
   "evidence_fingerprint": "017584e4acd971c0",
   "cycles_since_refresh": 0,

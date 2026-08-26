@@ -2,8 +2,34 @@
   "instance": "climate",
   "instance_label": "Climate & Catastrophe Risk",
   "cycle_id": "20260826",
-  "generated_at": "2026-08-26T04:52:31.165672+00:00",
+  "generated_at": "2026-08-26T08:58:59.023300+00:00",
   "clusters": [
+    {
+      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.2",
+      "country_cluster": "San Juan and Vicinity",
+      "signal_kind": "hazard_alert",
+      "title": "San Juan and Vicinity: Extreme Heat Warning in effect (Severe)",
+      "evidence": "NOAA NWS: Extreme Heat Warning issued August 26 at 12:56AM AST until August 26 at 5:00PM AST by NWS San Juan PR",
+      "evidence_grade": "A - official alert",
+      "confidence_score": 95,
+      "freshness": "new",
+      "decision": "Hazard response and exposure assessment",
+      "risk_flags": [
+        "Severe Extreme Heat Warning active in San Juan and Vicinity"
+      ],
+      "personas": [
+        {
+          "persona": "Resilience Planner",
+          "channel": "Telegram/SMS alert",
+          "action": "Active hazard alert \u2014 Extreme Heat Warning \u2014 Severe (San Juan and Vicinity). Pre-position resources and confirm evacuation/shelter readiness in the affected area now."
+        },
+        {
+          "persona": "Insurer / Reinsurer",
+          "channel": "Email + alert",
+          "action": "Exposure check \u2014 Extreme Heat Warning \u2014 Severe (San Juan and Vicinity). Flag policies in the affected zone and prepare parametric-trigger assessment."
+        }
+      ]
+    },
     {
       "cluster_id": "CLIM-tropical-outlook",
       "country_cluster": "North Atlantic / Caribbean basin",
@@ -31,13 +57,13 @@
       ]
     },
     {
-      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.6",
-      "country_cluster": "Atlantic Waters of Puerto Rico AND USVI from 10 NM to 19.5N",
+      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.2",
+      "country_cluster": "Culebra",
       "signal_kind": "hazard_alert",
-      "title": "Atlantic Waters of Puerto Rico AND USVI from 10 NM to 19.5N: Marine Weather Statement in effect (Minor)",
-      "evidence": "NOAA NWS: Marine Weather Statement issued August 25 at 11:03PM AST by NWS San Juan PR",
-      "evidence_grade": "C - advisory",
-      "confidence_score": 60,
+      "title": "Culebra: Heat Advisory in effect (Moderate)",
+      "evidence": "NOAA NWS: Heat Advisory issued August 26 at 12:56AM AST until August 26 at 5:00PM AST by NWS San Juan PR",
+      "evidence_grade": "B - official alert",
+      "confidence_score": 80,
       "freshness": "new",
       "decision": "Hazard response and exposure assessment",
       "risk_flags": [],
@@ -45,17 +71,17 @@
         {
           "persona": "Resilience Planner",
           "channel": "Telegram/SMS alert",
-          "action": "Active hazard alert \u2014 Marine Weather Statement \u2014 Minor (Atlantic Waters of Puerto Rico AND USVI from 10 NM to 19.5N). Pre-position resources and confirm evacuation/shelter readiness in the affected area now."
+          "action": "Active hazard alert \u2014 Heat Advisory \u2014 Moderate (Culebra). Pre-position resources and confirm evacuation/shelter readiness in the affected area now."
         },
         {
           "persona": "Insurer / Reinsurer",
           "channel": "Email + alert",
-          "action": "Exposure check \u2014 Marine Weather Statement \u2014 Minor (Atlantic Waters of Puerto Rico AND USVI from 10 NM to 19.5N). Flag policies in the affected zone and prepare parametric-trigger assessment."
+          "action": "Exposure check \u2014 Heat Advisory \u2014 Moderate (Culebra). Flag policies in the affected zone and prepare parametric-trigger assessment."
         }
       ]
     }
   ],
-  "dispatch_count": 4,
+  "dispatch_count": 6,
   "sources": [
     "NOAA NWS",
     "NDBC buoys",

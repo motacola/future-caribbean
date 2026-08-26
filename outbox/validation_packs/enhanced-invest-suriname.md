@@ -1,11 +1,11 @@
 # Opportunity Validation Pack — Suriname
 
-- Signal: `enhanced-invest-suriname` · Dispatch: `DSP-20260826-022`
-- Confidence: 68/100 (raw 98) · C - single-source
+- Signal: `enhanced-invest-suriname` · Dispatch: `DSP-20260826-020`
+- Confidence: 68/100 (raw 96) · C - single-source
 - Action readiness: medium (annual macro signal only)
 - Evidence freshness: refreshing · cycles since refresh: 0
 - Recommendation: **HOLD** — Calibrated confidence 68/100 with 0 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.
-- Last validated: 2026-08-26T04:52:30.763091+00:00
+- Last validated: 2026-08-26T08:58:58.630344+00:00
 
 ## Sector hypotheses
 - Offshore oil & gas exploration [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
@@ -27,8 +27,7 @@
 - [Kalinago Development Project](https://www.caribank.org/work-with-us/procurement/procurement-notices/kalinago-development-project-1) — Caribbean Development Bank (regional)
 
 ## Official country data
-- [Suriname Balance of Payments (2017 &#8211; 2025)](https://statistics.caricom.org/?country_data=suriname-balance-of-payments-2017-2024) — CARICOM Statistics
-- [Suriname: Monthly Consumer Price Index (CPI) by Expenditure Category](https://statistics.caricom.org/?country_data=suriname-monthly-consumer-price-index-cpi-by-expenditure-category) — CARICOM Statistics
+- No official country datasets matched.
 
 ## Relevant institutions & intro targets
 - Chamber of Commerce and Industry Suriname (KKF) — The national chamber — a shortcut to who's doing business

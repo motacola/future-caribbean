@@ -1,11 +1,11 @@
 # Opportunity Validation Pack — Guyana
 
-- Signal: `enhanced-invest-guyana` · Dispatch: `DSP-20260826-019`
-- Confidence: 100/100 (raw 111) · C - single-source
+- Signal: `enhanced-invest-guyana` · Dispatch: `DSP-20260826-017`
+- Confidence: 100/100 (raw 109) · C - single-source
 - Action readiness: high
 - Evidence freshness: refreshing · cycles since refresh: 0
 - Recommendation: **ADVANCE** — Calibrated confidence 100/100 with 3 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.
-- Last validated: 2026-08-26T04:52:30.763091+00:00
+- Last validated: 2026-08-26T08:58:58.630344+00:00
 
 ## Sector hypotheses
 - Oil & gas and offshore support services [corroborated] — _Google News — Guyana: MODEC’s FPSO reaches Guyana as ExxonMobil’s fifth oil project nears start-up - Offshore-Energy.biz_
@@ -31,8 +31,7 @@
 - [Enhancing the Quality of the Belize National Quality Infrastructure](https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure) — Caribbean Development Bank (regional)
 
 ## Official country data
-- [Guyana Balance of Payments (2000 – 2025)](https://statistics.caricom.org/?country_data=guyana-balance-of-payments-2000-2024) — CARICOM Statistics
-- [Guyana: Monthly Consumer Price Index (CPI) by Expenditure Category](https://statistics.caricom.org/?country_data=guyana-monthly-consumer-price-index-cpi-by-expenditure-category) — CARICOM Statistics
+- No official country datasets matched.
 
 ## Relevant institutions & intro targets
 - Guyana Office for Investment (GO-Invest) — National investment promotion agency

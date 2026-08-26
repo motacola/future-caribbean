@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T04:52:30.957851+00:00",
+  "generated_at": "2026-08-26T08:58:58.812195+00:00",
   "feedback_provenance": "simulated",
   "current_boosts": {
     "enhanced_investment": {
@@ -17,17 +17,10 @@
       "Guyana": -4,
       "Suriname": -4
     },
-    "food_security": {
-      "CARICOM": -4
-    },
     "ccrif_payout": {
-      "Turks and Caicos Islands": -10,
-      "Anguilla": -10,
-      "St. Kitts and Nevis": -10,
-      "Dominica": -10,
-      "St. Vincent & the Grenadines": -10,
-      "Grenada": -10,
-      "Jamaica": -12
+      "Haiti": -32,
+      "Barbados": -18,
+      "Nicaragua": -18
     }
   },
   "cycles": [
@@ -44,15 +37,14 @@
         "enhanced_investment": 1,
         "development_pipeline": 1
       },
-      "dispatch_count": 97,
+      "dispatch_count": 92,
       "countries": [
         "Haiti",
         "Barbados",
-        "Nicaragua",
         "Jamaica",
+        "Nicaragua",
         "Guyana",
         "Suriname",
-        "CARICOM",
         "Caribwide",
         "Turks and Caicos Islands",
         "Anguilla",
@@ -60,7 +52,7 @@
         "Dominica",
         "St. Vincent & the Grenadines",
         "Grenada",
-        "Bahamas, Belize, Grenada",
+        "CARICOM",
         "Eastern Caribbean Currency Union",
         "St. Vincent and the Grenadines"
       ],
