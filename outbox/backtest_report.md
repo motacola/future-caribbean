@@ -1,6 +1,6 @@
 # Signal Fabric — Backtest Report
 
-**Generated:** 2026-08-26T01:55:25.055441+00:00
+**Generated:** 2026-08-26T04:52:31.080774+00:00
 **Cycles analyzed:** 5
 **Total dispatches:** 605
 **Actionable responses:** 2
@@ -29,7 +29,7 @@
 ## Evidence Category Coverage
 
 - **Sector Hypotheses:** 8 packs (25.8%)
-- **Supporting Projects:** 8 packs (25.8%)
+- **Supporting Projects:** 6 packs (19.4%)
 - **Procurement Matches:** 166 packs (535.5%)
 - **Operators:** 16 packs (51.6%)
 
@@ -46,8 +46,8 @@
 
 | Cycle | Dispatches | Actionable | Response Rate |
 |-------|------------|------------|---------------|
-| 20260826 | 97 | 0 | 0.0% |
-| 20260825 | 97 | 2 | 2.1% |
+| 20260826 | 97 | 2 | 2.1% |
+| 20260825 | 97 | 0 | 0.0% |
 | 20260824 | 97 | 0 | 0.0% |
 | 20260823 | 97 | 0 | 0.0% |
 | 20260822 | 217 | 0 | 0.0% |

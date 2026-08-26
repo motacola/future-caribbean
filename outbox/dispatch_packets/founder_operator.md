@@ -2,7 +2,7 @@
 
 **Decision job:** Competitive positioning and capability mapping
 **Delivery channel:** Telegram
-**Generated:** Aug 26, 2026 at 01:55 UTC
+**Generated:** Aug 26, 2026 at 04:52 UTC
 **Dispatches in this packet:** 10
 
 ---

@@ -4,8 +4,8 @@
 - Confidence: 68/100 (raw 98) · C - single-source
 - Action readiness: medium (annual macro signal only)
 - Evidence freshness: refreshing · cycles since refresh: 0
-- Recommendation: **HOLD** — Calibrated confidence 68/100 with 1 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.
-- Last validated: 2026-08-26T01:55:24.754347+00:00
+- Recommendation: **HOLD** — Calibrated confidence 68/100 with 0 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.
+- Last validated: 2026-08-26T04:52:30.763091+00:00
 
 ## Sector hypotheses
 - Offshore oil & gas exploration [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
@@ -16,8 +16,7 @@
 - No registry-backed operators for this country yet.
 
 ## Supporting projects & publications
-- [Suriname Survey of Living Conditions: 2016-2017](https://data.iadb.org/en/search?q=Suriname%20Survey%20of%20Living%20Conditions%3A%2020) — IDB Open Data
-- [Suriname COVID-19 Survey: 2020](https://data.iadb.org/en/search?q=Suriname%20COVID-19%20Survey%3A%202020) — IDB Open Data
+- No matched projects this cycle.
 
 ## Procurement matches
 - [Enhancing the Quality of the Belize National Quality Infrastructure](https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure) — Caribbean Development Bank (regional)

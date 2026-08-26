@@ -4,8 +4,8 @@
 - Confidence: 100/100 (raw 111) · C - single-source
 - Action readiness: high
 - Evidence freshness: refreshing · cycles since refresh: 0
-- Recommendation: **ADVANCE** — Calibrated confidence 100/100 with 4 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.
-- Last validated: 2026-08-26T01:55:24.754347+00:00
+- Recommendation: **ADVANCE** — Calibrated confidence 100/100 with 3 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.
+- Last validated: 2026-08-26T04:52:30.763091+00:00
 
 ## Sector hypotheses
 - Oil & gas and offshore support services [corroborated] — _Google News — Guyana: MODEC’s FPSO reaches Guyana as ExxonMobil’s fifth oil project nears start-up - Offshore-Energy.biz_
@@ -20,7 +20,7 @@
 - Demerara Distillers Limited (DDL) — Regional rum and agro-processing exporter with established supply chains ([profile](https://www.ddldistillers.com/))
 
 ## Supporting projects & publications
-- [Productivity, Technology and Innovation Survey Guyana: 2013-2014](https://data.iadb.org/en/search?q=Productivity%2C%20Technology%20and%20Innovation%20) — IDB Open Data
+- No matched projects this cycle.
 
 ## Procurement matches
 - [Construction of Elderly Assisted Living Facility, Enmore, Region No.4, Phase 1](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
