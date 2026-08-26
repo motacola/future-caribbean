@@ -2,7 +2,7 @@
 
 **Decision job:** Operational readiness and bid pipeline assessment
 **Delivery channel:** Telegram
-**Generated:** Aug 26, 2026 at 13:12 UTC
+**Generated:** Aug 26, 2026 at 16:56 UTC
 **Dispatches in this packet:** 3
 
 ---
@@ -39,7 +39,7 @@
 
 ### 3. Eastern Caribbean Currency Union: 4.6%
 
-**ID:** `DSP-20260826-097` | **Country:** Eastern Caribbean Currency Union | **Confidence:** 🟡 Validation | 72/100 | C - single-source
+**ID:** `DSP-20260826-097` | **Country:** Eastern Caribbean Currency Union | **Confidence:** 🟡 Validation | 76/100 | C - single-source
 **Channel:** Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** ignored
 
