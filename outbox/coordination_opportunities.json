@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-26T23:27:22.101163+00:00",
+  "generated_at": "2026-08-27T09:36:24.673857+00:00",
   "engine": "deterministic",
   "registry_status": "pilot",
   "count": 28,
@@ -13,7 +13,7 @@
       "title": "Regional coordination path for Bahamas, Belize, Grenada: signal detected",
       "status": "candidate",
       "trigger_signal_id": "supply-chain-bahamas-belize-grenada",
-      "trigger_dispatch_id": "DSP-20260826-028",
+      "trigger_dispatch_id": "DSP-20260827-028",
       "signal_kind": "supply_chain_signal",
       "demand_node": {
         "country": "Bahamas, Belize, Grenada",
@@ -165,7 +165,7 @@
       "title": "Regional coordination path for Barbados: +34.8% FDI momentum validated — cross-reference before deploying",
       "status": "candidate",
       "trigger_signal_id": "enhanced-invest-barbados",
-      "trigger_dispatch_id": "DSP-20260826-025",
+      "trigger_dispatch_id": "DSP-20260827-025",
       "signal_kind": "enhanced_investment",
       "demand_node": {
         "country": "Barbados",
@@ -332,7 +332,7 @@
       "title": "Regional coordination path for Barbados: FDI trending at +34.8% — screening trigger active",
       "status": "candidate",
       "trigger_signal_id": "invest-barbados",
-      "trigger_dispatch_id": "DSP-20260826-007",
+      "trigger_dispatch_id": "DSP-20260827-007",
       "signal_kind": "investment_signal",
       "demand_node": {
         "country": "Barbados",
@@ -470,7 +470,7 @@
       "title": "Regional coordination path for Guyana: +860.3% capital surge on a single official source — market entry window open",
       "status": "candidate",
       "trigger_signal_id": "enhanced-invest-guyana",
-      "trigger_dispatch_id": "DSP-20260826-019",
+      "trigger_dispatch_id": "DSP-20260827-019",
       "signal_kind": "enhanced_investment",
       "demand_node": {
         "country": "Guyana",
@@ -691,7 +691,7 @@
       "title": "Regional coordination path for Suriname: +206.0% investment movement, one source — needs corroboration",
       "status": "candidate",
       "trigger_signal_id": "enhanced-invest-suriname",
-      "trigger_dispatch_id": "DSP-20260826-022",
+      "trigger_dispatch_id": "DSP-20260827-022",
       "signal_kind": "enhanced_investment",
       "demand_node": {
         "country": "Suriname",
@@ -912,7 +912,7 @@
       "title": "Regional coordination path for Guyana: FDI trending at +860.3% — screening trigger active",
       "status": "candidate",
       "trigger_signal_id": "invest-guyana",
-      "trigger_dispatch_id": "DSP-20260826-003",
+      "trigger_dispatch_id": "DSP-20260827-003",
       "signal_kind": "investment_signal",
       "demand_node": {
         "country": "Guyana",
@@ -1100,7 +1100,7 @@
       "title": "Regional coordination path for Suriname: FDI trending at +206.0% — screening trigger active",
       "status": "candidate",
       "trigger_signal_id": "invest-suriname",
-      "trigger_dispatch_id": "DSP-20260826-005",
+      "trigger_dispatch_id": "DSP-20260827-005",
       "signal_kind": "investment_signal",
       "demand_node": {
         "country": "Suriname",
@@ -1284,11 +1284,11 @@
       "operator_campaigns": []
     },
     {
-      "id": "coord-regional-enhanced-investment-20260826",
+      "id": "coord-regional-enhanced-investment-20260827",
       "title": "Regional coordination path for Capital convergence: 3 Caribbean economies showing multi-source investment momentum",
       "status": "candidate",
-      "trigger_signal_id": "regional-enhanced_investment-20260826",
-      "trigger_dispatch_id": "DSP-20260826-016",
+      "trigger_signal_id": "regional-enhanced_investment-20260827",
+      "trigger_dispatch_id": "DSP-20260827-016",
       "signal_kind": "enhanced_investment",
       "demand_node": {
         "country": "Caribwide",
@@ -1505,11 +1505,11 @@
       "operator_campaigns": []
     },
     {
-      "id": "coord-regional-investment-signal-20260826",
+      "id": "coord-regional-investment-signal-20260827",
       "title": "Regional coordination path for Regional FDI snapshot: 3 countries with active capital movement",
       "status": "candidate",
-      "trigger_signal_id": "regional-investment_signal-20260826",
-      "trigger_dispatch_id": "DSP-20260826-001",
+      "trigger_signal_id": "regional-investment_signal-20260827",
+      "trigger_dispatch_id": "DSP-20260827-001",
       "signal_kind": "investment_signal",
       "demand_node": {
         "country": "Caribwide",
@@ -1697,7 +1697,7 @@
       "title": "Regional coordination path for CARICOM: food supply indicators shifting — supply chain implications",
       "status": "candidate",
       "trigger_signal_id": "food-security-regional",
-      "trigger_dispatch_id": "DSP-20260826-011",
+      "trigger_dispatch_id": "DSP-20260827-011",
       "signal_kind": "food_security",
       "demand_node": {
         "country": "Caribbean regional demand",
@@ -1834,7 +1834,7 @@
         "friction_penalty": 21
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 80/100",
         "Matched 3 of 3 required capabilities across 3 regional nodes",
         "Registry evidence from 3 primary-source organisations"
       ],
@@ -1864,42 +1864,13 @@
       "title": "Regional coordination path for CARICOM: 9 active procurements — bidding window open",
       "status": "candidate",
       "trigger_signal_id": "dev-pipeline-regional",
-      "trigger_dispatch_id": "DSP-20260826-013",
+      "trigger_dispatch_id": "DSP-20260827-013",
       "signal_kind": "development_pipeline",
       "demand_node": {
         "country": "Caribbean regional demand",
         "summary": "CDB active procurement notices: 9"
       },
       "demand_projects": [
-        {
-          "id": "project:guyana:proc-2026-00417",
-          "source_id": "PROC-2026-00417",
-          "type": "project",
-          "country": "Guyana",
-          "title": "Construction of Elderly Assisted Living Facility, Enmore, Region No.4, Phase 1",
-          "agency": "39-Ministry of Human Services and Social Security",
-          "category": "Works",
-          "status": "Bid Advertised",
-          "closing_date": "2026-08-27",
-          "url": "https://eprocure.gov.gy/",
-          "sector": "construction_and_works",
-          "required_capabilities": [
-            "construction_delivery",
-            "civil_engineering"
-          ],
-          "classification": "deterministic_keyword",
-          "matched_keywords": [
-            "construction",
-            "works"
-          ],
-          "evidence": [
-            {
-              "source": "Guyana eProcure (NPTA)",
-              "url": "https://eprocure.gov.gy/",
-              "grade": "primary"
-            }
-          ]
-        },
         {
           "id": "project:guyana:proc-2026-00416",
           "source_id": "PROC-2026-00416",
@@ -2020,115 +1991,6 @@
         "Guyana"
       ],
       "project_coordination_matches": [
-        {
-          "project_id": "project:guyana:proc-2026-00417",
-          "title": "Construction of Elderly Assisted Living Facility, Enmore, Region No.4, Phase 1",
-          "country": "Guyana",
-          "sector": "construction_and_works",
-          "required_capabilities": [
-            "construction_delivery",
-            "civil_engineering"
-          ],
-          "matched_capabilities": [
-            "civil_engineering",
-            "construction_delivery"
-          ],
-          "missing_capabilities": [],
-          "candidate_nodes": [
-            {
-              "country": "Jamaica",
-              "matched_capabilities": [
-                {
-                  "id": "civil_engineering",
-                  "strength": 4
-                },
-                {
-                  "id": "construction_delivery",
-                  "strength": 4
-                }
-              ],
-              "constraints": [
-                "route economics",
-                "procurement eligibility"
-              ],
-              "evidence": [
-                {
-                  "source": "JAMPRO",
-                  "url": "https://dobusinessjamaica.com/",
-                  "grade": "primary",
-                  "supports": [
-                    "construction_delivery",
-                    "civil_engineering",
-                    "aviation_infrastructure",
-                    "shipping_logistics",
-                    "warehousing_distribution",
-                    "digital_services",
-                    "ict_integration"
-                  ]
-                }
-              ]
-            },
-            {
-              "country": "Trinidad & Tobago",
-              "matched_capabilities": [
-                {
-                  "id": "civil_engineering",
-                  "strength": 4
-                },
-                {
-                  "id": "construction_delivery",
-                  "strength": 4
-                }
-              ],
-              "constraints": [
-                "cross-border supplier qualification",
-                "shipping cost validation"
-              ],
-              "evidence": [
-                {
-                  "source": "Trinidad and Tobago Ministry of Trade and Industry",
-                  "url": "https://tradeind.gov.tt/",
-                  "grade": "primary",
-                  "supports": [
-                    "industrial_fabrication",
-                    "engineering_services",
-                    "civil_engineering",
-                    "construction_delivery"
-                  ]
-                }
-              ]
-            }
-          ],
-          "frictions": [
-            "cross-border supplier qualification",
-            "procurement eligibility",
-            "route economics",
-            "shipping cost validation"
-          ],
-          "unlock_path": [
-            {
-              "id": "unlock:project-guyana-proc-2026-00417:friction:eligibility_verification",
-              "type": "eligibility_verification",
-              "blocker": "cross-border supplier qualification",
-              "owner_persona": "procurement_watcher",
-              "minimum_evidence_request": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
-              "success_condition": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
-              "estimated_score_uplift": 3,
-              "uplift_basis": "one friction-penalty unit removed"
-            },
-            {
-              "id": "unlock:project-guyana-proc-2026-00417:friction:logistics_validation",
-              "type": "logistics_validation",
-              "blocker": "route economics",
-              "owner_persona": "regional_operator",
-              "minimum_evidence_request": "Route, lead time, landed cost, and contingency option validated",
-              "success_condition": "Route, lead time, landed cost, and contingency option validated",
-              "estimated_score_uplift": 3,
-              "uplift_basis": "one friction-penalty unit removed"
-            }
-          ],
-          "estimated_total_uplift": 6
-        },
         {
           "project_id": "project:guyana:proc-2026-00416",
           "title": "EOI for the Design and Supervision of the National Public Health Reference Laboratory Building",
@@ -2641,26 +2503,6 @@
           "uplift_basis": "one friction-penalty unit removed"
         },
         {
-          "id": "unlock:project-guyana-proc-2026-00417:friction:eligibility_verification",
-          "type": "eligibility_verification",
-          "blocker": "cross-border supplier qualification",
-          "owner_persona": "procurement_watcher",
-          "minimum_evidence_request": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
-          "success_condition": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
-          "estimated_score_uplift": 3,
-          "uplift_basis": "one friction-penalty unit removed"
-        },
-        {
-          "id": "unlock:project-guyana-proc-2026-00417:friction:logistics_validation",
-          "type": "logistics_validation",
-          "blocker": "route economics",
-          "owner_persona": "regional_operator",
-          "minimum_evidence_request": "Route, lead time, landed cost, and contingency option validated",
-          "success_condition": "Route, lead time, landed cost, and contingency option validated",
-          "estimated_score_uplift": 3,
-          "uplift_basis": "one friction-penalty unit removed"
-        },
-        {
           "id": "unlock:project-guyana-proc-2026-00422:friction:eligibility_verification",
           "type": "eligibility_verification",
           "blocker": "cross-border supplier qualification",
@@ -2941,11 +2783,6 @@
           "grade": "primary"
         },
         {
-          "source": "Guyana eProcure (NPTA)",
-          "url": "https://eprocure.gov.gy/",
-          "grade": "primary"
-        },
-        {
           "source": "Caribbean Development Bank",
           "url": "https://www.caribank.org/",
           "grade": "primary"
@@ -2992,8 +2829,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-08-26T23:27:22.110046+00:00",
-          "updated_at": "2026-08-26T23:27:22.110046+00:00"
+          "created_at": "2026-08-27T09:36:24.682615+00:00",
+          "updated_at": "2026-08-27T09:36:24.682615+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00422:capability:education_services",
@@ -3004,8 +2841,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-08-26T23:27:22.110046+00:00",
-          "updated_at": "2026-08-26T23:27:22.110046+00:00"
+          "created_at": "2026-08-27T09:36:24.682615+00:00",
+          "updated_at": "2026-08-27T09:36:24.682615+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00423:capability:education_services",
@@ -3016,8 +2853,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-08-26T23:27:22.110046+00:00",
-          "updated_at": "2026-08-26T23:27:22.110046+00:00"
+          "created_at": "2026-08-27T09:36:24.682615+00:00",
+          "updated_at": "2026-08-27T09:36:24.682615+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00416:friction:eligibility_verification",
@@ -3028,8 +2865,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-08-26T23:27:22.110046+00:00",
-          "updated_at": "2026-08-26T23:27:22.110046+00:00"
+          "created_at": "2026-08-27T09:36:24.682615+00:00",
+          "updated_at": "2026-08-27T09:36:24.682615+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00416:friction:logistics_validation",
@@ -3040,32 +2877,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-08-26T23:27:22.110046+00:00",
-          "updated_at": "2026-08-26T23:27:22.110046+00:00"
-        },
-        {
-          "id": "unlock:project-guyana-proc-2026-00417:friction:eligibility_verification",
-          "status": "proposed",
-          "owner_persona": "procurement_watcher",
-          "blocker": "cross-border supplier qualification",
-          "evidence": [],
-          "related_signals": [
-            "dev-pipeline-regional"
-          ],
-          "created_at": "2026-08-26T23:27:22.110046+00:00",
-          "updated_at": "2026-08-26T23:27:22.110046+00:00"
-        },
-        {
-          "id": "unlock:project-guyana-proc-2026-00417:friction:logistics_validation",
-          "status": "proposed",
-          "owner_persona": "regional_operator",
-          "blocker": "route economics",
-          "evidence": [],
-          "related_signals": [
-            "dev-pipeline-regional"
-          ],
-          "created_at": "2026-08-26T23:27:22.110046+00:00",
-          "updated_at": "2026-08-26T23:27:22.110046+00:00"
+          "created_at": "2026-08-27T09:36:24.682615+00:00",
+          "updated_at": "2026-08-27T09:36:24.682615+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00422:friction:eligibility_verification",
@@ -3076,8 +2889,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-08-26T23:27:22.110046+00:00",
-          "updated_at": "2026-08-26T23:27:22.110046+00:00"
+          "created_at": "2026-08-27T09:36:24.682615+00:00",
+          "updated_at": "2026-08-27T09:36:24.682615+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00422:friction:logistics_validation",
@@ -3088,8 +2901,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-08-26T23:27:22.110046+00:00",
-          "updated_at": "2026-08-26T23:27:22.110046+00:00"
+          "created_at": "2026-08-27T09:36:24.682615+00:00",
+          "updated_at": "2026-08-27T09:36:24.682615+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00423:friction:eligibility_verification",
@@ -3100,8 +2913,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-08-26T23:27:22.110046+00:00",
-          "updated_at": "2026-08-26T23:27:22.110046+00:00"
+          "created_at": "2026-08-27T09:36:24.682615+00:00",
+          "updated_at": "2026-08-27T09:36:24.682615+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00423:friction:logistics_validation",
@@ -3112,8 +2925,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-08-26T23:27:22.110046+00:00",
-          "updated_at": "2026-08-26T23:27:22.110046+00:00"
+          "created_at": "2026-08-27T09:36:24.682615+00:00",
+          "updated_at": "2026-08-27T09:36:24.682615+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00425:friction:eligibility_verification",
@@ -3124,8 +2937,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-08-26T23:27:22.110046+00:00",
-          "updated_at": "2026-08-26T23:27:22.110046+00:00"
+          "created_at": "2026-08-27T09:36:24.682615+00:00",
+          "updated_at": "2026-08-27T09:36:24.682615+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00425:friction:logistics_validation",
@@ -3136,42 +2949,40 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-08-26T23:27:22.110046+00:00",
-          "updated_at": "2026-08-26T23:27:22.110046+00:00"
+          "created_at": "2026-08-27T09:36:24.682615+00:00",
+          "updated_at": "2026-08-27T09:36:24.682615+00:00"
         }
       ],
       "operator_campaigns": [
         {
           "slug": "campaign-eligibility_verification-procurement_watcher-cross-border-supplier-qualification",
-          "intervention_count": 5,
-          "active_count": 5,
+          "intervention_count": 4,
+          "active_count": 4,
           "owner_persona": "procurement_watcher",
           "blocker": "cross-border supplier qualification",
           "intervention_type": null,
           "interventions": [
             "unlock:project-guyana-proc-2026-00416:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00417:friction:eligibility_verification",
             "unlock:project-guyana-proc-2026-00422:friction:eligibility_verification",
             "unlock:project-guyana-proc-2026-00423:friction:eligibility_verification",
             "unlock:project-guyana-proc-2026-00425:friction:eligibility_verification"
           ],
-          "updated_at": "2026-08-26T23:27:22.110046+00:00"
+          "updated_at": "2026-08-27T09:36:24.682615+00:00"
         },
         {
           "slug": "campaign-logistics_validation-regional_operator-route-economics",
-          "intervention_count": 5,
-          "active_count": 5,
+          "intervention_count": 4,
+          "active_count": 4,
           "owner_persona": "regional_operator",
           "blocker": "route economics",
           "intervention_type": null,
           "interventions": [
             "unlock:project-guyana-proc-2026-00416:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00417:friction:logistics_validation",
             "unlock:project-guyana-proc-2026-00422:friction:logistics_validation",
             "unlock:project-guyana-proc-2026-00423:friction:logistics_validation",
             "unlock:project-guyana-proc-2026-00425:friction:logistics_validation"
           ],
-          "updated_at": "2026-08-26T23:27:22.110046+00:00"
+          "updated_at": "2026-08-27T09:36:24.682615+00:00"
         },
         {
           "slug": "campaign-capability_verification-ecosystem_builder-education_services",
@@ -3185,7 +2996,7 @@
             "unlock:project-guyana-proc-2026-00422:capability:education_services",
             "unlock:project-guyana-proc-2026-00423:capability:education_services"
           ],
-          "updated_at": "2026-08-26T23:27:22.110046+00:00"
+          "updated_at": "2026-08-27T09:36:24.682615+00:00"
         }
       ]
     },
@@ -3194,7 +3005,7 @@
       "title": "Regional coordination path for Anguilla: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-ai-tropical_cyclone-2010-01-01",
-      "trigger_dispatch_id": "DSP-20260826-039",
+      "trigger_dispatch_id": "DSP-20260827-039",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "Anguilla",
@@ -3376,7 +3187,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 74/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -3416,7 +3227,7 @@
       "title": "Regional coordination path for Barbados: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-bb-excess_rainfall-2014-01-01",
-      "trigger_dispatch_id": "DSP-20260826-047",
+      "trigger_dispatch_id": "DSP-20260827-047",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "Barbados",
@@ -3596,7 +3407,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 66/100",
         "Matched 3 of 3 required capabilities across 4 regional nodes",
         "Registry evidence from 5 primary-source organisations"
       ],
@@ -3636,7 +3447,7 @@
       "title": "Regional coordination path for Barbados: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-bb-tropical_cyclone-2010-01-01",
-      "trigger_dispatch_id": "DSP-20260826-043",
+      "trigger_dispatch_id": "DSP-20260827-043",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "Barbados",
@@ -3816,7 +3627,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 66/100",
         "Matched 3 of 3 required capabilities across 4 regional nodes",
         "Registry evidence from 5 primary-source organisations"
       ],
@@ -3856,7 +3667,7 @@
       "title": "Regional coordination path for Dominica: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-dm-tropical_cyclone-2017-01-01",
-      "trigger_dispatch_id": "DSP-20260826-063",
+      "trigger_dispatch_id": "DSP-20260827-063",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "Dominica",
@@ -4038,7 +3849,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 74/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -4078,7 +3889,7 @@
       "title": "Regional coordination path for Grenada: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-gd-tropical_cyclone-2024-01-01",
-      "trigger_dispatch_id": "DSP-20260826-079",
+      "trigger_dispatch_id": "DSP-20260827-079",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "Grenada",
@@ -4260,7 +4071,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 74/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -4300,7 +4111,7 @@
       "title": "Regional coordination path for Haiti: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-ht-earthquake-2010-01-01",
-      "trigger_dispatch_id": "DSP-20260826-035",
+      "trigger_dispatch_id": "DSP-20260827-035",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "Haiti",
@@ -4482,7 +4293,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 56/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -4522,7 +4333,7 @@
       "title": "Regional coordination path for Haiti: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-ht-earthquake-2021-01-01",
-      "trigger_dispatch_id": "DSP-20260826-067",
+      "trigger_dispatch_id": "DSP-20260827-067",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "Haiti",
@@ -4704,7 +4515,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 56/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -4744,7 +4555,7 @@
       "title": "Regional coordination path for Haiti: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-ht-tropical_cyclone-2016-01-01",
-      "trigger_dispatch_id": "DSP-20260826-051",
+      "trigger_dispatch_id": "DSP-20260827-051",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "Haiti",
@@ -4926,7 +4737,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 56/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -4966,7 +4777,7 @@
       "title": "Regional coordination path for Haiti: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-ht-tropical_cyclone-2025-01-01",
-      "trigger_dispatch_id": "DSP-20260826-091",
+      "trigger_dispatch_id": "DSP-20260827-091",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "Haiti",
@@ -5148,7 +4959,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 56/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -5188,7 +4999,7 @@
       "title": "Regional coordination path for St. Kitts and Nevis: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-kn-tropical_cyclone-2017-01-01",
-      "trigger_dispatch_id": "DSP-20260826-059",
+      "trigger_dispatch_id": "DSP-20260827-059",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "St. Kitts and Nevis",
@@ -5370,7 +5181,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 74/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -5410,7 +5221,7 @@
       "title": "Regional coordination path for Nicaragua: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-ni-tropical_cyclone-2016-01-01",
-      "trigger_dispatch_id": "DSP-20260826-055",
+      "trigger_dispatch_id": "DSP-20260827-055",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "Nicaragua",
@@ -5592,7 +5403,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 66/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -5632,7 +5443,7 @@
       "title": "Regional coordination path for Nicaragua: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-ni-tropical_cyclone-2022-01-01",
-      "trigger_dispatch_id": "DSP-20260826-071",
+      "trigger_dispatch_id": "DSP-20260827-071",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "Nicaragua",
@@ -5814,7 +5625,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 66/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -5854,7 +5665,7 @@
       "title": "Regional coordination path for Turks and Caicos Islands: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-tc-tropical_cyclone-2008-01-01",
-      "trigger_dispatch_id": "DSP-20260826-031",
+      "trigger_dispatch_id": "DSP-20260827-031",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "Turks and Caicos Islands",
@@ -6036,7 +5847,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 74/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -6076,7 +5887,7 @@
       "title": "Regional coordination path for St. Vincent & the Grenadines: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-vc-tropical_cyclone-2024-01-01",
-      "trigger_dispatch_id": "DSP-20260826-075",
+      "trigger_dispatch_id": "DSP-20260827-075",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "St. Vincent & the Grenadines",
@@ -6258,7 +6069,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 74/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -6298,7 +6109,7 @@
       "title": "Regional coordination path for St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended",
       "status": "candidate",
       "trigger_signal_id": "vuln-st.-vincent-and-the-grenadines",
-      "trigger_dispatch_id": "DSP-20260826-009",
+      "trigger_dispatch_id": "DSP-20260827-009",
       "signal_kind": "economic_vulnerability",
       "demand_node": {
         "country": "St Vincent & the Grenadines",
@@ -6529,7 +6340,7 @@
       "title": "Regional coordination path for Jamaica: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-jm-tropical_cyclone-2024-01-01",
-      "trigger_dispatch_id": "DSP-20260826-083",
+      "trigger_dispatch_id": "DSP-20260827-083",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "Jamaica",
@@ -6696,7 +6507,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 68/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 4 regional nodes",
         "Registry evidence from 4 primary-source organisations"
       ],
@@ -6731,7 +6542,7 @@
       "title": "Regional coordination path for Jamaica: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-jm-tropical_cyclone-2025-01-01",
-      "trigger_dispatch_id": "DSP-20260826-087",
+      "trigger_dispatch_id": "DSP-20260827-087",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "Jamaica",
@@ -6898,7 +6709,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 68/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 4 regional nodes",
         "Registry evidence from 4 primary-source organisations"
       ],

@@ -1,6 +1,6 @@
 {
   "signal_id": "enhanced-invest-guyana",
-  "dispatch_id": "DSP-20260826-019",
+  "dispatch_id": "DSP-20260827-019",
   "country": "Guyana",
   "signal_title": "Guyana: +860.3% capital surge on a single official source — market entry window open",
   "confidence_score": 100,
@@ -38,13 +38,6 @@
   "supporting_projects": [],
   "procurement_matches": [
     {
-      "title": "Construction of Elderly Assisted Living Facility, Enmore, Region No.4, Phase 1",
-      "source": "Guyana eProcure (NPTA)",
-      "url": "https://eprocure.gov.gy/",
-      "match": "country",
-      "closing_date": "2026-08-27"
-    },
-    {
       "title": "EOI for the Design and Supervision of the National Public Health Reference Laboratory Building",
       "source": "Guyana eProcure (NPTA)",
       "url": "https://eprocure.gov.gy/",
@@ -76,6 +69,12 @@
       "title": "Enhancing the Quality of the Belize National Quality Infrastructure",
       "source": "Caribbean Development Bank",
       "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure",
+      "match": "regional"
+    },
+    {
+      "title": "Grenada Education Enhancement Project - Phase II",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-plans/grenada-education-enhancement-project-phase-ii",
       "match": "regional"
     }
   ],
@@ -137,11 +136,12 @@
     "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQYWZOQ3EySk03UE9vYjZ0OS1ycTk3TlZRQVRnSHdid19uLVVWdFdFSEZYanVrS0J3YUl0RmRaQWd5X3lGY3MwUkF1RnhwUWs1WTRETV9pb0tabWpZZEdzM1QxUjVCOGFLYVMzLTBqbDhJTWZXeFZ5cXM5UHJuc19rT2RxS1NiUGk2LWN2ZERNTnZQYUNtMVc4SU9XeThMYzNxS1NvdXhsQUNPdVE?oc=5",
     "https://statistics.caricom.org/?country_data=guyana-balance-of-payments-2000-2024",
     "https://statistics.caricom.org/?country_data=guyana-monthly-consumer-price-index-cpi-by-expenditure-category",
-    "https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure"
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure",
+    "https://www.caribank.org/work-with-us/procurement/procurement-plans/grenada-education-enhancement-project-phase-ii"
   ],
   "unresolved_questions": [
     "Which specific sectors are driving the movement in Guyana? No official sector-breakdown dataset matched this cycle.",
-    "Tender closes 2026-08-27 — confirm eligibility and bid requirements early.",
+    "Tender closes 2026-08-31 — confirm eligibility and bid requirements early.",
     "Validate fit with registry-listed operators (Guyana Shore Base Inc. (GSBI), Gaico Construction Inc.) before outreach.",
     "Validate that the underlying FDI movement is sustained, not a one-off transaction or statistical revision."
   ],
@@ -157,9 +157,9 @@
   ],
   "advance_or_reject_recommendation": "advance",
   "recommendation_reason": "Calibrated confidence 100/100 with 3 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.",
-  "last_validated_at": "2026-08-26T23:27:22.185941+00:00",
+  "last_validated_at": "2026-08-27T09:36:24.763084+00:00",
   "coordination_path": null,
-  "evidence_fingerprint": "017584e4acd971c0",
+  "evidence_fingerprint": "4deded059cfd8c32",
   "cycles_since_refresh": 0,
   "evidence_freshness": "refreshing"
 }

@@ -1,4 +1,4 @@
-*Caribbean Market Pulse — 2026-08-26 23:27 UTC*
+*Caribbean Market Pulse — 2026-08-27 09:36 UTC*
 
 Lead: Guyana. 3 converging signal(s) across 4 source(s). Signals: 💼 Investment + 🏖️ Tourism + 💎 Investment.
 
@@ -17,17 +17,16 @@ Lead: Guyana. 3 converging signal(s) across 4 source(s). Signals: 💼 Investmen
    Immediate | 98/100 | C - single-source
    Immediate investigation. Suriname has multi-source investment validation (3 signals converging). Priority: assess market entry options, identify existing operators.
 
-🔴 🔄 **🏗️ Pipeline — CARICOM**
+🔴 — **🏗️ Pipeline — CARICOM**
    CARICOM: 9 active procurements — bidding window open
    Immediate | 95/100 | B - cross-source
-   🔄 Content updated this cycle
    Active procurement pipeline: CDB active procurement notices: 9. Priority: review CDB/IDB opportunities as lead list for project-based entry.
 
-🟡 ⬆️ **ccrif_payout — Haiti**
-   Haiti: signal detected
+🟡 ⬆️ **ccrif_payout — Turks and Caicos Islands**
+   Turks and Caicos Islands: signal detected
    Validation | 84/100 | C - single-source
-   ⬆️ Strengthened (+28 pts)
-   Validation — Haiti: ccrif_payout (signal detected). Validate locally.
+   ⬆️ Strengthened (+10 pts)
+   Validation — Turks and Caicos Islands: ccrif_payout (signal detected). Validate locally.
 
-— Lead: Guyana · 34 composite signal(s) · 1 updated · 8 intensified · 17 persistent
+— Lead: Guyana · 34 composite signal(s) · 8 intensified · 18 persistent
 - Caribbean Signal OS

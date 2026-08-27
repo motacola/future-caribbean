@@ -1,8 +1,8 @@
 {
   "instance": "climate",
   "instance_label": "Climate & Catastrophe Risk",
-  "cycle_id": "20260826",
-  "generated_at": "2026-08-26T23:27:22.548506+00:00",
+  "cycle_id": "20260827",
+  "generated_at": "2026-08-27T09:36:25.233311+00:00",
   "clusters": [
     {
       "cluster_id": "CLIM-tropical-outlook",
@@ -31,11 +31,35 @@
       ]
     },
     {
-      "cluster_id": "CLIM-marine-57893",
+      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.9",
+      "country_cluster": "San Juan and Vicinity",
+      "signal_kind": "hazard_alert",
+      "title": "San Juan and Vicinity: Heat Advisory in effect (Moderate)",
+      "evidence": "NOAA NWS: Heat Advisory issued August 27 at 1:12AM AST until August 27 at 5:00PM AST by NWS San Juan PR",
+      "evidence_grade": "B - official alert",
+      "confidence_score": 80,
+      "freshness": "new",
+      "decision": "Hazard response and exposure assessment",
+      "risk_flags": [],
+      "personas": [
+        {
+          "persona": "Resilience Planner",
+          "channel": "Telegram/SMS alert",
+          "action": "Active hazard alert \u2014 Heat Advisory \u2014 Moderate (San Juan and Vicinity). Pre-position resources and confirm evacuation/shelter readiness in the affected area now."
+        },
+        {
+          "persona": "Insurer / Reinsurer",
+          "channel": "Email + alert",
+          "action": "Exposure check \u2014 Heat Advisory \u2014 Moderate (San Juan and Vicinity). Flag policies in the affected zone and prepare parametric-trigger assessment."
+        }
+      ]
+    },
+    {
+      "cluster_id": "CLIM-marine-65436",
       "country_cluster": "Caribbean marine zones",
       "signal_kind": "maritime_hazard",
-      "title": "Marine hazard: Pressure dropping at Western Caribbean (Cayman area): -3.5 hPa in ~2 r",
-      "evidence": "NDBC buoy network: Pressure dropping at Western Caribbean (Cayman area): -3.5 hPa in ~2 readings",
+      "title": "Marine hazard: High seas at Eastern Caribbean (E of Barbados): 3.2m",
+      "evidence": "NDBC buoy network: High seas at Eastern Caribbean (E of Barbados): 3.2m",
       "evidence_grade": "B - sensor",
       "confidence_score": 80,
       "freshness": "new",
@@ -45,17 +69,17 @@
         {
           "persona": "Operations/Resilience",
           "channel": "Telegram/SMS alert",
-          "action": "Marine hazard \u2014 Pressure dropping at Western Caribbean (Cayman area): -3.5 hPa in ~2 readings. Advise vessels and coastal operations; delay exposed activity until conditions ease."
+          "action": "Marine hazard \u2014 High seas at Eastern Caribbean (E of Barbados): 3.2m. Advise vessels and coastal operations; delay exposed activity until conditions ease."
         },
         {
           "persona": "Resilience Planner",
           "channel": "Telegram/SMS alert",
-          "action": "Marine conditions deteriorating \u2014 Pressure dropping at Western Caribbean (Cayman area): -3.5 hPa in ~2 readings. Monitor for escalation toward small-craft / coastal-flood thresholds."
+          "action": "Marine conditions deteriorating \u2014 High seas at Eastern Caribbean (E of Barbados): 3.2m. Monitor for escalation toward small-craft / coastal-flood thresholds."
         }
       ]
     }
   ],
-  "dispatch_count": 4,
+  "dispatch_count": 6,
   "sources": [
     "NOAA NWS",
     "NDBC buoys",
