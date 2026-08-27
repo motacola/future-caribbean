@@ -2,84 +2,34 @@
   "instance": "climate",
   "instance_label": "Climate & Catastrophe Risk",
   "cycle_id": "20260827",
-  "generated_at": "2026-08-27T09:36:25.233311+00:00",
+  "generated_at": "2026-08-27T22:13:21.164075+00:00",
   "clusters": [
     {
-      "cluster_id": "CLIM-tropical-outlook",
-      "country_cluster": "North Atlantic / Caribbean basin",
-      "signal_kind": "tropical_development",
-      "title": "Tropical development being monitored (NHC outlook)",
-      "evidence": "NHC Tropical Weather Outlook indicates a system worth watching across the basin.",
-      "evidence_grade": "B - official outlook",
-      "confidence_score": 85,
+      "cluster_id": "CLIM-allclear",
+      "country_cluster": "Caribbean basin",
+      "signal_kind": "all_clear",
+      "title": "All clear \u2014 no active hazards this cycle",
+      "evidence": "No active NWS alerts in Caribbean zones. Current conditions: 6 buoys reporting; peak seas 2.5m; max wind 19 kt; no tropical development expected (NHC).",
+      "evidence_grade": "A - official sources",
+      "confidence_score": 70,
       "freshness": "new",
-      "decision": "Basin-wide exposure and readiness",
-      "risk_flags": [
-        "Active tropical outlook for the basin"
-      ],
-      "personas": [
-        {
-          "persona": "Insurer / Reinsurer",
-          "channel": "Email + alert",
-          "action": "Tropical development watch \u2014 NHC basin outlook active. Begin exposure modelling for the basin; recovery-capital may be needed within days."
-        },
-        {
-          "persona": "Resilience Planner",
-          "channel": "Telegram/SMS alert",
-          "action": "Tropical outlook active \u2014 NHC basin outlook active. Move readiness posture up; verify supply and communication chains across exposed islands."
-        }
-      ]
-    },
-    {
-      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.9",
-      "country_cluster": "San Juan and Vicinity",
-      "signal_kind": "hazard_alert",
-      "title": "San Juan and Vicinity: Heat Advisory in effect (Moderate)",
-      "evidence": "NOAA NWS: Heat Advisory issued August 27 at 1:12AM AST until August 27 at 5:00PM AST by NWS San Juan PR",
-      "evidence_grade": "B - official alert",
-      "confidence_score": 80,
-      "freshness": "new",
-      "decision": "Hazard response and exposure assessment",
+      "decision": "Routine monitoring \u2014 no action required",
       "risk_flags": [],
       "personas": [
         {
           "persona": "Resilience Planner",
           "channel": "Telegram/SMS alert",
-          "action": "Active hazard alert \u2014 Heat Advisory \u2014 Moderate (San Juan and Vicinity). Pre-position resources and confirm evacuation/shelter readiness in the affected area now."
+          "action": "All clear across Caribbean zones \u2014 6 buoys reporting; peak seas 2.5m; max wind 19 kt; no tropical development expected (NHC). No action required; the engine keeps watching and will escalate the moment a threshold is crossed."
         },
         {
           "persona": "Insurer / Reinsurer",
           "channel": "Email + alert",
-          "action": "Exposure check \u2014 Heat Advisory \u2014 Moderate (San Juan and Vicinity). Flag policies in the affected zone and prepare parametric-trigger assessment."
-        }
-      ]
-    },
-    {
-      "cluster_id": "CLIM-marine-65436",
-      "country_cluster": "Caribbean marine zones",
-      "signal_kind": "maritime_hazard",
-      "title": "Marine hazard: High seas at Eastern Caribbean (E of Barbados): 3.2m",
-      "evidence": "NDBC buoy network: High seas at Eastern Caribbean (E of Barbados): 3.2m",
-      "evidence_grade": "B - sensor",
-      "confidence_score": 80,
-      "freshness": "new",
-      "decision": "Marine operations and coastal risk",
-      "risk_flags": [],
-      "personas": [
-        {
-          "persona": "Operations/Resilience",
-          "channel": "Telegram/SMS alert",
-          "action": "Marine hazard \u2014 High seas at Eastern Caribbean (E of Barbados): 3.2m. Advise vessels and coastal operations; delay exposed activity until conditions ease."
-        },
-        {
-          "persona": "Resilience Planner",
-          "channel": "Telegram/SMS alert",
-          "action": "Marine conditions deteriorating \u2014 High seas at Eastern Caribbean (E of Barbados): 3.2m. Monitor for escalation toward small-craft / coastal-flood thresholds."
+          "action": "No active hazard exposure this cycle (6 buoys reporting; peak seas 2.5m; max wind 19 kt; no tropical development expected (NHC)). Baseline confirmed for parametric monitoring."
         }
       ]
     }
   ],
-  "dispatch_count": 6,
+  "dispatch_count": 2,
   "sources": [
     "NOAA NWS",
     "NDBC buoys",

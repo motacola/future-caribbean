@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-27T09:36:24.954130+00:00",
+  "generated_at": "2026-08-27T22:13:20.962059+00:00",
   "feedback_provenance": "simulated",
   "current_boosts": {
     "enhanced_investment": {
@@ -17,32 +17,36 @@
       "Guyana": -4,
       "Suriname": -4
     },
-    "food_security": {
-      "CARICOM": -4
-    },
     "ccrif_payout": {
-      "Haiti": -28,
-      "Barbados": -18,
-      "Nicaragua": -18
+      "Turks and Caicos Islands": -10,
+      "Anguilla": -10,
+      "St. Kitts and Nevis": -10,
+      "Dominica": -10,
+      "St. Vincent & the Grenadines": -10,
+      "Grenada": -10,
+      "Jamaica": -16
     }
   },
   "cycles": [
     {
       "cycle_id": "20260827",
       "responses": {
-        "forwarded": 0,
-        "replied": 0,
+        "forwarded": 1,
+        "replied": 1,
         "opened": 0,
-        "ignored": 0,
+        "ignored": 48,
         "decision_changed": 0
       },
-      "engagement_by_kind": {},
+      "engagement_by_kind": {
+        "enhanced_investment": 1,
+        "development_pipeline": 1
+      },
       "dispatch_count": 97,
       "countries": [
         "Haiti",
         "Barbados",
-        "Jamaica",
         "Nicaragua",
+        "Jamaica",
         "Guyana",
         "Suriname",
         "CARICOM",
@@ -65,16 +69,13 @@
     {
       "cycle_id": "20260826",
       "responses": {
-        "forwarded": 1,
-        "replied": 1,
+        "forwarded": 0,
+        "replied": 0,
         "opened": 0,
-        "ignored": 48,
+        "ignored": 0,
         "decision_changed": 0
       },
-      "engagement_by_kind": {
-        "enhanced_investment": 1,
-        "development_pipeline": 1
-      },
+      "engagement_by_kind": {},
       "dispatch_count": 97,
       "countries": [
         "Haiti",
