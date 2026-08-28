@@ -1,11 +1,11 @@
 # Opportunity Validation Pack — Guyana
 
-- Signal: `enhanced-invest-guyana` · Dispatch: `DSP-20260827-019`
+- Signal: `enhanced-invest-guyana` · Dispatch: `DSP-20260828-019`
 - Confidence: 100/100 (raw 111) · C - single-source
 - Action readiness: high
 - Evidence freshness: refreshing · cycles since refresh: 0
 - Recommendation: **ADVANCE** — Calibrated confidence 100/100 with 3 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.
-- Last validated: 2026-08-27T22:13:20.755595+00:00
+- Last validated: 2026-08-28T11:18:09.742976+00:00
 
 ## Sector hypotheses
 - Oil & gas and offshore support services [corroborated] — _Google News — Guyana: MODEC’s FPSO reaches Guyana as ExxonMobil’s fifth oil project nears start-up - Offshore-Energy.biz_
