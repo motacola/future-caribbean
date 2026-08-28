@@ -7,16 +7,16 @@
   },
   "cycle_accuracy": [
     {
-      "actionable_responses": 0,
+      "actionable_responses": 2,
       "cycle_id": "20260828",
       "dispatches": 97,
-      "response_rate": 0.0
+      "response_rate": 0.020618556701030927
     },
     {
-      "actionable_responses": 2,
+      "actionable_responses": 0,
       "cycle_id": "20260827",
       "dispatches": 97,
-      "response_rate": 0.020618556701030927
+      "response_rate": 0.0
     },
     {
       "actionable_responses": 0,
@@ -62,10 +62,9 @@
       "unknown": 50
     },
     "by_signal_kind": {
-      "ccrif_payout": 29,
+      "ccrif_payout": 31,
       "development_pipeline": 3,
       "enhanced_investment": 9,
-      "food_security": 2,
       "investment_signal": 4,
       "supply_chain_signal": 3
     },
@@ -76,7 +75,7 @@
     },
     "total_feedback": 50
   },
-  "generated_at": "2026-08-28T11:18:10.077732+00:00",
+  "generated_at": "2026-08-28T22:15:26.776529+00:00",
   "recommendation_calibration": {
     "advance_rate": 0.08823529411764706,
     "hold_rate": 0.9117647058823529,
