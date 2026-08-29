@@ -2,7 +2,7 @@
   "instance": "climate",
   "instance_label": "Climate & Catastrophe Risk",
   "cycle_id": "20260829",
-  "generated_at": "2026-08-29T13:48:34.780722+00:00",
+  "generated_at": "2026-08-29T19:22:58.811536+00:00",
   "clusters": [
     {
       "cluster_id": "CLIM-tropical-outlook",
@@ -31,11 +31,11 @@
       ]
     },
     {
-      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.1",
+      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.3",
       "country_cluster": "San Juan and Vicinity",
       "signal_kind": "hazard_alert",
       "title": "San Juan and Vicinity: Rip Current Statement in effect (Moderate)",
-      "evidence": "NOAA NWS: Rip Current Statement issued August 29 at 6:30AM AST until August 31 at 6:00PM AST by NWS San Juan PR",
+      "evidence": "NOAA NWS: Rip Current Statement issued August 29 at 10:00AM AST until August 31 at 6:00PM AST by NWS San Juan PR",
       "evidence_grade": "B - official alert",
       "confidence_score": 80,
       "freshness": "new",
@@ -55,11 +55,35 @@
       ]
     },
     {
-      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.1",
+      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.2",
+      "country_cluster": "San Juan and Vicinity",
+      "signal_kind": "hazard_alert",
+      "title": "San Juan and Vicinity: Heat Advisory in effect (Moderate)",
+      "evidence": "NOAA NWS: Heat Advisory issued August 29 at 9:58AM AST until August 29 at 5:00PM AST by NWS San Juan PR",
+      "evidence_grade": "B - official alert",
+      "confidence_score": 80,
+      "freshness": "new",
+      "decision": "Hazard response and exposure assessment",
+      "risk_flags": [],
+      "personas": [
+        {
+          "persona": "Resilience Planner",
+          "channel": "Telegram/SMS alert",
+          "action": "Active hazard alert \u2014 Heat Advisory \u2014 Moderate (San Juan and Vicinity). Pre-position resources and confirm evacuation/shelter readiness in the affected area now."
+        },
+        {
+          "persona": "Insurer / Reinsurer",
+          "channel": "Email + alert",
+          "action": "Exposure check \u2014 Heat Advisory \u2014 Moderate (San Juan and Vicinity). Flag policies in the affected zone and prepare parametric-trigger assessment."
+        }
+      ]
+    },
+    {
+      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.5",
       "country_cluster": "Anegada Passage east of Virgin Gorda and Saint Croix south to 17N",
       "signal_kind": "hazard_alert",
       "title": "Anegada Passage east of Virgin Gorda and Saint Croix south to 17N: Small Craft Advisory in effect (Minor)",
-      "evidence": "NOAA NWS: Small Craft Advisory issued August 29 at 3:36AM AST until August 31 at 6:00AM AST by NWS San Juan PR",
+      "evidence": "NOAA NWS: Small Craft Advisory issued August 29 at 10:00AM AST until August 31 at 6:00AM AST by NWS San Juan PR",
       "evidence_grade": "C - advisory",
       "confidence_score": 60,
       "freshness": "new",
@@ -79,11 +103,11 @@
       ]
     },
     {
-      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.1",
+      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.5",
       "country_cluster": "Atlantic Waters of Puerto Rico AND USVI from 10 NM to 19.5N",
       "signal_kind": "hazard_alert",
       "title": "Atlantic Waters of Puerto Rico AND USVI from 10 NM to 19.5N: Small Craft Advisory in effect (Minor)",
-      "evidence": "NOAA NWS: Small Craft Advisory issued August 29 at 3:36AM AST until August 31 at 12:00PM AST by NWS San Juan PR",
+      "evidence": "NOAA NWS: Small Craft Advisory issued August 29 at 10:00AM AST until August 31 at 12:00PM AST by NWS San Juan PR",
       "evidence_grade": "C - advisory",
       "confidence_score": 60,
       "freshness": "new",
@@ -127,7 +151,7 @@
       ]
     }
   ],
-  "dispatch_count": 10,
+  "dispatch_count": 12,
   "sources": [
     "NOAA NWS",
     "NDBC buoys",
