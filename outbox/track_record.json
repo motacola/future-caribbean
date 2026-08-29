@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-29T19:22:58.613080+00:00",
+  "generated_at": "2026-08-29T22:38:07.508204+00:00",
   "feedback_provenance": "simulated",
   "current_boosts": {
     "enhanced_investment": {
@@ -14,13 +14,17 @@
       "Guyana": -4,
       "Suriname": -4
     },
+    "ccrif_payout": {
+      "Turks and Caicos Islands": -10,
+      "Anguilla": -10,
+      "St. Kitts and Nevis": -10,
+      "Dominica": -10,
+      "St. Vincent & the Grenadines": -10,
+      "Grenada": -10,
+      "Jamaica": -18
+    },
     "food_security": {
       "CARICOM": -4
-    },
-    "ccrif_payout": {
-      "Haiti": -34,
-      "Barbados": -18,
-      "Nicaragua": -18
     }
   },
   "cycles": [
@@ -41,8 +45,8 @@
       "countries": [
         "Haiti",
         "Barbados",
-        "Jamaica",
         "Nicaragua",
+        "Jamaica",
         "Guyana",
         "Suriname",
         "CARICOM",
