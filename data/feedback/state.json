@@ -27,30 +27,6 @@
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260829-028",
-      "signal_kind": "supply_chain_signal",
-      "country": "Bahamas, Belize, Grenada",
-      "feedback_status": "ignored",
-      "cycle": "20260829",
-      "cycles_ago": 0
-    },
-    {
-      "dispatch_id": "DSP-20260829-029",
-      "signal_kind": "supply_chain_signal",
-      "country": "Bahamas, Belize, Grenada",
-      "feedback_status": "ignored",
-      "cycle": "20260829",
-      "cycles_ago": 0
-    },
-    {
-      "dispatch_id": "DSP-20260829-030",
-      "signal_kind": "supply_chain_signal",
-      "country": "Bahamas, Belize, Grenada",
-      "feedback_status": "ignored",
-      "cycle": "20260829",
-      "cycles_ago": 0
-    },
-    {
       "dispatch_id": "DSP-20260829-022",
       "signal_kind": "enhanced_investment",
       "country": "Suriname",
@@ -155,9 +131,17 @@
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260829-031",
-      "signal_kind": "ccrif_payout",
-      "country": "Turks and Caicos Islands",
+      "dispatch_id": "DSP-20260829-011",
+      "signal_kind": "food_security",
+      "country": "CARICOM",
+      "feedback_status": "ignored",
+      "cycle": "20260829",
+      "cycles_ago": 0
+    },
+    {
+      "dispatch_id": "DSP-20260829-012",
+      "signal_kind": "food_security",
+      "country": "CARICOM",
       "feedback_status": "ignored",
       "cycle": "20260829",
       "cycles_ago": 0
@@ -165,7 +149,7 @@
     {
       "dispatch_id": "DSP-20260829-032",
       "signal_kind": "ccrif_payout",
-      "country": "Turks and Caicos Islands",
+      "country": "Haiti",
       "feedback_status": "ignored",
       "cycle": "20260829",
       "cycles_ago": 0
@@ -173,7 +157,7 @@
     {
       "dispatch_id": "DSP-20260829-033",
       "signal_kind": "ccrif_payout",
-      "country": "Turks and Caicos Islands",
+      "country": "Haiti",
       "feedback_status": "ignored",
       "cycle": "20260829",
       "cycles_ago": 0
@@ -181,15 +165,15 @@
     {
       "dispatch_id": "DSP-20260829-034",
       "signal_kind": "ccrif_payout",
-      "country": "Turks and Caicos Islands",
+      "country": "Haiti",
       "feedback_status": "ignored",
       "cycle": "20260829",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260829-039",
+      "dispatch_id": "DSP-20260829-035",
       "signal_kind": "ccrif_payout",
-      "country": "Anguilla",
+      "country": "Haiti",
       "feedback_status": "ignored",
       "cycle": "20260829",
       "cycles_ago": 0
@@ -197,7 +181,7 @@
     {
       "dispatch_id": "DSP-20260829-040",
       "signal_kind": "ccrif_payout",
-      "country": "Anguilla",
+      "country": "Barbados",
       "feedback_status": "ignored",
       "cycle": "20260829",
       "cycles_ago": 0
@@ -205,7 +189,7 @@
     {
       "dispatch_id": "DSP-20260829-041",
       "signal_kind": "ccrif_payout",
-      "country": "Anguilla",
+      "country": "Barbados",
       "feedback_status": "ignored",
       "cycle": "20260829",
       "cycles_ago": 0
@@ -213,47 +197,111 @@
     {
       "dispatch_id": "DSP-20260829-042",
       "signal_kind": "ccrif_payout",
-      "country": "Anguilla",
+      "country": "Barbados",
       "feedback_status": "ignored",
       "cycle": "20260829",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260829-059",
+      "dispatch_id": "DSP-20260829-043",
       "signal_kind": "ccrif_payout",
-      "country": "St. Kitts and Nevis",
+      "country": "Barbados",
       "feedback_status": "ignored",
       "cycle": "20260829",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260829-060",
+      "dispatch_id": "DSP-20260829-044",
       "signal_kind": "ccrif_payout",
-      "country": "St. Kitts and Nevis",
+      "country": "Barbados",
       "feedback_status": "ignored",
       "cycle": "20260829",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260829-061",
+      "dispatch_id": "DSP-20260829-045",
       "signal_kind": "ccrif_payout",
-      "country": "St. Kitts and Nevis",
+      "country": "Barbados",
       "feedback_status": "ignored",
       "cycle": "20260829",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260829-062",
+      "dispatch_id": "DSP-20260829-046",
       "signal_kind": "ccrif_payout",
-      "country": "St. Kitts and Nevis",
+      "country": "Barbados",
       "feedback_status": "ignored",
       "cycle": "20260829",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260829-063",
+      "dispatch_id": "DSP-20260829-047",
       "signal_kind": "ccrif_payout",
-      "country": "Dominica",
+      "country": "Barbados",
+      "feedback_status": "ignored",
+      "cycle": "20260829",
+      "cycles_ago": 0
+    },
+    {
+      "dispatch_id": "DSP-20260829-048",
+      "signal_kind": "ccrif_payout",
+      "country": "Haiti",
+      "feedback_status": "ignored",
+      "cycle": "20260829",
+      "cycles_ago": 0
+    },
+    {
+      "dispatch_id": "DSP-20260829-049",
+      "signal_kind": "ccrif_payout",
+      "country": "Haiti",
+      "feedback_status": "ignored",
+      "cycle": "20260829",
+      "cycles_ago": 0
+    },
+    {
+      "dispatch_id": "DSP-20260829-050",
+      "signal_kind": "ccrif_payout",
+      "country": "Haiti",
+      "feedback_status": "ignored",
+      "cycle": "20260829",
+      "cycles_ago": 0
+    },
+    {
+      "dispatch_id": "DSP-20260829-051",
+      "signal_kind": "ccrif_payout",
+      "country": "Haiti",
+      "feedback_status": "ignored",
+      "cycle": "20260829",
+      "cycles_ago": 0
+    },
+    {
+      "dispatch_id": "DSP-20260829-052",
+      "signal_kind": "ccrif_payout",
+      "country": "Nicaragua",
+      "feedback_status": "ignored",
+      "cycle": "20260829",
+      "cycles_ago": 0
+    },
+    {
+      "dispatch_id": "DSP-20260829-053",
+      "signal_kind": "ccrif_payout",
+      "country": "Nicaragua",
+      "feedback_status": "ignored",
+      "cycle": "20260829",
+      "cycles_ago": 0
+    },
+    {
+      "dispatch_id": "DSP-20260829-054",
+      "signal_kind": "ccrif_payout",
+      "country": "Nicaragua",
+      "feedback_status": "ignored",
+      "cycle": "20260829",
+      "cycles_ago": 0
+    },
+    {
+      "dispatch_id": "DSP-20260829-055",
+      "signal_kind": "ccrif_payout",
+      "country": "Nicaragua",
       "feedback_status": "ignored",
       "cycle": "20260829",
       "cycles_ago": 0
@@ -261,7 +309,7 @@
     {
       "dispatch_id": "DSP-20260829-064",
       "signal_kind": "ccrif_payout",
-      "country": "Dominica",
+      "country": "Haiti",
       "feedback_status": "ignored",
       "cycle": "20260829",
       "cycles_ago": 0
@@ -269,7 +317,7 @@
     {
       "dispatch_id": "DSP-20260829-065",
       "signal_kind": "ccrif_payout",
-      "country": "Dominica",
+      "country": "Haiti",
       "feedback_status": "ignored",
       "cycle": "20260829",
       "cycles_ago": 0
@@ -277,111 +325,47 @@
     {
       "dispatch_id": "DSP-20260829-066",
       "signal_kind": "ccrif_payout",
-      "country": "Dominica",
+      "country": "Haiti",
       "feedback_status": "ignored",
       "cycle": "20260829",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260829-075",
+      "dispatch_id": "DSP-20260829-067",
       "signal_kind": "ccrif_payout",
-      "country": "St. Vincent & the Grenadines",
+      "country": "Haiti",
       "feedback_status": "ignored",
       "cycle": "20260829",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260829-076",
+      "dispatch_id": "DSP-20260829-068",
       "signal_kind": "ccrif_payout",
-      "country": "St. Vincent & the Grenadines",
+      "country": "Nicaragua",
       "feedback_status": "ignored",
       "cycle": "20260829",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260829-077",
+      "dispatch_id": "DSP-20260829-069",
       "signal_kind": "ccrif_payout",
-      "country": "St. Vincent & the Grenadines",
+      "country": "Nicaragua",
       "feedback_status": "ignored",
       "cycle": "20260829",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260829-078",
+      "dispatch_id": "DSP-20260829-070",
       "signal_kind": "ccrif_payout",
-      "country": "St. Vincent & the Grenadines",
+      "country": "Nicaragua",
       "feedback_status": "ignored",
       "cycle": "20260829",
       "cycles_ago": 0
     },
     {
-      "dispatch_id": "DSP-20260829-079",
+      "dispatch_id": "DSP-20260829-071",
       "signal_kind": "ccrif_payout",
-      "country": "Grenada",
-      "feedback_status": "ignored",
-      "cycle": "20260829",
-      "cycles_ago": 0
-    },
-    {
-      "dispatch_id": "DSP-20260829-080",
-      "signal_kind": "ccrif_payout",
-      "country": "Grenada",
-      "feedback_status": "ignored",
-      "cycle": "20260829",
-      "cycles_ago": 0
-    },
-    {
-      "dispatch_id": "DSP-20260829-081",
-      "signal_kind": "ccrif_payout",
-      "country": "Grenada",
-      "feedback_status": "ignored",
-      "cycle": "20260829",
-      "cycles_ago": 0
-    },
-    {
-      "dispatch_id": "DSP-20260829-082",
-      "signal_kind": "ccrif_payout",
-      "country": "Grenada",
-      "feedback_status": "ignored",
-      "cycle": "20260829",
-      "cycles_ago": 0
-    },
-    {
-      "dispatch_id": "DSP-20260829-083",
-      "signal_kind": "ccrif_payout",
-      "country": "Jamaica",
-      "feedback_status": "ignored",
-      "cycle": "20260829",
-      "cycles_ago": 0
-    },
-    {
-      "dispatch_id": "DSP-20260829-084",
-      "signal_kind": "ccrif_payout",
-      "country": "Jamaica",
-      "feedback_status": "ignored",
-      "cycle": "20260829",
-      "cycles_ago": 0
-    },
-    {
-      "dispatch_id": "DSP-20260829-085",
-      "signal_kind": "ccrif_payout",
-      "country": "Jamaica",
-      "feedback_status": "ignored",
-      "cycle": "20260829",
-      "cycles_ago": 0
-    },
-    {
-      "dispatch_id": "DSP-20260829-086",
-      "signal_kind": "ccrif_payout",
-      "country": "Jamaica",
-      "feedback_status": "ignored",
-      "cycle": "20260829",
-      "cycles_ago": 0
-    },
-    {
-      "dispatch_id": "DSP-20260829-087",
-      "signal_kind": "ccrif_payout",
-      "country": "Jamaica",
+      "country": "Nicaragua",
       "feedback_status": "ignored",
       "cycle": "20260829",
       "cycles_ago": 0
@@ -389,7 +373,7 @@
     {
       "dispatch_id": "DSP-20260829-088",
       "signal_kind": "ccrif_payout",
-      "country": "Jamaica",
+      "country": "Haiti",
       "feedback_status": "ignored",
       "cycle": "20260829",
       "cycles_ago": 0
@@ -397,7 +381,23 @@
     {
       "dispatch_id": "DSP-20260829-089",
       "signal_kind": "ccrif_payout",
-      "country": "Jamaica",
+      "country": "Haiti",
+      "feedback_status": "ignored",
+      "cycle": "20260829",
+      "cycles_ago": 0
+    },
+    {
+      "dispatch_id": "DSP-20260829-090",
+      "signal_kind": "ccrif_payout",
+      "country": "Haiti",
+      "feedback_status": "ignored",
+      "cycle": "20260829",
+      "cycles_ago": 0
+    },
+    {
+      "dispatch_id": "DSP-20260829-091",
+      "signal_kind": "ccrif_payout",
+      "country": "Haiti",
       "feedback_status": "ignored",
       "cycle": "20260829",
       "cycles_ago": 0
@@ -409,9 +409,6 @@
       "Suriname": -6,
       "Barbados": -6
     },
-    "supply_chain_signal": {
-      "Bahamas, Belize, Grenada": -6
-    },
     "development_pipeline": {
       "CARICOM": 1
     },
@@ -419,14 +416,13 @@
       "Guyana": -4,
       "Suriname": -4
     },
+    "food_security": {
+      "CARICOM": -4
+    },
     "ccrif_payout": {
-      "Turks and Caicos Islands": -10,
-      "Anguilla": -10,
-      "St. Kitts and Nevis": -10,
-      "Dominica": -10,
-      "St. Vincent & the Grenadines": -10,
-      "Grenada": -10,
-      "Jamaica": -16
+      "Haiti": -34,
+      "Barbados": -18,
+      "Nicaragua": -18
     }
   }
 }

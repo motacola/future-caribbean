@@ -2,28 +2,14 @@
 
 **Decision job:** Project pipeline tracking and expression of interest preparation
 **Delivery channel:** Email brief
-**Generated:** Aug 29, 2026 at 06:59 UTC
-**Dispatches in this packet:** 2
+**Generated:** Aug 29, 2026 at 13:48 UTC
+**Dispatches in this packet:** 1
 
 ---
 
-## Dispatches (2)
+## Dispatches (1)
 
-### 1. Bahamas, Belize, Grenada: signal detected
-
-**ID:** `DSP-20260829-029` | **Country:** Bahamas, Belize, Grenada | **Confidence:** 🔴 Immediate | 100/100 | A - multi-source
-**Channel:** Email brief | **Window:** 21 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** CDB active procurement notices: 9;   • Enhancing the Quality of the Belize National Quality Infrastructure;   • Grenada Education Enhancement Project - Phase II; Maritime conditions stable — no high-wind or marine alerts
-**Detail:** signal detected
-**Grade:** A - multi-source
-
-**Recommended action:** CDB procurement (signal detected) aligned with stable shipping lanes. Viable corridor for logistics providers — prepare EOI.
-**Decision to influence:** Which logistics/procurement corridor to bid or partner on
-**Routing rationale:** CDB procurement aligned with maritime stability = viable logistics corridors for project-based entry
-
-### 2. CARICOM: 9 active procurements — bidding window open
+### 1. CARICOM: 9 active procurements — bidding window open
 
 **ID:** `DSP-20260829-014` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 95/100 | B - cross-source
 **Channel:** Email brief | **Window:** 30 days | **Freshness:** sustained

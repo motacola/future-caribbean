@@ -1,11 +1,11 @@
 🌴 *Signal Fabric — Decision Routes Ready*
-Cycle: `20260829` · 2026-08-29 06:59 UTC
+Cycle: `20260829` · 2026-08-29 13:48 UTC
 
 *What this is:*
 A Dispatch Desk notification. The product is the decision route: signal → persona → action → feedback. Telegram is only the delivery channel.
 
 *Open Track coordination chain this cycle*
-Data → 29 signal clusters → 97 persona routes → 7 personas → action/capital decisions
+Data → 28 signal clusters → 94 persona routes → 7 personas → action/capital decisions
 
 *Priority decision clusters*
 1) *Guyana: +860.3% capital surge on a single official source — market entry window…*
@@ -17,16 +17,7 @@ Data → 29 signal clusters → 97 persona routes → 7 personas → action/capi
    → Diaspora Investor: Investigate Guyana as a capital deployment target this cycle. One official…
    Loop: Feedback this cycle: 2 ignored, 1 forwarded.
 
-2) *Bahamas, Belize, Grenada: signal detected*
-   Decision: Which logistics/procurement corridor to bid or partner on
-   Evidence: CDB active procurement notices: 9; • Enhancing the Quality of the Belize National Quality… · A - multi-source
-   Confidence: 100/100 · sustained
-   → Regional Operator: Active supply chain corridor in Bahamas, Belize, Grenada: procurement live +…
-   → Regional Founder/Operator: Supply chain gap in Bahamas, Belize, Grenada confirmed. Procurement pipeline…
-   → Procurement Watcher: CDB procurement (signal detected) aligned with stable shipping lanes. Viable…
-   Loop: Feedback this cycle: 3 ignored.
-
-3) *Suriname: +206.0% investment movement, one source — needs corroboration*
+2) *Suriname: +206.0% investment movement, one source — needs corroboration*
    Decision: Which verified opportunity to investigate for capital deployment or partnership entry
    Evidence: WB FDI surge detected: Suriname; CARICOM trade/FDI data available (regional context, not… · C - single-source
    Confidence: 98/100 · sustained
@@ -35,11 +26,20 @@ Data → 29 signal clusters → 97 persona routes → 7 personas → action/capi
    → Diaspora Investor: Investigate Suriname as a capital deployment target this cycle. One official…
    Loop: Feedback this cycle: 3 ignored.
 
+3) *CARICOM: 9 active procurements — bidding window open*
+   Decision: Which procurement or project opportunity to pursue
+   Evidence: CDB active procurement notices: 9; • Enhancing the Quality of the Belize National Quality… · B - cross-source
+   Confidence: 95/100 · sustained
+   → Regional Operator: Review operational readiness for CARICOM opportunities. CDB active…
+   → Regional Founder/Operator: Map CARICOM procurement pipeline against your capability. CDB/IDB projects…
+   → Procurement Watcher: Track CDB/IDB project pipeline: CDB active procurement notices: 9. Review…
+   Loop: Feedback this cycle: 2 ignored, 1 replied.
+
 *Feedback-adjusted priority*
-• Haiti ccrif payout downranked -28
-• Nicaragua ccrif payout downranked -18
-• Barbados ccrif payout downranked -18
-• Suriname enhanced investment downranked -6
+• Jamaica ccrif payout downranked -16
+• Turks and Caicos Islands ccrif payout downranked -10
+• St. Vincent & the Grenadines ccrif payout downranked -10
+• St. Kitts and Nevis ccrif payout downranked -10
 
 *Open the product surface*
 • `outbox/dispatch_desk.md` — judge/user-facing decision desk

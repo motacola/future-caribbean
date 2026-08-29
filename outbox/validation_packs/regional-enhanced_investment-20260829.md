@@ -1,6 +1,6 @@
 # Opportunity Validation Pack — Caribwide
 
-- Signal: `regional-investment_signal-20260829` · Dispatch: `DSP-20260829-001`
+- Signal: `regional-enhanced_investment-20260829` · Dispatch: `DSP-20260829-016`
 - Confidence: 78/100 (raw 90) · B - cross-source
 - Action readiness: medium (no dated country procurement or news corroboration)
 - Evidence freshness: refreshing · cycles since refresh: 0

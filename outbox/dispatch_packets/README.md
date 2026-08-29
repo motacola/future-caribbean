@@ -1,16 +1,16 @@
 # Dispatch Packets
 
-Generated: Aug 29, 2026 at 06:59 UTC
+Generated: Aug 29, 2026 at 13:48 UTC
 Total personas: 7
-Total dispatches across all packets: 97
+Total dispatches across all packets: 94
 
 | Persona | Dispatches | Packet |
 |---------|-----------|--------|
 | Diaspora Investor | 26 | `diaspora_investor.md` |
 | Ecosystem Builder | 22 | `ecosystem_builder.md` |
-| Regional Founder/Operator | 10 | `founder_operator.md` |
+| Regional Founder/Operator | 9 | `founder_operator.md` |
 | Operations/Resilience | 16 | `operator_resilience.md` |
 | Policy/Media | 18 | `policy_media.md` |
-| Procurement Watcher | 2 | `procurement_watcher.md` |
-| Regional Operator | 3 | `regional_operator.md` |
+| Procurement Watcher | 1 | `procurement_watcher.md` |
+| Regional Operator | 2 | `regional_operator.md` |
 
