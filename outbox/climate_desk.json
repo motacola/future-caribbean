@@ -1,17 +1,43 @@
 {
   "instance": "climate",
   "instance_label": "Climate & Catastrophe Risk",
-  "cycle_id": "20260828",
-  "generated_at": "2026-08-28T22:15:26.852185+00:00",
+  "cycle_id": "20260829",
+  "generated_at": "2026-08-29T06:59:38.216511+00:00",
   "clusters": [
     {
-      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.7",
-      "country_cluster": "Adjuntas, PR",
+      "cluster_id": "CLIM-tropical-outlook",
+      "country_cluster": "North Atlantic / Caribbean basin",
+      "signal_kind": "tropical_development",
+      "title": "Tropical development being monitored (NHC outlook)",
+      "evidence": "NHC Tropical Weather Outlook indicates a system worth watching across the basin.",
+      "evidence_grade": "B - official outlook",
+      "confidence_score": 85,
+      "freshness": "new",
+      "decision": "Basin-wide exposure and readiness",
+      "risk_flags": [
+        "Active tropical outlook for the basin"
+      ],
+      "personas": [
+        {
+          "persona": "Insurer / Reinsurer",
+          "channel": "Email + alert",
+          "action": "Tropical development watch \u2014 NHC basin outlook active. Begin exposure modelling for the basin; recovery-capital may be needed within days."
+        },
+        {
+          "persona": "Resilience Planner",
+          "channel": "Telegram/SMS alert",
+          "action": "Tropical outlook active \u2014 NHC basin outlook active. Move readiness posture up; verify supply and communication chains across exposed islands."
+        }
+      ]
+    },
+    {
+      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.6",
+      "country_cluster": "San Juan and Vicinity",
       "signal_kind": "hazard_alert",
-      "title": "Adjuntas, PR: Hydrologic Outlook in effect (Unknown)",
-      "evidence": "NOAA NWS: Hydrologic Outlook issued August 28 at 2:15PM AST by NWS San Juan PR",
-      "evidence_grade": "C - advisory",
-      "confidence_score": 50,
+      "title": "San Juan and Vicinity: Heat Advisory in effect (Moderate)",
+      "evidence": "NOAA NWS: Heat Advisory issued August 29 at 1:33AM AST until August 29 at 5:00PM AST by NWS San Juan PR",
+      "evidence_grade": "B - official alert",
+      "confidence_score": 80,
       "freshness": "new",
       "decision": "Hazard response and exposure assessment",
       "risk_flags": [],
@@ -19,12 +45,12 @@
         {
           "persona": "Resilience Planner",
           "channel": "Telegram/SMS alert",
-          "action": "Active hazard alert \u2014 Hydrologic Outlook \u2014 Unknown (Adjuntas, PR). Pre-position resources and confirm evacuation/shelter readiness in the affected area now."
+          "action": "Active hazard alert \u2014 Heat Advisory \u2014 Moderate (San Juan and Vicinity). Pre-position resources and confirm evacuation/shelter readiness in the affected area now."
         },
         {
           "persona": "Insurer / Reinsurer",
           "channel": "Email + alert",
-          "action": "Exposure check \u2014 Hydrologic Outlook \u2014 Unknown (Adjuntas, PR). Flag policies in the affected zone and prepare parametric-trigger assessment."
+          "action": "Exposure check \u2014 Heat Advisory \u2014 Moderate (San Juan and Vicinity). Flag policies in the affected zone and prepare parametric-trigger assessment."
         }
       ]
     },
@@ -53,7 +79,7 @@
       ]
     }
   ],
-  "dispatch_count": 4,
+  "dispatch_count": 6,
   "sources": [
     "NOAA NWS",
     "NDBC buoys",

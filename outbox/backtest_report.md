@@ -1,37 +1,37 @@
 # Signal Fabric — Backtest Report
 
-**Generated:** 2026-08-28T22:15:26.776529+00:00
-**Cycles analyzed:** 7
-**Total dispatches:** 799
+**Generated:** 2026-08-29T06:59:38.133798+00:00
+**Cycles analyzed:** 8
+**Total dispatches:** 896
 **Actionable responses:** 2
-**Overall response rate:** 0.3%
-**Avg confidence:** 80.1/100
+**Overall response rate:** 0.2%
+**Avg confidence:** 80.0/100
 
 ## Summary
 
-- **Total validation packs:** 34
-- **Avg confidence:** 80.1/100
-- **Response rate:** 0.3%
+- **Total validation packs:** 35
+- **Avg confidence:** 80.0/100
+- **Response rate:** 0.2%
 
 ## Recommendation Distribution
 
-- **Advance:** 3 (8.8%)
-- **Hold:** 31 (91.2%)
+- **Advance:** 3 (8.6%)
+- **Hold:** 32 (91.4%)
 - **Reject:** 0 (0.0%)
 
 ## Confidence Calibration
 
-- **80-100:** 7 packs (20.6%)
-- **60-79:** 27 packs (79.4%)
+- **80-100:** 7 packs (20.0%)
+- **60-79:** 28 packs (80.0%)
 - **40-59:** 0 packs (0.0%)
 - **0-39:** 0 packs (0.0%)
 
 ## Evidence Category Coverage
 
-- **Sector Hypotheses:** 8 packs (23.5%)
-- **Supporting Projects:** 6 packs (17.6%)
-- **Procurement Matches:** 184 packs (541.2%)
-- **Operators:** 16 packs (47.1%)
+- **Sector Hypotheses:** 8 packs (22.9%)
+- **Supporting Projects:** 6 packs (17.1%)
+- **Procurement Matches:** 190 packs (542.9%)
+- **Operators:** 16 packs (45.7%)
 
 ## Signal Type Performance
 
@@ -39,13 +39,14 @@
 - **enhanced:** Advance 1, Hold 5, Reject 0 (n=6)
 - **food:** Advance 0, Hold 1, Reject 0 (n=1)
 - **invest:** Advance 1, Hold 0, Reject 0 (n=1)
-- **regional:** Advance 0, Hold 22, Reject 0 (n=22)
+- **regional:** Advance 0, Hold 23, Reject 0 (n=23)
 - **supply:** Advance 1, Hold 2, Reject 0 (n=3)
 
 ## Cycle Accuracy
 
 | Cycle | Dispatches | Actionable | Response Rate |
 |-------|------------|------------|---------------|
+| 20260829 | 97 | 0 | 0.0% |
 | 20260828 | 97 | 2 | 2.1% |
 | 20260827 | 97 | 0 | 0.0% |
 | 20260826 | 97 | 0 | 0.0% |
@@ -62,8 +63,8 @@
 
 ## Recommendation Calibration
 
-- **Advance rate:** 8.8%
-- **Hold rate:** 91.2%
+- **Advance rate:** 8.6%
+- **Hold rate:** 91.4%
 - **Reject rate:** 0.0%
 
 > **Calibration note:** Advance = high confidence + 2+ evidence categories. Hold = moderate. Reject = low.
