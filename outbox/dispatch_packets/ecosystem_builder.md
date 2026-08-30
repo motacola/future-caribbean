@@ -2,7 +2,7 @@
 
 **Decision job:** Founder matching and ecosystem support prioritisation
 **Delivery channel:** Telegram
-**Generated:** Aug 29, 2026 at 22:38 UTC
+**Generated:** Aug 30, 2026 at 05:19 UTC
 **Dispatches in this packet:** 22
 
 ---
@@ -11,7 +11,7 @@
 
 ### 1. Guyana: +860.3% capital surge on a single official source — market entry window open
 
-**ID:** `DSP-20260829-020` | **Country:** Guyana | **Confidence:** 🔴 Immediate | 100/100 | C - single-source
+**ID:** `DSP-20260830-020` | **Country:** Guyana | **Confidence:** 🔴 Immediate | 100/100 | C - single-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -25,7 +25,7 @@
 
 ### 2. Suriname: +206.0% investment movement, one source — needs corroboration
 
-**ID:** `DSP-20260829-023` | **Country:** Suriname | **Confidence:** 🔴 Immediate | 98/100 | C - single-source
+**ID:** `DSP-20260830-023` | **Country:** Suriname | **Confidence:** 🔴 Immediate | 98/100 | C - single-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -39,7 +39,7 @@
 
 ### 3. Capital convergence: 3 Caribbean economies showing multi-source investment momentum
 
-**ID:** `DSP-20260829-017` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
+**ID:** `DSP-20260830-017` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** new
 **Feedback status:** ignored
 
@@ -53,7 +53,7 @@
 
 ### 4. Barbados: +34.8% FDI momentum validated — cross-reference before deploying
 
-**ID:** `DSP-20260829-026` | **Country:** Barbados | **Confidence:** 🟡 Validation | 85/100 | C - single-source
+**ID:** `DSP-20260830-026` | **Country:** Barbados | **Confidence:** 🟡 Validation | 85/100 | C - single-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -65,121 +65,121 @@
 **Decision to influence:** Which verified opportunity to investigate for capital deployment or partnership entry
 **Routing rationale:** Cross-country investment velocity signals where to focus ecosystem support and founder matching
 
-### 5. Haiti: signal detected
+### 5. Turks and Caicos Islands: signal detected
 
-**ID:** `DSP-20260829-035` | **Country:** Haiti | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**ID:** `DSP-20260830-031` | **Country:** Turks and Caicos Islands | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** Payout: US$7,753,579; Peril: earthquake; Event date: 2010-01-01; Announced: 2010-01-01
+**Evidence:** Payout: US$6,303,913; Peril: tropical_cyclone; Event date: 2008-01-01; Announced: 2008-01-01
 **Detail:** signal detected
 **Grade:** C - single-source
 
-**Recommended action:** Route Haiti opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
+**Recommended action:** Route Turks and Caicos Islands opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 6. Barbados: signal detected
+### 6. Anguilla: signal detected
 
-**ID:** `DSP-20260829-043` | **Country:** Barbados | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**ID:** `DSP-20260830-039` | **Country:** Anguilla | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** Payout: US$8,560,247; Peril: tropical_cyclone; Event date: 2010-01-01; Announced: 2010-01-01
+**Evidence:** Payout: US$4,282,733; Peril: tropical_cyclone; Event date: 2010-01-01; Announced: 2010-01-01
 **Detail:** signal detected
 **Grade:** C - single-source
 
-**Recommended action:** Route Barbados opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
+**Recommended action:** Route Anguilla opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 7. Barbados: signal detected
+### 7. St. Kitts and Nevis: signal detected
 
-**ID:** `DSP-20260829-047` | **Country:** Barbados | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**ID:** `DSP-20260830-059` | **Country:** St. Kitts and Nevis | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** Payout: US$1,284,882; Peril: excess_rainfall; Event date: 2014-01-01; Announced: 2014-01-01
+**Evidence:** Payout: US$2,294,603; Peril: tropical_cyclone; Event date: 2017-01-01; Announced: 2017-01-01
 **Detail:** signal detected
 **Grade:** C - single-source
 
-**Recommended action:** Route Barbados opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
+**Recommended action:** Route St. Kitts and Nevis opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 8. Haiti: signal detected
+### 8. Dominica: signal detected
 
-**ID:** `DSP-20260829-051` | **Country:** Haiti | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**ID:** `DSP-20260830-063` | **Country:** Dominica | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** Payout: US$20,388,067; Peril: tropical_cyclone; Event date: 2016-01-01; Announced: 2016-01-01
+**Evidence:** Payout: US$19,294,800; Peril: tropical_cyclone; Event date: 2017-01-01; Announced: 2017-01-01
 **Detail:** signal detected
 **Grade:** C - single-source
 
-**Recommended action:** Route Haiti opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
+**Recommended action:** Route Dominica opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 9. Nicaragua: signal detected
+### 9. St. Vincent & the Grenadines: signal detected
 
-**ID:** `DSP-20260829-055` | **Country:** Nicaragua | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**ID:** `DSP-20260830-075` | **Country:** St. Vincent & the Grenadines | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** Payout: US$1,110,193; Peril: tropical_cyclone; Event date: 2016-01-01; Announced: 2016-01-01
+**Evidence:** Payout: US$1,862,728; Peril: tropical_cyclone; Event date: 2024-01-01; Announced: 2024-01-01
 **Detail:** signal detected
 **Grade:** C - single-source
 
-**Recommended action:** Route Nicaragua opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
+**Recommended action:** Route St. Vincent & the Grenadines opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 10. Haiti: signal detected
+### 10. Grenada: signal detected
 
-**ID:** `DSP-20260829-067` | **Country:** Haiti | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**ID:** `DSP-20260830-079` | **Country:** Grenada | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** Payout: US$39,953,272; Peril: earthquake; Event date: 2021-01-01; Announced: 2021-01-01
+**Evidence:** Payout: US$42,425,110; Peril: tropical_cyclone; Event date: 2024-01-01; Announced: 2024-01-01
 **Detail:** signal detected
 **Grade:** C - single-source
 
-**Recommended action:** Route Haiti opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
+**Recommended action:** Route Grenada opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 11. Nicaragua: signal detected
+### 11. Jamaica: signal detected
 
-**ID:** `DSP-20260829-071` | **Country:** Nicaragua | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**ID:** `DSP-20260830-083` | **Country:** Jamaica | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** Payout: US$8,924,577; Peril: tropical_cyclone; Event date: 2022-01-01; Announced: 2022-01-01
+**Evidence:** Payout: US$16,309,185; Peril: tropical_cyclone; Event date: 2024-01-01; Announced: 2024-01-01
 **Detail:** signal detected
 **Grade:** C - single-source
 
-**Recommended action:** Route Nicaragua opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
+**Recommended action:** Route Jamaica opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 12. Haiti: signal detected
+### 12. Jamaica: signal detected
 
-**ID:** `DSP-20260829-091` | **Country:** Haiti | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**ID:** `DSP-20260830-087` | **Country:** Jamaica | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** Payout: US$1,198,434; Peril: tropical_cyclone; Event date: 2025-01-01; Announced: 2025-01-01
+**Evidence:** Payout: US$70,803,832; Peril: tropical_cyclone; Event date: 2025-01-01; Announced: 2025-01-01
 **Detail:** signal detected
 **Grade:** C - single-source
 
-**Recommended action:** Route Haiti opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
+**Recommended action:** Route Jamaica opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
 ### 13. CARICOM: food supply indicators shifting — supply chain implications
 
-**ID:** `DSP-20260829-011` | **Country:** CARICOM | **Confidence:** 🟡 Validation | 80/100 | B - cross-source
+**ID:** `DSP-20260830-011` | **Country:** CARICOM | **Confidence:** 🟡 Validation | 80/100 | B - cross-source
 **Channel:** Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -193,7 +193,7 @@
 
 ### 14. Eastern Caribbean Currency Union: 4.6%
 
-**ID:** `DSP-20260829-093` | **Country:** Eastern Caribbean Currency Union | **Confidence:** 🟡 Validation | 76/100 | C - single-source
+**ID:** `DSP-20260830-093` | **Country:** Eastern Caribbean Currency Union | **Confidence:** 🟡 Validation | 76/100 | C - single-source
 **Channel:** Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -205,115 +205,115 @@
 **Decision to influence:** Deposit base expansion = currency union stability = confidence signal
 **Routing rationale:** Deposit surge = remittance inflow or FDI settlement = ecosystem liquidity
 
-### 15. Turks and Caicos Islands: signal detected
+### 15. Barbados: signal detected
 
-**ID:** `DSP-20260829-031` | **Country:** Turks and Caicos Islands | **Confidence:** 🟡 Validation | 74/100 | C - single-source
+**ID:** `DSP-20260830-043` | **Country:** Barbados | **Confidence:** 🟢 Monitor | 66/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** Payout: US$6,303,913; Peril: tropical_cyclone; Event date: 2008-01-01; Announced: 2008-01-01
+**Evidence:** Payout: US$8,560,247; Peril: tropical_cyclone; Event date: 2010-01-01; Announced: 2010-01-01
 **Detail:** signal detected
 **Grade:** C - single-source
 
-**Recommended action:** Route Turks and Caicos Islands opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
+**Recommended action:** Route Barbados opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 16. Anguilla: signal detected
+### 16. Barbados: signal detected
 
-**ID:** `DSP-20260829-039` | **Country:** Anguilla | **Confidence:** 🟡 Validation | 74/100 | C - single-source
+**ID:** `DSP-20260830-047` | **Country:** Barbados | **Confidence:** 🟢 Monitor | 66/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** Payout: US$4,282,733; Peril: tropical_cyclone; Event date: 2010-01-01; Announced: 2010-01-01
+**Evidence:** Payout: US$1,284,882; Peril: excess_rainfall; Event date: 2014-01-01; Announced: 2014-01-01
 **Detail:** signal detected
 **Grade:** C - single-source
 
-**Recommended action:** Route Anguilla opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
+**Recommended action:** Route Barbados opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 17. St. Kitts and Nevis: signal detected
+### 17. Nicaragua: signal detected
 
-**ID:** `DSP-20260829-059` | **Country:** St. Kitts and Nevis | **Confidence:** 🟡 Validation | 74/100 | C - single-source
+**ID:** `DSP-20260830-055` | **Country:** Nicaragua | **Confidence:** 🟢 Monitor | 66/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** Payout: US$2,294,603; Peril: tropical_cyclone; Event date: 2017-01-01; Announced: 2017-01-01
+**Evidence:** Payout: US$1,110,193; Peril: tropical_cyclone; Event date: 2016-01-01; Announced: 2016-01-01
 **Detail:** signal detected
 **Grade:** C - single-source
 
-**Recommended action:** Route St. Kitts and Nevis opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
+**Recommended action:** Route Nicaragua opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 18. Dominica: signal detected
+### 18. Nicaragua: signal detected
 
-**ID:** `DSP-20260829-063` | **Country:** Dominica | **Confidence:** 🟡 Validation | 74/100 | C - single-source
+**ID:** `DSP-20260830-071` | **Country:** Nicaragua | **Confidence:** 🟢 Monitor | 66/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** Payout: US$19,294,800; Peril: tropical_cyclone; Event date: 2017-01-01; Announced: 2017-01-01
+**Evidence:** Payout: US$8,924,577; Peril: tropical_cyclone; Event date: 2022-01-01; Announced: 2022-01-01
 **Detail:** signal detected
 **Grade:** C - single-source
 
-**Recommended action:** Route Dominica opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
+**Recommended action:** Route Nicaragua opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 19. St. Vincent & the Grenadines: signal detected
+### 19. Haiti: signal detected
 
-**ID:** `DSP-20260829-075` | **Country:** St. Vincent & the Grenadines | **Confidence:** 🟡 Validation | 74/100 | C - single-source
+**ID:** `DSP-20260830-035` | **Country:** Haiti | **Confidence:** 🟢 Monitor | 50/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** Payout: US$1,862,728; Peril: tropical_cyclone; Event date: 2024-01-01; Announced: 2024-01-01
+**Evidence:** Payout: US$7,753,579; Peril: earthquake; Event date: 2010-01-01; Announced: 2010-01-01
 **Detail:** signal detected
 **Grade:** C - single-source
 
-**Recommended action:** Route St. Vincent & the Grenadines opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
+**Recommended action:** Route Haiti opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 20. Grenada: signal detected
+### 20. Haiti: signal detected
 
-**ID:** `DSP-20260829-079` | **Country:** Grenada | **Confidence:** 🟡 Validation | 74/100 | C - single-source
+**ID:** `DSP-20260830-051` | **Country:** Haiti | **Confidence:** 🟢 Monitor | 50/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** Payout: US$42,425,110; Peril: tropical_cyclone; Event date: 2024-01-01; Announced: 2024-01-01
+**Evidence:** Payout: US$20,388,067; Peril: tropical_cyclone; Event date: 2016-01-01; Announced: 2016-01-01
 **Detail:** signal detected
 **Grade:** C - single-source
 
-**Recommended action:** Route Grenada opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
+**Recommended action:** Route Haiti opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 21. Jamaica: signal detected
+### 21. Haiti: signal detected
 
-**ID:** `DSP-20260829-083` | **Country:** Jamaica | **Confidence:** 🟢 Monitor | 66/100 | C - single-source
+**ID:** `DSP-20260830-067` | **Country:** Haiti | **Confidence:** 🟢 Monitor | 50/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** Payout: US$16,309,185; Peril: tropical_cyclone; Event date: 2024-01-01; Announced: 2024-01-01
+**Evidence:** Payout: US$39,953,272; Peril: earthquake; Event date: 2021-01-01; Announced: 2021-01-01
 **Detail:** signal detected
 **Grade:** C - single-source
 
-**Recommended action:** Route Jamaica opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
+**Recommended action:** Route Haiti opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 
-### 22. Jamaica: signal detected
+### 22. Haiti: signal detected
 
-**ID:** `DSP-20260829-087` | **Country:** Jamaica | **Confidence:** 🟢 Monitor | 66/100 | C - single-source
+**ID:** `DSP-20260830-091` | **Country:** Haiti | **Confidence:** 🟢 Monitor | 50/100 | C - single-source
 **Channel:** Telegram | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** Payout: US$70,803,832; Peril: tropical_cyclone; Event date: 2025-01-01; Announced: 2025-01-01
+**Evidence:** Payout: US$1,198,434; Peril: tropical_cyclone; Event date: 2025-01-01; Announced: 2025-01-01
 **Detail:** signal detected
 **Grade:** C - single-source
 
-**Recommended action:** Route Jamaica opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
+**Recommended action:** Route Haiti opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority introduction target.
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
 

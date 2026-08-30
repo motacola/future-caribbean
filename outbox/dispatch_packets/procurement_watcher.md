@@ -2,7 +2,7 @@
 
 **Decision job:** Project pipeline tracking and expression of interest preparation
 **Delivery channel:** Email brief
-**Generated:** Aug 29, 2026 at 22:38 UTC
+**Generated:** Aug 30, 2026 at 05:19 UTC
 **Dispatches in this packet:** 1
 
 ---
@@ -11,7 +11,7 @@
 
 ### 1. CARICOM: 9 active procurements — bidding window open
 
-**ID:** `DSP-20260829-014` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 95/100 | B - cross-source
+**ID:** `DSP-20260830-014` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 95/100 | B - cross-source
 **Channel:** Email brief | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** ignored
 

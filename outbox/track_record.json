@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-29T22:38:07.508204+00:00",
+  "generated_at": "2026-08-30T05:19:25.284856+00:00",
   "feedback_provenance": "simulated",
   "current_boosts": {
     "enhanced_investment": {
@@ -15,19 +15,49 @@
       "Suriname": -4
     },
     "ccrif_payout": {
-      "Turks and Caicos Islands": -10,
-      "Anguilla": -10,
-      "St. Kitts and Nevis": -10,
-      "Dominica": -10,
-      "St. Vincent & the Grenadines": -10,
-      "Grenada": -10,
-      "Jamaica": -18
+      "Haiti": -34,
+      "Barbados": -18,
+      "Nicaragua": -18
     },
     "food_security": {
       "CARICOM": -4
     }
   },
   "cycles": [
+    {
+      "cycle_id": "20260830",
+      "responses": {
+        "forwarded": 0,
+        "replied": 0,
+        "opened": 0,
+        "ignored": 0,
+        "decision_changed": 0
+      },
+      "engagement_by_kind": {},
+      "dispatch_count": 94,
+      "countries": [
+        "Haiti",
+        "Barbados",
+        "Jamaica",
+        "Nicaragua",
+        "Guyana",
+        "Suriname",
+        "CARICOM",
+        "Caribwide",
+        "Turks and Caicos Islands",
+        "Anguilla",
+        "St. Kitts and Nevis",
+        "Dominica",
+        "St. Vincent & the Grenadines",
+        "Grenada",
+        "Eastern Caribbean Currency Union",
+        "St. Vincent and the Grenadines"
+      ],
+      "lead": {
+        "country": "Guyana",
+        "title": "Money is moving into Guyana — up 860.3%, on one official source so far"
+      }
+    },
     {
       "cycle_id": "20260829",
       "responses": {
@@ -268,63 +298,6 @@
         "Grenada",
         "Bahamas, Belize, Grenada",
         "Eastern Caribbean Currency Union",
-        "St. Vincent and the Grenadines"
-      ],
-      "lead": {
-        "country": "Guyana",
-        "title": "Money is moving into Guyana — up 860.3%, on one official source so far"
-      }
-    },
-    {
-      "cycle_id": "20260822",
-      "responses": {
-        "forwarded": 0,
-        "replied": 0,
-        "opened": 0,
-        "ignored": 0,
-        "decision_changed": 0
-      },
-      "engagement_by_kind": {},
-      "dispatch_count": 217,
-      "countries": [
-        "Excess Rainfall policy - Trinidad",
-        "Haiti",
-        "Barbados",
-        "Excess Rainfall policy - Barbados",
-        "Tropical Cyclone policy - Nicaragua",
-        "Jamaica",
-        "Excess Rainfall - Jamaica",
-        "Nicaragua",
-        "Eastern Caribbean Currency Union",
-        "Guyana",
-        "Suriname",
-        "CARICOM",
-        "Caribwide",
-        "St. Kitts and Nevis",
-        "Dominica",
-        "Tropical Cyclone policy - The Bahamas",
-        "Excess Rainfall policy - Guatemala",
-        "Excess Rainfall policy - Haiti",
-        "Excess Rainfall policy - Jamaica",
-        "Excess Rainfall policy - Panama",
-        "Excess Rainfall policy -  Nicaragua",
-        "Tropical Cyclone policy - Barbados",
-        "Excess Rainfall policy - Antigua & Barbuda",
-        "Excess Rainfall policy - St. Kitts & Nevis",
-        "Excess Rainfall - Guatemala",
-        "St. Vincent & the Grenadines",
-        "Grenada",
-        "COAST - Grenada",
-        "Electric Utilities - GRENLEC - Grenada",
-        "CWUIC - NAWASA - Grenada",
-        "Excess Rainfall - Panama",
-        "Excess Rainfall - Panama (FAP)",
-        "Excess Rainfall - Honduras",
-        "Trinidad",
-        "Turks and Caicos Islands",
-        "Anguilla",
-        "Excess Rainfall policy - Dominica",
-        "Bahamas, Belize, Grenada",
         "St. Vincent and the Grenadines"
       ],
       "lead": {

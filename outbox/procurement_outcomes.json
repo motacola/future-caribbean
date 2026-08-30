@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
- "generated_at": "2026-08-29T22:38:06.858419+00:00",
- "corpus_updated_at": "2026-08-29T22:38:06.730747+00:00",
+ "generated_at": "2026-08-30T05:19:24.773046+00:00",
+ "corpus_updated_at": "2026-08-30T05:19:24.678090+00:00",
  "summary": {
   "tenders": 1040,
   "by_state": {
@@ -66,7 +66,7 @@
     "resolutions_of_prior_detection": 0,
     "last_seen_at": "2026-08-20T00:00:00+00:00",
     "first_seen_at": "2026-08-20T00:00:00+00:00",
-    "last_seen_age_days": 9,
+    "last_seen_age_days": 10,
     "observation_span_days": 0,
     "cadence": "single/rare sighting",
     "cadence_slug": "rare"
@@ -74,16 +74,16 @@
    {
     "source": "Guyana eProcure (NPTA)",
     "opportunities_observed": 81,
-    "total_snapshots": 343,
-    "distinct_observation_days": 21,
+    "total_snapshots": 347,
+    "distinct_observation_days": 22,
     "outcome_notices": 0,
     "outcome_snapshot_observations": 0,
     "resolutions_recorded": 0,
     "resolutions_of_prior_detection": 0,
-    "last_seen_at": "2026-08-29T06:59:37.104734+00:00",
+    "last_seen_at": "2026-08-30T05:19:24.678090+00:00",
     "first_seen_at": "2026-06-11T00:00:00+00:00",
     "last_seen_age_days": 0,
-    "observation_span_days": 79,
+    "observation_span_days": 80,
     "cadence": "regular",
     "cadence_slug": "regular"
    },
@@ -98,7 +98,7 @@
     "resolutions_of_prior_detection": 0,
     "last_seen_at": "2026-07-24T00:00:00+00:00",
     "first_seen_at": "2026-06-18T00:00:00+00:00",
-    "last_seen_age_days": 36,
+    "last_seen_age_days": 37,
     "observation_span_days": 36,
     "cadence": "regular",
     "cadence_slug": "regular"
@@ -114,7 +114,7 @@
     "resolutions_of_prior_detection": 14,
     "last_seen_at": "2026-08-20T00:00:00+00:00",
     "first_seen_at": "2026-08-20T00:00:00+00:00",
-    "last_seen_age_days": 9,
+    "last_seen_age_days": 10,
     "observation_span_days": 0,
     "cadence": "single/rare sighting",
     "cadence_slug": "rare"
@@ -130,7 +130,7 @@
     "resolutions_of_prior_detection": 2,
     "last_seen_at": "2026-07-24T00:00:00+00:00",
     "first_seen_at": "2026-06-18T00:00:00+00:00",
-    "last_seen_age_days": 36,
+    "last_seen_age_days": 37,
     "observation_span_days": 36,
     "cadence": "regular",
     "cadence_slug": "regular"
@@ -165,9 +165,9 @@
    "detected_before_close": true,
    "lead_time_days": 39,
    "award_lead_time_days": null,
-   "notice_count": 6,
+   "notice_count": 7,
    "resolution": null,
-   "last_seen_at": "2026-08-29T22:38:06.730747+00:00"
+   "last_seen_at": "2026-08-30T05:19:24.678090+00:00"
   },
   {
    "tender_id": "guyana-f59a5e5d1dac",
@@ -249,9 +249,9 @@
    "detected_before_close": true,
    "lead_time_days": 11,
    "award_lead_time_days": null,
-   "notice_count": 10,
+   "notice_count": 11,
    "resolution": null,
-   "last_seen_at": "2026-08-29T22:38:06.730747+00:00"
+   "last_seen_at": "2026-08-30T05:19:24.678090+00:00"
   },
   {
    "tender_id": "guyana-c0cbde59762b",
@@ -389,9 +389,9 @@
    "detected_before_close": true,
    "lead_time_days": 11,
    "award_lead_time_days": null,
-   "notice_count": 10,
+   "notice_count": 11,
    "resolution": null,
-   "last_seen_at": "2026-08-29T22:38:06.730747+00:00"
+   "last_seen_at": "2026-08-30T05:19:24.678090+00:00"
   },
   {
    "tender_id": "guyana-4601f99159ea",
@@ -417,9 +417,9 @@
    "detected_before_close": true,
    "lead_time_days": 11,
    "award_lead_time_days": null,
-   "notice_count": 10,
+   "notice_count": 11,
    "resolution": null,
-   "last_seen_at": "2026-08-29T22:38:06.730747+00:00"
+   "last_seen_at": "2026-08-30T05:19:24.678090+00:00"
   },
   {
    "tender_id": "guyana-3e1f7ffb425e",

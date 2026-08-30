@@ -2,10 +2,16 @@
   "confidence_calibration": {
     "0-39": 0,
     "40-59": 0,
-    "60-79": 29,
+    "60-79": 31,
     "80-100": 7
   },
   "cycle_accuracy": [
+    {
+      "actionable_responses": 0,
+      "cycle_id": "20260830",
+      "dispatches": 94,
+      "response_rate": 0.0
+    },
     {
       "actionable_responses": 2,
       "cycle_id": "20260829",
@@ -47,17 +53,11 @@
       "cycle_id": "20260823",
       "dispatches": 97,
       "response_rate": 0.0
-    },
-    {
-      "actionable_responses": 0,
-      "cycle_id": "20260822",
-      "dispatches": 217,
-      "response_rate": 0.0
     }
   ],
   "evidence_category_coverage": {
     "operators": 16,
-    "procurement_matches": 196,
+    "procurement_matches": 208,
     "sector_hypotheses": 8,
     "supporting_projects": 6
   },
@@ -81,16 +81,16 @@
     },
     "total_feedback": 50
   },
-  "generated_at": "2026-08-29T22:38:07.622107+00:00",
+  "generated_at": "2026-08-30T05:19:25.415307+00:00",
   "recommendation_calibration": {
-    "advance_rate": 0.08333333333333333,
-    "hold_rate": 0.9166666666666666,
+    "advance_rate": 0.07894736842105263,
+    "hold_rate": 0.9210526315789473,
     "note": "Advance = high confidence + 2+ evidence categories. Hold = moderate. Reject = low.",
     "reject_rate": 0.0
   },
   "recommendation_distribution": {
     "advance": 3,
-    "hold": 33,
+    "hold": 35,
     "reject": 0
   },
   "signal_type_performance": {
@@ -116,7 +116,7 @@
     },
     "regional": {
       "advance": 0,
-      "hold": 24,
+      "hold": 26,
       "reject": 0
     },
     "supply": {
@@ -126,11 +126,11 @@
     }
   },
   "summary": {
-    "avg_confidence": 79.97222222222223,
-    "overall_response_rate": 0.0022396416573348264,
+    "avg_confidence": 79.86842105263158,
+    "overall_response_rate": 0.0025974025974025974,
     "total_actionable_responses": 2,
     "total_cycles_analyzed": 8,
-    "total_dispatches": 893,
-    "total_validation_packs": 36
+    "total_dispatches": 770,
+    "total_validation_packs": 38
   }
 }
