@@ -7,16 +7,16 @@
   },
   "cycle_accuracy": [
     {
-      "actionable_responses": 0,
+      "actionable_responses": 2,
       "cycle_id": "20260830",
       "dispatches": 94,
-      "response_rate": 0.0
+      "response_rate": 0.02127659574468085
     },
     {
-      "actionable_responses": 2,
+      "actionable_responses": 0,
       "cycle_id": "20260829",
       "dispatches": 94,
-      "response_rate": 0.02127659574468085
+      "response_rate": 0.0
     },
     {
       "actionable_responses": 0,
@@ -81,7 +81,7 @@
     },
     "total_feedback": 50
   },
-  "generated_at": "2026-08-30T05:19:25.415307+00:00",
+  "generated_at": "2026-08-30T13:47:00.958339+00:00",
   "recommendation_calibration": {
     "advance_rate": 0.07894736842105263,
     "hold_rate": 0.9210526315789473,
