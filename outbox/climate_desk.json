@@ -2,7 +2,7 @@
   "instance": "climate",
   "instance_label": "Climate & Catastrophe Risk",
   "cycle_id": "20260830",
-  "generated_at": "2026-08-30T19:17:40.468433+00:00",
+  "generated_at": "2026-08-30T22:42:13.359251+00:00",
   "clusters": [
     {
       "cluster_id": "CLIM-tropical-outlook",
@@ -35,7 +35,7 @@
       "country_cluster": "San Juan and Vicinity",
       "signal_kind": "hazard_alert",
       "title": "San Juan and Vicinity: Rip Current Statement in effect (Moderate)",
-      "evidence": "NOAA NWS: Rip Current Statement issued August 30 at 11:21AM AST until August 31 at 6:00PM AST by NWS San Juan PR",
+      "evidence": "NOAA NWS: Rip Current Statement issued August 30 at 4:00PM AST until August 31 at 6:00PM AST by NWS San Juan PR",
       "evidence_grade": "B - official alert",
       "confidence_score": 80,
       "freshness": "new",
@@ -55,59 +55,35 @@
       ]
     },
     {
-      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.e",
-      "country_cluster": "Mona Passage Southward to 17N",
-      "signal_kind": "hazard_alert",
-      "title": "Mona Passage Southward to 17N: Marine Weather Statement in effect (Minor)",
-      "evidence": "NOAA NWS: Marine Weather Statement issued August 30 at 1:53PM AST by NWS San Juan PR",
-      "evidence_grade": "C - advisory",
-      "confidence_score": 60,
+      "cluster_id": "CLIM-marine-78217",
+      "country_cluster": "Caribbean marine zones",
+      "signal_kind": "maritime_hazard",
+      "title": "Marine hazard: High seas at North Caribbean (Puerto Rico Trench): 3.1m",
+      "evidence": "NDBC buoy network: High seas at North Caribbean (Puerto Rico Trench): 3.1m",
+      "evidence_grade": "B - sensor",
+      "confidence_score": 80,
       "freshness": "new",
-      "decision": "Hazard response and exposure assessment",
+      "decision": "Marine operations and coastal risk",
       "risk_flags": [],
       "personas": [
         {
-          "persona": "Resilience Planner",
+          "persona": "Operations/Resilience",
           "channel": "Telegram/SMS alert",
-          "action": "Active hazard alert \u2014 Marine Weather Statement \u2014 Minor (Mona Passage Southward to 17N). Pre-position resources and confirm evacuation/shelter readiness in the affected area now."
+          "action": "Marine hazard \u2014 High seas at North Caribbean (Puerto Rico Trench): 3.1m. Advise vessels and coastal operations; delay exposed activity until conditions ease."
         },
         {
-          "persona": "Insurer / Reinsurer",
-          "channel": "Email + alert",
-          "action": "Exposure check \u2014 Marine Weather Statement \u2014 Minor (Mona Passage Southward to 17N). Flag policies in the affected zone and prepare parametric-trigger assessment."
+          "persona": "Resilience Planner",
+          "channel": "Telegram/SMS alert",
+          "action": "Marine conditions deteriorating \u2014 High seas at North Caribbean (Puerto Rico Trench): 3.1m. Monitor for escalation toward small-craft / coastal-flood thresholds."
         }
       ]
     },
     {
-      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.6",
-      "country_cluster": "Anegada Passage east of Virgin Gorda and Saint Croix south to 17N",
-      "signal_kind": "hazard_alert",
-      "title": "Anegada Passage east of Virgin Gorda and Saint Croix south to 17N: Small Craft Advisory in effect (Minor)",
-      "evidence": "NOAA NWS: Small Craft Advisory issued August 30 at 11:21AM AST until August 31 at 6:00AM AST by NWS San Juan PR",
-      "evidence_grade": "C - advisory",
-      "confidence_score": 60,
-      "freshness": "new",
-      "decision": "Hazard response and exposure assessment",
-      "risk_flags": [],
-      "personas": [
-        {
-          "persona": "Resilience Planner",
-          "channel": "Telegram/SMS alert",
-          "action": "Active hazard alert \u2014 Small Craft Advisory \u2014 Minor (Anegada Passage east of Virgin Gorda and Saint Croix south to 17N). Pre-position resources and confirm evacuation/shelter readiness in the affected area now."
-        },
-        {
-          "persona": "Insurer / Reinsurer",
-          "channel": "Email + alert",
-          "action": "Exposure check \u2014 Small Craft Advisory \u2014 Minor (Anegada Passage east of Virgin Gorda and Saint Croix south to 17N). Flag policies in the affected zone and prepare parametric-trigger assessment."
-        }
-      ]
-    },
-    {
-      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.6",
+      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.1",
       "country_cluster": "Coastal Waters from Cabo San Juan to the waters between Anegada Island and Virgin Gorda and North 10 NM",
       "signal_kind": "hazard_alert",
       "title": "Coastal Waters from Cabo San Juan to the waters between Anegada Island and Virgin Gorda and North 10 NM: Small Craft Advisory in effect (Minor)",
-      "evidence": "NOAA NWS: Small Craft Advisory issued August 30 at 11:21AM AST until August 31 at 6:00AM AST by NWS San Juan PR",
+      "evidence": "NOAA NWS: Small Craft Advisory issued August 30 at 4:04PM AST until August 31 at 6:00AM AST by NWS San Juan PR",
       "evidence_grade": "C - advisory",
       "confidence_score": 60,
       "freshness": "new",
@@ -127,11 +103,11 @@
       ]
     },
     {
-      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.6",
+      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.1",
       "country_cluster": "Coastal Waters of Northern Puerto Rico out 10 NM",
       "signal_kind": "hazard_alert",
       "title": "Coastal Waters of Northern Puerto Rico out 10 NM: Small Craft Advisory in effect (Minor)",
-      "evidence": "NOAA NWS: Small Craft Advisory issued August 30 at 11:21AM AST until August 31 at 6:00AM AST by NWS San Juan PR",
+      "evidence": "NOAA NWS: Small Craft Advisory issued August 30 at 4:04PM AST until August 31 at 6:00AM AST by NWS San Juan PR",
       "evidence_grade": "C - advisory",
       "confidence_score": 60,
       "freshness": "new",
@@ -151,11 +127,11 @@
       ]
     },
     {
-      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.6",
+      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.1",
       "country_cluster": "Atlantic Waters of Puerto Rico AND USVI from 10 NM to 19.5N",
       "signal_kind": "hazard_alert",
       "title": "Atlantic Waters of Puerto Rico AND USVI from 10 NM to 19.5N: Small Craft Advisory in effect (Minor)",
-      "evidence": "NOAA NWS: Small Craft Advisory issued August 30 at 11:21AM AST until August 31 at 12:00PM AST by NWS San Juan PR",
+      "evidence": "NOAA NWS: Small Craft Advisory issued August 30 at 4:04PM AST until August 31 at 12:00PM AST by NWS San Juan PR",
       "evidence_grade": "C - advisory",
       "confidence_score": 60,
       "freshness": "new",
@@ -175,7 +151,7 @@
       ]
     }
   ],
-  "dispatch_count": 14,
+  "dispatch_count": 12,
   "sources": [
     "NOAA NWS",
     "NDBC buoys",
