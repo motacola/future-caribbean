@@ -2,128 +2,16 @@
 
 **Decision job:** Briefing input and narrative lead sourcing
 **Delivery channel:** Telegram digest
-**Generated:** Aug 31, 2026 at 16:07 UTC
+**Generated:** Aug 31, 2026 at 23:48 UTC
 **Dispatches in this packet:** 17
 
 ---
 
 ## Dispatches (17)
 
-### 1. Haiti: signal detected
+### 1. Turks and Caicos Islands: signal detected
 
-**ID:** `DSP-20260831-031` | **Country:** Haiti | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram digest | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$7,753,579; Peril: earthquake; Event date: 2010-01-01; Announced: 2010-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Signal context for Haiti: signal detected. Use this dispatch as a briefing input or narrative lead.
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Parametric payout = quantified sovereign risk event = fiscal impact story
-
-### 2. Barbados: signal detected
-
-**ID:** `DSP-20260831-039` | **Country:** Barbados | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram digest | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$8,560,247; Peril: tropical_cyclone; Event date: 2010-01-01; Announced: 2010-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Signal context for Barbados: signal detected. Use this dispatch as a briefing input or narrative lead.
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Parametric payout = quantified sovereign risk event = fiscal impact story
-
-### 3. Barbados: signal detected
-
-**ID:** `DSP-20260831-043` | **Country:** Barbados | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram digest | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$1,284,882; Peril: excess_rainfall; Event date: 2014-01-01; Announced: 2014-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Signal context for Barbados: signal detected. Use this dispatch as a briefing input or narrative lead.
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Parametric payout = quantified sovereign risk event = fiscal impact story
-
-### 4. Haiti: signal detected
-
-**ID:** `DSP-20260831-047` | **Country:** Haiti | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram digest | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$20,388,067; Peril: tropical_cyclone; Event date: 2016-01-01; Announced: 2016-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Signal context for Haiti: signal detected. Use this dispatch as a briefing input or narrative lead.
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Parametric payout = quantified sovereign risk event = fiscal impact story
-
-### 5. Nicaragua: signal detected
-
-**ID:** `DSP-20260831-051` | **Country:** Nicaragua | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram digest | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$1,110,193; Peril: tropical_cyclone; Event date: 2016-01-01; Announced: 2016-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Signal context for Nicaragua: signal detected. Use this dispatch as a briefing input or narrative lead.
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Parametric payout = quantified sovereign risk event = fiscal impact story
-
-### 6. Haiti: signal detected
-
-**ID:** `DSP-20260831-063` | **Country:** Haiti | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram digest | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$39,953,272; Peril: earthquake; Event date: 2021-01-01; Announced: 2021-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Signal context for Haiti: signal detected. Use this dispatch as a briefing input or narrative lead.
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Parametric payout = quantified sovereign risk event = fiscal impact story
-
-### 7. Nicaragua: signal detected
-
-**ID:** `DSP-20260831-067` | **Country:** Nicaragua | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram digest | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$8,924,577; Peril: tropical_cyclone; Event date: 2022-01-01; Announced: 2022-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Signal context for Nicaragua: signal detected. Use this dispatch as a briefing input or narrative lead.
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Parametric payout = quantified sovereign risk event = fiscal impact story
-
-### 8. Haiti: signal detected
-
-**ID:** `DSP-20260831-087` | **Country:** Haiti | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram digest | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$1,198,434; Peril: tropical_cyclone; Event date: 2025-01-01; Announced: 2025-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Signal context for Haiti: signal detected. Use this dispatch as a briefing input or narrative lead.
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Parametric payout = quantified sovereign risk event = fiscal impact story
-
-### 9. Turks and Caicos Islands: signal detected
-
-**ID:** `DSP-20260831-027` | **Country:** Turks and Caicos Islands | **Confidence:** 🟡 Validation | 74/100 | C - single-source
+**ID:** `DSP-20260831-027` | **Country:** Turks and Caicos Islands | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram digest | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -135,9 +23,9 @@
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Parametric payout = quantified sovereign risk event = fiscal impact story
 
-### 10. Anguilla: signal detected
+### 2. Anguilla: signal detected
 
-**ID:** `DSP-20260831-035` | **Country:** Anguilla | **Confidence:** 🟡 Validation | 74/100 | C - single-source
+**ID:** `DSP-20260831-035` | **Country:** Anguilla | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram digest | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -149,9 +37,9 @@
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Parametric payout = quantified sovereign risk event = fiscal impact story
 
-### 11. St. Kitts and Nevis: signal detected
+### 3. St. Kitts and Nevis: signal detected
 
-**ID:** `DSP-20260831-055` | **Country:** St. Kitts and Nevis | **Confidence:** 🟡 Validation | 74/100 | C - single-source
+**ID:** `DSP-20260831-055` | **Country:** St. Kitts and Nevis | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram digest | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -163,9 +51,9 @@
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Parametric payout = quantified sovereign risk event = fiscal impact story
 
-### 12. Dominica: signal detected
+### 4. Dominica: signal detected
 
-**ID:** `DSP-20260831-059` | **Country:** Dominica | **Confidence:** 🟡 Validation | 74/100 | C - single-source
+**ID:** `DSP-20260831-059` | **Country:** Dominica | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram digest | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -177,9 +65,9 @@
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Parametric payout = quantified sovereign risk event = fiscal impact story
 
-### 13. St. Vincent & the Grenadines: signal detected
+### 5. St. Vincent & the Grenadines: signal detected
 
-**ID:** `DSP-20260831-071` | **Country:** St. Vincent & the Grenadines | **Confidence:** 🟡 Validation | 74/100 | C - single-source
+**ID:** `DSP-20260831-071` | **Country:** St. Vincent & the Grenadines | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram digest | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -191,9 +79,9 @@
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Parametric payout = quantified sovereign risk event = fiscal impact story
 
-### 14. Grenada: signal detected
+### 6. Grenada: signal detected
 
-**ID:** `DSP-20260831-075` | **Country:** Grenada | **Confidence:** 🟡 Validation | 74/100 | C - single-source
+**ID:** `DSP-20260831-075` | **Country:** Grenada | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram digest | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -205,9 +93,9 @@
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Parametric payout = quantified sovereign risk event = fiscal impact story
 
-### 15. Jamaica: signal detected
+### 7. Jamaica: signal detected
 
-**ID:** `DSP-20260831-079` | **Country:** Jamaica | **Confidence:** 🟢 Monitor | 66/100 | C - single-source
+**ID:** `DSP-20260831-079` | **Country:** Jamaica | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram digest | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -219,9 +107,9 @@
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Parametric payout = quantified sovereign risk event = fiscal impact story
 
-### 16. Jamaica: signal detected
+### 8. Jamaica: signal detected
 
-**ID:** `DSP-20260831-083` | **Country:** Jamaica | **Confidence:** 🟢 Monitor | 66/100 | C - single-source
+**ID:** `DSP-20260831-083` | **Country:** Jamaica | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram digest | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -233,7 +121,63 @@
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Parametric payout = quantified sovereign risk event = fiscal impact story
 
-### 17. St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended
+### 9. Barbados: signal detected
+
+**ID:** `DSP-20260831-039` | **Country:** Barbados | **Confidence:** 🟢 Monitor | 66/100 | C - single-source
+**Channel:** Telegram digest | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$8,560,247; Peril: tropical_cyclone; Event date: 2010-01-01; Announced: 2010-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Signal context for Barbados: signal detected. Use this dispatch as a briefing input or narrative lead.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Parametric payout = quantified sovereign risk event = fiscal impact story
+
+### 10. Barbados: signal detected
+
+**ID:** `DSP-20260831-043` | **Country:** Barbados | **Confidence:** 🟢 Monitor | 66/100 | C - single-source
+**Channel:** Telegram digest | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$1,284,882; Peril: excess_rainfall; Event date: 2014-01-01; Announced: 2014-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Signal context for Barbados: signal detected. Use this dispatch as a briefing input or narrative lead.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Parametric payout = quantified sovereign risk event = fiscal impact story
+
+### 11. Nicaragua: signal detected
+
+**ID:** `DSP-20260831-051` | **Country:** Nicaragua | **Confidence:** 🟢 Monitor | 66/100 | C - single-source
+**Channel:** Telegram digest | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$1,110,193; Peril: tropical_cyclone; Event date: 2016-01-01; Announced: 2016-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Signal context for Nicaragua: signal detected. Use this dispatch as a briefing input or narrative lead.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Parametric payout = quantified sovereign risk event = fiscal impact story
+
+### 12. Nicaragua: signal detected
+
+**ID:** `DSP-20260831-067` | **Country:** Nicaragua | **Confidence:** 🟢 Monitor | 66/100 | C - single-source
+**Channel:** Telegram digest | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$8,924,577; Peril: tropical_cyclone; Event date: 2022-01-01; Announced: 2022-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Signal context for Nicaragua: signal detected. Use this dispatch as a briefing input or narrative lead.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Parametric payout = quantified sovereign risk event = fiscal impact story
+
+### 13. St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended
 
 **ID:** `DSP-20260831-010` | **Country:** St. Vincent and the Grenadines | **Confidence:** 🟢 Monitor | 60/100 | C - single-source
 **Channel:** Telegram digest | **Window:** 30 days | **Freshness:** sustained
@@ -247,6 +191,62 @@
 **Decision to influence:** Risk assessment for capital exposure or policy attention
 **Routing rationale:** Economic stress indicators drive policy response and media narratives
 **Risk flags:** Elevated economic stress in St. Vincent and the Grenadines
+
+### 14. Haiti: signal detected
+
+**ID:** `DSP-20260831-031` | **Country:** Haiti | **Confidence:** 🟢 Monitor | 50/100 | C - single-source
+**Channel:** Telegram digest | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$7,753,579; Peril: earthquake; Event date: 2010-01-01; Announced: 2010-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Signal context for Haiti: signal detected. Use this dispatch as a briefing input or narrative lead.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Parametric payout = quantified sovereign risk event = fiscal impact story
+
+### 15. Haiti: signal detected
+
+**ID:** `DSP-20260831-047` | **Country:** Haiti | **Confidence:** 🟢 Monitor | 50/100 | C - single-source
+**Channel:** Telegram digest | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$20,388,067; Peril: tropical_cyclone; Event date: 2016-01-01; Announced: 2016-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Signal context for Haiti: signal detected. Use this dispatch as a briefing input or narrative lead.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Parametric payout = quantified sovereign risk event = fiscal impact story
+
+### 16. Haiti: signal detected
+
+**ID:** `DSP-20260831-063` | **Country:** Haiti | **Confidence:** 🟢 Monitor | 50/100 | C - single-source
+**Channel:** Telegram digest | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$39,953,272; Peril: earthquake; Event date: 2021-01-01; Announced: 2021-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Signal context for Haiti: signal detected. Use this dispatch as a briefing input or narrative lead.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Parametric payout = quantified sovereign risk event = fiscal impact story
+
+### 17. Haiti: signal detected
+
+**ID:** `DSP-20260831-087` | **Country:** Haiti | **Confidence:** 🟢 Monitor | 50/100 | C - single-source
+**Channel:** Telegram digest | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$1,198,434; Peril: tropical_cyclone; Event date: 2025-01-01; Announced: 2025-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Signal context for Haiti: signal detected. Use this dispatch as a briefing input or narrative lead.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Parametric payout = quantified sovereign risk event = fiscal impact story
 
 ---
 

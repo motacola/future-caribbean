@@ -1,6 +1,6 @@
 # Caribbean Opportunity Dispatch — Judge Brief
 
-Generated: 2026-08-31 16:07 UTC
+Generated: 2026-08-31 23:48 UTC
 
 ## What This Proves
 
@@ -11,7 +11,7 @@ Caribbean Opportunity Dispatch is the product. Caribbean Signal OS is the archit
 - Total raw signals generated: 32
 - Sources represented: CCRIF SPC, CDB, ECCB, IDB, World Bank
 - Countries/zones: 16
-- New/updated this cycle: 0
+- New/updated this cycle: 1
 - User-facing outputs: opportunity dispatches, regional thesis, why-now context, feedback review, judge brief
 
 **Guyana** — 3 signal(s), 3 source(s): 💼 Investment + 🏖️ Tourism + 💎 Investment
@@ -29,43 +29,44 @@ Caribbean Opportunity Dispatch is the product. Caribbean Signal OS is the archit
    Audience: investor/founder via Email brief + Telegram
    Decision: Immediate investigation. Suriname has multi-source investment validation (2 signals converging). Priority: assess market entry options, identify existing operators.
 
-**2.** 🔴 **🏗️ Pipeline — CARICOM** — sustained
+**2.** 🔴 **🏗️ Pipeline — CARICOM** — updated
    Narrative: CARICOM: 9 active procurements — bidding window open
    Score: 95/100 | Grade: B - cross-source
    Audience: investor/founder via Email brief + Telegram
    Decision: Active procurement pipeline: CDB active procurement notices: 9. Priority: review CDB/IDB opportunities as lead list for project-based entry.
+   🔄 Content updated this cycle
 
-**3.** 🟡 **ccrif_payout — Haiti** — intensified
-   Narrative: Haiti: signal detected
+**3.** 🟡 **ccrif_payout — Turks and Caicos Islands** — intensified
+   Narrative: Turks and Caicos Islands: signal detected
    Score: 84/100 | Grade: C - single-source
    Audience: regional intelligence via Telegram digest
-   Decision: Validation — Haiti: ccrif_payout (signal detected). Validate locally.
-   ⬆️ Strengthened (+34 pts)
+   Decision: Validation — Turks and Caicos Islands: ccrif_payout (signal detected). Validate locally.
+   ⬆️ Strengthened (+10 pts)
 
-**4.** 🟡 **ccrif_payout — Barbados** — intensified
-   Narrative: Barbados: signal detected
+**4.** 🟡 **ccrif_payout — Anguilla** — intensified
+   Narrative: Anguilla: signal detected
    Score: 84/100 | Grade: C - single-source
    Audience: regional intelligence via Telegram digest
-   Decision: Validation — Barbados: ccrif_payout (signal detected). Validate locally.
-   ⬆️ Strengthened (+18 pts)
+   Decision: Validation — Anguilla: ccrif_payout (signal detected). Validate locally.
+   ⬆️ Strengthened (+10 pts)
 
 **5.** 🟡 **eccb_deposit_growth — Eastern Caribbean Currency Union** — sustained
    Narrative: Eastern Caribbean Currency Union: 4.6%
-   Score: 72/100 | Grade: C - single-source
+   Score: 76/100 | Grade: C - single-source
    Audience: regional intelligence via Telegram digest
    Decision: Validation — Eastern Caribbean Currency Union: eccb_deposit_growth (4.6%). Validate locally.
 
-**6.** 🟢 **⚠️ Vulnerability — St. Vincent and the Grenadines** — sustained
+**6.** 🟡 **💼 Investment — Barbados** — sustained
+   Narrative: Barbados: FDI trending at +34.8% — screening trigger active
+   Score: 71/100 | Grade: B - cross-source
+   Audience: investor/founder via Email brief + Telegram
+   Decision: Validation priority. Barbados FDI movement (34.8% change) signals opportunity. Cross-reference with sector data.
+
+**7.** 🟢 **⚠️ Vulnerability — St. Vincent and the Grenadines** — sustained
    Narrative: St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended
    Score: 60/100 | Grade: C - single-source
    Audience: policy/operator via Telegram digest
    Decision: Monitor. St. Vincent and the Grenadines showing economic stress (18.00%). Track next cycle. Escalates if additional stress indicators appear or existing ones worsen.
-
-**7.** ⚪ **🏖️ Tourism — Antigua and Barbuda** — sustained
-   Narrative: Antigua and Barbuda: GDP growth signals expanding tourist economy
-   Score: 47/100 | Grade: C - single-source
-   Audience: tourism operator via Telegram digest
-   Decision: Context. Antigua and Barbuda GDP data point for tourism sector awareness.
 
 ## Routing Rationale
 
@@ -135,7 +136,7 @@ Each signal is routed to specific personas based on signal kind and evidence lev
 
 ## Cycle Summary
 
-Lead: Guyana · 32 composite signal(s) · 8 intensified · 16 persistent
+Lead: Guyana · 32 composite signal(s) · 1 updated · 8 intensified · 15 persistent
 ## Judge Demo Path
 
 1. Run `bash run_pipeline.sh`.

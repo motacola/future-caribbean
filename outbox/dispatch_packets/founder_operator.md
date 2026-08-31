@@ -2,7 +2,7 @@
 
 **Decision job:** Competitive positioning and capability mapping
 **Delivery channel:** Telegram
-**Generated:** Aug 31, 2026 at 16:07 UTC
+**Generated:** Aug 31, 2026 at 23:48 UTC
 **Dispatches in this packet:** 9
 
 ---
@@ -123,7 +123,7 @@
 
 ### 9. Barbados: FDI trending at +34.8% — screening trigger active
 
-**ID:** `DSP-20260831-008` | **Country:** Barbados | **Confidence:** 🟡 Validation | 75/100 | B - cross-source
+**ID:** `DSP-20260831-008` | **Country:** Barbados | **Confidence:** 🟡 Validation | 71/100 | B - cross-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 

@@ -2,7 +2,7 @@
   "instance": "climate",
   "instance_label": "Climate & Catastrophe Risk",
   "cycle_id": "20260831",
-  "generated_at": "2026-08-31T16:07:46.123780+00:00",
+  "generated_at": "2026-08-31T23:48:04.466187+00:00",
   "clusters": [
     {
       "cluster_id": "CLIM-tropical-outlook",
@@ -31,35 +31,11 @@
       ]
     },
     {
-      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.c",
-      "country_cluster": "San Juan and Vicinity",
-      "signal_kind": "hazard_alert",
-      "title": "San Juan and Vicinity: Rip Current Statement in effect (Moderate)",
-      "evidence": "NOAA NWS: Rip Current Statement issued August 31 at 10:30AM AST until August 31 at 6:00PM AST by NWS San Juan PR",
-      "evidence_grade": "B - official alert",
-      "confidence_score": 80,
-      "freshness": "new",
-      "decision": "Hazard response and exposure assessment",
-      "risk_flags": [],
-      "personas": [
-        {
-          "persona": "Resilience Planner",
-          "channel": "Telegram/SMS alert",
-          "action": "Active hazard alert \u2014 Rip Current Statement \u2014 Moderate (San Juan and Vicinity). Pre-position resources and confirm evacuation/shelter readiness in the affected area now."
-        },
-        {
-          "persona": "Insurer / Reinsurer",
-          "channel": "Email + alert",
-          "action": "Exposure check \u2014 Rip Current Statement \u2014 Moderate (San Juan and Vicinity). Flag policies in the affected zone and prepare parametric-trigger assessment."
-        }
-      ]
-    },
-    {
-      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.4",
+      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.6",
       "country_cluster": "Atlantic Waters of Puerto Rico AND USVI from 10 NM to 19.5N",
       "signal_kind": "hazard_alert",
       "title": "Atlantic Waters of Puerto Rico AND USVI from 10 NM to 19.5N: Small Craft Advisory in effect (Minor)",
-      "evidence": "NOAA NWS: Small Craft Advisory issued August 31 at 10:26AM AST until August 31 at 6:00PM AST by NWS San Juan PR",
+      "evidence": "NOAA NWS: Small Craft Advisory issued August 31 at 4:45PM AST until September 1 at 12:00AM AST by NWS San Juan PR",
       "evidence_grade": "C - advisory",
       "confidence_score": 60,
       "freshness": "new",
@@ -79,7 +55,7 @@
       ]
     }
   ],
-  "dispatch_count": 6,
+  "dispatch_count": 4,
   "sources": [
     "NOAA NWS",
     "NDBC buoys",
