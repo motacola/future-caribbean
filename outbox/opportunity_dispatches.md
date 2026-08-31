@@ -1,7 +1,7 @@
-# Caribbean Opportunity Dispatch — Cycle 20260830
+# Caribbean Opportunity Dispatch — Cycle 20260831
 
-Generated: 2026-08-30 22:42 UTC
-Total dispatches: 94
+Generated: 2026-08-31 05:26 UTC
+Total dispatches: 92
 
 ## ✅ Delivered Dispatches
 
@@ -95,4 +95,4 @@ Total dispatches: 94
    Why this persona: Single-source FDI movement is a screening trigger, not a deployment signal — start diligence
    Action: Screen Guyana for investment readiness. FDI movement (860.3% change) is a screening trigger — cross-reference with sector conditions before deploying capital.
 
-*...and 79 more delivered dispatches*
+*...and 77 more delivered dispatches*

@@ -1,11 +1,11 @@
 # Opportunity Validation Pack — Guyana
 
-- Signal: `enhanced-invest-guyana` · Dispatch: `DSP-20260830-019`
-- Confidence: 100/100 (raw 111) · C - single-source
+- Signal: `enhanced-invest-guyana` · Dispatch: `DSP-20260831-017`
+- Confidence: 100/100 (raw 109) · C - single-source
 - Action readiness: high
 - Evidence freshness: refreshing · cycles since refresh: 0
 - Recommendation: **ADVANCE** — Calibrated confidence 100/100 with 3 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.
-- Last validated: 2026-08-30T22:42:12.955462+00:00
+- Last validated: 2026-08-31T05:26:11.215091+00:00
 
 ## Sector hypotheses
 - Oil & gas and offshore support services [corroborated] — _Google News — Guyana: MODEC’s FPSO reaches Guyana as ExxonMobil’s fifth oil project nears start-up - Offshore-Energy.biz_
@@ -23,16 +23,15 @@
 - No matched projects this cycle.
 
 ## Procurement matches
-- [EOI for the Design and Supervision of the National Public Health Reference Laboratory Building](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
-- [Consultancy for TVET & Training Diagnostic for SEND Students](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
-- [Consultancy for Service of Behavioural Therapist](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
 - [Rehabilitation and Upgrade of Mahaica Bridge to Abary Bridge Road Corridor](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
 - [Enhancing the Quality of the Belize National Quality Infrastructure](https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure) — Caribbean Development Bank (regional)
 - [Grenada Education Enhancement Project - Phase II](https://www.caribank.org/work-with-us/procurement/procurement-plans/grenada-education-enhancement-project-phase-ii) — Caribbean Development Bank (regional)
+- [The Bahamas Water Supply Improvement Project Phase 2](https://www.caribank.org/work-with-us/procurement/procurement-notices/bahamas-water-supply-improvement-project-phase-2-1) — Caribbean Development Bank (regional)
+- [The Bahamas Water Supply Improvement Project Phase 2](https://www.caribank.org/work-with-us/procurement/procurement-notices/bahamas-water-supply-improvement-project-phase-2-0) — Caribbean Development Bank (regional)
+- [Kalinago Development Project](https://www.caribank.org/work-with-us/procurement/procurement-notices/kalinago-development-project-2) — Caribbean Development Bank (regional)
 
 ## Official country data
-- [Guyana Balance of Payments (2000 – 2025)](https://statistics.caricom.org/?country_data=guyana-balance-of-payments-2000-2024) — CARICOM Statistics
-- [Guyana: Monthly Consumer Price Index (CPI) by Expenditure Category](https://statistics.caricom.org/?country_data=guyana-monthly-consumer-price-index-cpi-by-expenditure-category) — CARICOM Statistics
+- No official country datasets matched.
 
 ## Relevant institutions & intro targets
 - Guyana Office for Investment (GO-Invest) — National investment promotion agency
@@ -42,7 +41,7 @@
 
 ## Unresolved questions
 - Which specific sectors are driving the movement in Guyana? No official sector-breakdown dataset matched this cycle.
-- Tender closes 2026-08-31 — confirm eligibility and bid requirements early.
+- Tender closes 2026-10-02 — confirm eligibility and bid requirements early.
 - Validate fit with registry-listed operators (Guyana Shore Base Inc. (GSBI), Gaico Construction Inc.) before outreach.
 - Validate that the underlying FDI movement is sustained, not a one-off transaction or statistical revision.
 

@@ -1,12 +1,12 @@
 {
-  "cycle_intro": "Lead: Guyana. 3 converging signal(s) across 4 source(s). Signals: \ud83d\udcbc Investment + \ud83c\udfd6\ufe0f Tourism + \ud83d\udc8e Investment.",
-  "generated_at": "2026-08-30 22:42 UTC",
+  "cycle_intro": "Lead: Guyana. 3 converging signal(s) across 3 source(s). Signals: \ud83d\udcbc Investment + \ud83c\udfd6\ufe0f Tourism + \ud83d\udc8e Investment.",
+  "generated_at": "2026-08-31 05:26 UTC",
   "items": [
     {
       "band": "immediate",
       "channel": "Email brief + Telegram",
       "country": "Guyana",
-      "freshness": "sustained",
+      "freshness": "updated",
       "kind": "enhanced_investment",
       "metrics": {
         "decision_changed": null,
@@ -24,7 +24,7 @@
       "band": "immediate",
       "channel": "Email brief + Telegram",
       "country": "Suriname",
-      "freshness": "sustained",
+      "freshness": "updated",
       "kind": "enhanced_investment",
       "metrics": {
         "decision_changed": null,
@@ -35,7 +35,7 @@
       },
       "persona": "investor/founder",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 98,
+      "score": 96,
       "signal_id": "enhanced-invest-suriname"
     },
     {
@@ -58,9 +58,63 @@
     },
     {
       "band": "validation",
+      "channel": "Telegram digest",
+      "country": "Turks and Caicos Islands",
+      "freshness": "intensified",
+      "kind": "ccrif_payout",
+      "metrics": {
+        "decision_changed": null,
+        "forwarded": null,
+        "opened": null,
+        "reply_count": null,
+        "sent": false
+      },
+      "persona": "regional intelligence",
+      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
+      "score": 84,
+      "signal_id": "ccrif-payout-tc-tropical_cyclone-2008-01-01"
+    },
+    {
+      "band": "validation",
+      "channel": "Telegram digest",
+      "country": "Anguilla",
+      "freshness": "intensified",
+      "kind": "ccrif_payout",
+      "metrics": {
+        "decision_changed": null,
+        "forwarded": null,
+        "opened": null,
+        "reply_count": null,
+        "sent": false
+      },
+      "persona": "regional intelligence",
+      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
+      "score": 84,
+      "signal_id": "ccrif-payout-ai-tropical_cyclone-2010-01-01"
+    },
+    {
+      "band": "validation",
+      "channel": "Telegram digest",
+      "country": "St. Kitts and Nevis",
+      "freshness": "intensified",
+      "kind": "ccrif_payout",
+      "metrics": {
+        "decision_changed": null,
+        "forwarded": null,
+        "opened": null,
+        "reply_count": null,
+        "sent": false
+      },
+      "persona": "regional intelligence",
+      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
+      "score": 84,
+      "signal_id": "ccrif-payout-kn-tropical_cyclone-2017-01-01"
+    },
+    {
+      "band": "validation",
       "channel": "Email brief + Telegram",
       "country": "Barbados",
-      "freshness": "sustained",
+      "freshness": "updated",
       "kind": "enhanced_investment",
       "metrics": {
         "decision_changed": null,
@@ -71,44 +125,8 @@
       },
       "persona": "investor/founder",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 85,
+      "score": 83,
       "signal_id": "enhanced-invest-barbados"
-    },
-    {
-      "band": "validation",
-      "channel": "Telegram digest",
-      "country": "Haiti",
-      "freshness": "intensified",
-      "kind": "ccrif_payout",
-      "metrics": {
-        "decision_changed": null,
-        "forwarded": null,
-        "opened": null,
-        "reply_count": null,
-        "sent": false
-      },
-      "persona": "regional intelligence",
-      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 84,
-      "signal_id": "ccrif-payout-ht-earthquake-2010-01-01"
-    },
-    {
-      "band": "validation",
-      "channel": "Telegram digest",
-      "country": "Nicaragua",
-      "freshness": "intensified",
-      "kind": "ccrif_payout",
-      "metrics": {
-        "decision_changed": null,
-        "forwarded": null,
-        "opened": null,
-        "reply_count": null,
-        "sent": false
-      },
-      "persona": "regional intelligence",
-      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 84,
-      "signal_id": "ccrif-payout-ni-tropical_cyclone-2016-01-01"
     },
     {
       "band": "validation",
@@ -127,24 +145,6 @@
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
       "score": 76,
       "signal_id": "eccb-deposit-growth-eccu"
-    },
-    {
-      "band": "validation",
-      "channel": "Telegram digest",
-      "country": "Turks and Caicos Islands",
-      "freshness": "weakened",
-      "kind": "ccrif_payout",
-      "metrics": {
-        "decision_changed": null,
-        "forwarded": null,
-        "opened": null,
-        "reply_count": null,
-        "sent": false
-      },
-      "persona": "regional intelligence",
-      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 74,
-      "signal_id": "ccrif-payout-tc-tropical_cyclone-2008-01-01"
     },
     {
       "band": "monitor",

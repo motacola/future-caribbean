@@ -1,10 +1,10 @@
 {
   "signal_id": "enhanced-invest-suriname",
-  "dispatch_id": "DSP-20260830-022",
+  "dispatch_id": "DSP-20260831-020",
   "country": "Suriname",
   "signal_title": "Suriname: +206.0% investment movement, one source — needs corroboration",
   "confidence_score": 68,
-  "raw_confidence_score": 98,
+  "raw_confidence_score": 96,
   "action_readiness": "medium (annual macro signal only)",
   "evidence_grade": "C - single-source",
   "sector_hypotheses": [
@@ -63,18 +63,7 @@
       "match": "regional"
     }
   ],
-  "official_country_data": [
-    {
-      "title": "Suriname Balance of Payments (2017 &#8211; 2025)",
-      "source": "CARICOM Statistics",
-      "url": "https://statistics.caricom.org/?country_data=suriname-balance-of-payments-2017-2024"
-    },
-    {
-      "title": "Suriname: Monthly Consumer Price Index (CPI) by Expenditure Category",
-      "source": "CARICOM Statistics",
-      "url": "https://statistics.caricom.org/?country_data=suriname-monthly-consumer-price-index-cpi-by-expenditure-category"
-    }
-  ],
+  "official_country_data": [],
   "credible_local_operators": [],
   "relevant_institutions": [
     {
@@ -91,8 +80,6 @@
     }
   ],
   "source_links": [
-    "https://statistics.caricom.org/?country_data=suriname-balance-of-payments-2017-2024",
-    "https://statistics.caricom.org/?country_data=suriname-monthly-consumer-price-index-cpi-by-expenditure-category",
     "https://www.caribank.org/work-with-us/procurement/procurement-notices/bahamas-water-supply-improvement-project-phase-2-0",
     "https://www.caribank.org/work-with-us/procurement/procurement-notices/bahamas-water-supply-improvement-project-phase-2-1",
     "https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure",
@@ -114,7 +101,7 @@
   ],
   "advance_or_reject_recommendation": "hold",
   "recommendation_reason": "Calibrated confidence 68/100 with 0 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.",
-  "last_validated_at": "2026-08-30T22:42:12.955462+00:00",
+  "last_validated_at": "2026-08-31T05:26:11.215091+00:00",
   "coordination_path": null,
   "evidence_fingerprint": "e3b0c44298fc1c14",
   "cycles_since_refresh": 0,
