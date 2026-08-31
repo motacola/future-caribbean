@@ -2,7 +2,7 @@
 
 **Decision job:** Operational readiness and bid pipeline assessment
 **Delivery channel:** Telegram
-**Generated:** Aug 31, 2026 at 05:26 UTC
+**Generated:** Aug 31, 2026 at 16:07 UTC
 **Dispatches in this packet:** 2
 
 ---
@@ -15,7 +15,7 @@
 **Channel:** Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** replied
 
-**Evidence:** CDB active procurement notices: 9; • Enhancing the Quality of the Belize National Quality Infrastructure; • Grenada Education Enhancement Project - Phase II; • The Bahamas Water Supply Improvement Project Phase 2
+**Evidence:** CDB active procurement notices: 9; • Enhancing the Quality of the Belize National Quality Infrastructure; • The University of the West Indies Digital Transformation Project; • Grenada Education Enhancement Project - Phase II
 **Detail:** CDB active procurement notices: 9
 **Grade:** B - cross-source
 
@@ -25,7 +25,7 @@
 
 ### 2. Eastern Caribbean Currency Union: 4.6%
 
-**ID:** `DSP-20260831-092` | **Country:** Eastern Caribbean Currency Union | **Confidence:** 🟡 Validation | 76/100 | C - single-source
+**ID:** `DSP-20260831-092` | **Country:** Eastern Caribbean Currency Union | **Confidence:** 🟡 Validation | 72/100 | C - single-source
 **Channel:** Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** ignored
 
