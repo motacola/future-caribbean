@@ -1,6 +1,6 @@
 # Caribbean Opportunity Dispatch — Judge Brief
 
-Generated: 2026-09-01 19:22 UTC
+Generated: 2026-09-01 22:33 UTC
 
 ## What This Proves
 
@@ -11,7 +11,7 @@ Caribbean Opportunity Dispatch is the product. Caribbean Signal OS is the archit
 - Total raw signals generated: 32
 - Sources represented: CCRIF SPC, CDB, ECCB, IDB, World Bank
 - Countries/zones: 16
-- New/updated this cycle: 2
+- New/updated this cycle: 0
 - User-facing outputs: opportunity dispatches, regional thesis, why-now context, feedback review, judge brief
 
 **Guyana** — 3 signal(s), 3 source(s): 💼 Investment + 🏖️ Tourism + 💎 Investment
@@ -23,12 +23,12 @@ Caribbean Opportunity Dispatch is the product. Caribbean Signal OS is the archit
 
 ## Supporting Decision Signals
 
-**1.** 🔴 **💎 Investment — Suriname** — new
+**1.** 🔴 **💎 Investment — Suriname** — weakened
    Narrative: Suriname: +206.0% investment movement, one source — needs corroboration
-   Score: 100/100 | Grade: C - single-source
+   Score: 96/100 | Grade: C - single-source
    Audience: investor/founder via Email brief + Telegram
    Decision: Immediate investigation. Suriname has multi-source investment validation (2 signals converging). Priority: assess market entry options, identify existing operators.
-   🆕 New this cycle
+   ⬇️ Weakened (-6 pts)
 
 **2.** 🔴 **🏗️ Pipeline — CARICOM** — sustained
    Narrative: CARICOM: 9 active procurements — bidding window open
@@ -36,32 +36,32 @@ Caribbean Opportunity Dispatch is the product. Caribbean Signal OS is the archit
    Audience: investor/founder via Email brief + Telegram
    Decision: Active procurement pipeline: CDB active procurement notices: 9. Priority: review CDB/IDB opportunities as lead list for project-based entry.
 
-**3.** 🟡 **ccrif_payout — Haiti** — intensified
-   Narrative: Haiti: signal detected
+**3.** 🟡 **ccrif_payout — Anguilla** — intensified
+   Narrative: Anguilla: signal detected
    Score: 84/100 | Grade: C - single-source
    Audience: regional intelligence via Telegram digest
-   Decision: Validation — Haiti: ccrif_payout (signal detected). Validate locally.
-   ⬆️ Strengthened (+34 pts)
+   Decision: Validation — Anguilla: ccrif_payout (signal detected). Validate locally.
+   ⬆️ Strengthened (+10 pts)
 
-**4.** 🟡 **ccrif_payout — Nicaragua** — intensified
-   Narrative: Nicaragua: signal detected
+**4.** 🟡 **ccrif_payout — St. Kitts and Nevis** — intensified
+   Narrative: St. Kitts and Nevis: signal detected
    Score: 84/100 | Grade: C - single-source
    Audience: regional intelligence via Telegram digest
-   Decision: Validation — Nicaragua: ccrif_payout (signal detected). Validate locally.
-   ⬆️ Strengthened (+18 pts)
+   Decision: Validation — St. Kitts and Nevis: ccrif_payout (signal detected). Validate locally.
+   ⬆️ Strengthened (+10 pts)
 
-**5.** 🟡 **💼 Investment — Barbados** — sustained
-   Narrative: Barbados: FDI trending at +34.8% — screening trigger active
-   Score: 71/100 | Grade: B - cross-source
-   Audience: investor/founder via Email brief + Telegram
-   Decision: Validation priority. Barbados FDI movement (34.8% change) signals opportunity. Cross-reference with sector data.
-
-**6.** 🟡 **eccb_deposit_growth — Eastern Caribbean Currency Union** — weakened
+**5.** 🟡 **eccb_deposit_growth — Eastern Caribbean Currency Union** — intensified
    Narrative: Eastern Caribbean Currency Union: 4.6%
-   Score: 70/100 | Grade: C - single-source
+   Score: 76/100 | Grade: C - single-source
    Audience: regional intelligence via Telegram digest
    Decision: Validation — Eastern Caribbean Currency Union: eccb_deposit_growth (4.6%). Validate locally.
-   ⬇️ Weakened (-6 pts)
+   ⬆️ Strengthened (+6 pts)
+
+**6.** 🟡 **💼 Investment — Barbados** — sustained
+   Narrative: Barbados: FDI trending at +34.8% — screening trigger active
+   Score: 75/100 | Grade: B - cross-source
+   Audience: investor/founder via Email brief + Telegram
+   Decision: Validation priority. Barbados FDI movement (34.8% change) signals opportunity. Cross-reference with sector data.
 
 **7.** 🟢 **⚠️ Vulnerability — St. Vincent and the Grenadines** — sustained
    Narrative: St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended
@@ -137,7 +137,7 @@ Each signal is routed to specific personas based on signal kind and evidence lev
 
 ## Cycle Summary
 
-Lead: Guyana · 32 composite signal(s) · 2 new · 8 intensified · 13 persistent
+Lead: Guyana · 32 composite signal(s) · 8 intensified · 15 persistent
 ## Judge Demo Path
 
 1. Run `bash run_pipeline.sh`.

@@ -1,6 +1,6 @@
 # Caribbean Opportunity Dispatch — Cycle 20260901
 
-Generated: 2026-09-01 19:22 UTC
+Generated: 2026-09-01 22:33 UTC
 Total dispatches: 92
 
 ## ✅ Delivered Dispatches
@@ -89,10 +89,10 @@ Total dispatches: 92
    Why this persona: Multi-source investment lift indicates growing market that may support new entry or expansion
    Action: Assess competitive positioning in Caribwide. FDI movement (Guyana (860.3% change), Suriname (206.0% change), Barbados (34.8% change)) signals growing market...
 
-**Suriname: FDI trending at +206.0% — screening trigger active**
+**Guyana: FDI trending at +860.3% — screening trigger active**
    To: Diaspora Investor • Via: Email brief + Telegram
    — Feedback: ignored
    Why this persona: Single-source FDI movement is a screening trigger, not a deployment signal — start diligence
-   Action: Screen Suriname for investment readiness. FDI movement (206.0% change) is a screening trigger — cross-reference with sector conditions before deploying capital.
+   Action: Screen Guyana for investment readiness. FDI movement (860.3% change) is a screening trigger — cross-reference with sector conditions before deploying capital.
 
 *...and 77 more delivered dispatches*

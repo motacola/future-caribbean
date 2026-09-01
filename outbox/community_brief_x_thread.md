@@ -5,7 +5,7 @@
 
 2. Suriname: money flowing in from multiple sources — verified opportunity (206.0%) — New money = new competition AND new customers. Map your advantage before they arrive.
 
-3. Suriname: foreign investment spiking — worth watching (206.0%) — Investment noise in your market. Could mean competitors coming or demand growing.
+3. Guyana: foreign investment spiking — worth watching (860.3%) — Investment noise in your market. Could mean competitors coming or demand growing.
 
 
 Full brief: signal-fabric.vercel.app #CaribbeanTech #FutureCaribbean

@@ -2,7 +2,7 @@
 
 **Decision job:** Competitive positioning and capability mapping
 **Delivery channel:** Telegram
-**Generated:** Sep 01, 2026 at 19:22 UTC
+**Generated:** Sep 01, 2026 at 22:33 UTC
 **Dispatches in this packet:** 9
 
 ---
@@ -25,7 +25,7 @@
 
 ### 2. Suriname: +206.0% investment movement, one source — needs corroboration
 
-**ID:** `DSP-20260901-022` | **Country:** Suriname | **Confidence:** 🔴 Immediate | 100/100 | C - single-source
+**ID:** `DSP-20260901-022` | **Country:** Suriname | **Confidence:** 🔴 Immediate | 96/100 | C - single-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -79,21 +79,7 @@
 **Decision to influence:** Which verified opportunity to investigate for capital deployment or partnership entry
 **Routing rationale:** Multi-source investment lift indicates growing market that may support new entry or expansion
 
-### 6. Suriname: FDI trending at +206.0% — screening trigger active
-
-**ID:** `DSP-20260901-006` | **Country:** Suriname | **Confidence:** 🟡 Validation | 88/100 | B - cross-source
-**Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Suriname: Foreign direct investment net inflows current USD moved up 206.0% from 2024 to 2025.
-**Detail:** 206.0% change
-**Grade:** B - cross-source
-
-**Recommended action:** Assess competitive positioning in Suriname. FDI movement (206.0% change) signals growing market or incoming competition — evaluate local advantage before new entrants arrive.
-**Decision to influence:** Which country-sector pair to validate for investment readiness
-**Routing rationale:** FDI movement in your operating country signals competition or demand growth — assess positioning
-
-### 7. Guyana: FDI trending at +860.3% — screening trigger active
+### 6. Guyana: FDI trending at +860.3% — screening trigger active
 
 **ID:** `DSP-20260901-004` | **Country:** Guyana | **Confidence:** 🟡 Validation | 87/100 | B - cross-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
@@ -104,6 +90,20 @@
 **Grade:** B - cross-source
 
 **Recommended action:** Assess competitive positioning in Guyana. FDI movement (860.3% change) signals growing market or incoming competition — evaluate local advantage before new entrants arrive.
+**Decision to influence:** Which country-sector pair to validate for investment readiness
+**Routing rationale:** FDI movement in your operating country signals competition or demand growth — assess positioning
+
+### 7. Suriname: FDI trending at +206.0% — screening trigger active
+
+**ID:** `DSP-20260901-006` | **Country:** Suriname | **Confidence:** 🟡 Validation | 84/100 | B - cross-source
+**Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Suriname: Foreign direct investment net inflows current USD moved up 206.0% from 2024 to 2025.
+**Detail:** 206.0% change
+**Grade:** B - cross-source
+
+**Recommended action:** Assess competitive positioning in Suriname. FDI movement (206.0% change) signals growing market or incoming competition — evaluate local advantage before new entrants arrive.
 **Decision to influence:** Which country-sector pair to validate for investment readiness
 **Routing rationale:** FDI movement in your operating country signals competition or demand growth — assess positioning
 
@@ -123,7 +123,7 @@
 
 ### 9. Barbados: FDI trending at +34.8% — screening trigger active
 
-**ID:** `DSP-20260901-008` | **Country:** Barbados | **Confidence:** 🟡 Validation | 71/100 | B - cross-source
+**ID:** `DSP-20260901-008` | **Country:** Barbados | **Confidence:** 🟡 Validation | 75/100 | B - cross-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 

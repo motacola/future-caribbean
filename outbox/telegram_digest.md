@@ -1,4 +1,4 @@
-*Caribbean Market Pulse — 2026-09-01 19:22 UTC*
+*Caribbean Market Pulse — 2026-09-01 22:33 UTC*
 
 Lead: Guyana. 3 converging signal(s) across 3 source(s). Signals: 💼 Investment + 🏖️ Tourism + 💎 Investment.
 
@@ -7,10 +7,10 @@ Lead: Guyana. 3 converging signal(s) across 3 source(s). Signals: 💼 Investmen
    Immediate | 100/100 | C - single-source
    Immediate investigation. Guyana has multi-source investment validation (2 signals converging). Priority: assess market entry options, identify existing operators.
 
-🔴 🆕 **💎 Investment — Suriname**
+🔴 ⬇️ **💎 Investment — Suriname**
    Suriname: +206.0% investment movement, one source — needs corroboration
-   Immediate | 100/100 | C - single-source
-   🆕 New this cycle
+   Immediate | 96/100 | C - single-source
+   ⬇️ Weakened (-6 pts)
    Immediate investigation. Suriname has multi-source investment validation (2 signals converging). Priority: assess market entry options, identify existing operators.
 
 🔴 — **🏗️ Pipeline — CARICOM**
@@ -18,17 +18,17 @@ Lead: Guyana. 3 converging signal(s) across 3 source(s). Signals: 💼 Investmen
    Immediate | 95/100 | B - cross-source
    Active procurement pipeline: CDB active procurement notices: 9. Priority: review CDB/IDB opportunities as lead list for project-based entry.
 
-🟡 ⬆️ **ccrif_payout — Haiti**
-   Haiti: signal detected
+🟡 ⬆️ **ccrif_payout — Anguilla**
+   Anguilla: signal detected
    Validation | 84/100 | C - single-source
-   ⬆️ Strengthened (+34 pts)
-   Validation — Haiti: ccrif_payout (signal detected). Validate locally.
+   ⬆️ Strengthened (+10 pts)
+   Validation — Anguilla: ccrif_payout (signal detected). Validate locally.
 
-🟡 ⬆️ **ccrif_payout — Nicaragua**
-   Nicaragua: signal detected
+🟡 ⬆️ **ccrif_payout — St. Kitts and Nevis**
+   St. Kitts and Nevis: signal detected
    Validation | 84/100 | C - single-source
-   ⬆️ Strengthened (+18 pts)
-   Validation — Nicaragua: ccrif_payout (signal detected). Validate locally.
+   ⬆️ Strengthened (+10 pts)
+   Validation — St. Kitts and Nevis: ccrif_payout (signal detected). Validate locally.
 
-— Lead: Guyana · 32 composite signal(s) · 2 new · 8 intensified · 13 persistent
+— Lead: Guyana · 32 composite signal(s) · 8 intensified · 15 persistent
 - Caribbean Signal OS

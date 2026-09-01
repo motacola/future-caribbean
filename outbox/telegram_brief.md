@@ -1,5 +1,5 @@
 🌴 *Signal Fabric — Decision Routes Ready*
-Cycle: `20260901` · 2026-09-01 19:22 UTC
+Cycle: `20260901` · 2026-09-01 22:33 UTC
 
 *What this is:*
 A Dispatch Desk notification. The product is the decision route: signal → persona → action → feedback. Telegram is only the delivery channel.
@@ -20,7 +20,7 @@ Data → 27 signal clusters → 92 persona routes → 7 personas → action/capi
 2) *Suriname: +206.0% investment movement, one source — needs corroboration*
    Decision: Which verified opportunity to investigate for capital deployment or partnership entry
    Evidence: WB FDI surge detected: Suriname; CDB procurement/evaluation activity (regional context, not… · C - single-source
-   Confidence: 100/100 · sustained
+   Confidence: 96/100 · sustained
    → Regional Founder/Operator: Assess competitive positioning in Suriname. FDI movement (206.0% change)…
    → Ecosystem Builder: Route Suriname opportunity to relevant founders and investors in your…
    → Diaspora Investor: Investigate Suriname as a capital deployment target this cycle. One official…
@@ -36,10 +36,10 @@ Data → 27 signal clusters → 92 persona routes → 7 personas → action/capi
    Loop: Feedback this cycle: 2 ignored, 1 replied.
 
 *Feedback-adjusted priority*
-• Jamaica ccrif payout downranked -18
-• Turks and Caicos Islands ccrif payout downranked -10
-• St. Vincent & the Grenadines ccrif payout downranked -10
-• St. Kitts and Nevis ccrif payout downranked -10
+• Haiti ccrif payout downranked -34
+• Nicaragua ccrif payout downranked -18
+• Barbados ccrif payout downranked -18
+• Turks and Caicos Islands ccrif payout downranked -6
 
 *Open the product surface*
 • `outbox/dispatch_desk.md` — judge/user-facing decision desk
