@@ -1,41 +1,67 @@
 {
   "instance": "climate",
   "instance_label": "Climate & Catastrophe Risk",
-  "cycle_id": "20260831",
-  "generated_at": "2026-08-31T23:48:04.466187+00:00",
+  "cycle_id": "20260901",
+  "generated_at": "2026-09-01T05:00:25.193952+00:00",
   "clusters": [
     {
-      "cluster_id": "CLIM-tropical-outlook",
-      "country_cluster": "North Atlantic / Caribbean basin",
-      "signal_kind": "tropical_development",
-      "title": "Tropical development being monitored (NHC outlook)",
-      "evidence": "NHC Tropical Weather Outlook indicates a system worth watching across the basin.",
-      "evidence_grade": "B - official outlook",
-      "confidence_score": 85,
+      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.5",
+      "country_cluster": "Arroyo, PR",
+      "signal_kind": "hazard_alert",
+      "title": "Arroyo, PR: Flash Flood Warning in effect (Severe)",
+      "evidence": "NOAA NWS: Flash Flood Warning issued September 1 at 12:47AM AST until September 1 at 3:15AM AST by NWS San Juan PR",
+      "evidence_grade": "A - official alert",
+      "confidence_score": 95,
       "freshness": "new",
-      "decision": "Basin-wide exposure and readiness",
+      "decision": "Hazard response and exposure assessment",
       "risk_flags": [
-        "Active tropical outlook for the basin"
+        "Severe Flash Flood Warning active in Arroyo, PR"
       ],
       "personas": [
         {
-          "persona": "Insurer / Reinsurer",
-          "channel": "Email + alert",
-          "action": "Tropical development watch \u2014 NHC basin outlook active. Begin exposure modelling for the basin; recovery-capital may be needed within days."
-        },
-        {
           "persona": "Resilience Planner",
           "channel": "Telegram/SMS alert",
-          "action": "Tropical outlook active \u2014 NHC basin outlook active. Move readiness posture up; verify supply and communication chains across exposed islands."
+          "action": "Active hazard alert \u2014 Flash Flood Warning \u2014 Severe (Arroyo, PR). Pre-position resources and confirm evacuation/shelter readiness in the affected area now."
+        },
+        {
+          "persona": "Insurer / Reinsurer",
+          "channel": "Email + alert",
+          "action": "Exposure check \u2014 Flash Flood Warning \u2014 Severe (Arroyo, PR). Flag policies in the affected zone and prepare parametric-trigger assessment."
         }
       ]
     },
     {
-      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.6",
-      "country_cluster": "Atlantic Waters of Puerto Rico AND USVI from 10 NM to 19.5N",
+      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.c",
+      "country_cluster": "Guayama, PR",
       "signal_kind": "hazard_alert",
-      "title": "Atlantic Waters of Puerto Rico AND USVI from 10 NM to 19.5N: Small Craft Advisory in effect (Minor)",
-      "evidence": "NOAA NWS: Small Craft Advisory issued August 31 at 4:45PM AST until September 1 at 12:00AM AST by NWS San Juan PR",
+      "title": "Guayama, PR: Flash Flood Warning in effect (Severe)",
+      "evidence": "NOAA NWS: Flash Flood Warning issued September 1 at 12:34AM AST until September 1 at 3:15AM AST by NWS San Juan PR",
+      "evidence_grade": "A - official alert",
+      "confidence_score": 95,
+      "freshness": "new",
+      "decision": "Hazard response and exposure assessment",
+      "risk_flags": [
+        "Severe Flash Flood Warning active in Guayama, PR"
+      ],
+      "personas": [
+        {
+          "persona": "Resilience Planner",
+          "channel": "Telegram/SMS alert",
+          "action": "Active hazard alert \u2014 Flash Flood Warning \u2014 Severe (Guayama, PR). Pre-position resources and confirm evacuation/shelter readiness in the affected area now."
+        },
+        {
+          "persona": "Insurer / Reinsurer",
+          "channel": "Email + alert",
+          "action": "Exposure check \u2014 Flash Flood Warning \u2014 Severe (Guayama, PR). Flag policies in the affected zone and prepare parametric-trigger assessment."
+        }
+      ]
+    },
+    {
+      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.5",
+      "country_cluster": "Caguas, PR",
+      "signal_kind": "hazard_alert",
+      "title": "Caguas, PR: Flood Advisory in effect (Minor)",
+      "evidence": "NOAA NWS: Flood Advisory issued September 1 at 12:59AM AST until September 1 at 4:00AM AST by NWS San Juan PR",
       "evidence_grade": "C - advisory",
       "confidence_score": 60,
       "freshness": "new",
@@ -45,17 +71,17 @@
         {
           "persona": "Resilience Planner",
           "channel": "Telegram/SMS alert",
-          "action": "Active hazard alert \u2014 Small Craft Advisory \u2014 Minor (Atlantic Waters of Puerto Rico AND USVI from 10 NM to 19.5N). Pre-position resources and confirm evacuation/shelter readiness in the affected area now."
+          "action": "Active hazard alert \u2014 Flood Advisory \u2014 Minor (Caguas, PR). Pre-position resources and confirm evacuation/shelter readiness in the affected area now."
         },
         {
           "persona": "Insurer / Reinsurer",
           "channel": "Email + alert",
-          "action": "Exposure check \u2014 Small Craft Advisory \u2014 Minor (Atlantic Waters of Puerto Rico AND USVI from 10 NM to 19.5N). Flag policies in the affected zone and prepare parametric-trigger assessment."
+          "action": "Exposure check \u2014 Flood Advisory \u2014 Minor (Caguas, PR). Flag policies in the affected zone and prepare parametric-trigger assessment."
         }
       ]
     }
   ],
-  "dispatch_count": 4,
+  "dispatch_count": 6,
   "sources": [
     "NOAA NWS",
     "NDBC buoys",
