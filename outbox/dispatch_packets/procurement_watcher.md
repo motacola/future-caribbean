@@ -2,7 +2,7 @@
 
 **Decision job:** Project pipeline tracking and expression of interest preparation
 **Delivery channel:** Email brief
-**Generated:** Sep 01, 2026 at 05:00 UTC
+**Generated:** Sep 01, 2026 at 13:28 UTC
 **Dispatches in this packet:** 1
 
 ---
@@ -11,11 +11,11 @@
 
 ### 1. CARICOM: 9 active procurements — bidding window open
 
-**ID:** `DSP-20260901-012` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 95/100 | B - cross-source
+**ID:** `DSP-20260901-008` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 95/100 | B - cross-source
 **Channel:** Email brief | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** CDB active procurement notices: 9; • Enhancing the Quality of the Belize National Quality Infrastructure; • The University of the West Indies Digital Transformation Project; • Grenada Education Enhancement Project - Phase II
+**Evidence:** CDB active procurement notices: 9; • Enhancing the Quality of the Belize National Quality Infrastructure; • Supply Installation, Testing and Commissioning of Mechanical Equipment, Fire Pump System and Information and Communications Technology Systems; • The University of the West Indies Digital Transformation Project
 **Detail:** CDB active procurement notices: 9
 **Grade:** B - cross-source
 

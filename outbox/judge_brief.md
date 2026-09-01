@@ -1,6 +1,6 @@
 # Caribbean Opportunity Dispatch — Judge Brief
 
-Generated: 2026-09-01 05:00 UTC
+Generated: 2026-09-01 13:28 UTC
 
 ## What This Proves
 
@@ -8,9 +8,9 @@ Caribbean Opportunity Dispatch is the product. Caribbean Signal OS is the archit
 
 ## Live Run Snapshot
 
-- Total raw signals generated: 32
+- Total raw signals generated: 30
 - Sources represented: CCRIF SPC, CDB, ECCB, IDB, World Bank
-- Countries/zones: 16
+- Countries/zones: 15
 - New/updated this cycle: 0
 - User-facing outputs: opportunity dispatches, regional thesis, why-now context, feedback review, judge brief
 
@@ -23,35 +23,35 @@ Caribbean Opportunity Dispatch is the product. Caribbean Signal OS is the archit
 
 ## Supporting Decision Signals
 
-**1.** 🔴 **💎 Investment — Suriname** — sustained
-   Narrative: Suriname: +206.0% investment movement, one source — needs corroboration
-   Score: 96/100 | Grade: C - single-source
-   Audience: investor/founder via Email brief + Telegram
-   Decision: Immediate investigation. Suriname has multi-source investment validation (2 signals converging). Priority: assess market entry options, identify existing operators.
-
-**2.** 🔴 **🏗️ Pipeline — CARICOM** — sustained
+**1.** 🔴 **🏗️ Pipeline — CARICOM** — sustained
    Narrative: CARICOM: 9 active procurements — bidding window open
    Score: 95/100 | Grade: B - cross-source
    Audience: investor/founder via Email brief + Telegram
    Decision: Active procurement pipeline: CDB active procurement notices: 9. Priority: review CDB/IDB opportunities as lead list for project-based entry.
 
-**3.** 🟡 **ccrif_payout — Haiti** — intensified
-   Narrative: Haiti: signal detected
+**2.** 🟡 **ccrif_payout — Turks and Caicos Islands** — intensified
+   Narrative: Turks and Caicos Islands: signal detected
    Score: 84/100 | Grade: C - single-source
    Audience: regional intelligence via Telegram digest
-   Decision: Validation — Haiti: ccrif_payout (signal detected). Validate locally.
-   ⬆️ Strengthened (+34 pts)
+   Decision: Validation — Turks and Caicos Islands: ccrif_payout (signal detected). Validate locally.
+   ⬆️ Strengthened (+10 pts)
 
-**4.** 🟡 **ccrif_payout — Barbados** — intensified
-   Narrative: Barbados: signal detected
+**3.** 🟡 **ccrif_payout — Anguilla** — intensified
+   Narrative: Anguilla: signal detected
    Score: 84/100 | Grade: C - single-source
    Audience: regional intelligence via Telegram digest
-   Decision: Validation — Barbados: ccrif_payout (signal detected). Validate locally.
-   ⬆️ Strengthened (+18 pts)
+   Decision: Validation — Anguilla: ccrif_payout (signal detected). Validate locally.
+   ⬆️ Strengthened (+10 pts)
+
+**4.** 🟡 **💎 Investment — Barbados** — sustained
+   Narrative: Barbados: +34.8% FDI momentum validated — cross-reference before deploying
+   Score: 83/100 | Grade: C - single-source
+   Audience: investor/founder via Email brief + Telegram
+   Decision: Validation priority. Strong multi-source signal from Barbados. Cross-reference with sector data before committing resources.
 
 **5.** 🟡 **eccb_deposit_growth — Eastern Caribbean Currency Union** — sustained
    Narrative: Eastern Caribbean Currency Union: 4.6%
-   Score: 72/100 | Grade: C - single-source
+   Score: 76/100 | Grade: C - single-source
    Audience: regional intelligence via Telegram digest
    Decision: Validation — Eastern Caribbean Currency Union: eccb_deposit_growth (4.6%). Validate locally.
 
@@ -135,7 +135,7 @@ Each signal is routed to specific personas based on signal kind and evidence lev
 
 ## Cycle Summary
 
-Lead: Guyana · 32 composite signal(s) · 8 intensified · 16 persistent
+Lead: Guyana · 30 composite signal(s) · 8 intensified · 14 persistent
 ## Judge Demo Path
 
 1. Run `bash run_pipeline.sh`.

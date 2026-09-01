@@ -1,18 +1,16 @@
 {
   "engine": "deterministic",
   "model": null,
-  "generated_at": "2026-09-01T05:00:25.261079+00:00",
-  "thesis": "Capital momentum is led by Guyana (+860%), with Suriname, Barbados also moving. Meanwhile the climate instance shows an active hazard (Arroyo, PR: Flash Flood Warning in effect (Severe)). Where hazard exposure overlaps capital momentum, recovery-capital timing and entry timing intersect.",
+  "generated_at": "2026-09-01T13:28:26.883563+00:00",
+  "thesis": "Capital momentum is led by Guyana (+860%), with Barbados, Eastern Caribbean Currency Union also moving.",
   "connections": [
     "Guyana: 2 converging signal types (enhanced_investment, investment_signal)",
-    "Suriname: 2 converging signal types (enhanced_investment, investment_signal)",
-    "Caribwide: 2 converging signal types (enhanced_investment, investment_signal)",
-    "Cross-instance: hazard (Arroyo, PR) overlaps economic momentum window"
+    "Barbados: 3 converging signal types (ccrif_payout, enhanced_investment, investment_signal)"
   ],
   "stats": {
-    "economic_signals": 27,
-    "climate_signals": 3,
+    "economic_signals": 23,
+    "climate_signals": 1,
     "conflicts": 0,
-    "convergences": 4
+    "convergences": 2
   }
 }

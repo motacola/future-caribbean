@@ -2,7 +2,7 @@
 
 **Decision job:** Operational readiness and bid pipeline assessment
 **Delivery channel:** Telegram
-**Generated:** Sep 01, 2026 at 05:00 UTC
+**Generated:** Sep 01, 2026 at 13:28 UTC
 **Dispatches in this packet:** 2
 
 ---
@@ -11,11 +11,11 @@
 
 ### 1. CARICOM: 9 active procurements — bidding window open
 
-**ID:** `DSP-20260901-011` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 95/100 | B - cross-source
+**ID:** `DSP-20260901-007` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 95/100 | B - cross-source
 **Channel:** Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** replied
 
-**Evidence:** CDB active procurement notices: 9; • Enhancing the Quality of the Belize National Quality Infrastructure; • The University of the West Indies Digital Transformation Project; • Grenada Education Enhancement Project - Phase II
+**Evidence:** CDB active procurement notices: 9; • Enhancing the Quality of the Belize National Quality Infrastructure; • Supply Installation, Testing and Commissioning of Mechanical Equipment, Fire Pump System and Information and Communications Technology Systems; • The University of the West Indies Digital Transformation Project
 **Detail:** CDB active procurement notices: 9
 **Grade:** B - cross-source
 
@@ -25,7 +25,7 @@
 
 ### 2. Eastern Caribbean Currency Union: 4.6%
 
-**ID:** `DSP-20260901-092` | **Country:** Eastern Caribbean Currency Union | **Confidence:** 🟡 Validation | 72/100 | C - single-source
+**ID:** `DSP-20260901-082` | **Country:** Eastern Caribbean Currency Union | **Confidence:** 🟡 Validation | 76/100 | C - single-source
 **Channel:** Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** ignored
 

@@ -1,15 +1,15 @@
 # Opportunity Validation Pack — Guyana
 
-- Signal: `enhanced-invest-guyana` · Dispatch: `DSP-20260901-017`
+- Signal: `enhanced-invest-guyana` · Dispatch: `DSP-20260901-013`
 - Confidence: 100/100 (raw 109) · C - single-source
 - Action readiness: high
 - Evidence freshness: refreshing · cycles since refresh: 0
 - Recommendation: **ADVANCE** — Calibrated confidence 100/100 with 3 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.
-- Last validated: 2026-09-01T05:00:24.750544+00:00
+- Last validated: 2026-09-01T13:28:26.528522+00:00
 
 ## Sector hypotheses
 - Oil & gas and offshore support services [corroborated] — _Google News — Guyana: Norton calls on Government to build capacity to audit offshore oil activities - newssourcegy.com_
-- Construction and infrastructure [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
+- Construction and infrastructure [corroborated] — _Google News — Guyana: U.S. seeks role in Guyana’s infrastructure and economic development as oil boom accelerates - Caribbean National Weekly_
 - Logistics serving the energy supply chain [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
 - Agriculture and agro-processing [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
 - FDI-receiving sectors (composition not yet broken down) [macro_signal] — _World Bank: FDI net inflows moved +860.3% from 2023 to 2024_
@@ -23,12 +23,12 @@
 - No matched projects this cycle.
 
 ## Procurement matches
+- [Rehabilitation works for the Bartica 5 Miles Raw Water Intake Structure,  5 Miles, Bartica, Region No. 7](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
 - [Rehabilitation and Upgrade of Mahaica Bridge to Abary Bridge Road Corridor](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
 - [Enhancing the Quality of the Belize National Quality Infrastructure](https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure) — Caribbean Development Bank (regional)
+- [Supply Installation, Testing and Commissioning of Mechanical Equipment, Fire Pump System and Information and Communications Technology Systems](https://www.caribank.org/work-with-us/procurement/procurement-notices/supply-installation-testing-and-commissioning-mechanical-equipment-fire-pump-system-and-information) — Caribbean Development Bank (regional)
 - [The University of the West Indies Digital Transformation Project](https://www.caribank.org/work-with-us/procurement/procurement-notices/university-west-indies-digital-transformation-project-3) — Caribbean Development Bank (regional)
 - [Grenada Education Enhancement Project - Phase II](https://www.caribank.org/work-with-us/procurement/procurement-plans/grenada-education-enhancement-project-phase-ii) — Caribbean Development Bank (regional)
-- [The Bahamas Water Supply Improvement Project Phase 2](https://www.caribank.org/work-with-us/procurement/procurement-notices/bahamas-water-supply-improvement-project-phase-2-1) — Caribbean Development Bank (regional)
-- [The Bahamas Water Supply Improvement Project Phase 2](https://www.caribank.org/work-with-us/procurement/procurement-notices/bahamas-water-supply-improvement-project-phase-2-0) — Caribbean Development Bank (regional)
 
 ## Official country data
 - No official country datasets matched.
@@ -41,7 +41,7 @@
 
 ## Unresolved questions
 - Which specific sectors are driving the movement in Guyana? No official sector-breakdown dataset matched this cycle.
-- Tender closes 2026-10-02 — confirm eligibility and bid requirements early.
+- Tender closes 2026-09-22 — confirm eligibility and bid requirements early.
 - Validate fit with registry-listed operators (Guyana Shore Base Inc. (GSBI), Gaico Construction Inc.) before outreach.
 - Validate that the underlying FDI movement is sustained, not a one-off transaction or statistical revision.
 

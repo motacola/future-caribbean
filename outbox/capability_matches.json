@@ -1,23 +1,23 @@
 {
  "schema_version": 1,
  "registry_status": "pilot",
- "total_tenders": 1040,
- "classified_tenders": 415,
- "tenders_with_capability_match": 415,
+ "total_tenders": 1041,
+ "classified_tenders": 416,
+ "tenders_with_capability_match": 416,
  "by_capability": {
-  "civil_engineering": 200,
-  "construction_delivery": 169,
+  "civil_engineering": 201,
+  "construction_delivery": 170,
   "shipping_logistics": 161,
   "warehousing_distribution": 88,
   "digital_services": 54,
   "ict_integration": 54,
   "climate_resilience": 31,
-  "aviation_infrastructure": 10
+  "aviation_infrastructure": 11
  },
  "by_country": {
-  "Jamaica": 736,
-  "Trinidad & Tobago": 530,
-  "Guyana": 200,
+  "Jamaica": 739,
+  "Trinidad & Tobago": 532,
+  "Guyana": 201,
   "Barbados": 139,
   "Eastern Caribbean / OECS": 85
  },
@@ -16597,6 +16597,128 @@
         {
          "source": "Trinidad and Tobago Ministry of Trade and Industry",
          "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    }
+   ],
+   "has_capability_match": true
+  },
+  {
+   "tender_id": "guyana-dcabdebcf2dc",
+   "country": "Guyana",
+   "title": "Rehabilitation works for the Bartica 5 Miles Raw Water Intake Structure,  5 Miles, Bartica, Region No. 7",
+   "buyer": "34-Ministry of Public Utilities and Aviation",
+   "lifecycle_state": "detected",
+   "sector": "aviation_infrastructure",
+   "classification": "deterministic_keyword",
+   "matched_keywords": [
+    "aviation"
+   ],
+   "required_capabilities": [
+    "aviation_infrastructure",
+    "civil_engineering",
+    "construction_delivery"
+   ],
+   "capability_matches": [
+    {
+     "capability": "aviation_infrastructure",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 3,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "civil_engineering",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "construction_delivery",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Guyana",
+       "strength": 3,
+       "evidence": [
+        {
+         "source": "Guyana eProcure",
+         "url": "https://www.eprocure.gov.gy/",
          "grade": "primary"
         }
        ],

@@ -1,15 +1,15 @@
 # Opportunity Validation Pack — Guyana
 
-- Signal: `invest-guyana` · Dispatch: `DSP-20260821-001`
+- Signal: `invest-guyana` · Dispatch: `DSP-20260901-003`
 - Confidence: 87/100 (raw 87) · B - cross-source
 - Action readiness: high
 - Evidence freshness: refreshing · cycles since refresh: 0
 - Recommendation: **ADVANCE** — Calibrated confidence 87/100 with 3 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.
-- Last validated: 2026-08-21T16:48:46.166274+00:00
+- Last validated: 2026-09-01T13:28:26.528522+00:00
 
 ## Sector hypotheses
-- Oil & gas and offshore support services [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
-- Construction and infrastructure [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
+- Oil & gas and offshore support services [corroborated] — _Google News — Guyana: Norton calls on Government to build capacity to audit offshore oil activities - newssourcegy.com_
+- Construction and infrastructure [corroborated] — _Google News — Guyana: U.S. seeks role in Guyana’s infrastructure and economic development as oil boom accelerates - Caribbean National Weekly_
 - Logistics serving the energy supply chain [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
 - Agriculture and agro-processing [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
 - FDI-receiving sectors (composition not yet broken down) [macro_signal] — _World Bank: FDI net inflows moved +860.3% from 2023 to 2024_
@@ -20,22 +20,18 @@
 - Demerara Distillers Limited (DDL) — Regional rum and agro-processing exporter with established supply chains ([profile](https://www.ddldistillers.com/))
 
 ## Supporting projects & publications
-- [Productivity, Technology and Innovation Survey Guyana: 2013-2014](https://data.iadb.org/en/search?q=Productivity%2C%20Technology%20and%20Innovation%20) — IDB Open Data
-- [Guyana: Latin American Public Opinion Project - Victimization and Crime survey 2016](https://data.iadb.org/en/search?q=Guyana%3A%20Latin%20American%20Public%20Opinion%20Pr) — IDB Open Data
-- [Guyana Labor Force Survey: Third Quarter 2017](https://data.iadb.org/en/search?q=Guyana%20Labor%20Force%20Survey%3A%20Third%20Quarter) — IDB Open Data
-- [Guyana Labor Force Survey: Fourth Quarter 2017](https://data.iadb.org/en/search?q=Guyana%20Labor%20Force%20Survey%3A%20Fourth%20Quarte) — IDB Open Data
+- No matched projects this cycle.
 
 ## Procurement matches
-- [Supply and Delivery of: 805 Metric Ton Sulphate Of Ammonia](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
-- [Supply and Delivery of: 371 Metric Ton Muriate Of Potash](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
-- [Supply and Delivery of: 403 Metric Ton Urea](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
-- [Completion of Works at 58 Miles Primary School](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
-- [Construction of Elderly Assisted Living Facility, Enmore, Region No.4, Phase 1](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
-- [EOI for the Design and Supervision of the National Public Health Reference Laboratory Building](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
+- [Rehabilitation works for the Bartica 5 Miles Raw Water Intake Structure,  5 Miles, Bartica, Region No. 7](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
+- [Rehabilitation and Upgrade of Mahaica Bridge to Abary Bridge Road Corridor](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
+- [Enhancing the Quality of the Belize National Quality Infrastructure](https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure) — Caribbean Development Bank (regional)
+- [Supply Installation, Testing and Commissioning of Mechanical Equipment, Fire Pump System and Information and Communications Technology Systems](https://www.caribank.org/work-with-us/procurement/procurement-notices/supply-installation-testing-and-commissioning-mechanical-equipment-fire-pump-system-and-information) — Caribbean Development Bank (regional)
+- [The University of the West Indies Digital Transformation Project](https://www.caribank.org/work-with-us/procurement/procurement-notices/university-west-indies-digital-transformation-project-3) — Caribbean Development Bank (regional)
+- [Grenada Education Enhancement Project - Phase II](https://www.caribank.org/work-with-us/procurement/procurement-plans/grenada-education-enhancement-project-phase-ii) — Caribbean Development Bank (regional)
 
 ## Official country data
-- [Guyana Balance of Payments (2000 – 2025)](https://statistics.caricom.org/?country_data=guyana-balance-of-payments-2000-2024) — CARICOM Statistics
-- [Guyana: Monthly Consumer Price Index (CPI) by Expenditure Category](https://statistics.caricom.org/?country_data=guyana-monthly-consumer-price-index-cpi-by-expenditure-category) — CARICOM Statistics
+- No official country datasets matched.
 
 ## Relevant institutions & intro targets
 - Guyana Office for Investment (GO-Invest) — National investment promotion agency
@@ -45,7 +41,7 @@
 
 ## Unresolved questions
 - Which specific sectors are driving the movement in Guyana? No official sector-breakdown dataset matched this cycle.
-- Tender closes 2026-08-25 — confirm eligibility and bid requirements early.
+- Tender closes 2026-09-22 — confirm eligibility and bid requirements early.
 - Validate fit with registry-listed operators (Guyana Shore Base Inc. (GSBI), Gaico Construction Inc.) before outreach.
 - Validate that the underlying FDI movement is sustained, not a one-off transaction or statistical revision.
 

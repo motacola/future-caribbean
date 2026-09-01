@@ -1,40 +1,41 @@
 # Signal Fabric — Backtest Report
 
-**Generated:** 2026-09-01T05:00:25.107518+00:00
+**Generated:** 2026-09-01T13:28:26.754562+00:00
 **Cycles analyzed:** 8
-**Total dispatches:** 760
+**Total dispatches:** 750
 **Actionable responses:** 2
 **Overall response rate:** 0.3%
-**Avg confidence:** 79.7/100
+**Avg confidence:** 79.6/100
 
 ## Summary
 
-- **Total validation packs:** 42
-- **Avg confidence:** 79.7/100
+- **Total validation packs:** 44
+- **Avg confidence:** 79.6/100
 - **Response rate:** 0.3%
 
 ## Recommendation Distribution
 
-- **Advance:** 3 (7.1%)
-- **Hold:** 39 (92.9%)
+- **Advance:** 3 (6.8%)
+- **Hold:** 41 (93.2%)
 - **Reject:** 0 (0.0%)
 
 ## Confidence Calibration
 
-- **80-100:** 7 packs (16.7%)
-- **60-79:** 35 packs (83.3%)
+- **80-100:** 7 packs (15.9%)
+- **60-79:** 37 packs (84.1%)
 - **40-59:** 0 packs (0.0%)
 - **0-39:** 0 packs (0.0%)
 
 ## Evidence Category Coverage
 
-- **Sector Hypotheses:** 8 packs (19.0%)
-- **Supporting Projects:** 5 packs (11.9%)
-- **Procurement Matches:** 232 packs (552.4%)
-- **Operators:** 16 packs (38.1%)
+- **Sector Hypotheses:** 8 packs (18.2%)
+- **Supporting Projects:** 4 packs (9.1%)
+- **Procurement Matches:** 244 packs (554.5%)
+- **Operators:** 16 packs (36.4%)
 
 ## Signal Type Performance
 
+- **ccrif:** Advance 0, Hold 2, Reject 0 (n=2)
 - **dev:** Advance 0, Hold 1, Reject 0 (n=1)
 - **enhanced:** Advance 1, Hold 5, Reject 0 (n=6)
 - **food:** Advance 0, Hold 1, Reject 0 (n=1)
@@ -46,8 +47,8 @@
 
 | Cycle | Dispatches | Actionable | Response Rate |
 |-------|------------|------------|---------------|
-| 20260901 | 92 | 0 | 0.0% |
-| 20260831 | 92 | 2 | 2.2% |
+| 20260901 | 82 | 2 | 2.4% |
+| 20260831 | 92 | 0 | 0.0% |
 | 20260830 | 94 | 0 | 0.0% |
 | 20260829 | 94 | 0 | 0.0% |
 | 20260828 | 97 | 0 | 0.0% |
@@ -63,8 +64,8 @@
 
 ## Recommendation Calibration
 
-- **Advance rate:** 7.1%
-- **Hold rate:** 92.9%
+- **Advance rate:** 6.8%
+- **Hold rate:** 93.2%
 - **Reject rate:** 0.0%
 
 > **Calibration note:** Advance = high confidence + 2+ evidence categories. Hold = moderate. Reject = low.

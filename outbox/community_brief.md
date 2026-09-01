@@ -1,5 +1,5 @@
 🌴 **Caribbean Opportunity Brief** — what's moving this week
-Cycle 20260901 • 2026-09-01 05:00 UTC
+Cycle 20260901 • 2026-09-01 13:28 UTC
 
 Plain-language signals for builders, business owners, and community leaders.
 No jargon. Just what matters for your next move.
@@ -11,27 +11,27 @@ No jargon. Just what matters for your next move.
    🔴 High confidence — multiple sources agree
    📊 Single-source indicator — verify locally
 
-2. **Suriname**: money flowing in from multiple sources — verified opportunity — 206.0% movement
-   New money = new competition AND new customers. Map your advantage before they arrive. (holding steady)
-   🔴 High confidence — multiple sources agree
-   📊 Single-source indicator — verify locally
-
-3. **Guyana**: foreign investment spiking — worth watching — 860.3% movement
+2. **Guyana**: foreign investment spiking — worth watching — 860.3% movement
    Investment noise in your market. Could mean competitors coming or demand growing. (holding steady)
    🟡 Solid signal — some corroboration
    📊 Cross-source validation
 
-4. **Suriname**: foreign investment spiking — worth watching — 206.0% movement
-   Investment noise in your market. Could mean competitors coming or demand growing. (holding steady)
-   🟡 Solid signal — some corroboration
-   📊 Cross-source validation
-
-5. **Haiti**: ccrif payout
+3. **Turks and Caicos Islands**: ccrif payout
    Pay attention — something real is happening. (holding steady)
    🟡 Solid signal — some corroboration
    📊 Single-source indicator — verify locally
 
-6. **Barbados**: ccrif payout
+4. **Anguilla**: ccrif payout
+   Pay attention — something real is happening. (holding steady)
+   🟡 Solid signal — some corroboration
+   📊 Single-source indicator — verify locally
+
+5. **St. Kitts and Nevis**: ccrif payout
+   Pay attention — something real is happening. (holding steady)
+   🟡 Solid signal — some corroboration
+   📊 Single-source indicator — verify locally
+
+6. **Dominica**: ccrif payout
    Pay attention — something real is happening. (holding steady)
    🟡 Solid signal — some corroboration
    📊 Single-source indicator — verify locally
@@ -41,6 +41,7 @@ No jargon. Just what matters for your next move.
 **Why this week matters:**
 • Atlantic Hurricane Season — Operational risk for all Caribbean stakeholders. Monitoring NHC/NWS/NDBC for tropical development and maritime hazards.
 • Q3 Procurement Cycle — Late-summer procurement cycle. New project announcements common before fiscal year-end.
+• Regional Budget Planning — Caribbean governments and development banks finalize annual budgets. Infrastructure and investment signals carry extra w
 
 ---
 
