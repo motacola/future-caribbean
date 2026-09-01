@@ -1,6 +1,6 @@
 {
   "cycle_intro": "Lead: Guyana. 3 converging signal(s) across 3 source(s). Signals: \ud83d\udcbc Investment + \ud83c\udfd6\ufe0f Tourism + \ud83d\udc8e Investment.",
-  "generated_at": "2026-09-01 13:28 UTC",
+  "generated_at": "2026-09-01 19:22 UTC",
   "items": [
     {
       "band": "immediate",
@@ -23,6 +23,24 @@
     {
       "band": "immediate",
       "channel": "Email brief + Telegram",
+      "country": "Suriname",
+      "freshness": "new",
+      "kind": "enhanced_investment",
+      "metrics": {
+        "decision_changed": null,
+        "forwarded": null,
+        "opened": null,
+        "reply_count": null,
+        "sent": false
+      },
+      "persona": "investor/founder",
+      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
+      "score": 100,
+      "signal_id": "enhanced-invest-suriname"
+    },
+    {
+      "band": "immediate",
+      "channel": "Email brief + Telegram",
       "country": "CARICOM",
       "freshness": "sustained",
       "kind": "development_pipeline",
@@ -41,7 +59,7 @@
     {
       "band": "validation",
       "channel": "Telegram digest",
-      "country": "Turks and Caicos Islands",
+      "country": "Haiti",
       "freshness": "intensified",
       "kind": "ccrif_payout",
       "metrics": {
@@ -54,12 +72,12 @@
       "persona": "regional intelligence",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
       "score": 84,
-      "signal_id": "ccrif-payout-tc-tropical_cyclone-2008-01-01"
+      "signal_id": "ccrif-payout-ht-earthquake-2010-01-01"
     },
     {
       "band": "validation",
       "channel": "Telegram digest",
-      "country": "Anguilla",
+      "country": "Nicaragua",
       "freshness": "intensified",
       "kind": "ccrif_payout",
       "metrics": {
@@ -72,25 +90,7 @@
       "persona": "regional intelligence",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
       "score": 84,
-      "signal_id": "ccrif-payout-ai-tropical_cyclone-2010-01-01"
-    },
-    {
-      "band": "validation",
-      "channel": "Telegram digest",
-      "country": "St. Kitts and Nevis",
-      "freshness": "intensified",
-      "kind": "ccrif_payout",
-      "metrics": {
-        "decision_changed": null,
-        "forwarded": null,
-        "opened": null,
-        "reply_count": null,
-        "sent": false
-      },
-      "persona": "regional intelligence",
-      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 84,
-      "signal_id": "ccrif-payout-kn-tropical_cyclone-2017-01-01"
+      "signal_id": "ccrif-payout-ni-tropical_cyclone-2016-01-01"
     },
     {
       "band": "validation",
@@ -113,8 +113,26 @@
     {
       "band": "validation",
       "channel": "Telegram digest",
+      "country": "Turks and Caicos Islands",
+      "freshness": "weakened",
+      "kind": "ccrif_payout",
+      "metrics": {
+        "decision_changed": null,
+        "forwarded": null,
+        "opened": null,
+        "reply_count": null,
+        "sent": false
+      },
+      "persona": "regional intelligence",
+      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
+      "score": 74,
+      "signal_id": "ccrif-payout-tc-tropical_cyclone-2008-01-01"
+    },
+    {
+      "band": "validation",
+      "channel": "Telegram digest",
       "country": "Eastern Caribbean Currency Union",
-      "freshness": "sustained",
+      "freshness": "weakened",
       "kind": "eccb_deposit_growth",
       "metrics": {
         "decision_changed": null,
@@ -125,7 +143,7 @@
       },
       "persona": "regional intelligence",
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 76,
+      "score": 70,
       "signal_id": "eccb-deposit-growth-eccu"
     },
     {
@@ -199,24 +217,6 @@
       "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
       "score": 47,
       "signal_id": "tourism-grenada"
-    },
-    {
-      "band": "validation",
-      "channel": "Email brief + Telegram",
-      "country": "Guyana",
-      "freshness": "sustained",
-      "kind": "investment_signal",
-      "metrics": {
-        "decision_changed": null,
-        "forwarded": null,
-        "opened": null,
-        "reply_count": null,
-        "sent": false
-      },
-      "persona": "investor/founder",
-      "prompt": "Did this change a decision, trigger a follow-up, or get forwarded?",
-      "score": 87,
-      "signal_id": "invest-guyana"
     }
   ],
   "purpose": "Feedback agent input queue for distribution performance and trust signals."

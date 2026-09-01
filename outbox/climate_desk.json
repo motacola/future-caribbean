@@ -2,34 +2,106 @@
   "instance": "climate",
   "instance_label": "Climate & Catastrophe Risk",
   "cycle_id": "20260901",
-  "generated_at": "2026-09-01T13:28:26.828301+00:00",
+  "generated_at": "2026-09-01T19:22:11.279699+00:00",
   "clusters": [
     {
-      "cluster_id": "CLIM-allclear",
-      "country_cluster": "Caribbean basin",
-      "signal_kind": "all_clear",
-      "title": "All clear \u2014 no active hazards this cycle",
-      "evidence": "No active NWS alerts in Caribbean zones. Current conditions: 6 buoys reporting; peak seas 1.5m; max wind 19 kt; no tropical development expected (NHC).",
-      "evidence_grade": "A - official sources",
-      "confidence_score": 70,
+      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.d",
+      "country_cluster": "North Central",
+      "signal_kind": "hazard_alert",
+      "title": "North Central: Special Weather Statement in effect (Moderate)",
+      "evidence": "NOAA NWS: Special Weather Statement issued September 1 at 2:59PM AST by NWS San Juan PR",
+      "evidence_grade": "B - official alert",
+      "confidence_score": 80,
       "freshness": "new",
-      "decision": "Routine monitoring \u2014 no action required",
+      "decision": "Hazard response and exposure assessment",
       "risk_flags": [],
       "personas": [
         {
           "persona": "Resilience Planner",
           "channel": "Telegram/SMS alert",
-          "action": "All clear across Caribbean zones \u2014 6 buoys reporting; peak seas 1.5m; max wind 19 kt; no tropical development expected (NHC). No action required; the engine keeps watching and will escalate the moment a threshold is crossed."
+          "action": "Active hazard alert \u2014 Special Weather Statement \u2014 Moderate (North Central). Pre-position resources and confirm evacuation/shelter readiness in the affected area now."
         },
         {
           "persona": "Insurer / Reinsurer",
           "channel": "Email + alert",
-          "action": "No active hazard exposure this cycle (6 buoys reporting; peak seas 1.5m; max wind 19 kt; no tropical development expected (NHC)). Baseline confirmed for parametric monitoring."
+          "action": "Exposure check \u2014 Special Weather Statement \u2014 Moderate (North Central). Flag policies in the affected zone and prepare parametric-trigger assessment."
+        }
+      ]
+    },
+    {
+      "cluster_id": "CLIM-marine-92586",
+      "country_cluster": "Caribbean marine zones",
+      "signal_kind": "maritime_hazard",
+      "title": "Marine hazard: \ud83c\udf43 Light wind at Western Caribbean (Cayman area): 2 kts",
+      "evidence": "NDBC buoy network: \ud83c\udf43 Light wind at Western Caribbean (Cayman area): 2 kts",
+      "evidence_grade": "B - sensor",
+      "confidence_score": 80,
+      "freshness": "new",
+      "decision": "Marine operations and coastal risk",
+      "risk_flags": [],
+      "personas": [
+        {
+          "persona": "Operations/Resilience",
+          "channel": "Telegram/SMS alert",
+          "action": "Marine hazard \u2014 \ud83c\udf43 Light wind at Western Caribbean (Cayman area): 2 kts. Advise vessels and coastal operations; delay exposed activity until conditions ease."
+        },
+        {
+          "persona": "Resilience Planner",
+          "channel": "Telegram/SMS alert",
+          "action": "Marine conditions deteriorating \u2014 \ud83c\udf43 Light wind at Western Caribbean (Cayman area): 2 kts. Monitor for escalation toward small-craft / coastal-flood thresholds."
+        }
+      ]
+    },
+    {
+      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.7",
+      "country_cluster": "Anasco, PR",
+      "signal_kind": "hazard_alert",
+      "title": "Anasco, PR: Flood Advisory in effect (Minor)",
+      "evidence": "NOAA NWS: Flood Advisory issued September 1 at 2:19PM AST until September 1 at 4:15PM AST by NWS San Juan PR",
+      "evidence_grade": "C - advisory",
+      "confidence_score": 60,
+      "freshness": "new",
+      "decision": "Hazard response and exposure assessment",
+      "risk_flags": [],
+      "personas": [
+        {
+          "persona": "Resilience Planner",
+          "channel": "Telegram/SMS alert",
+          "action": "Active hazard alert \u2014 Flood Advisory \u2014 Minor (Anasco, PR). Pre-position resources and confirm evacuation/shelter readiness in the affected area now."
+        },
+        {
+          "persona": "Insurer / Reinsurer",
+          "channel": "Email + alert",
+          "action": "Exposure check \u2014 Flood Advisory \u2014 Minor (Anasco, PR). Flag policies in the affected zone and prepare parametric-trigger assessment."
+        }
+      ]
+    },
+    {
+      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.f",
+      "country_cluster": "Aguada, PR",
+      "signal_kind": "hazard_alert",
+      "title": "Aguada, PR: Flood Advisory in effect (Minor)",
+      "evidence": "NOAA NWS: Flood Advisory issued September 1 at 2:01PM AST until September 1 at 5:00PM AST by NWS San Juan PR",
+      "evidence_grade": "C - advisory",
+      "confidence_score": 60,
+      "freshness": "new",
+      "decision": "Hazard response and exposure assessment",
+      "risk_flags": [],
+      "personas": [
+        {
+          "persona": "Resilience Planner",
+          "channel": "Telegram/SMS alert",
+          "action": "Active hazard alert \u2014 Flood Advisory \u2014 Minor (Aguada, PR). Pre-position resources and confirm evacuation/shelter readiness in the affected area now."
+        },
+        {
+          "persona": "Insurer / Reinsurer",
+          "channel": "Email + alert",
+          "action": "Exposure check \u2014 Flood Advisory \u2014 Minor (Aguada, PR). Flag policies in the affected zone and prepare parametric-trigger assessment."
         }
       ]
     }
   ],
-  "dispatch_count": 2,
+  "dispatch_count": 8,
   "sources": [
     "NOAA NWS",
     "NDBC buoys",

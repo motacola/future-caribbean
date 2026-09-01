@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01T13:28:26.528522+00:00",
+  "generated_at": "2026-09-01T19:22:10.922385+00:00",
   "packs": [
     {
       "signal_id": "enhanced-invest-guyana",
@@ -9,6 +9,13 @@
       "confidence_score": 100
     },
     {
+      "signal_id": "enhanced-invest-suriname",
+      "file": "enhanced-invest-suriname.json",
+      "country": "Suriname",
+      "recommendation": "hold",
+      "confidence_score": 68
+    },
+    {
       "signal_id": "dev-pipeline-regional",
       "file": "dev-pipeline-regional.json",
       "country": "CARICOM",
@@ -16,23 +23,16 @@
       "confidence_score": 78
     },
     {
-      "signal_id": "invest-guyana",
-      "file": "invest-guyana.json",
-      "country": "Guyana",
-      "recommendation": "advance",
-      "confidence_score": 87
-    },
-    {
-      "signal_id": "ccrif-payout-tc-tropical_cyclone-2008-01-01",
-      "file": "ccrif-payout-tc-tropical_cyclone-2008-01-01.json",
-      "country": "Turks and Caicos Islands",
+      "signal_id": "regional-investment_signal-20260901",
+      "file": "regional-investment_signal-20260901.json",
+      "country": "Caribwide",
       "recommendation": "hold",
       "confidence_score": 78
     },
     {
-      "signal_id": "ccrif-payout-ai-tropical_cyclone-2010-01-01",
-      "file": "ccrif-payout-ai-tropical_cyclone-2010-01-01.json",
-      "country": "Anguilla",
+      "signal_id": "regional-enhanced_investment-20260901",
+      "file": "regional-enhanced_investment-20260901.json",
+      "country": "Caribwide",
       "recommendation": "hold",
       "confidence_score": 78
     }

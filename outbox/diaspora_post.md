@@ -7,9 +7,11 @@ Lead: Guyana. 3 converging signal(s) across 3 source(s). Signals: 💼 Investmen
 
 ★ **Guyana**: +860.3% capital surge on a single official source — market entry window open
 
+• **Suriname**: +206.0% investment movement, one source — needs corroboration
+
 • **Barbados**: +34.8% FDI momentum validated — cross-reference before deploying
 
 🏗️ CARICOM: 9 active procurements — bidding window open
 
 Generated from public regional data, ranked for decision value.
-Generated: 2026-09-01 13:28 UTC
+Generated: 2026-09-01 19:22 UTC

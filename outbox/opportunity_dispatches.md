@@ -1,7 +1,7 @@
 # Caribbean Opportunity Dispatch — Cycle 20260901
 
-Generated: 2026-09-01 13:28 UTC
-Total dispatches: 82
+Generated: 2026-09-01 19:22 UTC
+Total dispatches: 92
 
 ## ✅ Delivered Dispatches
 
@@ -9,7 +9,7 @@ Total dispatches: 82
    To: Diaspora Investor • Via: Email brief + Telegram
    📤 Feedback: forwarded
    Why this persona: Multi-source validation reduces screening risk — capital follows verified signals
-   Action: Investigate Guyana as a capital deployment target this cycle. Multi-source validation (860.3% change) confirms directional signal — next step is operator...
+   Action: Investigate Guyana as a capital deployment target this cycle. One official source shows the movement (860.3% change) — corroborate it before acting, then move...
 
 **Guyana: +860.3% capital surge on a single official source — market entry window open**
    To: Ecosystem Builder • Via: Telegram
@@ -22,6 +22,24 @@ Total dispatches: 82
    — Feedback: ignored
    Why this persona: Multi-source investment lift indicates growing market that may support new entry or expansion
    Action: Assess competitive positioning in Guyana. FDI movement (860.3% change) signals growing market or incoming competition — evaluate local advantage before new...
+
+**Suriname: +206.0% investment movement, one source — needs corroboration**
+   To: Diaspora Investor • Via: Email brief + Telegram
+   — Feedback: ignored
+   Why this persona: Multi-source validation reduces screening risk — capital follows verified signals
+   Action: Investigate Suriname as a capital deployment target this cycle. One official source shows the movement (206.0% change) — corroborate it before acting, then...
+
+**Suriname: +206.0% investment movement, one source — needs corroboration**
+   To: Ecosystem Builder • Via: Telegram
+   — Feedback: ignored
+   Why this persona: Cross-country investment velocity signals where to focus ecosystem support and founder matching
+   Action: Route Suriname opportunity to relevant founders and investors in your network. Signal strength (206.0% change) makes this a high-priority introduction target.
+
+**Suriname: +206.0% investment movement, one source — needs corroboration**
+   To: Regional Founder/Operator • Via: Telegram
+   — Feedback: ignored
+   Why this persona: Multi-source investment lift indicates growing market that may support new entry or expansion
+   Action: Assess competitive positioning in Suriname. FDI movement (206.0% change) signals growing market or incoming competition — evaluate local advantage before new...
 
 **CARICOM: 9 active procurements — bidding window open**
    To: Regional Operator • Via: Telegram
@@ -41,58 +59,40 @@ Total dispatches: 82
    Why this persona: Procurement pipeline signals government and institutional spending direction — follow the money
    Action: Map CARICOM procurement pipeline against your capability. CDB/IDB projects (CDB active procurement notices: 9) create service and supply opportunities.
 
-**Guyana: FDI trending at +860.3% — screening trigger active**
+**Regional FDI snapshot: 3 countries with active capital movement**
    To: Diaspora Investor • Via: Email brief + Telegram
    — Feedback: ignored
    Why this persona: Single-source FDI movement is a screening trigger, not a deployment signal — start diligence
-   Action: Screen Guyana for investment readiness. FDI movement (860.3% change) is a screening trigger — cross-reference with sector conditions before deploying capital.
+   Action: Screen Caribwide for investment readiness. FDI movement (Guyana (860.3% change), Suriname (206.0% change), Barbados (34.8% change)) is a screening trigger —...
 
-**Guyana: FDI trending at +860.3% — screening trigger active**
+**Regional FDI snapshot: 3 countries with active capital movement**
    To: Regional Founder/Operator • Via: Telegram
    — Feedback: ignored
    Why this persona: FDI movement in your operating country signals competition or demand growth — assess positioning
-   Action: Assess competitive positioning in Guyana. FDI movement (860.3% change) signals growing market or incoming competition — evaluate local advantage before new...
+   Action: Assess competitive positioning in Caribwide. FDI movement (Guyana (860.3% change), Suriname (206.0% change), Barbados (34.8% change)) signals growing market...
 
-**Turks and Caicos Islands: signal detected**
+**Capital convergence: 3 Caribbean economies showing multi-source investment momentum**
    To: Diaspora Investor • Via: Email brief + Telegram
    — Feedback: ignored
-   Why this persona: CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
-   Action: Review Turks and Caicos Islands: signal detected. Validate locally before action.
+   Why this persona: Multi-source validation reduces screening risk — capital follows verified signals
+   Action: Investigate Caribwide as a capital deployment target this cycle. Multi-source validation (Guyana (860.3% change), Suriname (206.0% change), Barbados (34.8%...
 
-**Turks and Caicos Islands: signal detected**
-   To: Policy/Media • Via: Telegram digest
-   — Feedback: ignored
-   Why this persona: Parametric payout = quantified sovereign risk event = fiscal impact story
-   Action: Signal context for Turks and Caicos Islands: signal detected. Use this dispatch as a briefing input or narrative lead.
-
-**Turks and Caicos Islands: signal detected**
-   To: Operations/Resilience • Via: Telegram/SMS alert
-   — Feedback: ignored
-   Why this persona: Payout confirms hazard severity = operational recovery capital available
-   Action: Prepare operational response: Turks and Caicos Islands. Action window: 7 days. Evidence: signal detected
-
-**Turks and Caicos Islands: signal detected**
+**Capital convergence: 3 Caribbean economies showing multi-source investment momentum**
    To: Ecosystem Builder • Via: Telegram
    — Feedback: ignored
-   Why this persona: Payout triggers regional reconstruction = supply chain, logistics, construction pipeline
-   Action: Route Turks and Caicos Islands opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a high-priority...
+   Why this persona: Cross-country investment velocity signals where to focus ecosystem support and founder matching
+   Action: Route Caribwide opportunity to relevant founders and investors in your network. Signal strength (Guyana (860.3% change), Suriname (206.0% change), Barbados...
 
-**Anguilla: signal detected**
+**Capital convergence: 3 Caribbean economies showing multi-source investment momentum**
+   To: Regional Founder/Operator • Via: Telegram
+   — Feedback: ignored
+   Why this persona: Multi-source investment lift indicates growing market that may support new entry or expansion
+   Action: Assess competitive positioning in Caribwide. FDI movement (Guyana (860.3% change), Suriname (206.0% change), Barbados (34.8% change)) signals growing market...
+
+**Suriname: FDI trending at +206.0% — screening trigger active**
    To: Diaspora Investor • Via: Email brief + Telegram
    — Feedback: ignored
-   Why this persona: CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
-   Action: Review Anguilla: signal detected. Validate locally before action.
+   Why this persona: Single-source FDI movement is a screening trigger, not a deployment signal — start diligence
+   Action: Screen Suriname for investment readiness. FDI movement (206.0% change) is a screening trigger — cross-reference with sector conditions before deploying capital.
 
-**Anguilla: signal detected**
-   To: Policy/Media • Via: Telegram digest
-   — Feedback: ignored
-   Why this persona: Parametric payout = quantified sovereign risk event = fiscal impact story
-   Action: Signal context for Anguilla: signal detected. Use this dispatch as a briefing input or narrative lead.
-
-**Anguilla: signal detected**
-   To: Operations/Resilience • Via: Telegram/SMS alert
-   — Feedback: ignored
-   Why this persona: Payout confirms hazard severity = operational recovery capital available
-   Action: Prepare operational response: Anguilla. Action window: 7 days. Evidence: signal detected
-
-*...and 67 more delivered dispatches*
+*...and 77 more delivered dispatches*

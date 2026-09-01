@@ -1,6 +1,6 @@
 # Channel Dispatch Log — Cycle 20260901
 
-Generated: 2026-09-01 13:28 UTC
+Generated: 2026-09-01 19:22 UTC
 
 Per-channel routing plan for this cycle. Live send receipts are written to `outbox/live_send_log.md` after each delivery run.
 
@@ -12,61 +12,79 @@ Per-channel routing plan for this cycle. Live send receipts are written to `outb
 ## Email brief + Telegram
 
 - [✓] Guyana: +860.3% capital surge on a single official source — market entry window open
+- [✓] Suriname: +206.0% investment movement, one source — needs corroboration
+- [✓] Regional FDI snapshot: 3 countries with active capital movement
+- [✓] Capital convergence: 3 Caribbean economies showing multi-source investment momentum
+- [✓] Suriname: FDI trending at +206.0% — screening trigger active
 - [✓] Guyana: FDI trending at +860.3% — screening trigger active
+- [✓] Haiti: signal detected
+- [✓] Haiti: signal detected
+- [✓] Nicaragua: signal detected
+- [✓] Haiti: signal detected
+- [✓] Nicaragua: signal detected
+- [✓] Haiti: signal detected
+- [✓] Barbados: +34.8% FDI momentum validated — cross-reference before deploying
+- [✓] Barbados: signal detected
+- [✓] Barbados: signal detected
 - [✓] Turks and Caicos Islands: signal detected
 - [✓] Anguilla: signal detected
 - [✓] St. Kitts and Nevis: signal detected
 - [✓] Dominica: signal detected
 - [✓] St. Vincent & the Grenadines: signal detected
 - [✓] Grenada: signal detected
-- [✓] Jamaica: signal detected
-- [✓] Jamaica: signal detected
-- [✓] Barbados: +34.8% FDI momentum validated — cross-reference before deploying
-- [✓] Eastern Caribbean Currency Union: 4.6%
 - [✓] Barbados: FDI trending at +34.8% — screening trigger active
-- [✓] Barbados: signal detected
-- [✓] Barbados: signal detected
-- [✓] Nicaragua: signal detected
-- [✓] Nicaragua: signal detected
+- [✓] Eastern Caribbean Currency Union: 4.6%
+- [✓] Jamaica: signal detected
+- [✓] Jamaica: signal detected
 - [✓] St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended
-- [✓] Haiti: signal detected
-- [✓] Haiti: signal detected
-- [✓] Haiti: signal detected
-- [✓] Haiti: signal detected
-- **22 dispatches routed to Email brief + Telegram**
+- **26 dispatches routed to Email brief + Telegram**
 
 ## Telegram
 
 - [✓] Guyana: +860.3% capital surge on a single official source — market entry window open
 - [✓] Guyana: +860.3% capital surge on a single official source — market entry window open
+- [✓] Suriname: +206.0% investment movement, one source — needs corroboration
+- [✓] Suriname: +206.0% investment movement, one source — needs corroboration
 - [✓] CARICOM: 9 active procurements — bidding window open
 - [✓] CARICOM: 9 active procurements — bidding window open
+- [✓] Regional FDI snapshot: 3 countries with active capital movement
+- [✓] Capital convergence: 3 Caribbean economies showing multi-source investment momentum
+- [✓] Capital convergence: 3 Caribbean economies showing multi-source investment momentum
+- [✓] Suriname: FDI trending at +206.0% — screening trigger active
 - [✓] Guyana: FDI trending at +860.3% — screening trigger active
+- [✓] Haiti: signal detected
+- [✓] Haiti: signal detected
+- [✓] Nicaragua: signal detected
+- [✓] Haiti: signal detected
+- [✓] Nicaragua: signal detected
+- [✓] Haiti: signal detected
+- [✓] Barbados: +34.8% FDI momentum validated — cross-reference before deploying
+- [✓] Barbados: +34.8% FDI momentum validated — cross-reference before deploying
+- [✓] Barbados: signal detected
+- [✓] Barbados: signal detected
 - [✓] Turks and Caicos Islands: signal detected
 - [✓] Anguilla: signal detected
 - [✓] St. Kitts and Nevis: signal detected
 - [✓] Dominica: signal detected
 - [✓] St. Vincent & the Grenadines: signal detected
 - [✓] Grenada: signal detected
-- [✓] Jamaica: signal detected
-- [✓] Jamaica: signal detected
-- [✓] Barbados: +34.8% FDI momentum validated — cross-reference before deploying
-- [✓] Barbados: +34.8% FDI momentum validated — cross-reference before deploying
-- [✓] Eastern Caribbean Currency Union: 4.6%
-- [✓] Eastern Caribbean Currency Union: 4.6%
 - [✓] Barbados: FDI trending at +34.8% — screening trigger active
-- [✓] Barbados: signal detected
-- [✓] Barbados: signal detected
-- [✓] Nicaragua: signal detected
-- [✓] Nicaragua: signal detected
-- [✓] Haiti: signal detected
-- [✓] Haiti: signal detected
-- [✓] Haiti: signal detected
-- [✓] Haiti: signal detected
-- **26 dispatches routed to Telegram**
+- [✓] Eastern Caribbean Currency Union: 4.6%
+- [✓] Eastern Caribbean Currency Union: 4.6%
+- [✓] Jamaica: signal detected
+- [✓] Jamaica: signal detected
+- **32 dispatches routed to Telegram**
 
 ## Telegram digest
 
+- [✓] Haiti: signal detected
+- [✓] Haiti: signal detected
+- [✓] Nicaragua: signal detected
+- [✓] Haiti: signal detected
+- [✓] Nicaragua: signal detected
+- [✓] Haiti: signal detected
+- [✓] Barbados: signal detected
+- [✓] Barbados: signal detected
 - [✓] Turks and Caicos Islands: signal detected
 - [✓] Anguilla: signal detected
 - [✓] St. Kitts and Nevis: signal detected
@@ -75,19 +93,19 @@ Per-channel routing plan for this cycle. Live send receipts are written to `outb
 - [✓] Grenada: signal detected
 - [✓] Jamaica: signal detected
 - [✓] Jamaica: signal detected
-- [✓] Barbados: signal detected
-- [✓] Barbados: signal detected
-- [✓] Nicaragua: signal detected
-- [✓] Nicaragua: signal detected
 - [✓] St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended
-- [✓] Haiti: signal detected
-- [✓] Haiti: signal detected
-- [✓] Haiti: signal detected
-- [✓] Haiti: signal detected
 - **17 dispatches routed to Telegram digest**
 
 ## Telegram/SMS alert
 
+- [✓] Haiti: signal detected
+- [✓] Haiti: signal detected
+- [✓] Nicaragua: signal detected
+- [✓] Haiti: signal detected
+- [✓] Nicaragua: signal detected
+- [✓] Haiti: signal detected
+- [✓] Barbados: signal detected
+- [✓] Barbados: signal detected
 - [✓] Turks and Caicos Islands: signal detected
 - [✓] Anguilla: signal detected
 - [✓] St. Kitts and Nevis: signal detected
@@ -96,14 +114,6 @@ Per-channel routing plan for this cycle. Live send receipts are written to `outb
 - [✓] Grenada: signal detected
 - [✓] Jamaica: signal detected
 - [✓] Jamaica: signal detected
-- [✓] Barbados: signal detected
-- [✓] Barbados: signal detected
-- [✓] Nicaragua: signal detected
-- [✓] Nicaragua: signal detected
-- [✓] Haiti: signal detected
-- [✓] Haiti: signal detected
-- [✓] Haiti: signal detected
-- [✓] Haiti: signal detected
 - **16 dispatches routed to Telegram/SMS alert**
 
 ## Channel Notes
