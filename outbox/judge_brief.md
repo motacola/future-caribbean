@@ -1,6 +1,6 @@
 # Caribbean Opportunity Dispatch — Judge Brief
 
-Generated: 2026-09-01 22:33 UTC
+Generated: 2026-09-02 04:23 UTC
 
 ## What This Proves
 
@@ -23,12 +23,11 @@ Caribbean Opportunity Dispatch is the product. Caribbean Signal OS is the archit
 
 ## Supporting Decision Signals
 
-**1.** 🔴 **💎 Investment — Suriname** — weakened
+**1.** 🔴 **💎 Investment — Suriname** — sustained
    Narrative: Suriname: +206.0% investment movement, one source — needs corroboration
    Score: 96/100 | Grade: C - single-source
    Audience: investor/founder via Email brief + Telegram
    Decision: Immediate investigation. Suriname has multi-source investment validation (2 signals converging). Priority: assess market entry options, identify existing operators.
-   ⬇️ Weakened (-6 pts)
 
 **2.** 🔴 **🏗️ Pipeline — CARICOM** — sustained
    Narrative: CARICOM: 9 active procurements — bidding window open
@@ -36,38 +35,37 @@ Caribbean Opportunity Dispatch is the product. Caribbean Signal OS is the archit
    Audience: investor/founder via Email brief + Telegram
    Decision: Active procurement pipeline: CDB active procurement notices: 9. Priority: review CDB/IDB opportunities as lead list for project-based entry.
 
-**3.** 🟡 **ccrif_payout — Anguilla** — intensified
-   Narrative: Anguilla: signal detected
+**3.** 🟡 **ccrif_payout — Haiti** — intensified
+   Narrative: Haiti: signal detected
    Score: 84/100 | Grade: C - single-source
    Audience: regional intelligence via Telegram digest
-   Decision: Validation — Anguilla: ccrif_payout (signal detected). Validate locally.
-   ⬆️ Strengthened (+10 pts)
+   Decision: Validation — Haiti: ccrif_payout (signal detected). Validate locally.
+   ⬆️ Strengthened (+34 pts)
 
-**4.** 🟡 **ccrif_payout — St. Kitts and Nevis** — intensified
-   Narrative: St. Kitts and Nevis: signal detected
+**4.** 🟡 **ccrif_payout — Barbados** — intensified
+   Narrative: Barbados: signal detected
    Score: 84/100 | Grade: C - single-source
    Audience: regional intelligence via Telegram digest
-   Decision: Validation — St. Kitts and Nevis: ccrif_payout (signal detected). Validate locally.
-   ⬆️ Strengthened (+10 pts)
+   Decision: Validation — Barbados: ccrif_payout (signal detected). Validate locally.
+   ⬆️ Strengthened (+18 pts)
 
-**5.** 🟡 **eccb_deposit_growth — Eastern Caribbean Currency Union** — intensified
+**5.** 🟡 **eccb_deposit_growth — Eastern Caribbean Currency Union** — sustained
    Narrative: Eastern Caribbean Currency Union: 4.6%
-   Score: 76/100 | Grade: C - single-source
+   Score: 72/100 | Grade: C - single-source
    Audience: regional intelligence via Telegram digest
    Decision: Validation — Eastern Caribbean Currency Union: eccb_deposit_growth (4.6%). Validate locally.
-   ⬆️ Strengthened (+6 pts)
 
-**6.** 🟡 **💼 Investment — Barbados** — sustained
-   Narrative: Barbados: FDI trending at +34.8% — screening trigger active
-   Score: 75/100 | Grade: B - cross-source
-   Audience: investor/founder via Email brief + Telegram
-   Decision: Validation priority. Barbados FDI movement (34.8% change) signals opportunity. Cross-reference with sector data.
-
-**7.** 🟢 **⚠️ Vulnerability — St. Vincent and the Grenadines** — sustained
+**6.** 🟢 **⚠️ Vulnerability — St. Vincent and the Grenadines** — sustained
    Narrative: St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended
    Score: 60/100 | Grade: C - single-source
    Audience: policy/operator via Telegram digest
    Decision: Monitor. St. Vincent and the Grenadines showing economic stress (18.00%). Track next cycle. Escalates if additional stress indicators appear or existing ones worsen.
+
+**7.** ⚪ **🏖️ Tourism — Antigua and Barbuda** — sustained
+   Narrative: Antigua and Barbuda: GDP growth signals expanding tourist economy
+   Score: 47/100 | Grade: C - single-source
+   Audience: tourism operator via Telegram digest
+   Decision: Context. Antigua and Barbuda GDP data point for tourism sector awareness.
 
 ## Routing Rationale
 
@@ -137,7 +135,7 @@ Each signal is routed to specific personas based on signal kind and evidence lev
 
 ## Cycle Summary
 
-Lead: Guyana · 32 composite signal(s) · 8 intensified · 15 persistent
+Lead: Guyana · 32 composite signal(s) · 8 intensified · 17 persistent
 ## Judge Demo Path
 
 1. Run `bash run_pipeline.sh`.
