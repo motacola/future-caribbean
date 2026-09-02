@@ -5,10 +5,10 @@
 - Action readiness: high
 - Evidence freshness: refreshing · cycles since refresh: 0
 - Recommendation: **ADVANCE** — Calibrated confidence 100/100 with 3 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.
-- Last validated: 2026-09-02T12:44:29.106593+00:00
+- Last validated: 2026-09-02T19:22:10.260026+00:00
 
 ## Sector hypotheses
-- Oil & gas and offshore support services [corroborated] — _Google News — Guyana: Brazil, Guyana, and Argentina support forecast crude oil growth in 2026 - eia.gov_
+- Oil & gas and offshore support services [corroborated] — _Google News — Guyana: Brazil, Guyana, and Argentina support forecast crude oil growth in 2026 - U.S. Energy Information Administration (EIA) (.gov)_
 - Construction and infrastructure [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
 - Logistics serving the energy supply chain [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
 - Agriculture and agro-processing [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_

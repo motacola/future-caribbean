@@ -70,8 +70,9 @@
     "by_signal_kind": {
       "ccrif_payout": 32,
       "development_pipeline": 3,
+      "eccb_deposit_growth": 2,
       "enhanced_investment": 9,
-      "investment_signal": 6
+      "investment_signal": 4
     },
     "by_status": {
       "forwarded": 1,
@@ -80,7 +81,7 @@
     },
     "total_feedback": 50
   },
-  "generated_at": "2026-09-02T12:44:29.458564+00:00",
+  "generated_at": "2026-09-02T19:22:10.569795+00:00",
   "recommendation_calibration": {
     "advance_rate": 0.06521739130434782,
     "hold_rate": 0.9347826086956522,

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-02T12:44:29.021017+00:00",
+  "generated_at": "2026-09-02T19:22:10.182740+00:00",
   "engine": "deterministic",
   "registry_status": "pilot",
   "count": 26,
@@ -288,7 +288,7 @@
         "friction_penalty": 15
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 71/100",
+        "Trigger signal confidence: 75/100",
         "Matched 2 of 2 required capabilities across 2 regional nodes",
         "Registry evidence from 3 primary-source organisations"
       ],
@@ -2152,8 +2152,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-09-02T12:44:29.030043+00:00",
-          "updated_at": "2026-09-02T12:44:29.030043+00:00"
+          "created_at": "2026-09-02T19:22:10.189677+00:00",
+          "updated_at": "2026-09-02T19:22:10.189677+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00425:friction:logistics_validation",
@@ -2164,8 +2164,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-09-02T12:44:29.030043+00:00",
-          "updated_at": "2026-09-02T12:44:29.030043+00:00"
+          "created_at": "2026-09-02T19:22:10.189677+00:00",
+          "updated_at": "2026-09-02T19:22:10.189677+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00426:friction:eligibility_verification",
@@ -2176,8 +2176,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-09-02T12:44:29.030043+00:00",
-          "updated_at": "2026-09-02T12:44:29.030043+00:00"
+          "created_at": "2026-09-02T19:22:10.189677+00:00",
+          "updated_at": "2026-09-02T19:22:10.189677+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00426:friction:logistics_validation",
@@ -2188,8 +2188,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-09-02T12:44:29.030043+00:00",
-          "updated_at": "2026-09-02T12:44:29.030043+00:00"
+          "created_at": "2026-09-02T19:22:10.189677+00:00",
+          "updated_at": "2026-09-02T19:22:10.189677+00:00"
         }
       ],
       "operator_campaigns": [
@@ -2204,7 +2204,7 @@
             "unlock:project-guyana-proc-2026-00425:friction:eligibility_verification",
             "unlock:project-guyana-proc-2026-00426:friction:eligibility_verification"
           ],
-          "updated_at": "2026-09-02T12:44:29.030043+00:00"
+          "updated_at": "2026-09-02T19:22:10.189677+00:00"
         },
         {
           "slug": "campaign-logistics_validation-regional_operator-route-economics",
@@ -2217,7 +2217,7 @@
             "unlock:project-guyana-proc-2026-00425:friction:logistics_validation",
             "unlock:project-guyana-proc-2026-00426:friction:logistics_validation"
           ],
-          "updated_at": "2026-09-02T12:44:29.030043+00:00"
+          "updated_at": "2026-09-02T19:22:10.189677+00:00"
         }
       ]
     },
@@ -2408,7 +2408,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 74/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -2628,7 +2628,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 66/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 4 regional nodes",
         "Registry evidence from 5 primary-source organisations"
       ],
@@ -2848,7 +2848,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 66/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 4 regional nodes",
         "Registry evidence from 5 primary-source organisations"
       ],
@@ -3070,7 +3070,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 74/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -3292,7 +3292,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 74/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -3514,7 +3514,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 50/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -3736,7 +3736,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 50/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -3958,7 +3958,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 50/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -4180,7 +4180,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 50/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -4402,7 +4402,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 74/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -4624,7 +4624,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 66/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -4846,7 +4846,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 66/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -5068,7 +5068,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 74/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -5290,7 +5290,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 74/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -5728,7 +5728,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 66/100",
         "Matched 3 of 3 required capabilities across 4 regional nodes",
         "Registry evidence from 4 primary-source organisations"
       ],
@@ -5930,7 +5930,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 66/100",
         "Matched 3 of 3 required capabilities across 4 regional nodes",
         "Registry evidence from 4 primary-source organisations"
       ],
