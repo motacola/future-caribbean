@@ -5,7 +5,7 @@
 - Action readiness: medium (no dated country procurement or news corroboration)
 - Evidence freshness: stale · cycles since refresh: 30
 - Recommendation: **HOLD** — Calibrated confidence 78/100 with 0 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.
-- Last validated: 2026-09-02T04:23:55.988724+00:00
+- Last validated: 2026-09-02T12:44:29.106593+00:00
 
 ## Sector hypotheses
 - None identified this cycle

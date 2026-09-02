@@ -2,29 +2,29 @@
   "instance": "climate",
   "instance_label": "Climate & Catastrophe Risk",
   "cycle_id": "20260902",
-  "generated_at": "2026-09-02T04:23:56.423592+00:00",
+  "generated_at": "2026-09-02T12:44:29.558489+00:00",
   "clusters": [
     {
-      "cluster_id": "CLIM-allclear",
-      "country_cluster": "Caribbean basin",
-      "signal_kind": "all_clear",
-      "title": "All clear \u2014 no active hazards this cycle",
-      "evidence": "No active NWS alerts in Caribbean zones. Current conditions: 6 buoys reporting; peak seas 1.1m; max wind 14 kt; no tropical development expected (NHC).",
-      "evidence_grade": "A - official sources",
-      "confidence_score": 70,
+      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.2",
+      "country_cluster": "San Juan and Vicinity",
+      "signal_kind": "hazard_alert",
+      "title": "San Juan and Vicinity: Heat Advisory in effect (Moderate)",
+      "evidence": "NOAA NWS: Heat Advisory issued September 2 at 2:01AM AST until September 2 at 4:00PM AST by NWS San Juan PR",
+      "evidence_grade": "B - official alert",
+      "confidence_score": 80,
       "freshness": "new",
-      "decision": "Routine monitoring \u2014 no action required",
+      "decision": "Hazard response and exposure assessment",
       "risk_flags": [],
       "personas": [
         {
           "persona": "Resilience Planner",
           "channel": "Telegram/SMS alert",
-          "action": "All clear across Caribbean zones \u2014 6 buoys reporting; peak seas 1.1m; max wind 14 kt; no tropical development expected (NHC). No action required; the engine keeps watching and will escalate the moment a threshold is crossed."
+          "action": "Active hazard alert \u2014 Heat Advisory \u2014 Moderate (San Juan and Vicinity). Pre-position resources and confirm evacuation/shelter readiness in the affected area now."
         },
         {
           "persona": "Insurer / Reinsurer",
           "channel": "Email + alert",
-          "action": "No active hazard exposure this cycle (6 buoys reporting; peak seas 1.1m; max wind 14 kt; no tropical development expected (NHC)). Baseline confirmed for parametric monitoring."
+          "action": "Exposure check \u2014 Heat Advisory \u2014 Moderate (San Juan and Vicinity). Flag policies in the affected zone and prepare parametric-trigger assessment."
         }
       ]
     }

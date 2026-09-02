@@ -5,11 +5,11 @@
 - Action readiness: high
 - Evidence freshness: refreshing · cycles since refresh: 0
 - Recommendation: **ADVANCE** — Calibrated confidence 100/100 with 3 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.
-- Last validated: 2026-09-02T04:23:55.988724+00:00
+- Last validated: 2026-09-02T12:44:29.106593+00:00
 
 ## Sector hypotheses
-- Oil & gas and offshore support services [corroborated] — _Google News — Guyana: MODEC’s FPSO reaches Guyana as ExxonMobil’s fifth oil project nears start-up - Offshore-Energy.biz_
-- Construction and infrastructure [corroborated] — _Google News — Guyana: Chinese Embassy slams US State Department official's criticism of Chinese construction works in Guyana - newssourcegy.com_
+- Oil & gas and offshore support services [corroborated] — _Google News — Guyana: Brazil, Guyana, and Argentina support forecast crude oil growth in 2026 - eia.gov_
+- Construction and infrastructure [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
 - Logistics serving the energy supply chain [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
 - Agriculture and agro-processing [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
 - FDI-receiving sectors (composition not yet broken down) [macro_signal] — _World Bank: FDI net inflows moved +860.3% from 2023 to 2024_
