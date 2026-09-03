@@ -1,6 +1,6 @@
 # Why Now? Editorial Calendar Context
 
-Run date: 2026-09-02
+Run date: 2026-09-03
 
 🔴 **Atlantic Hurricane Season** — Operational risk for all Caribbean stakeholders. Monitoring NHC/NWS/NDBC for tropical development and maritime hazards.
    → Review contingency plans and ensure resilience routing is active
