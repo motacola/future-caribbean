@@ -7,16 +7,16 @@
   },
   "cycle_accuracy": [
     {
-      "actionable_responses": 0,
+      "actionable_responses": 2,
       "cycle_id": "20260903",
       "dispatches": 92,
-      "response_rate": 0.0
+      "response_rate": 0.021739130434782608
     },
     {
-      "actionable_responses": 2,
+      "actionable_responses": 0,
       "cycle_id": "20260902",
       "dispatches": 92,
-      "response_rate": 0.021739130434782608
+      "response_rate": 0.0
     },
     {
       "actionable_responses": 0,
@@ -70,9 +70,8 @@
     "by_signal_kind": {
       "ccrif_payout": 32,
       "development_pipeline": 3,
-      "eccb_deposit_growth": 2,
       "enhanced_investment": 9,
-      "investment_signal": 4
+      "investment_signal": 6
     },
     "by_status": {
       "forwarded": 1,
@@ -81,7 +80,7 @@
     },
     "total_feedback": 50
   },
-  "generated_at": "2026-09-03T04:18:34.039685+00:00",
+  "generated_at": "2026-09-03T12:48:12.800954+00:00",
   "recommendation_calibration": {
     "advance_rate": 0.0625,
     "hold_rate": 0.9375,
