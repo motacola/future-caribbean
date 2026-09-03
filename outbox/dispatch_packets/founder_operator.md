@@ -2,16 +2,16 @@
 
 **Decision job:** Competitive positioning and capability mapping
 **Delivery channel:** Telegram
-**Generated:** Sep 03, 2026 at 12:48 UTC
-**Dispatches in this packet:** 9
+**Generated:** Sep 03, 2026 at 19:17 UTC
+**Dispatches in this packet:** 5
 
 ---
 
-## Dispatches (9)
+## Dispatches (5)
 
 ### 1. Guyana: +860.3% capital surge on a single official source — market entry window open
 
-**ID:** `DSP-20260903-019` | **Country:** Guyana | **Confidence:** 🔴 Immediate | 100/100 | C - single-source
+**ID:** `DSP-20260903-012` | **Country:** Guyana | **Confidence:** 🔴 Immediate | 100/100 | C - single-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -25,7 +25,7 @@
 
 ### 2. Suriname: +206.0% investment movement, one source — needs corroboration
 
-**ID:** `DSP-20260903-022` | **Country:** Suriname | **Confidence:** 🔴 Immediate | 96/100 | C - single-source
+**ID:** `DSP-20260903-015` | **Country:** Suriname | **Confidence:** 🔴 Immediate | 96/100 | C - single-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -39,11 +39,11 @@
 
 ### 3. CARICOM: 9 active procurements — bidding window open
 
-**ID:** `DSP-20260903-013` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 95/100 | B - cross-source
+**ID:** `DSP-20260903-009` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 95/100 | B - cross-source
 **Channel:** Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** CDB active procurement notices: 9; • Enhancing the Quality of the Belize National Quality Infrastructure; • Supply Installation, Testing and Commissioning of Mechanical Equipment, Fire Pump System and Information and Communications Technology Systems; • The University of the West Indies Digital Transformation Project
+**Evidence:** CDB active procurement notices: 9; • Enhancing the Quality of the Belize National Quality Infrastructure; • Call For Application – Scholarship Opportunity: International Master In Public Procurement Management at The University of Rome Tor Vergata (2026/2027 Academic Year); • Supply Installation, Testing and Commissioning of Mechanical Equipment, Fire Pump System and Information and Communications Technology Systems
 **Detail:** CDB active procurement notices: 9
 **Grade:** B - cross-source
 
@@ -51,37 +51,9 @@
 **Decision to influence:** Which procurement or project opportunity to pursue
 **Routing rationale:** Procurement pipeline signals government and institutional spending direction — follow the money
 
-### 4. Regional FDI snapshot: 3 countries with active capital movement
+### 4. Guyana: FDI trending at +860.3% — screening trigger active
 
-**ID:** `DSP-20260903-002` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
-**Channel:** Telegram | **Window:** 14 days | **Freshness:** new
-**Feedback status:** ignored
-
-**Evidence:** Multi-country investment signal validated across 3 countries. Top magnitudes: Guyana (860.3% change), Suriname (206.0% change), Barbados (34.8% change).
-**Detail:** Guyana (860.3% change), Suriname (206.0% change), Barbados (34.8% change)
-**Grade:** B - cross-source
-
-**Recommended action:** Assess competitive positioning in Caribwide. FDI movement (Guyana (860.3% change), Suriname (206.0% change), Barbados (34.8% change)) signals growing market or incoming competition — evaluate local advantage before new entrants arrive.
-**Decision to influence:** Which country-sector pair to validate for investment readiness
-**Routing rationale:** FDI movement in your operating country signals competition or demand growth — assess positioning
-
-### 5. Capital convergence: 3 Caribbean economies showing multi-source investment momentum
-
-**ID:** `DSP-20260903-016` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
-**Channel:** Telegram | **Window:** 14 days | **Freshness:** new
-**Feedback status:** ignored
-
-**Evidence:** Multi-country enhanced investment validated across 3 countries. Top magnitudes: Guyana (860.3% change), Suriname (206.0% change), Barbados (34.8% change).
-**Detail:** Guyana (860.3% change), Suriname (206.0% change), Barbados (34.8% change)
-**Grade:** B - cross-source
-
-**Recommended action:** Assess competitive positioning in Caribwide. FDI movement (Guyana (860.3% change), Suriname (206.0% change), Barbados (34.8% change)) signals growing market or incoming competition — evaluate local advantage before new entrants arrive.
-**Decision to influence:** Which verified opportunity to investigate for capital deployment or partnership entry
-**Routing rationale:** Multi-source investment lift indicates growing market that may support new entry or expansion
-
-### 6. Guyana: FDI trending at +860.3% — screening trigger active
-
-**ID:** `DSP-20260903-004` | **Country:** Guyana | **Confidence:** 🟡 Validation | 87/100 | B - cross-source
+**ID:** `DSP-20260903-002` | **Country:** Guyana | **Confidence:** 🟡 Validation | 87/100 | B - cross-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -93,9 +65,9 @@
 **Decision to influence:** Which country-sector pair to validate for investment readiness
 **Routing rationale:** FDI movement in your operating country signals competition or demand growth — assess positioning
 
-### 7. Suriname: FDI trending at +206.0% — screening trigger active
+### 5. Suriname: FDI trending at +206.0% — screening trigger active
 
-**ID:** `DSP-20260903-006` | **Country:** Suriname | **Confidence:** 🟡 Validation | 84/100 | B - cross-source
+**ID:** `DSP-20260903-004` | **Country:** Suriname | **Confidence:** 🟡 Validation | 84/100 | B - cross-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -104,34 +76,6 @@
 **Grade:** B - cross-source
 
 **Recommended action:** Assess competitive positioning in Suriname. FDI movement (206.0% change) signals growing market or incoming competition — evaluate local advantage before new entrants arrive.
-**Decision to influence:** Which country-sector pair to validate for investment readiness
-**Routing rationale:** FDI movement in your operating country signals competition or demand growth — assess positioning
-
-### 8. Barbados: +34.8% FDI momentum validated — cross-reference before deploying
-
-**ID:** `DSP-20260903-025` | **Country:** Barbados | **Confidence:** 🟡 Validation | 83/100 | C - single-source
-**Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** WB FDI surge detected: Barbados; CDB procurement/evaluation activity (regional context, not country confirmation); Confidence: 1 country-specific source confirmed · 1 regional dataset(s) available as context; FDI change: 34.8%
-**Detail:** 34.8% change
-**Grade:** C - single-source
-
-**Recommended action:** Assess competitive positioning in Barbados. FDI movement (34.8% change) signals growing market or incoming competition — evaluate local advantage before new entrants arrive.
-**Decision to influence:** Which verified opportunity to investigate for capital deployment or partnership entry
-**Routing rationale:** Multi-source investment lift indicates growing market that may support new entry or expansion
-
-### 9. Barbados: FDI trending at +34.8% — screening trigger active
-
-**ID:** `DSP-20260903-008` | **Country:** Barbados | **Confidence:** 🟡 Validation | 71/100 | B - cross-source
-**Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Barbados: Foreign direct investment net inflows current USD moved up 34.8% from 2023 to 2024.
-**Detail:** 34.8% change
-**Grade:** B - cross-source
-
-**Recommended action:** Assess competitive positioning in Barbados. FDI movement (34.8% change) signals growing market or incoming competition — evaluate local advantage before new entrants arrive.
 **Decision to influence:** Which country-sector pair to validate for investment readiness
 **Routing rationale:** FDI movement in your operating country signals competition or demand growth — assess positioning
 

@@ -1,6 +1,6 @@
 {
   "signal_id": "enhanced-invest-guyana",
-  "dispatch_id": "DSP-20260903-017",
+  "dispatch_id": "DSP-20260903-010",
   "country": "Guyana",
   "signal_title": "Guyana: +860.3% capital surge on a single official source — market entry window open",
   "confidence_score": 100,
@@ -10,15 +10,14 @@
   "sector_hypotheses": [
     {
       "sector": "Oil & gas and offshore support services",
-      "basis": "Google News — Guyana: Exxon looks to add to Guyana exploration program - Oil & Gas Journal",
+      "basis": "Google News — Guyana: Africa’s top oil producer targets $50 billion offshore comeback as it battles Namibia and Guyana for global energy investment - Business Insider Africa",
       "status": "corroborated",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNMGRRdDlCc3FrOThUa1lpWXVWLWxSRUlRMHp1UjZZUEtGRXA4NTAxcWpoM3ZiRm5Xcm40aGNYUmZvMlhCS3hGNWw3a01CaGdnQ2NxWUxod3VjUWNXckFuU0JIblMwUFpSc2Z5ellELXpnTGZmdkJqTE92bm5FNXFCM2RRMDFibTFwOUhGdnVJRVFPczBSMXRaRmt0dmlRUmY4MEgwcHJETDdqOWR5bEE?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOQU9qLVdKUnp6YnpQaUkyaFVOTUxIVkh0Y1o3bVlFLUVWTWotcGhmcUU1N0pEZEF4dkk4RDQtamdndUJQTEE1LUxhNEZQd185Y0VmeEpLTjZPUTlSVHREbHpRYmRsajNIWUpQdlQ2LU5CQVZsbWdGQzJaanlKMXRldktyZ3doc01PcDgyUFZ0WThUSnNpWnZLN2h4Szgxbi1JV1pZdE1jV3NjaEl1em9hRUFXVFhBdlhMZEZYM2NUaGdtbldMNExmTVhPbUVNVENBSFRabQ?oc=5"
     },
     {
       "sector": "Construction and infrastructure",
-      "basis": "Google News — Guyana: U.S. seeks role in Guyana’s infrastructure and economic development as oil boom accelerates - Caribbean National Weekly",
-      "status": "corroborated",
-      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQT1gzUE1UT21XNDVVaUN1VElUdlRFS0xNRlc0Y1R3YUozc2Y1TDRwbFJhR2t2TjhfOGdzN1ctckstcUVWUFZTdVM5bnlTRGdrejNQNUFPWE9IbUx3cEZ0SHFJRVpwWGdabzVLbkRnVm9vUG9aU0pPMW1jN1U2Y0RjaTJDc24yS3ROVC1QSXFLa0taeWRaa1FVNkU4eTlHN2k2YTlHYUNSNDhQRWg0REJxVjVTcGNMbkRJb1EzX0dBektheWFueTgwUlpBLVptWVk?oc=5"
+      "basis": "Analyst prior from widely reported sector drivers — requires local confirmation",
+      "status": "unconfirmed"
     },
     {
       "sector": "Logistics serving the energy supply chain",
@@ -59,6 +58,12 @@
       "match": "regional"
     },
     {
+      "title": "Call For Application – Scholarship Opportunity: International Master In Public Procurement Management at The University of Rome Tor Vergata (2026/2027 Academic Year)",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/call-application-scholarship-opportunity-international-master-public-procurement-management-2",
+      "match": "regional"
+    },
+    {
       "title": "Supply Installation, Testing and Commissioning of Mechanical Equipment, Fire Pump System and Information and Communications Technology Systems",
       "source": "Caribbean Development Bank",
       "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/supply-installation-testing-and-commissioning-mechanical-equipment-fire-pump-system-and-information",
@@ -68,12 +73,6 @@
       "title": "The University of the West Indies Digital Transformation Project",
       "source": "Caribbean Development Bank",
       "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/university-west-indies-digital-transformation-project-3",
-      "match": "regional"
-    },
-    {
-      "title": "Grenada Education Enhancement Project - Phase II",
-      "source": "Caribbean Development Bank",
-      "url": "https://www.caribank.org/work-with-us/procurement/procurement-plans/grenada-education-enhancement-project-phase-ii",
       "match": "regional"
     }
   ],
@@ -121,12 +120,11 @@
   ],
   "source_links": [
     "https://eprocure.gov.gy/",
-    "https://news.google.com/rss/articles/CBMirgFBVV95cUxNMGRRdDlCc3FrOThUa1lpWXVWLWxSRUlRMHp1UjZZUEtGRXA4NTAxcWpoM3ZiRm5Xcm40aGNYUmZvMlhCS3hGNWw3a01CaGdnQ2NxWUxod3VjUWNXckFuU0JIblMwUFpSc2Z5ellELXpnTGZmdkJqTE92bm5FNXFCM2RRMDFibTFwOUhGdnVJRVFPczBSMXRaRmt0dmlRUmY4MEgwcHJETDdqOWR5bEE?oc=5",
-    "https://news.google.com/rss/articles/CBMizwFBVV95cUxQT1gzUE1UT21XNDVVaUN1VElUdlRFS0xNRlc0Y1R3YUozc2Y1TDRwbFJhR2t2TjhfOGdzN1ctckstcUVWUFZTdVM5bnlTRGdrejNQNUFPWE9IbUx3cEZ0SHFJRVpwWGdabzVLbkRnVm9vUG9aU0pPMW1jN1U2Y0RjaTJDc24yS3ROVC1QSXFLa0taeWRaa1FVNkU4eTlHN2k2YTlHYUNSNDhQRWg0REJxVjVTcGNMbkRJb1EzX0dBektheWFueTgwUlpBLVptWVk?oc=5",
+    "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOQU9qLVdKUnp6YnpQaUkyaFVOTUxIVkh0Y1o3bVlFLUVWTWotcGhmcUU1N0pEZEF4dkk4RDQtamdndUJQTEE1LUxhNEZQd185Y0VmeEpLTjZPUTlSVHREbHpRYmRsajNIWUpQdlQ2LU5CQVZsbWdGQzJaanlKMXRldktyZ3doc01PcDgyUFZ0WThUSnNpWnZLN2h4Szgxbi1JV1pZdE1jV3NjaEl1em9hRUFXVFhBdlhMZEZYM2NUaGdtbldMNExmTVhPbUVNVENBSFRabQ?oc=5",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/call-application-scholarship-opportunity-international-master-public-procurement-management-2",
     "https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure",
     "https://www.caribank.org/work-with-us/procurement/procurement-notices/supply-installation-testing-and-commissioning-mechanical-equipment-fire-pump-system-and-information",
-    "https://www.caribank.org/work-with-us/procurement/procurement-notices/university-west-indies-digital-transformation-project-3",
-    "https://www.caribank.org/work-with-us/procurement/procurement-plans/grenada-education-enhancement-project-phase-ii"
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/university-west-indies-digital-transformation-project-3"
   ],
   "unresolved_questions": [
     "Which specific sectors are driving the movement in Guyana? No official sector-breakdown dataset matched this cycle.",
@@ -146,9 +144,9 @@
   ],
   "advance_or_reject_recommendation": "advance",
   "recommendation_reason": "Calibrated confidence 100/100 with 3 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.",
-  "last_validated_at": "2026-09-03T12:48:12.492576+00:00",
+  "last_validated_at": "2026-09-03T19:17:01.137450+00:00",
   "coordination_path": null,
-  "evidence_fingerprint": "475773f2bf369e63",
+  "evidence_fingerprint": "99b787d0f0e1141b",
   "cycles_since_refresh": 0,
   "evidence_freshness": "refreshing"
 }

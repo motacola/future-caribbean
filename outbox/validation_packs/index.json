@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-03T12:48:12.492576+00:00",
+  "generated_at": "2026-09-03T19:17:01.137450+00:00",
   "packs": [
     {
       "signal_id": "enhanced-invest-guyana",
@@ -23,18 +23,18 @@
       "confidence_score": 78
     },
     {
-      "signal_id": "regional-investment_signal-20260903",
-      "file": "regional-investment_signal-20260903.json",
-      "country": "Caribwide",
-      "recommendation": "hold",
-      "confidence_score": 78
+      "signal_id": "invest-guyana",
+      "file": "invest-guyana.json",
+      "country": "Guyana",
+      "recommendation": "advance",
+      "confidence_score": 87
     },
     {
-      "signal_id": "regional-enhanced_investment-20260903",
-      "file": "regional-enhanced_investment-20260903.json",
-      "country": "Caribwide",
+      "signal_id": "invest-suriname",
+      "file": "invest-suriname.json",
+      "country": "Suriname",
       "recommendation": "hold",
-      "confidence_score": 78
+      "confidence_score": 68
     }
   ]
 }

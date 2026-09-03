@@ -1,7 +1,7 @@
 # Opportunity Validation Pack — Suriname
 
-- Signal: `enhanced-invest-suriname` · Dispatch: `DSP-20260903-013`
-- Confidence: 68/100 (raw 96) · C - single-source
+- Signal: `invest-suriname` · Dispatch: `DSP-20260903-003`
+- Confidence: 68/100 (raw 84) · B - cross-source
 - Action readiness: medium (annual macro signal only)
 - Evidence freshness: refreshing · cycles since refresh: 0
 - Recommendation: **HOLD** — Calibrated confidence 68/100 with 0 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.

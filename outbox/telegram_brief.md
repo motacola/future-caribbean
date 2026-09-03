@@ -1,11 +1,11 @@
 🌴 *Signal Fabric — Decision Routes Ready*
-Cycle: `20260903` · 2026-09-03 12:48 UTC
+Cycle: `20260903` · 2026-09-03 19:17 UTC
 
 *What this is:*
 A Dispatch Desk notification. The product is the decision route: signal → persona → action → feedback. Telegram is only the delivery channel.
 
 *Open Track coordination chain this cycle*
-Data → 27 signal clusters → 92 persona routes → 7 personas → action/capital decisions
+Data → 23 signal clusters → 82 persona routes → 7 personas → action/capital decisions
 
 *Priority decision clusters*
 1) *Guyana: +860.3% capital surge on a single official source — market entry window…*
@@ -14,7 +14,7 @@ Data → 27 signal clusters → 92 persona routes → 7 personas → action/capi
    Confidence: 100/100 · sustained
    → Regional Founder/Operator: Assess competitive positioning in Guyana. FDI movement (860.3% change)…
    → Ecosystem Builder: Route Guyana opportunity to relevant founders and investors in your network…
-   → Diaspora Investor: Investigate Guyana as a capital deployment target this cycle. One official…
+   → Diaspora Investor: Investigate Guyana as a capital deployment target this cycle. Multi-source…
    Loop: Feedback this cycle: 2 ignored, 1 forwarded.
 
 2) *Suriname: +206.0% investment movement, one source — needs corroboration*
@@ -23,7 +23,7 @@ Data → 27 signal clusters → 92 persona routes → 7 personas → action/capi
    Confidence: 96/100 · sustained
    → Regional Founder/Operator: Assess competitive positioning in Suriname. FDI movement (206.0% change)…
    → Ecosystem Builder: Route Suriname opportunity to relevant founders and investors in your…
-   → Diaspora Investor: Investigate Suriname as a capital deployment target this cycle. One official…
+   → Diaspora Investor: Investigate Suriname as a capital deployment target this cycle. Multi-source…
    Loop: Feedback this cycle: 3 ignored.
 
 3) *CARICOM: 9 active procurements — bidding window open*
@@ -36,10 +36,10 @@ Data → 27 signal clusters → 92 persona routes → 7 personas → action/capi
    Loop: Feedback this cycle: 2 ignored, 1 replied.
 
 *Feedback-adjusted priority*
-• Haiti ccrif payout downranked -34
-• Nicaragua ccrif payout downranked -18
-• Barbados ccrif payout downranked -18
-• Suriname enhanced investment downranked -6
+• Jamaica ccrif payout downranked -18
+• Turks and Caicos Islands ccrif payout downranked -10
+• St. Vincent & the Grenadines ccrif payout downranked -10
+• St. Kitts and Nevis ccrif payout downranked -10
 
 *Open the product surface*
 • `outbox/dispatch_desk.md` — judge/user-facing decision desk
