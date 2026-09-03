@@ -9,8 +9,8 @@
     {
       "actionable_responses": 2,
       "cycle_id": "20260903",
-      "dispatches": 82,
-      "response_rate": 0.024390243902439025
+      "dispatches": 92,
+      "response_rate": 0.021739130434782608
     },
     {
       "actionable_responses": 0,
@@ -68,10 +68,9 @@
       "unknown": 50
     },
     "by_signal_kind": {
-      "ccrif_payout": 32,
+      "ccrif_payout": 37,
       "development_pipeline": 3,
-      "eccb_deposit_growth": 2,
-      "enhanced_investment": 9,
+      "enhanced_investment": 6,
       "investment_signal": 4
     },
     "by_status": {
@@ -81,7 +80,7 @@
     },
     "total_feedback": 50
   },
-  "generated_at": "2026-09-03T19:17:01.382874+00:00",
+  "generated_at": "2026-09-03T22:31:19.363296+00:00",
   "recommendation_calibration": {
     "advance_rate": 0.061224489795918366,
     "hold_rate": 0.9387755102040817,
@@ -132,10 +131,10 @@
   },
   "summary": {
     "avg_confidence": 79.24489795918367,
-    "overall_response_rate": 0.002702702702702703,
+    "overall_response_rate": 0.0026666666666666666,
     "total_actionable_responses": 2,
     "total_cycles_analyzed": 8,
-    "total_dispatches": 740,
+    "total_dispatches": 750,
     "total_validation_packs": 49
   }
 }

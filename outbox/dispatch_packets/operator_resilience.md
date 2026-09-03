@@ -2,156 +2,16 @@
 
 **Decision job:** Immediate operational readiness and response
 **Delivery channel:** Telegram/SMS alert
-**Generated:** Sep 03, 2026 at 19:17 UTC
+**Generated:** Sep 03, 2026 at 22:31 UTC
 **Dispatches in this packet:** 16
 
 ---
 
 ## Dispatches (16)
 
-### 1. Haiti: signal detected
+### 1. St. Kitts and Nevis: signal detected
 
-**ID:** `DSP-20260903-022` | **Country:** Haiti | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$7,753,579; Peril: earthquake; Event date: 2010-01-01; Announced: 2010-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: Haiti. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 2. Barbados: signal detected
-
-**ID:** `DSP-20260903-030` | **Country:** Barbados | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$8,560,247; Peril: tropical_cyclone; Event date: 2010-01-01; Announced: 2010-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: Barbados. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 3. Barbados: signal detected
-
-**ID:** `DSP-20260903-034` | **Country:** Barbados | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$1,284,882; Peril: excess_rainfall; Event date: 2014-01-01; Announced: 2014-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: Barbados. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 4. Haiti: signal detected
-
-**ID:** `DSP-20260903-038` | **Country:** Haiti | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$20,388,067; Peril: tropical_cyclone; Event date: 2016-01-01; Announced: 2016-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: Haiti. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 5. Nicaragua: signal detected
-
-**ID:** `DSP-20260903-042` | **Country:** Nicaragua | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$1,110,193; Peril: tropical_cyclone; Event date: 2016-01-01; Announced: 2016-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: Nicaragua. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 6. Haiti: signal detected
-
-**ID:** `DSP-20260903-054` | **Country:** Haiti | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$39,953,272; Peril: earthquake; Event date: 2021-01-01; Announced: 2021-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: Haiti. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 7. Nicaragua: signal detected
-
-**ID:** `DSP-20260903-058` | **Country:** Nicaragua | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$8,924,577; Peril: tropical_cyclone; Event date: 2022-01-01; Announced: 2022-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: Nicaragua. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 8. Haiti: signal detected
-
-**ID:** `DSP-20260903-078` | **Country:** Haiti | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$1,198,434; Peril: tropical_cyclone; Event date: 2025-01-01; Announced: 2025-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: Haiti. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 9. Turks and Caicos Islands: signal detected
-
-**ID:** `DSP-20260903-018` | **Country:** Turks and Caicos Islands | **Confidence:** 🟡 Validation | 74/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$6,303,913; Peril: tropical_cyclone; Event date: 2008-01-01; Announced: 2008-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: Turks and Caicos Islands. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 10. Anguilla: signal detected
-
-**ID:** `DSP-20260903-026` | **Country:** Anguilla | **Confidence:** 🟡 Validation | 74/100 | C - single-source
-**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$4,282,733; Peril: tropical_cyclone; Event date: 2010-01-01; Announced: 2010-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Prepare operational response: Anguilla. Action window: 7 days. Evidence: signal detected
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
-
-### 11. St. Kitts and Nevis: signal detected
-
-**ID:** `DSP-20260903-046` | **Country:** St. Kitts and Nevis | **Confidence:** 🟡 Validation | 74/100 | C - single-source
+**ID:** `DSP-20260903-056` | **Country:** St. Kitts and Nevis | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -163,9 +23,9 @@
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout confirms hazard severity = operational recovery capital available
 
-### 12. Dominica: signal detected
+### 2. Dominica: signal detected
 
-**ID:** `DSP-20260903-050` | **Country:** Dominica | **Confidence:** 🟡 Validation | 74/100 | C - single-source
+**ID:** `DSP-20260903-060` | **Country:** Dominica | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -177,9 +37,9 @@
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout confirms hazard severity = operational recovery capital available
 
-### 13. St. Vincent & the Grenadines: signal detected
+### 3. St. Vincent & the Grenadines: signal detected
 
-**ID:** `DSP-20260903-062` | **Country:** St. Vincent & the Grenadines | **Confidence:** 🟡 Validation | 74/100 | C - single-source
+**ID:** `DSP-20260903-072` | **Country:** St. Vincent & the Grenadines | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -191,9 +51,9 @@
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout confirms hazard severity = operational recovery capital available
 
-### 14. Grenada: signal detected
+### 4. Grenada: signal detected
 
-**ID:** `DSP-20260903-066` | **Country:** Grenada | **Confidence:** 🟡 Validation | 74/100 | C - single-source
+**ID:** `DSP-20260903-076` | **Country:** Grenada | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -205,9 +65,9 @@
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout confirms hazard severity = operational recovery capital available
 
-### 15. Jamaica: signal detected
+### 5. Jamaica: signal detected
 
-**ID:** `DSP-20260903-070` | **Country:** Jamaica | **Confidence:** 🟢 Monitor | 66/100 | C - single-source
+**ID:** `DSP-20260903-080` | **Country:** Jamaica | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -219,9 +79,9 @@
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout confirms hazard severity = operational recovery capital available
 
-### 16. Jamaica: signal detected
+### 6. Jamaica: signal detected
 
-**ID:** `DSP-20260903-074` | **Country:** Jamaica | **Confidence:** 🟢 Monitor | 66/100 | C - single-source
+**ID:** `DSP-20260903-084` | **Country:** Jamaica | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -230,6 +90,146 @@
 **Grade:** C - single-source
 
 **Recommended action:** Prepare operational response: Jamaica. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 7. Anguilla: signal detected
+
+**ID:** `DSP-20260903-036` | **Country:** Anguilla | **Confidence:** 🟡 Validation | 80/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$4,282,733; Peril: tropical_cyclone; Event date: 2010-01-01; Announced: 2010-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: Anguilla. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 8. Turks and Caicos Islands: signal detected
+
+**ID:** `DSP-20260903-028` | **Country:** Turks and Caicos Islands | **Confidence:** 🟡 Validation | 74/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$6,303,913; Peril: tropical_cyclone; Event date: 2008-01-01; Announced: 2008-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: Turks and Caicos Islands. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 9. Barbados: signal detected
+
+**ID:** `DSP-20260903-040` | **Country:** Barbados | **Confidence:** 🟢 Monitor | 66/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$8,560,247; Peril: tropical_cyclone; Event date: 2010-01-01; Announced: 2010-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: Barbados. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 10. Barbados: signal detected
+
+**ID:** `DSP-20260903-044` | **Country:** Barbados | **Confidence:** 🟢 Monitor | 66/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$1,284,882; Peril: excess_rainfall; Event date: 2014-01-01; Announced: 2014-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: Barbados. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 11. Nicaragua: signal detected
+
+**ID:** `DSP-20260903-052` | **Country:** Nicaragua | **Confidence:** 🟢 Monitor | 66/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$1,110,193; Peril: tropical_cyclone; Event date: 2016-01-01; Announced: 2016-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: Nicaragua. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 12. Nicaragua: signal detected
+
+**ID:** `DSP-20260903-068` | **Country:** Nicaragua | **Confidence:** 🟢 Monitor | 66/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$8,924,577; Peril: tropical_cyclone; Event date: 2022-01-01; Announced: 2022-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: Nicaragua. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 13. Haiti: signal detected
+
+**ID:** `DSP-20260903-032` | **Country:** Haiti | **Confidence:** 🟢 Monitor | 50/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$7,753,579; Peril: earthquake; Event date: 2010-01-01; Announced: 2010-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: Haiti. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 14. Haiti: signal detected
+
+**ID:** `DSP-20260903-048` | **Country:** Haiti | **Confidence:** 🟢 Monitor | 50/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$20,388,067; Peril: tropical_cyclone; Event date: 2016-01-01; Announced: 2016-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: Haiti. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 15. Haiti: signal detected
+
+**ID:** `DSP-20260903-064` | **Country:** Haiti | **Confidence:** 🟢 Monitor | 50/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$39,953,272; Peril: earthquake; Event date: 2021-01-01; Announced: 2021-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: Haiti. Action window: 7 days. Evidence: signal detected
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** Payout confirms hazard severity = operational recovery capital available
+
+### 16. Haiti: signal detected
+
+**ID:** `DSP-20260903-088` | **Country:** Haiti | **Confidence:** 🟢 Monitor | 50/100 | C - single-source
+**Channel:** Telegram/SMS alert | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$1,198,434; Peril: tropical_cyclone; Event date: 2025-01-01; Announced: 2025-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Prepare operational response: Haiti. Action window: 7 days. Evidence: signal detected
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** Payout confirms hazard severity = operational recovery capital available
 

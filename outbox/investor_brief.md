@@ -1,6 +1,6 @@
 # Caribbean Market Pulse — Investor Brief
 
-Generated: 2026-09-03 19:17 UTC
+Generated: 2026-09-03 22:31 UTC
 
 Audience: investors, founders, diaspora capital networks.
 Decision supported: where to investigate deal flow, procurement activity, or market momentum.
@@ -9,7 +9,7 @@ Decision supported: where to investigate deal flow, procurement activity, or mar
 
 Lead: Guyana. 3 converging signal(s) across 3 source(s). Signals: 💼 Investment + 🏖️ Tourism + 💎 Investment.
 
-*Lead: Guyana · 28 composite signal(s) · 1 new · 8 intensified · 11 persistent*
+*Lead: Guyana · 32 composite signal(s) · 4 new · 7 intensified · 13 persistent*
 
 ## Lead Signal
 
@@ -20,14 +20,15 @@ Lead: Guyana. 3 converging signal(s) across 3 source(s). Signals: 💼 Investmen
 
 ## Regional Investment Overview
 
-Multi-source investment signals validated across 2 countries. All carry A-grade evidence (3+ sources converging).
+Multi-source investment signals validated across 3 countries. All carry A-grade evidence (3+ sources converging).
 
 | Country | FDI Change | Score | Context |
 |---------|-----------|-------|---------|
 | **Guyana** | 860.3% | 100/100 | Clean multi-source signal |
 | **Suriname** | 206.0% | 96/100 | Clean multi-source signal |
+| **Barbados** | 34.8% | 89/100 | Clean multi-source signal |
 
-**Highest-impact targets**: Guyana, Suriname. Guyana at 860.3% change is the strongest directional signal in this cycle.
+**Highest-impact targets**: Guyana, Suriname, Barbados. Guyana at 860.3% change is the strongest directional signal in this cycle.
 
 ## Development Pipeline
 

@@ -1,5 +1,5 @@
 🌴 **Caribbean Opportunity Brief** — what's moving this week
-Cycle 20260903 • 2026-09-03 19:17 UTC
+Cycle 20260903 • 2026-09-03 22:31 UTC
 
 Plain-language signals for builders, business owners, and community leaders.
 No jargon. Just what matters for your next move.
@@ -16,22 +16,22 @@ No jargon. Just what matters for your next move.
    🔴 High confidence — multiple sources agree
    📊 Single-source indicator — verify locally
 
-3. **Guyana**: foreign investment spiking — worth watching — 860.3% movement
-   Investment noise in your market. Could mean competitors coming or demand growing. (holding steady)
-   🟡 Solid signal — some corroboration
-   📊 Cross-source validation
-
-4. **Suriname**: foreign investment spiking — worth watching — 206.0% movement
-   Investment noise in your market. Could mean competitors coming or demand growing. (holding steady)
-   🟡 Solid signal — some corroboration
-   📊 Cross-source validation
-
-5. **Haiti**: ccrif payout
-   Pay attention — something real is happening. (holding steady)
+3. **Barbados**: money flowing in from multiple sources — verified opportunity — 34.8% movement
+   New money = new competition AND new customers. Map your advantage before they arrive. (holding steady)
    🟡 Solid signal — some corroboration
    📊 Single-source indicator — verify locally
 
-6. **Barbados**: ccrif payout
+4. **Guyana**: foreign investment spiking — worth watching — 860.3% movement
+   Investment noise in your market. Could mean competitors coming or demand growing. (holding steady)
+   🟡 Solid signal — some corroboration
+   📊 Cross-source validation
+
+5. **Suriname**: foreign investment spiking — worth watching — 206.0% movement
+   Investment noise in your market. Could mean competitors coming or demand growing. (holding steady)
+   🟡 Solid signal — some corroboration
+   📊 Cross-source validation
+
+6. **St. Kitts and Nevis**: ccrif payout
    Pay attention — something real is happening. (holding steady)
    🟡 Solid signal — some corroboration
    📊 Single-source indicator — verify locally

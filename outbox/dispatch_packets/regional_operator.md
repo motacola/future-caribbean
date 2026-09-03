@@ -2,7 +2,7 @@
 
 **Decision job:** Operational readiness and bid pipeline assessment
 **Delivery channel:** Telegram
-**Generated:** Sep 03, 2026 at 19:17 UTC
+**Generated:** Sep 03, 2026 at 22:31 UTC
 **Dispatches in this packet:** 2
 
 ---
@@ -11,7 +11,7 @@
 
 ### 1. CARICOM: 9 active procurements — bidding window open
 
-**ID:** `DSP-20260903-007` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 95/100 | B - cross-source
+**ID:** `DSP-20260903-011` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 95/100 | B - cross-source
 **Channel:** Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** replied
 
@@ -25,7 +25,7 @@
 
 ### 2. Eastern Caribbean Currency Union: 4.6%
 
-**ID:** `DSP-20260903-082` | **Country:** Eastern Caribbean Currency Union | **Confidence:** 🟡 Validation | 72/100 | C - single-source
+**ID:** `DSP-20260903-092` | **Country:** Eastern Caribbean Currency Union | **Confidence:** 🟡 Validation | 76/100 | C - single-source
 **Channel:** Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** ignored
 

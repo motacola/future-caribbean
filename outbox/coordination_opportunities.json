@@ -1,19 +1,324 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-03T19:17:01.067187+00:00",
+  "generated_at": "2026-09-03T22:31:18.978164+00:00",
   "engine": "deterministic",
   "registry_status": "pilot",
-  "count": 22,
+  "count": 26,
   "screened_out_count": 0,
   "interventions_persisted": true,
   "screened_out": [],
   "opportunities": [
     {
+      "id": "coord-enhanced-invest-barbados",
+      "title": "Regional coordination path for Barbados: +34.8% FDI momentum validated — cross-reference before deploying",
+      "status": "candidate",
+      "trigger_signal_id": "enhanced-invest-barbados",
+      "trigger_dispatch_id": "DSP-20260903-023",
+      "signal_kind": "enhanced_investment",
+      "demand_node": {
+        "country": "Barbados",
+        "summary": "34.8% change"
+      },
+      "demand_projects": [],
+      "demand_countries": [
+        "Barbados"
+      ],
+      "project_coordination_matches": [],
+      "unlock_path": [],
+      "humanized_unlock_path": [],
+      "estimated_total_uplift": 0,
+      "unique_intervention_count": 0,
+      "required_capabilities": [
+        "project_finance",
+        "professional_services",
+        "digital_services"
+      ],
+      "available_capabilities": [
+        "digital_services",
+        "professional_services",
+        "project_finance"
+      ],
+      "missing_capabilities": [],
+      "contributing_nodes": [
+        {
+          "country": "Jamaica",
+          "matched_capabilities": [
+            {
+              "id": "digital_services",
+              "strength": 4
+            },
+            {
+              "id": "project_finance",
+              "strength": 4
+            }
+          ],
+          "constraints": [
+            "route economics",
+            "procurement eligibility"
+          ],
+          "evidence": [
+            {
+              "source": "JAMPRO",
+              "url": "https://dobusinessjamaica.com/",
+              "grade": "primary",
+              "supports": [
+                "construction_delivery",
+                "civil_engineering",
+                "aviation_infrastructure",
+                "shipping_logistics",
+                "warehousing_distribution",
+                "digital_services",
+                "ict_integration"
+              ]
+            },
+            {
+              "source": "Jamaica Stock Exchange",
+              "url": "https://www.jamstockex.com/",
+              "grade": "primary",
+              "supports": [
+                "project_finance"
+              ]
+            }
+          ]
+        },
+        {
+          "country": "Eastern Caribbean / OECS",
+          "matched_capabilities": [
+            {
+              "id": "digital_services",
+              "strength": 3
+            },
+            {
+              "id": "professional_services",
+              "strength": 3
+            }
+          ],
+          "constraints": [
+            "small transaction size",
+            "pooled procurement required",
+            "inter-island logistics"
+          ],
+          "evidence": [
+            {
+              "source": "OECS Commission",
+              "url": "https://www.oecs.int/",
+              "grade": "primary",
+              "supports": [
+                "climate_resilience",
+                "professional_services",
+                "food_processing",
+                "digital_services"
+              ]
+            },
+            {
+              "source": "Eastern Caribbean Central Bank",
+              "url": "https://www.eccb-centralbank.org/",
+              "grade": "primary",
+              "supports": [
+                "professional_services"
+              ]
+            }
+          ]
+        }
+      ],
+      "frictions": [
+        "inter-island logistics",
+        "pooled procurement required",
+        "procurement eligibility",
+        "route economics",
+        "small transaction size"
+      ],
+      "minimum_next_action": "Before this moves off hold, check with Jamaica, Eastern Caribbean / OECS: are they eligible to bid, and can they actually deliver? A short call this week answers both. If yes, the path opens; if not, we know what's missing.",
+      "accountable_recipient": {
+        "persona_key": "diaspora_investor",
+        "persona_label": "Diaspora Investor",
+        "channel": "Email brief + Telegram"
+      },
+      "coordination_score": 58,
+      "score_components": {
+        "evidence_quality": 93,
+        "complementarity": 100,
+        "unlockability": 40,
+        "recipient_readiness": 60,
+        "logistics_feasibility": 55,
+        "regional_impact": 75,
+        "friction_penalty": 15
+      },
+      "ranking_rationale": [
+        "Trigger signal confidence: 89/100",
+        "Matched 3 of 3 required capabilities across 2 regional nodes",
+        "Registry evidence from 4 primary-source organisations"
+      ],
+      "evidence": [
+        {
+          "source": "JAMPRO",
+          "url": "https://dobusinessjamaica.com/",
+          "grade": "primary"
+        },
+        {
+          "source": "Jamaica Stock Exchange",
+          "url": "https://www.jamstockex.com/",
+          "grade": "primary"
+        },
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary"
+        },
+        {
+          "source": "Eastern Caribbean Central Bank",
+          "url": "https://www.eccb-centralbank.org/",
+          "grade": "primary"
+        }
+      ],
+      "unknowns": [],
+      "intervention_state": [],
+      "operator_campaigns": []
+    },
+    {
+      "id": "coord-invest-barbados",
+      "title": "Regional coordination path for Barbados: FDI trending at +34.8% — screening trigger active",
+      "status": "candidate",
+      "trigger_signal_id": "invest-barbados",
+      "trigger_dispatch_id": "DSP-20260903-007",
+      "signal_kind": "investment_signal",
+      "demand_node": {
+        "country": "Barbados",
+        "summary": "34.8% change"
+      },
+      "demand_projects": [],
+      "demand_countries": [
+        "Barbados"
+      ],
+      "project_coordination_matches": [],
+      "unlock_path": [],
+      "humanized_unlock_path": [],
+      "estimated_total_uplift": 0,
+      "unique_intervention_count": 0,
+      "required_capabilities": [
+        "project_finance",
+        "professional_services"
+      ],
+      "available_capabilities": [
+        "professional_services",
+        "project_finance"
+      ],
+      "missing_capabilities": [],
+      "contributing_nodes": [
+        {
+          "country": "Jamaica",
+          "matched_capabilities": [
+            {
+              "id": "project_finance",
+              "strength": 4
+            }
+          ],
+          "constraints": [
+            "route economics",
+            "procurement eligibility"
+          ],
+          "evidence": [
+            {
+              "source": "Jamaica Stock Exchange",
+              "url": "https://www.jamstockex.com/",
+              "grade": "primary",
+              "supports": [
+                "project_finance"
+              ]
+            }
+          ]
+        },
+        {
+          "country": "Eastern Caribbean / OECS",
+          "matched_capabilities": [
+            {
+              "id": "professional_services",
+              "strength": 3
+            }
+          ],
+          "constraints": [
+            "small transaction size",
+            "pooled procurement required",
+            "inter-island logistics"
+          ],
+          "evidence": [
+            {
+              "source": "OECS Commission",
+              "url": "https://www.oecs.int/",
+              "grade": "primary",
+              "supports": [
+                "climate_resilience",
+                "professional_services",
+                "food_processing",
+                "digital_services"
+              ]
+            },
+            {
+              "source": "Eastern Caribbean Central Bank",
+              "url": "https://www.eccb-centralbank.org/",
+              "grade": "primary",
+              "supports": [
+                "professional_services"
+              ]
+            }
+          ]
+        }
+      ],
+      "frictions": [
+        "inter-island logistics",
+        "pooled procurement required",
+        "procurement eligibility",
+        "route economics",
+        "small transaction size"
+      ],
+      "minimum_next_action": "Before this moves off hold, check with Jamaica, Eastern Caribbean / OECS: are they eligible to bid, and can they actually deliver? A short call this week answers both. If yes, the path opens; if not, we know what's missing.",
+      "accountable_recipient": {
+        "persona_key": "diaspora_investor",
+        "persona_label": "Diaspora Investor",
+        "channel": "Email brief + Telegram"
+      },
+      "coordination_score": 55,
+      "score_components": {
+        "evidence_quality": 81,
+        "complementarity": 100,
+        "unlockability": 40,
+        "recipient_readiness": 60,
+        "logistics_feasibility": 55,
+        "regional_impact": 75,
+        "friction_penalty": 15
+      },
+      "ranking_rationale": [
+        "Trigger signal confidence: 75/100",
+        "Matched 2 of 2 required capabilities across 2 regional nodes",
+        "Registry evidence from 3 primary-source organisations"
+      ],
+      "evidence": [
+        {
+          "source": "Jamaica Stock Exchange",
+          "url": "https://www.jamstockex.com/",
+          "grade": "primary"
+        },
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary"
+        },
+        {
+          "source": "Eastern Caribbean Central Bank",
+          "url": "https://www.eccb-centralbank.org/",
+          "grade": "primary"
+        }
+      ],
+      "unknowns": [],
+      "intervention_state": [],
+      "operator_campaigns": []
+    },
+    {
       "id": "coord-enhanced-invest-guyana",
       "title": "Regional coordination path for Guyana: +860.3% capital surge on a single official source — market entry window open",
       "status": "candidate",
       "trigger_signal_id": "enhanced-invest-guyana",
-      "trigger_dispatch_id": "DSP-20260903-010",
+      "trigger_dispatch_id": "DSP-20260903-017",
       "signal_kind": "enhanced_investment",
       "demand_node": {
         "country": "Guyana",
@@ -234,7 +539,7 @@
       "title": "Regional coordination path for Suriname: +206.0% investment movement, one source — needs corroboration",
       "status": "candidate",
       "trigger_signal_id": "enhanced-invest-suriname",
-      "trigger_dispatch_id": "DSP-20260903-013",
+      "trigger_dispatch_id": "DSP-20260903-020",
       "signal_kind": "enhanced_investment",
       "demand_node": {
         "country": "Suriname",
@@ -455,7 +760,7 @@
       "title": "Regional coordination path for Guyana: FDI trending at +860.3% — screening trigger active",
       "status": "candidate",
       "trigger_signal_id": "invest-guyana",
-      "trigger_dispatch_id": "DSP-20260903-001",
+      "trigger_dispatch_id": "DSP-20260903-003",
       "signal_kind": "investment_signal",
       "demand_node": {
         "country": "Guyana",
@@ -643,7 +948,7 @@
       "title": "Regional coordination path for Suriname: FDI trending at +206.0% — screening trigger active",
       "status": "candidate",
       "trigger_signal_id": "invest-suriname",
-      "trigger_dispatch_id": "DSP-20260903-003",
+      "trigger_dispatch_id": "DSP-20260903-005",
       "signal_kind": "investment_signal",
       "demand_node": {
         "country": "Suriname",
@@ -827,11 +1132,420 @@
       "operator_campaigns": []
     },
     {
+      "id": "coord-regional-enhanced-investment-20260903",
+      "title": "Regional coordination path for Capital convergence: 3 Caribbean economies showing multi-source investment momentum",
+      "status": "candidate",
+      "trigger_signal_id": "regional-enhanced_investment-20260903",
+      "trigger_dispatch_id": "DSP-20260903-014",
+      "signal_kind": "enhanced_investment",
+      "demand_node": {
+        "country": "Caribwide",
+        "summary": "Guyana (860.3% change), Suriname (206.0% change), Barbados (34.8% change)"
+      },
+      "demand_projects": [],
+      "demand_countries": [
+        "Caribwide"
+      ],
+      "project_coordination_matches": [],
+      "unlock_path": [],
+      "humanized_unlock_path": [],
+      "estimated_total_uplift": 0,
+      "unique_intervention_count": 0,
+      "required_capabilities": [
+        "project_finance",
+        "professional_services",
+        "digital_services"
+      ],
+      "available_capabilities": [
+        "digital_services",
+        "professional_services",
+        "project_finance"
+      ],
+      "missing_capabilities": [],
+      "contributing_nodes": [
+        {
+          "country": "Barbados",
+          "matched_capabilities": [
+            {
+              "id": "professional_services",
+              "strength": 5
+            },
+            {
+              "id": "project_finance",
+              "strength": 5
+            },
+            {
+              "id": "digital_services",
+              "strength": 4
+            }
+          ],
+          "constraints": [
+            "mandate and ticket-size fit",
+            "local delivery partner required"
+          ],
+          "evidence": [
+            {
+              "source": "Caribbean Development Bank",
+              "url": "https://www.caribank.org/",
+              "grade": "primary",
+              "supports": [
+                "project_finance",
+                "climate_resilience"
+              ]
+            },
+            {
+              "source": "Invest Barbados",
+              "url": "https://www.investbarbados.org/",
+              "grade": "primary",
+              "supports": [
+                "professional_services",
+                "digital_services",
+                "ict_integration"
+              ]
+            }
+          ]
+        },
+        {
+          "country": "Jamaica",
+          "matched_capabilities": [
+            {
+              "id": "digital_services",
+              "strength": 4
+            },
+            {
+              "id": "project_finance",
+              "strength": 4
+            }
+          ],
+          "constraints": [
+            "route economics",
+            "procurement eligibility"
+          ],
+          "evidence": [
+            {
+              "source": "JAMPRO",
+              "url": "https://dobusinessjamaica.com/",
+              "grade": "primary",
+              "supports": [
+                "construction_delivery",
+                "civil_engineering",
+                "aviation_infrastructure",
+                "shipping_logistics",
+                "warehousing_distribution",
+                "digital_services",
+                "ict_integration"
+              ]
+            },
+            {
+              "source": "Jamaica Stock Exchange",
+              "url": "https://www.jamstockex.com/",
+              "grade": "primary",
+              "supports": [
+                "project_finance"
+              ]
+            }
+          ]
+        },
+        {
+          "country": "Eastern Caribbean / OECS",
+          "matched_capabilities": [
+            {
+              "id": "digital_services",
+              "strength": 3
+            },
+            {
+              "id": "professional_services",
+              "strength": 3
+            }
+          ],
+          "constraints": [
+            "small transaction size",
+            "pooled procurement required",
+            "inter-island logistics"
+          ],
+          "evidence": [
+            {
+              "source": "OECS Commission",
+              "url": "https://www.oecs.int/",
+              "grade": "primary",
+              "supports": [
+                "climate_resilience",
+                "professional_services",
+                "food_processing",
+                "digital_services"
+              ]
+            },
+            {
+              "source": "Eastern Caribbean Central Bank",
+              "url": "https://www.eccb-centralbank.org/",
+              "grade": "primary",
+              "supports": [
+                "professional_services"
+              ]
+            }
+          ]
+        }
+      ],
+      "frictions": [
+        "inter-island logistics",
+        "local delivery partner required",
+        "mandate and ticket-size fit",
+        "pooled procurement required",
+        "procurement eligibility",
+        "route economics",
+        "small transaction size"
+      ],
+      "minimum_next_action": "Before this moves off hold, check with Barbados, Jamaica, Eastern Caribbean / OECS: are they eligible to bid, and can they actually deliver? A short call this week answers both. If yes, the path opens; if not, we know what's missing.",
+      "accountable_recipient": {
+        "persona_key": "diaspora_investor",
+        "persona_label": "Diaspora Investor",
+        "channel": "Email brief + Telegram"
+      },
+      "coordination_score": 52,
+      "score_components": {
+        "evidence_quality": 100,
+        "complementarity": 100,
+        "unlockability": 24,
+        "recipient_readiness": 60,
+        "logistics_feasibility": 55,
+        "regional_impact": 85,
+        "friction_penalty": 21
+      },
+      "ranking_rationale": [
+        "Trigger signal confidence: 90/100",
+        "Matched 3 of 3 required capabilities across 3 regional nodes",
+        "Registry evidence from 6 primary-source organisations"
+      ],
+      "evidence": [
+        {
+          "source": "Caribbean Development Bank",
+          "url": "https://www.caribank.org/",
+          "grade": "primary"
+        },
+        {
+          "source": "Invest Barbados",
+          "url": "https://www.investbarbados.org/",
+          "grade": "primary"
+        },
+        {
+          "source": "JAMPRO",
+          "url": "https://dobusinessjamaica.com/",
+          "grade": "primary"
+        },
+        {
+          "source": "Jamaica Stock Exchange",
+          "url": "https://www.jamstockex.com/",
+          "grade": "primary"
+        },
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary"
+        },
+        {
+          "source": "Eastern Caribbean Central Bank",
+          "url": "https://www.eccb-centralbank.org/",
+          "grade": "primary"
+        }
+      ],
+      "unknowns": [],
+      "intervention_state": [],
+      "operator_campaigns": []
+    },
+    {
+      "id": "coord-regional-investment-signal-20260903",
+      "title": "Regional coordination path for Regional FDI snapshot: 3 countries with active capital movement",
+      "status": "candidate",
+      "trigger_signal_id": "regional-investment_signal-20260903",
+      "trigger_dispatch_id": "DSP-20260903-001",
+      "signal_kind": "investment_signal",
+      "demand_node": {
+        "country": "Caribwide",
+        "summary": "Guyana (860.3% change), Suriname (206.0% change), Barbados (34.8% change)"
+      },
+      "demand_projects": [],
+      "demand_countries": [
+        "Caribwide"
+      ],
+      "project_coordination_matches": [],
+      "unlock_path": [],
+      "humanized_unlock_path": [],
+      "estimated_total_uplift": 0,
+      "unique_intervention_count": 0,
+      "required_capabilities": [
+        "project_finance",
+        "professional_services"
+      ],
+      "available_capabilities": [
+        "professional_services",
+        "project_finance"
+      ],
+      "missing_capabilities": [],
+      "contributing_nodes": [
+        {
+          "country": "Barbados",
+          "matched_capabilities": [
+            {
+              "id": "professional_services",
+              "strength": 5
+            },
+            {
+              "id": "project_finance",
+              "strength": 5
+            }
+          ],
+          "constraints": [
+            "mandate and ticket-size fit",
+            "local delivery partner required"
+          ],
+          "evidence": [
+            {
+              "source": "Caribbean Development Bank",
+              "url": "https://www.caribank.org/",
+              "grade": "primary",
+              "supports": [
+                "project_finance",
+                "climate_resilience"
+              ]
+            },
+            {
+              "source": "Invest Barbados",
+              "url": "https://www.investbarbados.org/",
+              "grade": "primary",
+              "supports": [
+                "professional_services",
+                "digital_services",
+                "ict_integration"
+              ]
+            }
+          ]
+        },
+        {
+          "country": "Jamaica",
+          "matched_capabilities": [
+            {
+              "id": "project_finance",
+              "strength": 4
+            }
+          ],
+          "constraints": [
+            "route economics",
+            "procurement eligibility"
+          ],
+          "evidence": [
+            {
+              "source": "Jamaica Stock Exchange",
+              "url": "https://www.jamstockex.com/",
+              "grade": "primary",
+              "supports": [
+                "project_finance"
+              ]
+            }
+          ]
+        },
+        {
+          "country": "Eastern Caribbean / OECS",
+          "matched_capabilities": [
+            {
+              "id": "professional_services",
+              "strength": 3
+            }
+          ],
+          "constraints": [
+            "small transaction size",
+            "pooled procurement required",
+            "inter-island logistics"
+          ],
+          "evidence": [
+            {
+              "source": "OECS Commission",
+              "url": "https://www.oecs.int/",
+              "grade": "primary",
+              "supports": [
+                "climate_resilience",
+                "professional_services",
+                "food_processing",
+                "digital_services"
+              ]
+            },
+            {
+              "source": "Eastern Caribbean Central Bank",
+              "url": "https://www.eccb-centralbank.org/",
+              "grade": "primary",
+              "supports": [
+                "professional_services"
+              ]
+            }
+          ]
+        }
+      ],
+      "frictions": [
+        "inter-island logistics",
+        "local delivery partner required",
+        "mandate and ticket-size fit",
+        "pooled procurement required",
+        "procurement eligibility",
+        "route economics",
+        "small transaction size"
+      ],
+      "minimum_next_action": "Before this moves off hold, check with Barbados, Jamaica, Eastern Caribbean / OECS: are they eligible to bid, and can they actually deliver? A short call this week answers both. If yes, the path opens; if not, we know what's missing.",
+      "accountable_recipient": {
+        "persona_key": "diaspora_investor",
+        "persona_label": "Diaspora Investor",
+        "channel": "Email brief + Telegram"
+      },
+      "coordination_score": 52,
+      "score_components": {
+        "evidence_quality": 100,
+        "complementarity": 100,
+        "unlockability": 24,
+        "recipient_readiness": 60,
+        "logistics_feasibility": 55,
+        "regional_impact": 85,
+        "friction_penalty": 21
+      },
+      "ranking_rationale": [
+        "Trigger signal confidence: 90/100",
+        "Matched 2 of 2 required capabilities across 3 regional nodes",
+        "Registry evidence from 5 primary-source organisations"
+      ],
+      "evidence": [
+        {
+          "source": "Caribbean Development Bank",
+          "url": "https://www.caribank.org/",
+          "grade": "primary"
+        },
+        {
+          "source": "Invest Barbados",
+          "url": "https://www.investbarbados.org/",
+          "grade": "primary"
+        },
+        {
+          "source": "Jamaica Stock Exchange",
+          "url": "https://www.jamstockex.com/",
+          "grade": "primary"
+        },
+        {
+          "source": "OECS Commission",
+          "url": "https://www.oecs.int/",
+          "grade": "primary"
+        },
+        {
+          "source": "Eastern Caribbean Central Bank",
+          "url": "https://www.eccb-centralbank.org/",
+          "grade": "primary"
+        }
+      ],
+      "unknowns": [],
+      "intervention_state": [],
+      "operator_campaigns": []
+    },
+    {
       "id": "coord-dev-pipeline-regional",
       "title": "Regional coordination path for CARICOM: 9 active procurements — bidding window open",
       "status": "candidate",
       "trigger_signal_id": "dev-pipeline-regional",
-      "trigger_dispatch_id": "DSP-20260903-007",
+      "trigger_dispatch_id": "DSP-20260903-011",
       "signal_kind": "development_pipeline",
       "demand_node": {
         "country": "Caribbean regional demand",
@@ -1438,8 +2152,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-09-03T19:17:01.070473+00:00",
-          "updated_at": "2026-09-03T19:17:01.070473+00:00"
+          "created_at": "2026-09-03T22:31:18.985307+00:00",
+          "updated_at": "2026-09-03T22:31:18.985307+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00425:friction:logistics_validation",
@@ -1450,8 +2164,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-09-03T19:17:01.070473+00:00",
-          "updated_at": "2026-09-03T19:17:01.070473+00:00"
+          "created_at": "2026-09-03T22:31:18.985307+00:00",
+          "updated_at": "2026-09-03T22:31:18.985307+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00426:friction:eligibility_verification",
@@ -1462,8 +2176,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-09-03T19:17:01.070473+00:00",
-          "updated_at": "2026-09-03T19:17:01.070473+00:00"
+          "created_at": "2026-09-03T22:31:18.985307+00:00",
+          "updated_at": "2026-09-03T22:31:18.985307+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00426:friction:logistics_validation",
@@ -1474,8 +2188,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-09-03T19:17:01.070473+00:00",
-          "updated_at": "2026-09-03T19:17:01.070473+00:00"
+          "created_at": "2026-09-03T22:31:18.985307+00:00",
+          "updated_at": "2026-09-03T22:31:18.985307+00:00"
         }
       ],
       "operator_campaigns": [
@@ -1490,7 +2204,7 @@
             "unlock:project-guyana-proc-2026-00425:friction:eligibility_verification",
             "unlock:project-guyana-proc-2026-00426:friction:eligibility_verification"
           ],
-          "updated_at": "2026-09-03T19:17:01.070473+00:00"
+          "updated_at": "2026-09-03T22:31:18.985307+00:00"
         },
         {
           "slug": "campaign-logistics_validation-regional_operator-route-economics",
@@ -1503,7 +2217,7 @@
             "unlock:project-guyana-proc-2026-00425:friction:logistics_validation",
             "unlock:project-guyana-proc-2026-00426:friction:logistics_validation"
           ],
-          "updated_at": "2026-09-03T19:17:01.070473+00:00"
+          "updated_at": "2026-09-03T22:31:18.985307+00:00"
         }
       ]
     },
@@ -1512,7 +2226,7 @@
       "title": "Regional coordination path for Anguilla: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-ai-tropical_cyclone-2010-01-01",
-      "trigger_dispatch_id": "DSP-20260903-024",
+      "trigger_dispatch_id": "DSP-20260903-034",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "Anguilla",
@@ -1694,7 +2408,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 74/100",
+        "Trigger signal confidence: 80/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -1734,7 +2448,7 @@
       "title": "Regional coordination path for Barbados: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-bb-excess_rainfall-2014-01-01",
-      "trigger_dispatch_id": "DSP-20260903-032",
+      "trigger_dispatch_id": "DSP-20260903-042",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "Barbados",
@@ -1914,7 +2628,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 66/100",
         "Matched 3 of 3 required capabilities across 4 regional nodes",
         "Registry evidence from 5 primary-source organisations"
       ],
@@ -1954,7 +2668,7 @@
       "title": "Regional coordination path for Barbados: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-bb-tropical_cyclone-2010-01-01",
-      "trigger_dispatch_id": "DSP-20260903-028",
+      "trigger_dispatch_id": "DSP-20260903-038",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "Barbados",
@@ -2134,7 +2848,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 66/100",
         "Matched 3 of 3 required capabilities across 4 regional nodes",
         "Registry evidence from 5 primary-source organisations"
       ],
@@ -2174,7 +2888,7 @@
       "title": "Regional coordination path for Dominica: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-dm-tropical_cyclone-2017-01-01",
-      "trigger_dispatch_id": "DSP-20260903-048",
+      "trigger_dispatch_id": "DSP-20260903-058",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "Dominica",
@@ -2356,7 +3070,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 74/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -2396,7 +3110,7 @@
       "title": "Regional coordination path for Grenada: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-gd-tropical_cyclone-2024-01-01",
-      "trigger_dispatch_id": "DSP-20260903-064",
+      "trigger_dispatch_id": "DSP-20260903-074",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "Grenada",
@@ -2578,7 +3292,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 74/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -2618,7 +3332,7 @@
       "title": "Regional coordination path for Haiti: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-ht-earthquake-2010-01-01",
-      "trigger_dispatch_id": "DSP-20260903-020",
+      "trigger_dispatch_id": "DSP-20260903-030",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "Haiti",
@@ -2800,7 +3514,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 50/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -2840,7 +3554,7 @@
       "title": "Regional coordination path for Haiti: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-ht-earthquake-2021-01-01",
-      "trigger_dispatch_id": "DSP-20260903-052",
+      "trigger_dispatch_id": "DSP-20260903-062",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "Haiti",
@@ -3022,7 +3736,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 50/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -3062,7 +3776,7 @@
       "title": "Regional coordination path for Haiti: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-ht-tropical_cyclone-2016-01-01",
-      "trigger_dispatch_id": "DSP-20260903-036",
+      "trigger_dispatch_id": "DSP-20260903-046",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "Haiti",
@@ -3244,7 +3958,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 50/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -3284,7 +3998,7 @@
       "title": "Regional coordination path for Haiti: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-ht-tropical_cyclone-2025-01-01",
-      "trigger_dispatch_id": "DSP-20260903-076",
+      "trigger_dispatch_id": "DSP-20260903-086",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "Haiti",
@@ -3466,7 +4180,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 50/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -3506,7 +4220,7 @@
       "title": "Regional coordination path for St. Kitts and Nevis: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-kn-tropical_cyclone-2017-01-01",
-      "trigger_dispatch_id": "DSP-20260903-044",
+      "trigger_dispatch_id": "DSP-20260903-054",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "St. Kitts and Nevis",
@@ -3688,7 +4402,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 74/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -3728,7 +4442,7 @@
       "title": "Regional coordination path for Nicaragua: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-ni-tropical_cyclone-2016-01-01",
-      "trigger_dispatch_id": "DSP-20260903-040",
+      "trigger_dispatch_id": "DSP-20260903-050",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "Nicaragua",
@@ -3910,7 +4624,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 66/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -3950,7 +4664,7 @@
       "title": "Regional coordination path for Nicaragua: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-ni-tropical_cyclone-2022-01-01",
-      "trigger_dispatch_id": "DSP-20260903-056",
+      "trigger_dispatch_id": "DSP-20260903-066",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "Nicaragua",
@@ -4132,7 +4846,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 66/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -4172,7 +4886,7 @@
       "title": "Regional coordination path for Turks and Caicos Islands: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-tc-tropical_cyclone-2008-01-01",
-      "trigger_dispatch_id": "DSP-20260903-016",
+      "trigger_dispatch_id": "DSP-20260903-026",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "Turks and Caicos Islands",
@@ -4394,7 +5108,7 @@
       "title": "Regional coordination path for St. Vincent & the Grenadines: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-vc-tropical_cyclone-2024-01-01",
-      "trigger_dispatch_id": "DSP-20260903-060",
+      "trigger_dispatch_id": "DSP-20260903-070",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "St. Vincent & the Grenadines",
@@ -4576,7 +5290,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 74/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -4616,7 +5330,7 @@
       "title": "Regional coordination path for St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended",
       "status": "candidate",
       "trigger_signal_id": "vuln-st.-vincent-and-the-grenadines",
-      "trigger_dispatch_id": "DSP-20260903-005",
+      "trigger_dispatch_id": "DSP-20260903-009",
       "signal_kind": "economic_vulnerability",
       "demand_node": {
         "country": "St Vincent & the Grenadines",
@@ -4847,7 +5561,7 @@
       "title": "Regional coordination path for Jamaica: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-jm-tropical_cyclone-2024-01-01",
-      "trigger_dispatch_id": "DSP-20260903-068",
+      "trigger_dispatch_id": "DSP-20260903-078",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "Jamaica",
@@ -5014,7 +5728,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 66/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 4 regional nodes",
         "Registry evidence from 4 primary-source organisations"
       ],
@@ -5049,7 +5763,7 @@
       "title": "Regional coordination path for Jamaica: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-jm-tropical_cyclone-2025-01-01",
-      "trigger_dispatch_id": "DSP-20260903-072",
+      "trigger_dispatch_id": "DSP-20260903-082",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "Jamaica",
@@ -5216,7 +5930,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 66/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 4 regional nodes",
         "Registry evidence from 4 primary-source organisations"
       ],

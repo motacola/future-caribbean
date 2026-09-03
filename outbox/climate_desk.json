@@ -2,29 +2,29 @@
   "instance": "climate",
   "instance_label": "Climate & Catastrophe Risk",
   "cycle_id": "20260903",
-  "generated_at": "2026-09-03T19:17:01.459213+00:00",
+  "generated_at": "2026-09-03T22:31:19.448185+00:00",
   "clusters": [
     {
-      "cluster_id": "CLIM-marine-82264",
-      "country_cluster": "Caribbean marine zones",
-      "signal_kind": "maritime_hazard",
-      "title": "Marine hazard: \ud83c\udf43 Light wind at Western Caribbean (Yucatan Basin): 2 kts",
-      "evidence": "NDBC buoy network: \ud83c\udf43 Light wind at Western Caribbean (Yucatan Basin): 2 kts",
-      "evidence_grade": "B - sensor",
-      "confidence_score": 80,
+      "cluster_id": "CLIM-allclear",
+      "country_cluster": "Caribbean basin",
+      "signal_kind": "all_clear",
+      "title": "All clear \u2014 no active hazards this cycle",
+      "evidence": "No active NWS alerts in Caribbean zones. Current conditions: 6 buoys reporting; max wind 17 kt; no tropical development expected (NHC).",
+      "evidence_grade": "A - official sources",
+      "confidence_score": 70,
       "freshness": "new",
-      "decision": "Marine operations and coastal risk",
+      "decision": "Routine monitoring \u2014 no action required",
       "risk_flags": [],
       "personas": [
         {
-          "persona": "Operations/Resilience",
-          "channel": "Telegram/SMS alert",
-          "action": "Marine hazard \u2014 \ud83c\udf43 Light wind at Western Caribbean (Yucatan Basin): 2 kts. Advise vessels and coastal operations; delay exposed activity until conditions ease."
-        },
-        {
           "persona": "Resilience Planner",
           "channel": "Telegram/SMS alert",
-          "action": "Marine conditions deteriorating \u2014 \ud83c\udf43 Light wind at Western Caribbean (Yucatan Basin): 2 kts. Monitor for escalation toward small-craft / coastal-flood thresholds."
+          "action": "All clear across Caribbean zones \u2014 6 buoys reporting; max wind 17 kt; no tropical development expected (NHC). No action required; the engine keeps watching and will escalate the moment a threshold is crossed."
+        },
+        {
+          "persona": "Insurer / Reinsurer",
+          "channel": "Email + alert",
+          "action": "No active hazard exposure this cycle (6 buoys reporting; max wind 17 kt; no tropical development expected (NHC)). Baseline confirmed for parametric monitoring."
         }
       ]
     }
