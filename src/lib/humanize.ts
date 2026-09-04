@@ -301,6 +301,7 @@ const STATUS_COPY: Record<string, string> = {
   official_source_identified: 'Official source identified',
   proxy_watch: 'Proxy watch',
   fallback_cached: 'Cached fallback',
+  stale_fallback: 'Last published close, now some weeks old',
   date_unavailable: 'Date unavailable',
   current: 'Current',
   delayed: 'Delayed',
@@ -317,6 +318,7 @@ const STATUS_CHIP: Record<string, string> = {
   no_dated_observation: 'Awaiting close',
   official_source_identified: 'Source identified',
   fallback_cached: 'Cached',
+  stale_fallback: 'Older close',
   date_unavailable: 'No date',
   proxy_watch: 'Proxy',
 };

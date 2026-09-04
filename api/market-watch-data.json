@@ -1,13 +1,13 @@
 {
-  "fetched_at": "2026-08-13T17:25:27.838890+00:00",
+  "fetched_at": "2026-09-04T21:13:19.310779+00:00",
   "source": "Official Caribbean exchange public pages",
   "method": "deterministic official-page verification; no inferred or synthetic prices",
   "health": {
     "configured_sources": 6,
-    "successful_sources": 6,
+    "successful_sources": 5,
     "dated_observations": 4,
-    "current_observations": 4,
-    "fallback_sources": 0,
+    "current_observations": 3,
+    "fallback_sources": 1,
     "failed_sources": []
   },
   "markets": [
@@ -20,13 +20,13 @@
       "source_format": "public_html",
       "machine_readable_feed": false,
       "timing_disclosure": null,
-      "attempted_at": "2026-08-13T17:25:27.838890+00:00",
+      "attempted_at": "2026-09-04T21:13:19.310779+00:00",
       "fetch_status": "ok",
       "freshness_state": "source_checked_no_dated_observation",
       "observation_at": null,
       "observation_age_days": null,
       "summary": "Official source reached; no dated market observation was exposed in the public page.",
-      "response_date": "Thu, 13 Aug 2026 17:25:30 GMT",
+      "response_date": "Fri, 04 Sep 2026 21:13:21 GMT",
       "last_modified": null,
       "exchange": {
         "name": "Jamaica Stock Exchange (JSE)",
@@ -69,13 +69,13 @@
       "market_snapshot": {
         "bars": [
           49,
-          48,
-          49,
-          72,
-          40,
-          64,
+          63,
+          75,
+          59,
           61,
-          71
+          59,
+          59,
+          73
         ],
         "chart_label": "Indexed activity proxy, not price history",
         "data_status": "source_checked_no_dated_observation",
@@ -96,13 +96,13 @@
       "source_format": "public_html",
       "machine_readable_feed": false,
       "timing_disclosure": null,
-      "attempted_at": "2026-08-13T17:25:27.838890+00:00",
+      "attempted_at": "2026-09-04T21:13:19.310779+00:00",
       "fetch_status": "ok",
       "freshness_state": "current",
-      "observation_at": "2026-08-13",
+      "observation_at": "2026-09-04",
       "observation_age_days": 0,
-      "summary": "Activity for 13 Aug 2026",
-      "response_date": "Thu, 13 Aug 2026 17:25:31 GMT",
+      "summary": "Activity for 04 Sep 2026",
+      "response_date": "Fri, 04 Sep 2026 21:13:22 GMT",
       "last_modified": null,
       "exchange": {
         "name": "Trinidad and Tobago Stock Exchange (TTSE)",
@@ -144,18 +144,18 @@
       ],
       "market_snapshot": {
         "bars": [
-          54,
-          68,
-          45,
-          59,
-          38,
-          67,
-          48,
-          63
+          66,
+          35,
+          44,
+          66,
+          55,
+          75,
+          56,
+          74
         ],
         "chart_label": "Indexed activity proxy, not price history",
         "data_status": "current",
-        "headline": "Activity for 13 Aug 2026",
+        "headline": "Activity for 04 Sep 2026",
         "focus": [
           "energy",
           "banking",
@@ -172,19 +172,19 @@
       "source_format": "public_html",
       "machine_readable_feed": false,
       "timing_disclosure": null,
-      "attempted_at": "2026-08-13T17:25:27.838890+00:00",
-      "fetch_status": "ok",
-      "freshness_state": "current",
+      "attempted_at": "2026-09-04T21:13:19.310779+00:00",
+      "fetch_status": "fallback_cached",
+      "freshness_state": "stale_fallback",
       "observation_at": "2026-08-13",
       "observation_age_days": 0,
-      "summary": "Market open 2026-08-13",
+      "summary": "Refresh failed; serving the previous dated official observation as a preserved fallback.",
       "response_date": "Thu, 13 Aug 2026 17:25:28 GMT",
       "last_modified": null,
       "exchange": {
         "name": "Barbados Stock Exchange (BSE)",
         "code": null,
         "url": "https://bse.com.bb",
-        "feed_status": "current"
+        "feed_status": "stale_fallback"
       },
       "fx": {
         "currency": "BBD",
@@ -230,14 +230,15 @@
           63
         ],
         "chart_label": "Indexed activity proxy, not price history",
-        "data_status": "current",
-        "headline": "Market open 2026-08-13",
+        "data_status": "stale_fallback",
+        "headline": "Refresh failed; serving the previous dated official observation as a preserved fallback.",
         "focus": [
           "tourism",
           "banking",
           "insurance"
         ]
-      }
+      },
+      "error": "TimeoutError: The read operation timed out"
     },
     {
       "id": "bahamas",
@@ -248,13 +249,13 @@
       "source_format": "public_html",
       "machine_readable_feed": false,
       "timing_disclosure": "Official BISX homepage data is delayed by 30 minutes.",
-      "attempted_at": "2026-08-13T17:25:27.838890+00:00",
+      "attempted_at": "2026-09-04T21:13:19.310779+00:00",
       "fetch_status": "ok",
       "freshness_state": "current",
-      "observation_at": "2026-08-13",
+      "observation_at": "2026-09-04",
       "observation_age_days": 0,
       "summary": "Market Open GMT-4",
-      "response_date": "Thu, 13 Aug 2026 17:25:30 GMT",
+      "response_date": "Fri, 04 Sep 2026 21:13:21 GMT",
       "last_modified": null,
       "exchange": {
         "name": "Bahamas International Securities Exchange (BISX)",
@@ -296,14 +297,14 @@
       ],
       "market_snapshot": {
         "bars": [
-          54,
-          68,
-          45,
-          59,
-          38,
-          67,
-          48,
-          63
+          66,
+          35,
+          44,
+          66,
+          55,
+          75,
+          56,
+          74
         ],
         "chart_label": "Indexed activity proxy, not price history",
         "data_status": "current",
@@ -324,13 +325,13 @@
       "source_format": "public_html",
       "machine_readable_feed": false,
       "timing_disclosure": null,
-      "attempted_at": "2026-08-13T17:25:27.838890+00:00",
+      "attempted_at": "2026-09-04T21:13:19.310779+00:00",
       "fetch_status": "ok",
       "freshness_state": "source_checked_no_dated_observation",
       "observation_at": null,
       "observation_age_days": null,
       "summary": "Daily Trading Summary | Cayman Islands Stock Exchange",
-      "response_date": "Thu, 13 Aug 2026 17:25:28 GMT",
+      "response_date": "Fri, 04 Sep 2026 21:13:19 GMT",
       "last_modified": null,
       "exchange": {
         "name": "Cayman Islands Stock Exchange (CSX)",
@@ -373,13 +374,13 @@
       "market_snapshot": {
         "bars": [
           49,
-          48,
-          49,
-          72,
-          40,
-          64,
+          63,
+          75,
+          59,
           61,
-          71
+          59,
+          59,
+          73
         ],
         "chart_label": "Indexed activity proxy, not price history",
         "data_status": "source_checked_no_dated_observation",
@@ -400,14 +401,14 @@
       "source_format": "public_html",
       "machine_readable_feed": false,
       "timing_disclosure": null,
-      "attempted_at": "2026-08-13T17:25:27.838890+00:00",
+      "attempted_at": "2026-09-04T21:13:19.310779+00:00",
       "fetch_status": "ok",
       "freshness_state": "current",
-      "observation_at": "2026-08-12",
-      "observation_age_days": 1,
-      "summary": "ECSE Daily Trade Report and Financial Tip – 12 August 2026",
-      "response_date": "Thu, 13 Aug 2026 17:25:28 GMT",
-      "last_modified": "Wed, 12 Aug 2026 19:48:32 GMT",
+      "observation_at": "2026-09-04",
+      "observation_age_days": 0,
+      "summary": "ECSE Daily Trade Report and Financial Tip – 04 September 2026",
+      "response_date": "Fri, 04 Sep 2026 21:13:19 GMT",
+      "last_modified": "Fri, 04 Sep 2026 19:48:29 GMT",
       "exchange": {
         "name": "Eastern Caribbean Securities Exchange (ECSE)",
         "code": null,
@@ -448,18 +449,18 @@
       ],
       "market_snapshot": {
         "bars": [
-          40,
-          51,
-          68,
-          67,
-          50,
-          59,
-          69,
-          49
+          66,
+          35,
+          44,
+          66,
+          55,
+          75,
+          56,
+          74
         ],
         "chart_label": "Indexed activity proxy, not price history",
         "data_status": "current",
-        "headline": "ECSE Daily Trade Report and Financial Tip – 12 August 2026",
+        "headline": "ECSE Daily Trade Report and Financial Tip – 04 September 2026",
         "focus": [
           "banking",
           "government securities",
