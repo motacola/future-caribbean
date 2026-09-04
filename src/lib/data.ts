@@ -62,9 +62,9 @@ function cleanTitle(raw: string, evidenceGrade = ''): string {
 // fallow-ignore-next-line complexity
 function cleanGrade(raw: string): string {
   const r = raw.toLowerCase();
-  if (r.includes('multi-source') || raw.startsWith('A')) return 'Solid — several sources agree';
-  if (r.includes('cross-source') || raw.startsWith('B')) return 'Promising — more than one source';
-  if (raw.startsWith('C')) return 'Early — one source so far';
+  if (r.includes('multi-source') || raw.startsWith('A')) return 'Solid: several sources agree';
+  if (r.includes('cross-source') || raw.startsWith('B')) return 'Promising: more than one source';
+  if (raw.startsWith('C')) return 'Early: one source so far';
   return 'Exploratory';
 }
 
