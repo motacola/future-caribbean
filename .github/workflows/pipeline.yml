@@ -52,6 +52,25 @@ jobs:
           # We only fail the workflow on non-telegram failures.
           echo "Pipeline completed, checking for non-telegram failures..."
 
+      - name: Verify before publishing
+        # The gate that decides whether this cycle is fit to publish. It ran
+        # nowhere until now: scripts/verify.sh had no automated caller, so every
+        # four hours artefacts were committed with nothing checking them.
+        #
+        # `data` mode is the right scope here. This job publishes data artefacts;
+        # Vercel builds the site separately from whatever lands on the branch. So
+        # the gate runs pytest, the ranking invariants and the ledger hash chain,
+        # and skips Astro and Playwright rather than installing a Node toolchain
+        # into a job that has no other use for one.
+        #
+        # It also fails if any check wrote to a published artefact, so a future
+        # test that mutates outbox/ or data/ surfaces here instead of silently
+        # committing whatever it produced.
+        run: |
+          set -euo pipefail
+          pip install pytest
+          bash scripts/verify.sh data
+
       - name: Commit and push updated artifacts
         run: |
           git config user.name "github-actions[bot]"
