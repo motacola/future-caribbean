@@ -9,7 +9,7 @@
     "quality_profile": "showcase",
     "repository": {
       "url": "https://github.com/motacola/future-caribbean",
-      "revision": "2cfa9d16d0a31dad10af8bbc3fb66c42964109b9"
+      "revision": "4a26fb33ffa1644983a14ae1cf30c059cbff2b76"
     },
     "viewBox": [
       1040,
@@ -434,20 +434,20 @@
       "sources": [
         {
           "path": "server.py",
-          "line": 198,
-          "end_line": 234,
+          "line": 210,
+          "end_line": 248,
           "label": "token-gated mutation routes"
         },
         {
           "path": "server.py",
-          "line": 284,
-          "end_line": 293,
-          "label": "fail-closed admin gate"
+          "line": 306,
+          "end_line": 341,
+          "label": "host and admin gates"
         },
         {
           "path": "server.py",
-          "line": 304,
-          "end_line": 309,
+          "line": 352,
+          "end_line": 357,
           "label": "Flue workflow runner"
         }
       ]

@@ -12,7 +12,7 @@ Companion explanation for the interactive Archify map:
 
 All four HTML diagrams were rendered from their JSON sources on 2026-09-04 at Archify showcase
 quality: 9/9 artifact checks, 0 composition errors, 0 warnings, and 16 visual-check captures each
-across four viewports in both themes. Evidence links are pinned to `2cfa9d1`. **Re-render after any
+across four viewports in both themes. Evidence links are pinned to `4a26fb3`. **Re-render after any
 edit to a JSON source** — the HTML is a build output, not a hand-maintained file.
 
 ## What Signal Fabric is
@@ -90,10 +90,12 @@ This distinction matters: the frontend is a delivery and exploration layer, not 
   payload always names the engine that produced it. No other artifact, ranking, routing,
   or citation depends on it, and the public `/api/ask` path is deterministic over
   generated artifacts.
-- The local operator server authenticates mutations, but read routes stay open:
-  `/api/delivery/approvals` and `/api/webhooks` are readable over unauthenticated GET
-  with `Access-Control-Allow-Origin: *`, and there is no `Host` check. Loopback binding
-  is the containment boundary, not the only one to rely on if `HOST` is widened.
+- The local operator server authenticates mutations, and the two reads that expose
+  operator state rather than product — `/api/delivery/approvals` and `/api/webhooks` —
+  now require the same token. Requests are also rejected when the bind address is
+  loopback and the `Host` header is neither loopback nor a configured origin, which is
+  what stops a page resolving its own domain to `127.0.0.1`. Every other GET keeps
+  `Access-Control-Allow-Origin: *`; those are published surfaces.
 - Hosted write paths require authentication; read paths are the default public surface.
 - Delivery approvals carry five states — `pending`, `approved`, `sent`, `dry-run-sent`, `rejected`
   (`.flue/tools/delivery.ts:20`). The operations diagram states the count rather than a partial list.
@@ -115,6 +117,6 @@ This distinction matters: the frontend is a delivery and exploration layer, not 
 | Deterministic Q&A | `agent/query.py:1-80` |
 | Optional synthesis and its engine label | `reasoners/synthesis.py:9-22`, `reasoners/synthesis.py:205-236` |
 | Synthesis public surface | `api/reasoning.py:1-27`, `src/pages/index.astro:2978` |
-| Operator-server trust boundary | `server.py:19-25`, `server.py:284-293`, `tests/test_server_security.py` |
+| Operator-server trust boundary | `server.py:28-30`, `server.py:306-341`, `tests/test_server_security.py` |
 | MCP and CLI adapters | `mcp_adapter/desk_server.py:36-49`, `cli/signalctl.py:1-27` |
 | Vercel build and routing | `scripts/vercel-build.sh:10-31`, `vercel.json:1-76` |
