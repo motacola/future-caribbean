@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Serve Caribbean Opportunity Dispatch — product-first homepage with live API."""
 
+import hmac
 import http.server
 import json
 import os
@@ -15,6 +16,13 @@ from urllib.parse import parse_qs, urlparse
 
 PORT = int(os.environ.get("PORT", 8080))
 APP_DIR = Path(__file__).parent
+PUBLIC_POST_PATHS = frozenset({"/api/ask"})
+LOOPBACK_HOSTS = frozenset({"127.0.0.1", "::1", "localhost"})
+
+
+def get_bind_host() -> str:
+    """Keep the operator server local unless exposure is explicit."""
+    return os.environ.get("HOST", "127.0.0.1").strip() or "127.0.0.1"
 
 BLOCKED_PREFIXES = (
     ".git", ".env", ".claude", ".hermes", ".ruff_cache", ".github",
@@ -43,10 +51,19 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
     # ── Routing ────────────────────────────────────────────────
 
     def do_OPTIONS(self):
-        self.send_response(200)
+        path = urlparse(self.path).path
+        origin = self.headers.get("Origin", "")
+        if path not in PUBLIC_POST_PATHS and origin and not self._origin_allowed(origin):
+            self._json({"ok": False, "error": "Origin is not allowed"}, 403)
+            return
+
+        self.send_response(204)
         self._cors()
-        self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
-        self.send_header("Access-Control-Allow-Headers", "Content-Type")
+        self.send_header("Access-Control-Allow-Methods", "GET, POST, DELETE, OPTIONS")
+        self.send_header(
+            "Access-Control-Allow-Headers",
+            "Content-Type, Authorization, X-Desk-Admin-Token",
+        )
         self.end_headers()
 
     def do_GET(self):
@@ -182,6 +199,9 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
         parsed = urlparse(self.path)
         path = parsed.path
 
+        if path not in PUBLIC_POST_PATHS and not self._require_admin():
+            return
+
         if path == "/api/ask":
             self._api_ask()
             return
@@ -209,6 +229,8 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
     def do_DELETE(self):
         parsed = urlparse(self.path)
         path = parsed.path
+        if not self._require_admin():
+            return
         if path.startswith("/api/webhooks/"):
             sub_id = path[len("/api/webhooks/"):]
             self._api_webhooks_delete(sub_id)
@@ -227,7 +249,48 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
         self.wfile.write(body)
 
     def _cors(self) -> None:
-        self.send_header("Access-Control-Allow-Origin", "*")
+        path = urlparse(self.path).path
+        if self.command in {"GET", "HEAD"} or path in PUBLIC_POST_PATHS:
+            self.send_header("Access-Control-Allow-Origin", "*")
+            return
+
+        origin = self.headers.get("Origin", "")
+        if origin and self._origin_allowed(origin):
+            self.send_header("Access-Control-Allow-Origin", origin)
+            self.send_header("Vary", "Origin")
+
+    @staticmethod
+    def _origin_allowed(origin: str) -> bool:
+        configured = {
+            item.strip().rstrip("/")
+            for item in os.environ.get("SIGNAL_FABRIC_CORS_ORIGINS", "").split(",")
+            if item.strip()
+        }
+        candidate = origin.strip().rstrip("/")
+        if candidate in configured:
+            return True
+        try:
+            parsed = urlparse(candidate)
+            return parsed.scheme in {"http", "https"} and parsed.hostname in LOOPBACK_HOSTS
+        except ValueError:
+            return False
+
+    def _presented_admin_token(self) -> str:
+        authorization = self.headers.get("Authorization", "")
+        if authorization.startswith("Bearer "):
+            return authorization[len("Bearer "):].strip()
+        return self.headers.get("X-Desk-Admin-Token", "").strip()
+
+    def _require_admin(self) -> bool:
+        expected = os.environ.get("DESK_ADMIN_TOKEN", "").strip()
+        if not expected:
+            self._json({"ok": False, "error": "Admin write API is disabled"}, 503)
+            return False
+        presented = self._presented_admin_token()
+        if not presented or not hmac.compare_digest(presented, expected):
+            self._json({"ok": False, "error": "Unauthorized"}, 401)
+            return False
+        return True
 
     def _read_json_body(self) -> dict:
         try:
@@ -1304,6 +1367,7 @@ if __name__ == "__main__":
     if os.environ.get("DISABLE_PIPELINE_LOOP") != "1":
         threading.Thread(target=pipeline_loop, daemon=True).start()
     os.chdir(str(APP_DIR))
-    server = http.server.ThreadingHTTPServer(("0.0.0.0", PORT), AppHandler)
-    print(f"Listening on :{PORT}")
+    host = get_bind_host()
+    server = http.server.ThreadingHTTPServer((host, PORT), AppHandler)
+    print(f"Listening on http://{host}:{PORT}")
     server.serve_forever()

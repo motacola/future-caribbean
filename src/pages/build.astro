@@ -668,10 +668,15 @@ function submitWizard() {
   const btn=document.getElementById('wiz-submit'),status=document.getElementById('wiz-status');
   const payload={name:(document.getElementById('wiz-name').value||'').trim(),watch:(document.getElementById('wiz-watch').value||'').trim(),reason:(document.getElementById('wiz-reason').value||'').trim(),distribute:(document.getElementById('wiz-distribute').value||'').trim()};
   if(payload.name.length<3){status.textContent='⚠ Give the domain a name (3+ characters).';return;}
+  let adminToken=(sessionStorage.getItem('signal-fabric-admin-token')||'').trim();
+  if(!adminToken){adminToken=(window.prompt('Enter the local Signal Fabric admin token:')||'').trim();}
+  if(!adminToken){status.textContent='⚠ An admin token is required to create a domain.';return;}
+  sessionStorage.setItem('signal-fabric-admin-token',adminToken);
   btn.disabled=true;btn.textContent='Creating…';
-  fetch('/api/domains/create',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
-    .then(r=>r.json())
-    .then(r=>{
+  fetch('/api/domains/create',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+adminToken},body:JSON.stringify(payload)})
+    .then(async response=>({status:response.status,body:await response.json()}))
+    .then(({status:httpStatus,body:r})=>{
+      if(httpStatus===401){sessionStorage.removeItem('signal-fabric-admin-token');}
       if(r&&r.ok&&r.domain){status.innerHTML='✓ Created <code style="font-family:var(--mono)">domains/'+r.domain.id+'.json</code> — added to the switcher.';loadDomains();setTimeout(()=>{closeWizard();activeDomain=r.domain.id;loadDomains();document.querySelector('.engine-sec').scrollIntoView({behavior:'smooth'});},900);}
       else{status.textContent='⚠ '+((r&&r.error)||'Could not create domain.');}
     })
