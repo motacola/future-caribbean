@@ -3,7 +3,7 @@
 
 import { readFileSync, existsSync, readdirSync, statSync } from 'fs';
 import { resolve, join } from 'path';
-import { humanize, humanizeRulesJson, cleanHeadline, cleanDek, humanizeStatus } from './humanize.ts';
+import { humanize, humanizeRulesJson, cleanHeadline, cleanDek, humanizeStatus, statusChip } from './humanize.ts';
 
 const ROOT = resolve(process.cwd());
 
@@ -72,7 +72,24 @@ function cleanEvidence(raw: string): string {
   return raw
     .replace(/WB\s+/g, 'World Bank ')
     .replace(/detected:\s*/g, 'data shows: ')
-    .replace(/FDI surge/g, 'FDI movement');
+    .replace(/FDI surge/g, 'FDI movement')
+    // "1 regional dataset(s)" — pick the plural the count actually calls for.
+    // The noun is not always adjacent to the number ("1 regional dataset(s)"),
+    // so carry the nearest preceding count across the words between them.
+    .replace(/\b(\d+)([^;.]{0,40}?)\b([A-Za-z]+)\(s\)/g,
+      (_m, n, mid, word) => `${n}${mid}${word}${Number(n) === 1 ? '' : 's'}`);
+}
+
+/** Evidence arrives as one semicolon-joined run-on. Readers get a list. */
+function evidenceListHtml(raw: string): string {
+  const parts = cleanEvidence(raw)
+    .split(';')
+    .map(part => part.replace(/^[\s•\-–]+/, '').trim())
+    .filter(part => part.length > 1);
+  if (!parts.length) return '';
+  if (parts.length === 1) return `<p><strong>Evidence:</strong> ${esc(parts[0])}</p>`;
+  return `<p class="evidence-lead"><strong>Evidence</strong></p><ul class="evidence-list">${
+    parts.map(part => `<li>${esc(part)}</li>`).join('')}</ul>`;
 }
 
 function cleanSignalTitle(raw: string): string {
@@ -1009,7 +1026,15 @@ export function loadDashboardData() {
   }
 
   // ── Regional news desk ─────────────────────────────────────
-  const visibleNews = newsItems.filter((item: any) => item.relevance_score >= 35).slice(0, 18);
+  // Relevance alone put a 2,353-day-old CDB booklet and a 2021 republished
+  // notice on a desk headed "What is moving across the Caribbean". The country
+  // drill already sorted around this; the desk itself did not. A year is well
+  // past any reading of "moving" — items that old are archive, not news.
+  const NEWS_MAX_AGE_HOURS = 365 * 24;
+  const visibleNews = newsItems
+    .filter((item: any) => item.relevance_score >= 35)
+    .filter((item: any) => item.age_hours === null || item.age_hours <= NEWS_MAX_AGE_HOURS)
+    .slice(0, 18);
   const newsCountries = [...new Set(visibleNews.flatMap((item: any) => item.countries))].sort();
   const newsTopics = [...new Set(visibleNews.flatMap((item: any) => item.topics))].sort();
 
@@ -1077,7 +1102,7 @@ export function loadDashboardData() {
       <div class="news-kicker">${esc(kicker)}</div>
       <h3><a href="${esc(item.url)}" target="_blank" rel="noopener">${esc(headline)}</a></h3>
       ${dek ? `<p>${esc(dek)}</p>` : ''}
-      <footer><span class="news-source">${esc(humanize(item.source || 'Regional source'))}</span><span class="news-stamp">Tier ${esc(item.source_tier)} · ${esc(time)} · relevance ${esc(item.relevance_score)}</span></footer>
+      <footer><span class="news-source">${esc(humanize(item.source || 'Regional source'))}</span><span class="news-stamp">${esc(item.source_tier === 1 ? "Official source" : "Regional press")} · ${esc(time)}</span></footer>
     </article>`;
   }).join('') || '<p class="muted">Regional feeds have not been refreshed yet.</p>';
 
@@ -1098,7 +1123,9 @@ export function loadDashboardData() {
 
   for (const m of orderedMarkets) {
     const ex = m.exchange || {};
-    const status = statusLabels[ex.feed_status] ?? (ex.feed_status || 'Feed planned').replace(/_/g, ' ').replace(/\b\w/g, (c: string) => c.toUpperCase());
+    // Title-casing the raw key printed "Source Checked No Dated Observation" into
+    // a status pill. statusChip knows the short human label for these.
+    const status = statusLabels[ex.feed_status] ?? statusChip(ex.feed_status, 'Feed planned');
     const statusClass = ex.feed_status === 'proxy_watch' ? 'proxy' : 'official';
     const sectors = ((m.watch_sectors || []) as string[]).slice(0, 4).join(', ');
     const news = ((m.credible_news || []) as any[]).slice(0, 3).map((n: any) => n.name || '').join(', ');
@@ -1148,7 +1175,7 @@ export function loadDashboardData() {
       ${linksHtml}
     </article>`;
     marketChartHtml += `<article class="market-chart-card ${statusClass}">
-      <div class="market-top">${codeHtml}<span class="market-status">${esc(snap.data_status ? humanizeStatus(snap.data_status) : status)}</span></div>
+      <div class="market-top">${codeHtml}<span class="market-status">${esc(snap.data_status ? statusChip(snap.data_status) : status)}</span></div>
       <h3>${esc(humanize(m.country || exchName))}</h3>
       <div class="activity-chart-shell">${activityChart}</div>
       <p class="activity-readout" aria-live="polite"></p>
@@ -1245,7 +1272,7 @@ export function loadDashboardData() {
     const cg = cleanGrade(c.evidence_grade || '');
     const cf = c.freshness || '';
     const cd = humanize(c.decision || '').slice(0, 100);
-    const ce = cleanEvidence(c.evidence || '');
+    const ce = c.evidence || '';  // evidenceListHtml cleans and splits it
     const cr: string[] = c.risk_flags || [];
     const crHtml = cr.length ? `<div class="risk-inline">⚠️ ${esc(cr[0].slice(0, 80))}</div>` : '';
     const routesHtml = ((c.personas || []) as any[]).slice(0, 3)
@@ -1257,7 +1284,7 @@ export function loadDashboardData() {
         <h4>${esc(ct)}${cc ? ' · ' + esc(cc) : ''}</h4>
         <div class="conf-badge conf-high">${esc(cg)} · ${esc(cf)}</div>
         <p><strong>Decision:</strong> ${esc(cd)}</p>
-        <p><strong>Evidence:</strong> ${esc(ce)}</p>
+        ${evidenceListHtml(ce)}
         ${crHtml}
         <div class="croutes">${routesHtml}</div>
       </div>

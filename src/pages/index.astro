@@ -301,6 +301,11 @@ a:hover { text-decoration: underline; }
 .market-code::after { content: "▍"; margin-left: 3px; animation: caret-blink 1.2s step-end infinite; opacity: .7; }
 /* Longer status phrasings ("Source checked — no dated close published") used
    to run past the card edge on nowrap; let them wrap inside the pill. */
+/* Evidence used to print as one semicolon-joined run-on ("...notices: 9; • A; • B").
+   A list is what it always was. */
+.evidence-lead { margin-bottom: 2px; }
+.evidence-list { margin: 0 0 10px; padding-left: 16px; list-style: disc; }
+.evidence-list li { margin: 2px 0; line-height: 1.45; }
 .market-status { font-family: var(--mono); font-size: 9px; line-height: 1.5; text-transform: uppercase; letter-spacing: .7px; color: var(--teal); background: rgba(13,82,87,.08); border: 1px solid rgba(13,82,87,.16); border-radius: 10px; padding: 3px 8px; text-align: right; max-width: 62%; }
 .market-card .market-status, .market-chart-card .market-status { text-wrap: balance; }
 .market-card.proxy .market-status { color: var(--gold); background: rgba(154,107,21,.1); border-color: rgba(154,107,21,.2); }

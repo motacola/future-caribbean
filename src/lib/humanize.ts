@@ -222,6 +222,12 @@ export function cleanHeadline(title: string | null | undefined): string {
 // ("Tue, 08/11/2026 - 17:29") and bare boilerplate that adds nothing.
 const DEK_NOISE: RegExp[] = [
   /\b[a-z][a-z0-9_-]*\.[a-z][a-z0-9_-]*\s*(?:\.{2,}|…)/g,
+  // A truncated CMS author email at the head of the summary — the CDB feed
+  // opens one notice with "alice.castro@c… (This is a republication…".
+  /^[a-z][a-z0-9._-]*@[a-z0-9.-]*\s*(?:\.{2,}|…)?\s*/i,
+  // "Lothar Mikulla Summary The booklet…" — a byline the feed prepends before
+  // the real sentence. Two or three capitalised names, then Summary/Abstract.
+  /^(?:[A-Z][a-z]+\s+){1,3}(?=(?:Summary|Overview|Abstract)\s+[A-Z])/,
   /\b(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun),?\s*\d{1,2}\/\d{1,2}\/\d{2,4}\s*-\s*\d{1,2}:\d{2}\s*/g,
   /\b\d{1,2}\/\d{1,2}\/\d{4}\s*-\s*\d{1,2}:\d{2}\s*/g,
   /\bRead more\b\.?/gi,
@@ -251,6 +257,12 @@ export function cleanDek(summary: string | null | undefined, title?: string | nu
   for (const rule of DEK_NOISE) out = out.replace(rule, ' ');
   out = unshout(tidy(stripTrackingTokens(out)));
 
+  // Feeds open with a section word before repeating the headline ("Overview
+   // Future Leaders Network The Caribbean Development Bank's Future Leaders
+   // Network…"). Strip it first, or the headline-prefix test below never
+   // matches and the title is printed twice in a row.
+  out = tidy(out.replace(/^(?:Summary|Overview|Abstract|Background)\s+(?=[A-Z])/, ''));
+
   if (title) {
     const headline = comparable(title);
     // Feeds commonly prefix the summary with the headline; drop that prefix.
@@ -260,6 +272,15 @@ export function cleanDek(summary: string | null | undefined, title?: string | nu
       const pattern = headline.split(' ').map(w => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('[^A-Za-z0-9]+');
       out = tidy(out.replace(new RegExp(`^[^A-Za-z0-9]*${pattern}[^A-Za-z0-9]*`, 'i'), ''));
       out = tidy(out.replace(LEADING_SLUG, '').replace(/^(?:Summary|Overview|Abstract)\s+(?=[A-Z])/, ''));
+      // CDB tender feeds bury their own kicker behind the headline, a byline and
+      // a timestamp: "…(BESRPII) sonia.harrison… Tue, 08/11/2026 - 17:29
+      // INVITATION TO BID – WORKS The Government of Belize…". Only now, with the
+      // headline gone and unshout having folded the caps, is it at the front.
+      // The headline already says what kind of notice this is.
+      // No /i here: it would make [a-z] and the (?=[A-Z]) lookahead both
+      // case-blind, so the match ended immediately and left "works" behind.
+      // unshout has already normalised the caps by this point.
+      out = tidy(out.replace(/^Invitation to (?:bid|tender)\s*[–-]?\s*[a-z ]{0,24}?(?=[A-Z])/, ''));
     }
     const body = comparable(out);
     // Whatever is left is only useful if it says something new. A long dek
@@ -287,6 +308,25 @@ const STATUS_COPY: Record<string, string> = {
   live: 'Live feed',
   planned: 'Feed planned',
 };
+
+// Chips sit beside one-word labels like "Current" in a 9px uppercase pill, so
+// they need a label, not a sentence. The descriptive line under the card still
+// gets the full STATUS_COPY phrasing.
+const STATUS_CHIP: Record<string, string> = {
+  source_checked_no_dated_observation: 'Awaiting close',
+  no_dated_observation: 'Awaiting close',
+  official_source_identified: 'Source identified',
+  fallback_cached: 'Cached',
+  date_unavailable: 'No date',
+  proxy_watch: 'Proxy',
+};
+
+/** Short label for a status pill. Falls back to the readable sentence form. */
+export function statusChip(raw: string | null | undefined, fallback = 'Status unknown'): string {
+  const key = tidy(raw ?? '').toLowerCase().replace(/[\s-]+/g, '_');
+  if (!key) return fallback;
+  return STATUS_CHIP[key] ?? humanizeStatus(raw, fallback);
+}
 
 /** Render a pipeline status identifier as something a reader can parse. */
 export function humanizeStatus(raw: string | null | undefined, fallback = 'Status unknown'): string {
