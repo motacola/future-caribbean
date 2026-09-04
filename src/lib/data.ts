@@ -1153,7 +1153,7 @@ export function loadDashboardData() {
       <div class="activity-chart-shell">${activityChart}</div>
       <p class="activity-readout" aria-live="polite"></p>
       <p class="activity-chart-caption"><strong>${esc(humanize(barLabel))}</strong>${barMeta}</p>
-      <p class="market-chart-disclosure">Activity trend, not share price.</p>
+      <p class="market-chart-disclosure">Indexed activity trend, not share price.</p>
       ${snap.headline ? `<p class="market-chart-headline">${esc(humanize(snap.headline))}</p>` : ''}
       <p>${esc(humanize(focusCopy))}</p>
       <div class="market-finance-row"><span>${esc(humanize(fx.indicator || 'FX watch'))}</span><span>${esc(humanize(fx.pair || '—'))}</span></div>

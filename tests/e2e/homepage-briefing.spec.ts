@@ -48,7 +48,7 @@ test('market watch labels dates, source status, and illustrative chart limits ho
   await expect(charts).toHaveCount(await cards.count());
   await expect(cards.locator('.market-observation').first()).toContainText(/Official source (observation|status):/);
   await expect(charts.locator('.market-chart-disclosure').first()).toHaveText(
-    'Illustrative indexed activity proxy — not exchange price or OHLC data.',
+    'Indexed activity trend, not share price.',
   );
   await expect(marketWatch.locator('.source-registry')).toBeVisible();
   await expect(marketWatch.getByText(/Latest \d+/)).toHaveCount(0);
