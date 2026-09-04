@@ -14,4 +14,4 @@ Lead: Guyana. 3 converging signal(s) across 3 source(s). Signals: 💼 Investmen
 🏗️ CARICOM: 9 active procurements — bidding window open
 
 Generated from public regional data, ranked for decision value.
-Generated: 2026-09-03 22:31 UTC
+Generated: 2026-09-04 04:23 UTC
