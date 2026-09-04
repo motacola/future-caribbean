@@ -1,10 +1,10 @@
 {
   "signal_id": "enhanced-invest-suriname",
-  "dispatch_id": "DSP-20260825-022",
+  "dispatch_id": "DSP-20260903-020",
   "country": "Suriname",
   "signal_title": "Suriname: +206.0% investment movement, one source — needs corroboration",
   "confidence_score": 68,
-  "raw_confidence_score": 98,
+  "raw_confidence_score": 96,
   "action_readiness": "medium (annual macro signal only)",
   "evidence_grade": "C - single-source",
   "sector_hypotheses": [
@@ -24,25 +24,30 @@
       "status": "macro_signal"
     }
   ],
-  "supporting_projects": [
-    {
-      "title": "Suriname Survey of Living Conditions: 2016-2017",
-      "source": "IDB Open Data",
-      "url": "https://data.iadb.org/en/search?q=Suriname%20Survey%20of%20Living%20Conditions%3A%2020",
-      "topics": []
-    },
-    {
-      "title": "Suriname COVID-19 Survey: 2020",
-      "source": "IDB Open Data",
-      "url": "https://data.iadb.org/en/search?q=Suriname%20COVID-19%20Survey%3A%202020",
-      "topics": []
-    }
-  ],
+  "supporting_projects": [],
   "procurement_matches": [
     {
       "title": "Enhancing the Quality of the Belize National Quality Infrastructure",
       "source": "Caribbean Development Bank",
       "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure",
+      "match": "regional"
+    },
+    {
+      "title": "Call For Application – Scholarship Opportunity: International Master In Public Procurement Management at The University of Rome Tor Vergata (2026/2027 Academic Year)",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/call-application-scholarship-opportunity-international-master-public-procurement-management-2",
+      "match": "regional"
+    },
+    {
+      "title": "Supply Installation, Testing and Commissioning of Mechanical Equipment, Fire Pump System and Information and Communications Technology Systems",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/supply-installation-testing-and-commissioning-mechanical-equipment-fire-pump-system-and-information",
+      "match": "regional"
+    },
+    {
+      "title": "The University of the West Indies Digital Transformation Project",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/university-west-indies-digital-transformation-project-3",
       "match": "regional"
     },
     {
@@ -56,38 +61,9 @@
       "source": "Caribbean Development Bank",
       "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/bahamas-water-supply-improvement-project-phase-2-1",
       "match": "regional"
-    },
-    {
-      "title": "The Bahamas Water Supply Improvement Project Phase 2",
-      "source": "Caribbean Development Bank",
-      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/bahamas-water-supply-improvement-project-phase-2-0",
-      "match": "regional"
-    },
-    {
-      "title": "Kalinago Development Project",
-      "source": "Caribbean Development Bank",
-      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/kalinago-development-project-2",
-      "match": "regional"
-    },
-    {
-      "title": "Kalinago Development Project",
-      "source": "Caribbean Development Bank",
-      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/kalinago-development-project-1",
-      "match": "regional"
     }
   ],
-  "official_country_data": [
-    {
-      "title": "Suriname Balance of Payments (2017 &#8211; 2025)",
-      "source": "CARICOM Statistics",
-      "url": "https://statistics.caricom.org/?country_data=suriname-balance-of-payments-2017-2024"
-    },
-    {
-      "title": "Suriname: Monthly Consumer Price Index (CPI) by Expenditure Category",
-      "source": "CARICOM Statistics",
-      "url": "https://statistics.caricom.org/?country_data=suriname-monthly-consumer-price-index-cpi-by-expenditure-category"
-    }
-  ],
+  "official_country_data": [],
   "credible_local_operators": [],
   "relevant_institutions": [
     {
@@ -104,15 +80,11 @@
     }
   ],
   "source_links": [
-    "https://data.iadb.org/en/search?q=Suriname%20COVID-19%20Survey%3A%202020",
-    "https://data.iadb.org/en/search?q=Suriname%20Survey%20of%20Living%20Conditions%3A%2020",
-    "https://statistics.caricom.org/?country_data=suriname-balance-of-payments-2017-2024",
-    "https://statistics.caricom.org/?country_data=suriname-monthly-consumer-price-index-cpi-by-expenditure-category",
-    "https://www.caribank.org/work-with-us/procurement/procurement-notices/bahamas-water-supply-improvement-project-phase-2-0",
     "https://www.caribank.org/work-with-us/procurement/procurement-notices/bahamas-water-supply-improvement-project-phase-2-1",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/call-application-scholarship-opportunity-international-master-public-procurement-management-2",
     "https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure",
-    "https://www.caribank.org/work-with-us/procurement/procurement-notices/kalinago-development-project-1",
-    "https://www.caribank.org/work-with-us/procurement/procurement-notices/kalinago-development-project-2",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/supply-installation-testing-and-commissioning-mechanical-equipment-fire-pump-system-and-information",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/university-west-indies-digital-transformation-project-3",
     "https://www.caribank.org/work-with-us/procurement/procurement-plans/grenada-education-enhancement-project-phase-ii"
   ],
   "unresolved_questions": [
@@ -128,8 +100,8 @@
     }
   ],
   "advance_or_reject_recommendation": "hold",
-  "recommendation_reason": "Calibrated confidence 68/100 with 1 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.",
-  "last_validated_at": "2026-08-25T13:08:08.632342+00:00",
+  "recommendation_reason": "Calibrated confidence 68/100 with 0 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.",
+  "last_validated_at": "2026-09-03T22:31:19.062428+00:00",
   "coordination_path": null,
   "evidence_fingerprint": "e3b0c44298fc1c14",
   "cycles_since_refresh": 0,

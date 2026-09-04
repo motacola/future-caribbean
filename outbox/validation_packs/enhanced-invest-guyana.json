@@ -1,23 +1,24 @@
 {
   "signal_id": "enhanced-invest-guyana",
-  "dispatch_id": "DSP-20260825-019",
+  "dispatch_id": "DSP-20260903-017",
   "country": "Guyana",
   "signal_title": "Guyana: +860.3% capital surge on a single official source — market entry window open",
   "confidence_score": 100,
-  "raw_confidence_score": 111,
+  "raw_confidence_score": 109,
   "action_readiness": "high",
   "evidence_grade": "C - single-source",
   "sector_hypotheses": [
     {
       "sector": "Oil & gas and offshore support services",
-      "basis": "Google News — Guyana: ExxonMobil Guyana receives Errea Wittu FPSO at Uaru field - Oil & Gas Journal",
+      "basis": "Google News — Guyana: Africa’s top oil producer targets $50 billion offshore comeback as it battles Namibia and Guyana for global energy investment - Business Insider Africa",
       "status": "corroborated",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPQUV6cGpCYmQzTnJfS0w5MWY4ZFl2WkZwM0VtNUxVUlNqRnd4Y2l4clJrdkVUTkVHNDRMMVliYU5LZkNmazJEZC16eU5veF81ZFBrQS1GeEthc3hSa1U5ZFB2VHBCV2NlVVN1c1lhTEQzVGlfN3ZpWVhKR0taYjVoTkRkMk82cW1UZUtkYWJ2M2FqbUZ0b0hVcFRLempCTVdUR0dWcy1GUHNvcUt1VDlGUHBvM0o4aEU?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOQU9qLVdKUnp6YnpQaUkyaFVOTUxIVkh0Y1o3bVlFLUVWTWotcGhmcUU1N0pEZEF4dkk4RDQtamdndUJQTEE1LUxhNEZQd185Y0VmeEpLTjZPUTlSVHREbHpRYmRsajNIWUpQdlQ2LU5CQVZsbWdGQzJaanlKMXRldktyZ3doc01PcDgyUFZ0WThUSnNpWnZLN2h4Szgxbi1JV1pZdE1jV3NjaEl1em9hRUFXVFhBdlhMZEZYM2NUaGdtbldMNExmTVhPbUVNVENBSFRabQ?oc=5"
     },
     {
       "sector": "Construction and infrastructure",
-      "basis": "Analyst prior from widely reported sector drivers — requires local confirmation",
-      "status": "unconfirmed"
+      "basis": "Google News — Guyana: U.S. seeks role in Guyana’s infrastructure and economic development as oil boom accelerates - Caribbean National Weekly",
+      "status": "corroborated",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQT1gzUE1UT21XNDVVaUN1VElUdlRFS0xNRlc0Y1R3YUozc2Y1TDRwbFJhR2t2TjhfOGdzN1ctckstcUVWUFZTdVM5bnlTRGdrejNQNUFPWE9IbUx3cEZ0SHFJRVpwWGdabzVLbkRnVm9vUG9aU0pPMW1jN1U2Y0RjaTJDc24yS3ROVC1QSXFLa0taeWRaa1FVNkU4eTlHN2k2YTlHYUNSNDhQRWg0REJxVjVTcGNMbkRJb1EzX0dBektheWFueTgwUlpBLVptWVk?oc=5"
     },
     {
       "sector": "Logistics serving the energy supply chain",
@@ -35,64 +36,14 @@
       "status": "macro_signal"
     }
   ],
-  "supporting_projects": [
-    {
-      "title": "Productivity, Technology and Innovation Survey Guyana: 2013-2014",
-      "source": "IDB Open Data",
-      "url": "https://data.iadb.org/en/search?q=Productivity%2C%20Technology%20and%20Innovation%20",
-      "topics": []
-    },
-    {
-      "title": "Guyana: Latin American Public Opinion Project - Victimization and Crime survey 2016",
-      "source": "IDB Open Data",
-      "url": "https://data.iadb.org/en/search?q=Guyana%3A%20Latin%20American%20Public%20Opinion%20Pr",
-      "topics": []
-    },
-    {
-      "title": "Guyana Labor Force Survey: Third Quarter 2017",
-      "source": "IDB Open Data",
-      "url": "https://data.iadb.org/en/search?q=Guyana%20Labor%20Force%20Survey%3A%20Third%20Quarter",
-      "topics": [
-        "social"
-      ]
-    },
-    {
-      "title": "Guyana Labor Force Survey: Fourth Quarter 2017",
-      "source": "IDB Open Data",
-      "url": "https://data.iadb.org/en/search?q=Guyana%20Labor%20Force%20Survey%3A%20Fourth%20Quarte",
-      "topics": [
-        "social"
-      ]
-    }
-  ],
+  "supporting_projects": [],
   "procurement_matches": [
     {
-      "title": "Construction of Elderly Assisted Living Facility, Enmore, Region No.4, Phase 1",
+      "title": "Rehabilitation works for the Bartica 5 Miles Raw Water Intake Structure,  5 Miles, Bartica, Region No. 7",
       "source": "Guyana eProcure (NPTA)",
       "url": "https://eprocure.gov.gy/",
       "match": "country",
-      "closing_date": "2026-08-27"
-    },
-    {
-      "title": "EOI for the Design and Supervision of the National Public Health Reference Laboratory Building",
-      "source": "Guyana eProcure (NPTA)",
-      "url": "https://eprocure.gov.gy/",
-      "match": "country",
-      "closing_date": "2026-08-31"
-    },
-    {
-      "title": "Consultancy for TVET & Training Diagnostic for SEND Students",
-      "source": "Guyana eProcure (NPTA)",
-      "url": "https://eprocure.gov.gy/",
-      "match": "country",
-      "closing_date": "2026-08-31"
-    },
-    {
-      "title": "Consultancy for Service of Behavioural Therapist",
-      "source": "Guyana eProcure (NPTA)",
-      "url": "https://eprocure.gov.gy/",
-      "match": "country",
-      "closing_date": "2026-08-31"
+      "closing_date": "2026-09-22"
     },
     {
       "title": "Rehabilitation and Upgrade of Mahaica Bridge to Abary Bridge Road Corridor",
@@ -106,20 +57,27 @@
       "source": "Caribbean Development Bank",
       "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure",
       "match": "regional"
-    }
-  ],
-  "official_country_data": [
-    {
-      "title": "Guyana Balance of Payments (2000 – 2025)",
-      "source": "CARICOM Statistics",
-      "url": "https://statistics.caricom.org/?country_data=guyana-balance-of-payments-2000-2024"
     },
     {
-      "title": "Guyana: Monthly Consumer Price Index (CPI) by Expenditure Category",
-      "source": "CARICOM Statistics",
-      "url": "https://statistics.caricom.org/?country_data=guyana-monthly-consumer-price-index-cpi-by-expenditure-category"
+      "title": "Call For Application – Scholarship Opportunity: International Master In Public Procurement Management at The University of Rome Tor Vergata (2026/2027 Academic Year)",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/call-application-scholarship-opportunity-international-master-public-procurement-management-2",
+      "match": "regional"
+    },
+    {
+      "title": "Supply Installation, Testing and Commissioning of Mechanical Equipment, Fire Pump System and Information and Communications Technology Systems",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/supply-installation-testing-and-commissioning-mechanical-equipment-fire-pump-system-and-information",
+      "match": "regional"
+    },
+    {
+      "title": "The University of the West Indies Digital Transformation Project",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/university-west-indies-digital-transformation-project-3",
+      "match": "regional"
     }
   ],
+  "official_country_data": [],
   "credible_local_operators": [
     {
       "name": "Guyana Shore Base Inc. (GSBI)",
@@ -162,19 +120,17 @@
     }
   ],
   "source_links": [
-    "https://data.iadb.org/en/search?q=Guyana%20Labor%20Force%20Survey%3A%20Fourth%20Quarte",
-    "https://data.iadb.org/en/search?q=Guyana%20Labor%20Force%20Survey%3A%20Third%20Quarter",
-    "https://data.iadb.org/en/search?q=Guyana%3A%20Latin%20American%20Public%20Opinion%20Pr",
-    "https://data.iadb.org/en/search?q=Productivity%2C%20Technology%20and%20Innovation%20",
     "https://eprocure.gov.gy/",
-    "https://news.google.com/rss/articles/CBMitwFBVV95cUxPQUV6cGpCYmQzTnJfS0w5MWY4ZFl2WkZwM0VtNUxVUlNqRnd4Y2l4clJrdkVUTkVHNDRMMVliYU5LZkNmazJEZC16eU5veF81ZFBrQS1GeEthc3hSa1U5ZFB2VHBCV2NlVVN1c1lhTEQzVGlfN3ZpWVhKR0taYjVoTkRkMk82cW1UZUtkYWJ2M2FqbUZ0b0hVcFRLempCTVdUR0dWcy1GUHNvcUt1VDlGUHBvM0o4aEU?oc=5",
-    "https://statistics.caricom.org/?country_data=guyana-balance-of-payments-2000-2024",
-    "https://statistics.caricom.org/?country_data=guyana-monthly-consumer-price-index-cpi-by-expenditure-category",
-    "https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure"
+    "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOQU9qLVdKUnp6YnpQaUkyaFVOTUxIVkh0Y1o3bVlFLUVWTWotcGhmcUU1N0pEZEF4dkk4RDQtamdndUJQTEE1LUxhNEZQd185Y0VmeEpLTjZPUTlSVHREbHpRYmRsajNIWUpQdlQ2LU5CQVZsbWdGQzJaanlKMXRldktyZ3doc01PcDgyUFZ0WThUSnNpWnZLN2h4Szgxbi1JV1pZdE1jV3NjaEl1em9hRUFXVFhBdlhMZEZYM2NUaGdtbldMNExmTVhPbUVNVENBSFRabQ?oc=5",
+    "https://news.google.com/rss/articles/CBMizwFBVV95cUxQT1gzUE1UT21XNDVVaUN1VElUdlRFS0xNRlc0Y1R3YUozc2Y1TDRwbFJhR2t2TjhfOGdzN1ctckstcUVWUFZTdVM5bnlTRGdrejNQNUFPWE9IbUx3cEZ0SHFJRVpwWGdabzVLbkRnVm9vUG9aU0pPMW1jN1U2Y0RjaTJDc24yS3ROVC1QSXFLa0taeWRaa1FVNkU4eTlHN2k2YTlHYUNSNDhQRWg0REJxVjVTcGNMbkRJb1EzX0dBektheWFueTgwUlpBLVptWVk?oc=5",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/call-application-scholarship-opportunity-international-master-public-procurement-management-2",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/supply-installation-testing-and-commissioning-mechanical-equipment-fire-pump-system-and-information",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/university-west-indies-digital-transformation-project-3"
   ],
   "unresolved_questions": [
     "Which specific sectors are driving the movement in Guyana? No official sector-breakdown dataset matched this cycle.",
-    "Tender closes 2026-08-27 — confirm eligibility and bid requirements early.",
+    "Tender closes 2026-09-22 — confirm eligibility and bid requirements early.",
     "Validate fit with registry-listed operators (Guyana Shore Base Inc. (GSBI), Gaico Construction Inc.) before outreach.",
     "Validate that the underlying FDI movement is sustained, not a one-off transaction or statistical revision."
   ],
@@ -189,10 +145,10 @@
     }
   ],
   "advance_or_reject_recommendation": "advance",
-  "recommendation_reason": "Calibrated confidence 100/100 with 4 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.",
-  "last_validated_at": "2026-08-25T13:08:08.632342+00:00",
+  "recommendation_reason": "Calibrated confidence 100/100 with 3 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.",
+  "last_validated_at": "2026-09-03T22:31:19.062428+00:00",
   "coordination_path": null,
-  "evidence_fingerprint": "e5c490ff4bdafd80",
+  "evidence_fingerprint": "125cae8ddd3833fd",
   "cycles_since_refresh": 0,
   "evidence_freshness": "refreshing"
 }

@@ -1,87 +1,35 @@
 {
   "instance": "climate",
   "instance_label": "Climate & Catastrophe Risk",
-  "cycle_id": "20260825",
-  "generated_at": "2026-08-25T13:08:08.992007+00:00",
+  "cycle_id": "20260903",
+  "generated_at": "2026-09-03T22:31:19.448185+00:00",
   "clusters": [
     {
-      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.8",
-      "country_cluster": "San Juan and Vicinity",
-      "signal_kind": "hazard_alert",
-      "title": "San Juan and Vicinity: Extreme Heat Warning in effect (Severe)",
-      "evidence": "NOAA NWS: Extreme Heat Warning issued August 25 at 8:07AM AST until August 25 at 5:00PM AST by NWS San Juan PR",
-      "evidence_grade": "A - official alert",
-      "confidence_score": 95,
+      "cluster_id": "CLIM-allclear",
+      "country_cluster": "Caribbean basin",
+      "signal_kind": "all_clear",
+      "title": "All clear \u2014 no active hazards this cycle",
+      "evidence": "No active NWS alerts in Caribbean zones. Current conditions: 6 buoys reporting; max wind 17 kt; no tropical development expected (NHC).",
+      "evidence_grade": "A - official sources",
+      "confidence_score": 70,
       "freshness": "new",
-      "decision": "Hazard response and exposure assessment",
-      "risk_flags": [
-        "Severe Extreme Heat Warning active in San Juan and Vicinity"
-      ],
-      "personas": [
-        {
-          "persona": "Resilience Planner",
-          "channel": "Telegram/SMS alert",
-          "action": "Active hazard alert \u2014 Extreme Heat Warning \u2014 Severe (San Juan and Vicinity). Pre-position resources and confirm evacuation/shelter readiness in the affected area now."
-        },
-        {
-          "persona": "Insurer / Reinsurer",
-          "channel": "Email + alert",
-          "action": "Exposure check \u2014 Extreme Heat Warning \u2014 Severe (San Juan and Vicinity). Flag policies in the affected zone and prepare parametric-trigger assessment."
-        }
-      ]
-    },
-    {
-      "cluster_id": "CLIM-tropical-outlook",
-      "country_cluster": "North Atlantic / Caribbean basin",
-      "signal_kind": "tropical_development",
-      "title": "Tropical development being monitored (NHC outlook)",
-      "evidence": "NHC Tropical Weather Outlook indicates a system worth watching across the basin.",
-      "evidence_grade": "B - official outlook",
-      "confidence_score": 85,
-      "freshness": "new",
-      "decision": "Basin-wide exposure and readiness",
-      "risk_flags": [
-        "Active tropical outlook for the basin"
-      ],
-      "personas": [
-        {
-          "persona": "Insurer / Reinsurer",
-          "channel": "Email + alert",
-          "action": "Tropical development watch \u2014 NHC basin outlook active. Begin exposure modelling for the basin; recovery-capital may be needed within days."
-        },
-        {
-          "persona": "Resilience Planner",
-          "channel": "Telegram/SMS alert",
-          "action": "Tropical outlook active \u2014 NHC basin outlook active. Move readiness posture up; verify supply and communication chains across exposed islands."
-        }
-      ]
-    },
-    {
-      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.8",
-      "country_cluster": "Culebra",
-      "signal_kind": "hazard_alert",
-      "title": "Culebra: Heat Advisory in effect (Moderate)",
-      "evidence": "NOAA NWS: Heat Advisory issued August 25 at 8:07AM AST until August 25 at 5:00PM AST by NWS San Juan PR",
-      "evidence_grade": "B - official alert",
-      "confidence_score": 80,
-      "freshness": "new",
-      "decision": "Hazard response and exposure assessment",
+      "decision": "Routine monitoring \u2014 no action required",
       "risk_flags": [],
       "personas": [
         {
           "persona": "Resilience Planner",
           "channel": "Telegram/SMS alert",
-          "action": "Active hazard alert \u2014 Heat Advisory \u2014 Moderate (Culebra). Pre-position resources and confirm evacuation/shelter readiness in the affected area now."
+          "action": "All clear across Caribbean zones \u2014 6 buoys reporting; max wind 17 kt; no tropical development expected (NHC). No action required; the engine keeps watching and will escalate the moment a threshold is crossed."
         },
         {
           "persona": "Insurer / Reinsurer",
           "channel": "Email + alert",
-          "action": "Exposure check \u2014 Heat Advisory \u2014 Moderate (Culebra). Flag policies in the affected zone and prepare parametric-trigger assessment."
+          "action": "No active hazard exposure this cycle (6 buoys reporting; max wind 17 kt; no tropical development expected (NHC)). Baseline confirmed for parametric monitoring."
         }
       ]
     }
   ],
-  "dispatch_count": 6,
+  "dispatch_count": 2,
   "sources": [
     "NOAA NWS",
     "NDBC buoys",

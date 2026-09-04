@@ -1,11 +1,11 @@
 # Opportunity Validation Pack — Suriname
 
-- Signal: `enhanced-invest-suriname` · Dispatch: `DSP-20260825-022`
-- Confidence: 68/100 (raw 98) · C - single-source
+- Signal: `enhanced-invest-suriname` · Dispatch: `DSP-20260903-020`
+- Confidence: 68/100 (raw 96) · C - single-source
 - Action readiness: medium (annual macro signal only)
 - Evidence freshness: refreshing · cycles since refresh: 0
-- Recommendation: **HOLD** — Calibrated confidence 68/100 with 1 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.
-- Last validated: 2026-08-25T13:08:08.632342+00:00
+- Recommendation: **HOLD** — Calibrated confidence 68/100 with 0 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.
+- Last validated: 2026-09-03T22:31:19.062428+00:00
 
 ## Sector hypotheses
 - Offshore oil & gas exploration [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
@@ -16,20 +16,18 @@
 - No registry-backed operators for this country yet.
 
 ## Supporting projects & publications
-- [Suriname Survey of Living Conditions: 2016-2017](https://data.iadb.org/en/search?q=Suriname%20Survey%20of%20Living%20Conditions%3A%2020) — IDB Open Data
-- [Suriname COVID-19 Survey: 2020](https://data.iadb.org/en/search?q=Suriname%20COVID-19%20Survey%3A%202020) — IDB Open Data
+- No matched projects this cycle.
 
 ## Procurement matches
 - [Enhancing the Quality of the Belize National Quality Infrastructure](https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure) — Caribbean Development Bank (regional)
+- [Call For Application – Scholarship Opportunity: International Master In Public Procurement Management at The University of Rome Tor Vergata (2026/2027 Academic Year)](https://www.caribank.org/work-with-us/procurement/procurement-notices/call-application-scholarship-opportunity-international-master-public-procurement-management-2) — Caribbean Development Bank (regional)
+- [Supply Installation, Testing and Commissioning of Mechanical Equipment, Fire Pump System and Information and Communications Technology Systems](https://www.caribank.org/work-with-us/procurement/procurement-notices/supply-installation-testing-and-commissioning-mechanical-equipment-fire-pump-system-and-information) — Caribbean Development Bank (regional)
+- [The University of the West Indies Digital Transformation Project](https://www.caribank.org/work-with-us/procurement/procurement-notices/university-west-indies-digital-transformation-project-3) — Caribbean Development Bank (regional)
 - [Grenada Education Enhancement Project - Phase II](https://www.caribank.org/work-with-us/procurement/procurement-plans/grenada-education-enhancement-project-phase-ii) — Caribbean Development Bank (regional)
 - [The Bahamas Water Supply Improvement Project Phase 2](https://www.caribank.org/work-with-us/procurement/procurement-notices/bahamas-water-supply-improvement-project-phase-2-1) — Caribbean Development Bank (regional)
-- [The Bahamas Water Supply Improvement Project Phase 2](https://www.caribank.org/work-with-us/procurement/procurement-notices/bahamas-water-supply-improvement-project-phase-2-0) — Caribbean Development Bank (regional)
-- [Kalinago Development Project](https://www.caribank.org/work-with-us/procurement/procurement-notices/kalinago-development-project-2) — Caribbean Development Bank (regional)
-- [Kalinago Development Project](https://www.caribank.org/work-with-us/procurement/procurement-notices/kalinago-development-project-1) — Caribbean Development Bank (regional)
 
 ## Official country data
-- [Suriname Balance of Payments (2017 &#8211; 2025)](https://statistics.caricom.org/?country_data=suriname-balance-of-payments-2017-2024) — CARICOM Statistics
-- [Suriname: Monthly Consumer Price Index (CPI) by Expenditure Category](https://statistics.caricom.org/?country_data=suriname-monthly-consumer-price-index-cpi-by-expenditure-category) — CARICOM Statistics
+- No official country datasets matched.
 
 ## Relevant institutions & intro targets
 - Chamber of Commerce and Industry Suriname (KKF) — The national chamber — a shortcut to who's doing business

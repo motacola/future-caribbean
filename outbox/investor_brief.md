@@ -1,22 +1,22 @@
 # Caribbean Market Pulse — Investor Brief
 
-Generated: 2026-08-25 13:08 UTC
+Generated: 2026-09-03 22:31 UTC
 
 Audience: investors, founders, diaspora capital networks.
 Decision supported: where to investigate deal flow, procurement activity, or market momentum.
 
 ## This Cycle
 
-Lead: Guyana. 3 converging signal(s) across 4 source(s). Signals: 💼 Investment + 🏖️ Tourism + 💎 Investment.
+Lead: Guyana. 3 converging signal(s) across 3 source(s). Signals: 💼 Investment + 🏖️ Tourism + 💎 Investment.
 
-*Lead: Guyana · 34 composite signal(s) · 8 intensified · 18 persistent*
+*Lead: Guyana · 32 composite signal(s) · 4 new · 7 intensified · 13 persistent*
 
 ## Lead Signal
 
 🔴 — **💎 Investment — Guyana**
    Guyana: +860.3% capital surge on a single official source — market entry window open
    Immediate | 100/100 | C - single-source
-   Immediate investigation. Guyana has multi-source investment validation (3 signals converging). Priority: assess market entry options, identify existing operators.
+   Immediate investigation. Guyana has multi-source investment validation (2 signals converging). Priority: assess market entry options, identify existing operators.
 
 ## Regional Investment Overview
 
@@ -25,8 +25,8 @@ Multi-source investment signals validated across 3 countries. All carry A-grade 
 | Country | FDI Change | Score | Context |
 |---------|-----------|-------|---------|
 | **Guyana** | 860.3% | 100/100 | Clean multi-source signal |
-| **Suriname** | 206.0% | 98/100 | Clean multi-source signal |
-| **Barbados** | 34.8% | 85/100 | Clean multi-source signal |
+| **Suriname** | 206.0% | 96/100 | Clean multi-source signal |
+| **Barbados** | 34.8% | 89/100 | Clean multi-source signal |
 
 **Highest-impact targets**: Guyana, Suriname, Barbados. Guyana at 860.3% change is the strongest directional signal in this cycle.
 
@@ -39,5 +39,5 @@ Multi-source investment signals validated across 3 countries. All carry A-grade 
 
 Active procurement:
 - Enhancing the Quality of the Belize National Quality Infrastructure
-- Grenada Education Enhancement Project - Phase II
-- The Bahamas Water Supply Improvement Project Phase 2
+- Call For Application – Scholarship Opportunity: International Master In Public Procurement Management at The University of Rome Tor Vergata (2026/2027 Academic Year)
+- Supply Installation, Testing and Commissioning of Mechanical Equipment, Fire Pump System and Information and Communications Technology Systems

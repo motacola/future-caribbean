@@ -1,6 +1,6 @@
 {
   "signal_id": "invest-guyana",
-  "dispatch_id": "DSP-20260821-001",
+  "dispatch_id": "DSP-20260903-001",
   "country": "Guyana",
   "signal_title": "Guyana: FDI trending at +860.3% — screening trigger active",
   "confidence_score": 87,
@@ -10,8 +10,9 @@
   "sector_hypotheses": [
     {
       "sector": "Oil & gas and offshore support services",
-      "basis": "Analyst prior from widely reported sector drivers — requires local confirmation",
-      "status": "unconfirmed"
+      "basis": "Google News — Guyana: Africa’s top oil producer targets $50 billion offshore comeback as it battles Namibia and Guyana for global energy investment - Business Insider Africa",
+      "status": "corroborated",
+      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOQU9qLVdKUnp6YnpQaUkyaFVOTUxIVkh0Y1o3bVlFLUVWTWotcGhmcUU1N0pEZEF4dkk4RDQtamdndUJQTEE1LUxhNEZQd185Y0VmeEpLTjZPUTlSVHREbHpRYmRsajNIWUpQdlQ2LU5CQVZsbWdGQzJaanlKMXRldktyZ3doc01PcDgyUFZ0WThUSnNpWnZLN2h4Szgxbi1JV1pZdE1jV3NjaEl1em9hRUFXVFhBdlhMZEZYM2NUaGdtbldMNExmTVhPbUVNVENBSFRabQ?oc=5"
     },
     {
       "sector": "Construction and infrastructure",
@@ -34,92 +35,48 @@
       "status": "macro_signal"
     }
   ],
-  "supporting_projects": [
-    {
-      "title": "Productivity, Technology and Innovation Survey Guyana: 2013-2014",
-      "source": "IDB Open Data",
-      "url": "https://data.iadb.org/en/search?q=Productivity%2C%20Technology%20and%20Innovation%20",
-      "topics": []
-    },
-    {
-      "title": "Guyana: Latin American Public Opinion Project - Victimization and Crime survey 2016",
-      "source": "IDB Open Data",
-      "url": "https://data.iadb.org/en/search?q=Guyana%3A%20Latin%20American%20Public%20Opinion%20Pr",
-      "topics": []
-    },
-    {
-      "title": "Guyana Labor Force Survey: Third Quarter 2017",
-      "source": "IDB Open Data",
-      "url": "https://data.iadb.org/en/search?q=Guyana%20Labor%20Force%20Survey%3A%20Third%20Quarter",
-      "topics": [
-        "social"
-      ]
-    },
-    {
-      "title": "Guyana Labor Force Survey: Fourth Quarter 2017",
-      "source": "IDB Open Data",
-      "url": "https://data.iadb.org/en/search?q=Guyana%20Labor%20Force%20Survey%3A%20Fourth%20Quarte",
-      "topics": [
-        "social"
-      ]
-    }
-  ],
+  "supporting_projects": [],
   "procurement_matches": [
     {
-      "title": "Supply and Delivery of: 805 Metric Ton Sulphate Of Ammonia",
+      "title": "Rehabilitation works for the Bartica 5 Miles Raw Water Intake Structure,  5 Miles, Bartica, Region No. 7",
       "source": "Guyana eProcure (NPTA)",
       "url": "https://eprocure.gov.gy/",
       "match": "country",
-      "closing_date": "2026-08-25"
+      "closing_date": "2026-09-22"
     },
     {
-      "title": "Supply and Delivery of: 371 Metric Ton Muriate Of Potash",
+      "title": "Rehabilitation and Upgrade of Mahaica Bridge to Abary Bridge Road Corridor",
       "source": "Guyana eProcure (NPTA)",
       "url": "https://eprocure.gov.gy/",
       "match": "country",
-      "closing_date": "2026-08-25"
+      "closing_date": "2026-10-02"
     },
     {
-      "title": "Supply and Delivery of: 403 Metric Ton Urea",
-      "source": "Guyana eProcure (NPTA)",
-      "url": "https://eprocure.gov.gy/",
-      "match": "country",
-      "closing_date": "2026-08-25"
+      "title": "Enhancing the Quality of the Belize National Quality Infrastructure",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure",
+      "match": "regional"
     },
     {
-      "title": "Completion of Works at 58 Miles Primary School",
-      "source": "Guyana eProcure (NPTA)",
-      "url": "https://eprocure.gov.gy/",
-      "match": "country",
-      "closing_date": "2026-08-25"
+      "title": "Call For Application – Scholarship Opportunity: International Master In Public Procurement Management at The University of Rome Tor Vergata (2026/2027 Academic Year)",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/call-application-scholarship-opportunity-international-master-public-procurement-management-2",
+      "match": "regional"
     },
     {
-      "title": "Construction of Elderly Assisted Living Facility, Enmore, Region No.4, Phase 1",
-      "source": "Guyana eProcure (NPTA)",
-      "url": "https://eprocure.gov.gy/",
-      "match": "country",
-      "closing_date": "2026-08-27"
+      "title": "Supply Installation, Testing and Commissioning of Mechanical Equipment, Fire Pump System and Information and Communications Technology Systems",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/supply-installation-testing-and-commissioning-mechanical-equipment-fire-pump-system-and-information",
+      "match": "regional"
     },
     {
-      "title": "EOI for the Design and Supervision of the National Public Health Reference Laboratory Building",
-      "source": "Guyana eProcure (NPTA)",
-      "url": "https://eprocure.gov.gy/",
-      "match": "country",
-      "closing_date": "2026-08-31"
+      "title": "The University of the West Indies Digital Transformation Project",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/university-west-indies-digital-transformation-project-3",
+      "match": "regional"
     }
   ],
-  "official_country_data": [
-    {
-      "title": "Guyana Balance of Payments (2000 – 2025)",
-      "source": "CARICOM Statistics",
-      "url": "https://statistics.caricom.org/?country_data=guyana-balance-of-payments-2000-2024"
-    },
-    {
-      "title": "Guyana: Monthly Consumer Price Index (CPI) by Expenditure Category",
-      "source": "CARICOM Statistics",
-      "url": "https://statistics.caricom.org/?country_data=guyana-monthly-consumer-price-index-cpi-by-expenditure-category"
-    }
-  ],
+  "official_country_data": [],
   "credible_local_operators": [
     {
       "name": "Guyana Shore Base Inc. (GSBI)",
@@ -162,17 +119,16 @@
     }
   ],
   "source_links": [
-    "https://data.iadb.org/en/search?q=Guyana%20Labor%20Force%20Survey%3A%20Fourth%20Quarte",
-    "https://data.iadb.org/en/search?q=Guyana%20Labor%20Force%20Survey%3A%20Third%20Quarter",
-    "https://data.iadb.org/en/search?q=Guyana%3A%20Latin%20American%20Public%20Opinion%20Pr",
-    "https://data.iadb.org/en/search?q=Productivity%2C%20Technology%20and%20Innovation%20",
     "https://eprocure.gov.gy/",
-    "https://statistics.caricom.org/?country_data=guyana-balance-of-payments-2000-2024",
-    "https://statistics.caricom.org/?country_data=guyana-monthly-consumer-price-index-cpi-by-expenditure-category"
+    "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOQU9qLVdKUnp6YnpQaUkyaFVOTUxIVkh0Y1o3bVlFLUVWTWotcGhmcUU1N0pEZEF4dkk4RDQtamdndUJQTEE1LUxhNEZQd185Y0VmeEpLTjZPUTlSVHREbHpRYmRsajNIWUpQdlQ2LU5CQVZsbWdGQzJaanlKMXRldktyZ3doc01PcDgyUFZ0WThUSnNpWnZLN2h4Szgxbi1JV1pZdE1jV3NjaEl1em9hRUFXVFhBdlhMZEZYM2NUaGdtbldMNExmTVhPbUVNVENBSFRabQ?oc=5",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/call-application-scholarship-opportunity-international-master-public-procurement-management-2",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/supply-installation-testing-and-commissioning-mechanical-equipment-fire-pump-system-and-information",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/university-west-indies-digital-transformation-project-3"
   ],
   "unresolved_questions": [
     "Which specific sectors are driving the movement in Guyana? No official sector-breakdown dataset matched this cycle.",
-    "Tender closes 2026-08-25 — confirm eligibility and bid requirements early.",
+    "Tender closes 2026-09-22 — confirm eligibility and bid requirements early.",
     "Validate fit with registry-listed operators (Guyana Shore Base Inc. (GSBI), Gaico Construction Inc.) before outreach.",
     "Validate that the underlying FDI movement is sustained, not a one-off transaction or statistical revision."
   ],
@@ -188,9 +144,9 @@
   ],
   "advance_or_reject_recommendation": "advance",
   "recommendation_reason": "Calibrated confidence 87/100 with 3 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.",
-  "last_validated_at": "2026-08-21T16:48:46.166274+00:00",
+  "last_validated_at": "2026-09-03T19:17:01.137450+00:00",
   "coordination_path": null,
-  "evidence_fingerprint": "30024be8e9b88b89",
+  "evidence_fingerprint": "99b787d0f0e1141b",
   "cycles_since_refresh": 0,
   "evidence_freshness": "refreshing"
 }

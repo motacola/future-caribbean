@@ -2,34 +2,20 @@
 
 **Decision job:** Operational readiness and bid pipeline assessment
 **Delivery channel:** Telegram
-**Generated:** Aug 25, 2026 at 13:08 UTC
-**Dispatches in this packet:** 3
+**Generated:** Sep 03, 2026 at 22:31 UTC
+**Dispatches in this packet:** 2
 
 ---
 
-## Dispatches (3)
+## Dispatches (2)
 
-### 1. Bahamas, Belize, Grenada: signal detected
+### 1. CARICOM: 9 active procurements — bidding window open
 
-**ID:** `DSP-20260825-028` | **Country:** Bahamas, Belize, Grenada | **Confidence:** 🔴 Immediate | 100/100 | A - multi-source
-**Channel:** Telegram | **Window:** 21 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** CDB active procurement notices: 9;   • Enhancing the Quality of the Belize National Quality Infrastructure;   • Grenada Education Enhancement Project - Phase II; Maritime conditions stable — no high-wind or marine alerts
-**Detail:** signal detected
-**Grade:** A - multi-source
-
-**Recommended action:** Active supply chain corridor in Bahamas, Belize, Grenada: procurement live + maritime stable. Assess capacity for logistics, warehousing, transport — bid window open.
-**Decision to influence:** Which logistics/procurement corridor to bid or partner on
-**Routing rationale:** Active procurement + stable maritime = real supply chain corridor opportunity — first to respond wins
-
-### 2. CARICOM: 9 active procurements — bidding window open
-
-**ID:** `DSP-20260825-013` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 95/100 | B - cross-source
+**ID:** `DSP-20260903-011` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 95/100 | B - cross-source
 **Channel:** Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** replied
 
-**Evidence:** CDB active procurement notices: 9; • Enhancing the Quality of the Belize National Quality Infrastructure; • Grenada Education Enhancement Project - Phase II; • The Bahamas Water Supply Improvement Project Phase 2
+**Evidence:** CDB active procurement notices: 9; • Enhancing the Quality of the Belize National Quality Infrastructure; • Call For Application – Scholarship Opportunity: International Master In Public Procurement Management at The University of Rome Tor Vergata (2026/2027 Academic Year); • Supply Installation, Testing and Commissioning of Mechanical Equipment, Fire Pump System and Information and Communications Technology Systems
 **Detail:** CDB active procurement notices: 9
 **Grade:** B - cross-source
 
@@ -37,9 +23,9 @@
 **Decision to influence:** Which procurement or project opportunity to pursue
 **Routing rationale:** Active procurement directly maps to operational capacity needs — first to respond wins
 
-### 3. Eastern Caribbean Currency Union: 4.6%
+### 2. Eastern Caribbean Currency Union: 4.6%
 
-**ID:** `DSP-20260825-097` | **Country:** Eastern Caribbean Currency Union | **Confidence:** 🟡 Validation | 76/100 | C - single-source
+**ID:** `DSP-20260903-092` | **Country:** Eastern Caribbean Currency Union | **Confidence:** 🟡 Validation | 76/100 | C - single-source
 **Channel:** Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** ignored
 
