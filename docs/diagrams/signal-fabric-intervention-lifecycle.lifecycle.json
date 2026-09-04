@@ -1,0 +1,221 @@
+{
+  "schema_version": 1,
+  "diagram_type": "lifecycle",
+  "meta": {
+    "title": "Signal Fabric — intervention lifecycle",
+    "locale": "en",
+    "output": "signal-fabric-intervention-lifecycle.html",
+    "quality_profile": "showcase",
+    "viewBox": [
+      1200,
+      650
+    ],
+    "views": [
+      {
+        "id": "evidence-path",
+        "label": "Evidence path",
+        "focus": [
+          "proposed",
+          "evidence-requested",
+          "evidence-received",
+          "verified"
+        ],
+        "note": "The only route to verified runs through requested and received evidence."
+      },
+      {
+        "id": "terminal-exits",
+        "label": "Rejection and expiry",
+        "focus": [
+          "proposed",
+          "evidence-requested",
+          "evidence-received",
+          "rejected",
+          "expired"
+        ],
+        "note": "Every active state can be rejected or expired; neither exit returns to the rail."
+      },
+      {
+        "id": "verify-guards",
+        "label": "Verification guards",
+        "focus": [
+          "evidence-received",
+          "verified"
+        ],
+        "note": "verify() re-checks status, evidence presence, and country before the transition."
+      }
+    ]
+  },
+  "lanes": [
+    {
+      "id": "main",
+      "label": "Active states"
+    },
+    {
+      "id": "waiting",
+      "label": "Rejected exit"
+    },
+    {
+      "id": "terminal",
+      "label": "Expired exit"
+    }
+  ],
+  "states": [
+    {
+      "id": "proposed",
+      "type": "start",
+      "label": "Proposed",
+      "lane": "main",
+      "col": 0,
+      "step": "01",
+      "tag": "active"
+    },
+    {
+      "id": "evidence-requested",
+      "type": "waiting",
+      "label": "Evidence requested",
+      "lane": "main",
+      "col": 1,
+      "step": "02",
+      "tag": "active"
+    },
+    {
+      "id": "evidence-received",
+      "type": "decision",
+      "label": "Evidence received",
+      "lane": "main",
+      "col": 2,
+      "step": "03",
+      "tag": "active"
+    },
+    {
+      "id": "verified",
+      "type": "success",
+      "label": "Verified",
+      "lane": "main",
+      "col": 3,
+      "step": "04",
+      "tag": "terminal"
+    },
+    {
+      "id": "rejected",
+      "type": "failure",
+      "label": "Rejected",
+      "lane": "waiting",
+      "col": 0,
+      "tag": "terminal"
+    },
+    {
+      "id": "expired",
+      "type": "failure",
+      "label": "Expired",
+      "lane": "terminal",
+      "col": 2,
+      "tag": "terminal"
+    }
+  ],
+  "transitions": [
+    {
+      "id": "t-request",
+      "from": "proposed",
+      "to": "evidence-requested",
+      "label": "request_evidence()",
+      "variant": "emphasis",
+      "route": "straight",
+      "labelDy": 52,
+      "labelDx": 59
+    },
+    {
+      "id": "t-receive",
+      "from": "evidence-requested",
+      "to": "evidence-received",
+      "label": "add_evidence()",
+      "variant": "emphasis",
+      "route": "straight",
+      "labelDy": 52,
+      "labelDx": 29
+    },
+    {
+      "id": "t-verify",
+      "from": "evidence-received",
+      "to": "verified",
+      "label": "verify()",
+      "variant": "emphasis",
+      "route": "straight",
+      "labelDy": 52
+    },
+    {
+      "id": "t-proposed-rejected",
+      "from": "proposed",
+      "to": "rejected",
+      "variant": "security",
+      "route": "bottom-channel",
+      "channelY": 292
+    },
+    {
+      "id": "t-requested-rejected",
+      "from": "evidence-requested",
+      "to": "rejected",
+      "variant": "security",
+      "route": "bottom-channel",
+      "channelY": 276
+    },
+    {
+      "id": "t-received-rejected",
+      "from": "evidence-received",
+      "to": "rejected",
+      "variant": "security",
+      "route": "bottom-channel",
+      "channelY": 252
+    },
+    {
+      "id": "t-proposed-expired",
+      "from": "proposed",
+      "to": "expired",
+      "variant": "security",
+      "route": "top-channel",
+      "channelY": 48
+    },
+    {
+      "id": "t-requested-expired",
+      "from": "evidence-requested",
+      "to": "expired",
+      "variant": "security",
+      "route": "top-channel",
+      "channelY": 72
+    },
+    {
+      "id": "t-received-expired",
+      "from": "evidence-received",
+      "to": "expired",
+      "variant": "security",
+      "route": "top-channel",
+      "channelY": 96
+    }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "The table is the contract",
+      "items": [
+        "Nine legal moves, declared (interventions.py:12-16)",
+        "_transition() raises on anything else (interventions.py:130-136)"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Evidence is required",
+      "items": [
+        "Empty summary or source is refused (interventions.py:147-151)",
+        "From proposed it still passes through evidence_requested"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "verify() re-checks",
+      "items": [
+        "Needs evidence_received and real evidence (interventions.py:261-265)",
+        "A capability claim needs a named country (interventions.py:266-270)"
+      ]
+    }
+  ]
+}

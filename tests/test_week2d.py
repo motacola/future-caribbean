@@ -179,9 +179,9 @@ def test_astro_data_includes_ported_label_cleaners():
         f"headline claims consensus for {lead_country} on a single-source grade ({grade})"
     )
     # Lead confidence band must match the grade the desk actually assigned.
-    assert ("Solid — several sources agree" in dashboard
-            or "Promising — more than one source" in dashboard
-            or "Early — one source so far" in dashboard), (
+    assert ("Solid: several sources agree" in dashboard
+            or "Promising: more than one source" in dashboard
+            or "Early: one source so far" in dashboard), (
         "dashboard should render the lead's cleaned grade label"
     )
     assert "World Bank" in dashboard

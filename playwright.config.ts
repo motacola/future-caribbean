@@ -11,7 +11,12 @@ export default defineConfig({
     trace: 'retain-on-failure',
   },
   webServer: {
-    command: 'pnpm run build && pnpm exec astro preview --host 127.0.0.1 --port 4321',
+    // `pnpm run build` shells out to pnpm install, which refuses to run without
+    // a TTY and asks to purge node_modules — so the browser suite could not start
+    // its own server locally. scripts/verify.sh already calls Astro directly for
+    // the same reason; do the same here so `scripts/verify.sh` (full) works.
+    command:
+      'node ./node_modules/astro/bin/astro.mjs build && node ./node_modules/astro/bin/astro.mjs preview --host 127.0.0.1 --port 4321',
     url: 'http://127.0.0.1:4321/build/',
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,

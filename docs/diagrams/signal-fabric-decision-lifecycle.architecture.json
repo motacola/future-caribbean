@@ -1,0 +1,456 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Signal Fabric — decision and outcome lifecycle",
+    "locale": "en",
+    "output": "signal-fabric-decision-lifecycle.html",
+    "animation": "none",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/motacola/future-caribbean",
+      "revision": "4a26fb33ffa1644983a14ae1cf30c059cbff2b76"
+    },
+    "viewBox": [
+      1040,
+      520
+    ],
+    "views": [
+      {
+        "id": "decision-path",
+        "label": "Decision path",
+        "focus": [
+          "observation",
+          "composite",
+          "persona-route",
+          "validation-pack",
+          "coordination"
+        ],
+        "note": "Public observations become cited composite signals, persona routes, diligence packs, and coordination interventions."
+      },
+      {
+        "id": "outcome-resolution",
+        "label": "Outcome resolution",
+        "focus": [
+          "evidence",
+          "intervention-outcome",
+          "procurement-resolver",
+          "calibration"
+        ],
+        "note": "Evidence resolves intervention and procurement lifecycles without inferring unsupported winners or capabilities."
+      },
+      {
+        "id": "learning-loop",
+        "label": "Calibration loop",
+        "focus": [
+          "intervention-outcome",
+          "procurement-resolver",
+          "calibration",
+          "next-cycle"
+        ],
+        "note": "Resolved outcomes enter an append-only calibration ledger and influence later decisions through bounded, inspectable state."
+      }
+    ]
+  },
+  "components": [
+    {
+      "id": "observation",
+      "type": "external",
+      "label": "Public observation",
+      "sublabel": "Economy · climate · tender · news",
+      "pos": [
+        10,
+        190
+      ],
+      "size": [
+        145,
+        72
+      ],
+      "sources": [
+        {
+          "path": "run_pipeline.sh",
+          "line": 60,
+          "end_line": 82,
+          "label": "source acquisition"
+        }
+      ]
+    },
+    {
+      "id": "composite",
+      "type": "backend",
+      "label": "Composite signal",
+      "sublabel": "Identity · provenance",
+      "pos": [
+        180,
+        190
+      ],
+      "size": [
+        150,
+        72
+      ],
+      "sources": [
+        {
+          "path": "mergers/cross_source_merger.py",
+          "line": 44,
+          "end_line": 69,
+          "label": "signal contract"
+        },
+        {
+          "path": "mergers/cross_source_merger.py",
+          "line": 1286,
+          "end_line": 1335,
+          "label": "composite output"
+        }
+      ]
+    },
+    {
+      "id": "persona-route",
+      "type": "backend",
+      "label": "Persona route",
+      "sublabel": "Ranked audience · evidence bar",
+      "pos": [
+        355,
+        190
+      ],
+      "size": [
+        145,
+        72
+      ],
+      "sources": [
+        {
+          "path": "packagers/dispatch_desk.py",
+          "line": 121,
+          "end_line": 190,
+          "label": "routing and ranking"
+        }
+      ]
+    },
+    {
+      "id": "validation-pack",
+      "type": "database",
+      "label": "Validation pack",
+      "sublabel": "Claims · sources · verdict",
+      "pos": [
+        525,
+        190
+      ],
+      "size": [
+        145,
+        72
+      ],
+      "sources": [
+        {
+          "path": "packagers/validation_pack_generator.py",
+          "line": 430,
+          "end_line": 500,
+          "label": "diligence pack"
+        }
+      ]
+    },
+    {
+      "id": "coordination",
+      "type": "backend",
+      "label": "Coordination intervention",
+      "sublabel": "Blocker · owner · unlock path",
+      "pos": [
+        700,
+        190
+      ],
+      "size": [
+        170,
+        72
+      ],
+      "sources": [
+        {
+          "path": "coordination/engine.py",
+          "line": 95,
+          "end_line": 141,
+          "label": "intervention rules"
+        },
+        {
+          "path": "coordination/interventions.py",
+          "line": 53,
+          "end_line": 114,
+          "label": "persistent intervention state"
+        }
+      ]
+    },
+    {
+      "id": "evidence",
+      "type": "external",
+      "label": "Evidence received",
+      "sublabel": "Cited source evidence",
+      "pos": [
+        905,
+        190
+      ],
+      "size": [
+        120,
+        72
+      ],
+      "sources": [
+        {
+          "path": "coordination/interventions.py",
+          "line": 117,
+          "end_line": 170,
+          "label": "evidence transitions"
+        }
+      ]
+    },
+    {
+      "id": "intervention-outcome",
+      "type": "backend",
+      "label": "Intervention outcome",
+      "sublabel": "Verified · rejected · expired",
+      "pos": [
+        730,
+        360
+      ],
+      "size": [
+        170,
+        72
+      ],
+      "sources": [
+        {
+          "path": "coordination/interventions.py",
+          "line": 12,
+          "end_line": 18,
+          "label": "allowed lifecycle"
+        },
+        {
+          "path": "coordination/interventions.py",
+          "line": 182,
+          "end_line": 239,
+          "label": "reported outcomes"
+        },
+        {
+          "path": "coordination/interventions.py",
+          "line": 257,
+          "end_line": 290,
+          "label": "verified evidence"
+        }
+      ]
+    },
+    {
+      "id": "procurement-resolver",
+      "type": "backend",
+      "label": "Procurement resolver",
+      "sublabel": "Awarded · cancelled · unresolved",
+      "pos": [
+        510,
+        360
+      ],
+      "size": [
+        175,
+        72
+      ],
+      "sources": [
+        {
+          "path": "resolvers/procurement.py",
+          "line": 2,
+          "end_line": 29,
+          "label": "resolver contract"
+        },
+        {
+          "path": "resolvers/procurement.py",
+          "line": 45,
+          "end_line": 76,
+          "label": "tender lifecycle"
+        },
+        {
+          "path": "resolvers/procurement.py",
+          "line": 104,
+          "end_line": 115,
+          "label": "deterministic identity"
+        }
+      ]
+    },
+    {
+      "id": "calibration",
+      "type": "database",
+      "label": "Calibration ledger",
+      "sublabel": "Hash chain · Brier · log loss",
+      "pos": [
+        300,
+        360
+      ],
+      "size": [
+        175,
+        72
+      ],
+      "sources": [
+        {
+          "path": "packagers/calibration.py",
+          "line": 80,
+          "end_line": 122,
+          "label": "tamper-evident claims"
+        },
+        {
+          "path": "packagers/calibration.py",
+          "line": 154,
+          "end_line": 203,
+          "label": "forecast scoring"
+        }
+      ]
+    },
+    {
+      "id": "next-cycle",
+      "type": "backend",
+      "label": "Next-cycle decision",
+      "sublabel": "Bounded boosts · raw score retained",
+      "pos": [
+        80,
+        360
+      ],
+      "size": [
+        185,
+        72
+      ],
+      "sources": [
+        {
+          "path": "packagers/feedback_loop.py",
+          "line": 33,
+          "end_line": 56,
+          "label": "decay and bounds"
+        },
+        {
+          "path": "packagers/feedback_loop.py",
+          "line": 103,
+          "end_line": 161,
+          "label": "priority adjustment"
+        }
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "Deterministic decision and outcome core",
+      "wraps": [
+        "composite",
+        "persona-route",
+        "validation-pack",
+        "coordination",
+        "intervention-outcome",
+        "procurement-resolver",
+        "calibration",
+        "next-cycle"
+      ],
+      "pad": 10
+    }
+  ],
+  "connections": [
+    {
+      "id": "observation-to-composite",
+      "from": "observation",
+      "to": "composite",
+      "variant": "emphasis"
+    },
+    {
+      "id": "composite-to-route",
+      "from": "composite",
+      "to": "persona-route"
+    },
+    {
+      "id": "route-to-pack",
+      "from": "persona-route",
+      "to": "validation-pack"
+    },
+    {
+      "id": "pack-to-coordination",
+      "from": "validation-pack",
+      "to": "coordination"
+    },
+    {
+      "id": "coordination-to-evidence",
+      "from": "coordination",
+      "to": "evidence",
+      "variant": "emphasis"
+    },
+    {
+      "id": "evidence-to-intervention",
+      "from": "evidence",
+      "to": "intervention-outcome",
+      "fromSide": "left",
+      "toSide": "top",
+      "via": [
+        [
+          890,
+          226
+        ],
+        [
+          890,
+          300
+        ],
+        [
+          815,
+          300
+        ]
+      ]
+    },
+    {
+      "id": "evidence-to-procurement",
+      "from": "evidence",
+      "to": "procurement-resolver",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "via": [
+        [
+          965,
+          320
+        ],
+        [
+          597.5,
+          320
+        ]
+      ],
+      "variant": "dashed"
+    },
+    {
+      "id": "intervention-to-calibration",
+      "from": "intervention-outcome",
+      "to": "calibration",
+      "fromSide": "bottom",
+      "toSide": "bottom",
+      "via": [
+        [
+          815,
+          470
+        ],
+        [
+          387.5,
+          470
+        ]
+      ]
+    },
+    {
+      "id": "procurement-to-calibration",
+      "from": "procurement-resolver",
+      "to": "calibration"
+    },
+    {
+      "id": "calibration-to-next",
+      "from": "calibration",
+      "to": "next-cycle",
+      "variant": "emphasis"
+    },
+    {
+      "id": "next-to-route",
+      "from": "next-cycle",
+      "to": "persona-route",
+      "variant": "dashed",
+      "fromSide": "top",
+      "toSide": "bottom",
+      "via": [
+        [
+          172.5,
+          300
+        ],
+        [
+          427.5,
+          300
+        ]
+      ]
+    }
+  ]
+}

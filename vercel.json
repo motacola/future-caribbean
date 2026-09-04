@@ -48,6 +48,42 @@
       "dest": "/api/procurement-outcomes.py?view=capability_matches"
     },
     {
+      "src": "/api/reasoning",
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type"
+      },
+      "dest": "/api/artifact.py?doc=reasoning"
+    },
+    {
+      "src": "/api/track-record",
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type"
+      },
+      "dest": "/api/artifact.py?doc=track-record"
+    },
+    {
+      "src": "/api/calibration",
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type"
+      },
+      "dest": "/api/artifact.py?doc=calibration"
+    },
+    {
+      "src": "/api/map-data",
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type"
+      },
+      "dest": "/api/artifact.py?doc=map-data"
+    },
+    {
       "src": "/api/([^/]+)",
       "headers": {
         "Access-Control-Allow-Origin": "*",
@@ -59,18 +95,36 @@
     {
       "src": "/dashboard.html",
       "status": 301,
-      "headers": { "Location": "/" }
+      "headers": {
+        "Location": "/"
+      }
     },
     {
       "src": "/configurator.html",
       "status": 301,
-      "headers": { "Location": "/build" }
+      "headers": {
+        "Location": "/build"
+      }
     },
-    { "src": "/build", "dest": "/build/index.html" },
-    { "src": "/", "dest": "/index.html" },
-    { "src": "/signal/(.*)", "dest": "/signal/$1/index.html" },
-    { "src": "/(.*)", "dest": "/$1" }
+    {
+      "src": "/build",
+      "dest": "/build/index.html"
+    },
+    {
+      "src": "/",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/signal/(.*)",
+      "dest": "/signal/$1/index.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
   ],
   "crons": [],
-  "regions": ["iad1"]
+  "regions": [
+    "iad1"
+  ]
 }

@@ -4,88 +4,88 @@
 
 const HUMANIZE_RULES: [string, string][] = [
   ["^([^:]+): \\+?([\\d.]+)% multi-source capital surge — market entry window open$",
-   "Money is moving into $1 — up $2%, and more than one source says so"],
+   "Money is moving into $1: up $2%, and more than one source says so"],
   ["^([^:]+): \\+?([\\d.]+)% multi-source investment validated — opportunity active$",
-   "Money is moving into $1 — up $2%, validated by several sources"],
+   "Money is moving into $1: up $2%, validated by several sources"],
   ["^([^:]+): \\+?([\\d.]+)% capital surge on a single official source — market entry window open$",
-   "Money is moving into $1 — up $2%, on one official source so far"],
+   "Money is moving into $1: up $2%, on one official source so far"],
   ["^([^:]+): \\+?([\\d.]+)% investment movement, one source — needs corroboration$",
-   "Money is moving into $1 — up $2%, but only one source says so yet"],
+   "Money is moving into $1: up $2%, but only one source says so yet"],
   ["^([^:]+): FDI trending at \\+?([\\d.]+)% — screening trigger active$",
-   "Foreign investment into $1 is up $2% — worth a first look"],
+   "Foreign investment into $1 is up $2%. Worth a first look"],
   ["^([^:]+): (\\d+) active procurements? — bidding window open$",
-   "$2 live tenders in $1 — bids are open now"],
+   "$2 live tenders in $1. Bids are open now"],
   ["^([^:]+): food supply indicators shifting — supply chain implications$",
-   "Food supply numbers are shifting in $1 — keep an eye on the supply chain"],
+   "Food supply numbers are shifting in $1. Keep an eye on the supply chain"],
   ["^Capital convergence: (\\d+) Caribbean economies showing multi-source investment momentum$",
    "$1 Caribbean economies are pulling in money at the same time"],
   ["^([^:]+): GDP growth signals expanding tourist economy$",
-   "$1's economy is growing — good news for tourism demand"],
+   "$1's economy is growing, which is good news for tourism demand"],
   ["^([^:]+): economic stress indicators rising.*$",
-   "Stress numbers are rising in $1 — worth watching"],
+   "Stress numbers are rising in $1. Worth watching"],
   ["Investigate (.+?) as a capital deployment target this cycle\\. Multi-source validation \\((.+?)\\) confirms directional signal — next step is operator discovery and market entry assessment\\.",
-   "Take a serious look at $1 this cycle. Several sources point the same way ($2) — the next step is finding local partners and checking for a real way in."],
+   "Take a serious look at $1 this cycle. Several sources point the same way ($2), so the next step is finding local partners and checking for a real way in."],
   ["Assess competitive positioning in (.+?)\\. FDI movement \\((.+?)\\) signals growing market or incoming competition — evaluate (.+?)\\.",
-   "If you operate in $1, take stock: new money ($2) means a growing market — or new competition arriving."],
+   "If you operate in $1, take stock. New money ($2) means a growing market, or new competition arriving."],
   ["Assess portfolio exposure in (.+?)\\. Economic stress indicators \\((.+?)\\) may affect existing positions or timing\\.",
-   "Holding positions in $1? Stress numbers are at $2 — check your exposure and your timing."],
+   "Holding positions in $1? Stress numbers are at $2. Check your exposure and your timing."],
   ["Assess (.+?) demand trajectory\\. (.+?) change — adjust capacity plans\\.",
-   "Demand in $1 looks to be shifting ($2) — worth revisiting capacity plans."],
+   "Demand in $1 looks to be shifting ($2), so it is worth revisiting capacity plans."],
   ["Screen (.+?) for investment readiness\\. FDI movement \\((.+?)\\) is a screening trigger — cross-reference with sector conditions before deploying capital\\.",
    "$1 is worth a first screen: money is moving ($2). Check the sector picture before committing anything."],
   ["Multi-source validation reduces screening risk — capital follows verified signals",
    "When several sources agree, half the homework is already done"],
   ["FDI movement in your operating country signals competition or demand growth — assess positioning",
-   "Money moving into your market means demand — or competition. Either way, better to know early"],
+   "Money moving into your market means demand, or competition. Either way, better to know early"],
   ["Active procurement directly maps to operational capacity needs — first to respond wins",
    "Live tenders reward whoever responds first"],
   ["Cross-country investment velocity signals where to focus ecosystem support and founder matching",
    "Where the money lands is where founders will need support next"],
   ["Economic stress indicators drive policy response and media narratives",
-   "Stress numbers move policy — and headlines"],
+   "Stress numbers move policy, and headlines"],
   ["Food trade data reveals supply chain gaps that local founders and agri-tech can fill",
    "Gaps in the food trade are openings for local founders"],
   ["GDP growth in tourism-relevant economies signals demand trajectory — plan capacity accordingly",
-   "A growing economy means more visitors — plan capacity for it"],
+   "A growing economy means more visitors. Plan capacity for it"],
   ["CDB/IDB project pipeline is the primary lead source for project-based business development",
    "The CDB and IDB project pipeline is where project work starts"],
   ["Food security is a regional stability indicator — tracks pressure points before they become crises",
-   "Food security numbers flag pressure early — before it becomes a crisis"],
+   "Food security numbers flag pressure early, before it becomes a crisis"],
   ["Which verified opportunity to investigate for capital deployment or partnership entry",
    "Which opportunity deserves your attention first"],
   ["Analyst prior from widely reported sector drivers — requires local confirmation",
-   "Widely reported driver — still needs confirming on the ground"],
+   "Widely reported driver, still needs confirming on the ground"],
   ["(\\d+) independent evidence categories already attached",
    "evidence already attached from $1 directions"],
   ["High-confidence signal", "Strong signal"],
   ["Worth one validation conversation this cycle\\.", "Worth one real conversation this cycle."],
   ["Umbrella private-sector body — operator discovery",
-   "Knows the private sector — ask who's really operating"],
+   "Knows the private sector. Ask who's really operating"],
   ["National chamber — operator discovery",
-   "The national chamber — a shortcut to who's doing business"],
+   "The national chamber, a shortcut to who's doing business"],
   ["World Bank FDI movement data shows:\\s*(.+)", "World Bank sees foreign investment moving into $1"],
   ["WB FDI surge detected:\\s*", "World Bank sees money moving into "],
   ["\\bWB\\b", "World Bank"],
   ["\\bFDI\\b", "foreign investment"],
   // ── 2026-08-22 voice pass — mirrors the rules added to humanizer.py ──
   ["^Insurance capital deployment for reconstruction / parametric trigger validation$",
-   "Insurance money is moving for rebuilding — check what the payout trigger covers"],
+   "Insurance money is moving for rebuilding. Check what the payout trigger covers"],
   ["^Private sector credit expansion = banking confidence = investment timing signal$",
-   "Banks are lending more — usually a good moment to time an investment"],
+   "Banks are lending more, usually a good moment to time an investment"],
   ["^Deposit base expansion = currency union stability = confidence signal$",
-   "Deposits are growing across the currency union — a quiet sign of confidence"],
+   "Deposits are growing across the currency union, a quiet sign of confidence"],
   ["^Which country-sector pair to validate for investment readiness$",
    "Pick the country and sector most ready for investment, and check it holds up"],
   ["Calibrated confidence (\\d+)/100 with (\\d+) evidence categories including dated procurement or corroborated sector news\\. Worth one validation conversation\\.",
    "Confidence sits at $1 out of 100, backed by $2 kinds of evidence including a dated tender or corroborated news. Worth one real conversation."],
   ["Calibrated confidence (\\d+)/100 with (\\d+) evidence categories, but no dated country tender or corroborated sector article yet — advance after confirmation\\.",
-   "Confidence sits at $1 out of 100 with $2 kinds of evidence — but nothing dated or independently corroborated yet. Hold until that lands."],
+   "Confidence sits at $1 out of 100 with $2 kinds of evidence, but nothing dated or independently corroborated yet. Hold until that lands."],
   ["Calibrated confidence (\\d+)/100 with (\\d+) evidence categories\\. Keep on the desk; advance only after the unresolved questions below are answered\\.",
    "Confidence sits at $1 out of 100 with $2 kinds of evidence. Keep it on the desk until the open questions below get answers."],
   ["Calibrated confidence (\\d+)/100 with no corroborating evidence categories\\. Park unless new corroborating data arrives next cycle\\.",
    "Confidence sits at just $1 out of 100 with nothing to back it yet. Park it unless fresh evidence arrives next cycle."],
   ["Investigate (.+?) as a capital deployment target this cycle\\. One official source shows the movement \\((.+?)\\) — corroborate it before acting, then move to operator discovery\\.",
-   "Take a serious look at $1 this cycle. One official source shows the move ($2) — get a second one before you act, then start finding local partners."],
+   "Take a serious look at $1 this cycle. One official source shows the move ($2). Get a second one before you act, then start finding local partners."],
   ["Which specific sectors are driving the movement in (.+?)\\? No official sector-breakdown dataset matched this cycle\\.",
    "Which industries are actually driving this in $1? Nobody has published a breakdown yet."],
   ["Validate fit with registry-listed operators \\((.+?)\\) before outreach\\.",
@@ -107,11 +107,11 @@ const HUMANIZE_RULES: [string, string][] = [
   ["^Source registry now tracked by the desk$",
    "Where the desk gets this"],
   ["Review (.+?): signal detected\\. Validate locally before action\\.",
-   "The desk logged movement in $1 but nothing specific yet — worth a local check before it firms up."],
+   "The desk logged movement in $1 but nothing specific yet. Worth a local check before it firms up."],
   ["Signal context for (.+?): signal detected\\. Use this dispatch as a briefing input or narrative lead\\.",
-   "Movement logged in $1, with no detail attached yet — background for a briefing rather than a story on its own."],
+   "Movement logged in $1, with no detail attached yet: background for a briefing rather than a story on its own."],
   ["^(.+?): signal detected$",
-   "Early signal in $1 — no detail yet"],
+   "Early signal in $1, no detail yet"],
   ["\\(signal detected\\)",
    "(no figure attached yet)"],
 ];
@@ -222,6 +222,12 @@ export function cleanHeadline(title: string | null | undefined): string {
 // ("Tue, 08/11/2026 - 17:29") and bare boilerplate that adds nothing.
 const DEK_NOISE: RegExp[] = [
   /\b[a-z][a-z0-9_-]*\.[a-z][a-z0-9_-]*\s*(?:\.{2,}|…)/g,
+  // A truncated CMS author email at the head of the summary — the CDB feed
+  // opens one notice with "alice.castro@c… (This is a republication…".
+  /^[a-z][a-z0-9._-]*@[a-z0-9.-]*\s*(?:\.{2,}|…)?\s*/i,
+  // "Lothar Mikulla Summary The booklet…" — a byline the feed prepends before
+  // the real sentence. Two or three capitalised names, then Summary/Abstract.
+  /^(?:[A-Z][a-z]+\s+){1,3}(?=(?:Summary|Overview|Abstract)\s+[A-Z])/,
   /\b(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun),?\s*\d{1,2}\/\d{1,2}\/\d{2,4}\s*-\s*\d{1,2}:\d{2}\s*/g,
   /\b\d{1,2}\/\d{1,2}\/\d{4}\s*-\s*\d{1,2}:\d{2}\s*/g,
   /\bRead more\b\.?/gi,
@@ -251,6 +257,12 @@ export function cleanDek(summary: string | null | undefined, title?: string | nu
   for (const rule of DEK_NOISE) out = out.replace(rule, ' ');
   out = unshout(tidy(stripTrackingTokens(out)));
 
+  // Feeds open with a section word before repeating the headline ("Overview
+   // Future Leaders Network The Caribbean Development Bank's Future Leaders
+   // Network…"). Strip it first, or the headline-prefix test below never
+   // matches and the title is printed twice in a row.
+  out = tidy(out.replace(/^(?:Summary|Overview|Abstract|Background)\s+(?=[A-Z])/, ''));
+
   if (title) {
     const headline = comparable(title);
     // Feeds commonly prefix the summary with the headline; drop that prefix.
@@ -260,6 +272,15 @@ export function cleanDek(summary: string | null | undefined, title?: string | nu
       const pattern = headline.split(' ').map(w => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('[^A-Za-z0-9]+');
       out = tidy(out.replace(new RegExp(`^[^A-Za-z0-9]*${pattern}[^A-Za-z0-9]*`, 'i'), ''));
       out = tidy(out.replace(LEADING_SLUG, '').replace(/^(?:Summary|Overview|Abstract)\s+(?=[A-Z])/, ''));
+      // CDB tender feeds bury their own kicker behind the headline, a byline and
+      // a timestamp: "…(BESRPII) sonia.harrison… Tue, 08/11/2026 - 17:29
+      // INVITATION TO BID – WORKS The Government of Belize…". Only now, with the
+      // headline gone and unshout having folded the caps, is it at the front.
+      // The headline already says what kind of notice this is.
+      // No /i here: it would make [a-z] and the (?=[A-Z]) lookahead both
+      // case-blind, so the match ended immediately and left "works" behind.
+      // unshout has already normalised the caps by this point.
+      out = tidy(out.replace(/^Invitation to (?:bid|tender)\s*[–-]?\s*[a-z ]{0,24}?(?=[A-Z])/, ''));
     }
     const body = comparable(out);
     // Whatever is left is only useful if it says something new. A long dek
@@ -275,7 +296,7 @@ export function cleanDek(summary: string | null | undefined, title?: string | nu
 
 // Machine status identifiers that were being printed to the page verbatim.
 const STATUS_COPY: Record<string, string> = {
-  source_checked_no_dated_observation: 'Source checked — no dated close published',
+  source_checked_no_dated_observation: 'Source checked, no dated close published',
   no_dated_observation: 'No dated close published',
   official_source_identified: 'Official source identified',
   proxy_watch: 'Proxy watch',
@@ -287,6 +308,25 @@ const STATUS_COPY: Record<string, string> = {
   live: 'Live feed',
   planned: 'Feed planned',
 };
+
+// Chips sit beside one-word labels like "Current" in a 9px uppercase pill, so
+// they need a label, not a sentence. The descriptive line under the card still
+// gets the full STATUS_COPY phrasing.
+const STATUS_CHIP: Record<string, string> = {
+  source_checked_no_dated_observation: 'Awaiting close',
+  no_dated_observation: 'Awaiting close',
+  official_source_identified: 'Source identified',
+  fallback_cached: 'Cached',
+  date_unavailable: 'No date',
+  proxy_watch: 'Proxy',
+};
+
+/** Short label for a status pill. Falls back to the readable sentence form. */
+export function statusChip(raw: string | null | undefined, fallback = 'Status unknown'): string {
+  const key = tidy(raw ?? '').toLowerCase().replace(/[\s-]+/g, '_');
+  if (!key) return fallback;
+  return STATUS_CHIP[key] ?? humanizeStatus(raw, fallback);
+}
 
 /** Render a pipeline status identifier as something a reader can parse. */
 export function humanizeStatus(raw: string | null | undefined, fallback = 'Status unknown'): string {

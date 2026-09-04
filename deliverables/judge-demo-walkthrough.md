@@ -49,7 +49,7 @@ This executes:
 
 ---
 
-3. Open `dashboard.html` — Today's Desk first
+3. Open the desk at `/` (`python3 server.py`, then `http://localhost:8080/`) — Today's Desk first
 
 **What this proves:** The product is a dispatch desk, not a data viewer. The top section shows the coordination chain in one place.
 

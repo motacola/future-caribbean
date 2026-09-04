@@ -107,7 +107,7 @@ In five years it could support:
 ## Demo Path
 
 1. Run `bash run_pipeline.sh`
-2. Open `dashboard.html`
+2. Open the desk at `/` (`python3 server.py`, then `http://localhost:8080/`)
 3. Show the Dispatch Desk decision clusters
 4. Open `outbox/dispatch_desk.md`
 5. Open a persona packet, e.g. `outbox/dispatch_packets/diaspora_investor.md`

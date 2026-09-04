@@ -51,3 +51,8 @@ data/regional_news/raw/
 
 # Playwright run artefacts (traces, error contexts) — never commit
 test-results/
+
+# Archify visual-check captures and contact sheets are regenerable receipts
+# (~2.3MB per pass). The .json receipts are kept; the images are not.
+docs/diagrams/*.visual-check.*.png
+docs/diagrams/*.visual-check.html

@@ -1,0 +1,625 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Signal Fabric — operations, publication, and delivery",
+    "locale": "en",
+    "output": "signal-fabric-operations.html",
+    "animation": "none",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/motacola/future-caribbean",
+      "revision": "4a26fb33ffa1644983a14ae1cf30c059cbff2b76"
+    },
+    "viewBox": [
+      1040,
+      650
+    ],
+    "views": [
+      {
+        "id": "publication-path",
+        "label": "Publication path",
+        "focus": [
+          "trigger",
+          "source-polling",
+          "freshness",
+          "artifact-build",
+          "artifact-commit",
+          "vercel-build",
+          "runtime"
+        ],
+        "note": "Pipeline time, build time, and request time remain separate; committed artifacts are the handoff."
+      },
+      {
+        "id": "failure-contract",
+        "label": "Failure contract",
+        "focus": [
+          "source-polling",
+          "degraded-source",
+          "freshness",
+          "publication-blocked",
+          "runtime",
+          "missing-artifact"
+        ],
+        "note": "Optional sources degrade to stale-labelled cache; an essential step fails the cycle closed; absent runtime artifacts return 503."
+      },
+      {
+        "id": "delivery-controls",
+        "label": "Delivery controls",
+        "focus": [
+          "artifact-build",
+          "delta-gate",
+          "approval",
+          "channel-delivery",
+          "local-control"
+        ],
+        "note": "External sends pass content-hash idempotency, operator approval, dry-run defaults, channel adapters, and receipts."
+      }
+    ]
+  },
+  "components": [
+    {
+      "id": "trigger",
+      "type": "external",
+      "label": "Schedule or operator",
+      "sublabel": "Every 4 hours · manual dispatch",
+      "pos": [
+        10,
+        170
+      ],
+      "size": [
+        140,
+        72
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/pipeline.yml",
+          "line": 3,
+          "end_line": 19,
+          "label": "trigger and concurrency"
+        }
+      ]
+    },
+    {
+      "id": "source-polling",
+      "type": "backend",
+      "label": "Source polling",
+      "sublabel": "Independent optional watchers",
+      "pos": [
+        180,
+        170
+      ],
+      "size": [
+        140,
+        72
+      ],
+      "sources": [
+        {
+          "path": "run_pipeline.sh",
+          "line": 60,
+          "end_line": 82,
+          "label": "watcher stages"
+        }
+      ]
+    },
+    {
+      "id": "degraded-source",
+      "type": "external",
+      "label": "Source unavailable",
+      "sublabel": "Continue on cached evidence",
+      "pos": [
+        180,
+        20
+      ],
+      "size": [
+        140,
+        72
+      ],
+      "sources": [
+        {
+          "path": "run_pipeline.sh",
+          "line": 12,
+          "end_line": 26,
+          "label": "optional failure contract"
+        }
+      ]
+    },
+    {
+      "id": "freshness",
+      "type": "database",
+      "label": "Cache and freshness",
+      "sublabel": "Carried forward · stale labelled",
+      "pos": [
+        350,
+        170
+      ],
+      "size": [
+        140,
+        72
+      ],
+      "sources": [
+        {
+          "path": "run_pipeline.sh",
+          "line": 77,
+          "end_line": 89,
+          "label": "health before merge"
+        },
+        {
+          "path": "api/status.py",
+          "line": 146,
+          "end_line": 181,
+          "label": "runtime freshness"
+        }
+      ]
+    },
+    {
+      "id": "artifact-build",
+      "type": "backend",
+      "label": "Artifact build",
+      "sublabel": "Resolve · rank · package",
+      "pos": [
+        520,
+        170
+      ],
+      "size": [
+        150,
+        72
+      ],
+      "sources": [
+        {
+          "path": "run_pipeline.sh",
+          "line": 89,
+          "end_line": 147,
+          "label": "essential transformations"
+        }
+      ]
+    },
+    {
+      "id": "verification",
+      "type": "external",
+      "label": "Local verification gate",
+      "sublabel": "Manual · not run by CI",
+      "pos": [
+        877.5,
+        20
+      ],
+      "size": [
+        145,
+        72
+      ],
+      "sources": [
+        {
+          "path": "scripts/verify.sh",
+          "line": 1,
+          "end_line": 61,
+          "label": "release gate"
+        }
+      ]
+    },
+    {
+      "id": "publication-blocked",
+      "type": "external",
+      "label": "Publication blocked",
+      "sublabel": "Essential step failed",
+      "pos": [
+        700,
+        20
+      ],
+      "size": [
+        145,
+        72
+      ],
+      "sources": [
+        {
+          "path": "run_pipeline.sh",
+          "line": 174,
+          "end_line": 183,
+          "label": "fail closed"
+        }
+      ]
+    },
+    {
+      "id": "artifact-commit",
+      "type": "database",
+      "label": "Artifact commit",
+      "sublabel": "Only named state and products",
+      "pos": [
+        875,
+        170
+      ],
+      "size": [
+        150,
+        72
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/pipeline.yml",
+          "line": 55,
+          "end_line": 96,
+          "label": "selective commit"
+        }
+      ]
+    },
+    {
+      "id": "vercel-build",
+      "type": "cloud",
+      "label": "Vercel build time",
+      "sublabel": "Committed data → Astro dist",
+      "pos": [
+        875,
+        330
+      ],
+      "size": [
+        150,
+        72
+      ],
+      "sources": [
+        {
+          "path": "scripts/vercel-build.sh",
+          "line": 10,
+          "end_line": 33,
+          "label": "production build"
+        },
+        {
+          "path": "vercel.json",
+          "line": 1,
+          "end_line": 12,
+          "label": "build and routes"
+        }
+      ]
+    },
+    {
+      "id": "runtime",
+      "type": "cloud",
+      "label": "Request-time runtime",
+      "sublabel": "Static Astro · read-only APIs",
+      "pos": [
+        700,
+        330
+      ],
+      "size": [
+        145,
+        72
+      ],
+      "sources": [
+        {
+          "path": "vercel.json",
+          "line": 14,
+          "end_line": 72,
+          "label": "served routes"
+        },
+        {
+          "path": "api/status.py",
+          "line": 139,
+          "end_line": 181,
+          "label": "artifact reads"
+        }
+      ]
+    },
+    {
+      "id": "consumers",
+      "type": "external",
+      "label": "People and agents",
+      "sublabel": "Web · HTTP · MCP · CLI · RSS",
+      "pos": [
+        520,
+        330
+      ],
+      "size": [
+        150,
+        72
+      ],
+      "sources": [
+        {
+          "path": "api_manifest.py",
+          "line": 3,
+          "end_line": 29,
+          "label": "HTTP tool surface"
+        },
+        {
+          "path": "mcp_adapter/desk_server.py",
+          "line": 1,
+          "end_line": 18,
+          "label": "MCP surface"
+        }
+      ]
+    },
+    {
+      "id": "missing-artifact",
+      "type": "external",
+      "label": "503: artifact absent",
+      "sublabel": "Run pipeline; do not fabricate",
+      "pos": [
+        875,
+        490
+      ],
+      "size": [
+        150,
+        72
+      ],
+      "sources": [
+        {
+          "path": "api/status.py",
+          "line": 235,
+          "end_line": 238,
+          "label": "missing-artifact response"
+        }
+      ]
+    },
+    {
+      "id": "delta-gate",
+      "type": "backend",
+      "label": "Content-hash delta gate",
+      "sublabel": "SHA-256 · telegram brief",
+      "pos": [
+        350,
+        490
+      ],
+      "size": [
+        150,
+        72
+      ],
+      "sources": [
+        {
+          "path": "distributors/delta_outbox.py",
+          "line": 21,
+          "end_line": 87,
+          "label": "atomic hash state"
+        }
+      ]
+    },
+    {
+      "id": "approval",
+      "type": "database",
+      "label": "Operator approval",
+      "sublabel": "Five states · operator-set",
+      "pos": [
+        180,
+        490
+      ],
+      "size": [
+        145,
+        72
+      ],
+      "sources": [
+        {
+          "path": ".flue/tools/delivery.ts",
+          "line": 15,
+          "end_line": 40,
+          "label": "approval state"
+        },
+        {
+          "path": ".flue/tools/delivery.ts",
+          "line": 81,
+          "end_line": 122,
+          "label": "approval and send contract"
+        }
+      ]
+    },
+    {
+      "id": "channel-delivery",
+      "type": "external",
+      "label": "Channel + receipt",
+      "sublabel": "Dry-run · send · receipt",
+      "pos": [
+        10,
+        490
+      ],
+      "size": [
+        140,
+        72
+      ],
+      "sources": [
+        {
+          "path": "distributors/telegram_sender.py",
+          "line": 113,
+          "end_line": 170,
+          "label": "dry-run, send, receipt"
+        }
+      ]
+    },
+    {
+      "id": "local-control",
+      "type": "backend",
+      "label": "Local operator control",
+      "sublabel": "Authenticated · loopback bind",
+      "pos": [
+        600,
+        490
+      ],
+      "size": [
+        175,
+        72
+      ],
+      "sources": [
+        {
+          "path": "server.py",
+          "line": 210,
+          "end_line": 248,
+          "label": "token-gated mutation routes"
+        },
+        {
+          "path": "server.py",
+          "line": 306,
+          "end_line": 341,
+          "label": "host and admin gates"
+        },
+        {
+          "path": "server.py",
+          "line": 352,
+          "end_line": 357,
+          "label": "Flue workflow runner"
+        }
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "Pipeline time",
+      "wraps": [
+        "source-polling",
+        "freshness",
+        "artifact-build",
+        "artifact-commit"
+      ],
+      "pad": 10
+    },
+    {
+      "kind": "region",
+      "label": "Build and request time",
+      "wraps": [
+        "vercel-build",
+        "runtime"
+      ],
+      "pad": 10
+    },
+    {
+      "kind": "region",
+      "label": "Approval-gated external I/O",
+      "wraps": [
+        "delta-gate",
+        "approval",
+        "channel-delivery"
+      ],
+      "pad": 10
+    }
+  ],
+  "connections": [
+    {
+      "id": "trigger-to-poll",
+      "from": "trigger",
+      "to": "source-polling",
+      "variant": "emphasis"
+    },
+    {
+      "id": "poll-to-freshness",
+      "from": "source-polling",
+      "to": "freshness"
+    },
+    {
+      "id": "poll-failure",
+      "from": "source-polling",
+      "to": "degraded-source",
+      "fromSide": "top",
+      "toSide": "bottom",
+      "variant": "dashed"
+    },
+    {
+      "id": "degraded-to-freshness",
+      "from": "degraded-source",
+      "to": "freshness",
+      "fromSide": "right",
+      "toSide": "top",
+      "variant": "dashed"
+    },
+    {
+      "id": "freshness-to-build",
+      "from": "freshness",
+      "to": "artifact-build",
+      "variant": "emphasis"
+    },
+    {
+      "id": "build-to-commit",
+      "from": "artifact-build",
+      "to": "artifact-commit",
+      "label": "cycle artifacts",
+      "variant": "emphasis"
+    },
+    {
+      "id": "build-to-blocked",
+      "from": "artifact-build",
+      "to": "publication-blocked",
+      "label": "exit 1",
+      "variant": "dashed"
+    },
+    {
+      "id": "verify-advisory",
+      "from": "verification",
+      "to": "artifact-commit",
+      "variant": "dashed",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    {
+      "id": "commit-to-vercel",
+      "from": "artifact-commit",
+      "to": "vercel-build",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    {
+      "id": "vercel-to-runtime",
+      "from": "vercel-build",
+      "to": "runtime"
+    },
+    {
+      "id": "runtime-to-consumers",
+      "from": "runtime",
+      "to": "consumers",
+      "variant": "emphasis"
+    },
+    {
+      "id": "runtime-to-503",
+      "from": "runtime",
+      "to": "missing-artifact",
+      "fromSide": "right",
+      "toSide": "top",
+      "variant": "dashed"
+    },
+    {
+      "id": "build-to-delta",
+      "from": "artifact-build",
+      "to": "delta-gate",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "via": [
+        [
+          595,
+          280
+        ],
+        [
+          510,
+          280
+        ],
+        [
+          510,
+          450
+        ],
+        [
+          425,
+          450
+        ]
+      ]
+    },
+    {
+      "id": "delta-to-approval",
+      "from": "delta-gate",
+      "to": "approval"
+    },
+    {
+      "id": "approval-to-channel",
+      "from": "approval",
+      "to": "channel-delivery",
+      "variant": "emphasis"
+    },
+    {
+      "id": "local-to-approval",
+      "from": "local-control",
+      "to": "approval",
+      "fromSide": "bottom",
+      "toSide": "bottom",
+      "via": [
+        [
+          687.5,
+          610
+        ],
+        [
+          252.5,
+          610
+        ]
+      ],
+      "variant": "dashed"
+    }
+  ]
+}
