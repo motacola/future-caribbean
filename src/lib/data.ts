@@ -210,7 +210,7 @@ function calibrationNoteFor(score: number | string): string {
   });
   if (band && band.confirmation_rate !== null && band.confirmation_rate !== undefined) {
     const pct = Math.round(Number(band.confirmation_rate) * 100);
-    return `Signals scored ${band.band} have held up ${pct}% of the time (${band.resolved} resolved).`;
+    return `Calls this strong have held up ${pct}% of the time, across ${band.resolved} we have since followed up on.`;
   }
   const open = Number(report.open_claims || 0);
   return `Ranking position, not a probability — ${open} claim${open === 1 ? '' : 's'} still open, `
@@ -267,12 +267,27 @@ function packFreshnessStrip(pack: any): string {
 }
 
 // fallow-ignore-next-line complexity
+const NOW_YEAR = new Date().getUTCFullYear();
+
+/** Pipeline records are loosely typed; normalise a field to a string once. */
+const str = (v: any): string => String(v ?? '');
+/** Every 4-digit year in a blob of text, ignoring anything in the future. */
+const yearsIn = (text: string): number[] =>
+  (text.match(/(19|20)\d{2}/g) || []).map(Number).filter(y => y <= NOW_YEAR);
+
+const HYP_STATUS_LABEL: Record<string, string> = {
+  corroborated: 'Confirmed',
+  unconfirmed: 'Not confirmed yet',
+  contradicted: 'Contradicted',
+};
+
 function packHypothesisLi(h: any): string {
-  const status = h.status || '';
-  const badge = status
-    ? `<span class="hyp-status ${esc(status)}">${esc(status.replace(/_/g, ' '))}</span>` : '';
+  // The class keeps the raw token for styling; the label is what a reader sees.
+  const status = str(h.status);
+  const label = HYP_STATUS_LABEL[status] || status.replace(/_/g, ' ');
+  const badge = status ? `<span class="hyp-status ${esc(status)}">${esc(label)}</span>` : '';
   const basis = h.basis ? `<em>${esc(humanize(h.basis))}</em>` : '';
-  return `<li><strong>${esc(h.sector || '')}</strong>${badge}${basis}</li>`;
+  return `<li><strong>${esc(str(h.sector))}</strong>${badge}${basis}</li>`;
 }
 
 // fallow-ignore-next-line complexity
@@ -305,12 +320,33 @@ function buildValidationPackHtml(pack: any, country: string): string {
   const opLis = ((pack.credible_local_operators || []) as any[]).slice(0, 4).map(packOperatorLi).join('')
     || '<li>No registry-backed operators for this country yet.</li>';
   // fallow-ignore-next-line complexity
-  const projLis = ((pack.supporting_projects || []) as any[]).slice(0, 4).map((p: any) => {
-    const url = p.url || '';
-    const title = esc((p.title || '').slice(0, 90));
-    if (url) return `<li><a href="${esc(url)}" target="_blank" rel="noopener">${title}</a><em>${esc(p.source || '')}</em></li>`;
-    return `<li>${title}</li>`;
-  }).join('') || '<li>No matched projects this cycle.</li>';
+  // Supporting projects arrive with no date field; the year is only ever in the
+  // title ("Guyana Labor Force Survey: Third Quarter 2017"). Listed undated
+  // under "today's call" a 2013 survey reads as evidence for a move that
+  // happened last month, so pull the year out and separate current evidence
+  // from background.
+  const projectYear = (p: any): number | null => {
+    const years = yearsIn([p.date, p.approval_date, p.year, p.title].map(str).join(' '));
+    return years.length ? Math.max(...years) : null;
+  };
+  const yearTag = (year: number | null) => (year ? `<span class="vpack-year">${year}</span>` : '');
+  const projectLi = (p: any, year: number | null) => {
+    const title = esc(str(p.title).slice(0, 90));
+    const meta = `${yearTag(year)}<em>${esc(str(p.source))}</em>`;
+    const url = str(p.url);
+    return url
+      ? `<li><a href="${esc(url)}" target="_blank" rel="noopener">${title}</a>${meta}</li>`
+      : `<li>${title}${meta}</li>`;
+  };
+  const allProjects = ((pack.supporting_projects || []) as any[])
+    .map((p: any) => ({ p, year: projectYear(p) }));
+  const currentProjects = allProjects.filter(x => x.year === null || x.year >= NOW_YEAR - 2);
+  const olderProjects = allProjects.filter(x => x.year !== null && x.year < NOW_YEAR - 2);
+  const projLis = (currentProjects.slice(0, 4).map(x => projectLi(x.p, x.year)).join('')
+    || '<li class="vpack-empty">Nothing current matched this cycle.</li>')
+    + (olderProjects.length
+      ? `<li class="vpack-older"><details><summary>${olderProjects.length} older item${olderProjects.length === 1 ? '' : 's'} for background</summary><ul>${olderProjects.slice(0, 4).map(x => projectLi(x.p, x.year)).join('')}</ul></details></li>`
+      : '');
   const procLis = ((pack.procurement_matches || []) as any[]).slice(0, 4).map((p: any) => packProcurementLi(p)).join('')
     || '<li>No live procurement notices matched.</li>';
   const qLis = ((pack.unresolved_questions || []) as any[]).slice(0, 4)
@@ -319,21 +355,40 @@ function buildValidationPackHtml(pack: any, country: string): string {
   return `<div class="vpack">
     <div class="vpack-head">
       <div>
-        <span>Validation pack · auto-assembled this cycle</span>
+        <span>What we checked</span>
         <h3>What the system already checked for ${esc(pack.country || country)}</h3>
       </div>
       <span class="vpack-verdict ${esc(verdict)}">${esc(verdictLabel)}</span>
     </div>
-    ${packFreshnessStrip(pack)}
-    <div class="vpack-reason">${esc(humanize(pack.recommendation_reason || ''))}</div>
+    <details class="meta-disclose"><summary>How this was scored</summary><div class="meta-disclose-body">
+      ${packFreshnessStrip(pack)}
+      <div class="vpack-reason">${esc(humanize(pack.recommendation_reason || ''))}</div>
+    </div></details>
     <div class="vpack-grid">
-      <div class="vpack-col"><h4>Sector hypotheses</h4><ul>${hypLis}</ul></div>
-      <div class="vpack-col"><h4>Registry operators</h4><ul>${opLis}</ul></div>
-      <div class="vpack-col"><h4>Supporting projects &amp; data</h4><ul>${projLis}</ul></div>
-      <div class="vpack-col"><h4>Procurement pipeline</h4><ul>${procLis}</ul></div>
+      <div class="vpack-col"><h4>Which industries</h4><ul>${hypLis}</ul></div>
+      <div class="vpack-col"><h4>Companies on the ground</h4><ul>${opLis}</ul></div>
+      <div class="vpack-col"><h4>Projects backing it up</h4><ul>${projLis}</ul></div>
+      <div class="vpack-col"><h4>Live tenders</h4><ul>${procLis}</ul></div>
     </div>
-    <div class="vpack-questions"><h4>Still unresolved — what to validate this week</h4><ul>${qLis}</ul></div>
+    <div class="vpack-questions"><h4>Still open — what to check this week</h4><ul>${qLis}</ul></div>
   </div>`;
+}
+
+// Cycle ids look like 20260825. Printed raw they read as a barcode, so the page
+// shows the date and keeps the id in a title attribute for traceability.
+const RECENT_DAY_LABEL: Record<number, string> = { 0: 'Today', 1: 'Yesterday' };
+
+function cycleDateLabel(id: string): string {
+  const raw = String(id);
+  const m = raw.match(/^(\d{4})(\d{2})(\d{2})/);
+  if (!m) return raw;
+  const dt = new Date(`${m[1]}-${m[2]}-${m[3]}T00:00:00Z`);
+  if (Number.isNaN(dt.getTime())) return raw;
+  const now = new Date();
+  const days = Math.round(
+    (Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()) - dt.getTime()) / 86400000);
+  return RECENT_DAY_LABEL[days]
+    || dt.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', timeZone: 'UTC' });
 }
 
 // fallow-ignore-next-line complexity
@@ -378,7 +433,7 @@ function buildSignalRowHtml(c: any, allPacks: Record<string, any>, cycleId: stri
     validationHtml = `<div class="sig-validation">
       <div class="sig-validation-inner">
         <div class="sig-validation-head">
-          <span>Validation pack · auto-assembled this cycle</span>
+          <span>What we checked</span>
           <h4>Evidence for ${esc(pack.country || cc)}</h4>
           <span class="sig-validation-verdict ${esc(verdict)}">${esc(vl)}</span>
         </div>
@@ -387,9 +442,9 @@ function buildSignalRowHtml(c: any, allPacks: Record<string, any>, cycleId: stri
           <span class="freshness-meta">${esc(pack.action_readiness || 'n/a')} · ${esc(String(cycles))} cycles stale · conf ${esc(pack.confidence_score ?? '—')}</span>
         </div>
         <div class="sig-validation-grid">
-          <div class="sig-validation-col"><h5>Sector hypotheses</h5><ul>${hypLis}</ul></div>
+          <div class="sig-validation-col"><h5>Which industries</h5><ul>${hypLis}</ul></div>
           <div class="sig-validation-col"><h5>Projects &amp; data</h5><ul>${projLis}</ul></div>
-          <div class="sig-validation-col"><h5>Procurement pipeline</h5><ul>${procLis}</ul></div>
+          <div class="sig-validation-col"><h5>Live tenders</h5><ul>${procLis}</ul></div>
           <div class="sig-validation-col"><h5>Still unresolved</h5><ul>${unresolvedLis}</ul></div>
         </div>
       </div>
@@ -404,7 +459,7 @@ function buildSignalRowHtml(c: any, allPacks: Record<string, any>, cycleId: stri
         <strong class="art-head">${esc(ct)}</strong>
         <div class="sig-loc">${esc(cc)}</div>
         <p class="art-dek">${dek}</p>
-        <span class="art-by">By the Desk · Cycle ${esc(cycleId)}</span>
+        <span class="art-by" title="Cycle ${esc(cycleId)}">By the Desk · ${esc(cycleDateLabel(cycleId))}</span>
       </div></div>
       ${riskHtml}
       <span class="sig-expand" aria-label="Expand validation" title="View validation pack">▼</span>
@@ -445,11 +500,11 @@ function buildIndexedActivitySvg(values: number[], label: string): string {
       ? 'first period shown'
       : delta === 0 ? 'unchanged from the previous period'
       : `${delta > 0 ? 'up' : 'down'} ${Math.abs(Math.round(delta))} from the previous period`;
-    return `<g class="activity-col ${state}" tabindex="0"><title>Period ${index + 1}: indexed activity ${Math.round(value)} of 100 — ${move}. Not a price.</title><rect class="activity-bar" x="${(x - barWidth / 2).toFixed(1)}" y="${top.toFixed(1)}" width="${barWidth.toFixed(1)}" height="${Math.max(2, plotBottom - top).toFixed(1)}" /><circle class="activity-node" cx="${x.toFixed(1)}" cy="${top.toFixed(1)}" r="2.1" /></g>`;
+    return `<g class="activity-col ${state}" tabindex="0"><title>Period ${index + 1}: activity ${Math.round(value)} of 100 — ${move}. Not a price.</title><rect class="activity-bar" x="${(x - barWidth / 2).toFixed(1)}" y="${top.toFixed(1)}" width="${barWidth.toFixed(1)}" height="${Math.max(2, plotBottom - top).toFixed(1)}" /><circle class="activity-node" cx="${x.toFixed(1)}" cy="${top.toFixed(1)}" r="2.1" /></g>`;
   }).join('');
   const latest = points[points.length - 1];
   const latestY = y(latest).toFixed(1);
-  return `<svg class="activity-chart" viewBox="0 0 ${width} ${height}" role="img" aria-label="${esc(label)}. Indexed activity level per period on a 0 to 100 scale, not price history."><title>${esc(label)} — indexed activity, not price history</title>${grid}<line class="activity-baseline" x1="${plotLeft}" y1="${plotBottom}" x2="${plotRight}" y2="${plotBottom}" />${columns}<line class="activity-latest-line" x1="${plotLeft}" y1="${latestY}" x2="${plotRight}" y2="${latestY}" /><circle class="activity-latest-dot" cx="${plotRight}" cy="${latestY}" r="3.5" />${axis}<text class="activity-index-label" x="${plotLeft}" y="120">INDEXED ACTIVITY · NOT PRICE HISTORY</text></svg>`;
+  return `<svg class="activity-chart" viewBox="0 0 ${width} ${height}" role="img" aria-label="${esc(label)}. Activity level per period on a 0 to 100 scale. Not a share price."><title>${esc(label)} — activity trend, not a share price</title>${grid}<line class="activity-baseline" x1="${plotLeft}" y1="${plotBottom}" x2="${plotRight}" y2="${plotBottom}" />${columns}<line class="activity-latest-line" x1="${plotLeft}" y1="${latestY}" x2="${plotRight}" y2="${latestY}" /><circle class="activity-latest-dot" cx="${plotRight}" cy="${latestY}" r="3.5" />${axis}<text class="activity-index-label" x="${plotLeft}" y="120">ACTIVITY TREND · NOT A SHARE PRICE</text></svg>`;
 }
 
 // ── Main data loader ────────────────────────────────────────
@@ -710,18 +765,44 @@ export function loadDashboardData() {
       seenTicker[sid] = d;
     }
   }
+  // Dedupe again on the rendered headline, not just signal_id: separate signals
+  // routinely humanize to the same sentence ("Early signal in Barbados — no
+  // detail yet"), and the reader sees the sentence, not the id.
+  // Two passes. First drop identical rendered headlines, then drop items that
+  // are the same story told twice: same market, same figure. "Money is moving
+  // into Guyana — up 860.3%" and "Foreign investment into Guyana is up 860.3%"
+  // are one fact, and the wire should carry it once.
+  const tickerSeenText = new Set<string>();
+  const tickerSeenFact = new Set<string>();
   const tickerItems = Object.values(seenTicker)
     .sort((a, b) => (b.confidence_score || 0) - (a.confidence_score || 0))
+    .filter((t: any) => {
+      const country = canonicalCountry(t.country_cluster || '');
+      const title = humanize(t.title || '');
+      const textKey = `${country}|${title}`.toLowerCase();
+      if (tickerSeenText.has(textKey)) return false;
+      tickerSeenText.add(textKey);
+      const figures = (title.match(/\d+(?:\.\d+)?/g) || []).join(',');
+      const factKey = `${country}|${figures}`.toLowerCase();
+      if (figures && tickerSeenFact.has(factKey)) return false;
+      if (figures) tickerSeenFact.add(factKey);
+      return true;
+    })
     .slice(0, 12);
 
   // fallow-ignore-next-line complexity
   let tickerHtml = tickerItems.map((t: any) => {
     const color = kindColor(t.signal_kind || '');
     const country = canonicalCountry(t.country_cluster || '');
-    return `<a class="lw-item" href="#leaflet-map" data-country="${esc(country)}">` +
+    const title = humanize(t.title || '');
+    // A market with nothing behind it yet should not speak in the same voice as
+    // a validated lead.
+    const watchlist = /no detail yet/i.test(title);
+    return `<a class="lw-item${watchlist ? ' lw-watch' : ''}" href="#leaflet-map" data-country="${esc(country)}">` +
       `<i style="background:${color}"></i>` +
       `<span class="lw-kicker">${esc(t.country_cluster || 'Region')}</span>` +
-      `<span>${esc(humanize(t.title || ''))}</span></a>`;
+      (watchlist ? '<span class="lw-tag">Watchlist</span>' : '') +
+      `<span>${esc(title)}</span></a>`;
   }).join('');
 
   // ── Front pointers ─────────────────────────────────────────
@@ -742,8 +823,8 @@ export function loadDashboardData() {
   const leadCorroborated = leadGrade.startsWith('A') || leadGrade.startsWith('B')
     || /multi-source|cross-source/i.test(leadGrade);
   const lRankingBasis = leadCorroborated
-    ? `The desk is ranking ${lCountry} as the lead market this cycle because the evidence, source coverage, movement size, and feedback signals put it ahead of the rest of the regional wire.`
-    : `The desk is ranking ${lCountry} as the lead market this cycle on the size of the movement and the feedback signals. Only one source confirms it so far — corroboration is the next step, not a reason to wait.`;
+    ? `${lCountry} is the desk's lead this cycle. It is ahead of everything else on the wire for the size of the move, how much evidence backs it, and how many sources agree.`
+    : `${lCountry} is the desk's lead this cycle, on the size of the move and how readers responded. Only one source confirms it so far — get a second, but don't wait to start looking.`;
   const lEvidence = humanize(cleanEvidence(lead.evidence || ''));
   const lRanking = humanize(lead.ranking_rationale || '')
     || 'Ranking uses confidence, source coverage, evidence count, magnitude, and feedback.';
@@ -899,7 +980,7 @@ export function loadDashboardData() {
         return n ? `<span class="r-pill">${esc(label)} ${n}</span>` : '';
       }).join('') || '<span class="r-pill r-quiet">No responses yet</span>';
       return `<div class="receipt-row">
-        <div class="receipt-when"><strong>${esc(cycleDate)}</strong><span>Cycle ${esc(rid)}</span></div>
+        <div class="receipt-when" title="Cycle ${esc(rid)}"><strong>${esc(cycleDateLabel(rid))}</strong><span>${esc(cycleDate)}</span></div>
         <div class="receipt-said">
           <span class="fp-kicker">${esc(leadC)}</span>
           <strong>${esc(leadT)}</strong>
@@ -931,10 +1012,37 @@ export function loadDashboardData() {
   const visibleNews = newsItems.filter((item: any) => item.relevance_score >= 35).slice(0, 18);
   const newsCountries = [...new Set(visibleNews.flatMap((item: any) => item.countries))].sort();
   const newsTopics = [...new Set(visibleNews.flatMap((item: any) => item.topics))].sort();
+
+  // Country -> stories, so the map drill can show a country's news beside its
+  // data instead of the three-link stub it carried before. Same source as the
+  // news desk, so the two surfaces cannot disagree.
+  const newsByCountry: Record<string, any[]> = {};
+  for (const item of visibleNews) {
+    const age = item.age_hours === null ? 'date unavailable'
+      : item.age_hours < 24 ? `${item.age_hours}h ago`
+      : `${Math.floor(item.age_hours / 24)}d ago`;
+    for (const country of (item.countries.length ? item.countries : ['Regional context'])) {
+      (newsByCountry[country] ||= []).push({
+        title: cleanHeadline(item.title || ''),
+        url: item.url,
+        source: humanize(item.source || 'Regional source'),
+        topic: (item.topics && item.topics[0]) || 'regional',
+        tier: item.source_tier,
+        ageHours: item.age_hours === null ? Number.MAX_SAFE_INTEGER : item.age_hours,
+        age,
+      });
+    }
+  }
+  // The drill shows the first five, so freshest must lead — relevance order
+  // alone let a six-year-old bank post outrank this week's coverage.
+  for (const list of Object.values(newsByCountry)) list.sort((a, b) => a.ageHours - b.ageHours);
+  // Topics stay in view; ~25 country chips would otherwise put a screen of
+  // buttons between the reader and the first headline on mobile.
   const newsFilterHtml = [
     '<button class="news-filter active" data-news-filter="all">All</button>',
     ...newsTopics.map(topic => `<button class="news-filter" data-news-filter="topic:${esc(topic)}">${esc(topic)}</button>`),
-    ...newsCountries.map(country => `<button class="news-filter country" data-news-filter="country:${esc(country)}">${esc(country)}</button>`),
+    `<button class="news-filter news-filter-more" id="news-country-toggle" type="button" aria-expanded="false" aria-controls="news-countries">By country <span aria-hidden="true">+</span></button>`,
+    `<span class="news-countries" id="news-countries" hidden>${newsCountries.map(country => `<button class="news-filter country" data-news-filter="country:${esc(country)}">${esc(country)}</button>`).join('')}</span>`,
   ].join('');
   const newsHtml = visibleNews.map((item: any, index: number) => {
     const countries = item.countries.length ? item.countries : ['Regional context'];
@@ -998,10 +1106,16 @@ export function loadDashboardData() {
     const fx = m.fx || {};
     const snap = m.market_snapshot || {};
     const barVals = ((snap.bars || []) as number[]).slice(0, 8);
-    const barLabel = snap.chart_label || 'Market activity proxy';
+    // chart_label arrives from the market snapshot as pipeline copy
+    // ("Indexed activity proxy, not price history"); the disclosure below the
+    // chart already says this in plain words, so don't repeat it as a heading.
+    const rawChartLabel = String(snap.chart_label || '');
+    const barLabel = /indexed activity|not price history|proxy/i.test(rawChartLabel)
+      ? 'Market activity'
+      : (rawChartLabel || 'Market activity');
     const activityChart = buildIndexedActivitySvg(barVals, barLabel);
     const barMeta = barVals.length
-      ? `<span class="activity-chart-meta"><strong>Index ${Math.round(barVals[barVals.length - 1] || 0)}</strong><span>range ${Math.round(Math.min(...barVals))}–${Math.round(Math.max(...barVals))} · illustrative 0–100</span></span>`
+      ? `<span class="activity-chart-meta"><strong>Index ${Math.round(barVals[barVals.length - 1] || 0)}</strong><span>ranged ${Math.round(Math.min(...barVals))}–${Math.round(Math.max(...barVals))} this period</span></span>`
       : '';
     const observedAt = String(m.observation_at || snap.observation_at || '').slice(0, 10);
     const observationCopy = observedAt
@@ -1037,8 +1151,9 @@ export function loadDashboardData() {
       <div class="market-top">${codeHtml}<span class="market-status">${esc(snap.data_status ? humanizeStatus(snap.data_status) : status)}</span></div>
       <h3>${esc(humanize(m.country || exchName))}</h3>
       <div class="activity-chart-shell">${activityChart}</div>
+      <p class="activity-readout" aria-live="polite"></p>
       <p class="activity-chart-caption"><strong>${esc(humanize(barLabel))}</strong>${barMeta}</p>
-      <p class="market-chart-disclosure">Illustrative indexed activity proxy — not exchange price or OHLC data.</p>
+      <p class="market-chart-disclosure">Indexed activity trend, not share price.</p>
       ${snap.headline ? `<p class="market-chart-headline">${esc(humanize(snap.headline))}</p>` : ''}
       <p>${esc(humanize(focusCopy))}</p>
       <div class="market-finance-row"><span>${esc(humanize(fx.indicator || 'FX watch'))}</span><span>${esc(humanize(fx.pair || '—'))}</span></div>
@@ -1230,13 +1345,14 @@ export function loadDashboardData() {
 
   return {
     // Scalars
-    cycleId, nowStr, nCountries, nSources, nClusters, nPersonas, nFb, nComposite,
+    cycleId, cycleLabel: cycleDateLabel(cycleId), nowStr, nCountries, nSources, nClusters, nPersonas, nFb, nComposite,
     // Lead signal
     lTitle, lRankingBasis, lCountry, lEvidence, lRanking, lDecision, lGrade, lRisks, leadPctStr,
     leadAction, leadWindow, leadOwner, leadDispatchId, leadDelivery, leadFeedback, leadRationale,
     // HTML fragments
     leadRoutesHtml, validationPackHtml, secSignals, receiptsHtml, boostsHtml,
     receiptsProvenanceHtml, newsHtml, newsFilterHtml,
+    newsByCountryJson: JSON.stringify(newsByCountry),
     calibrationCommitmentHtml: calibrationCommitmentHtml(), marketWatchHtml, marketChartHtml, regionalSourceHtml,
     sourceRegistryHtml, sourceRegistrySummary, allClustersHtml, fbActionPills,
     srcRows,

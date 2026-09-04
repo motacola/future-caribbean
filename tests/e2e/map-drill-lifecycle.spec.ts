@@ -45,7 +45,7 @@ test('a routed country renders semantic briefing cards and clickable news', asyn
   expect(await drill.locator('.drill-card').count()).toBeGreaterThan(0);
   await expect(drill.locator('.drill-card h3').first()).not.toHaveText('');
 
-  const news = drill.locator('.map-news-list a');
+  const news = drill.locator('.drill-news-list a');
   await expect(news.first()).toBeVisible();
   expect(await news.count()).toBeGreaterThan(0);
   expect(await news.first().getAttribute('href')).toMatch(/^https?:\/\//);
@@ -78,11 +78,17 @@ test('dispatch lifecycle uses the desk observation and honest cadence copy', asy
 });
 
 test('watchlist countries render market freshness without invented corroboration', async ({ page }) => {
-  const drill = await openDrill(page, 'Anguilla');
+  await page.goto('/');
+  const watchlistChip = page.locator('.rmv-chip[title*="watchlist"]').first();
+  await expect(watchlistChip).toBeVisible();
+  const country = await watchlistChip.getAttribute('data-country');
+  if (!country) throw new Error('No watchlist country is available in the current desk artifact');
+
+  const drill = await openDrill(page, country);
   await expect(drill.getByText('WATCHLIST', { exact: false }).first()).toBeVisible();
   await expect(drill.locator('.drill-lifecycle-label')).toHaveText('Market watch');
   await expect(drill.getByText('No corroborating signal sources yet', { exact: true })).toBeVisible();
   await expect(drill.locator('.drill-evidence-seg')).toHaveCount(0);
   await expect(drill.locator('.drill-card')).toHaveCount(0);
-  await expect(drill.locator('.map-news-list')).toBeVisible();
+  await expect(drill.locator('.drill-news-list')).toBeVisible();
 });

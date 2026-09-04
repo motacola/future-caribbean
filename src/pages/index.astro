@@ -206,7 +206,11 @@ a:hover { text-decoration: underline; }
 .check-item { display: grid; grid-template-columns: 25px 1fr; gap: 10px; align-items: start; padding: 11px 0; border-top: 1px solid var(--border); cursor: pointer; }
 .check-box { width: 20px; height: 20px; border: 1px solid var(--border-dark); display: grid; place-items: center; font-size: 12px; color: transparent; transition: .15s ease; }
 .check-item.done .check-box { background: var(--teal); border-color: var(--teal); color: var(--card); }
+.check-item:hover .check-box, .check-item:focus-visible .check-box { border-color: var(--teal); color: color-mix(in oklab, var(--teal) 40%, transparent); }
+.check-item.done:hover .check-box, .check-item.done:focus-visible .check-box { color: var(--card); }
+.check-item:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
 .check-item.done strong, .check-item.done span { opacity: .48; text-decoration: line-through; }
+.check-progress { font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-top: 10px; }
 .check-item strong { display: block; font-size: 13px; margin-bottom: 2px; }
 .check-item span { display: block; font-size: 11px; color: var(--muted); }
 .decision-side { overflow: clip; }
@@ -222,6 +226,16 @@ a:hover { text-decoration: underline; }
 .route-state { position: absolute; right: 18px; top: 17px; font-family: var(--mono); font-size: 9px; color: var(--teal); text-transform: uppercase; }
 .decision-note { padding: 16px 18px; background: var(--card-alt); font-size: 12px; color: var(--sub); }
 .decision-note strong { color: var(--text); }
+
+/* Disclosure for system-explanation copy: kept on the page for anyone who wants
+   it, but never the default read. See docs/handover/BRIEF_2026-08-25_MOBILE_ENGAGEMENT.md */
+.meta-disclose { border-top: 1px solid var(--border); margin: 14px 0; }
+.meta-disclose > summary { list-style: none; cursor: pointer; padding: 11px 0; font: 700 10px var(--mono); letter-spacing: 1.1px; text-transform: uppercase; color: var(--muted); display: flex; align-items: center; gap: 8px; }
+.meta-disclose > summary::-webkit-details-marker { display: none; }
+.meta-disclose > summary::before { content: "+"; font-size: 13px; line-height: 1; color: var(--gold); }
+.meta-disclose[open] > summary::before { content: "–"; }
+.meta-disclose > summary:hover, .meta-disclose > summary:focus-visible { color: var(--text); }
+.meta-disclose-body { padding: 0 0 14px; font-size: 12px; color: var(--sub); line-height: 1.6; }
 .vpack { margin-top: 22px; border: 1px solid var(--border-dark); border-radius: 7px; overflow: hidden; box-shadow: var(--shadow-card); }
 .vpack-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; padding: 14px 16px; background: var(--card-alt); }
 .vpack-head div span { display: block; font-size: 9px; text-transform: uppercase; letter-spacing: 1.1px; font-weight: 700; color: var(--gold); margin-bottom: 4px; }
@@ -311,6 +325,11 @@ a:hover { text-decoration: underline; }
 .news-head .sec-label, .market-head .sec-label { border-top: none; padding-top: 0; }
 .news-filters { display:flex; flex-wrap:wrap; gap:6px; margin:12px 0 16px; }
 .news-filter { border:1px solid var(--border); background:transparent; color:var(--sub); border-radius:3px; padding:5px 9px; font:600 9.5px var(--mono); letter-spacing:.4px; text-transform:uppercase; cursor:pointer; }
+.news-filter-more { border-style:dashed; color:var(--gold); border-color:var(--gold); }
+.news-filter-more[aria-expanded="true"] span { display:none; }
+.news-countries { display:contents; }
+/* `hidden` sets display:none, but display:contents above wins — restate it. */
+.news-countries[hidden] { display:none; }
 .news-filter.active { background:var(--ink); border-color:var(--ink); color:var(--bg); }
 .news-filter.country { border-style:dashed; }
 /* A newsroom board, not a card wall. Stories are separated by hairlines and
@@ -420,10 +439,134 @@ a:hover { text-decoration: underline; }
 .news-card h3 a:hover { color:var(--teal); text-decoration:none; }
 .news-card.lead h3 { font-size:30px; line-height:1.08; }
 .news-card p { font-size:13px; line-height:1.55; color:var(--sub); }
-.map-news-list { grid-column:1/-1; display:grid; gap:5px; padding-top:8px; border-top:1px solid var(--border); }
-.map-news-list a { font-size:11px; line-height:1.35; }
-.map-news-list a:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; border-radius: 2px; }
-.map-news-list em { color: var(--muted); font-size: 10px; font-style: normal; line-height: 1.45; }
+/* Country news inside the map drill — the map is now a way to read a country,
+   so its stories get a proper section rather than three links in a corner. */
+.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0; }
+
+/* Section-level accordion for the agent-facing / provenance blocks. These are
+   correct and worth keeping, but they are reference material for machines and
+   auditors, not the reading path — so they open on request. */
+.sec-accordion { border: 1px solid var(--border); border-radius: var(--r); background: var(--card); overflow: hidden; }
+.sec-accordion > summary { list-style: none; cursor: pointer; padding: 16px 18px; display: grid; gap: 3px; position: relative; padding-right: 46px; }
+.sec-accordion > summary::-webkit-details-marker { display: none; }
+.sec-accordion > summary::after { content: "+"; position: absolute; right: 18px; top: 50%; transform: translateY(-50%); font: 400 20px var(--mono); line-height: 1; color: var(--gold); }
+.sec-accordion[open] > summary::after { content: "\2013"; }
+.sec-accordion > summary:hover { background: var(--card-alt); }
+.sec-accordion > summary:focus-visible { outline: 2px solid var(--teal); outline-offset: -2px; }
+.sec-accordion > summary strong { font-family: var(--serif); font-size: 19px; line-height: 1.25; }
+.sec-accordion > summary em { font-style: normal; font-size: 12px; color: var(--muted); }
+.sec-accordion > summary .agents-eyebrow { margin: 0; }
+/* .sec-label carries its own top rule and 18px gap; inside a summary the
+   accordion supplies the framing, so strip both. */
+.sec-accordion > summary .sec-label { margin: 0 0 2px; padding: 0; border-top: none; background-image: none; }
+.sec-accordion[open] > summary { border-bottom: 1px solid var(--border); }
+.sec-accordion > *:not(summary) { margin: 14px 18px; }
+
+/* Desk guide — persistent assistant */
+.guide-fab { position: fixed; right: 18px; bottom: 18px; z-index: 900; display: inline-flex; align-items: center; gap: 9px; appearance: none; cursor: pointer;
+  background: var(--ink, #12100e); color: #fff; border: 1px solid var(--ink, #12100e); border-radius: 999px; padding: 11px 18px 11px 13px;
+  font: 700 11px var(--mono); letter-spacing: 1px; text-transform: uppercase; box-shadow: 0 6px 22px rgb(0 0 0 / .22); }
+.guide-fab-mark { display: grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: var(--gold); color: var(--ink, #12100e); font: 700 12px var(--mono); }
+.guide-fab:hover { background: var(--teal); border-color: var(--teal); }
+.guide-fab:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
+.guide-fab[aria-expanded="true"] { display: none; }
+
+.guide-panel { position: fixed; right: 18px; bottom: 18px; z-index: 950; width: min(380px, calc(100vw - 36px)); max-height: min(560px, calc(100vh - 36px));
+  display: flex; flex-direction: column; background: var(--card); border: 1px solid var(--border-dark); border-radius: var(--r);
+  box-shadow: 0 18px 48px rgb(0 0 0 / .28); overflow: hidden; }
+.guide-panel[hidden] { display: none; }
+.guide-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 13px 15px; border-bottom: 3px double var(--border-dark); }
+.guide-eyebrow { display: block; font: 700 8.5px var(--mono); letter-spacing: 1.4px; text-transform: uppercase; color: var(--gold); margin-bottom: 3px; }
+.guide-head strong { font-family: var(--serif); font-size: 16px; }
+.guide-close { appearance: none; background: none; border: 1px solid var(--border); border-radius: 3px; padding: 4px 8px; cursor: pointer; font: 700 9px var(--mono); letter-spacing: .8px; text-transform: uppercase; color: var(--muted); }
+.guide-close:hover { border-color: var(--coral); color: var(--coral); }
+.guide-close:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+.guide-thread { flex: 1 1 auto; overflow-y: auto; padding: 13px 15px; display: grid; gap: 11px; align-content: start; }
+.guide-msg { font-size: 12.5px; line-height: 1.55; }
+.guide-msg.you { justify-self: end; max-width: 85%; background: var(--card-alt); border: 1px solid var(--border); border-radius: 10px 10px 2px 10px; padding: 7px 10px; color: var(--text); }
+.guide-msg.desk { color: var(--sub); white-space: pre-wrap; }
+.guide-msg.desk b { color: var(--text); }
+.guide-act { margin-top: 7px; display: flex; flex-wrap: wrap; gap: 5px; }
+.guide-act button { appearance: none; background: none; border: 1px solid var(--teal); border-radius: 3px; padding: 4px 9px; cursor: pointer; font: 700 9px var(--mono); letter-spacing: .7px; text-transform: uppercase; color: var(--teal); }
+.guide-act button:hover { background: color-mix(in oklab, var(--teal) 10%, transparent); }
+.guide-chips { display: flex; flex-wrap: wrap; gap: 5px; padding: 0 15px 10px; }
+.guide-chips button { appearance: none; background: none; border: 1px dashed var(--border-dark); border-radius: 3px; padding: 4px 8px; cursor: pointer; font: 600 9.5px var(--mono); letter-spacing: .4px; text-transform: uppercase; color: var(--muted); }
+.guide-chips button:hover { border-color: var(--teal); color: var(--teal); border-style: solid; }
+.guide-form { display: flex; gap: 7px; padding: 11px 15px; border-top: 1px solid var(--border); }
+.guide-input { flex: 1 1 auto; min-width: 0; background: var(--bg); border: 1px solid var(--border-dark); border-radius: 3px; padding: 8px 10px; font: 400 13px var(--sans); color: var(--text); }
+.guide-input:focus-visible { outline: 2px solid var(--teal); outline-offset: 1px; }
+.guide-send { appearance: none; background: var(--teal); border: 1px solid var(--teal); color: var(--card); border-radius: 3px; padding: 8px 13px; cursor: pointer; font: 700 10px var(--mono); letter-spacing: .8px; text-transform: uppercase; }
+.guide-send[disabled] { opacity: .55; cursor: default; }
+@media(max-width:768px) {
+  .guide-fab { right: 12px; bottom: 12px; padding: 10px 15px 10px 11px; }
+  .guide-fab-text { display: none; }
+  .guide-panel { right: 10px; left: 10px; bottom: 10px; width: auto; max-height: min(70vh, 520px); }
+}
+@media(prefers-reduced-motion: reduce) { .guide-fab, .guide-panel { transition: none; } }
+
+/* Reader preferences bar */
+.deskbar { padding-top: 0; }
+.deskbar-row { display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: start; border-top: 1px solid var(--border-dark); border-bottom: 1px solid var(--border); padding: 12px 0; }
+.deskbar-label { display: block; font: 700 9px var(--mono); letter-spacing: 1.4px; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+.deskbar-lens { display: block; }
+.deskbar-select { appearance: none; background: var(--card); border: 1px solid var(--border-dark); border-radius: 3px; padding: 7px 28px 7px 10px; font: 600 12px var(--sans); color: var(--text); cursor: pointer;
+  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-position: calc(100% - 15px) 55%, calc(100% - 10px) 55%; background-size: 5px 5px, 5px 5px; background-repeat: no-repeat; }
+.deskbar-select:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+.deskbar-hint { display: block; margin-top: 5px; font: 600 9.5px var(--mono); letter-spacing: .5px; text-transform: uppercase; color: var(--muted); }
+.deskbar-chips { display: flex; flex-wrap: wrap; gap: 5px; }
+.deskbar-none { font-size: 11px; color: var(--muted); }
+.follow-chip { display: inline-flex; align-items: center; gap: 6px; appearance: none; background: var(--card); border: 1px solid var(--teal); border-radius: 3px; padding: 4px 8px; cursor: pointer; font: 700 9.5px var(--mono); letter-spacing: .5px; text-transform: uppercase; color: var(--teal); }
+.follow-chip b { font-weight: 700; }
+.follow-chip i { font-style: normal; opacity: .6; }
+.follow-chip:hover { background: color-mix(in oklab, var(--teal) 10%, transparent); }
+.follow-chip:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+/* Follow control inside the map drill */
+.drill-follow { appearance: none; background: none; border: 1px solid var(--border-dark); border-radius: 3px; padding: 5px 10px; cursor: pointer; font: 700 9.5px var(--mono); letter-spacing: .7px; text-transform: uppercase; color: var(--sub); }
+.drill-follow:hover { border-color: var(--teal); color: var(--teal); }
+.drill-follow:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+.drill-follow.on { background: var(--teal); border-color: var(--teal); color: var(--card); }
+.drill-card.for-you { box-shadow: inset 3px 0 0 var(--gold); }
+/* Compact lead preview in the hero. */
+.lead-peek { display: grid; gap: 7px; padding: 16px 18px; margin: 4px 0 18px; background: var(--card); border: 1px solid var(--border-dark); border-left: 3px solid var(--gold); border-radius: var(--r); text-decoration: none; color: inherit; }
+.lead-peek:hover { text-decoration: none; border-left-color: var(--teal); }
+.lead-peek:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+.lead-peek-eyebrow { font: 700 9px var(--mono); letter-spacing: 1.4px; text-transform: uppercase; color: var(--gold); }
+.lead-peek-title { font-family: var(--serif); font-size: 22px; line-height: 1.2; color: var(--text); }
+.lead-peek-move { font-size: 12.5px; line-height: 1.5; color: var(--sub); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.lead-peek-meta { display: flex; flex-wrap: wrap; gap: 6px 20px; padding-top: 3px; border-top: 1px solid var(--border); margin-top: 3px; }
+.lead-peek-fact { display: grid; gap: 1px; font-size: 12px; color: var(--text); padding-top: 7px; }
+.lead-peek-fact b { font: 700 8.5px var(--mono); letter-spacing: 1px; text-transform: uppercase; color: var(--muted); }
+.lead-peek-go { justify-self: start; margin-top: 6px; }
+.vpack-year { display: inline-block; margin-right: 6px; font: 700 9px var(--mono); letter-spacing: .6px; color: var(--gold); }
+.vpack-empty { color: var(--muted); font-size: 11px; }
+.vpack-older > details > summary { list-style: none; cursor: pointer; font: 700 9px var(--mono); letter-spacing: .8px; text-transform: uppercase; color: var(--muted); padding: 6px 0; }
+.vpack-older > details > summary::-webkit-details-marker { display: none; }
+.vpack-older > details > summary::before { content: "+ "; color: var(--gold); }
+.vpack-older > details[open] > summary::before { content: "– "; }
+.vpack-older > details > summary:hover { color: var(--text); }
+.vpack-older ul { margin-top: 4px; }
+.drill-also { margin-top: 5px; font: 600 9px var(--mono); letter-spacing: .6px; text-transform: uppercase; color: var(--muted); }
+.for-you-tag { display: inline-block; margin-left: 6px; padding: 1px 5px; border-radius: 2px; background: var(--gold); color: var(--card); font: 700 8px var(--mono); letter-spacing: .8px; text-transform: uppercase; }
+@media(max-width:768px) {
+  .deskbar-row { grid-template-columns: 1fr; gap: 12px; }
+}
+
+.drill-news { border-top: 1px solid var(--border); padding: 14px 16px; }
+.drill-news-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin-bottom: 9px; }
+.drill-news-head strong { font: 700 9px var(--mono); letter-spacing: 1.4px; text-transform: uppercase; color: var(--gold); }
+.drill-news-head span { font: 600 9px var(--mono); letter-spacing: .6px; text-transform: uppercase; color: var(--muted); }
+.drill-news-empty { color: var(--muted); font-size: 11px; line-height: 1.5; }
+.drill-news-list { display: grid; gap: 0; list-style: none; margin: 0; padding: 0; }
+.drill-news-list li { padding: 8px 0; border-top: 1px solid var(--border); }
+.drill-news-list li:first-child { border-top: none; padding-top: 0; }
+.drill-news-list a { display: block; font-family: var(--serif); font-size: 14px; line-height: 1.3; color: var(--text); }
+.drill-news-list a:hover { color: var(--teal); }
+.drill-news-list a:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; border-radius: 2px; }
+.drill-news-list span { display: block; margin-top: 3px; font: 600 9px var(--mono); letter-spacing: .6px; text-transform: uppercase; color: var(--muted); }
+.drill-news-more { margin-top: 10px; appearance: none; background: none; border: 1px solid var(--border); border-radius: 3px; padding: 6px 11px; cursor: pointer; font: 700 9.5px var(--mono); letter-spacing: .8px; text-transform: uppercase; color: var(--teal); }
+.drill-news-more:hover { border-color: var(--teal); background: color-mix(in oklab, var(--teal) 8%, transparent); }
+.drill-news-more:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
 .source-registry { margin-top: 22px; background: none; border: none; border-top: 1px solid var(--border); padding: 14px 0 0; display: grid; gap: 12px; box-shadow: none; }
 .source-registry-head { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; flex-wrap: wrap; }
 .source-registry-head h3 { font-family: var(--serif); font-size: 19px; }
@@ -461,6 +604,12 @@ a:hover { text-decoration: underline; }
 .activity-bar { fill: currentColor; fill-opacity: .2; stroke: currentColor; stroke-width: .8; shape-rendering: crispEdges; }
 .activity-node { fill: currentColor; }
 .activity-col:focus { outline: none; filter: drop-shadow(0 0 2px currentColor); }
+.activity-col { cursor: pointer; }
+.activity-col.picked { filter: drop-shadow(0 0 3px currentColor); }
+/* SVG <title> is hover/keyboard only — on touch the bars are mute. This is
+   where the tapped bar's reading goes. */
+.activity-readout { font: 700 10px var(--mono); letter-spacing: .6px; color: var(--muted); min-height: 14px; margin-top: 6px; }
+.activity-readout.on { color: var(--chart-annotate); }
 .activity-latest-line { stroke: var(--chart-annotate); stroke-width: .8; stroke-dasharray: 4 3; opacity: .85; }
 .activity-latest-dot { fill: var(--chart-annotate); stroke: var(--chart-surface); stroke-width: 1.5; }
 .activity-axis-label, .activity-index-label { fill: var(--chart-tick); font-family: var(--mono); font-size: 7px; letter-spacing: .4px; }
@@ -469,13 +618,14 @@ a:hover { text-decoration: underline; }
 .activity-chart-meta { display: grid; justify-items: end; font: 500 9px var(--mono); color: var(--muted); line-height: 1.35; text-align: right; }
 .activity-chart-meta strong { color: var(--chart-annotate) !important; font-size: 11px; }
 .activity-chart-meta span { white-space: nowrap; }
-.out-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.out { background: none; border: none; border-top: 1px solid var(--border); padding: 0; overflow: hidden; }
-.out-head { padding: 14px 20px 12px; border-bottom: 3px double var(--border-dark); }
-.out-head h4 { font-family: var(--serif); font-size: 17px; font-weight: 700; margin-bottom: 4px; }
-.out-ch { font-size: 9px; color: var(--gold); text-transform: uppercase; letter-spacing: 1.1px; font-weight: 700; font-family: var(--mono); }
-.out-body { padding: 16px 20px; font-size: 12px; color: var(--sub); white-space: pre-wrap; font-family: var(--mono); line-height: 1.6; max-height: 220px; overflow: auto; }
-.out-static { padding: 10px 20px 14px; border-top: 1px solid var(--border); font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .8px; font-weight: 700; }
+.out-tabs { display: flex; flex-wrap: wrap; gap: 0; border-bottom: 3px double var(--border-dark); }
+.out-tab { appearance: none; background: none; border: none; border-bottom: 2px solid transparent; margin-bottom: -2px; padding: 10px 16px 9px; cursor: pointer; text-align: left; font-family: var(--serif); font-size: 15px; font-weight: 700; color: var(--muted); }
+.out-tab span { display: block; font: 700 9px var(--mono); letter-spacing: 1.1px; text-transform: uppercase; color: var(--muted); margin-top: 2px; }
+.out-tab:hover { color: var(--text); }
+.out-tab.active { color: var(--text); border-bottom-color: var(--gold); }
+.out-tab.active span { color: var(--gold); }
+.out-tab:focus-visible { outline: 2px solid var(--teal); outline-offset: -2px; }
+.out-body { padding: 16px 20px; font-size: 12px; color: var(--sub); white-space: pre-wrap; font-family: var(--mono); line-height: 1.6; max-height: 260px; overflow: auto; }
 .coordination-strip { background: transparent; color: var(--text); padding: 0; margin: 18px 0 14px; max-width: none; }
 .fabric-line { font-size: 14.5px; color: var(--sub); line-height: 1.6; max-width: 760px; }
 .fabric-foot { font-size: 13px; color: var(--sub); }
@@ -797,6 +947,10 @@ html { scroll-behavior: smooth; }
 .lw-rail .lw-item:nth-child(3) { animation-delay: .15s } .lw-rail .lw-item:nth-child(4) { animation-delay: .2s }
 .lw-rail .lw-item:nth-child(n+5) { animation-delay: .25s }
 .lw-item:hover { color: #fff; text-decoration: none; }
+/* Weak signals ride the same wire as validated leads; they should not read
+   with the same authority. */
+.lw-watch { color: rgba(244,235,221,.5); }
+.lw-tag { padding: 1px 5px; border: 1px solid rgba(244,235,221,.28); border-radius: 2px; font: 700 8px var(--mono); letter-spacing: .9px; text-transform: uppercase; color: rgba(244,235,221,.62); }
 .lw-item i { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
 .lw-kicker { font: 700 9px var(--mono); letter-spacing: 1px; text-transform: uppercase; color: var(--lime); }
 @media (prefers-reduced-motion: reduce) { .lw-rail { animation: none; } .lw-track { overflow-x: auto; } .lw-rail[aria-hidden] { display: none; } }
@@ -854,7 +1008,7 @@ html { scroll-behavior: smooth; }
 @keyframes rule-draw { from { background-size: 0% 2px; } to { background-size: 100% 2px; } }
 .reveal .sec-label { animation: rule-draw .7s var(--fe-ease-out) both .1s; }
 
-.out, .aud, .cluster-card { box-shadow: var(--shadow-rest); transition: transform .18s ease, box-shadow .18s ease; }
+.aud, .cluster-card { box-shadow: var(--shadow-rest); transition: transform .18s ease, box-shadow .18s ease; }
 
 .vpack { transition: box-shadow .18s ease; }
 .vpack:hover { box-shadow: 0 14px 40px rgba(24,37,31,.08); }
@@ -887,7 +1041,12 @@ html { scroll-behavior: smooth; }
   .reveal:not(.in) .rmv-bar-fill, .reveal.in .rmv-bar-fill { transform: scaleX(1); transition: none; }
 }
 @media(max-width:768px) {
-  .out-grid, .lead-details, .coordination-inner, .decision-shell, .vpack-grid, .market-grid, .market-chart-grid, .news-grid, .map-finance-strip, .map-market-panel, .source-registry-group { grid-template-columns: 1fr; }
+  .lead-details, .coordination-inner, .decision-shell, .vpack-grid, .market-grid, .market-chart-grid, .news-grid, .map-finance-strip, .map-market-panel, .source-registry-group { grid-template-columns: 1fr; }
+  /* Four serif tabs wrap to two tall rows at 375px; shrink rather than scroll,
+     so every channel stays visible without a swipe. */
+  .out-tabs { display: grid; grid-template-columns: 1fr 1fr; }
+  .out-tab { padding: 9px 10px 8px; font-size: 13px; }
+  .out-tab span { font-size: 8px; letter-spacing: .9px; }
   .news-grid { columns:1; column-rule:none; }
   .news-card.lead { grid-template-columns:1fr; grid-template-rows:none; align-content:start; }
   .news-card.lead > .news-media { grid-row:auto; }
@@ -1157,7 +1316,7 @@ html { scroll-behavior: smooth; }
 /* ── Hover motion: pointer-gated and reduced-motion safe ──────────────
    Eight hover rules moved transform out of their base declarations and
    into this block. Previously they fired on touch (sticky hover states
-   after a tap) and four of them — .out, .btn, .sig-expand, .ask-chip —
+   after a tap) and three of them — .btn, .sig-expand, .ask-chip —
    kept animating under prefers-reduced-motion, verified in a real
    browser with reducedMotion:'reduce'.
 
@@ -1170,16 +1329,16 @@ html { scroll-behavior: smooth; }
   .news-card:hover .news-media img { transform: scale(1.05); filter: saturate(1.06); }
   .front-cta:hover::after { transform: translateY(3px); }
   .sig-marker:hover .sig-dot { transform: scale(1.22); }
-  .out:hover, .cluster-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-raised); }
+  .cluster-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-raised); }
   .btn:hover { transform: translateY(-1px); }
   .sig-expand:hover { transform: rotate(180deg); }
   .drill-card:hover { transform: translateY(-2px); }
   .ask-chip:hover { transform: translateY(-1px); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .out, .btn, .sig-expand, .ask-chip, .drill-card { transition: none !important; }
+  .btn, .sig-expand, .ask-chip, .drill-card { transition: none !important; }
   .news-card:hover .news-media img, .front-cta:hover::after, .sig-marker:hover .sig-dot,
-  .out:hover, .cluster-card:hover, .btn:hover, .sig-expand:hover,
+  .cluster-card:hover, .btn:hover, .sig-expand:hover,
   .drill-card:hover, .ask-chip:hover { transform: none !important; }
 }
 </style>
@@ -1196,14 +1355,14 @@ html { scroll-behavior: smooth; }
 <div id="scroll-progress" aria-hidden="true"></div>
 
 <div class="masthead">
-  <div class="mast-edition"><span>Vol. I · Caribbean Edition</span><span>Cycle {d.cycleId} · {d.nowStr}</span></div>
+  <div class="mast-edition"><span>Vol. I · Caribbean Edition</span><span title={`Cycle ${d.cycleId}`}>{d.nowStr}</span></div>
   <div class="mast-inner">
     <div class="mast-brand">
       <div class="mast-name">CARIBBEAN <em>OPPORTUNITY</em> DISPATCH</div>
       <div class="mast-tagline">Where Caribbean capital is moving</div>
     </div>
     <div class="mast-links">
-      <a href="#decision-workspace"><span style="color:var(--teal)">●</span> Cycle {d.cycleId}</a>
+      <a href="#decision-workspace" title={`Cycle ${d.cycleId}`}><span style="color:var(--teal)">●</span> Updated {d.cycleLabel}</a>
       <a href="/build">Build your feed</a>
       <a href="/regional-connections">Regional Connections</a>
       <a href="javascript:void(0)" onclick="toggleDeep();return false;">Under the hood</a>
@@ -1225,21 +1384,29 @@ html { scroll-behavior: smooth; }
     <a href="#decision-workspace" class="dn-item dn-invest">Investment Desk</a>
     <a href="#regional-news" class="dn-item">Regional News</a>
     <a href="#market-watch" class="dn-item">Market Watch</a>
-    <a href="#theater" class="dn-item">Watch It Work</a>
     <a href="#ask-desk" class="dn-item">Ask the Desk</a>
-    <a href="#more-wire" class="dn-item">More from the Wire</a>
-    <a href="#receipts" class="dn-item">Receipts</a>
-    <a href="#for-agents" class="dn-item dn-agents">For Agents</a>
   </div>
 </nav>
 
 <section class="map-hero" aria-labelledby="map-title">
   <div class="front-grid">
     <div class="front-lede">
-      <p class="sec-label">The front page · cycle {d.cycleId}</p>
+      <p class="sec-label" title={`Cycle ${d.cycleId}`}>The front page · {d.cycleLabel}</p>
       <h1 id="map-title">Where Caribbean opportunity is moving <em>now.</em></h1>
       <p class="front-standfirst">{d.nCountries} Caribbean markets and territories, watched around the clock. The bigger the pulse on the map, the stronger the signal — tap a country to see what's moving.</p>
-      <a class="front-cta" href="#decision-workspace">Read today's briefing ↓</a>
+      <!-- The hero used to point at the payoff; now it delivers a piece of it.
+           Country, call, confidence, who it is for, and the move — then the
+           link down for the evidence. -->
+      <a class="lead-peek" href="#decision-workspace">
+        <span class="lead-peek-eyebrow">Lead this cycle · {d.lCountry}</span>
+        <strong class="lead-peek-title">{d.lTitle}</strong>
+        <span class="lead-peek-move">{d.leadAction}</span>
+        <span class="lead-peek-meta">
+          <span class="lead-peek-fact"><b>Confidence</b>{d.lGrade}</span>
+          <span class="lead-peek-fact"><b>Best placed to act</b>{d.leadOwner}</span>
+        </span>
+        <span class="front-cta lead-peek-go">Read the full briefing</span>
+      </a>
       <div class="how-to">
         <span class="fp-head">New here? How to read this page</span>
         <ol>
@@ -1296,6 +1463,32 @@ html { scroll-behavior: smooth; }
   </div>
 </section>
 
+<!-- Persistent reader preferences. The desk already routes the same signal
+     differently per persona; this makes that choice the reader's, carries it
+     across the page, and gives followed markets a home. localStorage only —
+     no account, no backend. -->
+<div class="sec deskbar" id="deskbar">
+  <div class="deskbar-row">
+    <div class="deskbar-lens">
+      <label class="deskbar-label" for="lens-select">Reading as</label>
+      <select id="lens-select" class="deskbar-select">
+        <option value="">Anyone</option>
+        <option value="Diaspora Investor">Diaspora Investor</option>
+        <option value="Ecosystem Builder">Ecosystem Builder</option>
+        <option value="Regional Founder/Operator">Founder / Operator</option>
+        <option value="Procurement Watcher">Procurement Watcher</option>
+        <option value="Policy/Media">Policy / Media</option>
+        <option value="Operations/Resilience">Operations / Resilience</option>
+      </select>
+      <span class="deskbar-hint" id="lens-hint"></span>
+    </div>
+    <div class="deskbar-follows">
+      <span class="deskbar-label">Following</span>
+      <div class="deskbar-chips" id="follow-chips"><span class="deskbar-none">Tap a country on the map, then Follow.</span></div>
+    </div>
+  </div>
+</div>
+
 <!-- Expanded map. The live .map-shell and #map-drill are moved in here on
      open and returned to their placeholders on close, so there is only ever
      one Leaflet instance and its markers, zoom and selection survive. -->
@@ -1303,7 +1496,7 @@ html { scroll-behavior: smooth; }
   <div class="map-overlay-inner" role="dialog" aria-modal="true" aria-labelledby="map-overlay-title">
     <div class="map-overlay-bar">
       <div>
-        <span class="map-overlay-kicker">Front page · cycle {d.cycleId}</span>
+        <span class="map-overlay-kicker" title={`Cycle ${d.cycleId}`}>Front page · {d.cycleLabel}</span>
         <strong id="map-overlay-title">Where Caribbean opportunity is moving</strong>
       </div>
       <button type="button" class="map-overlay-close" id="map-overlay-close">Close <kbd>Esc</kbd></button>
@@ -1312,67 +1505,22 @@ html { scroll-behavior: smooth; }
   </div>
 </div>
 
-<div class="sec" id="about-fabric">
-  <div class="sec-label">What is Signal Fabric?</div>
-  <p class="fabric-line">Signal Fabric is the engine under this page. Every four hours it reads the core regional data layer — World Bank, IDB, NOAA, NDBC, CARICOM, and CDB — plus the Market Watch registry for exchanges, FX references, regulators, central banks, and credible business press. Signals are checked against each other before they become briefings.</p>
-  <div class="coordination-strip">
-  <div class="coordination-inner">
-    <div class="coord-step"><span>01</span><strong>Watch</strong><p>We read the region's public data so you don't have to.</p></div>
-    <div class="coord-arrow">-></div>
-    <div class="coord-step"><span>02</span><strong>Sift</strong><p>Weak signals get checked against each other and graded.</p></div>
-    <div class="coord-arrow">-></div>
-    <div class="coord-step"><span>03</span><strong>Brief</strong><p>The right person gets a clear next move, not a chart.</p></div>
-    <div class="coord-arrow">-></div>
-    <div class="coord-step"><span>04</span><strong>Learn</strong><p>Your response shapes what the desk sends next.</p></div>
+<section class="sec sec-major" id="regional-news" aria-labelledby="regional-news-title">
+  <div class="news-head">
+    <div><div class="sec-label">Regional News Desk</div><div class="st" id="regional-news-title">What is moving across the Caribbean</div><div class="ss">Newest and most relevant first. Headlines link to the publisher.</div></div>
+    <span class="market-status">{d.regionalNewsCount} articles tracked</span>
   </div>
-  </div>
-  <p class="fabric-foot">Want this engine on a different market? <a href="/build">Build your own feed →</a></p>
-</div>
-
-<section class="theater" id="theater" aria-labelledby="theater-title">
-  <div class="live-grid">
-  <div class="sec-pane" id="ask-desk">
-    <div class="sec-label">Got a question?</div>
-    <div class="st">Ask the desk</div>
-    <div class="ss">It answers from today's data — with receipts, not guesswork.</div>
-    <div id="ask-desk-root"></div>
-  </div>
-  <div class="theater-shell">
-    <div class="theater-head">
-      <div class="theater-title">
-        <strong id="theater-title">Watch the desk work</strong>
-        <span class="stream-mode" id="stream-mode">LIVE</span>
-      </div>
-      <div class="cycle-clock" id="cycle-clock">
-        <span class="clock-item"><span class="clock-label">Next cycle:</span><span class="clock-value" id="next-cycle">—</span></span>
-        <span class="clock-item"><span class="clock-label">Last:</span><span class="clock-value" id="last-cycle">—</span></span>
-      </div>
-      <button class="theater-toggle" id="theater-toggle" type="button">Pause</button>
-    </div>
-    <div class="theater-feed" id="theater-feed" aria-live="polite">
-      <div class="theater-event event-source"><span class="theater-time">waiting</span><p><span>Pipeline ↻</span></p></div>
-    </div>
-  </div>
-  </div>
+  <div class="news-filters" id="news-filters"><Fragment set:html={d.newsFilterHtml} /></div>
+  <div class="news-grid" id="news-grid"><Fragment set:html={d.newsHtml} /></div>
 </section>
-
-<div class="proof-band">
-  <div class="proof-line">
-    <div class="proof-cell"><span class="proof-k">{d.nCountries}</span><span class="proof-v">Markets watched</span></div>
-    <div class="proof-cell"><span class="proof-k">{d.nSources}/6</span><span class="proof-v">Core sources live</span></div>
-    <div class="proof-cell"><span class="proof-k">{d.nClusters}</span><span class="proof-v">Live signals</span></div>
-    <div class="proof-cell"><span class="proof-k">{d.nPersonas}</span><span class="proof-v">Briefings routed</span></div>
-    <div class="proof-cell"><span class="proof-k">4h</span><span class="proof-v">Update rhythm</span></div>
-  </div>
-</div>
 
 <div class="sec band band-paper sec-major" id="decision-workspace">
   <div class="sec-label">Today's call</div>
   <div class="decision-shell">
     <div class="decision-main">
-      <div class="dateline"><span class="dl-desk">Investment Desk</span><span class="dl-by">By the Desk</span><span class="dl-when">Cycle {d.cycleId} · {d.nowStr}</span></div>
+      <div class="dateline"><span class="dl-desk">Investment Desk</span><span class="dl-by">By the Desk</span><span class="dl-when" title={`Cycle ${d.cycleId}`}>{d.nowStr}</span></div>
       <div class="decision-kicker">
-        <span class="decision-id">{d.leadDispatchId} · Cycle {d.cycleId}</span>
+        <span class="decision-id" title={`${d.leadDispatchId} · Cycle ${d.cycleId}`}>Briefing {d.cycleLabel}</span>
         <span class="decision-status">{d.leadDelivery}</span>
       </div>
       <h2>{d.lTitle}</h2>
@@ -1387,14 +1535,15 @@ html { scroll-behavior: smooth; }
         <div class="decision-fact"><label>How solid is this</label><strong>{d.lGrade}</strong></div>
         <div class="decision-fact"><label>What's happened so far</label><strong>{d.leadFeedback}</strong></div>
       </div>
-      <div class="decision-note"><strong>Why this ranks high:</strong> {d.lRanking}</div>
+      <details class="meta-disclose"><summary>Why this ranks high</summary><div class="meta-disclose-body">{d.lRanking}</div></details>
       <h3 class="check-title">Three checks before you commit</h3>
       <p class="check-sub">The desk has already pulled the evidence below — tick each one off before you spend more time or money.</p>
-      <div class="checklist" id="lead-checklist">
-        <div class="check-item" data-check="sector"><span class="check-box">✓</span><div><strong>Pin down which industry is driving this</strong><span>Big numbers hide specifics. Find the sectors actually creating the opening.</span></div></div>
-        <div class="check-item" data-check="operator"><span class="check-box">✓</span><div><strong>Find two people on the ground</strong><span>Who is already doing business there — and what do they know that the data doesn't?</span></div></div>
-        <div class="check-item" data-check="pipeline"><span class="check-box">✓</span><div><strong>Check for a concrete way in</strong><span>A live tender, a project, a partnership — something with a date on it.</span></div></div>
+      <div class="checklist" id="lead-checklist" role="group" aria-label="Three checks before you commit">
+        <div class="check-item" data-check="sector" role="checkbox" tabindex="0" aria-checked="false"><span class="check-box">✓</span><div><strong>Pin down which industry is driving this</strong><span>Big numbers hide specifics. Find the sectors actually creating the opening.</span></div></div>
+        <div class="check-item" data-check="operator" role="checkbox" tabindex="0" aria-checked="false"><span class="check-box">✓</span><div><strong>Find two people on the ground</strong><span>Who is already doing business there — and what do they know that the data doesn't?</span></div></div>
+        <div class="check-item" data-check="pipeline" role="checkbox" tabindex="0" aria-checked="false"><span class="check-box">✓</span><div><strong>Check for a concrete way in</strong><span>A live tender, a project, a partnership — something with a date on it.</span></div></div>
       </div>
+      <p class="check-progress" id="check-progress" aria-live="polite">0 of 3 done</p>
       <Fragment set:html={d.validationPackHtml} />
       <div id="risk-area"></div>
       <div class="lead-disclaimer"><strong>A signal, not advice.</strong> The data points; people on the ground confirm.</div>
@@ -1410,33 +1559,27 @@ html { scroll-behavior: smooth; }
   </div>
 </div>
 
-<section class="sec sec-major" id="regional-news" aria-labelledby="regional-news-title">
-  <div class="news-head">
-    <div><div class="sec-label">Regional News Desk</div><div class="st" id="regional-news-title">What is moving across the Caribbean</div><div class="ss">Ranked by freshness, source tier, country relevance, and connection to finance, trade, tourism, energy, procurement, or climate signals. Headlines link to the original publisher.</div></div>
-    <span class="market-status">{d.regionalNewsCount} articles tracked</span>
-  </div>
-  <div class="news-filters" id="news-filters"><Fragment set:html={d.newsFilterHtml} /></div>
-  <div class="news-grid" id="news-grid"><Fragment set:html={d.newsHtml} /></div>
-</section>
-
 <div class="sec market-watch band band-ink sec-major" id="market-watch">
   <div class="market-head">
     <div>
       <div class="sec-label">Caribbean Market Watch</div>
       <div class="st">Every listed market, and the news that moved it this cycle</div>
-      <div class="ss">The product now tracks the official exchanges, regulators, central banks, and credible business press needed to connect regional signals to listed-market context. This is market intelligence, not brokerage advice.</div>
+      <div class="ss">Official exchanges, regulators, and central banks. Market intelligence, not brokerage advice.</div>
     </div>
   </div>
   <div class="market-grid"><Fragment set:html={d.marketWatchHtml} /></div>
   <div class="market-chart-grid" aria-label="Stock market data charts and market activity indicators"><Fragment set:html={d.marketChartHtml} /></div>
-  <div class="market-note"><strong>Source policy:</strong> exchange prices and notices come from official exchanges or regulators first. News outlets are used for context and validation; social posts are discovery leads only.{d.regionalSourceHtml && <Fragment> Regional context sources include: <span class="regional-sources"><Fragment set:html={d.regionalSourceHtml} /></span></Fragment>}</div>
-  <div class="source-registry" id="source-registry">
-    <div class="source-registry-head">
-      <h3>Source registry now tracked by the desk</h3>
-      <span>{d.sourceRegistrySummary}</span>
+  <details class="sec-accordion" id="source-registry">
+    <summary>
+      <span class="agents-eyebrow">// provenance</span>
+      <strong>Where every number on this board comes from</strong>
+      <em>{d.sourceRegistrySummary}</em>
+    </summary>
+    <div class="market-note"><strong>Source policy:</strong> exchange prices and notices come from official exchanges or regulators first. News outlets are used for context and validation; social posts are discovery leads only.{d.regionalSourceHtml && <Fragment> Regional context sources include: <span class="regional-sources"><Fragment set:html={d.regionalSourceHtml} /></span></Fragment>}</div>
+    <div class="source-registry">
+      <Fragment set:html={d.sourceRegistryHtml} />
     </div>
-    <Fragment set:html={d.sourceRegistryHtml} />
-  </div>
+  </details>
 </div>
 
 <div class="sec sec-minor">
@@ -1451,25 +1594,79 @@ html { scroll-behavior: smooth; }
   <div class="sig-list" id="sig-list"><Fragment set:html={d.secSignals} /></div>
 </div>
 
+<div class="proof-band">
+  <div class="proof-line">
+    <div class="proof-cell"><span class="proof-k">{d.nCountries}</span><span class="proof-v">Markets watched</span></div>
+    <div class="proof-cell"><span class="proof-k">{d.nSources}/6</span><span class="proof-v">Core sources live</span></div>
+    <div class="proof-cell"><span class="proof-k">{d.nClusters}</span><span class="proof-v">Live signals</span></div>
+    <div class="proof-cell"><span class="proof-k">{d.nPersonas}</span><span class="proof-v">Briefings routed</span></div>
+    <div class="proof-cell"><span class="proof-k">4h</span><span class="proof-v">Update rhythm</span></div>
+  </div>
+</div>
+
+<section class="theater" id="theater" aria-labelledby="theater-title">
+  <div class="live-grid">
+  <details class="sec-pane sec-accordion" id="ask-desk">
+    <summary>
+      <span class="sec-label">Got a question?</span>
+      <strong>Ask the desk</strong>
+      <em>It answers from today's data — with receipts, not guesswork.</em>
+    </summary>
+    <div id="ask-desk-root"></div>
+  </details>
+  <details class="theater-shell sec-accordion">
+    <summary>
+      <span class="sec-label">Behind the desk</span>
+      <strong id="theater-title">Watch the desk work</strong>
+      <em>The cycle log, event by event, as the desk builds today's briefings.</em>
+    </summary>
+    <div class="theater-head">
+      <div class="theater-title">
+        <span class="stream-mode" id="stream-mode">LIVE</span>
+      </div>
+      <div class="cycle-clock" id="cycle-clock">
+        <span class="clock-item"><span class="clock-label">Next cycle:</span><span class="clock-value" id="next-cycle">—</span></span>
+        <span class="clock-item"><span class="clock-label">Last:</span><span class="clock-value" id="last-cycle">—</span></span>
+      </div>
+      <button class="theater-toggle" id="theater-toggle" type="button">Pause</button>
+    </div>
+    <div class="theater-feed" id="theater-feed" aria-live="polite">
+      <div class="theater-event event-source"><span class="theater-time">waiting</span><p><span>Pipeline ↻</span></p></div>
+    </div>
+  </details>
+  </div>
+</section>
+
 <div class="sec band band-paper" id="receipts">
-  <div class="sec-label">The desk's receipts</div>
-  <div class="st">What the desk said — and how responses reshape the next cycle</div>
-  <div class="ss">Every briefing is recorded, and response signals change what the desk prioritises. Here is that loop, in public.</div>
-  <Fragment set:html={d.receiptsProvenanceHtml} />
+  <details class="sec-accordion">
+    <summary>
+      <span class="sec-label">The desk's receipts</span>
+      <strong>What the desk said — and how responses reshape the next cycle</strong>
+      <em>Every briefing is recorded. Responses change what the desk prioritises next.</em>
+    </summary>
   <div class="receipts-table"><Fragment set:html={d.receiptsHtml} /></div>
   <div class="receipts-boosts"><span class="fp-head">Current priorities, shaped by responses</span><Fragment set:html={d.boostsHtml} /></div>
-  <Fragment set:html={d.calibrationCommitmentHtml} />
+  <details class="meta-disclose"><summary>How the desk records and calibrates this</summary><div class="meta-disclose-body">
+    <Fragment set:html={d.receiptsProvenanceHtml} />
+    <Fragment set:html={d.calibrationCommitmentHtml} />
+  </div></details>
   <p class="receipts-foot">Machine-readable record: <a href="/api/track-record">/api/track-record</a></p>
+  </details>
 </div>
 
 <div class="sec">
   <div class="sec-label">Ready to forward</div>
   <div class="st">Written to travel</div>
   <div class="ss">Live outputs from today's cycle — made to be forwarded, not filed.</div>
-  <div class="out-grid">
-    <div class="out">
-      <div class="out-head"><h4>Telegram Briefing</h4><div class="out-ch">Telegram channel</div></div>
-      <div class="out-body" id="tg-body">{`Signal Fabric
+  <div class="out-tabs" id="out-tabs" role="tablist" aria-label="Forwardable outputs">
+    <button type="button" class="out-tab active" role="tab" id="out-tab-tg" aria-controls="out-panel-tg" aria-selected="true" data-out="tg">Telegram<span>Channel</span></button>
+    <button type="button" class="out-tab" role="tab" id="out-tab-memo" aria-controls="out-panel-memo" aria-selected="false" tabindex="-1" data-out="memo">Investor Memo<span>Email</span></button>
+    <button type="button" class="out-tab" role="tab" id="out-tab-alert" aria-controls="out-panel-alert" aria-selected="false" tabindex="-1" data-out="alert">Message Alert<span>WhatsApp</span></button>
+    <button type="button" class="out-tab" role="tab" id="out-tab-policy" aria-controls="out-panel-policy" aria-selected="false" tabindex="-1" data-out="policy">Policy Brief<span>Document</span></button>
+  </div>
+  <div class="out-stage">
+    <div class="out-panel" id="out-panel-tg" role="tabpanel" aria-labelledby="out-tab-tg" data-out="tg">
+      <div class="out-body">{`Signal Fabric
 
 Today's lead: ${d.lCountry}
 
@@ -1488,10 +1685,8 @@ How solid: ${d.lGrade}
 Based on: ${d.lEvidence}
 
 A signal, not advice.`}</div>
-      <div class="out-static">Ready to send</div>
     </div>
-    <div class="out">
-      <div class="out-head"><h4>Investor Memo</h4><div class="out-ch">Email</div></div>
+    <div class="out-panel" id="out-panel-memo" role="tabpanel" aria-labelledby="out-tab-memo" data-out="memo" hidden>
       <div class="out-body">{`Caribbean Capital Momentum Brief
 
 Lead market: ${d.lCountry}
@@ -1510,10 +1705,8 @@ Before you act:
 This is a pointer, not a recommendation. Check the sector, the local risks, and the people you'd be working with.
 
 Signal Fabric`}</div>
-      <div class="out-static">Written for investors</div>
     </div>
-    <div class="out">
-      <div class="out-head"><h4>Message Alert</h4><div class="out-ch">WhatsApp / messaging</div></div>
+    <div class="out-panel" id="out-panel-alert" role="tabpanel" aria-labelledby="out-tab-alert" data-out="alert" hidden>
       <div class="out-body">{`${d.lCountry} — lead signal
 
 ${d.lEvidence}
@@ -1525,10 +1718,8 @@ Next: ${d.leadAction}
 Screening signal only. Not investment advice.
 
 Full brief: [link]`}</div>
-      <div class="out-static">Channel copy generated</div>
     </div>
-    <div class="out">
-      <div class="out-head"><h4>Policy Brief</h4><div class="out-ch">Email / document</div></div>
+    <div class="out-panel" id="out-panel-policy" role="tabpanel" aria-labelledby="out-tab-policy" data-out="policy" hidden>
       <div class="out-body">{`Regional Investment Signal
 
 Capital momentum is concentrating in ${d.lCountry}, with secondary movement noted in the regional wire.
@@ -1542,9 +1733,28 @@ Monitoring recommended:
 CDB and IDB project pipelines, trade data, and where the investment is landing by sector.
 
 Source: World Bank indicators, 2023 to 2024 comparison.`}</div>
-      <div class="out-static">Institution brief generated</div>
     </div>
   </div>
+  <div class="out-foot">
+    <button type="button" class="btn out-copy" id="out-copy">Copy to clipboard</button>
+  </div>
+</div>
+
+<div class="sec" id="about-fabric">
+  <div class="sec-label">What is Signal Fabric?</div>
+  <p class="fabric-line">The engine under this page. It reads the region's public data every four hours and checks signals against each other before they become briefings.</p>
+  <div class="coordination-strip">
+  <div class="coordination-inner">
+    <div class="coord-step"><span>01</span><strong>Watch</strong><p>We read the region's public data so you don't have to.</p></div>
+    <div class="coord-arrow">-></div>
+    <div class="coord-step"><span>02</span><strong>Sift</strong><p>Weak signals get checked against each other and graded.</p></div>
+    <div class="coord-arrow">-></div>
+    <div class="coord-step"><span>03</span><strong>Brief</strong><p>The right person gets a clear next move, not a chart.</p></div>
+    <div class="coord-arrow">-></div>
+    <div class="coord-step"><span>04</span><strong>Learn</strong><p>Your response shapes what the desk sends next.</p></div>
+  </div>
+  </div>
+  <p class="fabric-foot">Want this engine on a different market? <a href="/build">Build your own feed →</a></p>
 </div>
 
 <div class="sec deep">
@@ -1585,11 +1795,13 @@ Source: World Bank indicators, 2023 to 2024 comparison.`}</div>
   </div>
 </div>
 
+
 <Fragment set:html={`<script>
 const D = ${d.analystData};
 const MAP_DISPATCHES = ${d.mapDispatchesJson};
 const MAP_MARKERS = ${d.mapMarkersJson};
 const MAP_MARKER_BY_COUNTRY = Object.fromEntries(MAP_MARKERS.map(m => [m.country, m]));
+const NEWS_BY_COUNTRY = ${d.newsByCountryJson};
 const THEATER_EVENTS = ${d.theaterEventsJson};
 const HUMANIZE_RULES = ${d.humanizeRulesJson}.map(([p, r]) => { try { return [new RegExp(p), r]; } catch (e) { return null; } }).filter(Boolean);
 function humanizeJs(t) {
@@ -1764,6 +1976,334 @@ document.querySelectorAll('[data-news-filter]').forEach(button => button.addEven
   });
 }));
 
+// Several destinations are collapsed accordions now. An anchor that lands on a
+// closed panel looks like a dead link, so opening the target is part of going
+// there — for nav clicks, for the desk guide, and for a pasted #hash on load.
+function revealTarget(id) {
+  const target = id && document.getElementById(id);
+  if (!target) return null;
+  const panel = target.closest('details') || (target.tagName === 'DETAILS' ? target : target.querySelector('details'));
+  if (panel) panel.open = true;
+  return target;
+}
+
+document.addEventListener('click', event => {
+  const link = event.target.closest('a[href^="#"]');
+  if (!link) return;
+  revealTarget(decodeURIComponent(link.getAttribute('href').slice(1)));
+});
+
+if (location.hash) {
+  const landed = revealTarget(decodeURIComponent(location.hash.slice(1)));
+  if (landed) setTimeout(() => landed.scrollIntoView({ block: 'start' }), 60);
+}
+
+// ── Desk guide ────────────────────────────────────────────────────────────
+// A navigator first, a Q&A second. Navigation intents resolve here and act on
+// the page immediately; anything else goes to /api/ask, the same deterministic
+// endpoint the inline "Ask the desk" panel uses. No model runs in the browser.
+const GUIDE_PLACES = [
+  { id: 'regional-news',      label: 'Regional news desk', terms: ['news', 'headlines', 'stories', 'press', 'wire'] },
+  { id: 'decision-workspace', label: "Today's call",       terms: ["today's call", 'todays call', 'the call', 'briefing', 'lead call', 'decision'] },
+  { id: 'market-watch',       label: 'Market watch',       terms: ['market', 'markets', 'exchange', 'stocks', 'chart', 'fx'] },
+  { id: 'receipts',           label: "The desk's receipts", terms: ['receipts', 'track record', 'accuracy', 'past calls', 'history'] },
+  { id: 'map-hero',           label: 'The map',            terms: ['map', 'top', 'start', 'home', 'front page'] },
+  { id: 'theater',            label: 'Watch the desk work', terms: ['theater', 'watch the desk', 'live feed', 'stream'] },
+  { id: 'about-fabric',       label: 'What is Signal Fabric', terms: ['what is this', 'about', 'how it works', 'explain the site'] },
+  { id: 'for-agents',         label: 'Machine-readable edition', terms: ['api', 'agent', 'machine readable', 'json', 'mcp', 'developer'] },
+];
+
+const guideEls = {};
+let guideBusy = false;
+
+function guideKnownCountries() {
+  const fromMap = (typeof MAP_MARKERS !== 'undefined' ? MAP_MARKERS : []).map(m => m.country);
+  const fromNews = typeof NEWS_BY_COUNTRY !== 'undefined' ? Object.keys(NEWS_BY_COUNTRY) : [];
+  return [...new Set([...fromMap, ...fromNews])].filter(Boolean);
+}
+
+function guideMatchCountry(text) {
+  const q = text.toLowerCase();
+  // Longest name first so "St Kitts & Nevis" is not shadowed by a shorter match.
+  return guideKnownCountries()
+    .sort((a, b) => b.length - a.length)
+    .find(c => q.includes(c.toLowerCase())) || '';
+}
+
+function guideSay(role, text, actions) {
+  const thread = guideEls.thread;
+  if (!thread) return;
+  const msg = document.createElement('div');
+  msg.className = `guide-msg ${role}`;
+  msg.textContent = text;
+  if (actions && actions.length) {
+    const row = document.createElement('div');
+    row.className = 'guide-act';
+    for (const action of actions) {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.textContent = action.label;
+      button.addEventListener('click', action.run);
+      row.appendChild(button);
+    }
+    msg.appendChild(row);
+  }
+  thread.appendChild(msg);
+  thread.scrollTop = thread.scrollHeight;
+}
+
+function guideGoto(id, label) {
+  const target = revealTarget(id);
+  if (!target) return false;
+  target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  guideSay('desk', `Taking you to ${label}.`);
+  return true;
+}
+
+function guideOpenCountry(country) {
+  openCountryDrill(country);
+  document.getElementById('map-drill')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  const stories = (typeof NEWS_BY_COUNTRY !== 'undefined' && NEWS_BY_COUNTRY[country] || []).length;
+  const briefings = (typeof MAP_DISPATCHES !== 'undefined' && MAP_DISPATCHES[country] || []).length;
+  const parts = [];
+  if (briefings) parts.push(`${briefings} briefing${briefings === 1 ? '' : 's'}`);
+  if (stories) parts.push(`${stories} ${stories === 1 ? 'story' : 'stories'}`);
+  guideSay('desk', `${country} is open on the map — ${parts.length ? parts.join(' and ') + ' this cycle.' : 'watchlist only this cycle.'}`,
+    [
+      stories ? { label: `${country} news`, run: () => showCountryInNewsDesk(country) } : null,
+      { label: isFollowed(country) ? `Unfollow ${country}` : `Follow ${country}`, run: () => { toggleFollow(country); guideSay('desk', isFollowed(country) ? `Following ${country}.` : `No longer following ${country}.`); } },
+    ].filter(Boolean));
+}
+
+async function guideAskApi(question) {
+  guideBusy = true;
+  if (guideEls.send) guideEls.send.disabled = true;
+  guideSay('desk', 'Checking this cycle’s files…');
+  const pending = guideEls.thread?.lastElementChild;
+  try {
+    const res = await fetch('/api/ask', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ question }),
+    });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+    pending?.remove();
+    guideSay('desk', humanizeJs(data.answer) || 'No answer came back for that.');
+  } catch {
+    pending?.remove();
+    guideSay('desk', 'The desk API is not reachable from this copy of the page. Navigation still works — try "show me Guyana" or "take me to market watch".');
+  }
+  guideBusy = false;
+  if (guideEls.send) guideEls.send.disabled = false;
+}
+
+function guideHandle(rawInput) {
+  const input = (rawInput || '').trim();
+  if (!input || guideBusy) return;
+  guideSay('you', input);
+  const q = input.toLowerCase();
+
+  if (/^(help|what can you do|options)\b/.test(q)) {
+    guideSay('desk', 'I can move you around the page and answer questions about this cycle.\nTry: "show me Guyana", "news about Jamaica", "take me to market watch", "follow Belize", "read as investor", or "explain the lead".');
+    return;
+  }
+
+  const country = guideMatchCountry(q);
+
+  // "news about X" is a different destination from "show me X".
+  if (country && /\b(news|headlines|stories|press)\b/.test(q)) {
+    showCountryInNewsDesk(country);
+    guideSay('desk', `Filtered the news desk to ${country}.`);
+    return;
+  }
+  if (country && /\b(follow|watch|track)\b/.test(q)) {
+    if (!isFollowed(country)) toggleFollow(country);
+    guideSay('desk', `Following ${country}. It is in your desk bar now.`);
+    return;
+  }
+  if (/\bread(ing)? as\b|\blens\b|\bpersona\b/.test(q)) {
+    const select = document.getElementById('lens-select');
+    // Match on any distinctive word of the option, so "read as investor" finds
+    // "Diaspora Investor" and "operator" finds "Regional Founder/Operator".
+    const option = [...(select?.options || [])]
+      .filter(o => o.value)
+      .map(o => ({
+        o,
+        hits: o.value.toLowerCase().split(/[^a-z]+/).filter(w => w.length > 3 && q.includes(w)).length,
+      }))
+      .filter(x => x.hits > 0)
+      .sort((a, b) => b.hits - a.hits)[0]?.o;
+    if (select && option) {
+      select.value = option.value;
+      select.dispatchEvent(new Event('change'));
+      document.getElementById('deskbar')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      guideSay('desk', `Reading as ${option.value}. Briefings routed to you now lead the map drill.`);
+      return;
+    }
+    guideSay('desk', 'Pick a lens in the desk bar: Diaspora Investor, Ecosystem Builder, Founder / Operator, Procurement Watcher, Policy / Media, or Operations / Resilience.',
+      [{ label: 'Open desk bar', run: () => document.getElementById('deskbar')?.scrollIntoView({ behavior: 'smooth', block: 'center' }) }]);
+    return;
+  }
+  // A bare country name, or "show me X", is a map drill.
+  if (country && (/\b(show|open|go to|take me|drill|look at)\b/.test(q) || q.split(/\s+/).length <= 3)) {
+    guideOpenCountry(country);
+    return;
+  }
+  const place = GUIDE_PLACES.find(p => p.terms.some(t => q.includes(t)));
+  if (place && /\b(show|open|go|take me|jump|scroll|where)\b/.test(q)) {
+    if (guideGoto(place.id, place.label)) return;
+  }
+  if (country) { guideOpenCountry(country); return; }
+  if (place && guideGoto(place.id, place.label)) return;
+
+  guideAskApi(input);
+}
+
+function setupGuide() {
+  guideEls.fab = document.getElementById('guide-fab');
+  guideEls.panel = document.getElementById('guide-panel');
+  guideEls.thread = document.getElementById('guide-thread');
+  guideEls.form = document.getElementById('guide-form');
+  guideEls.input = document.getElementById('guide-input');
+  guideEls.send = document.getElementById('guide-send');
+  guideEls.chips = document.getElementById('guide-chips');
+  if (!guideEls.fab || !guideEls.panel) return;
+
+  const open = () => {
+    guideEls.panel.hidden = false;
+    guideEls.fab.setAttribute('aria-expanded', 'true');
+    guideEls.input?.focus();
+    if (!guideEls.thread.childElementCount) {
+      guideSay('desk', 'Ask me about this cycle, or tell me where to go. Say "help" for what I can do.');
+    }
+  };
+  const close = () => {
+    guideEls.panel.hidden = true;
+    guideEls.fab.setAttribute('aria-expanded', 'false');
+    guideEls.fab.focus();
+  };
+
+  guideEls.fab.addEventListener('click', open);
+  document.getElementById('guide-close')?.addEventListener('click', close);
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && !guideEls.panel.hidden) close();
+  });
+  guideEls.form?.addEventListener('submit', e => {
+    e.preventDefault();
+    const value = guideEls.input.value;
+    guideEls.input.value = '';
+    guideHandle(value);
+  });
+
+  for (const chip of ['Show me Guyana', 'Take me to market watch', 'Explain the lead', 'What changed this cycle?']) {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.textContent = chip;
+    button.addEventListener('click', () => guideHandle(chip));
+    guideEls.chips?.appendChild(button);
+  }
+}
+
+// The guide markup sits at the end of the document, below this script, so wait
+// for the parser before wiring it up.
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', setupGuide);
+} else {
+  setupGuide();
+}
+
+// ── Reader preferences ────────────────────────────────────────────────────
+// Persona and followed markets, kept in localStorage. The desk already routes
+// one signal to several personas; this lets the reader claim one and have the
+// page lead with their lane instead of broadcasting the same order to everyone.
+const PREFS_KEY = 'future-caribbean:prefs';
+const prefs = (() => {
+  try {
+    const raw = JSON.parse(localStorage.getItem(PREFS_KEY) || '{}');
+    return { lens: raw.lens || '', follows: Array.isArray(raw.follows) ? raw.follows : [] };
+  } catch { return { lens: '', follows: [] }; }
+})();
+function savePrefs() {
+  try { localStorage.setItem(PREFS_KEY, JSON.stringify(prefs)); } catch {}
+}
+function isFollowed(country) { return prefs.follows.includes(country); }
+function toggleFollow(country) {
+  const i = prefs.follows.indexOf(country);
+  if (i >= 0) prefs.follows.splice(i, 1); else prefs.follows.push(country);
+  savePrefs();
+  paintFollows();
+  renderDrill();
+}
+
+function countForLens(lens) {
+  if (!lens) return 0;
+  return Object.values(MAP_DISPATCHES).flat()
+    .filter(d => (d.persona_label || '') === lens).length;
+}
+
+function paintLens() {
+  const select = document.getElementById('lens-select');
+  const hint = document.getElementById('lens-hint');
+  if (select) select.value = prefs.lens;
+  if (hint) {
+    const n = countForLens(prefs.lens);
+    hint.textContent = prefs.lens
+      ? `${n} briefing${n === 1 ? '' : 's'} routed to you this cycle`
+      : 'Pick a lens and the desk leads with your briefings';
+  }
+}
+
+function paintFollows() {
+  const wrap = document.getElementById('follow-chips');
+  if (!wrap) return;
+  if (!prefs.follows.length) {
+    wrap.innerHTML = '<span class="deskbar-none">Tap a country on the map, then Follow.</span>';
+    return;
+  }
+  wrap.textContent = '';
+  for (const country of prefs.follows) {
+    const stories = (typeof NEWS_BY_COUNTRY !== 'undefined' && NEWS_BY_COUNTRY[country] || []).length;
+    const chip = document.createElement('button');
+    chip.type = 'button';
+    chip.className = 'follow-chip';
+    chip.title = `Open ${country}`;
+    const name = document.createElement('b');
+    name.textContent = country;
+    chip.appendChild(name);
+    if (stories) {
+      const count = document.createElement('i');
+      count.textContent = String(stories);
+      chip.appendChild(count);
+    }
+    chip.addEventListener('click', () => {
+      openCountryDrill(country);
+      document.getElementById('map-drill')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+    wrap.appendChild(chip);
+  }
+}
+
+document.getElementById('lens-select')?.addEventListener('change', event => {
+  prefs.lens = event.target.value;
+  savePrefs();
+  paintLens();
+  renderDrill();
+});
+
+// Bridge from the map drill to the news desk: apply the country filter, open
+// the country chip row if it is collapsed, and scroll the reader to the board.
+function showCountryInNewsDesk(country) {
+  const button = document.querySelector(`[data-news-filter="country:${CSS.escape(country)}"]`);
+  const wrap = document.getElementById('news-countries');
+  const toggle = document.getElementById('news-country-toggle');
+  if (wrap && wrap.hasAttribute('hidden')) {
+    wrap.removeAttribute('hidden');
+    toggle?.setAttribute('aria-expanded', 'true');
+  }
+  if (button) button.click();
+  document.getElementById('regional-news')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
 // Regional movement strip: tapping a country chip opens the same map-drill
 // that the leaflet marker click does. We scroll into view so the user lands
 // on the relevant triage panel.
@@ -1810,24 +2350,55 @@ const drillReact = (function () {
     }
   }
 
-  function NewsLinks({ marker }) {
-    const links = (marker.news || [])
-      .slice(0, 3)
-      .map((item, index) => ({
-        ...item,
-        href: safeExternalUrl(item.url),
-        key: item.url || `${item.title || 'story'}-${index}`,
-      }))
-      .filter(item => item.href);
+  function FollowButton({ country }) {
+    const on = typeof isFollowed === 'function' && isFollowed(country);
     return html`
-      <div class="map-news-list">
-        <span>${marker.news_coverage || 'Regional news context'}</span>
-        ${links.length
-          ? links.map(item => html`
-              <a key=${item.key} href=${item.href} target="_blank" rel="noopener noreferrer">
-                ${item.title || 'Open coverage'} · ${item.source || 'Source'}
-              </a>`)
-          : html`<em>No linked country coverage in this cycle.</em>`}
+      <button
+        type="button"
+        class=${`drill-follow${on ? ' on' : ''}`}
+        aria-pressed=${on ? 'true' : 'false'}
+        onClick=${() => toggleFollow(country)}>
+        ${on ? '\u2713 Following' : 'Follow'}
+      </button>`;
+  }
+
+  // The drill used to show three bare links from the marker payload. It now
+  // serves the news desk's own stories for the country, so tapping the map is a
+  // way to read a country — news beside data — not just a signal readout.
+  function CountryNews({ country, marker }) {
+    const desk = (typeof NEWS_BY_COUNTRY !== 'undefined' && NEWS_BY_COUNTRY[country]) || [];
+    const fallback = (marker.news || []).map(item => ({
+      title: item.title, url: item.url, source: item.source, age: '', topic: '', tier: '',
+    }));
+    const stories = (desk.length ? desk : fallback)
+      .map((item, index) => ({ ...item, href: safeExternalUrl(item.url), key: item.url || `${item.title}-${index}` }))
+      .filter(item => item.href);
+
+    if (!stories.length) {
+      return html`
+        <div class="drill-news">
+          <div class="drill-news-head"><strong>In the news</strong></div>
+          <p class="drill-news-empty">No ${country} coverage in this cycle. The desk keeps watching.</p>
+        </div>`;
+    }
+    return html`
+      <div class="drill-news">
+        <div class="drill-news-head">
+          <strong>In the news</strong>
+          <span>${stories.length} ${stories.length === 1 ? 'story' : 'stories'}</span>
+        </div>
+        <ul class="drill-news-list">
+          ${stories.slice(0, 5).map(item => html`
+            <li key=${item.key}>
+              <a href=${item.href} target="_blank" rel="noopener noreferrer">${item.title || 'Open coverage'}</a>
+              <span>${[item.source, item.age].filter(Boolean).join(' · ')}</span>
+            </li>`)}
+        </ul>
+        ${desk.length > 5
+          ? html`<button type="button" class="drill-news-more" onClick=${() => showCountryInNewsDesk(country)}>
+              All ${desk.length} ${country} stories →
+            </button>`
+          : null}
       </div>`;
   }
 
@@ -1892,14 +2463,14 @@ const drillReact = (function () {
     if (!items.length) {
       return html`
         <div class="rise-in">
-          <div class="map-drill-head"><strong>${country}</strong><span>Watchlist signal</span></div>
+          <div class="map-drill-head"><strong>${country}</strong><${FollowButton} country=${country} /></div>
           <div class="map-market-panel">
             <div><span>FX indicator</span><strong>${fx.pair || '—'}</strong><p>${fx.rate_label || 'Watch'} · ${fx.indicator || 'FX watch'}</p></div>
             <div><span>Market layer</span><strong>${marketLabel}</strong><p>${snapshot.data_status || market.status || 'source watch'} </p></div>
             <div><span>Finance signal</span><strong>${snapshot.focus || fx.signal || 'Signals, official notices, and local context'}</strong><p>${marker.finance_signal || marker.ranking_rationale || 'Ranking appears when a live signal is active.'}</p></div>
-            <${NewsLinks} marker=${marker} />
           </div>
           <${LifecyclePanel} marker=${marker} />
+          <${CountryNews} country=${country} marker=${marker} />
           <div class="map-drill-grid">
             <article>
               <span>WATCHLIST · ${marker.confidence || 0}/100</span>
@@ -1913,25 +2484,54 @@ const drillReact = (function () {
       <div class="rise-in">
         <div class="map-drill-head">
           <strong>${country}</strong>
-          <span>${items.length} briefing${items.length === 1 ? '' : 's'} this cycle</span>
+          <${FollowButton} country=${country} />
         </div>
         <div class="map-market-panel">
           <div><span>FX indicator</span><strong>${fx.pair || '—'}</strong><p>${fx.rate_label || 'Watch'} · ${fx.indicator || 'FX watch'}</p></div>
           <div><span>Market layer</span><strong>${marketLabel}</strong><p>${snapshot.data_status || market.status || 'source watch'} </p></div>
           <div><span>Finance signal</span><strong>${snapshot.focus || fx.signal || 'Signals, official notices, and local context'}</strong><p>${marker.finance_signal || marker.ranking_rationale || 'Ranking appears when a live signal is active.'}</p></div>
-          <${NewsLinks} marker=${marker} />
         </div>
         <${LifecyclePanel} marker=${marker} />
+        <${CountryNews} country=${country} marker=${marker} />
         <div class="map-drill-grid">
-          ${items.slice(0, 6).map((d, index) => {
+          ${(() => {
+            // A reader with a lens sees their own lane first; everyone else
+            // keeps the desk's order.
+            const lens = (typeof prefs !== 'undefined' && prefs.lens) || '';
+            const ordered = lens
+              ? [...items].sort((a, b) =>
+                  ((b.persona_label || '') === lens ? 1 : 0) - ((a.persona_label || '') === lens ? 1 : 0))
+              : items;
+            // One signal routed to six personas rendered as six identical cards.
+            // Keep the first, and carry the other recipients on it, so the panel
+            // says "also routed to" instead of repeating itself.
+            const byTitle = new Map();
+            for (const d of ordered) {
+              const key = (d.title || '').trim().toLowerCase();
+              if (!byTitle.has(key)) byTitle.set(key, { ...d, alsoRouted: [] });
+              else {
+                const seen = byTitle.get(key);
+                const who = d.persona_label || '';
+                if (who && who !== seen.persona_label && !seen.alsoRouted.includes(who)) seen.alsoRouted.push(who);
+              }
+            }
+            return [...byTitle.values()].slice(0, 6);
+          })().map((d, index) => {
             const rawConfidence = Number(d.confidence_score);
             const conf = Number.isFinite(rawConfidence) ? Math.max(0, Math.min(100, rawConfidence)) : 0;
+            const mine = !!((typeof prefs !== 'undefined' && prefs.lens) && (d.persona_label || '') === prefs.lens);
             const color = MAP_COLORS[(d.signal_kind || '').includes('invest') ? 'investment' : (d.signal_kind || '').includes('climate') ? 'climate' : (d.signal_kind || '').includes('procure') ? 'procurement' : 'none'];
             return html`
-              <article key=${d.dispatch_id || index} class="rise-in drill-card" style=${{ animationDelay: `${index * 70}ms` }}>
-                <span>${d.dispatch_id || 'Dispatch'} · ${d.persona_label || 'Desk recipient'}</span>
+              <article key=${d.dispatch_id || index} class=${`rise-in drill-card${mine ? ' for-you' : ''}`} style=${{ animationDelay: `${index * 70}ms` }}>
+                <span>
+                  ${d.dispatch_id || 'Dispatch'} · ${d.persona_label || 'Desk recipient'}
+                  ${mine ? html`<span class="for-you-tag">For you</span>` : null}
+                </span>
                 <h3>${d.title || 'Opportunity briefing'}</h3>
                 <p>${d.recommended_action || 'Open the supporting evidence before acting.'}</p>
+                ${d.alsoRouted && d.alsoRouted.length
+                  ? html`<p class="drill-also">Also routed to ${d.alsoRouted.join(', ')}</p>`
+                  : null}
                 <div class="conf-row">
                   <div class="conf-track" role="img" aria-label=${`Confidence: ${conf} of 100`}>
                     <div class="conf-fill" style=${{ width: `${conf}%`, background: color }}></div>
@@ -1951,7 +2551,15 @@ const drillReact = (function () {
   return { render: c => root.render(html`<${DrillPanel} country=${c} />`) };
 })();
 
+// Current drill selection, so a preference change can repaint the open panel
+// without the reader having to tap the country again.
+let drillCountry = null;
+function renderDrill() {
+  if (drillReact) drillReact.render(drillCountry);
+}
+
 function openCountryDrill(country) {
+  drillCountry = country;
   document.querySelectorAll('.sig-marker').forEach(x => x.classList.toggle('selected', x.dataset.country === country));
   if (drillReact) { drillReact.render(country); return; }
   const items = MAP_DISPATCHES[country] || [];
@@ -2122,16 +2730,112 @@ if (risks.length) {
   document.getElementById('risk-area').innerHTML = '<div class="lead-risk">⚠️ ' + risks[0] + '</div>';
 }
 
-const checklistKey = 'future-caribbean:' + D.cycle + ':lead-checklist';
+// Keyed by market, not by cycle: diligence on Guyana is still diligence on
+// Guyana next cycle, so progress should survive the desk moving on.
+const checklistCountry = (D.lead && D.lead.country) || 'region';
+const checklistKey = 'future-caribbean:checks:' + checklistCountry;
 const savedChecks = JSON.parse(localStorage.getItem(checklistKey) || '[]');
-document.querySelectorAll('#lead-checklist .check-item').forEach(item => {
-  if (savedChecks.includes(item.dataset.check)) item.classList.add('done');
-  item.addEventListener('click', () => {
-    item.classList.toggle('done');
-    const done = [...document.querySelectorAll('#lead-checklist .check-item.done')].map(x => x.dataset.check);
-    localStorage.setItem(checklistKey, JSON.stringify(done));
+const checkItems = [...document.querySelectorAll('#lead-checklist .check-item')];
+const checkProgress = document.getElementById('check-progress');
+
+function paintChecklist() {
+  const done = checkItems.filter(x => x.classList.contains('done'));
+  if (checkProgress) checkProgress.textContent = done.length + ' of ' + checkItems.length + ' done for ' + checklistCountry;
+  return done.map(x => x.dataset.check);
+}
+
+checkItems.forEach(item => {
+  const on = savedChecks.includes(item.dataset.check);
+  item.classList.toggle('done', on);
+  item.setAttribute('aria-checked', String(on));
+  const toggle = () => {
+    const next = !item.classList.contains('done');
+    item.classList.toggle('done', next);
+    item.setAttribute('aria-checked', String(next));
+    localStorage.setItem(checklistKey, JSON.stringify(paintChecklist()));
+  };
+  item.addEventListener('click', toggle);
+  item.addEventListener('keydown', e => {
+    if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); toggle(); }
   });
 });
+paintChecklist();
+
+paintLens();
+paintFollows();
+
+// Chart bars carry their reading in an SVG <title>, which touch devices never
+// surface. Mirror it into a live readout under the chart.
+document.querySelectorAll('.market-chart-card').forEach(card => {
+  const readout = card.querySelector('.activity-readout');
+  const cols = [...card.querySelectorAll('.activity-col')];
+  if (!readout || !cols.length) return;
+  const show = col => {
+    cols.forEach(c => c.classList.toggle('picked', c === col));
+    // The card already carries the "not a price" disclosure; no need to repeat it here.
+    readout.textContent = (col.querySelector('title')?.textContent || '').replace(/\s*Not a price\.\s*$/, '');
+    readout.classList.add('on');
+  };
+  cols.forEach(col => {
+    col.addEventListener('click', () => show(col));
+    col.addEventListener('focus', () => show(col));
+  });
+});
+
+const countryToggle = document.getElementById('news-country-toggle');
+const countryWrap = document.getElementById('news-countries');
+if (countryToggle && countryWrap) {
+  countryToggle.addEventListener('click', () => {
+    const open = countryWrap.hasAttribute('hidden');
+    if (open) countryWrap.removeAttribute('hidden'); else countryWrap.setAttribute('hidden', '');
+    countryToggle.setAttribute('aria-expanded', String(open));
+  });
+}
+
+const outTabs = [...document.querySelectorAll('.out-tab')];
+const outPanels = [...document.querySelectorAll('.out-panel')];
+const outCopy = document.getElementById('out-copy');
+
+function selectOut(name, focus) {
+  outTabs.forEach(t => {
+    const on = t.dataset.out === name;
+    t.classList.toggle('active', on);
+    t.setAttribute('aria-selected', String(on));
+    t.tabIndex = on ? 0 : -1;
+    if (on && focus) t.focus();
+  });
+  outPanels.forEach(p => { p.hidden = p.dataset.out !== name; });
+  if (outCopy) outCopy.textContent = 'Copy to clipboard';
+}
+
+outTabs.forEach((tab, i) => {
+  tab.addEventListener('click', () => selectOut(tab.dataset.out));
+  tab.addEventListener('keydown', e => {
+    const step = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+    if (!step) return;
+    e.preventDefault();
+    selectOut(outTabs[(i + step + outTabs.length) % outTabs.length].dataset.out, true);
+  });
+});
+
+if (outCopy) {
+  outCopy.addEventListener('click', async () => {
+    const panel = outPanels.find(p => !p.hidden);
+    if (!panel) return;
+    try {
+      await navigator.clipboard.writeText(panel.querySelector('.out-body').textContent.trim());
+      outCopy.textContent = 'Copied';
+    } catch {
+      outCopy.textContent = 'Selected — copy it';
+      const r = document.createRange();
+      r.selectNodeContents(panel.querySelector('.out-body'));
+      const sel = getSelection();
+      sel.removeAllRanges();
+      sel.addRange(r);
+    }
+    setTimeout(() => { outCopy.textContent = 'Copy to clipboard'; }, 2000);
+  });
+}
 
 function toggleDeep() {
   const c = document.getElementById('dc'); const b = document.getElementById('db');
@@ -2474,7 +3178,7 @@ window.addEventListener('scroll', () => {
 
   if (!('IntersectionObserver' in window)) return;
   const sections = document.querySelectorAll('.sec, .map-hero, .theater, .proof-band, .coordination-strip');
-  const CHILD_SEL = '.proof-cell, .aud, .out, .cluster-card, .coord-step, .sig-row, .vpack-col, .route-lane';
+  const CHILD_SEL = '.proof-cell, .aud, .out-panel, .cluster-card, .coord-step, .sig-row, .vpack-col, .route-lane';
   sections.forEach(s => {
     s.classList.add('reveal');
     s.querySelectorAll(CHILD_SEL).forEach((c, i) => {
@@ -2500,38 +3204,77 @@ window.addEventListener('scroll', () => {
   setTimeout(revealAll, 1200);
   window.addEventListener('load', () => setTimeout(revealAll, 400));
 
+  // The count-up overwrites the real figure while it runs, so it must be
+  // guaranteed to land on the true value. requestAnimationFrame is throttled in
+  // background tabs and can stop mid-count, which would leave "4 markets
+  // watched" on screen when the answer is 23 — on a data page a stale number is
+  // worse than no animation. Every counter keeps its final text and a timer
+  // writes it back whether or not the frames ever arrive.
   function animateCounters(band) {
+    const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     band.querySelectorAll('.proof-k').forEach(el => {
-      const m = el.textContent.match(/^(\d+)(.*)$/);
+      const finalText = el.textContent;
+      const m = finalText.match(/^(\d+)(.*)$/);
       if (!m) return;
       const target = parseInt(m[1], 10), suffix = m[2];
-      if (!target) return;
-      const t0 = performance.now(), dur = 900;
+      if (!target || reduced) return;
+      const dur = 900;
+      const settle = () => { el.textContent = finalText; };
+      const t0 = performance.now();
       (function tick(now) {
         const p = Math.min(1, (now - t0) / dur);
+        if (p >= 1) { settle(); return; }
         el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3))) + suffix;
-        if (p < 1) requestAnimationFrame(tick);
+        requestAnimationFrame(tick);
       })(t0);
+      setTimeout(settle, dur + 400);
     });
   }
 })();
 </script>
 
 <div class="sec" id="for-agents">
-  <div class="agents-block">
-    <div class="agents-head">
+  <details class="agents-block sec-accordion">
+    <summary>
       <span class="agents-eyebrow">// machine-readable edition</span>
-      <h2>Reading this as an AI agent? This page is yours too.</h2>
-      <p>Everything the desk publishes is available as structured data — same facts, no scraping required.</p>
-    </div>
+      <strong>Reading this as an AI agent? This page is yours too.</strong>
+      <em>Structured data — same facts, no scraping required.</em>
+    </summary>
     <div class="agents-grid">
       <div class="agents-card"><h4>One question, one answer</h4><pre set:html={`curl -X POST https://signal-fabric.vercel.app/api/ask \\\n  -d '{"question":"explain lead"}'`}></pre><span>Deterministic, cited — no hallucinations</span></div>
       <div class="agents-card"><h4>Every tool, self-described</h4><pre>GET /api/tools.json</pre><span>Ingest the manifest, configure yourself</span></div>
       <div class="agents-card"><h4>Follow the wire</h4><pre>GET /feed.xml</pre><span>RSS of every signal, every cycle</span></div>
     </div>
     <div class="agents-foot">Full connection guide for Claude (MCP), Hermes, OpenClaw, and anything HTTP-capable: <a href="/agents.md">agents.md</a> · <a href="/llms.txt">llms.txt</a></div>
-  </div>
+  </details>
 </div>
+
+<!-- Desk guide: a persistent assistant that both navigates the page and
+     answers content questions. Navigation intents are resolved client-side and
+     act on the page directly; anything else is handed to /api/ask, the same
+     deterministic endpoint the inline "Ask the desk" panel uses. -->
+<button type="button" class="guide-fab" id="guide-fab" aria-expanded="false" aria-controls="guide-panel">
+  <span class="guide-fab-mark" aria-hidden="true">?</span>
+  <span class="guide-fab-text">Ask / navigate</span>
+</button>
+
+<aside class="guide-panel" id="guide-panel" role="dialog" aria-modal="false" aria-labelledby="guide-title" hidden>
+  <header class="guide-head">
+    <div>
+      <span class="guide-eyebrow">Desk guide</span>
+      <strong id="guide-title">Ask, or say where to go</strong>
+    </div>
+    <button type="button" class="guide-close" id="guide-close" aria-label="Close the desk guide">Close</button>
+  </header>
+  <div class="guide-thread" id="guide-thread" role="log" aria-live="polite"></div>
+  <div class="guide-chips" id="guide-chips"></div>
+  <form class="guide-form" id="guide-form">
+    <label class="sr-only" for="guide-input">Ask the desk or name a place to go</label>
+    <input id="guide-input" class="guide-input" autocomplete="off"
+           placeholder="Try: show me Guyana, or explain the lead" />
+    <button type="submit" class="guide-send" id="guide-send">Send</button>
+  </form>
+</aside>
 
 <footer>
   <div class="foot-inner">

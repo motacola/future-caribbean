@@ -92,6 +92,32 @@ HUMANIZE_RULES = [
      r"Confidence sits at \1 out of 100 with \2 kinds of evidence. Keep it on the desk until the open questions below get answers."),
     (r"Calibrated confidence (\d+)/100 with no corroborating evidence categories\. Park unless new corroborating data arrives next cycle\.",
      r"Confidence sits at just \1 out of 100 with nothing to back it yet. Park it unless fresh evidence arrives next cycle."),
+    # ── 2026-08-25 voice pass: machine phrasing still reaching the front page ──
+    # Single-source variant of the capital-deployment action (multi-source variant above).
+    (r"Investigate (.+?) as a capital deployment target this cycle\. One official source shows the movement \((.+?)\) — corroborate it before acting, then move to operator discovery\.",
+     r"Take a serious look at \1 this cycle. One official source shows the move (\2) — get a second one before you act, then start finding local partners."),
+    (r"Which specific sectors are driving the movement in (.+?)\? No official sector-breakdown dataset matched this cycle\.",
+     r"Which industries are actually driving this in \1? Nobody has published a breakdown yet."),
+    (r"Validate fit with registry-listed operators \((.+?)\) before outreach\.",
+     r"Check these companies are the right fit before you reach out: \1."),
+    (r"^Analyst prior — sector likely but unconfirmed$", r"Likely, but nobody has confirmed it yet"),
+    (r"\bcorroborated\b", "confirmed"),
+    (r"\bCorroborated\b", "Confirmed"),
+    (r"\bunconfirmed\b", "not yet confirmed"),
+    (r"\bUnconfirmed\b", "Not yet confirmed"),
+    (r"\bcorroboration\b", "a second source"),
+    (r"\boperator discovery\b", "finding local partners"),
+    (r"^Source registry now tracked by the desk$", r"Where the desk gets this"),
+    # Generic dispatch fallbacks. The pipeline has no specifics for these, so
+    # say that plainly rather than dressing an empty card as an insight.
+    (r"Review (.+?): signal detected\. Validate locally before action\.",
+     r"The desk logged movement in \1 but nothing specific yet — worth a local check before it firms up."),
+    (r"Signal context for (.+?): signal detected\. Use this dispatch as a briefing input or narrative lead\.",
+     r"Movement logged in \1, with no detail attached yet — background for a briefing rather than a story on its own."),
+    (r"^(.+?): signal detected$", r"Early signal in \1 — no detail yet"),
+    # The generic placeholder also gets interpolated into templates that expect a
+    # figure, producing "Signal strength (signal detected)".
+    (r"\(signal detected\)", r"(no figure attached yet)"),
 ]
 _HUMANIZE_COMPILED = [(re.compile(p), r) for p, r in HUMANIZE_RULES]
 
