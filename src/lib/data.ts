@@ -1031,10 +1031,39 @@ export function loadDashboardData() {
   // drill already sorted around this; the desk itself did not. A year is well
   // past any reading of "moving" — items that old are archive, not news.
   const NEWS_MAX_AGE_HOURS = 365 * 24;
-  const visibleNews = newsItems
-    .filter((item: any) => item.relevance_score >= 35)
-    .filter((item: any) => item.age_hours === null || item.age_hours <= NEWS_MAX_AGE_HOURS)
-    .slice(0, 18);
+  // Relevance alone made a "Regional news desk" that was half one country —
+  // nine of eighteen items were Jamaica, because Google News carries far more
+  // Jamaican coverage than the rest of the region. api/regional-news.py already
+  // caps this server-side (max 2 per publisher, 3 per country); the build-time
+  // path that renders the page did not, so the two surfaces disagreed. Same
+  // caps here, applied in relevance order so the best story per country wins.
+  const NEWS_PER_COUNTRY = 3;
+  const NEWS_PER_PUBLISHER = 2;
+  const NEWS_SLOTS = 18;
+  const eligible = newsItems.filter((item: any) =>
+    item.relevance_score >= 35 &&
+    (item.age_hours === null || item.age_hours <= NEWS_MAX_AGE_HOURS));
+  const countryOf = (item: any) => item.countries?.[0] || 'Regional context';
+  const publisherOf = (item: any) =>
+    item.publisher_name || item.publisher_domain || item.source || 'unknown';
+  const perCountry = new Map<string, number>();
+  const perPublisher = new Map<string, number>();
+  const visibleNews: any[] = [];
+  // First pass takes the best story per country under both caps, so the desk
+  // opens regional. Second pass tops the shelf back up in relevance order, so
+  // enforcing the spread does not cost five cards.
+  for (const item of eligible) {
+    if (visibleNews.length >= NEWS_SLOTS) break;
+    if ((perCountry.get(countryOf(item)) ?? 0) >= NEWS_PER_COUNTRY) continue;
+    if ((perPublisher.get(publisherOf(item)) ?? 0) >= NEWS_PER_PUBLISHER) continue;
+    perCountry.set(countryOf(item), (perCountry.get(countryOf(item)) ?? 0) + 1);
+    perPublisher.set(publisherOf(item), (perPublisher.get(publisherOf(item)) ?? 0) + 1);
+    visibleNews.push(item);
+  }
+  for (const item of eligible) {
+    if (visibleNews.length >= NEWS_SLOTS) break;
+    if (!visibleNews.includes(item)) visibleNews.push(item);
+  }
   const newsCountries = [...new Set(visibleNews.flatMap((item: any) => item.countries))].sort();
   const newsTopics = [...new Set(visibleNews.flatMap((item: any) => item.topics))].sort();
 
