@@ -226,6 +226,16 @@ NODE = subprocess.run(
     text=True,
 ).stdout.strip()
 
+# lollipop.ts imports @tanstack/charts, so executing it needs the npm tree as
+# well as a node binary. The scheduled pipeline job installs Python only — node
+# is on the runner's PATH but node_modules is not there, so guarding on the
+# binary alone let these fail in CI with ERR_MODULE_NOT_FOUND while passing on
+# any machine that had run an install. The web checks (`scripts/verify.sh` full
+# or fast, and the Vercel build) always have the tree, so coverage is unchanged
+# where it means anything.
+NODE_DEPS = (ROOT / "node_modules" / "@tanstack" / "charts").exists()
+RUNS_TS = bool(NODE) and NODE_DEPS
+
 
 def _run_adapter(desk: dict) -> dict:
     script = (
@@ -244,7 +254,7 @@ def _run_adapter(desk: dict) -> dict:
     return json.loads(result.stdout)
 
 
-@pytest.mark.skipif(not NODE, reason="node not on PATH")
+@pytest.mark.skipif(not RUNS_TS, reason="needs node plus node_modules/@tanstack/charts")
 def test_opportunities_from_desk_dedupes_sorts_caps_and_preserves_source_time():
     desk = {
         "cycle_id": "20260813",
@@ -275,7 +285,7 @@ def test_opportunities_from_desk_dedupes_sorts_caps_and_preserves_source_time():
     assert "island-10" not in ids
 
 
-@pytest.mark.skipif(not NODE, reason="node not on PATH")
+@pytest.mark.skipif(not RUNS_TS, reason="needs node plus node_modules/@tanstack/charts")
 def test_opportunities_from_desk_handles_empty_and_uses_cycle_fallback_time():
     for desk in [{}, {"cycle_id": "x"}, {"clusters": "not-an-array"}]:
         out = _run_adapter(desk)
