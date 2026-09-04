@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-04T18:58:16.204396+00:00",
+  "generated_at": "2026-09-04T23:28:22.008233+00:00",
   "feedback_provenance": "simulated",
   "current_boosts": {
     "enhanced_investment": {
@@ -12,19 +12,13 @@
     },
     "investment_signal": {
       "Guyana": -4,
-      "Suriname": -4
+      "Suriname": -4,
+      "Barbados": -4
     },
     "ccrif_payout": {
-      "Anguilla": -10,
-      "St. Kitts and Nevis": -10,
-      "Dominica": -10,
-      "St. Vincent & the Grenadines": -10,
-      "Grenada": -10,
-      "Jamaica": -18,
-      "Turks and Caicos Islands": -10
-    },
-    "eccb_deposit_growth": {
-      "Eastern Caribbean Currency Union": -4
+      "Haiti": -34,
+      "Barbados": -18,
+      "Nicaragua": -18
     }
   },
   "cycles": [
@@ -45,8 +39,8 @@
       "countries": [
         "Haiti",
         "Barbados",
-        "Nicaragua",
         "Jamaica",
+        "Nicaragua",
         "Guyana",
         "Suriname",
         "Caribwide",
@@ -62,7 +56,7 @@
       ],
       "lead": {
         "country": "Guyana",
-        "title": "Money is moving into Guyana — up 860.3%, on one official source so far"
+        "title": "Money is moving into Guyana: up 860.3%, on one official source so far"
       }
     },
     {

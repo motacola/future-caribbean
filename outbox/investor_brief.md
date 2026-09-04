@@ -1,6 +1,6 @@
 # Caribbean Market Pulse — Investor Brief
 
-Generated: 2026-09-04 18:58 UTC
+Generated: 2026-09-04 23:28 UTC
 
 Audience: investors, founders, diaspora capital networks.
 Decision supported: where to investigate deal flow, procurement activity, or market momentum.
@@ -9,7 +9,7 @@ Decision supported: where to investigate deal flow, procurement activity, or mar
 
 Lead: Guyana. 3 converging signal(s) across 3 source(s). Signals: 💼 Investment + 🏖️ Tourism + 💎 Investment.
 
-*Lead: Guyana · 32 composite signal(s) · 1 updated · 8 intensified · 16 persistent*
+*Lead: Guyana · 32 composite signal(s) · 1 updated · 8 intensified · 15 persistent*
 
 ## Lead Signal
 
