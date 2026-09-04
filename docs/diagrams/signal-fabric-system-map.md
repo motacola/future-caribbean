@@ -5,9 +5,12 @@ Companion explanation for the interactive Archify map:
 - [`signal-fabric-system-map.html`](./signal-fabric-system-map.html) — self-contained interactive diagram
 - [`signal-fabric-decision-lifecycle.html`](./signal-fabric-decision-lifecycle.html) — decision and outcome lifecycle
 - [`signal-fabric-operations.html`](./signal-fabric-operations.html) — operations, publication, and delivery
+- [`signal-fabric-intervention-lifecycle.html`](./signal-fabric-intervention-lifecycle.html) — the enforced
+  intervention state machine (Archify `lifecycle` mode, so its citations are text in the cards rather
+  than machine-verified repository evidence, which is architecture-only)
 - [`signal-fabric-system-map.compact.architecture.json`](./signal-fabric-system-map.compact.architecture.json) — verifiable architecture source
 
-All three HTML diagrams were rendered from their JSON sources on 2026-09-04 at Archify showcase
+All four HTML diagrams were rendered from their JSON sources on 2026-09-04 at Archify showcase
 quality: 9/9 artifact checks, 0 composition errors, 0 warnings, and 16 visual-check captures each
 across four viewports in both themes. Evidence links are pinned to `2cfa9d1`. **Re-render after any
 edit to a JSON source** — the HTML is a build output, not a hand-maintained file.
