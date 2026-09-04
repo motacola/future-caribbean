@@ -1,16 +1,14 @@
-# Opportunity Validation Pack — Suriname
+# Opportunity Validation Pack — Caribwide
 
-- Signal: `enhanced-invest-suriname` · Dispatch: `DSP-20260904-020`
-- Confidence: 68/100 (raw 96) · C - single-source
-- Action readiness: medium (annual macro signal only)
+- Signal: `regional-investment_signal-20260904` · Dispatch: `DSP-20260904-001`
+- Confidence: 78/100 (raw 90) · B - cross-source
+- Action readiness: medium (no dated country procurement or news corroboration)
 - Evidence freshness: refreshing · cycles since refresh: 0
-- Recommendation: **HOLD** — Calibrated confidence 68/100 with 0 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.
+- Recommendation: **HOLD** — Calibrated confidence 78/100 with 0 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.
 - Last validated: 2026-09-04T18:58:16.031668+00:00
 
 ## Sector hypotheses
-- Offshore oil & gas exploration [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
-- Gold mining and extractives services [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
-- FDI-receiving sectors (composition not yet broken down) [macro_signal] — _World Bank: FDI net inflows moved +206.0% from 2024 to 2025_
+- None identified this cycle
 
 ## Credible local operators (registry-backed)
 - No registry-backed operators for this country yet.
@@ -30,13 +28,12 @@
 - No official country datasets matched.
 
 ## Relevant institutions & intro targets
-- Chamber of Commerce and Industry Suriname (KKF) — The national chamber — a shortcut to who's doing business
 - Caribbean Export Development Agency — Regional trade and investment promotion
 - Caribbean Development Bank (CDB) — Regional development finance and procurement
 
 ## Unresolved questions
-- Which specific sectors are driving the movement in Suriname? No official sector-breakdown dataset matched this cycle.
-- No live Suriname-specific procurement notice matched this cycle — check CDB and national tender portals directly.
+- Which specific sectors are driving the movement in Caribwide? No official sector-breakdown dataset matched this cycle.
+- No live Caribwide-specific procurement notice matched this cycle — check CDB and national tender portals directly.
 - No registry-backed local operators matched — source two credible operators via the listed institutions.
 - Validate that the underlying FDI movement is sustained, not a one-off transaction or statistical revision.
 

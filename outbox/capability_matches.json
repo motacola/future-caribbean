@@ -1,23 +1,23 @@
 {
  "schema_version": 1,
  "registry_status": "pilot",
- "total_tenders": 1041,
- "classified_tenders": 416,
- "tenders_with_capability_match": 416,
+ "total_tenders": 1046,
+ "classified_tenders": 421,
+ "tenders_with_capability_match": 421,
  "by_capability": {
-  "civil_engineering": 201,
-  "construction_delivery": 170,
+  "civil_engineering": 206,
+  "construction_delivery": 175,
   "shipping_logistics": 161,
   "warehousing_distribution": 88,
   "digital_services": 54,
   "ict_integration": 54,
   "climate_resilience": 31,
-  "aviation_infrastructure": 11
+  "aviation_infrastructure": 16
  },
  "by_country": {
-  "Jamaica": 739,
-  "Trinidad & Tobago": 532,
-  "Guyana": 201,
+  "Jamaica": 754,
+  "Trinidad & Tobago": 542,
+  "Guyana": 206,
   "Barbados": 139,
   "Eastern Caribbean / OECS": 85
  },
@@ -17731,6 +17731,616 @@
         {
          "source": "Port Authority of Trinidad and Tobago",
          "url": "https://www.patnt.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    }
+   ],
+   "has_capability_match": true
+  },
+  {
+   "tender_id": "guyana-5a4deb8f2cc7",
+   "country": "Guyana",
+   "title": "Supply and Installation of Transmission Mains at Adventure, Region # 6 (Lot 1-4): \nLot 1 – Supply and Installation of Transmission Mains from Tain to Alness\nLot 2 – Supply and Installation of Transmission Mains from Alness to Kilmarnock\nLot 3 – Supply and Installation of Transmission Mains from Kilmarnock to Kiltairn\nLot 4 – Supply and Installation of Transmission Mains from Kiltarin to Village 47",
+   "buyer": "34-Ministry of Public Utilities and Aviation",
+   "lifecycle_state": "detected",
+   "sector": "aviation_infrastructure",
+   "classification": "deterministic_keyword",
+   "matched_keywords": [
+    "aviation"
+   ],
+   "required_capabilities": [
+    "aviation_infrastructure",
+    "civil_engineering",
+    "construction_delivery"
+   ],
+   "capability_matches": [
+    {
+     "capability": "aviation_infrastructure",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 3,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "civil_engineering",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "construction_delivery",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Guyana",
+       "strength": 3,
+       "evidence": [
+        {
+         "source": "Guyana eProcure",
+         "url": "https://www.eprocure.gov.gy/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    }
+   ],
+   "has_capability_match": true
+  },
+  {
+   "tender_id": "guyana-c6224eb42be8",
+   "country": "Guyana",
+   "title": "Supply and Installation of Transmission Mains at Bath, West Coast Berbice, Region # 5 (Lot 1-4):\nLot 1 – Supply and Installation of Transmission Mains from Jacoba to Union\nLot 2 – Supply and Installation of Transmission Mains from Union to St. John \nLot 3 – Supply and Installation of Transmission Mains from St. John to Bath\nLot 4 – Supply and Installation of Transmission Mains from Bath to No. 7 Village and Experiment Housing Scheme",
+   "buyer": "34-Ministry of Public Utilities and Aviation",
+   "lifecycle_state": "detected",
+   "sector": "aviation_infrastructure",
+   "classification": "deterministic_keyword",
+   "matched_keywords": [
+    "aviation"
+   ],
+   "required_capabilities": [
+    "aviation_infrastructure",
+    "civil_engineering",
+    "construction_delivery"
+   ],
+   "capability_matches": [
+    {
+     "capability": "aviation_infrastructure",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 3,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "civil_engineering",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "construction_delivery",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Guyana",
+       "strength": 3,
+       "evidence": [
+        {
+         "source": "Guyana eProcure",
+         "url": "https://www.eprocure.gov.gy/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    }
+   ],
+   "has_capability_match": true
+  },
+  {
+   "tender_id": "guyana-f41503ad4c32",
+   "country": "Guyana",
+   "title": "Supply and Installation of Transmission Mains at Leguan, Region # 3",
+   "buyer": "34-Ministry of Public Utilities and Aviation",
+   "lifecycle_state": "detected",
+   "sector": "aviation_infrastructure",
+   "classification": "deterministic_keyword",
+   "matched_keywords": [
+    "aviation"
+   ],
+   "required_capabilities": [
+    "aviation_infrastructure",
+    "civil_engineering",
+    "construction_delivery"
+   ],
+   "capability_matches": [
+    {
+     "capability": "aviation_infrastructure",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 3,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "civil_engineering",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "construction_delivery",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Guyana",
+       "strength": 3,
+       "evidence": [
+        {
+         "source": "Guyana eProcure",
+         "url": "https://www.eprocure.gov.gy/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    }
+   ],
+   "has_capability_match": true
+  },
+  {
+   "tender_id": "guyana-c9679463374c",
+   "country": "Guyana",
+   "title": "Supply and Installation of Transmission Mains at Wakenaam, Region # 3",
+   "buyer": "34-Ministry of Public Utilities and Aviation",
+   "lifecycle_state": "detected",
+   "sector": "aviation_infrastructure",
+   "classification": "deterministic_keyword",
+   "matched_keywords": [
+    "aviation"
+   ],
+   "required_capabilities": [
+    "aviation_infrastructure",
+    "civil_engineering",
+    "construction_delivery"
+   ],
+   "capability_matches": [
+    {
+     "capability": "aviation_infrastructure",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 3,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "civil_engineering",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "construction_delivery",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Guyana",
+       "strength": 3,
+       "evidence": [
+        {
+         "source": "Guyana eProcure",
+         "url": "https://www.eprocure.gov.gy/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    }
+   ],
+   "has_capability_match": true
+  },
+  {
+   "tender_id": "guyana-93d6d1be88e8",
+   "country": "Guyana",
+   "title": "Supply and Installation of Transmission Mains at Walton Hall to Charity, Region # 2 (Lot 1-4):\nLot 1 - Supply & Installation of Transmission Mains from Walton Hall to Bounty Hall\nLot 2 - Supply & Installation of Transmission Mains from Bounty Hall to Maria's Delight\nLot 3 - Supply & Installation of Transmission Mains from Maria's Delight to Berks\nLot 4 - Supply & Installation of Transmission Mains from Berks to Charity",
+   "buyer": "34-Ministry of Public Utilities and Aviation",
+   "lifecycle_state": "detected",
+   "sector": "aviation_infrastructure",
+   "classification": "deterministic_keyword",
+   "matched_keywords": [
+    "aviation"
+   ],
+   "required_capabilities": [
+    "aviation_infrastructure",
+    "civil_engineering",
+    "construction_delivery"
+   ],
+   "capability_matches": [
+    {
+     "capability": "aviation_infrastructure",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 3,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "civil_engineering",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "construction_delivery",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Guyana",
+       "strength": 3,
+       "evidence": [
+        {
+         "source": "Guyana eProcure",
+         "url": "https://www.eprocure.gov.gy/",
          "grade": "primary"
         }
        ],

@@ -1,14 +1,14 @@
 # Opportunity Validation Pack — Guyana
 
-- Signal: `enhanced-invest-guyana` · Dispatch: `DSP-20260903-017`
+- Signal: `enhanced-invest-guyana` · Dispatch: `DSP-20260904-017`
 - Confidence: 100/100 (raw 109) · C - single-source
 - Action readiness: high
 - Evidence freshness: refreshing · cycles since refresh: 0
 - Recommendation: **ADVANCE** — Calibrated confidence 100/100 with 3 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.
-- Last validated: 2026-09-03T22:31:19.062428+00:00
+- Last validated: 2026-09-04T18:58:16.031668+00:00
 
 ## Sector hypotheses
-- Oil & gas and offshore support services [corroborated] — _Google News — Guyana: Africa’s top oil producer targets $50 billion offshore comeback as it battles Namibia and Guyana for global energy investment - Business Insider Africa_
+- Oil & gas and offshore support services [corroborated] — _Google News — Guyana: MODEC’s FPSO reaches Guyana as ExxonMobil’s fifth oil project nears start-up - Offshore-Energy.biz_
 - Construction and infrastructure [corroborated] — _Google News — Guyana: U.S. seeks role in Guyana’s infrastructure and economic development as oil boom accelerates - Caribbean National Weekly_
 - Logistics serving the energy supply chain [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
 - Agriculture and agro-processing [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
@@ -25,10 +25,18 @@
 ## Procurement matches
 - [Rehabilitation works for the Bartica 5 Miles Raw Water Intake Structure,  5 Miles, Bartica, Region No. 7](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
 - [Rehabilitation and Upgrade of Mahaica Bridge to Abary Bridge Road Corridor](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
-- [Enhancing the Quality of the Belize National Quality Infrastructure](https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure) — Caribbean Development Bank (regional)
-- [Call For Application – Scholarship Opportunity: International Master In Public Procurement Management at The University of Rome Tor Vergata (2026/2027 Academic Year)](https://www.caribank.org/work-with-us/procurement/procurement-notices/call-application-scholarship-opportunity-international-master-public-procurement-management-2) — Caribbean Development Bank (regional)
-- [Supply Installation, Testing and Commissioning of Mechanical Equipment, Fire Pump System and Information and Communications Technology Systems](https://www.caribank.org/work-with-us/procurement/procurement-notices/supply-installation-testing-and-commissioning-mechanical-equipment-fire-pump-system-and-information) — Caribbean Development Bank (regional)
-- [The University of the West Indies Digital Transformation Project](https://www.caribank.org/work-with-us/procurement/procurement-notices/university-west-indies-digital-transformation-project-3) — Caribbean Development Bank (regional)
+- [Supply and Installation of Transmission Mains at Leguan, Region # 3](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
+- [Supply and Installation of Transmission Mains at Bath, West Coast Berbice, Region # 5 (Lot 1-4):
+Lot 1 – Supply and Installation of Transmission Mains from Jacoba to Union
+Lot 2 – Supply and Installation of Transmission Mains from Union to St. John 
+Lot 3 – Supply and Installation of Transmission Mains from St. John to Bath
+Lot 4 – Supply and Installation of Transmission Mains from Bath to No. 7 Village and Experiment Housing Scheme](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
+- [Supply and Installation of Transmission Mains at Adventure, Region # 6 (Lot 1-4): 
+Lot 1 – Supply and Installation of Transmission Mains from Tain to Alness
+Lot 2 – Supply and Installation of Transmission Mains from Alness to Kilmarnock
+Lot 3 – Supply and Installation of Transmission Mains from Kilmarnock to Kiltairn
+Lot 4 – Supply and Installation of Transmission Mains from Kiltarin to Village 47](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
+- [Supply and Installation of Transmission Mains at Wakenaam, Region # 3](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
 
 ## Official country data
 - No official country datasets matched.

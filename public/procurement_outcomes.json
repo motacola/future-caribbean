@@ -1,14 +1,14 @@
 {
  "schema_version": 1,
- "generated_at": "2026-09-03T22:31:18.558908+00:00",
- "corpus_updated_at": "2026-09-03T22:31:18.420009+00:00",
+ "generated_at": "2026-09-04T18:58:15.525665+00:00",
+ "corpus_updated_at": "2026-09-04T18:58:15.378473+00:00",
  "summary": {
-  "tenders": 1041,
+  "tenders": 1046,
   "by_state": {
    "awarded": 307,
    "cancelled": 1,
    "closed": 146,
-   "detected": 2,
+   "detected": 7,
    "unresolved": 585
   },
   "countries": [
@@ -29,7 +29,7 @@
    "no_prior_detection": 292,
    "same_publisher": 16
   },
-  "detected_before_close": 82,
+  "detected_before_close": 87,
   "median_lead_days": 13,
   "max_lead_days": 47,
   "amendments_linked": 37,
@@ -66,24 +66,24 @@
     "resolutions_of_prior_detection": 0,
     "last_seen_at": "2026-08-20T00:00:00+00:00",
     "first_seen_at": "2026-08-20T00:00:00+00:00",
-    "last_seen_age_days": 14,
+    "last_seen_age_days": 15,
     "observation_span_days": 0,
     "cadence": "single/rare sighting",
     "cadence_slug": "rare"
    },
    {
     "source": "Guyana eProcure (NPTA)",
-    "opportunities_observed": 82,
-    "total_snapshots": 354,
-    "distinct_observation_days": 26,
+    "opportunities_observed": 87,
+    "total_snapshots": 361,
+    "distinct_observation_days": 27,
     "outcome_notices": 0,
     "outcome_snapshot_observations": 0,
     "resolutions_recorded": 0,
     "resolutions_of_prior_detection": 0,
-    "last_seen_at": "2026-09-03T04:18:33.175526+00:00",
+    "last_seen_at": "2026-09-04T18:58:15.378473+00:00",
     "first_seen_at": "2026-06-11T00:00:00+00:00",
     "last_seen_age_days": 0,
-    "observation_span_days": 84,
+    "observation_span_days": 85,
     "cadence": "regular",
     "cadence_slug": "regular"
    },
@@ -98,7 +98,7 @@
     "resolutions_of_prior_detection": 0,
     "last_seen_at": "2026-07-24T00:00:00+00:00",
     "first_seen_at": "2026-06-18T00:00:00+00:00",
-    "last_seen_age_days": 41,
+    "last_seen_age_days": 42,
     "observation_span_days": 36,
     "cadence": "regular",
     "cadence_slug": "regular"
@@ -114,7 +114,7 @@
     "resolutions_of_prior_detection": 14,
     "last_seen_at": "2026-08-20T00:00:00+00:00",
     "first_seen_at": "2026-08-20T00:00:00+00:00",
-    "last_seen_age_days": 14,
+    "last_seen_age_days": 15,
     "observation_span_days": 0,
     "cadence": "single/rare sighting",
     "cadence_slug": "rare"
@@ -130,7 +130,7 @@
     "resolutions_of_prior_detection": 2,
     "last_seen_at": "2026-07-24T00:00:00+00:00",
     "first_seen_at": "2026-06-18T00:00:00+00:00",
-    "last_seen_age_days": 41,
+    "last_seen_age_days": 42,
     "observation_span_days": 36,
     "cadence": "regular",
     "cadence_slug": "regular"
@@ -141,6 +141,146 @@
   "independently_resolved": 0
  },
  "tenders": [
+  {
+   "tender_id": "guyana-f41503ad4c32",
+   "country": "Guyana",
+   "buyer": "34-Ministry of Public Utilities and Aviation",
+   "title": "Supply and Installation of Transmission Mains at Leguan, Region # 3",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00427"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "first_detected_at": "2026-09-04T18:58:15.378473+00:00",
+   "original_closing_date": "2026-10-06",
+   "current_closing_date": "2026-10-06",
+   "amendments": [],
+   "lifecycle_state": "detected",
+   "detected_before_close": true,
+   "lead_time_days": 32,
+   "award_lead_time_days": null,
+   "notice_count": 1,
+   "resolution": null,
+   "last_seen_at": "2026-09-04T18:58:15.378473+00:00"
+  },
+  {
+   "tender_id": "guyana-c9679463374c",
+   "country": "Guyana",
+   "buyer": "34-Ministry of Public Utilities and Aviation",
+   "title": "Supply and Installation of Transmission Mains at Wakenaam, Region # 3",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00430"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "first_detected_at": "2026-09-04T18:58:15.378473+00:00",
+   "original_closing_date": "2026-10-06",
+   "current_closing_date": "2026-10-06",
+   "amendments": [],
+   "lifecycle_state": "detected",
+   "detected_before_close": true,
+   "lead_time_days": 32,
+   "award_lead_time_days": null,
+   "notice_count": 1,
+   "resolution": null,
+   "last_seen_at": "2026-09-04T18:58:15.378473+00:00"
+  },
+  {
+   "tender_id": "guyana-c6224eb42be8",
+   "country": "Guyana",
+   "buyer": "34-Ministry of Public Utilities and Aviation",
+   "title": "Supply and Installation of Transmission Mains at Bath, West Coast Berbice, Region # 5 (Lot 1-4):\nLot 1 – Supply and Installation of Transmission Mains from Jacoba to Union\nLot 2 – Supply and Installation of Transmission Mains from Union to St. John \nLot 3 – Supply and Installation of Transmission Mains from St. John to Bath\nLot 4 – Supply and Installation of Transmission Mains from Bath to No. 7 Village and Experiment Housing Scheme",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00428"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "first_detected_at": "2026-09-04T18:58:15.378473+00:00",
+   "original_closing_date": "2026-10-06",
+   "current_closing_date": "2026-10-06",
+   "amendments": [],
+   "lifecycle_state": "detected",
+   "detected_before_close": true,
+   "lead_time_days": 32,
+   "award_lead_time_days": null,
+   "notice_count": 1,
+   "resolution": null,
+   "last_seen_at": "2026-09-04T18:58:15.378473+00:00"
+  },
+  {
+   "tender_id": "guyana-93d6d1be88e8",
+   "country": "Guyana",
+   "buyer": "34-Ministry of Public Utilities and Aviation",
+   "title": "Supply and Installation of Transmission Mains at Walton Hall to Charity, Region # 2 (Lot 1-4):\nLot 1 - Supply & Installation of Transmission Mains from Walton Hall to Bounty Hall\nLot 2 - Supply & Installation of Transmission Mains from Bounty Hall to Maria's Delight\nLot 3 - Supply & Installation of Transmission Mains from Maria's Delight to Berks\nLot 4 - Supply & Installation of Transmission Mains from Berks to Charity",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00431"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "first_detected_at": "2026-09-04T18:58:15.378473+00:00",
+   "original_closing_date": "2026-10-06",
+   "current_closing_date": "2026-10-06",
+   "amendments": [],
+   "lifecycle_state": "detected",
+   "detected_before_close": true,
+   "lead_time_days": 32,
+   "award_lead_time_days": null,
+   "notice_count": 1,
+   "resolution": null,
+   "last_seen_at": "2026-09-04T18:58:15.378473+00:00"
+  },
+  {
+   "tender_id": "guyana-5a4deb8f2cc7",
+   "country": "Guyana",
+   "buyer": "34-Ministry of Public Utilities and Aviation",
+   "title": "Supply and Installation of Transmission Mains at Adventure, Region # 6 (Lot 1-4): \nLot 1 – Supply and Installation of Transmission Mains from Tain to Alness\nLot 2 – Supply and Installation of Transmission Mains from Alness to Kilmarnock\nLot 3 – Supply and Installation of Transmission Mains from Kilmarnock to Kiltairn\nLot 4 – Supply and Installation of Transmission Mains from Kiltarin to Village 47",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00429"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "first_detected_at": "2026-09-04T18:58:15.378473+00:00",
+   "original_closing_date": "2026-10-06",
+   "current_closing_date": "2026-10-06",
+   "amendments": [],
+   "lifecycle_state": "detected",
+   "detected_before_close": true,
+   "lead_time_days": 32,
+   "award_lead_time_days": null,
+   "notice_count": 1,
+   "resolution": null,
+   "last_seen_at": "2026-09-04T18:58:15.378473+00:00"
+  },
   {
    "tender_id": "guyana-dcabdebcf2dc",
    "country": "Guyana",
@@ -165,9 +305,9 @@
    "detected_before_close": true,
    "lead_time_days": 21,
    "award_lead_time_days": null,
-   "notice_count": 3,
+   "notice_count": 4,
    "resolution": null,
-   "last_seen_at": "2026-09-03T22:31:18.420009+00:00"
+   "last_seen_at": "2026-09-04T18:58:15.378473+00:00"
   },
   {
    "tender_id": "guyana-74a917bc7542",
@@ -193,9 +333,9 @@
    "detected_before_close": true,
    "lead_time_days": 39,
    "award_lead_time_days": null,
-   "notice_count": 11,
+   "notice_count": 12,
    "resolution": null,
-   "last_seen_at": "2026-09-03T22:31:18.420009+00:00"
+   "last_seen_at": "2026-09-04T18:58:15.378473+00:00"
   },
   {
    "tender_id": "guyana-f59a5e5d1dac",
