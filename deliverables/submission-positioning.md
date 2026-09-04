@@ -46,7 +46,7 @@ Open Track lets the submission tell the truth: this is coordination infrastructu
 ## What We Should Demo (in order)
 
 1. Run `bash run_pipeline.sh` — show the pipeline executing end-to-end
-2. Open `dashboard.html` — start with the Dispatch Desk product view, then scroll to operator/audit health
+2. Open the desk at `/` (`python3 server.py`, then `http://localhost:8080/`) — start with the Dispatch Desk product view, then scroll to operator/audit health
 3. Open `outbox/dispatch_desk.md` — the primary Open Track surface: decision clusters, persona routes, evidence, action, feedback
 4. Open `outbox/dispatch_packets/diaspora_investor.md` — persona-specific packet with action checklist and feedback options
 5. Open `outbox/delivery_manifest.json` — channel-ready delivery manifest, one entry per dispatch

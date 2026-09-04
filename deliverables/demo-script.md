@@ -43,7 +43,7 @@ bash run_pipeline.sh
 
 ## Files To Open During Demo (in order)
 
-1. `dashboard.html` — start here: Dispatch Desk product view at top, operator audit below
+1. The desk at `/` (`python3 server.py`, then `http://localhost:8080/`) — start here: Dispatch Desk product view at top, operator audit below
 2. `outbox/dispatch_desk.md` — judge/user-facing decision clusters in markdown
 3. `outbox/dispatch_packets/diaspora_investor.md` — persona-specific delivery packet
 4. `outbox/delivery_manifest.json` — channel handoff proof

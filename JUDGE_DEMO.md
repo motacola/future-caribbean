@@ -122,7 +122,7 @@ Available tools: `desk_status`, `list_signals`, `get_dispatch`, `get_validation_
 Additions for context (from the repo):
 - `outbox/delivery_manifest.json` — one entry per dispatch, channel-ready.
 - `outbox/feedback_review.md` — shows the feedback history shape the status block summarizes.
-- `data/history/*.jsonl` and `dashboard.html` — local theater replay fallback.
+- `data/history/*.jsonl` and the Astro desk at `/` — local theater replay fallback.
 
 Sources:
 - live probes: `https://signal-fabric.vercel.app/api/status`, `/api/ask`, `/api/validation-packs/enhanced-invest-guyana`, `/api/tools.json`, `/feed.xml`.
@@ -135,9 +135,9 @@ Sources:
 **Wi-Fi dies (or Vercel goes down)**
 Run this from the repo root:
 
-    python3 -m http.server 8090
+    node ./node_modules/astro/bin/astro.mjs build && python3 server.py
 
-Then open `http://localhost:8090/dashboard.html`. The browser dashboard loads from `dashboard.html` plus `outbox/` artifacts without the hosted API.
+Then open `http://localhost:8080/`. server.py serves the built Astro desk plus the same JSON API locally, so the walkthrough works without the hosted deployment. For a no-API static fallback, `cd dist && python3 -m http.server 8090` and open `http://localhost:8090/`.
 
 Ask-desk output shows the offline/empty-desk state. Say plainly: “The artifacts ARE the product; the site is just a window.”
 
@@ -156,5 +156,5 @@ Five items, in order:
 - [ ] `https://signal-fabric.vercel.app` loads and the top signal is the Guyana / Belize capital surge cluster for cycle `20260611`.
 - [ ] `/api/ask` answers: run the Guyana draft note prompt and confirm `engine: deterministic` plus a `Sources:` line.
 - [ ] `/feed.xml` fresh: `lastBuildDate` must be today’s date or the most recent cycle date.
-- [ ] Local fallback tested once before the session: `python3 -m http.server 8090` then browse `http://localhost:8090/dashboard.html`.
+- [ ] Local fallback tested once before the session: `python3 server.py` then browse `http://localhost:8080/`.
 - [ ] Terminal ready: three commands from Section 3 are pasted or bookmarked, and `claude_desktop_config.json` MCP block is on a second terminal line.
