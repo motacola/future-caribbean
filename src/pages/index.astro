@@ -2688,9 +2688,13 @@ if (typeof L !== 'undefined') {
     attributionControl: true
   });
   map.fitBounds(L.latLngBounds(MAP_MARKERS.map(m => [m.lat, m.lng])).pad(0.18));
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
-    subdomains: 'abcd'
+  // CARTO's keyless raster tiles now return an "API KEY REQUIRED" watermark
+  // instead of map imagery, which stamped that text across the homepage map.
+  // Esri's World Light Gray Canvas is keyless and muted, so the signal pulses
+  // stay the loudest thing on the map.
+  L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Tiles &copy; <a href="https://www.esri.com/">Esri</a> &mdash; Esri, DeLorme, NAVTEQ',
+    maxZoom: 9
   }).addTo(map);
   leafletMap = map;
 

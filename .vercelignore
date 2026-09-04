@@ -12,15 +12,17 @@ planning/
 # Test suite
 tests/
 
-# Hobby-plan function consolidation: /api/ping is routed to /api/status.
-api/ping.py
-# Unwired Python API endpoints (data is read as static JSON by src/lib/data.ts at
-# build time; these .py files exist for local dev and would otherwise push the
-# Hobby-plan function count past 12). The matching *-data.json files are kept
-# (they're static data, not Python, so they don't count as functions).
-api/market-watch.py
-api/regional-news.py
-api/source-health.py
+# Hobby-plan function budget: 12 Serverless Functions per deployment.
+#
+# regional-news and market-watch used to be excluded here to stay under it. That
+# kept the count legal but made /api/tools.json lie: the manifest advertises
+# regional_news.list at /api/regional-news, and agents following it got a 404.
+# api/artifact.py now serves reasoning, track-record, calibration and map-data
+# from one function instead of four, which buys the room to deploy them for real.
+#
+# api/source-health.py does not exist; the entry is kept out rather than carried
+# forward. Count with: ls api/*.py | wc -l  (tests/test_vercel_functions.py
+# enforces the budget).
 
 # Data — EXCEPT history/ which the theater replay needs
 data/*

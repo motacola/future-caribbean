@@ -6,14 +6,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-API_FUNCTIONS = [
-    "ask.py",
-    "status.py",
-    "tools.py",
-    "map-data.py",
-    "validation-packs.py",
-    "procurement-outcomes.py",
-]
+# Derived rather than hardcoded: the old list named six functions by hand and
+# went stale the moment api/ changed — it still listed map-data.py after that
+# endpoint moved into api/artifact.py. Reading the directory keeps every
+# deployed function covered, including ones added later.
+API_FUNCTIONS = sorted(p.name for p in (ROOT / "api").glob("*.py"))
 
 
 def _load(name: str):
