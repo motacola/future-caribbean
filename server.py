@@ -19,6 +19,11 @@ APP_DIR = Path(__file__).parent
 PUBLIC_POST_PATHS = frozenset({"/api/ask"})
 LOOPBACK_HOSTS = frozenset({"127.0.0.1", "::1", "localhost"})
 
+# Reads that expose operator state rather than product surface: the pending
+# delivery queue carries unsent message content, and the webhook list carries
+# subscriber URLs. Every other GET is a published surface and stays open.
+OPERATOR_READ_PATHS = frozenset({"/api/delivery/approvals", "/api/webhooks"})
+
 
 def get_bind_host() -> str:
     """Keep the operator server local unless exposure is explicit."""
@@ -51,6 +56,8 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
     # ── Routing ────────────────────────────────────────────────
 
     def do_OPTIONS(self):
+        if not self._require_trusted_host():
+            return
         path = urlparse(self.path).path
         origin = self.headers.get("Origin", "")
         if path not in PUBLIC_POST_PATHS and origin and not self._origin_allowed(origin):
@@ -69,6 +76,11 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
     def do_GET(self):
         parsed = urlparse(self.path)
         path = parsed.path
+
+        if not self._require_trusted_host():
+            return
+        if path in OPERATOR_READ_PATHS and not self._require_admin():
+            return
 
         # API routes
         if path == "/build":
@@ -199,6 +211,8 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
         parsed = urlparse(self.path)
         path = parsed.path
 
+        if not self._require_trusted_host():
+            return
         if path not in PUBLIC_POST_PATHS and not self._require_admin():
             return
 
@@ -229,6 +243,8 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
     def do_DELETE(self):
         parsed = urlparse(self.path)
         path = parsed.path
+        if not self._require_trusted_host():
+            return
         if not self._require_admin():
             return
         if path.startswith("/api/webhooks/"):
@@ -250,6 +266,12 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
 
     def _cors(self) -> None:
         path = urlparse(self.path).path
+        if path in OPERATOR_READ_PATHS:
+            origin = self.headers.get("Origin", "")
+            if origin and self._origin_allowed(origin):
+                self.send_header("Access-Control-Allow-Origin", origin)
+                self.send_header("Vary", "Origin")
+            return
         if self.command in {"GET", "HEAD"} or path in PUBLIC_POST_PATHS:
             self.send_header("Access-Control-Allow-Origin", "*")
             return
@@ -280,6 +302,32 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
         if authorization.startswith("Bearer "):
             return authorization[len("Bearer "):].strip()
         return self.headers.get("X-Desk-Admin-Token", "").strip()
+
+    def _require_trusted_host(self) -> bool:
+        """Reject DNS-rebinding: a hostile page resolving its own domain to 127.0.0.1.
+
+        Binding to loopback stops other machines reaching the port, but it does
+        not stop a page the operator visits from pointing evil.example at
+        127.0.0.1 and reading this server same-origin. The browser sends the
+        attacker's name in Host, so the bind address is what we check it against.
+        When HOST is widened deliberately, the operator owns the exposure and
+        this check steps aside.
+        """
+        if get_bind_host() not in LOOPBACK_HOSTS:
+            return True
+        host = self.headers.get("Host", "")
+        hostname = host.rsplit(":", 1)[0].strip("[]") if host else ""
+        if not hostname or hostname in LOOPBACK_HOSTS:
+            return True
+        configured = {
+            urlparse(item.strip()).hostname
+            for item in os.environ.get("SIGNAL_FABRIC_CORS_ORIGINS", "").split(",")
+            if item.strip()
+        }
+        if hostname in configured:
+            return True
+        self._json({"ok": False, "error": "Host is not allowed"}, 403)
+        return False
 
     def _require_admin(self) -> bool:
         expected = os.environ.get("DESK_ADMIN_TOKEN", "").strip()

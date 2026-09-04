@@ -210,3 +210,87 @@ def test_mutation_preflight_allows_loopback_and_configured_origins(monkeypatch):
     assert "Authorization" in loopback_headers["Access-Control-Allow-Headers"]
     assert configured_status == 204
     assert configured_headers["Access-Control-Allow-Origin"] == "https://operator.example"
+
+
+# ── Read-path exposure ─────────────────────────────────────────
+# Writes were locked first; these cover the reads. The operator endpoints leak
+# state rather than product: pending sends carry unsent message bodies and the
+# webhook list carries subscriber URLs.
+
+@pytest.mark.parametrize("path", ["/api/delivery/approvals", "/api/webhooks"])
+def test_operator_reads_require_admin_token(monkeypatch, path):
+    called = False
+
+    def forbidden(self, *args, **kwargs):
+        nonlocal called
+        called = True
+        self._json({"ok": True})
+
+    monkeypatch.setenv("DESK_ADMIN_TOKEN", "correct-test-token")
+    monkeypatch.setattr(server.AppHandler, "_api_delivery_approvals", forbidden)
+    monkeypatch.setattr(server.AppHandler, "_api_webhooks_list", forbidden)
+    with running_server() as base_url:
+        status, headers, _ = request(base_url, path, method="GET")
+
+    assert status == 401
+    assert called is False
+    assert headers.get("Access-Control-Allow-Origin") != "*"
+
+
+@pytest.mark.parametrize("path", ["/api/status", "/api/tools.json"])
+def test_published_reads_stay_open(monkeypatch, path):
+    monkeypatch.setenv("DESK_ADMIN_TOKEN", "correct-test-token")
+    monkeypatch.setattr(server.AppHandler, "_api_status", lambda self: self._json({"ok": True}))
+    monkeypatch.setattr(server.AppHandler, "_api_tools_manifest", lambda self: self._json({"ok": True}))
+    with running_server() as base_url:
+        status, headers, payload = request(base_url, path, method="GET")
+
+    assert status == 200
+    assert payload == {"ok": True}
+    assert headers["Access-Control-Allow-Origin"] == "*"
+
+
+def test_rebinding_host_is_rejected(monkeypatch):
+    """A page resolving its own domain to 127.0.0.1 reaches the port; Host betrays it."""
+    monkeypatch.delenv("HOST", raising=False)
+    monkeypatch.setattr(server.AppHandler, "_api_status", lambda self: self._json({"ok": True}))
+    with running_server() as base_url:
+        port = base_url.rsplit(":", 1)[1]
+        req = urllib.request.Request(
+            base_url + "/api/status", headers={"Host": f"evil.example:{port}"}, method="GET"
+        )
+        try:
+            response = urllib.request.urlopen(req, timeout=5)
+        except urllib.error.HTTPError as exc:
+            response = exc
+        status = response.status
+        payload = json.loads(response.read().decode("utf-8"))
+
+    assert status == 403
+    assert payload == {"ok": False, "error": "Host is not allowed"}
+
+
+def test_configured_origin_host_is_accepted(monkeypatch):
+    monkeypatch.delenv("HOST", raising=False)
+    monkeypatch.setenv("SIGNAL_FABRIC_CORS_ORIGINS", "https://operator.example")
+    monkeypatch.setattr(server.AppHandler, "_api_status", lambda self: self._json({"ok": True}))
+    with running_server() as base_url:
+        port = base_url.rsplit(":", 1)[1]
+        req = urllib.request.Request(
+            base_url + "/api/status", headers={"Host": f"operator.example:{port}"}, method="GET"
+        )
+        with urllib.request.urlopen(req, timeout=5) as response:
+            assert response.status == 200
+
+
+def test_host_check_steps_aside_when_bind_is_widened(monkeypatch):
+    """HOST=0.0.0.0 is a deliberate choice; the operator owns that exposure."""
+    monkeypatch.setenv("HOST", "0.0.0.0")
+    monkeypatch.setattr(server.AppHandler, "_api_status", lambda self: self._json({"ok": True}))
+    with running_server() as base_url:
+        port = base_url.rsplit(":", 1)[1]
+        req = urllib.request.Request(
+            base_url + "/api/status", headers={"Host": f"box.local:{port}"}, method="GET"
+        )
+        with urllib.request.urlopen(req, timeout=5) as response:
+            assert response.status == 200
