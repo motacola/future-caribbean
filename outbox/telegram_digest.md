@@ -1,4 +1,4 @@
-*Caribbean Market Pulse — 2026-09-04 04:23 UTC*
+*Caribbean Market Pulse — 2026-09-04 12:41 UTC*
 
 Lead: Guyana. 3 converging signal(s) across 3 source(s). Signals: 💼 Investment + 🏖️ Tourism + 💎 Investment.
 
@@ -12,22 +12,23 @@ Lead: Guyana. 3 converging signal(s) across 3 source(s). Signals: 💼 Investmen
    Immediate | 96/100 | C - single-source
    Immediate investigation. Suriname has multi-source investment validation (2 signals converging). Priority: assess market entry options, identify existing operators.
 
-🔴 — **🏗️ Pipeline — CARICOM**
-   CARICOM: 9 active procurements — bidding window open
+🔴 🔄 **🏗️ Pipeline — CARICOM**
+   CARICOM: 8 active procurements — bidding window open
    Immediate | 95/100 | B - cross-source
-   Active procurement pipeline: CDB active procurement notices: 9. Priority: review CDB/IDB opportunities as lead list for project-based entry.
+   🔄 Content updated this cycle
+   Active procurement pipeline: CDB active procurement notices: 8. Priority: review CDB/IDB opportunities as lead list for project-based entry.
 
-🟡 ⬆️ **ccrif_payout — Haiti**
-   Haiti: signal detected
+🟡 ⬆️ **ccrif_payout — Anguilla**
+   Anguilla: signal detected
    Validation | 84/100 | C - single-source
-   ⬆️ Strengthened (+34 pts)
-   Validation — Haiti: ccrif_payout (signal detected). Validate locally.
+   ⬆️ Strengthened (+10 pts)
+   Validation — Anguilla: ccrif_payout (signal detected). Validate locally.
 
-🟡 ⬆️ **ccrif_payout — Barbados**
-   Barbados: signal detected
+🟡 ⬆️ **ccrif_payout — St. Kitts and Nevis**
+   St. Kitts and Nevis: signal detected
    Validation | 84/100 | C - single-source
-   ⬆️ Strengthened (+18 pts)
-   Validation — Barbados: ccrif_payout (signal detected). Validate locally.
+   ⬆️ Strengthened (+10 pts)
+   Validation — St. Kitts and Nevis: ccrif_payout (signal detected). Validate locally.
 
-— Lead: Guyana · 32 composite signal(s) · 9 intensified · 14 persistent
+— Lead: Guyana · 32 composite signal(s) · 1 updated · 8 intensified · 15 persistent
 - Caribbean Signal OS
