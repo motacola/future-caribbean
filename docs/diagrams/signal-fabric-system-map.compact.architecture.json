@@ -1,0 +1,551 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Signal Fabric — system map",
+    "locale": "en",
+    "output": "signal-fabric-system-map.html",
+    "animation": "none",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/motacola/future-caribbean",
+      "revision": "2cfa9d16d0a31dad10af8bbc3fb66c42964109b9"
+    },
+    "viewBox": [
+      920,
+      480
+    ],
+    "views": [
+      {
+        "id": "signal-path",
+        "label": "Signal path",
+        "focus": [
+          "public-sources",
+          "watchers",
+          "file-state",
+          "merger",
+          "packagers",
+          "artifact-layer"
+        ],
+        "note": "Follow fragmented public evidence into ranked, cited product artifacts."
+      },
+      {
+        "id": "delivery-surfaces",
+        "label": "Delivery surfaces",
+        "focus": [
+          "artifact-layer",
+          "delivery-surfaces",
+          "people-and-agents"
+        ],
+        "note": "The same artifact layer feeds the web desk, HTTP API, MCP, CLI, RSS, and channel packets."
+      },
+      {
+        "id": "learning-loop",
+        "label": "Learning loop",
+        "focus": [
+          "people-and-agents",
+          "feedback-loop",
+          "packagers",
+          "artifact-layer"
+        ],
+        "note": "Recipient outcomes become decayed ranking boosts in the next cycle."
+      },
+      {
+        "id": "coordination",
+        "label": "Coordination graph",
+        "focus": [
+          "packagers",
+          "coordination-graph",
+          "artifact-layer"
+        ],
+        "note": "Demand signals are matched to cited regional capabilities, blockers, owners, and unlock paths."
+      },
+      {
+        "id": "synthesis-seam",
+        "label": "Optional synthesis seam",
+        "focus": [
+          "packagers",
+          "optional-synthesis",
+          "artifact-layer"
+        ],
+        "note": "Narrative synthesis may use a configured model; output names its engine and falls back deterministically on absence or failure."
+      }
+    ]
+  },
+  "components": [
+    {
+      "id": "public-sources",
+      "type": "external",
+      "label": "Public regional sources",
+      "sublabel": "Economy · climate · tenders · news",
+      "pos": [
+        10,
+        200
+      ],
+      "size": [
+        150,
+        78
+      ],
+      "sources": [
+        {
+          "path": "run_pipeline.sh",
+          "line": 60,
+          "end_line": 76,
+          "label": "source stages"
+        }
+      ]
+    },
+    {
+      "id": "watchers",
+      "type": "backend",
+      "label": "Source watchers",
+      "sublabel": "Poll · normalize · cache · freshness",
+      "pos": [
+        200,
+        200
+      ],
+      "size": [
+        170,
+        78
+      ],
+      "sources": [
+        {
+          "path": "run_pipeline.sh",
+          "line": 60,
+          "end_line": 82,
+          "label": "watcher orchestration"
+        },
+        {
+          "path": "watchers/world_bank_poller.py",
+          "line": 1,
+          "label": "representative poller"
+        }
+      ]
+    },
+    {
+      "id": "file-state",
+      "type": "database",
+      "label": "Versioned file state",
+      "sublabel": "Snapshots · history · ledgers · health",
+      "pos": [
+        200,
+        25
+      ],
+      "size": [
+        170,
+        78
+      ],
+      "sources": [
+        {
+          "path": "mergers/cross_source_merger.py",
+          "line": 28,
+          "end_line": 41,
+          "label": "source snapshots"
+        },
+        {
+          "path": "packagers/feedback_loop.py",
+          "line": 27,
+          "end_line": 31,
+          "label": "feedback state"
+        },
+        {
+          "path": ".github/workflows/pipeline.yml",
+          "line": 55,
+          "end_line": 96,
+          "label": "artifact persistence"
+        }
+      ]
+    },
+    {
+      "id": "optional-synthesis",
+      "type": "backend",
+      "label": "Optional synthesis",
+      "sublabel": "Model or rule fallback · labelled",
+      "pos": [
+        765,
+        25
+      ],
+      "size": [
+        135,
+        78
+      ],
+      "sources": [
+        {
+          "path": "reasoners/synthesis.py",
+          "line": 9,
+          "end_line": 22,
+          "label": "labelled engine contract"
+        },
+        {
+          "path": "reasoners/synthesis.py",
+          "line": 156,
+          "end_line": 219,
+          "label": "model call and fallback"
+        },
+        {
+          "path": "api/reasoning.py",
+          "line": 1,
+          "end_line": 27,
+          "label": "public route for the output"
+        }
+      ]
+    },
+    {
+      "id": "merger",
+      "type": "backend",
+      "label": "Composite merger",
+      "sublabel": "Rules · fact identity · provenance",
+      "pos": [
+        386,
+        200
+      ],
+      "size": [
+        170,
+        78
+      ],
+      "sources": [
+        {
+          "path": "mergers/cross_source_merger.py",
+          "line": 44,
+          "end_line": 69,
+          "label": "signal contract"
+        },
+        {
+          "path": "mergers/cross_source_merger.py",
+          "line": 1286,
+          "end_line": 1335,
+          "label": "composite output"
+        }
+      ]
+    },
+    {
+      "id": "packagers",
+      "type": "backend",
+      "label": "Resolvers + packaging",
+      "sublabel": "Outcomes · personas · diligence",
+      "pos": [
+        580,
+        200
+      ],
+      "size": [
+        160,
+        78
+      ],
+      "sources": [
+        {
+          "path": "run_pipeline.sh",
+          "line": 91,
+          "end_line": 124,
+          "label": "packaging stages"
+        },
+        {
+          "path": "packagers/dispatch_desk.py",
+          "line": 121,
+          "end_line": 190,
+          "label": "cluster ranking"
+        },
+        {
+          "path": "packagers/validation_pack_generator.py",
+          "line": 495,
+          "end_line": 500,
+          "label": "confidence calibration"
+        }
+      ]
+    },
+    {
+      "id": "coordination-graph",
+      "type": "backend",
+      "label": "Coordination graph",
+      "sublabel": "Demand ↔ capabilities · blockers · unlocks",
+      "pos": [
+        580,
+        25
+      ],
+      "size": [
+        160,
+        78
+      ],
+      "sources": [
+        {
+          "path": "coordination/engine.py",
+          "line": 16,
+          "end_line": 31,
+          "label": "inputs and outputs"
+        },
+        {
+          "path": "coordination/engine.py",
+          "line": 95,
+          "end_line": 141,
+          "label": "rules and interventions"
+        },
+        {
+          "path": "coordination/engine.py",
+          "line": 304,
+          "end_line": 334,
+          "label": "explainable score"
+        }
+      ]
+    },
+    {
+      "id": "feedback-loop",
+      "type": "backend",
+      "label": "Feedback loop",
+      "sublabel": "Outcomes · decay · next-cycle boosts",
+      "pos": [
+        386,
+        370
+      ],
+      "size": [
+        170,
+        78
+      ],
+      "sources": [
+        {
+          "path": "packagers/feedback_loop.py",
+          "line": 33,
+          "end_line": 56,
+          "label": "weights and decay"
+        },
+        {
+          "path": "packagers/feedback_loop.py",
+          "line": 103,
+          "end_line": 161,
+          "label": "boost computation"
+        },
+        {
+          "path": "mcp_adapter/desk_server.py",
+          "line": 187,
+          "end_line": 199,
+          "label": "feedback intake"
+        }
+      ]
+    },
+    {
+      "id": "artifact-layer",
+      "type": "database",
+      "label": "Canonical artifact layer",
+      "sublabel": "Desks · packs · feeds · track record",
+      "pos": [
+        580,
+        370
+      ],
+      "size": [
+        160,
+        78
+      ],
+      "sources": [
+        {
+          "path": "packagers/dispatch_desk.py",
+          "line": 26,
+          "end_line": 31,
+          "label": "desk artifacts"
+        },
+        {
+          "path": "packagers/dispatch_desk.py",
+          "line": 207,
+          "end_line": 295,
+          "label": "product surface"
+        },
+        {
+          "path": "run_pipeline.sh",
+          "line": 101,
+          "end_line": 141,
+          "label": "artifact builders"
+        }
+      ]
+    },
+    {
+      "id": "delivery-surfaces",
+      "type": "cloud",
+      "label": "Delivery adapters",
+      "sublabel": "Delta · approval · surfaces",
+      "pos": [
+        765,
+        370
+      ],
+      "size": [
+        135,
+        78
+      ],
+      "sources": [
+        {
+          "path": "distributors/delta_outbox.py",
+          "line": 21,
+          "end_line": 87,
+          "label": "content-hash delta gate"
+        },
+        {
+          "path": ".flue/tools/delivery.ts",
+          "line": 15,
+          "end_line": 40,
+          "label": "approval state"
+        },
+        {
+          "path": "api_manifest.py",
+          "line": 3,
+          "end_line": 204,
+          "label": "product API contract"
+        }
+      ]
+    },
+    {
+      "id": "people-and-agents",
+      "type": "external",
+      "label": "People and agents",
+      "sublabel": "Operators · investors · policy · AI",
+      "pos": [
+        765,
+        200
+      ],
+      "size": [
+        135,
+        78
+      ],
+      "sources": [
+        {
+          "path": "packagers/dispatch_desk.py",
+          "line": 216,
+          "end_line": 229,
+          "label": "coordination chain"
+        },
+        {
+          "path": "api_manifest.py",
+          "line": 17,
+          "end_line": 29,
+          "label": "agent query"
+        }
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "Deterministic core",
+      "wraps": [
+        "watchers",
+        "file-state",
+        "merger",
+        "packagers",
+        "coordination-graph",
+        "feedback-loop",
+        "artifact-layer"
+      ],
+      "pad": 10
+    }
+  ],
+  "connections": [
+    {
+      "id": "sources-to-watchers",
+      "from": "public-sources",
+      "to": "watchers",
+      "variant": "emphasis"
+    },
+    {
+      "id": "watchers-to-state",
+      "from": "watchers",
+      "to": "file-state",
+      "label": "snapshots",
+      "fromSide": "top",
+      "toSide": "bottom"
+    },
+    {
+      "id": "state-to-merger",
+      "from": "file-state",
+      "to": "merger",
+      "label": "current evidence"
+    },
+    {
+      "id": "state-to-coordination",
+      "from": "file-state",
+      "to": "coordination-graph",
+      "label": "tenders + registry"
+    },
+    {
+      "id": "merger-to-packagers",
+      "from": "merger",
+      "to": "packagers",
+      "label": "cited signals",
+      "variant": "emphasis",
+      "labelAt": [
+        500,
+        292
+      ]
+    },
+    {
+      "id": "coordination-to-packagers",
+      "from": "coordination-graph",
+      "to": "packagers",
+      "label": "matches + unlocks",
+      "labelAt": [
+        660,
+        117
+      ]
+    },
+    {
+      "id": "feedback-to-packagers",
+      "from": "feedback-loop",
+      "to": "packagers",
+      "label": "priority boosts",
+      "variant": "dashed"
+    },
+    {
+      "id": "packagers-to-artifacts",
+      "from": "packagers",
+      "to": "artifact-layer",
+      "label": "product artifacts",
+      "variant": "emphasis",
+      "labelAt": [
+        660,
+        292
+      ]
+    },
+    {
+      "id": "synthesis-to-artifacts",
+      "from": "optional-synthesis",
+      "to": "artifact-layer",
+      "label": "reasoning.json",
+      "variant": "dashed",
+      "labelAt": [
+        753,
+        292
+      ]
+    },
+    {
+      "id": "artifacts-to-delivery",
+      "from": "artifact-layer",
+      "to": "delivery-surfaces"
+    },
+    {
+      "id": "delivery-to-consumers",
+      "from": "delivery-surfaces",
+      "to": "people-and-agents"
+    },
+    {
+      "id": "consumers-to-feedback",
+      "from": "people-and-agents",
+      "to": "feedback-loop",
+      "label": "local outcomes",
+      "variant": "dashed",
+      "fromSide": "right",
+      "toSide": "bottom",
+      "via": [
+        [
+          910,
+          239
+        ],
+        [
+          910,
+          465
+        ],
+        [
+          471,
+          465
+        ]
+      ],
+      "labelAt": [
+        650,
+        468
+      ]
+    }
+  ]
+}
