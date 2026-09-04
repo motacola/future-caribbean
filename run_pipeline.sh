@@ -23,7 +23,7 @@ FAILED=""
 FAILED_OPTIONAL=""
 
 # Steps that may fail without invalidating the cycle.
-OPTIONAL_STEPS="World Bank|IDB CKAN|Tier 2 (CARICOM + CDB)|Tenders (Guyana eProcure + GOJEP)|Regional News RSS|CCRIF (Parametric Payouts)|ECCB (Monetary Stats)|NOAA NWS|NDBC Buoys|AIS Maritime|NHC Storms|Telegram Send|Webhook Alerts"
+OPTIONAL_STEPS="World Bank|IDB CKAN|Tier 2 (CARICOM + CDB)|Tenders (Guyana eProcure + GOJEP)|Regional News RSS|CCRIF (Parametric Payouts)|ECCB (Monetary Stats)|Market Watch (exchanges)|NOAA NWS|NDBC Buoys|AIS Maritime|NHC Storms|Telegram Send|Webhook Alerts"
 
 is_optional() {
     case "|$OPTIONAL_STEPS|" in
@@ -65,6 +65,13 @@ run_step "Tenders (Guyana eProcure + GOJEP)" "python3 \"$ROOT/watchers/tenders_p
 run_step "Regional News RSS" "python3 \"$ROOT/watchers/regional_news_poller.py\"" "regional_news"
 run_step "CCRIF (Parametric Payouts)" "python3 \"$ROOT/watchers/ccrif_poller.py\"" "ccrif"
 run_step "ECCB (Monetary Stats)" "python3 \"$ROOT/watchers/eccb_poller.py\"" "eccb"
+# Market Watch reads official exchange pages. It was never wired into the cycle,
+# so data/market_watch/latest.json stayed frozen at whatever a hand run last
+# produced — 22 days stale by 2026-09-04, while the desk still printed "current"
+# against those observations. Running it per cycle refreshes the dated closes and,
+# just as importantly, lets the poller downgrade an observation to stale_fallback
+# once it ages, instead of the site asserting freshness it no longer has.
+run_step "Market Watch (exchanges)" "python3 \"$ROOT/watchers/market_watch_poller.py\"" "market_watch"
 
 # ── Fast data (always runs) ───────────────────────────────
 run_step "NOAA NWS" "python3 \"$ROOT/watchers/noaa_nws_poller.py\"" "noaa_nws"
