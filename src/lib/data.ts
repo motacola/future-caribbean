@@ -1037,7 +1037,6 @@ export function loadDashboardData() {
   // caps this server-side (max 2 per publisher, 3 per country); the build-time
   // path that renders the page did not, so the two surfaces disagreed. Same
   // caps here, applied in relevance order so the best story per country wins.
-  const NEWS_PER_COUNTRY = 3;
   const NEWS_PER_PUBLISHER = 2;
   const NEWS_SLOTS = 18;
   const eligible = newsItems.filter((item: any) =>
@@ -1046,24 +1045,37 @@ export function loadDashboardData() {
   const countryOf = (item: any) => item.countries?.[0] || 'Regional context';
   const publisherOf = (item: any) =>
     item.publisher_name || item.publisher_domain || item.source || 'unknown';
-  const perCountry = new Map<string, number>();
+
+  // Round-robin by country, relevance order preserved inside each round: every
+  // country places its best story before any country places its second. Capping
+  // and then topping the shelf back up does not work — where the feed is skewed
+  // the top-up simply refills with the dominant country, which is how
+  // production still opened eight-of-eighteen Jamaica after the first attempt.
+  // This holds the spread at whatever shelf size the data can support.
+  const byCountry = new Map<string, any[]>();
+  for (const item of eligible) {
+    const key = countryOf(item);
+    if (!byCountry.has(key)) byCountry.set(key, []);
+    byCountry.get(key)!.push(item);
+  }
   const perPublisher = new Map<string, number>();
   const visibleNews: any[] = [];
-  // First pass takes the best story per country under both caps, so the desk
-  // opens regional. Second pass tops the shelf back up in relevance order, so
-  // enforcing the spread does not cost five cards.
-  for (const item of eligible) {
-    if (visibleNews.length >= NEWS_SLOTS) break;
-    if ((perCountry.get(countryOf(item)) ?? 0) >= NEWS_PER_COUNTRY) continue;
-    if ((perPublisher.get(publisherOf(item)) ?? 0) >= NEWS_PER_PUBLISHER) continue;
-    perCountry.set(countryOf(item), (perCountry.get(countryOf(item)) ?? 0) + 1);
-    perPublisher.set(publisherOf(item), (perPublisher.get(publisherOf(item)) ?? 0) + 1);
-    visibleNews.push(item);
+  for (let round = 0; visibleNews.length < NEWS_SLOTS; round++) {
+    const picks = [...byCountry.values()]
+      .map(list => list[round])
+      .filter(Boolean)
+      .sort((a, b) => b.relevance_score - a.relevance_score);
+    if (!picks.length) break;
+    for (const item of picks) {
+      if (visibleNews.length >= NEWS_SLOTS) break;
+      // One publisher should not speak for several countries at once.
+      const pub = publisherOf(item);
+      if ((perPublisher.get(pub) ?? 0) >= NEWS_PER_PUBLISHER + round) continue;
+      perPublisher.set(pub, (perPublisher.get(pub) ?? 0) + 1);
+      visibleNews.push(item);
+    }
   }
-  for (const item of eligible) {
-    if (visibleNews.length >= NEWS_SLOTS) break;
-    if (!visibleNews.includes(item)) visibleNews.push(item);
-  }
+
   const newsCountries = [...new Set(visibleNews.flatMap((item: any) => item.countries))].sort();
   const newsTopics = [...new Set(visibleNews.flatMap((item: any) => item.topics))].sort();
 
