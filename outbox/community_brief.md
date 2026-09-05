@@ -1,5 +1,5 @@
 🌴 **Caribbean Opportunity Brief** — what's moving this week
-Cycle 20260905 • 2026-09-05 18:13 UTC
+Cycle 20260905 • 2026-09-05 22:02 UTC
 
 Plain-language signals for builders, business owners, and community leaders.
 No jargon. Just what matters for your next move.
@@ -26,12 +26,12 @@ No jargon. Just what matters for your next move.
    🟡 Solid signal — some corroboration
    📊 Cross-source validation
 
-5. **Turks and Caicos Islands**: ccrif payout
+5. **Haiti**: ccrif payout
    Pay attention — something real is happening. (holding steady)
    🟡 Solid signal — some corroboration
    📊 Single-source indicator — verify locally
 
-6. **Anguilla**: ccrif payout
+6. **Barbados**: ccrif payout
    Pay attention — something real is happening. (holding steady)
    🟡 Solid signal — some corroboration
    📊 Single-source indicator — verify locally
