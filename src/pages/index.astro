@@ -935,9 +935,9 @@ html { scroll-behavior: smooth; }
 .masthead.scrolled .mast-tagline { display: none; }
 .masthead.scrolled .mast-links a { font-size: 11px; }
 [id] { scroll-margin-top: 100px; }
-.livewire { display: flex; align-items: stretch; width: 100%; max-width: 100vw; background: var(--ink); border-bottom: 3px solid var(--teal); overflow: hidden; contain: paint; }
-.lw-label { flex-shrink: 0; display: flex; align-items: center; gap: 7px; padding: 8px 16px; font: 700 9px var(--mono); letter-spacing: 1.6px; text-transform: uppercase; color: #1A1714; background: var(--gold); border-right: 1px solid rgba(244,235,221,.14); }
-.lw-label::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #1A1714; animation: theater-live 1.4s ease-in-out infinite; }
+.livewire { display: flex; align-items: stretch; width: 100%; max-width: 100vw; background: var(--card-alt); border-bottom: 3px solid var(--teal); overflow: hidden; contain: paint; }
+.lw-label { flex-shrink: 0; display: flex; align-items: center; gap: 7px; padding: 8px 16px; font: 700 9px var(--mono); letter-spacing: 1.6px; text-transform: uppercase; color: #F4EBDD; background: var(--teal); border-right: 1px solid var(--border); }
+.lw-label::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #F4EBDD; animation: theater-live 1.4s ease-in-out infinite; }
 /* A 26px fade was too short to hide the cut: entries emerged from behind the
    LIVE WIRE label already chopped mid-word. A longer ramp reads as copy
    travelling in from off-stage. */
@@ -945,19 +945,19 @@ html { scroll-behavior: smooth; }
 .lw-rail { display: flex; flex-shrink: 0; align-items: center; animation: lw-scroll var(--lw-dur, 60s) linear infinite; }
 .livewire:hover .lw-rail, .livewire:focus-within .lw-rail { animation-play-state: paused; }
 @keyframes lw-scroll { to { transform: translateX(-100%); } }
-.lw-item { display: inline-flex; align-items: center; gap: 8px; padding: 8px 26px 8px 0; margin-left: 26px; font-size: 12px; color: rgba(244,235,221,.82); text-decoration: none; white-space: nowrap; border-right: 1px solid rgba(244,235,221,.08); transition: color .15s ease; }
+.lw-item { display: inline-flex; align-items: center; gap: 8px; padding: 8px 26px 8px 0; margin-left: 26px; font-size: 12px; color: var(--text); text-decoration: none; white-space: nowrap; border-right: 1px solid var(--border); transition: color .15s ease; }
 @keyframes lw-in { from { opacity: 0; transform: translateX(-6px); } to { opacity: 1; transform: none; } }
 .lw-rail .lw-item { animation: lw-in .4s var(--fe-ease-out) both; }
 .lw-rail .lw-item:nth-child(1) { animation-delay: .05s } .lw-rail .lw-item:nth-child(2) { animation-delay: .1s }
 .lw-rail .lw-item:nth-child(3) { animation-delay: .15s } .lw-rail .lw-item:nth-child(4) { animation-delay: .2s }
 .lw-rail .lw-item:nth-child(n+5) { animation-delay: .25s }
-.lw-item:hover { color: #fff; text-decoration: none; }
+.lw-item:hover { color: var(--coral); text-decoration: none; }
 /* Weak signals ride the same wire as validated leads; they should not read
    with the same authority. */
-.lw-watch { color: rgba(244,235,221,.5); }
-.lw-tag { padding: 1px 5px; border: 1px solid rgba(244,235,221,.28); border-radius: 2px; font: 700 8px var(--mono); letter-spacing: .9px; text-transform: uppercase; color: rgba(244,235,221,.62); }
+.lw-watch { color: var(--sub); }
+.lw-tag { padding: 1px 5px; border: 1px solid var(--border-dark); border-radius: 2px; font: 700 8px var(--mono); letter-spacing: .9px; text-transform: uppercase; color: var(--sub); }
 .lw-item i { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
-.lw-kicker { font: 700 9px var(--mono); letter-spacing: 1px; text-transform: uppercase; color: var(--lime); }
+.lw-kicker { font: 700 9px var(--mono); letter-spacing: 1px; text-transform: uppercase; color: var(--teal); }
 @media (prefers-reduced-motion: reduce) { .lw-rail { animation: none; } .lw-track { overflow-x: auto; } .lw-rail[aria-hidden] { display: none; } }
 .desknav { background: var(--bg); border-bottom: 1px solid var(--border); position: sticky; top: 44px; z-index: 1100; }
 .desknav.scrolled { box-shadow: 0 6px 18px rgba(24,37,31,.1); }
