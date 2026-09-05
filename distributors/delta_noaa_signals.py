@@ -104,7 +104,7 @@ def main() -> int:
     for block in new_blocks:
         print(block)
         print()
-    print("— Caribbean Signal OS • NOAA watcher")
+    print("— Abeng • NOAA watcher")
     print("*Check latest.md for full alert summary*")
 
     # Update state

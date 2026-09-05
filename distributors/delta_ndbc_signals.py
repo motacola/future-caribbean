@@ -94,7 +94,7 @@ def main() -> int:
     for sig in new_signals:
         print(f"  • {sig}")
     print()
-    print("— Caribbean Signal OS • NDBC buoy watcher")
+    print("— Abeng • NDBC buoy watcher")
     print("*Full buoy data in signals/ndbc/latest.md*")
 
     save_state(state | new_fingerprints)

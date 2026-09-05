@@ -1,4 +1,4 @@
-# Caribbean Signal OS Schedule
+# Abeng Schedule
 
 The production loop should run continuously and distribute channel-ready signals, not static reports.
 

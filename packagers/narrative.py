@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Shared narrative title generator for Caribbean Signal OS.
+"""Shared narrative title generator for Abeng.
 
 Extracted from opportunity_dispatch.py so all channel packagers and
 editorial enrichment can produce the same editorial-quality titles.

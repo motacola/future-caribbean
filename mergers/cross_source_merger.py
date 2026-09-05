@@ -1294,7 +1294,7 @@ def write_outputs(
     json_path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
     md_lines = [
-        "# Caribbean Signal OS — Composite Intelligence",
+        "# Abeng — Composite Intelligence",
         "",
         f"- Generated: {fetched_at}",
         f"- Composite signals: {len(signals)}",
@@ -1442,7 +1442,7 @@ def run(rules_path: Path, data_dir: Path, signal_dir: Path) -> int:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Cross-source signal merger for Caribbean Signal OS.")
+    parser = argparse.ArgumentParser(description="Cross-source signal merger for Abeng.")
     parser.add_argument("--rules", type=Path, default=DEFAULT_RULES)
     parser.add_argument("--data-dir", type=Path, default=DEFAULT_DATA_DIR)
     parser.add_argument("--signal-dir", type=Path, default=DEFAULT_SIGNAL_DIR)

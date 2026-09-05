@@ -93,7 +93,7 @@ def list_feedback() -> None:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Intake feedback events for Caribbean Signal OS.")
+    parser = argparse.ArgumentParser(description="Intake feedback events for Abeng.")
     parser.add_argument("--dispatch-id", help="Dispatch ID (e.g. DSP-20260526-023)")
     parser.add_argument("--status", choices=sorted(VALID_STATUSES),
                         help="Feedback status: forwarded/replied/opened/ignored/decision_changed")

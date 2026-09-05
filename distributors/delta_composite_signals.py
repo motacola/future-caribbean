@@ -62,7 +62,7 @@ def main() -> int:
             print(f"   • {ev}")
         print()
 
-    print("— Caribbean Signal OS • Cross-source merger")
+    print("— Abeng • Cross-source merger")
 
     # Update state
     all_ids = {s.get("id") for s in signals if s.get("id")}

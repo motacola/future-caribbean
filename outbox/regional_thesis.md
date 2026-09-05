@@ -1,4 +1,4 @@
-# Regional Thesis — Caribbean Signal OS
+# Regional Thesis — Abeng
 
 Generated: 2026-09-04 23:28 UTC
 

@@ -120,7 +120,7 @@ def write_telegram_digest(
         lines.append("")
 
     lines.append(f"— {cycle_summary}")
-    lines.append("- Caribbean Signal OS")
+    lines.append("- Abeng")
 
     path = outbox / "telegram_digest.md"
     path.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
@@ -268,14 +268,13 @@ def write_judge_brief(
     fresh_count = sum(1 for s in enriched if s.get("_freshness") in ("new", "updated"))
 
     lines = [
-        "# Caribbean Opportunity Dispatch — Judge Brief",
+        "# Abeng — Judge Brief",
         "",
         f"Generated: {generated_at}",
         "",
         "## What This Proves",
         "",
-        "Caribbean Opportunity Dispatch is the product. Caribbean Signal OS is the architecture underneath. "
-        "It watches public regional data, merges weak signals across sources, "
+        "Abeng watches public regional data, merges weak signals across sources, "
         "packages the strongest signals into opportunity dispatches with persona routing, and maintains a "
         "persistent feedback loop — the system learns which signals actually changed decisions.",
         "",

@@ -149,7 +149,7 @@ def main() -> int:
         for line in up_lines:
             print(line)
         print()
-    print("— Caribbean Signal OS • IDB watcher")
+    print("— Abeng • IDB watcher")
 
     # Update state with all current fingerprints (including ones already sent)
     all_current = {fingerprint(ds) for ds in new + updated}

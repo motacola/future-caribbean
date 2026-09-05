@@ -3,7 +3,7 @@
 
 No API key required. Tracks dataset IDs and metadata_modified timestamps
 for delta detection, then emits signal briefs for new and updated datasets
-relevant to Caribbean Signal OS topics.
+relevant to Abeng topics.
 
 Outputs:
   data/idb/latest.json  — full structured snapshot

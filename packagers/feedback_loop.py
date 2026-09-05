@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Persistent feedback loop for Caribbean Signal OS.
+"""Persistent feedback loop for Abeng.
 
 Maintains a feedback state file across cycles. Each cycle:
 1. Reads previous feedback → computes boosts per signal kind + country
