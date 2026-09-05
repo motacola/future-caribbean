@@ -110,7 +110,7 @@ Markup, verbatim (placeholders `{{...}}` only where shown):
       <p>Everything the desk publishes is available as structured data — same facts, no scraping required.</p>
     </div>
     <div class="agents-grid">
-      <div class="agents-card"><h4>One question, one answer</h4><pre>curl -X POST https://signal-fabric.vercel.app/api/ask \
+      <div class="agents-card"><h4>One question, one answer</h4><pre>curl -X POST https://abeng.vercel.app/api/ask \
   -d '{"question":"explain lead"}'</pre><span>Deterministic, cited — no hallucinations</span></div>
       <div class="agents-card"><h4>Every tool, self-described</h4><pre>GET /api/tools.json</pre><span>Ingest the manifest, configure yourself</span></div>
       <div class="agents-card"><h4>Follow the wire</h4><pre>GET /feed.xml</pre><span>RSS of every signal, every cycle</span></div>

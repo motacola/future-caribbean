@@ -213,7 +213,7 @@ def write_outputs(payload: dict[str, Any]) -> None:
         "",
         f"Generated: {payload['generated_at']}",
         "",
-        "Signal Fabric turns fragmented regional data into decision-ready routes. This is the primary product surface; Telegram/email are delivery channels and the dashboard is the operator/audit view.",
+        "Abeng turns fragmented regional data into decision-ready routes. This is the primary product surface; Telegram/email are delivery channels and the dashboard is the operator/audit view.",
         "",
         "## Open Track Coordination Chain",
         "",

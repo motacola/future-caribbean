@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Signal Fabric → PocketBase schema bootstrap.
+ * Abeng → PocketBase schema bootstrap.
  *
  * Run against a LIVE PocketBase instance:
  *   PB_URL=https://pb.yourhost.com PB_ADMIN_EMAIL=you@x.com PB_ADMIN_PASSWORD=... node setup.mjs
@@ -292,8 +292,8 @@ const packs = await make({
   deleteRule: ADMIN_ONLY,
 });
 
-console.log("Signal Fabric PocketBase schema created:");
+console.log("Abeng PocketBase schema created:");
 for (const c of [users, sources, observations, signals, rules, recipients, campaigns, suppliers, interventions, outcomes, packs]) {
   console.log(`  - ${c.name} (${c.id})`);
 }
-console.log("\nNext: configure CORS to allow https://signal-fabric.vercel.app, then run sync_to_pb.mjs in the pipeline.");
+console.log("\nNext: configure CORS to allow https://abeng.vercel.app, then run sync_to_pb.mjs in the pipeline.");

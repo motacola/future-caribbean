@@ -188,7 +188,7 @@ def test_mutation_preflight_rejects_untrusted_origin(monkeypatch):
 
 def test_mutation_preflight_allows_loopback_and_configured_origins(monkeypatch):
     monkeypatch.setenv("DESK_ADMIN_TOKEN", "correct-test-token")
-    monkeypatch.setenv("SIGNAL_FABRIC_CORS_ORIGINS", "https://operator.example")
+    monkeypatch.setenv("ABENG_CORS_ORIGINS", "https://operator.example")
     with running_server() as base_url:
         loopback_status, loopback_headers, _ = request(
             base_url,
@@ -272,7 +272,7 @@ def test_rebinding_host_is_rejected(monkeypatch):
 
 def test_configured_origin_host_is_accepted(monkeypatch):
     monkeypatch.delenv("HOST", raising=False)
-    monkeypatch.setenv("SIGNAL_FABRIC_CORS_ORIGINS", "https://operator.example")
+    monkeypatch.setenv("ABENG_CORS_ORIGINS", "https://operator.example")
     monkeypatch.setattr(server.AppHandler, "_api_status", lambda self: self._json({"ok": True}))
     with running_server() as base_url:
         port = base_url.rsplit(":", 1)[1]

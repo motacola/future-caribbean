@@ -6,7 +6,7 @@
   "status": "pass",
   "visualReview": "pending",
   "artifact": {
-    "path": "/Users/christopherbelgrave/clawd/projects/future-caribbean/docs/diagrams/signal-fabric-system-map.html",
+    "path": "/Users/christopherbelgrave/clawd/projects/future-caribbean/docs/diagrams/abeng-system-map.html",
     "sha256": "c6edc0280dfe26726123d5193eb291ebbd7770a80bd4a7eb2447e916081fd08f",
     "bytes": 723201
   },
@@ -440,7 +440,7 @@
         "viewerChromeActive": true,
         "viewerChromeOk": true,
         "resolvedTheme": "light",
-        "file": "signal-fabric-system-map.visual-check.1440x900.light.png"
+        "file": "abeng-system-map.visual-check.1440x900.light.png"
       },
       {
         "width": 1440,
@@ -472,7 +472,7 @@
         "viewerChromeActive": true,
         "viewerChromeOk": true,
         "resolvedTheme": "dark",
-        "file": "signal-fabric-system-map.visual-check.1440x900.dark.png"
+        "file": "abeng-system-map.visual-check.1440x900.dark.png"
       },
       {
         "width": 2048,
@@ -504,7 +504,7 @@
         "viewerChromeActive": true,
         "viewerChromeOk": true,
         "resolvedTheme": "light",
-        "file": "signal-fabric-system-map.visual-check.2048x1320.light.png"
+        "file": "abeng-system-map.visual-check.2048x1320.light.png"
       },
       {
         "width": 2048,
@@ -536,13 +536,13 @@
         "viewerChromeActive": true,
         "viewerChromeOk": true,
         "resolvedTheme": "dark",
-        "file": "signal-fabric-system-map.visual-check.2048x1320.dark.png"
+        "file": "abeng-system-map.visual-check.2048x1320.dark.png"
       }
     ],
-    "contactSheet": "signal-fabric-system-map.visual-check.html"
+    "contactSheet": "abeng-system-map.visual-check.html"
   },
   "sidecars": {
-    "receipt": "signal-fabric-system-map.visual-check.json",
-    "contactSheet": "signal-fabric-system-map.visual-check.html"
+    "receipt": "abeng-system-map.visual-check.json",
+    "contactSheet": "abeng-system-map.visual-check.html"
   }
 }

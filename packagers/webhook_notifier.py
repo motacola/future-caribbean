@@ -102,7 +102,7 @@ def _fire(sub: dict, dispatch: dict) -> bool:
     req = urllib.request.Request(
         sub["url"],
         data=payload,
-        headers={"Content-Type": "application/json", "User-Agent": "SignalFabric-Webhook/1"},
+        headers={"Content-Type": "application/json", "User-Agent": "Abeng-Webhook/1"},
         method="POST",
     )
     try:

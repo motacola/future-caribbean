@@ -126,7 +126,7 @@
 ## Recommendations for Pipeline Integration
 
 1. **Immediate adapters (this sprint):**
-   - Guyana eProcure → JSON adapter (already proven in Signal Fabric)
+   - Guyana eProcure → JSON adapter (already proven in Abeng)
    - Barbados GIS → WP REST API adapter (parameterise category ID)
    - Bank of Jamaica → RSS adapter
    - Central Bank T&T → RSS adapter

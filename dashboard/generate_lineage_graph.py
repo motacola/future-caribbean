@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate Signal Fabric data lineage graph using graphify.
+"""Generate Abeng data lineage graph using graphify.
 
 Creates an interactive graph showing:
 - 8 data sources
@@ -16,11 +16,11 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-GRAPH_OUT = ROOT / "dashboard" / "signal-fabric-lineage.graphify.json"
+GRAPH_OUT = ROOT / "dashboard" / "abeng-lineage.graphify.json"
 
 
 def build_lineage_graph() -> dict:
-    """Build the complete Signal Fabric data lineage graph."""
+    """Build the complete Abeng data lineage graph."""
 
     nodes = []
     edges = []
@@ -194,7 +194,7 @@ def build_lineage_graph() -> dict:
         "nodes": nodes,
         "edges": edges,
         "metadata": {
-            "title": "Signal Fabric — Data Lineage & Routing Graph",
+            "title": "Abeng — Data Lineage & Routing Graph",
             "description": "8 sources → 8 watchers → merger → 14 signals → 11 personas → 8 artifacts → API",
             "version": "1.0",
             "cycle": "4-hour",
@@ -239,7 +239,7 @@ def main():
 def generate_dot(graph: dict, path: Path):
     """Generate Graphviz DOT file for rendering."""
     lines = [
-        "digraph SignalFabric {",
+        "digraph Abeng {",
         '  rankdir=LR;',
         '  fontname="Inter";',
         '  fontsize=12;',
@@ -295,7 +295,7 @@ def generate_dot(graph: dict, path: Path):
     lines.append("}")
     dot_content = "\n".join(lines)
 
-    path = Path.cwd() / "dashboard" / "signal-fabric-lineage.dot"
+    path = Path.cwd() / "dashboard" / "abeng-lineage.dot"
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 

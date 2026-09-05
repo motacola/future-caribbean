@@ -1,6 +1,6 @@
-# Handover — Signal Fabric (Future Caribbean Buildathon, Open Track)
+# Handover — Abeng (Future Caribbean Buildathon, Open Track)
 
-Signal Fabric is an agentic coordination infrastructure for fragmented economies: it watches public regional data, merges weak signals, routes opportunity dispatches to the right personas with auto-assembled diligence packs, and learns from recipient feedback. The Caribbean is the live proof; the engine is domain-agnostic (economic + climate instances today). Any agent can query it via HTTP, MCP, or CLI — it's deterministic, cited, and deployable now.
+Abeng is an agentic coordination infrastructure for fragmented economies: it watches public regional data, merges weak signals, routes opportunity dispatches to the right personas with auto-assembled diligence packs, and learns from recipient feedback. The Caribbean is the live proof; the engine is domain-agnostic (economic + climate instances today). Any agent can query it via HTTP, MCP, or CLI — it's deterministic, cited, and deployable now.
 
 > For Hermes. Read this first to get full context before touching anything.
 > Last updated: cycle 20260601. Repo: `motacola/future-caribbean` (private).
@@ -16,7 +16,7 @@ Signal Fabric is an agentic coordination infrastructure for fragmented economies
 
 ## 1. What this project is
 
-**Signal Fabric** — a domain-agnostic *agentic intelligence engine*. It watches
+**Abeng** — a domain-agnostic *agentic intelligence engine*. It watches
 public data, reasons over it, and distributes routed intelligence to the people
 who act on it. The Caribbean is the live proof; the engine deploys to any
 fragmented public-data market.
@@ -47,8 +47,8 @@ signals product struggles against — Open Track rewards the *engine* instead.
 
 ### Web app (`server.py`, pure-stdlib http.server on `:8080`)
 Routes:
-- `/` and `/build` → **configurator.html** — the **Signal Fabric** interactive
-  builder. THIS IS THE PREFERRED FRONT PAGE (user confirmed "the SIGNAL FABRIC
+- `/` and `/build` → **configurator.html** — the **Abeng** interactive
+  builder. THIS IS THE PREFERRED FRONT PAGE (user confirmed "the ABENG
   version was the best"). Has: domain switcher (2 live + 3 blueprints),
   watch→reason→distribute pipeline diagram, reasoning panel, the Signal Builder
   (persona/country/signal/channel chips → live device previews for Telegram /
@@ -70,16 +70,16 @@ APIs (all JSON, served by `server.py`):
 - `GET /api/whatsapp/link` — pre-filled wa.me share link (no Twilio).
 - `GET /api/pipeline/stream` — SSE of a live pipeline run.
 
-### CLI (`cli/signalctl.py`) — dependency-free, drives the same engine
+### CLI (`cli/abengctl.py`) — dependency-free, drives the same engine
 ```
-python3 cli/signalctl.py status      # sources, cycle, instances, outcomes
-python3 cli/signalctl.py domains      # list instances (live + blueprints)
-python3 cli/signalctl.py signals --domain climate -n 8
-python3 cli/signalctl.py preview --persona investor --channel telegram
-python3 cli/signalctl.py preview --domain climate --persona policy
-python3 cli/signalctl.py reason       # cross-signal synthesis
-python3 cli/signalctl.py run          # one full pipeline cycle
-python3 cli/signalctl.py send --channel telegram   # dry-run (add --live)
+python3 cli/abengctl.py status      # sources, cycle, instances, outcomes
+python3 cli/abengctl.py domains      # list instances (live + blueprints)
+python3 cli/abengctl.py signals --domain climate -n 8
+python3 cli/abengctl.py preview --persona investor --channel telegram
+python3 cli/abengctl.py preview --domain climate --persona policy
+python3 cli/abengctl.py reason       # cross-signal synthesis
+python3 cli/abengctl.py run          # one full pipeline cycle
+python3 cli/abengctl.py send --channel telegram   # dry-run (add --live)
 ```
 
 ### Reasoning agent (`reasoners/synthesis.py`)
@@ -111,7 +111,7 @@ Edit the **template**, not the output.
 ```
 server.py                      # web server + all /api/* endpoints + cycle counter
 run_pipeline.sh                # one full cycle: watchers → mergers → packagers → reasoner → dashboard
-cli/signalctl.py               # command-line control
+cli/abengctl.py               # command-line control
 domains/*.json                 # instance manifests (the engine's config layer)
 domains/registry.py            # load/validate/list domains; CLI: --json / --validate
 domains/README.md              # the domain contract (for judges)
@@ -120,7 +120,7 @@ watchers/                      # world_bank, idb_ckan, noaa_nws, ndbc_buoy, nhc_
 mergers/cross_source_merger.py # builds composite signals
 packagers/                     # opportunity_dispatch, dispatch_desk, climate_dispatch, telegram_brief, ...
 distributors/telegram_sender.py# live/dry-run Telegram
-configurator.html              # SIGNAL FABRIC front page (STATIC — see §3)
+configurator.html              # ABENG front page (STATIC — see §3)
 dashboard/template.html        # editorial page source → dashboard.html
 config/*.json                  # per-source + routing + composite-rule config
 ```
@@ -153,7 +153,7 @@ Data flows into `data/<source>/latest.json` and `outbox/*.json`
 
 ## 6. Open threads / where the user left off
 
-- **Page feel:** user wants the SIGNAL FABRIC page (current `/`) but feels it
+- **Page feel:** user wants the ABENG page (current `/`) but feels it
   could be "more alive and interactive, not overwhelming." A focused question
   was asked (lead-with-builder / progressive-disclosure / motion / stronger
   hero) and dismissed — so DO NOT restructure unprompted. Wait for direction.
@@ -170,9 +170,9 @@ Data flows into `data/<source>/latest.json` and `outbox/*.json`
 
 ```
 python3 server.py            # serves on :8080, runs one pipeline on startup
-# then open http://localhost:8080/   (Signal Fabric builder)
+# then open http://localhost:8080/   (Abeng builder)
 python3 run_pipeline.sh      # run a cycle manually
-python3 cli/signalctl.py status
+python3 cli/abengctl.py status
 python3 domains/registry.py  # see the instance registry
 ```
 ```

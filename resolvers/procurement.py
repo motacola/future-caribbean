@@ -3,7 +3,7 @@
 
 The claim this exists to earn:
 
-    Signal Fabric detected this Caribbean procurement opportunity before
+    Abeng detected this Caribbean procurement opportunity before
     close and subsequently recorded the award, supplier, value, and
     outcome.
 

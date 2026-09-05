@@ -1,8 +1,8 @@
 """Shared tool manifest — imported by server.py (local) and api/tools.py (Vercel)."""
 
 TOOLS_MANIFEST = {
-    "engine": "Signal Fabric",
-    "product": "Signal Fabric",
+    "engine": "Abeng",
+    "product": "Abeng",
     "version": 1,
     "tools": [
         {

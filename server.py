@@ -285,7 +285,7 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
     def _origin_allowed(origin: str) -> bool:
         configured = {
             item.strip().rstrip("/")
-            for item in os.environ.get("SIGNAL_FABRIC_CORS_ORIGINS", "").split(",")
+            for item in os.environ.get("ABENG_CORS_ORIGINS", "").split(",")
             if item.strip()
         }
         candidate = origin.strip().rstrip("/")
@@ -321,7 +321,7 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
             return True
         configured = {
             urlparse(item.strip()).hostname
-            for item in os.environ.get("SIGNAL_FABRIC_CORS_ORIGINS", "").split(",")
+            for item in os.environ.get("ABENG_CORS_ORIGINS", "").split(",")
             if item.strip()
         }
         if hostname in configured:
@@ -664,7 +664,7 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
             "name": name,
             "status": "blueprint",
             "created_via": "ui",
-            "tagline": _clip("tagline", "User-defined domain on the Signal Fabric engine."),
+            "tagline": _clip("tagline", "User-defined domain on the Abeng engine."),
             "blurb": _clip("tagline", "User-defined domain — same engine, new sources."),
             "pipeline": {
                 "watch": _clip("watch", "Public data sources for this domain."),

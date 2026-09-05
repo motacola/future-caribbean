@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""signalctl — command-line control for the Signal Fabric engine.
+"""abengctl — command-line control for the Abeng engine.
 
 A thin, dependency-free CLI over the same engine the web UI drives. Lets you
 run the pipeline, inspect live instances and signals, render a dispatch the
@@ -7,7 +7,7 @@ way a recipient would receive it, read the reasoning agent's synthesis, and
 send to a channel — all from a terminal.
 
 Usage:
-    python3 cli/signalctl.py <command> [options]
+    python3 cli/abengctl.py <command> [options]
 
 Commands:
     status                         Source health, cycle, instances, outcomes
@@ -26,13 +26,13 @@ Commands:
     coordinator verify --id I      Verify an intervention, update graph, recompute scores
 
 Examples:
-    python3 cli/signalctl.py status
-    python3 cli/signalctl.py signals --domain climate
-    python3 cli/signalctl.py preview --persona investor --channel telegram
-    python3 cli/signalctl.py preview --domain climate --persona policy
-    python3 cli/signalctl.py ask "explain the lead signal"
-    python3 cli/signalctl.py ask "what changed this cycle"
-    python3 cli/signalctl.py ask "draft a note for Guyana"
+    python3 cli/abengctl.py status
+    python3 cli/abengctl.py signals --domain climate
+    python3 cli/abengctl.py preview --persona investor --channel telegram
+    python3 cli/abengctl.py preview --domain climate --persona policy
+    python3 cli/abengctl.py ask "explain the lead signal"
+    python3 cli/abengctl.py ask "what changed this cycle"
+    python3 cli/abengctl.py ask "draft a note for Guyana"
 """
 
 from __future__ import annotations
@@ -76,7 +76,7 @@ def cmd_status(args) -> int:
         ("World Bank", "world_bank"), ("IDB", "idb"), ("NOAA", "noaa"),
         ("NDBC", "ndbc"), ("CARICOM/CDB", "tier2"),
     ]
-    print(bold("\nSignal Fabric — status\n"))
+    print(bold("\nAbeng — status\n"))
     live = 0
     for name, key in src_keys:
         ok = (ROOT / "data" / key / "latest.json").exists()
@@ -111,7 +111,7 @@ def cmd_status(args) -> int:
 def cmd_domains(args) -> int:
     from domains.registry import load_all, summarise
     domains, errors = load_all(validate=True)
-    print(bold(f"\nSignal Fabric — {len(domains)} domain(s)\n"))
+    print(bold(f"\nAbeng — {len(domains)} domain(s)\n"))
     for d in domains:
         s = summarise(d)
         c = s["counts"]
@@ -135,7 +135,7 @@ def cmd_signals(args) -> int:
     desk = _desk_for(args.domain)
     clusters = desk.get("clusters", [])
     if not clusters:
-        print(red(f"No signals for '{args.domain}'. Run: signalctl run"))
+        print(red(f"No signals for '{args.domain}'. Run: abengctl run"))
         return 1
     label = "Climate hazard" if args.domain == "climate" else "Caribbean economic"
     print(bold(f"\n{label} signals — cycle {desk.get('cycle_id', '—')}\n"))
@@ -155,7 +155,7 @@ def cmd_preview(args) -> int:
     desk = _desk_for(args.domain)
     clusters = desk.get("clusters", [])
     if not clusters:
-        print(red(f"No signals for '{args.domain}'. Run: signalctl run"))
+        print(red(f"No signals for '{args.domain}'. Run: abengctl run"))
         return 1
     cluster = clusters[0]
     persona_terms = {
@@ -220,7 +220,7 @@ def _wrap(text: str, width: int) -> list[str]:
 def cmd_reason(args) -> int:
     r = _read("outbox/reasoning.json")
     if not r:
-        print(red("No synthesis yet. Run: signalctl run"))
+        print(red("No synthesis yet. Run: abengctl run"))
         return 1
     eng = r.get("engine", "?")
     badge = teal("⚡ " + (r.get("model") or "LLM")) if eng == "llm" else dim("deterministic")
@@ -317,7 +317,7 @@ def cmd_ask(args) -> int:
     question = " ".join(args.question)
     desk = _read("outbox/dispatch_desk.json")
     if not desk:
-        print(red("No dispatch desk found. Run: signalctl run"))
+        print(red("No dispatch desk found. Run: abengctl run"))
         return 1
     try:
         sys.path.insert(0, str(ROOT))
@@ -341,7 +341,7 @@ def cmd_ask(args) -> int:
 
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(
-        prog="signalctl", description="Command-line control for the Signal Fabric engine.")
+        prog="abengctl", description="Command-line control for the Abeng engine.")
     sub = p.add_subparsers(dest="cmd", required=True)
 
     sub.add_parser("status", help="source health, cycle, instances, outcomes").set_defaults(fn=cmd_status)

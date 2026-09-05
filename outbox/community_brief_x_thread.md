@@ -8,4 +8,4 @@
 3. Guyana: foreign investment spiking — worth watching (860.3%) — Investment noise in your market. Could mean competitors coming or demand growing.
 
 
-Full brief: signal-fabric.vercel.app #CaribbeanTech #FutureCaribbean
+Full brief: abeng.vercel.app #CaribbeanTech #FutureCaribbean

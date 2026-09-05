@@ -27,7 +27,7 @@ Do not describe simulated feedback as customer traction. Say: “The closed-loop
 
 ## 2. Three-minute walkthrough (live site)
 
-All steps use **https://signal-fabric.vercel.app**.
+All steps use **https://abeng.vercel.app**.
 
 **0:00 — Live Wire + front page**
 Say: “This is the public view of the Caribbean Opportunity Desk.”
@@ -50,14 +50,14 @@ What the judge should notice: the answer is deterministic and cited (`outbox/dis
 Say: “The same engine in one curl call.”
 Paste and run:
 
-    curl -s -X POST https://signal-fabric.vercel.app/api/ask \
+    curl -s -X POST https://abeng.vercel.app/api/ask \
       -H "Content-Type: application/json" \
       -d '{"question":"what changed this cycle"}'
 
 What the judge should notice: a structured response with `engine: deterministic`, `generated_at` timestamp, and a `Sources:` line.
 
 **2:45 — Close on /feed.xml**
-Open **https://signal-fabric.vercel.app/feed.xml** in a second browser tab.
+Open **https://abeng.vercel.app/feed.xml** in a second browser tab.
 Say: “If you read the desk this way, you get every signal with plain-language descriptions and machine-readable IDs — consumable by another system in one line.”
 What the judge should notice: the route stays intact whether a human reads it or a script ingests it.
 
@@ -69,15 +69,15 @@ These are the three ways documented in the README to call the same engine.
 
 **curl**
 
-    curl -s -X POST https://signal-fabric.vercel.app/api/ask \
+    curl -s -X POST https://abeng.vercel.app/api/ask \
       -H "Content-Type: application/json" \
       -d '{"question":"draft a note for Guyana"}'
 
 Expected shape: `{"question": "...", "answer": "...", "engine": "deterministic", "generated_at": "..."}`.
 
-**signalctl (local)**
+**abengctl (local)**
 
-    python3 cli/signalctl.py ask "what changed this cycle"
+    python3 cli/abengctl.py ask "what changed this cycle"
 
 Expected shape: formatted answer plus **Sources:** line in terminal styling.
 
@@ -85,7 +85,7 @@ Expected shape: formatted answer plus **Sources:** line in terminal styling.
 
 Point a tool-calling agent or MCP client at the hosted `/api/tools.json`:
 
-    curl -s https://signal-fabric.vercel.app/api/tools.json | python3 -m json.tool | head
+    curl -s https://abeng.vercel.app/api/tools.json | python3 -m json.tool | head
 
 **Claude MCP connect line**
 
@@ -109,15 +109,15 @@ Available tools: `desk_status`, `list_signals`, `get_dispatch`, `get_validation_
 
 | Claim | Command or URL | What proves it |
 |---|---|---|
-| Six public sources | `https://signal-fabric.vercel.app/api/status` | `n_sources_total: 6` |
-| 4-hour cycle cadence | `https://signal-fabric.vercel.app/api/status` | `cadence_hours: 4` |
-| Deterministic cited answers | `https://signal-fabric.vercel.app/api/ask` | Returns `"engine":"deterministic"` plus `"Sources: outbox/..."` |
-| Live Guyana tenders with closing dates | `https://signal-fabric.vercel.app/api/validation-packs/enhanced-invest-guyana` | `procurement_matches` entries with `closing_date: 2026-06-16` |
-| Agent-agnostic surface | `https://signal-fabric.vercel.app/api/tools.json` + `https://signal-fabric.vercel.app/feed.xml` + MCP adapter | Machine-readable tool manifest, RSS feed, and MCP wrapper all present |
-| Feedback loop re-weighting | `https://signal-fabric.vercel.app/api/track-record` | `feedback_provenance: simulated` plus responses and active boosts proves the mechanism without claiming live traction |
-| 13 watched countries | `https://signal-fabric.vercel.app/api/tools.json` | `map-data` surface documented as live |
-| 13 clusters / 31 dispatches in current cycle | `https://signal-fabric.vercel.app/api/status` | `n_clusters: 13`, `n_dispatches: 31` |
-| Validation pack index live (5 packs) | `https://signal-fabric.vercel.app/api/validation-packs` | `packs[]` with five entries, including Guyana and Belize |
+| Six public sources | `https://abeng.vercel.app/api/status` | `n_sources_total: 6` |
+| 4-hour cycle cadence | `https://abeng.vercel.app/api/status` | `cadence_hours: 4` |
+| Deterministic cited answers | `https://abeng.vercel.app/api/ask` | Returns `"engine":"deterministic"` plus `"Sources: outbox/..."` |
+| Live Guyana tenders with closing dates | `https://abeng.vercel.app/api/validation-packs/enhanced-invest-guyana` | `procurement_matches` entries with `closing_date: 2026-06-16` |
+| Agent-agnostic surface | `https://abeng.vercel.app/api/tools.json` + `https://abeng.vercel.app/feed.xml` + MCP adapter | Machine-readable tool manifest, RSS feed, and MCP wrapper all present |
+| Feedback loop re-weighting | `https://abeng.vercel.app/api/track-record` | `feedback_provenance: simulated` plus responses and active boosts proves the mechanism without claiming live traction |
+| 13 watched countries | `https://abeng.vercel.app/api/tools.json` | `map-data` surface documented as live |
+| 13 clusters / 31 dispatches in current cycle | `https://abeng.vercel.app/api/status` | `n_clusters: 13`, `n_dispatches: 31` |
+| Validation pack index live (5 packs) | `https://abeng.vercel.app/api/validation-packs` | `packs[]` with five entries, including Guyana and Belize |
 
 Additions for context (from the repo):
 - `outbox/delivery_manifest.json` — one entry per dispatch, channel-ready.
@@ -125,7 +125,7 @@ Additions for context (from the repo):
 - `data/history/*.jsonl` and the Astro desk at `/` — local theater replay fallback.
 
 Sources:
-- live probes: `https://signal-fabric.vercel.app/api/status`, `/api/ask`, `/api/validation-packs/enhanced-invest-guyana`, `/api/tools.json`, `/feed.xml`.
+- live probes: `https://abeng.vercel.app/api/status`, `/api/ask`, `/api/validation-packs/enhanced-invest-guyana`, `/api/tools.json`, `/feed.xml`.
 - repo files: `agents.md`, `llms.txt`, `README.md`, `dashboard/generate.py`, `data/history/`.
 
 ---
@@ -153,7 +153,7 @@ Honest answer: Jamaica GOJEP procurement is not exposed in the public instance �
 
 Five items, in order:
 
-- [ ] `https://signal-fabric.vercel.app` loads and the top signal is the Guyana / Belize capital surge cluster for cycle `20260611`.
+- [ ] `https://abeng.vercel.app` loads and the top signal is the Guyana / Belize capital surge cluster for cycle `20260611`.
 - [ ] `/api/ask` answers: run the Guyana draft note prompt and confirm `engine: deterministic` plus a `Sources:` line.
 - [ ] `/feed.xml` fresh: `lastBuildDate` must be today’s date or the most recent cycle date.
 - [ ] Local fallback tested once before the session: `python3 server.py` then browse `http://localhost:8080/`.

@@ -25,7 +25,7 @@ const { items = [] } = Astro.props;
 
 <script>
   try {
-    const saved = JSON.parse(localStorage.getItem('signal-fabric:news-follows:v1') || '{}');
+    const saved = JSON.parse(localStorage.getItem('abeng:news-follows:v1') || '{}');
     const ids = Array.isArray(saved.ids) ? saved.ids : [];
     const snapshots = saved.snapshots || {};
     const shell = document.querySelector('[data-followed-stories]');

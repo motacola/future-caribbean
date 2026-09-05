@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Signal Fabric — Build Your Signal Feed</title>
+<title>Abeng — Build Your Signal Feed</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -327,7 +327,7 @@ footer { border-top: 1px solid var(--border); padding: 24px; text-align: center;
 </div>
 
 <footer>
-  Signal Fabric · Cycle {{cycle_id}} · {{now_str}} · Screening signals only, not investment advice · Data: World Bank · IDB · NOAA · NDBC · CARICOM · CDB
+  Abeng · Cycle {{cycle_id}} · {{now_str}} · Screening signals only, not investment advice · Data: World Bank · IDB · NOAA · NDBC · CARICOM · CDB
 </footer>
 
 <script>
@@ -497,9 +497,9 @@ function renderClientSide() {
   } else if (state.channel === 'whatsapp') {
     text = `🌴 Caribbean Signal\n\n${country}: ${ev}${pstr}\n\n${action.slice(0,160)}\n\nScreening signal only.\nhttps://future-caribbean.fly.dev`;
   } else if (state.channel === 'email') {
-    text = `Subject: ${country} — ${conf.toLowerCase()} market signal\n\n${ev}${pstr}\n\nFor ${pl}:\n${action}\n\nSource: World Bank / IDB\nConfidence: ${conf}\n\nScreening signal, not investment advice.\nSignal Fabric`;
+    text = `Subject: ${country} — ${conf.toLowerCase()} market signal\n\n${ev}${pstr}\n\nFor ${pl}:\n${action}\n\nSource: World Bank / IDB\nConfidence: ${conf}\n\nScreening signal, not investment advice.\nAbeng`;
   } else {
-    text = `CARIBBEAN OPPORTUNITY BRIEF\n${'─'.repeat(36)}\nCountry:    ${country}\nConfidence: ${conf}\nAudience:   ${pl}\n\nSIGNAL\n${ev}${pstr}\n\nRECOMMENDED ACTION\n${action}\n\n${'─'.repeat(36)}\nScreening signal only. Not investment advice.\nSignal Fabric`;
+    text = `CARIBBEAN OPPORTUNITY BRIEF\n${'─'.repeat(36)}\nCountry:    ${country}\nConfidence: ${conf}\nAudience:   ${pl}\n\nSIGNAL\n${ev}${pstr}\n\nRECOMMENDED ACTION\n${action}\n\n${'─'.repeat(36)}\nScreening signal only. Not investment advice.\nAbeng`;
   }
 
   _previewText = text;
@@ -526,7 +526,7 @@ function renderDevice(channel, text, country) {
     wrap.innerHTML = `
       <div class="tg-bar">
         <div class="tg-avatar">🌴</div>
-        <div><div class="tg-name">Signal Fabric</div><div class="tg-sub">Signal channel · ${PIPELINE.n_sources || 5}/6 sources live</div></div>
+        <div><div class="tg-name">Abeng</div><div class="tg-sub">Signal channel · ${PIPELINE.n_sources || 5}/6 sources live</div></div>
       </div>
       <div class="tg-bubble">${fmtTg(text)}</div>
       <div class="tg-time">${now}</div>`;
@@ -545,16 +545,16 @@ function renderDevice(channel, text, country) {
     const body = lines.slice(2).join('\n');
     wrap.className = 'device-wrap device-email';
     wrap.innerHTML = `
-      <div class="email-chrome"><span>From: Signal Fabric &lt;signal@cod.caribbean&gt;</span></div>
+      <div class="email-chrome"><span>From: Abeng &lt;signal@cod.caribbean&gt;</span></div>
       <div class="email-body">
         <div class="email-subject">${esc(subj)}</div>
-        <div class="email-from">Signal Fabric · ${now}</div>
+        <div class="email-from">Abeng · ${now}</div>
         <div class="email-text">${esc(body)}</div>
       </div>`;
   } else {
     wrap.className = 'device-wrap device-memo';
     wrap.innerHTML = `
-      <div class="memo-logo">Signal Fabric — Intelligence Brief</div>
+      <div class="memo-logo">Abeng — Intelligence Brief</div>
       <div class="memo-text">${esc(text)}</div>`;
   }
 }
@@ -583,7 +583,7 @@ function openWhatsApp() {
     .then(r => r.json())
     .then(r => { if (r.ok) window.open(r.link,'_blank','noopener'); })
     .catch(() => {
-      const msg = _previewText || '🌴 Signal Fabric\nhttps://future-caribbean.fly.dev';
+      const msg = _previewText || '🌴 Abeng\nhttps://future-caribbean.fly.dev';
       window.open('https://wa.me/?text='+encodeURIComponent(msg),'_blank','noopener');
     });
   closeModal();

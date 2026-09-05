@@ -1,6 +1,6 @@
 """Deterministic Opportunity vs Dislocation/Risk track for a signal kind.
 
-Signal Fabric's composite signals carry a ``kind`` (e.g. ``investment_signal``,
+Abeng's composite signals carry a ``kind`` (e.g. ``investment_signal``,
 ``cyclone_risk``, ``food_security``). The product surface should let a reader
 separate **opportunities** (capital, demand, capacity, market movement worth
 acting on) from **dislocations / risks** (hazards, vulnerability, shocks) without

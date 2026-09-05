@@ -14,7 +14,7 @@ dashboard.
 - `agent/query.py` — the deterministic query engine you are exposing
 - `server.py` — request handler patterns (`_api_status`, `_json`, `_read_json_body`)
 - `outbox/validation_packs/index.json` and one pack file
-- `cli/signalctl.py` — CLI subcommand patterns
+- `cli/abengctl.py` — CLI subcommand patterns
 - `dashboard/template.html` + `dashboard/generate.py` — placeholder/render pattern
 - `tests/test_validation_pack.py` — test conventions
 
@@ -36,7 +36,7 @@ Hand-written JSON (a `TOOLS_MANIFEST` dict in `server.py` or
 `method`, `path`, `params` (JSON-schema-ish), `example_request`,
 `example_response_keys`. Cover: ask, status, validation-packs (both),
 domains, reasoning, feedback-apply (mark `"writes": true`). Include top-level
-`{"engine": "Signal Fabric", "product": "Caribbean Opportunity Dispatch",
+`{"engine": "Abeng", "product": "Caribbean Opportunity Dispatch",
 "version": 1}`.
 
 ### 3. Discovery files, served and committed
@@ -45,13 +45,13 @@ domains, reasoning, feedback-apply (mark `"writes": true`). Include top-level
 - `agents.md` at repo root: connect instructions per framework —
   (a) plain HTTP/curl, (b) Hermes (point its HTTP tooling at
   `/api/tools.json`), (c) OpenClaw (same HTTP contract, plus
-  `python3 cli/signalctl.py` for shell-tool agents), (d) Claude via the MCP
+  `python3 cli/abengctl.py` for shell-tool agents), (d) Claude via the MCP
   adapter (see item 5). Keep each section copy-paste runnable.
 - Serve both at `/llms.txt` and `/agents.md` from `server.py`.
 
-### 4. `signalctl ask` subcommand
-`python3 cli/signalctl.py ask "what changed this cycle"` → prints the answer
-+ citation line, matching existing signalctl output style (bold/dim helpers).
+### 4. `abengctl ask` subcommand
+`python3 cli/abengctl.py ask "what changed this cycle"` → prints the answer
++ citation line, matching existing abengctl output style (bold/dim helpers).
 Reuses `agent.query` directly (no HTTP). Nonzero exit if desk artifacts
 missing.
 
@@ -90,7 +90,7 @@ Stdlib/pytest only, no live server needed where avoidable:
   the function layer or use `http.client` against a server started on an
   ephemeral port in a thread WITHOUT the pipeline loop — import the handler
   class, not `__main__`).
-- `signalctl ask` returns 0 and non-empty output via `subprocess`.
+- `abengctl ask` returns 0 and non-empty output via `subprocess`.
 - llms.txt and agents.md exist and mention `/api/tools.json`.
 
 ## Constraints
@@ -113,9 +113,9 @@ Stdlib/pytest only, no live server needed where avoidable:
 ## Validation
 
 ```bash
-python3 -m py_compile server.py cli/signalctl.py dashboard/generate.py
+python3 -m py_compile server.py cli/abengctl.py dashboard/generate.py
 python3 -m pytest -q                          # all pass, including new file
-python3 cli/signalctl.py ask "explain lead"   # prints cited answer, exit 0
+python3 cli/abengctl.py ask "explain lead"   # prints cited answer, exit 0
 python3 dashboard/generate.py --no-open
 grep -c "ask-desk\|askdesk" dashboard.html    # panel rendered, >0
 python3 - <<'PY'

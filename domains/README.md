@@ -1,6 +1,6 @@
 # Domains — the engine's instances
 
-Signal Fabric is **domain-agnostic**. The same pipeline —
+Abeng is **domain-agnostic**. The same pipeline —
 **watch → reason → distribute** — runs every instance. A *domain* is a
 declarative manifest in this folder that says, for one instance:
 

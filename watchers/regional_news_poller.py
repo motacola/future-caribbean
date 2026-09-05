@@ -17,7 +17,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CONFIG = ROOT / "config" / "regional_news_sources.json"
 OUT = ROOT / "data" / "regional_news" / "latest.json"
 RAW = ROOT / "data" / "regional_news" / "raw"
-UA = {"User-Agent": "Mozilla/5.0 (compatible; SignalFabric/1.0)"}
+UA = {"User-Agent": "Mozilla/5.0 (compatible; Abeng/1.0)"}
 TIMEOUT = 20
 
 # macOS + Homebrew Python environments often ship without a default CA bundle

@@ -7,7 +7,7 @@
 
 ## What I verified live vs from the repo
 
-Verified live against https://signal-fabric.vercel.app:
+Verified live against https://abeng.vercel.app:
 - `/api/status` returns `cadence_hours: 4`, `cycle_id: 20260611`, `n_clusters: 13`, `n_dispatches: 31`, six sources listed (all `ok: false` in the public status payload because the hosted instance surfaces the config, not runtime health from the watchers).
 - `/feed.xml` builds at `lastBuildDate: Thu, 11 Jun 2026 17:22:38 +0000`.
 - `/api/ask` with question "draft a note for Guyana" returned a deterministic answer with `engine: "deterministic"` and `generated_at: 2026-06-11T19:33:37.289488+00:00`, citing `outbox/dispatch_desk.json`.

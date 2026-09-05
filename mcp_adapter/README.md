@@ -1,6 +1,6 @@
 # Caribbean Opportunity Desk — MCP Adapter
 
-This is a **thin wrapper** exposing the Signal Fabric engine's deterministic operations as MCP tools for the Claude ecosystem (Claude Code, Claude Desktop, or any MCP-compatible client).
+This is a **thin wrapper** exposing the Abeng engine's deterministic operations as MCP tools for the Claude ecosystem (Claude Code, Claude Desktop, or any MCP-compatible client).
 
 **Key principle:** The pipeline (`run_pipeline.sh`, `server.py`, agents) **never imports anything from `mcp_adapter/`**. This adapter is a one-way consumer of the engine's output files.
 

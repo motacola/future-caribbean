@@ -10,7 +10,7 @@ every failure mode.
 - `PLAN_ENGINE_2026-06-10.md` — Decisions section (what was promised)
 - `outbox/judge_brief.md` — existing generated judge artifact
 - `agents.md`, `llms.txt` — the agent surface
-- Live site: https://signal-fabric.vercel.app (fetch the dashboard and
+- Live site: https://abeng.vercel.app (fetch the dashboard and
   /api/status to confirm what is actually live before you write about it)
 
 ## Build — one file: `JUDGE_DEMO.md`
@@ -23,7 +23,7 @@ Plain language. The fragmentation problem, the desk that solves it, and the
 (revolutionary, game-changing, etc.).
 
 ### 2. Three-minute walkthrough (live site)
-Numbered, timed steps using https://signal-fabric.vercel.app:
+Numbered, timed steps using https://abeng.vercel.app:
 0:00 Live Wire + front page; 0:30 click Guyana on the map (drill cards);
 1:00 the lead story — decision, checklist, validation pack with the LIVE
 tender closing 2026-06-16; 1:45 Ask the desk — click "Draft a note for

@@ -1,12 +1,12 @@
-# Caribbean Opportunity Dispatch — Signal Fabric Agent Interface
+# Caribbean Opportunity Dispatch — Abeng Agent Interface
 
-Signal Fabric is an agentic coordination infrastructure for fragmented economies: it watches public regional data, merges weak signals, routes opportunity dispatches to the right personas with auto-assembled diligence packs, and learns from recipient feedback. The Caribbean is the live proof; the engine is domain-agnostic (economic + climate instances today). Any agent can query it via HTTP, MCP, or CLI — it's deterministic, cited, and deployable now.
+Abeng is an agentic coordination infrastructure for fragmented economies: it watches public regional data, merges weak signals, routes opportunity dispatches to the right personas with auto-assembled diligence packs, and learns from recipient feedback. The Caribbean is the live proof; the engine is domain-agnostic (economic + climate instances today). Any agent can query it via HTTP, MCP, or CLI — it's deterministic, cited, and deployable now.
 
 **What this is:** A deterministic, citation-backed opportunity engine for the Caribbean. Humans read the dashboard; agents query the API. The same engine answers both.
 
 **Base URL (local):** `http://localhost:8080`
 
-**Base URL (hosted):** `https://signal-fabric.vercel.app`
+**Base URL (hosted):** `https://abeng.vercel.app`
 
 ---
 
@@ -31,15 +31,15 @@ Signal Fabric is an agentic coordination infrastructure for fragmented economies
 
 ```bash
 # Ask the desk a question
-curl -X POST https://signal-fabric.vercel.app/api/ask \
+curl -X POST https://abeng.vercel.app/api/ask \
   -H "Content-Type: application/json" \
   -d '{"question": "explain the lead signal"}'
 
 # Get the tool manifest (for agent self-configuration)
-curl https://signal-fabric.vercel.app/api/tools.json
+curl https://abeng.vercel.app/api/tools.json
 
 # Get validation packs index
-curl https://signal-fabric.vercel.app/api/validation-packs
+curl https://abeng.vercel.app/api/validation-packs
 ```
 
 **See also:** `/agents.md` for framework-specific setup (Claude/MCP, Hermes, OpenClaw, plain HTTP).

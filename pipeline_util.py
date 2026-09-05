@@ -62,15 +62,15 @@ def retry(
 # what the site publishes, but several writers run in subprocesses where
 # monkeypatching cannot reach them. So every writer resolves its destination
 # through `output_path()`, and the test harness points that at a temp dir via
-# SIGNAL_FABRIC_OUTPUT_ROOT. Inputs are unaffected — only writes are redirected.
+# ABENG_OUTPUT_ROOT. Inputs are unaffected — only writes are redirected.
 
-OUTPUT_ROOT_ENV = "SIGNAL_FABRIC_OUTPUT_ROOT"
+OUTPUT_ROOT_ENV = "ABENG_OUTPUT_ROOT"
 
 
 def output_path(default: "Path") -> "Path":
     """Where an artefact should actually be written.
 
-    Returns `default` unless SIGNAL_FABRIC_OUTPUT_ROOT is set, in which case
+    Returns `default` unless ABENG_OUTPUT_ROOT is set, in which case
     the path is remapped under that root, preserving its position relative to
     the repository so callers keep their directory layout.
     """

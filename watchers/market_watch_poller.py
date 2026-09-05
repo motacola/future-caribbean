@@ -22,7 +22,7 @@ OUT = ROOT / "data" / "market_watch" / "latest.json"
 PUBLIC_SNAPSHOT = ROOT / "public" / "market_watch.json"
 API_SNAPSHOT = ROOT / "api" / "market-watch-data.json"
 TIMEOUT = 25
-UA = {"User-Agent": "Mozilla/5.0 (compatible; SignalFabric/1.0; +https://signal-fabric.vercel.app)"}
+UA = {"User-Agent": "Mozilla/5.0 (compatible; Abeng/1.0; +https://abeng.vercel.app)"}
 
 SOURCE_PATHS = {
     "cayman": "https://www.csx.ky/trading/daily-trading-summary.asp",

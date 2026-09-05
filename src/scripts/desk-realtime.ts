@@ -1,4 +1,4 @@
-// Signal Fabric — realtime desk enhancement (additive, zero-regression).
+// Abeng — realtime desk enhancement (additive, zero-regression).
 //
 // Connects to PocketBase (if PUBLIC_PB_URL is set) and live-updates a dedicated
 // feed container. It NEVER mutates the build-time-rendered cards — it only
@@ -75,7 +75,7 @@ export async function initRealtime() {
     });
   } catch (err) {
     // PB unreachable — leave the feed empty, page still fully works from build JSON
-    console.warn("[signal-fabric] PocketBase realtime unavailable:", (err as Error)?.message);
+    console.warn("[abeng] PocketBase realtime unavailable:", (err as Error)?.message);
     feed.innerHTML = "";
   }
 }

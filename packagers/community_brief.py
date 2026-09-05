@@ -299,11 +299,11 @@ def build_community_brief() -> str:
         "---",
         "",
         "**Want the full picture?**",
-        "• Technical desk: `signal-fabric.vercel.app` (judge/investor view)",
+        "• Technical desk: `abeng.vercel.app` (judge/investor view)",
         "• Validation packs: pre-assembled diligence for each opportunity",
         "• Telegram: @caribbean_opportunity_dispatch (daily brief)",
         "",
-        "Reply **STOP** to unsubscribe. Built by Future Caribbean Signal Fabric.",
+        "Reply **STOP** to unsubscribe. Built by Future Caribbean Abeng.",
         "",
     ])
 
@@ -345,7 +345,7 @@ def build_social_snippets() -> dict[str, str]:
             tweet += f" ({mag})"
         tweet += f" — {action[:160]}"
         thread.append(tweet)
-    thread.append("\nFull brief: signal-fabric.vercel.app #CaribbeanTech #FutureCaribbean")
+    thread.append("\nFull brief: abeng.vercel.app #CaribbeanTech #FutureCaribbean")
 
     # Instagram caption
     ig_lines = [
@@ -383,7 +383,7 @@ def build_social_snippets() -> dict[str, str]:
         wa_lines.append(line)
     wa_lines.extend([
         "",
-        "Full: signal-fabric.vercel.app",
+        "Full: abeng.vercel.app",
         "Reply STOP to unsub",
     ])
 
