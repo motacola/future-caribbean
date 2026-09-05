@@ -46,7 +46,12 @@ test('market watch labels dates, source status, and illustrative chart limits ho
   const charts = marketWatch.locator('.market-chart-card');
   expect(await cards.count()).toBeGreaterThan(0);
   await expect(charts).toHaveCount(await cards.count());
-  await expect(cards.locator('.market-observation').first()).toContainText(/Official source (observation|status):/);
+  // The guarantee is that each card states where it stands — a real date it
+  // last published, or that the exchange could not be reached. It is not the
+  // "Official source status:" field prefix, which read as a database dump.
+  await expect(cards.locator('.market-observation').first()).toContainText(
+    /Exchange last published \d|could not reach the exchange|no dated close|not published/i,
+  );
   await expect(charts.locator('.market-chart-disclosure').first()).toHaveText(
     'Indexed activity trend, not share price.',
   );

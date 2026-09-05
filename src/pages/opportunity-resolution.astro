@@ -66,11 +66,11 @@ function fmtDate(value) {
 </div>
 
 <div class="hero">
-  <p class="hero-kicker">Procurement outcome resolver</p>
+  <p class="hero-kicker">What happened to the tenders we spotted</p>
   <h1>What happened <em>after</em> we saw it.</h1>
-  <p class="hero-sub">A detection is only worth something if someone checks what became of it. Every tender below is a canonical record built from dated public portal snapshots: when it was first seen, how its closing date moved, and whether an award or cancellation notice followed. Nothing here is inferred — where a portal never named a winner, no winner is shown.</p>
+  <p class="hero-sub">Spotting a tender is only worth something if somebody checks how it ended. Each one below is a single record built from dated snapshots of the public portals: when we first saw it, every time its closing date moved, and whether an award or cancellation followed. Nothing is guessed — where the portal never named a winner, we do not name one either.</p>
   <div class="hero-stats">
-    <div class="hero-stat"><strong>{summary.tenders ?? 0}</strong><span>Canonical tenders</span></div>
+    <div class="hero-stat"><strong>{summary.tenders ?? 0}</strong><span>Tenders tracked</span></div>
     <div class="hero-stat"><strong>{summary.detected_before_close ?? 0}</strong><span>Detected before close</span></div>
     <div class="hero-stat"><strong>{summary.median_lead_days ?? '—'}{summary.median_lead_days != null ? 'd' : ''}</strong><span>Median lead time</span></div>
     <div class="hero-stat"><strong>{summary.resolved_outcomes ?? 0}</strong><span>Recorded outcomes</span></div>

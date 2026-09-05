@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import { capabilityLabel } from '../lib/capability-labels';
 import { readFileSync, existsSync } from 'fs';
 import { resolve, join } from 'path';
 
@@ -51,32 +52,32 @@ function bestEvidence(holder: any): any {
 </div>
 
 <div class="hero">
-  <p class="hero-kicker">Detected demand → cited regional capability</p>
-  <h1>Where does the region show relevant capability?</h1>
-  <p class="hero-sub">Every tender below was detected by the resolver, classified into a sector with deterministic keyword rules, and matched to country or bloc entries in the capability registry — with the registry's cited source and evidence grade. This is a screening path, not proof that a named supplier can bid or deliver. The registry is a <strong>pilot</strong> and is not audited supplier capacity.</p>
+  <p class="hero-kicker">What the region is being asked to build</p>
+  <h1>Who in the region can do this work?</h1>
+  <p class="hero-sub">Every tender here asks for a particular kind of work — road building, shipping, IT. We sort each one by the work it needs, then show which countries have that trade on record, and where that record came from. Treat it as a starting point for a conversation, not proof that any company can win or deliver the job. The register is a <strong>pilot</strong>: it lists trades a country is known for, not audited company capacity.</p>
   <div class="hero-stats">
-    <div class="hero-stat"><strong>{total}</strong><span>Canonical tenders</span></div>
-    <div class="hero-stat"><strong>{classified}</strong><span>Classified by sector</span></div>
-    <div class="hero-stat"><strong>{matched}</strong><span>With a capability match</span></div>
+    <div class="hero-stat"><strong>{total}</strong><span>Tenders tracked</span></div>
+    <div class="hero-stat"><strong>{classified}</strong><span>Sorted into a sector</span></div>
+    <div class="hero-stat"><strong>{matched}</strong><span>Matched to a regional trade</span></div>
   </div>
 </div>
 
 <div class="sec">
   <div class="sec-label">Where the matches concentrate</div>
-  <div class="sec-title">Required capability vs cited registry evidence</div>
-  <div class="sec-sub">Counts are tender-capability links. The country view counts tender-capability-country links, so one tender can contribute more than once.</div>
+  <div class="sec-title">What is being asked for, and who does it</div>
+  <div class="sec-sub">One tender can need several trades, and several countries can do each one — so a single tender is counted more than once here. These are totals of matches, not of tenders.</div>
   <div class="split">
     <div class="split-col">
-      <h4>By required capability</h4>
+      <h4>By the work required</h4>
       <ul class="tally">
         {Object.entries(byCapability).map(([cap, n]) => (
-          <li><span>{cap}</span><strong>{n}</strong></li>
+          <li><span>{capabilityLabel(cap)}</span><strong>{n}</strong></li>
         ))}
         {Object.keys(byCapability).length === 0 && <li class="empty">No classified matches yet.</li>}
       </ul>
     </div>
     <div class="split-col">
-      <h4>By registry country / bloc</h4>
+      <h4>By country or bloc</h4>
       <ul class="tally">
         {Object.entries(byCountry).map(([c, n]) => (
           <li><span>{c}</span><strong>{n}</strong></li>
@@ -88,9 +89,9 @@ function bestEvidence(holder: any): any {
 </div>
 
 <div class="sec">
-  <div class="sec-label">Detected → matched</div>
-  <div class="sec-title">Tenders and the capabilities they require</div>
-  <div class="sec-sub">Each row shows the detected tender, its classified sector, required capabilities, and the country or bloc entries recorded against those capabilities. Sources and grades are taken verbatim from the pilot registry; they do not establish supplier eligibility or delivery capacity.</div>
+  <div class="sec-label">Tender by tender</div>
+  <div class="sec-title">Every tender and the work it calls for</div>
+  <div class="sec-sub">Each row is one tender: the sector we sorted it into, the trades it calls for, and the countries recorded as doing that work. Sources and grades come straight from the pilot register — they do not say a company is eligible to bid or able to deliver.</div>
   <div class="match-list">
     {matches.slice(0, 40).map((m) => (
       <div class="match-row">
@@ -106,7 +107,7 @@ function bestEvidence(holder: any): any {
         <div class="match-caps">
           {(m.capability_matches || []).map((cm) => (
             <div class={`cap-chip ${cm.matched ? 'cap-yes' : 'cap-no'}`}>
-              <span class="cap-id">{cm.capability}</span>
+              <span class="cap-id">{capabilityLabel(cm.capability)}</span>
               {cm.matched
                 ? <span class="cap-holders">
                     {(cm.holders || []).map((h) => {
@@ -125,7 +126,7 @@ function bestEvidence(holder: any): any {
         </div>
       </div>
     ))}
-    {matches.length === 0 && <div class="res-blank">No tenders have been matched to a registry capability yet.</div>}
+    {matches.length === 0 && <div class="res-blank">No tenders have been matched to a regional trade yet.</div>}
   </div>
 </div>
 

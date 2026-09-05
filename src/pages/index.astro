@@ -1540,7 +1540,7 @@ html { scroll-behavior: smooth; }
         <div class="decision-fact"><label>How solid is this</label><strong>{d.lGrade}</strong></div>
         <div class="decision-fact"><label>What's happened so far</label><strong>{d.leadFeedback}</strong></div>
       </div>
-      <details class="meta-disclose"><summary>Why this ranks high</summary><div class="meta-disclose-body">{d.lRanking}</div></details>
+      <details class="meta-disclose"><summary>Why this is top of the page</summary><div class="meta-disclose-body">{d.lRanking}</div></details>
       <h3 class="check-title">Three checks before you commit</h3>
       <p class="check-sub">The desk has already pulled the evidence below — tick each one off before you spend more time or money.</p>
       <div class="checklist" id="lead-checklist" role="group" aria-label="Three checks before you commit">
@@ -1576,7 +1576,7 @@ html { scroll-behavior: smooth; }
   <div class="market-chart-grid" aria-label="Stock market data charts and market activity indicators"><Fragment set:html={d.marketChartHtml} /></div>
   <details class="sec-accordion" id="source-registry">
     <summary>
-      <span class="agents-eyebrow">// provenance</span>
+      <span class="sec-label">Sources</span>
       <strong>Where every number on this board comes from</strong>
       <em>{d.sourceRegistrySummary}</em>
     </summary>
@@ -1589,12 +1589,12 @@ html { scroll-behavior: smooth; }
 
 <div class="sec sec-minor">
   <div class="sec-label" id="more-wire">More from the wire</div>
-  <div class="verdict-filter" id="verdict-filter" role="group" aria-label="Filter signals by validation verdict">
+  <div class="verdict-filter" id="verdict-filter" role="group" aria-label="Filter signals by what the desk recommends">
     <label>Filter:</label>
     <button class="verdict-btn active" data-verdict="all">All <span class="verdict-count" id="count-all">0</span></button>
-    <button class="verdict-btn verified" data-verdict="advance">Advance <span class="verdict-count" id="count-advance">0</span></button>
-    <button class="verdict-btn mixed" data-verdict="hold">Hold <span class="verdict-count" id="count-hold">0</span></button>
-    <button class="verdict-btn unverified" data-verdict="reject">Park <span class="verdict-count" id="count-reject">0</span></button>
+    <button class="verdict-btn verified" data-verdict="advance">Worth acting on <span class="verdict-count" id="count-advance">0</span></button>
+    <button class="verdict-btn mixed" data-verdict="hold">Needs another look <span class="verdict-count" id="count-hold">0</span></button>
+    <button class="verdict-btn unverified" data-verdict="reject">Set aside <span class="verdict-count" id="count-reject">0</span></button>
   </div>
   <div class="sig-list" id="sig-list"><Fragment set:html={d.secSignals} /></div>
 </div>
@@ -1636,7 +1636,7 @@ html { scroll-behavior: smooth; }
       <button class="theater-toggle" id="theater-toggle" type="button">Pause</button>
     </div>
     <div class="theater-feed" id="theater-feed" aria-live="polite">
-      <div class="theater-event event-source"><span class="theater-time">waiting</span><p><span>Pipeline ↻</span></p></div>
+      <div class="theater-event event-source"><span class="theater-time">waiting</span><p><span>Waiting for the next run ↻</span></p></div>
     </div>
   </details>
   </div>
@@ -1843,14 +1843,16 @@ function renderTheaterEvent(type, data) {
   row.className = 'theater-event event-' + eventClass;
   const time = '<span class="theater-time">' + theaterTime(data.ts) + '</span>';
   if (type === 'source_check') {
-    row.innerHTML = time + '<p><span>' + escapeMapText(data.source) + ' ↻</span> ' + escapeMapText(data.status) + '</p>';
+    const sourceState = { polling: 'checking now', complete: 'checked', error: 'no answer',
+                          failed: 'no answer', skipped: 'skipped' }[data.status] || data.status;
+    row.innerHTML = time + '<p><span>' + escapeMapText(data.source) + ' ↻</span> ' + escapeMapText(sourceState) + '</p>';
   } else if (type === 'signal_found') {
     const color = MAP_COLORS[data.kind] || MAP_COLORS.none;
     row.innerHTML = time + '<p><span style="background:' + color + '">' + escapeMapText(data.kind) + '</span><strong>' + escapeMapText(data.country) + '</strong> · ' + escapeMapText(data.confidence) + '% · ' + escapeMapText(humanizeJs(data.summary)) + '</p>';
   } else if (type === 'dispatch_routed') {
     row.innerHTML = time + '<p><strong>' + escapeMapText(data.recipient) + '</strong> · ' + escapeMapText(data.country) + ' <code>' + escapeMapText(data.dispatch_id) + '</code></p>';
   } else {
-    row.innerHTML = '<p>Cycle ' + escapeMapText(data.cycle) + ' complete — ' + escapeMapText(data.signals) + ' signals</p>';
+    row.innerHTML = '<p>Done — ' + escapeMapText(data.signals) + ' signals found this cycle</p>';
   }
   feed.appendChild(row);
   while (feed.children.length > 50) feed.firstElementChild.remove();
@@ -3064,15 +3066,25 @@ document.querySelectorAll('#sig-list .sig-row').forEach(row => {
   });
 });
 
+// Nothing rolled over past hours, so a cycle three weeks old read as
+// "557h 43m 51s ago". Roll up, and drop precision nobody reads at that scale.
 function formatDuration(seconds) {
   if (seconds == null) return '—';
   if (seconds <= 0) return 'Now';
+  const m = Math.floor(seconds / 60);
   const h = Math.floor(seconds / 3600);
-  const m = Math.floor((seconds % 3600) / 60);
-  const s = seconds % 60;
-  if (h > 0) return h + 'h ' + m + 'm ' + s + 's';
-  if (m > 0) return m + 'm ' + s + 's';
-  return s + 's';
+  const d = Math.floor(seconds / 86400);
+  if (d >= 7) {
+    const w = Math.floor(d / 7);
+    return w + (w === 1 ? ' week' : ' weeks');
+  }
+  if (d >= 1) return d + (d === 1 ? ' day' : ' days');
+  if (h >= 1) {
+    const rm = Math.floor((seconds % 3600) / 60);
+    return rm ? h + 'h ' + rm + 'm' : h + 'h';
+  }
+  if (m >= 1) return m + 'm ' + (seconds % 60) + 's';
+  return seconds + 's';
 }
 
 function updateCycleClock() {

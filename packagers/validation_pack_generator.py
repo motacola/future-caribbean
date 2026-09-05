@@ -328,7 +328,7 @@ def sector_hypotheses_for(country: str, tier2_items: list[dict], wb_obs: list[di
     fdi = [o for o in wb_obs if o.get("indicator_code") == "BX.KLT.DINV.CD.WD"]
     for o in fdi:
         hyps.append({
-            "sector": "FDI-receiving sectors (composition not yet broken down)",
+            "sector": "Which industries received it is not published yet",
             "basis": f"World Bank: FDI net inflows moved {o.get('delta_pct', 0):+.1f}% from {o.get('previous_year')} to {o.get('year')}",
             "status": "macro_signal",
         })
