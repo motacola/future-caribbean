@@ -66,6 +66,9 @@ def retry(
 
 OUTPUT_ROOT_ENV = "ABENG_OUTPUT_ROOT"
 
+# Deprecated pre-rename name; see server.cors_origins_raw.
+LEGACY_OUTPUT_ROOT_ENV = "SIGNAL_FABRIC_OUTPUT_ROOT"
+
 
 def output_path(default: "Path") -> "Path":
     """Where an artefact should actually be written.
@@ -77,7 +80,7 @@ def output_path(default: "Path") -> "Path":
     import os
     from pathlib import Path as _Path
 
-    root = os.environ.get(OUTPUT_ROOT_ENV)
+    root = os.environ.get(OUTPUT_ROOT_ENV) or os.environ.get(LEGACY_OUTPUT_ROOT_ENV)
     if not root:
         return default
 

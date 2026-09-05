@@ -294,3 +294,50 @@ def test_host_check_steps_aside_when_bind_is_widened(monkeypatch):
         )
         with urllib.request.urlopen(req, timeout=5) as response:
             assert response.status == 200
+
+
+def test_legacy_cors_origins_env_still_honoured(monkeypatch):
+    """Deployments still setting the pre-rename variable keep working.
+
+    Remove alongside server.LEGACY_CORS_ORIGINS_ENV once every environment
+    has been switched to ABENG_CORS_ORIGINS.
+    """
+    monkeypatch.setenv("DESK_ADMIN_TOKEN", "correct-test-token")
+    monkeypatch.delenv("ABENG_CORS_ORIGINS", raising=False)
+    monkeypatch.setenv("SIGNAL_FABRIC_CORS_ORIGINS", "https://operator.example")
+    with running_server() as base_url:
+        status, headers, _ = request(
+            base_url,
+            "/api/domains/create",
+            method="OPTIONS",
+            origin="https://operator.example",
+            body=b"",
+        )
+
+    assert status == 204
+    assert headers["Access-Control-Allow-Origin"] == "https://operator.example"
+
+
+def test_new_cors_origins_env_takes_precedence_over_legacy(monkeypatch):
+    monkeypatch.setenv("DESK_ADMIN_TOKEN", "correct-test-token")
+    monkeypatch.setenv("ABENG_CORS_ORIGINS", "https://new.example")
+    monkeypatch.setenv("SIGNAL_FABRIC_CORS_ORIGINS", "https://old.example")
+    with running_server() as base_url:
+        new_status, new_headers, _ = request(
+            base_url,
+            "/api/domains/create",
+            method="OPTIONS",
+            origin="https://new.example",
+            body=b"",
+        )
+        old_status, old_headers, _ = request(
+            base_url,
+            "/api/domains/create",
+            method="OPTIONS",
+            origin="https://old.example",
+            body=b"",
+        )
+
+    assert new_status == 204
+    assert new_headers["Access-Control-Allow-Origin"] == "https://new.example"
+    assert old_headers.get("Access-Control-Allow-Origin") != "https://old.example"
