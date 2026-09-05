@@ -1,4 +1,4 @@
-🌴 *Caribbean Opportunity Dispatch — Decision Routes Ready*
+🌴 *Abeng — Decision Routes Ready*
 Cycle: `20260603` · 2026-06-03 13:30 UTC
 
 *What this is:*
@@ -48,4 +48,4 @@ Data → 12 signal clusters → 29 persona routes → 6 personas → action/capi
 • `outbox/delivery_manifest.json` — channel handoff manifest
 
 No changed desk = no message.
-- Caribbean Opportunity Dispatch
+- Abeng
