@@ -1,1 +1,5 @@
-mcp>=1.0.0
+# The adapter is written against the v1 SDK (mcp.server.fastmcp.FastMCP).
+# v2 renamed FastMCP to MCPServer and moved the module, so an unbounded
+# `mcp>=1.0.0` installs 2.x and the server cannot start. Pin until the
+# adapter is ported to the v2 API.
+mcp>=1.0.0,<2

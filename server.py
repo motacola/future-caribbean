@@ -897,48 +897,14 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
             "NDBC": "ndbc",
             "CARICOM / CDB": "tier2",
         }
-        # Freshness is judged the same way the deployed function does it
-        # (api/status.py): a snapshot that exists is not proof a source is
-        # alive. A run that collected nothing reports ok=false and must not
-        # reset the clock, and a timestamp older than the source's own
-        # refresh cadence is stale, not healthy.
-        health_bundle = {}
-        try:
-            health_bundle = json.loads(
-                (APP_DIR / "api" / "source-health-data.json").read_text()
-            )
-        except Exception:
-            pass
+        # One freshness rule for every surface (see packagers/source_health):
+        # a snapshot file existing is not proof a source is alive, a run that
+        # collected nothing must not reset the clock, and a snapshot older
+        # than its source's own cadence is stale, not healthy.
+        from packagers.source_health import source_freshness
 
-        sources: dict = {}
-        n_sources_stale = 0
-        for name, key in source_keys.items():
-            snap_path = APP_DIR / "data" / key / "latest.json"
-            fetched_at = ""
-            if snap_path.exists():
-                try:
-                    d = json.loads(snap_path.read_text())
-                    if d.get("ok") is not False:
-                        fetched_at = d.get("fetched_at", "")
-                except Exception:
-                    pass
-            entry = health_bundle.get(key) or {}
-            if not fetched_at:
-                fetched_at = entry.get("fetched_at") or ""
-            age_minutes = _age_minutes(fetched_at)
-            max_age_minutes = _max_age_minutes(entry)
-            stale = age_minutes is not None and age_minutes > max_age_minutes
-            if stale:
-                n_sources_stale += 1
-            sources[key] = {
-                "name": name,
-                "ok": bool(fetched_at),
-                "fetched_at": fetched_at,
-                "age_minutes": age_minutes,
-                "max_age_minutes": max_age_minutes,
-                "stale": stale,
-                "carried_forward": bool(entry.get("carried_forward")),
-            }
+        sources = source_freshness(APP_DIR, source_keys)
+        n_sources_stale = sum(1 for s in sources.values() if s["stale"])
 
         desk: dict = {}
         desk_p = APP_DIR / "outbox" / "dispatch_desk.json"

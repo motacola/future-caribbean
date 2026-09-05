@@ -29,8 +29,23 @@ sys.path.insert(0, str(ROOT))
 
 try:
     from mcp.server.fastmcp import FastMCP
-except ImportError:
-    print("ERROR: 'mcp' package not installed. Run: pip install -r mcp_adapter/requirements.txt", file=sys.stderr)
+except ImportError as exc:
+    # Distinguish "no SDK" from "wrong SDK": v2 renamed FastMCP to MCPServer
+    # and moved the module, so an mcp 2.x install fails here too — and
+    # reporting that as "not installed" sends people to reinstall the very
+    # version that broke it.
+    try:
+        import mcp as _mcp  # noqa: F401
+    except ImportError:
+        print("ERROR: 'mcp' package not installed. Run: pip install -r mcp_adapter/requirements.txt",
+              file=sys.stderr)
+    else:
+        print("ERROR: the installed 'mcp' package does not provide "
+              "mcp.server.fastmcp.FastMCP — this adapter targets the v1 SDK "
+              "and v2 renamed it to MCPServer.\n"
+              f"       Underlying import error: {exc}\n"
+              "       Install a compatible version: pip install -r mcp_adapter/requirements.txt",
+              file=sys.stderr)
     sys.exit(1)
 
 from agent.query import load_desk, ask, explain_lead, what_changed, drill_country, routes_for_persona, draft_note
@@ -59,18 +74,11 @@ def desk_status() -> dict:
         "NDBC": "ndbc",
         "CARICOM / CDB": "tier2",
     }
-    sources: dict = {}
-    for name, key in source_keys.items():
-        p = ROOT / "data" / key / "latest.json"
-        ok = p.exists()
-        fetched_at = ""
-        if ok:
-            try:
-                d = json.loads(p.read_text())
-                fetched_at = d.get("fetched_at", "")
-            except Exception:
-                pass
-        sources[key] = {"name": name, "ok": ok, "fetched_at": fetched_at}
+    # One freshness rule for every surface (see packagers/source_health):
+    # a snapshot file existing is not proof a source is alive.
+    from packagers.source_health import source_freshness
+
+    sources = source_freshness(ROOT, source_keys)
 
     # Feedback outcomes
     feedback: dict = {}
