@@ -815,7 +815,7 @@ export function loadDashboardData() {
     // A market with nothing behind it yet should not speak in the same voice as
     // a validated lead.
     const watchlist = /no detail yet/i.test(title);
-    return `<a class="lw-item${watchlist ? ' lw-watch' : ''}" href="#leaflet-map" data-country="${esc(country)}">` +
+    return `<a class="lw-item${watchlist ? ' lw-watch' : ''}" href="#front-page" data-country="${esc(country)}">` +
       `<i style="background:${color}"></i>` +
       `<span class="lw-kicker">${esc(t.country_cluster || 'Region')}</span>` +
       (watchlist ? '<span class="lw-tag">Watchlist</span>' : '') +
@@ -825,7 +825,7 @@ export function loadDashboardData() {
   // ── Front pointers ─────────────────────────────────────────
   let frontPointersHtml = tickerItems.slice(1, 4).map((t: any) => {
     const country = canonicalCountry(t.country_cluster || '');
-    return `<a class="fp-item" href="#leaflet-map" data-country="${esc(country)}">` +
+    return `<a class="fp-item" href="#front-page" data-country="${esc(country)}">` +
       `<span class="fp-kicker">${esc(t.country_cluster || 'Region')}</span>` +
       `<span class="fp-title">${esc(humanize(t.title || ''))}</span></a>`;
   }).join('');

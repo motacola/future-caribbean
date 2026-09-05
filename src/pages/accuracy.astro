@@ -107,6 +107,7 @@ const fmtDate = (iso: string): string => {
 
     <section>
       <h2>Resolution mix by confidence band</h2>
+      <div class="table-scroll">
       <table>
         <thead>
           <tr><th>Band</th><th>Resolved</th><th>Confirmed</th><th>Confirmation rate</th></tr>
@@ -124,10 +125,12 @@ const fmtDate = (iso: string): string => {
           ))}
         </tbody>
       </table>
+      </div>
     </section>
 
     <section>
       <h2>The public commitment record</h2>
+      <div class="table-scroll">
       <table>
         <thead>
           <tr><th>Milestone</th><th>Needs resolved</th><th>Brier ceiling</th><th>So far</th><th>Status</th></tr>
@@ -144,6 +147,7 @@ const fmtDate = (iso: string): string => {
           ))}
         </tbody>
       </table>
+      </div>
     </section>
 
     <section class="method">
@@ -174,7 +178,10 @@ const fmtDate = (iso: string): string => {
     .accuracy-wrap .sub { font-size: 12px; color: var(--sub); margin-top: 4px; }
     .accuracy-wrap .delta { font-size: 12px; margin-top: 8px; font-weight: 600; }
     .accuracy-wrap h2 { font-size: 19px; margin: 36px 0 12px; }
-    .accuracy-wrap table { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; }
+    /* Five columns cannot fit a phone. The table scrolls inside its own box
+       so the page itself never scrolls sideways. */
+    .accuracy-wrap .table-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--r); background: var(--card); }
+    .accuracy-wrap table { width: 100%; min-width: 420px; border-collapse: collapse; background: var(--card); }
     .accuracy-wrap th { font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); }
     .accuracy-wrap td { padding: 10px 12px; border-bottom: 1px solid var(--border); font-size: 13px; }
     .accuracy-wrap tr:last-child td { border-bottom: none; }

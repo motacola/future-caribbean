@@ -53,6 +53,24 @@ BLOCKED_PREFIXES = (
     "Procfile", "fly.toml", "vercel.json", ".gitignore", ".dockerignore",
 )
 
+def _astro_page_exists(clean: str) -> bool:
+    """True when dist/<clean>/index.html is a real page built by Astro.
+
+    Guards against traversal and absolute paths: the resolved directory has
+    to sit inside dist/.
+    """
+    candidate = clean.strip("/")
+    if not candidate or candidate.startswith("/") or ".." in candidate.split("/"):
+        return False
+    dist = (APP_DIR / "dist").resolve()
+    try:
+        target = (dist / candidate / "index.html").resolve()
+        target.relative_to(dist)
+    except (ValueError, OSError):
+        return False
+    return target.is_file()
+
+
 # ── Source freshness ─────────────────────────────────────────
 # Same contract as the deployed function in api/status.py: a source is
 # judged against its own refresh cadence, with one missed refresh of grace.
@@ -163,7 +181,11 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
             self._api_coordination_opportunity(opportunity_id)
             return
         if path == "/api/pipeline/stream":
-            self._api_pipeline_stream(parse_qs(parsed.query).get("replay") == ["1"])
+            stream_query = parse_qs(parsed.query)
+            self._api_pipeline_stream(
+                stream_query.get("replay") == ["1"],
+                run=stream_query.get("run") == ["1"],
+            )
             return
         if path == "/api/pipeline/status":
             self._api_status()
@@ -233,6 +255,13 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
             self.path = "/dist/index.html"
         elif clean in ("build", "build.html"):
             self.path = "/dist/build/index.html"
+        # Every other Astro page. Resolved from what the build actually
+        # produced rather than a hand-maintained list: /accuracy,
+        # /capability-matches, /opportunity-resolution and /regional-connections
+        # were added to the site and linked from the home page, but never here,
+        # so the local full-stack server 404'd on its own navigation.
+        elif _astro_page_exists(clean):
+            self.path = "/dist/" + clean.strip("/") + "/index.html"
         # Legacy pages retired June 2026 — redirect old links to Astro routes
         elif clean == "dashboard.html":
             self.send_response(301)
@@ -1306,7 +1335,23 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
 
     # ── /api/pipeline/stream (SSE) ─────────────────────────────
 
-    def _api_pipeline_stream(self, replay: bool = False) -> None:
+    def _api_pipeline_stream(self, replay: bool = False, run: bool = False) -> None:
+        # Watching the cycle theater is a read. Starting a cycle rewrites every
+        # published artefact, so it takes an explicit ?run=1 and the admin token
+        # — otherwise loading the dashboard would launch a pipeline run per page
+        # view, republishing a degraded cycle over good data whenever a source
+        # is down. Auth is checked before the SSE headers go out, because
+        # _require_admin needs to answer with JSON.
+        if run and not replay:
+            if not self._require_admin():
+                return
+            _start_pipeline_cycle_if_idle()
+
+        # With no cycle in flight there is nothing live to show, so serve the
+        # recorded cycle instead of holding an empty stream open.
+        if not replay and not _pipeline_running:
+            replay = True
+
         self.send_response(200)
         self.send_header("Content-Type", "text/event-stream")
         self.send_header("Cache-Control", "no-cache")
@@ -1331,7 +1376,6 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
         subscriber: queue.Queue = queue.Queue()
         with _pipeline_subscribers_lock:
             _pipeline_subscribers.add(subscriber)
-        _start_pipeline_cycle_if_idle()
         try:
             while True:
                 try:
