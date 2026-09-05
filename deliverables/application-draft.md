@@ -1,4 +1,4 @@
-# Future Caribbean Application Draft — Caribbean Opportunity Dispatch
+# Future Caribbean Application Draft — Abeng
 
 ## Track
 
@@ -6,11 +6,11 @@
 
 ## Project name
 
-Caribbean Opportunity Dispatch
+Abeng
 
 ## One-liner
 
-Caribbean Opportunity Dispatch turns fragmented Caribbean public data into decision-ready routes: what changed, who should act, what they should do next, and how feedback changes the next cycle.
+Abeng turns fragmented Caribbean public data into decision-ready routes: what changed, who should act, what they should do next, and how feedback changes the next cycle.
 
 ## Category
 
@@ -22,11 +22,11 @@ Public data about Caribbean economies already exists. World Bank indicators, IDB
 
 Investors miss early signals because they are buried across ten different portals. Founders miss procurement windows because no one connects the notice to their capability. Policy teams react late because they lack a continuous reading. The gap is not data availability. The coordination layer is missing.
 
-Caribbean Opportunity Dispatch fills that gap — turning fragmented public data into routed decision clusters with evidence, persona-specific actions, and a feedback loop that learns what gets acted on.
+Abeng fills that gap — turning fragmented public data into routed decision clusters with evidence, persona-specific actions, and a feedback loop that learns what gets acted on.
 
 ## Solution
 
-Caribbean Opportunity Dispatch is a live Dispatch Desk that converts fragmented public data into routed decision clusters.
+Abeng is a live Dispatch Desk that converts fragmented public data into routed decision clusters.
 
 Each cycle:
 
@@ -44,7 +44,7 @@ The product is not the dashboard. The product is the decision route: signal -> p
 
 This is not a sector-specific app. Finance, disaster risk, food systems, ocean systems, tourism, and procurement are signal domains inside the system.
 
-Open Track is the right fit because Caribbean Opportunity Dispatch is cross-sector coordination infrastructure. It helps fragmented markets move from public signal to economic action faster.
+Open Track is the right fit because Abeng is cross-sector coordination infrastructure. It helps fragmented markets move from public signal to economic action faster.
 
 ## Users
 
@@ -93,7 +93,7 @@ Faster signal routing can improve how capital, operators, media, and institution
 
 ## Five-Year Potential
 
-Caribbean Opportunity Dispatch can become a regional intelligence and coordination layer for investors, operators, institutions, and ecosystem builders.
+Abeng can become a regional intelligence and coordination layer for investors, operators, institutions, and ecosystem builders.
 
 In five years it could support:
 
@@ -117,4 +117,4 @@ In five years it could support:
 
 ## Closing Claim
 
-Caribbean Opportunity Dispatch compresses the time between public signal and economic action.
+Abeng compresses the time between public signal and economic action.

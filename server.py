@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Serve Caribbean Opportunity Dispatch — product-first homepage with live API."""
+"""Serve Abeng — product-first homepage with live API."""
 
 import hmac
 import http.server
@@ -1150,7 +1150,7 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
                 + (f"Risk flag: {risks[0]}\n\n" if risks else "")
                 + f"Source: {source_label}\nConfidence: {confidence}\n\n"
                 f"{disclaimer}\n"
-                f"Caribbean Opportunity Dispatch"
+                f"Abeng"
             )
         else:  # memo
             brief_title = "CARIBBEAN HAZARD BRIEF" if domain == "climate" else "CARIBBEAN OPPORTUNITY BRIEF"
@@ -1166,7 +1166,7 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
                 + (f"RISK FLAG\n{risks[0]}\n\n" if risks else "")
                 + f"{'─' * 36}\n"
                 f"{disclaimer}\n"
-                f"Caribbean Opportunity Dispatch"
+                f"Abeng"
             )
 
         self._json({

@@ -22,7 +22,7 @@ Do not deploy externally unless Chris explicitly says to deploy.
 
 ## Build Scope
 
-1. Reposition docs around the actual product: Caribbean Opportunity Dispatch. Keep Caribbean Signal OS as the underlying architecture/system.
+1. Reposition docs around the actual product: Abeng. Keep Abeng as the underlying architecture/system.
 2. Update stale demo/submission references so the judge flow points to the current Phase 3 artifacts: opportunity dispatches, regional thesis, why-now, feedback review, judge brief, dashboard last.
 3. Upgrade dashboard/generate.py so dashboard.html becomes a judge-ready operator console showing product purpose, current regional thesis, why-now context, top dispatches, persona routing counts, feedback loop state, and source health.
 4. Add deliverables/judge-demo-walkthrough.md with a tight 2-minute walkthrough.

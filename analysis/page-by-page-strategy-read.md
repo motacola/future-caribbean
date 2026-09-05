@@ -8,19 +8,19 @@ The missing piece is not another data source or a better brief. The missing piec
 
 Future Caribbean's homepage says the hidden cost is the gap between when something should happen and when it actually happens. Every strong track turns that gap into a workflow: payments settle, freight gets matched, patients get routed, alerts get sent, guests get rerouted, property transactions move.
 
-Caribbean Signal OS currently reduces analysis time, but it does not yet visibly reduce action time.
+Abeng currently reduces analysis time, but it does not yet visibly reduce action time.
 
 That is the strategy problem.
 
 The product should not be pitched as "regional intelligence." That is too soft. It should be pitched as:
 
-    Caribbean Opportunity Dispatch
+    Abeng
 
 A live routing system that turns public Caribbean signals into specific follow-up actions for regional operators and diaspora capital.
 
 The sharper product sentence:
 
-    Caribbean Opportunity Dispatch watches fragmented Caribbean public data, detects investable or operational signals, routes them to the right regional actor and diaspora capital audience, and tracks whether the signal triggered follow-up.
+    Abeng watches fragmented Caribbean public data, detects investable or operational signals, routes them to the right regional actor and diaspora capital audience, and tracks whether the signal triggered follow-up.
 
 ## The Homepage Is The Master Spec
 
@@ -35,7 +35,7 @@ Core homepage requirements:
 - Operate inside the region and solve real problems.
 - Turn the build into a company.
 
-Implication for Signal OS:
+Implication for Abeng:
 
 The product must name the exact delay it compresses.
 
@@ -71,11 +71,11 @@ The product pattern:
 
     supply/demand signal -> match -> route -> delivery/logistics outcome
 
-Threat to Signal OS:
+Threat to Abeng:
 
 Food teams can show a real workflow: a producer has supply, a market has demand, freight is matched. The value is visible.
 
-What Signal OS should borrow:
+What Abeng should borrow:
 
 Every signal needs a "matched to whom" layer. A Guyana FDI signal should not stop at "investigate Guyana." It should route to a persona, recipient type, and follow-up path.
 
@@ -95,11 +95,11 @@ The product pattern:
 
     risk signal -> triage -> route -> escalation/care outcome
 
-Threat to Signal OS:
+Threat to Abeng:
 
 Healthcare naturally has urgency and human consequence. It is easy to understand why routing matters.
 
-What Signal OS should borrow:
+What Abeng should borrow:
 
 Do not just score signals. Triage them. Each signal needs severity, action window, escalation path, and owner.
 
@@ -120,11 +120,11 @@ The product pattern:
 
     fragmented financial data -> match/routing -> transaction/capital outcome
 
-Threat to Signal OS:
+Threat to Abeng:
 
 This is the most dangerous competing track because it directly owns the capital movement story. It can show capital moving, not just capital being informed.
 
-What Signal OS should borrow:
+What Abeng should borrow:
 
 If we keep "capital" in the pitch, we need a capital-adjacent action. Not actual regulated investing, but something concrete:
 - diligence request
@@ -154,11 +154,11 @@ The product pattern:
 
     live risk -> trigger -> alert/logistics/payout -> outcome
 
-Threat to Signal OS:
+Threat to Abeng:
 
 The disaster track has the clearest action loop. A judge instantly understands a trigger becoming an alert.
 
-What Signal OS should borrow:
+What Abeng should borrow:
 
 Use trigger language. Track 08 signals should have trigger conditions:
 - "If FDI velocity > X and procurement pipeline exists, route to investor/founder digest."
@@ -180,11 +180,11 @@ The product pattern:
 
     forecast -> optimize -> dispatch/coordination outcome
 
-Threat to Signal OS:
+Threat to Abeng:
 
 Energy teams can show dashboards, but the stronger ones will show optimization and dispatch decisions.
 
-What Signal OS should borrow:
+What Abeng should borrow:
 
 The output must make a decision recommendation, not just narrative. "Best immediate lane" should become standard:
 - monitor
@@ -211,13 +211,13 @@ The product pattern:
 
     monitoring -> anomaly -> alert -> enforcement/resource decision
 
-Threat to Signal OS:
+Threat to Abeng:
 
 Ocean intelligence overlaps with our existing NOAA/NDBC layer. But ocean teams may make the action clearer: detect illegal fishing, alert someone.
 
-What Signal OS should borrow:
+What Abeng should borrow:
 
-Field feedback matters. The intelligence track asks what spreads and what is trusted. Signal OS should have a lightweight "field note" or "recipient reply" path, even if demo-simulated.
+Field feedback matters. The intelligence track asks what spreads and what is trusted. Abeng should have a lightweight "field note" or "recipient reply" path, even if demo-simulated.
 
 ### 07. Tourism & Transportation
 
@@ -235,11 +235,11 @@ The product pattern:
 
     traveler/operator need -> coordination -> booking/rerouting/resolution
 
-Threat to Signal OS:
+Threat to Abeng:
 
 Very demo-friendly. A WhatsApp tourism agent will feel alive immediately.
 
-What Signal OS should borrow:
+What Abeng should borrow:
 
 Distribution cannot be abstract. For the demo, show the generated message as if it is going to a real channel and a real user role. Telegram is okay, but a WhatsApp-style operator digest may be more aligned with the site.
 
@@ -259,7 +259,7 @@ What the page explicitly wants:
 - Define who uses it and what decision changes.
 - Learn what spreads, what is trusted, and what drives action.
 
-Where Signal OS fits:
+Where Abeng fits:
 
 Technically, we are very aligned:
 - watcher agents exist
@@ -269,13 +269,13 @@ Technically, we are very aligned:
 - output files exist
 - state exists
 
-Where Signal OS misses:
+Where Abeng misses:
 
 The page is explicit that dashboards and reports are disqualified patterns. Our strongest artifacts are still briefs and markdown files. The product must visibly become a dispatch/feedback loop.
 
 Best Track 08 wedge:
 
-    Caribbean Opportunity Dispatch for diaspora investors and regional operators.
+    Abeng for diaspora investors and regional operators.
 
 This combines two examples the track already gives:
 - Caribbean Market Pulse
@@ -305,11 +305,11 @@ The product pattern:
 
     lead/transaction/development need -> multi-party coordination -> transaction progress
 
-Threat to Signal OS:
+Threat to Abeng:
 
 Real estate has a clear commercial buyer and concrete workflow. It can look like a company faster.
 
-What Signal OS should borrow:
+What Abeng should borrow:
 
 "Deal room" thinking. A signal should open a lightweight opportunity card:
 - why now
@@ -333,11 +333,11 @@ The product pattern:
 
     creative asset/audience/event -> operations/distribution/monetization outcome
 
-Threat to Signal OS:
+Threat to Abeng:
 
 Arts entries may be more emotionally compelling and easier to demo visually.
 
-What Signal OS should borrow:
+What Abeng should borrow:
 
 Narrative matters. Track 08 says narrative is part of the product. The current outputs are too institutionally worded. A winning version needs channel-native content:
 - investor memo
@@ -361,11 +361,11 @@ The product pattern:
 
     new category -> working infrastructure -> scalable company logic
 
-Threat to Signal OS:
+Threat to Abeng:
 
 Open Track is less directly threatening, but a strong agentic infrastructure team may look more technically ambitious.
 
-What Signal OS should borrow:
+What Abeng should borrow:
 
 If we emphasize OpenClaw/multi-agent architecture, do it as support, not the product. Judges are not buying our agent graph; they are buying the outcome.
 
@@ -414,11 +414,11 @@ Once this exists, every output can become secondary:
 
 ### Product Name
 
-Keep "Caribbean Signal OS" as the system/architecture name.
+Keep "Abeng" as the system/architecture name.
 
 Pitch the actual product as:
 
-    Caribbean Opportunity Dispatch
+    Abeng
 
 or:
 
@@ -557,7 +557,7 @@ Use demo feedback if real delivery is not appropriate.
 
 The demo should start with the delay:
 
-    "A public signal appears. Normally it dies in a PDF or portal. Signal OS routes it into action."
+    "A public signal appears. Normally it dies in a PDF or portal. Abeng routes it into action."
 
 Then show:
 - pipeline command
@@ -585,11 +585,11 @@ Better:
 
 ## Final Strategic Answer
 
-The product is not "Caribbean Signal OS produces market briefs."
+The product is not "Abeng produces market briefs."
 
 The product is:
 
-    Caribbean Opportunity Dispatch, powered by Caribbean Signal OS.
+    Abeng.
 
 It is for:
 

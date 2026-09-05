@@ -1,5 +1,5 @@
 # Future Caribbean Application Draft v2 — Abeng
-# Caribbean Opportunity Dispatch
+# Abeng
 **Last updated: 2026-06-18**
 
 ---
@@ -12,7 +12,7 @@
 
 ## Project name
 
-**Caribbean Opportunity Dispatch** — powered by Abeng
+**Abeng**
 
 ---
 

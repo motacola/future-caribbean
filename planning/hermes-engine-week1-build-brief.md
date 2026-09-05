@@ -36,7 +36,7 @@ Hand-written JSON (a `TOOLS_MANIFEST` dict in `server.py` or
 `method`, `path`, `params` (JSON-schema-ish), `example_request`,
 `example_response_keys`. Cover: ask, status, validation-packs (both),
 domains, reasoning, feedback-apply (mark `"writes": true`). Include top-level
-`{"engine": "Abeng", "product": "Caribbean Opportunity Dispatch",
+`{"engine": "Abeng", "product": "Abeng",
 "version": 1}`.
 
 ### 3. Discovery files, served and committed

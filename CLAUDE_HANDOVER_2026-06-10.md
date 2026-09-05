@@ -10,7 +10,7 @@ Date: 2026-06-10
 
 ## Start Here
 
-The product is **Caribbean Opportunity Dispatch**, powered by **Caribbean Signal OS**.
+The product is **Abeng**.
 
 It watches fragmented Caribbean public data, detects cross-source signals, routes each signal to a relevant decision-maker, packages channel-ready dispatches, and learns from recipient feedback.
 

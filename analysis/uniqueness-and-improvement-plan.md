@@ -1,4 +1,4 @@
-# Caribbean Signal OS - Uniqueness and Improvement Plan
+# Abeng - Uniqueness and Improvement Plan
 
 Date: 2026-05-26
 
@@ -28,7 +28,7 @@ That is not enough.
 
 The unique product wedge should be:
 
-    Caribbean Opportunity Dispatch, powered by Caribbean Signal OS.
+    Abeng.
 
 A continuous Track 08 routing layer that turns fragmented Caribbean public data into opportunity dispatches for regional operators and diaspora capital networks, then learns which dispatches trigger follow-up.
 
@@ -52,7 +52,7 @@ What they do not do:
 - package the same signal differently for diaspora investors, founders, operators, or media
 
 Implication:
-Signal OS should position these as inputs, not competitors.
+Abeng should position these as inputs, not competitors.
 
 ### 2. Investment Catalogues and Promotion Sites
 
@@ -72,7 +72,7 @@ What they do not do:
 - learn from investor/operator feedback
 
 Implication:
-Signal OS should not try to be a static investment catalogue. It should be the early-warning and routing layer that says, "this market/opportunity deserves attention now."
+Abeng should not try to be a static investment catalogue. It should be the early-warning and routing layer that says, "this market/opportunity deserves attention now."
 
 ### 3. Diaspora / Angel Investor Networks
 
@@ -93,7 +93,7 @@ What they do not do:
 - route opportunities based on live signals
 
 Implication:
-These could be recipients or partners in the product story. Signal OS can feed better signals into these networks.
+These could be recipients or partners in the product story. Abeng can feed better signals into these networks.
 
 ### 4. Procurement and Tender Tools
 
@@ -138,7 +138,7 @@ What they do not do:
 - make distribution and next-cycle learning central
 
 Implication:
-This is the category Signal OS will be mistaken for unless the demo visibly shows dispatch and feedback.
+This is the category Abeng will be mistaken for unless the demo visibly shows dispatch and feedback.
 
 ## What Is Actually Unique
 
@@ -179,11 +179,11 @@ More specifically:
 
 Architecture:
 
-    Caribbean Signal OS
+    Abeng
 
 Product:
 
-    Caribbean Opportunity Dispatch
+    Abeng
 
 Alternative if we want a less salesy name:
 
@@ -191,7 +191,7 @@ Alternative if we want a less salesy name:
 
 Recommended pitch:
 
-    Caribbean Opportunity Dispatch, powered by Caribbean Signal OS, turns fragmented Caribbean public data into routed, decision-grade opportunity signals for regional operators and diaspora capital networks.
+    Abeng turns fragmented Caribbean public data into routed, decision-grade opportunity signals for regional operators and diaspora capital networks.
 
 ### Primary User
 
@@ -219,7 +219,7 @@ A public signal appears.
 
 Normally, it sits in a PDF, portal, dashboard, or dataset until someone notices it.
 
-Signal OS detects it, enriches it, chooses the audience, generates a dispatch, sends it through a channel, and records whether it caused follow-up.
+Abeng detects it, enriches it, chooses the audience, generates a dispatch, sends it through a channel, and records whether it caused follow-up.
 
 Example:
 
@@ -440,7 +440,7 @@ One-liner:
 
 Short pitch:
 
-    Caribbean Opportunity Dispatch turns fragmented Caribbean public data into routed opportunity signals for regional operators and diaspora investors, then learns which signals trigger follow-up.
+    Abeng turns fragmented Caribbean public data into routed opportunity signals for regional operators and diaspora investors, then learns which signals trigger follow-up.
 
 Judge framing:
 

@@ -1,10 +1,10 @@
-# Caribbean Opportunity Dispatch — Judge Brief
+# Abeng — Judge Brief
 
 Generated: 2026-06-03 13:30 UTC
 
 ## What This Proves
 
-Caribbean Opportunity Dispatch is the product. Caribbean Signal OS is the architecture underneath. It watches public regional data, merges weak signals across sources, packages the strongest signals into opportunity dispatches with persona routing, and maintains a persistent feedback loop — the system learns which signals actually changed decisions.
+Abeng is the product. Abeng is the architecture underneath. It watches public regional data, merges weak signals across sources, packages the strongest signals into opportunity dispatches with persona routing, and maintains a persistent feedback loop — the system learns which signals actually changed decisions.
 
 ## Live Run Snapshot
 

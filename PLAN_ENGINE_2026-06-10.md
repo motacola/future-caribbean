@@ -13,8 +13,8 @@ Status: APPROVED with decisions (see Decisions section) — 2026-06-10
    writes exposed unauthenticated).
 3. **Ask mode: deterministic.** The existing query engine is the demo story:
    free, offline, cited, zero hallucination risk. Framed as a feature.
-4. **Branding: dual.** "Caribbean Opportunity Dispatch — powered by Signal
-   Fabric" everywhere: product story for judges, platform story for depth.
+4. **Branding: single.** "Abeng" everywhere: product story for judges,
+   platform story for depth.
 5. **Agent-agnostic (locked 2026-06-10).** The engine must plug into ANY
    agent — Claude, Hermes, OpenClaw, or anything HTTP-capable. The primary
    contract is the plain HTTP API + a machine-readable tool manifest

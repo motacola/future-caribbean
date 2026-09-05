@@ -1,8 +1,8 @@
-# Demo Script — Caribbean Opportunity Dispatch
+# Demo Script — Abeng
 
 ## One-liner
 
-Caribbean Opportunity Dispatch turns fragmented Caribbean public data into decision-ready routes: what changed, who should act, what they should do next, and how feedback changes the next cycle.
+Abeng turns fragmented Caribbean public data into decision-ready routes: what changed, who should act, what they should do next, and how feedback changes the next cycle.
 
 **Track:** 10 — Open Track.
 

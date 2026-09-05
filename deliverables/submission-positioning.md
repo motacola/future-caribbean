@@ -1,16 +1,14 @@
-# Buildathon Deliverable Positioning — Caribbean Opportunity Dispatch
+# Buildathon Deliverable Positioning — Abeng
 
-The product is **Caribbean Opportunity Dispatch**, not a dashboard.
+The product is **Abeng**, not a dashboard.
 
 The dashboard is only an operator console for proving the system is alive. The deliverables are the routed dispatches, persona dispatch packets, delivery manifest, regional thesis, why-now context, and feedback loop.
-
-Caribbean Signal OS is the architecture underneath — the terms are distinct.
 
 ## Track Fit
 
 **Chosen track: 10 — Open Track.**
 
-Caribbean Opportunity Dispatch belongs in Open Track because it is not a sector-specific app. It is an agentic market coordination layer for fragmented Caribbean economies.
+Abeng belongs in Open Track because it is not a sector-specific app. It is an agentic market coordination layer for fragmented Caribbean economies.
 
 Finance, disaster risk, food, ocean, tourism, energy, and procurement are signal domains inside the system. The product category is the cross-sector routing infrastructure that turns those signals into decision-ready dispatches for specific people.
 
@@ -18,7 +16,7 @@ The Open Track claim:
 
     Fragmented public data -> agentic signal pipeline -> routed decisions -> feedback -> faster regional action
 
-Caribbean Opportunity Dispatch (product) / Caribbean Signal OS (architecture) maps to this chain as follows:
+Abeng maps to this chain as follows:
 
 | Requirement | Implementation |
 |---|---|
@@ -57,7 +55,7 @@ Open Track lets the submission tell the truth: this is coordination infrastructu
 
 ## Product Framing
 
-**Caribbean Opportunity Dispatch** is the first product surface:
+**Abeng** is the first product surface:
 
 - Routed decision clusters for seven personas: diaspora investor, founder/operator, ecosystem builder, regional operator, procurement watcher, policy/media, tourism/logistics
 - Dispatch Desk view that groups repeated persona routes under one signal so the decision, evidence, action, and feedback are visible at once
@@ -83,7 +81,7 @@ This fills the **last mile between public regional data and acted-on opportunity
 
 The short version:
 
-> Caribbean Opportunity Dispatch compresses the time between public signal and economic action.
+> Abeng compresses the time between public signal and economic action.
 
 ## Dashboard Role
 

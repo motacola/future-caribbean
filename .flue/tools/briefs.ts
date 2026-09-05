@@ -38,7 +38,7 @@ export async function generateBrief(input: { audience?: string; channel?: string
 
   const lines: string[] = [];
   if (channel.includes('whatsapp') || channel.includes('telegram')) {
-    lines.push(`Caribbean Opportunity Dispatch — ${desk.cycle_id || 'current cycle'}`);
+    lines.push(`Abeng — ${desk.cycle_id || 'current cycle'}`);
     lines.push('');
     for (const [i, cluster] of clusters.entries()) {
       lines.push(`${i + 1}. ${cluster.title || 'Untitled signal'}`);
@@ -50,7 +50,7 @@ export async function generateBrief(input: { audience?: string; channel?: string
     }
     lines.push('Screening intelligence only. Not investment advice.');
   } else {
-    lines.push(`# Caribbean Opportunity Dispatch — ${desk.cycle_id || 'current cycle'}`);
+    lines.push(`# Abeng — ${desk.cycle_id || 'current cycle'}`);
     lines.push('');
     lines.push(`Audience: ${audience}`);
     lines.push(`Format: ${channel}`);

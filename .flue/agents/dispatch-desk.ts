@@ -12,7 +12,7 @@ export const route: AgentRouteHandler = async (_c, next) => next();
 
 const askDispatchTool = defineTool({
   name: 'ask_dispatch',
-  description: 'Ask the deterministic Caribbean Opportunity Dispatch query layer a grounded question about the current cycle.',
+  description: 'Ask the deterministic Abeng query layer a grounded question about the current cycle.',
   parameters: Type.Object({
     question: Type.String({ description: 'Question about the current dispatch cycle, country, persona, lead signal, or feedback.' }),
   }),
@@ -205,7 +205,7 @@ export default createAgent(() => ({
     archiveCycleTool,
     listCycleHistoryTool,
   ],
-  instructions: `You are the Caribbean Opportunity Dispatch agent.
+  instructions: `You are the Abeng agent.
 
 Answer questions about the current Caribbean signal cycle using the provided tools. Treat local artifacts as the source of truth. Do not invent countries, signals, sources, delivery state, or feedback state. If the tool output says no data is available, say that the pipeline must be run first.
 

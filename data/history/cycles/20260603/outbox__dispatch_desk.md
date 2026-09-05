@@ -2,7 +2,7 @@
 
 Generated: 2026-06-03 13:30 UTC
 
-Caribbean Opportunity Dispatch turns fragmented regional data into decision-ready routes. This is the primary product surface; Telegram/email are delivery channels and the dashboard is the operator/audit view.
+Abeng turns fragmented regional data into decision-ready routes. This is the primary product surface; Telegram/email are delivery channels and the dashboard is the operator/audit view.
 
 ## Open Track Coordination Chain
 
