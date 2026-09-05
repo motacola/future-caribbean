@@ -60,7 +60,7 @@
 
 ## Next Steps (for Abeng positioning)
 
-1. **Submit application before July 3** — Abeng qualifies (Abeng is a deployed, verifiable artifact)
+1. **Submit application before July 3** — Abeng qualifies (it is a deployed, verifiable artifact)
 2. **Leverage High-Rise H200 compute** — The reasoning agent (`reasoners/synthesis.py`) already supports `LLM_BASE_URL` — point it at High-Rise inference for LLM synthesis instead of deterministic fallback
 3. **Agent coordination layer** — OpenCall is explicitly encouraged; Abeng's MCP adapter + HTTP toolset + `abengctl` CLI already form a multi-agent interface layer
 4. **Validation packs as moat** — The `validation_pack_generator.py` produces pre-assembled diligence packs (sector hypotheses, procurement matches, intro targets, unresolved questions) — this is a differentiation vs. raw signal feeds

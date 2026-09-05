@@ -2,11 +2,9 @@
 
 ## Strategic Position
 
-The product is **Caribbean Opportunity Dispatch**.
+The product is **Abeng**. Judges should not have to infer the product from pipeline internals. The first thing they should understand is:
 
-Caribbean Signal OS is the architecture underneath it. Judges should not have to infer the product from pipeline internals. The first thing they should understand is:
-
-> Caribbean Opportunity Dispatch turns fragmented Caribbean public data into routed opportunity and risk dispatches for the people who can act on them.
+> Abeng turns fragmented Caribbean public data into routed opportunity and risk dispatches for the people who can act on them.
 
 The winning frame is not "we built a dashboard" or "we summarize regional data." The winning frame is:
 
@@ -65,8 +63,7 @@ Update:
 
 Required changes:
 
-- Lead with **Caribbean Opportunity Dispatch** as the product.
-- Keep **Caribbean Signal OS** as the architecture/system name.
+- Lead with **Abeng** as both the product and the system name.
 - Replace stale references to `feedback_queue.json` as the main feedback artifact with the current dispatch + persistent feedback loop:
 - `outbox/opportunity_dispatches.md`
 - `outbox/regional_thesis.md`

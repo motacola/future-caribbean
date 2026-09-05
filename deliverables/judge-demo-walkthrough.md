@@ -1,4 +1,4 @@
-# Caribbean Opportunity Dispatch — Judge Demo Walkthrough
+# Abeng — Judge Demo Walkthrough
 
 A guided tour of the system, artifact by artifact. Each step proves a specific claim about what the product does and why it matters.
 
@@ -6,7 +6,7 @@ A guided tour of the system, artifact by artifact. Each step proves a specific c
 
 **Category:** Agentic market coordination infrastructure for fragmented Caribbean economies.
 
-**Core claim:** Caribbean Opportunity Dispatch compresses the time between public signal and economic action.
+**Core claim:** Abeng compresses the time between public signal and economic action.
 
 ---
 
@@ -16,7 +16,7 @@ Public regional data for the Caribbean is fragmented across 10+ institutions —
 
 The intended consumer — diaspora investors, regional operators, ecosystem builders — has to pull from all of them manually. Most don't. The data sits in PDFs and spreadsheets, never reaching the people who could act on it.
 
-**Signal OS exists because the gap isn't data availability. It's data routing.**
+**Abeng exists because the gap isn't data availability. It's data routing.**
 
 That is why this belongs in Open Track: the product is a reusable coordination layer, not a single-sector app.
 
@@ -111,7 +111,7 @@ The top of the dashboard is the dispatch desk product view; the lower sections a
 
 ## Summary: The Open Track Claim
 
-Caribbean Opportunity Dispatch is not a dashboard. It is an **agentic market coordination system** that:
+Abeng is not a dashboard. It is an **agentic market coordination system** that:
 
 1. **Detects** signals from fragmented public data (6 watchers, 10+ sources)
 2. **Judges** them with editorial enrichment (score bands, evidence grades, narrative titles)

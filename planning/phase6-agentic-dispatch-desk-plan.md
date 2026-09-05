@@ -2,7 +2,7 @@
 
 > **For Hermes:** Use subagent-driven-development skill to implement this plan task-by-task.
 
-**Goal:** Add an “Ask the Dispatch Desk” analyst rail and headless-ready query layer so Caribbean Opportunity Dispatch feels like an interrogable intelligence operator, not only a dashboard/report.
+**Goal:** Add an “Ask the Dispatch Desk” analyst rail and headless-ready query layer so Abeng feels like an interrogable intelligence operator, not only a dashboard/report.
 
 **Architecture:** Keep the current Dispatch Desk as the evidence/report layer. Add a deterministic query engine over `outbox/dispatch_desk.json` and related artifacts, then expose it in the static dashboard as an analyst rail with suggested questions, drilldowns, and copyable answers. Do not wire a generic LLM chatbox yet; design the query engine so a future local LLM/API can sit behind the same interface.
 
@@ -89,7 +89,7 @@ By the end of this phase:
 
 ```bash
 mkdir -p agent
-printf '"""Headless query helpers for Caribbean Opportunity Dispatch."""\n' > agent/__init__.py
+printf '"""Headless query helpers for Abeng."""\n' > agent/__init__.py
 ```
 
 **Step 2: Implement initial query engine**
@@ -255,7 +255,7 @@ def draft_note(desk: dict[str, Any], country_or_persona: str) -> str:
         "",
         f"Subject: {country} signal worth reviewing this cycle",
         "",
-        f"A current Caribbean Opportunity Dispatch signal flagged {title}.",
+        f"A current Abeng signal flagged {title}.",
         f"Evidence: {chosen.get('evidence', 'Evidence recorded in Dispatch Desk')} ({chosen.get('evidence_grade', 'grade n/a')}).",
         f"Suggested next step: {action}",
         "",
@@ -713,7 +713,7 @@ Before `</body>` after `window.DISPATCH_DESK = ...`, add:
     let route = (c.personas || []).find(r => clean(r.persona).toLowerCase().includes('investor')) || (c.personas || [])[0];
     if (!route) return 'No persona route available to draft from.' + cite();
     const country = c.country_cluster || 'the region';
-    return `Draft note for ${country}:\n\nSubject: ${country} signal worth reviewing this cycle\n\nA current Caribbean Opportunity Dispatch signal flagged ${c.title}.\nEvidence: ${c.evidence} (${c.evidence_grade}).\nSuggested next step: ${route.action}\n\nI would treat this as a diligence trigger, not an investment recommendation: validate sector fit, local operator quality, and timing before acting.\n\nSources: \`outbox/dispatch_desk.json\``;
+    return `Draft note for ${country}:\n\nSubject: ${country} signal worth reviewing this cycle\n\nA current Abeng signal flagged ${c.title}.\nEvidence: ${c.evidence} (${c.evidence_grade}).\nSuggested next step: ${route.action}\n\nI would treat this as a diligence trigger, not an investment recommendation: validate sector fit, local operator quality, and timing before acting.\n\nSources: \`outbox/dispatch_desk.json\``;
   }
 
   function answer(question) {

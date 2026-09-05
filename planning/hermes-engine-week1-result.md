@@ -17,7 +17,7 @@
 - Helper: `_serve_static()` for discovery files
 
 ### Tool Manifest (`TOOLS_MANIFEST` in `server.py`)
-- `engine: "Abeng"`, `product: "Caribbean Opportunity Dispatch"`, `version: 1`
+- `engine: "Abeng"`, `product: "Abeng"`, `version: 1`
 - 7 tools: `ask`, `status`, `validation_packs.index`, `validation_packs.get`, `domains`, `reasoning`, `feedback_apply`
 - Each tool: `name`, `description`, `method`, `path`, `params` (JSON-schema-ish), `example_request`, `example_response_keys`
 - `feedback_apply` marked `"writes": true`

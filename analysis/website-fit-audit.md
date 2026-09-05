@@ -4,7 +4,7 @@ Date: 2026-05-26
 
 ## Verdict
 
-Caribbean Signal OS is pointed at the right track. The strongest fit is the Intelligence, Media & Distribution Systems track, because the site explicitly asks for:
+Abeng is pointed at the right track. The strongest fit is the Intelligence, Media & Distribution Systems track, because the site explicitly asks for:
 
     Data -> Signal -> Packaging -> Distribution -> Action -> Capital
 
@@ -58,7 +58,7 @@ The likely strong entries will not just show data. They will show operational sy
 
 Those projects naturally demonstrate a user taking action inside a workflow.
 
-Caribbean Signal OS can compete, but only if it stops looking like a better regional briefing tool and starts looking like the intelligence layer that triggers decisions across these workflows.
+Abeng can compete, but only if it stops looking like a better regional briefing tool and starts looking like the intelligence layer that triggers decisions across these workflows.
 
 ## What Is Strong
 
@@ -164,13 +164,13 @@ Demo rule:
 
 Current positioning:
 
-    Caribbean Signal OS turns fragmented public Caribbean data into continuous,
+    Abeng turns fragmented public Caribbean data into continuous,
     channel-ready market signals for operators, founders, investors, and diaspora
     capital networks.
 
 Stronger competition positioning:
 
-    Caribbean Signal OS is a distribution-first intelligence layer that turns
+    Abeng is a distribution-first intelligence layer that turns
     fragmented Caribbean public data into investable market signals, sends them
     to diaspora investors and regional founders, and learns which signals trigger
     follow-up.
@@ -273,7 +273,7 @@ Once those exist, the project will feel much closer to the competition brief: no
 
 After reviewing the homepage plus all challenge tracks, the repeated pattern is clear: Future Caribbean is rewarding systems that coordinate real-world workflows, not systems that merely summarize information.
 
-| Track | What strong teams will likely show | Competitive threat to Signal OS |
+| Track | What strong teams will likely show | Competitive threat to Abeng |
 | --- | --- | --- |
 | Food Systems & Supply Chains (/trade) | Farm-to-market matching, regional planting coordination, freight capacity matching, port/logistics coordination, supply-chain visibility | Very tangible workflow: producer -> freight -> market |
 | Healthcare Systems & Delivery | WhatsApp chronic care, triage, referral routing, cross-island specialist access, health-system alerts | Strong human outcome and clear user path |
@@ -282,14 +282,14 @@ After reviewing the homepage plus all challenge tracks, the repeated pattern is 
 | Energy, Climate & Resilience | Microgrid coordination, demand forecasting, battery/storage optimization, renewable dispatch | Operational optimization with measurable system outputs |
 | Ocean Systems & Blue Economy | Vessel tracking, fisheries risk, buoy/satellite aggregation, marine resource coordination | Strong if tied to enforcement or resource decisions |
 | Tourism & Transportation | WhatsApp-first guest ops, rerouting, staffing, inter-island transport, disruption response | Very demo-friendly; clear user action inside familiar channels |
-| Intelligence, Media & Distribution | Data -> Signal -> Packaging -> Distribution -> Action -> Capital | Correct home for Signal OS, but only if distribution/action are visible |
+| Intelligence, Media & Distribution | Data -> Signal -> Packaging -> Distribution -> Action -> Capital | Correct home for Abeng, but only if distribution/action are visible |
 | Real Estate & Development | WhatsApp real-estate agents, transaction coordination, developer/construction workflows, permits, escrow | Strong workflow market with obvious customer/user |
 | Arts | Creator operations, rights/royalties, event logistics, sponsorship, audience/distribution systems | Strong if monetization/distribution is concrete |
 | Open Track | Broad frontier systems, marketplaces, agent orchestration, underserved market tools | Less direct threat unless another team has a sharper AI infrastructure demo |
 
-The implication is uncomfortable but useful: most competing tracks naturally produce a visible workflow. A judge can watch a tourism assistant reroute a guest, a finance tool match currency flows, or a disaster system send an alert. Signal OS has to work harder because intelligence products can easily look like reports.
+The implication is uncomfortable but useful: most competing tracks naturally produce a visible workflow. A judge can watch a tourism assistant reroute a guest, a finance tool match currency flows, or a disaster system send an alert. Abeng has to work harder because intelligence products can easily look like reports.
 
-The winning version of Signal OS must therefore demonstrate a workflow, not just an insight:
+The winning version of Abeng must therefore demonstrate a workflow, not just an insight:
 
     signal detected -> audience selected -> action generated -> channel delivery -> feedback captured -> next cycle adapts
 
