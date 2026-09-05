@@ -1,18 +1,18 @@
-# Signal Fabric
+# Abeng
 
-Signal Fabric is an agentic coordination infrastructure for fragmented economies: it watches public regional data, merges weak signals, routes opportunity dispatches to the right personas with auto-assembled diligence packs, and learns from recipient feedback. The Caribbean is the live proof; the engine is domain-agnostic (economic + climate instances today). Any agent can query it via HTTP, MCP, or CLI — it's deterministic, cited, and deployable now.
+Abeng is an agentic coordination infrastructure for fragmented economies: it watches public regional data, merges weak signals, routes opportunity dispatches to the right personas with auto-assembled diligence packs, and learns from recipient feedback. The Caribbean is the live proof; the engine is domain-agnostic (economic + climate instances today). Any agent can query it via HTTP, MCP, or CLI — it's deterministic, cited, and deployable now.
 
 ---
 
 **Routed opportunity and risk dispatches from fragmented Caribbean public data — readable by humans, queryable by any AI agent.**
 
-Powered by **Signal Fabric**, a continuous multi-agent pipeline that watches public regional data, merges weak signals across sources, packages them into routed dispatches for specific decision-makers, pre-assembles the diligence evidence, and learns from recipient feedback.
+Powered by **Abeng**, a continuous multi-agent pipeline that watches public regional data, merges weak signals across sources, packages them into routed dispatches for specific decision-makers, pre-assembles the diligence evidence, and learns from recipient feedback.
 
 **Track:** 10 — Open Track (Future Caribbean Buildathon)
 
 **Category:** Agentic market coordination infrastructure for fragmented Caribbean economies.
 
-Signal Fabric belongs in Open Track because it is not a sector-specific app. Finance, disaster risk, food, ocean, tourism, and procurement are signal domains; the product is the cross-sector routing layer that turns those signals into action — and the first agent-ready opportunity API for the region.
+Abeng belongs in Open Track because it is not a sector-specific app. Finance, disaster risk, food, ocean, tourism, and procurement are signal domains; the product is the cross-sector routing layer that turns those signals into action — and the first agent-ready opportunity API for the region.
 
 ---
 
@@ -50,9 +50,9 @@ The engine is agent-agnostic by design. The contract is a plain HTTP API plus a 
 |---|---|
 | **Any agent / curl** | `GET /api/tools.json` — self-describing tool manifest; `POST /api/ask` for cited answers |
 | **Claude (Code/Desktop)** | MCP adapter: `mcp_adapter/desk_server.py` (see `mcp_adapter/README.md`) |
-| **Hermes / OpenClaw** | Point HTTP tooling at `/api/tools.json`, or shell out to `cli/signalctl.py` |
+| **Hermes / OpenClaw** | Point HTTP tooling at `/api/tools.json`, or shell out to `cli/abengctl.py` |
 | **Flue** | Workflow harness in `.flue/` (`ask-dispatch`, `run-cycle`, `record-feedback`, …) |
-| **Humans (terminal)** | `python3 cli/signalctl.py status\|signals\|preview\|ask\|reason\|send` |
+| **Humans (terminal)** | `python3 cli/abengctl.py status\|signals\|preview\|ask\|reason\|send` |
 | **Humans (browser)** | Astro site (`/`) — decision workspace, live map, cycle theater, ask-the-desk |
 
 Discovery files: [`llms.txt`](llms.txt) and [`agents.md`](agents.md) (also served over HTTP) describe every endpoint with copy-paste examples per framework.
@@ -62,7 +62,7 @@ Answers are **deterministic and cited** — they come from the generated desk ar
 ```bash
 # the same engine, three ways
 curl -X POST localhost:8080/api/ask -d '{"question":"explain lead"}'
-python3 cli/signalctl.py ask "what changed this cycle"
+python3 cli/abengctl.py ask "what changed this cycle"
 python3 agent/query.py ask "draft Belize investor note"
 ```
 
@@ -75,7 +75,7 @@ Run `pnpm build` for the Astro static frontend, or `python3 server.py` and open 
 - **Live Caribbean map** — 23 watched Caribbean markets and territories, signal pulses sized by confidence, click to drill; every beacon has either a routed live signal or a clearly labeled market/FX watchlist signal
 - **Cycle theater** — watch the pipeline run live over SSE (sources lighting up, signals forming, dispatches routing), with replay fallbacks from `data/history/` and an embedded recorded-cycle event stream for production/static deploys
 
-## Architecture (Signal Fabric)
+## Architecture (Abeng)
 
 ```
 public data -> watchers -> normalized records -> reasoning merger -> composite signals
@@ -146,9 +146,9 @@ bash run_pipeline.sh
 python3 server.py            # http://localhost:8080/
 
 # terminal control
-python3 cli/signalctl.py status
-python3 cli/signalctl.py ask "explain lead"
-python3 cli/signalctl.py preview --persona investor --channel telegram
+python3 cli/abengctl.py status
+python3 cli/abengctl.py ask "explain lead"
+python3 cli/abengctl.py preview --persona investor --channel telegram
 
 # tests
 python3 -m pytest -q
@@ -240,7 +240,7 @@ The repo (`motacola/future-caribbean`) drives two separate Vercel projects:
 
 | Project | URL | What it serves |
 |---|---|---|
-| `signal-fabric` | `signal-fabric.vercel.app` | **Live production site** — full Astro build |
+| `abeng` | `abeng.vercel.app` | **Live production site** — full Astro build |
 | `future-caribbean` | `future-caribbean.vercel.app` | **Holding page** — styled 404 until hackathon reveal |
 
 `scripts/vercel-build.sh` reads the `VERCEL_PROJECT_NAME` env var Vercel injects at build time:
@@ -299,7 +299,7 @@ Leaflet is loaded via CDN `<script>` and `<link>` tags. Do **not** add `integrit
 
 ### Vercel (current setup)
 
-**Live site:** `https://signal-fabric.vercel.app`
+**Live site:** `https://abeng.vercel.app`
 **Holding page:** `https://future-caribbean.vercel.app`
 
 Both projects connect to `motacola/future-caribbean` on GitHub. Push to `main` triggers both. The build script routes each to the right output. API functions in `api/*.py` deploy alongside the static site automatically — public instance is read-only.

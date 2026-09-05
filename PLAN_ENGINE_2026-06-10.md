@@ -44,7 +44,7 @@ Three value claims, each must be demo-provable in under 60 seconds:
 
 | Layer | Asset | State |
 |---|---|---|
-| CLI | `cli/signalctl.py` — status/domains/signals/preview/reason/run/send | Working |
+| CLI | `cli/abengctl.py` — status/domains/signals/preview/reason/run/send | Working |
 | HTTP API | `server.py` — status, domains, reasoning, feedback, delivery approvals, SSE pipeline stream | Working |
 | Agent harness | `.flue/` — `dispatch-desk` agent + 11 workflows incl. `ask-dispatch` | Working |
 | Query engine | `agent/query.py` — 6 deterministic cited intents | Working, **not exposed via API or UI** |
@@ -82,7 +82,7 @@ pipeline never imports it.
 - `llms.txt` + `agents.md` at root and served over HTTP — what the engine is,
   every endpoint, connect instructions per framework (Claude/MCP, Hermes,
   OpenClaw, plain curl).
-- `signalctl ask "..."` subcommand (parity with API).
+- `abengctl ask "..."` subcommand (parity with API).
 - README "For agents" section.
 
 **Exit criteria (three frameworks, same engine):**
@@ -231,7 +231,7 @@ Minimum winning demo = Phases 1 + 2 local. Hosted (5) is the backup wow;
 ## Phase 6 — Moat Deepening (added 2026-06-11, post-user-testing)
 
 Status of Phases 1, 2, 3A, 4C, 5: DELIVERED and live at
-https://signal-fabric.vercel.app. This phase is the next sprint,
+https://abeng.vercel.app. This phase is the next sprint,
 prioritised from competitive research (2026-06-11).
 
 ### Competitive landscape (researched 2026-06-11)

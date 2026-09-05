@@ -1,4 +1,4 @@
-🌴 *Signal Fabric — Decision Routes Ready*
+🌴 *Abeng — Decision Routes Ready*
 Cycle: `20260904` · 2026-09-04 23:28 UTC
 
 *What this is:*
@@ -48,4 +48,4 @@ Data → 27 signal clusters → 92 persona routes → 7 personas → action/capi
 • `outbox/delivery_manifest.json` — channel handoff manifest
 
 No changed desk = no message.
-- Signal Fabric
+- Abeng

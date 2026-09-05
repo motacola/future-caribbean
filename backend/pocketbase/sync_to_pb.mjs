@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 /**
- * sync_to_pb.mjs — Signal Fabric → PocketBase pipeline sync step.
+ * sync_to_pb.mjs — Abeng → PocketBase pipeline sync step.
  *
  * Run AFTER the pipeline generates artifacts (as a step in run_pipeline.sh, or standalone):
  *   node sync_to_pb.mjs
  *
- * Reads the real Signal Fabric state files and upserts them into PocketBase:
+ * Reads the real Abeng state files and upserts them into PocketBase:
  *   data/coordination/intervention_state.json  → interventions + campaigns (+ flattened outcomes)
  *   data/sources/*.json (watcher latest)        → sources / observations (optional, if present)
  *   outbox/*.json (packs)                        → packs (optional, if present)
@@ -196,7 +196,7 @@ async function syncPacks() {
 // ---- run ---------------------------------------------------------------
 try {
   await auth();
-  console.log(`Syncing Signal Fabric → PocketBase (${PB_URL})`);
+  console.log(`Syncing Abeng → PocketBase (${PB_URL})`);
   await syncInterventions();
   await syncSources();
   await syncPacks();

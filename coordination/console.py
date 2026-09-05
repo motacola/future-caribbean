@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Local operator console for the coordination closed loop.
 
-Runs on localhost (where the repo is writable). The Signal Fabric site is
+Runs on localhost (where the repo is writable). The Abeng site is
 static + serverless, and Vercel's filesystem is read-only at runtime, so
 outcomes are recorded HERE, then committed + deployed (the same
 artifact-commit convention the rest of the pipeline uses).

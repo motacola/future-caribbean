@@ -1,7 +1,7 @@
 import PocketBase from "pocketbase";
 const PB = process.env.PB_URL || "http://127.0.0.1:8097";
 const admin = new PocketBase(PB);
-await admin.admins.authWithPassword("admin@signalfabric.local", "HermesVerify123!");
+await admin.admins.authWithPassword("admin@abeng.local", "HermesVerify123!");
 const anon = new PocketBase(PB);
 
 // operator session

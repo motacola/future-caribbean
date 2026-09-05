@@ -632,10 +632,10 @@ a:hover { text-decoration: underline; }
 .out-tab:focus-visible { outline: 2px solid var(--teal); outline-offset: -2px; }
 .out-body { padding: 16px 20px; font-size: 12px; color: var(--sub); white-space: pre-wrap; font-family: var(--mono); line-height: 1.6; max-height: 260px; overflow: auto; }
 .coordination-strip { background: transparent; color: var(--text); padding: 0; margin: 18px 0 14px; max-width: none; }
-.fabric-line { font-size: 14.5px; color: var(--sub); line-height: 1.6; max-width: 760px; }
-.fabric-foot { font-size: 13px; color: var(--sub); }
-.fabric-foot a { font-weight: 600; }
-#about-fabric .coordination-inner { padding: 0; max-width: none; }
+.abeng-line { font-size: 14.5px; color: var(--sub); line-height: 1.6; max-width: 760px; }
+.abeng-foot { font-size: 13px; color: var(--sub); }
+.abeng-foot a { font-weight: 600; }
+#about-abeng .coordination-inner { padding: 0; max-width: none; }
 .coordination-inner { max-width: 1140px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 1fr 34px 1fr 34px 1fr 34px 1fr; gap: 12px; align-items: center; }
 .coord-step { min-height: auto; border: none; border-left: 1px solid var(--border); border-radius: 0; padding: 2px 0 2px 16px; }
 .coord-step span { display: block; font-family: var(--mono); color: var(--gold); font-size: 10px; margin-bottom: 6px; }
@@ -1348,7 +1348,7 @@ html { scroll-behavior: smooth; }
 }
 </style>
 
-<Base title="Signal Fabric — see where the region is moving">
+<Base title="Abeng — see where the region is moving">
   <Fragment slot="head">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
     <script is:inline src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
@@ -1671,7 +1671,7 @@ html { scroll-behavior: smooth; }
   </div>
   <div class="out-stage">
     <div class="out-panel" id="out-panel-tg" role="tabpanel" aria-labelledby="out-tab-tg" data-out="tg">
-      <div class="out-body">{`Signal Fabric
+      <div class="out-body">{`Abeng
 
 Today's lead: ${d.lCountry}
 
@@ -1709,7 +1709,7 @@ ${d.lRanking}
 Before you act:
 This is a pointer, not a recommendation. Check the sector, the local risks, and the people you'd be working with.
 
-Signal Fabric`}</div>
+Abeng`}</div>
     </div>
     <div class="out-panel" id="out-panel-alert" role="tabpanel" aria-labelledby="out-tab-alert" data-out="alert" hidden>
       <div class="out-body">{`${d.lCountry} — lead signal
@@ -1745,9 +1745,9 @@ Source: World Bank indicators, 2023 to 2024 comparison.`}</div>
   </div>
 </div>
 
-<div class="sec" id="about-fabric">
-  <div class="sec-label">What is Signal Fabric?</div>
-  <p class="fabric-line">The engine under this page. It reads the region's public data every four hours and checks signals against each other before they become briefings.</p>
+<div class="sec" id="about-abeng">
+  <div class="sec-label">What is Abeng?</div>
+  <p class="abeng-line">The engine under this page. It reads the region's public data every four hours and checks signals against each other before they become briefings.</p>
   <div class="coordination-strip">
   <div class="coordination-inner">
     <div class="coord-step"><span>01</span><strong>Watch</strong><p>We read the region's public data so you don't have to.</p></div>
@@ -1759,7 +1759,7 @@ Source: World Bank indicators, 2023 to 2024 comparison.`}</div>
     <div class="coord-step"><span>04</span><strong>Learn</strong><p>Your response shapes what the desk sends next.</p></div>
   </div>
   </div>
-  <p class="fabric-foot">Want this engine on a different market? <a href="/build">Build your own feed →</a></p>
+  <p class="abeng-foot">Want this engine on a different market? <a href="/build">Build your own feed →</a></p>
 </div>
 
 <div class="sec deep">
@@ -2014,7 +2014,7 @@ const GUIDE_PLACES = [
   { id: 'receipts',           label: "The desk's receipts", terms: ['receipts', 'track record', 'accuracy', 'past calls', 'history'] },
   { id: 'map-hero',           label: 'The map',            terms: ['map', 'top', 'start', 'home', 'front page'] },
   { id: 'theater',            label: 'Watch the desk work', terms: ['theater', 'watch the desk', 'live feed', 'stream'] },
-  { id: 'about-fabric',       label: 'What is Signal Fabric', terms: ['what is this', 'about', 'how it works', 'explain the site'] },
+  { id: 'about-abeng',       label: 'What is Abeng', terms: ['what is this', 'about', 'how it works', 'explain the site'] },
   { id: 'for-agents',         label: 'Machine-readable edition', terms: ['api', 'agent', 'machine readable', 'json', 'mcp', 'developer'] },
 ];
 
@@ -2948,7 +2948,7 @@ window.ask = function(q) {
           </div>`}
         ${offline && html`
           <div class="ask-offline rise-in">
-            The desk can't be reached from this copy of the page — try the live site at signal-fabric.vercel.app.
+            The desk can't be reached from this copy of the page — try the live site at abeng.vercel.app.
           </div>`}
         ${thread.map((m, i) => html`
           <div key=${m.at + m.q} class="ask-answer rise-in ${i > 0 ? 'older' : 'ans-sweep'}">
@@ -3250,7 +3250,7 @@ window.addEventListener('scroll', () => {
       <em>Structured data — same facts, no scraping required.</em>
     </summary>
     <div class="agents-grid">
-      <div class="agents-card"><h4>One question, one answer</h4><pre set:html={`curl -X POST https://signal-fabric.vercel.app/api/ask \\\n  -d '{"question":"explain lead"}'`}></pre><span>Deterministic, cited — no hallucinations</span></div>
+      <div class="agents-card"><h4>One question, one answer</h4><pre set:html={`curl -X POST https://abeng.vercel.app/api/ask \\\n  -d '{"question":"explain lead"}'`}></pre><span>Deterministic, cited — no hallucinations</span></div>
       <div class="agents-card"><h4>Every tool, self-described</h4><pre>GET /api/tools.json</pre><span>Ingest the manifest, configure yourself</span></div>
       <div class="agents-card"><h4>Follow the wire</h4><pre>GET /feed.xml</pre><span>RSS of every signal, every cycle</span></div>
     </div>
@@ -3299,7 +3299,7 @@ window.addEventListener('scroll', () => {
   </div>
   <div class="foot-legal">
     <span>A signal, not advice — always do your own diligence.</span>
-    <span>Powered by Signal Fabric</span>
+    <span>Powered by Abeng</span>
   </div>
 </footer>
 

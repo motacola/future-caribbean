@@ -18,7 +18,7 @@ sys.path.insert(0, str(ROOT))
 
 from humanizer import humanize  # noqa: E402
 
-SITE = "https://signal-fabric.vercel.app"
+SITE = "https://abeng.vercel.app"
 MAX_ITEMS = 20
 
 
@@ -43,7 +43,7 @@ def main() -> None:
     out = ['<?xml version="1.0" encoding="UTF-8"?>']
     out.append('<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">')
     out.append("<channel>")
-    out.append("<title>Signal Fabric — Live Wire</title>")
+    out.append("<title>Abeng — Live Wire</title>")
     out.append(f"<link>{SITE}/</link>")
     out.append("<description>Signals from the Caribbean's public data, in plain language. "
                "Machine-readable companion: /api/tools.json</description>")

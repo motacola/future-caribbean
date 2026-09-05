@@ -1006,7 +1006,7 @@ Future files likely:
 
 **Decision:** **No — stay deterministic in core.** The moat is *auditable coordination*: cited answers, deterministic rules, agent-agnostic protocol. PyTorch makes you "another AI tool."
 
-**When it would make sense (separate repo: `signal-fabric-ml/`):**
+**When it would make sense (separate repo: `abeng-ml/`):**
 
 | Use Case | Approach |
 |----------|----------|

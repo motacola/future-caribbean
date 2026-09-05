@@ -56,9 +56,9 @@ def test_designer_palette_matches_when_explicitly_configured():
 
     CI remains meaningful without Christopher's local filesystem because the
     live canonical palette is always checked above. Set
-    SIGNAL_FABRIC_DESIGNER_THEME to add cross-repository parity.
+    ABENG_DESIGNER_THEME to add cross-repository parity.
     """
-    configured = os.environ.get("SIGNAL_FABRIC_DESIGNER_THEME")
+    configured = os.environ.get("ABENG_DESIGNER_THEME")
     if not configured:
         return
     designer_theme = Path(configured).expanduser()

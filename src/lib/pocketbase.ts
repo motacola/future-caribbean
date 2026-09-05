@@ -1,4 +1,4 @@
-// Browser-safe PocketBase client for Signal Fabric frontend realtime.
+// Browser-safe PocketBase client for Abeng frontend realtime.
 // URL comes from the PUBLIC_PB_URL env (inlined at Astro build time).
 // If unset, getPb() returns null and the realtime layer is a no-op (page renders
 // from the committed-JSON build as before — zero regression).

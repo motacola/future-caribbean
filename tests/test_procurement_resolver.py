@@ -1,6 +1,6 @@
 """Procurement Outcome Resolver contracts.
 
-The product claim these tests protect: Signal Fabric detected a tender
+The product claim these tests protect: Abeng detected a tender
 before close and later recorded what happened to it. That claim is only
 worth something if amendments and awards attach to the tender that was
 detected, a missing award stays missing, and a source is never allowed to

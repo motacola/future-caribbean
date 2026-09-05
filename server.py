@@ -19,6 +19,21 @@ APP_DIR = Path(__file__).parent
 PUBLIC_POST_PATHS = frozenset({"/api/ask"})
 LOOPBACK_HOSTS = frozenset({"127.0.0.1", "::1", "localhost"})
 
+
+# Deprecated: the product was renamed Signal Fabric -> Abeng. Deployments that
+# still carry the old variable keep working until their dashboards are updated.
+# Delete this (and the fallback in pipeline_util.output_path) once every
+# environment sets ABENG_CORS_ORIGINS.
+LEGACY_CORS_ORIGINS_ENV = "SIGNAL_FABRIC_CORS_ORIGINS"
+
+
+def cors_origins_raw() -> str:
+    """Configured CORS origins, honouring the pre-rename variable as a fallback."""
+    return os.environ.get("ABENG_CORS_ORIGINS") or os.environ.get(
+        LEGACY_CORS_ORIGINS_ENV, ""
+    )
+
+
 # Reads that expose operator state rather than product surface: the pending
 # delivery queue carries unsent message content, and the webhook list carries
 # subscriber URLs. Every other GET is a published surface and stays open.
@@ -285,7 +300,7 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
     def _origin_allowed(origin: str) -> bool:
         configured = {
             item.strip().rstrip("/")
-            for item in os.environ.get("SIGNAL_FABRIC_CORS_ORIGINS", "").split(",")
+            for item in cors_origins_raw().split(",")
             if item.strip()
         }
         candidate = origin.strip().rstrip("/")
@@ -321,7 +336,7 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
             return True
         configured = {
             urlparse(item.strip()).hostname
-            for item in os.environ.get("SIGNAL_FABRIC_CORS_ORIGINS", "").split(",")
+            for item in cors_origins_raw().split(",")
             if item.strip()
         }
         if hostname in configured:
@@ -664,7 +679,7 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
             "name": name,
             "status": "blueprint",
             "created_via": "ui",
-            "tagline": _clip("tagline", "User-defined domain on the Signal Fabric engine."),
+            "tagline": _clip("tagline", "User-defined domain on the Abeng engine."),
             "blurb": _clip("tagline", "User-defined domain — same engine, new sources."),
             "pipeline": {
                 "watch": _clip("watch", "Public data sources for this domain."),

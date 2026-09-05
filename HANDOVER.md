@@ -1,4 +1,4 @@
-# Signal Fabric — Coordination Graph Handover (for Claude)
+# Abeng — Coordination Graph Handover (for Claude)
 
 **Date:** 2026-07-12
 **Repo:** `/Users/christopherbelgrave/clawd/projects/future-caribbean`
@@ -8,7 +8,7 @@
 
 ## 1. What is built and verified
 
-- **Originating concept (Chris's "Caribbean algorithm"):** This whole Coordination Graph is the implementation of Chris's idea — a deterministic algorithm for reducing Caribbean economic fragmentation by modeling the region as a network where **each island/market is a node**, capabilities and demand are edges, and the engine computes *which connection is missing* and the smallest verifiable action to close it. Signal Fabric's coordination layer is the product embodiment of that algorithm. When extending this, preserve the "island-as-node + missing-edge detection + prescribed smallest intervention" shape — that is the core design intent, not just an implementation detail.
+- **Originating concept (Chris's "Caribbean algorithm"):** This whole Coordination Graph is the implementation of Chris's idea — a deterministic algorithm for reducing Caribbean economic fragmentation by modeling the region as a network where **each island/market is a node**, capabilities and demand are edges, and the engine computes *which connection is missing* and the smallest verifiable action to close it. Abeng's coordination layer is the product embodiment of that algorithm. When extending this, preserve the "island-as-node + missing-edge detection + prescribed smallest intervention" shape — that is the core design intent, not just an implementation detail.
 - **Island-as-node reality check (verified 2026-07-12):** The graph currently has **5 `country`/territory nodes**: `country:guyana`, `country:trinidad-tobago`, `country:barbados`, `country:jamaica`, and `country:eastern-caribbean-oecs`. So the "each island = a node" principle holds at the **market/territory level** for the major independent markets, but **OECS (Eastern Caribbean) is currently one grouped cluster node**, not one node per island (Antigua, Barbuda, St Lucia, Grenada, etc.). If Chris wants strict per-island granularity, the registry + graph builder need an OECS-expansion step. Flag this as a known divergence from the literal "each island = a node" phrasing.
 - **Coordination graph engine** (`coordination/engine.py`): deterministic, no ML/LLM.
   - Builds a multi-layer graph (Geographic / Economic / Actor / Constraint nodes).
@@ -20,7 +20,7 @@
   - Produces Coordination Opportunities with `unlock_path` (blocker→intervention→owner→evidence request→success condition→estimated score uplift).
 - **Intervention persistence + campaigns** (`coordination/interventions.py`): `apply_interventions(opportunity)` reads `data/intervention_state.json`, seeds `proposed` state for each unlock-path entry, groups by `(type, blocker, owner)` into `operator_campaigns`, and writes the state file.
 - **Operator outcome feedback** (`coordination/interventions.py` + `coordination/engine.py`): `submit_outcome(state_id, type, note)` records one of `intro_accepted` | `supplier_validated` | `blocked_logistics` on an intervention. `engine._apply_outcomes()` (wired into `run()`) feeds these back into scoring — `supplier_validated` +4, `intro_accepted` +3 (de-risk nudge), `blocked_logistics` leaves the gap open but records the reason in `frictions` + `unknowns` (honest, not hidden). Verified: a `supplier_validated` outcome moved a candidate 50 → 54 with `outcome_adjustment: +4`.
-- **Operator CLI** (`cli/signalctl.py` is the primary CLI; `coordination/cli.py` supplements it): `cli/signalctl.py coordinator status|submit-evidence|verify` covers the evidence lifecycle. `coordination/cli.py` adds `run`, `state [--id]`, `submit-outcome --id --type ... [--note]` (the outcome feedback command — not in `cli/signalctl.py`), plus `submit-evidence`/`verify` mirrors. `coordination/console.py` is the local web UI.
+- **Operator CLI** (`cli/abengctl.py` is the primary CLI; `coordination/cli.py` supplements it): `cli/abengctl.py coordinator status|submit-evidence|verify` covers the evidence lifecycle. `coordination/cli.py` adds `run`, `state [--id]`, `submit-outcome --id --type ... [--note]` (the outcome feedback command — not in `cli/abengctl.py`), plus `submit-evidence`/`verify` mirrors. `coordination/console.py` is the local web UI.
 - **Local operator console** (`coordination/console.py`, stdlib-only): `python3 coordination/console.py [--port 8765]` → http://localhost:8765. Lists interventions with one-click outcome/evidence/verify buttons; persists to `data/intervention_state.json`, reruns the engine, and prints the commit command to ship. Local-first by design — Vercel's runtime FS is read-only, so outcomes are recorded locally then committed + deployed (same artifact-commit convention as the rest of the pipeline).
 - **Regional Connections product surface** (`src/pages/regional-connections.astro`): server-rendered page reading `outbox/coordination_opportunities.json` + `data/coordination/graph.json` + `data/intervention_state.json` at build time. Shows the island-as-node network, all coordination candidates, and a live "Closed loop — interventions" section with status pills + outcome badges. Reachable from the index masthead.
 - **Validation pack enrichment** (`packagers/validation_pack_generator.py`): injects `coordination_path` (score, demand countries, minimum next action, contributing countries, matched capabilities) into the dev-pipeline validation pack.
@@ -42,7 +42,7 @@
 - Created `coordination/interventions.py` (persistence + campaigns + full lifecycle).
 - Patched `coordination/engine.py` `run()` to call `apply_interventions(opportunity, root=...)` and set `opportunities["interventions_persisted"]`.
 - Added `tests/test_coordination.py::test_run_persists_intervention_state_and_campaigns`.
-- Added `coordinator status | submit-evidence | verify` subcommands to the **real** `cli/signalctl.py` (proper subparsers; the earlier overwrite-with-stub incident was reverted via `git checkout HEAD -- cli/signalctl.py` before re-adding correctly).
+- Added `coordinator status | submit-evidence | verify` subcommands to the **real** `cli/abengctl.py` (proper subparsers; the earlier overwrite-with-stub incident was reverted via `git checkout HEAD -- cli/abengctl.py` before re-adding correctly).
 
 ### Historical bug (now fixed)
 The persistence layer hardcoded `_STATE` to repo ROOT, ignoring the `root` passed to `engine.run(tmp_path)`, which broke the isolation test. **Fixed** by making `apply_interventions(opportunity, root=ROOT)` accept a root param and threading it through `run()` → `build_opportunities()` → `apply_interventions()`. Test now passes (part of the 74 green).
@@ -68,7 +68,7 @@ The 4 per-project `education_services` unlock items (projects 00369–00372) eac
 - **Pytest isolation:** run with `PYTEST_DISABLE_PLUGIN_AUTOLOAD=1` — LangSmith/pydantic_core plugins contaminate the suite on this machine and cause spurious failures.
 - **Never run full `run_pipeline.sh`** — its final stages send Telegram/webhook alerts. Verify the coordination stage by direct `python3 coordination/engine.py` execution.
 - **Deterministic only:** no LLM inference in matching/classification. Ordered keyword rules, cited evidence.
-- **`cli/signalctl.py` is the primary CLI** and DOES exist (status/domains/signals/preview/reason/run/send + `coordinator status|submit-evidence|verify`). It does **not** have a `submit-outcome` command — that's why `coordination/cli.py` (adds `submit-outcome` + `run`/`state`) and `coordination/console.py` (web UI) were added this session. Use `cli/signalctl.py` for the evidence lifecycle; use `coordination/cli.py`/`console.py` for operator outcomes.
+- **`cli/abengctl.py` is the primary CLI** and DOES exist (status/domains/signals/preview/reason/run/send + `coordinator status|submit-evidence|verify`). It does **not** have a `submit-outcome` command — that's why `coordination/cli.py` (adds `submit-outcome` + `run`/`state`) and `coordination/console.py` (web UI) were added this session. Use `cli/abengctl.py` for the evidence lifecycle; use `coordination/cli.py`/`console.py` for operator outcomes.
 - **Don't fabricate data:** capability registry is screening-level pilot data, explicitly marked as NOT audited supplier capacity.
 
 ---
@@ -83,10 +83,10 @@ PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python3 -m pytest tests -q
 pnpm run build
 git diff --check
 
-# Primary CLI (cli/signalctl.py):
-python3 cli/signalctl.py coordinator status
-python3 cli/signalctl.py coordinator submit-evidence --id <id> --summary "..." --source "..." [--country BB]
-python3 cli/signalctl.py coordinator verify --id <id>
+# Primary CLI (cli/abengctl.py):
+python3 cli/abengctl.py coordinator status
+python3 cli/abengctl.py coordinator submit-evidence --id <id> --summary "..." --source "..." [--country BB]
+python3 cli/abengctl.py coordinator verify --id <id>
 
 # Supplement CLI (coordination/cli.py) — adds submit-outcome + run/state:
 python3 coordination/cli.py run
@@ -109,14 +109,14 @@ python3 coordination/console.py --port 8765   # → http://localhost:8765
 ---
 
 ## 7. COMPLETED 2026-07-12 (this session)
-All items in §3 are done: root-isolation bug fixed (`apply_interventions(opportunity, root=ROOT)`, threaded through `engine.run`), coordinator CLI subcommands added to the real `cli/signalctl.py` (`coordinator status`, `coordinator submit-evidence --id --summary --source [--country]`, `coordinator verify --id`), and the lifecycle/evidence workflow implemented in `coordination/interventions.py`:
+All items in §3 are done: root-isolation bug fixed (`apply_interventions(opportunity, root=ROOT)`, threaded through `engine.run`), coordinator CLI subcommands added to the real `cli/abengctl.py` (`coordinator status`, `coordinator submit-evidence --id --summary --source [--country]`, `coordinator verify --id`), and the lifecycle/evidence workflow implemented in `coordination/interventions.py`:
 - Transitions: proposed → evidence_requested → evidence_received → verified/rejected/expired (invalid transitions raise).
 - `add_evidence`, `request_evidence`, `reject`, `expire`, `verify`.
 - `verify()` requires evidence naming a country for capability interventions, records a `verified_edge`, reruns the engine, and appends before/after scores to `data/coordination/track_record.json`.
 - `apply_verified_capabilities()` merges verified edges into the in-memory registry at `engine.run()` time, so the graph gains a cited `HAS_CAPABILITY` edge (status `verified_intervention`) and scores recompute deterministically.
 Verified: 74 tests pass (`PYTEST_DISABLE_PLUGIN_AUTOLOAD=1`), `pnpm run build` passes, `git diff --check` clean, engine run 28 nodes/51 edges/2 candidates. Stale `test` entry removed from `data/intervention_state.json`.
 
-> 📌 Note: §7 references `cli/signalctl.py coordinator …` subcommands — that file **does exist** on `main` and has `status` / `submit-evidence` / `verify`. It does **not** have `submit-outcome`; that command was added in `coordination/cli.py` + `coordination/console.py` (2026-07-13). Both CLIs are valid; use `cli/signalctl.py` for the evidence lifecycle.
+> 📌 Note: §7 references `cli/abengctl.py coordinator …` subcommands — that file **does exist** on `main` and has `status` / `submit-evidence` / `verify`. It does **not** have `submit-outcome`; that command was added in `coordination/cli.py` + `coordination/console.py` (2026-07-13). Both CLIs are valid; use `cli/abengctl.py` for the evidence lifecycle.
 
 ---
 

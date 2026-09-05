@@ -1,4 +1,4 @@
-# Agent guide for the Signal Fabric Astro site
+# Agent guide for the Abeng Astro site
 
 This file is for AI agents (Claude Code, Codex, OpenCode, Pi, etc.) working on
 this repo. It does NOT replace `AGENTS.md` (which is the product contract);
@@ -174,7 +174,7 @@ workbench, not the live site. **The live site is the Astro repo at
 
 If the user mentions "the designer" or "the workbench", they're
 referring to the React app. If they mention "the site" or "the live
-product" or "Signal Fabric", they're referring to the Astro repo.
+product" or "Abeng", they're referring to the Astro repo.
 Same for charts:
 - Designer (`/Users/christopherbelgrave/Documents/signal-fabric-designer/`)
   = where chart shapes are designed and demoed

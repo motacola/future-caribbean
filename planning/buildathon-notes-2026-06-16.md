@@ -58,34 +58,34 @@
 
 ---
 
-## Next Steps (for Signal Fabric positioning)
+## Next Steps (for Abeng positioning)
 
-1. **Submit application before July 3** — Signal Fabric qualifies (Signal Fabric is a deployed, verifiable artifact)
+1. **Submit application before July 3** — Abeng qualifies (Abeng is a deployed, verifiable artifact)
 2. **Leverage High-Rise H200 compute** — The reasoning agent (`reasoners/synthesis.py`) already supports `LLM_BASE_URL` — point it at High-Rise inference for LLM synthesis instead of deterministic fallback
-3. **Agent coordination layer** — OpenCall is explicitly encouraged; Signal Fabric's MCP adapter + HTTP toolset + `signalctl` CLI already form a multi-agent interface layer
+3. **Agent coordination layer** — OpenCall is explicitly encouraged; Abeng's MCP adapter + HTTP toolset + `abengctl` CLI already form a multi-agent interface layer
 4. **Validation packs as moat** — The `validation_pack_generator.py` produces pre-assembled diligence packs (sector hypotheses, procurement matches, intro targets, unresolved questions) — this is a differentiation vs. raw signal feeds
 5. **Track record transparency** — The `track_record.py` packager publishes the desk's public track record (feedback provenance, priority adjustments) — aligns with buildathon's "AI generates article, publishes for transparency"
-6. **Cross-region team matching** — Signal Fabric's domain registry (`domains/registry.py`) is a config-driven multi-instance engine — can spin up "buildathon team" instances as blueprint domains
+6. **Cross-region team matching** — Abeng's domain registry (`domains/registry.py`) is a config-driven multi-instance engine — can spin up "buildathon team" instances as blueprint domains
 
 ---
 
-## Strategic Implications for Signal Fabric
+## Strategic Implications for Abeng
 
 ### Immediate (pre-July 3)
-- [ ] Apply with Signal Fabric as the submission artifact (deployed API at `signal-fabric.vercel.app`, MCP adapter, CLI, deterministic query layer)
+- [ ] Apply with Abeng as the submission artifact (deployed API at `abeng.vercel.app`, MCP adapter, CLI, deterministic query layer)
 - [ ] Configure High-Rise H200 endpoint for reasoning agent LLM synthesis
-- [ ] Document the "agent coordination layer" narrative — Signal Fabric IS an agent coordination layer (MCP + HTTP tools + OpenCall compatible)
+- [ ] Document the "agent coordination layer" narrative — Abeng IS an agent coordination layer (MCP + HTTP tools + OpenCall compatible)
 
 ### Moat Deepening (post-acceptance)
 - [ ] **Agent-as-legal-entity** concept from advisor E → validation packs could include "agent registration readiness" scoring per Caribbean jurisdiction
 - [ ] **Supply chain signals** from Larry's product → merge with `tenders_poller.py` and `tier2_scraper.py` (CDB procurement) for a dedicated supply chain signal kind
 - [ ] **Disaster coordination** from Mika → integrate with NHC storm intelligence + NDBC buoy data for resilience routing
 - [ ] **Plain-language layer** from Anya → add a "community brief" renderer alongside `telegram_brief.py` for non-technical audiences
-- [ ] **University pipeline** gap → expose `signalctl` + MCP adapter as teaching tools; the deterministic query layer is auditable for coursework
+- [ ] **University pipeline** gap → expose `abengctl` + MCP adapter as teaching tools; the deterministic query layer is auditable for coursework
 
 ### Compute & Infrastructure
 - High-Rise provides: H200 GPUs via API, open-source coding model, 1B+ tokens/day
-- Signal Fabric's reasoning agent (`reasoners/synthesis.py`) already has pluggable LLM config (`LLM_BASE_URL`, `LLM_API_KEY`, `LLM_MODEL`)
+- Abeng's reasoning agent (`reasoners/synthesis.py`) already has pluggable LLM config (`LLM_BASE_URL`, `LLM_API_KEY`, `LLM_MODEL`)
 - Can run local Gemma 4 12B QAT on 8081 for deterministic fallback; High-Rise H200 for LLM synthesis cycles
 - Pipeline runs on 4-hour cadence — fits within "tens of millions of tokens per team" budget easily
 

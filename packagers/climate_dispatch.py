@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Climate & Catastrophe Risk — second live Signal Fabric instance.
+"""Climate & Catastrophe Risk — second live Abeng instance.
 
 Reads the already-running hazard watchers (NOAA NWS alerts, NDBC marine
 buoys, NHC tropical outlook) and routes them into climate dispatches for

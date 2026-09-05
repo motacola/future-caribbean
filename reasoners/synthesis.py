@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Reasoning agent — cross-signal synthesis for Signal Fabric.
+"""Reasoning agent — cross-signal synthesis for Abeng.
 
 The watchers gather and the packagers route, but raw signals are still a
 list. This agent is the "reason" stage: it reads the live dispatches from

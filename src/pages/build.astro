@@ -296,11 +296,11 @@ footer { border-top: 1px solid var(--border); padding: 24px; text-align: center;
 }
 </style>
 
-<Base title="Signal Fabric — build your Caribbean feed">
+<Base title="Abeng — build your Caribbean feed">
 
 <div class="masthead">
   <div class="mast-inner">
-    <a href="/" class="mast-name">SIGNAL <em>FABRIC</em></a>
+    <a href="/" class="mast-name"><em>ABENG</em></a>
     <div class="mast-links">
       <span class="live-pill"><span class="live-dot"></span> Caribbean instance · <span id="mast-sources">6/6</span> live</span>
       <a href="/">← Back to the Dispatch</a>
@@ -311,7 +311,7 @@ footer { border-top: 1px solid var(--border); padding: 24px; text-align: center;
 <div class="hero">
   <p class="hero-kicker">Build your feed</p>
   <h1 class="hero-headline">Choose the Caribbean signals<br><em>you want to follow.</em></h1>
-  <p class="hero-sub">Pick the countries, sectors, role, and delivery channel you care about. Signal Fabric turns scattered regional data into a briefing you can read, forward, or plug into your own workflow.</p>
+  <p class="hero-sub">Pick the countries, sectors, role, and delivery channel you care about. Abeng turns scattered regional data into a briefing you can read, forward, or plug into your own workflow.</p>
   <div class="hero-stats">
     <div class="hero-stat"><strong>1</strong> configurable feed</div>
     <div class="hero-stat"><strong id="hs-sources">6/6</strong> live sources (Caribbean)</div>
@@ -482,7 +482,7 @@ footer { border-top: 1px solid var(--border); padding: 24px; text-align: center;
 <div class="modal-overlay" id="modal" onclick="if(event.target===this)closeModal()">
   <div class="modal-card">
     <button class="modal-close" onclick="closeModal()">✕</button>
-    <h3 class="build-sec-title">Deploy Signal Fabric.</h3>
+    <h3 class="build-sec-title">Deploy Abeng.</h3>
     <p>Define a new market, choose its sources, and route the resulting briefings to the people who need them.</p>
     <div class="modal-actions">
       <button class="modal-btn primary" onclick="copyBriefing();closeModal()">📋 Copy a live briefing</button>
@@ -522,7 +522,7 @@ footer { border-top: 1px solid var(--border); padding: 24px; text-align: center;
 </div>
 
 <footer>
-  Signal Fabric · Caribbean market intelligence product · Screening signals only, not investment advice · Data: World Bank · IDB · NOAA · NDBC · CARICOM · CDB
+  Abeng · Caribbean market intelligence product · Screening signals only, not investment advice · Data: World Bank · IDB · NOAA · NDBC · CARICOM · CDB
 </footer>
 
 <script is:inline define:vars={{ PIPELINE }}>
@@ -627,8 +627,8 @@ function renderClientSide() {
   let text='';
   if(state.channel==='telegram'){text='*Caribbean Opportunity Signal*\n\n*'+country+'* — '+conf+'\n\n'+ev+pstr+'\n\n*What to do ('+pl+'):*\n'+action+'\n\n_Screening signal only. Not investment advice._';}
   else if(state.channel==='whatsapp'){text='🌴 Caribbean Signal\n\n'+country+': '+ev+pstr+'\n\n'+action.slice(0,160)+'\n\nScreening signal only.';}
-  else if(state.channel==='email'){text='Subject: '+country+' — '+conf.toLowerCase()+' market signal\n\n'+ev+pstr+'\n\nFor '+pl+':\n'+action+'\n\nSource: World Bank / IDB\nConfidence: '+conf+'\n\nScreening signal, not investment advice.\nSignal Fabric';}
-  else{text='CARIBBEAN OPPORTUNITY BRIEF\n'+'─'.repeat(36)+'\nCountry:    '+country+'\nConfidence: '+conf+'\nAudience:   '+pl+'\n\nSIGNAL\n'+ev+pstr+'\n\nRECOMMENDED ACTION\n'+action+'\n\n'+'─'.repeat(36)+'\nScreening signal only. Not investment advice.\nSignal Fabric';}
+  else if(state.channel==='email'){text='Subject: '+country+' — '+conf.toLowerCase()+' market signal\n\n'+ev+pstr+'\n\nFor '+pl+':\n'+action+'\n\nSource: World Bank / IDB\nConfidence: '+conf+'\n\nScreening signal, not investment advice.\nAbeng';}
+  else{text='CARIBBEAN OPPORTUNITY BRIEF\n'+'─'.repeat(36)+'\nCountry:    '+country+'\nConfidence: '+conf+'\nAudience:   '+pl+'\n\nSIGNAL\n'+ev+pstr+'\n\nRECOMMENDED ACTION\n'+action+'\n\n'+'─'.repeat(36)+'\nScreening signal only. Not investment advice.\nAbeng';}
   _previewText=text;
   renderDevice(state.channel,text,country);
   document.getElementById('signal-meta').innerHTML='<div class="meta-item"><strong>'+country+'</strong></div>'+'<div class="meta-item"><strong>'+conf+'</strong></div>'+'<div class="meta-item">World Bank / IDB / NOAA</div>'+(pct?'<div class="meta-item"><strong>'+pct+'</strong></div>':'');
@@ -642,17 +642,17 @@ function renderDevice(channel,text,country) {
   const now=new Date().toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'});
   if(channel==='telegram'){
     wrap.className='device-wrap device-tg';
-    wrap.innerHTML='<div class="tg-bar"><div class="tg-avatar">🌴</div><div><div class="tg-name">Signal Fabric</div><div class="tg-sub">Signal channel · '+(PIPELINE.n_sources||5)+'/6 sources live</div></div></div><div class="tg-bubble">'+fmtTg(text)+'</div><div class="tg-time">'+now+'</div>';
+    wrap.innerHTML='<div class="tg-bar"><div class="tg-avatar">🌴</div><div><div class="tg-name">Abeng</div><div class="tg-sub">Signal channel · '+(PIPELINE.n_sources||5)+'/6 sources live</div></div></div><div class="tg-bubble">'+fmtTg(text)+'</div><div class="tg-time">'+now+'</div>';
   }else if(channel==='whatsapp'){
     wrap.className='device-wrap device-wa';
     wrap.innerHTML='<div class="wa-bar"><div class="wa-avatar">🌴</div><div><div class="wa-name">Caribbean Signals</div><div class="wa-sub">Broadcast channel</div></div></div><div class="wa-bubble">'+esc(text)+'</div><div class="wa-time">'+now+'</div>';
   }else if(channel==='email'){
     const lines=text.split('\n');const subj=lines[0].replace('Subject: ','');const body=lines.slice(2).join('\n');
     wrap.className='device-wrap device-email';
-    wrap.innerHTML='<div class="email-chrome"><span>From: Signal Fabric &lt;signal@cod.caribbean&gt;</span></div><div class="email-body"><div class="email-subject">'+esc(subj)+'</div><div class="email-from">Signal Fabric · '+now+'</div><div class="email-text">'+esc(body)+'</div></div>';
+    wrap.innerHTML='<div class="email-chrome"><span>From: Abeng &lt;signal@cod.caribbean&gt;</span></div><div class="email-body"><div class="email-subject">'+esc(subj)+'</div><div class="email-from">Abeng · '+now+'</div><div class="email-text">'+esc(body)+'</div></div>';
   }else{
     wrap.className='device-wrap device-memo';
-    wrap.innerHTML='<div class="memo-logo">Signal Fabric — Intelligence Brief</div><div class="memo-text">'+esc(text)+'</div>';
+    wrap.innerHTML='<div class="memo-logo">Abeng — Intelligence Brief</div><div class="memo-text">'+esc(text)+'</div>';
   }
 }
 
@@ -668,15 +668,15 @@ function submitWizard() {
   const btn=document.getElementById('wiz-submit'),status=document.getElementById('wiz-status');
   const payload={name:(document.getElementById('wiz-name').value||'').trim(),watch:(document.getElementById('wiz-watch').value||'').trim(),reason:(document.getElementById('wiz-reason').value||'').trim(),distribute:(document.getElementById('wiz-distribute').value||'').trim()};
   if(payload.name.length<3){status.textContent='⚠ Give the domain a name (3+ characters).';return;}
-  let adminToken=(sessionStorage.getItem('signal-fabric-admin-token')||'').trim();
-  if(!adminToken){adminToken=(window.prompt('Enter the local Signal Fabric admin token:')||'').trim();}
+  let adminToken=(sessionStorage.getItem('abeng-admin-token')||'').trim();
+  if(!adminToken){adminToken=(window.prompt('Enter the local Abeng admin token:')||'').trim();}
   if(!adminToken){status.textContent='⚠ An admin token is required to create a domain.';return;}
-  sessionStorage.setItem('signal-fabric-admin-token',adminToken);
+  sessionStorage.setItem('abeng-admin-token',adminToken);
   btn.disabled=true;btn.textContent='Creating…';
   fetch('/api/domains/create',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+adminToken},body:JSON.stringify(payload)})
     .then(async response=>({status:response.status,body:await response.json()}))
     .then(({status:httpStatus,body:r})=>{
-      if(httpStatus===401){sessionStorage.removeItem('signal-fabric-admin-token');}
+      if(httpStatus===401){sessionStorage.removeItem('abeng-admin-token');}
       if(r&&r.ok&&r.domain){status.innerHTML='✓ Created <code style="font-family:var(--mono)">domains/'+r.domain.id+'.json</code> — added to the switcher.';loadDomains();setTimeout(()=>{closeWizard();activeDomain=r.domain.id;loadDomains();document.querySelector('.engine-sec').scrollIntoView({behavior:'smooth'});},900);}
       else{status.textContent='⚠ '+((r&&r.error)||'Could not create domain.');}
     })

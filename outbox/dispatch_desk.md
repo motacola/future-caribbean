@@ -2,7 +2,7 @@
 
 Generated: 2026-09-04 23:28 UTC
 
-Signal Fabric turns fragmented regional data into decision-ready routes. This is the primary product surface; Telegram/email are delivery channels and the dashboard is the operator/audit view.
+Abeng turns fragmented regional data into decision-ready routes. This is the primary product surface; Telegram/email are delivery channels and the dashboard is the operator/audit view.
 
 ## Open Track Coordination Chain
 

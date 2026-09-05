@@ -81,7 +81,7 @@ def build_brief() -> str:
     top_clusters = clusters[:3]
 
     lines = [
-        "🌴 *Signal Fabric — Decision Routes Ready*",
+        "🌴 *Abeng — Decision Routes Ready*",
         f"Cycle: `{cycle_id}` · {generated_at}",
         "",
         "*What this is:*",
@@ -119,7 +119,7 @@ def build_brief() -> str:
         "• `outbox/delivery_manifest.json` — channel handoff manifest",
         "",
         "No changed desk = no message.",
-        "- Signal Fabric",
+        "- Abeng",
     ])
 
     text = "\n".join(lines).rstrip() + "\n"

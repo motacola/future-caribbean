@@ -7,7 +7,7 @@ if [ "$VERCEL_PROJECT_NAME" = "future-caribbean" ]; then
   cp scripts/future-caribbean-holding.html dist/index.html
   echo "✓ done"
 else
-  echo "▶ signal-fabric: building full site"
+  echo "▶ abeng: building full site"
   pnpm install
 
   # Regional news data (data/regional_news/latest.json) is force-committed to git and

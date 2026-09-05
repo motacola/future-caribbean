@@ -1,4 +1,4 @@
-// Example Astro client island: realtime Signal Fabric map + desk.
+// Example Astro client island: realtime Abeng map + desk.
 // Drop into a <script> island on regional-connections.astro / /build desk.
 // Requires: npm i @pocketbase/js  and PB CORS allowing your Vercel origin.
 

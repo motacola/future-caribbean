@@ -17,7 +17,7 @@
 - Helper: `_serve_static()` for discovery files
 
 ### Tool Manifest (`TOOLS_MANIFEST` in `server.py`)
-- `engine: "Signal Fabric"`, `product: "Caribbean Opportunity Dispatch"`, `version: 1`
+- `engine: "Abeng"`, `product: "Caribbean Opportunity Dispatch"`, `version: 1`
 - 7 tools: `ask`, `status`, `validation_packs.index`, `validation_packs.get`, `domains`, `reasoning`, `feedback_apply`
 - Each tool: `name`, `description`, `method`, `path`, `params` (JSON-schema-ish), `example_request`, `example_response_keys`
 - `feedback_apply` marked `"writes": true`
@@ -27,14 +27,14 @@
 - `agents.md` — framework-specific connect instructions:
   - (a) Plain HTTP/curl
   - (b) Hermes (HTTP toolset pointed at `/api/tools.json`)
-  - (c) OpenClaw (HTTP contract + `signalctl` CLI)
+  - (c) OpenClaw (HTTP contract + `abengctl` CLI)
   - (d) Claude via MCP adapter
 
-### CLI (`cli/signalctl.py`)
-- Added `ask` subcommand: `python3 cli/signalctl.py ask "question"`
+### CLI (`cli/abengctl.py`)
+- Added `ask` subcommand: `python3 cli/abengctl.py ask "question"`
 - Reuses `agent.query.ask()` directly (no HTTP)
 - Exits non-zero if desk artifacts missing
-- Output matches existing signalctl style (bold/dim helpers)
+- Output matches existing abengctl style (bold/dim helpers)
 
 ### MCP Adapter (`mcp_adapter/`)
 - `desk_server.py` — FastMCP stdio server with 6 tools:
@@ -57,7 +57,7 @@
 - `test_tools_manifest_valid_structure` — manifest has required fields, all tools have name/method/path, ask + validation-packs present
 - `test_ask_handler_routes_through_agent_query` — function layer routes through `agent.query.ask`
 - `test_ask_handler_empty_question_returns_400` — empty question handled
-- `test_signalctl_ask_returns_zero_and_output` — CLI returns 0 and non-empty output with citation
+- `test_abengctl_ask_returns_zero_and_output` — CLI returns 0 and non-empty output with citation
 - `test_llms_txt_exists_and_mentions_tools` — file exists, mentions `/api/tools.json`
 - `test_agents_md_exists_and_mentions_tools` — file exists, mentions `/api/tools.json`, has framework sections
 - `test_validation_packs_index_exists` — index valid JSON with packs
@@ -68,14 +68,14 @@
 ## Validation Command Output
 
 ```bash
-$ python3 -m py_compile server.py cli/signalctl.py dashboard/generate.py
+$ python3 -m py_compile server.py cli/abengctl.py dashboard/generate.py
 # (no output = success)
 
 $ python3 -m pytest -q
 ..................
 18 passed in 0.13s
 
-$ python3 cli/signalctl.py ask "explain lead"
+$ python3 cli/abengctl.py ask "explain lead"
 Q: explain lead
 
 Lead signal: Guyana: +860.3% multi-source capital surge — market entry window open

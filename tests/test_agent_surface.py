@@ -21,9 +21,9 @@ def test_tools_manifest_valid_structure():
     from server import TOOLS_MANIFEST
 
     assert "engine" in TOOLS_MANIFEST
-    assert TOOLS_MANIFEST["engine"] == "Signal Fabric"
+    assert TOOLS_MANIFEST["engine"] == "Abeng"
     assert "product" in TOOLS_MANIFEST
-    assert TOOLS_MANIFEST["product"] == "Signal Fabric"
+    assert TOOLS_MANIFEST["product"] == "Abeng"
     assert "version" in TOOLS_MANIFEST
     assert TOOLS_MANIFEST["version"] == 1
     assert "tools" in TOOLS_MANIFEST
@@ -67,27 +67,27 @@ def test_ask_handler_empty_question_returns_400():
     assert "Ask about a country, persona, lead signal" in answer
 
 
-# ── Test: signalctl ask subcommand ─────────────────────────────
+# ── Test: abengctl ask subcommand ─────────────────────────────
 
-def test_signalctl_ask_returns_zero_and_output():
-    """signalctl ask returns exit code 0 and non-empty output."""
+def test_abengctl_ask_returns_zero_and_output():
+    """abengctl ask returns exit code 0 and non-empty output."""
     result = subprocess.run(
-        [sys.executable, "cli/signalctl.py", "ask", "explain the lead signal"],
+        [sys.executable, "cli/abengctl.py", "ask", "explain the lead signal"],
         cwd=str(ROOT),
         capture_output=True,
         text=True,
     )
-    assert result.returncode == 0, f"signalctl ask failed: {result.stderr}"
-    assert result.stdout.strip(), "No output from signalctl ask"
+    assert result.returncode == 0, f"abengctl ask failed: {result.stderr}"
+    assert result.stdout.strip(), "No output from abengctl ask"
     assert "Sources:" in result.stdout, "Missing citation in output"
 
 
-def test_signalctl_ask_missing_desk():
-    """signalctl ask returns non-zero if desk missing (simulated via subprocess)."""
+def test_abengctl_ask_missing_desk():
+    """abengctl ask returns non-zero if desk missing (simulated via subprocess)."""
     # This is harder to test without moving files, but we can verify
     # the command exists and has the right structure
     result = subprocess.run(
-        [sys.executable, "cli/signalctl.py", "ask", "--help"],
+        [sys.executable, "cli/abengctl.py", "ask", "--help"],
         cwd=str(ROOT),
         capture_output=True,
         text=True,
@@ -118,7 +118,7 @@ def test_agents_md_exists_and_mentions_tools():
     # Should have sections for different frameworks
     assert "Plain HTTP" in content or "plain HTTP" in content or "curl" in content
     assert "Hermes" in content
-    assert "OpenClaw" in content or "signalctl" in content
+    assert "OpenClaw" in content or "abengctl" in content
     assert "Claude" in content or "MCP" in content
 
 

@@ -104,7 +104,7 @@ After any pipeline run (local or GitHub Actions), confirm freshness on
 the live site:
 
 ```bash
-curl -s https://signal-fabric.vercel.app/api/status | python3 -m json.tool
+curl -s https://abeng.vercel.app/api/status | python3 -m json.tool
 ```
 
 Expected:

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Domain registry for Signal Fabric.
+"""Domain registry for Abeng.
 
 A *domain* is a declarative manifest (domains/*.json) that defines one
 instance of the engine: which public sources it watches, which signal
@@ -91,7 +91,7 @@ def summarise(d: dict[str, Any]) -> dict[str, Any]:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="Signal Fabric domain registry")
+    ap = argparse.ArgumentParser(description="Abeng domain registry")
     ap.add_argument("--json", action="store_true", help="machine-readable output")
     ap.add_argument("--validate", action="store_true", help="exit non-zero on errors")
     args = ap.parse_args()
@@ -101,7 +101,7 @@ def main() -> int:
     if args.json:
         print(json.dumps([summarise(d) for d in domains], indent=2))
     else:
-        print(f"\nSignal Fabric — {len(domains)} domain(s) registered\n")
+        print(f"\nAbeng — {len(domains)} domain(s) registered\n")
         for d in domains:
             s = summarise(d)
             tag = "● LIVE     " if s["status"] == "live" else "○ blueprint"

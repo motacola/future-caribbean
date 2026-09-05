@@ -1,4 +1,4 @@
-# Future Caribbean Application Draft v2 — Signal Fabric
+# Future Caribbean Application Draft v2 — Abeng
 # Caribbean Opportunity Dispatch
 **Last updated: 2026-06-18**
 
@@ -12,13 +12,13 @@
 
 ## Project name
 
-**Caribbean Opportunity Dispatch** — powered by Signal Fabric
+**Caribbean Opportunity Dispatch** — powered by Abeng
 
 ---
 
 ## One-liner
 
-Signal Fabric watches fragmented Caribbean public data on a continuous 4-hour cycle, routes dated opportunity dispatches to the right person with pre-assembled diligence, and learns from feedback — exposing the same deterministic engine to humans and agents through HTTP, MCP, or CLI.
+Abeng watches fragmented Caribbean public data on a continuous 4-hour cycle, routes dated opportunity dispatches to the right person with pre-assembled diligence, and learns from feedback — exposing the same deterministic engine to humans and agents through HTTP, MCP, or CLI.
 
 ---
 
@@ -38,13 +38,13 @@ Caribbean public data already exists: World Bank FDI figures, IDB project datase
 - FDI velocity in Belize has moved +701% — no diaspora investor has been routed to it.
 - An oil & gas local content story in Guyana was published yesterday — no regional operator's diligence pack mentions it.
 
-The gap is not data availability. The coordination layer is missing. Signal Fabric fills it.
+The gap is not data availability. The coordination layer is missing. Abeng fills it.
 
 ---
 
 ## Solution
 
-Signal Fabric is a **continuous multi-agent pipeline** that turns fragmented regional public data into routed, actionable dispatches — then learns from what gets acted on.
+Abeng is a **continuous multi-agent pipeline** that turns fragmented regional public data into routed, actionable dispatches — then learns from what gets acted on.
 
 **Each 4-hour cycle:**
 
@@ -72,9 +72,9 @@ This is a working system, not a proposal:
 | Dispatch generation | 32 dispatches per cycle across 7 personas with routing rationale |
 | Agent API | `POST /api/ask` — deterministic, cited, no LLM hallucination |
 | MCP adapter | `mcp_adapter/desk_server.py` — any MCP-compatible agent queries the same engine |
-| CLI | `signalctl.py ask "..."` — shell-compatible, OpenCall-ready |
+| CLI | `abengctl.py ask "..."` — shell-compatible, OpenCall-ready |
 | Domain instances | 2 live (Caribbean economic signals, climate/catastrophe risk) + 3 blueprints |
-| Deployed | https://signal-fabric.vercel.app |
+| Deployed | https://abeng.vercel.app |
 | llms.txt + agents.md | Machine-readable contract for agent discovery |
 
 ---
@@ -91,7 +91,7 @@ This is a working system, not a proposal:
 
 ## The agentic architecture (Open Track fit)
 
-Signal Fabric maps to all three Open Track build categories:
+Abeng maps to all three Open Track build categories:
 
 **Agentic AI systems**
 - Watchers, merger, packagers, and feedback are distinct agents with defined inputs and outputs
@@ -112,7 +112,7 @@ Signal Fabric maps to all three Open Track build categories:
 
 ## Why Open Track (not a sector track)
 
-Finance, climate, food, ocean, and procurement are **signal domains inside the engine**, not the product category. Sector tracks reward solutions that change outcomes in one vertical. Open Track rewards the coordination layer that makes all verticals faster. That's Signal Fabric.
+Finance, climate, food, ocean, and procurement are **signal domains inside the engine**, not the product category. Sector tracks reward solutions that change outcomes in one vertical. Open Track rewards the coordination layer that makes all verticals faster. That's Abeng.
 
 ---
 
@@ -162,17 +162,17 @@ What works here works in any fragmented regional economy: West Africa, Southeast
 Year 1: Caribbean economic + climate signal instances live; regional chambers and diaspora networks as first institutional subscribers.  
 Year 2: Second geography (West Africa or Pacific small states) via domain configurator; API revenue from 3–5 institutional clients.  
 Year 3: Sector-specific signal desks (capital markets, supply chain, compliance) as licensable domain blueprints.  
-Year 5: Signal Fabric becomes the coordination API layer for fragmented-market intelligence globally — the "who should act on this" layer that sector analysts, AI agents, and coordination platforms connect to.
+Year 5: Abeng becomes the coordination API layer for fragmented-market intelligence globally — the "who should act on this" layer that sector analysts, AI agents, and coordination platforms connect to.
 
 ---
 
 ## Build artifacts (verifiable today)
 
-- Deployed: https://signal-fabric.vercel.app
+- Deployed: https://abeng.vercel.app
 - Source: github.com/motacola/future-caribbean (private; share access on request)
-- API: `curl -s -X POST https://signal-fabric.vercel.app/api/ask -H "Content-Type: application/json" -d '{"question":"what changed this cycle"}'`
+- API: `curl -s -X POST https://abeng.vercel.app/api/ask -H "Content-Type: application/json" -d '{"question":"what changed this cycle"}'`
 - MCP: `mcp_adapter/desk_server.py` — runs locally, queries same artifacts
-- CLI: `python3 cli/signalctl.py ask "show Guyana dispatches"`
+- CLI: `python3 cli/abengctl.py ask "show Guyana dispatches"`
 - Validation pack: `outbox/validation_packs/enhanced-invest-guyana.md` — live, dated procurement, corroborated sector, registry operators
 
 ---
@@ -193,20 +193,20 @@ Total: ~3.5 minutes. Dashboard is available for deep-dive questions, not the ope
 
 ## Closing claim
 
-Signal Fabric compresses the time between a public signal and the person who should act on it. The Caribbean is where it runs today. Any fragmented regional economy is where it runs tomorrow.
+Abeng compresses the time between a public signal and the person who should act on it. The Caribbean is where it runs today. Any fragmented regional economy is where it runs tomorrow.
 
 ---
 
 ## Notes for the application form
 
 **Q: What is your prior build artifact?**
-Deployed API at https://signal-fabric.vercel.app + source repository. The `/api/ask` endpoint, validation packs in `/outbox/validation_packs/`, and live tender data are all runnable and inspectable.
+Deployed API at https://abeng.vercel.app + source repository. The `/api/ask` endpoint, validation packs in `/outbox/validation_packs/`, and live tender data are all runnable and inspectable.
 
 **Q: What frameworks / tools are you using?**
 Pure Python pipeline (no framework lock-in); stdlib HTTP server; MCP adapter; Flue workflow harness; pluggable LLM via `LLM_BASE_URL` (currently Ollama/Gemma 4 locally, ready for High-Rise H200).
 
 **Q: How does this use agentic AI?**
-Multi-agent pipeline with distinct watcher, merger, packaging, and reasoning agents. The agent API (`/api/ask`, `/api/tools.json`, MCP adapter, `signalctl`) makes the same deterministic intelligence layer accessible to any AI agent or coordination framework. Feedback loop adjusts agent routing across cycles.
+Multi-agent pipeline with distinct watcher, merger, packaging, and reasoning agents. The agent API (`/api/ask`, `/api/tools.json`, MCP adapter, `abengctl`) makes the same deterministic intelligence layer accessible to any AI agent or coordination framework. Feedback loop adjusts agent routing across cycles.
 
 **Q: Why Open Track?**
 This is coordination infrastructure, not a vertical app. Open Track is the only track that rewards the engine that makes every other track faster.

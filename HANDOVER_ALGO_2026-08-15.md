@@ -1,4 +1,4 @@
-# Handover — Signal Fabric ranking algorithm, calibration, and competitive position
+# Handover — Abeng ranking algorithm, calibration, and competitive position
 
 **Date:** 2026-08-15 · **Cycle at handover:** `20260815` · **For:** Hermes (implementation), Chris (review)
 
@@ -260,7 +260,7 @@ Checked directly against vendor sites. Quotes are from the vendors' own copy. So
 
 ### 5.1 Dataminr — closest on mechanism
 
-The nearest thing to Signal Fabric's *method* anywhere. Their own description of the pipeline is
+The nearest thing to Abeng's *method* anywhere. Their own description of the pipeline is
 almost a description of ours:
 
 > "assembling fragmented signals, enriching data, scoring risks, and routing finished
@@ -274,7 +274,7 @@ Scale to be realistic about: **43+ TB of public data daily**, **50+ proprietary 
 of data**.
 
 **Where they are not:** their domain is threat, risk and cyber defence — event detection for
-security operations. Not capital flows, not FDI, not procurement, not a region. Signal Fabric is
+security operations. Not capital flows, not FDI, not procurement, not a region. Abeng is
 not competing with Dataminr; it is applying a comparable method to a subject they do not cover.
 
 ### 5.2 fDi Markets (Financial Times) — closest on subject
@@ -282,7 +282,7 @@ not competing with Dataminr; it is applying a comparable method to a subject the
 > "the most comprehensive greenfield FDI tracking database on the market… real-time data since 2003"
 
 **The important distinction:** fDi Markets tracks **greenfield project announcements** — a company
-announcing a new facility. Signal Fabric tracks **macro flows** (World Bank FDI net inflows),
+announcing a new facility. Abeng tracks **macro flows** (World Bank FDI net inflows),
 **procurement**, and **regional press**. Different data layer entirely. A greenfield database will
 never tell you a CDB tender opened in Belize.
 
@@ -329,8 +329,8 @@ Their public commitment schedule:
 **Three things follow, and they matter more than anything else in this document:**
 
 1. **They are at day zero — cutoff `2026-08-15`, RESOLVED: 0, 65 active forecasts.**
-   Signal Fabric is at 16 open claims, same day. **Nobody has a track record yet. The race is
-   even, and it starts now.** Every cycle Signal Fabric runs without the ledger recording is a
+   Abeng is at 16 open claims, same day. **Nobody has a track record yet. The race is
+   even, and it starts now.** Every cycle Abeng runs without the ledger recording is a
    cycle of compounding forfeited.
 
 2. **Their metric set is more rigorous than ours.** They report Brier score, log-loss, calibration
@@ -340,7 +340,7 @@ Their public commitment schedule:
 
 3. **Pre-commitment beats post-hoc reporting.** Publishing targets you might miss, before
    resolution, is a far stronger trust signal than a rate published after the fact. It is also
-   free to copy — and Signal Fabric can do it this week.
+   free to copy — and Abeng can do it this week.
 
 They are a general forecasting platform, not Caribbean and not FDI, so they are not a direct
 competitor. But they are proof the positioning works, executed by someone who has thought about
@@ -356,7 +356,7 @@ it harder than we have.
 - CDB funds feasibility study on CARICOM regional stock exchange, Jamaica Gleaner, 2026-08-09 — https://jamaica-gleaner.com/article/business/20260809/cdb-funds-feasibility-study-caricom-regional-stock-exchange
 
 *Live lead spotted while researching:* the CDB has granted US$100,000 to study a **single regional
-CARICOM stock exchange**. That is directly upstream of Signal Fabric's market-watch layer and worth
+CARICOM stock exchange**. That is directly upstream of Abeng's market-watch layer and worth
 tracking as a product signal, not just a news item.
 
 ---
@@ -405,7 +405,7 @@ under-exploited asset in the codebase.
    product.** Do not leave it ambiguous.
 
 5. **Agent-readable distribution.** `llms.txt` and `mcp_adapter/` exist. If the calibration
-   figure is exposed through MCP, Signal Fabric becomes the Caribbean data source an agent can
+   figure is exposed through MCP, Abeng becomes the Caribbean data source an agent can
    *reason about the reliability of* — which is a different product from a feed.
 
 6. **Signal decay as an editorial product.** `_transfer_fdi_magnitudes` and the freshness

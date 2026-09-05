@@ -1,11 +1,11 @@
 # Connecting Agents to the Caribbean Opportunity Desk
 
-Signal Fabric is an agentic coordination infrastructure for fragmented economies: it watches public regional data, merges weak signals, routes opportunity dispatches to the right personas with auto-assembled diligence packs, and learns from recipient feedback. The Caribbean is the live proof; the engine is domain-agnostic (economic + climate instances today). Any agent can query it via HTTP, MCP, or CLI — it's deterministic, cited, and deployable now.
+Abeng is an agentic coordination infrastructure for fragmented economies: it watches public regional data, merges weak signals, routes opportunity dispatches to the right personas with auto-assembled diligence packs, and learns from recipient feedback. The Caribbean is the live proof; the engine is domain-agnostic (economic + climate instances today). Any agent can query it via HTTP, MCP, or CLI — it's deterministic, cited, and deployable now.
 
-The Signal Fabric engine exposes a **plain HTTP API** as its foundation — no SDK, no vendor lock-in. Every framework below hits the same endpoints.
+The Abeng engine exposes a **plain HTTP API** as its foundation — no SDK, no vendor lock-in. Every framework below hits the same endpoints.
 
 **Base URL (local):** `http://localhost:8080`
-**Base URL (hosted):** `https://signal-fabric.vercel.app`
+**Base URL (hosted):** `https://abeng.vercel.app`
 
 **Tool manifest:** `GET /api/tools.json (see also /feed.xml — RSS of the latest signals)` — machine-readable, ingest to self-configure.
 
@@ -17,21 +17,21 @@ No agent framework needed. The API is REST + JSON.
 
 ```bash
 # Status check
-curl https://signal-fabric.vercel.app/api/status
+curl https://abeng.vercel.app/api/status
 
 # Ask a question (deterministic, cited)
-curl -X POST https://signal-fabric.vercel.app/api/ask \
+curl -X POST https://abeng.vercel.app/api/ask \
   -H "Content-Type: application/json" \
   -d '{"question": "what changed this cycle"}'
 
 # List validation packs
-curl https://signal-fabric.vercel.app/api/validation-packs
+curl https://abeng.vercel.app/api/validation-packs
 
 # Get a specific pack
-curl https://signal-fabric.vercel.app/api/validation-packs/enhanced-invest-guyana
+curl https://abeng.vercel.app/api/validation-packs/enhanced-invest-guyana
 
 # Tool manifest (for any tool-calling agent)
-curl https://signal-fabric.vercel.app/api/tools.json
+curl https://abeng.vercel.app/api/tools.json
 ```
 
 **Response shape (`/api/ask`):**
@@ -56,7 +56,7 @@ Hermes uses **HTTP toolsets** pointed at `/api/tools.json`.
 {
   "name": "caribbean-desk",
   "type": "http",
-  "url": "https://signal-fabric.vercel.app/api/tools.json",
+  "url": "https://abeng.vercel.app/api/tools.json",
   "auth": "none"
 }
 ```
@@ -64,7 +64,7 @@ Hermes uses **HTTP toolsets** pointed at `/api/tools.json`.
 2. Or add via CLI:
 
 ```bash
-hermes tools add http caribbean-desk https://signal-fabric.vercel.app/api/tools.json
+hermes tools add http caribbean-desk https://abeng.vercel.app/api/tools.json
 ```
 
 3. Now Hermes can call `caribbean_desk.ask`, `caribbean_desk.status`, `caribbean_desk.validation_packs.get`, etc., directly.
@@ -76,25 +76,25 @@ hermes tools add http caribbean-desk https://signal-fabric.vercel.app/api/tools.
 
 ## (c) OpenClaw (or any HTTP-capable CLI agent)
 
-OpenClaw can call the HTTP API directly, or use the provided **`signalctl` CLI** for shell-tool agents.
+OpenClaw can call the HTTP API directly, or use the provided **`abengctl` CLI** for shell-tool agents.
 
 ### Option 1: HTTP (same as plain curl above)
 
-OpenClaw's HTTP tools pointed at `https://signal-fabric.vercel.app/api/tools.json`.
+OpenClaw's HTTP tools pointed at `https://abeng.vercel.app/api/tools.json`.
 
-### Option 2: `signalctl` (no HTTP server needed — runs against local files)
+### Option 2: `abengctl` (no HTTP server needed — runs against local files)
 
 ```bash
 # Install (already in repo)
-python3 cli/signalctl.py ask "explain the lead signal"
-python3 cli/signalctl.py ask "what changed this cycle"
-python3 cli/signalctl.py ask "routes for diaspora investor"
-python3 cli/signalctl.py ask "draft a note for Guyana"
+python3 cli/abengctl.py ask "explain the lead signal"
+python3 cli/abengctl.py ask "what changed this cycle"
+python3 cli/abengctl.py ask "routes for diaspora investor"
+python3 cli/abengctl.py ask "draft a note for Guyana"
 ```
 
 **Output:** Formatted answer + citation line (bold/dim styling on TTY).
 
-**Use from OpenClaw:** Define `signalctl` as a shell tool in your agent config.
+**Use from OpenClaw:** Define `abengctl` as a shell tool in your agent config.
 
 ---
 
@@ -138,7 +138,7 @@ Same config, ensure `python3` is on PATH and the `mcp` package is installed in t
 > "Get the Guyana validation pack and tell me the sector hypotheses."
 > "What changed this cycle according to the desk?"
 
-**Note:** The MCP adapter runs locally against your checked-out repo. For a hosted public instance, the MCP server would need to be deployed alongside the API (future work). The HTTP API at `https://signal-fabric.vercel.app` remains the universal interface.
+**Note:** The MCP adapter runs locally against your checked-out repo. For a hosted public instance, the MCP server would need to be deployed alongside the API (future work). The HTTP API at `https://abeng.vercel.app` remains the universal interface.
 
 ---
 

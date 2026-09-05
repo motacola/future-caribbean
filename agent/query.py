@@ -156,7 +156,7 @@ def draft_note(desk: dict[str, Any], country_or_persona: str) -> str:
         "",
         f"Subject: {country} signal worth reviewing this cycle",
         "",
-        f"A current Signal Fabric signal flagged {title}.",
+        f"A current Abeng signal flagged {title}.",
         f"Evidence: {chosen.get('evidence', 'Evidence recorded in Dispatch Desk')} ({chosen.get('evidence_grade', 'grade n/a')}).",
         f"Suggested next step: {action}",
         "",

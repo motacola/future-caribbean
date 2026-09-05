@@ -1,1 +1,1 @@
-"""Headless query helpers for Signal Fabric."""
+"""Headless query helpers for Abeng."""

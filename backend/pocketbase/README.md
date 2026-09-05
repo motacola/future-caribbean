@@ -1,6 +1,6 @@
-# Signal Fabric × PocketBase — Backend Design
+# Abeng × PocketBase — Backend Design
 
-**Problem PocketBase solves here.** Signal Fabric's state currently lives in three places that don't compose:
+**Problem PocketBase solves here.** Abeng's state currently lives in three places that don't compose:
 1. **JSON files in git** (`track_record.json`, `recipients.json`, `composite_rules.json`, `data/*.json`, `outbox/*.json`) — committed by the 4h GitHub Action. Up to 4h stale on the public site; no auth; no concurrent writes.
 2. **`server.py`** (`@vercel/python` serverless) — serves those JSON files over HTTP; public writes are disabled (`writes: False`).
 3. **`coordination/console.py`** — a local web operator console for `verify()` / `submit_outcome`.
@@ -61,7 +61,7 @@ When an operator verifies an intervention (`status → verified`, `afterScore` s
 1. **Add the SDK:** `npm i @pocketbase/js` to the Astro/frontend project. PB ships a first-class JS SDK (browser + Node).
 2. **SSR pages** (`regional-connections.astro`, `/build` desk): fetch server-side at request time via `pb.collection(...).getList()` → always fresh, kills the 4h staleness without touching page logic beyond the data source.
 3. **Client realtime:** init `new PocketBase(PB_URL)` in an island, `subscribe()` on mount, `unsubscribe()` on destroy.
-4. **CORS:** PB Settings → add `https://signal-fabric.vercel.app` (and your preview `*.vercel.app`). Without this the browser calls are blocked.
+4. **CORS:** PB Settings → add `https://abeng.vercel.app` (and your preview `*.vercel.app`). Without this the browser calls are blocked.
 5. **Operator auth:** login form → `pb.collection('users').authWithPassword` → `authStore` token sent on `verify()`/`submit_outcome` calls.
 6. **Agent contract:** keep `api_manifest.py` + `server.py` as the Hermes/MCP tool surface, but back reads with PB (or point agents straight at PB REST). Writes stay operator-authed.
 
@@ -135,6 +135,6 @@ PB_URL=https://pb.yourhost.com PB_ADMIN_EMAIL=you@x.com PB_ADMIN_PASSWORD=... \
   node setup.mjs
 ```
 
-Then point the Vercel frontend at `PB_URL`, add `https://signal-fabric.vercel.app` to
+Then point the Vercel frontend at `PB_URL`, add `https://abeng.vercel.app` to
 PocketBase Settings → CORS, and switch the Astro data layer from "read committed JSON" to
 "read PB collection" using the SDK + `realtime-leaderboard.example.ts`.
