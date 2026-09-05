@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Editorial enrichment layer for Caribbean Signal OS.
+"""Editorial enrichment layer for Abeng.
 
 Runs after the cross-source merger, before channel packaging.
 Transforms raw composite signals into editorial-grade intelligence:

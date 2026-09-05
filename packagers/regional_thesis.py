@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Cross-cluster regional thesis generator for Caribbean Signal OS.
+"""Cross-cluster regional thesis generator for Abeng.
 
 Produces one narrative paragraph per cycle that connects the dots
 between investment momentum, risk flags, and timing relevance.
@@ -208,7 +208,7 @@ def write_thesis_output(
     from datetime import datetime, timezone
 
     lines: list[str] = [
-        "# Regional Thesis — Caribbean Signal OS",
+        "# Regional Thesis — Abeng",
         "",
         f"Generated: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}",
         "",

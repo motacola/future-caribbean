@@ -7,7 +7,7 @@ Each dispatch is a concrete opportunity object with:
   - channel routing and delivery tracking
   - feedback prompt and next-cycle effect
 
-This is the core product artifact of Caribbean Opportunity Dispatch.
+This is the core product artifact of Abeng.
 """
 
 from __future__ import annotations
@@ -616,7 +616,7 @@ def write_dispatch_md(dispatches: list[dict[str, Any]], path: Path, cycle_id: st
     MAX_SHOWN = 15
 
     lines = [
-        f"# Caribbean Opportunity Dispatch — Cycle {cycle_id}",
+        f"# Abeng — Cycle {cycle_id}",
         "",
         f"Generated: {now}",
         f"Total dispatches: {len(dispatches)}",
@@ -683,7 +683,7 @@ def write_feedback_review(feedback_items: list[dict[str, Any]], path: Path, cycl
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
     lines = [
-        f"# Signal OS Feedback Review — Cycle {cycle_id}",
+        f"# Abeng Feedback Review — Cycle {cycle_id}",
         "",
         f"Generated: {now}",
         "",

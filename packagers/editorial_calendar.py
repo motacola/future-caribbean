@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Editorial calendar context for Caribbean Signal OS.
+"""Editorial calendar context for Abeng.
 
 Provides 'why now?' context per dispatch kind and country, based on
 seasonal windows and upcoming events from config/editorial_calendar.json.

@@ -31,4 +31,4 @@ Lead: Guyana. 3 converging signal(s) across 3 source(s). Signals: 💼 Investmen
    Validation — Anguilla: ccrif_payout (signal detected). Validate locally.
 
 — Lead: Guyana · 32 composite signal(s) · 1 updated · 8 intensified · 15 persistent
-- Caribbean Signal OS
+- Abeng

@@ -14,7 +14,7 @@ OUT = ROOT / "data" / "tenders" / "latest.json"
 RAW = ROOT / "data" / "tenders" / "raw"
 
 UA = {
-    "User-Agent": "Mozilla/5.0 (compatible; CaribbeanSignalOS/1.0)",
+    "User-Agent": "Mozilla/5.0 (compatible; Abeng/1.0)",
     "Accept": "application/json, text/html, */*",
 }
 TIMEOUT = 20

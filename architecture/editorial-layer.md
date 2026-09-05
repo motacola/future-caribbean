@@ -1,4 +1,4 @@
-# Editorial Layer — Caribbean Signal OS
+# Editorial Layer — Abeng
 
 ## Architecture
 

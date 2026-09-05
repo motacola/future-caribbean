@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-# Full Caribbean Signal OS pipeline.
+# Full Abeng pipeline.
 # Runs watchers, merger, channel packagers, and the operator console.
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")" && pwd)"
 
-echo "=== Caribbean Signal OS Pipeline ==="
+echo "=== Abeng Pipeline ==="
 echo ""
 
 # Track step success for summary.

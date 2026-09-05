@@ -90,7 +90,7 @@ def main() -> int:
     for sig in new_signals:
         print(f"• {sig}")
     print()
-    print("— Caribbean Signal OS • World Bank watcher")
+    print("— Abeng • World Bank watcher")
 
     # Update sent state with ALL current signals, not just new ones
     save_state(current_fingerprints)
