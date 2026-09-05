@@ -192,14 +192,21 @@ def write_outputs(
     config: dict[str, Any],
     data_dir: Path,
     signal_dir: Path,
+    errors: list[str] | None = None,
 ) -> tuple[Path, Path]:
     data_dir.mkdir(parents=True, exist_ok=True)
     signal_dir.mkdir(parents=True, exist_ok=True)
     fetched_at = datetime.now(timezone.utc).isoformat()
 
+    # A run where every request failed must not look like a healthy refresh.
+    # Record the outcome next to the timestamp so freshness checks
+    # (packagers/source_health.py, /api/status) can tell a real collection
+    # from an empty one that merely reset the clock.
     payload = {
         "source": "World Bank API",
         "fetched_at": fetched_at,
+        "ok": bool(observations),
+        "errors": list(errors or []),
         "countries": config["countries"],
         "indicators": config["indicators"],
         "observations": [serialize_observation(obs) for obs in observations],
@@ -276,7 +283,7 @@ def run(config_path: Path, data_dir: Path, signal_dir: Path, timeout: int, per_p
         if signal:
             signals.append(signal)
 
-    json_path, md_path = write_outputs(observations, signals, config, data_dir, signal_dir)
+    json_path, md_path = write_outputs(observations, signals, config, data_dir, signal_dir, errors)
     print(f"Wrote {json_path}", flush=True)
     print(f"Wrote {md_path}", flush=True)
     print(f"Observations: {len(observations)}", flush=True)

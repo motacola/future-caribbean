@@ -66,6 +66,12 @@ def build_health(root: Path = ROOT, previous: dict | None = None) -> dict:
     health: dict = {}
     for key, refresh in REFRESH_MINUTES.items():
         snapshot = _read_json(root / "data" / key / "latest.json")
+        # A snapshot that declares its own run failed (every request errored,
+        # nothing collected) is treated as no snapshot at all: its timestamp
+        # must not reset the freshness clock, or a dead collector reads as
+        # healthy for as long as it keeps failing on schedule.
+        if snapshot is not None and snapshot.get("ok") is False:
+            snapshot = None
         fetched_at = (snapshot or {}).get("fetched_at")
         entry = {
             "ok": bool(fetched_at),

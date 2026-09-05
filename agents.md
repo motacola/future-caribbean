@@ -146,6 +146,6 @@ Same config, ensure `python3` is on PATH and the `mcp` package is installed in t
 
 - **Deterministic only:** Answers come from `agent/query.py` against `outbox/dispatch_desk.json` — no LLM generation, no hallucinations.
 - **Read-first:** All endpoints are GET except `/api/ask` (POST, read-only) and `/api/feedback/apply` (POST, write).
-- **No auth required locally.** Hosted instance requires `DESK_ADMIN_TOKEN` header for write endpoints.
+- **Reads need no auth; writes always do.** Every write endpoint requires `DESK_ADMIN_TOKEN` to be set on the server and presented per request as `Authorization: Bearer <token>` or `X-Desk-Admin-Token: <token>` — local runs included. With the variable unset the write API is off and returns `503 {"error": "Admin write API is disabled"}`; a wrong token returns `401`.
 - **Citations included:** Every answer ends with `Sources: `artifact1`, `artifact2`` pointing to verifiable files.
 - **Pipeline must run first:** `bash run_pipeline.sh` generates the desk artifacts that the API queries.

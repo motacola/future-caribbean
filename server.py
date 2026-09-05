@@ -53,6 +53,31 @@ BLOCKED_PREFIXES = (
     "Procfile", "fly.toml", "vercel.json", ".gitignore", ".dockerignore",
 )
 
+# ── Source freshness ─────────────────────────────────────────
+# Same contract as the deployed function in api/status.py: a source is
+# judged against its own refresh cadence, with one missed refresh of grace.
+_DEFAULT_REFRESH_MINUTES = 1440
+_STALENESS_GRACE_FACTOR = 2
+
+
+def _age_minutes(ts: str | None) -> int | None:
+    if not ts:
+        return None
+    try:
+        dt = datetime.fromisoformat(ts.replace("Z", "+00:00"))
+        return int((datetime.now(timezone.utc) - dt).total_seconds() / 60)
+    except Exception:
+        return None
+
+
+def _max_age_minutes(health_entry: dict) -> int:
+    try:
+        refresh = int(health_entry.get("refresh_minutes") or _DEFAULT_REFRESH_MINUTES)
+    except (TypeError, ValueError):
+        refresh = _DEFAULT_REFRESH_MINUTES
+    return max(refresh, 1) * _STALENESS_GRACE_FACTOR
+
+
 _pipeline_lock = threading.Lock()
 _pipeline_running = False
 _last_pipeline_lines: list[str] = []
@@ -382,6 +407,15 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
                     data["stdout"] = output[-6000:]
         if result.stderr:
             data["stderr"] = result.stderr[-3000:]
+        # A workflow can refuse the request (unapproved delivery, unknown id)
+        # and still exit 0, reporting the refusal inside its own payload. The
+        # envelope has to carry that through, or a caller checking the
+        # top-level `ok` reads a rejected send as a successful one.
+        inner = data.get("result")
+        if isinstance(inner, dict) and inner.get("ok") is False:
+            data["ok"] = False
+            if inner.get("error"):
+                data.setdefault("error", inner["error"])
         return data
 
     def _sse(self, data: str) -> bool:
@@ -834,18 +868,48 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
             "NDBC": "ndbc",
             "CARICOM / CDB": "tier2",
         }
+        # Freshness is judged the same way the deployed function does it
+        # (api/status.py): a snapshot that exists is not proof a source is
+        # alive. A run that collected nothing reports ok=false and must not
+        # reset the clock, and a timestamp older than the source's own
+        # refresh cadence is stale, not healthy.
+        health_bundle = {}
+        try:
+            health_bundle = json.loads(
+                (APP_DIR / "api" / "source-health-data.json").read_text()
+            )
+        except Exception:
+            pass
+
         sources: dict = {}
+        n_sources_stale = 0
         for name, key in source_keys.items():
-            p = APP_DIR / "data" / key / "latest.json"
-            ok = p.exists()
+            snap_path = APP_DIR / "data" / key / "latest.json"
             fetched_at = ""
-            if ok:
+            if snap_path.exists():
                 try:
-                    d = json.loads(p.read_text())
-                    fetched_at = d.get("fetched_at", "")
+                    d = json.loads(snap_path.read_text())
+                    if d.get("ok") is not False:
+                        fetched_at = d.get("fetched_at", "")
                 except Exception:
                     pass
-            sources[key] = {"name": name, "ok": ok, "fetched_at": fetched_at}
+            entry = health_bundle.get(key) or {}
+            if not fetched_at:
+                fetched_at = entry.get("fetched_at") or ""
+            age_minutes = _age_minutes(fetched_at)
+            max_age_minutes = _max_age_minutes(entry)
+            stale = age_minutes is not None and age_minutes > max_age_minutes
+            if stale:
+                n_sources_stale += 1
+            sources[key] = {
+                "name": name,
+                "ok": bool(fetched_at),
+                "fetched_at": fetched_at,
+                "age_minutes": age_minutes,
+                "max_age_minutes": max_age_minutes,
+                "stale": stale,
+                "carried_forward": bool(entry.get("carried_forward")),
+            }
 
         desk: dict = {}
         desk_p = APP_DIR / "outbox" / "dispatch_desk.json"
@@ -903,6 +967,7 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
             "ok": True,
             "sources": sources,
             "n_sources_ok": sum(1 for s in sources.values() if s["ok"]),
+            "n_sources_stale": n_sources_stale,
             "n_dispatches": desk.get("dispatch_count", 0),
             "n_clusters": len(desk.get("clusters", [])),
             "cycle_id": desk.get("cycle_id", "—"),

@@ -1,63 +1,63 @@
 {
-  "updatedAt": "2026-06-03T14:30:52.622Z",
+  "updatedAt": "2026-09-05T19:22:22.129Z",
   "cycles": [
     {
       "cycleId": "20260603",
       "archivedAt": "2026-06-03T14:30:52.622Z",
-      "archiveDir": "/Users/christopherbelgrave/clawd/projects/future-caribbean/data/history/cycles/20260603",
+      "archiveDir": "data/history/cycles/20260603",
       "clusterCount": 12,
       "dispatchCount": 29,
-      "leadTitle": "Guyana: +860.3% multi-source capital surge — market entry window open",
+      "leadTitle": "Guyana: +860.3% multi-source capital surge \u2014 market entry window open",
       "leadCountry": "Guyana",
       "artifacts": [
         {
           "path": "outbox/dispatch_desk.json",
-          "archivePath": "/Users/christopherbelgrave/clawd/projects/future-caribbean/data/history/cycles/20260603/outbox__dispatch_desk.json",
+          "archivePath": "data/history/cycles/20260603/outbox__dispatch_desk.json",
           "size": 26871
         },
         {
           "path": "outbox/dispatch_desk.md",
-          "archivePath": "/Users/christopherbelgrave/clawd/projects/future-caribbean/data/history/cycles/20260603/outbox__dispatch_desk.md",
+          "archivePath": "data/history/cycles/20260603/outbox__dispatch_desk.md",
           "size": 11097
         },
         {
           "path": "outbox/opportunity_dispatches.json",
-          "archivePath": "/Users/christopherbelgrave/clawd/projects/future-caribbean/data/history/cycles/20260603/outbox__opportunity_dispatches.json",
+          "archivePath": "data/history/cycles/20260603/outbox__opportunity_dispatches.json",
           "size": 50187
         },
         {
           "path": "outbox/opportunity_dispatches.md",
-          "archivePath": "/Users/christopherbelgrave/clawd/projects/future-caribbean/data/history/cycles/20260603/outbox__opportunity_dispatches.md",
+          "archivePath": "data/history/cycles/20260603/outbox__opportunity_dispatches.md",
           "size": 6657
         },
         {
           "path": "outbox/delivery_manifest.json",
-          "archivePath": "/Users/christopherbelgrave/clawd/projects/future-caribbean/data/history/cycles/20260603/outbox__delivery_manifest.json",
+          "archivePath": "data/history/cycles/20260603/outbox__delivery_manifest.json",
           "size": 19904
         },
         {
           "path": "outbox/judge_brief.md",
-          "archivePath": "/Users/christopherbelgrave/clawd/projects/future-caribbean/data/history/cycles/20260603/outbox__judge_brief.md",
+          "archivePath": "data/history/cycles/20260603/outbox__judge_brief.md",
           "size": 9136
         },
         {
           "path": "outbox/investor_brief.md",
-          "archivePath": "/Users/christopherbelgrave/clawd/projects/future-caribbean/data/history/cycles/20260603/outbox__investor_brief.md",
+          "archivePath": "data/history/cycles/20260603/outbox__investor_brief.md",
           "size": 2276
         },
         {
           "path": "outbox/telegram_brief.md",
-          "archivePath": "/Users/christopherbelgrave/clawd/projects/future-caribbean/data/history/cycles/20260603/outbox__telegram_brief.md",
+          "archivePath": "data/history/cycles/20260603/outbox__telegram_brief.md",
           "size": 2995
         },
         {
           "path": "outbox/feedback_review.md",
-          "archivePath": "/Users/christopherbelgrave/clawd/projects/future-caribbean/data/history/cycles/20260603/outbox__feedback_review.md",
+          "archivePath": "data/history/cycles/20260603/outbox__feedback_review.md",
           "size": 2282
         },
         {
           "path": "outbox/reasoning.json",
-          "archivePath": "/Users/christopherbelgrave/clawd/projects/future-caribbean/data/history/cycles/20260603/outbox__reasoning.json",
+          "archivePath": "data/history/cycles/20260603/outbox__reasoning.json",
           "size": 1225
         }
       ]

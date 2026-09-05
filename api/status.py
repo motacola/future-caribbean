@@ -153,6 +153,11 @@ class handler(BaseHTTPRequestHandler):
             n_sources_stale = 0
             for label, key, desc in SRC:
                 d = _read_json(ROOT / "data" / key / "latest.json")
+                if d is not None and d.get("ok") is False:
+                    # The watcher recorded that this run collected nothing.
+                    # Fall through to the last known-good timestamp so the
+                    # age keeps growing instead of resetting on every failure.
+                    d = None
                 fetched_at = (d or {}).get("fetched_at") if d else None
                 fallback = bundled_source_health.get(key) or {}
                 if not fetched_at:

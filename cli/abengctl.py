@@ -42,6 +42,7 @@ import json
 import re
 import subprocess
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -69,6 +70,25 @@ def _read(rel: str) -> dict:
         return {}
 
 
+def _age_minutes(ts: str) -> int | None:
+    if not ts:
+        return None
+    try:
+        dt = datetime.fromisoformat(ts.replace("Z", "+00:00"))
+        return int((datetime.now(timezone.utc) - dt).total_seconds() / 60)
+    except ValueError:
+        return None
+
+
+def _age_str(minutes: int | None) -> str:
+    if minutes is None:
+        return "unknown age"
+    if minutes < 120:
+        return f"{minutes}m old"
+    hours = minutes // 60
+    return f"{hours}h old" if hours < 48 else f"{hours // 24}d old"
+
+
 # ── commands ────────────────────────────────────────────────────
 
 def cmd_status(args) -> int:
@@ -77,14 +97,37 @@ def cmd_status(args) -> int:
         ("NDBC", "ndbc"), ("CARICOM/CDB", "tier2"),
     ]
     print(bold("\nAbeng — status\n"))
+    # Same freshness contract as /api/status: the presence of a snapshot
+    # file proves nothing. A run that collected nothing reports ok=false,
+    # and a snapshot older than the source's own refresh cadence is stale.
+    from packagers.source_health import REFRESH_MINUTES
+
+    bundle = _read("api/source-health-data.json")
     live = 0
+    stale = 0
     for name, key in src_keys:
-        ok = (ROOT / "data" / key / "latest.json").exists()
+        snapshot = _read(f"data/{key}/latest.json")
+        fetched_at = "" if snapshot.get("ok") is False else snapshot.get("fetched_at", "")
+        entry = bundle.get(key) or {}
+        if not fetched_at:
+            fetched_at = entry.get("fetched_at") or ""
+        age = _age_minutes(fetched_at)
+        max_age = int(entry.get("refresh_minutes") or REFRESH_MINUTES.get(key, 1440)) * 2
+        is_stale = age is not None and age > max_age
+        ok = bool(fetched_at) and not is_stale
         if ok:
             live += 1
-        dot = green("●") if ok else dim("○")
-        print(f"  {dot} {name:<14} {'live' if ok else 'offline'}")
-    print(f"\n  Sources live : {live}/5 dirs")
+        elif is_stale:
+            stale += 1
+        if ok:
+            label, dot = "live", green("●")
+        elif is_stale:
+            label, dot = f"stale ({_age_str(age)})", dim("○")
+        else:
+            label, dot = "offline", dim("○")
+        print(f"  {dot} {name:<14} {label}")
+    suffix = f" · {stale} stale" if stale else ""
+    print(f"\n  Sources live : {live}/{len(src_keys)}{suffix}")
 
     desk = _read("outbox/dispatch_desk.json")
     clim = _read("outbox/climate_desk.json")

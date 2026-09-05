@@ -158,9 +158,18 @@ python3 -m pytest -q
 
 Read: `GET /api/status` · `/api/tools.json` · `/api/domains` · `/api/reasoning` · `/api/validation-packs[/<signal_id>]` · `/api/map-data` · `/api/history` · `/api/pipeline/stream` (SSE, `?replay=1` for offline replay) · `/llms.txt` · `/agents.md`
 
-Ask: `POST /api/ask` `{"question": "..."}` → `{answer, citations}`
+Ask: `POST /api/ask` `{"question": "..."}` → `{question, answer, engine, generated_at}` — sources are cited inline at the end of `answer` (the shape `/api/tools.json` advertises)
 
 Write (approval-gated): `POST /api/feedback/apply` · `/api/delivery/prepare` · `/api/delivery/approve` · `/api/delivery/send-approved` (dry-run by default) · `/api/history/archive`
+
+Write endpoints are off until `DESK_ADMIN_TOKEN` is set on the server, and each request must present it as `Authorization: Bearer <token>` or `X-Desk-Admin-Token: <token>` — locally too. Unset, they return `503 {"error": "Admin write API is disabled"}`; wrong token returns `401`.
+
+```bash
+DESK_ADMIN_TOKEN=local-dev-token python3 server.py
+curl -X POST localhost:8080/api/delivery/prepare \
+  -H 'Authorization: Bearer local-dev-token' \
+  -H 'Content-Type: application/json' -d '{"channel":"telegram"}'
+```
 
 Delivery is intentionally approval-gated: prepare first, approve explicitly, then send. Live Telegram sends require `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID`; dry-run is the default.
 

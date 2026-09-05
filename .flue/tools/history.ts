@@ -27,11 +27,15 @@ export async function archiveCurrentCycle(input: { cycleId?: string; overwrite?:
   const desk = await readJson(deskPath);
   const cycleId = String(input.cycleId || desk.cycle_id || new Date().toISOString().slice(0, 10).replaceAll('-', ''));
   const archiveDir = join(HISTORY_ROOT, cycleId);
+  // Paths in the index are served publicly by /api/history. Record them
+  // relative to the repo root: an absolute path leaks the layout of whatever
+  // machine ran the cycle and means nothing to a caller anywhere else.
+  const archiveDirRel = ['data', 'history', 'cycles', cycleId].join('/');
 
   try {
     const existing = await stat(archiveDir);
     if (existing.isDirectory() && !input.overwrite) {
-      return { ok: false, cycleId, archiveDir, error: 'Archive already exists. Pass overwrite=true to replace files.' };
+      return { ok: false, cycleId, archiveDir: archiveDirRel, error: 'Archive already exists. Pass overwrite=true to replace files.' };
     }
   } catch {
     // no archive yet
@@ -42,10 +46,11 @@ export async function archiveCurrentCycle(input: { cycleId?: string; overwrite?:
   for (const rel of ARCHIVE_ARTIFACTS) {
     try {
       const src = join(PROJECT_ROOT, rel);
-      const dst = join(archiveDir, rel.replaceAll('/', '__'));
+      const name = rel.replaceAll('/', '__');
+      const dst = join(archiveDir, name);
       await copyFile(src, dst);
       const s = await stat(dst);
-      copied.push({ path: rel, archivePath: dst, size: s.size });
+      copied.push({ path: rel, archivePath: `${archiveDirRel}/${name}`, size: s.size });
     } catch (error) {
       copied.push({ path: rel, skipped: true, error: error instanceof Error ? error.message : String(error) });
     }
@@ -54,7 +59,7 @@ export async function archiveCurrentCycle(input: { cycleId?: string; overwrite?:
   const entry = {
     cycleId,
     archivedAt: new Date().toISOString(),
-    archiveDir,
+    archiveDir: archiveDirRel,
     clusterCount: desk.cluster_count ?? desk.clusters?.length ?? null,
     dispatchCount: desk.dispatch_count ?? null,
     leadTitle: desk.clusters?.[0]?.title ?? null,
