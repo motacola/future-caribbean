@@ -5,7 +5,7 @@
 - Action readiness: high
 - Evidence freshness: refreshing · cycles since refresh: 0
 - Recommendation: **ADVANCE** — Calibrated confidence 100/100 with 3 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.
-- Last validated: 2026-09-05T15:08:21.700159+00:00
+- Last validated: 2026-09-05T18:13:42.885816+00:00
 
 ## Sector hypotheses
 - Oil & gas and offshore support services [corroborated] — _Google News — Guyana: Exxon’s Well Operations Supervisor reflects on her oil and gas journey - Guyana Chronicle_
