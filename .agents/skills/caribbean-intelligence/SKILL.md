@@ -1,6 +1,6 @@
 ---
 name: caribbean-intelligence
-description: Answer and package Caribbean Opportunity Dispatch signals with evidence, source citations, and clear decision routing.
+description: Answer and package Abeng signals with evidence, source citations, and clear decision routing.
 ---
 
 # Caribbean Intelligence Desk

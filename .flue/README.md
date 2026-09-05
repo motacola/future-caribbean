@@ -1,6 +1,6 @@
 # Flue Harness — Level 1
 
-This repo now has a thin Flue wrapper around the existing Caribbean Opportunity Dispatch Python pipeline.
+This repo now has a thin Flue wrapper around the existing Abeng Python pipeline.
 
 The Python pipeline remains the source of truth:
 

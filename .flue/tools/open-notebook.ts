@@ -43,7 +43,7 @@ export async function listOpenNotebooks() {
   return { ok: res.ok, status: res.status, notebooks: res.body };
 }
 
-export async function ensureNotebook(name = 'Future Caribbean Dispatch', description = 'Evidence artifacts and generated briefs from Caribbean Opportunity Dispatch.') {
+export async function ensureNotebook(name = 'Future Caribbean Dispatch', description = 'Evidence artifacts and generated briefs from Abeng.') {
   const list = await request('/api/notebooks');
   if (!list.ok || !Array.isArray(list.body)) return { status: list.status, ok: false, error: 'Could not list notebooks', detail: list.body };
   const existing = list.body.find((n: any) => String(n?.name || '').toLowerCase() === name.toLowerCase());
@@ -67,7 +67,7 @@ export async function pushCycleToOpenNotebook(input: { notebookName?: string; in
   const desk = JSON.parse(deskRaw);
   const brief = await generateBrief({ audience: 'investor', channel: 'memo', maxClusters: 5 });
   const markdown = [
-    `# Caribbean Opportunity Dispatch — ${desk.cycle_id || 'current cycle'}`,
+    `# Abeng — ${desk.cycle_id || 'current cycle'}`,
     '',
     brief.brief,
     '',

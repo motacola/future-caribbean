@@ -105,7 +105,7 @@ def test_llms_txt_exists_and_mentions_tools():
     content = llms.read_text()
     assert "/api/tools.json" in content
     assert "/api/ask" in content
-    assert "Caribbean Opportunity Dispatch" in content
+    assert "Abeng" in content
 
 
 def test_agents_md_exists_and_mentions_tools():

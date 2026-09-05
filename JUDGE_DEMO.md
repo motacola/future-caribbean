@@ -1,4 +1,4 @@
-# Caribbean Opportunity Dispatch — Judge Demo Kit
+# Abeng — Judge Demo Kit
 
 Generated for a 3-minute live demo with rehearsed fallbacks.
 
@@ -6,7 +6,7 @@ Generated for a 3-minute live demo with rehearsed fallbacks.
 
 ## 1. The pitch in three sentences
 
-Caribbean opportunity data is split across thirteen public sources, six countries’ portals, and a handful of old-style bulletins — so a deal or procurement window is often missed before it opens. Caribbean Opportunity Dispatch watches those sources on a four-hour cycle, grades the signals, pre-assembles the diligence evidence, and routes a clear next move to the right person. The desk is built so humans read it and any agent queries it: one HTTP API, one tool manifest, one MCP adapter, and the same deterministic engine behind all of them.
+Caribbean opportunity data is split across thirteen public sources, six countries’ portals, and a handful of old-style bulletins — so a deal or procurement window is often missed before it opens. Abeng watches those sources on a four-hour cycle, grades the signals, pre-assembles the diligence evidence, and routes a clear next move to the right person. The desk is built so humans read it and any agent queries it: one HTTP API, one tool manifest, one MCP adapter, and the same deterministic engine behind all of them.
 
 ---
 
