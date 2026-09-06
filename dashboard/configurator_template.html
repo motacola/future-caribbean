@@ -495,7 +495,7 @@ function renderClientSide() {
   if (state.channel === 'telegram') {
     text = `*Caribbean Opportunity Signal*\n\n*${country}* — ${conf}\n\n${ev}${pstr}\n\n*What to do (${pl}):*\n${action}\n\n_Screening signal only. Not investment advice._`;
   } else if (state.channel === 'whatsapp') {
-    text = `🌴 Caribbean Signal\n\n${country}: ${ev}${pstr}\n\n${action.slice(0,160)}\n\nScreening signal only.\nhttps://future-caribbean.fly.dev`;
+    text = `🌴 Caribbean Signal\n\n${country}: ${ev}${pstr}\n\n${action.slice(0,160)}\n\nScreening signal only.\nhttps://abeng.vercel.app`;
   } else if (state.channel === 'email') {
     text = `Subject: ${country} — ${conf.toLowerCase()} market signal\n\n${ev}${pstr}\n\nFor ${pl}:\n${action}\n\nSource: World Bank / IDB\nConfidence: ${conf}\n\nScreening signal, not investment advice.\nAbeng`;
   } else {
@@ -583,7 +583,7 @@ function openWhatsApp() {
     .then(r => r.json())
     .then(r => { if (r.ok) window.open(r.link,'_blank','noopener'); })
     .catch(() => {
-      const msg = _previewText || '🌴 Abeng\nhttps://future-caribbean.fly.dev';
+      const msg = _previewText || '🌴 Abeng\nhttps://abeng.vercel.app';
       window.open('https://wa.me/?text='+encodeURIComponent(msg),'_blank','noopener');
     });
   closeModal();

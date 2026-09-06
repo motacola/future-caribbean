@@ -50,7 +50,7 @@ BLOCKED_PREFIXES = (
     "packagers/", "planning/", "tests/", "agent/", "architecture/",
     "config/", "memory/", "domains/", "cli/", "reasoners/",
     "run_pipeline.sh", "requirements.txt", "server.py", "Dockerfile",
-    "Procfile", "fly.toml", "vercel.json", ".gitignore", ".dockerignore",
+    "Procfile", "vercel.json", ".gitignore", ".dockerignore",
 )
 
 def _astro_page_exists(clean: str) -> bool:
@@ -1199,7 +1199,7 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
                 f"{country}: {evidence}{pct_str}\n\n"
                 f"{action[:160]}\n\n"
                 f"{disclaimer}\n"
-                f"Full brief: https://future-caribbean.fly.dev"
+                f"Full brief: https://abeng.vercel.app"
             )
         elif channel == "email":
             kind_word = "hazard" if domain == "climate" else "market"
@@ -1284,7 +1284,7 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
             "",
             "_Screening signal only. Not investment advice._",
             "",
-            "Full brief: https://future-caribbean.fly.dev",
+            "Full brief: https://abeng.vercel.app",
         ]
         msg = "\n".join(lines)
 
