@@ -188,9 +188,15 @@ Run workflows directly via CLI:
 ```bash
 pnpm flue:run-cycle
 pnpm flue:apply-feedback
-pnpm flue:prepare-delivery -- '{"channel":"telegram"}'
-pnpm flue:approve-delivery -- '{"approvalId":"APP-...","approvedBy":"operator"}'
-pnpm flue:send-approved -- '{"approvalId":"APP-...","dryRun":true}'
+pnpm flue:artifacts
+pnpm flue:history
+
+# Payload goes straight after the script name. Do not put `--` in front of it:
+# pnpm forwards the separator to the script, so Flue sees `--payload --` and
+# rejects the JSON that follows as an unknown argument.
+pnpm flue:prepare-delivery '{"channel":"telegram"}'
+pnpm flue:approve-delivery '{"approvalId":"APP-...","approvedBy":"operator"}'
+pnpm flue:send-approved '{"approvalId":"APP-...","dryRun":true}'
 ```
 
 ## Validation Packs — from "investigate" to "here's the evidence"

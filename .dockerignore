@@ -1,2 +1,10 @@
 fly.toml
 .venv
+.git
+node_modules
+# dist/ is produced by the build stage; copying a local one in would mask it.
+dist
+dist-flue
+test-results
+playwright-report
+__pycache__
