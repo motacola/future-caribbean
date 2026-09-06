@@ -1,6 +1,6 @@
 # Abeng — Backtest Report
 
-**Generated:** 2026-09-06T12:07:19.134265+00:00
+**Generated:** 2026-09-06T15:28:11.666583+00:00
 **Cycles analyzed:** 8
 **Total dispatches:** 738
 **Actionable responses:** 2
