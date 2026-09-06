@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "abeng": {
+      "command": "python3",
+      "args": ["mcp_adapter/desk_server.py"]
+    }
+  }
+}

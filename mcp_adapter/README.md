@@ -19,19 +19,23 @@ pip install -r requirements.txt
 
 ## Configuration
 
-### Claude Code (`.mcp.json` at repo root)
+### Claude Code — already wired
+
+`.mcp.json` ships in the repo, so a clone is configured out of the box:
 
 ```json
 {
   "mcpServers": {
-    "caribbean-desk": {
+    "abeng": {
       "command": "python3",
-      "args": ["mcp_adapter/desk_server.py"],
-      "cwd": "/path/to/future-caribbean"
+      "args": ["mcp_adapter/desk_server.py"]
     }
   }
 }
 ```
+
+Install the SDK (`pip install -r mcp_adapter/requirements.txt`) and Claude
+Code picks the server up from the project root on the next session.
 
 ### Claude Desktop (`claude_desktop_config.json`)
 

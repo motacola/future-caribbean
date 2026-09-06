@@ -105,7 +105,7 @@ _pipeline_subscribers_lock = threading.Lock()
 
 # ── Tool Manifest ────────────────────────────────────────────
 
-from api_manifest import TOOLS_MANIFEST
+from api_manifest import TOOLS_MANIFEST, manifest_for
 
 
 class AppHandler(http.server.SimpleHTTPRequestHandler):
@@ -252,6 +252,12 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
             self.path = "/dist/" + clean + "/index.html"
         # Root and named pages — serve from Astro dist
         elif clean in ("", "index.html", "briefing", "briefing.html", "desk", "system", "system.html"):
+            # dist/ is gitignored, so a fresh clone has no site until it is
+            # built. The API answers fine without it, which made this a bare
+            # 404 on the home page with nothing to say why.
+            if not (APP_DIR / "dist" / "index.html").is_file():
+                self._site_not_built()
+                return
             self.path = "/dist/index.html"
         elif clean in ("build", "build.html"):
             self.path = "/dist/build/index.html"
@@ -652,9 +658,47 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
             return
         self._json({"ok": True, "snippets": snippets})
 
+    def _site_not_built(self) -> None:
+        """Explain the missing build instead of 404ing on the home page."""
+        body = (
+            "<!doctype html><meta charset=utf-8>"
+            "<title>Abeng — site not built yet</title>"
+            "<style>body{font:16px/1.6 system-ui,sans-serif;max-width:38rem;"
+            "margin:12vh auto;padding:0 1.5rem;color:#18251F}"
+            "code{background:#f2efe6;padding:.15em .4em;border-radius:3px}"
+            "pre{background:#18251F;color:#FFFCF4;padding:1rem;border-radius:6px;"
+            "overflow-x:auto}a{color:#0D5257}</style>"
+            "<h1>The site has not been built yet</h1>"
+            "<p>The API is running and already answering — this server just has no "
+            "<code>dist/</code> to serve the pages from. It is gitignored, so a fresh "
+            "clone never has one.</p>"
+            "<pre>pnpm install &amp;&amp; pnpm build</pre>"
+            "<p>Then reload. Nothing else needs restarting.</p>"
+            "<h2>The agent surface works right now</h2>"
+            "<p>No build required for any of these:</p>"
+            "<pre>curl localhost:8080/api/tools.json\n"
+            "curl -X POST localhost:8080/api/ask -d '{\"question\":\"explain lead\"}'\n"
+            "python3 cli/abengctl.py status</pre>"
+            "<p><a href=\"/api/tools.json\">/api/tools.json</a> &middot; "
+            "<a href=\"/agents.md\">/agents.md</a> &middot; "
+            "<a href=\"/llms.txt\">/llms.txt</a></p>"
+        ).encode("utf-8")
+        self.send_response(503)
+        self.send_header("Content-Type", "text/html; charset=utf-8")
+        self.send_header("Content-Length", str(len(body)))
+        self.end_headers()
+        self.wfile.write(body)
+
     def _api_tools_manifest(self) -> None:
-        """Serve the machine-readable tool manifest."""
-        self._json(TOOLS_MANIFEST)
+        """Serve the machine-readable tool manifest.
+
+        Resolved against the address the agent actually reached us on, so
+        the manifest it ingests carries callable URLs rather than paths it
+        has to guess a host for.
+        """
+        host = self.headers.get("Host") or f"127.0.0.1:{PORT}"
+        scheme = "https" if self.headers.get("X-Forwarded-Proto") == "https" else "http"
+        self._json(manifest_for(f"{scheme}://{host}"))
 
     # ── Static file serving for discovery ──────────────────────
 

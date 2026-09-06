@@ -203,3 +203,33 @@ TOOLS_MANIFEST = {
         }
     ]
 }
+
+
+def manifest_for(base_url: str = "", public: bool = False) -> dict:
+    """The manifest an agent can act on without being told anything else.
+
+    The stored form carries relative paths, so an agent that fetched
+    /api/tools.json had 17 tools and no host to send them to — the README
+    invites it to "ingest the manifest, configure yourself", which needs an
+    address. Every tool gains an absolute `url`, and the envelope names the
+    `base_url` they were built from.
+
+    `public` marks the write tools unavailable, which is what the deployed
+    read-only instance serves.
+    """
+    import copy
+
+    manifest = copy.deepcopy(TOOLS_MANIFEST)
+    base = (base_url or "").rstrip("/")
+    if base:
+        manifest["base_url"] = base
+    for tool in manifest["tools"]:
+        path = tool.get("path", "")
+        if base and path:
+            tool["url"] = base + path
+        if public:
+            writes = bool(tool.get("writes"))
+            tool["available"] = not writes
+            if writes:
+                tool["note"] = "local instance only"
+    return manifest
