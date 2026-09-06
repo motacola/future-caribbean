@@ -39,4 +39,50 @@ export function capabilityLabel(id: string | null | undefined): string {
   return words ? words.charAt(0).toUpperCase() + words.slice(1) : 'Unspecified';
 }
 
+/**
+ * Sector labels. `sector` is a separate taxonomy from `capability` and was
+ * still rendering raw: a match row read "Bahamas climate_resilience", and the
+ * sector filter listed the slugs verbatim.
+ */
+const SECTORS: Record<string, string> = {
+  aviation_infrastructure: 'Airports & aviation',
+  climate_resilience: 'Climate resilience',
+  construction_and_works: 'Construction & works',
+  digital_and_ict: 'Digital & IT',
+  education_infrastructure: 'Education facilities',
+  medical_supplies: 'Medical supplies',
+  transport_and_logistics: 'Transport & logistics',
+  water_and_irrigation: 'Water & irrigation',
+};
+
+/** A sector slug as a reader should see it. */
+export function sectorLabel(id: string | null | undefined): string {
+  if (!id) return 'Unsorted';
+  const key = String(id).trim();
+  if (SECTORS[key]) return SECTORS[key];
+  const words = key.replace(/[_-]+/g, ' ').trim();
+  return words ? words.charAt(0).toUpperCase() + words.slice(1) : 'Unsorted';
+}
+
+/**
+ * Tender lifecycle labels. /opportunity-resolution had its own copy of this
+ * map; /capability-matches had none and printed the raw token ("UNRESOLVED").
+ */
+const STATES: Record<string, string> = {
+  detected: 'Detected',
+  open: 'Open',
+  amended: 'Amended',
+  closed: 'Closed — awaiting outcome',
+  awarded: 'Awarded',
+  cancelled: 'Cancelled',
+  unresolved: 'Unresolved',
+};
+
+/** A tender lifecycle state as a reader should see it. */
+export function stateLabel(id: string | null | undefined): string {
+  if (!id) return 'Unknown';
+  const key = String(id).trim();
+  return STATES[key] || key.replace(/[_-]+/g, ' ');
+}
+
 export default capabilityLabel;

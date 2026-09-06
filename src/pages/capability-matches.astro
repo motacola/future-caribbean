@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import { capabilityLabel } from '../lib/capability-labels';
+import { capabilityLabel, sectorLabel, stateLabel } from '../lib/capability-labels';
 import { readFileSync, existsSync } from 'fs';
 import { resolve, join } from 'path';
 
@@ -105,14 +105,14 @@ function bestEvidence(holder: any): any {
   </div>
   <div class="match-list" id="match-list" data-reveal="15">
     {matches.slice(0, 120).map((m) => (
-      <div class="match-row" data-country={m.country} data-sector={m.sector}>
+      <div class="match-row" data-country={m.country} data-sector={sectorLabel(m.sector)}>
         <div class="match-head">
           <div class="match-title">{m.title}</div>
           <div class="match-meta">
             <span>{m.country}</span>
             {m.buyer && <span>{m.buyer}</span>}
-            <span class="match-sector">{m.sector}</span>
-            <span class={`match-state state-${m.lifecycle_state}`}>{m.lifecycle_state}</span>
+            <span class="match-sector">{sectorLabel(m.sector)}</span>
+            <span class={`match-state state-${m.lifecycle_state}`}>{stateLabel(m.lifecycle_state)}</span>
           </div>
         </div>
         <div class="match-caps">

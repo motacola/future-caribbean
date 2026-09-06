@@ -260,3 +260,52 @@ h1, h2 { animation: fe-rise .7s var(--fe-ease-out) both; }
   .filter-field { flex: 1 1 140px; }
   .filter-field select { width: 100%; }
 }
+
+/* ── Masthead ────────────────────────────────────────────────
+   The homepage styles .masthead inside its own is:global block, so the
+   five sub-pages that reuse the same markup rendered it completely
+   unstyled — a plain link soup where the site header should be. This is
+   the shared baseline; the homepage's own rules still override it. ── */
+.masthead {
+  background: linear-gradient(160deg, #211D19, #14110E 88%);
+  color: var(--bg, #FFFCF4);
+  padding: 8px 0 14px;
+}
+.masthead::after {
+  content: "";
+  display: block;
+  height: 3px;
+  margin-bottom: -3px;
+  background: linear-gradient(90deg, var(--gold, #B57A22), var(--teal, #0D5257) 55%, transparent);
+  opacity: .85;
+}
+.masthead .mast-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 6px 24px 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.masthead .mast-name {
+  font-family: var(--serif, Georgia, serif);
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  line-height: 1;
+  color: var(--bg, #FFFCF4);
+  text-decoration: none;
+}
+.masthead .mast-name em { font-style: normal; color: var(--gold, #B57A22); }
+.masthead .mast-links { display: flex; gap: 22px; flex-wrap: wrap; justify-content: center; }
+.masthead .mast-links a {
+  color: color-mix(in srgb, var(--bg, #FFFCF4) 62%, transparent);
+  font-size: 11px;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-decoration: none;
+}
+.masthead .mast-links a:hover { color: var(--bg, #FFFCF4); }
