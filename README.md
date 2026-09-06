@@ -334,6 +334,25 @@ pnpm dev
 vercel deploy --prod --force
 ```
 
+### Self-hosting (your own server)
+
+`server.py` is pure standard library, so a host needs Python 3.10+, the one
+dependency in `requirements.txt`, and something to terminate TLS. Node is
+optional — without it the pipeline skips the Astro build and serves whatever
+is already in `dist/`.
+
+`deploy/` carries systemd units for the server and a four-hourly pipeline
+timer, an environment file to copy, and Caddy and nginx snippets:
+
+```bash
+sudo cp deploy/abeng.service deploy/abeng-pipeline.service deploy/abeng-pipeline.timer /etc/systemd/system/
+sudo install -m 600 deploy/abeng.env.example /etc/abeng.env
+sudo systemctl enable --now abeng.service abeng-pipeline.timer
+```
+
+Full walkthrough, including the `ABENG_CORS_ORIGINS` setting a reverse proxy
+needs before writes stop returning 403: [`deploy/README.md`](deploy/README.md).
+
 ### Static hosting (Netlify, GitHub Pages, etc.)
 
 1. Run `bash run_pipeline.sh` then `pnpm build`

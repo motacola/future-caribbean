@@ -1,0 +1,19 @@
+# The documented cadence is four-hourly.
+#
+#   systemctl enable --now abeng-pipeline.timer
+#   systemctl list-timers abeng-pipeline.timer
+
+[Unit]
+Description=Run an Abeng pipeline cycle every four hours
+Documentation=https://github.com/motacola/future-caribbean
+
+[Timer]
+OnCalendar=*-*-* 00/4:00:00
+# Catch up after a reboot or an outage rather than waiting for the next slot.
+Persistent=true
+# Keep several hosts from hitting the public sources on the same second.
+RandomizedDelaySec=5min
+Unit=abeng-pipeline.service
+
+[Install]
+WantedBy=timers.target

@@ -49,8 +49,8 @@ BLOCKED_PREFIXES = (
     "data/", "signals/", "watchers/", "mergers/", "distributors/",
     "packagers/", "planning/", "tests/", "agent/", "architecture/",
     "config/", "memory/", "domains/", "cli/", "reasoners/",
-    "run_pipeline.sh", "requirements.txt", "server.py", "Dockerfile",
-    "Procfile", "vercel.json", ".gitignore", ".dockerignore",
+    "run_pipeline.sh", "requirements.txt", "server.py",
+    "vercel.json", ".gitignore", "deploy/",
 )
 
 def _astro_page_exists(clean: str) -> bool:

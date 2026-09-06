@@ -1,0 +1,47 @@
+# The Abeng operator server.
+#
+# server.py is pure standard library — no gunicorn, no uvicorn, nothing to
+# put in front of it but a TLS terminator. Install to
+# /etc/systemd/system/abeng.service and edit WorkingDirectory/User if you
+# checked out somewhere other than /opt/abeng.
+#
+#   systemctl enable --now abeng.service
+
+[Unit]
+Description=Abeng operator server
+Documentation=https://github.com/motacola/future-caribbean
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=exec
+User=abeng
+Group=abeng
+WorkingDirectory=/opt/abeng
+
+# PORT, HOST, ABENG_CORS_ORIGINS, DESK_ADMIN_TOKEN and the Telegram
+# credentials live here. See deploy/README.md; the file is optional, and
+# the server starts with sensible defaults without it.
+EnvironmentFile=-/etc/abeng.env
+
+# The pipeline runs from abeng-pipeline.timer, so the server's own 4-hour
+# loop is off. Two schedulers would run cycles on top of each other and
+# republish the same artefacts twice.
+Environment=DISABLE_PIPELINE_LOOP=1
+
+ExecStart=/usr/bin/python3 server.py
+Restart=on-failure
+RestartSec=5s
+
+# The server writes only inside its own checkout (outbox/, data/, dist/).
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/abeng
+ProtectKernelTunables=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+
+[Install]
+WantedBy=multi-user.target
