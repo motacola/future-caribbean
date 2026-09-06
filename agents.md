@@ -138,7 +138,17 @@ Same config, ensure `python3` is on PATH and the `mcp` package is installed in t
 > "Get the Guyana validation pack and tell me the sector hypotheses."
 > "What changed this cycle according to the desk?"
 
-**Note:** The MCP adapter runs locally against your checked-out repo. For a hosted public instance, the MCP server would need to be deployed alongside the API (future work). The HTTP API at `https://abeng.vercel.app` remains the universal interface.
+**Hosted MCP:** `https://abeng.vercel.app/mcp` speaks Model Context Protocol over Streamable HTTP — point any MCP client at that URL and the desk's tools appear, with nothing to install and no repo to clone. It is stateless and read-only.
+
+```json
+{
+  "mcpServers": {
+    "abeng": { "url": "https://abeng.vercel.app/mcp" }
+  }
+}
+```
+
+Tools: `desk_status`, `list_signals`, `get_dispatch`, `get_validation_pack`, `ask_desk`. The stdio adapter in `mcp_adapter/desk_server.py` serves the same tools from a local checkout, and adds `record_feedback`, which writes and so is absent from the hosted surface.
 
 ---
 

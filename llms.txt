@@ -14,6 +14,7 @@ Abeng is an agentic coordination infrastructure for fragmented economies: it wat
 
 | Method | Path | Description |
 |--------|------|-------------|
+| POST | `/mcp` | Model Context Protocol over Streamable HTTP. Point an MCP client here and the desk's tools appear — nothing to install. |
 | POST | `/api/ask` | Ask a question against the current Dispatch Desk. Returns a deterministic, cited answer. |
 | GET | `/api/status` | Engine health: source status, cycle info, dispatch counts, feedback outcomes. |
 | GET | `/api/validation-packs` | Index of all validation packs for the current cycle. |
@@ -30,6 +31,9 @@ Abeng is an agentic coordination infrastructure for fragmented economies: it wat
 ## Quick Start (curl)
 
 ```bash
+# Add the desk to an MCP client — no clone, no install
+#   { "mcpServers": { "abeng": { "url": "https://abeng.vercel.app/mcp" } } }
+
 # Ask the desk a question
 curl -X POST https://abeng.vercel.app/api/ask \
   -H "Content-Type: application/json" \

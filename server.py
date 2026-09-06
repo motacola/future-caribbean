@@ -16,7 +16,10 @@ from urllib.parse import parse_qs, urlparse
 
 PORT = int(os.environ.get("PORT", 8080))
 APP_DIR = Path(__file__).parent
-PUBLIC_POST_PATHS = frozenset({"/api/ask"})
+# POSTs that read rather than write, so the admin gate lets them through.
+# /mcp is the Model Context Protocol endpoint: JSON-RPC in, published
+# artefacts out, no tool behind it that can change anything.
+PUBLIC_POST_PATHS = frozenset({"/api/ask", "/mcp"})
 LOOPBACK_HOSTS = frozenset({"127.0.0.1", "::1", "localhost"})
 
 
@@ -224,6 +227,13 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
         if path == "/api/community-brief/snippets":
             self._api_community_brief_snippets()
             return
+        if path == "/mcp":
+            self.send_response(405)
+            self.send_header("Allow", "POST, OPTIONS")
+            self.send_header("Content-Length", "0")
+            self._cors()
+            self.end_headers()
+            return
         if path == "/api/tools.json":
             self._api_tools_manifest()
             return
@@ -291,6 +301,9 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
         if path not in PUBLIC_POST_PATHS and not self._require_admin():
             return
 
+        if path == "/mcp":
+            self._mcp_endpoint()
+            return
         if path == "/api/ask":
             self._api_ask()
             return
@@ -686,6 +699,36 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
         self.send_response(503)
         self.send_header("Content-Type", "text/html; charset=utf-8")
         self.send_header("Content-Length", str(len(body)))
+        self.end_headers()
+        self.wfile.write(body)
+
+    def _mcp_endpoint(self) -> None:
+        """Model Context Protocol over Streamable HTTP.
+
+        Stateless: every tool is a read of published artefacts, so there is
+        no session to hold and a client loses nothing by reconnecting.
+        """
+        from mcp_adapter.http import handle_payload
+
+        try:
+            length = int(self.headers.get("Content-Length", 0))
+        except (TypeError, ValueError):
+            length = 0
+        raw = self.rfile.read(length) if length else b"{}"
+
+        status, response = handle_payload(raw)
+        if response is None:
+            self.send_response(202)
+            self.send_header("Content-Length", "0")
+            self._cors()
+            self.end_headers()
+            return
+
+        body = json.dumps(response, ensure_ascii=False).encode("utf-8")
+        self.send_response(status)
+        self.send_header("Content-Type", "application/json")
+        self.send_header("Content-Length", str(len(body)))
+        self._cors()
         self.end_headers()
         self.wfile.write(body)
 

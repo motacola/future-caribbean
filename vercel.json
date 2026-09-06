@@ -3,6 +3,15 @@
   "outputDirectory": "dist",
   "routes": [
     {
+      "src": "/mcp",
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type, Mcp-Session-Id, MCP-Protocol-Version"
+      },
+      "dest": "/api/mcp.py"
+    },
+    {
       "src": "/api/tools.json",
       "headers": {
         "Access-Control-Allow-Origin": "*",

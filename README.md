@@ -49,7 +49,8 @@ The engine is agent-agnostic by design. The contract is a plain HTTP API plus a 
 | Client | How it connects |
 |---|---|
 | **Any agent / curl** | `GET /api/tools.json` — self-describing tool manifest; `POST /api/ask` for cited answers |
-| **Claude (Code/Desktop)** | MCP adapter: `mcp_adapter/desk_server.py` (see `mcp_adapter/README.md`) |
+| **Any MCP client** | Hosted endpoint: `https://abeng.vercel.app/mcp` — add the URL, no install |
+| **Claude Code / Desktop** | Or run it locally: `.mcp.json` ships in the repo (see `mcp_adapter/README.md`) |
 | **Hermes / OpenClaw** | Point HTTP tooling at `/api/tools.json`, or shell out to `cli/abengctl.py` |
 | **Flue** | Workflow harness in `.flue/` (`ask-dispatch`, `run-cycle`, `record-feedback`, …) |
 | **Humans (terminal)** | `python3 cli/abengctl.py status\|signals\|preview\|ask\|reason\|send` |
@@ -157,6 +158,8 @@ python3 -m pytest -q
 ### HTTP API (server.py)
 
 Read: `GET /api/status` · `/api/tools.json` · `/api/domains` · `/api/reasoning` · `/api/validation-packs[/<signal_id>]` · `/api/map-data` · `/api/history` · `/api/pipeline/stream` (SSE, `?replay=1` for offline replay) · `/llms.txt` · `/agents.md`
+
+MCP: `POST /mcp` — Model Context Protocol over Streamable HTTP. Stateless and read-only; `initialize`, `tools/list`, `tools/call` with `desk_status`, `list_signals`, `get_dispatch`, `get_validation_pack`, `ask_desk`.
 
 Ask: `POST /api/ask` `{"question": "..."}` → `{question, answer, engine, generated_at}` — sources are cited inline at the end of `answer` (the shape `/api/tools.json` advertises)
 

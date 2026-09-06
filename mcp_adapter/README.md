@@ -13,11 +13,34 @@ cd mcp_adapter
 pip install -r requirements.txt
 ```
 
-> **Note:** If the `mcp` package cannot be installed in your environment, the adapter code is still written and documented here — it is simply untested. The rest of the engine (HTTP API, CLI, dashboard) works without it.
+> **Note:** `requirements.txt` pins `mcp<2`. The v2 SDK renamed `FastMCP` to
+> `MCPServer` and moved the module, so an unpinned install breaks this server.
+> Every tool here has been exercised against both transports. The rest of the
+> engine (HTTP API, CLI, dashboard) works without the SDK at all — the hosted
+> endpoint above needs nothing installed on either side.
 
 ---
 
-## Configuration
+## Hosted — nothing to install
+
+The deployed instance speaks MCP over Streamable HTTP. Point a client at the
+URL and the tools appear:
+
+```json
+{
+  "mcpServers": {
+    "abeng": { "url": "https://abeng.vercel.app/mcp" }
+  }
+}
+```
+
+Stateless and read-only: every tool reads artefacts the pipeline already
+published, so there is no session to keep and nothing a client can change.
+`record_feedback` writes, so it exists only on the local stdio server below.
+
+The same endpoint is on any local instance at `http://localhost:8080/mcp`.
+
+## Configuration (local stdio server)
 
 ### Claude Code — already wired
 
