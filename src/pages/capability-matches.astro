@@ -51,7 +51,7 @@ function bestEvidence(holder: any): any {
   </div>
 </div>
 
-<div class="hero">
+<div class="hero" id="main-content" role="main">
   <p class="hero-kicker">What the region is being asked to build</p>
   <h1>Who in the region can do this work?</h1>
   <p class="hero-sub">Every tender here asks for a particular kind of work — road building, shipping, IT. We sort each one by the work it needs, then show which countries have that trade on record, and where that record came from. Treat it as a starting point for a conversation, not proof that any company can win or deliver the job. The register is a <strong>pilot</strong>: it lists trades a country is known for, not audited company capacity.</p>
@@ -64,11 +64,11 @@ function bestEvidence(holder: any): any {
 
 <div class="sec">
   <div class="sec-label">Where the matches concentrate</div>
-  <div class="sec-title">What is being asked for, and who does it</div>
+  <h2 class="sec-title">What is being asked for, and who does it</h2>
   <div class="sec-sub">One tender can need several trades, and several countries can do each one — so a single tender is counted more than once here. These are totals of matches, not of tenders.</div>
   <div class="split">
     <div class="split-col">
-      <h4>By the work required</h4>
+      <h3>By the work required</h3>
       <ul class="tally">
         {Object.entries(byCapability).map(([cap, n]) => (
           <li><span>{capabilityLabel(cap)}</span><strong>{n}</strong></li>
@@ -77,7 +77,7 @@ function bestEvidence(holder: any): any {
       </ul>
     </div>
     <div class="split-col">
-      <h4>By country or bloc</h4>
+      <h3>By country or bloc</h3>
       <ul class="tally">
         {Object.entries(byCountry).map(([c, n]) => (
           <li><span>{c}</span><strong>{n}</strong></li>
@@ -90,7 +90,7 @@ function bestEvidence(holder: any): any {
 
 <div class="sec">
   <div class="sec-label">Tender by tender</div>
-  <div class="sec-title">Every tender and the work it calls for</div>
+  <h2 class="sec-title">Every tender and the work it calls for</h2>
   <div class="sec-sub">Each row is one tender: the sector we sorted it into, the trades it calls for, and the countries recorded as doing that work. Sources and grades come straight from the pilot register — they do not say a company is eligible to bid or able to deliver.</div>
   <div class="match-list">
     {matches.slice(0, 40).map((m) => (
@@ -132,10 +132,10 @@ function bestEvidence(holder: any): any {
 
 <div class="sec">
   <div class="sec-label">Provenance</div>
-  <div class="sec-title">What this rests on</div>
+  <h2 class="sec-title">What this rests on</h2>
   <div class="prov">
     <div class="prov-block">
-      <h4>Method</h4>
+      <h3>Method</h3>
       <ul>
         <li>Sector classification: deterministic ordered keyword rules (resolvers reuse coordination.engine.classify_tender).</li>
         <li>Capability registry: config/regional_capabilities.json (status: {data.registry_status ?? 'unknown'}).</li>
@@ -143,7 +143,7 @@ function bestEvidence(holder: any): any {
       </ul>
     </div>
     <div class="prov-block">
-      <h4>Caveats</h4>
+      <h3>Caveats</h3>
       <ul>
         <li>The registry is a pilot and is not audited supplier capacity.</li>
         <li>Evidence grades (primary / corroborated / claimed) are the registry's own, propagated verbatim.</li>

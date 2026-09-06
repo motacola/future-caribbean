@@ -175,7 +175,7 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); line
   </div>
 </div>
 
-<div class="hero">
+<div class="hero" id="main-content" role="main">
   <p class="hero-kicker">How the islands connect</p>
   <h1>The Caribbean as a <em>network of islands</em> —<br>and the links still missing.</h1>
   <p class="hero-sub">One island needs something built; another already does that work. This page lays those two sides beside each other — where the region is already trading, where the link is thin, and, where the gap looks real, the smallest next step that would close it. Nothing is guessed: it is all built from public regional data.</p>
@@ -189,7 +189,7 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); line
 
 <div class="sec">
   <div class="sec-label">The network</div>
-  <div class="sec-title">What each island can actually do</div>
+  <h2 class="sec-title">What each island can actually do</h2>
   <div class="sec-sub">Each trade below is cited from a public source. The 1–5 figure is how strong that evidence is, not a score we invented. An island with nothing listed has not been checked yet — it does not mean the work is not done there.</div>
   <div class="network-grid">
     {countryNodes.map((n) => (
@@ -214,7 +214,7 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); line
 
 <div class="sec">
   <div class="sec-label">Where the signal points to a gap</div>
-  <div class="sec-title">Gaps worth a closer look</div>
+  <h2 class="sec-title">Gaps worth a closer look</h2>
   <div class="sec-sub">Each one is a place where somebody needs work done, somebody else can do it, and something is getting in the way. The score weighs how good the evidence is, how well the trade matches, how hard the shipping is and how much of the region it would help — minus whatever is blocking it. The next step listed is the smallest thing that would get it moving.</div>
   <div class="opp-list">
     {opportunities.map((o) => (
@@ -239,7 +239,7 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); line
           </div>
           {(o.contributing_nodes || []).length > 0 && (
             <div class="contrib">
-              <h4>Who can help close it</h4>
+              <h3>Who can help close it</h3>
               {(o.contributing_nodes || []).map((c) => (
                 <div class="contrib-row">
                   <strong>{c.country}</strong>
@@ -254,7 +254,7 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); line
           )}
           {(o.humanized_unlock_path || []).length > 0 && (
             <div class="unlock">
-              <h4>The unlock path</h4>
+              <h3>The unlock path</h3>
               <ul class="unlock-list">
                 {(o.humanized_unlock_path || []).map((line) => (
                   <li>{line}</li>

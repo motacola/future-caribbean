@@ -1393,7 +1393,7 @@ html { scroll-behavior: smooth; }
   </div>
 </nav>
 
-<section class="map-hero" aria-labelledby="map-title">
+<section class="map-hero" id="main-content" role="main" aria-labelledby="map-title">
   <div class="front-grid">
     <div class="front-lede">
       <p class="sec-label" title={`Cycle ${d.cycleId}`}>The front page · {d.cycleLabel}</p>
@@ -1512,7 +1512,7 @@ html { scroll-behavior: smooth; }
 
 <section class="sec sec-major" id="regional-news" aria-labelledby="regional-news-title">
   <div class="news-head">
-    <div><div class="sec-label">Regional News Desk</div><div class="st" id="regional-news-title">What is moving across the Caribbean</div><div class="ss">Newest and most relevant first. Headlines link to the publisher.</div></div>
+    <div><div class="sec-label">Regional News Desk</div><h2 class="st" id="regional-news-title">What is moving across the Caribbean</h2><div class="ss">Newest and most relevant first. Headlines link to the publisher.</div></div>
     <span class="market-status">{d.regionalNewsCount} articles tracked</span>
   </div>
   <div class="news-filters" id="news-filters"><Fragment set:html={d.newsFilterHtml} /></div>
@@ -1568,7 +1568,7 @@ html { scroll-behavior: smooth; }
   <div class="market-head">
     <div>
       <div class="sec-label">Caribbean Market Watch</div>
-      <div class="st">Every listed market, and the news that moved it this cycle</div>
+      <h2 class="st">Every listed market, and the news that moved it this cycle</h2>
       <div class="ss">Official exchanges, regulators, and central banks. Market intelligence, not brokerage advice.</div>
     </div>
   </div>
@@ -1661,7 +1661,7 @@ html { scroll-behavior: smooth; }
 
 <div class="sec">
   <div class="sec-label">Ready to forward</div>
-  <div class="st">Written to travel</div>
+  <h2 class="st">Written to travel</h2>
   <div class="ss">Live outputs from today's cycle — made to be forwarded, not filed.</div>
   <div class="out-tabs" id="out-tabs" role="tablist" aria-label="Forwardable outputs">
     <button type="button" class="out-tab active" role="tab" id="out-tab-tg" aria-controls="out-panel-tg" aria-selected="true" data-out="tg">Telegram<span>Channel</span></button>

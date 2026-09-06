@@ -69,3 +69,61 @@ h1, h2 { animation: fe-rise .7s var(--fe-ease-out) both; }
 .fe-reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s var(--fe-ease-out), transform .6s var(--fe-ease-out); transition-delay: var(--fe-d, 0s); }
 .fe-reveal.fe-in { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .fe-reveal { opacity: 1; transform: none; transition: none; } }
+
+/* ── Keyboard focus ──────────────────────────────────────────
+   The global sheet carried no focus style at all, so on most controls a
+   keyboard user had no idea where they were — only a handful of components
+   defined their own ring. This is the site-wide floor; components that set
+   their own :focus-visible still win. ── */
+:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--teal) 55%, transparent);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* ── Skip link ───────────────────────────────────────────────
+   The home page runs to ~24 screens with 225 controls before the content
+   a reader came for. Off-screen until focused. ── */
+.skip-link {
+  position: absolute;
+  left: 8px;
+  top: -60px;
+  z-index: 999;
+  padding: 12px 18px;
+  background: var(--ink, #18251F);
+  color: #fff;
+  font: 600 14px var(--sans);
+  border-radius: 0 0 6px 6px;
+  text-decoration: none;
+  transition: top .15s ease;
+}
+.skip-link:focus { top: 0; }
+
+/* ── Touch targets ───────────────────────────────────────────
+   These controls rendered 21-32px tall on a phone, under the 44px most
+   guidance asks for. min-height is the safe lever: the page styles set
+   padding, not height, so nothing here overrides their look. ── */
+@media (max-width: 640px) {
+  .chip,
+  .news-filter,
+  .track-btn,
+  .verdict-btn,
+  .theater-toggle,
+  .map-expand,
+  .deep-btn,
+  .proof-toggle,
+  .btn,
+  .map-fallback button,
+  /* Masthead links are the cross-page navigation and rendered ~18px tall.
+     Padding rather than min-height here: these sit in a flex row, so the
+     tappable area has to grow around the text without stretching the bar. */
+  .mast-links a,
+  .mast-name {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .mast-links { gap: 4px; }
+  .mast-links a { padding: 0 10px; }
+}
