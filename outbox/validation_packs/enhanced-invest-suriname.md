@@ -5,12 +5,12 @@
 - Action readiness: medium (annual macro signal only)
 - Evidence freshness: refreshing · cycles since refresh: 0
 - Recommendation: **HOLD** — Calibrated confidence 68/100 with 0 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.
-- Last validated: 2026-09-06T15:28:11.445906+00:00
+- Last validated: 2026-09-06T18:15:41.900873+00:00
 
 ## Sector hypotheses
 - Offshore oil & gas exploration [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
 - Gold mining and extractives services [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
-- FDI-receiving sectors (composition not yet broken down) [macro_signal] — _World Bank: FDI net inflows moved +206.0% from 2024 to 2025_
+- Which industries received it is not published yet [macro_signal] — _World Bank: FDI net inflows moved +206.0% from 2024 to 2025_
 
 ## Credible local operators (registry-backed)
 - No registry-backed operators for this country yet.
