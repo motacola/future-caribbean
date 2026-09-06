@@ -98,10 +98,17 @@ function fmtDate(value) {
 <div class="sec">
   <div class="sec-label">Detection lead time</div>
   <h2 class="sec-title">Seen this far before bids closed</h2>
-  <div class="sec-sub">Lead time is the gap between the first dated snapshot containing the tender and its closing date. Where a closing date was later amended, the current date is used and the change is shown on the record.</div>
-  <div class="res-list">
-    {earlyDetections.slice(0, 12).map((t) => (
-      <div class="res-row">
+  <div class="sec-sub">Lead time is the gap between the first dated snapshot containing the tender and its closing date. Where a closing date was later amended, the current date is used and the change is shown on the record. This page publishes the {Math.min(earlyDetections.length, 60)} longest of {earlyDetections.length} early detections.</div>
+  <div class="filter-bar" data-filter-for="#early-list">
+    <div class="filter-field">
+      <label for="early-country">Country</label>
+      <select id="early-country" data-filter-key="country"><option value="">All countries</option></select>
+    </div>
+    <button type="button" class="filter-reset">Clear</button>
+  </div>
+  <div class="res-list" id="early-list" data-reveal="10">
+    {earlyDetections.slice(0, 60).map((t) => (
+      <div class="res-row" data-country={t.country}>
         <div class="res-lead"><strong>+{t.lead_time_days}</strong><span>days</span></div>
         <div class="res-body">
           <div class="res-title">{t.title}</div>
@@ -135,10 +142,21 @@ function fmtDate(value) {
 <div class="sec">
   <div class="sec-label">Recorded outcomes</div>
   <h2 class="sec-title">Awards and cancellations</h2>
-  <div class="sec-sub">Each outcome is labelled with how much distance the resolving source has from the source that generated the claim. Only “independent source” counts as external confirmation.</div>
-  <div class="res-list">
-    {resolved.slice(0, 20).map((t) => (
-      <div class="res-row">
+  <div class="sec-sub">Each outcome is labelled with how much distance the resolving source has from the source that generated the claim. Only “independent source” counts as external confirmation. This page publishes the {Math.min(resolved.length, 60)} most recent of {resolved.length} recorded outcomes.</div>
+  <div class="filter-bar" data-filter-for="#resolved-list">
+    <div class="filter-field">
+      <label for="res-country">Country</label>
+      <select id="res-country" data-filter-key="country"><option value="">All countries</option></select>
+    </div>
+    <div class="filter-field">
+      <label for="res-state">Outcome</label>
+      <select id="res-state" data-filter-key="state"><option value="">All outcomes</option></select>
+    </div>
+    <button type="button" class="filter-reset">Clear</button>
+  </div>
+  <div class="res-list" id="resolved-list" data-reveal="10">
+    {resolved.slice(0, 60).map((t) => (
+      <div class="res-row" data-country={t.country} data-state={stateLabel[t.resolution.state] || t.resolution.state}>
         <div class={`res-badge badge-${t.resolution.state}`}>{stateLabel[t.resolution.state] || t.resolution.state}</div>
         <div class="res-body">
           <div class="res-title">{t.title}</div>
@@ -269,4 +287,5 @@ function fmtDate(value) {
   }
 </style>
 
+<script>import "../scripts/page-tools.ts";</script>
 </Base>

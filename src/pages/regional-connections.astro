@@ -191,9 +191,16 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); line
   <div class="sec-label">The network</div>
   <h2 class="sec-title">What each island can actually do</h2>
   <div class="sec-sub">Each trade below is cited from a public source. The 1–5 figure is how strong that evidence is, not a score we invented. An island with nothing listed has not been checked yet — it does not mean the work is not done there.</div>
-  <div class="network-grid">
+  <div class="filter-bar" data-filter-for="#network-grid">
+    <div class="filter-field">
+      <label for="isle-country">Island or market</label>
+      <select id="isle-country" data-filter-key="country"><option value="">All islands</option></select>
+    </div>
+    <button type="button" class="filter-reset">Clear</button>
+  </div>
+  <div class="network-grid" id="network-grid" data-reveal="8">
     {countryNodes.map((n) => (
-      <div class="isle">
+      <div class="isle" data-country={n.label}>
         <div class="isle-head">
           <span class="isle-name">{n.label}</span>
           <span class="isle-tag">{n.status}</span>
@@ -216,9 +223,20 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); line
   <div class="sec-label">Where the signal points to a gap</div>
   <h2 class="sec-title">Gaps worth a closer look</h2>
   <div class="sec-sub">Each one is a place where somebody needs work done, somebody else can do it, and something is getting in the way. The score weighs how good the evidence is, how well the trade matches, how hard the shipping is and how much of the region it would help — minus whatever is blocking it. The next step listed is the smallest thing that would get it moving.</div>
-  <div class="opp-list">
+  <div class="filter-bar" data-filter-for="#opp-list">
+    <div class="filter-field">
+      <label for="opp-status">Status</label>
+      <select id="opp-status" data-filter-key="status"><option value="">All statuses</option></select>
+    </div>
+    <div class="filter-field">
+      <label for="opp-kind">Signal type</label>
+      <select id="opp-kind" data-filter-key="kind"><option value="">All signal types</option></select>
+    </div>
+    <button type="button" class="filter-reset">Clear</button>
+  </div>
+  <div class="opp-list" id="opp-list" data-reveal="6">
     {opportunities.map((o) => (
-      <article class="opp">
+      <article class="opp" data-status={o.status} data-kind={o.signal_kind}>
         <div class="opp-head">
           <div>
             <div class="opp-title">{o.title}</div>
@@ -304,4 +322,5 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); line
   <br><br>
   Operators: record outcomes (supplier validated · intro accepted · blocked by logistics) locally with <code>python3 coordination/console.py</code> → http://localhost:8765, then commit + deploy to surface them here.
 </div>
+<script>import "../scripts/page-tools.ts";</script>
 </Base>

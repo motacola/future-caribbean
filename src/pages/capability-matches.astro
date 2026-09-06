@@ -91,10 +91,21 @@ function bestEvidence(holder: any): any {
 <div class="sec">
   <div class="sec-label">Tender by tender</div>
   <h2 class="sec-title">Every tender and the work it calls for</h2>
-  <div class="sec-sub">Each row is one tender: the sector we sorted it into, the trades it calls for, and the countries recorded as doing that work. Sources and grades come straight from the pilot register — they do not say a company is eligible to bid or able to deliver.</div>
-  <div class="match-list">
-    {matches.slice(0, 40).map((m) => (
-      <div class="match-row">
+  <div class="sec-sub">Each row is one tender: the sector we sorted it into, the trades it calls for, and the countries recorded as doing that work. Sources and grades come straight from the pilot register — they do not say a company is eligible to bid or able to deliver. This page publishes the {Math.min(matches.length, 120)} most recent of {matches.length} matched tenders.</div>
+  <div class="filter-bar" data-filter-for="#match-list">
+    <div class="filter-field">
+      <label for="cap-country">Country</label>
+      <select id="cap-country" data-filter-key="country"><option value="">All countries</option></select>
+    </div>
+    <div class="filter-field">
+      <label for="cap-sector">Sector</label>
+      <select id="cap-sector" data-filter-key="sector"><option value="">All sectors</option></select>
+    </div>
+    <button type="button" class="filter-reset">Clear</button>
+  </div>
+  <div class="match-list" id="match-list" data-reveal="15">
+    {matches.slice(0, 120).map((m) => (
+      <div class="match-row" data-country={m.country} data-sector={m.sector}>
         <div class="match-head">
           <div class="match-title">{m.title}</div>
           <div class="match-meta">
@@ -193,4 +204,5 @@ function bestEvidence(holder: any): any {
   }
 </style>
 
+<script>import "../scripts/page-tools.ts";</script>
 </Base>
