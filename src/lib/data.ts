@@ -94,9 +94,9 @@ function evidenceListHtml(raw: string): string {
     .map(part => part.replace(/^[\s•\-–]+/, '').trim())
     .filter(part => part.length > 1);
   if (!parts.length) return '';
-  if (parts.length === 1) return `<p><strong>Evidence:</strong> ${esc(parts[0])}</p>`;
+  if (parts.length === 1) return `<p><strong>Evidence:</strong> ${esc(humanize(parts[0]))}</p>`;
   return `<p class="evidence-lead"><strong>Evidence</strong></p><ul class="evidence-list">${
-    parts.map(part => `<li>${esc(part)}</li>`).join('')}</ul>`;
+    parts.map(part => `<li>${esc(humanize(part))}</li>`).join('')}</ul>`;
 }
 
 function cleanSignalTitle(raw: string): string {

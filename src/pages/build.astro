@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import { humanizeRulesJson } from '../lib/humanize.ts';
 import LollipopIsland from '../lib/charts/LollipopIsland.tsx';
 import { opportunitiesFromDesk } from '../lib/charts/lollipop.ts';
 import pipelineFixture from '../data/build-pipeline-fixture.json';
@@ -789,15 +790,36 @@ function loadDomains() {
   }).catch(()=>{});
 }
 
+// Compiled on first use rather than at parse time: this script runs before
+// the rules tag further down the document exists, so reading it eagerly
+// threw on every page load.
+let HUMANIZE_RULES = null;
+function humanizeRules() {
+  if (HUMANIZE_RULES) return HUMANIZE_RULES;
+  const tag = document.getElementById('humanize-rules');
+  let raw = [];
+  try { raw = tag ? JSON.parse(tag.textContent) : []; } catch (e) { raw = []; }
+  HUMANIZE_RULES = raw
+    .map(([p, r]) => { try { return [new RegExp(p), r]; } catch (e) { return null; } })
+    .filter(Boolean);
+  return HUMANIZE_RULES;
+}
+function humanizeJs(t) {
+  if (!t) return t || '';
+  let out = String(t);
+  humanizeRules().forEach(([rx, r]) => { out = out.replace(rx, r); });
+  return out;
+}
+
 function loadReasoning() {
   fetch('/api/reasoning').then(r=>r.ok?r.json():null).then(r=>{
     if(!r||!r.ok)return;
     const eng=document.getElementById('reason-engine');const isLlm=r.engine==='llm';
     eng.className='reason-engine '+(isLlm?'eng-llm':'eng-det');
     eng.textContent=isLlm?('⚡ '+(r.model||'LLM')):'deterministic';
-    document.getElementById('reason-thesis').textContent=r.thesis||'';
+    document.getElementById('reason-thesis').textContent=humanizeJs(r.thesis||'');
     const ul=document.getElementById('reason-conns');
-    ul.innerHTML=(r.connections||[]).map(c=>'<li>'+c.replace(/</g,'&lt;')+'</li>').join('');
+    ul.innerHTML=(r.connections||[]).map(c=>'<li>'+humanizeJs(c).replace(/</g,'&lt;')+'</li>').join('');
   }).catch(()=>{});
 }
 
@@ -805,4 +827,5 @@ renderDomains();selectDomain('caribbean');loadDomains();loadReasoning();
 updateMeta();loadPreview();
 </script>
 
+<script type="application/json" id="humanize-rules" set:html={humanizeRulesJson}></script>
 </Base>

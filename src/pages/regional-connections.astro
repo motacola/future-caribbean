@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import { capabilityLabel } from '../lib/capability-labels';
+import { capabilityLabel, signalKindLabel, personaLabel } from '../lib/labels';
 import { readFileSync, existsSync } from 'fs';
 import { resolve, join } from 'path';
 
@@ -236,11 +236,11 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); line
   </div>
   <div class="opp-list" id="opp-list" data-reveal="6">
     {opportunities.map((o) => (
-      <article class="opp" data-status={o.status} data-kind={o.signal_kind}>
+      <article class="opp" data-status={o.status} data-kind={signalKindLabel(o.signal_kind)}>
         <div class="opp-head">
           <div>
             <div class="opp-title">{o.title}</div>
-            <div class="opp-meta">{o.signal_kind} · {o.status}</div>
+            <div class="opp-meta">{signalKindLabel(o.signal_kind)} · {o.status}</div>
           </div>
           <div class={"score-badge score-" + scoreTier(o.coordination_score)}>{o.coordination_score}</div>
         </div>
@@ -290,7 +290,7 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); line
                   return (
                     <div class="iv-row">
                       <span class="iv-blocker">{c.blocker}</span>
-                      <span class="iv-owner">{c.owner_persona}</span>
+                      <span class="iv-owner">{personaLabel(c.owner_persona)}</span>
                       <span class={`iv-pill ${statusLabel}`}>{statusLabel}{pulse.total > 1 ? ` · ${pulse.total}` : ''}</span>
                       {pulse.blocked && <span class="iv-pill blocked">blocked</span>}
                       {pulse.outcomes.map((t) => (

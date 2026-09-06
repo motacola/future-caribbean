@@ -1,5 +1,5 @@
 /**
- * Human labels for the capability taxonomy.
+ * Human labels for the pipeline's internal taxonomies.
  *
  * `config/regional_capabilities.json` stores capabilities as slugs, and the
  * pages used to render them straight through: /capability-matches printed
@@ -83,6 +83,40 @@ export function stateLabel(id: string | null | undefined): string {
   if (!id) return 'Unknown';
   const key = String(id).trim();
   return STATES[key] || key.replace(/[_-]+/g, ' ');
+}
+
+/**
+ * Signal-kind labels. The coordination graph renders these directly, so
+ * they never pass through humanize(): /regional-connections showed
+ * "enhanced_investment · candidate" on every card, and the signal-type
+ * filter offered the same slugs as its options.
+ */
+const SIGNAL_KINDS: Record<string, string> = {
+  enhanced_investment: 'Validated investment',
+  investment_signal: 'Investment signal',
+  economic_vulnerability: 'Economic stress',
+  development_pipeline: 'Development pipeline',
+  ccrif_payout: 'Catastrophe insurance payout',
+  finance_signal: 'Finance signal',
+  news_coverage: 'News coverage',
+  food_security: 'Food security',
+  tourism_impact: 'Tourism impact',
+};
+
+/** A signal kind as a reader should see it. */
+export function signalKindLabel(id: string | null | undefined): string {
+  if (!id) return 'Unclassified';
+  const key = String(id).trim();
+  if (SIGNAL_KINDS[key]) return SIGNAL_KINDS[key];
+  const words = key.replace(/[_-]+/g, ' ').trim();
+  return words ? words.charAt(0).toUpperCase() + words.slice(1) : 'Unclassified';
+}
+
+/** A persona id ("procurement_watcher") as a reader should see it. */
+export function personaLabel(id: string | null | undefined): string {
+  if (!id) return '';
+  const words = String(id).replace(/[_-]+/g, ' ').trim();
+  return words ? words.charAt(0).toUpperCase() + words.slice(1) : '';
 }
 
 export default capabilityLabel;
