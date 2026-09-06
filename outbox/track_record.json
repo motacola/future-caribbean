@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-06T18:15:42.038304+00:00",
+  "generated_at": "2026-09-06T22:06:53.344454+00:00",
   "feedback_provenance": "simulated",
   "current_boosts": {
     "enhanced_investment": {
@@ -12,19 +12,13 @@
     },
     "investment_signal": {
       "Guyana": -4,
-      "Suriname": -4
+      "Suriname": -4,
+      "Barbados": -4
     },
     "ccrif_payout": {
-      "Turks and Caicos Islands": -10,
-      "Anguilla": -10,
-      "St. Kitts and Nevis": -10,
-      "Dominica": -10,
-      "St. Vincent & the Grenadines": -10,
-      "Grenada": -10,
-      "Jamaica": -18
-    },
-    "eccb_deposit_growth": {
-      "Eastern Caribbean Currency Union": -4
+      "Haiti": -34,
+      "Barbados": -18,
+      "Nicaragua": -18
     }
   },
   "cycles": [
@@ -45,8 +39,8 @@
       "countries": [
         "Haiti",
         "Barbados",
-        "Nicaragua",
         "Jamaica",
+        "Nicaragua",
         "Guyana",
         "Suriname",
         "Caribwide",

@@ -5,11 +5,11 @@
 - Action readiness: high
 - Evidence freshness: refreshing · cycles since refresh: 0
 - Recommendation: **ADVANCE** — Calibrated confidence 100/100 with 3 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.
-- Last validated: 2026-09-06T18:15:41.900873+00:00
+- Last validated: 2026-09-06T22:06:53.191099+00:00
 
 ## Sector hypotheses
-- Oil & gas and offshore support services [corroborated] — _Google News — Guyana: Exxon’s Well Operations Supervisor reflects on her oil and gas journey - Guyana Chronicle_
-- Construction and infrastructure [corroborated] — _Google News — Guyana: U.S. seeks role in Guyana’s infrastructure and economic development as oil boom accelerates - Caribbean National Weekly_
+- Oil & gas and offshore support services [corroborated] — _Google News — Guyana: Exxon’s Well Operations Supervisor reflects on her oil and gas journey - guyanachronicle.com_
+- Construction and infrastructure [corroborated] — _Google News — Guyana: U.S. seeks role in Guyana’s infrastructure and economic development as oil boom accelerates - caribbeannationalweekly.com_
 - Logistics serving the energy supply chain [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
 - Agriculture and agro-processing [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
 - Which industries received it is not published yet [macro_signal] — _World Bank: FDI net inflows moved +860.3% from 2023 to 2024_

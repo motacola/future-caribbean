@@ -2,64 +2,14 @@
   "instance": "climate",
   "instance_label": "Climate & Catastrophe Risk",
   "cycle_id": "20260906",
-  "generated_at": "2026-09-06T18:15:42.195978+00:00",
+  "generated_at": "2026-09-06T22:06:53.531699+00:00",
   "clusters": [
     {
-      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.2",
-      "country_cluster": "San Juan and Vicinity",
-      "signal_kind": "hazard_alert",
-      "title": "San Juan and Vicinity: Extreme Heat Warning in effect (Severe)",
-      "evidence": "NOAA NWS: Extreme Heat Warning issued September 6 at 10:45AM AST until September 6 at 5:00PM AST by NWS San Juan PR",
-      "evidence_grade": "A - official alert",
-      "confidence_score": 95,
-      "freshness": "new",
-      "decision": "Hazard response and exposure assessment",
-      "risk_flags": [
-        "Severe Extreme Heat Warning active in San Juan and Vicinity"
-      ],
-      "personas": [
-        {
-          "persona": "Resilience Planner",
-          "channel": "Telegram/SMS alert",
-          "action": "Active hazard alert \u2014 Extreme Heat Warning \u2014 Severe (San Juan and Vicinity). Pre-position resources and confirm evacuation/shelter readiness in the affected area now."
-        },
-        {
-          "persona": "Insurer / Reinsurer",
-          "channel": "Email + alert",
-          "action": "Exposure check \u2014 Extreme Heat Warning \u2014 Severe (San Juan and Vicinity). Flag policies in the affected zone and prepare parametric-trigger assessment."
-        }
-      ]
-    },
-    {
-      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.2",
-      "country_cluster": "Culebra",
-      "signal_kind": "hazard_alert",
-      "title": "Culebra: Heat Advisory in effect (Moderate)",
-      "evidence": "NOAA NWS: Heat Advisory issued September 6 at 10:45AM AST until September 6 at 5:00PM AST by NWS San Juan PR",
-      "evidence_grade": "B - official alert",
-      "confidence_score": 80,
-      "freshness": "new",
-      "decision": "Hazard response and exposure assessment",
-      "risk_flags": [],
-      "personas": [
-        {
-          "persona": "Resilience Planner",
-          "channel": "Telegram/SMS alert",
-          "action": "Active hazard alert \u2014 Heat Advisory \u2014 Moderate (Culebra). Pre-position resources and confirm evacuation/shelter readiness in the affected area now."
-        },
-        {
-          "persona": "Insurer / Reinsurer",
-          "channel": "Email + alert",
-          "action": "Exposure check \u2014 Heat Advisory \u2014 Moderate (Culebra). Flag policies in the affected zone and prepare parametric-trigger assessment."
-        }
-      ]
-    },
-    {
-      "cluster_id": "CLIM-marine-71",
+      "cluster_id": "CLIM-marine-97519",
       "country_cluster": "Caribbean marine zones",
       "signal_kind": "maritime_hazard",
-      "title": "Marine hazard: \ud83c\udf43 Light wind at Western Caribbean (Yucatan Basin): 2 kts",
-      "evidence": "NDBC buoy network: \ud83c\udf43 Light wind at Western Caribbean (Yucatan Basin): 2 kts",
+      "title": "Marine hazard: Pressure dropping at Eastern Caribbean (E of Barbados): -3.5 hPa in ~3",
+      "evidence": "NDBC buoy network: Pressure dropping at Eastern Caribbean (E of Barbados): -3.5 hPa in ~3 readings",
       "evidence_grade": "B - sensor",
       "confidence_score": 80,
       "freshness": "new",
@@ -69,41 +19,17 @@
         {
           "persona": "Operations/Resilience",
           "channel": "Telegram/SMS alert",
-          "action": "Marine hazard \u2014 \ud83c\udf43 Light wind at Western Caribbean (Yucatan Basin): 2 kts. Advise vessels and coastal operations; delay exposed activity until conditions ease."
+          "action": "Marine hazard \u2014 Pressure dropping at Eastern Caribbean (E of Barbados): -3.5 hPa in ~3 readings. Advise vessels and coastal operations; delay exposed activity until conditions ease."
         },
         {
           "persona": "Resilience Planner",
           "channel": "Telegram/SMS alert",
-          "action": "Marine conditions deteriorating \u2014 \ud83c\udf43 Light wind at Western Caribbean (Yucatan Basin): 2 kts. Monitor for escalation toward small-craft / coastal-flood thresholds."
-        }
-      ]
-    },
-    {
-      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.9",
-      "country_cluster": "Ciales, PR",
-      "signal_kind": "hazard_alert",
-      "title": "Ciales, PR: Flood Advisory in effect (Minor)",
-      "evidence": "NOAA NWS: Flood Advisory issued September 6 at 1:22PM AST until September 6 at 3:15PM AST by NWS San Juan PR",
-      "evidence_grade": "C - advisory",
-      "confidence_score": 60,
-      "freshness": "new",
-      "decision": "Hazard response and exposure assessment",
-      "risk_flags": [],
-      "personas": [
-        {
-          "persona": "Resilience Planner",
-          "channel": "Telegram/SMS alert",
-          "action": "Active hazard alert \u2014 Flood Advisory \u2014 Minor (Ciales, PR). Pre-position resources and confirm evacuation/shelter readiness in the affected area now."
-        },
-        {
-          "persona": "Insurer / Reinsurer",
-          "channel": "Email + alert",
-          "action": "Exposure check \u2014 Flood Advisory \u2014 Minor (Ciales, PR). Flag policies in the affected zone and prepare parametric-trigger assessment."
+          "action": "Marine conditions deteriorating \u2014 Pressure dropping at Eastern Caribbean (E of Barbados): -3.5 hPa in ~3 readings. Monitor for escalation toward small-craft / coastal-flood thresholds."
         }
       ]
     }
   ],
-  "dispatch_count": 8,
+  "dispatch_count": 2,
   "sources": [
     "NOAA NWS",
     "NDBC buoys",
