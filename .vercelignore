@@ -44,14 +44,15 @@ data/regional_news/raw/
 !data/market_watch/
 !data/market_watch/**
 
-# Pipeline source code (not needed at runtime)
+# Pipeline source code — packagers + mcp_adapter are imported by runtime API
+# functions (/api/status imports packagers.source_health; /api/mcp imports
+# mcp_adapter.http), so they must ship even though they are not standalone Vercel
+# functions. cli/ and watchers/ stay excluded as local-only tooling.
 cli/
 mergers/
 watchers/
-packagers/
 distributors/
 .flue/
-mcp_adapter/
 
 # Config & infra (not needed at runtime)
 .github/
