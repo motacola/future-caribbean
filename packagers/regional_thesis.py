@@ -68,6 +68,7 @@ def build_regional_thesis(
             "thesis": "No enriched signals available this cycle.",
             "capital_momentum": [],
             "risk_flags": [],
+            "conflicted_countries": [],
             "timing": "",
             "recommendations": [],
         }

@@ -34,6 +34,18 @@ def main() -> int:
     enriched = pkg["enriched_signals"]
     lead = pkg["lead_signal"] or {}
 
+    # A cycle can legitimately collect nothing — every source unreachable, the
+    # merger emits no composites — and the pipeline still publishes, flagged.
+    # There is nothing to rank then, so the invariants below are vacuous: this
+    # used to die on `max(raws)` with an empty-sequence ValueError, which in
+    # `verify.sh data` is the gate the scheduled pipeline runs before it
+    # commits. Say what happened instead of crashing, and never claim the
+    # invariants hold when none of them were evaluated.
+    if not enriched:
+        print("\nNo signals in data/composite/latest.json — nothing to rank.")
+        print("Ranking invariants NOT CHECKED this run (empty cycle, not a failure).")
+        return 0
+
     print("\nRanked signals")
     print(f"  {'country':<12} {'kind':<22} {'raw':>5} {'shown':>5} {'mag%':>8} {'stale':>6}")
     for s in sorted(enriched, key=lambda x: -x.get("_score_raw", 0))[:8]:

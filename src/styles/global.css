@@ -69,3 +69,243 @@ h1, h2 { animation: fe-rise .7s var(--fe-ease-out) both; }
 .fe-reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s var(--fe-ease-out), transform .6s var(--fe-ease-out); transition-delay: var(--fe-d, 0s); }
 .fe-reveal.fe-in { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .fe-reveal { opacity: 1; transform: none; transition: none; } }
+
+/* ── Keyboard focus ──────────────────────────────────────────
+   The global sheet carried no focus style at all, so on most controls a
+   keyboard user had no idea where they were — only a handful of components
+   defined their own ring. This is the site-wide floor; components that set
+   their own :focus-visible still win. ── */
+:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--teal) 55%, transparent);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* ── Skip link ───────────────────────────────────────────────
+   The home page runs to ~24 screens with 225 controls before the content
+   a reader came for. Off-screen until focused. ── */
+.skip-link {
+  position: absolute;
+  left: 8px;
+  top: -60px;
+  z-index: 999;
+  padding: 12px 18px;
+  background: var(--ink, #18251F);
+  color: #fff;
+  font: 600 14px var(--sans);
+  border-radius: 0 0 6px 6px;
+  text-decoration: none;
+  transition: top .15s ease;
+}
+.skip-link:focus { top: 0; }
+
+/* ── Touch targets ───────────────────────────────────────────
+   These controls rendered 21-32px tall on a phone, under the 44px most
+   guidance asks for. min-height is the safe lever: the page styles set
+   padding, not height, so nothing here overrides their look. ── */
+@media (max-width: 640px) {
+  .chip,
+  .news-filter,
+  .track-btn,
+  .verdict-btn,
+  .theater-toggle,
+  .map-expand,
+  .deep-btn,
+  .proof-toggle,
+  .btn,
+  .map-fallback button,
+  /* Masthead links are the cross-page navigation and rendered ~18px tall.
+     Padding rather than min-height here: these sit in a flex row, so the
+     tappable area has to grow around the text without stretching the bar. */
+  .mast-links a,
+  .mast-name {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .mast-links { gap: 4px; }
+  .mast-links a { padding: 0 10px; }
+}
+
+/* The UA rule for [hidden] is display:none, but any class that sets its own
+   display beats it — .res-row is display:flex, so hiding a row did nothing
+   and the list got longer rather than shorter. */
+[hidden] { display: none !important; }
+
+/* ── Reading tools for the long record pages ─────────────────
+   Built at runtime by src/scripts/page-tools.ts. Every control here is
+   sized for touch from the start rather than being patched by the
+   media query above. ── */
+
+.page-nav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: color-mix(in srgb, var(--bg, #FFFCF4) 94%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border, rgba(24,37,31,.12));
+}
+.page-nav-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.page-nav-inner::-webkit-scrollbar { display: none; }
+.page-nav-label {
+  font: 600 10px var(--mono, ui-monospace, monospace);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--muted, #6b6a63);
+  white-space: nowrap;
+  padding-right: 8px;
+}
+.page-nav-link {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 12px;
+  white-space: nowrap;
+  font-size: 13px;
+  color: var(--sub, #46453f);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+.page-nav-link:hover { color: var(--text, #18251F); }
+.page-nav-link.is-current {
+  color: var(--text, #18251F);
+  font-weight: 600;
+  border-bottom-color: var(--teal, #0D5257);
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 12px;
+  margin: 0 0 18px;
+}
+.filter-field { display: flex; flex-direction: column; gap: 4px; }
+.filter-field label {
+  font: 600 10px var(--mono, ui-monospace, monospace);
+  text-transform: uppercase;
+  letter-spacing: 1.1px;
+  color: var(--muted, #6b6a63);
+}
+.filter-field select {
+  min-height: 44px;
+  padding: 0 12px;
+  font: inherit;
+  font-size: 14px;
+  color: var(--text, #18251F);
+  background: var(--card, #fff);
+  border: 1px solid var(--border-dark, rgba(24,37,31,.28));
+  border-radius: 6px;
+}
+.filter-reset {
+  min-height: 44px;
+  padding: 0 16px;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  color: var(--sub, #46453f);
+  background: transparent;
+  border: 1px solid var(--border-dark, rgba(24,37,31,.28));
+  border-radius: 6px;
+}
+.filter-reset:hover { color: var(--text, #18251F); }
+.filter-empty {
+  padding: 20px 0;
+  color: var(--muted, #6b6a63);
+  font-style: italic;
+}
+
+.reveal-more-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  padding-top: 16px;
+}
+.reveal-status {
+  font-size: 12px;
+  color: var(--muted, #6b6a63);
+  margin: 0;
+}
+.reveal-more {
+  min-height: 44px;
+  padding: 0 20px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--text, #18251F);
+  background: var(--card, #fff);
+  border: 1px solid var(--border-dark, rgba(24,37,31,.28));
+  border-radius: 6px;
+}
+.reveal-more:hover { border-color: var(--teal, #0D5257); color: var(--teal, #0D5257); }
+/* The reveal moves focus to the first new row; it should not draw a ring
+   around the whole record, only signal where the reader landed. */
+[data-reveal] > [tabindex="-1"]:focus-visible { outline-offset: -3px; }
+
+@media (max-width: 640px) {
+  .page-nav-inner { padding: 0 12px; }
+  .filter-bar { gap: 10px; }
+  .filter-field { flex: 1 1 140px; }
+  .filter-field select { width: 100%; }
+}
+
+/* ── Masthead ────────────────────────────────────────────────
+   The homepage styles .masthead inside its own is:global block, so the
+   five sub-pages that reuse the same markup rendered it completely
+   unstyled — a plain link soup where the site header should be. This is
+   the shared baseline; the homepage's own rules still override it. ── */
+.masthead {
+  background: linear-gradient(160deg, #211D19, #14110E 88%);
+  color: var(--bg, #FFFCF4);
+  padding: 8px 0 14px;
+}
+.masthead::after {
+  content: "";
+  display: block;
+  height: 3px;
+  margin-bottom: -3px;
+  background: linear-gradient(90deg, var(--gold, #B57A22), var(--teal, #0D5257) 55%, transparent);
+  opacity: .85;
+}
+.masthead .mast-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 6px 24px 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.masthead .mast-name {
+  font-family: var(--serif, Georgia, serif);
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  line-height: 1;
+  color: var(--bg, #FFFCF4);
+  text-decoration: none;
+}
+.masthead .mast-name em { font-style: normal; color: var(--gold, #B57A22); }
+.masthead .mast-links { display: flex; gap: 22px; flex-wrap: wrap; justify-content: center; }
+.masthead .mast-links a {
+  color: color-mix(in srgb, var(--bg, #FFFCF4) 62%, transparent);
+  font-size: 11px;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-decoration: none;
+}
+.masthead .mast-links a:hover { color: var(--bg, #FFFCF4); }

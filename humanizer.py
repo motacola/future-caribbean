@@ -118,6 +118,25 @@ HUMANIZE_RULES = [
     # The generic placeholder also gets interpolated into templates that expect a
     # figure, producing "Signal strength (signal detected)".
     (r"\(signal detected\)", r"(no figure attached yet)"),
+    # ── Internal vocabulary ─────────────────────────────────
+    # Signal kinds, CCRIF perils and persona ids travel through generated
+    # prose as the slugs the pipeline stores them as, and reached readers
+    # intact: "Peril: tropical_cyclone" on the front page, "2 converging
+    # signal types (enhanced_investment, investment_signal)" on /build.
+    # Rewrite the vocabulary wherever it lands in a sentence.
+    (r"\benhanced_investment\b", r"validated investment"),
+    (r"\binvestment_signal\b", r"investment signal"),
+    (r"\beconomic_vulnerability\b", r"economic stress"),
+    (r"\bdevelopment_pipeline\b", r"development pipeline"),
+    (r"\bccrif_payout\b", r"catastrophe insurance payout"),
+    (r"\bfinance_signal\b", r"finance signal"),
+    (r"\bnews_coverage\b", r"news coverage"),
+    (r"\bfood_security\b", r"food security"),
+    (r"\btourism_impact\b", r"tourism impact"),
+    (r"\btropical_cyclone\b", r"tropical cyclone"),
+    (r"\bexcess_rainfall\b", r"excess rainfall"),
+    (r"\bprocurement_watcher\b", r"procurement watcher"),
+    (r"\bregional_operator\b", r"regional operator"),
 ]
 _HUMANIZE_COMPILED = [(re.compile(p), r) for p, r in HUMANIZE_RULES]
 

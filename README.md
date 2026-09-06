@@ -49,7 +49,8 @@ The engine is agent-agnostic by design. The contract is a plain HTTP API plus a 
 | Client | How it connects |
 |---|---|
 | **Any agent / curl** | `GET /api/tools.json` — self-describing tool manifest; `POST /api/ask` for cited answers |
-| **Claude (Code/Desktop)** | MCP adapter: `mcp_adapter/desk_server.py` (see `mcp_adapter/README.md`) |
+| **Any MCP client** | Hosted endpoint: `https://abeng.vercel.app/mcp` — add the URL, no install |
+| **Claude Code / Desktop** | Or run it locally: `.mcp.json` ships in the repo (see `mcp_adapter/README.md`) |
 | **Hermes / OpenClaw** | Point HTTP tooling at `/api/tools.json`, or shell out to `cli/abengctl.py` |
 | **Flue** | Workflow harness in `.flue/` (`ask-dispatch`, `run-cycle`, `record-feedback`, …) |
 | **Humans (terminal)** | `python3 cli/abengctl.py status\|signals\|preview\|ask\|reason\|send` |
@@ -158,9 +159,20 @@ python3 -m pytest -q
 
 Read: `GET /api/status` · `/api/tools.json` · `/api/domains` · `/api/reasoning` · `/api/validation-packs[/<signal_id>]` · `/api/map-data` · `/api/history` · `/api/pipeline/stream` (SSE, `?replay=1` for offline replay) · `/llms.txt` · `/agents.md`
 
-Ask: `POST /api/ask` `{"question": "..."}` → `{answer, citations}`
+MCP: `POST /mcp` — Model Context Protocol over Streamable HTTP. Stateless and read-only; `initialize`, `tools/list`, `tools/call` with `desk_status`, `list_signals`, `get_dispatch`, `get_validation_pack`, `ask_desk`.
+
+Ask: `POST /api/ask` `{"question": "..."}` → `{question, answer, engine, generated_at}` — sources are cited inline at the end of `answer` (the shape `/api/tools.json` advertises)
 
 Write (approval-gated): `POST /api/feedback/apply` · `/api/delivery/prepare` · `/api/delivery/approve` · `/api/delivery/send-approved` (dry-run by default) · `/api/history/archive`
+
+Write endpoints are off until `DESK_ADMIN_TOKEN` is set on the server, and each request must present it as `Authorization: Bearer <token>` or `X-Desk-Admin-Token: <token>` — locally too. Unset, they return `503 {"error": "Admin write API is disabled"}`; wrong token returns `401`.
+
+```bash
+DESK_ADMIN_TOKEN=local-dev-token python3 server.py
+curl -X POST localhost:8080/api/delivery/prepare \
+  -H 'Authorization: Bearer local-dev-token' \
+  -H 'Content-Type: application/json' -d '{"channel":"telegram"}'
+```
 
 Delivery is intentionally approval-gated: prepare first, approve explicitly, then send. Live Telegram sends require `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID`; dry-run is the default.
 
@@ -179,9 +191,15 @@ Run workflows directly via CLI:
 ```bash
 pnpm flue:run-cycle
 pnpm flue:apply-feedback
-pnpm flue:prepare-delivery -- '{"channel":"telegram"}'
-pnpm flue:approve-delivery -- '{"approvalId":"APP-...","approvedBy":"operator"}'
-pnpm flue:send-approved -- '{"approvalId":"APP-...","dryRun":true}'
+pnpm flue:artifacts
+pnpm flue:history
+
+# Payload goes straight after the script name. Do not put `--` in front of it:
+# pnpm forwards the separator to the script, so Flue sees `--payload --` and
+# rejects the JSON that follows as an unknown argument.
+pnpm flue:prepare-delivery '{"channel":"telegram"}'
+pnpm flue:approve-delivery '{"approvalId":"APP-...","approvedBy":"operator"}'
+pnpm flue:send-approved '{"approvalId":"APP-...","dryRun":true}'
 ```
 
 ## Validation Packs — from "investigate" to "here's the evidence"
@@ -318,6 +336,25 @@ pnpm dev
 # force-push to Vercel (bypasses build cache)
 vercel deploy --prod --force
 ```
+
+### Self-hosting (your own server)
+
+`server.py` is pure standard library, so a host needs Python 3.10+, the one
+dependency in `requirements.txt`, and something to terminate TLS. Node is
+optional — without it the pipeline skips the Astro build and serves whatever
+is already in `dist/`.
+
+`deploy/` carries systemd units for the server and a four-hourly pipeline
+timer, an environment file to copy, and Caddy and nginx snippets:
+
+```bash
+sudo cp deploy/abeng.service deploy/abeng-pipeline.service deploy/abeng-pipeline.timer /etc/systemd/system/
+sudo install -m 600 deploy/abeng.env.example /etc/abeng.env
+sudo systemctl enable --now abeng.service abeng-pipeline.timer
+```
+
+Full walkthrough, including the `ABENG_CORS_ORIGINS` setting a reverse proxy
+needs before writes stop returning 403: [`deploy/README.md`](deploy/README.md).
 
 ### Static hosting (Netlify, GitHub Pages, etc.)
 

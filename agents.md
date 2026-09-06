@@ -138,7 +138,17 @@ Same config, ensure `python3` is on PATH and the `mcp` package is installed in t
 > "Get the Guyana validation pack and tell me the sector hypotheses."
 > "What changed this cycle according to the desk?"
 
-**Note:** The MCP adapter runs locally against your checked-out repo. For a hosted public instance, the MCP server would need to be deployed alongside the API (future work). The HTTP API at `https://abeng.vercel.app` remains the universal interface.
+**Hosted MCP:** `https://abeng.vercel.app/mcp` speaks Model Context Protocol over Streamable HTTP — point any MCP client at that URL and the desk's tools appear, with nothing to install and no repo to clone. It is stateless and read-only.
+
+```json
+{
+  "mcpServers": {
+    "abeng": { "url": "https://abeng.vercel.app/mcp" }
+  }
+}
+```
+
+Tools: `desk_status`, `list_signals`, `get_dispatch`, `get_validation_pack`, `ask_desk`. The stdio adapter in `mcp_adapter/desk_server.py` serves the same tools from a local checkout, and adds `record_feedback`, which writes and so is absent from the hosted surface.
 
 ---
 
@@ -146,6 +156,6 @@ Same config, ensure `python3` is on PATH and the `mcp` package is installed in t
 
 - **Deterministic only:** Answers come from `agent/query.py` against `outbox/dispatch_desk.json` — no LLM generation, no hallucinations.
 - **Read-first:** All endpoints are GET except `/api/ask` (POST, read-only) and `/api/feedback/apply` (POST, write).
-- **No auth required locally.** Hosted instance requires `DESK_ADMIN_TOKEN` header for write endpoints.
+- **Reads need no auth; writes always do.** Every write endpoint requires `DESK_ADMIN_TOKEN` to be set on the server and presented per request as `Authorization: Bearer <token>` or `X-Desk-Admin-Token: <token>` — local runs included. With the variable unset the write API is off and returns `503 {"error": "Admin write API is disabled"}`; a wrong token returns `401`.
 - **Citations included:** Every answer ends with `Sources: `artifact1`, `artifact2`` pointing to verifiable files.
 - **Pipeline must run first:** `bash run_pipeline.sh` generates the desk artifacts that the API queries.

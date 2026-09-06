@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import { capabilityLabel, signalKindLabel, personaLabel } from '../lib/labels';
 import { readFileSync, existsSync } from 'fs';
 import { resolve, join } from 'path';
 
@@ -174,25 +175,32 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); line
   </div>
 </div>
 
-<div class="hero">
-  <p class="hero-kicker">Regional coordination graph</p>
+<div class="hero" id="main-content" role="main">
+  <p class="hero-kicker">How the islands connect</p>
   <h1>The Caribbean as a <em>network of islands</em> —<br>and the links still missing.</h1>
-  <p class="hero-sub">Every island and market is a node. Capabilities and demand are edges. This view shows which connections exist, which are weak, and — where a signal points to a real gap — the smallest verifiable step that would close it. No models guessing; the graph is built from public regional data.</p>
+  <p class="hero-sub">One island needs something built; another already does that work. This page lays those two sides beside each other — where the region is already trading, where the link is thin, and, where the gap looks real, the smallest next step that would close it. Nothing is guessed: it is all built from public regional data.</p>
   <div class="hero-stats">
-    <div class="hero-stat"><strong>{graph.counts?.nodes ?? 0}</strong><span>Nodes in the graph</span></div>
-    <div class="hero-stat"><strong>{graph.counts?.edges ?? 0}</strong><span>Cited connections</span></div>
-    <div class="hero-stat"><strong>{opportunities.length}</strong><span>Coordination candidates</span></div>
-    <div class="hero-stat"><strong>{memberEdges.length}</strong><span>OECS member links</span></div>
+    <div class="hero-stat"><strong>{graph.counts?.nodes ?? 0}</strong><span>Islands &amp; markets covered</span></div>
+    <div class="hero-stat"><strong>{graph.counts?.edges ?? 0}</strong><span>Links backed by a source</span></div>
+    <div class="hero-stat"><strong>{opportunities.length}</strong><span>Gaps worth a closer look</span></div>
+    <div class="hero-stat"><strong>{memberEdges.length}</strong><span>Links inside the OECS</span></div>
   </div>
 </div>
 
 <div class="sec">
   <div class="sec-label">The network</div>
-  <div class="sec-title">What each island can actually do</div>
-  <div class="sec-sub">Capabilities are cited from public sources (pilot registry). Strength is a 1–5 read of the evidence, not a rating we invented. Islands without a listed capability simply haven't been verified yet.</div>
-  <div class="network-grid">
+  <h2 class="sec-title">What each island can actually do</h2>
+  <div class="sec-sub">Each trade below is cited from a public source. The 1–5 figure is how strong that evidence is, not a score we invented. An island with nothing listed has not been checked yet — it does not mean the work is not done there.</div>
+  <div class="filter-bar" data-filter-for="#network-grid">
+    <div class="filter-field">
+      <label for="isle-country">Island or market</label>
+      <select id="isle-country" data-filter-key="country"><option value="">All islands</option></select>
+    </div>
+    <button type="button" class="filter-reset">Clear</button>
+  </div>
+  <div class="network-grid" id="network-grid" data-reveal="8">
     {countryNodes.map((n) => (
-      <div class="isle">
+      <div class="isle" data-country={n.label}>
         <div class="isle-head">
           <span class="isle-name">{n.label}</span>
           <span class="isle-tag">{n.status}</span>
@@ -204,7 +212,7 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); line
             ))}
           </div>
         ) : (
-          <div class="cap-blank">No verified capability yet</div>
+          <div class="cap-blank">Not checked yet</div>
         )}
       </div>
     ))}
@@ -213,15 +221,26 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); line
 
 <div class="sec">
   <div class="sec-label">Where the signal points to a gap</div>
-  <div class="sec-title">Coordination candidates</div>
-  <div class="sec-sub">Each candidate is one signal where demand, supply, and friction line up. The score is deterministic (evidence quality, capability match, logistics, regional impact, minus friction). The next action is the smallest step that would move it off hold.</div>
-  <div class="opp-list">
+  <h2 class="sec-title">Gaps worth a closer look</h2>
+  <div class="sec-sub">Each one is a place where somebody needs work done, somebody else can do it, and something is getting in the way. The score weighs how good the evidence is, how well the trade matches, how hard the shipping is and how much of the region it would help — minus whatever is blocking it. The next step listed is the smallest thing that would get it moving.</div>
+  <div class="filter-bar" data-filter-for="#opp-list">
+    <div class="filter-field">
+      <label for="opp-status">Status</label>
+      <select id="opp-status" data-filter-key="status"><option value="">All statuses</option></select>
+    </div>
+    <div class="filter-field">
+      <label for="opp-kind">Signal type</label>
+      <select id="opp-kind" data-filter-key="kind"><option value="">All signal types</option></select>
+    </div>
+    <button type="button" class="filter-reset">Clear</button>
+  </div>
+  <div class="opp-list" id="opp-list" data-reveal="6">
     {opportunities.map((o) => (
-      <article class="opp">
+      <article class="opp" data-status={o.status} data-kind={signalKindLabel(o.signal_kind)}>
         <div class="opp-head">
           <div>
             <div class="opp-title">{o.title}</div>
-            <div class="opp-meta">{o.signal_kind} · {o.status}</div>
+            <div class="opp-meta">{signalKindLabel(o.signal_kind)} · {o.status}</div>
           </div>
           <div class={"score-badge score-" + scoreTier(o.coordination_score)}>{o.coordination_score}</div>
         </div>
@@ -238,13 +257,13 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); line
           </div>
           {(o.contributing_nodes || []).length > 0 && (
             <div class="contrib">
-              <h4>Who can help close it</h4>
+              <h3>Who can help close it</h3>
               {(o.contributing_nodes || []).map((c) => (
                 <div class="contrib-row">
                   <strong>{c.country}</strong>
                   <div class="contrib-caps">
                     {(c.matched_capabilities || []).map((mc) => (
-                      <span>{mc.id.replace(/_/g, ' ')}</span>
+                      <span>{capabilityLabel(mc.id)}</span>
                     ))}
                   </div>
                 </div>
@@ -253,7 +272,7 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); line
           )}
           {(o.humanized_unlock_path || []).length > 0 && (
             <div class="unlock">
-              <h4>The unlock path</h4>
+              <h3>The unlock path</h3>
               <ul class="unlock-list">
                 {(o.humanized_unlock_path || []).map((line) => (
                   <li>{line}</li>
@@ -271,7 +290,7 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); line
                   return (
                     <div class="iv-row">
                       <span class="iv-blocker">{c.blocker}</span>
-                      <span class="iv-owner">{c.owner_persona}</span>
+                      <span class="iv-owner">{personaLabel(c.owner_persona)}</span>
                       <span class={`iv-pill ${statusLabel}`}>{statusLabel}{pulse.total > 1 ? ` · ${pulse.total}` : ''}</span>
                       {pulse.blocked && <span class="iv-pill blocked">blocked</span>}
                       {pulse.outcomes.map((t) => (
@@ -299,8 +318,9 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); line
 </div>
 
 <div class="disclaimer">
-  Pilot registry — capability strengths are a read of cited public sources, not an audit. Coordination candidates are screening support, not investment advice. The closed loop (intervention → evidence → score recompute) only updates after real evidence is submitted.
+  Pilot register — the strength figures read cited public sources; they are not an audit. These gaps are a place to start looking, not investment advice. Scores only change once somebody submits real evidence.
   <br><br>
   Operators: record outcomes (supplier validated · intro accepted · blocked by logistics) locally with <code>python3 coordination/console.py</code> → http://localhost:8765, then commit + deploy to surface them here.
 </div>
+<script>import "../scripts/page-tools.ts";</script>
 </Base>

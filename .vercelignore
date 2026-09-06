@@ -55,13 +55,9 @@ mcp_adapter/
 
 # Config & infra (not needed at runtime)
 .github/
-docker/
-Dockerfile
-Procfile
-fly.toml
+deploy/
 vercel.json
 .gitignore
-.dockerignore
 requirements.txt
 run_pipeline.sh
 server.py

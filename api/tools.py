@@ -7,23 +7,13 @@ from http.server import BaseHTTPRequestHandler
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from api_manifest import TOOLS_MANIFEST  # noqa: E402
+from api_manifest import manifest_for  # noqa: E402
 
 
-def _public_manifest() -> dict:
-    """Return a copy of TOOLS_MANIFEST with write tools marked as unavailable on public deploy."""
-    import copy
-    manifest = copy.deepcopy(TOOLS_MANIFEST)
-    for tool in manifest["tools"]:
-        if tool.get("writes"):
-            tool["available"] = False
-            tool["note"] = "local instance only"
-        else:
-            tool["available"] = True
-    return manifest
-
-
-PUBLIC_MANIFEST = _public_manifest()
+# The deployment's own address, so an agent that ingests the manifest can
+# call the tools without being told where they live. Vercel passes the real
+# host through; the fallback is the documented public instance.
+PUBLIC_BASE_URL = "https://abeng.vercel.app"
 
 
 class handler(BaseHTTPRequestHandler):
@@ -44,4 +34,6 @@ class handler(BaseHTTPRequestHandler):
         self.end_headers()
 
     def do_GET(self):
-        self._json(PUBLIC_MANIFEST)
+        host = self.headers.get("Host")
+        base = f"https://{host}" if host else PUBLIC_BASE_URL
+        self._json(manifest_for(base, public=True))

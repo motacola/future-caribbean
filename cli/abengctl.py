@@ -69,6 +69,15 @@ def _read(rel: str) -> dict:
         return {}
 
 
+def _age_str(minutes: int | None) -> str:
+    if minutes is None:
+        return "unknown age"
+    if minutes < 120:
+        return f"{minutes}m old"
+    hours = minutes // 60
+    return f"{hours}h old" if hours < 48 else f"{hours // 24}d old"
+
+
 # ── commands ────────────────────────────────────────────────────
 
 def cmd_status(args) -> int:
@@ -77,14 +86,22 @@ def cmd_status(args) -> int:
         ("NDBC", "ndbc"), ("CARICOM/CDB", "tier2"),
     ]
     print(bold("\nAbeng — status\n"))
-    live = 0
-    for name, key in src_keys:
-        ok = (ROOT / "data" / key / "latest.json").exists()
-        if ok:
+    # One freshness rule for every surface (see packagers/source_health).
+    from packagers.source_health import source_freshness
+
+    live = stale = 0
+    for key, entry in source_freshness(ROOT, {name: key for name, key in src_keys}).items():
+        if entry["ok"]:
             live += 1
-        dot = green("●") if ok else dim("○")
-        print(f"  {dot} {name:<14} {'live' if ok else 'offline'}")
-    print(f"\n  Sources live : {live}/5 dirs")
+            label, dot = "live", green("●")
+        elif entry["stale"]:
+            stale += 1
+            label, dot = f"stale ({_age_str(entry['age_minutes'])})", dim("○")
+        else:
+            label, dot = "offline", dim("○")
+        print(f"  {dot} {entry['name']:<14} {label}")
+    suffix = f" · {stale} stale" if stale else ""
+    print(f"\n  Sources live : {live}/{len(src_keys)}{suffix}")
 
     desk = _read("outbox/dispatch_desk.json")
     clim = _read("outbox/climate_desk.json")

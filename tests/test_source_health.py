@@ -66,29 +66,64 @@ def test_never_collected_source_is_not_ok(tmp_path):
     assert health["noaa"]["fetched_at"] is None
 
 
-def test_staleness_threshold_is_cadence_relative():
-    mod = _load_status_module()
-    # A four-hourly source and a daily source must not share a threshold.
-    fast = mod._max_age_minutes({"refresh_minutes": 240})
-    slow = mod._max_age_minutes({"refresh_minutes": 1440})
-    assert fast < slow
-    assert fast == 480
-    assert slow == 2880
+def _snapshot(root, key: str, payload: dict) -> None:
+    d = root / "data" / key
+    d.mkdir(parents=True, exist_ok=True)
+    (d / "latest.json").write_text(json.dumps(payload), encoding="utf-8")
 
 
-def test_staleness_threshold_survives_a_missing_or_broken_interval():
-    mod = _load_status_module()
-    assert mod._max_age_minutes({}) == mod._DEFAULT_REFRESH_MINUTES * 2
-    assert mod._max_age_minutes({"refresh_minutes": "nonsense"}) == mod._DEFAULT_REFRESH_MINUTES * 2
+def test_staleness_threshold_is_cadence_relative(tmp_path):
+    """A four-hourly source and a daily source must not share a threshold.
+
+    The thresholds now come from source_freshness, the one implementation all
+    four status surfaces read (server.py, api/status.py, cli/abengctl.py,
+    mcp_adapter/desk_server.py) — they each used to carry their own copy.
+    """
+    now = datetime.now(timezone.utc).isoformat()
+    _snapshot(tmp_path, "noaa", {"fetched_at": now})     # 240-minute cadence
+    _snapshot(tmp_path, "idb", {"fetched_at": now})      # 1440-minute cadence
+    f = source_health.source_freshness(tmp_path, {"NOAA": "noaa", "IDB": "idb"})
+    assert f["noaa"]["max_age_minutes"] == 480
+    assert f["idb"]["max_age_minutes"] == 2880
+    assert f["noaa"]["max_age_minutes"] < f["idb"]["max_age_minutes"]
 
 
-def test_status_marks_a_silent_source_stale():
+def test_staleness_threshold_survives_a_broken_interval(tmp_path):
+    """A nonsense cadence in the bundle must fall back, not raise."""
+    now = datetime.now(timezone.utc).isoformat()
+    _snapshot(tmp_path, "noaa", {"fetched_at": now})
+    (tmp_path / "api").mkdir(parents=True, exist_ok=True)
+    (tmp_path / "api" / "source-health-data.json").write_text(
+        json.dumps({"noaa": {"refresh_minutes": "nonsense"}}), encoding="utf-8")
+    f = source_health.source_freshness(tmp_path, {"NOAA": "noaa"})
+    assert f["noaa"]["max_age_minutes"] == source_health.REFRESH_MINUTES["noaa"] * 2
+
+
+def test_status_marks_a_silent_source_stale(tmp_path):
     """The defect in production: fetched_at existed, so ok was True and
     nothing said the snapshot was six days old."""
-    mod = _load_status_module()
     six_days_ago = (datetime.now(timezone.utc) - timedelta(days=6)).isoformat()
-    age = mod._age_minutes(six_days_ago)
-    assert age > mod._max_age_minutes({"refresh_minutes": 240})
+    _snapshot(tmp_path, "noaa", {"fetched_at": six_days_ago})
+    f = source_health.source_freshness(tmp_path, {"NOAA": "noaa"})
+    assert f["noaa"]["stale"] is True
+    assert f["noaa"]["ok"] is False, "a six-day-old snapshot must not read as healthy"
+    assert f["noaa"]["age_minutes"] > f["noaa"]["max_age_minutes"]
+
+
+def test_a_failed_run_does_not_reset_the_clock_on_any_surface(tmp_path):
+    """The shared helper is what stops a failing collector reading as fresh."""
+    (tmp_path / "api").mkdir(parents=True, exist_ok=True)
+    (tmp_path / "api" / "source-health-data.json").write_text(
+        json.dumps({"world_bank": {"fetched_at": "2026-09-01T00:00:00+00:00",
+                                   "refresh_minutes": 1440}}), encoding="utf-8")
+    _snapshot(tmp_path, "world_bank", {
+        "fetched_at": datetime.now(timezone.utc).isoformat(),
+        "ok": False,
+        "errors": ["GY/NY.GDP.MKTP.CD: 403 Forbidden"],
+    })
+    f = source_health.source_freshness(tmp_path, {"World Bank": "world_bank"})
+    assert f["world_bank"]["fetched_at"] == "2026-09-01T00:00:00+00:00"
+    assert f["world_bank"]["carried_forward"] is True
 
 
 def test_published_bundle_has_refresh_intervals():

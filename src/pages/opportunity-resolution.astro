@@ -65,12 +65,12 @@ function fmtDate(value) {
   </div>
 </div>
 
-<div class="hero">
-  <p class="hero-kicker">Procurement outcome resolver</p>
+<div class="hero" id="main-content" role="main">
+  <p class="hero-kicker">What happened to the tenders we spotted</p>
   <h1>What happened <em>after</em> we saw it.</h1>
-  <p class="hero-sub">A detection is only worth something if someone checks what became of it. Every tender below is a canonical record built from dated public portal snapshots: when it was first seen, how its closing date moved, and whether an award or cancellation notice followed. Nothing here is inferred — where a portal never named a winner, no winner is shown.</p>
+  <p class="hero-sub">Spotting a tender is only worth something if somebody checks how it ended. Each one below is a single record built from dated snapshots of the public portals: when we first saw it, every time its closing date moved, and whether an award or cancellation followed. Nothing is guessed — where the portal never named a winner, we do not name one either.</p>
   <div class="hero-stats">
-    <div class="hero-stat"><strong>{summary.tenders ?? 0}</strong><span>Canonical tenders</span></div>
+    <div class="hero-stat"><strong>{summary.tenders ?? 0}</strong><span>Tenders tracked</span></div>
     <div class="hero-stat"><strong>{summary.detected_before_close ?? 0}</strong><span>Detected before close</span></div>
     <div class="hero-stat"><strong>{summary.median_lead_days ?? '—'}{summary.median_lead_days != null ? 'd' : ''}</strong><span>Median lead time</span></div>
     <div class="hero-stat"><strong>{summary.resolved_outcomes ?? 0}</strong><span>Recorded outcomes</span></div>
@@ -79,7 +79,7 @@ function fmtDate(value) {
 
 <div class="sec">
   <div class="sec-label">What this evidence does and does not show</div>
-  <div class="sec-title">The honest read</div>
+  <h2 class="sec-title">The honest read</h2>
   <div class="sec-sub">
     <p>Of {summary.resolved_outcomes ?? 0} recorded outcomes, {summary.outcomes_resolving_a_prior_detection ?? 0} resolve a tender this desk had already detected; the rest are award notices for tenders that were never in our opportunity feed.</p>
     <p>{summary.independently_resolved ?? 0} outcomes are confirmed by a publisher independent of the one that generated the claim — a source cannot corroborate itself.</p>
@@ -97,11 +97,18 @@ function fmtDate(value) {
 
 <div class="sec">
   <div class="sec-label">Detection lead time</div>
-  <div class="sec-title">Seen this far before bids closed</div>
-  <div class="sec-sub">Lead time is the gap between the first dated snapshot containing the tender and its closing date. Where a closing date was later amended, the current date is used and the change is shown on the record.</div>
-  <div class="res-list">
-    {earlyDetections.slice(0, 12).map((t) => (
-      <div class="res-row">
+  <h2 class="sec-title">Seen this far before bids closed</h2>
+  <div class="sec-sub">Lead time is the gap between the first dated snapshot containing the tender and its closing date. Where a closing date was later amended, the current date is used and the change is shown on the record. This page publishes the {Math.min(earlyDetections.length, 60)} longest of {earlyDetections.length} early detections.</div>
+  <div class="filter-bar" data-filter-for="#early-list">
+    <div class="filter-field">
+      <label for="early-country">Country</label>
+      <select id="early-country" data-filter-key="country"><option value="">All countries</option></select>
+    </div>
+    <button type="button" class="filter-reset">Clear</button>
+  </div>
+  <div class="res-list" id="early-list" data-reveal="10">
+    {earlyDetections.slice(0, 60).map((t) => (
+      <div class="res-row" data-country={t.country}>
         <div class="res-lead"><strong>+{t.lead_time_days}</strong><span>days</span></div>
         <div class="res-body">
           <div class="res-title">{t.title}</div>
@@ -134,11 +141,22 @@ function fmtDate(value) {
 
 <div class="sec">
   <div class="sec-label">Recorded outcomes</div>
-  <div class="sec-title">Awards and cancellations</div>
-  <div class="sec-sub">Each outcome is labelled with how much distance the resolving source has from the source that generated the claim. Only “independent source” counts as external confirmation.</div>
-  <div class="res-list">
-    {resolved.slice(0, 20).map((t) => (
-      <div class="res-row">
+  <h2 class="sec-title">Awards and cancellations</h2>
+  <div class="sec-sub">Each outcome is labelled with how much distance the resolving source has from the source that generated the claim. Only “independent source” counts as external confirmation. This page publishes the {Math.min(resolved.length, 60)} most recent of {resolved.length} recorded outcomes.</div>
+  <div class="filter-bar" data-filter-for="#resolved-list">
+    <div class="filter-field">
+      <label for="res-country">Country</label>
+      <select id="res-country" data-filter-key="country"><option value="">All countries</option></select>
+    </div>
+    <div class="filter-field">
+      <label for="res-state">Outcome</label>
+      <select id="res-state" data-filter-key="state"><option value="">All outcomes</option></select>
+    </div>
+    <button type="button" class="filter-reset">Clear</button>
+  </div>
+  <div class="res-list" id="resolved-list" data-reveal="10">
+    {resolved.slice(0, 60).map((t) => (
+      <div class="res-row" data-country={t.country} data-state={stateLabel[t.resolution.state] || t.resolution.state}>
         <div class={`res-badge badge-${t.resolution.state}`}>{stateLabel[t.resolution.state] || t.resolution.state}</div>
         <div class="res-body">
           <div class="res-title">{t.title}</div>
@@ -166,7 +184,7 @@ function fmtDate(value) {
 
 <div class="sec">
   <div class="sec-label">Source cadence & coverage gaps</div>
-  <div class="sec-title">Why the unresolved rate looks the way it does</div>
+  <h2 class="sec-title">Why the unresolved rate looks the way it does</h2>
   <div class="sec-sub">
     <p>{coverage.unresolved_total ?? 0} tenders sit unresolved and {coverage.outcomes_without_prior_detection ?? 0} recorded outcomes correspond to no prior detection. The rates reflect uneven observation histories and outcome coverage across portals. The table is derived from dated snapshots already in the corpus; nothing here was re-fetched.</p>
   </div>
@@ -197,18 +215,18 @@ function fmtDate(value) {
 
 <div class="sec">
   <div class="sec-label">Provenance</div>
-  <div class="sec-title">Where these records come from</div>
+  <h2 class="sec-title">Where these records come from</h2>
   <div class="prov">
     <div class="prov-block">
-      <h4>Opportunity sources</h4>
+      <h3>Opportunity sources</h3>
       <ul>{(provenance.generating_sources || []).map((s) => <li>{s}</li>)}</ul>
     </div>
     <div class="prov-block">
-      <h4>Resolution sources</h4>
+      <h3>Resolution sources</h3>
       <ul>{(provenance.resolution_sources || []).map((s) => <li>{s}</li>)}</ul>
     </div>
     <div class="prov-block">
-      <h4>Caveats</h4>
+      <h3>Caveats</h3>
       <ul>{(provenance.notes || []).map((n) => <li>{n}</li>)}</ul>
     </div>
   </div>
@@ -269,4 +287,5 @@ function fmtDate(value) {
   }
 </style>
 
+<script>import "../scripts/page-tools.ts";</script>
 </Base>

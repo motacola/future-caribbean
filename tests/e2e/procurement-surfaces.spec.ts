@@ -38,8 +38,10 @@ test('capability page shows country-level caveat and cited registry sources', as
   const errors: string[] = [];
   page.on('pageerror', error => errors.push(error.message));
   await page.goto('/capability-matches', { waitUntil: 'networkidle' });
-  await expect(page.getByRole('heading', { name: 'Where does the region show relevant capability?' })).toBeVisible();
-  await expect(page.getByText('not proof that a named supplier can bid or deliver')).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Who in the region can do this work?' })).toBeVisible();
+  // The caveat must survive any rewording: a match is a screening lead, never a
+  // claim that a company can win or deliver the work.
+  await expect(page.getByText(/not proof that any company can win or deliver/)).toBeVisible();
   expect(await page.locator('.match-row').count()).toBeGreaterThan(0);
   expect(await page.locator('.cap-holders a[href^="https://"]').count()).toBeGreaterThan(0);
   expect(errors).toEqual([]);

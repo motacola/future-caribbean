@@ -148,3 +148,53 @@ def test_validation_pack_file_matches_index():
 
 if __name__ == "__main__":
     pytest.main([__file__, "-v"])
+
+# ── Manifest addressability ─────────────────────────────────
+# The README invites an agent to "ingest the manifest, configure yourself".
+# It could not: every tool carried a relative path and the envelope named no
+# host, so an agent that fetched /api/tools.json had 17 tools and nowhere to
+# send them.
+
+def test_manifest_resolves_tools_to_callable_urls():
+    from api_manifest import manifest_for
+
+    m = manifest_for("https://abeng.example.org")
+    assert m["base_url"] == "https://abeng.example.org"
+    assert m["tools"], "manifest has no tools"
+    for tool in m["tools"]:
+        assert tool["url"] == "https://abeng.example.org" + tool["path"], (
+            f"{tool['name']} has no callable url"
+        )
+
+
+def test_manifest_without_a_base_url_stays_relative():
+    """No host given, no invented one — the stored form is unchanged."""
+    from api_manifest import manifest_for
+
+    m = manifest_for()
+    assert "base_url" not in m
+    assert all("url" not in t for t in m["tools"])
+
+
+def test_public_manifest_marks_write_tools_unavailable():
+    """The deployed instance is read-only and has to say so."""
+    from api_manifest import manifest_for
+
+    m = manifest_for("https://abeng.example.org", public=True)
+    writes = [t for t in m["tools"] if t.get("writes")]
+    reads = [t for t in m["tools"] if not t.get("writes")]
+    assert writes, "no write tools in the manifest to check"
+    assert all(t["available"] is False for t in writes)
+    assert all(t["note"] == "local instance only" for t in writes)
+    assert all(t["available"] is True for t in reads)
+
+
+def test_mcp_config_ships_so_a_clone_is_already_wired():
+    """mcp_adapter/README told people to write this file themselves."""
+    import json
+
+    cfg = json.loads((ROOT / ".mcp.json").read_text(encoding="utf-8"))
+    server = cfg["mcpServers"]["abeng"]
+    assert server["command"] == "python3"
+    assert server["args"] == ["mcp_adapter/desk_server.py"]
+    assert (ROOT / server["args"][0]).is_file(), "config points at a missing server"

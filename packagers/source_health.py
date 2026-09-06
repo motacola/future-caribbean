@@ -66,6 +66,12 @@ def build_health(root: Path = ROOT, previous: dict | None = None) -> dict:
     health: dict = {}
     for key, refresh in REFRESH_MINUTES.items():
         snapshot = _read_json(root / "data" / key / "latest.json")
+        # A snapshot that declares its own run failed (every request errored,
+        # nothing collected) is treated as no snapshot at all: its timestamp
+        # must not reset the freshness clock, or a dead collector reads as
+        # healthy for as long as it keeps failing on schedule.
+        if snapshot is not None and snapshot.get("ok") is False:
+            snapshot = None
         fetched_at = (snapshot or {}).get("fetched_at")
         entry = {
             "ok": bool(fetched_at),
@@ -84,6 +90,69 @@ def build_health(root: Path = ROOT, previous: dict | None = None) -> dict:
                 entry["carried_forward"] = False
         health[key] = entry
     return health
+
+
+def source_freshness(root: Path = ROOT, keys: dict[str, str] | None = None) -> dict:
+    """Per-source freshness for a status surface, judged one way everywhere.
+
+    `keys` maps display name -> source key; it defaults to every source this
+    module tracks. Each entry reports whether the source has a usable snapshot,
+    when it was last collected, how old that is, the age at which it counts as
+    stale, and whether the timestamp was carried forward from a previous run.
+
+    This exists because four surfaces — server.py, api/status.py,
+    cli/abengctl.py and mcp_adapter/desk_server.py — each carried their own
+    copy of the check, and the copies drifted: three of them decided a source
+    was live from `path.exists()` alone, so a collector whose every request
+    failed still read as healthy, and a snapshot that had not been refreshed
+    in days read as current.
+    """
+    if keys is None:
+        keys = {k.replace("_", " ").title(): k for k in REFRESH_MINUTES}
+
+    bundle = _read_json(root / "api" / "source-health-data.json") or {}
+    now = datetime.now(timezone.utc)
+
+    out: dict = {}
+    for name, key in keys.items():
+        snapshot = _read_json(root / "data" / key / "latest.json") or {}
+        # A run that collected nothing must not stand in for a refresh.
+        fetched_at = "" if snapshot.get("ok") is False else (snapshot.get("fetched_at") or "")
+        entry = bundle.get(key) or {}
+        carried_forward = False
+        if not fetched_at:
+            fetched_at = entry.get("fetched_at") or ""
+            carried_forward = bool(fetched_at)
+
+        age_minutes = None
+        if fetched_at:
+            try:
+                dt = datetime.fromisoformat(fetched_at.replace("Z", "+00:00"))
+                age_minutes = int((now - dt).total_seconds() / 60)
+            except ValueError:
+                age_minutes = None
+
+        try:
+            refresh = int(entry.get("refresh_minutes") or REFRESH_MINUTES.get(key, 1440))
+        except (TypeError, ValueError):
+            refresh = REFRESH_MINUTES.get(key, 1440)
+        max_age_minutes = max(refresh, 1) * 2
+
+        stale = age_minutes is not None and age_minutes > max_age_minutes
+        out[key] = {
+            "name": name,
+            # `has_data` is "we hold a snapshot for this source at all";
+            # `ok` is the stricter, user-facing reading — we hold one and it
+            # is current. A six-day-old snapshot has data and is not ok.
+            "has_data": bool(fetched_at),
+            "ok": bool(fetched_at) and not stale,
+            "fetched_at": fetched_at,
+            "age_minutes": age_minutes,
+            "max_age_minutes": max_age_minutes,
+            "stale": stale,
+            "carried_forward": carried_forward or bool(entry.get("carried_forward")),
+        }
+    return out
 
 
 def main() -> int:

@@ -114,6 +114,38 @@ const HUMANIZE_RULES: [string, string][] = [
    "Early signal in $1, no detail yet"],
   ["\\(signal detected\\)",
    "(no figure attached yet)"],
+  // ── Internal vocabulary ─────────────────────────────────
+  // Signal kinds, CCRIF perils and persona ids travel through generated
+  // prose as the slugs the pipeline stores them as, and reached readers
+  // intact: "Peril: tropical_cyclone" on the front page, "2 converging
+  // signal types (enhanced_investment, investment_signal)" on /build.
+  // Rewrite the vocabulary wherever it lands in a sentence.
+  ["\\benhanced_investment\\b",
+   "validated investment"],
+  ["\\binvestment_signal\\b",
+   "investment signal"],
+  ["\\beconomic_vulnerability\\b",
+   "economic stress"],
+  ["\\bdevelopment_pipeline\\b",
+   "development pipeline"],
+  ["\\bccrif_payout\\b",
+   "catastrophe insurance payout"],
+  ["\\bfinance_signal\\b",
+   "finance signal"],
+  ["\\bnews_coverage\\b",
+   "news coverage"],
+  ["\\bfood_security\\b",
+   "food security"],
+  ["\\btourism_impact\\b",
+   "tourism impact"],
+  ["\\btropical_cyclone\\b",
+   "tropical cyclone"],
+  ["\\bexcess_rainfall\\b",
+   "excess rainfall"],
+  ["\\bprocurement_watcher\\b",
+   "procurement watcher"],
+  ["\\bregional_operator\\b",
+   "regional operator"],
 ];
 
 const _compiled: [RegExp, string][] = HUMANIZE_RULES.map(([p, r]) => {
@@ -296,13 +328,13 @@ export function cleanDek(summary: string | null | undefined, title?: string | nu
 
 // Machine status identifiers that were being printed to the page verbatim.
 const STATUS_COPY: Record<string, string> = {
-  source_checked_no_dated_observation: 'Source checked, no dated close published',
-  no_dated_observation: 'No dated close published',
-  official_source_identified: 'Official source identified',
-  proxy_watch: 'Proxy watch',
-  fallback_cached: 'Cached fallback',
-  stale_fallback: 'Last published close, now some weeks old',
-  unavailable: 'Official source could not be reached this cycle',
+  source_checked_no_dated_observation: 'We checked the exchange; it has not published a dated close',
+  no_dated_observation: 'No dated close published yet',
+  official_source_identified: 'Official source found, no figures yet',
+  proxy_watch: 'Watched indirectly',
+  fallback_cached: 'Showing a saved copy',
+  stale_fallback: 'Showing the last close published — now some weeks old',
+  unavailable: 'We could not reach the exchange this cycle',
   date_unavailable: 'Date unavailable',
   current: 'Current',
   delayed: 'Delayed',

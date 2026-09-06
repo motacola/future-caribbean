@@ -16,7 +16,10 @@ from urllib.parse import parse_qs, urlparse
 
 PORT = int(os.environ.get("PORT", 8080))
 APP_DIR = Path(__file__).parent
-PUBLIC_POST_PATHS = frozenset({"/api/ask"})
+# POSTs that read rather than write, so the admin gate lets them through.
+# /mcp is the Model Context Protocol endpoint: JSON-RPC in, published
+# artefacts out, no tool behind it that can change anything.
+PUBLIC_POST_PATHS = frozenset({"/api/ask", "/mcp"})
 LOOPBACK_HOSTS = frozenset({"127.0.0.1", "::1", "localhost"})
 
 
@@ -49,9 +52,52 @@ BLOCKED_PREFIXES = (
     "data/", "signals/", "watchers/", "mergers/", "distributors/",
     "packagers/", "planning/", "tests/", "agent/", "architecture/",
     "config/", "memory/", "domains/", "cli/", "reasoners/",
-    "run_pipeline.sh", "requirements.txt", "server.py", "Dockerfile",
-    "Procfile", "fly.toml", "vercel.json", ".gitignore", ".dockerignore",
+    "run_pipeline.sh", "requirements.txt", "server.py",
+    "vercel.json", ".gitignore", "deploy/",
 )
+
+def _astro_page_exists(clean: str) -> bool:
+    """True when dist/<clean>/index.html is a real page built by Astro.
+
+    Guards against traversal and absolute paths: the resolved directory has
+    to sit inside dist/.
+    """
+    candidate = clean.strip("/")
+    if not candidate or candidate.startswith("/") or ".." in candidate.split("/"):
+        return False
+    dist = (APP_DIR / "dist").resolve()
+    try:
+        target = (dist / candidate / "index.html").resolve()
+        target.relative_to(dist)
+    except (ValueError, OSError):
+        return False
+    return target.is_file()
+
+
+# ── Source freshness ─────────────────────────────────────────
+# Same contract as the deployed function in api/status.py: a source is
+# judged against its own refresh cadence, with one missed refresh of grace.
+_DEFAULT_REFRESH_MINUTES = 1440
+_STALENESS_GRACE_FACTOR = 2
+
+
+def _age_minutes(ts: str | None) -> int | None:
+    if not ts:
+        return None
+    try:
+        dt = datetime.fromisoformat(ts.replace("Z", "+00:00"))
+        return int((datetime.now(timezone.utc) - dt).total_seconds() / 60)
+    except Exception:
+        return None
+
+
+def _max_age_minutes(health_entry: dict) -> int:
+    try:
+        refresh = int(health_entry.get("refresh_minutes") or _DEFAULT_REFRESH_MINUTES)
+    except (TypeError, ValueError):
+        refresh = _DEFAULT_REFRESH_MINUTES
+    return max(refresh, 1) * _STALENESS_GRACE_FACTOR
+
 
 _pipeline_lock = threading.Lock()
 _pipeline_running = False
@@ -62,7 +108,7 @@ _pipeline_subscribers_lock = threading.Lock()
 
 # ── Tool Manifest ────────────────────────────────────────────
 
-from api_manifest import TOOLS_MANIFEST
+from api_manifest import TOOLS_MANIFEST, manifest_for
 
 
 class AppHandler(http.server.SimpleHTTPRequestHandler):
@@ -138,7 +184,11 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
             self._api_coordination_opportunity(opportunity_id)
             return
         if path == "/api/pipeline/stream":
-            self._api_pipeline_stream(parse_qs(parsed.query).get("replay") == ["1"])
+            stream_query = parse_qs(parsed.query)
+            self._api_pipeline_stream(
+                stream_query.get("replay") == ["1"],
+                run=stream_query.get("run") == ["1"],
+            )
             return
         if path == "/api/pipeline/status":
             self._api_status()
@@ -177,6 +227,13 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
         if path == "/api/community-brief/snippets":
             self._api_community_brief_snippets()
             return
+        if path == "/mcp":
+            self.send_response(405)
+            self.send_header("Allow", "POST, OPTIONS")
+            self.send_header("Content-Length", "0")
+            self._cors()
+            self.end_headers()
+            return
         if path == "/api/tools.json":
             self._api_tools_manifest()
             return
@@ -205,9 +262,22 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
             self.path = "/dist/" + clean + "/index.html"
         # Root and named pages — serve from Astro dist
         elif clean in ("", "index.html", "briefing", "briefing.html", "desk", "system", "system.html"):
+            # dist/ is gitignored, so a fresh clone has no site until it is
+            # built. The API answers fine without it, which made this a bare
+            # 404 on the home page with nothing to say why.
+            if not (APP_DIR / "dist" / "index.html").is_file():
+                self._site_not_built()
+                return
             self.path = "/dist/index.html"
         elif clean in ("build", "build.html"):
             self.path = "/dist/build/index.html"
+        # Every other Astro page. Resolved from what the build actually
+        # produced rather than a hand-maintained list: /accuracy,
+        # /capability-matches, /opportunity-resolution and /regional-connections
+        # were added to the site and linked from the home page, but never here,
+        # so the local full-stack server 404'd on its own navigation.
+        elif _astro_page_exists(clean):
+            self.path = "/dist/" + clean.strip("/") + "/index.html"
         # Legacy pages retired June 2026 — redirect old links to Astro routes
         elif clean == "dashboard.html":
             self.send_response(301)
@@ -231,6 +301,9 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
         if path not in PUBLIC_POST_PATHS and not self._require_admin():
             return
 
+        if path == "/mcp":
+            self._mcp_endpoint()
+            return
         if path == "/api/ask":
             self._api_ask()
             return
@@ -382,6 +455,15 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
                     data["stdout"] = output[-6000:]
         if result.stderr:
             data["stderr"] = result.stderr[-3000:]
+        # A workflow can refuse the request (unapproved delivery, unknown id)
+        # and still exit 0, reporting the refusal inside its own payload. The
+        # envelope has to carry that through, or a caller checking the
+        # top-level `ok` reads a rejected send as a successful one.
+        inner = data.get("result")
+        if isinstance(inner, dict) and inner.get("ok") is False:
+            data["ok"] = False
+            if inner.get("error"):
+                data.setdefault("error", inner["error"])
         return data
 
     def _sse(self, data: str) -> bool:
@@ -589,9 +671,77 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
             return
         self._json({"ok": True, "snippets": snippets})
 
+    def _site_not_built(self) -> None:
+        """Explain the missing build instead of 404ing on the home page."""
+        body = (
+            "<!doctype html><meta charset=utf-8>"
+            "<title>Abeng — site not built yet</title>"
+            "<style>body{font:16px/1.6 system-ui,sans-serif;max-width:38rem;"
+            "margin:12vh auto;padding:0 1.5rem;color:#18251F}"
+            "code{background:#f2efe6;padding:.15em .4em;border-radius:3px}"
+            "pre{background:#18251F;color:#FFFCF4;padding:1rem;border-radius:6px;"
+            "overflow-x:auto}a{color:#0D5257}</style>"
+            "<h1>The site has not been built yet</h1>"
+            "<p>The API is running and already answering — this server just has no "
+            "<code>dist/</code> to serve the pages from. It is gitignored, so a fresh "
+            "clone never has one.</p>"
+            "<pre>pnpm install &amp;&amp; pnpm build</pre>"
+            "<p>Then reload. Nothing else needs restarting.</p>"
+            "<h2>The agent surface works right now</h2>"
+            "<p>No build required for any of these:</p>"
+            "<pre>curl localhost:8080/api/tools.json\n"
+            "curl -X POST localhost:8080/api/ask -d '{\"question\":\"explain lead\"}'\n"
+            "python3 cli/abengctl.py status</pre>"
+            "<p><a href=\"/api/tools.json\">/api/tools.json</a> &middot; "
+            "<a href=\"/agents.md\">/agents.md</a> &middot; "
+            "<a href=\"/llms.txt\">/llms.txt</a></p>"
+        ).encode("utf-8")
+        self.send_response(503)
+        self.send_header("Content-Type", "text/html; charset=utf-8")
+        self.send_header("Content-Length", str(len(body)))
+        self.end_headers()
+        self.wfile.write(body)
+
+    def _mcp_endpoint(self) -> None:
+        """Model Context Protocol over Streamable HTTP.
+
+        Stateless: every tool is a read of published artefacts, so there is
+        no session to hold and a client loses nothing by reconnecting.
+        """
+        from mcp_adapter.http import handle_payload
+
+        try:
+            length = int(self.headers.get("Content-Length", 0))
+        except (TypeError, ValueError):
+            length = 0
+        raw = self.rfile.read(length) if length else b"{}"
+
+        status, response = handle_payload(raw)
+        if response is None:
+            self.send_response(202)
+            self.send_header("Content-Length", "0")
+            self._cors()
+            self.end_headers()
+            return
+
+        body = json.dumps(response, ensure_ascii=False).encode("utf-8")
+        self.send_response(status)
+        self.send_header("Content-Type", "application/json")
+        self.send_header("Content-Length", str(len(body)))
+        self._cors()
+        self.end_headers()
+        self.wfile.write(body)
+
     def _api_tools_manifest(self) -> None:
-        """Serve the machine-readable tool manifest."""
-        self._json(TOOLS_MANIFEST)
+        """Serve the machine-readable tool manifest.
+
+        Resolved against the address the agent actually reached us on, so
+        the manifest it ingests carries callable URLs rather than paths it
+        has to guess a host for.
+        """
+        host = self.headers.get("Host") or f"127.0.0.1:{PORT}"
+        scheme = "https" if self.headers.get("X-Forwarded-Proto") == "https" else "http"
+        self._json(manifest_for(f"{scheme}://{host}"))
 
     # ── Static file serving for discovery ──────────────────────
 
@@ -834,18 +984,14 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
             "NDBC": "ndbc",
             "CARICOM / CDB": "tier2",
         }
-        sources: dict = {}
-        for name, key in source_keys.items():
-            p = APP_DIR / "data" / key / "latest.json"
-            ok = p.exists()
-            fetched_at = ""
-            if ok:
-                try:
-                    d = json.loads(p.read_text())
-                    fetched_at = d.get("fetched_at", "")
-                except Exception:
-                    pass
-            sources[key] = {"name": name, "ok": ok, "fetched_at": fetched_at}
+        # One freshness rule for every surface (see packagers/source_health):
+        # a snapshot file existing is not proof a source is alive, a run that
+        # collected nothing must not reset the clock, and a snapshot older
+        # than its source's own cadence is stale, not healthy.
+        from packagers.source_health import source_freshness
+
+        sources = source_freshness(APP_DIR, source_keys)
+        n_sources_stale = sum(1 for s in sources.values() if s["stale"])
 
         desk: dict = {}
         desk_p = APP_DIR / "outbox" / "dispatch_desk.json"
@@ -903,6 +1049,7 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
             "ok": True,
             "sources": sources,
             "n_sources_ok": sum(1 for s in sources.values() if s["ok"]),
+            "n_sources_stale": n_sources_stale,
             "n_dispatches": desk.get("dispatch_count", 0),
             "n_clusters": len(desk.get("clusters", [])),
             "cycle_id": desk.get("cycle_id", "—"),
@@ -1139,7 +1286,7 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
                 f"{country}: {evidence}{pct_str}\n\n"
                 f"{action[:160]}\n\n"
                 f"{disclaimer}\n"
-                f"Full brief: https://future-caribbean.fly.dev"
+                f"Full brief: https://abeng.vercel.app"
             )
         elif channel == "email":
             kind_word = "hazard" if domain == "climate" else "market"
@@ -1224,7 +1371,7 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
             "",
             "_Screening signal only. Not investment advice._",
             "",
-            "Full brief: https://future-caribbean.fly.dev",
+            "Full brief: https://abeng.vercel.app",
         ]
         msg = "\n".join(lines)
 
@@ -1241,7 +1388,23 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
 
     # ── /api/pipeline/stream (SSE) ─────────────────────────────
 
-    def _api_pipeline_stream(self, replay: bool = False) -> None:
+    def _api_pipeline_stream(self, replay: bool = False, run: bool = False) -> None:
+        # Watching the cycle theater is a read. Starting a cycle rewrites every
+        # published artefact, so it takes an explicit ?run=1 and the admin token
+        # — otherwise loading the dashboard would launch a pipeline run per page
+        # view, republishing a degraded cycle over good data whenever a source
+        # is down. Auth is checked before the SSE headers go out, because
+        # _require_admin needs to answer with JSON.
+        if run and not replay:
+            if not self._require_admin():
+                return
+            _start_pipeline_cycle_if_idle()
+
+        # With no cycle in flight there is nothing live to show, so serve the
+        # recorded cycle instead of holding an empty stream open.
+        if not replay and not _pipeline_running:
+            replay = True
+
         self.send_response(200)
         self.send_header("Content-Type", "text/event-stream")
         self.send_header("Cache-Control", "no-cache")
@@ -1266,7 +1429,6 @@ class AppHandler(http.server.SimpleHTTPRequestHandler):
         subscriber: queue.Queue = queue.Queue()
         with _pipeline_subscribers_lock:
             _pipeline_subscribers.add(subscriber)
-        _start_pipeline_cycle_if_idle()
         try:
             while True:
                 try:

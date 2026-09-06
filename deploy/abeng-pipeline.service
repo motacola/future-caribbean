@@ -1,0 +1,36 @@
+# One pipeline cycle: poll the public sources, merge, package, rebuild the
+# site. Fired by abeng-pipeline.timer; run it by hand with
+#
+#   systemctl start abeng-pipeline.service
+#
+# Node and pnpm are optional. Without them run_pipeline.sh skips the Astro
+# build and leaves the existing dist/ in place, which is fine if you deploy
+# a site built elsewhere.
+
+[Unit]
+Description=Abeng pipeline cycle
+Documentation=https://github.com/motacola/future-caribbean
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=abeng
+Group=abeng
+WorkingDirectory=/opt/abeng
+EnvironmentFile=-/etc/abeng.env
+
+ExecStart=/bin/bash run_pipeline.sh
+
+# A cycle that cannot reach its sources still publishes, flagged, so a
+# non-zero exit is worth seeing in the journal rather than retrying blindly.
+TimeoutStartSec=30min
+
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/abeng
+ProtectKernelTunables=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true

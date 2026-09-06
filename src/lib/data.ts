@@ -21,6 +21,13 @@ function readText(path: string): string {
 }
 
 // fallow-ignore-next-line complexity
+/** "2026-08-30" -> "30 Aug 2026". Falls back to the raw value if unparseable. */
+function friendlyDate(iso: string): string {
+  const dt = new Date(`${iso}T00:00:00Z`);
+  if (Number.isNaN(dt.getTime())) return iso;
+  return dt.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
+}
+
 function age(ts: string | undefined | null): string {
   if (!ts) return '—';
   try {
@@ -87,9 +94,9 @@ function evidenceListHtml(raw: string): string {
     .map(part => part.replace(/^[\s•\-–]+/, '').trim())
     .filter(part => part.length > 1);
   if (!parts.length) return '';
-  if (parts.length === 1) return `<p><strong>Evidence:</strong> ${esc(parts[0])}</p>`;
+  if (parts.length === 1) return `<p><strong>Evidence:</strong> ${esc(humanize(parts[0]))}</p>`;
   return `<p class="evidence-lead"><strong>Evidence</strong></p><ul class="evidence-list">${
-    parts.map(part => `<li>${esc(part)}</li>`).join('')}</ul>`;
+    parts.map(part => `<li>${esc(humanize(part))}</li>`).join('')}</ul>`;
 }
 
 function cleanSignalTitle(raw: string): string {
@@ -268,17 +275,22 @@ function packFreshnessStrip(pack: any): string {
   const freshness = pack.evidence_freshness || 'unknown';
   const cycles = parseInt(pack.cycles_since_refresh || '0', 10) || 0;
   const readiness = pack.action_readiness || 'n/a';
-  const raw = pack.raw_confidence_score ?? pack.confidence_score ?? '—';
   const calibrated = pack.confidence_score ?? '—';
   const validated = age(pack.last_validated_at);
-  const labelMap: Record<string, string> = { refreshing:'Refreshing', aging:'Aging', stale:'Stale — downgrade risk' };
+  const labelMap: Record<string, string> = { refreshing:'Still coming in', aging:'Getting older', stale:'Going cold' };
   const label = labelMap[freshness] ?? freshness.replace(/_/g, ' ').replace(/\b\w/g, (c: string) => c.toUpperCase());
-  const cycleNote = cycles === 0 ? 'new evidence this cycle' : `${cycles} cycle${cycles === 1 ? '' : 's'} since evidence changed`;
+  const cycleNote = cycles === 0 ? 'something new came in today' : `nothing new for ${cycles} cycle${cycles === 1 ? '' : 's'}`;
+  // `raw` is the uncapped internal score used for ranking. It means nothing to a
+  // reader beside the 0-100 figure, so it stays out of the page.
+  const readinessMap: Record<string, string> = {
+    high: 'Ready to act on', medium: 'Worth a look', low: 'Early — keep watching',
+  };
+  const readinessLabel = readinessMap[String(readiness).toLowerCase()] ?? readiness;
   return `<div class="vpack-freshness">
     <span class="freshness-pill ${esc(freshness)}">${esc(label)}</span>
-    <span class="freshness-meta">Action readiness: <strong>${esc(readiness)}</strong></span>
-    <span class="freshness-meta">Confidence: <strong>${esc(calibrated)}</strong> <em>(raw ${esc(raw)})</em></span>
-    <span class="freshness-meta">Validated ${esc(validated)} · ${esc(cycleNote)}</span>
+    <span class="freshness-meta">${esc(readinessLabel)}</span>
+    <span class="freshness-meta">Confidence <strong>${esc(calibrated)}</strong> out of 100</span>
+    <span class="freshness-meta">Checked ${esc(validated)} · ${esc(cycleNote)}</span>
     <span class="freshness-meta freshness-calibration">${esc(calibrationNoteFor(calibrated))}</span>
   </div>`;
 }
@@ -296,6 +308,15 @@ const HYP_STATUS_LABEL: Record<string, string> = {
   corroborated: 'Confirmed',
   unconfirmed: 'Not confirmed yet',
   contradicted: 'Contradicted',
+  // Without this the badge fell through to the raw token, "macro signal".
+  macro_signal: 'Whole-economy figure',
+};
+
+// Packs generated before the wording was fixed still carry the old label, and
+// they stay on the site until the next cycle regenerates them.
+const LEGACY_SECTOR_COPY: Record<string, string> = {
+  'FDI-receiving sectors (composition not yet broken down)':
+    'Which industries received it is not published yet',
 };
 
 function packHypothesisLi(h: any): string {
@@ -304,7 +325,8 @@ function packHypothesisLi(h: any): string {
   const label = HYP_STATUS_LABEL[status] || status.replace(/_/g, ' ');
   const badge = status ? `<span class="hyp-status ${esc(status)}">${esc(label)}</span>` : '';
   const basis = h.basis ? `<em>${esc(humanize(h.basis))}</em>` : '';
-  return `<li><strong>${esc(str(h.sector))}</strong>${badge}${basis}</li>`;
+  const sector = str(h.sector);
+  return `<li><strong>${esc(LEGACY_SECTOR_COPY[sector] || sector)}</strong>${badge}${basis}</li>`;
 }
 
 // fallow-ignore-next-line complexity
@@ -815,7 +837,7 @@ export function loadDashboardData() {
     // A market with nothing behind it yet should not speak in the same voice as
     // a validated lead.
     const watchlist = /no detail yet/i.test(title);
-    return `<a class="lw-item${watchlist ? ' lw-watch' : ''}" href="#leaflet-map" data-country="${esc(country)}">` +
+    return `<a class="lw-item${watchlist ? ' lw-watch' : ''}" href="#front-page" data-country="${esc(country)}">` +
       `<i style="background:${color}"></i>` +
       `<span class="lw-kicker">${esc(t.country_cluster || 'Region')}</span>` +
       (watchlist ? '<span class="lw-tag">Watchlist</span>' : '') +
@@ -825,7 +847,7 @@ export function loadDashboardData() {
   // ── Front pointers ─────────────────────────────────────────
   let frontPointersHtml = tickerItems.slice(1, 4).map((t: any) => {
     const country = canonicalCountry(t.country_cluster || '');
-    return `<a class="fp-item" href="#leaflet-map" data-country="${esc(country)}">` +
+    return `<a class="fp-item" href="#front-page" data-country="${esc(country)}">` +
       `<span class="fp-kicker">${esc(t.country_cluster || 'Region')}</span>` +
       `<span class="fp-title">${esc(humanize(t.title || ''))}</span></a>`;
   }).join('');
@@ -844,7 +866,7 @@ export function loadDashboardData() {
     : `${lCountry} is the desk's lead this cycle, on the size of the move and how readers responded. Only one source confirms it so far — get a second, but don't wait to start looking.`;
   const lEvidence = humanize(cleanEvidence(lead.evidence || ''));
   const lRanking = humanize(lead.ranking_rationale || '')
-    || 'Ranking uses confidence, source coverage, evidence count, magnitude, and feedback.';
+    || 'We rank on how big the move is, how many sources agree, how much evidence sits behind it, and what readers did with it last time.';
   const lDecision = humanize(lead.decision || 'Which opportunity deserves your attention first');
   const lGrade = cleanGrade(lead.evidence_grade || '');
   const lRisks: string[] = lead.risk_flags || [];
@@ -1186,9 +1208,11 @@ export function loadDashboardData() {
       ? `<span class="activity-chart-meta"><strong>Index ${Math.round(barVals[barVals.length - 1] || 0)}</strong><span>ranged ${Math.round(Math.min(...barVals))}–${Math.round(Math.max(...barVals))} this period</span></span>`
       : '';
     const observedAt = String(m.observation_at || snap.observation_at || '').slice(0, 10);
+    // Read as a sentence, not a field dump — the old form printed
+    // "Official source status: Official source could not be reached this cycle".
     const observationCopy = observedAt
-      ? `Official source observation: ${observedAt}`
-      : `Official source status: ${humanizeStatus(m.freshness_state || snap.data_status, 'Date unavailable')}`;
+      ? `Exchange last published ${friendlyDate(observedAt)}`
+      : humanizeStatus(m.freshness_state || snap.data_status, 'No date published');
     const exchName = ex.name || 'Market source';
     const exchHtml = ex.url
       ? `<a href="${esc(ex.url)}" target="_blank" rel="noopener">${esc(exchName)}</a>`

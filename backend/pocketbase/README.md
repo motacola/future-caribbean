@@ -79,7 +79,7 @@ No rewrite of the Astro routes is needed — only the data-fetch layer swaps fro
 
 - **You now run a server:** TLS, SQLite backup (the 4h Action can also `pb` export), and PB version updates. More ops than static Vercel.
 - **Pre-1.0:** PB is v0.39.6 — API is stable in practice but not version-guaranteed. Pin the version.
-- **Latency hop:** a US-East PB talking to Caribbean users is fine for a dashboard; host closer (Fly `mia`/`gru`) if needed.
+- **Latency hop:** a US-East PB talking to Caribbean users is fine for a dashboard; host closer to the region if needed.
 - **Gain:** realtime, auth, multi-operator desk, no 4h staleness, structured queries/filters instead of JSON grep.
 
 ## Verification (run against live PocketBase 0.39.6)

@@ -14,7 +14,7 @@
     "flue:prepare-delivery": "flue run prepare-delivery --target node --payload",
     "flue:approve-delivery": "flue run approve-delivery --target node --payload",
     "flue:send-approved": "flue run send-approved --target node --payload",
-    "flue:history": "flue run cycle-history --target node --payload",
+    "flue:history": "flue run cycle-history --target node --payload '{}'",
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
