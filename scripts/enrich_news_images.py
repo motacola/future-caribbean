@@ -187,6 +187,12 @@ def enrich_payload(payload: dict[str, Any], limit: int = 24, workers: int = 3) -
         article_url = _safe_http_url(item.get("url"))
         if not article_url:
             continue
+        # The poller now reads media:content, media:thumbnail, enclosures and the
+        # first <img> in content:encoded, so a publisher feed can hand us the
+        # image directly. When it has, there is nothing to look up: skip the
+        # fetch rather than spend a third-party request re-deriving what we hold.
+        if item.get("image_kind") == "feed" and _safe_http_url(item.get("image_url")):
+            continue
         cached = cache.get(article_url)
         if isinstance(cached, dict):
             items[index] = apply_metadata(item, cached)
