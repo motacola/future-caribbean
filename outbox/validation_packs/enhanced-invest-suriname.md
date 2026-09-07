@@ -1,11 +1,11 @@
 # Opportunity Validation Pack — Suriname
 
-- Signal: `enhanced-invest-suriname` · Dispatch: `DSP-20260906-020`
+- Signal: `enhanced-invest-suriname` · Dispatch: `DSP-20260907-020`
 - Confidence: 68/100 (raw 96) · C - single-source
 - Action readiness: medium (annual macro signal only)
 - Evidence freshness: refreshing · cycles since refresh: 0
 - Recommendation: **HOLD** — Calibrated confidence 68/100 with 0 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.
-- Last validated: 2026-09-06T22:06:53.191099+00:00
+- Last validated: 2026-09-07T04:30:41.192448+00:00
 
 ## Sector hypotheses
 - Offshore oil & gas exploration [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_

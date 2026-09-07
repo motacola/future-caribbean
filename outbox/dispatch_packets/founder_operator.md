@@ -2,7 +2,7 @@
 
 **Decision job:** Competitive positioning and capability mapping
 **Delivery channel:** Telegram
-**Generated:** Sep 06, 2026 at 22:06 UTC
+**Generated:** Sep 07, 2026 at 04:30 UTC
 **Dispatches in this packet:** 9
 
 ---
@@ -11,7 +11,7 @@
 
 ### 1. Guyana: +860.3% capital surge on a single official source — market entry window open
 
-**ID:** `DSP-20260906-019` | **Country:** Guyana | **Confidence:** 🔴 Immediate | 100/100 | C - single-source
+**ID:** `DSP-20260907-019` | **Country:** Guyana | **Confidence:** 🔴 Immediate | 100/100 | C - single-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -25,7 +25,7 @@
 
 ### 2. Suriname: +206.0% investment movement, one source — needs corroboration
 
-**ID:** `DSP-20260906-022` | **Country:** Suriname | **Confidence:** 🔴 Immediate | 96/100 | C - single-source
+**ID:** `DSP-20260907-022` | **Country:** Suriname | **Confidence:** 🔴 Immediate | 96/100 | C - single-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -37,23 +37,23 @@
 **Decision to influence:** Which verified opportunity to investigate for capital deployment or partnership entry
 **Routing rationale:** Multi-source investment lift indicates growing market that may support new entry or expansion
 
-### 3. CARICOM: 8 active procurements — bidding window open
+### 3. CARICOM: 7 active procurements — bidding window open
 
-**ID:** `DSP-20260906-013` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 95/100 | B - cross-source
+**ID:** `DSP-20260907-013` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 95/100 | B - cross-source
 **Channel:** Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** CDB active procurement notices: 8; • Enhancing the Quality of the Belize National Quality Infrastructure; • Call For Application – Scholarship Opportunity: International Master In Public Procurement Management at The University of Rome Tor Vergata (2026/2027 Academic Year); • Supply Installation, Testing and Commissioning of Mechanical Equipment, Fire Pump System and Information and Communications Technology Systems
-**Detail:** CDB active procurement notices: 8
+**Evidence:** CDB active procurement notices: 7; • Enhancing the Quality of the Belize National Quality Infrastructure; • Call For Application – Scholarship Opportunity: International Master In Public Procurement Management at The University of Rome Tor Vergata (2026/2027 Academic Year); • Supply Installation, Testing and Commissioning of Mechanical Equipment, Fire Pump System and Information and Communications Technology Systems
+**Detail:** CDB active procurement notices: 7
 **Grade:** B - cross-source
 
-**Recommended action:** Map CARICOM procurement pipeline against your capability. CDB/IDB projects (CDB active procurement notices: 8) create service and supply opportunities.
+**Recommended action:** Map CARICOM procurement pipeline against your capability. CDB/IDB projects (CDB active procurement notices: 7) create service and supply opportunities.
 **Decision to influence:** Which procurement or project opportunity to pursue
 **Routing rationale:** Procurement pipeline signals government and institutional spending direction — follow the money
 
 ### 4. Regional FDI snapshot: 3 countries with active capital movement
 
-**ID:** `DSP-20260906-002` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
+**ID:** `DSP-20260907-002` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** new
 **Feedback status:** ignored
 
@@ -67,7 +67,7 @@
 
 ### 5. Capital convergence: 3 Caribbean economies showing multi-source investment momentum
 
-**ID:** `DSP-20260906-016` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
+**ID:** `DSP-20260907-016` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** new
 **Feedback status:** ignored
 
@@ -81,7 +81,7 @@
 
 ### 6. Guyana: FDI trending at +860.3% — screening trigger active
 
-**ID:** `DSP-20260906-004` | **Country:** Guyana | **Confidence:** 🟡 Validation | 87/100 | B - cross-source
+**ID:** `DSP-20260907-004` | **Country:** Guyana | **Confidence:** 🟡 Validation | 87/100 | B - cross-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -95,7 +95,7 @@
 
 ### 7. Suriname: FDI trending at +206.0% — screening trigger active
 
-**ID:** `DSP-20260906-006` | **Country:** Suriname | **Confidence:** 🟡 Validation | 84/100 | B - cross-source
+**ID:** `DSP-20260907-006` | **Country:** Suriname | **Confidence:** 🟡 Validation | 84/100 | B - cross-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -109,7 +109,7 @@
 
 ### 8. Barbados: +34.8% FDI momentum validated — cross-reference before deploying
 
-**ID:** `DSP-20260906-025` | **Country:** Barbados | **Confidence:** 🟡 Validation | 83/100 | C - single-source
+**ID:** `DSP-20260907-025` | **Country:** Barbados | **Confidence:** 🟡 Validation | 83/100 | C - single-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -123,7 +123,7 @@
 
 ### 9. Barbados: FDI trending at +34.8% — screening trigger active
 
-**ID:** `DSP-20260906-008` | **Country:** Barbados | **Confidence:** 🟡 Validation | 71/100 | B - cross-source
+**ID:** `DSP-20260907-008` | **Country:** Barbados | **Confidence:** 🟡 Validation | 75/100 | B - cross-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 

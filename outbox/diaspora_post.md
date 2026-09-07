@@ -11,7 +11,7 @@ Lead: Guyana. 3 converging signal(s) across 3 source(s). Signals: 💼 Investmen
 
 • **Barbados**: +34.8% FDI momentum validated — cross-reference before deploying
 
-🏗️ CARICOM: 8 active procurements — bidding window open
+🏗️ CARICOM: 7 active procurements — bidding window open
 
 Generated from public regional data, ranked for decision value.
-Generated: 2026-09-06 22:06 UTC
+Generated: 2026-09-07 04:30 UTC

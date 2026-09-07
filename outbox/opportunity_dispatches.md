@@ -1,6 +1,6 @@
-# Abeng — Cycle 20260906
+# Abeng — Cycle 20260907
 
-Generated: 2026-09-06 22:06 UTC
+Generated: 2026-09-07 04:30 UTC
 Total dispatches: 92
 
 ## ✅ Delivered Dispatches
@@ -41,23 +41,23 @@ Total dispatches: 92
    Why this persona: Multi-source investment lift indicates growing market that may support new entry or expansion
    Action: Assess competitive positioning in Suriname. FDI movement (206.0% change) signals growing market or incoming competition — evaluate local advantage before new...
 
-**CARICOM: 8 active procurements — bidding window open**
+**CARICOM: 7 active procurements — bidding window open**
    To: Regional Operator • Via: Telegram
    💬 Feedback: replied
    Why this persona: Active procurement directly maps to operational capacity needs — first to respond wins
-   Action: Review operational readiness for CARICOM opportunities. CDB active procurement notices: 8 — assess capacity and bid pipeline.
+   Action: Review operational readiness for CARICOM opportunities. CDB active procurement notices: 7 — assess capacity and bid pipeline.
 
-**CARICOM: 8 active procurements — bidding window open**
+**CARICOM: 7 active procurements — bidding window open**
    To: Procurement Watcher • Via: Email brief
    — Feedback: ignored
    Why this persona: CDB/IDB project pipeline is the primary lead source for project-based business development
-   Action: Track CDB/IDB project pipeline: CDB active procurement notices: 8. Review opportunity fit and prepare expression of interest.
+   Action: Track CDB/IDB project pipeline: CDB active procurement notices: 7. Review opportunity fit and prepare expression of interest.
 
-**CARICOM: 8 active procurements — bidding window open**
+**CARICOM: 7 active procurements — bidding window open**
    To: Regional Founder/Operator • Via: Telegram
    — Feedback: ignored
    Why this persona: Procurement pipeline signals government and institutional spending direction — follow the money
-   Action: Map CARICOM procurement pipeline against your capability. CDB/IDB projects (CDB active procurement notices: 8) create service and supply opportunities.
+   Action: Map CARICOM procurement pipeline against your capability. CDB/IDB projects (CDB active procurement notices: 7) create service and supply opportunities.
 
 **Regional FDI snapshot: 3 countries with active capital movement**
    To: Diaspora Investor • Via: Email brief + Telegram

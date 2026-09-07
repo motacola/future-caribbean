@@ -1,5 +1,5 @@
 🌴 *Abeng — Decision Routes Ready*
-Cycle: `20260906` · 2026-09-06 22:06 UTC
+Cycle: `20260907` · 2026-09-07 04:30 UTC
 
 *What this is:*
 A Dispatch Desk notification. The product is the decision route: signal → persona → action → feedback. Telegram is only the delivery channel.
@@ -26,20 +26,20 @@ Data → 27 signal clusters → 92 persona routes → 7 personas → action/capi
    → Diaspora Investor: Investigate Suriname as a capital deployment target this cycle. One official…
    Loop: Feedback this cycle: 3 ignored.
 
-3) *CARICOM: 8 active procurements — bidding window open*
+3) *CARICOM: 7 active procurements — bidding window open*
    Decision: Which procurement or project opportunity to pursue
-   Evidence: CDB active procurement notices: 8; • Enhancing the Quality of the Belize National Quality… · B - cross-source
+   Evidence: CDB active procurement notices: 7; • Enhancing the Quality of the Belize National Quality… · B - cross-source
    Confidence: 95/100 · sustained
    → Regional Operator: Review operational readiness for CARICOM opportunities. CDB active…
    → Regional Founder/Operator: Map CARICOM procurement pipeline against your capability. CDB/IDB projects…
-   → Procurement Watcher: Track CDB/IDB project pipeline: CDB active procurement notices: 8. Review…
+   → Procurement Watcher: Track CDB/IDB project pipeline: CDB active procurement notices: 7. Review…
    Loop: Feedback this cycle: 2 ignored, 1 replied.
 
 *Feedback-adjusted priority*
-• Haiti ccrif payout downranked -34
-• Nicaragua ccrif payout downranked -18
-• Barbados ccrif payout downranked -18
-• Suriname enhanced investment downranked -6
+• Jamaica ccrif payout downranked -18
+• Turks and Caicos Islands ccrif payout downranked -10
+• St. Vincent & the Grenadines ccrif payout downranked -10
+• St. Kitts and Nevis ccrif payout downranked -10
 
 *Open the product surface*
 • `outbox/dispatch_desk.md` — judge/user-facing decision desk

@@ -2,30 +2,30 @@
 
 **Decision job:** Operational readiness and bid pipeline assessment
 **Delivery channel:** Telegram
-**Generated:** Sep 06, 2026 at 22:06 UTC
+**Generated:** Sep 07, 2026 at 04:30 UTC
 **Dispatches in this packet:** 2
 
 ---
 
 ## Dispatches (2)
 
-### 1. CARICOM: 8 active procurements — bidding window open
+### 1. CARICOM: 7 active procurements — bidding window open
 
-**ID:** `DSP-20260906-011` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 95/100 | B - cross-source
+**ID:** `DSP-20260907-011` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 95/100 | B - cross-source
 **Channel:** Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** replied
 
-**Evidence:** CDB active procurement notices: 8; • Enhancing the Quality of the Belize National Quality Infrastructure; • Call For Application – Scholarship Opportunity: International Master In Public Procurement Management at The University of Rome Tor Vergata (2026/2027 Academic Year); • Supply Installation, Testing and Commissioning of Mechanical Equipment, Fire Pump System and Information and Communications Technology Systems
-**Detail:** CDB active procurement notices: 8
+**Evidence:** CDB active procurement notices: 7; • Enhancing the Quality of the Belize National Quality Infrastructure; • Call For Application – Scholarship Opportunity: International Master In Public Procurement Management at The University of Rome Tor Vergata (2026/2027 Academic Year); • Supply Installation, Testing and Commissioning of Mechanical Equipment, Fire Pump System and Information and Communications Technology Systems
+**Detail:** CDB active procurement notices: 7
 **Grade:** B - cross-source
 
-**Recommended action:** Review operational readiness for CARICOM opportunities. CDB active procurement notices: 8 — assess capacity and bid pipeline.
+**Recommended action:** Review operational readiness for CARICOM opportunities. CDB active procurement notices: 7 — assess capacity and bid pipeline.
 **Decision to influence:** Which procurement or project opportunity to pursue
 **Routing rationale:** Active procurement directly maps to operational capacity needs — first to respond wins
 
 ### 2. Eastern Caribbean Currency Union: 4.6%
 
-**ID:** `DSP-20260906-092` | **Country:** Eastern Caribbean Currency Union | **Confidence:** 🟡 Validation | 76/100 | C - single-source
+**ID:** `DSP-20260907-092` | **Country:** Eastern Caribbean Currency Union | **Confidence:** 🟡 Validation | 72/100 | C - single-source
 **Channel:** Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** ignored
 
