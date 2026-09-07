@@ -829,6 +829,13 @@ export function loadDashboardData() {
     })
     .slice(0, 12);
 
+  // A headline on the wire is a dispatch, and every dispatch has its own page
+  // (src/pages/signal/[id].astro builds one per entry of the same file these
+  // items come from). Pointing the link there is what makes clicking a
+  // headline open that headline — see the click handler note in index.astro.
+  const dispatchHref = (t: any) =>
+    t.dispatch_id ? `/signal/${encodeURIComponent(t.dispatch_id)}/` : '#front-page';
+
   // fallow-ignore-next-line complexity
   let tickerHtml = tickerItems.map((t: any) => {
     const color = kindColor(t.signal_kind || '');
@@ -837,7 +844,7 @@ export function loadDashboardData() {
     // A market with nothing behind it yet should not speak in the same voice as
     // a validated lead.
     const watchlist = /no detail yet/i.test(title);
-    return `<a class="lw-item${watchlist ? ' lw-watch' : ''}" href="#front-page" data-country="${esc(country)}">` +
+    return `<a class="lw-item${watchlist ? ' lw-watch' : ''}" href="${esc(dispatchHref(t))}" data-country="${esc(country)}">` +
       `<i style="background:${color}"></i>` +
       `<span class="lw-kicker">${esc(t.country_cluster || 'Region')}</span>` +
       (watchlist ? '<span class="lw-tag">Watchlist</span>' : '') +
@@ -847,7 +854,7 @@ export function loadDashboardData() {
   // ── Front pointers ─────────────────────────────────────────
   let frontPointersHtml = tickerItems.slice(1, 4).map((t: any) => {
     const country = canonicalCountry(t.country_cluster || '');
-    return `<a class="fp-item" href="#front-page" data-country="${esc(country)}">` +
+    return `<a class="fp-item" href="${esc(dispatchHref(t))}" data-country="${esc(country)}">` +
       `<span class="fp-kicker">${esc(t.country_cluster || 'Region')}</span>` +
       `<span class="fp-title">${esc(humanize(t.title || ''))}</span></a>`;
   }).join('');

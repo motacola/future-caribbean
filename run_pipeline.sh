@@ -23,7 +23,7 @@ FAILED=""
 FAILED_OPTIONAL=""
 
 # Steps that may fail without invalidating the cycle.
-OPTIONAL_STEPS="World Bank|IDB CKAN|Tier 2 (CARICOM + CDB)|Tenders (Guyana eProcure + GOJEP)|Regional News RSS|CCRIF (Parametric Payouts)|ECCB (Monetary Stats)|Market Watch (exchanges)|NOAA NWS|NDBC Buoys|AIS Maritime|NHC Storms|Telegram Send|Webhook Alerts"
+OPTIONAL_STEPS="World Bank|IDB CKAN|Tier 2 (CARICOM + CDB)|Tenders (Guyana eProcure + GOJEP)|Regional News RSS|News Images|CCRIF (Parametric Payouts)|ECCB (Monetary Stats)|Market Watch (exchanges)|NOAA NWS|NDBC Buoys|AIS Maritime|NHC Storms|Telegram Send|Webhook Alerts"
 
 is_optional() {
     case "|$OPTIONAL_STEPS|" in
@@ -63,6 +63,15 @@ run_step "IDB CKAN" "python3 \"$ROOT/watchers/idb_ckan_poller.py\"" "idb_ckan"
 run_step "Tier 2 (CARICOM + CDB)" "python3 \"$ROOT/watchers/tier2_scraper.py\"" "tier2"
 run_step "Tenders (Guyana eProcure + GOJEP)" "python3 \"$ROOT/watchers/tenders_poller.py\"" "tenders"
 run_step "Regional News RSS" "python3 \"$ROOT/watchers/regional_news_poller.py\"" "regional_news"
+# The poller carries no imagery: every configured feed is a Google News search
+# or the CDB RSS, and neither emits media:content, media:thumbnail or an
+# enclosure — so a thumbnail can only come from the article page itself. This
+# step resolves publisher metadata for the top-ranked articles and, just as
+# importantly, is what refreshes public/regional_news.json and
+# api/regional-news-data.json. Without it those two snapshots only ever changed
+# when someone ran the script by hand: they were frozen at 13 Aug and 24 Jul
+# while latest.json was being refreshed every four hours.
+run_step "News Images" "python3 \"$ROOT/scripts/enrich_news_images.py\" --limit 24" "news_images"
 run_step "CCRIF (Parametric Payouts)" "python3 \"$ROOT/watchers/ccrif_poller.py\"" "ccrif"
 run_step "ECCB (Monetary Stats)" "python3 \"$ROOT/watchers/eccb_poller.py\"" "eccb"
 # Market Watch reads official exchange pages. It was never wired into the cycle,

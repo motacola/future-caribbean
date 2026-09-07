@@ -90,6 +90,77 @@ def fetch_feed(url: str) -> str:
         return response.read().decode("utf-8", errors="replace")
 
 
+MEDIA_NS = "{http://search.yahoo.com/mrss/}"
+CONTENT_NS = "{http://purl.org/rss/1.0/modules/content/}"
+
+# Feed imagery is routinely a site logo, a share icon, or a 1x1 tracking pixel
+# dressed as an article image. None of those belong on a news card.
+IMAGE_NOISE = re.compile(
+    r"(?:^|[/_.-])(logo|logotype|favicon|icon|avatar|banner|badge|spacer|pixel|blank|placeholder|default)(?:[/_.-]|$)",
+    re.I,
+)
+IMAGE_EXT_REJECT = (".svg", ".ico", ".gif")
+
+
+def _usable_image(url: str, width: str | int | None = None, height: str | int | None = None) -> str:
+    """Return the URL if it looks like real article imagery, else ''."""
+    url = (url or "").strip()
+    if not url.lower().startswith(("http://", "https://")):
+        return ""
+    path = url.split("?", 1)[0].lower()
+    if path.endswith(IMAGE_EXT_REJECT) or IMAGE_NOISE.search(path):
+        return ""
+    try:
+        # A declared size is a stronger signal than the filename: trackers
+        # advertise themselves as 1x1.
+        if width and int(width) < 200:
+            return ""
+        if height and int(height) < 150:
+            return ""
+    except (TypeError, ValueError):
+        pass
+    return url
+
+
+def extract_feed_image(item: ET.Element) -> str:
+    """Pull an article image out of an RSS item, if the feed carries one.
+
+    Four places, in descending order of how deliberate they are:
+    media:content and media:thumbnail (Media RSS, what most publishing
+    platforms emit), an image enclosure, and finally the first <img> inside
+    content:encoded or description — which is where WordPress puts it, and
+    WordPress is what most of the region's newsrooms run.
+    """
+    for element in item.findall(f"{MEDIA_NS}content"):
+        medium = (element.get("medium") or "").lower()
+        mime = (element.get("type") or "").lower()
+        if medium and medium != "image":
+            continue
+        if mime and not mime.startswith("image/"):
+            continue
+        found = _usable_image(element.get("url", ""), element.get("width"), element.get("height"))
+        if found:
+            return found
+
+    for element in item.findall(f"{MEDIA_NS}thumbnail"):
+        found = _usable_image(element.get("url", ""), element.get("width"), element.get("height"))
+        if found:
+            return found
+
+    for element in item.findall("enclosure"):
+        if (element.get("type") or "").lower().startswith("image/"):
+            found = _usable_image(element.get("url", ""))
+            if found:
+                return found
+
+    body = (item.findtext(f"{CONTENT_NS}encoded", "") or "") + (item.findtext("description", "") or "")
+    for match in re.finditer(r"<img[^>]+src=[\"']([^\"']+)[\"']", unescape(body), re.I):
+        found = _usable_image(match.group(1))
+        if found:
+            return found
+    return ""
+
+
 def parse_rss(xml_text: str) -> list[dict[str, str]]:
     root = ET.fromstring(xml_text)
     channel = root.find("channel")
@@ -102,7 +173,12 @@ def parse_rss(xml_text: str) -> list[dict[str, str]]:
         published = (item.findtext("pubDate", "") or item.findtext("{http://purl.org/dc/elements/1.1/}date", "") or "").strip()
         summary = strip_html(item.findtext("description", "") or item.findtext("{http://purl.org/rss/1.0/modules/content/}encoded", "") or "")
         if title and link:
-            items.append({"title": title, "url": link, "published": published, "summary": summary})
+            entry = {"title": title, "url": link, "published": published, "summary": summary}
+            image = extract_feed_image(item)
+            if image:
+                entry["image_url"] = image
+                entry["image_kind"] = "feed"
+            items.append(entry)
     return items
 
 
@@ -144,6 +220,10 @@ def normalize_article(article: dict[str, str], feed: dict[str, Any]) -> dict[str
         "source": feed.get("label", feed.get("slug", "rss")), "feed_slug": feed.get("slug", ""),
         "countries": infer_countries(text, feed.get("scope", "regional")),
         "fetched_at": datetime.now(timezone.utc).isoformat(),
+        # normalize_article rebuilds the record field by field, so anything the
+        # feed gave us has to be carried across explicitly or it is dropped here.
+        **({"image_url": article["image_url"], "image_kind": article.get("image_kind", "feed")}
+           if article.get("image_url") else {}),
     }
 
 

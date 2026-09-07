@@ -187,6 +187,12 @@ def enrich_payload(payload: dict[str, Any], limit: int = 24, workers: int = 3) -
         article_url = _safe_http_url(item.get("url"))
         if not article_url:
             continue
+        # The poller now reads media:content, media:thumbnail, enclosures and the
+        # first <img> in content:encoded, so a publisher feed can hand us the
+        # image directly. When it has, there is nothing to look up: skip the
+        # fetch rather than spend a third-party request re-deriving what we hold.
+        if item.get("image_kind") == "feed" and _safe_http_url(item.get("image_url")):
+            continue
         cached = cache.get(article_url)
         if isinstance(cached, dict):
             items[index] = apply_metadata(item, cached)
@@ -229,6 +235,32 @@ def enrich_payload(payload: dict[str, Any], limit: int = 24, workers: int = 3) -
     return payload, cache
 
 
+CACHE_RETENTION_DAYS = 30
+
+
+def prune_cache(cache: dict[str, Any], live_urls: set[str], now: datetime | None = None) -> dict[str, Any]:
+    """Keep entries for articles still ranked, plus anything looked up recently.
+
+    The cache is committed on every cycle. Left unpruned it only ever grows,
+    because Google News mints a fresh redirect URL per article and the desk
+    churns through them — so yesterday's keys can never be hit again.
+    """
+    now = now or datetime.now(timezone.utc)
+    kept: dict[str, Any] = {}
+    for url, entry in cache.items():
+        if url in live_urls:
+            kept[url] = entry
+            continue
+        checked = entry.get("checked_at") if isinstance(entry, dict) else None
+        try:
+            age_days = (now - datetime.fromisoformat(str(checked))).days
+        except (TypeError, ValueError):
+            continue
+        if age_days <= CACHE_RETENTION_DAYS:
+            kept[url] = entry
+    return kept
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--limit", type=int, default=24)
@@ -242,6 +274,8 @@ def main() -> int:
         return 0
 
     enriched, cache = enrich_payload(payload, limit=args.limit, workers=args.workers)
+    live_urls = {str(item.get("url")) for item in enriched.get("items") or []}
+    cache = prune_cache(cache, live_urls)
     CACHE.parent.mkdir(parents=True, exist_ok=True)
     CACHE.write_text(json.dumps(cache, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     serialized = json.dumps(enriched, indent=1, ensure_ascii=False) + "\n"
