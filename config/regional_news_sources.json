@@ -2,28 +2,28 @@
   "feeds": [
     {
       "slug": "google-news-caribbean",
-      "label": "Google News — Caribbean economy",
+      "label": "Google News \u2014 Caribbean economy",
       "url": "https://news.google.com/rss/search?q=Caribbean+investment+OR+procurement+OR+infrastructure&hl=en-US&gl=US&ceid=US:en",
       "scope": "regional",
       "kind": "aggregator"
     },
     {
       "slug": "google-news-guyana",
-      "label": "Google News — Guyana",
+      "label": "Google News \u2014 Guyana",
       "url": "https://news.google.com/rss/search?q=Guyana+investment+OR+oil+OR+infrastructure&hl=en-US&gl=US&ceid=US:en",
       "scope": "Guyana",
       "kind": "aggregator"
     },
     {
       "slug": "google-news-jamaica",
-      "label": "Google News — Jamaica",
+      "label": "Google News \u2014 Jamaica",
       "url": "https://news.google.com/rss/search?q=Jamaica+investment+OR+tourism+OR+infrastructure&hl=en-US&gl=US&ceid=US:en",
       "scope": "Jamaica",
       "kind": "aggregator"
     },
     {
       "slug": "google-news-belize",
-      "label": "Google News — Belize",
+      "label": "Google News \u2014 Belize",
       "url": "https://news.google.com/rss/search?q=Belize+investment+OR+tourism+OR+logistics&hl=en-US&gl=US&ceid=US:en",
       "scope": "Belize",
       "kind": "aggregator"
@@ -54,26 +54,16 @@
     {
       "slug": "dominica-news",
       "label": "Dominica News Online",
-      "url": "https://dominicanewsonline.com/feed/",
+      "url": "https://feeds.feedburner.com/DominicaNewsOnline/",
       "scope": "Dominica",
-      "kind": "publisher",
-      "unverified": true
+      "kind": "publisher"
     },
     {
       "slug": "skn-observer",
       "label": "St Kitts & Nevis Observer",
       "url": "https://www.thestkittsnevisobserver.com/feed/",
       "scope": "St Kitts & Nevis",
-      "kind": "publisher",
-      "unverified": true
-    },
-    {
-      "slug": "caribbean-national",
-      "label": "Caribbean National Weekly",
-      "url": "https://www.caribbeannationalweekly.com/feed/",
-      "scope": "regional",
-      "kind": "publisher",
-      "unverified": true
+      "kind": "publisher"
     }
   ],
   "max_items_per_feed": 25,

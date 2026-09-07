@@ -37,6 +37,8 @@ def check(feed: dict) -> dict:
     result["items"] = len(items)
     result["with_image"] = sum(1 for i in items if i.get("image_url"))
     result["sample"] = next((i["image_url"] for i in items if i.get("image_url")), "")
+    if not items:
+        result["error"] = "HTTPError: zero parsed items"
     return result
 
 

@@ -13,7 +13,9 @@ pnpm install
 # deploy tree regardless of .gitignore / .vercelignore edge cases.
 echo "▶ using committed regional news data (no in-build polling)"
 mkdir -p public
-cp data/regional_news/latest.json public/regional_news.json 2>/dev/null || echo "⚠ could not copy regional news data"
+cp data/regional_news/latest.json public/regional_news.json
+cp data/regional_news/latest.json api/regional-news-data.json
+node scripts/news-thumbnails.mjs
 
 pnpm build
 

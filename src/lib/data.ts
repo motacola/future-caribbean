@@ -1139,12 +1139,18 @@ export function loadDashboardData() {
     `<button class="news-filter news-filter-more" id="news-country-toggle" type="button" aria-expanded="false" aria-controls="news-countries">By country <span aria-hidden="true">+</span></button>`,
     `<span class="news-countries" id="news-countries" hidden>${newsCountries.map(country => `<button class="news-filter country" data-news-filter="country:${esc(country)}">${esc(country)}</button>`).join('')}</span>`,
   ].join('');
+  const newsThumbnails = readJson('public/news-thumbnails/index.json') || {};
   const newsHtml = visibleNews.map((item: any, index: number) => {
     const countries = item.countries.length ? item.countries : ['Regional context'];
     const time = item.age_hours === null ? 'date unavailable' : item.age_hours < 24 ? `${item.age_hours}h ago` : `${Math.floor(item.age_hours / 24)}d ago`;
     const primaryCountry = countries[0] || 'Caribbean';
     const primaryTopic = (item.topics && item.topics[0]) || 'regional';
     const imageUrl = item.image_url || item.imageUrl || '';
+    const thumbnail = newsThumbnails[imageUrl];
+    const imageSourceUrl = imageUrl;
+    const resolvedSrc = thumbnail?.url || imageUrl;
+    const thumbnailWidth = thumbnail?.width || '';
+    const thumbnailHeight = thumbnail?.height || '';
     // Feed hygiene: de-shout notice headlines, strip CMS debris from the
     // summary, and drop the dek entirely when it only restates the headline.
     const headline = cleanHeadline(item.title || '');
@@ -1158,9 +1164,12 @@ export function loadDashboardData() {
     // images win when present; otherwise the topic gradient stand-in gives
     // the board consistent visual rhythm instead of text-only rows.
     const showMedia = true;
+    const imgTag = resolvedSrc
+      ? `<img class="news-image-backdrop" src="${esc(resolvedSrc)}" alt="" aria-hidden="true" loading="lazy" decoding="async" referrerpolicy="no-referrer"><img class="news-image-main" src="${esc(resolvedSrc)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"${thumbnailWidth ? ` width="${esc(String(thumbnailWidth))}"` : ''}${thumbnailHeight ? ` height="${esc(String(thumbnailHeight))}"` : ''}${imageSourceUrl && imageSourceUrl !== resolvedSrc ? ` data-thumbnail-source="${esc(imageSourceUrl)}"` : ''} onerror="const media=this.closest('.news-media');media?.classList.add('image-failed');media?.querySelectorAll('img').forEach(img=>img.remove())">`
+      : '';
     const mediaHtml = showMedia
       ? `<a class="news-media topic-${esc(primaryTopic)}" href="${esc(item.url)}" target="_blank" rel="noopener" aria-label="Read ${esc(headline)}">
-        <span class="news-media-fallback" aria-hidden="true"><b>${esc(primaryCountry)}</b><em>${esc(primaryTopic)}</em></span>${imageUrl ? `<img class="news-image-backdrop" src="${esc(imageUrl)}" alt="" aria-hidden="true" loading="lazy" decoding="async" referrerpolicy="no-referrer"><img class="news-image-main" src="${esc(imageUrl)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="const media=this.closest('.news-media');media?.classList.add('image-failed');media?.querySelectorAll('img').forEach(img=>img.remove())">` : ''}
+        <span class="news-media-fallback" aria-hidden="true"><b>${esc(primaryCountry)}</b><em>${esc(primaryTopic)}</em></span>${imgTag}
       </a>`
       : '';
     // Country and topic move into a single kicker line. They used to be five
