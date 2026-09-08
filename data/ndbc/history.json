@@ -4,6 +4,11 @@
       "timestamp": "2026-09-08T19:00:00+00:00",
       "pressure_hpa": 1010.4,
       "wind_speed_ms": 11.0
+    },
+    {
+      "timestamp": "2026-09-08T21:50:00+00:00",
+      "pressure_hpa": 1010.2,
+      "wind_speed_ms": 10.0
     }
   ],
   "42059": [],
@@ -12,12 +17,22 @@
       "timestamp": "2026-09-08T19:00:00+00:00",
       "pressure_hpa": 1015.1,
       "wind_speed_ms": 8.0
+    },
+    {
+      "timestamp": "2026-09-08T21:50:00+00:00",
+      "pressure_hpa": 1014.8,
+      "wind_speed_ms": 8.0
     }
   ],
   "41043": [
     {
       "timestamp": "2026-09-08T19:00:00+00:00",
       "pressure_hpa": 1017.1,
+      "wind_speed_ms": 6.0
+    },
+    {
+      "timestamp": "2026-09-08T21:50:00+00:00",
+      "pressure_hpa": 1017.2,
       "wind_speed_ms": 6.0
     }
   ],
@@ -26,6 +41,11 @@
       "timestamp": "2026-09-08T19:00:00+00:00",
       "pressure_hpa": 1015.1,
       "wind_speed_ms": 5.0
+    },
+    {
+      "timestamp": "2026-09-08T21:50:00+00:00",
+      "pressure_hpa": 1014.5,
+      "wind_speed_ms": 6.0
     }
   ],
   "42057": [
@@ -33,6 +53,11 @@
       "timestamp": "2026-09-08T19:00:00+00:00",
       "pressure_hpa": 1014.2,
       "wind_speed_ms": 7.0
+    },
+    {
+      "timestamp": "2026-09-08T21:50:00+00:00",
+      "pressure_hpa": 1013.7,
+      "wind_speed_ms": 6.0
     }
   ]
 }
