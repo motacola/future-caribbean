@@ -1,9 +1,9 @@
-# Opportunity Validation Pack — CARICOM
+# Opportunity Validation Pack — Caribwide
 
-- Signal: `dev-pipeline-regional` · Dispatch: `DSP-20260908-011`
-- Confidence: 78/100 (raw 95) · B - cross-source
+- Signal: `regional-investment_signal-20260908` · Dispatch: `DSP-20260908-001`
+- Confidence: 78/100 (raw 90) · B - cross-source
 - Action readiness: medium (no dated country procurement or news corroboration)
-- Evidence freshness: stale · cycles since refresh: 30
+- Evidence freshness: refreshing · cycles since refresh: 0
 - Recommendation: **HOLD** — Calibrated confidence 78/100 with 0 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.
 - Last validated: 2026-09-08T04:28:34.752956+00:00
 
@@ -32,8 +32,8 @@
 - Caribbean Development Bank (CDB) — Regional development finance and procurement
 
 ## Unresolved questions
-- Which specific sectors are driving the movement in CARICOM? No official sector-breakdown dataset matched this cycle.
-- No live CARICOM-specific procurement notice matched this cycle — check CDB and national tender portals directly.
+- Which specific sectors are driving the movement in Caribwide? No official sector-breakdown dataset matched this cycle.
+- No live Caribwide-specific procurement notice matched this cycle — check CDB and national tender portals directly.
 - No registry-backed local operators matched — source two credible operators via the listed institutions.
 - Validate that the underlying FDI movement is sustained, not a one-off transaction or statistical revision.
 

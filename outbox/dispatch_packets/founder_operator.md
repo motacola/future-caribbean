@@ -2,7 +2,7 @@
 
 **Decision job:** Competitive positioning and capability mapping
 **Delivery channel:** Telegram
-**Generated:** Sep 07, 2026 at 14:13 UTC
+**Generated:** Sep 08, 2026 at 04:28 UTC
 **Dispatches in this packet:** 9
 
 ---
@@ -11,7 +11,7 @@
 
 ### 1. Guyana: +860.3% capital surge on a single official source — market entry window open
 
-**ID:** `DSP-20260907-019` | **Country:** Guyana | **Confidence:** 🔴 Immediate | 100/100 | C - single-source
+**ID:** `DSP-20260908-019` | **Country:** Guyana | **Confidence:** 🔴 Immediate | 100/100 | C - single-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -25,7 +25,7 @@
 
 ### 2. Suriname: +206.0% investment movement, one source — needs corroboration
 
-**ID:** `DSP-20260907-022` | **Country:** Suriname | **Confidence:** 🔴 Immediate | 96/100 | C - single-source
+**ID:** `DSP-20260908-022` | **Country:** Suriname | **Confidence:** 🔴 Immediate | 96/100 | C - single-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -39,7 +39,7 @@
 
 ### 3. CARICOM: 7 active procurements — bidding window open
 
-**ID:** `DSP-20260907-013` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 95/100 | B - cross-source
+**ID:** `DSP-20260908-013` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 95/100 | B - cross-source
 **Channel:** Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -53,7 +53,7 @@
 
 ### 4. Regional FDI snapshot: 3 countries with active capital movement
 
-**ID:** `DSP-20260907-002` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
+**ID:** `DSP-20260908-002` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** new
 **Feedback status:** ignored
 
@@ -67,7 +67,7 @@
 
 ### 5. Capital convergence: 3 Caribbean economies showing multi-source investment momentum
 
-**ID:** `DSP-20260907-016` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
+**ID:** `DSP-20260908-016` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** new
 **Feedback status:** ignored
 
@@ -81,7 +81,7 @@
 
 ### 6. Guyana: FDI trending at +860.3% — screening trigger active
 
-**ID:** `DSP-20260907-004` | **Country:** Guyana | **Confidence:** 🟡 Validation | 87/100 | B - cross-source
+**ID:** `DSP-20260908-004` | **Country:** Guyana | **Confidence:** 🟡 Validation | 87/100 | B - cross-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -95,7 +95,7 @@
 
 ### 7. Suriname: FDI trending at +206.0% — screening trigger active
 
-**ID:** `DSP-20260907-006` | **Country:** Suriname | **Confidence:** 🟡 Validation | 84/100 | B - cross-source
+**ID:** `DSP-20260908-006` | **Country:** Suriname | **Confidence:** 🟡 Validation | 84/100 | B - cross-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -109,7 +109,7 @@
 
 ### 8. Barbados: +34.8% FDI momentum validated — cross-reference before deploying
 
-**ID:** `DSP-20260907-025` | **Country:** Barbados | **Confidence:** 🟡 Validation | 83/100 | C - single-source
+**ID:** `DSP-20260908-025` | **Country:** Barbados | **Confidence:** 🟡 Validation | 83/100 | C - single-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -123,7 +123,7 @@
 
 ### 9. Barbados: FDI trending at +34.8% — screening trigger active
 
-**ID:** `DSP-20260907-008` | **Country:** Barbados | **Confidence:** 🟡 Validation | 71/100 | B - cross-source
+**ID:** `DSP-20260908-008` | **Country:** Barbados | **Confidence:** 🟡 Validation | 75/100 | B - cross-source
 **Channel:** Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
