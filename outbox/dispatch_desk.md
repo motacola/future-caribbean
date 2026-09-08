@@ -1,6 +1,6 @@
 # Dispatch Desk — Cycle 20260908
 
-Generated: 2026-09-08 04:28 UTC
+Generated: 2026-09-08 12:50 UTC
 
 Abeng turns fragmented regional data into decision-ready routes. This is the primary product surface; Telegram/email are delivery channels and the dashboard is the operator/audit view.
 
@@ -117,10 +117,10 @@ Capital momentum is strongest in Guyana (+860.3%), followed by Suriname. Separat
 | Regional Founder/Operator | Telegram | Assess competitive positioning in Guyana. FDI movement (860.3% change) signals growing market or incoming competition — evaluate… | ignored (`DSP-20260908-004`) |
 | Diaspora Investor | Email brief + Telegram | Screen Guyana for investment readiness. FDI movement (860.3% change) is a screening trigger — cross-reference with sector conditions… | ignored (`DSP-20260908-003`) |
 
-### 7. Haiti: signal detected
+### 7. Turks and Caicos Islands: signal detected
 
 - **Decision:** Insurance capital deployment for reconstruction / parametric trigger validation
-- **Evidence:** Payout: US$7,753,579; Peril: earthquake; Event date: 2010-01-01; Announced: 2010-01-01 (C - single-source)
+- **Evidence:** Payout: US$6,303,913; Peril: tropical_cyclone; Event date: 2008-01-01; Announced: 2008-01-01 (C - single-source)
 - **Confidence:** 84/100 · sustained
 - **Signal detail:** signal detected
 - **Why ranked here:** Ranking uses confidence, source coverage, evidence count, magnitude, and feedback.
@@ -128,15 +128,15 @@ Capital momentum is strongest in Guyana (+860.3%), followed by Suriname. Separat
 
 | Persona | Channel | Next action | Feedback |
 |---|---|---|---|
-| Policy/Media | Telegram digest | Signal context for Haiti: signal detected. Use this dispatch as a briefing input or narrative lead. | ignored (`DSP-20260908-031`) |
-| Operations/Resilience | Telegram/SMS alert | Prepare operational response: Haiti. Action window: 7 days. Evidence: signal detected | ignored (`DSP-20260908-032`) |
-| Ecosystem Builder | Telegram | Route Haiti opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a… | ignored (`DSP-20260908-033`) |
-| Diaspora Investor | Email brief + Telegram | Review Haiti: signal detected. Validate locally before action. | ignored (`DSP-20260908-030`) |
+| Policy/Media | Telegram digest | Signal context for Turks and Caicos Islands: signal detected. Use this dispatch as a briefing input or narrative lead. | ignored (`DSP-20260908-027`) |
+| Operations/Resilience | Telegram/SMS alert | Prepare operational response: Turks and Caicos Islands. Action window: 7 days. Evidence: signal detected | ignored (`DSP-20260908-028`) |
+| Ecosystem Builder | Telegram | Route Turks and Caicos Islands opportunity to relevant founders and investors in your network. Signal strength (signal detected)… | ignored (`DSP-20260908-029`) |
+| Diaspora Investor | Email brief + Telegram | Review Turks and Caicos Islands: signal detected. Validate locally before action. | ignored (`DSP-20260908-026`) |
 
-### 8. Barbados: signal detected
+### 8. Anguilla: signal detected
 
 - **Decision:** Insurance capital deployment for reconstruction / parametric trigger validation
-- **Evidence:** Payout: US$8,560,247; Peril: tropical_cyclone; Event date: 2010-01-01; Announced: 2010-01-01 (C - single-source)
+- **Evidence:** Payout: US$4,282,733; Peril: tropical_cyclone; Event date: 2010-01-01; Announced: 2010-01-01 (C - single-source)
 - **Confidence:** 84/100 · sustained
 - **Signal detail:** signal detected
 - **Why ranked here:** Ranking uses confidence, source coverage, evidence count, magnitude, and feedback.
@@ -144,18 +144,18 @@ Capital momentum is strongest in Guyana (+860.3%), followed by Suriname. Separat
 
 | Persona | Channel | Next action | Feedback |
 |---|---|---|---|
-| Policy/Media | Telegram digest | Signal context for Barbados: signal detected. Use this dispatch as a briefing input or narrative lead. | ignored (`DSP-20260908-039`) |
-| Operations/Resilience | Telegram/SMS alert | Prepare operational response: Barbados. Action window: 7 days. Evidence: signal detected | ignored (`DSP-20260908-040`) |
-| Ecosystem Builder | Telegram | Route Barbados opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a… | ignored (`DSP-20260908-041`) |
-| Diaspora Investor | Email brief + Telegram | Review Barbados: signal detected. Validate locally before action. | ignored (`DSP-20260908-038`) |
+| Policy/Media | Telegram digest | Signal context for Anguilla: signal detected. Use this dispatch as a briefing input or narrative lead. | ignored (`DSP-20260908-035`) |
+| Operations/Resilience | Telegram/SMS alert | Prepare operational response: Anguilla. Action window: 7 days. Evidence: signal detected | ignored (`DSP-20260908-036`) |
+| Ecosystem Builder | Telegram | Route Anguilla opportunity to relevant founders and investors in your network. Signal strength (signal detected) makes this a… | ignored (`DSP-20260908-037`) |
+| Diaspora Investor | Email brief + Telegram | Review Anguilla: signal detected. Validate locally before action. | ignored (`DSP-20260908-034`) |
 
 ## Feedback-Adjusted Priority
 
-- Jamaica ccrif payout downranked -18
-- Turks and Caicos Islands ccrif payout downranked -10
-- St. Vincent & the Grenadines ccrif payout downranked -10
-- St. Kitts and Nevis ccrif payout downranked -10
-- Grenada ccrif payout downranked -10
+- Haiti ccrif payout downranked -34
+- Nicaragua ccrif payout downranked -18
+- Barbados ccrif payout downranked -18
+- Suriname enhanced investment downranked -6
+- Barbados enhanced investment downranked -6
 
 ## Supporting Artifacts
 
