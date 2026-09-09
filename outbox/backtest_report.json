@@ -2,10 +2,16 @@
   "confidence_calibration": {
     "0-39": 0,
     "40-59": 0,
-    "60-79": 52,
+    "60-79": 54,
     "80-100": 7
   },
   "cycle_accuracy": [
+    {
+      "actionable_responses": 0,
+      "cycle_id": "20260909",
+      "dispatches": 92,
+      "response_rate": 0.0
+    },
     {
       "actionable_responses": 2,
       "cycle_id": "20260908",
@@ -47,17 +53,11 @@
       "cycle_id": "20260902",
       "dispatches": 92,
       "response_rate": 0.0
-    },
-    {
-      "actionable_responses": 0,
-      "cycle_id": "20260901",
-      "dispatches": 92,
-      "response_rate": 0.0
     }
   ],
   "evidence_category_coverage": {
     "operators": 16,
-    "procurement_matches": 334,
+    "procurement_matches": 346,
     "sector_hypotheses": 9,
     "supporting_projects": 4
   },
@@ -70,8 +70,9 @@
     "by_signal_kind": {
       "ccrif_payout": 32,
       "development_pipeline": 3,
+      "eccb_deposit_growth": 2,
       "enhanced_investment": 9,
-      "investment_signal": 6
+      "investment_signal": 4
     },
     "by_status": {
       "forwarded": 1,
@@ -80,16 +81,16 @@
     },
     "total_feedback": 50
   },
-  "generated_at": "2026-09-08T22:36:19.277471+00:00",
+  "generated_at": "2026-09-09T04:35:24.569826+00:00",
   "recommendation_calibration": {
-    "advance_rate": 0.05084745762711865,
-    "hold_rate": 0.9491525423728814,
+    "advance_rate": 0.04918032786885246,
+    "hold_rate": 0.9508196721311475,
     "note": "Advance = high confidence + 2+ evidence categories. Hold = moderate. Reject = low.",
     "reject_rate": 0.0
   },
   "recommendation_distribution": {
     "advance": 3,
-    "hold": 56,
+    "hold": 58,
     "reject": 0
   },
   "signal_type_performance": {
@@ -120,7 +121,7 @@
     },
     "regional": {
       "advance": 0,
-      "hold": 44,
+      "hold": 46,
       "reject": 0
     },
     "supply": {
@@ -130,11 +131,11 @@
     }
   },
   "summary": {
-    "avg_confidence": 79.03389830508475,
+    "avg_confidence": 79.0,
     "overall_response_rate": 0.002717391304347826,
     "total_actionable_responses": 2,
     "total_cycles_analyzed": 8,
     "total_dispatches": 736,
-    "total_validation_packs": 59
+    "total_validation_packs": 61
   }
 }
