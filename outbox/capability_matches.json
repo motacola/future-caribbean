@@ -1,23 +1,23 @@
 {
  "schema_version": 1,
  "registry_status": "pilot",
- "total_tenders": 1046,
- "classified_tenders": 421,
- "tenders_with_capability_match": 421,
+ "total_tenders": 1047,
+ "classified_tenders": 422,
+ "tenders_with_capability_match": 422,
  "by_capability": {
-  "civil_engineering": 206,
-  "construction_delivery": 175,
+  "civil_engineering": 207,
+  "construction_delivery": 176,
   "shipping_logistics": 161,
   "warehousing_distribution": 88,
   "digital_services": 54,
   "ict_integration": 54,
   "climate_resilience": 31,
-  "aviation_infrastructure": 16
+  "aviation_infrastructure": 17
  },
  "by_country": {
-  "Jamaica": 754,
-  "Trinidad & Tobago": 542,
-  "Guyana": 206,
+  "Jamaica": 757,
+  "Trinidad & Tobago": 544,
+  "Guyana": 207,
   "Barbados": 139,
   "Eastern Caribbean / OECS": 85
  },
@@ -17731,6 +17731,128 @@
         {
          "source": "Port Authority of Trinidad and Tobago",
          "url": "https://www.patnt.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    }
+   ],
+   "has_capability_match": true
+  },
+  {
+   "tender_id": "guyana-635775a7719f",
+   "country": "Guyana",
+   "title": "Supply and Delivery of Pole Mounted Transformers for Lethem Power Co. Inc.",
+   "buyer": "34-Ministry of Public Utilities and Aviation",
+   "lifecycle_state": "detected",
+   "sector": "aviation_infrastructure",
+   "classification": "deterministic_keyword",
+   "matched_keywords": [
+    "aviation"
+   ],
+   "required_capabilities": [
+    "aviation_infrastructure",
+    "civil_engineering",
+    "construction_delivery"
+   ],
+   "capability_matches": [
+    {
+     "capability": "aviation_infrastructure",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 3,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "civil_engineering",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "construction_delivery",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Guyana",
+       "strength": 3,
+       "evidence": [
+        {
+         "source": "Guyana eProcure",
+         "url": "https://www.eprocure.gov.gy/",
          "grade": "primary"
         }
        ],

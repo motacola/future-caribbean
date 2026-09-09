@@ -1,14 +1,14 @@
 {
  "schema_version": 1,
- "generated_at": "2026-09-09T12:57:06.959293+00:00",
- "corpus_updated_at": "2026-09-09T12:57:06.787553+00:00",
+ "generated_at": "2026-09-09T19:15:01.653930+00:00",
+ "corpus_updated_at": "2026-09-09T19:15:01.476924+00:00",
  "summary": {
-  "tenders": 1046,
+  "tenders": 1047,
   "by_state": {
    "awarded": 307,
    "cancelled": 1,
    "closed": 146,
-   "detected": 7,
+   "detected": 8,
    "unresolved": 585
   },
   "countries": [
@@ -29,7 +29,7 @@
    "no_prior_detection": 292,
    "same_publisher": 16
   },
-  "detected_before_close": 87,
+  "detected_before_close": 88,
   "median_lead_days": 13,
   "max_lead_days": 47,
   "amendments_linked": 37,
@@ -73,14 +73,14 @@
    },
    {
     "source": "Guyana eProcure (NPTA)",
-    "opportunities_observed": 87,
-    "total_snapshots": 396,
+    "opportunities_observed": 88,
+    "total_snapshots": 397,
     "distinct_observation_days": 32,
     "outcome_notices": 0,
     "outcome_snapshot_observations": 0,
     "resolutions_recorded": 0,
     "resolutions_of_prior_detection": 0,
-    "last_seen_at": "2026-09-09T04:35:23.509016+00:00",
+    "last_seen_at": "2026-09-09T19:15:01.476924+00:00",
     "first_seen_at": "2026-06-11T00:00:00+00:00",
     "last_seen_age_days": 0,
     "observation_span_days": 90,
@@ -142,6 +142,34 @@
  },
  "tenders": [
   {
+   "tender_id": "guyana-635775a7719f",
+   "country": "Guyana",
+   "buyer": "34-Ministry of Public Utilities and Aviation",
+   "title": "Supply and Delivery of Pole Mounted Transformers for Lethem Power Co. Inc.",
+   "sector": "Goods",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00432"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "first_detected_at": "2026-09-09T19:15:01.476924+00:00",
+   "original_closing_date": "2026-10-01",
+   "current_closing_date": "2026-10-01",
+   "amendments": [],
+   "lifecycle_state": "detected",
+   "detected_before_close": true,
+   "lead_time_days": 22,
+   "award_lead_time_days": null,
+   "notice_count": 1,
+   "resolution": null,
+   "last_seen_at": "2026-09-09T19:15:01.476924+00:00"
+  },
+  {
    "tender_id": "guyana-f41503ad4c32",
    "country": "Guyana",
    "buyer": "34-Ministry of Public Utilities and Aviation",
@@ -167,7 +195,7 @@
    "award_lead_time_days": null,
    "notice_count": 6,
    "resolution": null,
-   "last_seen_at": "2026-09-09T12:57:06.787553+00:00"
+   "last_seen_at": "2026-09-09T19:15:01.476924+00:00"
   },
   {
    "tender_id": "guyana-c9679463374c",
@@ -195,7 +223,7 @@
    "award_lead_time_days": null,
    "notice_count": 6,
    "resolution": null,
-   "last_seen_at": "2026-09-09T12:57:06.787553+00:00"
+   "last_seen_at": "2026-09-09T19:15:01.476924+00:00"
   },
   {
    "tender_id": "guyana-c6224eb42be8",
@@ -223,7 +251,7 @@
    "award_lead_time_days": null,
    "notice_count": 6,
    "resolution": null,
-   "last_seen_at": "2026-09-09T12:57:06.787553+00:00"
+   "last_seen_at": "2026-09-09T19:15:01.476924+00:00"
   },
   {
    "tender_id": "guyana-93d6d1be88e8",
@@ -251,7 +279,7 @@
    "award_lead_time_days": null,
    "notice_count": 6,
    "resolution": null,
-   "last_seen_at": "2026-09-09T12:57:06.787553+00:00"
+   "last_seen_at": "2026-09-09T19:15:01.476924+00:00"
   },
   {
    "tender_id": "guyana-5a4deb8f2cc7",
@@ -279,7 +307,7 @@
    "award_lead_time_days": null,
    "notice_count": 6,
    "resolution": null,
-   "last_seen_at": "2026-09-09T12:57:06.787553+00:00"
+   "last_seen_at": "2026-09-09T19:15:01.476924+00:00"
   },
   {
    "tender_id": "guyana-dcabdebcf2dc",
@@ -307,7 +335,7 @@
    "award_lead_time_days": null,
    "notice_count": 9,
    "resolution": null,
-   "last_seen_at": "2026-09-09T12:57:06.787553+00:00"
+   "last_seen_at": "2026-09-09T19:15:01.476924+00:00"
   },
   {
    "tender_id": "guyana-74a917bc7542",
@@ -335,7 +363,7 @@
    "award_lead_time_days": null,
    "notice_count": 17,
    "resolution": null,
-   "last_seen_at": "2026-09-09T12:57:06.787553+00:00"
+   "last_seen_at": "2026-09-09T19:15:01.476924+00:00"
   },
   {
    "tender_id": "guyana-f59a5e5d1dac",

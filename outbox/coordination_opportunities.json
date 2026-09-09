@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-09T12:57:07.385772+00:00",
+  "generated_at": "2026-09-09T19:15:02.048940+00:00",
   "engine": "deterministic",
   "registry_status": "pilot",
   "count": 28,
@@ -440,7 +440,7 @@
         "friction_penalty": 15
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 71/100",
+        "Trigger signal confidence: 75/100",
         "Matched 2 of 2 required capabilities across 2 regional nodes",
         "Registry evidence from 3 primary-source organisations"
       ],
@@ -1834,7 +1834,7 @@
         "friction_penalty": 21
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 80/100",
         "Matched 3 of 3 required capabilities across 3 regional nodes",
         "Registry evidence from 3 primary-source organisations"
       ],
@@ -1881,6 +1881,35 @@
           "category": "Works",
           "status": "Bid Advertised",
           "closing_date": "2026-09-22",
+          "url": "https://eprocure.gov.gy/",
+          "sector": "aviation_infrastructure",
+          "required_capabilities": [
+            "aviation_infrastructure",
+            "civil_engineering",
+            "construction_delivery"
+          ],
+          "classification": "deterministic_keyword",
+          "matched_keywords": [
+            "aviation"
+          ],
+          "evidence": [
+            {
+              "source": "Guyana eProcure (NPTA)",
+              "url": "https://eprocure.gov.gy/",
+              "grade": "primary"
+            }
+          ]
+        },
+        {
+          "id": "project:guyana:proc-2026-00432",
+          "source_id": "PROC-2026-00432",
+          "type": "project",
+          "country": "Guyana",
+          "title": "Supply and Delivery of Pole Mounted Transformers for Lethem Power Co. Inc.",
+          "agency": "34-Ministry of Public Utilities and Aviation",
+          "category": "Goods",
+          "status": "Bid Advertised",
+          "closing_date": "2026-10-01",
           "url": "https://eprocure.gov.gy/",
           "sector": "aviation_infrastructure",
           "required_capabilities": [
@@ -2184,6 +2213,121 @@
             },
             {
               "id": "unlock:project-guyana-proc-2026-00426:friction:logistics_validation",
+              "type": "logistics_validation",
+              "blocker": "route economics",
+              "owner_persona": "regional_operator",
+              "minimum_evidence_request": "Route, lead time, landed cost, and contingency option validated",
+              "success_condition": "Route, lead time, landed cost, and contingency option validated",
+              "estimated_score_uplift": 3,
+              "uplift_basis": "one friction-penalty unit removed"
+            }
+          ],
+          "estimated_total_uplift": 6
+        },
+        {
+          "project_id": "project:guyana:proc-2026-00432",
+          "title": "Supply and Delivery of Pole Mounted Transformers for Lethem Power Co. Inc.",
+          "country": "Guyana",
+          "sector": "aviation_infrastructure",
+          "required_capabilities": [
+            "aviation_infrastructure",
+            "civil_engineering",
+            "construction_delivery"
+          ],
+          "matched_capabilities": [
+            "aviation_infrastructure",
+            "civil_engineering",
+            "construction_delivery"
+          ],
+          "missing_capabilities": [],
+          "candidate_nodes": [
+            {
+              "country": "Jamaica",
+              "matched_capabilities": [
+                {
+                  "id": "civil_engineering",
+                  "strength": 4
+                },
+                {
+                  "id": "construction_delivery",
+                  "strength": 4
+                },
+                {
+                  "id": "aviation_infrastructure",
+                  "strength": 3
+                }
+              ],
+              "constraints": [
+                "route economics",
+                "procurement eligibility"
+              ],
+              "evidence": [
+                {
+                  "source": "JAMPRO",
+                  "url": "https://dobusinessjamaica.com/",
+                  "grade": "primary",
+                  "supports": [
+                    "construction_delivery",
+                    "civil_engineering",
+                    "aviation_infrastructure",
+                    "shipping_logistics",
+                    "warehousing_distribution",
+                    "digital_services",
+                    "ict_integration"
+                  ]
+                }
+              ]
+            },
+            {
+              "country": "Trinidad & Tobago",
+              "matched_capabilities": [
+                {
+                  "id": "civil_engineering",
+                  "strength": 4
+                },
+                {
+                  "id": "construction_delivery",
+                  "strength": 4
+                }
+              ],
+              "constraints": [
+                "cross-border supplier qualification",
+                "shipping cost validation"
+              ],
+              "evidence": [
+                {
+                  "source": "Trinidad and Tobago Ministry of Trade and Industry",
+                  "url": "https://tradeind.gov.tt/",
+                  "grade": "primary",
+                  "supports": [
+                    "industrial_fabrication",
+                    "engineering_services",
+                    "civil_engineering",
+                    "construction_delivery"
+                  ]
+                }
+              ]
+            }
+          ],
+          "frictions": [
+            "cross-border supplier qualification",
+            "procurement eligibility",
+            "route economics",
+            "shipping cost validation"
+          ],
+          "unlock_path": [
+            {
+              "id": "unlock:project-guyana-proc-2026-00432:friction:eligibility_verification",
+              "type": "eligibility_verification",
+              "blocker": "cross-border supplier qualification",
+              "owner_persona": "procurement_watcher",
+              "minimum_evidence_request": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
+              "success_condition": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
+              "estimated_score_uplift": 3,
+              "uplift_basis": "one friction-penalty unit removed"
+            },
+            {
+              "id": "unlock:project-guyana-proc-2026-00432:friction:logistics_validation",
               "type": "logistics_validation",
               "blocker": "route economics",
               "owner_persona": "regional_operator",
@@ -3034,6 +3178,26 @@
           "success_condition": "Route, lead time, landed cost, and contingency option validated",
           "estimated_score_uplift": 3,
           "uplift_basis": "one friction-penalty unit removed"
+        },
+        {
+          "id": "unlock:project-guyana-proc-2026-00432:friction:eligibility_verification",
+          "type": "eligibility_verification",
+          "blocker": "cross-border supplier qualification",
+          "owner_persona": "procurement_watcher",
+          "minimum_evidence_request": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
+          "success_condition": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
+          "estimated_score_uplift": 3,
+          "uplift_basis": "one friction-penalty unit removed"
+        },
+        {
+          "id": "unlock:project-guyana-proc-2026-00432:friction:logistics_validation",
+          "type": "logistics_validation",
+          "blocker": "route economics",
+          "owner_persona": "regional_operator",
+          "minimum_evidence_request": "Route, lead time, landed cost, and contingency option validated",
+          "success_condition": "Route, lead time, landed cost, and contingency option validated",
+          "estimated_score_uplift": 3,
+          "uplift_basis": "one friction-penalty unit removed"
         }
       ],
       "humanized_unlock_path": [
@@ -3270,6 +3434,11 @@
           "grade": "primary"
         },
         {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        },
+        {
           "source": "Caribbean Development Bank",
           "url": "https://www.caribank.org/",
           "grade": "primary"
@@ -3317,7 +3486,7 @@
             "dev-pipeline-regional"
           ],
           "created_at": "2026-09-07T03:18:50.314919+00:00",
-          "updated_at": "2026-09-09T12:57:07.394740+00:00"
+          "updated_at": "2026-09-09T19:15:02.069867+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00425:friction:logistics_validation",
@@ -3329,7 +3498,7 @@
             "dev-pipeline-regional"
           ],
           "created_at": "2026-09-07T03:18:50.314919+00:00",
-          "updated_at": "2026-09-09T12:57:07.394740+00:00"
+          "updated_at": "2026-09-09T19:15:02.069867+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00426:friction:eligibility_verification",
@@ -3341,7 +3510,7 @@
             "dev-pipeline-regional"
           ],
           "created_at": "2026-09-07T03:18:50.314919+00:00",
-          "updated_at": "2026-09-09T12:57:07.394740+00:00"
+          "updated_at": "2026-09-09T19:15:02.069867+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00426:friction:logistics_validation",
@@ -3353,7 +3522,7 @@
             "dev-pipeline-regional"
           ],
           "created_at": "2026-09-07T03:18:50.314919+00:00",
-          "updated_at": "2026-09-09T12:57:07.394740+00:00"
+          "updated_at": "2026-09-09T19:15:02.069867+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00427:friction:eligibility_verification",
@@ -3364,8 +3533,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-09-09T12:57:07.394740+00:00",
-          "updated_at": "2026-09-09T12:57:07.394740+00:00"
+          "created_at": "2026-09-09T19:15:02.069867+00:00",
+          "updated_at": "2026-09-09T19:15:02.069867+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00427:friction:logistics_validation",
@@ -3376,8 +3545,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-09-09T12:57:07.394740+00:00",
-          "updated_at": "2026-09-09T12:57:07.394740+00:00"
+          "created_at": "2026-09-09T19:15:02.069867+00:00",
+          "updated_at": "2026-09-09T19:15:02.069867+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00428:friction:eligibility_verification",
@@ -3388,8 +3557,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-09-09T12:57:07.394740+00:00",
-          "updated_at": "2026-09-09T12:57:07.394740+00:00"
+          "created_at": "2026-09-09T19:15:02.069867+00:00",
+          "updated_at": "2026-09-09T19:15:02.069867+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00428:friction:logistics_validation",
@@ -3400,8 +3569,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-09-09T12:57:07.394740+00:00",
-          "updated_at": "2026-09-09T12:57:07.394740+00:00"
+          "created_at": "2026-09-09T19:15:02.069867+00:00",
+          "updated_at": "2026-09-09T19:15:02.069867+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00429:friction:eligibility_verification",
@@ -3412,8 +3581,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-09-09T12:57:07.394740+00:00",
-          "updated_at": "2026-09-09T12:57:07.394740+00:00"
+          "created_at": "2026-09-09T19:15:02.069867+00:00",
+          "updated_at": "2026-09-09T19:15:02.069867+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00429:friction:logistics_validation",
@@ -3424,8 +3593,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-09-09T12:57:07.394740+00:00",
-          "updated_at": "2026-09-09T12:57:07.394740+00:00"
+          "created_at": "2026-09-09T19:15:02.069867+00:00",
+          "updated_at": "2026-09-09T19:15:02.069867+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00430:friction:eligibility_verification",
@@ -3436,8 +3605,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-09-09T12:57:07.394740+00:00",
-          "updated_at": "2026-09-09T12:57:07.394740+00:00"
+          "created_at": "2026-09-09T19:15:02.069867+00:00",
+          "updated_at": "2026-09-09T19:15:02.069867+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00430:friction:logistics_validation",
@@ -3448,8 +3617,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-09-09T12:57:07.394740+00:00",
-          "updated_at": "2026-09-09T12:57:07.394740+00:00"
+          "created_at": "2026-09-09T19:15:02.069867+00:00",
+          "updated_at": "2026-09-09T19:15:02.069867+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00431:friction:eligibility_verification",
@@ -3460,8 +3629,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-09-09T12:57:07.394740+00:00",
-          "updated_at": "2026-09-09T12:57:07.394740+00:00"
+          "created_at": "2026-09-09T19:15:02.069867+00:00",
+          "updated_at": "2026-09-09T19:15:02.069867+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00431:friction:logistics_validation",
@@ -3472,15 +3641,39 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-09-09T12:57:07.394740+00:00",
-          "updated_at": "2026-09-09T12:57:07.394740+00:00"
+          "created_at": "2026-09-09T19:15:02.069867+00:00",
+          "updated_at": "2026-09-09T19:15:02.069867+00:00"
+        },
+        {
+          "id": "unlock:project-guyana-proc-2026-00432:friction:eligibility_verification",
+          "status": "proposed",
+          "owner_persona": "procurement_watcher",
+          "blocker": "cross-border supplier qualification",
+          "evidence": [],
+          "related_signals": [
+            "dev-pipeline-regional"
+          ],
+          "created_at": "2026-09-09T19:15:02.069867+00:00",
+          "updated_at": "2026-09-09T19:15:02.069867+00:00"
+        },
+        {
+          "id": "unlock:project-guyana-proc-2026-00432:friction:logistics_validation",
+          "status": "proposed",
+          "owner_persona": "regional_operator",
+          "blocker": "route economics",
+          "evidence": [],
+          "related_signals": [
+            "dev-pipeline-regional"
+          ],
+          "created_at": "2026-09-09T19:15:02.069867+00:00",
+          "updated_at": "2026-09-09T19:15:02.069867+00:00"
         }
       ],
       "operator_campaigns": [
         {
           "slug": "campaign-eligibility_verification-procurement_watcher-cross-border-supplier-qualification",
-          "intervention_count": 7,
-          "active_count": 7,
+          "intervention_count": 8,
+          "active_count": 8,
           "owner_persona": "procurement_watcher",
           "blocker": "cross-border supplier qualification",
           "intervention_type": null,
@@ -3491,14 +3684,15 @@
             "unlock:project-guyana-proc-2026-00428:friction:eligibility_verification",
             "unlock:project-guyana-proc-2026-00429:friction:eligibility_verification",
             "unlock:project-guyana-proc-2026-00430:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00431:friction:eligibility_verification"
+            "unlock:project-guyana-proc-2026-00431:friction:eligibility_verification",
+            "unlock:project-guyana-proc-2026-00432:friction:eligibility_verification"
           ],
-          "updated_at": "2026-09-09T12:57:07.394740+00:00"
+          "updated_at": "2026-09-09T19:15:02.069867+00:00"
         },
         {
           "slug": "campaign-logistics_validation-regional_operator-route-economics",
-          "intervention_count": 7,
-          "active_count": 7,
+          "intervention_count": 8,
+          "active_count": 8,
           "owner_persona": "regional_operator",
           "blocker": "route economics",
           "intervention_type": null,
@@ -3509,9 +3703,10 @@
             "unlock:project-guyana-proc-2026-00428:friction:logistics_validation",
             "unlock:project-guyana-proc-2026-00429:friction:logistics_validation",
             "unlock:project-guyana-proc-2026-00430:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00431:friction:logistics_validation"
+            "unlock:project-guyana-proc-2026-00431:friction:logistics_validation",
+            "unlock:project-guyana-proc-2026-00432:friction:logistics_validation"
           ],
-          "updated_at": "2026-09-09T12:57:07.394740+00:00"
+          "updated_at": "2026-09-09T19:15:02.069867+00:00"
         }
       ]
     },
@@ -3702,7 +3897,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 74/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -3922,7 +4117,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 66/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 4 regional nodes",
         "Registry evidence from 5 primary-source organisations"
       ],
@@ -4142,7 +4337,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 66/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 4 regional nodes",
         "Registry evidence from 5 primary-source organisations"
       ],
@@ -4364,7 +4559,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 74/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -4586,7 +4781,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 74/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -4808,7 +5003,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 50/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -5030,7 +5225,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 50/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -5252,7 +5447,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 50/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -5474,7 +5669,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 50/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -5696,7 +5891,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 74/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -5918,7 +6113,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 66/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -6140,7 +6335,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 66/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -6362,7 +6557,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 74/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -6584,7 +6779,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 74/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -7022,7 +7217,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 72/100",
         "Matched 3 of 3 required capabilities across 4 regional nodes",
         "Registry evidence from 4 primary-source organisations"
       ],
@@ -7224,7 +7419,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 72/100",
         "Matched 3 of 3 required capabilities across 4 regional nodes",
         "Registry evidence from 4 primary-source organisations"
       ],

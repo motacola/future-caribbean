@@ -5,7 +5,7 @@
 - Action readiness: high
 - Evidence freshness: refreshing · cycles since refresh: 0
 - Recommendation: **ADVANCE** — Calibrated confidence 100/100 with 3 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.
-- Last validated: 2026-09-09T12:57:07.469951+00:00
+- Last validated: 2026-09-09T19:15:02.150731+00:00
 
 ## Sector hypotheses
 - Oil & gas and offshore support services [corroborated] — _Google News — Guyana: Exxon looks to add to Guyana exploration program - Oil & Gas Journal_
@@ -24,6 +24,7 @@
 
 ## Procurement matches
 - [Rehabilitation works for the Bartica 5 Miles Raw Water Intake Structure,  5 Miles, Bartica, Region No. 7](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
+- [Supply and Delivery of Pole Mounted Transformers for Lethem Power Co. Inc.](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
 - [Rehabilitation and Upgrade of Mahaica Bridge to Abary Bridge Road Corridor](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
 - [Supply and Installation of Transmission Mains at Leguan, Region # 3](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
 - [Supply and Installation of Transmission Mains at Bath, West Coast Berbice, Region # 5 (Lot 1-4):
@@ -36,7 +37,6 @@ Lot 1 – Supply and Installation of Transmission Mains from Tain to Alness
 Lot 2 – Supply and Installation of Transmission Mains from Alness to Kilmarnock
 Lot 3 – Supply and Installation of Transmission Mains from Kilmarnock to Kiltairn
 Lot 4 – Supply and Installation of Transmission Mains from Kiltarin to Village 47](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
-- [Supply and Installation of Transmission Mains at Wakenaam, Region # 3](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
 
 ## Official country data
 - [Guyana Balance of Payments (2000 – 2025)](https://statistics.caricom.org/country_data/guyana-balance-of-payments-2000-2024/) — CARICOM Statistics

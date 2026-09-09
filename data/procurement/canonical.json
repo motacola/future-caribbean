@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-09-09T12:57:06.787553+00:00",
+ "updated_at": "2026-09-09T19:15:01.476924+00:00",
  "tenders": {
   "bahamas-09a150a1385c": {
    "schema_version": 1,
@@ -21611,7 +21611,47 @@
    "detected_before_close": true,
    "lead_time_days": 32,
    "award_lead_time_days": null,
-   "last_seen_at": "2026-09-09T12:57:06.787553+00:00"
+   "last_seen_at": "2026-09-09T19:15:01.476924+00:00"
+  },
+  "guyana-635775a7719f": {
+   "schema_version": 1,
+   "tender_id": "guyana-635775a7719f",
+   "country": "Guyana",
+   "buyer": "34-Ministry of Public Utilities and Aviation",
+   "title": "Supply and Delivery of Pole Mounted Transformers for Lethem Power Co. Inc.",
+   "sector": "Goods",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00432"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-09-09",
+   "original_closing_date": "2026-10-01",
+   "current_closing_date": "2026-10-01",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00432",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-10-01",
+     "published": "2026-09-09",
+     "observed_at": "2026-09-09T19:15:01.476924+00:00"
+    }
+   ],
+   "first_detected_at": "2026-09-09T19:15:01.476924+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 22,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-09-09T19:15:01.476924+00:00"
   },
   "guyana-67988c49dffa": {
    "schema_version": 1,
@@ -22228,7 +22268,7 @@
    "detected_before_close": true,
    "lead_time_days": 39,
    "award_lead_time_days": null,
-   "last_seen_at": "2026-09-09T12:57:06.787553+00:00"
+   "last_seen_at": "2026-09-09T19:15:01.476924+00:00"
   },
   "guyana-7b390e26a29b": {
    "schema_version": 1,
@@ -23487,7 +23527,7 @@
    "detected_before_close": true,
    "lead_time_days": 32,
    "award_lead_time_days": null,
-   "last_seen_at": "2026-09-09T12:57:06.787553+00:00"
+   "last_seen_at": "2026-09-09T19:15:01.476924+00:00"
   },
   "guyana-960671d6886a": {
    "schema_version": 1,
@@ -24947,7 +24987,7 @@
    "detected_before_close": true,
    "lead_time_days": 32,
    "award_lead_time_days": null,
-   "last_seen_at": "2026-09-09T12:57:06.787553+00:00"
+   "last_seen_at": "2026-09-09T19:15:01.476924+00:00"
   },
   "guyana-c808e0592ec1": {
    "schema_version": 1,
@@ -25238,7 +25278,7 @@
    "detected_before_close": true,
    "lead_time_days": 32,
    "award_lead_time_days": null,
-   "last_seen_at": "2026-09-09T12:57:06.787553+00:00"
+   "last_seen_at": "2026-09-09T19:15:01.476924+00:00"
   },
   "guyana-ca0e33fe7cf3": {
    "schema_version": 1,
@@ -25731,7 +25771,7 @@
    "detected_before_close": true,
    "lead_time_days": 21,
    "award_lead_time_days": null,
-   "last_seen_at": "2026-09-09T12:57:06.787553+00:00"
+   "last_seen_at": "2026-09-09T19:15:01.476924+00:00"
   },
   "guyana-dcb145a47d3f": {
    "schema_version": 1,
@@ -26356,7 +26396,7 @@
    "detected_before_close": true,
    "lead_time_days": 32,
    "award_lead_time_days": null,
-   "last_seen_at": "2026-09-09T12:57:06.787553+00:00"
+   "last_seen_at": "2026-09-09T19:15:01.476924+00:00"
   },
   "guyana-f4a4c16c06b9": {
    "schema_version": 1,
