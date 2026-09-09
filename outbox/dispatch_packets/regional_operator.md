@@ -2,16 +2,30 @@
 
 **Decision job:** Operational readiness and bid pipeline assessment
 **Delivery channel:** Telegram
-**Generated:** Sep 09, 2026 at 04:35 UTC
-**Dispatches in this packet:** 2
+**Generated:** Sep 09, 2026 at 12:57 UTC
+**Dispatches in this packet:** 3
 
 ---
 
-## Dispatches (2)
+## Dispatches (3)
 
-### 1. CARICOM: 7 active procurements — bidding window open
+### 1. Bahamas, Belize, Grenada: signal detected
 
-**ID:** `DSP-20260909-011` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 95/100 | B - cross-source
+**ID:** `DSP-20260909-028` | **Country:** Bahamas, Belize, Grenada | **Confidence:** 🔴 Immediate | 100/100 | A - multi-source
+**Channel:** Telegram | **Window:** 21 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** CDB active procurement notices: 7;   • Enhancing the Quality of the Belize National Quality Infrastructure;   • Call For Application – Scholarship Opportunity: International Master In Public P; Maritime conditions stable — no high-wind or marine alerts
+**Detail:** signal detected
+**Grade:** A - multi-source
+
+**Recommended action:** Active supply chain corridor in Bahamas, Belize, Grenada: procurement live + maritime stable. Assess capacity for logistics, warehousing, transport — bid window open.
+**Decision to influence:** Which logistics/procurement corridor to bid or partner on
+**Routing rationale:** Active procurement + stable maritime = real supply chain corridor opportunity — first to respond wins
+
+### 2. CARICOM: 7 active procurements — bidding window open
+
+**ID:** `DSP-20260909-013` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 95/100 | B - cross-source
 **Channel:** Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** replied
 
@@ -23,9 +37,9 @@
 **Decision to influence:** Which procurement or project opportunity to pursue
 **Routing rationale:** Active procurement directly maps to operational capacity needs — first to respond wins
 
-### 2. Eastern Caribbean Currency Union: 4.6%
+### 3. Eastern Caribbean Currency Union: 4.6%
 
-**ID:** `DSP-20260909-092` | **Country:** Eastern Caribbean Currency Union | **Confidence:** 🟡 Validation | 72/100 | C - single-source
+**ID:** `DSP-20260909-097` | **Country:** Eastern Caribbean Currency Union | **Confidence:** 🟡 Validation | 76/100 | C - single-source
 **Channel:** Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** ignored
 

@@ -1,8 +1,8 @@
 # Abeng — Backtest Report
 
-**Generated:** 2026-09-09T04:35:24.569826+00:00
+**Generated:** 2026-09-09T12:57:07.775391+00:00
 **Cycles analyzed:** 8
-**Total dispatches:** 736
+**Total dispatches:** 741
 **Actionable responses:** 2
 **Overall response rate:** 0.3%
 **Avg confidence:** 79.0/100
@@ -29,7 +29,7 @@
 ## Evidence Category Coverage
 
 - **Sector Hypotheses:** 9 packs (14.8%)
-- **Supporting Projects:** 4 packs (6.6%)
+- **Supporting Projects:** 5 packs (8.2%)
 - **Procurement Matches:** 346 packs (567.2%)
 - **Operators:** 16 packs (26.2%)
 
@@ -47,8 +47,8 @@
 
 | Cycle | Dispatches | Actionable | Response Rate |
 |-------|------------|------------|---------------|
-| 20260909 | 92 | 0 | 0.0% |
-| 20260908 | 92 | 2 | 2.2% |
+| 20260909 | 97 | 2 | 2.1% |
+| 20260908 | 92 | 0 | 0.0% |
 | 20260907 | 92 | 0 | 0.0% |
 | 20260906 | 92 | 0 | 0.0% |
 | 20260905 | 92 | 0 | 0.0% |

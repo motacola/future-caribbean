@@ -7,16 +7,16 @@
   },
   "cycle_accuracy": [
     {
-      "actionable_responses": 0,
+      "actionable_responses": 2,
       "cycle_id": "20260909",
-      "dispatches": 92,
-      "response_rate": 0.0
+      "dispatches": 97,
+      "response_rate": 0.020618556701030927
     },
     {
-      "actionable_responses": 2,
+      "actionable_responses": 0,
       "cycle_id": "20260908",
       "dispatches": 92,
-      "response_rate": 0.021739130434782608
+      "response_rate": 0.0
     },
     {
       "actionable_responses": 0,
@@ -59,7 +59,7 @@
     "operators": 16,
     "procurement_matches": 346,
     "sector_hypotheses": 9,
-    "supporting_projects": 4
+    "supporting_projects": 5
   },
   "feedback_analysis": {
     "actionable_count": 2,
@@ -70,9 +70,8 @@
     "by_signal_kind": {
       "ccrif_payout": 32,
       "development_pipeline": 3,
-      "eccb_deposit_growth": 2,
       "enhanced_investment": 9,
-      "investment_signal": 4
+      "investment_signal": 6
     },
     "by_status": {
       "forwarded": 1,
@@ -81,7 +80,7 @@
     },
     "total_feedback": 50
   },
-  "generated_at": "2026-09-09T04:35:24.569826+00:00",
+  "generated_at": "2026-09-09T12:57:07.775391+00:00",
   "recommendation_calibration": {
     "advance_rate": 0.04918032786885246,
     "hold_rate": 0.9508196721311475,
@@ -132,10 +131,10 @@
   },
   "summary": {
     "avg_confidence": 79.0,
-    "overall_response_rate": 0.002717391304347826,
+    "overall_response_rate": 0.002699055330634278,
     "total_actionable_responses": 2,
     "total_cycles_analyzed": 8,
-    "total_dispatches": 736,
+    "total_dispatches": 741,
     "total_validation_packs": 61
   }
 }

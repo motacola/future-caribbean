@@ -1,15 +1,15 @@
 # Opportunity Validation Pack — Guyana
 
-- Signal: `enhanced-invest-guyana` · Dispatch: `DSP-20260909-017`
-- Confidence: 100/100 (raw 109) · C - single-source
+- Signal: `enhanced-invest-guyana` · Dispatch: `DSP-20260909-019`
+- Confidence: 100/100 (raw 111) · C - single-source
 - Action readiness: high
 - Evidence freshness: refreshing · cycles since refresh: 0
 - Recommendation: **ADVANCE** — Calibrated confidence 100/100 with 3 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.
-- Last validated: 2026-09-09T04:35:24.208384+00:00
+- Last validated: 2026-09-09T12:57:07.469951+00:00
 
 ## Sector hypotheses
 - Oil & gas and offshore support services [corroborated] — _Google News — Guyana: Exxon looks to add to Guyana exploration program - Oil & Gas Journal_
-- Construction and infrastructure [corroborated] — _Guyana Chronicle: Generation capacity exists but distribution overload driving power outages_
+- Construction and infrastructure [corroborated] — _Guyana Chronicle: Puruni Bridge construction begins, completion targeted for December_
 - Logistics serving the energy supply chain [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
 - Agriculture and agro-processing [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
 - Which industries received it is not published yet [macro_signal] — _World Bank: FDI net inflows moved +860.3% from 2023 to 2024_
@@ -39,7 +39,8 @@ Lot 4 – Supply and Installation of Transmission Mains from Kiltarin to Village
 - [Supply and Installation of Transmission Mains at Wakenaam, Region # 3](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
 
 ## Official country data
-- No official country datasets matched.
+- [Guyana Balance of Payments (2000 – 2025)](https://statistics.caricom.org/country_data/guyana-balance-of-payments-2000-2024/) — CARICOM Statistics
+- [Guyana: Monthly Consumer Price Index (CPI) by Expenditure Category](https://statistics.caricom.org/country_data/guyana-monthly-consumer-price-index-cpi-by-expenditure-category/) — CARICOM Statistics
 
 ## Relevant institutions & intro targets
 - Guyana Office for Investment (GO-Invest) — National investment promotion agency

@@ -21305,8 +21305,55 @@
       "resolved_at": null,
       "prev_hash": "ebc969d6425924d5c73a3f8b1f56c49f5b57259cd5ba6ede5fce803d75860601",
       "hash": "3bb2ab312641d765f00256b1e863b25b25c035560643236e12bd2de50ee0472b"
+    },
+    {
+      "cycle_id": "20260909",
+      "fact_key": "id:food-security-regional",
+      "signal_id": "food-security-regional",
+      "kind": "food_security",
+      "country": "CARICOM",
+      "score": 84,
+      "band": "70-84",
+      "corroborating_at_claim": 2,
+      "source_names": [
+        "CARICOM",
+        "World Bank"
+      ],
+      "chain_schema": 2,
+      "recorded_at": "2026-09-09T12:57:07.708307+00:00",
+      "forecast_probability": 0.95,
+      "prior_basis": "calibrated",
+      "outcome": null,
+      "resolved_by": null,
+      "resolved_at": null,
+      "prev_hash": "3bb2ab312641d765f00256b1e863b25b25c035560643236e12bd2de50ee0472b",
+      "hash": "bbaef7640208e7d733dd78d7150da9d1c4935be9048aa0c7388ae0829a19fc8e"
+    },
+    {
+      "cycle_id": "20260909",
+      "fact_key": "id:supply-chain-bahamas-belize-grenada",
+      "signal_id": "supply-chain-bahamas-belize-grenada",
+      "kind": "supply_chain_signal",
+      "country": "Bahamas, Belize, Grenada",
+      "score": 100,
+      "band": "85-100",
+      "corroborating_at_claim": 3,
+      "source_names": [
+        "CARICOM",
+        "CDB",
+        "NDBC"
+      ],
+      "chain_schema": 2,
+      "recorded_at": "2026-09-09T12:57:07.708471+00:00",
+      "forecast_probability": 0.95,
+      "prior_basis": "calibrated",
+      "outcome": null,
+      "resolved_by": null,
+      "resolved_at": null,
+      "prev_hash": "bbaef7640208e7d733dd78d7150da9d1c4935be9048aa0c7388ae0829a19fc8e",
+      "hash": "217e4d03791349011547f0af00b658e0868cbeed5860b0f47a96158e3ef066af"
     }
   ],
   "created_at": "2026-08-15T21:38:36.574954+00:00",
-  "updated_at": "2026-09-09T04:35:24.502838+00:00"
+  "updated_at": "2026-09-09T12:57:07.708851+00:00"
 }

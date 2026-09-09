@@ -1,11 +1,11 @@
 # Opportunity Validation Pack — CARICOM
 
-- Signal: `dev-pipeline-regional` · Dispatch: `DSP-20260909-011`
+- Signal: `dev-pipeline-regional` · Dispatch: `DSP-20260909-013`
 - Confidence: 78/100 (raw 95) · B - cross-source
 - Action readiness: medium (no dated country procurement or news corroboration)
 - Evidence freshness: stale · cycles since refresh: 30
-- Recommendation: **HOLD** — Calibrated confidence 78/100 with 0 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.
-- Last validated: 2026-09-09T04:35:24.208384+00:00
+- Recommendation: **HOLD** — Calibrated confidence 78/100 with 1 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.
+- Last validated: 2026-09-09T12:57:07.469951+00:00
 
 ## Sector hypotheses
 - None identified this cycle
@@ -14,7 +14,12 @@
 - No registry-backed operators for this country yet.
 
 ## Supporting projects & publications
-- No matched projects this cycle.
+- [CARICOM Selected Economic Indicators 2011, 2015-2019](https://statistics.caricom.org/all-publications/caricoms-selected-economic-indicators-2011-2015-2019/) — CARICOM Statistics
+- [CARICOM Selected Economic Indicators 2010, 2014-2018](https://statistics.caricom.org/all-publications/caricoms-selected-economic-indicators-2010-2014-2018/) — CARICOM Statistics
+- [CARICOM Trade in Services 2012-2018](https://statistics.caricom.org/all-publications/caricom-trade-in-services-2012-2018/) — CARICOM Statistics
+- [CARICOM&#8217;s Trade with Japan 2011-2016](https://statistics.caricom.org/all-publications/caricoms-trade-with-japan-2011-2016/) — CARICOM Statistics
+- [CARICOM&#8217;s Trade with UK 2011 &#8211; 2016](https://statistics.caricom.org/all-publications/caricoms-trade-with-uk-2011-2016/) — CARICOM Statistics
+- [CARICOM&#8217;s Trade with EU 2011 &#8211; 2016](https://statistics.caricom.org/all-publications/caricoms-trade-with-eu-2011-2016/) — CARICOM Statistics
 
 ## Procurement matches
 - [Enhancing the Quality of the Belize National Quality Infrastructure](https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure) — Caribbean Development Bank (regional)
@@ -25,7 +30,12 @@
 - [The Bahamas Water Supply Improvement Project Phase 2](https://www.caribank.org/work-with-us/procurement/procurement-notices/bahamas-water-supply-improvement-project-phase-2-1) — Caribbean Development Bank (regional)
 
 ## Official country data
-- No official country datasets matched.
+- [CARICOM Travel Trade Balance](https://statistics.caricom.org/country_data/caricom-travel-trade-balance/) — CARICOM Statistics
+- [Share of CARICOM Exports by Member State, 1973–2024](https://statistics.caricom.org/country_data/share-of-caricom-exports-by-member-state-1973-2024/) — CARICOM Statistics
+- [CARICOM Intra-regional Balance of Trade 1973-2024](https://statistics.caricom.org/country_data/caricom-balance-of-trade/) — CARICOM Statistics
+- [CARICOM Total Imports by SITC, 1973-2024](https://statistics.caricom.org/country_data/caricom-total-imports-by-sitc-1973-2024/) — CARICOM Statistics
+- [CARICOM Total Exports: 1973-2024](https://statistics.caricom.org/country_data/caricom-total-exports-1973-2023/) — CARICOM Statistics
+- [CARICOM&#8217;s Intra-regional Total Exports: 1973-2024](https://statistics.caricom.org/country_data/caricoms-intra-regional-total-exports-1973-2023/) — CARICOM Statistics
 
 ## Relevant institutions & intro targets
 - Caribbean Export Development Agency — Regional trade and investment promotion

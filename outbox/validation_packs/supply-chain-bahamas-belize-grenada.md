@@ -1,11 +1,11 @@
 # Opportunity Validation Pack — Bahamas, Belize, Grenada
 
-- Signal: `supply-chain-bahamas-belize-grenada` · Dispatch: `DSP-20260829-028`
-- Confidence: 78/100 (raw 102) · A - multi-source
+- Signal: `supply-chain-bahamas-belize-grenada` · Dispatch: `DSP-20260909-028`
+- Confidence: 78/100 (raw 108) · A - multi-source
 - Action readiness: medium (no dated country procurement or news corroboration)
 - Evidence freshness: refreshing · cycles since refresh: 0
 - Recommendation: **HOLD** — Calibrated confidence 78/100 with 0 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.
-- Last validated: 2026-08-29T06:59:37.779683+00:00
+- Last validated: 2026-09-09T12:57:07.469951+00:00
 
 ## Sector hypotheses
 - None identified this cycle
@@ -18,11 +18,11 @@
 
 ## Procurement matches
 - [Enhancing the Quality of the Belize National Quality Infrastructure](https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure) — Caribbean Development Bank (regional)
+- [Call For Application – Scholarship Opportunity: International Master In Public Procurement Management at The University of Rome Tor Vergata (2026/2027 Academic Year)](https://www.caribank.org/work-with-us/procurement/procurement-notices/call-application-scholarship-opportunity-international-master-public-procurement-management-2) — Caribbean Development Bank (regional)
+- [Supply Installation, Testing and Commissioning of Mechanical Equipment, Fire Pump System and Information and Communications Technology Systems](https://www.caribank.org/work-with-us/procurement/procurement-notices/supply-installation-testing-and-commissioning-mechanical-equipment-fire-pump-system-and-information) — Caribbean Development Bank (regional)
+- [The University of the West Indies Digital Transformation Project](https://www.caribank.org/work-with-us/procurement/procurement-notices/university-west-indies-digital-transformation-project-3) — Caribbean Development Bank (regional)
 - [Grenada Education Enhancement Project - Phase II](https://www.caribank.org/work-with-us/procurement/procurement-plans/grenada-education-enhancement-project-phase-ii) — Caribbean Development Bank (regional)
 - [The Bahamas Water Supply Improvement Project Phase 2](https://www.caribank.org/work-with-us/procurement/procurement-notices/bahamas-water-supply-improvement-project-phase-2-1) — Caribbean Development Bank (regional)
-- [The Bahamas Water Supply Improvement Project Phase 2](https://www.caribank.org/work-with-us/procurement/procurement-notices/bahamas-water-supply-improvement-project-phase-2-0) — Caribbean Development Bank (regional)
-- [Kalinago Development Project](https://www.caribank.org/work-with-us/procurement/procurement-notices/kalinago-development-project-2) — Caribbean Development Bank (regional)
-- [Kalinago Development Project](https://www.caribank.org/work-with-us/procurement/procurement-notices/kalinago-development-project-1) — Caribbean Development Bank (regional)
 
 ## Official country data
 - No official country datasets matched.

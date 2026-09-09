@@ -1,10 +1,10 @@
 {
   "signal_id": "enhanced-invest-guyana",
-  "dispatch_id": "DSP-20260909-017",
+  "dispatch_id": "DSP-20260909-019",
   "country": "Guyana",
   "signal_title": "Guyana: +860.3% capital surge on a single official source — market entry window open",
   "confidence_score": 100,
-  "raw_confidence_score": 109,
+  "raw_confidence_score": 111,
   "action_readiness": "high",
   "evidence_grade": "C - single-source",
   "sector_hypotheses": [
@@ -16,9 +16,9 @@
     },
     {
       "sector": "Construction and infrastructure",
-      "basis": "Guyana Chronicle: Generation capacity exists but distribution overload driving power outages",
+      "basis": "Guyana Chronicle: Puruni Bridge construction begins, completion targeted for December",
       "status": "corroborated",
-      "url": "https://guyanachronicle.com/2026/09/08/generation-capacity-exists-but-distribution-overload-driving-power-outages/"
+      "url": "https://guyanachronicle.com/2026/09/09/puruni-bridge-construction-begins-completion-targeted-for-december/"
     },
     {
       "sector": "Logistics serving the energy supply chain",
@@ -81,7 +81,18 @@
       "closing_date": "2026-10-06"
     }
   ],
-  "official_country_data": [],
+  "official_country_data": [
+    {
+      "title": "Guyana Balance of Payments (2000 – 2025)",
+      "source": "CARICOM Statistics",
+      "url": "https://statistics.caricom.org/country_data/guyana-balance-of-payments-2000-2024/"
+    },
+    {
+      "title": "Guyana: Monthly Consumer Price Index (CPI) by Expenditure Category",
+      "source": "CARICOM Statistics",
+      "url": "https://statistics.caricom.org/country_data/guyana-monthly-consumer-price-index-cpi-by-expenditure-category/"
+    }
+  ],
   "credible_local_operators": [
     {
       "name": "Guyana Shore Base Inc. (GSBI)",
@@ -125,8 +136,10 @@
   ],
   "source_links": [
     "https://eprocure.gov.gy/",
-    "https://guyanachronicle.com/2026/09/08/generation-capacity-exists-but-distribution-overload-driving-power-outages/",
-    "https://news.google.com/rss/articles/CBMirgFBVV95cUxNMGRRdDlCc3FrOThUa1lpWXVWLWxSRUlRMHp1UjZZUEtGRXA4NTAxcWpoM3ZiRm5Xcm40aGNYUmZvMlhCS3hGNWw3a01CaGdnQ2NxWUxod3VjUWNXckFuU0JIblMwUFpSc2Z5ellELXpnTGZmdkJqTE92bm5FNXFCM2RRMDFibTFwOUhGdnVJRVFPczBSMXRaRmt0dmlRUmY4MEgwcHJETDdqOWR5bEE?oc=5"
+    "https://guyanachronicle.com/2026/09/09/puruni-bridge-construction-begins-completion-targeted-for-december/",
+    "https://news.google.com/rss/articles/CBMirgFBVV95cUxNMGRRdDlCc3FrOThUa1lpWXVWLWxSRUlRMHp1UjZZUEtGRXA4NTAxcWpoM3ZiRm5Xcm40aGNYUmZvMlhCS3hGNWw3a01CaGdnQ2NxWUxod3VjUWNXckFuU0JIblMwUFpSc2Z5ellELXpnTGZmdkJqTE92bm5FNXFCM2RRMDFibTFwOUhGdnVJRVFPczBSMXRaRmt0dmlRUmY4MEgwcHJETDdqOWR5bEE?oc=5",
+    "https://statistics.caricom.org/country_data/guyana-balance-of-payments-2000-2024/",
+    "https://statistics.caricom.org/country_data/guyana-monthly-consumer-price-index-cpi-by-expenditure-category/"
   ],
   "unresolved_questions": [
     "Which specific sectors are driving the movement in Guyana? No official sector-breakdown dataset matched this cycle.",
@@ -146,9 +159,9 @@
   ],
   "advance_or_reject_recommendation": "advance",
   "recommendation_reason": "Calibrated confidence 100/100 with 3 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.",
-  "last_validated_at": "2026-09-09T04:35:24.208384+00:00",
+  "last_validated_at": "2026-09-09T12:57:07.469951+00:00",
   "coordination_path": null,
-  "evidence_fingerprint": "e6ff1214a07b5465",
+  "evidence_fingerprint": "9325469991e2168f",
   "cycles_since_refresh": 0,
   "evidence_freshness": "refreshing"
 }

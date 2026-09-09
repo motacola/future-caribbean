@@ -1,10 +1,10 @@
 {
   "signal_id": "supply-chain-bahamas-belize-grenada",
-  "dispatch_id": "DSP-20260829-028",
+  "dispatch_id": "DSP-20260909-028",
   "country": "Bahamas, Belize, Grenada",
   "signal_title": "Bahamas, Belize, Grenada: signal detected",
   "confidence_score": 78,
-  "raw_confidence_score": 102,
+  "raw_confidence_score": 108,
   "action_readiness": "medium (no dated country procurement or news corroboration)",
   "evidence_grade": "A - multi-source",
   "sector_hypotheses": [],
@@ -17,6 +17,24 @@
       "match": "regional"
     },
     {
+      "title": "Call For Application – Scholarship Opportunity: International Master In Public Procurement Management at The University of Rome Tor Vergata (2026/2027 Academic Year)",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/call-application-scholarship-opportunity-international-master-public-procurement-management-2",
+      "match": "regional"
+    },
+    {
+      "title": "Supply Installation, Testing and Commissioning of Mechanical Equipment, Fire Pump System and Information and Communications Technology Systems",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/supply-installation-testing-and-commissioning-mechanical-equipment-fire-pump-system-and-information",
+      "match": "regional"
+    },
+    {
+      "title": "The University of the West Indies Digital Transformation Project",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/university-west-indies-digital-transformation-project-3",
+      "match": "regional"
+    },
+    {
       "title": "Grenada Education Enhancement Project - Phase II",
       "source": "Caribbean Development Bank",
       "url": "https://www.caribank.org/work-with-us/procurement/procurement-plans/grenada-education-enhancement-project-phase-ii",
@@ -26,24 +44,6 @@
       "title": "The Bahamas Water Supply Improvement Project Phase 2",
       "source": "Caribbean Development Bank",
       "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/bahamas-water-supply-improvement-project-phase-2-1",
-      "match": "regional"
-    },
-    {
-      "title": "The Bahamas Water Supply Improvement Project Phase 2",
-      "source": "Caribbean Development Bank",
-      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/bahamas-water-supply-improvement-project-phase-2-0",
-      "match": "regional"
-    },
-    {
-      "title": "Kalinago Development Project",
-      "source": "Caribbean Development Bank",
-      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/kalinago-development-project-2",
-      "match": "regional"
-    },
-    {
-      "title": "Kalinago Development Project",
-      "source": "Caribbean Development Bank",
-      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/kalinago-development-project-1",
       "match": "regional"
     }
   ],
@@ -60,11 +60,11 @@
     }
   ],
   "source_links": [
-    "https://www.caribank.org/work-with-us/procurement/procurement-notices/bahamas-water-supply-improvement-project-phase-2-0",
     "https://www.caribank.org/work-with-us/procurement/procurement-notices/bahamas-water-supply-improvement-project-phase-2-1",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/call-application-scholarship-opportunity-international-master-public-procurement-management-2",
     "https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure",
-    "https://www.caribank.org/work-with-us/procurement/procurement-notices/kalinago-development-project-1",
-    "https://www.caribank.org/work-with-us/procurement/procurement-notices/kalinago-development-project-2",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/supply-installation-testing-and-commissioning-mechanical-equipment-fire-pump-system-and-information",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/university-west-indies-digital-transformation-project-3",
     "https://www.caribank.org/work-with-us/procurement/procurement-plans/grenada-education-enhancement-project-phase-ii"
   ],
   "unresolved_questions": [
@@ -81,7 +81,7 @@
   ],
   "advance_or_reject_recommendation": "hold",
   "recommendation_reason": "Calibrated confidence 78/100 with 0 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.",
-  "last_validated_at": "2026-08-29T06:59:37.779683+00:00",
+  "last_validated_at": "2026-09-09T12:57:07.469951+00:00",
   "coordination_path": null,
   "evidence_fingerprint": "e3b0c44298fc1c14",
   "cycles_since_refresh": 0,
