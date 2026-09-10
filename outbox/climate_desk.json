@@ -2,82 +2,34 @@
   "instance": "climate",
   "instance_label": "Climate & Catastrophe Risk",
   "cycle_id": "20260910",
-  "generated_at": "2026-09-10T04:33:58.520683+00:00",
+  "generated_at": "2026-09-10T12:54:00.689200+00:00",
   "clusters": [
     {
-      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.f",
-      "country_cluster": "San Juan and Vicinity",
-      "signal_kind": "hazard_alert",
-      "title": "San Juan and Vicinity: Special Weather Statement in effect (Moderate)",
-      "evidence": "NOAA NWS: Special Weather Statement issued September 9 at 11:57PM AST by NWS San Juan PR",
-      "evidence_grade": "B - official alert",
-      "confidence_score": 80,
+      "cluster_id": "CLIM-allclear",
+      "country_cluster": "Caribbean basin",
+      "signal_kind": "all_clear",
+      "title": "All clear \u2014 no active hazards this cycle",
+      "evidence": "No active NWS alerts in Caribbean zones. Current conditions: 6 buoys reporting; peak seas 2.0m; max wind 21 kt; no tropical development expected (NHC).",
+      "evidence_grade": "A - official sources",
+      "confidence_score": 70,
       "freshness": "new",
-      "decision": "Hazard response and exposure assessment",
+      "decision": "Routine monitoring \u2014 no action required",
       "risk_flags": [],
       "personas": [
         {
           "persona": "Resilience Planner",
           "channel": "Telegram/SMS alert",
-          "action": "Active hazard alert \u2014 Special Weather Statement \u2014 Moderate (San Juan and Vicinity). Pre-position resources and confirm evacuation/shelter readiness in the affected area now."
+          "action": "All clear across Caribbean zones \u2014 6 buoys reporting; peak seas 2.0m; max wind 21 kt; no tropical development expected (NHC). No action required; the engine keeps watching and will escalate the moment a threshold is crossed."
         },
         {
           "persona": "Insurer / Reinsurer",
           "channel": "Email + alert",
-          "action": "Exposure check \u2014 Special Weather Statement \u2014 Moderate (San Juan and Vicinity). Flag policies in the affected zone and prepare parametric-trigger assessment."
-        }
-      ]
-    },
-    {
-      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.2",
-      "country_cluster": "Arecibo, PR",
-      "signal_kind": "hazard_alert",
-      "title": "Arecibo, PR: Flood Advisory in effect (Minor)",
-      "evidence": "NOAA NWS: Flood Advisory issued September 10 at 12:07AM AST until September 10 at 1:30AM AST by NWS San Juan PR",
-      "evidence_grade": "C - advisory",
-      "confidence_score": 60,
-      "freshness": "new",
-      "decision": "Hazard response and exposure assessment",
-      "risk_flags": [],
-      "personas": [
-        {
-          "persona": "Resilience Planner",
-          "channel": "Telegram/SMS alert",
-          "action": "Active hazard alert \u2014 Flood Advisory \u2014 Minor (Arecibo, PR). Pre-position resources and confirm evacuation/shelter readiness in the affected area now."
-        },
-        {
-          "persona": "Insurer / Reinsurer",
-          "channel": "Email + alert",
-          "action": "Exposure check \u2014 Flood Advisory \u2014 Minor (Arecibo, PR). Flag policies in the affected zone and prepare parametric-trigger assessment."
-        }
-      ]
-    },
-    {
-      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.a",
-      "country_cluster": "Atlantic Waters of Puerto Rico AND USVI from 10 NM to 19.5N",
-      "signal_kind": "hazard_alert",
-      "title": "Atlantic Waters of Puerto Rico AND USVI from 10 NM to 19.5N: Marine Weather Statement in effect (Minor)",
-      "evidence": "NOAA NWS: Marine Weather Statement issued September 10 at 12:18AM AST by NWS San Juan PR",
-      "evidence_grade": "C - advisory",
-      "confidence_score": 60,
-      "freshness": "new",
-      "decision": "Hazard response and exposure assessment",
-      "risk_flags": [],
-      "personas": [
-        {
-          "persona": "Resilience Planner",
-          "channel": "Telegram/SMS alert",
-          "action": "Active hazard alert \u2014 Marine Weather Statement \u2014 Minor (Atlantic Waters of Puerto Rico AND USVI from 10 NM to 19.5N). Pre-position resources and confirm evacuation/shelter readiness in the affected area now."
-        },
-        {
-          "persona": "Insurer / Reinsurer",
-          "channel": "Email + alert",
-          "action": "Exposure check \u2014 Marine Weather Statement \u2014 Minor (Atlantic Waters of Puerto Rico AND USVI from 10 NM to 19.5N). Flag policies in the affected zone and prepare parametric-trigger assessment."
+          "action": "No active hazard exposure this cycle (6 buoys reporting; peak seas 2.0m; max wind 21 kt; no tropical development expected (NHC)). Baseline confirmed for parametric monitoring."
         }
       ]
     }
   ],
-  "dispatch_count": 6,
+  "dispatch_count": 2,
   "sources": [
     "NOAA NWS",
     "NDBC buoys",

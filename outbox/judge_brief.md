@@ -1,6 +1,6 @@
 # Abeng — Judge Brief
 
-Generated: 2026-09-10 04:33 UTC
+Generated: 2026-09-10 12:53 UTC
 
 ## What This Proves
 
@@ -41,19 +41,19 @@ Abeng watches public regional data, merges weak signals across sources, packages
    Audience: investor/founder via Email brief + Telegram
    Decision: Active procurement pipeline: CDB active procurement notices: 7. Priority: review CDB/IDB opportunities as lead list for project-based entry.
 
-**4.** 🟡 **ccrif_payout — Haiti** — intensified
-   Narrative: Haiti: signal detected
+**4.** 🟡 **ccrif_payout — Turks and Caicos Islands** — intensified
+   Narrative: Turks and Caicos Islands: signal detected
    Score: 84/100 | Grade: C - single-source
    Audience: regional intelligence via Telegram digest
-   Decision: Validation — Haiti: ccrif_payout (signal detected). Validate locally.
-   ⬆️ Strengthened (+32 pts)
+   Decision: Validation — Turks and Caicos Islands: ccrif_payout (signal detected). Validate locally.
+   ⬆️ Strengthened (+10 pts)
 
-**5.** 🟡 **ccrif_payout — Barbados** — intensified
-   Narrative: Barbados: signal detected
+**5.** 🟡 **ccrif_payout — Anguilla** — intensified
+   Narrative: Anguilla: signal detected
    Score: 84/100 | Grade: C - single-source
    Audience: regional intelligence via Telegram digest
-   Decision: Validation — Barbados: ccrif_payout (signal detected). Validate locally.
-   ⬆️ Strengthened (+18 pts)
+   Decision: Validation — Anguilla: ccrif_payout (signal detected). Validate locally.
+   ⬆️ Strengthened (+10 pts)
 
 **6.** 🟡 **eccb_deposit_growth — Eastern Caribbean Currency Union** — sustained
    Narrative: Eastern Caribbean Currency Union: 4.6%
@@ -61,11 +61,11 @@ Abeng watches public regional data, merges weak signals across sources, packages
    Audience: regional intelligence via Telegram digest
    Decision: Validation — Eastern Caribbean Currency Union: eccb_deposit_growth (4.6%). Validate locally.
 
-**7.** 🟢 **⚠️ Vulnerability — St. Vincent and the Grenadines** — sustained
-   Narrative: St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended
-   Score: 60/100 | Grade: C - single-source
-   Audience: policy/operator via Telegram digest
-   Decision: Monitor. St. Vincent and the Grenadines showing economic stress (18.00%). Track next cycle. Escalates if additional stress indicators appear or existing ones worsen.
+**7.** 🟡 **💼 Investment — Barbados** — sustained
+   Narrative: Barbados: FDI trending at +34.8% — screening trigger active
+   Score: 75/100 | Grade: B - cross-source
+   Audience: investor/founder via Email brief + Telegram
+   Decision: Validation priority. Barbados FDI movement (34.8% change) signals opportunity. Cross-reference with sector data.
 
 ## Routing Rationale
 
