@@ -1,5 +1,5 @@
 🌴 *Abeng — Decision Routes Ready*
-Cycle: `20260910` · 2026-09-10 12:54 UTC
+Cycle: `20260910` · 2026-09-10 19:06 UTC
 
 *What this is:*
 A Dispatch Desk notification. The product is the decision route: signal → persona → action → feedback. Telegram is only the delivery channel.
@@ -36,10 +36,10 @@ Data → 29 signal clusters → 97 persona routes → 7 personas → action/capi
    Loop: Feedback this cycle: 3 ignored.
 
 *Feedback-adjusted priority*
-• Haiti ccrif payout downranked -32
-• Nicaragua ccrif payout downranked -18
-• Barbados ccrif payout downranked -18
-• Suriname enhanced investment downranked -6
+• Jamaica ccrif payout downranked -12
+• Turks and Caicos Islands ccrif payout downranked -10
+• St. Vincent & the Grenadines ccrif payout downranked -10
+• St. Kitts and Nevis ccrif payout downranked -10
 
 *Open the product surface*
 • `outbox/dispatch_desk.md` — judge/user-facing decision desk
