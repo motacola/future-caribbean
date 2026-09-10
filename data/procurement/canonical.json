@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-09-10T19:06:40.899884+00:00",
+ "updated_at": "2026-09-10T22:32:02.554552+00:00",
  "tenders": {
   "bahamas-09a150a1385c": {
    "schema_version": 1,
@@ -21620,7 +21620,7 @@
    "detected_before_close": true,
    "lead_time_days": 32,
    "award_lead_time_days": null,
-   "last_seen_at": "2026-09-10T19:06:40.899884+00:00"
+   "last_seen_at": "2026-09-10T22:32:02.554552+00:00"
   },
   "guyana-635775a7719f": {
    "schema_version": 1,
@@ -21669,7 +21669,7 @@
    "detected_before_close": true,
    "lead_time_days": 22,
    "award_lead_time_days": null,
-   "last_seen_at": "2026-09-10T19:06:40.899884+00:00"
+   "last_seen_at": "2026-09-10T22:32:02.554552+00:00"
   },
   "guyana-67988c49dffa": {
    "schema_version": 1,
@@ -22295,7 +22295,7 @@
    "detected_before_close": true,
    "lead_time_days": 39,
    "award_lead_time_days": null,
-   "last_seen_at": "2026-09-10T19:06:40.899884+00:00"
+   "last_seen_at": "2026-09-10T22:32:02.554552+00:00"
   },
   "guyana-7b390e26a29b": {
    "schema_version": 1,
@@ -23563,7 +23563,7 @@
    "detected_before_close": true,
    "lead_time_days": 32,
    "award_lead_time_days": null,
-   "last_seen_at": "2026-09-10T19:06:40.899884+00:00"
+   "last_seen_at": "2026-09-10T22:32:02.554552+00:00"
   },
   "guyana-960671d6886a": {
    "schema_version": 1,
@@ -24790,6 +24790,46 @@
    "award_lead_time_days": null,
    "last_seen_at": "2026-08-20T01:48:19.464349+00:00"
   },
+  "guyana-c18248aecade": {
+   "schema_version": 1,
+   "tender_id": "guyana-c18248aecade",
+   "country": "Guyana",
+   "buyer": "21-Ministry of Agriculture",
+   "title": "Development and Finalisation of the National Water Policy and Action Plan",
+   "sector": "Services",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00433"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-09-04",
+   "original_closing_date": "2026-09-29",
+   "current_closing_date": "2026-09-29",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00433",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-09-29",
+     "published": "2026-09-04",
+     "observed_at": "2026-09-10T22:32:02.554552+00:00"
+    }
+   ],
+   "first_detected_at": "2026-09-10T22:32:02.554552+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 19,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-09-10T22:32:02.554552+00:00"
+  },
   "guyana-c18a827b84ea": {
    "schema_version": 1,
    "tender_id": "guyana-c18a827b84ea",
@@ -25032,7 +25072,7 @@
    "detected_before_close": true,
    "lead_time_days": 32,
    "award_lead_time_days": null,
-   "last_seen_at": "2026-09-10T19:06:40.899884+00:00"
+   "last_seen_at": "2026-09-10T22:32:02.554552+00:00"
   },
   "guyana-c808e0592ec1": {
    "schema_version": 1,
@@ -25332,7 +25372,7 @@
    "detected_before_close": true,
    "lead_time_days": 32,
    "award_lead_time_days": null,
-   "last_seen_at": "2026-09-10T19:06:40.899884+00:00"
+   "last_seen_at": "2026-09-10T22:32:02.554552+00:00"
   },
   "guyana-ca0e33fe7cf3": {
    "schema_version": 1,
@@ -25834,7 +25874,7 @@
    "detected_before_close": true,
    "lead_time_days": 21,
    "award_lead_time_days": null,
-   "last_seen_at": "2026-09-10T19:06:40.899884+00:00"
+   "last_seen_at": "2026-09-10T22:32:02.554552+00:00"
   },
   "guyana-dcb145a47d3f": {
    "schema_version": 1,
@@ -26468,7 +26508,7 @@
    "detected_before_close": true,
    "lead_time_days": 32,
    "award_lead_time_days": null,
-   "last_seen_at": "2026-09-10T19:06:40.899884+00:00"
+   "last_seen_at": "2026-09-10T22:32:02.554552+00:00"
   },
   "guyana-f4a4c16c06b9": {
    "schema_version": 1,

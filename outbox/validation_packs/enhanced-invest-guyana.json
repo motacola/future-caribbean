@@ -10,7 +10,7 @@
   "sector_hypotheses": [
     {
       "sector": "Oil & gas and offshore support services",
-      "basis": "Google News — Guyana: UKEF willing to support Guyanese private sector importation of non-oil sector products - Demerara Waves Online News- Guyana",
+      "basis": "Google News — Guyana: UKEF willing to support Guyanese private sector importation of non-oil sector products - demerarawaves.com",
       "status": "corroborated",
       "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQbkdiUEVuRjBXbC1pc1VsbjdPeWh5NTl0RnJCX1VIc1ZXOTVqaTdzdFlzbmQ1UFhmVEVycS0tQ2RfcnhYRkJtQWdhNFJ4U2N1M2FURkFEMTJ5ejdKRlpyRElwQzlWc05JQTBzYjlITG50ZV9DN1JkNVdBc1hVZmd1OVJmUS1qMzRpXzNuaklYTFZGNUlkUE1GRHhUWk9oNXVqaTNpeldGT3NVRjh2YnJRYms2QjdKX2pOczhJVnMzNE50Tmc?oc=5"
     },
@@ -46,6 +46,13 @@
       "closing_date": "2026-09-22"
     },
     {
+      "title": "Development and Finalisation of the National Water Policy and Action Plan",
+      "source": "Guyana eProcure (NPTA)",
+      "url": "https://eprocure.gov.gy/",
+      "match": "country",
+      "closing_date": "2026-09-29"
+    },
+    {
       "title": "Supply and Delivery of Pole Mounted Transformers for Lethem Power Co. Inc.",
       "source": "Guyana eProcure (NPTA)",
       "url": "https://eprocure.gov.gy/",
@@ -68,13 +75,6 @@
     },
     {
       "title": "Supply and Installation of Transmission Mains at Bath, West Coast Berbice, Region # 5 (Lot 1-4):\nLot 1 – Supply and Installation of Transmission Mains from Jacoba to Union\nLot 2 – Supply and Installation of Transmission Mains from Union to St. John \nLot 3 – Supply and Installation of Transmission Mains from St. John to Bath\nLot 4 – Supply and Installation of Transmission Mains from Bath to No. 7 Village and Experiment Housing Scheme",
-      "source": "Guyana eProcure (NPTA)",
-      "url": "https://eprocure.gov.gy/",
-      "match": "country",
-      "closing_date": "2026-10-06"
-    },
-    {
-      "title": "Supply and Installation of Transmission Mains at Adventure, Region # 6 (Lot 1-4): \nLot 1 – Supply and Installation of Transmission Mains from Tain to Alness\nLot 2 – Supply and Installation of Transmission Mains from Alness to Kilmarnock\nLot 3 – Supply and Installation of Transmission Mains from Kilmarnock to Kiltairn\nLot 4 – Supply and Installation of Transmission Mains from Kiltarin to Village 47",
       "source": "Guyana eProcure (NPTA)",
       "url": "https://eprocure.gov.gy/",
       "match": "country",
@@ -159,9 +159,9 @@
   ],
   "advance_or_reject_recommendation": "advance",
   "recommendation_reason": "Calibrated confidence 100/100 with 3 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.",
-  "last_validated_at": "2026-09-10T19:06:41.666971+00:00",
+  "last_validated_at": "2026-09-10T22:32:03.043706+00:00",
   "coordination_path": null,
-  "evidence_fingerprint": "564d4078c5922519",
+  "evidence_fingerprint": "d1c32b018bc1a049",
   "cycles_since_refresh": 0,
   "evidence_freshness": "refreshing"
 }

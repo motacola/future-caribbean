@@ -1,6 +1,6 @@
 # Dispatch Desk — Cycle 20260910
 
-Generated: 2026-09-10 19:06 UTC
+Generated: 2026-09-10 22:32 UTC
 
 Abeng turns fragmented regional data into decision-ready routes. This is the primary product surface; Telegram/email are delivery channels and the dashboard is the operator/audit view.
 
@@ -19,7 +19,7 @@ Fragmented public data → Agentic signal pipeline → Routed decisions → Feed
 
 ## Regional Read
 
-Capital momentum is strongest in Guyana (+860.3%), followed by Suriname. Separately, St. Vincent and the Grenadines show elevated economic vulnerability — relevant for portfolio monitoring and resilience planning. Development pipeline remains active (CDB active procurement notices: 7) — the bidding window is open for project-based entry. Tourism-related growth signals are visible in Antigua and Barbuda, Barbados, Dominica — demand-side indicators for capacity planning.
+Capital momentum is strongest in Guyana (+860.3%), followed by Suriname. Separately, St. Vincent and the Grenadines show elevated economic vulnerability — relevant for portfolio monitoring and resilience planning. Development pipeline remains active (CDB active procurement notices: 7) — the bidding window is open for project-based entry. Tourism-related growth signals are visible in Barbados, Dominica, Grenada — demand-side indicators for capacity planning.
 
 ## Why This Cycle Matters
 
@@ -149,11 +149,11 @@ Capital momentum is strongest in Guyana (+860.3%), followed by Suriname. Separat
 
 ## Feedback-Adjusted Priority
 
-- Jamaica ccrif payout downranked -12
-- Turks and Caicos Islands ccrif payout downranked -10
-- St. Vincent & the Grenadines ccrif payout downranked -10
-- St. Kitts and Nevis ccrif payout downranked -10
-- Grenada ccrif payout downranked -10
+- Haiti ccrif payout downranked -32
+- Nicaragua ccrif payout downranked -18
+- Barbados ccrif payout downranked -18
+- Suriname enhanced investment downranked -6
+- Barbados enhanced investment downranked -6
 
 ## Supporting Artifacts
 
