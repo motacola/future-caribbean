@@ -1,11 +1,11 @@
 # Opportunity Validation Pack — CARICOM
 
-- Signal: `dev-pipeline-regional` · Dispatch: `DSP-20260910-013`
+- Signal: `dev-pipeline-regional` · Dispatch: `DSP-20260911-013`
 - Confidence: 78/100 (raw 95) · B - cross-source
 - Action readiness: medium (no dated country procurement or news corroboration)
 - Evidence freshness: stale · cycles since refresh: 30
 - Recommendation: **HOLD** — Calibrated confidence 78/100 with 1 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.
-- Last validated: 2026-09-10T22:32:03.043706+00:00
+- Last validated: 2026-09-11T04:31:45.451538+00:00
 
 ## Sector hypotheses
 - None identified this cycle

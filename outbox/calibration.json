@@ -1,6 +1,6 @@
 {
   "committed_at": "2026-08-15",
-  "days_elapsed": 26,
+  "days_elapsed": 27,
   "commitments": [
     {
       "milestone": "Day 30",
@@ -8,8 +8,8 @@
       "min_resolved": 20,
       "max_brier": null,
       "due": false,
-      "resolved_so_far": 919,
-      "brier_so_far": 0.0465,
+      "resolved_so_far": 948,
+      "brier_so_far": 0.0452,
       "status": "pending"
     },
     {
@@ -18,8 +18,8 @@
       "min_resolved": 80,
       "max_brier": 0.22,
       "due": false,
-      "resolved_so_far": 919,
-      "brier_so_far": 0.0465,
+      "resolved_so_far": 948,
+      "brier_so_far": 0.0452,
       "status": "pending"
     },
     {
@@ -28,8 +28,8 @@
       "min_resolved": 150,
       "max_brier": 0.2,
       "due": false,
-      "resolved_so_far": 919,
-      "brier_so_far": 0.0465,
+      "resolved_so_far": 948,
+      "brier_so_far": 0.0452,
       "status": "pending"
     },
     {
@@ -38,16 +38,16 @@
       "min_resolved": 200,
       "max_brier": 0.18,
       "due": false,
-      "resolved_so_far": 919,
-      "brier_so_far": 0.0465,
+      "resolved_so_far": 948,
+      "brier_so_far": 0.0452,
       "status": "pending"
     }
   ],
-  "brier": 0.0465,
-  "brier_naive_baseline": 0.1127,
-  "brier_improvement_over_naive": 0.0662,
-  "log_loss": 0.1985,
-  "calibration_error": 0.2737,
+  "brier": 0.0452,
+  "brier_naive_baseline": 0.1125,
+  "brier_improvement_over_naive": 0.0673,
+  "log_loss": 0.194,
+  "calibration_error": 0.2745,
   "brier_external_only": null,
   "external_resolved_n": 2,
   "chain_intact": true,
@@ -55,37 +55,37 @@
   "bands": [
     {
       "band": "85-100",
-      "resolved": 103,
-      "confirmed": 100,
-      "confirmation_rate": 0.971,
+      "resolved": 106,
+      "confirmed": 103,
+      "confirmation_rate": 0.972,
       "sufficient_sample": true
     },
     {
       "band": "70-84",
-      "resolved": 509,
-      "confirmed": 488,
-      "confirmation_rate": 0.959,
+      "resolved": 525,
+      "confirmed": 504,
+      "confirmation_rate": 0.96,
       "sufficient_sample": true
     },
     {
       "band": "55-69",
-      "resolved": 115,
-      "confirmed": 111,
-      "confirmation_rate": 0.965,
+      "resolved": 118,
+      "confirmed": 114,
+      "confirmation_rate": 0.966,
       "sufficient_sample": true
     },
     {
       "band": "0-54",
-      "resolved": 192,
-      "confirmed": 192,
+      "resolved": 199,
+      "confirmed": 199,
       "confirmation_rate": 1.0,
       "sufficient_sample": true
     }
   ],
-  "total_resolved": 919,
-  "open_claims": 91,
+  "total_resolved": 948,
+  "open_claims": 93,
   "resolved_by": {
-    "internal_persistence": 917,
+    "internal_persistence": 946,
     "external_publisher": 2
   },
   "externally_resolved": 2,
@@ -94,6 +94,6 @@
   "resolution_window_cycles": 3,
   "calibrated": true,
   "method": "Claims are resolved after 3 cycles, preferring outside evidence: an independent publisher covering the same country and topic, then a newer release of the same indicator, and only failing those, whether our own pipeline kept reporting the fact.",
-  "cycle_id": "20260910",
-  "generated_at": "2026-09-10T22:32:03.407516+00:00"
+  "cycle_id": "20260911",
+  "generated_at": "2026-09-11T04:31:45.820047+00:00"
 }

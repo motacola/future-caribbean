@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-10T22:32:03.350542+00:00",
+  "generated_at": "2026-09-11T04:31:45.654032+00:00",
   "feedback_provenance": "simulated",
   "current_boosts": {
     "enhanced_investment": {
@@ -17,13 +17,55 @@
       "Guyana": -4,
       "Suriname": -4
     },
+    "food_security": {
+      "CARICOM": -4
+    },
     "ccrif_payout": {
-      "Haiti": -32,
-      "Barbados": -18,
-      "Nicaragua": -18
+      "Turks and Caicos Islands": -10,
+      "Anguilla": -10,
+      "St. Kitts and Nevis": -10,
+      "Dominica": -10,
+      "St. Vincent & the Grenadines": -10,
+      "Grenada": -10,
+      "Jamaica": -12
     }
   },
   "cycles": [
+    {
+      "cycle_id": "20260911",
+      "responses": {
+        "forwarded": 0,
+        "replied": 0,
+        "opened": 0,
+        "ignored": 0,
+        "decision_changed": 0
+      },
+      "engagement_by_kind": {},
+      "dispatch_count": 97,
+      "countries": [
+        "Haiti",
+        "Barbados",
+        "Nicaragua",
+        "Jamaica",
+        "Guyana",
+        "Suriname",
+        "CARICOM",
+        "Caribwide",
+        "Turks and Caicos Islands",
+        "Anguilla",
+        "St. Kitts and Nevis",
+        "Dominica",
+        "St. Vincent & the Grenadines",
+        "Grenada",
+        "Bahamas, Belize, Grenada",
+        "Eastern Caribbean Currency Union",
+        "St. Vincent and the Grenadines"
+      ],
+      "lead": {
+        "country": "Guyana",
+        "title": "Money is moving into Guyana: up 860.3%, on one official source so far"
+      }
+    },
     {
       "cycle_id": "20260910",
       "responses": {
@@ -265,40 +307,6 @@
       "lead": {
         "country": "Guyana",
         "title": "Money is moving into Guyana: up 860.3%, on one official source so far"
-      }
-    },
-    {
-      "cycle_id": "20260903",
-      "responses": {
-        "forwarded": 0,
-        "replied": 0,
-        "opened": 0,
-        "ignored": 0,
-        "decision_changed": 0
-      },
-      "engagement_by_kind": {},
-      "dispatch_count": 92,
-      "countries": [
-        "Haiti",
-        "Barbados",
-        "Jamaica",
-        "Nicaragua",
-        "Guyana",
-        "Suriname",
-        "Caribwide",
-        "St. Kitts and Nevis",
-        "Dominica",
-        "St. Vincent & the Grenadines",
-        "Grenada",
-        "Anguilla",
-        "Turks and Caicos Islands",
-        "CARICOM",
-        "Eastern Caribbean Currency Union",
-        "St. Vincent and the Grenadines"
-      ],
-      "lead": {
-        "country": "Guyana",
-        "title": "Money is moving into Guyana — up 860.3%, on one official source so far"
       }
     }
   ]

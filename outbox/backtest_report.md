@@ -1,37 +1,37 @@
 # Abeng — Backtest Report
 
-**Generated:** 2026-09-10T22:32:03.434013+00:00
+**Generated:** 2026-09-11T04:31:45.865468+00:00
 **Cycles analyzed:** 8
-**Total dispatches:** 746
+**Total dispatches:** 751
 **Actionable responses:** 2
 **Overall response rate:** 0.3%
 **Avg confidence:** 79.0/100
 
 ## Summary
 
-- **Total validation packs:** 62
+- **Total validation packs:** 63
 - **Avg confidence:** 79.0/100
 - **Response rate:** 0.3%
 
 ## Recommendation Distribution
 
 - **Advance:** 3 (4.8%)
-- **Hold:** 59 (95.2%)
+- **Hold:** 60 (95.2%)
 - **Reject:** 0 (0.0%)
 
 ## Confidence Calibration
 
-- **80-100:** 7 packs (11.3%)
-- **60-79:** 55 packs (88.7%)
+- **80-100:** 7 packs (11.1%)
+- **60-79:** 56 packs (88.9%)
 - **40-59:** 0 packs (0.0%)
 - **0-39:** 0 packs (0.0%)
 
 ## Evidence Category Coverage
 
-- **Sector Hypotheses:** 9 packs (14.5%)
-- **Supporting Projects:** 5 packs (8.1%)
-- **Procurement Matches:** 352 packs (567.7%)
-- **Operators:** 16 packs (25.8%)
+- **Sector Hypotheses:** 9 packs (14.3%)
+- **Supporting Projects:** 5 packs (7.9%)
+- **Procurement Matches:** 358 packs (568.3%)
+- **Operators:** 16 packs (25.4%)
 
 ## Signal Type Performance
 
@@ -40,13 +40,14 @@
 - **enhanced:** Advance 1, Hold 5, Reject 0 (n=6)
 - **food:** Advance 0, Hold 1, Reject 0 (n=1)
 - **invest:** Advance 1, Hold 1, Reject 0 (n=2)
-- **regional:** Advance 0, Hold 47, Reject 0 (n=47)
+- **regional:** Advance 0, Hold 48, Reject 0 (n=48)
 - **supply:** Advance 1, Hold 2, Reject 0 (n=3)
 
 ## Cycle Accuracy
 
 | Cycle | Dispatches | Actionable | Response Rate |
 |-------|------------|------------|---------------|
+| 20260911 | 97 | 0 | 0.0% |
 | 20260910 | 97 | 2 | 2.1% |
 | 20260909 | 97 | 0 | 0.0% |
 | 20260908 | 92 | 0 | 0.0% |
@@ -54,7 +55,6 @@
 | 20260906 | 92 | 0 | 0.0% |
 | 20260905 | 92 | 0 | 0.0% |
 | 20260904 | 92 | 0 | 0.0% |
-| 20260903 | 92 | 0 | 0.0% |
 
 ## Feedback Analysis
 
