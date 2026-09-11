@@ -1,6 +1,6 @@
 # Caribbean Market Pulse — Investor Brief
 
-Generated: 2026-09-11 12:47 UTC
+Generated: 2026-09-11 19:08 UTC
 
 Audience: investors, founders, diaspora capital networks.
 Decision supported: where to investigate deal flow, procurement activity, or market momentum.
@@ -39,5 +39,5 @@ Multi-source investment signals validated across 3 countries. All carry A-grade 
 
 Active procurement:
 - Enhancing the Quality of the Belize National Quality Infrastructure
+- Solar Photo-Voltaic and Battery Energy Storage System Project
 - Call For Application – Scholarship Opportunity: International Master In Public Procurement Management at The University of Rome Tor Vergata (2026/2027 Academic Year)
-- Supply Installation, Testing and Commissioning of Mechanical Equipment, Fire Pump System and Information and Communications Technology Systems

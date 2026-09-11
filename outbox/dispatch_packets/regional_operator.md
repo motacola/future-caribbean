@@ -2,7 +2,7 @@
 
 **Decision job:** Operational readiness and bid pipeline assessment
 **Delivery channel:** Telegram
-**Generated:** Sep 11, 2026 at 12:48 UTC
+**Generated:** Sep 11, 2026 at 19:08 UTC
 **Dispatches in this packet:** 3
 
 ---
@@ -15,7 +15,7 @@
 **Channel:** Telegram | **Window:** 21 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** CDB active procurement notices: 7;   • Enhancing the Quality of the Belize National Quality Infrastructure;   • Call For Application – Scholarship Opportunity: International Master In Public P; Maritime conditions stable — no high-wind or marine alerts
+**Evidence:** CDB active procurement notices: 7;   • Enhancing the Quality of the Belize National Quality Infrastructure;   • Solar Photo-Voltaic and Battery Energy Storage System Project; Maritime conditions stable — no high-wind or marine alerts
 **Detail:** signal detected
 **Grade:** A - multi-source
 
@@ -29,7 +29,7 @@
 **Channel:** Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** replied
 
-**Evidence:** CDB active procurement notices: 7; • Enhancing the Quality of the Belize National Quality Infrastructure; • Call For Application – Scholarship Opportunity: International Master In Public Procurement Management at The University of Rome Tor Vergata (2026/2027 Academic Year); • Supply Installation, Testing and Commissioning of Mechanical Equipment, Fire Pump System and Information and Communications Technology Systems
+**Evidence:** CDB active procurement notices: 7; • Enhancing the Quality of the Belize National Quality Infrastructure; • Solar Photo-Voltaic and Battery Energy Storage System Project; • Call For Application – Scholarship Opportunity: International Master In Public Procurement Management at The University of Rome Tor Vergata (2026/2027 Academic Year)
 **Detail:** CDB active procurement notices: 7
 **Grade:** B - cross-source
 

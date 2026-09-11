@@ -1,8 +1,8 @@
 # Regional Thesis — Abeng
 
-Generated: 2026-09-11 12:48 UTC
+Generated: 2026-09-11 19:08 UTC
 
-Capital momentum is strongest in Guyana (+860.3%), followed by Suriname.  Separately, St. Vincent and the Grenadines show elevated economic vulnerability — relevant for portfolio monitoring and resilience planning.  Development pipeline remains active (CDB active procurement notices: 7) — the bidding window is open for project-based entry. Tourism-related growth signals are visible in Antigua and Barbuda, Barbados, Dominica — demand-side indicators for capacity planning.
+Capital momentum is strongest in Guyana (+860.3%), followed by Suriname.  Separately, St. Vincent and the Grenadines show elevated economic vulnerability — relevant for portfolio monitoring and resilience planning.  Development pipeline remains active (CDB active procurement notices: 7) — the bidding window is open for project-based entry. Tourism-related growth signals are visible in Barbados, Antigua and Barbuda, Dominica — demand-side indicators for capacity planning.
 
 **Why now:** Atlantic Hurricane Season active
 
