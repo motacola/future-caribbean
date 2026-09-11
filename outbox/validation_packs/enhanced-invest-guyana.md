@@ -1,11 +1,11 @@
 # Opportunity Validation Pack — Guyana
 
-- Signal: `enhanced-invest-guyana` · Dispatch: `DSP-20260911-019`
+- Signal: `enhanced-invest-guyana` · Dispatch: `DSP-20260911-021`
 - Confidence: 100/100 (raw 111) · C - single-source
 - Action readiness: high
 - Evidence freshness: refreshing · cycles since refresh: 0
 - Recommendation: **ADVANCE** — Calibrated confidence 100/100 with 3 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.
-- Last validated: 2026-09-11T19:08:22.934622+00:00
+- Last validated: 2026-09-11T22:31:54.379264+00:00
 
 ## Sector hypotheses
 - Oil & gas and offshore support services [corroborated] — _Google News — Guyana: UKEF willing to support Guyanese private sector importation of non-oil sector products - Demerara Waves Online News- Guyana_
@@ -25,14 +25,10 @@
 ## Procurement matches
 - [Rehabilitation works for the Bartica 5 Miles Raw Water Intake Structure,  5 Miles, Bartica, Region No. 7](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
 - [Development and Finalisation of the National Water Policy and Action Plan](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
-- [Supply and Delivery of Pole Mounted Transformers for Lethem Power Co. Inc.](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
-- [Rehabilitation and Upgrade of Mahaica Bridge to Abary Bridge Road Corridor](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
-- [Supply and Installation of Transmission Mains at Leguan, Region # 3](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
-- [Supply and Installation of Transmission Mains at Bath, West Coast Berbice, Region # 5 (Lot 1-4):
-Lot 1 – Supply and Installation of Transmission Mains from Jacoba to Union
-Lot 2 – Supply and Installation of Transmission Mains from Union to St. John 
-Lot 3 – Supply and Installation of Transmission Mains from St. John to Bath
-Lot 4 – Supply and Installation of Transmission Mains from Bath to No. 7 Village and Experiment Housing Scheme](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
+- [Installation of Kettle Filters at Better Hope Water Treatment Plant, ECD, Region #4](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
+- [Design, Supply, Installation and Testing of Air Conditioning Units and related Electrical Works and Networking Cables for GWI’s Corporate Complex](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
+- [Drilling of Potable Water Well at Long Creek, Linden Soesdyke Highway, Region #4](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
+- [Drilling of Potable Water Well at Lusignan, East Coast Demerara, Region #4](https://eprocure.gov.gy/) — Guyana eProcure (NPTA) (country)
 
 ## Official country data
 - [Guyana Balance of Payments (2000 – 2025)](https://statistics.caricom.org/country_data/guyana-balance-of-payments-2000-2024/) — CARICOM Statistics

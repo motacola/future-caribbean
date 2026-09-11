@@ -2,26 +2,26 @@
 
 **Decision job:** Capacity planning and demand trajectory assessment
 **Delivery channel:** Telegram
-**Generated:** Jun 19, 2026 at 12:18 UTC
+**Generated:** Sep 11, 2026 at 22:31 UTC
 **Dispatches in this packet:** 1
 
 ---
 
 ## Dispatches (1)
 
-### 1. Guyana: GDP growth signals expanding tourist economy
+### 1. Barbados / Windwards: signal detected
 
-**ID:** `DSP-20260619-013` | **Country:** Guyana | **Confidence:** 🟢 Monitor | 51/100 | C - single-source
-**Channel:** Telegram | **Window:** 30 days | **Freshness:** sustained
+**ID:** `DSP-20260911-002` | **Country:** Barbados / Windwards | **Confidence:** 🟡 Validation | 86/100 | B - cross-source
+**Channel:** Telegram | **Window:** 48 hours | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** Guyana: GDP current USD moved up 45.8% from 2023 to 2024.
-**Detail:** 45.8% change
-**Grade:** C - single-source
+**Evidence:** Buoy Eastern Caribbean (E of Barbados): 1008 hPa, wind 23 kts
+**Detail:** signal detected
+**Grade:** B - cross-source
 
-**Recommended action:** Assess Guyana demand trajectory. 45.8% change — adjust capacity plans.
-**Decision to influence:** Tourism capacity planning and timing of marketing or expansion
-**Routing rationale:** GDP growth in tourism-relevant economies signals demand trajectory — plan capacity accordingly
+**Recommended action:** Assess Barbados / Windwards demand trajectory. signal detected — adjust capacity plans.
+**Decision to influence:** Immediate operational readiness
+**Routing rationale:** Cyclone risk directly impacts tourism bookings and logistics routing — advance warning for contingency
 
 ---
 

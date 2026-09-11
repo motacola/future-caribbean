@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-09-11T19:08:22.284173+00:00",
+ "updated_at": "2026-09-11T22:31:53.686958+00:00",
  "tenders": {
   "bahamas-09a150a1385c": {
    "schema_version": 1,
@@ -19929,6 +19929,46 @@
    "award_lead_time_days": null,
    "last_seen_at": "2026-07-24T00:00:00+00:00"
   },
+  "guyana-221b142c33cb": {
+   "schema_version": 1,
+   "tender_id": "guyana-221b142c33cb",
+   "country": "Guyana",
+   "buyer": "34-Ministry of Public Utilities and Aviation",
+   "title": "Design, Supply, Installation and Testing of Air Conditioning Units and related Electrical Works and Networking Cables for GWI’s Corporate Complex",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00442"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-09-04",
+   "original_closing_date": "2026-09-29",
+   "current_closing_date": "2026-09-29",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00442",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-09-29",
+     "published": "2026-09-04",
+     "observed_at": "2026-09-11T22:31:53.686958+00:00"
+    }
+   ],
+   "first_detected_at": "2026-09-11T22:31:53.686958+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 18,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-09-11T22:31:53.686958+00:00"
+  },
   "guyana-222de02f9d42": {
    "schema_version": 1,
    "tender_id": "guyana-222de02f9d42",
@@ -19978,6 +20018,86 @@
    "award_lead_time_days": null,
    "last_seen_at": "2026-07-24T00:00:00+00:00"
   },
+  "guyana-234dd4a8fe0f": {
+   "schema_version": 1,
+   "tender_id": "guyana-234dd4a8fe0f",
+   "country": "Guyana",
+   "buyer": "34-Ministry of Public Utilities and Aviation",
+   "title": "GPL-PD-026-2026 Supply and Delivery of Insulators.",
+   "sector": "Goods",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00446"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-09-11",
+   "original_closing_date": "2026-10-06",
+   "current_closing_date": "2026-10-06",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00446",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-10-06",
+     "published": "2026-09-11",
+     "observed_at": "2026-09-11T22:31:53.686958+00:00"
+    }
+   ],
+   "first_detected_at": "2026-09-11T22:31:53.686958+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 25,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-09-11T22:31:53.686958+00:00"
+  },
+  "guyana-23cf97c3fbe7": {
+   "schema_version": 1,
+   "tender_id": "guyana-23cf97c3fbe7",
+   "country": "Guyana",
+   "buyer": "34-Ministry of Public Utilities and Aviation",
+   "title": "Drilling of Potable Water Well at Long Creek, Linden Soesdyke Highway, Region #4",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00443"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-09-04",
+   "original_closing_date": "2026-09-29",
+   "current_closing_date": "2026-09-29",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00443",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-09-29",
+     "published": "2026-09-04",
+     "observed_at": "2026-09-11T22:31:53.686958+00:00"
+    }
+   ],
+   "first_detected_at": "2026-09-11T22:31:53.686958+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 18,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-09-11T22:31:53.686958+00:00"
+  },
   "guyana-26e97319bfab": {
    "schema_version": 1,
    "tender_id": "guyana-26e97319bfab",
@@ -20015,6 +20135,46 @@
    "lead_time_days": -772,
    "award_lead_time_days": null,
    "last_seen_at": "2026-08-20T00:00:00+00:00"
+  },
+  "guyana-28b0dc4afe28": {
+   "schema_version": 1,
+   "tender_id": "guyana-28b0dc4afe28",
+   "country": "Guyana",
+   "buyer": "45-Ministry of Housing",
+   "title": "\tDrilling of Potable Water Wells at Amelia’s Ward, Phase 4, Region #10",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00438"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-09-11",
+   "original_closing_date": "2026-10-06",
+   "current_closing_date": "2026-10-06",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00438",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-10-06",
+     "published": "2026-09-11",
+     "observed_at": "2026-09-11T22:31:53.686958+00:00"
+    }
+   ],
+   "first_detected_at": "2026-09-11T22:31:53.686958+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 25,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-09-11T22:31:53.686958+00:00"
   },
   "guyana-28e8310e5645": {
    "schema_version": 1,
@@ -21061,6 +21221,46 @@
    "award_lead_time_days": null,
    "last_seen_at": "2026-08-20T00:00:00+00:00"
   },
+  "guyana-43d73fa9a83e": {
+   "schema_version": 1,
+   "tender_id": "guyana-43d73fa9a83e",
+   "country": "Guyana",
+   "buyer": "45-Ministry of Housing",
+   "title": "\tDrilling of Potable Water Wells at Cummings Lodge Industrial Zone, Lusignan, Non Pareil, Phase 1, Success, Phase 2, Diamond and Ogle Highway, Region #4 - Lots 1-6",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00436"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-09-11",
+   "original_closing_date": "2026-10-06",
+   "current_closing_date": "2026-10-06",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00436",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-10-06",
+     "published": "2026-09-11",
+     "observed_at": "2026-09-11T22:31:53.686958+00:00"
+    }
+   ],
+   "first_detected_at": "2026-09-11T22:31:53.686958+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 25,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-09-11T22:31:53.686958+00:00"
+  },
   "guyana-45b7496f1396": {
    "schema_version": 1,
    "tender_id": "guyana-45b7496f1396",
@@ -21275,6 +21475,46 @@
    "lead_time_days": 11,
    "award_lead_time_days": null,
    "last_seen_at": "2026-08-30T22:42:12.278319+00:00"
+  },
+  "guyana-48a2398cf806": {
+   "schema_version": 1,
+   "tender_id": "guyana-48a2398cf806",
+   "country": "Guyana",
+   "buyer": "34-Ministry of Public Utilities and Aviation",
+   "title": "GPL-PD-028-2026 Supply and Delivery of Transmission & Distribution Materials- Good \nHope.",
+   "sector": "Goods",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00447"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-09-11",
+   "original_closing_date": "2026-10-06",
+   "current_closing_date": "2026-10-06",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00447",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-10-06",
+     "published": "2026-09-11",
+     "observed_at": "2026-09-11T22:31:53.686958+00:00"
+    }
+   ],
+   "first_detected_at": "2026-09-11T22:31:53.686958+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 25,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-09-11T22:31:53.686958+00:00"
   },
   "guyana-4b27e2ad0628": {
    "schema_version": 1,
@@ -21528,6 +21768,46 @@
    "award_lead_time_days": null,
    "last_seen_at": "2026-07-24T00:00:00+00:00"
   },
+  "guyana-58b2e7817fc9": {
+   "schema_version": 1,
+   "tender_id": "guyana-58b2e7817fc9",
+   "country": "Guyana",
+   "buyer": "45-Ministry of Housing",
+   "title": "1. Drilling of Potable Water Wells at Meten-Meer-Zorg, Phase 2, Wales, Phases 1 & 2  \nand Stewartville, Region #3 - Lots 1-3 \n2. Drilling of Potable Water Wells at Cummings Lodge Industrial Zone, Lusignan,  Non \nPareil, Phase 1, Success, Phase 2, Diamond and Ogle Highway, Region #4 - Lots 1-6 \n3. Drilling of Potable Water Wells at Palmyra, No. 75 Village, Moleson Creek, Phase \nand  Providence Region #6 - Lots 1-4 \n4. Drilling of Potable Water Wells at Amelia’s Ward, Phase 4, Region #10",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00439"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-09-11",
+   "original_closing_date": "2026-10-06",
+   "current_closing_date": "2026-10-06",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00439",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-10-06",
+     "published": "2026-09-11",
+     "observed_at": "2026-09-11T22:31:53.686958+00:00"
+    }
+   ],
+   "first_detected_at": "2026-09-11T22:31:53.686958+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 25,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-09-11T22:31:53.686958+00:00"
+  },
   "guyana-5a4deb8f2cc7": {
    "schema_version": 1,
    "tender_id": "guyana-5a4deb8f2cc7",
@@ -21629,7 +21909,7 @@
    "detected_before_close": true,
    "lead_time_days": 32,
    "award_lead_time_days": null,
-   "last_seen_at": "2026-09-11T19:08:22.284173+00:00"
+   "last_seen_at": "2026-09-11T22:31:53.686958+00:00"
   },
   "guyana-635775a7719f": {
    "schema_version": 1,
@@ -21687,7 +21967,7 @@
    "detected_before_close": true,
    "lead_time_days": 22,
    "award_lead_time_days": null,
-   "last_seen_at": "2026-09-11T19:08:22.284173+00:00"
+   "last_seen_at": "2026-09-11T22:31:53.686958+00:00"
   },
   "guyana-67988c49dffa": {
    "schema_version": 1,
@@ -21865,6 +22145,86 @@
    "lead_time_days": 47,
    "award_lead_time_days": null,
    "last_seen_at": "2026-07-24T00:00:00+00:00"
+  },
+  "guyana-6c886a989078": {
+   "schema_version": 1,
+   "tender_id": "guyana-6c886a989078",
+   "country": "Guyana",
+   "buyer": "34-Ministry of Public Utilities and Aviation",
+   "title": "GPL-PD-030-2026 Electrification Project- Linden Soesdyke Highway-R2 Lots 1-2.",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00441"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-09-11",
+   "original_closing_date": "2026-10-08",
+   "current_closing_date": "2026-10-08",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00441",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Opening",
+     "closing_date": "2026-10-08",
+     "published": "2026-09-11",
+     "observed_at": "2026-09-11T22:31:53.686958+00:00"
+    }
+   ],
+   "first_detected_at": "2026-09-11T22:31:53.686958+00:00",
+   "lifecycle_state": "closed",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 27,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-09-11T22:31:53.686958+00:00"
+  },
+  "guyana-6d3ef70d4e76": {
+   "schema_version": 1,
+   "tender_id": "guyana-6d3ef70d4e76",
+   "country": "Guyana",
+   "buyer": "34-Ministry of Public Utilities and Aviation",
+   "title": "Installation of Kettle Filters at Better Hope Water Treatment Plant, ECD, Region #4",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00440"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-09-04",
+   "original_closing_date": "2026-09-29",
+   "current_closing_date": "2026-09-29",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00440",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-09-29",
+     "published": "2026-09-04",
+     "observed_at": "2026-09-11T22:31:53.686958+00:00"
+    }
+   ],
+   "first_detected_at": "2026-09-11T22:31:53.686958+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 18,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-09-11T22:31:53.686958+00:00"
   },
   "guyana-6e4e33b1c253": {
    "schema_version": 1,
@@ -22322,7 +22682,7 @@
    "detected_before_close": true,
    "lead_time_days": 39,
    "award_lead_time_days": null,
-   "last_seen_at": "2026-09-11T19:08:22.284173+00:00"
+   "last_seen_at": "2026-09-11T22:31:53.686958+00:00"
   },
   "guyana-7b390e26a29b": {
    "schema_version": 1,
@@ -23599,7 +23959,7 @@
    "detected_before_close": true,
    "lead_time_days": 32,
    "award_lead_time_days": null,
-   "last_seen_at": "2026-09-11T19:08:22.284173+00:00"
+   "last_seen_at": "2026-09-11T22:31:53.686958+00:00"
   },
   "guyana-960671d6886a": {
    "schema_version": 1,
@@ -23725,6 +24085,46 @@
    "lead_time_days": -729,
    "award_lead_time_days": null,
    "last_seen_at": "2026-08-20T00:00:00+00:00"
+  },
+  "guyana-9a61f8430715": {
+   "schema_version": 1,
+   "tender_id": "guyana-9a61f8430715",
+   "country": "Guyana",
+   "buyer": "34-Ministry of Public Utilities and Aviation",
+   "title": "Drilling of Potable Water Well at Lusignan, East Coast Demerara, Region #4",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00444"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-09-04",
+   "original_closing_date": "2026-09-29",
+   "current_closing_date": "2026-09-29",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00444",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-09-29",
+     "published": "2026-09-04",
+     "observed_at": "2026-09-11T22:31:53.686958+00:00"
+    }
+   ],
+   "first_detected_at": "2026-09-11T22:31:53.686958+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 18,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-09-11T22:31:53.686958+00:00"
   },
   "guyana-9e7e739c5c3d": {
    "schema_version": 1,
@@ -24126,7 +24526,7 @@
    "detected_before_close": true,
    "lead_time_days": 32,
    "award_lead_time_days": null,
-   "last_seen_at": "2026-09-11T19:08:22.284173+00:00"
+   "last_seen_at": "2026-09-11T22:31:53.686958+00:00"
   },
   "guyana-ae39624ca7c0": {
    "schema_version": 1,
@@ -24540,6 +24940,46 @@
    "award_lead_time_days": null,
    "last_seen_at": "2026-07-24T00:00:00+00:00"
   },
+  "guyana-b37c4b2fe12f": {
+   "schema_version": 1,
+   "tender_id": "guyana-b37c4b2fe12f",
+   "country": "Guyana",
+   "buyer": "34-Ministry of Public Utilities and Aviation",
+   "title": "Drilling of Potable Water Well at Shirley Field Ridley Square, Georgetown, Region #4",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00445"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-09-04",
+   "original_closing_date": "2026-09-29",
+   "current_closing_date": "2026-09-29",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00445",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-09-29",
+     "published": "2026-09-04",
+     "observed_at": "2026-09-11T22:31:53.686958+00:00"
+    }
+   ],
+   "first_detected_at": "2026-09-11T22:31:53.686958+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 18,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-09-11T22:31:53.686958+00:00"
+  },
   "guyana-b43045d79ccf": {
    "schema_version": 1,
    "tender_id": "guyana-b43045d79ccf",
@@ -24913,7 +25353,7 @@
    "detected_before_close": true,
    "lead_time_days": 19,
    "award_lead_time_days": null,
-   "last_seen_at": "2026-09-11T19:08:22.284173+00:00"
+   "last_seen_at": "2026-09-11T22:31:53.686958+00:00"
   },
   "guyana-c18a827b84ea": {
    "schema_version": 1,
@@ -25166,7 +25606,7 @@
    "detected_before_close": true,
    "lead_time_days": 32,
    "award_lead_time_days": null,
-   "last_seen_at": "2026-09-11T19:08:22.284173+00:00"
+   "last_seen_at": "2026-09-11T22:31:53.686958+00:00"
   },
   "guyana-c808e0592ec1": {
    "schema_version": 1,
@@ -25475,7 +25915,7 @@
    "detected_before_close": true,
    "lead_time_days": 32,
    "award_lead_time_days": null,
-   "last_seen_at": "2026-09-11T19:08:22.284173+00:00"
+   "last_seen_at": "2026-09-11T22:31:53.686958+00:00"
   },
   "guyana-ca0e33fe7cf3": {
    "schema_version": 1,
@@ -25554,6 +25994,46 @@
    "lead_time_days": -729,
    "award_lead_time_days": null,
    "last_seen_at": "2026-08-20T00:00:00+00:00"
+  },
+  "guyana-ced4230d159d": {
+   "schema_version": 1,
+   "tender_id": "guyana-ced4230d159d",
+   "country": "Guyana",
+   "buyer": "45-Ministry of Housing",
+   "title": "\tDrilling of Potable Water Wells at Meten-Meer-Zorg, Phase 2, Wales, Phases 1 & 2 and Stewartville, Region #3 - Lots 1-3",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00435"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-09-11",
+   "original_closing_date": "2026-10-06",
+   "current_closing_date": "2026-10-06",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00435",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-10-06",
+     "published": "2026-09-11",
+     "observed_at": "2026-09-11T22:31:53.686958+00:00"
+    }
+   ],
+   "first_detected_at": "2026-09-11T22:31:53.686958+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 25,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-09-11T22:31:53.686958+00:00"
   },
   "guyana-cf0b9fb5d97d": {
    "schema_version": 1,
@@ -25986,7 +26466,7 @@
    "detected_before_close": true,
    "lead_time_days": 21,
    "award_lead_time_days": null,
-   "last_seen_at": "2026-09-11T19:08:22.284173+00:00"
+   "last_seen_at": "2026-09-11T22:31:53.686958+00:00"
   },
   "guyana-dcb145a47d3f": {
    "schema_version": 1,
@@ -26629,7 +27109,7 @@
    "detected_before_close": true,
    "lead_time_days": 32,
    "award_lead_time_days": null,
-   "last_seen_at": "2026-09-11T19:08:22.284173+00:00"
+   "last_seen_at": "2026-09-11T22:31:53.686958+00:00"
   },
   "guyana-f4a4c16c06b9": {
    "schema_version": 1,
@@ -27171,6 +27651,46 @@
    "lead_time_days": 14,
    "award_lead_time_days": null,
    "last_seen_at": "2026-06-25T00:00:00+00:00"
+  },
+  "guyana-fefef5d2fec4": {
+   "schema_version": 1,
+   "tender_id": "guyana-fefef5d2fec4",
+   "country": "Guyana",
+   "buyer": "45-Ministry of Housing",
+   "title": "\tDrilling of Potable Water Wells at Palmyra, No. 75 Village, Moleson Creek, Phase and Providence Region #6 - Lots 1-4",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00437"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-09-11",
+   "original_closing_date": "2026-10-06",
+   "current_closing_date": "2026-10-06",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00437",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-10-06",
+     "published": "2026-09-11",
+     "observed_at": "2026-09-11T22:31:53.686958+00:00"
+    }
+   ],
+   "first_detected_at": "2026-09-11T22:31:53.686958+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 25,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-09-11T22:31:53.686958+00:00"
   },
   "haiti-0235f6dd09ed": {
    "schema_version": 1,

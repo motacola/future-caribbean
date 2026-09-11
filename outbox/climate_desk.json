@@ -2,60 +2,34 @@
   "instance": "climate",
   "instance_label": "Climate & Catastrophe Risk",
   "cycle_id": "20260911",
-  "generated_at": "2026-09-11T19:08:23.357468+00:00",
+  "generated_at": "2026-09-11T22:31:54.805349+00:00",
   "clusters": [
     {
-      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.3",
-      "country_cluster": "San Juan and Vicinity",
-      "signal_kind": "hazard_alert",
-      "title": "San Juan and Vicinity: Extreme Heat Warning in effect (Severe)",
-      "evidence": "NOAA NWS: Extreme Heat Warning issued September 11 at 10:13AM AST until September 11 at 5:00PM AST by NWS San Juan PR",
-      "evidence_grade": "A - official alert",
-      "confidence_score": 95,
-      "freshness": "new",
-      "decision": "Hazard response and exposure assessment",
-      "risk_flags": [
-        "Severe Extreme Heat Warning active in San Juan and Vicinity"
-      ],
-      "personas": [
-        {
-          "persona": "Resilience Planner",
-          "channel": "Telegram/SMS alert",
-          "action": "Active hazard alert \u2014 Extreme Heat Warning \u2014 Severe (San Juan and Vicinity). Pre-position resources and confirm evacuation/shelter readiness in the affected area now."
-        },
-        {
-          "persona": "Insurer / Reinsurer",
-          "channel": "Email + alert",
-          "action": "Exposure check \u2014 Extreme Heat Warning \u2014 Severe (San Juan and Vicinity). Flag policies in the affected zone and prepare parametric-trigger assessment."
-        }
-      ]
-    },
-    {
-      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.3",
-      "country_cluster": "Culebra",
-      "signal_kind": "hazard_alert",
-      "title": "Culebra: Heat Advisory in effect (Moderate)",
-      "evidence": "NOAA NWS: Heat Advisory issued September 11 at 10:13AM AST until September 11 at 5:00PM AST by NWS San Juan PR",
-      "evidence_grade": "B - official alert",
+      "cluster_id": "CLIM-marine-1622",
+      "country_cluster": "Caribbean marine zones",
+      "signal_kind": "maritime_hazard",
+      "title": "Marine hazard: Pressure dropping at Western Caribbean (Yucatan Basin): -3.1 hPa in ~2",
+      "evidence": "NDBC buoy network: Pressure dropping at Western Caribbean (Yucatan Basin): -3.1 hPa in ~2 readings",
+      "evidence_grade": "B - sensor",
       "confidence_score": 80,
       "freshness": "new",
-      "decision": "Hazard response and exposure assessment",
+      "decision": "Marine operations and coastal risk",
       "risk_flags": [],
       "personas": [
         {
-          "persona": "Resilience Planner",
+          "persona": "Operations/Resilience",
           "channel": "Telegram/SMS alert",
-          "action": "Active hazard alert \u2014 Heat Advisory \u2014 Moderate (Culebra). Pre-position resources and confirm evacuation/shelter readiness in the affected area now."
+          "action": "Marine hazard \u2014 Pressure dropping at Western Caribbean (Yucatan Basin): -3.1 hPa in ~2 readings. Advise vessels and coastal operations; delay exposed activity until conditions ease."
         },
         {
-          "persona": "Insurer / Reinsurer",
-          "channel": "Email + alert",
-          "action": "Exposure check \u2014 Heat Advisory \u2014 Moderate (Culebra). Flag policies in the affected zone and prepare parametric-trigger assessment."
+          "persona": "Resilience Planner",
+          "channel": "Telegram/SMS alert",
+          "action": "Marine conditions deteriorating \u2014 Pressure dropping at Western Caribbean (Yucatan Basin): -3.1 hPa in ~2 readings. Monitor for escalation toward small-craft / coastal-flood thresholds."
         }
       ]
     }
   ],
-  "dispatch_count": 4,
+  "dispatch_count": 2,
   "sources": [
     "NOAA NWS",
     "NDBC buoys",

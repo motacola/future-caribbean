@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-11T19:08:22.852400+00:00",
+  "generated_at": "2026-09-11T22:31:54.296565+00:00",
   "engine": "deterministic",
   "registry_status": "pilot",
   "count": 28,
@@ -13,7 +13,7 @@
       "title": "Regional coordination path for Bahamas, Belize, Grenada: signal detected",
       "status": "candidate",
       "trigger_signal_id": "supply-chain-bahamas-belize-grenada",
-      "trigger_dispatch_id": "DSP-20260911-028",
+      "trigger_dispatch_id": "DSP-20260911-030",
       "signal_kind": "supply_chain_signal",
       "demand_node": {
         "country": "Bahamas, Belize, Grenada",
@@ -165,7 +165,7 @@
       "title": "Regional coordination path for Barbados: +34.8% FDI momentum validated — cross-reference before deploying",
       "status": "candidate",
       "trigger_signal_id": "enhanced-invest-barbados",
-      "trigger_dispatch_id": "DSP-20260911-025",
+      "trigger_dispatch_id": "DSP-20260911-027",
       "signal_kind": "enhanced_investment",
       "demand_node": {
         "country": "Barbados",
@@ -332,7 +332,7 @@
       "title": "Regional coordination path for Barbados: FDI trending at +34.8% — screening trigger active",
       "status": "candidate",
       "trigger_signal_id": "invest-barbados",
-      "trigger_dispatch_id": "DSP-20260911-007",
+      "trigger_dispatch_id": "DSP-20260911-009",
       "signal_kind": "investment_signal",
       "demand_node": {
         "country": "Barbados",
@@ -470,7 +470,7 @@
       "title": "Regional coordination path for Guyana: +860.3% capital surge on a single official source — market entry window open",
       "status": "candidate",
       "trigger_signal_id": "enhanced-invest-guyana",
-      "trigger_dispatch_id": "DSP-20260911-019",
+      "trigger_dispatch_id": "DSP-20260911-021",
       "signal_kind": "enhanced_investment",
       "demand_node": {
         "country": "Guyana",
@@ -691,7 +691,7 @@
       "title": "Regional coordination path for Suriname: +206.0% investment movement, one source — needs corroboration",
       "status": "candidate",
       "trigger_signal_id": "enhanced-invest-suriname",
-      "trigger_dispatch_id": "DSP-20260911-022",
+      "trigger_dispatch_id": "DSP-20260911-024",
       "signal_kind": "enhanced_investment",
       "demand_node": {
         "country": "Suriname",
@@ -912,7 +912,7 @@
       "title": "Regional coordination path for Guyana: FDI trending at +860.3% — screening trigger active",
       "status": "candidate",
       "trigger_signal_id": "invest-guyana",
-      "trigger_dispatch_id": "DSP-20260911-003",
+      "trigger_dispatch_id": "DSP-20260911-005",
       "signal_kind": "investment_signal",
       "demand_node": {
         "country": "Guyana",
@@ -1100,7 +1100,7 @@
       "title": "Regional coordination path for Suriname: FDI trending at +206.0% — screening trigger active",
       "status": "candidate",
       "trigger_signal_id": "invest-suriname",
-      "trigger_dispatch_id": "DSP-20260911-005",
+      "trigger_dispatch_id": "DSP-20260911-007",
       "signal_kind": "investment_signal",
       "demand_node": {
         "country": "Suriname",
@@ -1288,7 +1288,7 @@
       "title": "Regional coordination path for Capital convergence: 3 Caribbean economies showing multi-source investment momentum",
       "status": "candidate",
       "trigger_signal_id": "regional-enhanced_investment-20260911",
-      "trigger_dispatch_id": "DSP-20260911-016",
+      "trigger_dispatch_id": "DSP-20260911-018",
       "signal_kind": "enhanced_investment",
       "demand_node": {
         "country": "Caribwide",
@@ -1509,7 +1509,7 @@
       "title": "Regional coordination path for Regional FDI snapshot: 3 countries with active capital movement",
       "status": "candidate",
       "trigger_signal_id": "regional-investment_signal-20260911",
-      "trigger_dispatch_id": "DSP-20260911-001",
+      "trigger_dispatch_id": "DSP-20260911-003",
       "signal_kind": "investment_signal",
       "demand_node": {
         "country": "Caribwide",
@@ -1697,7 +1697,7 @@
       "title": "Regional coordination path for CARICOM: food supply indicators shifting — supply chain implications",
       "status": "candidate",
       "trigger_signal_id": "food-security-regional",
-      "trigger_dispatch_id": "DSP-20260911-011",
+      "trigger_dispatch_id": "DSP-20260911-013",
       "signal_kind": "food_security",
       "demand_node": {
         "country": "Caribbean regional demand",
@@ -1834,7 +1834,7 @@
         "friction_penalty": 21
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 80/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 3 regional nodes",
         "Registry evidence from 3 primary-source organisations"
       ],
@@ -1864,7 +1864,7 @@
       "title": "Regional coordination path for CARICOM: 7 active procurements — bidding window open",
       "status": "candidate",
       "trigger_signal_id": "dev-pipeline-regional",
-      "trigger_dispatch_id": "DSP-20260911-013",
+      "trigger_dispatch_id": "DSP-20260911-015",
       "signal_kind": "development_pipeline",
       "demand_node": {
         "country": "Caribbean regional demand",
@@ -1926,6 +1926,151 @@
           ]
         },
         {
+          "id": "project:guyana:proc-2026-00440",
+          "source_id": "PROC-2026-00440",
+          "type": "project",
+          "country": "Guyana",
+          "title": "Installation of Kettle Filters at Better Hope Water Treatment Plant, ECD, Region #4",
+          "agency": "34-Ministry of Public Utilities and Aviation",
+          "category": "Works",
+          "status": "Bid Advertised",
+          "closing_date": "2026-09-29",
+          "url": "https://eprocure.gov.gy/",
+          "sector": "aviation_infrastructure",
+          "required_capabilities": [
+            "aviation_infrastructure",
+            "civil_engineering",
+            "construction_delivery"
+          ],
+          "classification": "deterministic_keyword",
+          "matched_keywords": [
+            "aviation"
+          ],
+          "evidence": [
+            {
+              "source": "Guyana eProcure (NPTA)",
+              "url": "https://eprocure.gov.gy/",
+              "grade": "primary"
+            }
+          ]
+        },
+        {
+          "id": "project:guyana:proc-2026-00442",
+          "source_id": "PROC-2026-00442",
+          "type": "project",
+          "country": "Guyana",
+          "title": "Design, Supply, Installation and Testing of Air Conditioning Units and related Electrical Works and Networking Cables for GWI’s Corporate Complex",
+          "agency": "34-Ministry of Public Utilities and Aviation",
+          "category": "Works",
+          "status": "Bid Advertised",
+          "closing_date": "2026-09-29",
+          "url": "https://eprocure.gov.gy/",
+          "sector": "aviation_infrastructure",
+          "required_capabilities": [
+            "aviation_infrastructure",
+            "civil_engineering",
+            "construction_delivery"
+          ],
+          "classification": "deterministic_keyword",
+          "matched_keywords": [
+            "aviation"
+          ],
+          "evidence": [
+            {
+              "source": "Guyana eProcure (NPTA)",
+              "url": "https://eprocure.gov.gy/",
+              "grade": "primary"
+            }
+          ]
+        },
+        {
+          "id": "project:guyana:proc-2026-00443",
+          "source_id": "PROC-2026-00443",
+          "type": "project",
+          "country": "Guyana",
+          "title": "Drilling of Potable Water Well at Long Creek, Linden Soesdyke Highway, Region #4",
+          "agency": "34-Ministry of Public Utilities and Aviation",
+          "category": "Works",
+          "status": "Bid Advertised",
+          "closing_date": "2026-09-29",
+          "url": "https://eprocure.gov.gy/",
+          "sector": "aviation_infrastructure",
+          "required_capabilities": [
+            "aviation_infrastructure",
+            "civil_engineering",
+            "construction_delivery"
+          ],
+          "classification": "deterministic_keyword",
+          "matched_keywords": [
+            "aviation"
+          ],
+          "evidence": [
+            {
+              "source": "Guyana eProcure (NPTA)",
+              "url": "https://eprocure.gov.gy/",
+              "grade": "primary"
+            }
+          ]
+        },
+        {
+          "id": "project:guyana:proc-2026-00444",
+          "source_id": "PROC-2026-00444",
+          "type": "project",
+          "country": "Guyana",
+          "title": "Drilling of Potable Water Well at Lusignan, East Coast Demerara, Region #4",
+          "agency": "34-Ministry of Public Utilities and Aviation",
+          "category": "Works",
+          "status": "Bid Advertised",
+          "closing_date": "2026-09-29",
+          "url": "https://eprocure.gov.gy/",
+          "sector": "aviation_infrastructure",
+          "required_capabilities": [
+            "aviation_infrastructure",
+            "civil_engineering",
+            "construction_delivery"
+          ],
+          "classification": "deterministic_keyword",
+          "matched_keywords": [
+            "aviation"
+          ],
+          "evidence": [
+            {
+              "source": "Guyana eProcure (NPTA)",
+              "url": "https://eprocure.gov.gy/",
+              "grade": "primary"
+            }
+          ]
+        },
+        {
+          "id": "project:guyana:proc-2026-00445",
+          "source_id": "PROC-2026-00445",
+          "type": "project",
+          "country": "Guyana",
+          "title": "Drilling of Potable Water Well at Shirley Field Ridley Square, Georgetown, Region #4",
+          "agency": "34-Ministry of Public Utilities and Aviation",
+          "category": "Works",
+          "status": "Bid Advertised",
+          "closing_date": "2026-09-29",
+          "url": "https://eprocure.gov.gy/",
+          "sector": "aviation_infrastructure",
+          "required_capabilities": [
+            "aviation_infrastructure",
+            "civil_engineering",
+            "construction_delivery"
+          ],
+          "classification": "deterministic_keyword",
+          "matched_keywords": [
+            "aviation"
+          ],
+          "evidence": [
+            {
+              "source": "Guyana eProcure (NPTA)",
+              "url": "https://eprocure.gov.gy/",
+              "grade": "primary"
+            }
+          ]
+        },
+        {
           "id": "project:guyana:proc-2026-00432",
           "source_id": "PROC-2026-00432",
           "type": "project",
@@ -1935,152 +2080,6 @@
           "category": "Goods",
           "status": "Bid Advertised",
           "closing_date": "2026-10-01",
-          "url": "https://eprocure.gov.gy/",
-          "sector": "aviation_infrastructure",
-          "required_capabilities": [
-            "aviation_infrastructure",
-            "civil_engineering",
-            "construction_delivery"
-          ],
-          "classification": "deterministic_keyword",
-          "matched_keywords": [
-            "aviation"
-          ],
-          "evidence": [
-            {
-              "source": "Guyana eProcure (NPTA)",
-              "url": "https://eprocure.gov.gy/",
-              "grade": "primary"
-            }
-          ]
-        },
-        {
-          "id": "project:guyana:proc-2026-00425",
-          "source_id": "PROC-2026-00425",
-          "type": "project",
-          "country": "Guyana",
-          "title": "Rehabilitation and Upgrade of Mahaica Bridge to Abary Bridge Road Corridor",
-          "agency": "31-Ministry of Public Works",
-          "category": "Works",
-          "status": "Bid Advertised",
-          "closing_date": "2026-10-02",
-          "url": "https://eprocure.gov.gy/",
-          "sector": "transport_and_logistics",
-          "required_capabilities": [
-            "civil_engineering",
-            "shipping_logistics",
-            "warehousing_distribution"
-          ],
-          "classification": "deterministic_keyword",
-          "matched_keywords": [
-            "bridge",
-            "road"
-          ],
-          "evidence": [
-            {
-              "source": "Guyana eProcure (NPTA)",
-              "url": "https://eprocure.gov.gy/",
-              "grade": "primary"
-            }
-          ]
-        },
-        {
-          "id": "project:guyana:proc-2026-00427",
-          "source_id": "PROC-2026-00427",
-          "type": "project",
-          "country": "Guyana",
-          "title": "Supply and Installation of Transmission Mains at Leguan, Region # 3",
-          "agency": "34-Ministry of Public Utilities and Aviation",
-          "category": "Works",
-          "status": "Bid Advertised",
-          "closing_date": "2026-10-06",
-          "url": "https://eprocure.gov.gy/",
-          "sector": "aviation_infrastructure",
-          "required_capabilities": [
-            "aviation_infrastructure",
-            "civil_engineering",
-            "construction_delivery"
-          ],
-          "classification": "deterministic_keyword",
-          "matched_keywords": [
-            "aviation"
-          ],
-          "evidence": [
-            {
-              "source": "Guyana eProcure (NPTA)",
-              "url": "https://eprocure.gov.gy/",
-              "grade": "primary"
-            }
-          ]
-        },
-        {
-          "id": "project:guyana:proc-2026-00428",
-          "source_id": "PROC-2026-00428",
-          "type": "project",
-          "country": "Guyana",
-          "title": "Supply and Installation of Transmission Mains at Bath, West Coast Berbice, Region # 5 (Lot 1-4):\nLot 1 – Supply and Installation of Transmission Mains from Jacoba to Union\nLot 2 – Supply and Installation of Transmission Mains from Union to St. John \nLot 3 – Supply and Installation of Transmission Mains from St. John to Bath\nLot 4 – Supply and Installation of Transmission Mains from Bath to No. 7 Village and Experiment Housing Scheme",
-          "agency": "34-Ministry of Public Utilities and Aviation",
-          "category": "Works",
-          "status": "Bid Advertised",
-          "closing_date": "2026-10-06",
-          "url": "https://eprocure.gov.gy/",
-          "sector": "aviation_infrastructure",
-          "required_capabilities": [
-            "aviation_infrastructure",
-            "civil_engineering",
-            "construction_delivery"
-          ],
-          "classification": "deterministic_keyword",
-          "matched_keywords": [
-            "aviation"
-          ],
-          "evidence": [
-            {
-              "source": "Guyana eProcure (NPTA)",
-              "url": "https://eprocure.gov.gy/",
-              "grade": "primary"
-            }
-          ]
-        },
-        {
-          "id": "project:guyana:proc-2026-00429",
-          "source_id": "PROC-2026-00429",
-          "type": "project",
-          "country": "Guyana",
-          "title": "Supply and Installation of Transmission Mains at Adventure, Region # 6 (Lot 1-4): \nLot 1 – Supply and Installation of Transmission Mains from Tain to Alness\nLot 2 – Supply and Installation of Transmission Mains from Alness to Kilmarnock\nLot 3 – Supply and Installation of Transmission Mains from Kilmarnock to Kiltairn\nLot 4 – Supply and Installation of Transmission Mains from Kiltarin to Village 47",
-          "agency": "34-Ministry of Public Utilities and Aviation",
-          "category": "Works",
-          "status": "Bid Advertised",
-          "closing_date": "2026-10-06",
-          "url": "https://eprocure.gov.gy/",
-          "sector": "aviation_infrastructure",
-          "required_capabilities": [
-            "aviation_infrastructure",
-            "civil_engineering",
-            "construction_delivery"
-          ],
-          "classification": "deterministic_keyword",
-          "matched_keywords": [
-            "aviation"
-          ],
-          "evidence": [
-            {
-              "source": "Guyana eProcure (NPTA)",
-              "url": "https://eprocure.gov.gy/",
-              "grade": "primary"
-            }
-          ]
-        },
-        {
-          "id": "project:guyana:proc-2026-00430",
-          "source_id": "PROC-2026-00430",
-          "type": "project",
-          "country": "Guyana",
-          "title": "Supply and Installation of Transmission Mains at Wakenaam, Region # 3",
-          "agency": "34-Ministry of Public Utilities and Aviation",
-          "category": "Works",
-          "status": "Bid Advertised",
-          "closing_date": "2026-10-06",
           "url": "https://eprocure.gov.gy/",
           "sector": "aviation_infrastructure",
           "required_capabilities": [
@@ -2346,6 +2345,581 @@
           "estimated_total_uplift": 12
         },
         {
+          "project_id": "project:guyana:proc-2026-00440",
+          "title": "Installation of Kettle Filters at Better Hope Water Treatment Plant, ECD, Region #4",
+          "country": "Guyana",
+          "sector": "aviation_infrastructure",
+          "required_capabilities": [
+            "aviation_infrastructure",
+            "civil_engineering",
+            "construction_delivery"
+          ],
+          "matched_capabilities": [
+            "aviation_infrastructure",
+            "civil_engineering",
+            "construction_delivery"
+          ],
+          "missing_capabilities": [],
+          "candidate_nodes": [
+            {
+              "country": "Jamaica",
+              "matched_capabilities": [
+                {
+                  "id": "civil_engineering",
+                  "strength": 4
+                },
+                {
+                  "id": "construction_delivery",
+                  "strength": 4
+                },
+                {
+                  "id": "aviation_infrastructure",
+                  "strength": 3
+                }
+              ],
+              "constraints": [
+                "route economics",
+                "procurement eligibility"
+              ],
+              "evidence": [
+                {
+                  "source": "JAMPRO",
+                  "url": "https://dobusinessjamaica.com/",
+                  "grade": "primary",
+                  "supports": [
+                    "construction_delivery",
+                    "civil_engineering",
+                    "aviation_infrastructure",
+                    "shipping_logistics",
+                    "warehousing_distribution",
+                    "digital_services",
+                    "ict_integration"
+                  ]
+                }
+              ]
+            },
+            {
+              "country": "Trinidad & Tobago",
+              "matched_capabilities": [
+                {
+                  "id": "civil_engineering",
+                  "strength": 4
+                },
+                {
+                  "id": "construction_delivery",
+                  "strength": 4
+                }
+              ],
+              "constraints": [
+                "cross-border supplier qualification",
+                "shipping cost validation"
+              ],
+              "evidence": [
+                {
+                  "source": "Trinidad and Tobago Ministry of Trade and Industry",
+                  "url": "https://tradeind.gov.tt/",
+                  "grade": "primary",
+                  "supports": [
+                    "industrial_fabrication",
+                    "engineering_services",
+                    "civil_engineering",
+                    "construction_delivery"
+                  ]
+                }
+              ]
+            }
+          ],
+          "frictions": [
+            "cross-border supplier qualification",
+            "procurement eligibility",
+            "route economics",
+            "shipping cost validation"
+          ],
+          "unlock_path": [
+            {
+              "id": "unlock:project-guyana-proc-2026-00440:friction:eligibility_verification",
+              "type": "eligibility_verification",
+              "blocker": "cross-border supplier qualification",
+              "owner_persona": "procurement_watcher",
+              "minimum_evidence_request": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
+              "success_condition": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
+              "estimated_score_uplift": 3,
+              "uplift_basis": "one friction-penalty unit removed"
+            },
+            {
+              "id": "unlock:project-guyana-proc-2026-00440:friction:logistics_validation",
+              "type": "logistics_validation",
+              "blocker": "route economics",
+              "owner_persona": "regional_operator",
+              "minimum_evidence_request": "Route, lead time, landed cost, and contingency option validated",
+              "success_condition": "Route, lead time, landed cost, and contingency option validated",
+              "estimated_score_uplift": 3,
+              "uplift_basis": "one friction-penalty unit removed"
+            }
+          ],
+          "estimated_total_uplift": 6
+        },
+        {
+          "project_id": "project:guyana:proc-2026-00442",
+          "title": "Design, Supply, Installation and Testing of Air Conditioning Units and related Electrical Works and Networking Cables for GWI’s Corporate Complex",
+          "country": "Guyana",
+          "sector": "aviation_infrastructure",
+          "required_capabilities": [
+            "aviation_infrastructure",
+            "civil_engineering",
+            "construction_delivery"
+          ],
+          "matched_capabilities": [
+            "aviation_infrastructure",
+            "civil_engineering",
+            "construction_delivery"
+          ],
+          "missing_capabilities": [],
+          "candidate_nodes": [
+            {
+              "country": "Jamaica",
+              "matched_capabilities": [
+                {
+                  "id": "civil_engineering",
+                  "strength": 4
+                },
+                {
+                  "id": "construction_delivery",
+                  "strength": 4
+                },
+                {
+                  "id": "aviation_infrastructure",
+                  "strength": 3
+                }
+              ],
+              "constraints": [
+                "route economics",
+                "procurement eligibility"
+              ],
+              "evidence": [
+                {
+                  "source": "JAMPRO",
+                  "url": "https://dobusinessjamaica.com/",
+                  "grade": "primary",
+                  "supports": [
+                    "construction_delivery",
+                    "civil_engineering",
+                    "aviation_infrastructure",
+                    "shipping_logistics",
+                    "warehousing_distribution",
+                    "digital_services",
+                    "ict_integration"
+                  ]
+                }
+              ]
+            },
+            {
+              "country": "Trinidad & Tobago",
+              "matched_capabilities": [
+                {
+                  "id": "civil_engineering",
+                  "strength": 4
+                },
+                {
+                  "id": "construction_delivery",
+                  "strength": 4
+                }
+              ],
+              "constraints": [
+                "cross-border supplier qualification",
+                "shipping cost validation"
+              ],
+              "evidence": [
+                {
+                  "source": "Trinidad and Tobago Ministry of Trade and Industry",
+                  "url": "https://tradeind.gov.tt/",
+                  "grade": "primary",
+                  "supports": [
+                    "industrial_fabrication",
+                    "engineering_services",
+                    "civil_engineering",
+                    "construction_delivery"
+                  ]
+                }
+              ]
+            }
+          ],
+          "frictions": [
+            "cross-border supplier qualification",
+            "procurement eligibility",
+            "route economics",
+            "shipping cost validation"
+          ],
+          "unlock_path": [
+            {
+              "id": "unlock:project-guyana-proc-2026-00442:friction:eligibility_verification",
+              "type": "eligibility_verification",
+              "blocker": "cross-border supplier qualification",
+              "owner_persona": "procurement_watcher",
+              "minimum_evidence_request": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
+              "success_condition": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
+              "estimated_score_uplift": 3,
+              "uplift_basis": "one friction-penalty unit removed"
+            },
+            {
+              "id": "unlock:project-guyana-proc-2026-00442:friction:logistics_validation",
+              "type": "logistics_validation",
+              "blocker": "route economics",
+              "owner_persona": "regional_operator",
+              "minimum_evidence_request": "Route, lead time, landed cost, and contingency option validated",
+              "success_condition": "Route, lead time, landed cost, and contingency option validated",
+              "estimated_score_uplift": 3,
+              "uplift_basis": "one friction-penalty unit removed"
+            }
+          ],
+          "estimated_total_uplift": 6
+        },
+        {
+          "project_id": "project:guyana:proc-2026-00443",
+          "title": "Drilling of Potable Water Well at Long Creek, Linden Soesdyke Highway, Region #4",
+          "country": "Guyana",
+          "sector": "aviation_infrastructure",
+          "required_capabilities": [
+            "aviation_infrastructure",
+            "civil_engineering",
+            "construction_delivery"
+          ],
+          "matched_capabilities": [
+            "aviation_infrastructure",
+            "civil_engineering",
+            "construction_delivery"
+          ],
+          "missing_capabilities": [],
+          "candidate_nodes": [
+            {
+              "country": "Jamaica",
+              "matched_capabilities": [
+                {
+                  "id": "civil_engineering",
+                  "strength": 4
+                },
+                {
+                  "id": "construction_delivery",
+                  "strength": 4
+                },
+                {
+                  "id": "aviation_infrastructure",
+                  "strength": 3
+                }
+              ],
+              "constraints": [
+                "route economics",
+                "procurement eligibility"
+              ],
+              "evidence": [
+                {
+                  "source": "JAMPRO",
+                  "url": "https://dobusinessjamaica.com/",
+                  "grade": "primary",
+                  "supports": [
+                    "construction_delivery",
+                    "civil_engineering",
+                    "aviation_infrastructure",
+                    "shipping_logistics",
+                    "warehousing_distribution",
+                    "digital_services",
+                    "ict_integration"
+                  ]
+                }
+              ]
+            },
+            {
+              "country": "Trinidad & Tobago",
+              "matched_capabilities": [
+                {
+                  "id": "civil_engineering",
+                  "strength": 4
+                },
+                {
+                  "id": "construction_delivery",
+                  "strength": 4
+                }
+              ],
+              "constraints": [
+                "cross-border supplier qualification",
+                "shipping cost validation"
+              ],
+              "evidence": [
+                {
+                  "source": "Trinidad and Tobago Ministry of Trade and Industry",
+                  "url": "https://tradeind.gov.tt/",
+                  "grade": "primary",
+                  "supports": [
+                    "industrial_fabrication",
+                    "engineering_services",
+                    "civil_engineering",
+                    "construction_delivery"
+                  ]
+                }
+              ]
+            }
+          ],
+          "frictions": [
+            "cross-border supplier qualification",
+            "procurement eligibility",
+            "route economics",
+            "shipping cost validation"
+          ],
+          "unlock_path": [
+            {
+              "id": "unlock:project-guyana-proc-2026-00443:friction:eligibility_verification",
+              "type": "eligibility_verification",
+              "blocker": "cross-border supplier qualification",
+              "owner_persona": "procurement_watcher",
+              "minimum_evidence_request": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
+              "success_condition": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
+              "estimated_score_uplift": 3,
+              "uplift_basis": "one friction-penalty unit removed"
+            },
+            {
+              "id": "unlock:project-guyana-proc-2026-00443:friction:logistics_validation",
+              "type": "logistics_validation",
+              "blocker": "route economics",
+              "owner_persona": "regional_operator",
+              "minimum_evidence_request": "Route, lead time, landed cost, and contingency option validated",
+              "success_condition": "Route, lead time, landed cost, and contingency option validated",
+              "estimated_score_uplift": 3,
+              "uplift_basis": "one friction-penalty unit removed"
+            }
+          ],
+          "estimated_total_uplift": 6
+        },
+        {
+          "project_id": "project:guyana:proc-2026-00444",
+          "title": "Drilling of Potable Water Well at Lusignan, East Coast Demerara, Region #4",
+          "country": "Guyana",
+          "sector": "aviation_infrastructure",
+          "required_capabilities": [
+            "aviation_infrastructure",
+            "civil_engineering",
+            "construction_delivery"
+          ],
+          "matched_capabilities": [
+            "aviation_infrastructure",
+            "civil_engineering",
+            "construction_delivery"
+          ],
+          "missing_capabilities": [],
+          "candidate_nodes": [
+            {
+              "country": "Jamaica",
+              "matched_capabilities": [
+                {
+                  "id": "civil_engineering",
+                  "strength": 4
+                },
+                {
+                  "id": "construction_delivery",
+                  "strength": 4
+                },
+                {
+                  "id": "aviation_infrastructure",
+                  "strength": 3
+                }
+              ],
+              "constraints": [
+                "route economics",
+                "procurement eligibility"
+              ],
+              "evidence": [
+                {
+                  "source": "JAMPRO",
+                  "url": "https://dobusinessjamaica.com/",
+                  "grade": "primary",
+                  "supports": [
+                    "construction_delivery",
+                    "civil_engineering",
+                    "aviation_infrastructure",
+                    "shipping_logistics",
+                    "warehousing_distribution",
+                    "digital_services",
+                    "ict_integration"
+                  ]
+                }
+              ]
+            },
+            {
+              "country": "Trinidad & Tobago",
+              "matched_capabilities": [
+                {
+                  "id": "civil_engineering",
+                  "strength": 4
+                },
+                {
+                  "id": "construction_delivery",
+                  "strength": 4
+                }
+              ],
+              "constraints": [
+                "cross-border supplier qualification",
+                "shipping cost validation"
+              ],
+              "evidence": [
+                {
+                  "source": "Trinidad and Tobago Ministry of Trade and Industry",
+                  "url": "https://tradeind.gov.tt/",
+                  "grade": "primary",
+                  "supports": [
+                    "industrial_fabrication",
+                    "engineering_services",
+                    "civil_engineering",
+                    "construction_delivery"
+                  ]
+                }
+              ]
+            }
+          ],
+          "frictions": [
+            "cross-border supplier qualification",
+            "procurement eligibility",
+            "route economics",
+            "shipping cost validation"
+          ],
+          "unlock_path": [
+            {
+              "id": "unlock:project-guyana-proc-2026-00444:friction:eligibility_verification",
+              "type": "eligibility_verification",
+              "blocker": "cross-border supplier qualification",
+              "owner_persona": "procurement_watcher",
+              "minimum_evidence_request": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
+              "success_condition": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
+              "estimated_score_uplift": 3,
+              "uplift_basis": "one friction-penalty unit removed"
+            },
+            {
+              "id": "unlock:project-guyana-proc-2026-00444:friction:logistics_validation",
+              "type": "logistics_validation",
+              "blocker": "route economics",
+              "owner_persona": "regional_operator",
+              "minimum_evidence_request": "Route, lead time, landed cost, and contingency option validated",
+              "success_condition": "Route, lead time, landed cost, and contingency option validated",
+              "estimated_score_uplift": 3,
+              "uplift_basis": "one friction-penalty unit removed"
+            }
+          ],
+          "estimated_total_uplift": 6
+        },
+        {
+          "project_id": "project:guyana:proc-2026-00445",
+          "title": "Drilling of Potable Water Well at Shirley Field Ridley Square, Georgetown, Region #4",
+          "country": "Guyana",
+          "sector": "aviation_infrastructure",
+          "required_capabilities": [
+            "aviation_infrastructure",
+            "civil_engineering",
+            "construction_delivery"
+          ],
+          "matched_capabilities": [
+            "aviation_infrastructure",
+            "civil_engineering",
+            "construction_delivery"
+          ],
+          "missing_capabilities": [],
+          "candidate_nodes": [
+            {
+              "country": "Jamaica",
+              "matched_capabilities": [
+                {
+                  "id": "civil_engineering",
+                  "strength": 4
+                },
+                {
+                  "id": "construction_delivery",
+                  "strength": 4
+                },
+                {
+                  "id": "aviation_infrastructure",
+                  "strength": 3
+                }
+              ],
+              "constraints": [
+                "route economics",
+                "procurement eligibility"
+              ],
+              "evidence": [
+                {
+                  "source": "JAMPRO",
+                  "url": "https://dobusinessjamaica.com/",
+                  "grade": "primary",
+                  "supports": [
+                    "construction_delivery",
+                    "civil_engineering",
+                    "aviation_infrastructure",
+                    "shipping_logistics",
+                    "warehousing_distribution",
+                    "digital_services",
+                    "ict_integration"
+                  ]
+                }
+              ]
+            },
+            {
+              "country": "Trinidad & Tobago",
+              "matched_capabilities": [
+                {
+                  "id": "civil_engineering",
+                  "strength": 4
+                },
+                {
+                  "id": "construction_delivery",
+                  "strength": 4
+                }
+              ],
+              "constraints": [
+                "cross-border supplier qualification",
+                "shipping cost validation"
+              ],
+              "evidence": [
+                {
+                  "source": "Trinidad and Tobago Ministry of Trade and Industry",
+                  "url": "https://tradeind.gov.tt/",
+                  "grade": "primary",
+                  "supports": [
+                    "industrial_fabrication",
+                    "engineering_services",
+                    "civil_engineering",
+                    "construction_delivery"
+                  ]
+                }
+              ]
+            }
+          ],
+          "frictions": [
+            "cross-border supplier qualification",
+            "procurement eligibility",
+            "route economics",
+            "shipping cost validation"
+          ],
+          "unlock_path": [
+            {
+              "id": "unlock:project-guyana-proc-2026-00445:friction:eligibility_verification",
+              "type": "eligibility_verification",
+              "blocker": "cross-border supplier qualification",
+              "owner_persona": "procurement_watcher",
+              "minimum_evidence_request": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
+              "success_condition": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
+              "estimated_score_uplift": 3,
+              "uplift_basis": "one friction-penalty unit removed"
+            },
+            {
+              "id": "unlock:project-guyana-proc-2026-00445:friction:logistics_validation",
+              "type": "logistics_validation",
+              "blocker": "route economics",
+              "owner_persona": "regional_operator",
+              "minimum_evidence_request": "Route, lead time, landed cost, and contingency option validated",
+              "success_condition": "Route, lead time, landed cost, and contingency option validated",
+              "estimated_score_uplift": 3,
+              "uplift_basis": "one friction-penalty unit removed"
+            }
+          ],
+          "estimated_total_uplift": 6
+        },
+        {
           "project_id": "project:guyana:proc-2026-00432",
           "title": "Supply and Delivery of Pole Mounted Transformers for Lethem Power Co. Inc.",
           "country": "Guyana",
@@ -2459,612 +3033,9 @@
             }
           ],
           "estimated_total_uplift": 6
-        },
-        {
-          "project_id": "project:guyana:proc-2026-00425",
-          "title": "Rehabilitation and Upgrade of Mahaica Bridge to Abary Bridge Road Corridor",
-          "country": "Guyana",
-          "sector": "transport_and_logistics",
-          "required_capabilities": [
-            "civil_engineering",
-            "shipping_logistics",
-            "warehousing_distribution"
-          ],
-          "matched_capabilities": [
-            "civil_engineering",
-            "shipping_logistics",
-            "warehousing_distribution"
-          ],
-          "missing_capabilities": [],
-          "candidate_nodes": [
-            {
-              "country": "Jamaica",
-              "matched_capabilities": [
-                {
-                  "id": "shipping_logistics",
-                  "strength": 5
-                },
-                {
-                  "id": "warehousing_distribution",
-                  "strength": 5
-                },
-                {
-                  "id": "civil_engineering",
-                  "strength": 4
-                }
-              ],
-              "constraints": [
-                "route economics",
-                "procurement eligibility"
-              ],
-              "evidence": [
-                {
-                  "source": "JAMPRO",
-                  "url": "https://dobusinessjamaica.com/",
-                  "grade": "primary",
-                  "supports": [
-                    "construction_delivery",
-                    "civil_engineering",
-                    "aviation_infrastructure",
-                    "shipping_logistics",
-                    "warehousing_distribution",
-                    "digital_services",
-                    "ict_integration"
-                  ]
-                }
-              ]
-            },
-            {
-              "country": "Trinidad & Tobago",
-              "matched_capabilities": [
-                {
-                  "id": "civil_engineering",
-                  "strength": 4
-                },
-                {
-                  "id": "shipping_logistics",
-                  "strength": 4
-                }
-              ],
-              "constraints": [
-                "cross-border supplier qualification",
-                "shipping cost validation"
-              ],
-              "evidence": [
-                {
-                  "source": "Trinidad and Tobago Ministry of Trade and Industry",
-                  "url": "https://tradeind.gov.tt/",
-                  "grade": "primary",
-                  "supports": [
-                    "industrial_fabrication",
-                    "engineering_services",
-                    "civil_engineering",
-                    "construction_delivery"
-                  ]
-                },
-                {
-                  "source": "Port Authority of Trinidad and Tobago",
-                  "url": "https://www.patnt.com/",
-                  "grade": "primary",
-                  "supports": [
-                    "shipping_logistics"
-                  ]
-                }
-              ]
-            }
-          ],
-          "frictions": [
-            "cross-border supplier qualification",
-            "procurement eligibility",
-            "route economics",
-            "shipping cost validation"
-          ],
-          "unlock_path": [
-            {
-              "id": "unlock:project-guyana-proc-2026-00425:friction:eligibility_verification",
-              "type": "eligibility_verification",
-              "blocker": "cross-border supplier qualification",
-              "owner_persona": "procurement_watcher",
-              "minimum_evidence_request": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
-              "success_condition": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
-              "estimated_score_uplift": 3,
-              "uplift_basis": "one friction-penalty unit removed"
-            },
-            {
-              "id": "unlock:project-guyana-proc-2026-00425:friction:logistics_validation",
-              "type": "logistics_validation",
-              "blocker": "route economics",
-              "owner_persona": "regional_operator",
-              "minimum_evidence_request": "Route, lead time, landed cost, and contingency option validated",
-              "success_condition": "Route, lead time, landed cost, and contingency option validated",
-              "estimated_score_uplift": 3,
-              "uplift_basis": "one friction-penalty unit removed"
-            }
-          ],
-          "estimated_total_uplift": 6
-        },
-        {
-          "project_id": "project:guyana:proc-2026-00427",
-          "title": "Supply and Installation of Transmission Mains at Leguan, Region # 3",
-          "country": "Guyana",
-          "sector": "aviation_infrastructure",
-          "required_capabilities": [
-            "aviation_infrastructure",
-            "civil_engineering",
-            "construction_delivery"
-          ],
-          "matched_capabilities": [
-            "aviation_infrastructure",
-            "civil_engineering",
-            "construction_delivery"
-          ],
-          "missing_capabilities": [],
-          "candidate_nodes": [
-            {
-              "country": "Jamaica",
-              "matched_capabilities": [
-                {
-                  "id": "civil_engineering",
-                  "strength": 4
-                },
-                {
-                  "id": "construction_delivery",
-                  "strength": 4
-                },
-                {
-                  "id": "aviation_infrastructure",
-                  "strength": 3
-                }
-              ],
-              "constraints": [
-                "route economics",
-                "procurement eligibility"
-              ],
-              "evidence": [
-                {
-                  "source": "JAMPRO",
-                  "url": "https://dobusinessjamaica.com/",
-                  "grade": "primary",
-                  "supports": [
-                    "construction_delivery",
-                    "civil_engineering",
-                    "aviation_infrastructure",
-                    "shipping_logistics",
-                    "warehousing_distribution",
-                    "digital_services",
-                    "ict_integration"
-                  ]
-                }
-              ]
-            },
-            {
-              "country": "Trinidad & Tobago",
-              "matched_capabilities": [
-                {
-                  "id": "civil_engineering",
-                  "strength": 4
-                },
-                {
-                  "id": "construction_delivery",
-                  "strength": 4
-                }
-              ],
-              "constraints": [
-                "cross-border supplier qualification",
-                "shipping cost validation"
-              ],
-              "evidence": [
-                {
-                  "source": "Trinidad and Tobago Ministry of Trade and Industry",
-                  "url": "https://tradeind.gov.tt/",
-                  "grade": "primary",
-                  "supports": [
-                    "industrial_fabrication",
-                    "engineering_services",
-                    "civil_engineering",
-                    "construction_delivery"
-                  ]
-                }
-              ]
-            }
-          ],
-          "frictions": [
-            "cross-border supplier qualification",
-            "procurement eligibility",
-            "route economics",
-            "shipping cost validation"
-          ],
-          "unlock_path": [
-            {
-              "id": "unlock:project-guyana-proc-2026-00427:friction:eligibility_verification",
-              "type": "eligibility_verification",
-              "blocker": "cross-border supplier qualification",
-              "owner_persona": "procurement_watcher",
-              "minimum_evidence_request": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
-              "success_condition": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
-              "estimated_score_uplift": 3,
-              "uplift_basis": "one friction-penalty unit removed"
-            },
-            {
-              "id": "unlock:project-guyana-proc-2026-00427:friction:logistics_validation",
-              "type": "logistics_validation",
-              "blocker": "route economics",
-              "owner_persona": "regional_operator",
-              "minimum_evidence_request": "Route, lead time, landed cost, and contingency option validated",
-              "success_condition": "Route, lead time, landed cost, and contingency option validated",
-              "estimated_score_uplift": 3,
-              "uplift_basis": "one friction-penalty unit removed"
-            }
-          ],
-          "estimated_total_uplift": 6
-        },
-        {
-          "project_id": "project:guyana:proc-2026-00428",
-          "title": "Supply and Installation of Transmission Mains at Bath, West Coast Berbice, Region # 5 (Lot 1-4):\nLot 1 – Supply and Installation of Transmission Mains from Jacoba to Union\nLot 2 – Supply and Installation of Transmission Mains from Union to St. John \nLot 3 – Supply and Installation of Transmission Mains from St. John to Bath\nLot 4 – Supply and Installation of Transmission Mains from Bath to No. 7 Village and Experiment Housing Scheme",
-          "country": "Guyana",
-          "sector": "aviation_infrastructure",
-          "required_capabilities": [
-            "aviation_infrastructure",
-            "civil_engineering",
-            "construction_delivery"
-          ],
-          "matched_capabilities": [
-            "aviation_infrastructure",
-            "civil_engineering",
-            "construction_delivery"
-          ],
-          "missing_capabilities": [],
-          "candidate_nodes": [
-            {
-              "country": "Jamaica",
-              "matched_capabilities": [
-                {
-                  "id": "civil_engineering",
-                  "strength": 4
-                },
-                {
-                  "id": "construction_delivery",
-                  "strength": 4
-                },
-                {
-                  "id": "aviation_infrastructure",
-                  "strength": 3
-                }
-              ],
-              "constraints": [
-                "route economics",
-                "procurement eligibility"
-              ],
-              "evidence": [
-                {
-                  "source": "JAMPRO",
-                  "url": "https://dobusinessjamaica.com/",
-                  "grade": "primary",
-                  "supports": [
-                    "construction_delivery",
-                    "civil_engineering",
-                    "aviation_infrastructure",
-                    "shipping_logistics",
-                    "warehousing_distribution",
-                    "digital_services",
-                    "ict_integration"
-                  ]
-                }
-              ]
-            },
-            {
-              "country": "Trinidad & Tobago",
-              "matched_capabilities": [
-                {
-                  "id": "civil_engineering",
-                  "strength": 4
-                },
-                {
-                  "id": "construction_delivery",
-                  "strength": 4
-                }
-              ],
-              "constraints": [
-                "cross-border supplier qualification",
-                "shipping cost validation"
-              ],
-              "evidence": [
-                {
-                  "source": "Trinidad and Tobago Ministry of Trade and Industry",
-                  "url": "https://tradeind.gov.tt/",
-                  "grade": "primary",
-                  "supports": [
-                    "industrial_fabrication",
-                    "engineering_services",
-                    "civil_engineering",
-                    "construction_delivery"
-                  ]
-                }
-              ]
-            }
-          ],
-          "frictions": [
-            "cross-border supplier qualification",
-            "procurement eligibility",
-            "route economics",
-            "shipping cost validation"
-          ],
-          "unlock_path": [
-            {
-              "id": "unlock:project-guyana-proc-2026-00428:friction:eligibility_verification",
-              "type": "eligibility_verification",
-              "blocker": "cross-border supplier qualification",
-              "owner_persona": "procurement_watcher",
-              "minimum_evidence_request": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
-              "success_condition": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
-              "estimated_score_uplift": 3,
-              "uplift_basis": "one friction-penalty unit removed"
-            },
-            {
-              "id": "unlock:project-guyana-proc-2026-00428:friction:logistics_validation",
-              "type": "logistics_validation",
-              "blocker": "route economics",
-              "owner_persona": "regional_operator",
-              "minimum_evidence_request": "Route, lead time, landed cost, and contingency option validated",
-              "success_condition": "Route, lead time, landed cost, and contingency option validated",
-              "estimated_score_uplift": 3,
-              "uplift_basis": "one friction-penalty unit removed"
-            }
-          ],
-          "estimated_total_uplift": 6
-        },
-        {
-          "project_id": "project:guyana:proc-2026-00429",
-          "title": "Supply and Installation of Transmission Mains at Adventure, Region # 6 (Lot 1-4): \nLot 1 – Supply and Installation of Transmission Mains from Tain to Alness\nLot 2 – Supply and Installation of Transmission Mains from Alness to Kilmarnock\nLot 3 – Supply and Installation of Transmission Mains from Kilmarnock to Kiltairn\nLot 4 – Supply and Installation of Transmission Mains from Kiltarin to Village 47",
-          "country": "Guyana",
-          "sector": "aviation_infrastructure",
-          "required_capabilities": [
-            "aviation_infrastructure",
-            "civil_engineering",
-            "construction_delivery"
-          ],
-          "matched_capabilities": [
-            "aviation_infrastructure",
-            "civil_engineering",
-            "construction_delivery"
-          ],
-          "missing_capabilities": [],
-          "candidate_nodes": [
-            {
-              "country": "Jamaica",
-              "matched_capabilities": [
-                {
-                  "id": "civil_engineering",
-                  "strength": 4
-                },
-                {
-                  "id": "construction_delivery",
-                  "strength": 4
-                },
-                {
-                  "id": "aviation_infrastructure",
-                  "strength": 3
-                }
-              ],
-              "constraints": [
-                "route economics",
-                "procurement eligibility"
-              ],
-              "evidence": [
-                {
-                  "source": "JAMPRO",
-                  "url": "https://dobusinessjamaica.com/",
-                  "grade": "primary",
-                  "supports": [
-                    "construction_delivery",
-                    "civil_engineering",
-                    "aviation_infrastructure",
-                    "shipping_logistics",
-                    "warehousing_distribution",
-                    "digital_services",
-                    "ict_integration"
-                  ]
-                }
-              ]
-            },
-            {
-              "country": "Trinidad & Tobago",
-              "matched_capabilities": [
-                {
-                  "id": "civil_engineering",
-                  "strength": 4
-                },
-                {
-                  "id": "construction_delivery",
-                  "strength": 4
-                }
-              ],
-              "constraints": [
-                "cross-border supplier qualification",
-                "shipping cost validation"
-              ],
-              "evidence": [
-                {
-                  "source": "Trinidad and Tobago Ministry of Trade and Industry",
-                  "url": "https://tradeind.gov.tt/",
-                  "grade": "primary",
-                  "supports": [
-                    "industrial_fabrication",
-                    "engineering_services",
-                    "civil_engineering",
-                    "construction_delivery"
-                  ]
-                }
-              ]
-            }
-          ],
-          "frictions": [
-            "cross-border supplier qualification",
-            "procurement eligibility",
-            "route economics",
-            "shipping cost validation"
-          ],
-          "unlock_path": [
-            {
-              "id": "unlock:project-guyana-proc-2026-00429:friction:eligibility_verification",
-              "type": "eligibility_verification",
-              "blocker": "cross-border supplier qualification",
-              "owner_persona": "procurement_watcher",
-              "minimum_evidence_request": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
-              "success_condition": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
-              "estimated_score_uplift": 3,
-              "uplift_basis": "one friction-penalty unit removed"
-            },
-            {
-              "id": "unlock:project-guyana-proc-2026-00429:friction:logistics_validation",
-              "type": "logistics_validation",
-              "blocker": "route economics",
-              "owner_persona": "regional_operator",
-              "minimum_evidence_request": "Route, lead time, landed cost, and contingency option validated",
-              "success_condition": "Route, lead time, landed cost, and contingency option validated",
-              "estimated_score_uplift": 3,
-              "uplift_basis": "one friction-penalty unit removed"
-            }
-          ],
-          "estimated_total_uplift": 6
-        },
-        {
-          "project_id": "project:guyana:proc-2026-00430",
-          "title": "Supply and Installation of Transmission Mains at Wakenaam, Region # 3",
-          "country": "Guyana",
-          "sector": "aviation_infrastructure",
-          "required_capabilities": [
-            "aviation_infrastructure",
-            "civil_engineering",
-            "construction_delivery"
-          ],
-          "matched_capabilities": [
-            "aviation_infrastructure",
-            "civil_engineering",
-            "construction_delivery"
-          ],
-          "missing_capabilities": [],
-          "candidate_nodes": [
-            {
-              "country": "Jamaica",
-              "matched_capabilities": [
-                {
-                  "id": "civil_engineering",
-                  "strength": 4
-                },
-                {
-                  "id": "construction_delivery",
-                  "strength": 4
-                },
-                {
-                  "id": "aviation_infrastructure",
-                  "strength": 3
-                }
-              ],
-              "constraints": [
-                "route economics",
-                "procurement eligibility"
-              ],
-              "evidence": [
-                {
-                  "source": "JAMPRO",
-                  "url": "https://dobusinessjamaica.com/",
-                  "grade": "primary",
-                  "supports": [
-                    "construction_delivery",
-                    "civil_engineering",
-                    "aviation_infrastructure",
-                    "shipping_logistics",
-                    "warehousing_distribution",
-                    "digital_services",
-                    "ict_integration"
-                  ]
-                }
-              ]
-            },
-            {
-              "country": "Trinidad & Tobago",
-              "matched_capabilities": [
-                {
-                  "id": "civil_engineering",
-                  "strength": 4
-                },
-                {
-                  "id": "construction_delivery",
-                  "strength": 4
-                }
-              ],
-              "constraints": [
-                "cross-border supplier qualification",
-                "shipping cost validation"
-              ],
-              "evidence": [
-                {
-                  "source": "Trinidad and Tobago Ministry of Trade and Industry",
-                  "url": "https://tradeind.gov.tt/",
-                  "grade": "primary",
-                  "supports": [
-                    "industrial_fabrication",
-                    "engineering_services",
-                    "civil_engineering",
-                    "construction_delivery"
-                  ]
-                }
-              ]
-            }
-          ],
-          "frictions": [
-            "cross-border supplier qualification",
-            "procurement eligibility",
-            "route economics",
-            "shipping cost validation"
-          ],
-          "unlock_path": [
-            {
-              "id": "unlock:project-guyana-proc-2026-00430:friction:eligibility_verification",
-              "type": "eligibility_verification",
-              "blocker": "cross-border supplier qualification",
-              "owner_persona": "procurement_watcher",
-              "minimum_evidence_request": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
-              "success_condition": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
-              "estimated_score_uplift": 3,
-              "uplift_basis": "one friction-penalty unit removed"
-            },
-            {
-              "id": "unlock:project-guyana-proc-2026-00430:friction:logistics_validation",
-              "type": "logistics_validation",
-              "blocker": "route economics",
-              "owner_persona": "regional_operator",
-              "minimum_evidence_request": "Route, lead time, landed cost, and contingency option validated",
-              "success_condition": "Route, lead time, landed cost, and contingency option validated",
-              "estimated_score_uplift": 3,
-              "uplift_basis": "one friction-penalty unit removed"
-            }
-          ],
-          "estimated_total_uplift": 6
         }
       ],
       "unlock_path": [
-        {
-          "id": "unlock:project-guyana-proc-2026-00425:friction:eligibility_verification",
-          "type": "eligibility_verification",
-          "blocker": "cross-border supplier qualification",
-          "owner_persona": "procurement_watcher",
-          "minimum_evidence_request": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
-          "success_condition": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
-          "estimated_score_uplift": 3,
-          "uplift_basis": "one friction-penalty unit removed"
-        },
-        {
-          "id": "unlock:project-guyana-proc-2026-00425:friction:logistics_validation",
-          "type": "logistics_validation",
-          "blocker": "route economics",
-          "owner_persona": "regional_operator",
-          "minimum_evidence_request": "Route, lead time, landed cost, and contingency option validated",
-          "success_condition": "Route, lead time, landed cost, and contingency option validated",
-          "estimated_score_uplift": 3,
-          "uplift_basis": "one friction-penalty unit removed"
-        },
         {
           "id": "unlock:project-guyana-proc-2026-00426:friction:eligibility_verification",
           "type": "eligibility_verification",
@@ -3077,86 +3048,6 @@
         },
         {
           "id": "unlock:project-guyana-proc-2026-00426:friction:logistics_validation",
-          "type": "logistics_validation",
-          "blocker": "route economics",
-          "owner_persona": "regional_operator",
-          "minimum_evidence_request": "Route, lead time, landed cost, and contingency option validated",
-          "success_condition": "Route, lead time, landed cost, and contingency option validated",
-          "estimated_score_uplift": 3,
-          "uplift_basis": "one friction-penalty unit removed"
-        },
-        {
-          "id": "unlock:project-guyana-proc-2026-00427:friction:eligibility_verification",
-          "type": "eligibility_verification",
-          "blocker": "cross-border supplier qualification",
-          "owner_persona": "procurement_watcher",
-          "minimum_evidence_request": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
-          "success_condition": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
-          "estimated_score_uplift": 3,
-          "uplift_basis": "one friction-penalty unit removed"
-        },
-        {
-          "id": "unlock:project-guyana-proc-2026-00427:friction:logistics_validation",
-          "type": "logistics_validation",
-          "blocker": "route economics",
-          "owner_persona": "regional_operator",
-          "minimum_evidence_request": "Route, lead time, landed cost, and contingency option validated",
-          "success_condition": "Route, lead time, landed cost, and contingency option validated",
-          "estimated_score_uplift": 3,
-          "uplift_basis": "one friction-penalty unit removed"
-        },
-        {
-          "id": "unlock:project-guyana-proc-2026-00428:friction:eligibility_verification",
-          "type": "eligibility_verification",
-          "blocker": "cross-border supplier qualification",
-          "owner_persona": "procurement_watcher",
-          "minimum_evidence_request": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
-          "success_condition": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
-          "estimated_score_uplift": 3,
-          "uplift_basis": "one friction-penalty unit removed"
-        },
-        {
-          "id": "unlock:project-guyana-proc-2026-00428:friction:logistics_validation",
-          "type": "logistics_validation",
-          "blocker": "route economics",
-          "owner_persona": "regional_operator",
-          "minimum_evidence_request": "Route, lead time, landed cost, and contingency option validated",
-          "success_condition": "Route, lead time, landed cost, and contingency option validated",
-          "estimated_score_uplift": 3,
-          "uplift_basis": "one friction-penalty unit removed"
-        },
-        {
-          "id": "unlock:project-guyana-proc-2026-00429:friction:eligibility_verification",
-          "type": "eligibility_verification",
-          "blocker": "cross-border supplier qualification",
-          "owner_persona": "procurement_watcher",
-          "minimum_evidence_request": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
-          "success_condition": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
-          "estimated_score_uplift": 3,
-          "uplift_basis": "one friction-penalty unit removed"
-        },
-        {
-          "id": "unlock:project-guyana-proc-2026-00429:friction:logistics_validation",
-          "type": "logistics_validation",
-          "blocker": "route economics",
-          "owner_persona": "regional_operator",
-          "minimum_evidence_request": "Route, lead time, landed cost, and contingency option validated",
-          "success_condition": "Route, lead time, landed cost, and contingency option validated",
-          "estimated_score_uplift": 3,
-          "uplift_basis": "one friction-penalty unit removed"
-        },
-        {
-          "id": "unlock:project-guyana-proc-2026-00430:friction:eligibility_verification",
-          "type": "eligibility_verification",
-          "blocker": "cross-border supplier qualification",
-          "owner_persona": "procurement_watcher",
-          "minimum_evidence_request": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
-          "success_condition": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
-          "estimated_score_uplift": 3,
-          "uplift_basis": "one friction-penalty unit removed"
-        },
-        {
-          "id": "unlock:project-guyana-proc-2026-00430:friction:logistics_validation",
           "type": "logistics_validation",
           "blocker": "route economics",
           "owner_persona": "regional_operator",
@@ -3222,6 +3113,106 @@
           "owner_persona": "ecosystem_builder",
           "minimum_evidence_request": "One qualified local delivery partner accepts an introduction",
           "success_condition": "One qualified local delivery partner accepts an introduction",
+          "estimated_score_uplift": 3,
+          "uplift_basis": "one friction-penalty unit removed"
+        },
+        {
+          "id": "unlock:project-guyana-proc-2026-00440:friction:eligibility_verification",
+          "type": "eligibility_verification",
+          "blocker": "cross-border supplier qualification",
+          "owner_persona": "procurement_watcher",
+          "minimum_evidence_request": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
+          "success_condition": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
+          "estimated_score_uplift": 3,
+          "uplift_basis": "one friction-penalty unit removed"
+        },
+        {
+          "id": "unlock:project-guyana-proc-2026-00440:friction:logistics_validation",
+          "type": "logistics_validation",
+          "blocker": "route economics",
+          "owner_persona": "regional_operator",
+          "minimum_evidence_request": "Route, lead time, landed cost, and contingency option validated",
+          "success_condition": "Route, lead time, landed cost, and contingency option validated",
+          "estimated_score_uplift": 3,
+          "uplift_basis": "one friction-penalty unit removed"
+        },
+        {
+          "id": "unlock:project-guyana-proc-2026-00442:friction:eligibility_verification",
+          "type": "eligibility_verification",
+          "blocker": "cross-border supplier qualification",
+          "owner_persona": "procurement_watcher",
+          "minimum_evidence_request": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
+          "success_condition": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
+          "estimated_score_uplift": 3,
+          "uplift_basis": "one friction-penalty unit removed"
+        },
+        {
+          "id": "unlock:project-guyana-proc-2026-00442:friction:logistics_validation",
+          "type": "logistics_validation",
+          "blocker": "route economics",
+          "owner_persona": "regional_operator",
+          "minimum_evidence_request": "Route, lead time, landed cost, and contingency option validated",
+          "success_condition": "Route, lead time, landed cost, and contingency option validated",
+          "estimated_score_uplift": 3,
+          "uplift_basis": "one friction-penalty unit removed"
+        },
+        {
+          "id": "unlock:project-guyana-proc-2026-00443:friction:eligibility_verification",
+          "type": "eligibility_verification",
+          "blocker": "cross-border supplier qualification",
+          "owner_persona": "procurement_watcher",
+          "minimum_evidence_request": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
+          "success_condition": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
+          "estimated_score_uplift": 3,
+          "uplift_basis": "one friction-penalty unit removed"
+        },
+        {
+          "id": "unlock:project-guyana-proc-2026-00443:friction:logistics_validation",
+          "type": "logistics_validation",
+          "blocker": "route economics",
+          "owner_persona": "regional_operator",
+          "minimum_evidence_request": "Route, lead time, landed cost, and contingency option validated",
+          "success_condition": "Route, lead time, landed cost, and contingency option validated",
+          "estimated_score_uplift": 3,
+          "uplift_basis": "one friction-penalty unit removed"
+        },
+        {
+          "id": "unlock:project-guyana-proc-2026-00444:friction:eligibility_verification",
+          "type": "eligibility_verification",
+          "blocker": "cross-border supplier qualification",
+          "owner_persona": "procurement_watcher",
+          "minimum_evidence_request": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
+          "success_condition": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
+          "estimated_score_uplift": 3,
+          "uplift_basis": "one friction-penalty unit removed"
+        },
+        {
+          "id": "unlock:project-guyana-proc-2026-00444:friction:logistics_validation",
+          "type": "logistics_validation",
+          "blocker": "route economics",
+          "owner_persona": "regional_operator",
+          "minimum_evidence_request": "Route, lead time, landed cost, and contingency option validated",
+          "success_condition": "Route, lead time, landed cost, and contingency option validated",
+          "estimated_score_uplift": 3,
+          "uplift_basis": "one friction-penalty unit removed"
+        },
+        {
+          "id": "unlock:project-guyana-proc-2026-00445:friction:eligibility_verification",
+          "type": "eligibility_verification",
+          "blocker": "cross-border supplier qualification",
+          "owner_persona": "procurement_watcher",
+          "minimum_evidence_request": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
+          "success_condition": "Bid eligibility, registrations, and qualification requirements confirmed in writing",
+          "estimated_score_uplift": 3,
+          "uplift_basis": "one friction-penalty unit removed"
+        },
+        {
+          "id": "unlock:project-guyana-proc-2026-00445:friction:logistics_validation",
+          "type": "logistics_validation",
+          "blocker": "route economics",
+          "owner_persona": "regional_operator",
+          "minimum_evidence_request": "Route, lead time, landed cost, and contingency option validated",
+          "success_condition": "Route, lead time, landed cost, and contingency option validated",
           "estimated_score_uplift": 3,
           "uplift_basis": "one friction-penalty unit removed"
         }
@@ -3507,30 +3498,6 @@
       "unknowns": [],
       "intervention_state": [
         {
-          "id": "unlock:project-guyana-proc-2026-00425:friction:eligibility_verification",
-          "status": "proposed",
-          "owner_persona": "procurement_watcher",
-          "blocker": "cross-border supplier qualification",
-          "evidence": [],
-          "related_signals": [
-            "dev-pipeline-regional"
-          ],
-          "created_at": "2026-09-07T03:18:50.314919+00:00",
-          "updated_at": "2026-09-11T19:08:22.861014+00:00"
-        },
-        {
-          "id": "unlock:project-guyana-proc-2026-00425:friction:logistics_validation",
-          "status": "proposed",
-          "owner_persona": "regional_operator",
-          "blocker": "route economics",
-          "evidence": [],
-          "related_signals": [
-            "dev-pipeline-regional"
-          ],
-          "created_at": "2026-09-07T03:18:50.314919+00:00",
-          "updated_at": "2026-09-11T19:08:22.861014+00:00"
-        },
-        {
           "id": "unlock:project-guyana-proc-2026-00426:friction:eligibility_verification",
           "status": "proposed",
           "owner_persona": "procurement_watcher",
@@ -3540,7 +3507,7 @@
             "dev-pipeline-regional"
           ],
           "created_at": "2026-09-07T03:18:50.314919+00:00",
-          "updated_at": "2026-09-11T19:08:22.861014+00:00"
+          "updated_at": "2026-09-11T22:31:54.306265+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00426:friction:logistics_validation",
@@ -3552,103 +3519,7 @@
             "dev-pipeline-regional"
           ],
           "created_at": "2026-09-07T03:18:50.314919+00:00",
-          "updated_at": "2026-09-11T19:08:22.861014+00:00"
-        },
-        {
-          "id": "unlock:project-guyana-proc-2026-00427:friction:eligibility_verification",
-          "status": "proposed",
-          "owner_persona": "procurement_watcher",
-          "blocker": "cross-border supplier qualification",
-          "evidence": [],
-          "related_signals": [
-            "dev-pipeline-regional"
-          ],
-          "created_at": "2026-09-11T19:08:22.861014+00:00",
-          "updated_at": "2026-09-11T19:08:22.861014+00:00"
-        },
-        {
-          "id": "unlock:project-guyana-proc-2026-00427:friction:logistics_validation",
-          "status": "proposed",
-          "owner_persona": "regional_operator",
-          "blocker": "route economics",
-          "evidence": [],
-          "related_signals": [
-            "dev-pipeline-regional"
-          ],
-          "created_at": "2026-09-11T19:08:22.861014+00:00",
-          "updated_at": "2026-09-11T19:08:22.861014+00:00"
-        },
-        {
-          "id": "unlock:project-guyana-proc-2026-00428:friction:eligibility_verification",
-          "status": "proposed",
-          "owner_persona": "procurement_watcher",
-          "blocker": "cross-border supplier qualification",
-          "evidence": [],
-          "related_signals": [
-            "dev-pipeline-regional"
-          ],
-          "created_at": "2026-09-11T19:08:22.861014+00:00",
-          "updated_at": "2026-09-11T19:08:22.861014+00:00"
-        },
-        {
-          "id": "unlock:project-guyana-proc-2026-00428:friction:logistics_validation",
-          "status": "proposed",
-          "owner_persona": "regional_operator",
-          "blocker": "route economics",
-          "evidence": [],
-          "related_signals": [
-            "dev-pipeline-regional"
-          ],
-          "created_at": "2026-09-11T19:08:22.861014+00:00",
-          "updated_at": "2026-09-11T19:08:22.861014+00:00"
-        },
-        {
-          "id": "unlock:project-guyana-proc-2026-00429:friction:eligibility_verification",
-          "status": "proposed",
-          "owner_persona": "procurement_watcher",
-          "blocker": "cross-border supplier qualification",
-          "evidence": [],
-          "related_signals": [
-            "dev-pipeline-regional"
-          ],
-          "created_at": "2026-09-11T19:08:22.861014+00:00",
-          "updated_at": "2026-09-11T19:08:22.861014+00:00"
-        },
-        {
-          "id": "unlock:project-guyana-proc-2026-00429:friction:logistics_validation",
-          "status": "proposed",
-          "owner_persona": "regional_operator",
-          "blocker": "route economics",
-          "evidence": [],
-          "related_signals": [
-            "dev-pipeline-regional"
-          ],
-          "created_at": "2026-09-11T19:08:22.861014+00:00",
-          "updated_at": "2026-09-11T19:08:22.861014+00:00"
-        },
-        {
-          "id": "unlock:project-guyana-proc-2026-00430:friction:eligibility_verification",
-          "status": "proposed",
-          "owner_persona": "procurement_watcher",
-          "blocker": "cross-border supplier qualification",
-          "evidence": [],
-          "related_signals": [
-            "dev-pipeline-regional"
-          ],
-          "created_at": "2026-09-11T19:08:22.861014+00:00",
-          "updated_at": "2026-09-11T19:08:22.861014+00:00"
-        },
-        {
-          "id": "unlock:project-guyana-proc-2026-00430:friction:logistics_validation",
-          "status": "proposed",
-          "owner_persona": "regional_operator",
-          "blocker": "route economics",
-          "evidence": [],
-          "related_signals": [
-            "dev-pipeline-regional"
-          ],
-          "created_at": "2026-09-11T19:08:22.861014+00:00",
-          "updated_at": "2026-09-11T19:08:22.861014+00:00"
+          "updated_at": "2026-09-11T22:31:54.306265+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00432:friction:eligibility_verification",
@@ -3659,8 +3530,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-09-11T19:08:22.861014+00:00",
-          "updated_at": "2026-09-11T19:08:22.861014+00:00"
+          "created_at": "2026-09-11T22:31:54.306265+00:00",
+          "updated_at": "2026-09-11T22:31:54.306265+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00432:friction:logistics_validation",
@@ -3671,8 +3542,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-09-11T19:08:22.861014+00:00",
-          "updated_at": "2026-09-11T19:08:22.861014+00:00"
+          "created_at": "2026-09-11T22:31:54.306265+00:00",
+          "updated_at": "2026-09-11T22:31:54.306265+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00433:friction:demand_aggregation",
@@ -3683,8 +3554,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-09-11T19:08:22.861014+00:00",
-          "updated_at": "2026-09-11T19:08:22.861014+00:00"
+          "created_at": "2026-09-11T22:31:54.306265+00:00",
+          "updated_at": "2026-09-11T22:31:54.306265+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00433:friction:finance_fit",
@@ -3695,8 +3566,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-09-11T19:08:22.861014+00:00",
-          "updated_at": "2026-09-11T19:08:22.861014+00:00"
+          "created_at": "2026-09-11T22:31:54.306265+00:00",
+          "updated_at": "2026-09-11T22:31:54.306265+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00433:friction:logistics_validation",
@@ -3707,8 +3578,8 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-09-11T19:08:22.861014+00:00",
-          "updated_at": "2026-09-11T19:08:22.861014+00:00"
+          "created_at": "2026-09-11T22:31:54.306265+00:00",
+          "updated_at": "2026-09-11T22:31:54.306265+00:00"
         },
         {
           "id": "unlock:project-guyana-proc-2026-00433:friction:partner_introduction",
@@ -3719,8 +3590,128 @@
           "related_signals": [
             "dev-pipeline-regional"
           ],
-          "created_at": "2026-09-11T19:08:22.861014+00:00",
-          "updated_at": "2026-09-11T19:08:22.861014+00:00"
+          "created_at": "2026-09-11T22:31:54.306265+00:00",
+          "updated_at": "2026-09-11T22:31:54.306265+00:00"
+        },
+        {
+          "id": "unlock:project-guyana-proc-2026-00440:friction:eligibility_verification",
+          "status": "proposed",
+          "owner_persona": "procurement_watcher",
+          "blocker": "cross-border supplier qualification",
+          "evidence": [],
+          "related_signals": [
+            "dev-pipeline-regional"
+          ],
+          "created_at": "2026-09-11T22:31:54.306265+00:00",
+          "updated_at": "2026-09-11T22:31:54.306265+00:00"
+        },
+        {
+          "id": "unlock:project-guyana-proc-2026-00440:friction:logistics_validation",
+          "status": "proposed",
+          "owner_persona": "regional_operator",
+          "blocker": "route economics",
+          "evidence": [],
+          "related_signals": [
+            "dev-pipeline-regional"
+          ],
+          "created_at": "2026-09-11T22:31:54.306265+00:00",
+          "updated_at": "2026-09-11T22:31:54.306265+00:00"
+        },
+        {
+          "id": "unlock:project-guyana-proc-2026-00442:friction:eligibility_verification",
+          "status": "proposed",
+          "owner_persona": "procurement_watcher",
+          "blocker": "cross-border supplier qualification",
+          "evidence": [],
+          "related_signals": [
+            "dev-pipeline-regional"
+          ],
+          "created_at": "2026-09-11T22:31:54.306265+00:00",
+          "updated_at": "2026-09-11T22:31:54.306265+00:00"
+        },
+        {
+          "id": "unlock:project-guyana-proc-2026-00442:friction:logistics_validation",
+          "status": "proposed",
+          "owner_persona": "regional_operator",
+          "blocker": "route economics",
+          "evidence": [],
+          "related_signals": [
+            "dev-pipeline-regional"
+          ],
+          "created_at": "2026-09-11T22:31:54.306265+00:00",
+          "updated_at": "2026-09-11T22:31:54.306265+00:00"
+        },
+        {
+          "id": "unlock:project-guyana-proc-2026-00443:friction:eligibility_verification",
+          "status": "proposed",
+          "owner_persona": "procurement_watcher",
+          "blocker": "cross-border supplier qualification",
+          "evidence": [],
+          "related_signals": [
+            "dev-pipeline-regional"
+          ],
+          "created_at": "2026-09-11T22:31:54.306265+00:00",
+          "updated_at": "2026-09-11T22:31:54.306265+00:00"
+        },
+        {
+          "id": "unlock:project-guyana-proc-2026-00443:friction:logistics_validation",
+          "status": "proposed",
+          "owner_persona": "regional_operator",
+          "blocker": "route economics",
+          "evidence": [],
+          "related_signals": [
+            "dev-pipeline-regional"
+          ],
+          "created_at": "2026-09-11T22:31:54.306265+00:00",
+          "updated_at": "2026-09-11T22:31:54.306265+00:00"
+        },
+        {
+          "id": "unlock:project-guyana-proc-2026-00444:friction:eligibility_verification",
+          "status": "proposed",
+          "owner_persona": "procurement_watcher",
+          "blocker": "cross-border supplier qualification",
+          "evidence": [],
+          "related_signals": [
+            "dev-pipeline-regional"
+          ],
+          "created_at": "2026-09-11T22:31:54.306265+00:00",
+          "updated_at": "2026-09-11T22:31:54.306265+00:00"
+        },
+        {
+          "id": "unlock:project-guyana-proc-2026-00444:friction:logistics_validation",
+          "status": "proposed",
+          "owner_persona": "regional_operator",
+          "blocker": "route economics",
+          "evidence": [],
+          "related_signals": [
+            "dev-pipeline-regional"
+          ],
+          "created_at": "2026-09-11T22:31:54.306265+00:00",
+          "updated_at": "2026-09-11T22:31:54.306265+00:00"
+        },
+        {
+          "id": "unlock:project-guyana-proc-2026-00445:friction:eligibility_verification",
+          "status": "proposed",
+          "owner_persona": "procurement_watcher",
+          "blocker": "cross-border supplier qualification",
+          "evidence": [],
+          "related_signals": [
+            "dev-pipeline-regional"
+          ],
+          "created_at": "2026-09-11T22:31:54.306265+00:00",
+          "updated_at": "2026-09-11T22:31:54.306265+00:00"
+        },
+        {
+          "id": "unlock:project-guyana-proc-2026-00445:friction:logistics_validation",
+          "status": "proposed",
+          "owner_persona": "regional_operator",
+          "blocker": "route economics",
+          "evidence": [],
+          "related_signals": [
+            "dev-pipeline-regional"
+          ],
+          "created_at": "2026-09-11T22:31:54.306265+00:00",
+          "updated_at": "2026-09-11T22:31:54.306265+00:00"
         }
       ],
       "operator_campaigns": [
@@ -3732,15 +3723,15 @@
           "blocker": "cross-border supplier qualification",
           "intervention_type": null,
           "interventions": [
-            "unlock:project-guyana-proc-2026-00425:friction:eligibility_verification",
             "unlock:project-guyana-proc-2026-00426:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00427:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00428:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00429:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00430:friction:eligibility_verification",
-            "unlock:project-guyana-proc-2026-00432:friction:eligibility_verification"
+            "unlock:project-guyana-proc-2026-00432:friction:eligibility_verification",
+            "unlock:project-guyana-proc-2026-00440:friction:eligibility_verification",
+            "unlock:project-guyana-proc-2026-00442:friction:eligibility_verification",
+            "unlock:project-guyana-proc-2026-00443:friction:eligibility_verification",
+            "unlock:project-guyana-proc-2026-00444:friction:eligibility_verification",
+            "unlock:project-guyana-proc-2026-00445:friction:eligibility_verification"
           ],
-          "updated_at": "2026-09-11T19:08:22.861014+00:00"
+          "updated_at": "2026-09-11T22:31:54.306265+00:00"
         },
         {
           "slug": "campaign-logistics_validation-regional_operator-route-economics",
@@ -3750,15 +3741,15 @@
           "blocker": "route economics",
           "intervention_type": null,
           "interventions": [
-            "unlock:project-guyana-proc-2026-00425:friction:logistics_validation",
             "unlock:project-guyana-proc-2026-00426:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00427:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00428:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00429:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00430:friction:logistics_validation",
-            "unlock:project-guyana-proc-2026-00432:friction:logistics_validation"
+            "unlock:project-guyana-proc-2026-00432:friction:logistics_validation",
+            "unlock:project-guyana-proc-2026-00440:friction:logistics_validation",
+            "unlock:project-guyana-proc-2026-00442:friction:logistics_validation",
+            "unlock:project-guyana-proc-2026-00443:friction:logistics_validation",
+            "unlock:project-guyana-proc-2026-00444:friction:logistics_validation",
+            "unlock:project-guyana-proc-2026-00445:friction:logistics_validation"
           ],
-          "updated_at": "2026-09-11T19:08:22.861014+00:00"
+          "updated_at": "2026-09-11T22:31:54.306265+00:00"
         },
         {
           "slug": "campaign-demand_aggregation-ecosystem_builder-pooled-procurement-required",
@@ -3770,7 +3761,7 @@
           "interventions": [
             "unlock:project-guyana-proc-2026-00433:friction:demand_aggregation"
           ],
-          "updated_at": "2026-09-11T19:08:22.861014+00:00"
+          "updated_at": "2026-09-11T22:31:54.306265+00:00"
         },
         {
           "slug": "campaign-finance_fit-diaspora_investor-mandate-and-ticket-size-fit",
@@ -3782,7 +3773,7 @@
           "interventions": [
             "unlock:project-guyana-proc-2026-00433:friction:finance_fit"
           ],
-          "updated_at": "2026-09-11T19:08:22.861014+00:00"
+          "updated_at": "2026-09-11T22:31:54.306265+00:00"
         },
         {
           "slug": "campaign-logistics_validation-regional_operator-inter-island-logistics",
@@ -3794,7 +3785,7 @@
           "interventions": [
             "unlock:project-guyana-proc-2026-00433:friction:logistics_validation"
           ],
-          "updated_at": "2026-09-11T19:08:22.861014+00:00"
+          "updated_at": "2026-09-11T22:31:54.306265+00:00"
         },
         {
           "slug": "campaign-partner_introduction-ecosystem_builder-local-delivery-partner-required",
@@ -3806,7 +3797,7 @@
           "interventions": [
             "unlock:project-guyana-proc-2026-00433:friction:partner_introduction"
           ],
-          "updated_at": "2026-09-11T19:08:22.861014+00:00"
+          "updated_at": "2026-09-11T22:31:54.306265+00:00"
         }
       ]
     },
@@ -3815,7 +3806,7 @@
       "title": "Regional coordination path for Anguilla: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-ai-tropical_cyclone-2010-01-01",
-      "trigger_dispatch_id": "DSP-20260911-039",
+      "trigger_dispatch_id": "DSP-20260911-041",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "Anguilla",
@@ -3997,7 +3988,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 74/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -4037,7 +4028,7 @@
       "title": "Regional coordination path for Barbados: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-bb-excess_rainfall-2014-01-01",
-      "trigger_dispatch_id": "DSP-20260911-047",
+      "trigger_dispatch_id": "DSP-20260911-049",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "Barbados",
@@ -4217,7 +4208,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 66/100",
         "Matched 3 of 3 required capabilities across 4 regional nodes",
         "Registry evidence from 5 primary-source organisations"
       ],
@@ -4257,7 +4248,7 @@
       "title": "Regional coordination path for Barbados: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-bb-tropical_cyclone-2010-01-01",
-      "trigger_dispatch_id": "DSP-20260911-043",
+      "trigger_dispatch_id": "DSP-20260911-045",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "Barbados",
@@ -4437,7 +4428,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 66/100",
         "Matched 3 of 3 required capabilities across 4 regional nodes",
         "Registry evidence from 5 primary-source organisations"
       ],
@@ -4477,7 +4468,7 @@
       "title": "Regional coordination path for Dominica: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-dm-tropical_cyclone-2017-01-01",
-      "trigger_dispatch_id": "DSP-20260911-063",
+      "trigger_dispatch_id": "DSP-20260911-065",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "Dominica",
@@ -4659,7 +4650,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 74/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -4699,7 +4690,7 @@
       "title": "Regional coordination path for Grenada: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-gd-tropical_cyclone-2024-01-01",
-      "trigger_dispatch_id": "DSP-20260911-079",
+      "trigger_dispatch_id": "DSP-20260911-081",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "Grenada",
@@ -4881,7 +4872,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 74/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -4921,7 +4912,7 @@
       "title": "Regional coordination path for Haiti: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-ht-earthquake-2010-01-01",
-      "trigger_dispatch_id": "DSP-20260911-035",
+      "trigger_dispatch_id": "DSP-20260911-037",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "Haiti",
@@ -5103,7 +5094,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 52/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -5143,7 +5134,7 @@
       "title": "Regional coordination path for Haiti: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-ht-earthquake-2021-01-01",
-      "trigger_dispatch_id": "DSP-20260911-067",
+      "trigger_dispatch_id": "DSP-20260911-069",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "Haiti",
@@ -5325,7 +5316,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 52/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -5365,7 +5356,7 @@
       "title": "Regional coordination path for Haiti: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-ht-tropical_cyclone-2016-01-01",
-      "trigger_dispatch_id": "DSP-20260911-051",
+      "trigger_dispatch_id": "DSP-20260911-053",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "Haiti",
@@ -5547,7 +5538,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 52/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -5587,7 +5578,7 @@
       "title": "Regional coordination path for Haiti: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-ht-tropical_cyclone-2025-01-01",
-      "trigger_dispatch_id": "DSP-20260911-091",
+      "trigger_dispatch_id": "DSP-20260911-093",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "Haiti",
@@ -5769,7 +5760,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 52/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -5809,7 +5800,7 @@
       "title": "Regional coordination path for St. Kitts and Nevis: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-kn-tropical_cyclone-2017-01-01",
-      "trigger_dispatch_id": "DSP-20260911-059",
+      "trigger_dispatch_id": "DSP-20260911-061",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "St. Kitts and Nevis",
@@ -5991,7 +5982,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 74/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -6031,7 +6022,7 @@
       "title": "Regional coordination path for Nicaragua: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-ni-tropical_cyclone-2016-01-01",
-      "trigger_dispatch_id": "DSP-20260911-055",
+      "trigger_dispatch_id": "DSP-20260911-057",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "Nicaragua",
@@ -6213,7 +6204,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 66/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -6253,7 +6244,7 @@
       "title": "Regional coordination path for Nicaragua: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-ni-tropical_cyclone-2022-01-01",
-      "trigger_dispatch_id": "DSP-20260911-071",
+      "trigger_dispatch_id": "DSP-20260911-073",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "Nicaragua",
@@ -6435,7 +6426,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 84/100",
+        "Trigger signal confidence: 66/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -6475,7 +6466,7 @@
       "title": "Regional coordination path for Turks and Caicos Islands: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-tc-tropical_cyclone-2008-01-01",
-      "trigger_dispatch_id": "DSP-20260911-031",
+      "trigger_dispatch_id": "DSP-20260911-033",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "Turks and Caicos Islands",
@@ -6657,7 +6648,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 74/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -6697,7 +6688,7 @@
       "title": "Regional coordination path for St. Vincent & the Grenadines: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-vc-tropical_cyclone-2024-01-01",
-      "trigger_dispatch_id": "DSP-20260911-075",
+      "trigger_dispatch_id": "DSP-20260911-077",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "St. Vincent & the Grenadines",
@@ -6879,7 +6870,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 74/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 5 regional nodes",
         "Registry evidence from 6 primary-source organisations"
       ],
@@ -6919,7 +6910,7 @@
       "title": "Regional coordination path for St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended",
       "status": "candidate",
       "trigger_signal_id": "vuln-st.-vincent-and-the-grenadines",
-      "trigger_dispatch_id": "DSP-20260911-009",
+      "trigger_dispatch_id": "DSP-20260911-011",
       "signal_kind": "economic_vulnerability",
       "demand_node": {
         "country": "St Vincent & the Grenadines",
@@ -7150,7 +7141,7 @@
       "title": "Regional coordination path for Jamaica: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-jm-tropical_cyclone-2024-01-01",
-      "trigger_dispatch_id": "DSP-20260911-083",
+      "trigger_dispatch_id": "DSP-20260911-085",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "Jamaica",
@@ -7317,7 +7308,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 72/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 4 regional nodes",
         "Registry evidence from 4 primary-source organisations"
       ],
@@ -7352,7 +7343,7 @@
       "title": "Regional coordination path for Jamaica: signal detected",
       "status": "candidate",
       "trigger_signal_id": "ccrif-payout-jm-tropical_cyclone-2025-01-01",
-      "trigger_dispatch_id": "DSP-20260911-087",
+      "trigger_dispatch_id": "DSP-20260911-089",
       "signal_kind": "ccrif_payout",
       "demand_node": {
         "country": "Jamaica",
@@ -7519,7 +7510,7 @@
         "friction_penalty": 25
       },
       "ranking_rationale": [
-        "Trigger signal confidence: 72/100",
+        "Trigger signal confidence: 84/100",
         "Matched 3 of 3 required capabilities across 4 regional nodes",
         "Registry evidence from 4 primary-source organisations"
       ],

@@ -1,6 +1,6 @@
 # Abeng — Judge Brief
 
-Generated: 2026-09-11 19:08 UTC
+Generated: 2026-09-11 22:31 UTC
 
 ## What This Proves
 
@@ -8,10 +8,10 @@ Abeng watches public regional data, merges weak signals across sources, packages
 
 ## Live Run Snapshot
 
-- Total raw signals generated: 34
-- Sources represented: CARICOM, CCRIF SPC, CDB, ECCB, IDB, NDBC, World Bank
-- Countries/zones: 17
-- New/updated this cycle: 0
+- Total raw signals generated: 35
+- Sources represented: CARICOM, CCRIF SPC, CDB, ECCB, IDB, NDBC, NOAA, World Bank
+- Countries/zones: 18
+- New/updated this cycle: 1
 - User-facing outputs: opportunity dispatches, regional thesis, why-now context, feedback review, judge brief
 
 **Guyana** — 3 signal(s), 4 source(s): 💼 Investment + 🏖️ Tourism + 💎 Investment
@@ -41,31 +41,32 @@ Abeng watches public regional data, merges weak signals across sources, packages
    Audience: investor/founder via Email brief + Telegram
    Decision: Active procurement pipeline: CDB active procurement notices: 7. Priority: review CDB/IDB opportunities as lead list for project-based entry.
 
-**4.** 🟡 **ccrif_payout — Haiti** — intensified
-   Narrative: Haiti: signal detected
+**4.** 🟡 **🌀 Storm Risk — Barbados / Windwards** — new
+   Narrative: Barbados / Windwards: signal detected
+   Score: 86/100 | Grade: B - cross-source
+   Audience: operator/resilience via Telegram/SMS alert
+   Decision: Validation — Barbados / Windwards: 🌀 Storm Risk (signal detected). Validate locally.
+   🆕 New this cycle
+
+**5.** 🟡 **ccrif_payout — Turks and Caicos Islands** — intensified
+   Narrative: Turks and Caicos Islands: signal detected
    Score: 84/100 | Grade: C - single-source
    Audience: regional intelligence via Telegram digest
-   Decision: Validation — Haiti: ccrif_payout (signal detected). Validate locally.
-   ⬆️ Strengthened (+32 pts)
+   Decision: Validation — Turks and Caicos Islands: ccrif_payout (signal detected). Validate locally.
+   ⬆️ Strengthened (+10 pts)
 
-**5.** 🟡 **ccrif_payout — Barbados** — intensified
-   Narrative: Barbados: signal detected
+**6.** 🟡 **ccrif_payout — Anguilla** — intensified
+   Narrative: Anguilla: signal detected
    Score: 84/100 | Grade: C - single-source
    Audience: regional intelligence via Telegram digest
-   Decision: Validation — Barbados: ccrif_payout (signal detected). Validate locally.
-   ⬆️ Strengthened (+18 pts)
+   Decision: Validation — Anguilla: ccrif_payout (signal detected). Validate locally.
+   ⬆️ Strengthened (+10 pts)
 
-**6.** 🟡 **eccb_deposit_growth — Eastern Caribbean Currency Union** — sustained
+**7.** 🟡 **eccb_deposit_growth — Eastern Caribbean Currency Union** — sustained
    Narrative: Eastern Caribbean Currency Union: 4.6%
    Score: 76/100 | Grade: C - single-source
    Audience: regional intelligence via Telegram digest
    Decision: Validation — Eastern Caribbean Currency Union: eccb_deposit_growth (4.6%). Validate locally.
-
-**7.** 🟢 **⚠️ Vulnerability — St. Vincent and the Grenadines** — sustained
-   Narrative: St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended
-   Score: 60/100 | Grade: C - single-source
-   Audience: policy/operator via Telegram digest
-   Decision: Monitor. St. Vincent and the Grenadines showing economic stress (18.00%). Track next cycle. Escalates if additional stress indicators appear or existing ones worsen.
 
 ## Routing Rationale
 
@@ -135,7 +136,7 @@ Each signal is routed to specific personas based on signal kind and evidence lev
 
 ## Cycle Summary
 
-Lead: Guyana · 34 composite signal(s) · 8 intensified · 18 persistent
+Lead: Guyana · 35 composite signal(s) · 1 new · 8 intensified · 18 persistent
 ## Judge Demo Path
 
 1. Run `bash run_pipeline.sh`.

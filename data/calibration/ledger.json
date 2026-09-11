@@ -22742,8 +22742,31 @@
       "resolved_at": null,
       "prev_hash": "4380e4a4dd143c93d329f0fd6f8bafc8bf8ee80b5537287fbc098df85b84865e",
       "hash": "a26118d751758933e770bad1b25e9d0fe6ee0dadde52e8963af8b35a3df848c0"
+    },
+    {
+      "cycle_id": "20260911",
+      "fact_key": "id:cyclone-42058",
+      "signal_id": "cyclone-42058",
+      "kind": "cyclone_risk",
+      "country": "Barbados / Windwards",
+      "score": 86,
+      "band": "85-100",
+      "corroborating_at_claim": 2,
+      "source_names": [
+        "NDBC",
+        "NOAA"
+      ],
+      "chain_schema": 2,
+      "recorded_at": "2026-09-11T22:31:54.654096+00:00",
+      "forecast_probability": 0.95,
+      "prior_basis": "calibrated",
+      "outcome": null,
+      "resolved_by": null,
+      "resolved_at": null,
+      "prev_hash": "a26118d751758933e770bad1b25e9d0fe6ee0dadde52e8963af8b35a3df848c0",
+      "hash": "f796a0f3aa8c0d4934b20a07b6fdf7adfc478a66b8d543bf02b40215a29a50a7"
     }
   ],
   "created_at": "2026-08-15T21:38:36.574954+00:00",
-  "updated_at": "2026-09-11T19:08:23.206061+00:00"
+  "updated_at": "2026-09-11T22:31:54.654532+00:00"
 }

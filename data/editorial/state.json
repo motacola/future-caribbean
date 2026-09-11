@@ -1,5 +1,5 @@
 {
-  "previous_run": "2026-09-11T19:08:42.906427+00:00",
+  "previous_run": "2026-09-11T22:32:14.860241+00:00",
   "previous_lead_country": "Guyana",
   "previous_signal_ids": [
     "eccb-deposit-growth-eccu",
@@ -35,32 +35,33 @@
     "vuln-st.-vincent-and-the-grenadines",
     "invest-suriname",
     "invest-guyana",
-    "invest-barbados"
+    "invest-barbados",
+    "cyclone-42058"
   ],
   "previous_top_scores": {
     "eccb-deposit-growth-eccu": 76,
-    "ccrif-payout-ht-tropical_cyclone-2025-01-01": 84,
-    "ccrif-payout-jm-tropical_cyclone-2025-01-01": 72,
-    "ccrif-payout-jm-tropical_cyclone-2024-01-01": 72,
-    "ccrif-payout-gd-tropical_cyclone-2024-01-01": 74,
-    "ccrif-payout-vc-tropical_cyclone-2024-01-01": 74,
-    "ccrif-payout-ni-tropical_cyclone-2022-01-01": 84,
-    "ccrif-payout-ht-earthquake-2021-01-01": 84,
-    "ccrif-payout-dm-tropical_cyclone-2017-01-01": 74,
-    "ccrif-payout-kn-tropical_cyclone-2017-01-01": 74,
-    "ccrif-payout-ni-tropical_cyclone-2016-01-01": 84,
-    "ccrif-payout-ht-tropical_cyclone-2016-01-01": 84,
-    "ccrif-payout-bb-excess_rainfall-2014-01-01": 84,
-    "ccrif-payout-bb-tropical_cyclone-2010-01-01": 84,
-    "ccrif-payout-ai-tropical_cyclone-2010-01-01": 74,
-    "ccrif-payout-ht-earthquake-2010-01-01": 84,
-    "ccrif-payout-tc-tropical_cyclone-2008-01-01": 74,
+    "ccrif-payout-ht-tropical_cyclone-2025-01-01": 52,
+    "ccrif-payout-jm-tropical_cyclone-2025-01-01": 84,
+    "ccrif-payout-jm-tropical_cyclone-2024-01-01": 84,
+    "ccrif-payout-gd-tropical_cyclone-2024-01-01": 84,
+    "ccrif-payout-vc-tropical_cyclone-2024-01-01": 84,
+    "ccrif-payout-ni-tropical_cyclone-2022-01-01": 66,
+    "ccrif-payout-ht-earthquake-2021-01-01": 52,
+    "ccrif-payout-dm-tropical_cyclone-2017-01-01": 84,
+    "ccrif-payout-kn-tropical_cyclone-2017-01-01": 84,
+    "ccrif-payout-ni-tropical_cyclone-2016-01-01": 66,
+    "ccrif-payout-ht-tropical_cyclone-2016-01-01": 52,
+    "ccrif-payout-bb-excess_rainfall-2014-01-01": 66,
+    "ccrif-payout-bb-tropical_cyclone-2010-01-01": 66,
+    "ccrif-payout-ai-tropical_cyclone-2010-01-01": 84,
+    "ccrif-payout-ht-earthquake-2010-01-01": 52,
+    "ccrif-payout-tc-tropical_cyclone-2008-01-01": 84,
     "supply-chain-bahamas-belize-grenada": 102,
     "enhanced-invest-suriname": 98,
     "enhanced-invest-guyana": 111,
     "enhanced-invest-barbados": 85,
     "dev-pipeline-regional": 95,
-    "food-security-regional": 80,
+    "food-security-regional": 84,
     "tourism-st.-vincent-and-the-grenadines": 47,
     "tourism-st.-kitts-and-nevis": 47,
     "tourism-guyana": 47,
@@ -71,7 +72,8 @@
     "vuln-st.-vincent-and-the-grenadines": 60,
     "invest-suriname": 84,
     "invest-guyana": 87,
-    "invest-barbados": 75
+    "invest-barbados": 75,
+    "cyclone-42058": 86
   },
   "score_basis": "raw-v1",
   "previous_summaries": {
@@ -108,6 +110,7 @@
     "vuln-st.-vincent-and-the-grenadines": "St. Vincent and the Grenadines: elevated economic vulnerability indicators",
     "invest-suriname": "Suriname: FDI surge detected with active IDB development datasets available",
     "invest-guyana": "Guyana: FDI surge detected with active IDB development datasets available",
-    "invest-barbados": "Barbados: FDI surge detected with active IDB development datasets available"
+    "invest-barbados": "Barbados: FDI surge detected with active IDB development datasets available",
+    "cyclone-42058": "Elevated tropical weather risk in Barbados / Windwards: Eastern Caribbean (E of Barbados) reports 1008 hPa at 23 kts"
   }
 }
