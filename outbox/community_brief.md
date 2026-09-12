@@ -1,5 +1,5 @@
 🌴 **Caribbean Opportunity Brief** — what's moving this week
-Cycle 20260911 • 2026-09-11 22:31 UTC
+Cycle 20260912 • 2026-09-12 04:28 UTC
 
 Plain-language signals for builders, business owners, and community leaders.
 No jargon. Just what matters for your next move.
@@ -26,15 +26,15 @@ No jargon. Just what matters for your next move.
    🟡 Solid signal — some corroboration
    📊 Cross-source validation
 
-5. **Barbados / Windwards**: storm risk elevated — prepare operations
-   Bad weather likely. Secure assets, check comms, warn crews. (holding steady)
-   🟡 Solid signal — some corroboration
-   📊 Cross-source validation
-
-6. **Barbados**: money flowing in from multiple sources — verified opportunity — 34.8% movement
+5. **Barbados**: money flowing in from multiple sources — verified opportunity — 34.8% movement
    New money = new competition AND new customers. Map your advantage before they arrive. (holding steady)
    🟡 Solid signal — some corroboration
    📊 Single-source indicator — verify locally
+
+6. **Suriname**: foreign investment spiking — worth watching — 206.0% movement
+   Investment noise in your market. Could mean competitors coming or demand growing. (holding steady)
+   🟡 Solid signal — some corroboration
+   📊 Cross-source validation
 
 ---
 

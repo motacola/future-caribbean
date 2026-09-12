@@ -1,4 +1,4 @@
-*Caribbean Market Pulse — 2026-09-11 22:31 UTC*
+*Caribbean Market Pulse — 2026-09-12 04:28 UTC*
 
 Lead: Guyana. 3 converging signal(s) across 4 source(s). Signals: 💼 Investment + 🏖️ Tourism + 💎 Investment.
 
@@ -22,11 +22,11 @@ Lead: Guyana. 3 converging signal(s) across 4 source(s). Signals: 💼 Investmen
    Immediate | 95/100 | B - cross-source
    Active procurement pipeline: CDB active procurement notices: 7. Priority: review CDB/IDB opportunities as lead list for project-based entry.
 
-🟡 🆕 **🌀 Storm Risk — Barbados / Windwards**
-   Barbados / Windwards: signal detected
-   Validation | 86/100 | B - cross-source
-   🆕 New this cycle
-   Validation — Barbados / Windwards: 🌀 Storm Risk (signal detected). Validate locally.
+🟡 ⬆️ **ccrif_payout — Haiti**
+   Haiti: signal detected
+   Validation | 84/100 | C - single-source
+   ⬆️ Strengthened (+32 pts)
+   Validation — Haiti: ccrif_payout (signal detected). Validate locally.
 
-— Lead: Guyana · 35 composite signal(s) · 1 new · 8 intensified · 18 persistent
+— Lead: Guyana · 34 composite signal(s) · 8 intensified · 18 persistent
 - Abeng

@@ -2,7 +2,7 @@
 
 **Decision job:** Capital deployment screening and market entry assessment
 **Delivery channel:** Email brief + Telegram
-**Generated:** Sep 11, 2026 at 22:31 UTC
+**Generated:** Sep 12, 2026 at 04:28 UTC
 **Dispatches in this packet:** 26
 
 ---
@@ -11,7 +11,7 @@
 
 ### 1. Guyana: +860.3% capital surge on a single official source — market entry window open
 
-**ID:** `DSP-20260911-021` | **Country:** Guyana | **Confidence:** 🔴 Immediate | 100/100 | C - single-source
+**ID:** `DSP-20260912-019` | **Country:** Guyana | **Confidence:** 🔴 Immediate | 100/100 | C - single-source
 **Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** forwarded
 
@@ -25,7 +25,7 @@
 
 ### 2. Suriname: +206.0% investment movement, one source — needs corroboration
 
-**ID:** `DSP-20260911-024` | **Country:** Suriname | **Confidence:** 🔴 Immediate | 98/100 | C - single-source
+**ID:** `DSP-20260912-022` | **Country:** Suriname | **Confidence:** 🔴 Immediate | 98/100 | C - single-source
 **Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -39,7 +39,7 @@
 
 ### 3. Regional FDI snapshot: 3 countries with active capital movement
 
-**ID:** `DSP-20260911-003` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
+**ID:** `DSP-20260912-001` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
 **Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** new
 **Feedback status:** ignored
 
@@ -53,7 +53,7 @@
 
 ### 4. Capital convergence: 3 Caribbean economies showing multi-source investment momentum
 
-**ID:** `DSP-20260911-018` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
+**ID:** `DSP-20260912-016` | **Country:** Caribwide | **Confidence:** 🟡 Validation | Multi-country | Multi-source
 **Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** new
 **Feedback status:** ignored
 
@@ -67,7 +67,7 @@
 
 ### 5. Guyana: FDI trending at +860.3% — screening trigger active
 
-**ID:** `DSP-20260911-005` | **Country:** Guyana | **Confidence:** 🟡 Validation | 87/100 | B - cross-source
+**ID:** `DSP-20260912-003` | **Country:** Guyana | **Confidence:** 🟡 Validation | 87/100 | B - cross-source
 **Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -81,7 +81,7 @@
 
 ### 6. Barbados: +34.8% FDI momentum validated — cross-reference before deploying
 
-**ID:** `DSP-20260911-027` | **Country:** Barbados | **Confidence:** 🟡 Validation | 85/100 | C - single-source
+**ID:** `DSP-20260912-025` | **Country:** Barbados | **Confidence:** 🟡 Validation | 85/100 | C - single-source
 **Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -95,7 +95,7 @@
 
 ### 7. Suriname: FDI trending at +206.0% — screening trigger active
 
-**ID:** `DSP-20260911-007` | **Country:** Suriname | **Confidence:** 🟡 Validation | 84/100 | B - cross-source
+**ID:** `DSP-20260912-005` | **Country:** Suriname | **Confidence:** 🟡 Validation | 84/100 | B - cross-source
 **Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -107,220 +107,9 @@
 **Decision to influence:** Which country-sector pair to validate for investment readiness
 **Routing rationale:** Single-source FDI movement is a screening trigger, not a deployment signal — start diligence
 
-### 8. Turks and Caicos Islands: signal detected
+### 8. Haiti: signal detected
 
-**ID:** `DSP-20260911-033` | **Country:** Turks and Caicos Islands | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$6,303,913; Peril: tropical_cyclone; Event date: 2008-01-01; Announced: 2008-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Review Turks and Caicos Islands: signal detected. Validate locally before action.
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
-
-### 9. Anguilla: signal detected
-
-**ID:** `DSP-20260911-041` | **Country:** Anguilla | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$4,282,733; Peril: tropical_cyclone; Event date: 2010-01-01; Announced: 2010-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Review Anguilla: signal detected. Validate locally before action.
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
-
-### 10. St. Kitts and Nevis: signal detected
-
-**ID:** `DSP-20260911-061` | **Country:** St. Kitts and Nevis | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$2,294,603; Peril: tropical_cyclone; Event date: 2017-01-01; Announced: 2017-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Review St. Kitts and Nevis: signal detected. Validate locally before action.
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
-
-### 11. Dominica: signal detected
-
-**ID:** `DSP-20260911-065` | **Country:** Dominica | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$19,294,800; Peril: tropical_cyclone; Event date: 2017-01-01; Announced: 2017-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Review Dominica: signal detected. Validate locally before action.
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
-
-### 12. St. Vincent & the Grenadines: signal detected
-
-**ID:** `DSP-20260911-077` | **Country:** St. Vincent & the Grenadines | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$1,862,728; Peril: tropical_cyclone; Event date: 2024-01-01; Announced: 2024-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Review St. Vincent & the Grenadines: signal detected. Validate locally before action.
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
-
-### 13. Grenada: signal detected
-
-**ID:** `DSP-20260911-081` | **Country:** Grenada | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$42,425,110; Peril: tropical_cyclone; Event date: 2024-01-01; Announced: 2024-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Review Grenada: signal detected. Validate locally before action.
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
-
-### 14. Jamaica: signal detected
-
-**ID:** `DSP-20260911-085` | **Country:** Jamaica | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$16,309,185; Peril: tropical_cyclone; Event date: 2024-01-01; Announced: 2024-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Review Jamaica: signal detected. Validate locally before action.
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
-
-### 15. Jamaica: signal detected
-
-**ID:** `DSP-20260911-089` | **Country:** Jamaica | **Confidence:** 🟡 Validation | 84/100 | C - single-source
-**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$70,803,832; Peril: tropical_cyclone; Event date: 2025-01-01; Announced: 2025-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Review Jamaica: signal detected. Validate locally before action.
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
-
-### 16. Eastern Caribbean Currency Union: 4.6%
-
-**ID:** `DSP-20260911-097` | **Country:** Eastern Caribbean Currency Union | **Confidence:** 🟡 Validation | 76/100 | C - single-source
-**Channel:** Email brief + Telegram | **Window:** 30 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Total deposits growth: +4.6% YoY (threshold 3%); Private sector credit growth: +5.8% YoY (threshold 5%); Total deposits: EC$22,353.3M; Period: 2025 (YoY: +4.6%)
-**Detail:** 4.6%
-**Grade:** C - single-source
-
-**Recommended action:** Review Eastern Caribbean Currency Union: 4.6%. Validate locally before action.
-**Decision to influence:** Deposit base expansion = currency union stability = confidence signal
-**Routing rationale:** Deposit growth = institutional confidence = favorable capital environment
-
-### 17. Barbados: FDI trending at +34.8% — screening trigger active
-
-**ID:** `DSP-20260911-009` | **Country:** Barbados | **Confidence:** 🟡 Validation | 75/100 | B - cross-source
-**Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Barbados: Foreign direct investment net inflows current USD moved up 34.8% from 2023 to 2024.
-**Detail:** 34.8% change
-**Grade:** B - cross-source
-
-**Recommended action:** Screen Barbados for investment readiness. FDI movement (34.8% change) is a screening trigger — cross-reference with sector conditions before deploying capital.
-**Decision to influence:** Which country-sector pair to validate for investment readiness
-**Routing rationale:** Single-source FDI movement is a screening trigger, not a deployment signal — start diligence
-
-### 18. Barbados: signal detected
-
-**ID:** `DSP-20260911-045` | **Country:** Barbados | **Confidence:** 🟢 Monitor | 66/100 | C - single-source
-**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$8,560,247; Peril: tropical_cyclone; Event date: 2010-01-01; Announced: 2010-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Review Barbados: signal detected. Validate locally before action.
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
-
-### 19. Barbados: signal detected
-
-**ID:** `DSP-20260911-049` | **Country:** Barbados | **Confidence:** 🟢 Monitor | 66/100 | C - single-source
-**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$1,284,882; Peril: excess_rainfall; Event date: 2014-01-01; Announced: 2014-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Review Barbados: signal detected. Validate locally before action.
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
-
-### 20. Nicaragua: signal detected
-
-**ID:** `DSP-20260911-057` | **Country:** Nicaragua | **Confidence:** 🟢 Monitor | 66/100 | C - single-source
-**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$1,110,193; Peril: tropical_cyclone; Event date: 2016-01-01; Announced: 2016-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Review Nicaragua: signal detected. Validate locally before action.
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
-
-### 21. Nicaragua: signal detected
-
-**ID:** `DSP-20260911-073` | **Country:** Nicaragua | **Confidence:** 🟢 Monitor | 66/100 | C - single-source
-**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
-**Feedback status:** ignored
-
-**Evidence:** Payout: US$8,924,577; Peril: tropical_cyclone; Event date: 2022-01-01; Announced: 2022-01-01
-**Detail:** signal detected
-**Grade:** C - single-source
-
-**Recommended action:** Review Nicaragua: signal detected. Validate locally before action.
-**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
-**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
-
-### 22. St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended
-
-**ID:** `DSP-20260911-011` | **Country:** St. Vincent and the Grenadines | **Confidence:** 🟢 Monitor | 60/100 | C - single-source
-**Channel:** Email brief + Telegram | **Window:** 30 days | **Freshness:** sustained
-**Feedback status:** decision_changed
-
-**Evidence:** St. Vincent and the Grenadines: Unemployment % is 18.00% (2025).
-**Detail:** 18.00%
-**Grade:** C - single-source
-
-**Recommended action:** Assess portfolio exposure in St. Vincent and the Grenadines. Economic stress indicators (18.00%) may affect existing positions or timing.
-**Decision to influence:** Risk assessment for capital exposure or policy attention
-**Routing rationale:** Vulnerability signals change risk profiles — reassess exposure and timing
-**Risk flags:** Elevated economic stress in St. Vincent and the Grenadines
-
-### 23. Haiti: signal detected
-
-**ID:** `DSP-20260911-037` | **Country:** Haiti | **Confidence:** 🟢 Monitor | 52/100 | C - single-source
+**ID:** `DSP-20260912-035` | **Country:** Haiti | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -332,9 +121,37 @@
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
 
-### 24. Haiti: signal detected
+### 9. Barbados: signal detected
 
-**ID:** `DSP-20260911-053` | **Country:** Haiti | **Confidence:** 🟢 Monitor | 52/100 | C - single-source
+**ID:** `DSP-20260912-043` | **Country:** Barbados | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$8,560,247; Peril: tropical_cyclone; Event date: 2010-01-01; Announced: 2010-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Barbados: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 10. Barbados: signal detected
+
+**ID:** `DSP-20260912-047` | **Country:** Barbados | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$1,284,882; Peril: excess_rainfall; Event date: 2014-01-01; Announced: 2014-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Barbados: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 11. Haiti: signal detected
+
+**ID:** `DSP-20260912-051` | **Country:** Haiti | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -346,9 +163,23 @@
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
 
-### 25. Haiti: signal detected
+### 12. Nicaragua: signal detected
 
-**ID:** `DSP-20260911-069` | **Country:** Haiti | **Confidence:** 🟢 Monitor | 52/100 | C - single-source
+**ID:** `DSP-20260912-055` | **Country:** Nicaragua | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$1,110,193; Peril: tropical_cyclone; Event date: 2016-01-01; Announced: 2016-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Nicaragua: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 13. Haiti: signal detected
+
+**ID:** `DSP-20260912-067` | **Country:** Haiti | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -360,9 +191,23 @@
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
 
-### 26. Haiti: signal detected
+### 14. Nicaragua: signal detected
 
-**ID:** `DSP-20260911-093` | **Country:** Haiti | **Confidence:** 🟢 Monitor | 52/100 | C - single-source
+**ID:** `DSP-20260912-071` | **Country:** Nicaragua | **Confidence:** 🟡 Validation | 84/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$8,924,577; Peril: tropical_cyclone; Event date: 2022-01-01; Announced: 2022-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Nicaragua: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 15. Haiti: signal detected
+
+**ID:** `DSP-20260912-091` | **Country:** Haiti | **Confidence:** 🟡 Validation | 84/100 | C - single-source
 **Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
 **Feedback status:** ignored
 
@@ -373,6 +218,161 @@
 **Recommended action:** Review Haiti: signal detected. Validate locally before action.
 **Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
 **Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 16. Jamaica: signal detected
+
+**ID:** `DSP-20260912-083` | **Country:** Jamaica | **Confidence:** 🟡 Validation | 76/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$16,309,185; Peril: tropical_cyclone; Event date: 2024-01-01; Announced: 2024-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Jamaica: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 17. Jamaica: signal detected
+
+**ID:** `DSP-20260912-087` | **Country:** Jamaica | **Confidence:** 🟡 Validation | 76/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$70,803,832; Peril: tropical_cyclone; Event date: 2025-01-01; Announced: 2025-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Jamaica: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 18. Eastern Caribbean Currency Union: 4.6%
+
+**ID:** `DSP-20260912-095` | **Country:** Eastern Caribbean Currency Union | **Confidence:** 🟡 Validation | 76/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 30 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Total deposits growth: +4.6% YoY (threshold 3%); Private sector credit growth: +5.8% YoY (threshold 5%); Total deposits: EC$22,353.3M; Period: 2025 (YoY: +4.6%)
+**Detail:** 4.6%
+**Grade:** C - single-source
+
+**Recommended action:** Review Eastern Caribbean Currency Union: 4.6%. Validate locally before action.
+**Decision to influence:** Deposit base expansion = currency union stability = confidence signal
+**Routing rationale:** Deposit growth = institutional confidence = favorable capital environment
+
+### 19. Barbados: FDI trending at +34.8% — screening trigger active
+
+**ID:** `DSP-20260912-007` | **Country:** Barbados | **Confidence:** 🟡 Validation | 75/100 | B - cross-source
+**Channel:** Email brief + Telegram | **Window:** 14 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Barbados: Foreign direct investment net inflows current USD moved up 34.8% from 2023 to 2024.
+**Detail:** 34.8% change
+**Grade:** B - cross-source
+
+**Recommended action:** Screen Barbados for investment readiness. FDI movement (34.8% change) is a screening trigger — cross-reference with sector conditions before deploying capital.
+**Decision to influence:** Which country-sector pair to validate for investment readiness
+**Routing rationale:** Single-source FDI movement is a screening trigger, not a deployment signal — start diligence
+
+### 20. Turks and Caicos Islands: signal detected
+
+**ID:** `DSP-20260912-031` | **Country:** Turks and Caicos Islands | **Confidence:** 🟡 Validation | 74/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$6,303,913; Peril: tropical_cyclone; Event date: 2008-01-01; Announced: 2008-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Turks and Caicos Islands: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 21. Anguilla: signal detected
+
+**ID:** `DSP-20260912-039` | **Country:** Anguilla | **Confidence:** 🟡 Validation | 74/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$4,282,733; Peril: tropical_cyclone; Event date: 2010-01-01; Announced: 2010-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Anguilla: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 22. St. Kitts and Nevis: signal detected
+
+**ID:** `DSP-20260912-059` | **Country:** St. Kitts and Nevis | **Confidence:** 🟡 Validation | 74/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$2,294,603; Peril: tropical_cyclone; Event date: 2017-01-01; Announced: 2017-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review St. Kitts and Nevis: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 23. Dominica: signal detected
+
+**ID:** `DSP-20260912-063` | **Country:** Dominica | **Confidence:** 🟡 Validation | 74/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$19,294,800; Peril: tropical_cyclone; Event date: 2017-01-01; Announced: 2017-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Dominica: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 24. St. Vincent & the Grenadines: signal detected
+
+**ID:** `DSP-20260912-075` | **Country:** St. Vincent & the Grenadines | **Confidence:** 🟡 Validation | 74/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$1,862,728; Peril: tropical_cyclone; Event date: 2024-01-01; Announced: 2024-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review St. Vincent & the Grenadines: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 25. Grenada: signal detected
+
+**ID:** `DSP-20260912-079` | **Country:** Grenada | **Confidence:** 🟡 Validation | 74/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 7 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** Payout: US$42,425,110; Peril: tropical_cyclone; Event date: 2024-01-01; Announced: 2024-01-01
+**Detail:** signal detected
+**Grade:** C - single-source
+
+**Recommended action:** Review Grenada: signal detected. Validate locally before action.
+**Decision to influence:** Insurance capital deployment for reconstruction / parametric trigger validation
+**Routing rationale:** CCRIF payout = verified hazard + immediate liquidity = reconstruction investment window opens
+
+### 26. St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended
+
+**ID:** `DSP-20260912-009` | **Country:** St. Vincent and the Grenadines | **Confidence:** 🟢 Monitor | 60/100 | C - single-source
+**Channel:** Email brief + Telegram | **Window:** 30 days | **Freshness:** sustained
+**Feedback status:** decision_changed
+
+**Evidence:** St. Vincent and the Grenadines: Unemployment % is 18.00% (2025).
+**Detail:** 18.00%
+**Grade:** C - single-source
+
+**Recommended action:** Assess portfolio exposure in St. Vincent and the Grenadines. Economic stress indicators (18.00%) may affect existing positions or timing.
+**Decision to influence:** Risk assessment for capital exposure or policy attention
+**Routing rationale:** Vulnerability signals change risk profiles — reassess exposure and timing
+**Risk flags:** Elevated economic stress in St. Vincent and the Grenadines
 
 ---
 

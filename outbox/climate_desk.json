@@ -1,30 +1,30 @@
 {
   "instance": "climate",
   "instance_label": "Climate & Catastrophe Risk",
-  "cycle_id": "20260911",
-  "generated_at": "2026-09-11T22:31:54.805349+00:00",
+  "cycle_id": "20260912",
+  "generated_at": "2026-09-12T04:28:15.670139+00:00",
   "clusters": [
     {
-      "cluster_id": "CLIM-marine-1622",
-      "country_cluster": "Caribbean marine zones",
-      "signal_kind": "maritime_hazard",
-      "title": "Marine hazard: Pressure dropping at Western Caribbean (Yucatan Basin): -3.1 hPa in ~2",
-      "evidence": "NDBC buoy network: Pressure dropping at Western Caribbean (Yucatan Basin): -3.1 hPa in ~2 readings",
-      "evidence_grade": "B - sensor",
-      "confidence_score": 80,
+      "cluster_id": "CLIM-allclear",
+      "country_cluster": "Caribbean basin",
+      "signal_kind": "all_clear",
+      "title": "All clear \u2014 no active hazards this cycle",
+      "evidence": "No active NWS alerts in Caribbean zones. Current conditions: 6 buoys reporting; peak seas 1.2m; max wind 23 kt; no tropical development expected (NHC).",
+      "evidence_grade": "A - official sources",
+      "confidence_score": 70,
       "freshness": "new",
-      "decision": "Marine operations and coastal risk",
+      "decision": "Routine monitoring \u2014 no action required",
       "risk_flags": [],
       "personas": [
         {
-          "persona": "Operations/Resilience",
-          "channel": "Telegram/SMS alert",
-          "action": "Marine hazard \u2014 Pressure dropping at Western Caribbean (Yucatan Basin): -3.1 hPa in ~2 readings. Advise vessels and coastal operations; delay exposed activity until conditions ease."
-        },
-        {
           "persona": "Resilience Planner",
           "channel": "Telegram/SMS alert",
-          "action": "Marine conditions deteriorating \u2014 Pressure dropping at Western Caribbean (Yucatan Basin): -3.1 hPa in ~2 readings. Monitor for escalation toward small-craft / coastal-flood thresholds."
+          "action": "All clear across Caribbean zones \u2014 6 buoys reporting; peak seas 1.2m; max wind 23 kt; no tropical development expected (NHC). No action required; the engine keeps watching and will escalate the moment a threshold is crossed."
+        },
+        {
+          "persona": "Insurer / Reinsurer",
+          "channel": "Email + alert",
+          "action": "No active hazard exposure this cycle (6 buoys reporting; peak seas 1.2m; max wind 23 kt; no tropical development expected (NHC)). Baseline confirmed for parametric monitoring."
         }
       ]
     }
