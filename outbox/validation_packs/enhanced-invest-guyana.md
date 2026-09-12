@@ -5,11 +5,11 @@
 - Action readiness: high
 - Evidence freshness: refreshing · cycles since refresh: 0
 - Recommendation: **ADVANCE** — Calibrated confidence 100/100 with 3 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.
-- Last validated: 2026-09-12T18:19:42.605498+00:00
+- Last validated: 2026-09-12T22:13:53.082237+00:00
 
 ## Sector hypotheses
-- Oil & gas and offshore support services [corroborated] — _Google News — Guyana: UKEF willing to support Guyanese private sector importation of non-oil sector products - Demerara Waves Online News- Guyana_
-- Construction and infrastructure [corroborated] — _Guyana Chronicle: Wales gas-to-energy project takes shape as works continue_
+- Oil & gas and offshore support services [corroborated] — _Google News — Guyana: Exxon looks to add to Guyana exploration program - Oil & Gas Journal_
+- Construction and infrastructure [corroborated] — _Guyana Chronicle: GPL advancing major power network expansion_
 - Logistics serving the energy supply chain [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
 - Agriculture and agro-processing [unconfirmed] — _Analyst prior from widely reported sector drivers — requires local confirmation_
 - Which industries received it is not published yet [macro_signal] — _World Bank: FDI net inflows moved +860.3% from 2023 to 2024_

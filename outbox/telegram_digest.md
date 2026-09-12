@@ -1,4 +1,4 @@
-*Caribbean Market Pulse — 2026-09-12 18:19 UTC*
+*Caribbean Market Pulse — 2026-09-12 22:13 UTC*
 
 Lead: Guyana. 3 converging signal(s) across 4 source(s). Signals: 💼 Investment + 🏖️ Tourism + 💎 Investment.
 
@@ -6,6 +6,12 @@ Lead: Guyana. 3 converging signal(s) across 4 source(s). Signals: 💼 Investmen
    Guyana: +860.3% capital surge on a single official source — market entry window open
    Immediate | 100/100 | C - single-source
    Immediate investigation. Guyana has multi-source investment validation (3 signals converging). Priority: assess market entry options, identify existing operators.
+
+🔴 🆕 **supply_chain_signal — Bahamas, Belize, Grenada**
+   Bahamas, Belize, Grenada: signal detected
+   Immediate | 100/100 | A - multi-source
+   🆕 New this cycle
+   Immediate — Bahamas, Belize, Grenada: supply_chain_signal (signal detected). Validate locally.
 
 🔴 — **💎 Investment — Suriname**
    Suriname: +206.0% investment movement, one source — needs corroboration
@@ -17,17 +23,11 @@ Lead: Guyana. 3 converging signal(s) across 4 source(s). Signals: 💼 Investmen
    Immediate | 95/100 | B - cross-source
    Active procurement pipeline: CDB active procurement notices: 7. Priority: review CDB/IDB opportunities as lead list for project-based entry.
 
-🟡 ⬆️ **ccrif_payout — Haiti**
-   Haiti: signal detected
+🟡 ⬆️ **ccrif_payout — Turks and Caicos Islands**
+   Turks and Caicos Islands: signal detected
    Validation | 84/100 | C - single-source
-   ⬆️ Strengthened (+32 pts)
-   Validation — Haiti: ccrif_payout (signal detected). Validate locally.
+   ⬆️ Strengthened (+10 pts)
+   Validation — Turks and Caicos Islands: ccrif_payout (signal detected). Validate locally.
 
-🟡 ⬆️ **ccrif_payout — Barbados**
-   Barbados: signal detected
-   Validation | 84/100 | C - single-source
-   ⬆️ Strengthened (+18 pts)
-   Validation — Barbados: ccrif_payout (signal detected). Validate locally.
-
-— Lead: Guyana · 33 composite signal(s) · 8 intensified · 17 persistent
+— Lead: Guyana · 34 composite signal(s) · 1 new · 8 intensified · 17 persistent
 - Abeng

@@ -1,8 +1,8 @@
 # Abeng — Backtest Report
 
-**Generated:** 2026-09-12T18:19:42.927402+00:00
+**Generated:** 2026-09-12T22:13:53.337526+00:00
 **Cycles analyzed:** 8
-**Total dispatches:** 755
+**Total dispatches:** 758
 **Actionable responses:** 2
 **Overall response rate:** 0.3%
 **Avg confidence:** 78.9/100
@@ -47,7 +47,7 @@
 
 | Cycle | Dispatches | Actionable | Response Rate |
 |-------|------------|------------|---------------|
-| 20260912 | 94 | 2 | 2.1% |
+| 20260912 | 97 | 2 | 2.1% |
 | 20260911 | 99 | 0 | 0.0% |
 | 20260910 | 97 | 0 | 0.0% |
 | 20260909 | 97 | 0 | 0.0% |
