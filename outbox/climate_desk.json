@@ -2,14 +2,40 @@
   "instance": "climate",
   "instance_label": "Climate & Catastrophe Risk",
   "cycle_id": "20260912",
-  "generated_at": "2026-09-12T12:08:28.284567+00:00",
+  "generated_at": "2026-09-12T18:19:43.013035+00:00",
   "clusters": [
     {
-      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.2",
+      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.3",
+      "country_cluster": "Mona Passage Southward to 17N",
+      "signal_kind": "hazard_alert",
+      "title": "Mona Passage Southward to 17N: Special Marine Warning in effect (Severe)",
+      "evidence": "NOAA NWS: Special Marine Warning issued September 12 at 2:10PM AST until September 12 at 2:45PM AST by NWS San Juan PR",
+      "evidence_grade": "A - official alert",
+      "confidence_score": 95,
+      "freshness": "new",
+      "decision": "Hazard response and exposure assessment",
+      "risk_flags": [
+        "Severe Special Marine Warning active in Mona Passage Southward to 17N"
+      ],
+      "personas": [
+        {
+          "persona": "Resilience Planner",
+          "channel": "Telegram/SMS alert",
+          "action": "Active hazard alert \u2014 Special Marine Warning \u2014 Severe (Mona Passage Southward to 17N). Pre-position resources and confirm evacuation/shelter readiness in the affected area now."
+        },
+        {
+          "persona": "Insurer / Reinsurer",
+          "channel": "Email + alert",
+          "action": "Exposure check \u2014 Special Marine Warning \u2014 Severe (Mona Passage Southward to 17N). Flag policies in the affected zone and prepare parametric-trigger assessment."
+        }
+      ]
+    },
+    {
+      "cluster_id": "CLIM-alert-urn:oid:2.49.0.1.840.0.a",
       "country_cluster": "San Juan and Vicinity",
       "signal_kind": "hazard_alert",
       "title": "San Juan and Vicinity: Heat Advisory in effect (Moderate)",
-      "evidence": "NOAA NWS: Heat Advisory issued September 12 at 3:52AM AST until September 12 at 5:00PM AST by NWS San Juan PR",
+      "evidence": "NOAA NWS: Heat Advisory issued September 12 at 10:35AM AST until September 12 at 5:00PM AST by NWS San Juan PR",
       "evidence_grade": "B - official alert",
       "confidence_score": 80,
       "freshness": "new",
@@ -27,9 +53,33 @@
           "action": "Exposure check \u2014 Heat Advisory \u2014 Moderate (San Juan and Vicinity). Flag policies in the affected zone and prepare parametric-trigger assessment."
         }
       ]
+    },
+    {
+      "cluster_id": "CLIM-marine-4516",
+      "country_cluster": "Caribbean marine zones",
+      "signal_kind": "maritime_hazard",
+      "title": "Marine hazard: High seas at Eastern Caribbean (E of Barbados): 3.0m",
+      "evidence": "NDBC buoy network: High seas at Eastern Caribbean (E of Barbados): 3.0m",
+      "evidence_grade": "B - sensor",
+      "confidence_score": 80,
+      "freshness": "new",
+      "decision": "Marine operations and coastal risk",
+      "risk_flags": [],
+      "personas": [
+        {
+          "persona": "Operations/Resilience",
+          "channel": "Telegram/SMS alert",
+          "action": "Marine hazard \u2014 High seas at Eastern Caribbean (E of Barbados): 3.0m. Advise vessels and coastal operations; delay exposed activity until conditions ease."
+        },
+        {
+          "persona": "Resilience Planner",
+          "channel": "Telegram/SMS alert",
+          "action": "Marine conditions deteriorating \u2014 High seas at Eastern Caribbean (E of Barbados): 3.0m. Monitor for escalation toward small-craft / coastal-flood thresholds."
+        }
+      ]
     }
   ],
-  "dispatch_count": 2,
+  "dispatch_count": 6,
   "sources": [
     "NOAA NWS",
     "NDBC buoys",

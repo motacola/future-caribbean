@@ -5,7 +5,7 @@
 - Action readiness: high
 - Evidence freshness: refreshing · cycles since refresh: 0
 - Recommendation: **ADVANCE** — Calibrated confidence 100/100 with 3 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.
-- Last validated: 2026-09-12T12:08:27.841515+00:00
+- Last validated: 2026-09-12T18:19:42.605498+00:00
 
 ## Sector hypotheses
 - Oil & gas and offshore support services [corroborated] — _Google News — Guyana: UKEF willing to support Guyanese private sector importation of non-oil sector products - Demerara Waves Online News- Guyana_

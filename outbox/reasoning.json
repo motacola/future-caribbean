@@ -1,17 +1,17 @@
 {
   "engine": "deterministic",
   "model": null,
-  "generated_at": "2026-09-12T12:08:28.352822+00:00",
-  "thesis": "Capital momentum is led by Guyana (+860%), with Suriname, Barbados also moving. Meanwhile the climate instance shows an active hazard (San Juan and Vicinity: Heat Advisory in effect (Moderate)). Where hazard exposure overlaps capital momentum, recovery-capital timing and entry timing intersect.",
+  "generated_at": "2026-09-12T18:19:43.075149+00:00",
+  "thesis": "Capital momentum is led by Guyana (+860%), with Suriname, Barbados also moving. Meanwhile the climate instance shows an active hazard (Mona Passage Southward to 17N: Special Marine Warning in effect (Severe)). Where hazard exposure overlaps capital momentum, recovery-capital timing and entry timing intersect.",
   "connections": [
     "Guyana: 2 converging signal types (enhanced_investment, investment_signal)",
     "Suriname: 2 converging signal types (enhanced_investment, investment_signal)",
     "CARICOM: 2 converging signal types (development_pipeline, food_security)",
-    "Cross-instance: hazard (San Juan and Vicinity) overlaps economic momentum window"
+    "Cross-instance: hazard (Mona Passage Southward to 17N) overlaps economic momentum window"
   ],
   "stats": {
-    "economic_signals": 29,
-    "climate_signals": 1,
+    "economic_signals": 28,
+    "climate_signals": 3,
     "conflicts": 0,
     "convergences": 5
   }
