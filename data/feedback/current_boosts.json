@@ -1,10 +1,13 @@
 {
-  "generated_at": "2026-09-12T22:13:52.316914+00:00",
+  "generated_at": "2026-09-13T04:40:16.935061+00:00",
   "boosts": {
     "enhanced_investment": {
       "Guyana": 4,
       "Suriname": -6,
       "Barbados": -6
+    },
+    "supply_chain_signal": {
+      "Bahamas, Belize, Grenada": -6
     },
     "development_pipeline": {
       "CARICOM": 1
@@ -14,12 +17,13 @@
       "Suriname": -4
     },
     "ccrif_payout": {
-      "Haiti": -34,
-      "Barbados": -18,
-      "Nicaragua": -18
-    },
-    "food_security": {
-      "CARICOM": -4
+      "Turks and Caicos Islands": -10,
+      "Anguilla": -10,
+      "St. Kitts and Nevis": -10,
+      "Dominica": -10,
+      "St. Vincent & the Grenadines": -10,
+      "Grenada": -10,
+      "Jamaica": -16
     }
   }
 }

@@ -1,11 +1,11 @@
 # Opportunity Validation Pack — Guyana
 
-- Signal: `enhanced-invest-guyana` · Dispatch: `DSP-20260912-019`
+- Signal: `enhanced-invest-guyana` · Dispatch: `DSP-20260913-019`
 - Confidence: 100/100 (raw 111) · C - single-source
 - Action readiness: high
 - Evidence freshness: refreshing · cycles since refresh: 0
 - Recommendation: **ADVANCE** — Calibrated confidence 100/100 with 3 evidence categories including dated procurement or corroborated sector news. Worth one validation conversation.
-- Last validated: 2026-09-12T22:13:53.082237+00:00
+- Last validated: 2026-09-13T04:40:17.845555+00:00
 
 ## Sector hypotheses
 - Oil & gas and offshore support services [corroborated] — _Google News — Guyana: Exxon looks to add to Guyana exploration program - Oil & Gas Journal_
