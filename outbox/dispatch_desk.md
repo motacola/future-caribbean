@@ -1,6 +1,6 @@
 # Dispatch Desk — Cycle 20260913
 
-Generated: 2026-09-13 18:45 UTC
+Generated: 2026-09-13 22:22 UTC
 
 Abeng turns fragmented regional data into decision-ready routes. This is the primary product surface; Telegram/email are delivery channels and the dashboard is the operator/audit view.
 
@@ -149,11 +149,11 @@ Capital momentum is strongest in Guyana (+860.3%), followed by Suriname. Separat
 
 ## Feedback-Adjusted Priority
 
-- Jamaica ccrif payout downranked -16
-- Turks and Caicos Islands ccrif payout downranked -10
-- St. Vincent & the Grenadines ccrif payout downranked -10
-- St. Kitts and Nevis ccrif payout downranked -10
-- Grenada ccrif payout downranked -10
+- Haiti ccrif payout downranked -28
+- Nicaragua ccrif payout downranked -18
+- Barbados ccrif payout downranked -18
+- Suriname enhanced investment downranked -6
+- Barbados enhanced investment downranked -6
 
 ## Supporting Artifacts
 
