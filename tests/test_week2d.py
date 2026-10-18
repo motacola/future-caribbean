@@ -170,8 +170,13 @@ def test_astro_data_includes_ported_label_cleaners():
     assert lead_country, "dispatch_desk.json has no lead cluster"
 
     corroborated = grade.startswith(("A", "B")) or "source" in grade.lower() and "single" not in grade.lower()
-    consensus = f"All signals point to {lead_country}." in dashboard
-    watchful = f"{lead_country} is the one to watch." in dashboard
+    # BRAND.md: the headline leads with the change and says how solid it is.
+    # Read the headline itself; the same phrases appear in other markets' rows.
+    import re as _re
+    heads = _re.findall(r"<h2>([^<]*)</h2>", dashboard)
+    lead_head = next((h for h in heads if h.startswith(f"{lead_country}: ")), "")
+    consensus = "confirmed by several sources" in lead_head
+    watchful = "on one source so far" in lead_head
     assert consensus or watchful, (
         f"dashboard should render a lead headline naming {lead_country} (grade={grade})"
     )
@@ -185,7 +190,7 @@ def test_astro_data_includes_ported_label_cleaners():
         "dashboard should render the lead's cleaned grade label"
     )
     assert "World Bank" in dashboard
-    assert "money on the move" in dashboard
+    assert "Foreign investment +" in dashboard
 
 
 if __name__ == "__main__":

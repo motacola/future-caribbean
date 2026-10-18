@@ -1,4 +1,5 @@
 ---
+import SiteMast from '../components/SiteMast.astro';
 import Base from '../layouts/Base.astro';
 import { capabilityLabel, signalKindLabel, personaLabel } from '../lib/labels';
 import { readFileSync, existsSync } from 'fs';
@@ -165,15 +166,7 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); line
 
 <Base title="Abeng — Regional Connections" description="The Caribbean coordination graph: each island as a node, missing links made visible, and the smallest verifiable step to close them.">
 
-<div class="masthead">
-  <div class="mast-inner">
-    <a href="/" class="mast-name"><em>ABENG</em></a>
-    <div class="mast-links">
-      <a href="/">← The Dispatch</a>
-      <a href="/build">Build a feed</a>
-    </div>
-  </div>
-</div>
+<SiteMast current="/regional-connections" />
 
 <div class="hero" id="main-content" role="main">
   <p class="hero-kicker">How the islands connect</p>

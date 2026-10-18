@@ -1,4 +1,5 @@
 ---
+import SiteMast from '../components/SiteMast.astro';
 import Base from '../layouts/Base.astro';
 import { readFileSync, existsSync } from 'fs';
 import { resolve, join } from 'path';
@@ -55,15 +56,7 @@ function fmtDate(value) {
 
 <Base title="Abeng — Opportunity Resolution" description="What happened after a Caribbean procurement opportunity was detected: closing-date amendments, awards, cancellations, and the detection lead time behind each.">
 
-<div class="masthead">
-  <div class="mast-inner">
-    <a href="/" class="mast-name"><em>ABENG</em></a>
-    <div class="mast-links">
-      <a href="/">← The Dispatch</a>
-      <a href="/regional-connections">Regional connections</a>
-    </div>
-  </div>
-</div>
+<SiteMast current="/opportunity-resolution" />
 
 <div class="hero" id="main-content" role="main">
   <p class="hero-kicker">What happened to the tenders we spotted</p>

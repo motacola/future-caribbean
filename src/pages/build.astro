@@ -1,4 +1,5 @@
 ---
+import SiteMast from '../components/SiteMast.astro';
 import Base from '../layouts/Base.astro';
 import { humanizeRulesJson } from '../lib/humanize.ts';
 import LollipopIsland from '../lib/charts/LollipopIsland.tsx';
@@ -299,15 +300,9 @@ footer { border-top: 1px solid var(--border); padding: 24px; text-align: center;
 
 <Base title="Abeng — build your Caribbean feed">
 
-<div class="masthead">
-  <div class="mast-inner">
-    <a href="/" class="mast-name"><em>ABENG</em></a>
-    <div class="mast-links">
-      <span class="live-pill"><span class="live-dot"></span> Caribbean instance · <span id="mast-sources">6/6</span> live</span>
-      <a href="/">← Back to the Dispatch</a>
-    </div>
-  </div>
-</div>
+<SiteMast current="/build">
+  <span class="live-pill"><span class="live-dot"></span> Caribbean instance · <span id="mast-sources">6/6</span> live</span>
+</SiteMast>
 
 <div class="hero" id="main-content" role="main">
   <p class="hero-kicker">Build your feed</p>

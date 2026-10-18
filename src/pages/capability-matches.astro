@@ -1,4 +1,5 @@
 ---
+import SiteMast from '../components/SiteMast.astro';
 import Base from '../layouts/Base.astro';
 import { capabilityLabel, sectorLabel, stateLabel } from '../lib/labels';
 import { readFileSync, existsSync } from 'fs';
@@ -41,15 +42,7 @@ function bestEvidence(holder: any): any {
 
 <Base title="Abeng — Capability Matches" description="Detected Caribbean tenders matched to cited country-level capability-registry entries.">
 
-<div class="masthead">
-  <div class="mast-inner">
-    <a href="/" class="mast-name"><em>ABENG</em></a>
-    <div class="mast-links">
-      <a href="/">← The Dispatch</a>
-      <a href="/opportunity-resolution">Opportunity resolution</a>
-    </div>
-  </div>
-</div>
+<SiteMast current="/capability-matches" />
 
 <div class="hero" id="main-content" role="main">
   <p class="hero-kicker">What the region is being asked to build</p>

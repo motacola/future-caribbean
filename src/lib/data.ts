@@ -61,9 +61,20 @@ function cleanTitle(raw: string, evidenceGrade = ''): string {
   const grade = evidenceGrade.toLowerCase();
   const corroborated = grade.includes('multi-source') || grade.includes('cross-source')
     || evidenceGrade.startsWith('A') || evidenceGrade.startsWith('B');
-  return corroborated
-    ? `All signals point to ${country}.`
-    : `${country} is the one to watch.`;
+  const source = corroborated ? 'confirmed by several sources' : 'on one source so far';
+  const pct = raw.match(/([+\-]?)(\d+(?:\.\d+)?)%/);
+  if (pct && /capital|invest|FDI/i.test(raw)) {
+    // Headlines round big moves to whole numbers; the evidence keeps the decimal.
+    const n = Number(pct[2]);
+    const shown = n >= 10 ? String(Math.round(n)) : String(n);
+    return `${displayPlace(country)}: foreign investment ${pct[1] === '-' ? 'down' : 'up'} ${shown}%, ${source}`;
+  }
+  return humanize(raw) !== raw ? humanize(raw) : `${displayPlace(country)}: early signal, ${source}`;
+}
+
+/** Internal cluster names stay internal: "Caribwide" reads as "Regional". */
+function displayPlace(raw: string): string {
+  return /^caribwide$/i.test(String(raw).trim()) ? 'Regional' : raw;
 }
 
 // fallow-ignore-next-line complexity
@@ -100,10 +111,14 @@ function evidenceListHtml(raw: string): string {
 }
 
 function cleanSignalTitle(raw: string): string {
-  const country = raw.includes(':') ? raw.split(':')[0].trim() : 'Caribbean';
-  const pct = raw.match(/([+\-]?\d+\.?\d*)%/);
-  if (pct) return `${country} — money on the move (${pct[1]}%)`;
-  return `${country} — early signal`;
+  const pct = raw.match(/([+\-]?)(\d+\.?\d*)%/);
+  const tenders = raw.match(/(\d+) active procurements?/);
+  if (tenders) return `${tenders[1]} live tender${tenders[1] === '1' ? '' : 's'}`;
+  if (pct) {
+    const change = `${pct[1] === '-' ? '-' : '+'}${pct[2]}%`;
+    return /capital|invest|FDI/i.test(raw) ? `Foreign investment ${change}` : `Moved ${change}`;
+  }
+  return 'Early signal, no detail yet';
 }
 
 // ── Country data ────────────────────────────────────────────
@@ -433,7 +448,7 @@ function cycleDateLabel(id: string): string {
 // fallow-ignore-next-line complexity
 function buildSignalRowHtml(c: any, allPacks: Record<string, any>, cycleId: string): { html: string; verdict: string } {
   const ct = cleanSignalTitle(c.title || '');
-  const cc = c.country_cluster || '';
+  const cc = displayPlace(c.country_cluster || '');
   const riskHtml = c.risk_flags?.length
     ? `<span class="risk-tag">⚠️ ${esc((c.risk_flags[0] || '').slice(0, 50))}</span>` : '';
 
@@ -846,7 +861,7 @@ export function loadDashboardData() {
     const watchlist = /no detail yet/i.test(title);
     return `<a class="lw-item${watchlist ? ' lw-watch' : ''}" href="${esc(dispatchHref(t))}" data-country="${esc(country)}">` +
       `<i style="background:${color}"></i>` +
-      `<span class="lw-kicker">${esc(t.country_cluster || 'Region')}</span>` +
+      `<span class="lw-kicker">${esc(displayPlace(t.country_cluster || 'Regional'))}</span>` +
       (watchlist ? '<span class="lw-tag">Watchlist</span>' : '') +
       `<span>${esc(title)}</span></a>`;
   }).join('');
@@ -855,7 +870,7 @@ export function loadDashboardData() {
   let frontPointersHtml = tickerItems.slice(1, 4).map((t: any) => {
     const country = canonicalCountry(t.country_cluster || '');
     return `<a class="fp-item" href="${esc(dispatchHref(t))}" data-country="${esc(country)}">` +
-      `<span class="fp-kicker">${esc(t.country_cluster || 'Region')}</span>` +
+      `<span class="fp-kicker">${esc(displayPlace(t.country_cluster || 'Regional'))}</span>` +
       `<span class="fp-title">${esc(humanize(t.title || ''))}</span></a>`;
   }).join('');
 
@@ -1002,7 +1017,7 @@ export function loadDashboardData() {
     const cycles: any[] = trackRecord.cycles || [];
     const currentBoosts: Record<string, any> = trackRecord.current_boosts || {};
     if (trackRecord.feedback_provenance !== 'observed') {
-      receiptsProvenanceHtml = `<p class="receipts-note"><strong>Validation note:</strong> these seeded responses exercise the feedback and reprioritisation loop. Observed recipient outcomes replace them as audience activity accumulates.</p>`;
+      receiptsProvenanceHtml = `<p class="receipts-note"><strong>Test data:</strong> these responses are there to show how feedback changes priority. Real reader responses will replace them.</p>`;
     }
     const PILL_ORDER = [
       ['forwarded','Forwarded'], ['replied','Replied'],
@@ -1349,7 +1364,7 @@ export function loadDashboardData() {
   // fallow-ignore-next-line complexity
   const allClustersHtml = clusters.map((c, i) => {
     const ct = cleanSignalTitle(c.title || '');
-    const cc = c.country_cluster || '';
+    const cc = displayPlace(c.country_cluster || '');
     const cg = cleanGrade(c.evidence_grade || '');
     const cf = c.freshness || '';
     const cd = humanize(c.decision || '').slice(0, 100);
@@ -1431,7 +1446,7 @@ export function loadDashboardData() {
     .forEach((m: any, i: number) => {
       theaterEvents.push({
         event: 'signal_found',
-        data: { ts: nowTs + 56 + i * 10, kind: m.kind, country: m.country, confidence: m.confidence, summary: m.summary },
+        data: { ts: nowTs + 56 + i * 10, kind: m.kind, label: ({ investment: 'Investment', climate: 'Climate', procurement: 'Procurement', market: 'Market watch' } as Record<string, string>)[m.kind] || 'Quiet', country: m.country, confidence: m.confidence, summary: m.summary },
       });
     });
   // fallow-ignore-next-line complexity
@@ -1457,7 +1472,7 @@ export function loadDashboardData() {
   // Watchlist items ("no detail yet") are not moves; they are counted, not listed.
   const isWatch = (t: any) => /no detail yet/i.test(humanize(t.title || ''));
   const briefMoves = tickerItems.slice(1).filter((t: any) => !isWatch(t)).slice(0, 5).map((t: any) => ({
-    country: canonicalCountry(t.country_cluster || '') || 'Region',
+    country: displayPlace(canonicalCountry(t.country_cluster || '')) || 'Regional',
     title: humanize(t.title || ''),
     href: dispatchHref(t),
   }));

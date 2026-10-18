@@ -144,6 +144,8 @@ a:hover { text-decoration: underline; }
 .mast-name { font-family: var(--serif); font-size: 34px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; line-height: 1; animation: mast-press 1s var(--fe-ease-out) both; }
 .mast-name em { font-style: normal; color: var(--gold); }
 .mast-tagline { margin-top: 7px; font: 500 9px var(--mono); letter-spacing: 2.4px; text-transform: uppercase; color: rgba(244,235,221,.42); }
+/* Brand tagline (BRAND.md): same size and tone as the shared masthead. */
+.mast-tagline { font: 500 11px var(--mono); letter-spacing: 1.2px; color: rgba(255,249,240,.72); }
 .mast-links { display: flex; gap: 22px; flex-wrap: wrap; justify-content: center; }
 .mast-links a { color: color-mix(in srgb, var(--bg) 62%, transparent); font-size: 11px; letter-spacing: .8px; text-transform: uppercase; font-weight: 500; }
 .mast-links a:hover { color: var(--bg); text-decoration: none; }
@@ -1367,7 +1369,7 @@ html { scroll-behavior: smooth; }
   <div class="mast-inner">
     <div class="mast-brand">
       <div class="mast-name"><em>ABENG</em></div>
-      <div class="mast-tagline">Where Caribbean capital is moving</div>
+      <div class="mast-tagline">What changed. Who should act.</div>
     </div>
     <div class="mast-links">
       <a href="#decision-workspace" title={`Cycle ${d.cycleId}`}><span style="color:var(--teal)">●</span> Updated {d.cycleLabel}</a>
@@ -1425,7 +1427,7 @@ html { scroll-behavior: smooth; }
         <span class="fp-head">New here? How to read this page</span>
         <p class="how-to-what">It is a wire service for one region. Public records go in; a short, cited call on where money and risk are moving comes out. You do not need to follow markets to use it — start with the briefing.</p>
         <ol>
-          <li><strong>The map</strong> shows where money and risk moved this cycle. The bigger the pulse, the stronger the signal — tap a country.</li>
+          <li><strong>The map</strong> shows where money and risk moved this cycle. Larger pulses mark stronger signals. Select a country for what the desk found.</li>
           <li><strong>The briefing</strong> below tells you what to do about the strongest signal, with the evidence attached.</li>
           <li><strong>Ask the desk</strong> anything — every answer comes straight from the data, cited.</li>
         </ol>
@@ -1446,7 +1448,7 @@ html { scroll-behavior: smooth; }
       <div class="regional-movement" aria-label="Countries with active signals and their freshness state">
         <div class="regional-movement-head">
           <span class="regional-movement-label">Regional movement</span>
-          <span class="regional-movement-sub">tap a chip to drill into the country</span>
+          <span class="regional-movement-sub">select a country for what the desk found</span>
         </div>
         <div class="track-filter" role="group" aria-label="Filter regional movement by track">
           <button type="button" class="track-btn is-active" data-track-filter="all">All</button>
@@ -1459,7 +1461,7 @@ html { scroll-behavior: smooth; }
         <div class="map-finance-chip fx"><span>FX layer</span><strong>USD pegs + floats</strong></div>
         <div class="map-finance-chip market"><span>Equity layer</span><strong>JSE · TTSE · BSE</strong></div>
         <div class="map-finance-chip market"><span>Financial centres</span><strong>BISX · CSX · ECSE</strong></div>
-        <div class="map-finance-chip fx"><span>Tap any island</span><strong>Currency + market watch</strong></div>
+        <div class="map-finance-chip fx"><span>Select any island</span><strong>Currency + market watch</strong></div>
       </div>
       <div class="map-foot">
         <div class="map-legend" aria-label="Signal kinds">
@@ -1474,7 +1476,7 @@ html { scroll-behavior: smooth; }
     </div>
   </div>
   <div class="map-drill" id="map-drill" aria-live="polite">
-    <p class="map-drill-empty">Tap a country to see what the desk found.</p>
+    <p class="map-drill-empty">Select a country to see what the desk found.</p>
   </div>
 </section>
 
@@ -1499,7 +1501,7 @@ html { scroll-behavior: smooth; }
     </div>
     <div class="deskbar-follows">
       <span class="deskbar-label">Following</span>
-      <div class="deskbar-chips" id="follow-chips"><span class="deskbar-none">Tap a country on the map, then Follow.</span></div>
+      <div class="deskbar-chips" id="follow-chips"><span class="deskbar-none">Select a country on the map, then Follow.</span></div>
     </div>
   </div>
 </div>
@@ -1818,7 +1820,7 @@ const MAP_MARKERS = ${d.mapMarkersJson};
 const MAP_MARKER_BY_COUNTRY = Object.fromEntries(MAP_MARKERS.map(m => [m.country, m]));
 const NEWS_BY_COUNTRY = ${d.newsByCountryJson};
 const THEATER_EVENTS = ${d.theaterEventsJson};
-const HUMANIZE_RULES = ${d.humanizeRulesJson}.map(([p, r]) => { try { return [new RegExp(p), r]; } catch (e) { return null; } }).filter(Boolean);
+const HUMANIZE_RULES = ${d.humanizeRulesJson}.map(([p, r]) => { try { return [new RegExp(p, 'g'), r]; } catch (e) { return null; } }).filter(Boolean);
 function humanizeJs(t) {
   if (!t) return t;
   let out = String(t);
@@ -1858,7 +1860,7 @@ function renderTheaterEvent(type, data) {
     row.innerHTML = time + '<p><span>' + escapeMapText(data.source) + ' ↻</span> ' + escapeMapText(sourceState) + '</p>';
   } else if (type === 'signal_found') {
     const color = MAP_COLORS[data.kind] || MAP_COLORS.none;
-    row.innerHTML = time + '<p><span style="background:' + color + '">' + escapeMapText(data.kind) + '</span><strong>' + escapeMapText(data.country) + '</strong> · ' + escapeMapText(data.confidence) + '% · ' + escapeMapText(humanizeJs(data.summary)) + '</p>';
+    row.innerHTML = time + '<p><span style="background:' + color + '">' + escapeMapText(data.label || data.kind) + '</span><strong>' + escapeMapText(data.country) + '</strong> · ' + escapeMapText(data.confidence) + '% · ' + escapeMapText(humanizeJs(data.summary)) + '</p>';
   } else if (type === 'dispatch_routed') {
     row.innerHTML = time + '<p><strong>' + escapeMapText(data.recipient) + '</strong> · ' + escapeMapText(data.country) + ' <code>' + escapeMapText(data.dispatch_id) + '</code></p>';
   } else {
@@ -2274,7 +2276,7 @@ function paintFollows() {
   const wrap = document.getElementById('follow-chips');
   if (!wrap) return;
   if (!prefs.follows.length) {
-    wrap.innerHTML = '<span class="deskbar-none">Tap a country on the map, then Follow.</span>';
+    wrap.innerHTML = '<span class="deskbar-none">Select a country on the map, then Follow.</span>';
     return;
   }
   wrap.textContent = '';
@@ -2470,7 +2472,7 @@ const drillReact = (function () {
   }
 
   function DrillPanel({ country }) {
-    if (!country) return html`<p class="map-drill-empty">Tap a country to see what the desk found.</p>`;
+    if (!country) return html`<p class="map-drill-empty">Select a country to see what the desk found.</p>`;
     const items = MAP_DISPATCHES[country] || [];
     const marker = MAP_MARKER_BY_COUNTRY[country] || {};
     const fx = marker.fx || {};

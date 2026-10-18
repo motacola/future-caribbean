@@ -28,7 +28,7 @@ const paletteCountries = d.briefCountries.map((c) => ({ name: c.country, href: c
 const briefWords = [d.lRankingBasis, d.leadRationale, d.leadAction, d.lEvidence, ...d.briefMoves.map((m) => m.title)]
   .join(' ').split(/\s+/).length + d.briefCountries.length * 2;
 ---
-<Base title="Abeng — the Caribbean morning brief" description={`Where Caribbean capital is moving this cycle: ${d.lTitle}`}>
+<Base title="Abeng — the Caribbean morning brief" description={`A live desk for the Caribbean. What changed, who should act. This cycle: ${d.lTitle}`}>
   <Fragment slot="head">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
     <script is:inline src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
@@ -36,7 +36,7 @@ const briefWords = [d.lRankingBasis, d.leadRationale, d.leadAction, d.lEvidence,
 
 <header class="bm-mast" id="bm-mast">
   <div class="bm-mast-inner">
-    <a class="bm-wordmark" href="/" aria-label="Abeng, morning brief">Abeng</a>
+    <a class="bm-wordmark" href="/" aria-label="Abeng, morning brief"><span class="bm-wordmark-word">Abeng</span><span class="bm-wordmark-tag">What changed. Who should act.</span></a>
     <nav class="bm-links" aria-label="Sections">
       <a href="/desk" class="bm-link">Full desk</a>
       <a href="/desk#regional-news" class="bm-link">News wire</a>
@@ -75,7 +75,7 @@ const briefWords = [d.lRankingBasis, d.leadRationale, d.leadAction, d.lEvidence,
         <li style="--c:#B57A22">Procurement</li>
         <li style="--c:#6F5FA8">Market watch</li>
         <li style="--c:#7F8C83">Quiet</li>
-        <li class="bm-legend-note">Bigger pulse, stronger signal. Tap a country.</li>
+        <li class="bm-legend-note">Larger pulses mark stronger signals. Select a country for what the desk found.</li>
       </ul>
     </div>
   </div>
@@ -260,7 +260,10 @@ const briefWords = [d.lRankingBasis, d.leadRationale, d.leadAction, d.lEvidence,
   .bm-mast.is-hidden { transform: translateY(-100%); }
   .bm-mast-inner { max-width: 1180px; margin: 0 auto; padding: 14px clamp(16px, 4vw, 40px); display: flex; align-items: center; gap: 32px; }
   .bm-wordmark { font-family: var(--serif); font-weight: 700; font-size: clamp(30px, 2.6vw, 38px); line-height: 1; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); }
-  .bm-wordmark:hover { text-decoration: none; color: var(--gold-on-ink); }
+  .bm-wordmark { display: grid; gap: 5px; }
+  .bm-wordmark-tag { font: 500 11px var(--mono); letter-spacing: 1.2px; text-transform: uppercase; color: rgba(255,249,240,.72); }
+  .bm-wordmark:hover { text-decoration: none; }
+  .bm-wordmark:hover .bm-wordmark-word { color: var(--gold-on-ink); }
   .bm-links { display: flex; gap: 22px; }
   .bm-link { font-size: 12px; font-weight: 500; letter-spacing: .8px; text-transform: uppercase; color: rgba(255,249,240,.72); text-underline-offset: 5px; }
   .bm-link:hover { color: var(--bg); text-decoration: underline; text-decoration-color: var(--gold-on-ink); }

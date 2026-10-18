@@ -137,7 +137,8 @@ def test_dashboard_rendering():
     assert "receipts-table" in content
     assert "receipts-boosts" in content
     assert "r-pill" in content
-    assert "Validation note:" in content
+    # Seeded feedback must be labelled as test data (BRAND.md tone: say it plainly).
+    assert "Test data:" in content
 
     desk = json.loads((ROOT / "outbox" / "dispatch_desk.json").read_text())
     assert f'Cycle {desk["cycle_id"]}' in content
