@@ -4,9 +4,10 @@ import { test, expect } from '@playwright/test';
 // morning-brief-redesign.md). These guard the things that made it read like
 // Yahoo/MSN from creeping back, and the affordance/contrast rules in DESIGN.md.
 
-test('homepage stays a brief: no ticker, chip rows, card grid or floating widgets', async ({ page }) => {
+test('homepage stays a brief: one wire ticker, no chip rows, card grid or floating widgets', async ({ page }) => {
   await page.goto('/', { waitUntil: 'networkidle' });
-  for (const sel of ['.livewire', '[role="marquee"]', '.news-grid', '.news-filters', '.track-filter', '.guide-fab', '.desknav']) {
+  await expect(page.locator('[role="marquee"]')).toHaveCount(1);
+  for (const sel of ['.news-grid', '.news-filters', '.track-filter', '.guide-fab', '.desknav']) {
     await expect(page.locator(sel), sel).toHaveCount(0);
   }
   await expect(page.locator('nav[aria-label="Sections"]')).toHaveCount(1);
@@ -57,7 +58,7 @@ test('control and label text clears 4.5:1 against its own backdrop', async ({ pa
       }
       return [255, 249, 240];
     };
-    const sel = '.bm-link,.bm-ask-btn,.bm-edition,.bm-kicker,.bm-label,.bm-fine,.bm-num,.bm-country,.bm-status,.bm-section-link,.bm-section-note,.bm-spy a,.bm-go,.bm-more-btn,.bm-ask-row button';
+    const sel = '.bm-link,.bm-ask-btn,.bm-edition,.bm-kicker,.bm-label,.bm-fine,.bm-num,.bm-country,.bm-status,.bm-section-link,.bm-section-note,.bm-spy a,.bm-go,.bm-more-btn,.bm-ask-row button,.bm-wire .lw-kicker,.bm-wire-label';
     const bad: string[] = [];
     for (const el of document.querySelectorAll(sel)) {
       const r = el.getBoundingClientRect();
@@ -89,5 +90,19 @@ test('reduced motion shows the headline immediately', async ({ browser }) => {
   await page.goto('/');
   const anim = await page.locator('.bm-word').first().evaluate(el => getComputedStyle(el).animationName);
   expect(anim).toBe('none');
+  await ctx.close();
+});
+
+test('the wire ticker links each headline to its dispatch and pauses for reduced motion', async ({ browser }) => {
+  const ctx = await browser.newContext({ reducedMotion: 'reduce' });
+  const page = await ctx.newPage();
+  await page.goto('/');
+  const items = page.locator('.bm-wire-rail:not([aria-hidden]) .lw-item');
+  expect(await items.count()).toBeGreaterThan(0);
+  for (const href of await items.evaluateAll(els => els.map(e => e.getAttribute('href')))) {
+    expect(href).toMatch(/^\/(signal\/[^/]+\/|desk#)/);
+  }
+  expect(await page.locator('.bm-wire-rail').first().evaluate(el => getComputedStyle(el).animationName)).toBe('none');
+  await expect(page.locator('.bm-wire-rail[aria-hidden]')).toBeHidden();
   await ctx.close();
 });

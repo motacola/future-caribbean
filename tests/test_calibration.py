@@ -386,7 +386,11 @@ def test_report_measures_itself_against_the_naive_baseline():
 
 # ── Public pre-commitment ──────────────────────────────────
 
-def test_commitments_are_pending_before_their_day_and_never_silently_pass():
+def test_commitments_are_pending_before_their_day_and_never_silently_pass(monkeypatch):
+    # Pin the commitment to today: with the real 2026-08-15 date the gates
+    # fall due as the calendar moves, and this test went red on its own.
+    from datetime import datetime, timezone
+    monkeypatch.setattr(cal, "COMMITMENT_MADE_AT", datetime.now(timezone.utc).strftime("%Y-%m-%d"))
     report = cal.reliability(_run([("20260101", [_signal("a|x|2024", 100)])]))
     assert report["committed_at"] == cal.COMMITMENT_MADE_AT
     assert [c["status"] for c in report["commitments"]] == ["pending"] * len(cal.COMMITMENTS)

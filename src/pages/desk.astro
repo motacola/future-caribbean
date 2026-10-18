@@ -442,6 +442,8 @@ a:hover { text-decoration: underline; }
 .news-card h3 { font:700 20px/1.2 var(--serif); letter-spacing:-.1px; }
 .news-card h3 a { color:var(--ink); }
 .news-card h3 a:hover { color:var(--teal); text-decoration:none; }
+/* Feed summaries can carry bare URLs; unbroken they ran into the next column. */
+.news-card p, .news-card h3 { overflow-wrap:anywhere; }
 .news-card.lead h3 { font-size:30px; line-height:1.08; }
 .news-card p { font-size:13px; line-height:1.55; color:var(--sub); }
 /* Country news inside the map drill — the map is now a way to read a country,

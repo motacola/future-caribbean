@@ -19,6 +19,8 @@ const pad = (n: number) => String(n).padStart(2, '0');
 const half = Math.ceil(d.briefCountries.length / 2);
 const countryCols = [d.briefCountries.slice(0, half), d.briefCountries.slice(half)];
 const hasGround = d.groundPosts.length > 0;
+// Ticker links that fall back to the desk's own map anchor must leave this page.
+const wireHtml = d.tickerHtml.replaceAll('href="#front-page"', 'href="/desk#front-page"');
 const NUM = ['No', 'One', 'Two', 'Three', 'Four', 'Five'];
 const movesTitle = `${NUM[d.briefMoves.length] ?? d.briefMoves.length} ${d.briefMoves.length === 1 ? 'move' : 'moves'} this cycle`;
 const spy = [
@@ -46,6 +48,14 @@ const spy = [
   </div>
   <div class="bm-progress" aria-hidden="true"><span id="bm-progress-bar"></span></div>
 </header>
+
+<div class="bm-wire" role="marquee" aria-label="Latest signals from this cycle" style={`--lw-dur:${Math.max(30, d.tickerItemCount * 7)}s`}>
+  <span class="bm-wire-label">The wire</span>
+  <div class="bm-wire-track">
+    <div class="bm-wire-rail"><Fragment set:html={wireHtml} /></div>
+    <div class="bm-wire-rail" aria-hidden="true" inert><Fragment set:html={wireHtml} /></div>
+  </div>
+</div>
 
 <main class="bm-page" id="main-content">
   <div class="bm-column">
@@ -357,6 +367,21 @@ const spy = [
   .bm-progress { height: 2px; }
   .bm-progress span { display: block; height: 100%; background: var(--teal); transform-origin: 0 50%; transform: scaleX(0); }
 
+  /* ── The wire: ticker, set as a ruled line ─────────── */
+  .bm-wire { display: flex; align-items: center; border-bottom: 1px solid var(--border); background: var(--card); overflow: hidden; }
+  .bm-wire-label { flex: none; font: 600 11px var(--mono); letter-spacing: 1.2px; text-transform: uppercase; color: var(--bg); background: var(--ink); padding: 10px 14px; }
+  .bm-wire-track { display: flex; flex: 1; min-width: 0; overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 40px, #000 calc(100% - 40px), transparent); }
+  .bm-wire-rail { display: flex; flex: none; animation: bm-wire var(--lw-dur, 60s) linear infinite; }
+  .bm-wire:hover .bm-wire-rail, .bm-wire:focus-within .bm-wire-rail { animation-play-state: paused; }
+  @keyframes bm-wire { to { transform: translateX(-100%); } }
+  .bm-wire :global(.lw-item) { display: inline-flex; align-items: baseline; gap: 8px; padding: 9px 22px; white-space: nowrap; font-size: 14px; color: var(--ink); border-right: 1px solid var(--border); }
+  .bm-wire :global(.lw-item:hover) { text-decoration: none; background: var(--card-alt); }
+  .bm-wire :global(.lw-item:hover span:last-child) { text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 3px; }
+  .bm-wire :global(.lw-item i) { width: 7px; height: 7px; border-radius: 50%; flex: none; align-self: center; }
+  .bm-wire :global(.lw-kicker) { font: 600 11px var(--sans); letter-spacing: 1px; text-transform: uppercase; color: var(--gold-text); }
+  .bm-wire :global(.lw-tag) { font: 11px var(--mono); text-transform: uppercase; color: var(--sub); }
+  .bm-wire :global(.lw-watch) { color: var(--sub); }
+
   /* ── Page grid: reading column + rail ──────────────── */
   .bm-page { max-width: 1180px; margin: 0 auto; padding: clamp(32px, 6vw, 72px) clamp(16px, 4vw, 40px) 64px; display: grid; grid-template-columns: minmax(0, 680px) minmax(240px, 300px); justify-content: space-between; gap: 64px; }
 
@@ -484,7 +509,9 @@ const spy = [
     .bm-foot-inner { flex-direction: column; }
   }
   @media (prefers-reduced-motion: reduce) {
-    .bm-word, .bm-standfirst, .bm-palette[open] { animation: none; }
+    .bm-word, .bm-standfirst, .bm-palette[open], .bm-wire-rail { animation: none; }
+    .bm-wire-track { overflow-x: auto; mask-image: none; }
+    .bm-wire-rail[aria-hidden] { display: none; }
     .bm-mast, .bm-move-row::before, .bm-index-row::before, .bm-chev, .bm-post-media img { transition: none; }
   }
 </style>
