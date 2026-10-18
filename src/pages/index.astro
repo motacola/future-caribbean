@@ -253,18 +253,21 @@ const briefWords = [d.lRankingBasis, d.leadRationale, d.leadAction, d.lEvidence,
   :root { --gold-text: #8F6313; } /* 5.06:1 on paper */
 
   /* ── Masthead: one row ─────────────────────────────── */
-  .bm-mast { position: sticky; top: 0; z-index: 20; background: var(--bg); border-top: 3px solid var(--ink); border-bottom: 1px solid var(--border); transition: transform .3s var(--fe-ease-out); }
+  /* Same masthead as every other page (desk, build, connections, signal):
+     ink gradient, gold nameplate, gold→teal rule underneath. */
+  .bm-mast { position: sticky; top: 0; z-index: 20; background-color: #1A1714; background-image: linear-gradient(160deg, #211D19, #14110E 88%); color: var(--bg); transition: transform .3s var(--fe-ease-out); }
+  .bm-mast::after { content: ""; display: block; height: 2px; background: linear-gradient(90deg, var(--gold), var(--teal) 55%, transparent); opacity: .85; }
   .bm-mast.is-hidden { transform: translateY(-100%); }
-  .bm-mast-inner { max-width: 1180px; margin: 0 auto; padding: 12px clamp(16px, 4vw, 40px); display: flex; align-items: baseline; gap: 28px; }
-  .bm-wordmark { font-family: var(--serif); font-weight: 700; font-size: 26px; letter-spacing: 3px; text-transform: uppercase; color: var(--ink); }
-  .bm-wordmark:hover { text-decoration: none; color: var(--teal); }
+  .bm-mast-inner { max-width: 1180px; margin: 0 auto; padding: 14px clamp(16px, 4vw, 40px); display: flex; align-items: center; gap: 32px; }
+  .bm-wordmark { font-family: var(--serif); font-weight: 700; font-size: clamp(30px, 2.6vw, 38px); line-height: 1; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); }
+  .bm-wordmark:hover { text-decoration: none; color: var(--gold-on-ink); }
   .bm-links { display: flex; gap: 22px; }
-  .bm-link { font-size: 14px; color: var(--sub); text-underline-offset: 4px; }
-  .bm-link:hover { color: var(--ink); text-decoration: underline; text-decoration-color: var(--gold-text); }
-  .bm-ask-btn { margin-left: auto; font: 500 13px var(--sans); color: var(--ink); background: transparent; border: 1px solid var(--border-dark); border-radius: var(--r); padding: 6px 10px; cursor: pointer; display: inline-flex; gap: 8px; align-items: center; }
-  .bm-ask-btn:hover { border-color: var(--ink); background: var(--card-alt); }
-  .bm-ask-btn kbd { font: 11px var(--mono); color: var(--sub); }
-  .bm-edition { font: 12px var(--mono); color: var(--sub); white-space: nowrap; }
+  .bm-link { font-size: 12px; font-weight: 500; letter-spacing: .8px; text-transform: uppercase; color: rgba(255,249,240,.72); text-underline-offset: 5px; }
+  .bm-link:hover { color: var(--bg); text-decoration: underline; text-decoration-color: var(--gold-on-ink); }
+  .bm-ask-btn { margin-left: auto; font: 500 13px var(--sans); color: var(--bg); background: transparent; border: 1px solid rgba(244,235,221,.38); border-radius: var(--r); padding: 6px 10px; cursor: pointer; display: inline-flex; gap: 8px; align-items: center; }
+  .bm-ask-btn:hover { border-color: var(--bg); background: rgba(244,235,221,.08); }
+  .bm-ask-btn kbd { font: 11px var(--mono); color: rgba(255,249,240,.70); }
+  .bm-edition { font: 11px var(--mono); letter-spacing: .6px; text-transform: uppercase; color: rgba(255,249,240,.70); white-space: nowrap; }
 
   /* ── The wire: ticker, set as a ruled line ─────────── */
   .bm-wire { display: flex; align-items: center; border-bottom: 1px solid var(--border); background: var(--card); overflow: hidden; }
@@ -289,7 +292,7 @@ const briefWords = [d.lRankingBasis, d.leadRationale, d.leadAction, d.lEvidence,
   .bm-reveal { color: inherit; }
   .bm-spy-slot { min-height: 36px; }
   @media (max-width: 960px) { .bm-spy-slot { display: none; } }
-  .bm-readprog { position: absolute; left: 0; right: 0; bottom: -1px; gap: 0; }
+  .bm-readprog { position: absolute; left: 0; right: 0; bottom: 0; gap: 0; z-index: 1; }
   .bm-readprog [role="progressbar"] { background: transparent; border-radius: 0; }
   .bm-readprog [role="progressbar"] > div { height: 2px; background: var(--teal); border-radius: 0; }
   .bm-readprog > div:last-child:not([role]) { display: none; }
