@@ -12,6 +12,6 @@
 /* The slice of Tailwind's preflight these components assume, limited to
    them: lists without markers, controls without native chrome. */
 @layer reset {
-  :where(.bm-spy, .bm-showmore, .bm-readprog, .bm-answer, .bm-palette, .bm-post-img, [data-interior]) :where(ol, ul) { list-style: none; }
-  :where(.bm-spy, .bm-showmore, .bm-readprog, .bm-answer, .bm-palette, .bm-post-img, [data-interior]) :where(button, input) { border: 0; background: transparent; font: inherit; color: inherit; outline-offset: 2px; }
+  :where(.bm-showmore, .bm-answer, .bm-palette) :where(ol, ul) { list-style: none; }
+  :where(.bm-showmore, .bm-answer, .bm-palette) :where(button, input) { border: 0; background: transparent; font: inherit; color: inherit; outline-offset: 2px; }
 }

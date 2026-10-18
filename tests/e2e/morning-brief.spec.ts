@@ -85,16 +85,19 @@ test('⌘K opens the interior.dev command palette and jumps to a country', async
   await expect(page).toHaveURL(/\/(signal\/[^/]+\/|desk)/);
 });
 
-test('library pieces are live: text reveal, scroll spy, show more, reading progress', async ({ page }) => {
+test('the brief\'s reading aids work: headline text, scroll spy, show more, reading progress', async ({ page }) => {
   await page.goto('/', { waitUntil: 'networkidle' });
-  // Text Reveal keeps the whole headline readable to assistive tech.
+  // The word-by-word reveal keeps the whole headline readable to assistive tech.
   await expect(page.locator('#bm-lead-title .sr-only')).toHaveText(/\S/);
   if (page.viewportSize()!.width > 960) {
-    await page.mouse.wheel(0, 400);
-    await expect(page.getByRole('navigation', { name: 'On this page' })).toBeVisible();
+    const spy = page.getByRole('navigation', { name: 'On this page' });
+    await expect(spy).toBeVisible();
+    await page.locator('#brief-index').scrollIntoViewIfNeeded();
+    await expect(spy.locator('a[aria-current]')).toHaveAttribute('data-spy', /brief-(index|moves)/);
   }
-  await expect(page.getByRole('progressbar', { name: 'Briefing read' })).toBeAttached();
-  // Wait for the island to hydrate before pressing it.
+  await page.evaluate(() => scrollTo(0, 1600));
+  await expect.poll(() => page.locator('#bm-progress-bar').evaluate(el => getComputedStyle(el).transform)).not.toBe('matrix(0, 0, 0, 1, 0, 0)');
+  // Show More is the interior.dev component; wait for it to hydrate first.
   await expect(page.locator('astro-island[component-export="EvidenceMore"]:not([ssr])')).toHaveCount(1);
   const more = page.locator('.bm-showmore button[aria-controls]');
   if (await more.isVisible()) {
@@ -106,9 +109,8 @@ test('library pieces are live: text reveal, scroll spy, show more, reading progr
 test('reduced motion shows the headline immediately', async ({ browser }) => {
   const ctx = await browser.newContext({ reducedMotion: 'reduce' });
   const page = await ctx.newPage();
-  await page.goto('/', { waitUntil: 'networkidle' });
-  const opacity = await page.locator('#bm-lead-title [aria-hidden="true"] span span').first().evaluate(el => getComputedStyle(el).opacity);
-  expect(opacity).toBe('1');
+  await page.goto('/');
+  expect(await page.locator('.bm-word').first().evaluate(el => getComputedStyle(el).animationName)).toBe('none');
   await ctx.close();
 });
 

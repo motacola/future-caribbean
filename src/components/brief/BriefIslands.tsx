@@ -1,19 +1,11 @@
-// React islands for the homepage brief. Each wraps an interior.dev component
+// React islands for the homepage brief: the three interior.dev components that
+// earn their weight (Jev, 18 Oct). Each wraps a library component
 // (src/components/interior, copied from the library unchanged) and adapts it
 // to the page; Abeng's paper/ink/teal skin lives in src/pages/index.astro.
 import { useEffect, useRef, useState } from "react";
-import { TextReveal } from "../interior/text-reveal";
 import { ShowMore } from "../interior/show-more";
-import { ScrollSpy, type ScrollSpySection } from "../interior/scroll-spy";
-import { ReadingProgress } from "../interior/reading-progress";
-import { useHideOnScroll } from "../interior/hide-on-scroll";
 import { StreamingText } from "../interior/streaming-text";
 import { CommandPalette, type CommandItem } from "../interior/command-palette";
-import { BlurUpImage } from "../interior/blur-up-image";
-
-export function LeadReveal({ text }: { text: string }) {
-  return <TextReveal text={text} startOnView={false} className="bm-reveal" />;
-}
 
 export function EvidenceMore({ text }: { text: string }) {
   return (
@@ -21,55 +13,6 @@ export function EvidenceMore({ text }: { text: string }) {
       <p>{text}</p>
     </ShowMore>
   );
-}
-
-// ScrollSpy scrolls its active chip into view on mount, which moves the
-// browser's Tab starting point (and, where the rail sits below the fold on a
-// phone, scrolls the page). So: desktop only, mounted after the first scroll,
-// with its row reserved so nothing shifts.
-export function BriefSpy({ sections }: { sections: ScrollSpySection[] }) {
-  const [show, setShow] = useState(false);
-  useEffect(() => {
-    if (!matchMedia("(min-width: 961px)").matches) return;
-    const onScroll = () => { setShow(true); removeEventListener("scroll", onScroll); };
-    addEventListener("scroll", onScroll, { passive: true });
-    return () => removeEventListener("scroll", onScroll);
-  }, []);
-  return (
-    <div className="bm-spy-slot">
-      {show ? <ScrollSpy sections={sections} offset={110} label="On this page" className="bm-spy" /> : null}
-    </div>
-  );
-}
-
-// Progress through the reading column, not the whole page.
-export function BriefProgress({ words }: { words: number }) {
-  const target = useRef<HTMLElement | null>(null);
-  const [ready, setReady] = useState(false);
-  useEffect(() => {
-    target.current = document.querySelector<HTMLElement>(".bm-column");
-    setReady(true);
-  }, []);
-  if (!ready) return null;
-  return <ReadingProgress target={target} words={words} label="Briefing read" doneLabel="Done" className="bm-readprog" />;
-}
-
-// No ref attached → the hook watches the window. Hides the masthead on
-// phones only; it is layout state, so reduced motion only drops the slide.
-export function MastHider() {
-  const [narrow, setNarrow] = useState(false);
-  useEffect(() => {
-    const mq = matchMedia("(max-width: 759px)");
-    const sync = () => setNarrow(mq.matches);
-    sync();
-    mq.addEventListener("change", sync);
-    return () => mq.removeEventListener("change", sync);
-  }, []);
-  const { hidden } = useHideOnScroll<HTMLElement>({ disabled: !narrow, topGuard: 120 });
-  useEffect(() => {
-    document.getElementById("bm-mast")?.classList.toggle("is-hidden", narrow && hidden);
-  }, [narrow, hidden]);
-  return null;
 }
 
 // Ask the desk: deterministic answers from /api/ask, paced by StreamingText.
@@ -149,8 +92,4 @@ export function Palette({ countries }: { countries: Country[] }) {
       <CommandPalette open={open} items={items} onSelect={onSelect} onDismiss={() => setOpen(false)} placeholder="Type a country, or ask the desk" label="Ask the desk or jump to a country" className="bm-palette" />
     </>
   );
-}
-
-export function GroundImage({ src }: { src: string }) {
-  return <BlurUpImage src={src} alt="" width={400} height={400} className="bm-post-img" />;
 }
