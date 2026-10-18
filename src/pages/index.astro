@@ -4,16 +4,10 @@
 // homepage used to stack (wire, news grid, market watch, receipts, outputs)
 // lives on /desk unchanged. See docs/design/2026-10-18-morning-brief-redesign.md.
 import Base from '../layouts/Base.astro';
+import '../styles/interior.css';
+import { LeadReveal, EvidenceMore, BriefSpy, BriefProgress, MastHider, AskDesk, Palette, GroundImage } from '../components/brief/BriefIslands';
 import { loadDashboardData } from '../lib/data.ts';
 const d = loadDashboardData();
-
-// interior.dev Text Reveal, ported: words split at build time, so the reveal
-// needs no JS. Same cadence: 0.055s stagger, whole reveal capped at 1.6s.
-const leadWords = String(d.lTitle || '').trim().split(/\s+/).filter(Boolean);
-const REVEAL_DURATION = 0.6;
-const revealStep = leadWords.length > 1
-  ? Math.min(0.055, (1.6 - REVEAL_DURATION) / (leadWords.length - 1))
-  : 0;
 
 const pad = (n: number) => String(n).padStart(2, '0');
 const half = Math.ceil(d.briefCountries.length / 2);
@@ -24,13 +18,21 @@ const wireHtml = d.tickerHtml.replaceAll('href="#front-page"', 'href="/desk#fron
 const NUM = ['No', 'One', 'Two', 'Three', 'Four', 'Five'];
 const movesTitle = `${NUM[d.briefMoves.length] ?? d.briefMoves.length} ${d.briefMoves.length === 1 ? 'move' : 'moves'} this cycle`;
 const spy = [
-  ['brief-lead', 'The lead'],
-  ['brief-moves', 'This cycle'],
-  ...(hasGround ? [['brief-ground', 'From the ground']] : []),
-  ['brief-index', 'Countries'],
+  { id: 'brief-lead', label: 'Lead' },
+  { id: 'brief-moves', label: 'This cycle' },
+  ...(hasGround ? [{ id: 'brief-ground', label: 'Ground' }] : []),
+  { id: 'brief-index', label: 'Countries' },
 ];
+const paletteCountries = d.briefCountries.map((c) => ({ name: c.country, href: c.href, status: c.status }));
+// Rough length of the reading column, for Reading Progress's minutes-left.
+const briefWords = [d.lRankingBasis, d.leadRationale, d.leadAction, d.lEvidence, ...d.briefMoves.map((m) => m.title)]
+  .join(' ').split(/\s+/).length + d.briefCountries.length * 2;
 ---
 <Base title="Abeng — the Caribbean morning brief" description={`Where Caribbean capital is moving this cycle: ${d.lTitle}`}>
+  <Fragment slot="head">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+    <script is:inline src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  </Fragment>
 
 <header class="bm-mast" id="bm-mast">
   <div class="bm-mast-inner">
@@ -41,12 +43,11 @@ const spy = [
       <a href="/market-momentum" class="bm-link">Markets</a>
       <a href="/regional-connections" class="bm-link">Connections</a>
     </nav>
-    <button type="button" class="bm-ask-btn" id="bm-palette-open" aria-haspopup="dialog">
-      Ask or jump <kbd>⌘K</kbd>
-    </button>
+    <Palette client:idle countries={paletteCountries} />
     <span class="bm-edition" title={`Cycle ${d.cycleId}`}>{d.nowStr}</span>
   </div>
-  <div class="bm-progress" aria-hidden="true"><span id="bm-progress-bar"></span></div>
+  <BriefProgress client:idle words={briefWords} />
+  <MastHider client:idle />
 </header>
 
 <div class="bm-wire" role="marquee" aria-label="Latest signals from this cycle" style={`--lw-dur:${Math.max(30, d.tickerItemCount * 7)}s`}>
@@ -57,18 +58,34 @@ const spy = [
   </div>
 </div>
 
-<main class="bm-page" id="main-content">
+<section class="bm-hero" id="main-content" aria-labelledby="bm-lead-title">
+  <div class="bm-map-wrap">
+    <div id="bm-map" role="application" aria-label="Map of the 23 watched Caribbean markets. Each pulse is a signal; bigger pulses are stronger. Select a country to see what the desk found."></div>
+    <div class="bm-map-card" id="bm-map-card" aria-live="polite" hidden></div>
+  </div>
+  <div class="bm-hero-inner">
+    <div class="bm-hero-panel">
+      <p class="bm-kicker"><span>The lead</span><span>{d.lCountry}</span><span>Briefing {d.cycleLabel}</span></p>
+      <h1 class="bm-headline" id="bm-lead-title"><LeadReveal client:load text={d.lTitle} /></h1>
+      <p class="bm-standfirst">{d.lRankingBasis}</p>
+      <a class="bm-go" href="#brief-lead">Read the briefing <span aria-hidden="true">↓</span></a>
+      <ul class="bm-legend" aria-label="What the map pulses mean">
+        <li style="--c:#2676A8">Investment</li>
+        <li style="--c:#0D766E">Climate</li>
+        <li style="--c:#B57A22">Procurement</li>
+        <li style="--c:#6F5FA8">Market watch</li>
+        <li style="--c:#7F8C83">Quiet</li>
+        <li class="bm-legend-note">Bigger pulse, stronger signal. Tap a country.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<main class="bm-page">
   <div class="bm-column">
 
-    <article class="bm-lead" id="brief-lead" aria-labelledby="bm-lead-title">
-      <p class="bm-kicker"><span>The lead</span><span>{d.lCountry}</span><span>Briefing {d.cycleLabel}</span></p>
-      <h1 class="bm-headline" id="bm-lead-title">
-        <span class="sr-only">{d.lTitle}</span>
-        <span aria-hidden="true">{leadWords.map((w, i) => (
-          <><span class="bm-word" style={`--d:${(i * revealStep).toFixed(3)}s`}>{w}</span>{i < leadWords.length - 1 ? ' ' : ''}</>
-        ))}</span>
-      </h1>
-      <p class="bm-standfirst">{d.lRankingBasis}</p>
+    <article class="bm-lead" id="brief-lead" aria-label={`The briefing: ${d.lTitle}`}>
+      <p class="bm-kicker"><span>The briefing</span><span>{d.lCountry}</span></p>
 
       <div class="bm-trio">
         <section class="bm-block">
@@ -82,10 +99,7 @@ const spy = [
         </section>
         <section class="bm-block">
           <h2 class="bm-label">Evidence</h2>
-          <div class="bm-more" data-show-more>
-            <p class="bm-more-body">{d.lEvidence}</p>
-            <button type="button" class="bm-more-btn" hidden aria-expanded="false">Show the full evidence</button>
-          </div>
+          <EvidenceMore client:load text={d.lEvidence} />
           <p class="bm-fine">How solid: <b>{d.lGrade}</b></p>
         </section>
       </div>
@@ -128,11 +142,7 @@ const spy = [
           {d.groundPosts.map((p) => (
             <li class="bm-post">
               <a href={p.url} target="_blank" rel="noopener noreferrer">
-                {p.image && (
-                  <span class="bm-post-media">
-                    <img src={p.image} alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-blur-up />
-                  </span>
-                )}
+                {p.image && <span class="bm-post-media"><GroundImage client:visible src={p.image} /></span>}
                 <span class="bm-post-handle">{p.handle}{p.country && ` · ${p.country}`}</span>
                 <span class="bm-post-caption">{p.caption}</span>
               </a>
@@ -167,18 +177,8 @@ const spy = [
 
   <aside class="bm-rail" aria-label="Brief tools">
     <div class="bm-rail-inner">
-      <nav class="bm-spy" aria-label="On this page">
-        {spy.map(([id, label]) => <a href={`#${id}`} data-spy={id}>{label}</a>)}
-      </nav>
-      <form class="bm-askbox" id="bm-askbox">
-        <label class="bm-label" for="bm-ask-input">Ask the desk</label>
-        <div class="bm-ask-row">
-          <input id="bm-ask-input" name="q" type="text" autocomplete="off" placeholder="What changed in Guyana?" />
-          <button type="submit" aria-label="Ask">›</button>
-        </div>
-        <p class="bm-fine">Answers come from this cycle's files, with sources.</p>
-        <div class="bm-answer" id="bm-answer" aria-live="polite"></div>
-      </form>
+      <BriefSpy client:idle sections={spy} />
+      <AskDesk client:idle />
     </div>
   </aside>
 </main>
@@ -194,162 +194,63 @@ const spy = [
   </div>
 </footer>
 
-<dialog class="bm-palette" id="bm-palette" aria-label="Ask the desk or jump to a country">
-  <form method="dialog" class="bm-palette-form" id="bm-palette-form">
-    <input id="bm-palette-input" type="text" autocomplete="off" placeholder="Type a country, or ask a question" aria-controls="bm-palette-list" />
-    <ul id="bm-palette-list" role="listbox"></ul>
-    <p class="bm-fine">Enter to open · Esc to close</p>
-  </form>
-</dialog>
-
-<script is:inline define:vars={{ countries: d.briefCountries.map((c) => ({ name: c.country, href: c.href, status: c.status })) }}>
+<script is:inline define:vars={{ countries: paletteCountries, markers: JSON.parse(d.mapMarkersJson).map((m) => ({ country: m.country, lat: m.lat, lng: m.lng, kind: m.kind, confidence: m.confidence, summary: m.summary })) }}>
 (() => {
-  // Reading progress + mobile hide-on-scroll. Layout state, so not gated on
-  // reduced motion; only the transition is.
-  const mast = document.getElementById('bm-mast');
-  const bar = document.getElementById('bm-progress-bar');
-  const column = document.querySelector('.bm-column');
-  let lastY = scrollY;
-  const onScroll = () => {
-    const r = column.getBoundingClientRect();
-    const p = Math.min(1, Math.max(0, -r.top / Math.max(1, r.height - innerHeight)));
-    bar.style.transform = `scaleX(${p})`;
-    const y = scrollY;
-    mast.classList.toggle('is-hidden', innerWidth < 760 && y > lastY && y > 120);
-    lastY = y;
+  // ── Map hero. Same tiles, markers and sizing rule as the desk map, so the
+  // two cannot disagree; tapping a country opens a card in place.
+  const MAP_COLORS = { investment: '#2676A8', climate: '#0D766E', procurement: '#B57A22', market: '#6F5FA8', none: '#7F8C83' };
+  const byName = Object.fromEntries(countries.map((c) => [c.name, c]));
+  const card = document.getElementById('bm-map-card');
+  const esc = (v) => String(v ?? '').replace(/[&<>"']/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
+  const showCard = (m) => {
+    const c = byName[m.country] || { href: '/desk#front-page', status: 'Quiet' };
+    card.innerHTML = `<button type="button" class="bm-card-close" aria-label="Close">×</button>
+      <p class="bm-card-status" style="--c:${MAP_COLORS[m.kind] || MAP_COLORS.none}">${esc(c.status)}</p>
+      <h2 class="bm-card-title">${esc(m.country)}</h2>
+      <p class="bm-card-summary">${esc(m.summary || 'On the watchlist. No current signal.')}</p>
+      <a class="bm-go" href="${esc(c.href)}">Read the briefing <span aria-hidden="true">›</span></a>`;
+    card.hidden = false;
+    card.querySelector('.bm-card-close').addEventListener('click', () => { card.hidden = true; });
   };
-  addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-
-  // Scroll spy.
-  const links = [...document.querySelectorAll('[data-spy]')];
-  const spyIO = new IntersectionObserver((entries) => {
-    entries.forEach((e) => {
-      if (!e.isIntersecting) return;
-      links.forEach((a) => a.toggleAttribute('aria-current', a.dataset.spy === e.target.id));
+  const mapEl = document.getElementById('bm-map');
+  if (typeof L === 'undefined') {
+    mapEl.closest('.bm-hero').classList.add('no-map');
+  } else {
+    const map = L.map(mapEl, { minZoom: 3.5, maxZoom: 9, zoomSnap: 0.25, fadeAnimation: false, scrollWheelZoom: false, maxBounds: [[-25, -130], [50, -10]], maxBoundsViscosity: 0.8, zoomControl: true });
+    // Bounds wider than the viewport: tiles outside maxBounds are never
+    // refreshed, which drew a hairline box across the hero.
+    const bounds = L.latLngBounds(markers.map((m) => [m.lat, m.lng])).pad(0.04);
+    // On wide screens the lead panel covers the map's left side; push the
+    // markers into the visible right-hand area instead of under the panel.
+    const panel = document.querySelector('.bm-hero-panel');
+    const frame = () => map.fitBounds(bounds, innerWidth > 960
+      ? { paddingTopLeft: [panel.getBoundingClientRect().right + 24, 24], paddingBottomRight: [24, 24] }
+      : { padding: [12, 12] });
+    frame();
+    addEventListener('resize', frame);
+    L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+      attribution: 'Tiles &copy; Esri', maxZoom: 9,
+    }).addTo(map);
+    markers.forEach((m, i) => {
+      const conf = Math.max(0, Math.min(100, m.confidence || 0));
+      const size = Math.round(14 + conf / 100 * 14);
+      const quiet = m.kind === 'none' || conf === 0 ? ' quiet' : '';
+      const icon = L.divIcon({ className: '', iconSize: [size, size], iconAnchor: [size / 2, size / 2],
+        html: `<div class="bm-pin${quiet}" style="--c:${MAP_COLORS[m.kind] || MAP_COLORS.none};--delay:${(i % 3) * 0.85}s;width:${size}px;height:${size}px"><span class="bm-pin-ring"></span><span class="bm-pin-dot"></span></div>` });
+      L.marker([m.lat, m.lng], { icon, keyboard: true, title: m.country, alt: m.country })
+        .bindTooltip(`<strong>${esc(m.country)}</strong>${esc(byName[m.country]?.status || '')}`, { className: 'bm-tip', direction: 'top', offset: [0, -10] })
+        .on('click', () => { showCard(m); map.flyTo([m.lat, m.lng], Math.max(map.getZoom(), 6), { duration: 0.7 }); })
+        .addTo(map);
     });
-  }, { rootMargin: '-30% 0px -60% 0px' });
-  links.forEach((a) => { const el = document.getElementById(a.dataset.spy); if (el) spyIO.observe(el); });
+  }
 
-  // Show more: only when the text actually overflows its clamp.
-  document.querySelectorAll('[data-show-more]').forEach((box) => {
-    const body = box.querySelector('.bm-more-body');
-    const btn = box.querySelector('.bm-more-btn');
-    if (body.scrollHeight <= body.clientHeight + 2) { box.classList.add('is-open'); return; }
-    btn.hidden = false;
-    btn.addEventListener('click', () => {
-      const open = box.classList.toggle('is-open');
-      btn.setAttribute('aria-expanded', String(open));
-      btn.textContent = open ? 'Show less' : 'Show the full evidence';
-    });
-  });
-
-  // Blur-up images; a broken image leaves the post text-first.
-  document.querySelectorAll('img[data-blur-up]').forEach((img) => {
-    const done = () => img.classList.add('is-loaded');
-    const fail = () => img.closest('.bm-post-media')?.remove();
-    if (img.complete) (img.naturalWidth ? done() : fail());
-    else { img.addEventListener('load', done); img.addEventListener('error', fail); }
-  });
-
-  // Ask the desk. Answers are deterministic; streaming is pacing only, and
-  // the "Sources:" line lands last as its own line.
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const answer = document.getElementById('bm-answer');
-  let busy = false;
-  const streamInto = (el, text) => {
-    const [body, sources] = text.split(/\n\s*Sources:/);
-    el.textContent = '';
-    const p = document.createElement('p');
-    el.append(p);
-    const words = body.trim().split(/(\s+)/);
-    const finish = () => {
-      if (sources) { const s = document.createElement('p'); s.className = 'bm-fine'; s.textContent = 'Sources:' + sources; el.append(s); }
-    };
-    if (reduced) { p.textContent = body.trim(); finish(); return; }
-    const step = Math.min(28, 1600 / Math.max(1, words.length));
-    let i = 0;
-    const tick = () => {
-      p.textContent += words.slice(i, i + 2).join('');
-      i += 2;
-      if (i < words.length) setTimeout(tick, step); else finish();
-    };
-    tick();
-  };
-  const ask = async (q) => {
-    if (!q || busy) return;
-    busy = true;
-    answer.classList.add('is-busy');
-    answer.textContent = 'Checking this cycle’s files…';
-    try {
-      const res = await fetch('/api/ask', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ question: q }) });
-      if (!res.ok) throw new Error(String(res.status));
-      const data = await res.json();
-      streamInto(answer, String(data.answer || 'No answer came back for that.'));
-    } catch {
-      answer.textContent = 'The desk is not reachable from this copy of the page. The full desk has every country and source.';
-    }
-    answer.classList.remove('is-busy');
-    busy = false;
-  };
-  document.getElementById('bm-askbox').addEventListener('submit', (e) => {
-    e.preventDefault();
-    ask(e.target.q.value.trim());
-  });
-
-  // ⌘K palette: jump to a country, or hand the text to Ask.
-  const dlg = document.getElementById('bm-palette');
-  const input = document.getElementById('bm-palette-input');
-  const list = document.getElementById('bm-palette-list');
-  let active = 0;
-  const items = () => {
-    const q = input.value.trim().toLowerCase();
-    const hits = countries.filter((c) => !q || c.name.toLowerCase().includes(q)).slice(0, 7)
-      .map((c) => ({ label: c.name, hint: c.status, run: () => { location.href = c.href; } }));
-    if (q) hits.push({ label: `Ask the desk: “${input.value.trim()}”`, hint: 'answer', run: () => {
-      dlg.close();
-      document.getElementById('bm-ask-input').value = input.value.trim();
-      document.getElementById('brief-lead').scrollIntoView();
-      ask(input.value.trim());
-    } });
-    return hits;
-  };
-  let current = [];
-  const render = () => {
-    current = items();
-    active = Math.min(active, Math.max(0, current.length - 1));
-    list.innerHTML = '';
-    current.forEach((it, i) => {
-      const li = document.createElement('li');
-      li.role = 'option';
-      li.setAttribute('aria-selected', String(i === active));
-      li.innerHTML = '<span></span><small></small>';
-      li.firstChild.textContent = it.label;
-      li.lastChild.textContent = it.hint;
-      li.addEventListener('click', it.run);
-      list.append(li);
-    });
-  };
-  const open = () => { input.value = ''; active = 0; render(); dlg.showModal(); input.focus(); };
-  document.getElementById('bm-palette-open').addEventListener('click', open);
-  addEventListener('keydown', (e) => {
-    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); dlg.open ? dlg.close() : open(); }
-  });
-  input.addEventListener('input', () => { active = 0; render(); });
-  input.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowDown') { e.preventDefault(); active = (active + 1) % Math.max(1, current.length); render(); }
-    if (e.key === 'ArrowUp') { e.preventDefault(); active = (active - 1 + current.length) % Math.max(1, current.length); render(); }
-    if (e.key === 'Enter') { e.preventDefault(); current[active]?.run(); }
-  });
-  dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
 })();
 </script>
 
-<style>
+<style is:global>
   /* Tokens come from global.css. --gold measures 4.47:1 on paper, just under
      the 4.5 floor for small labels, so text uses a slightly deeper mix. */
-  :global(:root) { --gold-text: #8F6313; } /* 5.06:1 on paper */
-  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  :root { --gold-text: #8F6313; } /* 5.06:1 on paper */
 
   /* ── Masthead: one row ─────────────────────────────── */
   .bm-mast { position: sticky; top: 0; z-index: 20; background: var(--bg); border-top: 3px solid var(--ink); border-bottom: 1px solid var(--border); transition: transform .3s var(--fe-ease-out); }
@@ -364,8 +265,6 @@ const spy = [
   .bm-ask-btn:hover { border-color: var(--ink); background: var(--card-alt); }
   .bm-ask-btn kbd { font: 11px var(--mono); color: var(--sub); }
   .bm-edition { font: 12px var(--mono); color: var(--sub); white-space: nowrap; }
-  .bm-progress { height: 2px; }
-  .bm-progress span { display: block; height: 100%; background: var(--teal); transform-origin: 0 50%; transform: scaleX(0); }
 
   /* ── The wire: ticker, set as a ruled line ─────────── */
   .bm-wire { display: flex; align-items: center; border-bottom: 1px solid var(--border); background: var(--card); overflow: hidden; }
@@ -374,13 +273,88 @@ const spy = [
   .bm-wire-rail { display: flex; flex: none; animation: bm-wire var(--lw-dur, 60s) linear infinite; }
   .bm-wire:hover .bm-wire-rail, .bm-wire:focus-within .bm-wire-rail { animation-play-state: paused; }
   @keyframes bm-wire { to { transform: translateX(-100%); } }
-  .bm-wire :global(.lw-item) { display: inline-flex; align-items: baseline; gap: 8px; padding: 9px 22px; white-space: nowrap; font-size: 14px; color: var(--ink); border-right: 1px solid var(--border); }
-  .bm-wire :global(.lw-item:hover) { text-decoration: none; background: var(--card-alt); }
-  .bm-wire :global(.lw-item:hover span:last-child) { text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 3px; }
-  .bm-wire :global(.lw-item i) { width: 7px; height: 7px; border-radius: 50%; flex: none; align-self: center; }
-  .bm-wire :global(.lw-kicker) { font: 600 11px var(--sans); letter-spacing: 1px; text-transform: uppercase; color: var(--gold-text); }
-  .bm-wire :global(.lw-tag) { font: 11px var(--mono); text-transform: uppercase; color: var(--sub); }
-  .bm-wire :global(.lw-watch) { color: var(--sub); }
+  .bm-wire .lw-item { display: inline-flex; align-items: baseline; gap: 8px; padding: 9px 22px; white-space: nowrap; font-size: 14px; color: var(--ink); border-right: 1px solid var(--border); }
+  .bm-wire .lw-item:hover { text-decoration: none; background: var(--card-alt); }
+  .bm-wire .lw-item:hover span:last-child { text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 3px; }
+  .bm-wire .lw-item i { width: 7px; height: 7px; border-radius: 50%; flex: none; align-self: center; }
+  .bm-wire .lw-kicker { font: 600 11px var(--sans); letter-spacing: 1px; text-transform: uppercase; color: var(--gold-text); }
+  .bm-wire .lw-tag { font: 11px var(--mono); text-transform: uppercase; color: var(--sub); }
+  .bm-wire .lw-watch { color: var(--sub); }
+
+
+  /* ── interior.dev components, re-skinned to Abeng ──────
+     The components are unchanged library code styled with Tailwind; these
+     unlayered rules beat Tailwind's layer and swap its neutral/blue skin for
+     paper, ink and teal. */
+  .bm-reveal { color: inherit; }
+  .bm-spy-slot { min-height: 36px; }
+  @media (max-width: 960px) { .bm-spy-slot { display: none; } }
+  .bm-readprog { position: absolute; left: 0; right: 0; bottom: -1px; gap: 0; }
+  .bm-readprog [role="progressbar"] { background: transparent; border-radius: 0; }
+  .bm-readprog [role="progressbar"] > div { height: 2px; background: var(--teal); border-radius: 0; }
+  .bm-readprog > div:last-child:not([role]) { display: none; }
+  .bm-showmore { font-size: 16px; line-height: 1.6; color: var(--ink); }
+  .bm-showmore > div:first-child > div:last-child { background: linear-gradient(to top, var(--bg), transparent); }
+  .bm-showmore button { background: none; box-shadow: none; padding: 0; height: auto; color: var(--teal); font: 500 14px var(--sans); text-decoration: underline; text-underline-offset: 3px; }
+  .bm-showmore button svg { color: var(--teal); }
+  /* Quiet spy (Jev: 0.88 over the boxed default): no frame, the active chip
+     marked by the library's sliding thumb drawn as a 2px teal underline. */
+  .bm-spy > div { background: transparent; box-shadow: none; padding: 0; border-bottom: 1px solid var(--border); border-radius: 0; }
+  .bm-spy li > span[aria-hidden] { background: transparent; box-shadow: inset 0 -2px 0 var(--teal); border-radius: 0; }
+  .bm-spy a { font-size: 14px; justify-content: flex-start; padding: 0 12px 0 0; }
+  .bm-spy a span span:last-child { color: var(--sub); }
+  .bm-spy a span span.font-medium:last-child { color: var(--ink); }
+  .bm-answer { font-size: 14px; line-height: 1.55; color: var(--ink); margin-top: 14px; }
+  .bm-answer button { background: none; box-shadow: none; color: var(--teal); text-decoration: underline; }
+  .bm-answer.is-busy { color: var(--sub); }
+  .bm-palette input { font-family: var(--sans); color: var(--ink); }
+  .bm-palette [role="dialog"], .bm-palette > div > div { background: var(--bg); border-radius: var(--r); }
+  .bm-palette [aria-selected="true"] { background: var(--card-alt); box-shadow: inset 2px 0 0 var(--teal); }
+  .bm-post-img { width: 100%; height: 100%; }
+  .bm-post-img img { object-fit: cover; }
+
+  /* ── Map hero ──────────────────────────────────────── */
+  .bm-hero { position: relative; border-bottom: 1px solid var(--border); }
+  .bm-map-wrap { position: relative; }
+  #bm-map { height: clamp(520px, 70vh, 680px); background: #D0CFD4; font-family: var(--sans); }
+  /* Leaflet 1.9 blends tiles with plus-lighter; at fractional zoom the
+     overlapping tile edges add up to white seams. Blend normally and let the
+     background (the tiles' own sea colour) fill any sub-pixel gap. */
+  #bm-map .leaflet-tile { mix-blend-mode: normal; }
+  .bm-hero-inner { position: absolute; inset: 0; max-width: 1180px; margin: 0 auto; padding: clamp(28px, 4vw, 48px) clamp(16px, 4vw, 40px); pointer-events: none; z-index: 500; display: flex; align-items: flex-start; }
+  .bm-hero-panel { pointer-events: auto; width: min(480px, 42vw); background: var(--bg); border: 1px solid var(--border); border-top: 3px solid var(--ink); padding: 28px 30px 22px; }
+  .bm-hero-panel .bm-headline { font-size: clamp(36px, 4.2vw, 56px); }
+  .bm-hero-panel .bm-standfirst { font-size: 17px; margin-top: 16px; }
+  .bm-hero-panel .bm-go { display: inline-block; margin-top: 18px; }
+  .bm-legend { list-style: none; display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 20px; padding-top: 14px; border-top: 1px solid var(--border); font-size: 13px; color: var(--sub); }
+  .bm-legend li { display: inline-flex; align-items: center; gap: 6px; }
+  .bm-legend li:not(.bm-legend-note)::before { content: ''; width: 9px; height: 9px; border-radius: 50%; background: var(--c); }
+  .bm-legend-note { flex-basis: 100%; }
+  .bm-hero.no-map .bm-map-wrap { display: none; }
+  .bm-hero.no-map .bm-hero-inner { position: static; }
+
+  .bm-map-card .bm-go { font-weight: 600; font-size: 15px; color: var(--teal); text-decoration: underline; text-decoration-color: rgba(13,82,87,.35); text-underline-offset: 4px; }
+  .bm-map-card { position: absolute; z-index: 600; right: clamp(16px, 4vw, 40px); top: clamp(28px, 4vw, 48px); width: min(320px, calc(100% - 32px)); background: var(--bg); border: 1px solid var(--border-dark); border-top: 3px solid var(--teal); padding: 18px 20px; animation: fe-rise .3s var(--fe-ease-out); }
+  .bm-map-card .bm-card-close { position: absolute; top: 4px; right: 4px; width: 44px; height: 44px; font-size: 22px; color: var(--sub); background: none; border: 0; cursor: pointer; }
+  .bm-map-card .bm-card-close:hover { color: var(--ink); }
+  .bm-map-card .bm-card-status { display: inline-flex; align-items: center; gap: 6px; font: 500 12px var(--mono); letter-spacing: 1px; text-transform: uppercase; color: var(--sub); }
+  .bm-map-card .bm-card-status::before { content: ''; width: 9px; height: 9px; border-radius: 50%; background: var(--c); }
+  .bm-map-card .bm-card-title { font-family: var(--serif); font-weight: 600; font-size: 26px; line-height: 1.15; margin: 4px 0 8px; animation: none; }
+  .bm-map-card .bm-card-summary { font-size: 14px; line-height: 1.5; color: var(--ink); margin-bottom: 10px; }
+
+  /* Pins: same pulse language as the desk map. */
+  #bm-map .bm-pin { position: relative; cursor: pointer; }
+  #bm-map .bm-pin-dot { position: absolute; inset: 0; border-radius: 50%; background: var(--c); border: 2px solid #FFFCF4; box-shadow: 0 2px 10px rgba(24,37,31,.35); transition: transform .15s; }
+  #bm-map .bm-pin:hover .bm-pin-dot { transform: scale(1.18); }
+  #bm-map .bm-pin-ring { position: absolute; inset: 0; border-radius: 50%; background: var(--c); opacity: .3; animation: bm-pulse 2.6s ease-out infinite; animation-delay: var(--delay, 0s); }
+  #bm-map .bm-pin.quiet .bm-pin-ring { animation: none; opacity: 0; }
+  @keyframes bm-pulse { 0% { transform: scale(.8); opacity: .35; } 75%, 100% { transform: scale(2.4); opacity: 0; } }
+  .bm-tip { background: var(--card) !important; color: var(--ink) !important; border: 1px solid var(--border) !important; border-radius: var(--r) !important; box-shadow: none !important; font: 12px/1.4 var(--sans) !important; padding: 6px 10px !important; }
+  .bm-tip strong { display: block; font-family: var(--serif); font-size: 15px; }
+  #bm-map .leaflet-control-attribution { font-size: 10px; background: rgba(255,252,244,.85); color: var(--sub); }
+  #bm-map .leaflet-control-zoom a { color: var(--ink); }
+  /* Leave room for the lead panel: zoom sits bottom-right, not under it. */
+  #bm-map .leaflet-top.leaflet-left { top: auto; bottom: 24px; left: auto; right: 10px; }
 
   /* ── Page grid: reading column + rail ──────────────── */
   .bm-page { max-width: 1180px; margin: 0 auto; padding: clamp(32px, 6vw, 72px) clamp(16px, 4vw, 40px) 64px; display: grid; grid-template-columns: minmax(0, 680px) minmax(240px, 300px); justify-content: space-between; gap: 64px; }
@@ -389,8 +363,6 @@ const spy = [
   .bm-kicker { display: flex; flex-wrap: wrap; gap: 0 14px; font: 500 12px var(--mono); letter-spacing: 1.2px; text-transform: uppercase; color: var(--gold-text); margin-bottom: 18px; }
   .bm-kicker span + span::before { content: '·'; margin-right: 14px; color: var(--sub); }
   .bm-headline { font-family: var(--serif); font-weight: 700; font-size: clamp(38px, 5.4vw, 64px); line-height: 1.04; letter-spacing: -.5px; color: var(--ink); animation: none; text-wrap: balance; }
-  .bm-word { display: inline-block; animation: bm-word .6s var(--fe-ease-out) both; animation-delay: var(--d); }
-  @keyframes bm-word { from { opacity: 0; transform: translateY(10px); filter: blur(8px); } to { opacity: 1; transform: none; filter: none; } }
   .bm-standfirst { font-size: 20px; line-height: 1.55; color: var(--sub); margin-top: 22px; max-width: 60ch; animation: fe-rise .7s .5s var(--fe-ease-out) both; }
 
   .bm-trio { margin-top: 36px; border-top: 2px solid var(--ink); }
@@ -402,9 +374,6 @@ const spy = [
   .bm-move { font-family: var(--serif); font-size: 21px !important; line-height: 1.35 !important; font-weight: 600; }
   .bm-fine { font-size: 13px !important; color: var(--sub); margin-top: 6px; }
   .bm-fine b { color: var(--ink); font-weight: 600; }
-  .bm-more-body { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4; overflow: hidden; }
-  .bm-more.is-open .bm-more-body { display: block; }
-  .bm-more-btn { margin-top: 6px; font: 500 13px var(--sans); color: var(--teal); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
   .bm-source { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-top: 18px; font-size: 13px; color: var(--sub); }
   .bm-go { font-weight: 600; font-size: 15px; color: var(--teal); text-decoration: underline; text-decoration-color: rgba(13,82,87,.35); text-underline-offset: 4px; }
   .bm-go:hover { text-decoration-color: var(--teal); }
@@ -437,8 +406,6 @@ const spy = [
   .bm-post a { display: block; color: var(--ink); }
   .bm-post a:hover { text-decoration: none; }
   .bm-post-media { display: block; aspect-ratio: 1; overflow: hidden; background: var(--card-alt); margin-bottom: 10px; }
-  .bm-post-media img { width: 100%; height: 100%; object-fit: cover; filter: blur(14px); transform: scale(1.06); transition: filter .5s var(--fe-ease-out), transform .5s var(--fe-ease-out); }
-  .bm-post-media img.is-loaded { filter: none; transform: none; }
   .bm-post-handle { display: block; font: 12px var(--mono); color: var(--teal); }
   .bm-post-caption { display: block; font-size: 14px; line-height: 1.45; margin-top: 4px; }
   .bm-post a:hover .bm-post-caption { text-decoration: underline; text-decoration-color: var(--gold-text); }
@@ -454,10 +421,6 @@ const spy = [
 
   /* ── Rail ──────────────────────────────────────────── */
   .bm-rail-inner { position: sticky; top: 96px; display: grid; gap: 36px; }
-  .bm-spy { display: grid; border-left: 1px solid var(--border); }
-  .bm-spy a { padding: 6px 0 6px 16px; margin-left: -1px; border-left: 2px solid transparent; font-size: 14px; color: var(--sub); }
-  .bm-spy a:hover { color: var(--ink); text-decoration: none; border-left-color: var(--border-dark); }
-  .bm-spy a[aria-current] { color: var(--ink); font-weight: 600; border-left-color: var(--teal); }
   .bm-askbox .bm-label { display: block; margin-bottom: 8px; }
   .bm-ask-row { display: flex; border: 1px solid var(--border-dark); border-radius: var(--r); background: var(--card); }
   .bm-ask-row:focus-within { border-color: var(--teal); box-shadow: 0 0 0 2px rgba(13,82,87,.15); }
@@ -466,7 +429,6 @@ const spy = [
   .bm-ask-row button { font-size: 20px; color: var(--bg); background: var(--teal); border: 0; width: 42px; cursor: pointer; border-radius: 0 2px 2px 0; }
   .bm-ask-row button:hover { background: var(--ink); }
   .bm-answer { margin-top: 14px; font-size: 14px; line-height: 1.55; white-space: pre-line; }
-  .bm-answer:empty { display: none; }
   .bm-answer.is-busy { color: var(--sub); }
 
   /* ── Footer ────────────────────────────────────────── */
@@ -476,21 +438,16 @@ const spy = [
   .bm-foot nav { display: flex; gap: 18px; white-space: nowrap; }
 
   /* ── ⌘K palette ────────────────────────────────────── */
-  .bm-palette { margin: 14vh auto auto; width: min(560px, calc(100vw - 32px)); border: 1px solid var(--border-dark); border-radius: var(--r); background: var(--bg); padding: 0; color: var(--ink); }
-  .bm-palette::backdrop { background: rgba(26,23,20,.35); }
-  .bm-palette[open] { animation: fe-rise .2s var(--fe-ease-out); }
-  .bm-palette-form input { width: 100%; font: 18px var(--sans); color: var(--ink); border: 0; border-bottom: 1px solid var(--border); background: transparent; padding: 16px 18px; outline: none; }
-  .bm-palette ul { list-style: none; max-height: 320px; overflow: auto; }
-  .bm-palette li { display: flex; justify-content: space-between; padding: 10px 18px; cursor: pointer; font-size: 15px; }
-  .bm-palette li small { font: 12px var(--mono); color: var(--sub); text-transform: uppercase; }
-  .bm-palette li[aria-selected="true"], .bm-palette li:hover { background: var(--card-alt); box-shadow: inset 2px 0 0 var(--teal); }
-  .bm-palette .bm-fine { padding: 8px 18px 12px; margin: 0; border-top: 1px solid var(--border); }
 
   /* ── Responsive ────────────────────────────────────── */
   @media (max-width: 960px) {
+    /* Map stays first and full-width; the lead panel follows it. */
+    .bm-hero-inner { position: static; padding-top: 0; }
+    .bm-hero-panel { width: 100%; border-top-width: 3px; }
+    #bm-map { height: clamp(380px, 56vh, 520px); }
+    .bm-map-card { top: 16px; }
     .bm-page { grid-template-columns: minmax(0, 1fr); gap: 56px; }
     .bm-rail-inner { position: static; }
-    .bm-spy { display: none; }
     .bm-edition { display: none; }
   }
   @media (max-width: 760px) {
@@ -509,10 +466,11 @@ const spy = [
     .bm-foot-inner { flex-direction: column; }
   }
   @media (prefers-reduced-motion: reduce) {
-    .bm-word, .bm-standfirst, .bm-palette[open], .bm-wire-rail { animation: none; }
+    .bm-standfirst, .bm-wire-rail { animation: none; }
     .bm-wire-track { overflow-x: auto; mask-image: none; }
     .bm-wire-rail[aria-hidden] { display: none; }
-    .bm-mast, .bm-move-row::before, .bm-index-row::before, .bm-chev, .bm-post-media img { transition: none; }
+    .bm-mast, .bm-move-row::before, .bm-index-row::before, .bm-chev { transition: none; }
+    #bm-map .bm-pin-ring, .bm-map-card { animation: none; }
   }
 </style>
 </Base>

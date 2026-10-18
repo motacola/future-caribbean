@@ -73,23 +73,42 @@ test('control and label text clears 4.5:1 against its own backdrop', async ({ pa
   expect(failures).toEqual([]);
 });
 
-test('⌘K palette jumps to a country and offers Ask', async ({ page }) => {
-  await page.goto('/');
-  await page.locator('#bm-palette-open').click();
-  await expect(page.locator('#bm-palette')).toBeVisible();
-  await page.locator('#bm-palette-input').fill('guy');
-  await expect(page.locator('#bm-palette-list li').first()).toContainText('Guyana');
-  await expect(page.locator('#bm-palette-list li').last()).toContainText('Ask the desk');
-  await page.keyboard.press('Escape');
-  await expect(page.locator('#bm-palette')).toBeHidden();
+test('⌘K opens the interior.dev command palette and jumps to a country', async ({ page }) => {
+  await page.goto('/', { waitUntil: 'networkidle' });
+  await page.keyboard.press('ControlOrMeta+k');
+  const box = page.getByRole('combobox', { name: 'Ask the desk or jump to a country' });
+  await expect(box).toBeVisible();
+  await box.fill('guy');
+  const option = page.getByRole('option', { name: /Guyana/ });
+  await expect(option).toBeVisible();
+  await option.click();
+  await expect(page).toHaveURL(/\/(signal\/[^/]+\/|desk)/);
+});
+
+test('library pieces are live: text reveal, scroll spy, show more, reading progress', async ({ page }) => {
+  await page.goto('/', { waitUntil: 'networkidle' });
+  // Text Reveal keeps the whole headline readable to assistive tech.
+  await expect(page.locator('#bm-lead-title .sr-only')).toHaveText(/\S/);
+  if (page.viewportSize()!.width > 960) {
+    await page.mouse.wheel(0, 400);
+    await expect(page.getByRole('navigation', { name: 'On this page' })).toBeVisible();
+  }
+  await expect(page.getByRole('progressbar', { name: 'Briefing read' })).toBeAttached();
+  // Wait for the island to hydrate before pressing it.
+  await expect(page.locator('astro-island[component-export="EvidenceMore"]:not([ssr])')).toHaveCount(1);
+  const more = page.locator('.bm-showmore button[aria-controls]');
+  if (await more.isVisible()) {
+    await more.click();
+    await expect(more).toHaveAttribute('aria-expanded', 'true');
+  }
 });
 
 test('reduced motion shows the headline immediately', async ({ browser }) => {
   const ctx = await browser.newContext({ reducedMotion: 'reduce' });
   const page = await ctx.newPage();
-  await page.goto('/');
-  const anim = await page.locator('.bm-word').first().evaluate(el => getComputedStyle(el).animationName);
-  expect(anim).toBe('none');
+  await page.goto('/', { waitUntil: 'networkidle' });
+  const opacity = await page.locator('#bm-lead-title [aria-hidden="true"] span span').first().evaluate(el => getComputedStyle(el).opacity);
+  expect(opacity).toBe('1');
   await ctx.close();
 });
 
@@ -105,4 +124,23 @@ test('the wire ticker links each headline to its dispatch and pauses for reduced
   expect(await page.locator('.bm-wire-rail').first().evaluate(el => getComputedStyle(el).animationName)).toBe('none');
   await expect(page.locator('.bm-wire-rail[aria-hidden]')).toBeHidden();
   await ctx.close();
+});
+
+test('the map is the hero: first thing under the wire, 23 pins, a country card in place', async ({ page }) => {
+  await page.goto('/', { waitUntil: 'networkidle' });
+  const map = page.locator('#bm-map');
+  await expect(map).toBeVisible();
+  const box = await map.boundingBox();
+  // Above the fold and the widest thing on the page.
+  expect(box!.y).toBeLessThan(200);
+  expect(box!.width).toBeGreaterThanOrEqual(page.viewportSize()!.width - 1);
+  expect(box!.height).toBeGreaterThanOrEqual(360);
+  await expect(page.locator('#bm-map .leaflet-marker-icon')).toHaveCount(23);
+  await page.locator('.leaflet-marker-icon[title="Guyana"]').click();
+  const card = page.locator('#bm-map-card');
+  await expect(card).toBeVisible();
+  await expect(card.locator('.bm-card-title')).toHaveText('Guyana');
+  await expect(card.locator('a.bm-go')).toHaveAttribute('href', /^\/(signal\/[^/]+\/|desk#)/);
+  await card.locator('.bm-card-close').click();
+  await expect(card).toBeHidden();
 });

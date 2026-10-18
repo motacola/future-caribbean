@@ -31,7 +31,11 @@
   --fe-ease-out: cubic-bezier(0.23, 1, 0.32, 1);
   --fe-ease-inout: cubic-bezier(0.77, 0, 0.175, 1);
 }
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+/* The reset sits in the lowest layer so component utilities (the Tailwind
+   used by src/components/interior) can set spacing over it. Unlayered site
+   rules still beat it, exactly as its zero specificity already allowed. */
+@layer reset, theme, utilities;
+@layer reset { *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; } }
 html { overflow-x: clip; }
 body { font-family: var(--sans); background: var(--bg); background-image: radial-gradient(1100px 500px at 75% -120px, rgba(154,107,21,.05), transparent 70%), radial-gradient(900px 420px at -10% 30%, rgba(13,82,87,.04), transparent 70%); color: var(--text); line-height: 1.6; font-size: 15px; -webkit-font-smoothing: antialiased; }
 a { color: var(--teal); text-decoration: none; }

@@ -1,0 +1,17 @@
+/* Tailwind for the interior.dev components only.
+   - No preflight: the site's own reset and type stay in charge.
+   - Utilities are generated from src/components/interior alone.
+   - Everything sits in layers, so the site's unlayered CSS always wins.
+   - `dark:` follows a .dark class (never set), not the OS: the site is paper. */
+@layer theme, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities) source(none);
+@source "../components/interior";
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* The slice of Tailwind's preflight these components assume, limited to
+   them: lists without markers, controls without native chrome. */
+@layer reset {
+  :where(.bm-spy, .bm-showmore, .bm-readprog, .bm-answer, .bm-palette, .bm-post-img, [data-interior]) :where(ol, ul) { list-style: none; }
+  :where(.bm-spy, .bm-showmore, .bm-readprog, .bm-answer, .bm-palette, .bm-post-img, [data-interior]) :where(button, input) { border: 0; background: transparent; font: inherit; color: inherit; outline-offset: 2px; }
+}

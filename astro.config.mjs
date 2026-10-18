@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
+import tailwindcss from '@tailwindcss/vite';
 
 // We render TanStack Charts as small React islands inside Astro pages
 // (specifically /build). Static SVG paths stay in pure Astro (see
@@ -8,4 +9,6 @@ import react from '@astrojs/react';
 // Astro, interactive islands in /build via React.
 export default defineConfig({
   integrations: [react()],
+  // Tailwind only styles the interior.dev components (src/styles/interior.css).
+  vite: { plugins: [tailwindcss()] },
 });

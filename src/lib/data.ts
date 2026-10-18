@@ -1462,7 +1462,7 @@ export function loadDashboardData() {
     href: dispatchHref(t),
   }));
   const briefWatchCount = tickerItems.slice(1).filter(isWatch).length;
-  const KIND_WORD: Record<string, string> = { investment: 'Investment', climate: 'Climate', procurement: 'Procurement' };
+  const KIND_WORD: Record<string, string> = { investment: 'Investment', climate: 'Climate', procurement: 'Procurement', market: 'Market watch' };
   const countryStatus = (m: any) => (m.track === 'risk' ? 'Risk' : KIND_WORD[m.kind] || 'Quiet');
   const countryHref = (country: string) => {
     const first = (mapDispatches[country] || [])[0];
