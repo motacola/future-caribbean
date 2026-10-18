@@ -76,11 +76,11 @@ const paletteCountries = d.briefCountries.map((c) => ({ name: c.country, href: c
       <p class="bm-standfirst">{d.lRankingBasis}</p>
       <a class="bm-go" href="#brief-lead">Read the briefing <span aria-hidden="true">↓</span></a>
       <ul class="bm-legend" aria-label="What the map pulses mean">
-        <li style="--c:#2676A8">Investment</li>
-        <li style="--c:#0D766E">Climate</li>
-        <li style="--c:#B57A22">Procurement</li>
-        <li style="--c:#6F5FA8">Market watch</li>
-        <li style="--c:#7F8C83">Quiet</li>
+        <li style="--c:#1D5FD0">Investment</li>
+        <li style="--c:#22A3D6">Climate</li>
+        <li style="--c:#E07A2E">Procurement</li>
+        <li style="--c:#7B5CD6">Market watch</li>
+        <li style="--c:#8A94A6">Quiet</li>
         <li class="bm-legend-note">Larger pulses mark stronger signals. Select a country for what the desk found.</li>
       </ul>
     </div>
@@ -206,7 +206,7 @@ const paletteCountries = d.briefCountries.map((c) => ({ name: c.country, href: c
 (() => {
   // ── Map hero. Same tiles, markers and sizing rule as the desk map, so the
   // two cannot disagree; tapping a country opens a card in place.
-  const MAP_COLORS = { investment: '#2676A8', climate: '#0D766E', procurement: '#B57A22', market: '#6F5FA8', none: '#7F8C83' };
+  const MAP_COLORS = { investment: '#1D5FD0', climate: '#22A3D6', procurement: '#E07A2E', market: '#7B5CD6', none: '#8A94A6' };
   const byName = Object.fromEntries(countries.map((c) => [c.name, c]));
   const card = document.getElementById('bm-map-card');
   const esc = (v) => String(v ?? '').replace(/[&<>"']/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
@@ -300,29 +300,29 @@ const paletteCountries = d.briefCountries.map((c) => ({ name: c.country, href: c
 <style is:global>
   /* Tokens come from global.css. --gold measures 4.47:1 on paper, just under
      the 4.5 floor for small labels, so text uses a slightly deeper mix. */
-  :root { --gold-text: #8F6313; } /* 5.06:1 on paper */
+  :root { --gold-text: #1747A6; } /* 5.06:1 on paper */
 
   /* ── Masthead: one row ─────────────────────────────── */
   /* Same masthead as every other page (desk, build, connections, signal):
      ink gradient, gold nameplate, gold→teal rule underneath. */
-  .bm-mast { position: sticky; top: 0; z-index: 20; background-color: #1A1714; background-image: linear-gradient(160deg, #211D19, #14110E 88%); color: var(--bg); transition: transform .3s var(--fe-ease-out); }
+  .bm-mast { position: sticky; top: 0; z-index: 20; background-color: #0F1B2D; background-image: linear-gradient(160deg, #14243B, #0A1424 88%); color: var(--bg); transition: transform .3s var(--fe-ease-out); }
   .bm-mast::after { content: ""; display: block; height: 2px; background: linear-gradient(90deg, var(--gold), var(--teal) 55%, transparent); opacity: .85; }
   .bm-mast.is-hidden { transform: translateY(-100%); }
   .bm-mast-inner { max-width: 1180px; margin: 0 auto; padding: 14px clamp(16px, 4vw, 40px); display: flex; align-items: center; gap: 32px; }
   .bm-wordmark { font-family: var(--serif); font-weight: 700; font-size: clamp(30px, 2.6vw, 38px); line-height: 1; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); }
   .bm-wordmark { display: grid; gap: 5px; }
-  .bm-wordmark-tag { font: 500 11px var(--mono); letter-spacing: 1.2px; text-transform: uppercase; color: rgba(255,249,240,.72); }
+  .bm-wordmark-tag { font: 500 11px var(--mono); letter-spacing: 1.2px; text-transform: uppercase; color: rgba(241,244,249,.72); }
   .bm-wordmark:hover { text-decoration: none; }
   .bm-wordmark:hover .bm-wordmark-word { color: var(--gold-on-ink); }
   .bm-links { display: flex; gap: 22px; }
   .bm-link, .bm-ask-btn, .bm-wordmark-tag, .bm-edition { white-space: nowrap; }
   @media (max-width: 1200px) { .bm-edition { display: none; } .bm-links { gap: 16px; } .bm-mast-inner { gap: 24px; } }
-  .bm-link { font-size: 12px; font-weight: 500; letter-spacing: .8px; text-transform: uppercase; color: rgba(255,249,240,.72); text-underline-offset: 5px; }
+  .bm-link { font-size: 12px; font-weight: 500; letter-spacing: .8px; text-transform: uppercase; color: rgba(241,244,249,.72); text-underline-offset: 5px; }
   .bm-link:hover { color: var(--bg); text-decoration: underline; text-decoration-color: var(--gold-on-ink); }
-  .bm-ask-btn { margin-left: auto; font: 500 13px var(--sans); color: var(--bg); background: transparent; border: 1px solid rgba(244,235,221,.38); border-radius: var(--r); padding: 6px 10px; cursor: pointer; display: inline-flex; gap: 8px; align-items: center; }
-  .bm-ask-btn:hover { border-color: var(--bg); background: rgba(244,235,221,.08); }
-  .bm-ask-btn kbd { font: 11px var(--mono); color: rgba(255,249,240,.70); }
-  .bm-edition { font: 11px var(--mono); letter-spacing: .6px; text-transform: uppercase; color: rgba(255,249,240,.70); white-space: nowrap; }
+  .bm-ask-btn { margin-left: auto; font: 500 13px var(--sans); color: var(--bg); background: transparent; border: 1px solid rgba(241,244,249,.38); border-radius: var(--r); padding: 6px 10px; cursor: pointer; display: inline-flex; gap: 8px; align-items: center; }
+  .bm-ask-btn:hover { border-color: var(--bg); background: rgba(241,244,249,.08); }
+  .bm-ask-btn kbd { font: 11px var(--mono); color: rgba(241,244,249,.70); }
+  .bm-edition { font: 11px var(--mono); letter-spacing: .6px; text-transform: uppercase; color: rgba(241,244,249,.70); white-space: nowrap; }
 
   /* ── The wire: ticker, set as a ruled line ─────────── */
   .bm-wire { display: flex; align-items: center; border-bottom: 1px solid var(--border); background: var(--card); overflow: hidden; }
@@ -389,7 +389,7 @@ const paletteCountries = d.briefCountries.map((c) => ({ name: c.country, href: c
   .bm-hero.no-map .bm-map-wrap { display: none; }
   .bm-hero.no-map .bm-hero-inner { position: static; }
 
-  .bm-map-card .bm-go { font-weight: 600; font-size: 15px; color: var(--teal); text-decoration: underline; text-decoration-color: rgba(13,82,87,.35); text-underline-offset: 4px; }
+  .bm-map-card .bm-go { font-weight: 600; font-size: 15px; color: var(--teal); text-decoration: underline; text-decoration-color: rgba(29,95,208,.35); text-underline-offset: 4px; }
   .bm-map-card { position: absolute; z-index: 600; right: clamp(16px, 4vw, 40px); top: clamp(28px, 4vw, 48px); width: min(320px, calc(100% - 32px)); background: var(--bg); border: 1px solid var(--border-dark); border-top: 3px solid var(--teal); padding: 18px 20px; animation: fe-rise .3s var(--fe-ease-out); }
   .bm-map-card .bm-card-close { position: absolute; top: 4px; right: 4px; width: 44px; height: 44px; font-size: 22px; color: var(--sub); background: none; border: 0; cursor: pointer; }
   .bm-map-card .bm-card-close:hover { color: var(--ink); }
@@ -400,14 +400,14 @@ const paletteCountries = d.briefCountries.map((c) => ({ name: c.country, href: c
 
   /* Pins: same pulse language as the desk map. */
   #bm-map .bm-pin { position: relative; cursor: pointer; }
-  #bm-map .bm-pin-dot { position: absolute; inset: 0; border-radius: 50%; background: var(--c); border: 2px solid #FFFCF4; box-shadow: 0 2px 10px rgba(24,37,31,.35); transition: transform .15s; }
+  #bm-map .bm-pin-dot { position: absolute; inset: 0; border-radius: 50%; background: var(--c); border: 2px solid #FFFFFF; box-shadow: 0 2px 10px rgba(15,27,45,.35); transition: transform .15s; }
   #bm-map .bm-pin:hover .bm-pin-dot { transform: scale(1.18); }
   #bm-map .bm-pin-ring { position: absolute; inset: 0; border-radius: 50%; background: var(--c); opacity: .3; animation: bm-pulse 2.6s ease-out infinite; animation-delay: var(--delay, 0s); }
   #bm-map .bm-pin.quiet .bm-pin-ring { animation: none; opacity: 0; }
   @keyframes bm-pulse { 0% { transform: scale(.8); opacity: .35; } 75%, 100% { transform: scale(2.4); opacity: 0; } }
   .bm-tip { background: var(--card) !important; color: var(--ink) !important; border: 1px solid var(--border) !important; border-radius: var(--r) !important; box-shadow: none !important; font: 12px/1.4 var(--sans) !important; padding: 6px 10px !important; }
   .bm-tip strong { display: block; font-family: var(--serif); font-size: 15px; }
-  #bm-map .leaflet-control-attribution { font-size: 10px; background: rgba(255,252,244,.85); color: var(--sub); }
+  #bm-map .leaflet-control-attribution { font-size: 10px; background: rgba(255,255,255,.85); color: var(--sub); }
   #bm-map .leaflet-control-zoom a { color: var(--ink); }
   /* Leave room for the lead panel: zoom sits bottom-right, not under it. */
   #bm-map .leaflet-top.leaflet-left { top: auto; bottom: 24px; left: auto; right: 10px; }
@@ -431,7 +431,7 @@ const paletteCountries = d.briefCountries.map((c) => ({ name: c.country, href: c
   .bm-fine { font-size: 13px !important; color: var(--sub); margin-top: 6px; }
   .bm-fine b { color: var(--ink); font-weight: 600; }
   .bm-source { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-top: 18px; font-size: 13px; color: var(--sub); }
-  .bm-go { font-weight: 600; font-size: 15px; color: var(--teal); text-decoration: underline; text-decoration-color: rgba(13,82,87,.35); text-underline-offset: 4px; }
+  .bm-go { font-weight: 600; font-size: 15px; color: var(--teal); text-decoration: underline; text-decoration-color: rgba(29,95,208,.35); text-underline-offset: 4px; }
   .bm-go:hover { text-decoration-color: var(--teal); }
 
   /* ── Sections ──────────────────────────────────────── */
@@ -479,7 +479,7 @@ const paletteCountries = d.briefCountries.map((c) => ({ name: c.country, href: c
   .bm-rail-inner { position: sticky; top: 96px; display: grid; gap: 36px; }
   .bm-askbox .bm-label { display: block; margin-bottom: 8px; }
   .bm-ask-row { display: flex; border: 1px solid var(--border-dark); border-radius: var(--r); background: var(--card); }
-  .bm-ask-row:focus-within { border-color: var(--teal); box-shadow: 0 0 0 2px rgba(13,82,87,.15); }
+  .bm-ask-row:focus-within { border-color: var(--teal); box-shadow: 0 0 0 2px rgba(29,95,208,.15); }
   .bm-ask-row input { flex: 1; min-width: 0; font: 15px var(--sans); color: var(--ink); background: transparent; border: 0; padding: 10px 12px; outline: none; }
   .bm-ask-row input::placeholder { color: var(--sub); opacity: .75; }
   .bm-ask-row button { font-size: 20px; color: var(--bg); background: var(--teal); border: 0; width: 42px; cursor: pointer; border-radius: 0 2px 2px 0; }

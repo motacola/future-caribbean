@@ -156,14 +156,14 @@ const COUNTRY_FX: Record<string, any> = {
 };
 
 const KIND_COLORS: Record<string, string> = {
-  'enhanced_investment':'#2676A8', 'investment_signal':'#2676A8',
-  'climate':'#0D766E', 'weather':'#0D766E',
-  'procurement':'#B57A22', 'development_pipeline':'#B57A22',
+  'enhanced_investment':'#1D5FD0', 'investment_signal':'#1D5FD0',
+  'climate':'#22A3D6', 'weather':'#22A3D6',
+  'procurement':'#E07A2E', 'development_pipeline':'#E07A2E',
 };
 
 function kindColor(kind: string): string {
   const entry = Object.entries(KIND_COLORS).find(([k]) => kind.includes(k));
-  return entry ? entry[1] : '#7F8C83';
+  return entry ? entry[1] : '#8A94A6';
 }
 
 function canonicalCountry(raw: string): string {
@@ -461,7 +461,7 @@ function buildSignalRowHtml(c: any, allPacks: Record<string, any>, cycleId: stri
     : (kind.includes('climate') || kind.includes('weather')) ? 'Climate Desk'
     : (kind.includes('procure') || kind.includes('pipeline')) ? 'Procurement Desk'
     : 'Regional Desk';
-  const deskColor = { 'Investment Desk':'#2676A8', 'Climate Desk':'#0D766E', 'Procurement Desk':'#B57A22' }[deskName] || '#7F8C83';
+  const deskColor = { 'Investment Desk':'#1D5FD0', 'Climate Desk':'#22A3D6', 'Procurement Desk':'#E07A2E' }[deskName] || '#8A94A6';
   const dek = esc(humanize(c.decision || '').slice(0, 110));
 
   let validationHtml = '';

@@ -9,12 +9,12 @@ ROOT = Path(__file__).resolve().parents[1]
 ASTRO_THEME = ROOT / "src" / "lib" / "caribbean-theme.ts"
 CANONICAL = {
     "sea": "#1dbdd3",
-    "reef": "#36c98a",
+    "reef": "#7b5cd6",  # was green; Abeng uses no green (Harbour navy, 18 Oct 2026)
     "sand": "#f2d94c",
     "sun": "#ff8a3d",
     "storm": "#315cff",
-    "background": "#fffcf4",
-    "foreground": "#18251f",
+    "background": "#ffffff",
+    "foreground": "#0f1b2d",
 }
 
 

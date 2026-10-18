@@ -189,6 +189,8 @@ const HUMANIZE_RULES: [string, string][] = [
    "across the region"],
   ["\\bCaribwide\\b",
    "the region"],
+  ["^the region\\b",
+   "The region"],
   ["\\((-[\\d.]+)% change\\)",
    "($1%)"],
   ["\\(([\\d.]+)% change\\)",

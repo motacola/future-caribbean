@@ -87,8 +87,10 @@ Borrowed from the analyst friend: direct second person when telling the reader w
 
 ## 6. Visual identity (summary; tokens in DESIGN.md)
 
-- **Nameplate:** ABENG in Playfair Display 700, uppercase, 3px tracking, gold (`#9A6B15`) on the ink masthead (`#211D19 → #14110E`), gold→teal rule beneath. 30–38px; never below 24px. Same masthead on every page.
-- **Palette roles:** paper `#FFF9F0` ground; ink text and masthead; teal `#0D5257` for links and progress; gold for the nameplate and rules (`#8F6313` for small gold text); oxblood `#7A1E1E` for risk only.
+- **Palette: Harbour navy** (18 Oct 2026; Chris: no brown, no green; Jev 0.71 over "Sea and sun" 0.27 and "Coral and charcoal" 0.02).
+- **Nameplate:** ABENG in Playfair Display 700, uppercase, 3px tracking, sun amber (`#E0A526`) on the navy masthead (`#14243B → #0A1424`), amber→blue rule beneath. 30–38px; never below 24px. Same masthead on every page.
+- **Palette roles:** cool white paper `#F7F8FA`, white cards; navy ink `#0F1B2D` for text and masthead; Caribbean blue `#1D5FD0` for links, progress and accents; deep blue `#1747A6` for small labels and kickers; amber `#E0A526` for the nameplate and rules only (not small text); red `#C0392B` for risk only. Map pins: investment `#1D5FD0`, climate `#22A3D6`, procurement `#E07A2E`, market watch `#7B5CD6`, quiet `#8A94A6`.
+- **Never:** brown, beige, ochre, olive, teal or any green, in UI or charts. Third-party brand colours in channel mock-ups (WhatsApp, Telegram) are the only exception.
 - **Type:** Playfair for headlines; Inter for reading; IBM Plex Mono only for small labels and figures.
 - **Signature:** the live map of 23 pulsing markets is the hero and the brand's most recognisable asset. Never cut or shrink it.
 - **Imagery:** publisher photography that belongs to the story, or none. No stock, no illustrations standing in for news.

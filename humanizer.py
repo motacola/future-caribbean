@@ -161,6 +161,7 @@ HUMANIZE_RULES = [
     (r"\bCaribwide-specific\b", r"region-wide"),
     (r"\bin Caribwide\b", r"across the region"),
     (r"\bCaribwide\b", r"the region"),
+    (r"^the region\b", r"The region"),
     (r"\((-[\d.]+)% change\)", r"(\1%)"),
     (r"\(([\d.]+)% change\)", r"(+\1%)"),
     (r"(?<![\d.])(-[\d.]+)% change\b", r"\1%"),

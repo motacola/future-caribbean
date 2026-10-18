@@ -232,25 +232,25 @@ function fmtDate(value) {
 <style>
   .sec-sub p { margin:0 0 .4rem; }
   .state-row { display:flex; flex-wrap:wrap; gap:.6rem; margin-top:1.1rem; }
-  .state-chip { display:flex; flex-direction:column; gap:.15rem; padding:.55rem .85rem; border:1px solid var(--rule,#d9d3c7); border-radius:3px; min-width:7.5rem; }
+  .state-chip { display:flex; flex-direction:column; gap:.15rem; padding:.55rem .85rem; border:1px solid var(--rule,#D3DAE4); border-radius:3px; min-width:7.5rem; }
   .state-chip strong { font-size:1.35rem; font-family:var(--serif); }
   .state-chip span { font-size:.72rem; letter-spacing:.05em; text-transform:uppercase; opacity:.7; }
-  .state-awarded { border-left:3px solid #4a7c59; }
-  .state-cancelled { border-left:3px solid #9c4a3c; }
-  .state-unresolved { border-left:3px solid #8a8378; }
+  .state-awarded { border-left:3px solid #1D5FD0; }
+  .state-cancelled { border-left:3px solid #C0392B; }
+  .state-unresolved { border-left:3px solid #6B7587; }
   .res-list { display:flex; flex-direction:column; gap:.9rem; margin-top:1.2rem; }
-  .res-row { display:flex; gap:1rem; padding:.9rem 0; border-top:1px solid var(--rule,#e5e0d6); }
+  .res-row { display:flex; gap:1rem; padding:.9rem 0; border-top:1px solid var(--rule,#E3E8EF); }
   .res-lead { flex:0 0 4.5rem; text-align:center; }
   .res-lead strong { display:block; font-family:var(--serif); font-size:1.7rem; line-height:1; }
   .res-lead span { font-size:.68rem; text-transform:uppercase; letter-spacing:.06em; opacity:.65; }
   .res-badge { flex:0 0 8.5rem; align-self:flex-start; font-size:.7rem; letter-spacing:.06em; text-transform:uppercase; padding:.3rem .5rem; border-radius:2px; text-align:center; }
-  .badge-awarded { background:rgba(74,124,89,.14); color:#3c6a4a; }
-  .badge-cancelled { background:rgba(156,74,60,.14); color:#8c4335; }
+  .badge-awarded { background:rgba(29,95,208,.14); color:#1747A6; }
+  .badge-cancelled { background:rgba(192,57,43,.14); color:#A93226; }
   .res-body { flex:1 1 auto; min-width:0; }
   .res-title { font-family:var(--serif); font-size:1.12rem; line-height:1.3; }
   .res-meta { display:flex; flex-wrap:wrap; gap:.35rem .9rem; margin-top:.3rem; font-size:.78rem; opacity:.8; }
   .res-indep { font-weight:600; opacity:1; }
-  .res-amend { margin-top:.35rem; font-size:.76rem; color:#8c6a1f; }
+  .res-amend { margin-top:.35rem; font-size:.76rem; color:#1747A6; }
   .res-amend span { display:block; }
   .res-src { margin-top:.35rem; font-family:'IBM Plex Mono',monospace; font-size:.7rem; opacity:.62; }
   .res-src a { margin-left:.5rem; }
@@ -259,19 +259,19 @@ function fmtDate(value) {
   .prov-block h4 { font-size:.72rem; text-transform:uppercase; letter-spacing:.07em; opacity:.7; margin:0 0 .4rem; }
   .prov-block ul { margin:0; padding-left:1.1rem; font-size:.82rem; line-height:1.55; }
   .prov-foot { margin-top:1.2rem; font-size:.8rem; opacity:.75; }
-  .cov-table { margin-top:1.1rem; border:1px solid var(--rule,#e5e0d6); border-radius:3px; overflow:hidden; }
+  .cov-table { margin-top:1.1rem; border:1px solid var(--rule,#E3E8EF); border-radius:3px; overflow:hidden; }
   .cov-head, .cov-row { display:grid; grid-template-columns:2.2fr 1fr 1fr 1.2fr .9fr 1.3fr; gap:.5rem; padding:.55rem .8rem; font-size:.78rem; }
   .cov-head { background:rgba(0,0,0,.03); text-transform:uppercase; letter-spacing:.05em; opacity:.7; font-size:.68rem; }
-  .cov-row { border-top:1px solid var(--rule,#ece7dd); }
+  .cov-row { border-top:1px solid var(--rule,#EAEEF3); }
   .cov-row:hover { background:rgba(0,0,0,.015); }
   .cov-src { font-family:'IBM Plex Mono',monospace; font-size:.72rem; }
   .cov-cad { font-size:.7rem; }
-  .cov-cad-rare { color:#8a8378; }
-  .cov-cad-regular { color:#3c6a4a; }
-  .cov-cad-occasional { color:#8c6a1f; }
-  .cov-cad-stale { color:#9c4a3c; }
-  .cov-cad-nodatedsnapshots { color:#9c4a3c; }
-  .cov-cad-unknownlastseen { color:#9c4a3c; }
+  .cov-cad-rare { color:#6B7587; }
+  .cov-cad-regular { color:#1747A6; }
+  .cov-cad-occasional { color:#1747A6; }
+  .cov-cad-stale { color:#C0392B; }
+  .cov-cad-nodatedsnapshots { color:#C0392B; }
+  .cov-cad-unknownlastseen { color:#C0392B; }
   .cov-note { margin-top:1.1rem; }
   @media (max-width:640px) {
     .res-row { flex-direction:column; gap:.5rem; }

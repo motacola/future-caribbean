@@ -45,22 +45,22 @@ const labels: Record<HomepageBriefingCard['kind'], string> = {
 <style>
   .briefing { max-width: 1140px; margin: 0 auto; padding: 44px 24px 36px; }
   .briefing-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 18px; }
-  .eyebrow { margin: 0 0 7px; font: 700 10px 'IBM Plex Mono', monospace; text-transform: uppercase; letter-spacing: 1.3px; color: #b57a22; }
-  h2 { margin: 0; font: 700 clamp(28px, 4vw, 42px)/1.02 'Cormorant Garamond', Georgia, serif; color: #18251f; }
-  .intro { margin: 8px 0 0; max-width: 650px; color: #455a50; font-size: 14px; }
-  .briefing-head > a { flex: none; font-size: 12px; font-weight: 700; color: #0d766e; }
+  .eyebrow { margin: 0 0 7px; font: 700 10px 'IBM Plex Mono', monospace; text-transform: uppercase; letter-spacing: 1.3px; color: #E07A2E; }
+  h2 { margin: 0; font: 700 clamp(28px, 4vw, 42px)/1.02 'Cormorant Garamond', Georgia, serif; color: #0F1B2D; }
+  .intro { margin: 8px 0 0; max-width: 650px; color: #3E4A5C; font-size: 14px; }
+  .briefing-head > a { flex: none; font-size: 12px; font-weight: 700; color: #22A3D6; }
   .briefing-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
-  .briefing-card { display: flex; flex-direction: column; min-width: 0; padding: 17px; background: #fffcf4; border: 1px solid #d8cbb8; border-top: 3px solid #0d766e; border-radius: 4px; box-shadow: 0 2px 8px rgba(24,37,31,.06); }
-  .briefing-card.opportunity { border-top-color: #b57a22; }
-  .briefing-card.validation { border-top-color: #2676a8; }
-  .card-top, .trust-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 5px 10px; font: 700 8px 'IBM Plex Mono', monospace; text-transform: uppercase; letter-spacing: .65px; color: #5d6b62; }
-  .card-top b { color: #0d766e; }
-  h3 { margin: 12px 0 8px; font: 700 20px/1.08 'Cormorant Garamond', Georgia, serif; color: #18251f; }
-  .briefing-card > p:not(.disclaimer) { margin: 0 0 12px; color: #455a50; font-size: 12px; line-height: 1.5; overflow-wrap: anywhere; }
-  .trust-row { display: grid; gap: 3px; margin-top: auto; padding-top: 11px; border-top: 1px solid #d8cbb8; text-transform: none; letter-spacing: 0; }
-  .disclaimer { margin: 8px 0; color: #5d6b62; font-size: 9px; line-height: 1.4; }
-  .briefing-card > a { font-size: 11px; font-weight: 700; color: #0d766e; }
-  .updated { margin: 12px 0 0; color: #5d6b62; font: 9px 'IBM Plex Mono', monospace; }
+  .briefing-card { display: flex; flex-direction: column; min-width: 0; padding: 17px; background: #FFFFFF; border: 1px solid #CDD6E2; border-top: 3px solid #22A3D6; border-radius: 4px; box-shadow: 0 2px 8px rgba(15,27,45,.06); }
+  .briefing-card.opportunity { border-top-color: #E07A2E; }
+  .briefing-card.validation { border-top-color: #1D5FD0; }
+  .card-top, .trust-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 5px 10px; font: 700 8px 'IBM Plex Mono', monospace; text-transform: uppercase; letter-spacing: .65px; color: #55606F; }
+  .card-top b { color: #22A3D6; }
+  h3 { margin: 12px 0 8px; font: 700 20px/1.08 'Cormorant Garamond', Georgia, serif; color: #0F1B2D; }
+  .briefing-card > p:not(.disclaimer) { margin: 0 0 12px; color: #3E4A5C; font-size: 12px; line-height: 1.5; overflow-wrap: anywhere; }
+  .trust-row { display: grid; gap: 3px; margin-top: auto; padding-top: 11px; border-top: 1px solid #CDD6E2; text-transform: none; letter-spacing: 0; }
+  .disclaimer { margin: 8px 0; color: #55606F; font-size: 9px; line-height: 1.4; }
+  .briefing-card > a { font-size: 11px; font-weight: 700; color: #22A3D6; }
+  .updated { margin: 12px 0 0; color: #55606F; font: 9px 'IBM Plex Mono', monospace; }
   @media (max-width: 900px) { .briefing-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   @media (max-width: 620px) { .briefing { padding: 34px 16px 28px; } .briefing-head { display: grid; } .briefing-grid { grid-template-columns: 1fr; } }
 </style>

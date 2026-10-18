@@ -3,6 +3,7 @@ import SiteMast from '../../components/SiteMast.astro';
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import Base from '../../layouts/Base.astro';
+import { humanize } from '../../lib/humanize';
 
 export async function getStaticPaths() {
   const raw = JSON.parse(readFileSync(resolve('outbox/opportunity_dispatches.json'), 'utf8'));
@@ -26,15 +27,15 @@ const FRESHNESS_CLASS: Record<string, string> = {
   weakened: 'f-weakened',
 };
 const KIND_COLOR: Record<string, string> = {
-  enhanced_investment: '#2676A8',
-  investment_signal: '#2676A8',
-  development_pipeline: '#9A6B15',
-  economic_vulnerability: '#7A1E1E',
-  food_security: '#0D766E',
-  tourism_impact: '#0D766E',
-  marine_hazard: '#7A1E1E',
+  enhanced_investment: '#1D5FD0',
+  investment_signal: '#1D5FD0',
+  development_pipeline: '#E0A526',
+  economic_vulnerability: '#C0392B',
+  food_security: '#22A3D6',
+  tourism_impact: '#22A3D6',
+  marine_hazard: '#C0392B',
 };
-const kindColor = KIND_COLOR[d.signal_kind] ?? '#857D71';
+const kindColor = KIND_COLOR[d.signal_kind] ?? '#6B7587';
 
 const gradeLabel: Record<string, string> = {
   'A - multi-source': 'A — multi-source',
@@ -56,9 +57,9 @@ const generatedAt = d.generated_at
 .sig-mast { background: var(--ink); padding: 14px 0; }
 .sig-mast::after { content:""; display:block; height:2px; background:linear-gradient(90deg,var(--gold),var(--teal) 55%,transparent); opacity:.85; }
 .sig-mast-inner { max-width:860px; margin:0 auto; padding:0 24px; display:flex; justify-content:space-between; align-items:center; }
-.sig-mast-back { color:color-mix(in srgb,#F4EBDD 62%,transparent); font-size:12px; letter-spacing:.5px; text-transform:uppercase; font-weight:500; text-decoration:none; }
-.sig-mast-back:hover { color:#F4EBDD; text-decoration:none; }
-.sig-mast-id { font-family:var(--mono); font-size:11px; color:color-mix(in srgb,#F4EBDD 45%,transparent); }
+.sig-mast-back { color:color-mix(in srgb,#F1F4F9 62%,transparent); font-size:12px; letter-spacing:.5px; text-transform:uppercase; font-weight:500; text-decoration:none; }
+.sig-mast-back:hover { color:#F1F4F9; text-decoration:none; }
+.sig-mast-id { font-family:var(--mono); font-size:11px; color:color-mix(in srgb,#F1F4F9 45%,transparent); }
 
 .sig-wrap { max-width:860px; margin:0 auto; padding:48px 24px 72px; }
 
@@ -66,8 +67,8 @@ const generatedAt = d.generated_at
 .sig-kind { display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:700; padding:4px 12px; border-radius:20px; color:#fff; }
 .sig-kind-dot { width:7px; height:7px; border-radius:50%; background:#fff; opacity:.8; }
 .fresh-badge { font-size:11px; font-weight:600; padding:3px 10px; border-radius:20px; }
-.f-new { background:rgba(13,118,110,.14); color:var(--teal); }
-.f-sustained { background:rgba(181,122,34,.16); color:#9a7a1f; }
+.f-new { background:rgba(34,163,214,.14); color:var(--teal); }
+.f-sustained { background:rgba(224,122,46,.16); color:#1747A6; }
 .f-weakened { background:rgba(130,154,177,.18); color:var(--sub); }
 .sig-cycle { font-family:var(--mono); font-size:11px; color:var(--muted); }
 
@@ -88,10 +89,10 @@ const generatedAt = d.generated_at
 .sig-card-body { font-size:14px; color:var(--sub); line-height:1.65; }
 .sig-card-body strong { color:var(--ink); }
 
-.action-card { background:var(--ink); color:#F4EBDD; border-radius:var(--r); padding:28px; margin-bottom:28px; border-left:4px solid var(--gold); }
+.action-card { background:var(--ink); color:#F1F4F9; border-radius:var(--r); padding:28px; margin-bottom:28px; border-left:4px solid var(--gold); }
 .action-label { font-size:10px; text-transform:uppercase; letter-spacing:1.2px; color:var(--gold); font-weight:600; margin-bottom:12px; }
 .action-text { font-size:16px; line-height:1.65; margin-bottom:16px; }
-.action-window { display:inline-flex; align-items:center; gap:6px; font-size:12px; color:color-mix(in srgb,#F4EBDD 60%,transparent); font-family:var(--mono); }
+.action-window { display:inline-flex; align-items:center; gap:6px; font-size:12px; color:color-mix(in srgb,#F1F4F9 60%,transparent); font-family:var(--mono); }
 
 .sig-meta-row { display:flex; flex-wrap:wrap; gap:20px; padding:18px 0; border-top:1px solid var(--border); font-size:12px; color:var(--muted); }
 .meta-pair { display:flex; flex-direction:column; gap:2px; }
@@ -102,7 +103,7 @@ const generatedAt = d.generated_at
 .persona-name { font-size:15px; font-weight:700; color:var(--ink); margin-bottom:4px; }
 .persona-desc { font-size:13px; color:var(--sub); line-height:1.55; }
 
-.risk-row { background:rgba(185,72,54,.07); border:1px solid rgba(185,72,54,.22); border-radius:var(--r); padding:14px 18px; margin-bottom:20px; font-size:13px; color:#8a2f22; display:flex; flex-direction:column; gap:6px; }
+.risk-row { background:rgba(185,72,54,.07); border:1px solid rgba(185,72,54,.22); border-radius:var(--r); padding:14px 18px; margin-bottom:20px; font-size:13px; color:#A93226; display:flex; flex-direction:column; gap:6px; }
 
 .sig-footer { margin-top:48px; padding-top:24px; border-top:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
 .sig-footer-brand { font-family:var(--serif); font-size:14px; font-weight:700; color:var(--muted); }
@@ -114,8 +115,8 @@ const generatedAt = d.generated_at
 </style>
 
 <Base
-  title={`${d.title} — Abeng`}
-  description={d.recommended_action?.slice(0, 155)}
+  title={`${humanize(d.title)} — Abeng`}
+  description={humanize(d.recommended_action)?.slice(0, 155)}
 >
 
 <SiteMast>
@@ -137,11 +138,11 @@ const generatedAt = d.generated_at
     {cycleDate && <span class="sig-cycle">Cycle {cycleDate}</span>}
   </div>
 
-  <h1 class="sig-title">{d.title}</h1>
-  <div class="sig-country">{d.country_cluster}</div>
+  <h1 class="sig-title">{humanize(d.title)}</h1>
+  <div class="sig-country">{/^caribwide$/i.test(d.country_cluster || '') ? 'Regional' : d.country_cluster}</div>
 
   <div class="sig-conf">
-    <div>{d.confidence_display}</div>
+    <div>{humanize(d.confidence_display)}</div>
     <div class="sig-conf-bar">
       <div class="conf-track">
         <div class="conf-fill" style={`width:${d.confidence_score}%;background:${kindColor}`}></div>
@@ -152,7 +153,7 @@ const generatedAt = d.generated_at
 
   <div class="action-card">
     <div class="action-label">Recommended action · {d.persona_label}</div>
-    <p class="action-text">{d.recommended_action}</p>
+    <p class="action-text">{humanize(d.recommended_action)}</p>
     {d.action_window && (
       <span class="action-window">⏱ Act within {d.action_window}</span>
     )}
@@ -161,34 +162,34 @@ const generatedAt = d.generated_at
   <div class="sig-persona">
     <div class="persona-label">Who this is for</div>
     <div class="persona-name">{d.persona_label}</div>
-    {d.recipient_type && <p class="persona-desc">{d.recipient_type}</p>}
+    {d.recipient_type && <p class="persona-desc">{humanize(d.recipient_type)}</p>}
   </div>
 
   <div class="sig-grid">
     <div class="sig-card">
       <div class="sig-card-label">Evidence</div>
       <div class="sig-card-body">
-        <p>{d.evidence_summary}</p>
-        {d.detail && <p style="margin-top:8px"><strong>{d.detail}</strong></p>}
+        <p>{humanize(d.evidence_summary)}</p>
+        {d.detail && <p style="margin-top:8px"><strong>{humanize(d.detail)}</strong></p>}
       </div>
     </div>
     <div class="sig-card">
       <div class="sig-card-label">Evidence grade · {grade}</div>
-      <div class="sig-card-body">{d.ranking_rationale}</div>
+      <div class="sig-card-body">{humanize(d.ranking_rationale)}</div>
     </div>
     <div class="sig-card">
       <div class="sig-card-label">Why routed here</div>
-      <div class="sig-card-body">{d.routing_rationale}</div>
+      <div class="sig-card-body">{humanize(d.routing_rationale)}</div>
     </div>
     <div class="sig-card">
       <div class="sig-card-label">Decision this informs</div>
-      <div class="sig-card-body">{d.decision_influence}</div>
+      <div class="sig-card-body">{humanize(d.decision_influence)}</div>
     </div>
   </div>
 
   {d.risk_flags?.length > 0 && (
     <div class="risk-row">
-      {d.risk_flags.map((r: string) => <span>⚠ {r}</span>)}
+      {d.risk_flags.map((r: string) => <span>⚠ {humanize(r)}</span>)}
     </div>
   )}
 

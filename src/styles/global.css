@@ -3,10 +3,10 @@
    page. Page-local <style> blocks may override specifics but inherit these.
    Previous warm-Caribbean system preserved in tag old-design-20260824. */
 :root {
-  --bg: #FFF9F0; --ink: #1A1714; --card: #FFFCF4; --card-alt: #F2E8D9;
-  --text: #1A1714; --sub: #4A443C; --muted: #857D71;
-  --gold: #9A6B15; --teal: #0D5257; --coral: #7A1E1E; --sky: #2676A8;
-  --lime: #B6C74E; --border: rgba(26,23,20,.18); --border-dark: rgba(26,23,20,.45);
+  --bg: #F7F8FA; --ink: #0F1B2D; --card: #FFFFFF; --card-alt: #E9EEF5;
+  --text: #0F1B2D; --sub: #3E4A5C; --muted: #6B7587;
+  --gold: #E0A526; --teal: #1D5FD0; --coral: #C0392B; --sky: #1D5FD0;
+  --lime: #F2B83A; --border: rgba(15,27,45,.18); --border-dark: rgba(15,27,45,.45);
   /* Grounds and accents for the tonal bands. The ink band reuses --ink
      rather than introducing a deeper black, so band and masthead share
      one ink register. The -on-ink accents are the same hues lifted to
@@ -18,10 +18,10 @@
      resolve against that shadow and paint cream on cream. This token is
      never shadowed, so it keeps the real ink. */
   --ink-ground: var(--ink);
-  --paper-deep: #EBDCC6;
-  --teal-on-ink: #5FA8AD; --gold-on-ink: #D0A03F;
-  --coral-on-ink: #D08078; --sky-on-ink: #6FAFD6;
-  --ink-fg: #F4EBDD;
+  --paper-deep: #DCE3EE;
+  --teal-on-ink: #7FB2FF; --gold-on-ink: #FFD27A;
+  --coral-on-ink: #F28B7E; --sky-on-ink: #8CC4F0;
+  --ink-fg: #F1F4F9;
   --serif: 'Playfair Display', Georgia, serif;
   --sans: 'Inter', -apple-system, system-ui, sans-serif;
   --mono: 'IBM Plex Mono', monospace;
@@ -37,7 +37,7 @@
 @layer reset, theme, utilities;
 @layer reset { *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; } }
 html { overflow-x: clip; }
-body { font-family: var(--sans); background: var(--bg); background-image: radial-gradient(1100px 500px at 75% -120px, rgba(154,107,21,.05), transparent 70%), radial-gradient(900px 420px at -10% 30%, rgba(13,82,87,.04), transparent 70%); color: var(--text); line-height: 1.6; font-size: 15px; -webkit-font-smoothing: antialiased; }
+body { font-family: var(--sans); background: var(--bg); background-image: radial-gradient(1100px 500px at 75% -120px, rgba(224,165,38,.05), transparent 70%), radial-gradient(900px 420px at -10% 30%, rgba(29,95,208,.04), transparent 70%); color: var(--text); line-height: 1.6; font-size: 15px; -webkit-font-smoothing: antialiased; }
 a { color: var(--teal); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
@@ -54,7 +54,7 @@ a:hover { text-decoration: underline; }
    rows read as pressable records. */
 @media (hover: hover) and (pointer: fine) {
   tbody tr { transition: background .15s ease; }
-  tbody tr:hover { background: rgba(154,107,21,.04); }
+  tbody tr:hover { background: rgba(224,165,38,.04); }
   .card { transition: transform .18s var(--fe-ease-out), border-color .18s var(--fe-ease-out); }
 }
 
@@ -94,7 +94,7 @@ h1, h2 { animation: fe-rise .7s var(--fe-ease-out) both; }
   top: -60px;
   z-index: 999;
   padding: 12px 18px;
-  background: var(--ink, #18251F);
+  background: var(--ink, #0F1B2D);
   color: #fff;
   font: 600 14px var(--sans);
   border-radius: 0 0 6px 6px;
@@ -146,9 +146,9 @@ h1, h2 { animation: fe-rise .7s var(--fe-ease-out) both; }
   position: sticky;
   top: 0;
   z-index: 40;
-  background: color-mix(in srgb, var(--bg, #FFFCF4) 94%, transparent);
+  background: color-mix(in srgb, var(--bg, #FFFFFF) 94%, transparent);
   backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--border, rgba(24,37,31,.12));
+  border-bottom: 1px solid var(--border, rgba(15,27,45,.12));
 }
 .page-nav-inner {
   max-width: 1140px;
@@ -165,7 +165,7 @@ h1, h2 { animation: fe-rise .7s var(--fe-ease-out) both; }
   font: 600 10px var(--mono, ui-monospace, monospace);
   text-transform: uppercase;
   letter-spacing: 1.2px;
-  color: var(--muted, #6b6a63);
+  color: var(--muted, #5A6475);
   white-space: nowrap;
   padding-right: 8px;
 }
@@ -176,15 +176,15 @@ h1, h2 { animation: fe-rise .7s var(--fe-ease-out) both; }
   padding: 0 12px;
   white-space: nowrap;
   font-size: 13px;
-  color: var(--sub, #46453f);
+  color: var(--sub, #3A4352);
   text-decoration: none;
   border-bottom: 2px solid transparent;
 }
-.page-nav-link:hover { color: var(--text, #18251F); }
+.page-nav-link:hover { color: var(--text, #0F1B2D); }
 .page-nav-link.is-current {
-  color: var(--text, #18251F);
+  color: var(--text, #0F1B2D);
   font-weight: 600;
-  border-bottom-color: var(--teal, #0D5257);
+  border-bottom-color: var(--teal, #1D5FD0);
 }
 
 .filter-bar {
@@ -199,16 +199,16 @@ h1, h2 { animation: fe-rise .7s var(--fe-ease-out) both; }
   font: 600 10px var(--mono, ui-monospace, monospace);
   text-transform: uppercase;
   letter-spacing: 1.1px;
-  color: var(--muted, #6b6a63);
+  color: var(--muted, #5A6475);
 }
 .filter-field select {
   min-height: 44px;
   padding: 0 12px;
   font: inherit;
   font-size: 14px;
-  color: var(--text, #18251F);
+  color: var(--text, #0F1B2D);
   background: var(--card, #fff);
-  border: 1px solid var(--border-dark, rgba(24,37,31,.28));
+  border: 1px solid var(--border-dark, rgba(15,27,45,.28));
   border-radius: 6px;
 }
 .filter-reset {
@@ -217,15 +217,15 @@ h1, h2 { animation: fe-rise .7s var(--fe-ease-out) both; }
   font: inherit;
   font-size: 13px;
   cursor: pointer;
-  color: var(--sub, #46453f);
+  color: var(--sub, #3A4352);
   background: transparent;
-  border: 1px solid var(--border-dark, rgba(24,37,31,.28));
+  border: 1px solid var(--border-dark, rgba(15,27,45,.28));
   border-radius: 6px;
 }
-.filter-reset:hover { color: var(--text, #18251F); }
+.filter-reset:hover { color: var(--text, #0F1B2D); }
 .filter-empty {
   padding: 20px 0;
-  color: var(--muted, #6b6a63);
+  color: var(--muted, #5A6475);
   font-style: italic;
 }
 
@@ -238,7 +238,7 @@ h1, h2 { animation: fe-rise .7s var(--fe-ease-out) both; }
 }
 .reveal-status {
   font-size: 12px;
-  color: var(--muted, #6b6a63);
+  color: var(--muted, #5A6475);
   margin: 0;
 }
 .reveal-more {
@@ -248,12 +248,12 @@ h1, h2 { animation: fe-rise .7s var(--fe-ease-out) both; }
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  color: var(--text, #18251F);
+  color: var(--text, #0F1B2D);
   background: var(--card, #fff);
-  border: 1px solid var(--border-dark, rgba(24,37,31,.28));
+  border: 1px solid var(--border-dark, rgba(15,27,45,.28));
   border-radius: 6px;
 }
-.reveal-more:hover { border-color: var(--teal, #0D5257); color: var(--teal, #0D5257); }
+.reveal-more:hover { border-color: var(--teal, #1D5FD0); color: var(--teal, #1D5FD0); }
 /* The reveal moves focus to the first new row; it should not draw a ring
    around the whole record, only signal where the reader landed. */
 [data-reveal] > [tabindex="-1"]:focus-visible { outline-offset: -3px; }
@@ -271,8 +271,8 @@ h1, h2 { animation: fe-rise .7s var(--fe-ease-out) both; }
    unstyled — a plain link soup where the site header should be. This is
    the shared baseline; the homepage's own rules still override it. ── */
 .masthead {
-  background: linear-gradient(160deg, #211D19, #14110E 88%);
-  color: var(--bg, #FFFCF4);
+  background: linear-gradient(160deg, #14243B, #0A1424 88%);
+  color: var(--bg, #FFFFFF);
   padding: 8px 0 14px;
 }
 .masthead::after {
@@ -280,7 +280,7 @@ h1, h2 { animation: fe-rise .7s var(--fe-ease-out) both; }
   display: block;
   height: 3px;
   margin-bottom: -3px;
-  background: linear-gradient(90deg, var(--gold, #B57A22), var(--teal, #0D5257) 55%, transparent);
+  background: linear-gradient(90deg, var(--gold, #E07A2E), var(--teal, #1D5FD0) 55%, transparent);
   opacity: .85;
 }
 .masthead .mast-inner {
@@ -299,17 +299,17 @@ h1, h2 { animation: fe-rise .7s var(--fe-ease-out) both; }
   letter-spacing: 3px;
   text-transform: uppercase;
   line-height: 1;
-  color: var(--bg, #FFFCF4);
+  color: var(--bg, #FFFFFF);
   text-decoration: none;
 }
-.masthead .mast-name em { font-style: normal; color: var(--gold, #B57A22); }
+.masthead .mast-name em { font-style: normal; color: var(--gold, #E07A2E); }
 .masthead .mast-links { display: flex; gap: 22px; flex-wrap: wrap; justify-content: center; }
 .masthead .mast-links a {
-  color: color-mix(in srgb, var(--bg, #FFFCF4) 62%, transparent);
+  color: color-mix(in srgb, var(--bg, #FFFFFF) 62%, transparent);
   font-size: 11px;
   letter-spacing: .8px;
   text-transform: uppercase;
   font-weight: 500;
   text-decoration: none;
 }
-.masthead .mast-links a:hover { color: var(--bg, #FFFCF4); }
+.masthead .mast-links a:hover { color: var(--bg, #FFFFFF); }
