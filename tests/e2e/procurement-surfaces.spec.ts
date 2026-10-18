@@ -2,7 +2,7 @@
 import { test, expect } from '@playwright/test';
 
 test('track filter separates opportunity and risk chips without changing signal kinds', async ({ page }) => {
-  await page.goto('/', { waitUntil: 'networkidle' });
+  await page.goto('/desk', { waitUntil: 'networkidle' });
   const chips = page.locator('.rmv-chip');
   expect(await chips.count()).toBeGreaterThan(10);
 

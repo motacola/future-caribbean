@@ -4,7 +4,7 @@
 import { test, expect } from '@playwright/test';
 
 test('homepage renders a fully classified regional movement strip', async ({ page }) => {
-  await page.goto('/', { waitUntil: 'networkidle' });
+  await page.goto('/desk', { waitUntil: 'networkidle' });
   const strip = page.locator('.regional-movement');
   const chips = strip.locator('.rmv-chip');
   await expect(strip).toBeVisible();
@@ -17,7 +17,7 @@ test('homepage renders a fully classified regional movement strip', async ({ pag
 });
 
 test('every chip exposes bounded confidence and an accessible label', async ({ page }) => {
-  await page.goto('/', { waitUntil: 'networkidle' });
+  await page.goto('/desk', { waitUntil: 'networkidle' });
   const bars = page.locator('.rmv-bar');
   const fills = page.locator('.rmv-bar-fill');
   const count = await fills.count();
@@ -35,7 +35,7 @@ test('every chip exposes bounded confidence and an accessible label', async ({ p
 });
 
 test('activating a chip opens the matching map drill', async ({ page }) => {
-  await page.goto('/', { waitUntil: 'networkidle' });
+  await page.goto('/desk', { waitUntil: 'networkidle' });
   const chip = page.locator('.rmv-chip').first();
   const country = await chip.getAttribute('data-country');
   expect(country).toBeTruthy();
@@ -44,7 +44,7 @@ test('activating a chip opens the matching map drill', async ({ page }) => {
 });
 
 test('the strip is ordered between the map and finance chips in the DOM', async ({ page }) => {
-  await page.goto('/', { waitUntil: 'networkidle' });
+  await page.goto('/desk', { waitUntil: 'networkidle' });
   const orderIsCorrect = await page.evaluate(() => {
     const map = document.querySelector('.map-shell');
     const strip = document.querySelector('.regional-movement');
@@ -65,7 +65,7 @@ test('regional movement has no browser runtime errors', async ({ page }) => {
       failedResponses.push(`${response.status()} ${response.url()}`);
     }
   });
-  await page.goto('/', { waitUntil: 'networkidle' });
+  await page.goto('/desk', { waitUntil: 'networkidle' });
   await expect(page.locator('.rmv-chip').first()).toBeVisible();
   expect(errors).toEqual([]);
   expect(failedResponses).toEqual([]);

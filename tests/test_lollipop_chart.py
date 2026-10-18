@@ -31,7 +31,7 @@ THEME_TS = ROOT / "src" / "lib" / "caribbean-theme.ts"
 ISLAND_TSX = ROOT / "src" / "lib" / "charts" / "LollipopIsland.tsx"
 BUILD_ASTRO = ROOT / "src" / "pages" / "build.astro"
 DATA_TS = ROOT / "src" / "lib" / "data.ts"
-INDEX_ASTRO = ROOT / "src" / "pages" / "index.astro"
+INDEX_ASTRO = ROOT / "src" / "pages" / "desk.astro"
 
 
 
@@ -112,9 +112,9 @@ def test_lollipop_island_applies_caribbean_theme():
 
 def test_index_astro_has_drill_lifecycle_css():
     """The map-drill panel renders a lifecycle + evidence-mix strip on
-    click. The CSS that styles it must live in index.astro (it's part
+    click. The CSS that styles it must live in desk.astro (it's part
     of the homepage, not the build page)."""
-    page = (ROOT / "src" / "pages" / "index.astro").read_text()
+    page = (ROOT / "src" / "pages" / "desk.astro").read_text()
     # CSS for the head, state, and the bar.
     for sel in (
         ".drill-lifecycle {",
@@ -128,7 +128,7 @@ def test_index_astro_has_drill_lifecycle_css():
         ".drill-evidence-seg {",
 
     ):
-        assert sel in page, f"index.astro must define {sel} CSS"
+        assert sel in page, f"desk.astro must define {sel} CSS"
 
 
 def test_data_ts_reads_market_record_freshness_not_just_snapshot():

@@ -13,6 +13,7 @@ import { test, expect } from '@playwright/test';
 
 const PAGES = [
   '/',
+  '/desk',
   '/build',
   '/accuracy',
   '/capability-matches',
@@ -67,16 +68,17 @@ for (const path of PAGES) {
   });
 }
 
-test('standalone controls are big enough to tap on a phone', async ({ page }) => {
+for (const path of ['/', '/desk']) test(`${path}: standalone controls are big enough to tap on a phone`, async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
-  await page.goto('/');
+  await page.goto(path);
   await page.waitForTimeout(500);
 
   // Inline links inside a sentence are exempt (WCAG 2.5.8); these are the
   // standalone controls, which were rendering 21-32px tall.
   const undersized = await page.evaluate(() => {
     const sel = '.chip,.news-filter,.track-btn,.verdict-btn,.theater-toggle,'
-      + '.map-expand,.deep-btn,.proof-toggle,.map-fallback button,.mast-links a';
+      + '.map-expand,.deep-btn,.proof-toggle,.map-fallback button,.mast-links a,'
+      + '.bm-ask-btn,.bm-ask-row button,.bm-move-row,.bm-index-row';
     const bad: string[] = [];
     for (const el of document.querySelectorAll(sel)) {
       const b = el.getBoundingClientRect();

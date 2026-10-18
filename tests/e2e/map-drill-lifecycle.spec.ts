@@ -25,7 +25,7 @@ const sourceFamilies = [
   .map(([label]) => `${label}: 1`);
 
 async function openDrill(page: import('@playwright/test').Page, country: string) {
-  await page.goto('/', { waitUntil: 'networkidle' });
+  await page.goto('/desk', { waitUntil: 'networkidle' });
   await page.evaluate((name) => {
     const opener = (window as unknown as { openCountryDrill?: (country: string) => void }).openCountryDrill;
     if (!opener) throw new Error('openCountryDrill is not available');
@@ -78,7 +78,7 @@ test('dispatch lifecycle uses the desk observation and honest cadence copy', asy
 });
 
 test('watchlist countries render market freshness without invented corroboration', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('/desk');
   const watchlistChip = page.locator('.rmv-chip[title*="watchlist"]').first();
   await expect(watchlistChip).toBeVisible();
   const country = await watchlistChip.getAttribute('data-country');

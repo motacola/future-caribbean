@@ -8,7 +8,7 @@ const forbiddenCopy = [
 ];
 
 test('homepage leads with the Caribbean map and decision context before system proof', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('/desk');
   await expect(page.getByRole('heading', { level: 1 })).toContainText('Caribbean opportunity');
   await expect(page.locator('#leaflet-map')).toBeVisible();
   await expect(page.locator('#decision-workspace')).toBeVisible();
@@ -29,7 +29,7 @@ test('homepage leads with the Caribbean map and decision context before system p
 });
 
 test('regional movement connects each classified market to its drill', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('/desk');
   const strip = page.locator('.regional-movement');
   await expect(strip).toBeVisible();
   await expect(strip.locator('.rmv-chip').first()).toBeVisible();
@@ -38,7 +38,7 @@ test('regional movement connects each classified market to its drill', async ({ 
 });
 
 test('market watch labels dates, source status, and illustrative chart limits honestly', async ({ page }) => {
-  await page.goto('/#market-watch');
+  await page.goto('/desk#market-watch');
   const marketWatch = page.locator('#market-watch');
   await expect(marketWatch).toBeVisible();
 
@@ -61,7 +61,7 @@ test('market watch labels dates, source status, and illustrative chart limits ho
 
 test('desktop hero map opens a semantic country drill-down', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name.includes('mobile'));
-  await page.goto('/');
+  await page.goto('/desk');
 
   const mainMap = page.locator('#leaflet-map');
   await expect(mainMap).toBeVisible();
@@ -78,7 +78,7 @@ test('desktop hero map opens a semantic country drill-down', async ({ page }, te
 
 test('the map never traps page-wheel scrolling', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name.includes('mobile'), 'Mouse-wheel behavior is desktop-specific');
-  await page.goto('/');
+  await page.goto('/desk');
 
   const map = page.locator('#leaflet-map');
   await expect(map).toBeVisible();
@@ -106,7 +106,7 @@ test('the map never traps page-wheel scrolling', async ({ page }, testInfo) => {
 
 test('mobile homepage is glance-first and has no horizontal overflow', async ({ page }, testInfo) => {
   test.skip(!testInfo.project.name.includes('mobile'));
-  await page.goto('/');
+  await page.goto('/desk');
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
   expect(overflow).toBeLessThanOrEqual(1);
   await expect(page.locator('.mast-name')).toBeVisible();

@@ -8,7 +8,7 @@ import { expect, test } from '@playwright/test';
 // every dispatch has a page, so the link points at its own story.
 
 test('every wire headline links to its own dispatch page', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('/desk');
   const items = page.locator('#lw-rail .lw-item');
   expect(await items.count()).toBeGreaterThan(0);
 
@@ -19,7 +19,7 @@ test('every wire headline links to its own dispatch page', async ({ page }) => {
 });
 
 test('a market the map does not carry still opens its story', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('/desk');
   const offMap = page.locator('#lw-rail .lw-item').filter({ hasText: /CARICOM|Caribwide|Nicaragua|Turks/ }).first();
   test.skip(await offMap.count() === 0, 'no off-map market on the wire this cycle');
 
@@ -29,7 +29,7 @@ test('a market the map does not carry still opens its story', async ({ page }) =
 });
 
 test('clicking a headline opens that headline', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('/desk');
   // The rail scrolls; pausing it makes the assertion about the link, not timing.
   await page.addStyleTag({ content: '.lw-rail { animation: none !important; }' });
   const item = page.locator('#lw-rail .lw-item').first();
@@ -43,7 +43,7 @@ test('clicking a headline opens that headline', async ({ page }) => {
 test('the wire works with JavaScript disabled', async ({ browser }) => {
   const context = await browser.newContext({ javaScriptEnabled: false });
   const page = await context.newPage();
-  await page.goto('/');
+  await page.goto('/desk');
   const href = await page.locator('#lw-rail .lw-item').first().getAttribute('href');
   expect(href).toMatch(/^\/signal\//);
   await context.close();

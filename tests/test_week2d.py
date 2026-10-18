@@ -72,14 +72,14 @@ def test_validation_packs_endpoint_returns_verdict_field(tmp_path):
 
 def test_dashboard_renders_verdict_filter_and_expandable_packs():
     """Test that the Astro dashboard page contains verdict filter and expandable validation sections."""
-    template = Path(ROOT / "src" / "pages" / "index.astro").read_text()
-    assert "verdict-filter" in template, "Verdict filter not in index.astro"
-    assert "sig-expand" in template, "Expand button not in index.astro"
-    assert "sig-validation" in template, "Validation section not in index.astro"
-    assert "cycle-clock" in template, "Cycle clock not in index.astro"
-    assert "next-cycle" in template, "Next cycle element not in index.astro"
-    assert "last-cycle" in template, "Last cycle element not in index.astro"
-    assert "data-verdict" in template, "data-verdict attribute not in index.astro"
+    template = Path(ROOT / "src" / "pages" / "desk.astro").read_text()
+    assert "verdict-filter" in template, "Verdict filter not in desk.astro"
+    assert "sig-expand" in template, "Expand button not in desk.astro"
+    assert "sig-validation" in template, "Validation section not in desk.astro"
+    assert "cycle-clock" in template, "Cycle clock not in desk.astro"
+    assert "next-cycle" in template, "Next cycle element not in desk.astro"
+    assert "last-cycle" in template, "Last cycle element not in desk.astro"
+    assert "data-verdict" in template, "data-verdict attribute not in desk.astro"
 
     # Verdict counting logic lives in the Astro data layer now
     data_layer = Path(ROOT / "src" / "lib" / "data.ts").read_text()
@@ -150,9 +150,9 @@ def test_status_endpoint_returns_cycle_timing(tmp_path):
 def test_astro_data_includes_ported_label_cleaners():
     """The Astro data loader owns the label-cleaning rules formerly in dashboard/generate.py."""
     data_source = Path(ROOT / "src" / "lib" / "data.ts").read_text()
-    dashboard_path = ROOT / "dist" / "index.html"
+    dashboard_path = ROOT / "dist" / "desk" / "index.html"
     if not dashboard_path.exists():
-        pytest.skip("dist/index.html not built — run `pnpm build` first")
+        pytest.skip("dist/desk/index.html not built — run `pnpm build` first")
     dashboard = dashboard_path.read_text()
 
     assert "function cleanTitle" in data_source

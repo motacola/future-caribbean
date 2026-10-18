@@ -121,9 +121,9 @@ def test_dashboard_rendering():
     """outbox/track_record.json valid and the built Astro page contains id=\"receipts\" and receipt-row."""
     import pytest
 
-    dashboard_path = ROOT / "dist" / "index.html"
+    dashboard_path = ROOT / "dist" / "desk" / "index.html"
     if not dashboard_path.exists():
-        pytest.skip("dist/index.html not built — run `pnpm build` first")
+        pytest.skip("dist/desk/index.html not built — run `pnpm build` first")
 
     content = dashboard_path.read_text()
 

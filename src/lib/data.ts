@@ -1451,7 +1451,55 @@ export function loadDashboardData() {
     data: { ts: nowTs + 190, cycle: cycleId, signals: nClusters },
   });
 
+  // ── Morning brief (homepage) ───────────────────────────────
+  // Structured slices of what the full desk already renders, so the brief and
+  // the desk cannot disagree. Moves skip the lead (ticker item 0).
+  // Watchlist items ("no detail yet") are not moves; they are counted, not listed.
+  const isWatch = (t: any) => /no detail yet/i.test(humanize(t.title || ''));
+  const briefMoves = tickerItems.slice(1).filter((t: any) => !isWatch(t)).slice(0, 5).map((t: any) => ({
+    country: canonicalCountry(t.country_cluster || '') || 'Region',
+    title: humanize(t.title || ''),
+    href: dispatchHref(t),
+  }));
+  const briefWatchCount = tickerItems.slice(1).filter(isWatch).length;
+  const KIND_WORD: Record<string, string> = { investment: 'Investment', climate: 'Climate', procurement: 'Procurement' };
+  const countryStatus = (m: any) => (m.track === 'risk' ? 'Risk' : KIND_WORD[m.kind] || 'Quiet');
+  const countryHref = (country: string) => {
+    const first = (mapDispatches[country] || [])[0];
+    return first ? `/signal/${encodeURIComponent(first.dispatch_id)}/` : '/desk#front-page';
+  };
+  const briefCountries = mapMarkers
+    .map((m: any) => ({
+      country: m.country,
+      status: countryStatus(m),
+      risk: countryStatus(m) === 'Risk',
+      quiet: countryStatus(m) === 'Quiet',
+      freshness: freshnessClass(m.freshness_state || ''),
+      href: countryHref(m.country),
+    }))
+    .sort((a: any, b: any) => a.country.localeCompare(b.country));
+  // Only real Instagram items from the news feed; no stand-ins. Empty → the
+  // homepage omits the section.
+  const groundPosts = newsItems
+    .filter((item: any) => item.source_platform === 'instagram' && item.url)
+    .slice(0, 3)
+    .map((item: any) => {
+      const imageUrl = item.image_url || item.imageUrl || '';
+      return {
+        handle: item.author_handle || item.source || item.publisher_name || 'Instagram',
+        caption: cleanHeadline(item.title || item.summary || ''),
+        url: item.url,
+        image: newsThumbnails[imageUrl]?.url || imageUrl,
+        country: item.countries[0] || '',
+      };
+    });
+  const leadHref = (mapDispatches[canonicalCountry(lCountry)] || [])[0]
+    ? `/signal/${encodeURIComponent(mapDispatches[canonicalCountry(lCountry)][0].dispatch_id)}/`
+    : '/desk#decision-workspace';
+
   return {
+    // Morning brief
+    briefMoves, briefWatchCount, briefCountries, groundPosts, leadHref,
     // Scalars
     cycleId, cycleLabel: cycleDateLabel(cycleId), nowStr, nCountries, nSources, nClusters, nPersonas, nFb, nComposite,
     // Lead signal
