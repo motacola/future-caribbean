@@ -24,25 +24,22 @@ tests/
 # forward. Count with: ls api/*.py | wc -l  (tests/test_vercel_functions.py
 # enforces the budget).
 
-# Data — EXCEPT history/ which the theater replay needs
-data/*
-!data/history/
-!data/history/**
-# Regional news is baked into the static dashboard at build time via map_data.py /
-# src/lib/data.ts. Re-include the whole regional_news dir (the generated latest.json
-# is force-committed) so the section renders on Vercel. Ignore the bulky raw RSS cache.
-!data/regional_news/
-!data/regional_news/**
+# Data. Kept: history/ (theater replay), regional_news/ minus raw/,
+# coordination/, intervention_state.json and market_watch/, which the build
+# and the Regional Connections page read. Everything else is listed rather
+# than excluded with `data/*` plus `!` re-includes: the CLI's local matcher
+# does not honour re-includes under an excluded parent, so `vercel deploy`
+# uploads shipped no data/ at all and the build failed on the news copy.
+data/approvals/
+data/calibration/
+data/editorial/
+data/feedback/
+data/ndbc/
+data/procurement/
+data/registries/
+data/validation_packs/
+data/webhooks/
 data/regional_news/raw/
-# Coordination graph + intervention state are force-committed and read by the
-# Regional Connections page at build time. Un-ignore so the build context has them.
-!data/coordination/
-!data/intervention_state.json
-# Market Watch poller output is force-committed and read by the index page at
-# build time (src/lib/data.ts reads data/market_watch/latest.json to populate the
-# candle charts + watch-sector / news-context cards).
-!data/market_watch/
-!data/market_watch/**
 
 # Pipeline source code — packagers + mcp_adapter are imported by runtime API
 # functions (/api/status imports packagers.source_health; /api/mcp imports
