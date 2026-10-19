@@ -1,0 +1,131 @@
+{
+  "signal_id": "invest-bahamas",
+  "dispatch_id": "DSP-20261019-001",
+  "country": "Bahamas",
+  "signal_title": "Bahamas: FDI trending at +538.6% — screening trigger active",
+  "confidence_score": 68,
+  "raw_confidence_score": 94,
+  "action_readiness": "medium (annual macro signal only)",
+  "evidence_grade": "B - cross-source",
+  "sector_hypotheses": [
+    {
+      "sector": "Tourism and hospitality",
+      "basis": "Analyst prior from widely reported sector drivers — requires local confirmation",
+      "status": "unconfirmed"
+    },
+    {
+      "sector": "Financial services",
+      "basis": "Analyst prior from widely reported sector drivers — requires local confirmation",
+      "status": "unconfirmed"
+    },
+    {
+      "sector": "Which industries received it is not published yet",
+      "basis": "World Bank: FDI net inflows moved +538.6% from 2024 to 2025",
+      "status": "macro_signal"
+    }
+  ],
+  "supporting_projects": [
+    {
+      "title": "Productivity, Technology and Innovation Survey Bahamas: 2013-2014",
+      "source": "IDB Open Data",
+      "url": "https://data.iadb.org/en/search?q=Productivity%2C%20Technology%20and%20Innovation%20",
+      "topics": []
+    },
+    {
+      "title": "Latin American Public Opinion Project - Victimization and Crime survey Bahamas: 2014",
+      "source": "IDB Open Data",
+      "url": "https://data.iadb.org/en/search?q=Latin%20American%20Public%20Opinion%20Project%20-%20",
+      "topics": []
+    }
+  ],
+  "procurement_matches": [
+    {
+      "title": "Enhancing the Quality of the Belize National Quality Infrastructure",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure",
+      "match": "regional"
+    },
+    {
+      "title": "Development of a Climate Resilient Integrated National Land Use Plan Technical Assistance Project",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/development-climate-resilient-integrated-national-land-use-plan-technical-assistance-project",
+      "match": "regional"
+    },
+    {
+      "title": "Creation of an Enabling Environment For Movable Asset-Based Financing in Barbados by Modernizing The Secured Transaction Legal and Infrastructure System Project",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/creation-enabling-environment-movable-asset-based-financing-barbados-modernizing-secured-transaction-1",
+      "match": "regional"
+    },
+    {
+      "title": "Creation of an Enabling Environment For Movable Asset-Based Financing in Barbados by Modernizing The Secured Transaction Legal and Infrastructure System Project",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/creation-enabling-environment-movable-asset-based-financing-barbados-modernizing-secured-transaction-0",
+      "match": "regional"
+    },
+    {
+      "title": "Creation of an Enabling Environment For Movable Asset-Based Financing in Barbados by Modernizing The Secured Transaction Legal and Infrastructure System Project",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/creation-enabling-environment-movable-asset-based-financing-barbados-modernizing-secured-transaction",
+      "match": "regional"
+    },
+    {
+      "title": "EU-CDB Regional Food Security Programme",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/eu-cdb-regional-food-security-programme",
+      "match": "regional"
+    }
+  ],
+  "official_country_data": [
+    {
+      "title": "Bahamas Balance of Payments (2015 &#8211; 2025)",
+      "source": "CARICOM Statistics",
+      "url": "https://statistics.caricom.org/?country_data=bahamas-balance-of-payments-2015-2024"
+    }
+  ],
+  "credible_local_operators": [],
+  "relevant_institutions": [
+    {
+      "name": "Bahamas Investment Authority",
+      "role": "National investment facilitation agency"
+    },
+    {
+      "name": "Caribbean Export Development Agency",
+      "role": "Regional trade and investment promotion"
+    },
+    {
+      "name": "Caribbean Development Bank (CDB)",
+      "role": "Regional development finance and procurement"
+    }
+  ],
+  "source_links": [
+    "https://data.iadb.org/en/search?q=Latin%20American%20Public%20Opinion%20Project%20-%20",
+    "https://data.iadb.org/en/search?q=Productivity%2C%20Technology%20and%20Innovation%20",
+    "https://statistics.caricom.org/?country_data=bahamas-balance-of-payments-2015-2024",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/creation-enabling-environment-movable-asset-based-financing-barbados-modernizing-secured-transaction",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/creation-enabling-environment-movable-asset-based-financing-barbados-modernizing-secured-transaction-0",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/creation-enabling-environment-movable-asset-based-financing-barbados-modernizing-secured-transaction-1",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/development-climate-resilient-integrated-national-land-use-plan-technical-assistance-project",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/eu-cdb-regional-food-security-programme"
+  ],
+  "unresolved_questions": [
+    "Which specific sectors are driving the movement in Bahamas? No official sector-breakdown dataset matched this cycle.",
+    "No live Bahamas-specific procurement notice matched this cycle — check CDB and national tender portals directly.",
+    "No registry-backed local operators matched — source two credible operators via the listed institutions.",
+    "Validate that the underlying FDI movement is sustained, not a one-off transaction or statistical revision."
+  ],
+  "recommended_intro_targets": [
+    {
+      "name": "Bahamas Investment Authority",
+      "why": "National investment facilitation agency"
+    }
+  ],
+  "advance_or_reject_recommendation": "hold",
+  "recommendation_reason": "Calibrated confidence 68/100 with 1 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.",
+  "last_validated_at": "2026-10-19T12:03:47.881316+00:00",
+  "coordination_path": null,
+  "evidence_fingerprint": "e3b0c44298fc1c14",
+  "cycles_since_refresh": 0,
+  "evidence_freshness": "refreshing"
+}

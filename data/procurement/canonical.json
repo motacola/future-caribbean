@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "updated_at": "2026-09-06T22:06:52.621458+00:00",
+ "updated_at": "2026-10-19T12:03:47.445521+00:00",
  "tenders": {
   "bahamas-09a150a1385c": {
    "schema_version": 1,
@@ -19558,6 +19558,46 @@
    "award_lead_time_days": null,
    "last_seen_at": "2026-08-20T00:00:00+00:00"
   },
+  "guyana-153ccee3198b": {
+   "schema_version": 1,
+   "tender_id": "guyana-153ccee3198b",
+   "country": "Guyana",
+   "buyer": "21-Ministry of Agriculture",
+   "title": "1.\tRepairs to Access Bridge at Verde Vrienschapp, Canal No.1., West Bank Demerara, Region No.3",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00483"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-10-06",
+   "original_closing_date": "2026-10-29",
+   "current_closing_date": "2026-10-29",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00483",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-10-29",
+     "published": "2026-10-06",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
+    }
+   ],
+   "first_detected_at": "2026-10-19T12:03:47.445521+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 10,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
+  },
   "guyana-16cf153b4a14": {
    "schema_version": 1,
    "tender_id": "guyana-16cf153b4a14",
@@ -19740,6 +19780,46 @@
    "award_lead_time_days": null,
    "last_seen_at": "2026-07-10T00:00:00+00:00"
   },
+  "guyana-1bff7c1e79b1": {
+   "schema_version": 1,
+   "tender_id": "guyana-1bff7c1e79b1",
+   "country": "Guyana",
+   "buyer": "21-Ministry of Agriculture",
+   "title": "Rehabilitation of Farm to Market Road Access Road at Esah and Jacob Phase 2, Burma Mahaicony Creek, Region No.5",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00497"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-10-12",
+   "original_closing_date": "2026-11-05",
+   "current_closing_date": "2026-11-05",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00497",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-11-05",
+     "published": "2026-10-12",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
+    }
+   ],
+   "first_detected_at": "2026-10-19T12:03:47.445521+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 17,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
+  },
   "guyana-1de7f9596a4f": {
    "schema_version": 1,
    "tender_id": "guyana-1de7f9596a4f",
@@ -19824,6 +19904,86 @@
    "lead_time_days": 19,
    "award_lead_time_days": null,
    "last_seen_at": "2026-06-25T00:00:00+00:00"
+  },
+  "guyana-1f22f78c220f": {
+   "schema_version": 1,
+   "tender_id": "guyana-1f22f78c220f",
+   "country": "Guyana",
+   "buyer": "21-Ministry of Agriculture",
+   "title": "Supply and Delivery of Aquaculture Cage Mesh for Cage Culture Project",
+   "sector": "Goods",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00467"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-09-30",
+   "original_closing_date": "2026-10-27",
+   "current_closing_date": "2026-10-27",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00467",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-10-27",
+     "published": "2026-09-30",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
+    }
+   ],
+   "first_detected_at": "2026-10-19T12:03:47.445521+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 8,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
+  },
+  "guyana-1ffe1fdee542": {
+   "schema_version": 1,
+   "tender_id": "guyana-1ffe1fdee542",
+   "country": "Guyana",
+   "buyer": "01-Office of the President",
+   "title": "Consultancy Services to conduct a Structural Assessment of the EPA’s Concrete Building",
+   "sector": "Services",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00472"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-09-29",
+   "original_closing_date": "2026-10-20",
+   "current_closing_date": "2026-10-20",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00472",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-10-20",
+     "published": "2026-09-29",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
+    }
+   ],
+   "first_detected_at": "2026-10-19T12:03:47.445521+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 1,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
   },
   "guyana-205558c19c03": {
    "schema_version": 1,
@@ -20900,6 +21060,46 @@
    "award_lead_time_days": null,
    "last_seen_at": "2026-08-25T01:49:08.200758+00:00"
   },
+  "guyana-3e17a25a3a95": {
+   "schema_version": 1,
+   "tender_id": "guyana-3e17a25a3a95",
+   "country": "Guyana",
+   "buyer": "21-Ministry of Agriculture",
+   "title": "1.\tConstruction of Check Structure at Junior Farming Area, East Bank Demerara, Region No. 4",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00490"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-10-06",
+   "original_closing_date": "2026-10-29",
+   "current_closing_date": "2026-10-29",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00490",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-10-29",
+     "published": "2026-10-06",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
+    }
+   ],
+   "first_detected_at": "2026-10-19T12:03:47.445521+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 10,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
+  },
   "guyana-3e1f7ffb425e": {
    "schema_version": 1,
    "tender_id": "guyana-3e1f7ffb425e",
@@ -20984,6 +21184,46 @@
    "lead_time_days": 5,
    "award_lead_time_days": null,
    "last_seen_at": "2026-08-25T01:49:08.200758+00:00"
+  },
+  "guyana-3e954a27cbf4": {
+   "schema_version": 1,
+   "tender_id": "guyana-3e954a27cbf4",
+   "country": "Guyana",
+   "buyer": "21-Ministry of Agriculture",
+   "title": "1.\tConstruction of Revetment at Anna Regina Collector’s Drain, Essequibo Coast, Region No.2",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00499"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-10-12",
+   "original_closing_date": "2026-11-05",
+   "current_closing_date": "2026-11-05",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00499",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-11-05",
+     "published": "2026-10-12",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
+    }
+   ],
+   "first_detected_at": "2026-10-19T12:03:47.445521+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 17,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
   },
   "guyana-42917bcc8c18": {
    "schema_version": 1,
@@ -21363,6 +21603,46 @@
    "award_lead_time_days": null,
    "last_seen_at": "2026-08-20T00:00:00+00:00"
   },
+  "guyana-4eec4d994cf2": {
+   "schema_version": 1,
+   "tender_id": "guyana-4eec4d994cf2",
+   "country": "Guyana",
+   "buyer": "21-Ministry of Agriculture",
+   "title": "1.\tConstruction of Timber Revetment at Suga Man Canal, Mahaicony Creek, Drainage Structure at, Region No. 5",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00496"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-10-12",
+   "original_closing_date": "2026-11-05",
+   "current_closing_date": "2026-11-05",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00496",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-11-05",
+     "published": "2026-10-12",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
+    }
+   ],
+   "first_detected_at": "2026-10-19T12:03:47.445521+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 17,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
+  },
   "guyana-4fb2f05ec899": {
    "schema_version": 1,
    "tender_id": "guyana-4fb2f05ec899",
@@ -21528,6 +21808,126 @@
    "award_lead_time_days": null,
    "last_seen_at": "2026-07-24T00:00:00+00:00"
   },
+  "guyana-554bdbd903db": {
+   "schema_version": 1,
+   "tender_id": "guyana-554bdbd903db",
+   "country": "Guyana",
+   "buyer": "40-Ministry of Education",
+   "title": "Construction of Assembly Shed at- North Georgetown Secondary School",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00464"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-09-29",
+   "original_closing_date": "2026-10-20",
+   "current_closing_date": "2026-10-20",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00464",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-10-20",
+     "published": "2026-09-29",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
+    }
+   ],
+   "first_detected_at": "2026-10-19T12:03:47.445521+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 1,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
+  },
+  "guyana-55e6da09f96e": {
+   "schema_version": 1,
+   "tender_id": "guyana-55e6da09f96e",
+   "country": "Guyana",
+   "buyer": "21-Ministry of Agriculture",
+   "title": "1.\tConstruction of Fisherman’s Wharf at Sheet Anchor, Region No. 4",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00498"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-10-12",
+   "original_closing_date": "2026-11-05",
+   "current_closing_date": "2026-11-05",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00498",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-11-05",
+     "published": "2026-10-12",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
+    }
+   ],
+   "first_detected_at": "2026-10-19T12:03:47.445521+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 17,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
+  },
+  "guyana-592a6a982d88": {
+   "schema_version": 1,
+   "tender_id": "guyana-592a6a982d88",
+   "country": "Guyana",
+   "buyer": "21-Ministry of Agriculture",
+   "title": "1.\tConstruction of Concrete Drains at Ladernsville, Aroaima Berbice River, Region No. 10",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00487"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-10-06",
+   "original_closing_date": "2026-10-29",
+   "current_closing_date": "2026-10-29",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00487",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-10-29",
+     "published": "2026-10-06",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
+    }
+   ],
+   "first_detected_at": "2026-10-19T12:03:47.445521+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 10,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
+  },
   "guyana-5a4deb8f2cc7": {
    "schema_version": 1,
    "tender_id": "guyana-5a4deb8f2cc7",
@@ -21579,12 +21979,92 @@
     }
    ],
    "first_detected_at": "2026-09-04T18:58:15.378473+00:00",
-   "lifecycle_state": "detected",
+   "lifecycle_state": "closed",
    "resolution": null,
    "detected_before_close": true,
    "lead_time_days": 32,
    "award_lead_time_days": null,
    "last_seen_at": "2026-09-06T22:06:52.621458+00:00"
+  },
+  "guyana-6097e8eab4a7": {
+   "schema_version": 1,
+   "tender_id": "guyana-6097e8eab4a7",
+   "country": "Guyana",
+   "buyer": "34-Ministry of Public Utilities and Aviation",
+   "title": "Installation of 300MM Transmission Mains along Brickdam from Vlissengen to Avenue of Republic, Georgetown, Region 4 (Lot 2: Austin Place to Avenue of Republic)",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00474"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-09-28",
+   "original_closing_date": "2026-10-20",
+   "current_closing_date": "2026-10-20",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00474",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-10-20",
+     "published": "2026-09-28",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
+    }
+   ],
+   "first_detected_at": "2026-10-19T12:03:47.445521+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 1,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
+  },
+  "guyana-60a51ffe6cf9": {
+   "schema_version": 1,
+   "tender_id": "guyana-60a51ffe6cf9",
+   "country": "Guyana",
+   "buyer": "21-Ministry of Agriculture",
+   "title": "Supply & Delivery of Oil Lubricants & Greases to Guysuco for the Year 2027-2028",
+   "sector": "Goods",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00460"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-09-21",
+   "original_closing_date": "2026-10-20",
+   "current_closing_date": "2026-10-20",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00460",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-10-20",
+     "published": "2026-09-21",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
+    }
+   ],
+   "first_detected_at": "2026-10-19T12:03:47.445521+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 1,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
   },
   "guyana-67988c49dffa": {
    "schema_version": 1,
@@ -21762,6 +22242,46 @@
    "lead_time_days": 47,
    "award_lead_time_days": null,
    "last_seen_at": "2026-07-24T00:00:00+00:00"
+  },
+  "guyana-69c154124fa6": {
+   "schema_version": 1,
+   "tender_id": "guyana-69c154124fa6",
+   "country": "Guyana",
+   "buyer": "21-Ministry of Agriculture",
+   "title": "1.\tProcurement of Fleet Management and Asset Tracking Devices for Region Nos.2,3,4,5,6 and 10.",
+   "sector": "Goods",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00491"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-10-06",
+   "original_closing_date": "2026-10-29",
+   "current_closing_date": "2026-10-29",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00491",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-10-29",
+     "published": "2026-10-06",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
+    }
+   ],
+   "first_detected_at": "2026-10-19T12:03:47.445521+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 10,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
   },
   "guyana-6e4e33b1c253": {
    "schema_version": 1,
@@ -22019,6 +22539,46 @@
    "award_lead_time_days": null,
    "last_seen_at": "2026-06-25T00:00:00+00:00"
   },
+  "guyana-737fb3a50cc1": {
+   "schema_version": 1,
+   "tender_id": "guyana-737fb3a50cc1",
+   "country": "Guyana",
+   "buyer": "51-Ministry of Home Affairs",
+   "title": "Construction of Parking Lot at National Security Tower, Brickdam, Region No. 4- Guyana Police Force",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00480"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-10-06",
+   "original_closing_date": "2026-10-22",
+   "current_closing_date": "2026-10-22",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00480",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-10-22",
+     "published": "2026-10-06",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
+    }
+   ],
+   "first_detected_at": "2026-10-19T12:03:47.445521+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 3,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
+  },
   "guyana-74a917bc7542": {
    "schema_version": 1,
    "tender_id": "guyana-74a917bc7542",
@@ -22169,12 +22729,52 @@
     }
    ],
    "first_detected_at": "2026-08-24T16:52:22.987577+00:00",
-   "lifecycle_state": "detected",
+   "lifecycle_state": "closed",
    "resolution": null,
    "detected_before_close": true,
    "lead_time_days": 39,
    "award_lead_time_days": null,
    "last_seen_at": "2026-09-06T22:06:52.621458+00:00"
+  },
+  "guyana-7a8f2375ca05": {
+   "schema_version": 1,
+   "tender_id": "guyana-7a8f2375ca05",
+   "country": "Guyana",
+   "buyer": "21-Ministry of Agriculture",
+   "title": "1.\tRepairs to Access Bridge at Soesdyke, Canal No.1., West Bank Demerara, Region No.3",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00484"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-10-06",
+   "original_closing_date": "2026-10-29",
+   "current_closing_date": "2026-10-29",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00484",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-10-29",
+     "published": "2026-10-06",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
+    }
+   ],
+   "first_detected_at": "2026-10-19T12:03:47.445521+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 10,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
   },
   "guyana-7b390e26a29b": {
    "schema_version": 1,
@@ -22453,6 +23053,46 @@
    "award_lead_time_days": null,
    "last_seen_at": "2026-06-19T00:00:00+00:00"
   },
+  "guyana-81940c58a50b": {
+   "schema_version": 1,
+   "tender_id": "guyana-81940c58a50b",
+   "country": "Guyana",
+   "buyer": "01-Office of the President",
+   "title": "Retender-Consultancy Services for the preparation of an Integrated Strategy for the North Rupununi Wetland Productive Landscape.",
+   "sector": "Services",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00471"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-09-29",
+   "original_closing_date": "2026-10-20",
+   "current_closing_date": "2026-10-20",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00471",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-10-20",
+     "published": "2026-09-29",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
+    }
+   ],
+   "first_detected_at": "2026-10-19T12:03:47.445521+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 1,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
+  },
   "guyana-82003e7c12e2": {
    "schema_version": 1,
    "tender_id": "guyana-82003e7c12e2",
@@ -22492,6 +23132,46 @@
    "lead_time_days": 4,
    "award_lead_time_days": null,
    "last_seen_at": "2026-07-24T00:00:00+00:00"
+  },
+  "guyana-86cca48dfed4": {
+   "schema_version": 1,
+   "tender_id": "guyana-86cca48dfed4",
+   "country": "Guyana",
+   "buyer": "34-Ministry of Public Utilities and Aviation",
+   "title": "Installation of 300mm Transmission Mains along Water Street from Church Street to Battery Road & High Street, Georgetown, Region 4 (Lot 2: Sluice Bridge to Battery Road)",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00476"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-09-28",
+   "original_closing_date": "2026-10-20",
+   "current_closing_date": "2026-10-20",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00476",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-10-20",
+     "published": "2026-09-28",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
+    }
+   ],
+   "first_detected_at": "2026-10-19T12:03:47.445521+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 1,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
   },
   "guyana-86fccf159808": {
    "schema_version": 1,
@@ -22577,6 +23257,86 @@
    "lead_time_days": 19,
    "award_lead_time_days": null,
    "last_seen_at": "2026-06-25T00:00:00+00:00"
+  },
+  "guyana-87992d11a97f": {
+   "schema_version": 1,
+   "tender_id": "guyana-87992d11a97f",
+   "country": "Guyana",
+   "buyer": "21-Ministry of Agriculture",
+   "title": "1.\tRehabilitation to Access Bridge at Ooku, Canal No.1., West Bank Demerara, Region No.3",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00485"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-10-06",
+   "original_closing_date": "2026-10-29",
+   "current_closing_date": "2026-10-29",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00485",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-10-29",
+     "published": "2026-10-06",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
+    }
+   ],
+   "first_detected_at": "2026-10-19T12:03:47.445521+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 10,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
+  },
+  "guyana-88250545dccd": {
+   "schema_version": 1,
+   "tender_id": "guyana-88250545dccd",
+   "country": "Guyana",
+   "buyer": "40-Ministry of Education",
+   "title": "Supply, Delivery, Installation and Testing of Network and Equipment for Secondary Schools",
+   "sector": "Goods",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00479"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-10-06",
+   "original_closing_date": "2026-10-29",
+   "current_closing_date": "2026-10-29",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00479",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-10-29",
+     "published": "2026-10-06",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
+    }
+   ],
+   "first_detected_at": "2026-10-19T12:03:47.445521+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 10,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
   },
   "guyana-8896ee84d6dc": {
    "schema_version": 1,
@@ -22860,6 +23620,86 @@
    "award_lead_time_days": null,
    "last_seen_at": "2026-06-19T00:00:00+00:00"
   },
+  "guyana-8a7c3adaaf79": {
+   "schema_version": 1,
+   "tender_id": "guyana-8a7c3adaaf79",
+   "country": "Guyana",
+   "buyer": "21-Ministry of Agriculture",
+   "title": "Rehabilitation of concrete culverts along the left Bank Mahaicony Creek, Region No.5 Lots 1-3",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00494"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-10-12",
+   "original_closing_date": "2026-11-05",
+   "current_closing_date": "2026-11-05",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00494",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-11-05",
+     "published": "2026-10-12",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
+    }
+   ],
+   "first_detected_at": "2026-10-19T12:03:47.445521+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 17,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
+  },
+  "guyana-8b80f5cd6182": {
+   "schema_version": 1,
+   "tender_id": "guyana-8b80f5cd6182",
+   "country": "Guyana",
+   "buyer": "21-Ministry of Agriculture",
+   "title": "1.\tRehabilitation to Revetment at Siriki Sand Upper Pomeroon, Region No.2 (",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00500"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-10-12",
+   "original_closing_date": "2026-11-05",
+   "current_closing_date": "2026-11-05",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00500",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-11-05",
+     "published": "2026-10-12",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
+    }
+   ],
+   "first_detected_at": "2026-10-19T12:03:47.445521+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 17,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
+  },
   "guyana-8cc09bce847e": {
    "schema_version": 1,
    "tender_id": "guyana-8cc09bce847e",
@@ -23011,6 +23851,46 @@
    "lead_time_days": 20,
    "award_lead_time_days": null,
    "last_seen_at": "2026-07-10T00:00:00+00:00"
+  },
+  "guyana-8cf861f2afb9": {
+   "schema_version": 1,
+   "tender_id": "guyana-8cf861f2afb9",
+   "country": "Guyana",
+   "buyer": "21-Ministry of Agriculture",
+   "title": "1.\tConstruction of Check Structure Along Block-B Drainage Channel, East Bank Demerara, Region No. 4.",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00489"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-10-06",
+   "original_closing_date": "2026-10-29",
+   "current_closing_date": "2026-10-29",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00489",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-10-29",
+     "published": "2026-10-06",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
+    }
+   ],
+   "first_detected_at": "2026-10-19T12:03:47.445521+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 10,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
   },
   "guyana-8fd82ba103c5": {
    "schema_version": 1,
@@ -23401,7 +24281,7 @@
     }
    ],
    "first_detected_at": "2026-09-04T18:58:15.378473+00:00",
-   "lifecycle_state": "detected",
+   "lifecycle_state": "closed",
    "resolution": null,
    "detected_before_close": true,
    "lead_time_days": 32,
@@ -23495,6 +24375,86 @@
    "award_lead_time_days": null,
    "last_seen_at": "2026-07-24T00:00:00+00:00"
   },
+  "guyana-97aec9035e93": {
+   "schema_version": 1,
+   "tender_id": "guyana-97aec9035e93",
+   "country": "Guyana",
+   "buyer": "21-Ministry of Agriculture",
+   "title": "Retender for the Decommission of High Grade Pug Mill and Replace with Stainless Steel at Albion Estate",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00478"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-09-30",
+   "original_closing_date": "2026-10-27",
+   "current_closing_date": "2026-10-27",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00478",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-10-27",
+     "published": "2026-09-30",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
+    }
+   ],
+   "first_detected_at": "2026-10-19T12:03:47.445521+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 8,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
+  },
+  "guyana-97ef378116d0": {
+   "schema_version": 1,
+   "tender_id": "guyana-97ef378116d0",
+   "country": "Guyana",
+   "buyer": "21-Ministry of Agriculture",
+   "title": "1.\tConstruction of Check Structure Along No. 3 Canal at Mocha, East Bank Demerara, Region No. 4",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00488"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-10-06",
+   "original_closing_date": "2026-10-29",
+   "current_closing_date": "2026-10-29",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00488",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-10-29",
+     "published": "2026-10-06",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
+    }
+   ],
+   "first_detected_at": "2026-10-19T12:03:47.445521+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 10,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
+  },
   "guyana-9a49fe17bd2a": {
    "schema_version": 1,
    "tender_id": "guyana-9a49fe17bd2a",
@@ -23532,6 +24492,46 @@
    "lead_time_days": -729,
    "award_lead_time_days": null,
    "last_seen_at": "2026-08-20T00:00:00+00:00"
+  },
+  "guyana-9ba9873d5821": {
+   "schema_version": 1,
+   "tender_id": "guyana-9ba9873d5821",
+   "country": "Guyana",
+   "buyer": "51-Ministry of Home Affairs",
+   "title": "Extension of Kitchen, Sealing of Floor in Infirmary and Modifications to Storage Room at New Amsterdam Prison, Region No.6- Guyana Prison Service",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00481"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-10-02",
+   "original_closing_date": "2026-10-22",
+   "current_closing_date": "2026-10-22",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00481",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Opening",
+     "closing_date": "2026-10-22",
+     "published": "2026-10-02",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
+    }
+   ],
+   "first_detected_at": "2026-10-19T12:03:47.445521+00:00",
+   "lifecycle_state": "closed",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 3,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
   },
   "guyana-9e7e739c5c3d": {
    "schema_version": 1,
@@ -23608,6 +24608,46 @@
    "lead_time_days": 13,
    "award_lead_time_days": null,
    "last_seen_at": "2026-07-06T00:00:00+00:00"
+  },
+  "guyana-a0ac9254a1cc": {
+   "schema_version": 1,
+   "tender_id": "guyana-a0ac9254a1cc",
+   "country": "Guyana",
+   "buyer": "40-Ministry of Education",
+   "title": "Rehab Works at Carnegie School of Home Economics",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00466"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-09-29",
+   "original_closing_date": "2026-10-21",
+   "current_closing_date": "2026-10-21",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00466",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-10-21",
+     "published": "2026-09-29",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
+    }
+   ],
+   "first_detected_at": "2026-10-19T12:03:47.445521+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 2,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
   },
   "guyana-a20d6eedd7a1": {
    "schema_version": 1,
@@ -24170,6 +25210,46 @@
    "award_lead_time_days": null,
    "last_seen_at": "2026-07-06T00:00:00+00:00"
   },
+  "guyana-b190f815df3c": {
+   "schema_version": 1,
+   "tender_id": "guyana-b190f815df3c",
+   "country": "Guyana",
+   "buyer": "21-Ministry of Agriculture",
+   "title": "Construction of Center of Excellence at GSA Compound, Ministry of Agriculture, Mon Repos, E.C.D, Region No.4",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00493"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-10-13",
+   "original_closing_date": "2026-11-05",
+   "current_closing_date": "2026-11-05",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00493",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-11-05",
+     "published": "2026-10-13",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
+    }
+   ],
+   "first_detected_at": "2026-10-19T12:03:47.445521+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 17,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
+  },
   "guyana-b200a4113ec5": {
    "schema_version": 1,
    "tender_id": "guyana-b200a4113ec5",
@@ -24383,6 +25463,46 @@
    "award_lead_time_days": null,
    "last_seen_at": "2026-08-20T00:00:00+00:00"
   },
+  "guyana-b528ed82ab28": {
+   "schema_version": 1,
+   "tender_id": "guyana-b528ed82ab28",
+   "country": "Guyana",
+   "buyer": "34-Ministry of Public Utilities and Aviation",
+   "title": "Procurement of Works – Installation of 300mm Transmission Mains along Brickdam from Vlissengen To Avenue of Republic, Georgetown, Region 4 (Lot 1: Square of Revolution to Austin Place)",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00473"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-09-28",
+   "original_closing_date": "2026-10-20",
+   "current_closing_date": "2026-10-20",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00473",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-10-20",
+     "published": "2026-09-28",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
+    }
+   ],
+   "first_detected_at": "2026-10-19T12:03:47.445521+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 1,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
+  },
   "guyana-b7270d757455": {
    "schema_version": 1,
    "tender_id": "guyana-b7270d757455",
@@ -24507,6 +25627,126 @@
    "lead_time_days": 5,
    "award_lead_time_days": null,
    "last_seen_at": "2026-08-25T01:49:08.200758+00:00"
+  },
+  "guyana-b970238f5424": {
+   "schema_version": 1,
+   "tender_id": "guyana-b970238f5424",
+   "country": "Guyana",
+   "buyer": "01-Office of the President",
+   "title": "Washing and Repainting of the Environmental Protection Agency’s Office Building, Lots 1 &2",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00469"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-09-27",
+   "original_closing_date": "2026-10-20",
+   "current_closing_date": "2026-10-20",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00469",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-10-20",
+     "published": "2026-09-27",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
+    }
+   ],
+   "first_detected_at": "2026-10-19T12:03:47.445521+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 1,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
+  },
+  "guyana-ba37da7d2738": {
+   "schema_version": 1,
+   "tender_id": "guyana-ba37da7d2738",
+   "country": "Guyana",
+   "buyer": "21-Ministry of Agriculture",
+   "title": "1.\tRehabilitation of concrete culverts along the Right Bank Mahaicony Creek, Region No.5 Lots 1-3",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00495"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-10-12",
+   "original_closing_date": "2026-11-05",
+   "current_closing_date": "2026-11-05",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00495",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-11-05",
+     "published": "2026-10-12",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
+    }
+   ],
+   "first_detected_at": "2026-10-19T12:03:47.445521+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 17,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
+  },
+  "guyana-be8fe68e764d": {
+   "schema_version": 1,
+   "tender_id": "guyana-be8fe68e764d",
+   "country": "Guyana",
+   "buyer": "21-Ministry of Agriculture",
+   "title": "Retender for the Rehabilitation of Four (4) Mild Steel High Grade Crystallizer with Stainless Steel",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00477"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-09-30",
+   "original_closing_date": "2026-10-27",
+   "current_closing_date": "2026-10-27",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00477",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-10-27",
+     "published": "2026-09-30",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
+    }
+   ],
+   "first_detected_at": "2026-10-19T12:03:47.445521+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 8,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
   },
   "guyana-bf3b04c5b747": {
    "schema_version": 1,
@@ -24834,7 +26074,7 @@
     }
    ],
    "first_detected_at": "2026-09-04T18:58:15.378473+00:00",
-   "lifecycle_state": "detected",
+   "lifecycle_state": "closed",
    "resolution": null,
    "detected_before_close": true,
    "lead_time_days": 32,
@@ -25098,7 +26338,7 @@
     }
    ],
    "first_detected_at": "2026-09-04T18:58:15.378473+00:00",
-   "lifecycle_state": "detected",
+   "lifecycle_state": "closed",
    "resolution": null,
    "detected_before_close": true,
    "lead_time_days": 32,
@@ -25182,6 +26422,46 @@
    "lead_time_days": -729,
    "award_lead_time_days": null,
    "last_seen_at": "2026-08-20T00:00:00+00:00"
+  },
+  "guyana-cd9b8eb2fc1b": {
+   "schema_version": 1,
+   "tender_id": "guyana-cd9b8eb2fc1b",
+   "country": "Guyana",
+   "buyer": "40-Ministry of Education",
+   "title": "Rehabilitation of Driveway at Staff Quarters- New Amsterdam Technical Institute",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00465"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-09-29",
+   "original_closing_date": "2026-10-21",
+   "current_closing_date": "2026-10-21",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00465",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-10-21",
+     "published": "2026-09-29",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
+    }
+   ],
+   "first_detected_at": "2026-10-19T12:03:47.445521+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 2,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
   },
   "guyana-cf0b9fb5d97d": {
    "schema_version": 1,
@@ -25369,6 +26649,46 @@
    "lead_time_days": 47,
    "award_lead_time_days": null,
    "last_seen_at": "2026-07-24T00:00:00+00:00"
+  },
+  "guyana-d316cd7da841": {
+   "schema_version": 1,
+   "tender_id": "guyana-d316cd7da841",
+   "country": "Guyana",
+   "buyer": "31-Ministry of Public Works",
+   "title": "Hinterland Roads Phase 2 - Lots 36 - 37",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00502"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-10-16",
+   "original_closing_date": "2026-11-11",
+   "current_closing_date": "2026-11-11",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00502",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-11-11",
+     "published": "2026-10-16",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
+    }
+   ],
+   "first_detected_at": "2026-10-19T12:03:47.445521+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 23,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
   },
   "guyana-d4a131ec301c": {
    "schema_version": 1,
@@ -25564,7 +26884,7 @@
     }
    ],
    "first_detected_at": "2026-09-01T13:28:25.937536+00:00",
-   "lifecycle_state": "detected",
+   "lifecycle_state": "closed",
    "resolution": null,
    "detected_before_close": true,
    "lead_time_days": 21,
@@ -25608,6 +26928,46 @@
    "lead_time_days": -881,
    "award_lead_time_days": null,
    "last_seen_at": "2026-08-20T00:00:00+00:00"
+  },
+  "guyana-e0d0d0741848": {
+   "schema_version": 1,
+   "tender_id": "guyana-e0d0d0741848",
+   "country": "Guyana",
+   "buyer": "51-Ministry of Home Affairs",
+   "title": "Construction of Fuel Storage Facility and Provision for Electrical Upgrade at Mackenzie Fire Station, Region No. 10 – Guyana Fire Service",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00492"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-10-02",
+   "original_closing_date": "2026-10-22",
+   "current_closing_date": "2026-10-22",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00492",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-10-22",
+     "published": "2026-10-02",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
+    }
+   ],
+   "first_detected_at": "2026-10-19T12:03:47.445521+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 3,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
   },
   "guyana-e2d69a1ecc00": {
    "schema_version": 1,
@@ -25995,6 +27355,46 @@
    "award_lead_time_days": null,
    "last_seen_at": "2026-06-19T00:00:00+00:00"
   },
+  "guyana-e9063ae55ac4": {
+   "schema_version": 1,
+   "tender_id": "guyana-e9063ae55ac4",
+   "country": "Guyana",
+   "buyer": "21-Ministry of Agriculture",
+   "title": "1.\tConstruction of Drainage Structure at Ladernsville, Aroaima Berbice River, Region No. 10",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00486"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-10-06",
+   "original_closing_date": "2026-10-29",
+   "current_closing_date": "2026-10-29",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00486",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-10-29",
+     "published": "2026-10-06",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
+    }
+   ],
+   "first_detected_at": "2026-10-19T12:03:47.445521+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 10,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
+  },
   "guyana-e9a0ffa19c88": {
    "schema_version": 1,
    "tender_id": "guyana-e9a0ffa19c88",
@@ -26071,6 +27471,46 @@
    "award_lead_time_days": null,
    "last_seen_at": "2026-08-20T00:00:00+00:00"
   },
+  "guyana-ee56c21552af": {
+   "schema_version": 1,
+   "tender_id": "guyana-ee56c21552af",
+   "country": "Guyana",
+   "buyer": "34-Ministry of Public Utilities and Aviation",
+   "title": "Installation of 300mm Transmission Mains along Water Street from Church Street to Battery Road & High Street, Georgetown, Region 4 (Lot 1: Church Street to Sluice Bridge)",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00475"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-09-28",
+   "original_closing_date": "2026-10-20",
+   "current_closing_date": "2026-10-20",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00475",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-10-20",
+     "published": "2026-09-28",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
+    }
+   ],
+   "first_detected_at": "2026-10-19T12:03:47.445521+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 1,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
+  },
   "guyana-ef881b139862": {
    "schema_version": 1,
    "tender_id": "guyana-ef881b139862",
@@ -26110,6 +27550,46 @@
    "lead_time_days": 4,
    "award_lead_time_days": null,
    "last_seen_at": "2026-07-24T00:00:00+00:00"
+  },
+  "guyana-f0782e77b31a": {
+   "schema_version": 1,
+   "tender_id": "guyana-f0782e77b31a",
+   "country": "Guyana",
+   "buyer": "21-Ministry of Agriculture",
+   "title": "1.\tConstruction of Kofi Operator’s Living Quarters, East Demerara Water Conservancy, Region No.4",
+   "sector": "Works",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00482"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-10-06",
+   "original_closing_date": "2026-10-29",
+   "current_closing_date": "2026-10-29",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00482",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-10-29",
+     "published": "2026-10-06",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
+    }
+   ],
+   "first_detected_at": "2026-10-19T12:03:47.445521+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 10,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
   },
   "guyana-f41503ad4c32": {
    "schema_version": 1,
@@ -26162,7 +27642,7 @@
     }
    ],
    "first_detected_at": "2026-09-04T18:58:15.378473+00:00",
-   "lifecycle_state": "detected",
+   "lifecycle_state": "closed",
    "resolution": null,
    "detected_before_close": true,
    "lead_time_days": 32,
@@ -26385,6 +27865,46 @@
    "lead_time_days": -1204,
    "award_lead_time_days": null,
    "last_seen_at": "2026-08-20T00:00:00+00:00"
+  },
+  "guyana-f6777ad653bd": {
+   "schema_version": 1,
+   "tender_id": "guyana-f6777ad653bd",
+   "country": "Guyana",
+   "buyer": "21-Ministry of Agriculture",
+   "title": "1.\tProvision of Security and Monitoring of the East Demerara Water Conservancy Embankment for the period 1st November 2026 to 31st October, 2029",
+   "sector": "Services",
+   "method": "Open Tendered",
+   "source_ref_ids": [
+    "PROC-2026-00501"
+   ],
+   "generating_sources": [
+    "Guyana eProcure (NPTA)"
+   ],
+   "urls": [
+    "https://eprocure.gov.gy/"
+   ],
+   "published": "2026-10-12",
+   "original_closing_date": "2026-11-05",
+   "current_closing_date": "2026-11-05",
+   "amendments": [],
+   "notices": [
+    {
+     "source": "Guyana eProcure (NPTA)",
+     "source_ref_id": "PROC-2026-00501",
+     "url": "https://eprocure.gov.gy/",
+     "status": "Bid Advertised",
+     "closing_date": "2026-11-05",
+     "published": "2026-10-12",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
+    }
+   ],
+   "first_detected_at": "2026-10-19T12:03:47.445521+00:00",
+   "lifecycle_state": "detected",
+   "resolution": null,
+   "detected_before_close": true,
+   "lead_time_days": 17,
+   "award_lead_time_days": null,
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
   },
   "guyana-f80a2e0d4b8e": {
    "schema_version": 1,
@@ -32385,6 +33905,15 @@
      "closing_date": null,
      "published": "2026-07-23",
      "observed_at": "2026-07-24T00:00:00+00:00"
+    },
+    {
+     "source": "Jamaica GOJEP (contract award)",
+     "source_ref_id": "award-The Provision of Psychosocial Consultant Services for the Mi",
+     "url": "https://www.gojep.gov.jm/epps/cft/prepareViewCfTWS.do?resourceId=9513905",
+     "status": "awarded",
+     "closing_date": null,
+     "published": "2026-07-23",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
     }
    ],
    "first_detected_at": "2026-07-24T00:00:00+00:00",
@@ -32404,7 +33933,7 @@
    "detected_before_close": null,
    "lead_time_days": null,
    "award_lead_time_days": -1,
-   "last_seen_at": "2026-07-24T00:00:00+00:00"
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
   },
   "jamaica-08626a4ee5d9": {
    "schema_version": 1,
@@ -32532,6 +34061,15 @@
      "closing_date": null,
      "published": "2026-07-24",
      "observed_at": "2026-07-24T00:00:00+00:00"
+    },
+    {
+     "source": "Jamaica GOJEP (contract award)",
+     "source_ref_id": "award-Procurement of Two (2) Multimedia Camcorders",
+     "url": "https://www.gojep.gov.jm/epps/cft/prepareViewCfTWS.do?resourceId=9405995",
+     "status": "awarded",
+     "closing_date": null,
+     "published": "2026-07-24",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
     }
    ],
    "first_detected_at": "2026-07-24T00:00:00+00:00",
@@ -32551,7 +34089,7 @@
    "detected_before_close": null,
    "lead_time_days": null,
    "award_lead_time_days": 0,
-   "last_seen_at": "2026-07-24T00:00:00+00:00"
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
   },
   "jamaica-0a259dda6837": {
    "schema_version": 1,
@@ -32837,6 +34375,15 @@
      "closing_date": "2026-07-24",
      "published": null,
      "observed_at": "2026-07-24T00:00:00+00:00"
+    },
+    {
+     "source": "Jamaica GOJEP (opened bids)",
+     "source_ref_id": "1098/4654",
+     "url": "https://www.gojep.gov.jm/epps/cft/prepareViewCfTWS.do?resourceId=10041386",
+     "status": "Evaluation",
+     "closing_date": "2026-07-24",
+     "published": null,
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
     }
    ],
    "first_detected_at": "2026-07-24T00:00:00+00:00",
@@ -32845,7 +34392,7 @@
    "detected_before_close": false,
    "lead_time_days": 0,
    "award_lead_time_days": null,
-   "last_seen_at": "2026-07-24T00:00:00+00:00"
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
   },
   "jamaica-11c470ee94c4": {
    "schema_version": 1,
@@ -33702,6 +35249,15 @@
      "closing_date": "2026-07-23",
      "published": null,
      "observed_at": "2026-07-24T00:00:00+00:00"
+    },
+    {
+     "source": "Jamaica GOJEP (opened bids)",
+     "source_ref_id": "1317/9366",
+     "url": "https://www.gojep.gov.jm/epps/cft/prepareViewCfTWS.do?resourceId=10041108",
+     "status": "Evaluation",
+     "closing_date": "2026-07-23",
+     "published": null,
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
     }
    ],
    "first_detected_at": "2026-07-24T00:00:00+00:00",
@@ -33710,7 +35266,7 @@
    "detected_before_close": false,
    "lead_time_days": -1,
    "award_lead_time_days": null,
-   "last_seen_at": "2026-07-24T00:00:00+00:00"
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
   },
   "jamaica-1d4e843bfa85": {
    "schema_version": 1,
@@ -35087,6 +36643,15 @@
      "closing_date": null,
      "published": "2026-07-23",
      "observed_at": "2026-07-24T00:00:00+00:00"
+    },
+    {
+     "source": "Jamaica GOJEP (contract award)",
+     "source_ref_id": "award-Purchase of Twenty-five (25) Attendance Registers for the Mi",
+     "url": "https://www.gojep.gov.jm/epps/cft/prepareViewCfTWS.do?resourceId=9517596",
+     "status": "awarded",
+     "closing_date": null,
+     "published": "2026-07-23",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
     }
    ],
    "first_detected_at": "2026-07-24T00:00:00+00:00",
@@ -35106,7 +36671,7 @@
    "detected_before_close": null,
    "lead_time_days": null,
    "award_lead_time_days": -1,
-   "last_seen_at": "2026-07-24T00:00:00+00:00"
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
   },
   "jamaica-4c91901e0f84": {
    "schema_version": 1,
@@ -35252,6 +36817,15 @@
      "closing_date": null,
      "published": "2026-07-23",
      "observed_at": "2026-07-24T00:00:00+00:00"
+    },
+    {
+     "source": "Jamaica GOJEP (contract award)",
+     "source_ref_id": "award-Provision of Fans (Wall, Standing, Industrial)",
+     "url": "https://www.gojep.gov.jm/epps/cft/prepareViewCfTWS.do?resourceId=9623367",
+     "status": "awarded",
+     "closing_date": null,
+     "published": "2026-07-23",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
     }
    ],
    "first_detected_at": "2026-07-24T00:00:00+00:00",
@@ -35271,7 +36845,7 @@
    "detected_before_close": null,
    "lead_time_days": null,
    "award_lead_time_days": -1,
-   "last_seen_at": "2026-07-24T00:00:00+00:00"
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
   },
   "jamaica-51db4f1adac7": {
    "schema_version": 1,
@@ -35564,6 +37138,15 @@
      "closing_date": "2026-07-22",
      "published": null,
      "observed_at": "2026-07-24T00:00:00+00:00"
+    },
+    {
+     "source": "Jamaica GOJEP (opened bids)",
+     "source_ref_id": "1105/2495",
+     "url": "https://www.gojep.gov.jm/epps/cft/prepareViewCfTWS.do?resourceId=10045339",
+     "status": "Evaluation",
+     "closing_date": "2026-07-22",
+     "published": null,
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
     }
    ],
    "first_detected_at": "2026-07-24T00:00:00+00:00",
@@ -35572,7 +37155,7 @@
    "detected_before_close": false,
    "lead_time_days": -2,
    "award_lead_time_days": null,
-   "last_seen_at": "2026-07-24T00:00:00+00:00"
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
   },
   "jamaica-5ef9e14c9cb7": {
    "schema_version": 1,
@@ -35604,6 +37187,15 @@
      "closing_date": "2026-07-23",
      "published": null,
      "observed_at": "2026-07-24T00:00:00+00:00"
+    },
+    {
+     "source": "Jamaica GOJEP (opened bids)",
+     "source_ref_id": "2710/1772",
+     "url": "https://www.gojep.gov.jm/epps/cft/prepareViewCfTWS.do?resourceId=10040723",
+     "status": "Evaluation",
+     "closing_date": "2026-07-23",
+     "published": null,
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
     }
    ],
    "first_detected_at": "2026-07-24T00:00:00+00:00",
@@ -35612,7 +37204,7 @@
    "detected_before_close": false,
    "lead_time_days": -1,
    "award_lead_time_days": null,
-   "last_seen_at": "2026-07-24T00:00:00+00:00"
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
   },
   "jamaica-60b4ededbaad": {
    "schema_version": 1,
@@ -37894,6 +39486,15 @@
      "closing_date": null,
      "published": "2026-07-23",
      "observed_at": "2026-07-24T00:00:00+00:00"
+    },
+    {
+     "source": "Jamaica GOJEP (contract award)",
+     "source_ref_id": "award-Request for Quotation – Supply and Delivery of Uninterruptib",
+     "url": "https://www.gojep.gov.jm/epps/cft/prepareViewCfTWS.do?resourceId=9151727",
+     "status": "awarded",
+     "closing_date": null,
+     "published": "2026-07-23",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
     }
    ],
    "first_detected_at": "2026-07-24T00:00:00+00:00",
@@ -37913,7 +39514,7 @@
    "detected_before_close": null,
    "lead_time_days": null,
    "award_lead_time_days": -1,
-   "last_seen_at": "2026-07-24T00:00:00+00:00"
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
   },
   "jamaica-9d7b926b3c6d": {
    "schema_version": 1,
@@ -37994,6 +39595,15 @@
      "closing_date": "2026-07-24",
      "published": null,
      "observed_at": "2026-07-24T00:00:00+00:00"
+    },
+    {
+     "source": "Jamaica GOJEP (opened bids)",
+     "source_ref_id": "2327/2392",
+     "url": "https://www.gojep.gov.jm/epps/cft/prepareViewCfTWS.do?resourceId=10040307",
+     "status": "Evaluation",
+     "closing_date": "2026-07-24",
+     "published": null,
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
     }
    ],
    "first_detected_at": "2026-07-24T00:00:00+00:00",
@@ -38002,7 +39612,7 @@
    "detected_before_close": false,
    "lead_time_days": 0,
    "award_lead_time_days": null,
-   "last_seen_at": "2026-07-24T00:00:00+00:00"
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
   },
   "jamaica-9f0192728570": {
    "schema_version": 1,
@@ -38141,6 +39751,15 @@
      "closing_date": "2026-07-23",
      "published": null,
      "observed_at": "2026-07-24T00:00:00+00:00"
+    },
+    {
+     "source": "Jamaica GOJEP (opened bids)",
+     "source_ref_id": "1821/2714",
+     "url": "https://www.gojep.gov.jm/epps/cft/prepareViewCfTWS.do?resourceId=10044702",
+     "status": "Evaluation",
+     "closing_date": "2026-07-23",
+     "published": null,
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
     }
    ],
    "first_detected_at": "2026-07-24T00:00:00+00:00",
@@ -38149,7 +39768,7 @@
    "detected_before_close": false,
    "lead_time_days": -1,
    "award_lead_time_days": null,
-   "last_seen_at": "2026-07-24T00:00:00+00:00"
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
   },
   "jamaica-a1b5381b2fa1": {
    "schema_version": 1,
@@ -38451,6 +40070,15 @@
      "closing_date": null,
      "published": "2026-07-24",
      "observed_at": "2026-07-24T00:00:00+00:00"
+    },
+    {
+     "source": "Jamaica GOJEP (contract award)",
+     "source_ref_id": "award-Procurement of Tape Library and Fibre Channel Switches for I",
+     "url": "https://www.gojep.gov.jm/epps/cft/prepareViewCfTWS.do?resourceId=7643606",
+     "status": "awarded",
+     "closing_date": null,
+     "published": "2026-07-24",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
     }
    ],
    "first_detected_at": "2026-07-24T00:00:00+00:00",
@@ -38470,7 +40098,7 @@
    "detected_before_close": null,
    "lead_time_days": null,
    "award_lead_time_days": 0,
-   "last_seen_at": "2026-07-24T00:00:00+00:00"
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
   },
   "jamaica-a67b180f5034": {
    "schema_version": 1,
@@ -39142,6 +40770,15 @@
      "closing_date": "2026-07-23",
      "published": null,
      "observed_at": "2026-07-24T00:00:00+00:00"
+    },
+    {
+     "source": "Jamaica GOJEP (opened bids)",
+     "source_ref_id": "2331/6760",
+     "url": "https://www.gojep.gov.jm/epps/cft/prepareViewCfTWS.do?resourceId=10047107",
+     "status": "Evaluation",
+     "closing_date": "2026-07-23",
+     "published": null,
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
     }
    ],
    "first_detected_at": "2026-07-24T00:00:00+00:00",
@@ -39150,7 +40787,7 @@
    "detected_before_close": false,
    "lead_time_days": -1,
    "award_lead_time_days": null,
-   "last_seen_at": "2026-07-24T00:00:00+00:00"
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
   },
   "jamaica-b3d118091c4c": {
    "schema_version": 1,
@@ -39271,6 +40908,15 @@
      "closing_date": "2026-08-07",
      "published": null,
      "observed_at": "2026-07-24T00:00:00+00:00"
+    },
+    {
+     "source": "Jamaica GOJEP (opened bids)",
+     "source_ref_id": "1002/587",
+     "url": "https://www.gojep.gov.jm/epps/cft/prepareViewCfTWS.do?resourceId=9535120",
+     "status": "Bid submission",
+     "closing_date": "2026-08-07",
+     "published": null,
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
     }
    ],
    "first_detected_at": "2026-07-24T00:00:00+00:00",
@@ -39279,7 +40925,7 @@
    "detected_before_close": true,
    "lead_time_days": 14,
    "award_lead_time_days": null,
-   "last_seen_at": "2026-07-24T00:00:00+00:00"
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
   },
   "jamaica-b9292ccf2c54": {
    "schema_version": 1,
@@ -40367,6 +42013,15 @@
      "closing_date": null,
      "published": "2026-07-23",
      "observed_at": "2026-07-24T00:00:00+00:00"
+    },
+    {
+     "source": "Jamaica GOJEP (contract award)",
+     "source_ref_id": "award-Request for Quotation – Provision of Garbage Collection and",
+     "url": "https://www.gojep.gov.jm/epps/cft/prepareViewCfTWS.do?resourceId=9394679",
+     "status": "awarded",
+     "closing_date": null,
+     "published": "2026-07-23",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
     }
    ],
    "first_detected_at": "2026-07-24T00:00:00+00:00",
@@ -40386,7 +42041,7 @@
    "detected_before_close": null,
    "lead_time_days": null,
    "award_lead_time_days": -1,
-   "last_seen_at": "2026-07-24T00:00:00+00:00"
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
   },
   "jamaica-cfd4a2e980e0": {
    "schema_version": 1,
@@ -40505,6 +42160,15 @@
      "closing_date": null,
      "published": "2026-07-24",
      "observed_at": "2026-07-24T00:00:00+00:00"
+    },
+    {
+     "source": "Jamaica GOJEP (contract award)",
+     "source_ref_id": "award-Procurement for Supply, Installation and Configuration of 15",
+     "url": "https://www.gojep.gov.jm/epps/cft/prepareViewCfTWS.do?resourceId=4090762",
+     "status": "awarded",
+     "closing_date": null,
+     "published": "2026-07-24",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
     }
    ],
    "first_detected_at": "2026-07-24T00:00:00+00:00",
@@ -40524,7 +42188,7 @@
    "detected_before_close": null,
    "lead_time_days": null,
    "award_lead_time_days": 0,
-   "last_seen_at": "2026-07-24T00:00:00+00:00"
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
   },
   "jamaica-d567bd8099f8": {
    "schema_version": 1,
@@ -40976,6 +42640,15 @@
      "closing_date": "2026-07-24",
      "published": null,
      "observed_at": "2026-07-24T00:00:00+00:00"
+    },
+    {
+     "source": "Jamaica GOJEP (opened bids)",
+     "source_ref_id": "2337/3288",
+     "url": "https://www.gojep.gov.jm/epps/cft/prepareViewCfTWS.do?resourceId=10060869",
+     "status": "Evaluation",
+     "closing_date": "2026-07-24",
+     "published": null,
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
     }
    ],
    "first_detected_at": "2026-07-24T00:00:00+00:00",
@@ -40984,7 +42657,7 @@
    "detected_before_close": false,
    "lead_time_days": 0,
    "award_lead_time_days": null,
-   "last_seen_at": "2026-07-24T00:00:00+00:00"
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
   },
   "jamaica-db9116552b1d": {
    "schema_version": 1,
@@ -41016,6 +42689,15 @@
      "closing_date": "2026-08-13",
      "published": null,
      "observed_at": "2026-07-24T00:00:00+00:00"
+    },
+    {
+     "source": "Jamaica GOJEP (opened bids)",
+     "source_ref_id": "4875/13",
+     "url": "https://www.gojep.gov.jm/epps/cft/prepareViewCfTWS.do?resourceId=9631088",
+     "status": "Bid submission",
+     "closing_date": "2026-08-13",
+     "published": null,
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
     }
    ],
    "first_detected_at": "2026-07-24T00:00:00+00:00",
@@ -41024,7 +42706,7 @@
    "detected_before_close": true,
    "lead_time_days": 20,
    "award_lead_time_days": null,
-   "last_seen_at": "2026-07-24T00:00:00+00:00"
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
   },
   "jamaica-dbe95c97ad59": {
    "schema_version": 1,
@@ -41170,6 +42852,15 @@
      "closing_date": null,
      "published": "2026-07-23",
      "observed_at": "2026-07-24T00:00:00+00:00"
+    },
+    {
+     "source": "Jamaica GOJEP (contract award)",
+     "source_ref_id": "award-Supply and Delivery of Kyocera Printer",
+     "url": "https://www.gojep.gov.jm/epps/cft/prepareViewCfTWS.do?resourceId=5565249",
+     "status": "awarded",
+     "closing_date": null,
+     "published": "2026-07-23",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
     }
    ],
    "first_detected_at": "2026-07-24T00:00:00+00:00",
@@ -41189,7 +42880,7 @@
    "detected_before_close": null,
    "lead_time_days": null,
    "award_lead_time_days": -1,
-   "last_seen_at": "2026-07-24T00:00:00+00:00"
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
   },
   "jamaica-dfaff826b3d1": {
    "schema_version": 1,
@@ -41978,6 +43669,15 @@
      "closing_date": null,
      "published": "2026-07-23",
      "observed_at": "2026-07-24T00:00:00+00:00"
+    },
+    {
+     "source": "Jamaica GOJEP (contract award)",
+     "source_ref_id": "award-350 KVA Standby Generator (Supply and Installation for Antil",
+     "url": "https://www.gojep.gov.jm/epps/cft/prepareViewCfTWS.do?resourceId=9083766",
+     "status": "awarded",
+     "closing_date": null,
+     "published": "2026-07-23",
+     "observed_at": "2026-10-19T12:03:47.445521+00:00"
     }
    ],
    "first_detected_at": "2026-07-24T00:00:00+00:00",
@@ -41997,7 +43697,7 @@
    "detected_before_close": null,
    "lead_time_days": null,
    "award_lead_time_days": -1,
-   "last_seen_at": "2026-07-24T00:00:00+00:00"
+   "last_seen_at": "2026-10-19T12:03:47.445521+00:00"
   },
   "jamaica-f7f3905370fb": {
    "schema_version": 1,

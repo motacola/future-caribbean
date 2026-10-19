@@ -1,6 +1,6 @@
 # Abeng — Judge Brief
 
-Generated: 2026-09-06 22:06 UTC
+Generated: 2026-10-19 12:03 UTC
 
 ## What This Proves
 
@@ -8,64 +8,66 @@ Abeng watches public regional data, merges weak signals across sources, packages
 
 ## Live Run Snapshot
 
-- Total raw signals generated: 32
-- Sources represented: CCRIF SPC, CDB, ECCB, IDB, World Bank
-- Countries/zones: 16
-- New/updated this cycle: 1
+- Total raw signals generated: 16
+- Sources represented: CARICOM, CDB, ECCB, IDB, NDBC, World Bank
+- Countries/zones: 12
+- New/updated this cycle: 6
 - User-facing outputs: opportunity dispatches, regional thesis, why-now context, feedback review, judge brief
 
-**Guyana** — 3 signal(s), 3 source(s): 💼 Investment + 🏖️ Tourism + 💎 Investment
+**Bahamas** — 2 signal(s), 4 source(s): 💼 Investment + 💎 Investment
 
-🔴 — **💎 Investment — Guyana**
-   Guyana: +860.3% capital surge on a single official source — market entry window open
+🔴 🆕 **💎 Investment — Bahamas**
+   Bahamas: +538.6% capital surge on a single official source — market entry window open
    Immediate | 100/100 | C - single-source
-   Immediate investigation. Guyana has multi-source investment validation (2 signals converging). Priority: assess market entry options, identify existing operators.
+   🆕 New this cycle
+   Immediate investigation. Bahamas has multi-source investment validation (3 signals converging). Priority: assess market entry options, identify existing operators.
 
 ## Supporting Decision Signals
 
-**1.** 🔴 **💎 Investment — Suriname** — sustained
-   Narrative: Suriname: +206.0% investment movement, one source — needs corroboration
-   Score: 96/100 | Grade: C - single-source
-   Audience: investor/founder via Email brief + Telegram
-   Decision: Immediate investigation. Suriname has multi-source investment validation (2 signals converging). Priority: assess market entry options, identify existing operators.
+**1.** 🔴 **supply_chain_signal — Barbados, Belize** — new
+   Narrative: Barbados, Belize: signal detected
+   Score: 100/100 | Grade: A - multi-source
+   Audience: regional intelligence via Telegram digest
+   Decision: Immediate — Barbados, Belize: supply_chain_signal (signal detected). Validate locally.
+   🆕 New this cycle
 
-**2.** 🔴 **🏗️ Pipeline — CARICOM** — sustained
-   Narrative: CARICOM: 8 active procurements — bidding window open
+**2.** 🔴 **💎 Investment — Suriname** — updated
+   Narrative: Suriname: +206.2% investment movement, one source — needs corroboration
+   Score: 98/100 | Grade: C - single-source
+   Audience: investor/founder via Email brief + Telegram
+   Decision: Immediate investigation. Suriname has multi-source investment validation (3 signals converging). Priority: assess market entry options, identify existing operators.
+   🔄 Content updated this cycle
+
+**3.** 🔴 **🏗️ Pipeline — CARICOM** — updated
+   Narrative: CARICOM: 6 active procurements — bidding window open
    Score: 95/100 | Grade: B - cross-source
    Audience: investor/founder via Email brief + Telegram
-   Decision: Active procurement pipeline: CDB active procurement notices: 8. Priority: review CDB/IDB opportunities as lead list for project-based entry.
+   Decision: Active procurement pipeline: CDB active procurement notices: 6. Priority: review CDB/IDB opportunities as lead list for project-based entry.
+   🔄 Content updated this cycle
 
-**3.** 🟡 **ccrif_payout — Turks and Caicos Islands** — intensified
-   Narrative: Turks and Caicos Islands: signal detected
-   Score: 84/100 | Grade: C - single-source
-   Audience: regional intelligence via Telegram digest
-   Decision: Validation — Turks and Caicos Islands: ccrif_payout (signal detected). Validate locally.
-   ⬆️ Strengthened (+10 pts)
-
-**4.** 🟡 **ccrif_payout — Anguilla** — intensified
-   Narrative: Anguilla: signal detected
-   Score: 84/100 | Grade: C - single-source
-   Audience: regional intelligence via Telegram digest
-   Decision: Validation — Anguilla: ccrif_payout (signal detected). Validate locally.
-   ⬆️ Strengthened (+10 pts)
-
-**5.** 🟡 **eccb_deposit_growth — Eastern Caribbean Currency Union** — sustained
+**4.** 🟡 **eccb_deposit_growth — Eastern Caribbean Currency Union** — sustained
    Narrative: Eastern Caribbean Currency Union: 4.6%
-   Score: 76/100 | Grade: C - single-source
+   Score: 72/100 | Grade: C - single-source
    Audience: regional intelligence via Telegram digest
    Decision: Validation — Eastern Caribbean Currency Union: eccb_deposit_growth (4.6%). Validate locally.
 
-**6.** 🟡 **💼 Investment — Barbados** — sustained
-   Narrative: Barbados: FDI trending at +34.8% — screening trigger active
-   Score: 71/100 | Grade: B - cross-source
-   Audience: investor/founder via Email brief + Telegram
-   Decision: Validation priority. Barbados FDI movement (34.8% change) signals opportunity. Cross-reference with sector data.
-
-**7.** 🟢 **⚠️ Vulnerability — St. Vincent and the Grenadines** — sustained
+**5.** 🟢 **⚠️ Vulnerability — St. Vincent and the Grenadines** — sustained
    Narrative: St. Vincent and the Grenadines: economic stress indicators rising — portfolio review recommended
    Score: 60/100 | Grade: C - single-source
    Audience: policy/operator via Telegram digest
    Decision: Monitor. St. Vincent and the Grenadines showing economic stress (18.00%). Track next cycle. Escalates if additional stress indicators appear or existing ones worsen.
+
+**6.** ⚪ **🏖️ Tourism — Barbados** — sustained
+   Narrative: Barbados: GDP growth signals expanding tourist economy
+   Score: 47/100 | Grade: C - single-source
+   Audience: tourism operator via Telegram digest
+   Decision: Context. Barbados GDP data point for tourism sector awareness.
+
+**7.** ⚪ **🏖️ Tourism — Antigua and Barbuda** — sustained
+   Narrative: Antigua and Barbuda: GDP growth signals expanding tourist economy
+   Score: 47/100 | Grade: C - single-source
+   Audience: tourism operator via Telegram digest
+   Decision: Context. Antigua and Barbuda GDP data point for tourism sector awareness.
 
 ## Routing Rationale
 
@@ -135,7 +137,7 @@ Each signal is routed to specific personas based on signal kind and evidence lev
 
 ## Cycle Summary
 
-Lead: Guyana · 32 composite signal(s) · 1 new · 8 intensified · 15 persistent
+Lead: Bahamas · 16 composite signal(s) · 4 new · 2 updated · 10 persistent
 ## Judge Demo Path
 
 1. Run `bash run_pipeline.sh`.

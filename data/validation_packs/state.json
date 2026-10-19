@@ -20,8 +20,8 @@
     },
     "dev-pipeline-regional": {
       "evidence_fingerprint": "e3b0c44298fc1c14",
-      "stale_cycles": 29,
-      "last_validated_at": "2026-08-15T22:00:15.369942+00:00",
+      "stale_cycles": 30,
+      "last_validated_at": "2026-10-19T12:03:47.881316+00:00",
       "recommendation": "hold"
     },
     "supply-chain-belize": {
@@ -37,9 +37,9 @@
       "recommendation": "hold"
     },
     "enhanced-invest-suriname": {
-      "evidence_fingerprint": "118b7905bb78c1ee",
-      "stale_cycles": 7,
-      "last_validated_at": "2026-08-15T22:00:15.369942+00:00",
+      "evidence_fingerprint": "e3b0c44298fc1c14",
+      "stale_cycles": 0,
+      "last_validated_at": "2026-10-19T12:03:47.881316+00:00",
       "recommendation": "hold"
     },
     "enhanced-invest-barbados": {
@@ -77,7 +77,25 @@
       "stale_cycles": 1,
       "last_validated_at": "2026-08-15T22:00:15.369942+00:00",
       "recommendation": "hold"
+    },
+    "enhanced-invest-bahamas": {
+      "evidence_fingerprint": "e3b0c44298fc1c14",
+      "stale_cycles": 0,
+      "last_validated_at": "2026-10-19T12:03:47.881316+00:00",
+      "recommendation": "hold"
+    },
+    "supply-chain-barbados-belize": {
+      "evidence_fingerprint": "e3b0c44298fc1c14",
+      "stale_cycles": 0,
+      "last_validated_at": "2026-10-19T12:03:47.881316+00:00",
+      "recommendation": "hold"
+    },
+    "invest-bahamas": {
+      "evidence_fingerprint": "e3b0c44298fc1c14",
+      "stale_cycles": 0,
+      "last_validated_at": "2026-10-19T12:03:47.881316+00:00",
+      "recommendation": "hold"
     }
   },
-  "updated_at": "2026-08-15T22:00:15.369942+00:00"
+  "updated_at": "2026-10-19T12:03:47.881316+00:00"
 }

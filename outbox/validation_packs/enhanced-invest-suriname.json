@@ -1,10 +1,10 @@
 {
   "signal_id": "enhanced-invest-suriname",
-  "dispatch_id": "DSP-20260906-020",
+  "dispatch_id": "DSP-20261019-015",
   "country": "Suriname",
-  "signal_title": "Suriname: +206.0% investment movement, one source — needs corroboration",
+  "signal_title": "Suriname: +206.2% investment movement, one source — needs corroboration",
   "confidence_score": 68,
-  "raw_confidence_score": 96,
+  "raw_confidence_score": 98,
   "action_readiness": "medium (annual macro signal only)",
   "evidence_grade": "C - single-source",
   "sector_hypotheses": [
@@ -20,11 +20,42 @@
     },
     {
       "sector": "Which industries received it is not published yet",
-      "basis": "World Bank: FDI net inflows moved +206.0% from 2024 to 2025",
+      "basis": "World Bank: FDI net inflows moved +206.2% from 2024 to 2025",
       "status": "macro_signal"
     }
   ],
-  "supporting_projects": [],
+  "supporting_projects": [
+    {
+      "title": "Productivity, Technology and Innovation Survey Suriname: 2013-2014",
+      "source": "IDB Open Data",
+      "url": "https://data.iadb.org/en/search?q=Productivity%2C%20Technology%20and%20Innovation%20",
+      "topics": []
+    },
+    {
+      "title": "Suriname COVID-19 Survey: 2020",
+      "source": "IDB Open Data",
+      "url": "https://data.iadb.org/en/search?q=Suriname%20COVID-19%20Survey%3A%202020",
+      "topics": []
+    },
+    {
+      "title": "Suriname Survey of Living Conditions: 2016-2017",
+      "source": "IDB Open Data",
+      "url": "https://data.iadb.org/en/search?q=Suriname%20Survey%20of%20Living%20Conditions%3A%2020",
+      "topics": []
+    },
+    {
+      "title": "Suriname: Latin American Public Opinion Project - Victimization and Crime survey 2014",
+      "source": "IDB Open Data",
+      "url": "https://data.iadb.org/en/search?q=Suriname%3A%20Latin%20American%20Public%20Opinion%20",
+      "topics": []
+    },
+    {
+      "title": "2022 Suriname Survey of Living Conditions",
+      "source": "IDB Open Data",
+      "url": "https://data.iadb.org/en/search?q=2022%20Suriname%20Survey%20of%20Living%20Condition",
+      "topics": []
+    }
+  ],
   "procurement_matches": [
     {
       "title": "Enhancing the Quality of the Belize National Quality Infrastructure",
@@ -33,37 +64,48 @@
       "match": "regional"
     },
     {
-      "title": "Call For Application – Scholarship Opportunity: International Master In Public Procurement Management at The University of Rome Tor Vergata (2026/2027 Academic Year)",
+      "title": "Development of a Climate Resilient Integrated National Land Use Plan Technical Assistance Project",
       "source": "Caribbean Development Bank",
-      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/call-application-scholarship-opportunity-international-master-public-procurement-management-2",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/development-climate-resilient-integrated-national-land-use-plan-technical-assistance-project",
       "match": "regional"
     },
     {
-      "title": "Supply Installation, Testing and Commissioning of Mechanical Equipment, Fire Pump System and Information and Communications Technology Systems",
+      "title": "Creation of an Enabling Environment For Movable Asset-Based Financing in Barbados by Modernizing The Secured Transaction Legal and Infrastructure System Project",
       "source": "Caribbean Development Bank",
-      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/supply-installation-testing-and-commissioning-mechanical-equipment-fire-pump-system-and-information",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/creation-enabling-environment-movable-asset-based-financing-barbados-modernizing-secured-transaction-1",
       "match": "regional"
     },
     {
-      "title": "The University of the West Indies Digital Transformation Project",
+      "title": "Creation of an Enabling Environment For Movable Asset-Based Financing in Barbados by Modernizing The Secured Transaction Legal and Infrastructure System Project",
       "source": "Caribbean Development Bank",
-      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/university-west-indies-digital-transformation-project-3",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/creation-enabling-environment-movable-asset-based-financing-barbados-modernizing-secured-transaction-0",
       "match": "regional"
     },
     {
-      "title": "Grenada Education Enhancement Project - Phase II",
+      "title": "Creation of an Enabling Environment For Movable Asset-Based Financing in Barbados by Modernizing The Secured Transaction Legal and Infrastructure System Project",
       "source": "Caribbean Development Bank",
-      "url": "https://www.caribank.org/work-with-us/procurement/procurement-plans/grenada-education-enhancement-project-phase-ii",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/creation-enabling-environment-movable-asset-based-financing-barbados-modernizing-secured-transaction",
       "match": "regional"
     },
     {
-      "title": "The Bahamas Water Supply Improvement Project Phase 2",
+      "title": "EU-CDB Regional Food Security Programme",
       "source": "Caribbean Development Bank",
-      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/bahamas-water-supply-improvement-project-phase-2-1",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/eu-cdb-regional-food-security-programme",
       "match": "regional"
     }
   ],
-  "official_country_data": [],
+  "official_country_data": [
+    {
+      "title": "Suriname Balance of Payments (2017 &#8211; 2025)",
+      "source": "CARICOM Statistics",
+      "url": "https://statistics.caricom.org/?country_data=suriname-balance-of-payments-2017-2024"
+    },
+    {
+      "title": "Suriname: Monthly Consumer Price Index (CPI) by Expenditure Category",
+      "source": "CARICOM Statistics",
+      "url": "https://statistics.caricom.org/?country_data=suriname-monthly-consumer-price-index-cpi-by-expenditure-category"
+    }
+  ],
   "credible_local_operators": [],
   "relevant_institutions": [
     {
@@ -80,12 +122,19 @@
     }
   ],
   "source_links": [
-    "https://www.caribank.org/work-with-us/procurement/procurement-notices/bahamas-water-supply-improvement-project-phase-2-1",
-    "https://www.caribank.org/work-with-us/procurement/procurement-notices/call-application-scholarship-opportunity-international-master-public-procurement-management-2",
+    "https://data.iadb.org/en/search?q=2022%20Suriname%20Survey%20of%20Living%20Condition",
+    "https://data.iadb.org/en/search?q=Productivity%2C%20Technology%20and%20Innovation%20",
+    "https://data.iadb.org/en/search?q=Suriname%20COVID-19%20Survey%3A%202020",
+    "https://data.iadb.org/en/search?q=Suriname%20Survey%20of%20Living%20Conditions%3A%2020",
+    "https://data.iadb.org/en/search?q=Suriname%3A%20Latin%20American%20Public%20Opinion%20",
+    "https://statistics.caricom.org/?country_data=suriname-balance-of-payments-2017-2024",
+    "https://statistics.caricom.org/?country_data=suriname-monthly-consumer-price-index-cpi-by-expenditure-category",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/creation-enabling-environment-movable-asset-based-financing-barbados-modernizing-secured-transaction",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/creation-enabling-environment-movable-asset-based-financing-barbados-modernizing-secured-transaction-0",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/creation-enabling-environment-movable-asset-based-financing-barbados-modernizing-secured-transaction-1",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/development-climate-resilient-integrated-national-land-use-plan-technical-assistance-project",
     "https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure",
-    "https://www.caribank.org/work-with-us/procurement/procurement-notices/supply-installation-testing-and-commissioning-mechanical-equipment-fire-pump-system-and-information",
-    "https://www.caribank.org/work-with-us/procurement/procurement-notices/university-west-indies-digital-transformation-project-3",
-    "https://www.caribank.org/work-with-us/procurement/procurement-plans/grenada-education-enhancement-project-phase-ii"
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/eu-cdb-regional-food-security-programme"
   ],
   "unresolved_questions": [
     "Which specific sectors are driving the movement in Suriname? No official sector-breakdown dataset matched this cycle.",
@@ -100,8 +149,8 @@
     }
   ],
   "advance_or_reject_recommendation": "hold",
-  "recommendation_reason": "Calibrated confidence 68/100 with 0 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.",
-  "last_validated_at": "2026-09-06T22:06:53.191099+00:00",
+  "recommendation_reason": "Calibrated confidence 68/100 with 1 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.",
+  "last_validated_at": "2026-10-19T12:03:47.881316+00:00",
   "coordination_path": null,
   "evidence_fingerprint": "e3b0c44298fc1c14",
   "cycles_since_refresh": 0,

@@ -9,8 +9,10 @@ import { test, expect } from '@playwright/test';
 import { readFileSync } from 'node:fs';
 
 const desk = JSON.parse(readFileSync('outbox/dispatch_desk.json', 'utf8'));
+// The cycle's lead country: the routed country the drill tests exercise.
+const LEAD: string = desk.clusters[0].country_cluster;
 const sourceText = desk.clusters
-  .filter((cluster: { country_cluster?: string }) => cluster.country_cluster === 'Guyana')
+  .filter((cluster: { country_cluster?: string }) => cluster.country_cluster === LEAD)
   .map((cluster: { evidence?: string; source?: string }) => `${cluster.evidence || ''} ${cluster.source || ''}`)
   .join(' ')
   .toLowerCase();
@@ -39,7 +41,7 @@ async function openDrill(page: import('@playwright/test').Page, country: string)
 test('a routed country renders semantic briefing cards and clickable news', async ({ page }) => {
   const errors: string[] = [];
   page.on('pageerror', error => errors.push(error.message));
-  const drill = await openDrill(page, 'Guyana');
+  const drill = await openDrill(page, LEAD);
 
   await expect(drill.locator('.drill-card').first()).toBeVisible();
   expect(await drill.locator('.drill-card').count()).toBeGreaterThan(0);
@@ -56,8 +58,8 @@ test('a routed country renders semantic briefing cards and clickable news', asyn
   expect(errors).toEqual([]);
 });
 
-test('Guyana evidence names only source families stated by its cluster', async ({ page }) => {
-  const drill = await openDrill(page, 'Guyana');
+test('lead-country evidence names only source families stated by its cluster', async ({ page }) => {
+  const drill = await openDrill(page, LEAD);
   await expect(drill.locator('.drill-lifecycle-label')).toHaveText('Dispatch desk');
   await expect(drill.getByText(`Confirmed source groups (${sourceFamilies.length})`, { exact: true })).toBeVisible();
 
@@ -68,7 +70,7 @@ test('Guyana evidence names only source families stated by its cluster', async (
 });
 
 test('dispatch lifecycle uses the desk observation and honest cadence copy', async ({ page }) => {
-  const drill = await openDrill(page, 'Guyana');
+  const drill = await openDrill(page, LEAD);
   const fields = drill.locator('.drill-lifecycle-fields');
   await expect(fields).toContainText('Published');
   await expect(fields).toContainText(desk.generated_at);

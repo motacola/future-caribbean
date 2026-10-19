@@ -72,7 +72,10 @@ def test_validation_packs_endpoint_returns_verdict_field(tmp_path):
 
 def test_dashboard_renders_verdict_filter_and_expandable_packs():
     """Test that the Astro dashboard page contains verdict filter and expandable validation sections."""
-    template = Path(ROOT / "src" / "pages" / "desk.astro").read_text()
+    # The page markup plus the client modules it loads from src/scripts/desk/.
+    template = Path(ROOT / "src" / "pages" / "desk.astro").read_text() + "".join(
+        p.read_text() for p in sorted((ROOT / "src" / "scripts" / "desk").glob("*.ts"))
+    )
     assert "verdict-filter" in template, "Verdict filter not in desk.astro"
     assert "sig-expand" in template, "Expand button not in desk.astro"
     assert "sig-validation" in template, "Validation section not in desk.astro"

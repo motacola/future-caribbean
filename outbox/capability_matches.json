@@ -1,25 +1,25 @@
 {
  "schema_version": 1,
  "registry_status": "pilot",
- "total_tenders": 1046,
- "classified_tenders": 421,
- "tenders_with_capability_match": 421,
+ "total_tenders": 1084,
+ "classified_tenders": 453,
+ "tenders_with_capability_match": 453,
  "by_capability": {
-  "civil_engineering": 206,
-  "construction_delivery": 175,
-  "shipping_logistics": 161,
-  "warehousing_distribution": 88,
-  "digital_services": 54,
-  "ict_integration": 54,
-  "climate_resilience": 31,
-  "aviation_infrastructure": 16
+  "civil_engineering": 234,
+  "construction_delivery": 197,
+  "shipping_logistics": 163,
+  "warehousing_distribution": 90,
+  "digital_services": 55,
+  "ict_integration": 55,
+  "climate_resilience": 38,
+  "aviation_infrastructure": 20
  },
  "by_country": {
-  "Jamaica": 754,
-  "Trinidad & Tobago": 542,
-  "Guyana": 206,
-  "Barbados": 139,
-  "Eastern Caribbean / OECS": 85
+  "Jamaica": 814,
+  "Trinidad & Tobago": 594,
+  "Guyana": 235,
+  "Barbados": 148,
+  "Eastern Caribbean / OECS": 93
  },
  "count_semantics": {
   "by_capability": "classified tender-capability links",
@@ -10492,6 +10492,531 @@
    "has_capability_match": true
   },
   {
+   "tender_id": "guyana-8cf861f2afb9",
+   "country": "Guyana",
+   "title": "1.\tConstruction of Check Structure Along Block-B Drainage Channel, East Bank Demerara, Region No. 4.",
+   "buyer": "21-Ministry of Agriculture",
+   "lifecycle_state": "detected",
+   "sector": "water_and_irrigation",
+   "classification": "deterministic_keyword",
+   "matched_keywords": [
+    "drainage"
+   ],
+   "required_capabilities": [
+    "water_infrastructure",
+    "civil_engineering",
+    "climate_resilience"
+   ],
+   "capability_matches": [
+    {
+     "capability": "water_infrastructure",
+     "matched": false,
+     "holders": []
+    },
+    {
+     "capability": "civil_engineering",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "climate_resilience",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Barbados",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Caribbean Development Bank",
+         "url": "https://www.caribank.org/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Eastern Caribbean / OECS",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "OECS Commission",
+         "url": "https://www.oecs.int/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Guyana",
+       "strength": 2,
+       "evidence": [
+        {
+         "source": "Guyana eProcure",
+         "url": "https://www.eprocure.gov.gy/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    }
+   ],
+   "has_capability_match": true
+  },
+  {
+   "tender_id": "guyana-97ef378116d0",
+   "country": "Guyana",
+   "title": "1.\tConstruction of Check Structure Along No. 3 Canal at Mocha, East Bank Demerara, Region No. 4",
+   "buyer": "21-Ministry of Agriculture",
+   "lifecycle_state": "detected",
+   "sector": "water_and_irrigation",
+   "classification": "deterministic_keyword",
+   "matched_keywords": [
+    "canal"
+   ],
+   "required_capabilities": [
+    "water_infrastructure",
+    "civil_engineering",
+    "climate_resilience"
+   ],
+   "capability_matches": [
+    {
+     "capability": "water_infrastructure",
+     "matched": false,
+     "holders": []
+    },
+    {
+     "capability": "civil_engineering",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "climate_resilience",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Barbados",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Caribbean Development Bank",
+         "url": "https://www.caribank.org/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Eastern Caribbean / OECS",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "OECS Commission",
+         "url": "https://www.oecs.int/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Guyana",
+       "strength": 2,
+       "evidence": [
+        {
+         "source": "Guyana eProcure",
+         "url": "https://www.eprocure.gov.gy/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    }
+   ],
+   "has_capability_match": true
+  },
+  {
+   "tender_id": "guyana-3e17a25a3a95",
+   "country": "Guyana",
+   "title": "1.\tConstruction of Check Structure at Junior Farming Area, East Bank Demerara, Region No. 4",
+   "buyer": "21-Ministry of Agriculture",
+   "lifecycle_state": "detected",
+   "sector": "construction_and_works",
+   "classification": "deterministic_keyword",
+   "matched_keywords": [
+    "construction",
+    "works"
+   ],
+   "required_capabilities": [
+    "construction_delivery",
+    "civil_engineering"
+   ],
+   "capability_matches": [
+    {
+     "capability": "construction_delivery",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Guyana",
+       "strength": 3,
+       "evidence": [
+        {
+         "source": "Guyana eProcure",
+         "url": "https://www.eprocure.gov.gy/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "civil_engineering",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    }
+   ],
+   "has_capability_match": true
+  },
+  {
+   "tender_id": "guyana-592a6a982d88",
+   "country": "Guyana",
+   "title": "1.\tConstruction of Concrete Drains at Ladernsville, Aroaima Berbice River, Region No. 10",
+   "buyer": "21-Ministry of Agriculture",
+   "lifecycle_state": "detected",
+   "sector": "construction_and_works",
+   "classification": "deterministic_keyword",
+   "matched_keywords": [
+    "construction",
+    "works"
+   ],
+   "required_capabilities": [
+    "construction_delivery",
+    "civil_engineering"
+   ],
+   "capability_matches": [
+    {
+     "capability": "construction_delivery",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Guyana",
+       "strength": 3,
+       "evidence": [
+        {
+         "source": "Guyana eProcure",
+         "url": "https://www.eprocure.gov.gy/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "civil_engineering",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    }
+   ],
+   "has_capability_match": true
+  },
+  {
+   "tender_id": "guyana-e9063ae55ac4",
+   "country": "Guyana",
+   "title": "1.\tConstruction of Drainage Structure at Ladernsville, Aroaima Berbice River, Region No. 10",
+   "buyer": "21-Ministry of Agriculture",
+   "lifecycle_state": "detected",
+   "sector": "water_and_irrigation",
+   "classification": "deterministic_keyword",
+   "matched_keywords": [
+    "drainage"
+   ],
+   "required_capabilities": [
+    "water_infrastructure",
+    "civil_engineering",
+    "climate_resilience"
+   ],
+   "capability_matches": [
+    {
+     "capability": "water_infrastructure",
+     "matched": false,
+     "holders": []
+    },
+    {
+     "capability": "civil_engineering",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "climate_resilience",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Barbados",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Caribbean Development Bank",
+         "url": "https://www.caribank.org/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Eastern Caribbean / OECS",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "OECS Commission",
+         "url": "https://www.oecs.int/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Guyana",
+       "strength": 2,
+       "evidence": [
+        {
+         "source": "Guyana eProcure",
+         "url": "https://www.eprocure.gov.gy/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    }
+   ],
+   "has_capability_match": true
+  },
+  {
    "tender_id": "guyana-d6045044de23",
    "country": "Guyana",
    "title": "1.\tConstruction of Farm to Market Access Road at Soesdyke, Canal No.1, West Bank Demerara, Region No. 3",
@@ -10706,11 +11231,215 @@
    "has_capability_match": true
   },
   {
+   "tender_id": "guyana-55e6da09f96e",
+   "country": "Guyana",
+   "title": "1.\tConstruction of Fisherman’s Wharf at Sheet Anchor, Region No. 4",
+   "buyer": "21-Ministry of Agriculture",
+   "lifecycle_state": "detected",
+   "sector": "construction_and_works",
+   "classification": "deterministic_keyword",
+   "matched_keywords": [
+    "construction",
+    "works"
+   ],
+   "required_capabilities": [
+    "construction_delivery",
+    "civil_engineering"
+   ],
+   "capability_matches": [
+    {
+     "capability": "construction_delivery",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Guyana",
+       "strength": 3,
+       "evidence": [
+        {
+         "source": "Guyana eProcure",
+         "url": "https://www.eprocure.gov.gy/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "civil_engineering",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    }
+   ],
+   "has_capability_match": true
+  },
+  {
    "tender_id": "guyana-e569448fa5d3",
    "country": "Guyana",
    "title": "1.\tConstruction of Foundation for a Complete Drying and Storage Paddy Facility, Essequibo Coast, Region No.2",
    "buyer": "21-Ministry of Agriculture",
    "lifecycle_state": "closed",
+   "sector": "construction_and_works",
+   "classification": "deterministic_keyword",
+   "matched_keywords": [
+    "construction",
+    "works"
+   ],
+   "required_capabilities": [
+    "construction_delivery",
+    "civil_engineering"
+   ],
+   "capability_matches": [
+    {
+     "capability": "construction_delivery",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Guyana",
+       "strength": 3,
+       "evidence": [
+        {
+         "source": "Guyana eProcure",
+         "url": "https://www.eprocure.gov.gy/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "civil_engineering",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    }
+   ],
+   "has_capability_match": true
+  },
+  {
+   "tender_id": "guyana-f0782e77b31a",
+   "country": "Guyana",
+   "title": "1.\tConstruction of Kofi Operator’s Living Quarters, East Demerara Water Conservancy, Region No.4",
+   "buyer": "21-Ministry of Agriculture",
+   "lifecycle_state": "detected",
    "sector": "construction_and_works",
    "classification": "deterministic_keyword",
    "matched_keywords": [
@@ -10910,6 +11639,318 @@
    "has_capability_match": true
   },
   {
+   "tender_id": "guyana-3e954a27cbf4",
+   "country": "Guyana",
+   "title": "1.\tConstruction of Revetment at Anna Regina Collector’s Drain, Essequibo Coast, Region No.2",
+   "buyer": "21-Ministry of Agriculture",
+   "lifecycle_state": "detected",
+   "sector": "construction_and_works",
+   "classification": "deterministic_keyword",
+   "matched_keywords": [
+    "construction",
+    "works"
+   ],
+   "required_capabilities": [
+    "construction_delivery",
+    "civil_engineering"
+   ],
+   "capability_matches": [
+    {
+     "capability": "construction_delivery",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Guyana",
+       "strength": 3,
+       "evidence": [
+        {
+         "source": "Guyana eProcure",
+         "url": "https://www.eprocure.gov.gy/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "civil_engineering",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    }
+   ],
+   "has_capability_match": true
+  },
+  {
+   "tender_id": "guyana-4eec4d994cf2",
+   "country": "Guyana",
+   "title": "1.\tConstruction of Timber Revetment at Suga Man Canal, Mahaicony Creek, Drainage Structure at, Region No. 5",
+   "buyer": "21-Ministry of Agriculture",
+   "lifecycle_state": "detected",
+   "sector": "water_and_irrigation",
+   "classification": "deterministic_keyword",
+   "matched_keywords": [
+    "canal",
+    "drainage"
+   ],
+   "required_capabilities": [
+    "water_infrastructure",
+    "civil_engineering",
+    "climate_resilience"
+   ],
+   "capability_matches": [
+    {
+     "capability": "water_infrastructure",
+     "matched": false,
+     "holders": []
+    },
+    {
+     "capability": "civil_engineering",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "climate_resilience",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Barbados",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Caribbean Development Bank",
+         "url": "https://www.caribank.org/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Eastern Caribbean / OECS",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "OECS Commission",
+         "url": "https://www.oecs.int/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Guyana",
+       "strength": 2,
+       "evidence": [
+        {
+         "source": "Guyana eProcure",
+         "url": "https://www.eprocure.gov.gy/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    }
+   ],
+   "has_capability_match": true
+  },
+  {
+   "tender_id": "guyana-ba37da7d2738",
+   "country": "Guyana",
+   "title": "1.\tRehabilitation of concrete culverts along the Right Bank Mahaicony Creek, Region No.5 Lots 1-3",
+   "buyer": "21-Ministry of Agriculture",
+   "lifecycle_state": "detected",
+   "sector": "construction_and_works",
+   "classification": "deterministic_keyword",
+   "matched_keywords": [
+    "rehabilitation",
+    "works"
+   ],
+   "required_capabilities": [
+    "construction_delivery",
+    "civil_engineering"
+   ],
+   "capability_matches": [
+    {
+     "capability": "construction_delivery",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Guyana",
+       "strength": 3,
+       "evidence": [
+        {
+         "source": "Guyana eProcure",
+         "url": "https://www.eprocure.gov.gy/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "civil_engineering",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    }
+   ],
+   "has_capability_match": true
+  },
+  {
    "tender_id": "guyana-5519c875447d",
    "country": "Guyana",
    "title": "1.\tRehabilitation of the NDIA Pontoon located at Abary, Region No.5 (EE: $3,737,000)",
@@ -10999,6 +12040,429 @@
         {
          "source": "Trinidad and Tobago Ministry of Trade and Industry",
          "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    }
+   ],
+   "has_capability_match": true
+  },
+  {
+   "tender_id": "guyana-87992d11a97f",
+   "country": "Guyana",
+   "title": "1.\tRehabilitation to Access Bridge at Ooku, Canal No.1., West Bank Demerara, Region No.3",
+   "buyer": "21-Ministry of Agriculture",
+   "lifecycle_state": "detected",
+   "sector": "water_and_irrigation",
+   "classification": "deterministic_keyword",
+   "matched_keywords": [
+    "canal"
+   ],
+   "required_capabilities": [
+    "water_infrastructure",
+    "civil_engineering",
+    "climate_resilience"
+   ],
+   "capability_matches": [
+    {
+     "capability": "water_infrastructure",
+     "matched": false,
+     "holders": []
+    },
+    {
+     "capability": "civil_engineering",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "climate_resilience",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Barbados",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Caribbean Development Bank",
+         "url": "https://www.caribank.org/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Eastern Caribbean / OECS",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "OECS Commission",
+         "url": "https://www.oecs.int/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Guyana",
+       "strength": 2,
+       "evidence": [
+        {
+         "source": "Guyana eProcure",
+         "url": "https://www.eprocure.gov.gy/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    }
+   ],
+   "has_capability_match": true
+  },
+  {
+   "tender_id": "guyana-8b80f5cd6182",
+   "country": "Guyana",
+   "title": "1.\tRehabilitation to Revetment at Siriki Sand Upper Pomeroon, Region No.2 (",
+   "buyer": "21-Ministry of Agriculture",
+   "lifecycle_state": "detected",
+   "sector": "construction_and_works",
+   "classification": "deterministic_keyword",
+   "matched_keywords": [
+    "rehabilitation",
+    "works"
+   ],
+   "required_capabilities": [
+    "construction_delivery",
+    "civil_engineering"
+   ],
+   "capability_matches": [
+    {
+     "capability": "construction_delivery",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Guyana",
+       "strength": 3,
+       "evidence": [
+        {
+         "source": "Guyana eProcure",
+         "url": "https://www.eprocure.gov.gy/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "civil_engineering",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    }
+   ],
+   "has_capability_match": true
+  },
+  {
+   "tender_id": "guyana-7a8f2375ca05",
+   "country": "Guyana",
+   "title": "1.\tRepairs to Access Bridge at Soesdyke, Canal No.1., West Bank Demerara, Region No.3",
+   "buyer": "21-Ministry of Agriculture",
+   "lifecycle_state": "detected",
+   "sector": "water_and_irrigation",
+   "classification": "deterministic_keyword",
+   "matched_keywords": [
+    "canal"
+   ],
+   "required_capabilities": [
+    "water_infrastructure",
+    "civil_engineering",
+    "climate_resilience"
+   ],
+   "capability_matches": [
+    {
+     "capability": "water_infrastructure",
+     "matched": false,
+     "holders": []
+    },
+    {
+     "capability": "civil_engineering",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "climate_resilience",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Barbados",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Caribbean Development Bank",
+         "url": "https://www.caribank.org/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Eastern Caribbean / OECS",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "OECS Commission",
+         "url": "https://www.oecs.int/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Guyana",
+       "strength": 2,
+       "evidence": [
+        {
+         "source": "Guyana eProcure",
+         "url": "https://www.eprocure.gov.gy/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    }
+   ],
+   "has_capability_match": true
+  },
+  {
+   "tender_id": "guyana-153ccee3198b",
+   "country": "Guyana",
+   "title": "1.\tRepairs to Access Bridge at Verde Vrienschapp, Canal No.1., West Bank Demerara, Region No.3",
+   "buyer": "21-Ministry of Agriculture",
+   "lifecycle_state": "detected",
+   "sector": "water_and_irrigation",
+   "classification": "deterministic_keyword",
+   "matched_keywords": [
+    "canal"
+   ],
+   "required_capabilities": [
+    "water_infrastructure",
+    "civil_engineering",
+    "climate_resilience"
+   ],
+   "capability_matches": [
+    {
+     "capability": "water_infrastructure",
+     "matched": false,
+     "holders": []
+    },
+    {
+     "capability": "civil_engineering",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "climate_resilience",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Barbados",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Caribbean Development Bank",
+         "url": "https://www.caribank.org/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Eastern Caribbean / OECS",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "OECS Commission",
+         "url": "https://www.oecs.int/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Guyana",
+       "strength": 2,
+       "evidence": [
+        {
+         "source": "Guyana eProcure",
+         "url": "https://www.eprocure.gov.gy/",
          "grade": "primary"
         }
        ],
@@ -11701,6 +13165,181 @@
    "has_capability_match": true
   },
   {
+   "tender_id": "guyana-554bdbd903db",
+   "country": "Guyana",
+   "title": "Construction of Assembly Shed at- North Georgetown Secondary School",
+   "buyer": "40-Ministry of Education",
+   "lifecycle_state": "detected",
+   "sector": "education_infrastructure",
+   "classification": "deterministic_keyword",
+   "matched_keywords": [
+    "education",
+    "school"
+   ],
+   "required_capabilities": [
+    "construction_delivery",
+    "education_services"
+   ],
+   "capability_matches": [
+    {
+     "capability": "construction_delivery",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Guyana",
+       "strength": 3,
+       "evidence": [
+        {
+         "source": "Guyana eProcure",
+         "url": "https://www.eprocure.gov.gy/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "education_services",
+     "matched": false,
+     "holders": []
+    }
+   ],
+   "has_capability_match": true
+  },
+  {
+   "tender_id": "guyana-b190f815df3c",
+   "country": "Guyana",
+   "title": "Construction of Center of Excellence at GSA Compound, Ministry of Agriculture, Mon Repos, E.C.D, Region No.4",
+   "buyer": "21-Ministry of Agriculture",
+   "lifecycle_state": "detected",
+   "sector": "construction_and_works",
+   "classification": "deterministic_keyword",
+   "matched_keywords": [
+    "construction",
+    "works"
+   ],
+   "required_capabilities": [
+    "construction_delivery",
+    "civil_engineering"
+   ],
+   "capability_matches": [
+    {
+     "capability": "construction_delivery",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Guyana",
+       "strength": 3,
+       "evidence": [
+        {
+         "source": "Guyana eProcure",
+         "url": "https://www.eprocure.gov.gy/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "civil_engineering",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    }
+   ],
+   "has_capability_match": true
+  },
+  {
    "tender_id": "guyana-1de7f9596a4f",
    "country": "Guyana",
    "title": "Construction of Coconut Peat Facility for the Hope Coconut Industries Limited, Ministry of Agriculture at Charity, Essequibo Coast, Region No.2.",
@@ -12084,6 +13723,108 @@
    "has_capability_match": true
   },
   {
+   "tender_id": "guyana-e0d0d0741848",
+   "country": "Guyana",
+   "title": "Construction of Fuel Storage Facility and Provision for Electrical Upgrade at Mackenzie Fire Station, Region No. 10 – Guyana Fire Service",
+   "buyer": "51-Ministry of Home Affairs",
+   "lifecycle_state": "detected",
+   "sector": "construction_and_works",
+   "classification": "deterministic_keyword",
+   "matched_keywords": [
+    "construction",
+    "works"
+   ],
+   "required_capabilities": [
+    "construction_delivery",
+    "civil_engineering"
+   ],
+   "capability_matches": [
+    {
+     "capability": "construction_delivery",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Guyana",
+       "strength": 3,
+       "evidence": [
+        {
+         "source": "Guyana eProcure",
+         "url": "https://www.eprocure.gov.gy/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "civil_engineering",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    }
+   ],
+   "has_capability_match": true
+  },
+  {
    "tender_id": "guyana-28e8310e5645",
    "country": "Guyana",
    "title": "Construction of Laboratories at Block C- Micobie Secondary School",
@@ -12153,6 +13894,108 @@
      "capability": "education_services",
      "matched": false,
      "holders": []
+    }
+   ],
+   "has_capability_match": true
+  },
+  {
+   "tender_id": "guyana-737fb3a50cc1",
+   "country": "Guyana",
+   "title": "Construction of Parking Lot at National Security Tower, Brickdam, Region No. 4- Guyana Police Force",
+   "buyer": "51-Ministry of Home Affairs",
+   "lifecycle_state": "detected",
+   "sector": "construction_and_works",
+   "classification": "deterministic_keyword",
+   "matched_keywords": [
+    "construction",
+    "works"
+   ],
+   "required_capabilities": [
+    "construction_delivery",
+    "civil_engineering"
+   ],
+   "capability_matches": [
+    {
+     "capability": "construction_delivery",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Guyana",
+       "strength": 3,
+       "evidence": [
+        {
+         "source": "Guyana eProcure",
+         "url": "https://www.eprocure.gov.gy/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "civil_engineering",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
     }
    ],
    "has_capability_match": true
@@ -13987,6 +15830,107 @@
    "has_capability_match": true
   },
   {
+   "tender_id": "guyana-9ba9873d5821",
+   "country": "Guyana",
+   "title": "Extension of Kitchen, Sealing of Floor in Infirmary and Modifications to Storage Room at New Amsterdam Prison, Region No.6- Guyana Prison Service",
+   "buyer": "51-Ministry of Home Affairs",
+   "lifecycle_state": "closed",
+   "sector": "construction_and_works",
+   "classification": "deterministic_keyword",
+   "matched_keywords": [
+    "works"
+   ],
+   "required_capabilities": [
+    "construction_delivery",
+    "civil_engineering"
+   ],
+   "capability_matches": [
+    {
+     "capability": "construction_delivery",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Guyana",
+       "strength": 3,
+       "evidence": [
+        {
+         "source": "Guyana eProcure",
+         "url": "https://www.eprocure.gov.gy/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "civil_engineering",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    }
+   ],
+   "has_capability_match": true
+  },
+  {
    "tender_id": "guyana-3d994b1fdeab",
    "country": "Guyana",
    "title": "Extension of Storage Bond at Shelterbelt, Georgetown, \nRegion No. 4",
@@ -14210,6 +16154,114 @@
    "has_capability_match": true
   },
   {
+   "tender_id": "guyana-d316cd7da841",
+   "country": "Guyana",
+   "title": "Hinterland Roads Phase 2 - Lots 36 - 37",
+   "buyer": "31-Ministry of Public Works",
+   "lifecycle_state": "detected",
+   "sector": "transport_and_logistics",
+   "classification": "deterministic_keyword",
+   "matched_keywords": [
+    "road"
+   ],
+   "required_capabilities": [
+    "civil_engineering",
+    "shipping_logistics",
+    "warehousing_distribution"
+   ],
+   "capability_matches": [
+    {
+     "capability": "civil_engineering",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "shipping_logistics",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 5,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Port Authority of Trinidad and Tobago",
+         "url": "https://www.patnt.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "warehousing_distribution",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 5,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    }
+   ],
+   "has_capability_match": true
+  },
+  {
    "tender_id": "guyana-222de02f9d42",
    "country": "Guyana",
    "title": "Improvement (Rehabilitation and Upgrade) of the Selected Regional Road Corridor - Reconstruction of Existing Road Network on the East Coast Demerara – Lot 2: Design and Build Bridges: Across the Mahaica, Mahaicony and Abary Rivers/Creeks",
@@ -14298,6 +16350,372 @@
         {
          "source": "Invest Barbados",
          "url": "https://www.investbarbados.org/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    }
+   ],
+   "has_capability_match": true
+  },
+  {
+   "tender_id": "guyana-6097e8eab4a7",
+   "country": "Guyana",
+   "title": "Installation of 300MM Transmission Mains along Brickdam from Vlissengen to Avenue of Republic, Georgetown, Region 4 (Lot 2: Austin Place to Avenue of Republic)",
+   "buyer": "34-Ministry of Public Utilities and Aviation",
+   "lifecycle_state": "detected",
+   "sector": "aviation_infrastructure",
+   "classification": "deterministic_keyword",
+   "matched_keywords": [
+    "aviation"
+   ],
+   "required_capabilities": [
+    "aviation_infrastructure",
+    "civil_engineering",
+    "construction_delivery"
+   ],
+   "capability_matches": [
+    {
+     "capability": "aviation_infrastructure",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 3,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "civil_engineering",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "construction_delivery",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Guyana",
+       "strength": 3,
+       "evidence": [
+        {
+         "source": "Guyana eProcure",
+         "url": "https://www.eprocure.gov.gy/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    }
+   ],
+   "has_capability_match": true
+  },
+  {
+   "tender_id": "guyana-ee56c21552af",
+   "country": "Guyana",
+   "title": "Installation of 300mm Transmission Mains along Water Street from Church Street to Battery Road & High Street, Georgetown, Region 4 (Lot 1: Church Street to Sluice Bridge)",
+   "buyer": "34-Ministry of Public Utilities and Aviation",
+   "lifecycle_state": "detected",
+   "sector": "aviation_infrastructure",
+   "classification": "deterministic_keyword",
+   "matched_keywords": [
+    "aviation"
+   ],
+   "required_capabilities": [
+    "aviation_infrastructure",
+    "civil_engineering",
+    "construction_delivery"
+   ],
+   "capability_matches": [
+    {
+     "capability": "aviation_infrastructure",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 3,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "civil_engineering",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "construction_delivery",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Guyana",
+       "strength": 3,
+       "evidence": [
+        {
+         "source": "Guyana eProcure",
+         "url": "https://www.eprocure.gov.gy/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    }
+   ],
+   "has_capability_match": true
+  },
+  {
+   "tender_id": "guyana-86cca48dfed4",
+   "country": "Guyana",
+   "title": "Installation of 300mm Transmission Mains along Water Street from Church Street to Battery Road & High Street, Georgetown, Region 4 (Lot 2: Sluice Bridge to Battery Road)",
+   "buyer": "34-Ministry of Public Utilities and Aviation",
+   "lifecycle_state": "detected",
+   "sector": "aviation_infrastructure",
+   "classification": "deterministic_keyword",
+   "matched_keywords": [
+    "aviation"
+   ],
+   "required_capabilities": [
+    "aviation_infrastructure",
+    "civil_engineering",
+    "construction_delivery"
+   ],
+   "capability_matches": [
+    {
+     "capability": "aviation_infrastructure",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 3,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "civil_engineering",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "construction_delivery",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Guyana",
+       "strength": 3,
+       "evidence": [
+        {
+         "source": "Guyana eProcure",
+         "url": "https://www.eprocure.gov.gy/",
          "grade": "primary"
         }
        ],
@@ -14620,6 +17038,128 @@
    "title": "Procurement of Works – Extension of Transmission mains at Agriculture Road, \nMon Repos, Region No. 4",
    "buyer": "34-Ministry of Public Utilities and Aviation",
    "lifecycle_state": "closed",
+   "sector": "aviation_infrastructure",
+   "classification": "deterministic_keyword",
+   "matched_keywords": [
+    "aviation"
+   ],
+   "required_capabilities": [
+    "aviation_infrastructure",
+    "civil_engineering",
+    "construction_delivery"
+   ],
+   "capability_matches": [
+    {
+     "capability": "aviation_infrastructure",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 3,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "civil_engineering",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "construction_delivery",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Guyana",
+       "strength": 3,
+       "evidence": [
+        {
+         "source": "Guyana eProcure",
+         "url": "https://www.eprocure.gov.gy/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    }
+   ],
+   "has_capability_match": true
+  },
+  {
+   "tender_id": "guyana-b528ed82ab28",
+   "country": "Guyana",
+   "title": "Procurement of Works – Installation of 300mm Transmission Mains along Brickdam from Vlissengen To Avenue of Republic, Georgetown, Region 4 (Lot 1: Square of Revolution to Austin Place)",
+   "buyer": "34-Ministry of Public Utilities and Aviation",
+   "lifecycle_state": "detected",
    "sector": "aviation_infrastructure",
    "classification": "deterministic_keyword",
    "matched_keywords": [
@@ -15465,6 +18005,79 @@
    "has_capability_match": true
   },
   {
+   "tender_id": "guyana-a0ac9254a1cc",
+   "country": "Guyana",
+   "title": "Rehab Works at Carnegie School of Home Economics",
+   "buyer": "40-Ministry of Education",
+   "lifecycle_state": "detected",
+   "sector": "education_infrastructure",
+   "classification": "deterministic_keyword",
+   "matched_keywords": [
+    "education",
+    "school"
+   ],
+   "required_capabilities": [
+    "construction_delivery",
+    "education_services"
+   ],
+   "capability_matches": [
+    {
+     "capability": "construction_delivery",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Guyana",
+       "strength": 3,
+       "evidence": [
+        {
+         "source": "Guyana eProcure",
+         "url": "https://www.eprocure.gov.gy/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "education_services",
+     "matched": false,
+     "holders": []
+    }
+   ],
+   "has_capability_match": true
+  },
+  {
    "tender_id": "guyana-6e4e33b1c253",
    "country": "Guyana",
    "title": "Rehabilitate Mild Steel High Grade Crystallizer with Stainless Steel at Blairmont Estate",
@@ -15570,7 +18183,7 @@
    "country": "Guyana",
    "title": "Rehabilitation and Upgrade of Mahaica Bridge to Abary Bridge Road Corridor",
    "buyer": "31-Ministry of Public Works",
-   "lifecycle_state": "detected",
+   "lifecycle_state": "closed",
    "sector": "transport_and_logistics",
    "classification": "deterministic_keyword",
    "matched_keywords": [
@@ -16094,6 +18707,78 @@
    "has_capability_match": true
   },
   {
+   "tender_id": "guyana-cd9b8eb2fc1b",
+   "country": "Guyana",
+   "title": "Rehabilitation of Driveway at Staff Quarters- New Amsterdam Technical Institute",
+   "buyer": "40-Ministry of Education",
+   "lifecycle_state": "detected",
+   "sector": "education_infrastructure",
+   "classification": "deterministic_keyword",
+   "matched_keywords": [
+    "education"
+   ],
+   "required_capabilities": [
+    "construction_delivery",
+    "education_services"
+   ],
+   "capability_matches": [
+    {
+     "capability": "construction_delivery",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Guyana",
+       "strength": 3,
+       "evidence": [
+        {
+         "source": "Guyana eProcure",
+         "url": "https://www.eprocure.gov.gy/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "education_services",
+     "matched": false,
+     "holders": []
+    }
+   ],
+   "has_capability_match": true
+  },
+  {
    "tender_id": "guyana-309ee8510084",
    "country": "Guyana",
    "title": "Rehabilitation of Existing Timber Walk Way at Mahaicony Fishermen Wharf at Railway Line Mahaicony River, Region No.5",
@@ -16183,6 +18868,114 @@
         {
          "source": "Trinidad and Tobago Ministry of Trade and Industry",
          "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    }
+   ],
+   "has_capability_match": true
+  },
+  {
+   "tender_id": "guyana-1bff7c1e79b1",
+   "country": "Guyana",
+   "title": "Rehabilitation of Farm to Market Road Access Road at Esah and Jacob Phase 2, Burma Mahaicony Creek, Region No.5",
+   "buyer": "21-Ministry of Agriculture",
+   "lifecycle_state": "detected",
+   "sector": "transport_and_logistics",
+   "classification": "deterministic_keyword",
+   "matched_keywords": [
+    "road"
+   ],
+   "required_capabilities": [
+    "civil_engineering",
+    "shipping_logistics",
+    "warehousing_distribution"
+   ],
+   "capability_matches": [
+    {
+     "capability": "civil_engineering",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "shipping_logistics",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 5,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Port Authority of Trinidad and Tobago",
+         "url": "https://www.patnt.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "warehousing_distribution",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 5,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
          "grade": "primary"
         }
        ],
@@ -16610,11 +19403,113 @@
    "has_capability_match": true
   },
   {
+   "tender_id": "guyana-8a7c3adaaf79",
+   "country": "Guyana",
+   "title": "Rehabilitation of concrete culverts along the left Bank Mahaicony Creek, Region No.5 Lots 1-3",
+   "buyer": "21-Ministry of Agriculture",
+   "lifecycle_state": "detected",
+   "sector": "construction_and_works",
+   "classification": "deterministic_keyword",
+   "matched_keywords": [
+    "rehabilitation",
+    "works"
+   ],
+   "required_capabilities": [
+    "construction_delivery",
+    "civil_engineering"
+   ],
+   "capability_matches": [
+    {
+     "capability": "construction_delivery",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Guyana",
+       "strength": 3,
+       "evidence": [
+        {
+         "source": "Guyana eProcure",
+         "url": "https://www.eprocure.gov.gy/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "civil_engineering",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    }
+   ],
+   "has_capability_match": true
+  },
+  {
    "tender_id": "guyana-dcabdebcf2dc",
    "country": "Guyana",
    "title": "Rehabilitation works for the Bartica 5 Miles Raw Water Intake Structure,  5 Miles, Bartica, Region No. 7",
    "buyer": "34-Ministry of Public Utilities and Aviation",
-   "lifecycle_state": "detected",
+   "lifecycle_state": "closed",
    "sector": "aviation_infrastructure",
    "classification": "deterministic_keyword",
    "matched_keywords": [
@@ -17146,6 +20041,209 @@
         {
          "source": "Guyana eProcure",
          "url": "https://www.eprocure.gov.gy/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    }
+   ],
+   "has_capability_match": true
+  },
+  {
+   "tender_id": "guyana-97aec9035e93",
+   "country": "Guyana",
+   "title": "Retender for the Decommission of High Grade Pug Mill and Replace with Stainless Steel at Albion Estate",
+   "buyer": "21-Ministry of Agriculture",
+   "lifecycle_state": "detected",
+   "sector": "construction_and_works",
+   "classification": "deterministic_keyword",
+   "matched_keywords": [
+    "works"
+   ],
+   "required_capabilities": [
+    "construction_delivery",
+    "civil_engineering"
+   ],
+   "capability_matches": [
+    {
+     "capability": "construction_delivery",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Guyana",
+       "strength": 3,
+       "evidence": [
+        {
+         "source": "Guyana eProcure",
+         "url": "https://www.eprocure.gov.gy/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "civil_engineering",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    }
+   ],
+   "has_capability_match": true
+  },
+  {
+   "tender_id": "guyana-be8fe68e764d",
+   "country": "Guyana",
+   "title": "Retender for the Rehabilitation of Four (4) Mild Steel High Grade Crystallizer with Stainless Steel",
+   "buyer": "21-Ministry of Agriculture",
+   "lifecycle_state": "detected",
+   "sector": "construction_and_works",
+   "classification": "deterministic_keyword",
+   "matched_keywords": [
+    "rehabilitation",
+    "works"
+   ],
+   "required_capabilities": [
+    "construction_delivery",
+    "civil_engineering"
+   ],
+   "capability_matches": [
+    {
+     "capability": "construction_delivery",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Guyana",
+       "strength": 3,
+       "evidence": [
+        {
+         "source": "Guyana eProcure",
+         "url": "https://www.eprocure.gov.gy/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "civil_engineering",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
          "grade": "primary"
         }
        ],
@@ -17748,7 +20846,7 @@
    "country": "Guyana",
    "title": "Supply and Installation of Transmission Mains at Adventure, Region # 6 (Lot 1-4): \nLot 1 – Supply and Installation of Transmission Mains from Tain to Alness\nLot 2 – Supply and Installation of Transmission Mains from Alness to Kilmarnock\nLot 3 – Supply and Installation of Transmission Mains from Kilmarnock to Kiltairn\nLot 4 – Supply and Installation of Transmission Mains from Kiltarin to Village 47",
    "buyer": "34-Ministry of Public Utilities and Aviation",
-   "lifecycle_state": "detected",
+   "lifecycle_state": "closed",
    "sector": "aviation_infrastructure",
    "classification": "deterministic_keyword",
    "matched_keywords": [
@@ -17870,7 +20968,7 @@
    "country": "Guyana",
    "title": "Supply and Installation of Transmission Mains at Bath, West Coast Berbice, Region # 5 (Lot 1-4):\nLot 1 – Supply and Installation of Transmission Mains from Jacoba to Union\nLot 2 – Supply and Installation of Transmission Mains from Union to St. John \nLot 3 – Supply and Installation of Transmission Mains from St. John to Bath\nLot 4 – Supply and Installation of Transmission Mains from Bath to No. 7 Village and Experiment Housing Scheme",
    "buyer": "34-Ministry of Public Utilities and Aviation",
-   "lifecycle_state": "detected",
+   "lifecycle_state": "closed",
    "sector": "aviation_infrastructure",
    "classification": "deterministic_keyword",
    "matched_keywords": [
@@ -17992,7 +21090,7 @@
    "country": "Guyana",
    "title": "Supply and Installation of Transmission Mains at Leguan, Region # 3",
    "buyer": "34-Ministry of Public Utilities and Aviation",
-   "lifecycle_state": "detected",
+   "lifecycle_state": "closed",
    "sector": "aviation_infrastructure",
    "classification": "deterministic_keyword",
    "matched_keywords": [
@@ -18114,7 +21212,7 @@
    "country": "Guyana",
    "title": "Supply and Installation of Transmission Mains at Wakenaam, Region # 3",
    "buyer": "34-Ministry of Public Utilities and Aviation",
-   "lifecycle_state": "detected",
+   "lifecycle_state": "closed",
    "sector": "aviation_infrastructure",
    "classification": "deterministic_keyword",
    "matched_keywords": [
@@ -18236,7 +21334,7 @@
    "country": "Guyana",
    "title": "Supply and Installation of Transmission Mains at Walton Hall to Charity, Region # 2 (Lot 1-4):\nLot 1 - Supply & Installation of Transmission Mains from Walton Hall to Bounty Hall\nLot 2 - Supply & Installation of Transmission Mains from Bounty Hall to Maria's Delight\nLot 3 - Supply & Installation of Transmission Mains from Maria's Delight to Berks\nLot 4 - Supply & Installation of Transmission Mains from Berks to Charity",
    "buyer": "34-Ministry of Public Utilities and Aviation",
-   "lifecycle_state": "detected",
+   "lifecycle_state": "closed",
    "sector": "aviation_infrastructure",
    "classification": "deterministic_keyword",
    "matched_keywords": [
@@ -18664,6 +21762,107 @@
    "has_capability_match": true
   },
   {
+   "tender_id": "guyana-88250545dccd",
+   "country": "Guyana",
+   "title": "Supply, Delivery, Installation and Testing of Network and Equipment for Secondary Schools",
+   "buyer": "40-Ministry of Education",
+   "lifecycle_state": "detected",
+   "sector": "digital_and_ict",
+   "classification": "deterministic_keyword",
+   "matched_keywords": [
+    "network"
+   ],
+   "required_capabilities": [
+    "digital_services",
+    "ict_integration"
+   ],
+   "capability_matches": [
+    {
+     "capability": "digital_services",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Barbados",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Invest Barbados",
+         "url": "https://www.investbarbados.org/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Eastern Caribbean / OECS",
+       "strength": 3,
+       "evidence": [
+        {
+         "source": "OECS Commission",
+         "url": "https://www.oecs.int/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "ict_integration",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Barbados",
+       "strength": 3,
+       "evidence": [
+        {
+         "source": "Invest Barbados",
+         "url": "https://www.investbarbados.org/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    }
+   ],
+   "has_capability_match": true
+  },
+  {
    "tender_id": "guyana-b7270d757455",
    "country": "Guyana",
    "title": "Supply, Installation and Commission Leguan Power Plant Switchgear, Essequibo Islands Guyana.",
@@ -19047,6 +22246,107 @@
         {
          "source": "Invest Barbados",
          "url": "https://www.investbarbados.org/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    }
+   ],
+   "has_capability_match": true
+  },
+  {
+   "tender_id": "guyana-b970238f5424",
+   "country": "Guyana",
+   "title": "Washing and Repainting of the Environmental Protection Agency’s Office Building, Lots 1 &2",
+   "buyer": "01-Office of the President",
+   "lifecycle_state": "detected",
+   "sector": "construction_and_works",
+   "classification": "deterministic_keyword",
+   "matched_keywords": [
+    "works"
+   ],
+   "required_capabilities": [
+    "construction_delivery",
+    "civil_engineering"
+   ],
+   "capability_matches": [
+    {
+     "capability": "construction_delivery",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Guyana",
+       "strength": 3,
+       "evidence": [
+        {
+         "source": "Guyana eProcure",
+         "url": "https://www.eprocure.gov.gy/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      }
+     ]
+    },
+    {
+     "capability": "civil_engineering",
+     "matched": true,
+     "holders": [
+      {
+       "country": "Jamaica",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "JAMPRO",
+         "url": "https://dobusinessjamaica.com/",
+         "grade": "primary"
+        }
+       ],
+       "evidence_grades": [
+        "primary"
+       ]
+      },
+      {
+       "country": "Trinidad & Tobago",
+       "strength": 4,
+       "evidence": [
+        {
+         "source": "Trinidad and Tobago Ministry of Trade and Industry",
+         "url": "https://tradeind.gov.tt/",
          "grade": "primary"
         }
        ],

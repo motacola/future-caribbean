@@ -2,24 +2,38 @@
 
 **Decision job:** Project pipeline tracking and expression of interest preparation
 **Delivery channel:** Email brief
-**Generated:** Sep 06, 2026 at 22:06 UTC
-**Dispatches in this packet:** 1
+**Generated:** Oct 19, 2026 at 12:03 UTC
+**Dispatches in this packet:** 2
 
 ---
 
-## Dispatches (1)
+## Dispatches (2)
 
-### 1. CARICOM: 8 active procurements — bidding window open
+### 1. Barbados, Belize: signal detected
 
-**ID:** `DSP-20260906-012` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 95/100 | B - cross-source
+**ID:** `DSP-20261019-019` | **Country:** Barbados, Belize | **Confidence:** 🔴 Immediate | 100/100 | A - multi-source
+**Channel:** Email brief | **Window:** 21 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** CDB active procurement notices: 6;   • Enhancing the Quality of the Belize National Quality Infrastructure;   • Development of a Climate Resilient Integrated National Land Use Plan Technical A; Maritime conditions stable — no high-wind or marine alerts
+**Detail:** signal detected
+**Grade:** A - multi-source
+
+**Recommended action:** CDB procurement (signal detected) aligned with stable shipping lanes. Viable corridor for logistics providers — prepare EOI.
+**Decision to influence:** Which logistics/procurement corridor to bid or partner on
+**Routing rationale:** CDB procurement aligned with maritime stability = viable logistics corridors for project-based entry
+
+### 2. CARICOM: 6 active procurements — bidding window open
+
+**ID:** `DSP-20261019-010` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 95/100 | B - cross-source
 **Channel:** Email brief | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** ignored
 
-**Evidence:** CDB active procurement notices: 8; • Enhancing the Quality of the Belize National Quality Infrastructure; • Call For Application – Scholarship Opportunity: International Master In Public Procurement Management at The University of Rome Tor Vergata (2026/2027 Academic Year); • Supply Installation, Testing and Commissioning of Mechanical Equipment, Fire Pump System and Information and Communications Technology Systems
-**Detail:** CDB active procurement notices: 8
+**Evidence:** CDB active procurement notices: 6; • Enhancing the Quality of the Belize National Quality Infrastructure; • Development of a Climate Resilient Integrated National Land Use Plan Technical Assistance Project; • Creation of an Enabling Environment For Movable Asset-Based Financing in Barbados by Modernizing The Secured Transaction Legal and Infrastructure System Project
+**Detail:** CDB active procurement notices: 6
 **Grade:** B - cross-source
 
-**Recommended action:** Track CDB/IDB project pipeline: CDB active procurement notices: 8. Review opportunity fit and prepare expression of interest.
+**Recommended action:** Track CDB/IDB project pipeline: CDB active procurement notices: 6. Review opportunity fit and prepare expression of interest.
 **Decision to influence:** Which procurement or project opportunity to pursue
 **Routing rationale:** CDB/IDB project pipeline is the primary lead source for project-based business development
 

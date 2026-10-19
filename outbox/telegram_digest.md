@@ -1,33 +1,35 @@
-*Caribbean Market Pulse — 2026-09-06 22:06 UTC*
+*Caribbean Market Pulse — 2026-10-19 12:03 UTC*
 
-Lead: Guyana. 3 converging signal(s) across 3 source(s). Signals: 💼 Investment + 🏖️ Tourism + 💎 Investment.
+Lead: Bahamas. 2 converging signal(s) across 4 source(s). Signals: 💼 Investment + 💎 Investment.
 
-🔴 — **💎 Investment — Guyana**
-   Guyana: +860.3% capital surge on a single official source — market entry window open
+🔴 🆕 **💎 Investment — Bahamas**
+   Bahamas: +538.6% capital surge on a single official source — market entry window open
    Immediate | 100/100 | C - single-source
-   Immediate investigation. Guyana has multi-source investment validation (2 signals converging). Priority: assess market entry options, identify existing operators.
+   🆕 New this cycle
+   Immediate investigation. Bahamas has multi-source investment validation (3 signals converging). Priority: assess market entry options, identify existing operators.
 
-🔴 — **💎 Investment — Suriname**
-   Suriname: +206.0% investment movement, one source — needs corroboration
-   Immediate | 96/100 | C - single-source
-   Immediate investigation. Suriname has multi-source investment validation (2 signals converging). Priority: assess market entry options, identify existing operators.
+🔴 🆕 **supply_chain_signal — Barbados, Belize**
+   Barbados, Belize: signal detected
+   Immediate | 100/100 | A - multi-source
+   🆕 New this cycle
+   Immediate — Barbados, Belize: supply_chain_signal (signal detected). Validate locally.
 
-🔴 — **🏗️ Pipeline — CARICOM**
-   CARICOM: 8 active procurements — bidding window open
+🔴 🔄 **💎 Investment — Suriname**
+   Suriname: +206.2% investment movement, one source — needs corroboration
+   Immediate | 98/100 | C - single-source
+   🔄 Content updated this cycle
+   Immediate investigation. Suriname has multi-source investment validation (3 signals converging). Priority: assess market entry options, identify existing operators.
+
+🔴 🔄 **🏗️ Pipeline — CARICOM**
+   CARICOM: 6 active procurements — bidding window open
    Immediate | 95/100 | B - cross-source
-   Active procurement pipeline: CDB active procurement notices: 8. Priority: review CDB/IDB opportunities as lead list for project-based entry.
+   🔄 Content updated this cycle
+   Active procurement pipeline: CDB active procurement notices: 6. Priority: review CDB/IDB opportunities as lead list for project-based entry.
 
-🟡 ⬆️ **ccrif_payout — Turks and Caicos Islands**
-   Turks and Caicos Islands: signal detected
-   Validation | 84/100 | C - single-source
-   ⬆️ Strengthened (+10 pts)
-   Validation — Turks and Caicos Islands: ccrif_payout (signal detected). Validate locally.
+🟡 — **eccb_deposit_growth — Eastern Caribbean Currency Union**
+   Eastern Caribbean Currency Union: 4.6%
+   Validation | 72/100 | C - single-source
+   Validation — Eastern Caribbean Currency Union: eccb_deposit_growth (4.6%). Validate locally.
 
-🟡 ⬆️ **ccrif_payout — Anguilla**
-   Anguilla: signal detected
-   Validation | 84/100 | C - single-source
-   ⬆️ Strengthened (+10 pts)
-   Validation — Anguilla: ccrif_payout (signal detected). Validate locally.
-
-— Lead: Guyana · 32 composite signal(s) · 1 new · 8 intensified · 15 persistent
+— Lead: Bahamas · 16 composite signal(s) · 4 new · 2 updated · 10 persistent
 - Abeng

@@ -2,30 +2,44 @@
 
 **Decision job:** Operational readiness and bid pipeline assessment
 **Delivery channel:** Telegram
-**Generated:** Sep 06, 2026 at 22:06 UTC
-**Dispatches in this packet:** 2
+**Generated:** Oct 19, 2026 at 12:03 UTC
+**Dispatches in this packet:** 3
 
 ---
 
-## Dispatches (2)
+## Dispatches (3)
 
-### 1. CARICOM: 8 active procurements — bidding window open
+### 1. Barbados, Belize: signal detected
 
-**ID:** `DSP-20260906-011` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 95/100 | B - cross-source
+**ID:** `DSP-20261019-018` | **Country:** Barbados, Belize | **Confidence:** 🔴 Immediate | 100/100 | A - multi-source
+**Channel:** Telegram | **Window:** 21 days | **Freshness:** sustained
+**Feedback status:** ignored
+
+**Evidence:** CDB active procurement notices: 6;   • Enhancing the Quality of the Belize National Quality Infrastructure;   • Development of a Climate Resilient Integrated National Land Use Plan Technical A; Maritime conditions stable — no high-wind or marine alerts
+**Detail:** signal detected
+**Grade:** A - multi-source
+
+**Recommended action:** Active supply chain corridor in Barbados, Belize: procurement live + maritime stable. Assess capacity for logistics, warehousing, transport — bid window open.
+**Decision to influence:** Which logistics/procurement corridor to bid or partner on
+**Routing rationale:** Active procurement + stable maritime = real supply chain corridor opportunity — first to respond wins
+
+### 2. CARICOM: 6 active procurements — bidding window open
+
+**ID:** `DSP-20261019-009` | **Country:** CARICOM | **Confidence:** 🔴 Immediate | 95/100 | B - cross-source
 **Channel:** Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** replied
 
-**Evidence:** CDB active procurement notices: 8; • Enhancing the Quality of the Belize National Quality Infrastructure; • Call For Application – Scholarship Opportunity: International Master In Public Procurement Management at The University of Rome Tor Vergata (2026/2027 Academic Year); • Supply Installation, Testing and Commissioning of Mechanical Equipment, Fire Pump System and Information and Communications Technology Systems
-**Detail:** CDB active procurement notices: 8
+**Evidence:** CDB active procurement notices: 6; • Enhancing the Quality of the Belize National Quality Infrastructure; • Development of a Climate Resilient Integrated National Land Use Plan Technical Assistance Project; • Creation of an Enabling Environment For Movable Asset-Based Financing in Barbados by Modernizing The Secured Transaction Legal and Infrastructure System Project
+**Detail:** CDB active procurement notices: 6
 **Grade:** B - cross-source
 
-**Recommended action:** Review operational readiness for CARICOM opportunities. CDB active procurement notices: 8 — assess capacity and bid pipeline.
+**Recommended action:** Review operational readiness for CARICOM opportunities. CDB active procurement notices: 6 — assess capacity and bid pipeline.
 **Decision to influence:** Which procurement or project opportunity to pursue
 **Routing rationale:** Active procurement directly maps to operational capacity needs — first to respond wins
 
-### 2. Eastern Caribbean Currency Union: 4.6%
+### 3. Eastern Caribbean Currency Union: 4.6%
 
-**ID:** `DSP-20260906-092` | **Country:** Eastern Caribbean Currency Union | **Confidence:** 🟡 Validation | 76/100 | C - single-source
+**ID:** `DSP-20261019-023` | **Country:** Eastern Caribbean Currency Union | **Confidence:** 🟡 Validation | 72/100 | C - single-source
 **Channel:** Telegram | **Window:** 30 days | **Freshness:** sustained
 **Feedback status:** ignored
 

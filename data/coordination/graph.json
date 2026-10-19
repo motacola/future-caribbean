@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-13T16:44:24.942763+00:00",
+  "generated_at": "2026-10-19T12:03:47.815443+00:00",
   "registry_status": "pilot",
   "nodes": [
     {
@@ -162,6 +162,115 @@
       "id": "capability:food_processing",
       "type": "capability",
       "label": "Food Processing"
+    },
+    {
+      "id": "project:guyana:proc-2026-00460",
+      "type": "project",
+      "title": "Supply & Delivery of Oil Lubricants & Greases to Guysuco for the Year 2027-2028",
+      "country": "Guyana",
+      "agency": "21-Ministry of Agriculture",
+      "category": "Goods",
+      "sector": "general_procurement",
+      "classification": "category_fallback",
+      "status": "Bid Advertised",
+      "closing_date": "2026-10-20",
+      "url": "https://eprocure.gov.gy/"
+    },
+    {
+      "id": "project:guyana:proc-2026-00464",
+      "type": "project",
+      "title": "Construction of Assembly Shed at- North Georgetown Secondary School",
+      "country": "Guyana",
+      "agency": "40-Ministry of Education",
+      "category": "Works",
+      "sector": "education_infrastructure",
+      "classification": "deterministic_keyword",
+      "status": "Bid Advertised",
+      "closing_date": "2026-10-20",
+      "url": "https://eprocure.gov.gy/"
+    },
+    {
+      "id": "capability:education_services",
+      "type": "capability",
+      "label": "Education Services"
+    },
+    {
+      "id": "project:guyana:proc-2026-00469",
+      "type": "project",
+      "title": "Washing and Repainting of the Environmental Protection Agency’s Office Building, Lots 1 &2",
+      "country": "Guyana",
+      "agency": "01-Office of the President",
+      "category": "Works",
+      "sector": "construction_and_works",
+      "classification": "deterministic_keyword",
+      "status": "Bid Advertised",
+      "closing_date": "2026-10-20",
+      "url": "https://eprocure.gov.gy/"
+    },
+    {
+      "id": "project:guyana:proc-2026-00471",
+      "type": "project",
+      "title": "Retender-Consultancy Services for the preparation of an Integrated Strategy for the North Rupununi Wetland Productive Landscape.",
+      "country": "Guyana",
+      "agency": "01-Office of the President",
+      "category": "Services",
+      "sector": "general_procurement",
+      "classification": "category_fallback",
+      "status": "Bid Advertised",
+      "closing_date": "2026-10-20",
+      "url": "https://eprocure.gov.gy/"
+    },
+    {
+      "id": "project:guyana:proc-2026-00472",
+      "type": "project",
+      "title": "Consultancy Services to conduct a Structural Assessment of the EPA’s Concrete Building",
+      "country": "Guyana",
+      "agency": "01-Office of the President",
+      "category": "Services",
+      "sector": "general_procurement",
+      "classification": "category_fallback",
+      "status": "Bid Advertised",
+      "closing_date": "2026-10-20",
+      "url": "https://eprocure.gov.gy/"
+    },
+    {
+      "id": "project:guyana:proc-2026-00473",
+      "type": "project",
+      "title": "Procurement of Works – Installation of 300mm Transmission Mains along Brickdam from Vlissengen To Avenue of Republic, Georgetown, Region 4 (Lot 1: Square of Revolution to Austin Place)",
+      "country": "Guyana",
+      "agency": "34-Ministry of Public Utilities and Aviation",
+      "category": "Works",
+      "sector": "aviation_infrastructure",
+      "classification": "deterministic_keyword",
+      "status": "Bid Advertised",
+      "closing_date": "2026-10-20",
+      "url": "https://eprocure.gov.gy/"
+    },
+    {
+      "id": "project:guyana:proc-2026-00474",
+      "type": "project",
+      "title": "Installation of 300MM Transmission Mains along Brickdam from Vlissengen to Avenue of Republic, Georgetown, Region 4 (Lot 2: Austin Place to Avenue of Republic)",
+      "country": "Guyana",
+      "agency": "34-Ministry of Public Utilities and Aviation",
+      "category": "Works",
+      "sector": "aviation_infrastructure",
+      "classification": "deterministic_keyword",
+      "status": "Bid Advertised",
+      "closing_date": "2026-10-20",
+      "url": "https://eprocure.gov.gy/"
+    },
+    {
+      "id": "project:guyana:proc-2026-00475",
+      "type": "project",
+      "title": "Installation of 300mm Transmission Mains along Water Street from Church Street to Battery Road & High Street, Georgetown, Region 4 (Lot 1: Church Street to Sluice Bridge)",
+      "country": "Guyana",
+      "agency": "34-Ministry of Public Utilities and Aviation",
+      "category": "Works",
+      "sector": "aviation_infrastructure",
+      "classification": "deterministic_keyword",
+      "status": "Bid Advertised",
+      "closing_date": "2026-10-20",
+      "url": "https://eprocure.gov.gy/"
     }
   ],
   "edges": [
@@ -1640,10 +1749,346 @@
           ]
         }
       ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00460",
+      "to": "country:guyana",
+      "type": "LOCATED_IN",
+      "weight": 1.0,
+      "status": "observed",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00460",
+      "to": "capability:professional_services",
+      "type": "REQUIRES_CAPABILITY",
+      "weight": 1.0,
+      "status": "inferred_from_category",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00464",
+      "to": "country:guyana",
+      "type": "LOCATED_IN",
+      "weight": 1.0,
+      "status": "observed",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00464",
+      "to": "capability:construction_delivery",
+      "type": "REQUIRES_CAPABILITY",
+      "weight": 1.0,
+      "status": "inferred_from_category",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00464",
+      "to": "capability:education_services",
+      "type": "REQUIRES_CAPABILITY",
+      "weight": 1.0,
+      "status": "inferred_from_category",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00469",
+      "to": "country:guyana",
+      "type": "LOCATED_IN",
+      "weight": 1.0,
+      "status": "observed",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00469",
+      "to": "capability:construction_delivery",
+      "type": "REQUIRES_CAPABILITY",
+      "weight": 1.0,
+      "status": "inferred_from_category",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00469",
+      "to": "capability:civil_engineering",
+      "type": "REQUIRES_CAPABILITY",
+      "weight": 1.0,
+      "status": "inferred_from_category",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00471",
+      "to": "country:guyana",
+      "type": "LOCATED_IN",
+      "weight": 1.0,
+      "status": "observed",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00471",
+      "to": "capability:professional_services",
+      "type": "REQUIRES_CAPABILITY",
+      "weight": 1.0,
+      "status": "inferred_from_category",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00472",
+      "to": "country:guyana",
+      "type": "LOCATED_IN",
+      "weight": 1.0,
+      "status": "observed",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00472",
+      "to": "capability:professional_services",
+      "type": "REQUIRES_CAPABILITY",
+      "weight": 1.0,
+      "status": "inferred_from_category",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00473",
+      "to": "country:guyana",
+      "type": "LOCATED_IN",
+      "weight": 1.0,
+      "status": "observed",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00473",
+      "to": "capability:aviation_infrastructure",
+      "type": "REQUIRES_CAPABILITY",
+      "weight": 1.0,
+      "status": "inferred_from_category",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00473",
+      "to": "capability:civil_engineering",
+      "type": "REQUIRES_CAPABILITY",
+      "weight": 1.0,
+      "status": "inferred_from_category",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00473",
+      "to": "capability:construction_delivery",
+      "type": "REQUIRES_CAPABILITY",
+      "weight": 1.0,
+      "status": "inferred_from_category",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00474",
+      "to": "country:guyana",
+      "type": "LOCATED_IN",
+      "weight": 1.0,
+      "status": "observed",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00474",
+      "to": "capability:aviation_infrastructure",
+      "type": "REQUIRES_CAPABILITY",
+      "weight": 1.0,
+      "status": "inferred_from_category",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00474",
+      "to": "capability:civil_engineering",
+      "type": "REQUIRES_CAPABILITY",
+      "weight": 1.0,
+      "status": "inferred_from_category",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00474",
+      "to": "capability:construction_delivery",
+      "type": "REQUIRES_CAPABILITY",
+      "weight": 1.0,
+      "status": "inferred_from_category",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00475",
+      "to": "country:guyana",
+      "type": "LOCATED_IN",
+      "weight": 1.0,
+      "status": "observed",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00475",
+      "to": "capability:aviation_infrastructure",
+      "type": "REQUIRES_CAPABILITY",
+      "weight": 1.0,
+      "status": "inferred_from_category",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00475",
+      "to": "capability:civil_engineering",
+      "type": "REQUIRES_CAPABILITY",
+      "weight": 1.0,
+      "status": "inferred_from_category",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
+    },
+    {
+      "from": "project:guyana:proc-2026-00475",
+      "to": "capability:construction_delivery",
+      "type": "REQUIRES_CAPABILITY",
+      "weight": 1.0,
+      "status": "inferred_from_category",
+      "evidence": [
+        {
+          "source": "Guyana eProcure (NPTA)",
+          "url": "https://eprocure.gov.gy/",
+          "grade": "primary"
+        }
+      ]
     }
   ],
   "counts": {
-    "nodes": 26,
-    "edges": 64
+    "nodes": 35,
+    "edges": 88
   }
 }

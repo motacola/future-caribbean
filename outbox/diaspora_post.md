@@ -3,15 +3,13 @@ Caribbean Market Pulse
 The Caribbean does not need another static dashboard.
 It needs useful signals that move to the people who can act.
 
-Lead: Guyana. 3 converging signal(s) across 3 source(s). Signals: 💼 Investment + 🏖️ Tourism + 💎 Investment.
+Lead: Bahamas. 2 converging signal(s) across 4 source(s). Signals: 💼 Investment + 💎 Investment.
 
-★ **Guyana**: +860.3% capital surge on a single official source — market entry window open
+★ **Bahamas**: +538.6% capital surge on a single official source — market entry window open
 
-• **Suriname**: +206.0% investment movement, one source — needs corroboration
+• **Suriname**: +206.2% investment movement, one source — needs corroboration
 
-• **Barbados**: +34.8% FDI momentum validated — cross-reference before deploying
-
-🏗️ CARICOM: 8 active procurements — bidding window open
+🏗️ CARICOM: 6 active procurements — bidding window open
 
 Generated from public regional data, ranked for decision value.
-Generated: 2026-09-06 22:06 UTC
+Generated: 2026-10-19 12:03 UTC

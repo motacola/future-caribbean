@@ -27,8 +27,10 @@ for (const { path, list, row, step } of LIST_PAGES) {
     const status = page.locator(`${list} ~ .reveal-more-wrap .reveal-status`);
     await expect(status).toContainText(`Showing ${step} of`);
 
+    // A short cycle may hold fewer than two steps' worth of rows.
+    const total = await page.locator(`${list} > ${row}`).count();
     await page.locator(`${list} ~ .reveal-more-wrap .reveal-more`).click();
-    await expect(visible()).toHaveCount(step * 2);
+    await expect(visible()).toHaveCount(Math.min(step * 2, total));
   });
 }
 

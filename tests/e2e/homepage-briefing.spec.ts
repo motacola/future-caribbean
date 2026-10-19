@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test';
+import { readFileSync } from 'node:fs';
 
 const forbiddenCopy = [
   'generalised to any emerging-market set',
@@ -67,11 +68,12 @@ test('desktop hero map opens a semantic country drill-down', async ({ page }, te
   await expect(mainMap).toBeVisible();
   expect(await mainMap.evaluate(node => node.getBoundingClientRect().height)).toBeGreaterThanOrEqual(540);
 
-  await page.evaluate(() => {
+  const lead = JSON.parse(readFileSync('outbox/dispatch_desk.json', 'utf8')).clusters[0].country_cluster;
+  await page.evaluate((name) => {
     const opener = (window as unknown as { openCountryDrill?: (country: string) => void }).openCountryDrill;
     if (!opener) throw new Error('openCountryDrill is not available');
-    opener('Guyana');
-  });
+    opener(name);
+  }, lead);
   await expect(page.locator('#map-drill article.drill-card').first()).toBeVisible();
   await expect(page.locator('#map-drill')).not.toContainText('<article');
 });

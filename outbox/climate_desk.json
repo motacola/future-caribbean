@@ -1,30 +1,32 @@
 {
   "instance": "climate",
   "instance_label": "Climate & Catastrophe Risk",
-  "cycle_id": "20260906",
-  "generated_at": "2026-09-06T22:06:53.531699+00:00",
+  "cycle_id": "20261019",
+  "generated_at": "2026-10-19T12:03:48.310199+00:00",
   "clusters": [
     {
-      "cluster_id": "CLIM-marine-97519",
-      "country_cluster": "Caribbean marine zones",
-      "signal_kind": "maritime_hazard",
-      "title": "Marine hazard: Pressure dropping at Eastern Caribbean (E of Barbados): -3.5 hPa in ~3",
-      "evidence": "NDBC buoy network: Pressure dropping at Eastern Caribbean (E of Barbados): -3.5 hPa in ~3 readings",
-      "evidence_grade": "B - sensor",
-      "confidence_score": 80,
+      "cluster_id": "CLIM-tropical-outlook",
+      "country_cluster": "North Atlantic / Caribbean basin",
+      "signal_kind": "tropical_development",
+      "title": "Tropical development being monitored (NHC outlook)",
+      "evidence": "NHC Tropical Weather Outlook indicates a system worth watching across the basin.",
+      "evidence_grade": "B - official outlook",
+      "confidence_score": 85,
       "freshness": "new",
-      "decision": "Marine operations and coastal risk",
-      "risk_flags": [],
+      "decision": "Basin-wide exposure and readiness",
+      "risk_flags": [
+        "Active tropical outlook for the basin"
+      ],
       "personas": [
         {
-          "persona": "Operations/Resilience",
-          "channel": "Telegram/SMS alert",
-          "action": "Marine hazard \u2014 Pressure dropping at Eastern Caribbean (E of Barbados): -3.5 hPa in ~3 readings. Advise vessels and coastal operations; delay exposed activity until conditions ease."
+          "persona": "Insurer / Reinsurer",
+          "channel": "Email + alert",
+          "action": "Tropical development watch \u2014 NHC basin outlook active. Begin exposure modelling for the basin; recovery-capital may be needed within days."
         },
         {
           "persona": "Resilience Planner",
           "channel": "Telegram/SMS alert",
-          "action": "Marine conditions deteriorating \u2014 Pressure dropping at Eastern Caribbean (E of Barbados): -3.5 hPa in ~3 readings. Monitor for escalation toward small-craft / coastal-flood thresholds."
+          "action": "Tropical outlook active \u2014 NHC basin outlook active. Move readiness posture up; verify supply and communication chains across exposed islands."
         }
       ]
     }

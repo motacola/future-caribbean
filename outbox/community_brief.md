@@ -1,37 +1,37 @@
 🌴 **Caribbean Opportunity Brief** — what's moving this week
-Cycle 20260906 • 2026-09-06 22:06 UTC
+Cycle 20261019 • 2026-10-19 12:03 UTC
 
 Plain-language signals for builders, business owners, and community leaders.
 No jargon. Just what matters for your next move.
 
 ---
 
-1. **Guyana**: money flowing in from multiple sources — verified opportunity — 860.3% movement
+1. **Bahamas**: money flowing in from multiple sources — verified opportunity — 538.6% movement
    New money = new competition AND new customers. Map your advantage before they arrive. (holding steady)
    🔴 High confidence — multiple sources agree
    📊 Single-source indicator — verify locally
 
-2. **Suriname**: money flowing in from multiple sources — verified opportunity — 206.0% movement
+2. **Barbados, Belize**: supply chain corridor opening — logistics/procurement opportunity
+   Supply chain gap + procurement pipeline = build warehousing, transport, or last-mile here. (holding steady)
+   🔴 High confidence — multiple sources agree
+   📊 Backed by multiple independent data sources
+
+3. **Suriname**: money flowing in from multiple sources — verified opportunity — 206.2% movement
    New money = new competition AND new customers. Map your advantage before they arrive. (holding steady)
    🔴 High confidence — multiple sources agree
    📊 Single-source indicator — verify locally
 
-3. **Guyana**: foreign investment spiking — worth watching — 860.3% movement
+4. **Bahamas**: foreign investment spiking — worth watching — 538.6% movement
+   Investment noise in your market. Could mean competitors coming or demand growing. (holding steady)
+   🔴 High confidence — multiple sources agree
+   📊 Cross-source validation
+
+5. **Suriname**: foreign investment spiking — worth watching — 206.2% movement
    Investment noise in your market. Could mean competitors coming or demand growing. (holding steady)
    🟡 Solid signal — some corroboration
    📊 Cross-source validation
 
-4. **Suriname**: foreign investment spiking — worth watching — 206.0% movement
-   Investment noise in your market. Could mean competitors coming or demand growing. (holding steady)
-   🟡 Solid signal — some corroboration
-   📊 Cross-source validation
-
-5. **Turks and Caicos Islands**: ccrif payout
-   Pay attention — something real is happening. (holding steady)
-   🟡 Solid signal — some corroboration
-   📊 Single-source indicator — verify locally
-
-6. **Anguilla**: ccrif payout
+6. **Eastern Caribbean Currency Union**: eccb deposit growth — 4.6% movement
    Pay attention — something real is happening. (holding steady)
    🟡 Solid signal — some corroboration
    📊 Single-source indicator — verify locally

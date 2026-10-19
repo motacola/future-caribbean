@@ -1,0 +1,89 @@
+{
+  "signal_id": "supply-chain-barbados-belize",
+  "dispatch_id": "DSP-20261019-018",
+  "country": "Barbados, Belize",
+  "signal_title": "Barbados, Belize: signal detected",
+  "confidence_score": 78,
+  "raw_confidence_score": 108,
+  "action_readiness": "medium (no dated country procurement or news corroboration)",
+  "evidence_grade": "A - multi-source",
+  "sector_hypotheses": [],
+  "supporting_projects": [],
+  "procurement_matches": [
+    {
+      "title": "Enhancing the Quality of the Belize National Quality Infrastructure",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure",
+      "match": "regional"
+    },
+    {
+      "title": "Development of a Climate Resilient Integrated National Land Use Plan Technical Assistance Project",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/development-climate-resilient-integrated-national-land-use-plan-technical-assistance-project",
+      "match": "regional"
+    },
+    {
+      "title": "Creation of an Enabling Environment For Movable Asset-Based Financing in Barbados by Modernizing The Secured Transaction Legal and Infrastructure System Project",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/creation-enabling-environment-movable-asset-based-financing-barbados-modernizing-secured-transaction-1",
+      "match": "regional"
+    },
+    {
+      "title": "Creation of an Enabling Environment For Movable Asset-Based Financing in Barbados by Modernizing The Secured Transaction Legal and Infrastructure System Project",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/creation-enabling-environment-movable-asset-based-financing-barbados-modernizing-secured-transaction-0",
+      "match": "regional"
+    },
+    {
+      "title": "Creation of an Enabling Environment For Movable Asset-Based Financing in Barbados by Modernizing The Secured Transaction Legal and Infrastructure System Project",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/creation-enabling-environment-movable-asset-based-financing-barbados-modernizing-secured-transaction",
+      "match": "regional"
+    },
+    {
+      "title": "EU-CDB Regional Food Security Programme",
+      "source": "Caribbean Development Bank",
+      "url": "https://www.caribank.org/work-with-us/procurement/procurement-notices/eu-cdb-regional-food-security-programme",
+      "match": "regional"
+    }
+  ],
+  "official_country_data": [],
+  "credible_local_operators": [],
+  "relevant_institutions": [
+    {
+      "name": "Caribbean Export Development Agency",
+      "role": "Regional trade and investment promotion"
+    },
+    {
+      "name": "Caribbean Development Bank (CDB)",
+      "role": "Regional development finance and procurement"
+    }
+  ],
+  "source_links": [
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/creation-enabling-environment-movable-asset-based-financing-barbados-modernizing-secured-transaction",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/creation-enabling-environment-movable-asset-based-financing-barbados-modernizing-secured-transaction-0",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/creation-enabling-environment-movable-asset-based-financing-barbados-modernizing-secured-transaction-1",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/development-climate-resilient-integrated-national-land-use-plan-technical-assistance-project",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/enhancing-quality-belize-national-quality-infrastructure",
+    "https://www.caribank.org/work-with-us/procurement/procurement-notices/eu-cdb-regional-food-security-programme"
+  ],
+  "unresolved_questions": [
+    "Which specific sectors are driving the movement in Barbados, Belize? No official sector-breakdown dataset matched this cycle.",
+    "No live Barbados, Belize-specific procurement notice matched this cycle — check CDB and national tender portals directly.",
+    "No registry-backed local operators matched — source two credible operators via the listed institutions.",
+    "Validate that the underlying FDI movement is sustained, not a one-off transaction or statistical revision."
+  ],
+  "recommended_intro_targets": [
+    {
+      "name": "Caribbean Export Development Agency",
+      "why": "Regional trade and investment promotion"
+    }
+  ],
+  "advance_or_reject_recommendation": "hold",
+  "recommendation_reason": "Calibrated confidence 78/100 with 0 evidence categories. Keep on the desk; advance only after the unresolved questions below are answered.",
+  "last_validated_at": "2026-10-19T12:03:47.881316+00:00",
+  "coordination_path": null,
+  "evidence_fingerprint": "e3b0c44298fc1c14",
+  "cycles_since_refresh": 0,
+  "evidence_freshness": "refreshing"
+}

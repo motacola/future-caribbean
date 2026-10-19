@@ -74,7 +74,7 @@ export function Palette({ countries }: { countries: Country[] }) {
   const items: CommandItem[] = [
     { id: "ask", label: "Ask the desk a question", hint: "Answer", keywords: "ask question what why how" },
     { id: "lead", label: "Read the lead briefing", hint: "Brief", keywords: "lead briefing" },
-    ...countries.map((c) => ({ id: `c:${c.href}`, label: c.name, hint: c.status, keywords: "country" })),
+    ...countries.map((c) => ({ id: `c:${c.name}`, label: c.name, hint: c.status, keywords: "country" })),
     { id: "desk", label: "Open the full desk", hint: "Page", keywords: "desk map news wire" },
   ];
   const onSelect = (item: CommandItem) => {
@@ -82,7 +82,7 @@ export function Palette({ countries }: { countries: Country[] }) {
     if (item.id === "ask") { document.getElementById("bm-askbox")?.scrollIntoView({ block: "center" }); dispatchEvent(new CustomEvent("bm-ask", { detail: "" })); }
     else if (item.id === "lead") document.getElementById("brief-lead")?.scrollIntoView();
     else if (item.id === "desk") location.href = "/desk";
-    else location.href = item.id.slice(2);
+    else location.href = countries.find((c) => `c:${c.name}` === item.id)?.href ?? "/desk";
   };
   return (
     <>
