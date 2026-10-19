@@ -15,7 +15,9 @@ echo "▶ using committed regional news data (no in-build polling)"
 mkdir -p public
 cp data/regional_news/latest.json public/regional_news.json
 cp data/regional_news/latest.json api/regional-news-data.json
-node scripts/news-thumbnails.mjs
+# Optional: local WebP thumbnails. The page falls back to publisher URLs
+# when public/news-thumbnails/index.json is absent.
+if [ -f scripts/news-thumbnails.mjs ]; then node scripts/news-thumbnails.mjs; fi
 
 pnpm build
 
